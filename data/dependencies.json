@@ -1,0 +1,2316 @@
+{
+  "version": "v0.1.0",
+  "schemaVersion": 1,
+  "dependencies": [
+    {
+      "topicId": "mt_num-10-composition",
+      "prerequisiteId": "mt_num-10-recognition",
+      "strength": "hard",
+      "reason": "先会数数认数才能把一组物体分成两部分"
+    },
+    {
+      "topicId": "mt_num-10-addsub",
+      "prerequisiteId": "mt_num-10-recognition",
+      "strength": "hard",
+      "reason": "理解加减含义以认识10以内各数为前提"
+    },
+    {
+      "topicId": "mt_num-10-addsub",
+      "prerequisiteId": "mt_num-10-composition",
+      "strength": "hard",
+      "reason": "加减计算常借分成与合的思路算得数"
+    },
+    {
+      "topicId": "mt_num-10-mixed",
+      "prerequisiteId": "mt_num-10-addsub",
+      "strength": "hard",
+      "reason": "连加连减是10以内加减的连续运用"
+    },
+    {
+      "topicId": "mt_num-20-recognition",
+      "prerequisiteId": "mt_num-10-recognition",
+      "strength": "hard",
+      "reason": "11到20各数在10以内数的基础上扩展"
+    },
+    {
+      "topicId": "mt_num-20-carry",
+      "prerequisiteId": "mt_num-20-recognition",
+      "strength": "hard",
+      "reason": "进位加法要在认识20以内数之后进行"
+    },
+    {
+      "topicId": "mt_num-20-carry",
+      "prerequisiteId": "mt_num-10-composition",
+      "strength": "hard",
+      "reason": "凑十法依据10的分与合来拆数"
+    },
+    {
+      "topicId": "mt_num-20-carry",
+      "prerequisiteId": "mt_num-10-addsub",
+      "strength": "hard",
+      "reason": "9加几的口算需要10以内加减的基础"
+    },
+    {
+      "topicId": "mt_num-20-borrow",
+      "prerequisiteId": "mt_num-20-recognition",
+      "strength": "hard",
+      "reason": "退位减法的被减数是十几，需先认识"
+    },
+    {
+      "topicId": "mt_num-20-borrow",
+      "prerequisiteId": "mt_num-10-addsub",
+      "strength": "hard",
+      "reason": "破十平十都要先用10以内减法拆分"
+    },
+    {
+      "topicId": "mt_num-20-borrow",
+      "prerequisiteId": "mt_num-20-carry",
+      "strength": "soft",
+      "reason": "加减互逆，会进位加有助于理解退位减"
+    },
+    {
+      "topicId": "mt_num-100-recognition",
+      "prerequisiteId": "mt_num-20-recognition",
+      "strength": "hard",
+      "reason": "百以内数在20以内数位基础上扩展"
+    },
+    {
+      "topicId": "mt_num-100-addsub",
+      "prerequisiteId": "mt_num-100-recognition",
+      "strength": "hard",
+      "reason": "口算之前先会数会读百以内的数"
+    },
+    {
+      "topicId": "mt_num-100-addsub",
+      "prerequisiteId": "mt_num-10-addsub",
+      "strength": "soft",
+      "reason": "整十数加减是10以内加减的扩展"
+    },
+    {
+      "topicId": "mt_shape-2d",
+      "prerequisiteId": "mt_shape-3d",
+      "strength": "soft",
+      "reason": "平面图形多从立体图形的面上描下来"
+    },
+    {
+      "topicId": "mt_classify",
+      "prerequisiteId": "mt_num-10-recognition",
+      "strength": "soft",
+      "reason": "按数量分类要借助数数的经验"
+    },
+    {
+      "topicId": "mt_pattern",
+      "prerequisiteId": "mt_num-10-recognition",
+      "strength": "hard",
+      "reason": "发现数的规律要先会按顺序数数"
+    },
+    {
+      "topicId": "mt_num-100-pen",
+      "prerequisiteId": "mt_num-100-addsub",
+      "strength": "hard",
+      "reason": "竖式是口算方法的书面化，需口算先行"
+    },
+    {
+      "topicId": "mt_num-100-pen",
+      "prerequisiteId": "mt_num-100-recognition",
+      "strength": "hard",
+      "reason": "竖式相同数位对齐依赖数位概念"
+    },
+    {
+      "topicId": "mt_num-100-pen",
+      "prerequisiteId": "mt_num-20-borrow",
+      "strength": "hard",
+      "reason": "竖式退位减的算理来自20以内退位减"
+    },
+    {
+      "topicId": "mt_mul-meaning",
+      "prerequisiteId": "mt_num-100-addsub",
+      "strength": "hard",
+      "reason": "求几个相同加数的和需要扎实的加法"
+    },
+    {
+      "topicId": "mt_mul-tables-2-6",
+      "prerequisiteId": "mt_mul-meaning",
+      "strength": "hard",
+      "reason": "口诀是相同加数求和的逐句编制"
+    },
+    {
+      "topicId": "mt_mul-tables-7-9",
+      "prerequisiteId": "mt_mul-tables-2-6",
+      "strength": "hard",
+      "reason": "7到9的口诀延续2到6的编制方法"
+    },
+    {
+      "topicId": "mt_div-avg",
+      "prerequisiteId": "mt_num-10-composition",
+      "strength": "hard",
+      "reason": "平均分就是把一组物体分成几份的活动"
+    },
+    {
+      "topicId": "mt_div-avg",
+      "prerequisiteId": "mt_mul-meaning",
+      "strength": "hard",
+      "reason": "乘除互逆，先懂乘法容易理解除法"
+    },
+    {
+      "topicId": "mt_div-tables-2-6",
+      "prerequisiteId": "mt_mul-tables-2-6",
+      "strength": "hard",
+      "reason": "用2到6的口诀求商，口诀是前提"
+    },
+    {
+      "topicId": "mt_div-tables-2-6",
+      "prerequisiteId": "mt_div-avg",
+      "strength": "hard",
+      "reason": "求商之前先理解除法算式表示的意义"
+    },
+    {
+      "topicId": "mt_div-tables-7-9",
+      "prerequisiteId": "mt_mul-tables-7-9",
+      "strength": "hard",
+      "reason": "用7到9的乘法口诀直接求商"
+    },
+    {
+      "topicId": "mt_div-tables-7-9",
+      "prerequisiteId": "mt_div-tables-2-6",
+      "strength": "hard",
+      "reason": "求商方法由表内除法迁移到7到9"
+    },
+    {
+      "topicId": "mt_mixed-two-steps",
+      "prerequisiteId": "mt_num-10-mixed",
+      "strength": "hard",
+      "reason": "从左往右算的顺序在连加连减中初识"
+    },
+    {
+      "topicId": "mt_mixed-two-steps",
+      "prerequisiteId": "mt_mul-tables-2-6",
+      "strength": "hard",
+      "reason": "乘除混合运算需要表内乘法基础"
+    },
+    {
+      "topicId": "mt_mixed-two-steps",
+      "prerequisiteId": "mt_div-tables-2-6",
+      "strength": "hard",
+      "reason": "含除法的两步题要会熟练求商"
+    },
+    {
+      "topicId": "mt_div-remainder",
+      "prerequisiteId": "mt_div-tables-2-6",
+      "strength": "hard",
+      "reason": "有余数除法是表内除法的自然延伸"
+    },
+    {
+      "topicId": "mt_num-10000-recognition",
+      "prerequisiteId": "mt_num-100-recognition",
+      "strength": "hard",
+      "reason": "万以内数位在百位基础上增加千万位"
+    },
+    {
+      "topicId": "mt_mass-g-kg",
+      "prerequisiteId": "mt_num-100-recognition",
+      "strength": "soft",
+      "reason": "掂量估计物品轻重要借助数的大小经验"
+    },
+    {
+      "topicId": "mt_length-cm-m",
+      "prerequisiteId": "mt_num-10-recognition",
+      "strength": "soft",
+      "reason": "量长度要一边数刻度一边比较多少"
+    },
+    {
+      "topicId": "mt_angle-intro",
+      "prerequisiteId": "mt_shape-2d",
+      "strength": "hard",
+      "reason": "角从长方形三角形等平面图形中引出"
+    },
+    {
+      "topicId": "mt_observe-object",
+      "prerequisiteId": "mt_shape-3d",
+      "strength": "hard",
+      "reason": "观察物体就是观察立体图形的各个面"
+    },
+    {
+      "topicId": "mt_shape-move",
+      "prerequisiteId": "mt_shape-2d",
+      "strength": "hard",
+      "reason": "平移旋转轴对称都以平面图形为对象"
+    },
+    {
+      "topicId": "mt_data-collect",
+      "prerequisiteId": "mt_classify",
+      "strength": "hard",
+      "reason": "数据收集整理是分类活动的延伸"
+    },
+    {
+      "topicId": "mt_measure-compare",
+      "prerequisiteId": "mt_length-cm-m",
+      "strength": "hard",
+      "reason": "量一量比一比要用厘米尺测量长度"
+    },
+    {
+      "topicId": "mt_addsub-10000",
+      "prerequisiteId": "mt_num-100-pen",
+      "strength": "hard",
+      "reason": "万以内笔算延续竖式进退位的方法"
+    },
+    {
+      "topicId": "mt_addsub-10000",
+      "prerequisiteId": "mt_num-10000-recognition",
+      "strength": "hard",
+      "reason": "万以内加减要先会读写万以内的数"
+    },
+    {
+      "topicId": "mt_time-hms",
+      "prerequisiteId": "mt_num-100-recognition",
+      "strength": "soft",
+      "reason": "钟面大格小格的计数用到百以内数数"
+    },
+    {
+      "topicId": "mt_unit-ton",
+      "prerequisiteId": "mt_mass-g-kg",
+      "strength": "hard",
+      "reason": "吨与千克同属质量单位的换算体系"
+    },
+    {
+      "topicId": "mt_unit-ton",
+      "prerequisiteId": "mt_num-10000-recognition",
+      "strength": "soft",
+      "reason": "1吨等于1000千克的换算需要大数基础"
+    },
+    {
+      "topicId": "mt_mult-1digit",
+      "prerequisiteId": "mt_mul-tables-7-9",
+      "strength": "hard",
+      "reason": "多位数乘一位数每一步都用乘法口诀"
+    },
+    {
+      "topicId": "mt_mult-1digit",
+      "prerequisiteId": "mt_num-10000-recognition",
+      "strength": "hard",
+      "reason": "部分积按数位累加需要数位概念"
+    },
+    {
+      "topicId": "mt_mult-1digit",
+      "prerequisiteId": "mt_addsub-10000",
+      "strength": "soft",
+      "reason": "各部分积相加用到万以内加减法"
+    },
+    {
+      "topicId": "mt_div-1digit",
+      "prerequisiteId": "mt_div-tables-7-9",
+      "strength": "hard",
+      "reason": "一位数除法的试商用乘法口诀"
+    },
+    {
+      "topicId": "mt_div-1digit",
+      "prerequisiteId": "mt_mult-1digit",
+      "strength": "hard",
+      "reason": "除法用乘法验算，且算理与乘法互逆"
+    },
+    {
+      "topicId": "mt_div-1digit",
+      "prerequisiteId": "mt_num-10000-recognition",
+      "strength": "soft",
+      "reason": "商中间有0的处理要理解万以内数位"
+    },
+    {
+      "topicId": "mt_multiple",
+      "prerequisiteId": "mt_mul-meaning",
+      "strength": "hard",
+      "reason": "倍的概念本质是几个几的重新表述"
+    },
+    {
+      "topicId": "mt_multiple",
+      "prerequisiteId": "mt_num-100-addsub",
+      "strength": "soft",
+      "reason": "求一个数的几倍是多少要扎实加法"
+    },
+    {
+      "topicId": "mt_frac-intro",
+      "prerequisiteId": "mt_num-10-composition",
+      "strength": "hard",
+      "reason": "几分之一来自平均分，即一组的分成"
+    },
+    {
+      "topicId": "mt_frac-intro",
+      "prerequisiteId": "mt_shape-2d",
+      "strength": "soft",
+      "reason": "折纸涂色引入分数需要图形操作经验"
+    },
+    {
+      "topicId": "mt_frac-same-addsub",
+      "prerequisiteId": "mt_frac-intro",
+      "strength": "hard",
+      "reason": "会认分数才会算同分母分数加减"
+    },
+    {
+      "topicId": "mt_frac-same-addsub",
+      "prerequisiteId": "mt_num-10-addsub",
+      "strength": "soft",
+      "reason": "分数单位累加类似整数个数的相加"
+    },
+    {
+      "topicId": "mt_dec-intro",
+      "prerequisiteId": "mt_frac-intro",
+      "strength": "hard",
+      "reason": "十分之几写成零点几，分数是基础"
+    },
+    {
+      "topicId": "mt_dec-intro",
+      "prerequisiteId": "mt_num-100-recognition",
+      "strength": "soft",
+      "reason": "小数读写沿用整数位值顺序的思想"
+    },
+    {
+      "topicId": "mt_dec-addsub",
+      "prerequisiteId": "mt_dec-intro",
+      "strength": "hard",
+      "reason": "会认小数才会做小数加减"
+    },
+    {
+      "topicId": "mt_dec-addsub",
+      "prerequisiteId": "mt_num-100-pen",
+      "strength": "hard",
+      "reason": "小数点对齐是相同数位对齐的延续"
+    },
+    {
+      "topicId": "mt_calendar",
+      "prerequisiteId": "mt_time-hms",
+      "strength": "hard",
+      "reason": "24时计时法以时分秒的认识为基础"
+    },
+    {
+      "topicId": "mt_direction",
+      "prerequisiteId": "mt_position-basic",
+      "strength": "hard",
+      "reason": "东南西北是上下前后左右的方向扩展"
+    },
+    {
+      "topicId": "mt_direction",
+      "prerequisiteId": "mt_shape-2d",
+      "strength": "soft",
+      "reason": "画位置示意图需要平面图形表象"
+    },
+    {
+      "topicId": "mt_rect-perimeter",
+      "prerequisiteId": "mt_length-cm-m",
+      "strength": "hard",
+      "reason": "周长是图形各边长度的累加"
+    },
+    {
+      "topicId": "mt_rect-perimeter",
+      "prerequisiteId": "mt_shape-2d",
+      "strength": "hard",
+      "reason": "计算周长前先认识长方形正方形"
+    },
+    {
+      "topicId": "mt_rect-perimeter",
+      "prerequisiteId": "mt_num-100-addsub",
+      "strength": "soft",
+      "reason": "计算周长要用百以内加减法"
+    },
+    {
+      "topicId": "mt_area-intro",
+      "prerequisiteId": "mt_shape-2d",
+      "strength": "hard",
+      "reason": "面积概念从平面图形的表面引入"
+    },
+    {
+      "topicId": "mt_area-intro",
+      "prerequisiteId": "mt_length-cm-m",
+      "strength": "hard",
+      "reason": "面积单位由边长1厘米的正方形规定"
+    },
+    {
+      "topicId": "mt_area-intro",
+      "prerequisiteId": "mt_rect-perimeter",
+      "strength": "soft",
+      "reason": "区分周长与面积需要先会看边和面"
+    },
+    {
+      "topicId": "mt_rect-area",
+      "prerequisiteId": "mt_area-intro",
+      "strength": "hard",
+      "reason": "会认面积单位才能推导管面积公式"
+    },
+    {
+      "topicId": "mt_rect-area",
+      "prerequisiteId": "mt_rect-perimeter",
+      "strength": "soft",
+      "reason": "周长与面积常在一起比较，经验可迁移"
+    },
+    {
+      "topicId": "mt_rect-area",
+      "prerequisiteId": "mt_mult-1digit",
+      "strength": "hard",
+      "reason": "长乘宽的公式计算需要乘法基础"
+    },
+    {
+      "topicId": "mt_stats-table",
+      "prerequisiteId": "mt_data-collect",
+      "strength": "hard",
+      "reason": "复式统计表是两组收集整理的合并"
+    },
+    {
+      "topicId": "mt_stats-table",
+      "prerequisiteId": "mt_classify",
+      "strength": "soft",
+      "reason": "整理成表之前要按标准给数据分类"
+    },
+    {
+      "topicId": "mt_big-num",
+      "prerequisiteId": "mt_num-10000-recognition",
+      "strength": "hard",
+      "reason": "万以上数位在万以内数位基础上扩展"
+    },
+    {
+      "topicId": "mt_area-hectare",
+      "prerequisiteId": "mt_rect-area",
+      "strength": "hard",
+      "reason": "公顷平方千米是更大的面积单位"
+    },
+    {
+      "topicId": "mt_area-hectare",
+      "prerequisiteId": "mt_big-num",
+      "strength": "soft",
+      "reason": "公顷与平方米的进率换算要用到大数"
+    },
+    {
+      "topicId": "mt_mult-2digit",
+      "prerequisiteId": "mt_mult-1digit",
+      "strength": "hard",
+      "reason": "两位数乘法笔算由一位数乘法扩展"
+    },
+    {
+      "topicId": "mt_mult-2digit",
+      "prerequisiteId": "mt_addsub-10000",
+      "strength": "hard",
+      "reason": "两次部分积相加用到万以内加减法"
+    },
+    {
+      "topicId": "mt_div-2digit",
+      "prerequisiteId": "mt_mult-2digit",
+      "strength": "hard",
+      "reason": "试商要算除数与商的积，用到乘法"
+    },
+    {
+      "topicId": "mt_div-2digit",
+      "prerequisiteId": "mt_div-1digit",
+      "strength": "hard",
+      "reason": "除法算理与验算由一位数除法迁移"
+    },
+    {
+      "topicId": "mt_ops-order",
+      "prerequisiteId": "mt_mixed-two-steps",
+      "strength": "hard",
+      "reason": "两步混合运算的顺序扩展到四则"
+    },
+    {
+      "topicId": "mt_ops-order",
+      "prerequisiteId": "mt_div-2digit",
+      "strength": "soft",
+      "reason": "四则混合题中出现除数是两位数的除法"
+    },
+    {
+      "topicId": "mt_ops-order",
+      "prerequisiteId": "mt_mult-2digit",
+      "strength": "soft",
+      "reason": "四则混合题中出现三位数乘两位数"
+    },
+    {
+      "topicId": "mt_ops-laws",
+      "prerequisiteId": "mt_addsub-10000",
+      "strength": "hard",
+      "reason": "加法运算律在加减计算中反复体验"
+    },
+    {
+      "topicId": "mt_ops-laws",
+      "prerequisiteId": "mt_mult-2digit",
+      "strength": "hard",
+      "reason": "乘法分配律在两位数乘法中容易发现"
+    },
+    {
+      "topicId": "mt_dec-meaning",
+      "prerequisiteId": "mt_dec-intro",
+      "strength": "hard",
+      "reason": "小数意义是初步认识的系统化"
+    },
+    {
+      "topicId": "mt_dec-meaning",
+      "prerequisiteId": "mt_num-10000-recognition",
+      "strength": "hard",
+      "reason": "小数数位顺序与整数位值思想一致"
+    },
+    {
+      "topicId": "mt_dec-meaning",
+      "prerequisiteId": "mt_frac-intro",
+      "strength": "soft",
+      "reason": "小数与十分之几的联系需要分数基础"
+    },
+    {
+      "topicId": "mt_dec-addsub2",
+      "prerequisiteId": "mt_dec-meaning",
+      "strength": "hard",
+      "reason": "小数点对齐的依据是小数的性质"
+    },
+    {
+      "topicId": "mt_dec-addsub2",
+      "prerequisiteId": "mt_dec-addsub",
+      "strength": "hard",
+      "reason": "小数加减由一位小数扩展到多位"
+    },
+    {
+      "topicId": "mt_dec-addsub2",
+      "prerequisiteId": "mt_num-100-pen",
+      "strength": "soft",
+      "reason": "竖式加减的对位经验直接迁移"
+    },
+    {
+      "topicId": "mt_dec-addsub2",
+      "prerequisiteId": "mt_ops-laws",
+      "strength": "soft",
+      "reason": "小数简便运算沿用加法运算律"
+    },
+    {
+      "topicId": "mt_average-mean",
+      "prerequisiteId": "mt_div-1digit",
+      "strength": "hard",
+      "reason": "求平均数就是总数除以对应的份数"
+    },
+    {
+      "topicId": "mt_average-mean",
+      "prerequisiteId": "mt_stats-table",
+      "strength": "soft",
+      "reason": "求平均数之前要先把数据整理成表"
+    },
+    {
+      "topicId": "mt_bar-chart",
+      "prerequisiteId": "mt_data-collect",
+      "strength": "hard",
+      "reason": "条形统计图是数据整理的图形化"
+    },
+    {
+      "topicId": "mt_bar-chart",
+      "prerequisiteId": "mt_stats-table",
+      "strength": "soft",
+      "reason": "复式统计表的数据可用条形图呈现"
+    },
+    {
+      "topicId": "mt_lines",
+      "prerequisiteId": "mt_shape-2d",
+      "strength": "hard",
+      "reason": "线段射线直线以平面图形为背景认识"
+    },
+    {
+      "topicId": "mt_lines",
+      "prerequisiteId": "mt_angle-intro",
+      "strength": "soft",
+      "reason": "由角的边抽象出射线与直线"
+    },
+    {
+      "topicId": "mt_angle-measure",
+      "prerequisiteId": "mt_angle-intro",
+      "strength": "hard",
+      "reason": "度量角以初步认识角为前提"
+    },
+    {
+      "topicId": "mt_angle-measure",
+      "prerequisiteId": "mt_lines",
+      "strength": "hard",
+      "reason": "平角周角由射线旋转形成，需先认线"
+    },
+    {
+      "topicId": "mt_parallelogram",
+      "prerequisiteId": "mt_shape-2d",
+      "strength": "hard",
+      "reason": "从一般四边形中辨认特殊四边形"
+    },
+    {
+      "topicId": "mt_parallelogram",
+      "prerequisiteId": "mt_lines",
+      "strength": "hard",
+      "reason": "平行四边形的底和高涉及垂直与平行"
+    },
+    {
+      "topicId": "mt_triangle",
+      "prerequisiteId": "mt_shape-2d",
+      "strength": "hard",
+      "reason": "三角形是基本平面图形，需先认识"
+    },
+    {
+      "topicId": "mt_triangle",
+      "prerequisiteId": "mt_angle-measure",
+      "strength": "hard",
+      "reason": "按角给三角形分类需要角的度量"
+    },
+    {
+      "topicId": "mt_triangle",
+      "prerequisiteId": "mt_parallelogram",
+      "strength": "soft",
+      "reason": "三角形的高可由平行四边形的高迁移"
+    },
+    {
+      "topicId": "mt_symmetry",
+      "prerequisiteId": "mt_shape-move",
+      "strength": "hard",
+      "reason": "轴对称是图形运动的基本形式之一"
+    },
+    {
+      "topicId": "mt_symmetry",
+      "prerequisiteId": "mt_shape-2d",
+      "strength": "hard",
+      "reason": "轴对称操作以平面图形为对象"
+    },
+    {
+      "topicId": "mt_optimize",
+      "prerequisiteId": "mt_num-100-addsub",
+      "strength": "hard",
+      "reason": "比较不同方案的总时长需要加减计算"
+    },
+    {
+      "topicId": "mt_optimize",
+      "prerequisiteId": "mt_time-hms",
+      "strength": "soft",
+      "reason": "统筹安排工序要计算各环节用时"
+    },
+    {
+      "topicId": "mt_chicken-rabbit",
+      "prerequisiteId": "mt_mixed-two-steps",
+      "strength": "hard",
+      "reason": "假设后调整头数脚数需两步混合运算"
+    },
+    {
+      "topicId": "mt_chicken-rabbit",
+      "prerequisiteId": "mt_num-100-pen",
+      "strength": "soft",
+      "reason": "假设调整的过程用笔算记录更清楚"
+    },
+    {
+      "topicId": "mt_dec-mul",
+      "prerequisiteId": "mt_dec-meaning",
+      "strength": "hard",
+      "reason": "小数点定位的依据是小数的意义性质"
+    },
+    {
+      "topicId": "mt_dec-mul",
+      "prerequisiteId": "mt_mult-2digit",
+      "strength": "hard",
+      "reason": "小数乘法先按整数乘法算出积"
+    },
+    {
+      "topicId": "mt_dec-div",
+      "prerequisiteId": "mt_div-2digit",
+      "strength": "hard",
+      "reason": "小数除法沿用整数除法的试商方法"
+    },
+    {
+      "topicId": "mt_dec-div",
+      "prerequisiteId": "mt_dec-meaning",
+      "strength": "hard",
+      "reason": "除数化成整数依据小数点移动规律"
+    },
+    {
+      "topicId": "mt_dec-div",
+      "prerequisiteId": "mt_dec-mul",
+      "strength": "soft",
+      "reason": "除法的结果可以用乘法进行验算"
+    },
+    {
+      "topicId": "mt_factors",
+      "prerequisiteId": "mt_div-2digit",
+      "strength": "hard",
+      "reason": "判断整除依赖除数是两位数的除法"
+    },
+    {
+      "topicId": "mt_factors",
+      "prerequisiteId": "mt_mul-tables-7-9",
+      "strength": "soft",
+      "reason": "表内乘除法中最先接触因数倍数关系"
+    },
+    {
+      "topicId": "mt_frac-meaning",
+      "prerequisiteId": "mt_frac-intro",
+      "strength": "hard",
+      "reason": "分数意义是初步认识的抽象与深化"
+    },
+    {
+      "topicId": "mt_frac-meaning",
+      "prerequisiteId": "mt_div-avg",
+      "strength": "hard",
+      "reason": "分数的分子分母来自平均分活动"
+    },
+    {
+      "topicId": "mt_frac-meaning",
+      "prerequisiteId": "mt_num-10000-recognition",
+      "strength": "soft",
+      "reason": "分数单位累加需要较大的数数能力"
+    },
+    {
+      "topicId": "mt_frac-div",
+      "prerequisiteId": "mt_frac-meaning",
+      "strength": "hard",
+      "reason": "分数与除法的关系以单位一理解前提"
+    },
+    {
+      "topicId": "mt_frac-div",
+      "prerequisiteId": "mt_div-avg",
+      "strength": "hard",
+      "reason": "分数即除法算式的另一种书写形式"
+    },
+    {
+      "topicId": "mt_frac-reduce",
+      "prerequisiteId": "mt_frac-meaning",
+      "strength": "hard",
+      "reason": "约分通分以分数基本性质为依据"
+    },
+    {
+      "topicId": "mt_frac-reduce",
+      "prerequisiteId": "mt_factors",
+      "strength": "hard",
+      "reason": "最大公因数最小公倍数是约分通分工具"
+    },
+    {
+      "topicId": "mt_frac-addsub",
+      "prerequisiteId": "mt_frac-reduce",
+      "strength": "hard",
+      "reason": "异分母加减必须先通分"
+    },
+    {
+      "topicId": "mt_frac-addsub",
+      "prerequisiteId": "mt_frac-same-addsub",
+      "strength": "hard",
+      "reason": "同分母加减的早期经验是基础"
+    },
+    {
+      "topicId": "mt_frac-addsub",
+      "prerequisiteId": "mt_ops-order",
+      "strength": "soft",
+      "reason": "分数混合运算同样遵循四则运算顺序"
+    },
+    {
+      "topicId": "mt_position-pairs",
+      "prerequisiteId": "mt_num-100-recognition",
+      "strength": "hard",
+      "reason": "数对是列与行两个数的有序组合"
+    },
+    {
+      "topicId": "mt_position-pairs",
+      "prerequisiteId": "mt_position-basic",
+      "strength": "soft",
+      "reason": "前后左右的位置描述是早期经验"
+    },
+    {
+      "topicId": "mt_position-pairs",
+      "prerequisiteId": "mt_direction",
+      "strength": "soft",
+      "reason": "方向加距离确定位置的经验可迁移"
+    },
+    {
+      "topicId": "mt_polygon-area",
+      "prerequisiteId": "mt_rect-area",
+      "strength": "hard",
+      "reason": "多边形面积用割补法转化成长方形"
+    },
+    {
+      "topicId": "mt_polygon-area",
+      "prerequisiteId": "mt_triangle",
+      "strength": "hard",
+      "reason": "推导三角形面积公式需先认识底和高"
+    },
+    {
+      "topicId": "mt_polygon-area",
+      "prerequisiteId": "mt_lines",
+      "strength": "hard",
+      "reason": "图形的高涉及底边与垂线的认识"
+    },
+    {
+      "topicId": "mt_cuboid",
+      "prerequisiteId": "mt_shape-3d",
+      "strength": "hard",
+      "reason": "长方体是立体图形的系统再认识"
+    },
+    {
+      "topicId": "mt_cuboid",
+      "prerequisiteId": "mt_observe-object",
+      "strength": "hard",
+      "reason": "从不同方向观察是研究立体的方法"
+    },
+    {
+      "topicId": "mt_volume",
+      "prerequisiteId": "mt_area-intro",
+      "strength": "hard",
+      "reason": "体积单位由棱长1厘米的正方体规定"
+    },
+    {
+      "topicId": "mt_volume",
+      "prerequisiteId": "mt_cuboid",
+      "strength": "hard",
+      "reason": "体积公式以认识长方体特征为前提"
+    },
+    {
+      "topicId": "mt_volume",
+      "prerequisiteId": "mt_rect-area",
+      "strength": "soft",
+      "reason": "体积公式推导用到长乘宽的面积算法"
+    },
+    {
+      "topicId": "mt_probability",
+      "prerequisiteId": "mt_frac-intro",
+      "strength": "hard",
+      "reason": "可能性的大小用几分之几来表示"
+    },
+    {
+      "topicId": "mt_probability",
+      "prerequisiteId": "mt_data-collect",
+      "strength": "soft",
+      "reason": "可能性通过收集数据的试验来感受"
+    },
+    {
+      "topicId": "mt_line-chart",
+      "prerequisiteId": "mt_bar-chart",
+      "strength": "hard",
+      "reason": "折线统计图由条形统计图变化而来"
+    },
+    {
+      "topicId": "mt_line-chart",
+      "prerequisiteId": "mt_stats-table",
+      "strength": "soft",
+      "reason": "折线图的数据来源需先整理成表"
+    },
+    {
+      "topicId": "mt_tree-plant",
+      "prerequisiteId": "mt_length-cm-m",
+      "strength": "hard",
+      "reason": "间隔问题以测量段长为计算基础"
+    },
+    {
+      "topicId": "mt_tree-plant",
+      "prerequisiteId": "mt_pattern",
+      "strength": "soft",
+      "reason": "间隔排列的重复规律是植树问题雏形"
+    },
+    {
+      "topicId": "mt_find-defective",
+      "prerequisiteId": "mt_div-avg",
+      "strength": "hard",
+      "reason": "找次品的核心是把物品平均分成三份"
+    },
+    {
+      "topicId": "mt_find-defective",
+      "prerequisiteId": "mt_data-collect",
+      "strength": "soft",
+      "reason": "称重的过程要记录比较的结果"
+    },
+    {
+      "topicId": "mt_phone-call",
+      "prerequisiteId": "mt_pattern",
+      "strength": "hard",
+      "reason": "通知人数翻倍的规律需要找规律能力"
+    },
+    {
+      "topicId": "mt_phone-call",
+      "prerequisiteId": "mt_data-collect",
+      "strength": "soft",
+      "reason": "用示意图记录每一轮的已知人数"
+    },
+    {
+      "topicId": "mt_frac-mul",
+      "prerequisiteId": "mt_frac-meaning",
+      "strength": "hard",
+      "reason": "分数乘法意义以单位一和分数单位为基础"
+    },
+    {
+      "topicId": "mt_frac-mul",
+      "prerequisiteId": "mt_frac-addsub",
+      "strength": "hard",
+      "reason": "分数乘加混合运算需要分数加减基础"
+    },
+    {
+      "topicId": "mt_frac-div2",
+      "prerequisiteId": "mt_frac-mul",
+      "strength": "hard",
+      "reason": "分数除法转化成乘倒数来计算"
+    },
+    {
+      "topicId": "mt_frac-div2",
+      "prerequisiteId": "mt_frac-div",
+      "strength": "hard",
+      "reason": "分数除法的书写形式即分数与除法"
+    },
+    {
+      "topicId": "mt_ratio",
+      "prerequisiteId": "mt_frac-meaning",
+      "strength": "hard",
+      "reason": "比与分数在意义上直接相通"
+    },
+    {
+      "topicId": "mt_ratio",
+      "prerequisiteId": "mt_frac-div",
+      "strength": "hard",
+      "reason": "比的前项后项关系相当于分子分母"
+    },
+    {
+      "topicId": "mt_ratio",
+      "prerequisiteId": "mt_multiple",
+      "strength": "soft",
+      "reason": "比表示两个量之间的倍数关系"
+    },
+    {
+      "topicId": "mt_percent-1",
+      "prerequisiteId": "mt_frac-div",
+      "strength": "hard",
+      "reason": "百分数与分数互化需要分数基础"
+    },
+    {
+      "topicId": "mt_percent-1",
+      "prerequisiteId": "mt_ratio",
+      "strength": "soft",
+      "reason": "百分数又称百分比，与比密切相关"
+    },
+    {
+      "topicId": "mt_percent-2",
+      "prerequisiteId": "mt_percent-1",
+      "strength": "hard",
+      "reason": "成数税率利率都是百分数的应用"
+    },
+    {
+      "topicId": "mt_percent-2",
+      "prerequisiteId": "mt_dec-div",
+      "strength": "soft",
+      "reason": "利率的计算涉及小数除法运算"
+    },
+    {
+      "topicId": "mt_negative",
+      "prerequisiteId": "mt_num-100-recognition",
+      "strength": "soft",
+      "reason": "负数在数线上扩展了整数数线经验"
+    },
+    {
+      "topicId": "mt_proportion",
+      "prerequisiteId": "mt_ratio",
+      "strength": "hard",
+      "reason": "比例由两个比值相等的比组成"
+    },
+    {
+      "topicId": "mt_proportion",
+      "prerequisiteId": "mt_frac-reduce",
+      "strength": "hard",
+      "reason": "比例的基本性质依托约分的算理"
+    },
+    {
+      "topicId": "mt_direct-inverse",
+      "prerequisiteId": "mt_proportion",
+      "strength": "hard",
+      "reason": "正反比例是比例关系的函数化扩展"
+    },
+    {
+      "topicId": "mt_direct-inverse",
+      "prerequisiteId": "mt_frac-div2",
+      "strength": "soft",
+      "reason": "两种量的商关系用分数除法刻画"
+    },
+    {
+      "topicId": "mt_circle",
+      "prerequisiteId": "mt_lines",
+      "strength": "hard",
+      "reason": "圆是到定点等距的点的集合，需线段概念"
+    },
+    {
+      "topicId": "mt_circle",
+      "prerequisiteId": "mt_shape-2d",
+      "strength": "soft",
+      "reason": "圆是常见平面图形，归类经验可迁移"
+    },
+    {
+      "topicId": "mt_circle-measure",
+      "prerequisiteId": "mt_circle",
+      "strength": "hard",
+      "reason": "计算周长面积前先认识半径直径"
+    },
+    {
+      "topicId": "mt_circle-measure",
+      "prerequisiteId": "mt_polygon-area",
+      "strength": "hard",
+      "reason": "圆的面积用化圆为方的转化思想"
+    },
+    {
+      "topicId": "mt_circle-measure",
+      "prerequisiteId": "mt_dec-div",
+      "strength": "soft",
+      "reason": "圆周率取近似值涉及小数除法"
+    },
+    {
+      "topicId": "mt_sector",
+      "prerequisiteId": "mt_circle",
+      "strength": "hard",
+      "reason": "扇形由圆心角两条半径和一段弧围成"
+    },
+    {
+      "topicId": "mt_sector",
+      "prerequisiteId": "mt_angle-measure",
+      "strength": "hard",
+      "reason": "扇形的大小用圆心角的度数来刻画"
+    },
+    {
+      "topicId": "mt_sector",
+      "prerequisiteId": "mt_circle-measure",
+      "strength": "soft",
+      "reason": "扇形弧长面积计算用到圆的周长面积"
+    },
+    {
+      "topicId": "mt_cylinder",
+      "prerequisiteId": "mt_shape-3d",
+      "strength": "hard",
+      "reason": "圆柱是立体图形的再认识"
+    },
+    {
+      "topicId": "mt_cylinder",
+      "prerequisiteId": "mt_cuboid",
+      "strength": "hard",
+      "reason": "圆柱表面积体积算法由长方体迁移"
+    },
+    {
+      "topicId": "mt_cylinder",
+      "prerequisiteId": "mt_circle",
+      "strength": "hard",
+      "reason": "圆柱的底面和侧面展开都与圆有关"
+    },
+    {
+      "topicId": "mt_cylinder",
+      "prerequisiteId": "mt_volume",
+      "strength": "soft",
+      "reason": "圆柱体积公式由长方体体积公式推出"
+    },
+    {
+      "topicId": "mt_pie-chart",
+      "prerequisiteId": "mt_circle",
+      "strength": "hard",
+      "reason": "扇形统计图以圆的扇形表示部分"
+    },
+    {
+      "topicId": "mt_pie-chart",
+      "prerequisiteId": "mt_frac-meaning",
+      "strength": "hard",
+      "reason": "各部分占比用分数百分数表示"
+    },
+    {
+      "topicId": "mt_pie-chart",
+      "prerequisiteId": "mt_sector",
+      "strength": "soft",
+      "reason": "扇形统计图就是扇形大小比较的应用"
+    },
+    {
+      "topicId": "mt_stats-center",
+      "prerequisiteId": "mt_average-mean",
+      "strength": "hard",
+      "reason": "平均数是三种统计量中已学过的一个"
+    },
+    {
+      "topicId": "mt_stats-center",
+      "prerequisiteId": "mt_line-chart",
+      "strength": "soft",
+      "reason": "中位数众数常结合折线图来观察"
+    },
+    {
+      "topicId": "mt_number-shape",
+      "prerequisiteId": "mt_pattern",
+      "strength": "hard",
+      "reason": "数与形从图形排列的规律中发现算式"
+    },
+    {
+      "topicId": "mt_number-shape",
+      "prerequisiteId": "mt_polygon-area",
+      "strength": "soft",
+      "reason": "用图形的面积解释算式的结果"
+    },
+    {
+      "topicId": "mt_pigeonhole",
+      "prerequisiteId": "mt_div-avg",
+      "strength": "hard",
+      "reason": "抽屉原理的核心是把物体平均分到抽屉"
+    },
+    {
+      "topicId": "mt_pigeonhole",
+      "prerequisiteId": "mt_classify",
+      "strength": "soft",
+      "reason": "建立抽屉模型要先按属性给物体分类"
+    },
+    {
+      "topicId": "mt_pinyin-initials",
+      "prerequisiteId": "mt_pinyin-finals",
+      "strength": "soft",
+      "reason": "先学单韵母和声调，声母呼读更扎实"
+    },
+    {
+      "topicId": "mt_pinyin-blending",
+      "prerequisiteId": "mt_pinyin-initials",
+      "strength": "hard",
+      "reason": "拼读音节需要先认识声母"
+    },
+    {
+      "topicId": "mt_pinyin-blending",
+      "prerequisiteId": "mt_pinyin-finals",
+      "strength": "hard",
+      "reason": "韵母是音节的一半，先学才能拼"
+    },
+    {
+      "topicId": "mt_pinyin-whole",
+      "prerequisiteId": "mt_pinyin-initials",
+      "strength": "hard",
+      "reason": "整体认读音节多含平翘舌声母，需先认读"
+    },
+    {
+      "topicId": "mt_pinyin-whole",
+      "prerequisiteId": "mt_pinyin-blending",
+      "strength": "soft",
+      "reason": "先练拼读再学直读，对比更清楚"
+    },
+    {
+      "topicId": "mt_pinyin-reading",
+      "prerequisiteId": "mt_pinyin-blending",
+      "strength": "hard",
+      "reason": "熟练拼读是借助拼音识字的前提"
+    },
+    {
+      "topicId": "mt_pinyin-reading",
+      "prerequisiteId": "mt_pinyin-whole",
+      "strength": "hard",
+      "reason": "识字常遇到整体认读音节，须先会认读"
+    },
+    {
+      "topicId": "mt_char-pictographic",
+      "prerequisiteId": "mt_pinyin-reading",
+      "strength": "hard",
+      "reason": "识字前先会借助拼音，才能读准字音"
+    },
+    {
+      "topicId": "mt_char-radical",
+      "prerequisiteId": "mt_char-pictographic",
+      "strength": "soft",
+      "reason": "由象形识字引出偏旁来源，理解更自然"
+    },
+    {
+      "topicId": "mt_char-stroke",
+      "prerequisiteId": "mt_char-pictographic",
+      "strength": "hard",
+      "reason": "先整体认字，再学习分解字的笔画"
+    },
+    {
+      "topicId": "mt_char-writing",
+      "prerequisiteId": "mt_char-stroke",
+      "strength": "hard",
+      "reason": "先掌握基本笔画和笔顺，才能把字写规范"
+    },
+    {
+      "topicId": "mt_char-writing",
+      "prerequisiteId": "mt_char-radical",
+      "strength": "hard",
+      "reason": "按偏旁结构安排间架，字才写得匀称"
+    },
+    {
+      "topicId": "mt_char-phonetic-order",
+      "prerequisiteId": "mt_pinyin-initials",
+      "strength": "hard",
+      "reason": "音序查字要先熟悉拼音字母的顺序"
+    },
+    {
+      "topicId": "mt_char-radical-lookup",
+      "prerequisiteId": "mt_char-radical",
+      "strength": "hard",
+      "reason": "按部首查字先要认识常见偏旁部首"
+    },
+    {
+      "topicId": "mt_char-radical-lookup",
+      "prerequisiteId": "mt_char-phonetic-order",
+      "strength": "soft",
+      "reason": "与音序查字法对照，查字方法更完整"
+    },
+    {
+      "topicId": "mt_char-homophone",
+      "prerequisiteId": "mt_char-pictographic",
+      "strength": "hard",
+      "reason": "辨析形近字以象形识字等方法为基础"
+    },
+    {
+      "topicId": "mt_char-homophone",
+      "prerequisiteId": "mt_char-radical",
+      "strength": "hard",
+      "reason": "形近字多靠偏旁部首区分字形和字义"
+    },
+    {
+      "topicId": "mt_word-understand",
+      "prerequisiteId": "mt_char-radical",
+      "strength": "hard",
+      "reason": "分析偏旁推断字义是理解词语的常用方法"
+    },
+    {
+      "topicId": "mt_word-understand",
+      "prerequisiteId": "mt_char-radical-lookup",
+      "strength": "soft",
+      "reason": "查字典看释义能帮助理解词义"
+    },
+    {
+      "topicId": "mt_word-accumulate",
+      "prerequisiteId": "mt_word-understand",
+      "strength": "hard",
+      "reason": "先会用方法理解词义，再归类积累"
+    },
+    {
+      "topicId": "mt_word-accumulate",
+      "prerequisiteId": "mt_char-radical-lookup",
+      "strength": "hard",
+      "reason": "会查字典才能自主认读和积累新词"
+    },
+    {
+      "topicId": "mt_word-idiom",
+      "prerequisiteId": "mt_word-accumulate",
+      "strength": "hard",
+      "reason": "成语积累建立在一般词语积累之上"
+    },
+    {
+      "topicId": "mt_word-idiom",
+      "prerequisiteId": "mt_word-understand",
+      "strength": "soft",
+      "reason": "理解成语意思要用到理解词语的方法"
+    },
+    {
+      "topicId": "mt_sent-complete",
+      "prerequisiteId": "mt_char-pictographic",
+      "strength": "hard",
+      "reason": "句子由字词组成，先识字才能组词成句"
+    },
+    {
+      "topicId": "mt_punct-basic",
+      "prerequisiteId": "mt_sent-complete",
+      "strength": "hard",
+      "reason": "先认识完整句子，再学句内标点用法"
+    },
+    {
+      "topicId": "mt_sent-ba-bei",
+      "prerequisiteId": "mt_sent-complete",
+      "strength": "hard",
+      "reason": "句式变换以认识句子结构为基础"
+    },
+    {
+      "topicId": "mt_sent-rhetoric",
+      "prerequisiteId": "mt_sent-complete",
+      "strength": "hard",
+      "reason": "先掌握基本句式，再学修辞句式"
+    },
+    {
+      "topicId": "mt_sent-extend",
+      "prerequisiteId": "mt_sent-complete",
+      "strength": "hard",
+      "reason": "扩句先要会分析句子的基本成分"
+    },
+    {
+      "topicId": "mt_sent-extend",
+      "prerequisiteId": "mt_word-accumulate",
+      "strength": "hard",
+      "reason": "把句子写具体需要丰富的词语储备"
+    },
+    {
+      "topicId": "mt_sent-conjunction",
+      "prerequisiteId": "mt_sent-complete",
+      "strength": "hard",
+      "reason": "关联词连接分句，先懂句子结构"
+    },
+    {
+      "topicId": "mt_sent-quote",
+      "prerequisiteId": "mt_punct-basic",
+      "strength": "hard",
+      "reason": "先学基本标点，再学冒号引号用法"
+    },
+    {
+      "topicId": "mt_sent-quote",
+      "prerequisiteId": "mt_sent-complete",
+      "strength": "hard",
+      "reason": "直述转述以认识句子结构为基础"
+    },
+    {
+      "topicId": "mt_punct-advanced",
+      "prerequisiteId": "mt_punct-basic",
+      "strength": "hard",
+      "reason": "标点学习由基本到复杂逐步递进"
+    },
+    {
+      "topicId": "mt_punct-advanced",
+      "prerequisiteId": "mt_sent-quote",
+      "strength": "soft",
+      "reason": "标点用法由对话扩展到句中标点"
+    },
+    {
+      "topicId": "mt_punct-advanced",
+      "prerequisiteId": "mt_sent-conjunction",
+      "strength": "hard",
+      "reason": "分号用于并列分句，先懂分句间关系"
+    },
+    {
+      "topicId": "mt_sent-fix",
+      "prerequisiteId": "mt_sent-complete",
+      "strength": "hard",
+      "reason": "辨病句先要清楚完整句子的基本结构"
+    },
+    {
+      "topicId": "mt_sent-fix",
+      "prerequisiteId": "mt_char-homophone",
+      "strength": "hard",
+      "reason": "错别字是病句常见类型，先学会辨析形近字"
+    },
+    {
+      "topicId": "mt_sent-fix",
+      "prerequisiteId": "mt_punct-advanced",
+      "strength": "soft",
+      "reason": "标点误用是病句常见类型之一"
+    },
+    {
+      "topicId": "mt_sent-compress",
+      "prerequisiteId": "mt_sent-complete",
+      "strength": "hard",
+      "reason": "缩句先要会分析句子成分找出主干"
+    },
+    {
+      "topicId": "mt_sent-compress",
+      "prerequisiteId": "mt_sent-extend",
+      "strength": "soft",
+      "reason": "扩句缩句互逆，对照学习更清楚"
+    },
+    {
+      "topicId": "mt_read-aloud",
+      "prerequisiteId": "mt_pinyin-reading",
+      "strength": "hard",
+      "reason": "读准字音是朗读的基础，先借助拼音识字"
+    },
+    {
+      "topicId": "mt_read-silent",
+      "prerequisiteId": "mt_read-aloud",
+      "strength": "hard",
+      "reason": "先学会出声朗读，再过渡到默读"
+    },
+    {
+      "topicId": "mt_read-mark",
+      "prerequisiteId": "mt_read-silent",
+      "strength": "hard",
+      "reason": "批注要在默读理解的基础上动笔圈画"
+    },
+    {
+      "topicId": "mt_read-mark",
+      "prerequisiteId": "mt_word-understand",
+      "strength": "hard",
+      "reason": "圈画关键词先要会理解词语的意思"
+    },
+    {
+      "topicId": "mt_read-predict",
+      "prerequisiteId": "mt_read-silent",
+      "strength": "hard",
+      "reason": "预测在默读过程中依据线索推想下文"
+    },
+    {
+      "topicId": "mt_read-predict",
+      "prerequisiteId": "mt_read-mark",
+      "strength": "soft",
+      "reason": "边读边批注有助于发现预测的线索"
+    },
+    {
+      "topicId": "mt_read-question",
+      "prerequisiteId": "mt_read-mark",
+      "strength": "hard",
+      "reason": "提问常从批注的疑问处生发"
+    },
+    {
+      "topicId": "mt_read-question",
+      "prerequisiteId": "mt_read-predict",
+      "strength": "soft",
+      "reason": "预测推想中发现问题，为提问做铺垫"
+    },
+    {
+      "topicId": "mt_read-speed",
+      "prerequisiteId": "mt_read-silent",
+      "strength": "hard",
+      "reason": "提高速度以扎实的默读能力为基础"
+    },
+    {
+      "topicId": "mt_read-speed",
+      "prerequisiteId": "mt_read-mark",
+      "strength": "hard",
+      "reason": "抓关键词读是提高速度的常用方法"
+    },
+    {
+      "topicId": "mt_read-speed",
+      "prerequisiteId": "mt_read-question",
+      "strength": "soft",
+      "reason": "带着问题读，会主动跳过次要内容"
+    },
+    {
+      "topicId": "mt_read-purpose",
+      "prerequisiteId": "mt_read-speed",
+      "strength": "hard",
+      "reason": "按目的调节快慢，是速度训练的延伸"
+    },
+    {
+      "topicId": "mt_read-purpose",
+      "prerequisiteId": "mt_read-question",
+      "strength": "hard",
+      "reason": "学会提问，阅读目的会更明确"
+    },
+    {
+      "topicId": "mt_read-ancient",
+      "prerequisiteId": "mt_poem-recite",
+      "strength": "hard",
+      "reason": "先有古诗积累，再学用注释插图助读"
+    },
+    {
+      "topicId": "mt_read-main",
+      "prerequisiteId": "mt_read-mark",
+      "strength": "hard",
+      "reason": "概括主要内容先要学会圈画关键信息"
+    },
+    {
+      "topicId": "mt_read-main",
+      "prerequisiteId": "mt_read-silent",
+      "strength": "hard",
+      "reason": "概括主要内容以默读理解全文为前提"
+    },
+    {
+      "topicId": "mt_read-main",
+      "prerequisiteId": "mt_read-question",
+      "strength": "soft",
+      "reason": "带着问题读有助于抓住文章要点"
+    },
+    {
+      "topicId": "mt_read-feel",
+      "prerequisiteId": "mt_read-aloud",
+      "strength": "hard",
+      "reason": "有感情朗读是体会思想感情的重要途径"
+    },
+    {
+      "topicId": "mt_read-feel",
+      "prerequisiteId": "mt_read-main",
+      "strength": "soft",
+      "reason": "先把握主要内容，再深入体会情感"
+    },
+    {
+      "topicId": "mt_read-appreciate",
+      "prerequisiteId": "mt_read-feel",
+      "strength": "hard",
+      "reason": "赏析语言以体会情感为基础"
+    },
+    {
+      "topicId": "mt_read-appreciate",
+      "prerequisiteId": "mt_sent-rhetoric",
+      "strength": "hard",
+      "reason": "赏析比喻拟人等表达，先学过修辞知识"
+    },
+    {
+      "topicId": "mt_book-reading",
+      "prerequisiteId": "mt_read-silent",
+      "strength": "hard",
+      "reason": "整本书篇幅长，以默读能力为基础"
+    },
+    {
+      "topicId": "mt_book-classic",
+      "prerequisiteId": "mt_book-reading",
+      "strength": "hard",
+      "reason": "从短篇整本过渡到中长篇名著"
+    },
+    {
+      "topicId": "mt_book-classic",
+      "prerequisiteId": "mt_read-speed",
+      "strength": "hard",
+      "reason": "名著篇幅长，需要提高阅读速度"
+    },
+    {
+      "topicId": "mt_book-classic",
+      "prerequisiteId": "mt_poem-understand",
+      "strength": "soft",
+      "reason": "名著中常有古诗文篇章，先打阅读底子"
+    },
+    {
+      "topicId": "mt_book-classic",
+      "prerequisiteId": "mt_read-appreciate",
+      "strength": "soft",
+      "reason": "读名著要能赏析语言，体会表达妙处"
+    },
+    {
+      "topicId": "mt_book-classic",
+      "prerequisiteId": "mt_write-person",
+      "strength": "soft",
+      "reason": "读名著分析人物，要调动写人的观察经验"
+    },
+    {
+      "topicId": "mt_write-picture",
+      "prerequisiteId": "mt_sent-complete",
+      "strength": "hard",
+      "reason": "写话先要会写完整通顺的句子"
+    },
+    {
+      "topicId": "mt_write-picture",
+      "prerequisiteId": "mt_char-writing",
+      "strength": "hard",
+      "reason": "能把字写规范，才能顺利把话写下来"
+    },
+    {
+      "topicId": "mt_write-imitate",
+      "prerequisiteId": "mt_write-picture",
+      "strength": "hard",
+      "reason": "从看图写话过渡到仿写，先会写完整话"
+    },
+    {
+      "topicId": "mt_write-imitate",
+      "prerequisiteId": "mt_sent-ba-bei",
+      "strength": "soft",
+      "reason": "仿写句子常练把字句被字句的改写"
+    },
+    {
+      "topicId": "mt_write-diary",
+      "prerequisiteId": "mt_write-imitate",
+      "strength": "hard",
+      "reason": "日记是写话的延续，先会流畅写话"
+    },
+    {
+      "topicId": "mt_write-diary",
+      "prerequisiteId": "mt_punct-basic",
+      "strength": "hard",
+      "reason": "日记要把事情写清楚，基本标点必须会用"
+    },
+    {
+      "topicId": "mt_write-observe",
+      "prerequisiteId": "mt_sent-extend",
+      "strength": "hard",
+      "reason": "把事物写清楚离不开把句子写具体"
+    },
+    {
+      "topicId": "mt_write-observe",
+      "prerequisiteId": "mt_word-accumulate",
+      "strength": "hard",
+      "reason": "描摹事物依赖丰富的词语积累"
+    },
+    {
+      "topicId": "mt_write-imagine",
+      "prerequisiteId": "mt_write-picture",
+      "strength": "hard",
+      "reason": "想象作文从看图写话的看图想象起步"
+    },
+    {
+      "topicId": "mt_write-imagine",
+      "prerequisiteId": "mt_sent-rhetoric",
+      "strength": "soft",
+      "reason": "会用比喻拟人，想象的内容更生动"
+    },
+    {
+      "topicId": "mt_write-narrative",
+      "prerequisiteId": "mt_write-observe",
+      "strength": "hard",
+      "reason": "把观察写清楚是记事记叙的基础"
+    },
+    {
+      "topicId": "mt_write-narrative",
+      "prerequisiteId": "mt_write-diary",
+      "strength": "hard",
+      "reason": "日记练记事，六要素在记事中清晰起来"
+    },
+    {
+      "topicId": "mt_write-narrative",
+      "prerequisiteId": "mt_sent-quote",
+      "strength": "hard",
+      "reason": "记事常写人物对话，先学冒号引号用法"
+    },
+    {
+      "topicId": "mt_write-narrative",
+      "prerequisiteId": "mt_word-idiom",
+      "strength": "soft",
+      "reason": "记事文用好成语，以平时的积累为基础"
+    },
+    {
+      "topicId": "mt_write-person",
+      "prerequisiteId": "mt_write-observe",
+      "strength": "hard",
+      "reason": "写人物先从观察外貌和言行开始"
+    },
+    {
+      "topicId": "mt_write-person",
+      "prerequisiteId": "mt_sent-quote",
+      "strength": "hard",
+      "reason": "写人物语言要用引号，先学冒号引号"
+    },
+    {
+      "topicId": "mt_write-person",
+      "prerequisiteId": "mt_write-narrative",
+      "strength": "soft",
+      "reason": "记事为写人提供事例，人在事中立"
+    },
+    {
+      "topicId": "mt_write-application",
+      "prerequisiteId": "mt_write-diary",
+      "strength": "hard",
+      "reason": "书信与日记同属实用文，先练日记打底"
+    },
+    {
+      "topicId": "mt_write-application",
+      "prerequisiteId": "mt_sent-quote",
+      "strength": "soft",
+      "reason": "书信正文常用对话，先学冒号引号"
+    },
+    {
+      "topicId": "mt_write-revise",
+      "prerequisiteId": "mt_write-picture",
+      "strength": "hard",
+      "reason": "修改习作先要能写出完整的话"
+    },
+    {
+      "topicId": "mt_write-revise",
+      "prerequisiteId": "mt_write-imitate",
+      "strength": "soft",
+      "reason": "仿写后对照原文找差距，是修改的雏形"
+    },
+    {
+      "topicId": "mt_write-center",
+      "prerequisiteId": "mt_write-narrative",
+      "strength": "hard",
+      "reason": "围绕中心选材以记事写人的篇章经验为基础"
+    },
+    {
+      "topicId": "mt_write-center",
+      "prerequisiteId": "mt_read-main",
+      "strength": "hard",
+      "reason": "把握主要内容与围绕中心写作互为表里"
+    },
+    {
+      "topicId": "mt_write-center",
+      "prerequisiteId": "mt_write-imagine",
+      "strength": "soft",
+      "reason": "想象作文也要想清楚中心再动笔"
+    },
+    {
+      "topicId": "mt_write-center",
+      "prerequisiteId": "mt_write-application",
+      "strength": "soft",
+      "reason": "实用文动笔前也要想清楚目的重点"
+    },
+    {
+      "topicId": "mt_write-summary",
+      "prerequisiteId": "mt_read-main",
+      "strength": "hard",
+      "reason": "写梗概先要学会把握作品主要内容"
+    },
+    {
+      "topicId": "mt_write-summary",
+      "prerequisiteId": "mt_book-classic",
+      "strength": "hard",
+      "reason": "为读过的名著写梗概，需有整本书经验"
+    },
+    {
+      "topicId": "mt_write-summary",
+      "prerequisiteId": "mt_sent-compress",
+      "strength": "soft",
+      "reason": "梗概要删繁就简，提取主干是基础"
+    },
+    {
+      "topicId": "mt_write-summary",
+      "prerequisiteId": "mt_read-purpose",
+      "strength": "soft",
+      "reason": "写梗概要带着提取情节的目的重读作品"
+    },
+    {
+      "topicId": "mt_write-summary",
+      "prerequisiteId": "mt_write-revise",
+      "strength": "soft",
+      "reason": "梗概初稿要反复修改，删繁就简"
+    },
+    {
+      "topicId": "mt_oral-listen",
+      "prerequisiteId": "mt_read-aloud",
+      "strength": "hard",
+      "reason": "讲故事先学会清楚朗读，注意语气停顿"
+    },
+    {
+      "topicId": "mt_oral-listen",
+      "prerequisiteId": "mt_sent-complete",
+      "strength": "hard",
+      "reason": "讲故事要把事情说完整，以完整句打底"
+    },
+    {
+      "topicId": "mt_oral-discuss",
+      "prerequisiteId": "mt_oral-listen",
+      "strength": "hard",
+      "reason": "先学会倾听和讲述，再参与讨论"
+    },
+    {
+      "topicId": "mt_oral-discuss",
+      "prerequisiteId": "mt_read-silent",
+      "strength": "hard",
+      "reason": "课堂讨论基于对课文的理解，先会默读"
+    },
+    {
+      "topicId": "mt_oral-retell",
+      "prerequisiteId": "mt_oral-discuss",
+      "strength": "hard",
+      "reason": "复述转述以清楚表达和交流能力为基础"
+    },
+    {
+      "topicId": "mt_oral-retell",
+      "prerequisiteId": "mt_book-reading",
+      "strength": "soft",
+      "reason": "复述故事内容借助整本书阅读的积累"
+    },
+    {
+      "topicId": "mt_oral-debate",
+      "prerequisiteId": "mt_oral-discuss",
+      "strength": "hard",
+      "reason": "辩论以清楚表达和应对异议的能力为基础"
+    },
+    {
+      "topicId": "mt_oral-debate",
+      "prerequisiteId": "mt_read-question",
+      "strength": "hard",
+      "reason": "辩论要抓住对方观点提问，先学提问策略"
+    },
+    {
+      "topicId": "mt_oral-debate",
+      "prerequisiteId": "mt_sent-fix",
+      "strength": "soft",
+      "reason": "反驳先要听出对方话语里的漏洞"
+    },
+    {
+      "topicId": "mt_oral-debate",
+      "prerequisiteId": "mt_oral-retell",
+      "strength": "soft",
+      "reason": "辩论要先概括对方观点再反驳"
+    },
+    {
+      "topicId": "mt_poem-recite",
+      "prerequisiteId": "mt_read-aloud",
+      "strength": "hard",
+      "reason": "背诵古诗从朗读入手，读熟自然成诵"
+    },
+    {
+      "topicId": "mt_poem-recite",
+      "prerequisiteId": "mt_pinyin-reading",
+      "strength": "soft",
+      "reason": "借助拼音读准字音，背诵更顺利"
+    },
+    {
+      "topicId": "mt_poem-understand",
+      "prerequisiteId": "mt_poem-recite",
+      "strength": "hard",
+      "reason": "理解大意以一定的背诵积累为前提"
+    },
+    {
+      "topicId": "mt_poem-understand",
+      "prerequisiteId": "mt_read-ancient",
+      "strength": "soft",
+      "reason": "读懂注释和插图的方法也适用于古诗"
+    },
+    {
+      "topicId": "mt_en-letter-write",
+      "prerequisiteId": "mt_en-letter-name",
+      "strength": "hard",
+      "reason": "先认识字母的名称和读音，才能按笔顺规范书写"
+    },
+    {
+      "topicId": "mt_en-phonics",
+      "prerequisiteId": "mt_en-letter-name",
+      "strength": "hard",
+      "reason": "字母音的学习以字母名称音的认读为基础"
+    },
+    {
+      "topicId": "mt_en-num-color",
+      "prerequisiteId": "mt_en-letter-name",
+      "strength": "hard",
+      "reason": "认读颜色和数字单词需要先认识字母读音"
+    },
+    {
+      "topicId": "mt_en-spelling-rules",
+      "prerequisiteId": "mt_en-letter-write",
+      "strength": "soft",
+      "reason": "字母书写规范是正确拼写单词的前提"
+    },
+    {
+      "topicId": "mt_en-copying",
+      "prerequisiteId": "mt_en-letter-write",
+      "strength": "hard",
+      "reason": "规范书写字母是抄写单词和句子的基础"
+    },
+    {
+      "topicId": "mt_en-spelling-rules",
+      "prerequisiteId": "mt_en-phonics",
+      "strength": "hard",
+      "reason": "字母组合的发音规则以单个字母发音为基础"
+    },
+    {
+      "topicId": "mt_en-body-stationery",
+      "prerequisiteId": "mt_en-phonics",
+      "strength": "hard",
+      "reason": "借助字母音拼读身体部位和文具单词"
+    },
+    {
+      "topicId": "mt_en-family",
+      "prerequisiteId": "mt_en-phonics",
+      "strength": "hard",
+      "reason": "家庭成员单词可借助字母音拼读识记"
+    },
+    {
+      "topicId": "mt_en-animals",
+      "prerequisiteId": "mt_en-phonics",
+      "strength": "hard",
+      "reason": "动物名词多为单音节词，适合用拼读识记"
+    },
+    {
+      "topicId": "mt_en-food",
+      "prerequisiteId": "mt_en-phonics",
+      "strength": "hard",
+      "reason": "食物和饮料单词借助字母音拼读认读"
+    },
+    {
+      "topicId": "mt_en-reading-pictures",
+      "prerequisiteId": "mt_en-phonics",
+      "strength": "hard",
+      "reason": "借助字母音拼读简单词才能图文匹配"
+    },
+    {
+      "topicId": "mt_en-guessing-words",
+      "prerequisiteId": "mt_en-phonics",
+      "strength": "hard",
+      "reason": "利用拼读知识辅助猜测生词读音"
+    },
+    {
+      "topicId": "mt_en-listening",
+      "prerequisiteId": "mt_en-phonics",
+      "strength": "hard",
+      "reason": "听力辨音能力以字母音的感知为基础"
+    },
+    {
+      "topicId": "mt_en-body-stationery",
+      "prerequisiteId": "mt_en-num-color",
+      "strength": "soft",
+      "reason": "先积累数字颜色词汇，再按话题扩充新词"
+    },
+    {
+      "topicId": "mt_en-demonstratives",
+      "prerequisiteId": "mt_en-num-color",
+      "strength": "soft",
+      "reason": "指认物品时常同时说出它的颜色"
+    },
+    {
+      "topicId": "mt_en-listening",
+      "prerequisiteId": "mt_en-num-color",
+      "strength": "soft",
+      "reason": "听数字和颜色信息需要先认读这些词"
+    },
+    {
+      "topicId": "mt_en-copying",
+      "prerequisiteId": "mt_en-num-color",
+      "strength": "soft",
+      "reason": "抄写内容多为数字颜色等基础词汇"
+    },
+    {
+      "topicId": "mt_en-family",
+      "prerequisiteId": "mt_en-body-stationery",
+      "strength": "soft",
+      "reason": "由身体部位话题延伸到家庭成员话题"
+    },
+    {
+      "topicId": "mt_en-animals",
+      "prerequisiteId": "mt_en-body-stationery",
+      "strength": "soft",
+      "reason": "按话题顺序滚动积累词汇"
+    },
+    {
+      "topicId": "mt_en-clothes",
+      "prerequisiteId": "mt_en-body-stationery",
+      "strength": "soft",
+      "reason": "服装名称与身体部位词汇联系紧密"
+    },
+    {
+      "topicId": "mt_en-places",
+      "prerequisiteId": "mt_en-body-stationery",
+      "strength": "soft",
+      "reason": "由文具话题扩展到学校场所话题"
+    },
+    {
+      "topicId": "mt_en-demonstratives",
+      "prerequisiteId": "mt_en-body-stationery",
+      "strength": "hard",
+      "reason": "用这个那个指认文具和身体部位"
+    },
+    {
+      "topicId": "mt_en-prepositions",
+      "prerequisiteId": "mt_en-body-stationery",
+      "strength": "hard",
+      "reason": "描述文具和身体部位的位置关系"
+    },
+    {
+      "topicId": "mt_en-reading-pictures",
+      "prerequisiteId": "mt_en-body-stationery",
+      "strength": "soft",
+      "reason": "图文匹配常借助身体文具词汇理解"
+    },
+    {
+      "topicId": "mt_en-pronouns",
+      "prerequisiteId": "mt_en-family",
+      "strength": "hard",
+      "reason": "谈论家庭成员需要人称代词和物主代词"
+    },
+    {
+      "topicId": "mt_en-be-verb",
+      "prerequisiteId": "mt_en-family",
+      "strength": "hard",
+      "reason": "介绍家庭成员用be动词连接主语和表语"
+    },
+    {
+      "topicId": "mt_en-jobs",
+      "prerequisiteId": "mt_en-family",
+      "strength": "hard",
+      "reason": "职业话题常围绕家人职业展开"
+    },
+    {
+      "topicId": "mt_en-wh-questions",
+      "prerequisiteId": "mt_en-family",
+      "strength": "hard",
+      "reason": "询问那是谁她是谁以家庭词汇为核心内容"
+    },
+    {
+      "topicId": "mt_en-culture",
+      "prerequisiteId": "mt_en-family",
+      "strength": "hard",
+      "reason": "中外家庭观念差异是文化话题的重要内容"
+    },
+    {
+      "topicId": "mt_en-food",
+      "prerequisiteId": "mt_en-animals",
+      "strength": "soft",
+      "reason": "由动物话题自然延伸到食物话题"
+    },
+    {
+      "topicId": "mt_en-yes-no-questions",
+      "prerequisiteId": "mt_en-animals",
+      "strength": "hard",
+      "reason": "用这是一只猫吗猜测动物巩固问答"
+    },
+    {
+      "topicId": "mt_en-weather",
+      "prerequisiteId": "mt_en-food",
+      "strength": "soft",
+      "reason": "话题词汇由饮食扩展到天气季节"
+    },
+    {
+      "topicId": "mt_en-culture",
+      "prerequisiteId": "mt_en-food",
+      "strength": "soft",
+      "reason": "节日饮食是感受文化差异的常见入口"
+    },
+    {
+      "topicId": "mt_en-clothes",
+      "prerequisiteId": "mt_en-weather",
+      "strength": "hard",
+      "reason": "依据天气冷暖谈论穿着是服装话题的核心"
+    },
+    {
+      "topicId": "mt_en-describing",
+      "prerequisiteId": "mt_en-clothes",
+      "strength": "soft",
+      "reason": "描述人物外貌时常涉及服装穿着"
+    },
+    {
+      "topicId": "mt_en-activities",
+      "prerequisiteId": "mt_en-places",
+      "strength": "soft",
+      "reason": "日常活动依托具体场所展开理解"
+    },
+    {
+      "topicId": "mt_en-jobs",
+      "prerequisiteId": "mt_en-places",
+      "strength": "soft",
+      "reason": "职业与工作场所词汇常配对出现"
+    },
+    {
+      "topicId": "mt_en-transport",
+      "prerequisiteId": "mt_en-places",
+      "strength": "hard",
+      "reason": "问路指路需要先会说地点场所名词"
+    },
+    {
+      "topicId": "mt_en-transport",
+      "prerequisiteId": "mt_en-activities",
+      "strength": "soft",
+      "reason": "交通方式与日常出行活动密切相关"
+    },
+    {
+      "topicId": "mt_en-present-simple",
+      "prerequisiteId": "mt_en-activities",
+      "strength": "hard",
+      "reason": "描述经常做的事需要活动短语"
+    },
+    {
+      "topicId": "mt_en-speaking-routine",
+      "prerequisiteId": "mt_en-activities",
+      "strength": "hard",
+      "reason": "开口谈论日常话题需要活动短语储备"
+    },
+    {
+      "topicId": "mt_en-past-tense",
+      "prerequisiteId": "mt_en-activities",
+      "strength": "hard",
+      "reason": "讲述过去做的事需要活动短语"
+    },
+    {
+      "topicId": "mt_en-describing",
+      "prerequisiteId": "mt_en-activities",
+      "strength": "hard",
+      "reason": "描述人和事需要日常活动短语支撑"
+    },
+    {
+      "topicId": "mt_en-progressive",
+      "prerequisiteId": "mt_en-activities",
+      "strength": "hard",
+      "reason": "描述正在进行的活动需要活动短语"
+    },
+    {
+      "topicId": "mt_en-writing-short",
+      "prerequisiteId": "mt_en-activities",
+      "strength": "hard",
+      "reason": "写介绍日常生活的句子需要活动短语"
+    },
+    {
+      "topicId": "mt_en-going-to",
+      "prerequisiteId": "mt_en-transport",
+      "strength": "soft",
+      "reason": "用将来计划谈论出行需要交通词汇"
+    },
+    {
+      "topicId": "mt_en-prepositions",
+      "prerequisiteId": "mt_en-demonstratives",
+      "strength": "soft",
+      "reason": "先会指认事物再描述它的位置"
+    },
+    {
+      "topicId": "mt_en-be-verb",
+      "prerequisiteId": "mt_en-demonstratives",
+      "strength": "hard",
+      "reason": "这是那是的句型把指示代词和be动词组合"
+    },
+    {
+      "topicId": "mt_en-be-verb",
+      "prerequisiteId": "mt_en-pronouns",
+      "strength": "hard",
+      "reason": "代词作主语搭配be动词构成基础句型"
+    },
+    {
+      "topicId": "mt_en-wh-questions",
+      "prerequisiteId": "mt_en-pronouns",
+      "strength": "hard",
+      "reason": "用谁和什么提问需要人称代词基础"
+    },
+    {
+      "topicId": "mt_en-yes-no-questions",
+      "prerequisiteId": "mt_en-pronouns",
+      "strength": "hard",
+      "reason": "一般疑问句常以人称代词作主语问答"
+    },
+    {
+      "topicId": "mt_en-yes-no-questions",
+      "prerequisiteId": "mt_en-be-verb",
+      "strength": "hard",
+      "reason": "一般疑问句由be动词提前构成"
+    },
+    {
+      "topicId": "mt_en-wh-questions",
+      "prerequisiteId": "mt_en-be-verb",
+      "strength": "hard",
+      "reason": "特殊疑问句依托be动词询问人和事物"
+    },
+    {
+      "topicId": "mt_en-present-simple",
+      "prerequisiteId": "mt_en-be-verb",
+      "strength": "hard",
+      "reason": "一般现在时在be动词句型基础上扩展"
+    },
+    {
+      "topicId": "mt_en-progressive",
+      "prerequisiteId": "mt_en-be-verb",
+      "strength": "hard",
+      "reason": "进行时由be动词加动词ing构成"
+    },
+    {
+      "topicId": "mt_en-going-to",
+      "prerequisiteId": "mt_en-be-verb",
+      "strength": "hard",
+      "reason": "将来时结构由be动词加going to构成"
+    },
+    {
+      "topicId": "mt_en-comparatives",
+      "prerequisiteId": "mt_en-be-verb",
+      "strength": "hard",
+      "reason": "比较句以be加形容词的句型为基础"
+    },
+    {
+      "topicId": "mt_en-writing-short",
+      "prerequisiteId": "mt_en-be-verb",
+      "strength": "hard",
+      "reason": "写出完整句子需要be动词基本句型"
+    },
+    {
+      "topicId": "mt_en-past-tense",
+      "prerequisiteId": "mt_en-be-verb",
+      "strength": "hard",
+      "reason": "过去时中be动词的过去式以现在式为基础"
+    },
+    {
+      "topicId": "mt_en-wh-questions",
+      "prerequisiteId": "mt_en-yes-no-questions",
+      "strength": "hard",
+      "reason": "由一般疑问句的语序过渡到特殊疑问句"
+    },
+    {
+      "topicId": "mt_en-present-simple",
+      "prerequisiteId": "mt_en-yes-no-questions",
+      "strength": "hard",
+      "reason": "助动词疑问句以be动词疑问句为基础"
+    },
+    {
+      "topicId": "mt_en-speaking-routine",
+      "prerequisiteId": "mt_en-wh-questions",
+      "strength": "hard",
+      "reason": "开口交流日常话题需要会用特殊疑问句"
+    },
+    {
+      "topicId": "mt_en-places",
+      "prerequisiteId": "mt_en-prepositions",
+      "strength": "hard",
+      "reason": "描述校园内物品位置需要方位介词"
+    },
+    {
+      "topicId": "mt_en-progressive",
+      "prerequisiteId": "mt_en-present-simple",
+      "strength": "hard",
+      "reason": "先区分习惯动作再学正在进行的动作"
+    },
+    {
+      "topicId": "mt_en-going-to",
+      "prerequisiteId": "mt_en-present-simple",
+      "strength": "hard",
+      "reason": "先掌握一般现在时再学将来计划表达"
+    },
+    {
+      "topicId": "mt_en-past-tense",
+      "prerequisiteId": "mt_en-present-simple",
+      "strength": "hard",
+      "reason": "过去式与现在式对照变化需先掌握现在时"
+    },
+    {
+      "topicId": "mt_en-writing-passage",
+      "prerequisiteId": "mt_en-present-simple",
+      "strength": "hard",
+      "reason": "连句成篇需要一般现在时组织句子"
+    },
+    {
+      "topicId": "mt_en-going-to",
+      "prerequisiteId": "mt_en-progressive",
+      "strength": "soft",
+      "reason": "两者都含be动词加动词形式的搭配"
+    },
+    {
+      "topicId": "mt_en-comparatives",
+      "prerequisiteId": "mt_en-past-tense",
+      "strength": "soft",
+      "reason": "过去与现在的对比常同时用到两种结构"
+    },
+    {
+      "topicId": "mt_en-speaking-routine",
+      "prerequisiteId": "mt_en-listening",
+      "strength": "hard",
+      "reason": "口语交流以听懂别人的话为基础"
+    },
+    {
+      "topicId": "mt_en-listening",
+      "prerequisiteId": "mt_en-greetings",
+      "strength": "hard",
+      "reason": "课堂听力活动从听懂问候指令开始"
+    },
+    {
+      "topicId": "mt_en-speaking-routine",
+      "prerequisiteId": "mt_en-greetings",
+      "strength": "hard",
+      "reason": "由固定问候扩展到日常话题交流"
+    },
+    {
+      "topicId": "mt_en-describing",
+      "prerequisiteId": "mt_en-speaking-routine",
+      "strength": "hard",
+      "reason": "由简短对话升级为连贯成段的描述"
+    },
+    {
+      "topicId": "mt_en-culture",
+      "prerequisiteId": "mt_en-speaking-routine",
+      "strength": "hard",
+      "reason": "能就日常话题交流才能讨论文化差异"
+    },
+    {
+      "topicId": "mt_en-comparatives",
+      "prerequisiteId": "mt_en-describing",
+      "strength": "hard",
+      "reason": "先能连贯描述人或事物再学两者对比"
+    },
+    {
+      "topicId": "mt_en-activities",
+      "prerequisiteId": "mt_en-jobs",
+      "strength": "soft",
+      "reason": "职业行为与日常活动都围绕做什么"
+    },
+    {
+      "topicId": "mt_en-describing",
+      "prerequisiteId": "mt_en-jobs",
+      "strength": "soft",
+      "reason": "描述人物时可以谈论其职业"
+    },
+    {
+      "topicId": "mt_en-writing-short",
+      "prerequisiteId": "mt_en-copying",
+      "strength": "hard",
+      "reason": "从抄写仿写句子过渡到独立写句"
+    },
+    {
+      "topicId": "mt_en-guessing-words",
+      "prerequisiteId": "mt_en-reading-pictures",
+      "strength": "hard",
+      "reason": "先掌握图文理解再练习推断词义"
+    },
+    {
+      "topicId": "mt_en-weather",
+      "prerequisiteId": "mt_en-spelling-rules",
+      "strength": "hard",
+      "reason": "天气单词的后缀读音需要字母组合规则"
+    },
+    {
+      "topicId": "mt_en-guessing-words",
+      "prerequisiteId": "mt_en-spelling-rules",
+      "strength": "soft",
+      "reason": "字母组合读音帮助推断生词读音"
+    },
+    {
+      "topicId": "mt_en-writing-passage",
+      "prerequisiteId": "mt_en-guessing-words",
+      "strength": "soft",
+      "reason": "阅读中积累的词块为写作提供素材"
+    },
+    {
+      "topicId": "mt_en-learning-strategies",
+      "prerequisiteId": "mt_en-guessing-words",
+      "strength": "hard",
+      "reason": "猜词等阅读策略是学习策略的核心"
+    },
+    {
+      "topicId": "mt_en-writing-passage",
+      "prerequisiteId": "mt_en-writing-short",
+      "strength": "hard",
+      "reason": "由写几句话扩展为写小短文"
+    },
+    {
+      "topicId": "mt_en-learning-strategies",
+      "prerequisiteId": "mt_en-culture",
+      "strength": "soft",
+      "reason": "了解文化差异有助选择学习资源"
+    }
+  ]
+}

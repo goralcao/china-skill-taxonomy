@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "curriculum-standard.schema.json",
+  "title": "课程标准条目",
+  "type": "object",
+  "required": ["version", "schemaVersion", "source", "standards"],
+  "properties": {
+    "version": { "type": "string" },
+    "schemaVersion": { "type": "integer" },
+    "source": {
+      "type": "object",
+      "required": ["name", "url"],
+      "properties": {
+        "name": { "type": "string" },
+        "url": { "type": "string", "format": "uri" },
+        "note": { "type": "string" }
+      }
+    },
+    "standards": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "slug", "curriculum", "stage", "domain", "theme", "summary"],
+        "properties": {
+          "code": { "type": "string", "pattern": "^(math|chinese|english)-2022:" },
+          "slug": { "type": "string" },
+          "curriculum": { "type": "string" },
+          "stage": { "type": "string" },
+          "domain": { "type": "string" },
+          "theme": { "type": "string" },
+          "summary": { "type": "string", "minLength": 10, "maxLength": 200 }
+        }
+      }
+    }
+  }
+}

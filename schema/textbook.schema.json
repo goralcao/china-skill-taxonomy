@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "textbook.schema.json",
+  "title": "教材目录",
+  "type": "object",
+  "required": ["version", "schemaVersion", "sources", "versions"],
+  "properties": {
+    "version": { "type": "string" },
+    "schemaVersion": { "type": "integer" },
+    "sources": { "type": "object" },
+    "versions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["slug", "name", "subject", "gradeStart", "note", "books"],
+        "properties": {
+          "slug": { "type": "string", "pattern": "^[a-z-]+$" },
+          "name": { "type": "string" },
+          "subject": { "enum": ["数学", "语文", "英语"] },
+          "gradeStart": { "type": "integer", "minimum": 1, "maximum": 6 },
+          "note": { "type": "string" },
+          "unitCounts": { "type": "object" },
+          "books": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["slug", "grade", "semester"],
+              "properties": {
+                "slug": { "type": "string", "pattern": "^[1-6][ab]$" },
+                "grade": { "type": "integer", "minimum": 1, "maximum": 6 },
+                "semester": { "enum": ["上", "下"] },
+                "units": { "type": "array", "items": { "type": "string" } },
+                "blocks": { "type": "array", "items": { "type": "string" } }
+              }
+            }
+          }
+        }
+      }
+    },
+    "chinaTextbookPrimaryVersions": { "type": "object" }
+  }
+}

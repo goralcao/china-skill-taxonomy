@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "cluster.schema.json",
+  "title": "域摘要（家长友好）",
+  "type": "object",
+  "required": ["version", "schemaVersion", "clusters"],
+  "properties": {
+    "version": { "type": "string" },
+    "schemaVersion": { "type": "integer" },
+    "clusters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["subject", "domain", "stage", "summary"],
+        "properties": {
+          "subject": { "enum": ["数学", "语文", "英语"] },
+          "domain": { "type": "string" },
+          "stage": { "type": "string" },
+          "summary": { "type": "string", "minLength": 40, "maxLength": 250 }
+        }
+      }
+    }
+  }
+}

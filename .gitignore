@@ -1,0 +1,5 @@
+# 本地环境
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store

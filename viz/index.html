@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学阶图谱 · 中国小学学能图谱</title>
+<style>
+  :root {
+    --bg: #0e1420;
+    --bg-panel: #151d2e;
+    --bg-card: #1a2438;
+    --line: #2a3550;
+    --text: #e8edf5;
+    --text-dim: #93a1b9;
+    --math: #4f8ff7;
+    --chinese: #f76e6e;
+    --english: #3ecf9a;
+    --accent: #ffd166;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; overflow: hidden; background: var(--bg); color: var(--text);
+    font-family: system-ui, -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; }
+  #app { display: flex; flex-direction: column; height: 100vh; }
+
+  header { padding: 10px 16px; border-bottom: 1px solid var(--line); display: flex;
+    align-items: center; gap: 16px; flex-wrap: wrap; background: var(--bg-panel); }
+  header h1 { font-size: 17px; font-weight: 700; letter-spacing: .5px; }
+  header h1 small { font-size: 12px; color: var(--text-dim); font-weight: 400; margin-left: 8px; }
+  .stats { font-size: 12px; color: var(--text-dim); }
+  .stats b { color: var(--text); font-weight: 600; }
+
+  .toolbar { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; padding: 8px 16px;
+    border-bottom: 1px solid var(--line); background: var(--bg-panel); }
+  .chip { border: 1px solid var(--line); background: transparent; color: var(--text-dim);
+    border-radius: 999px; padding: 3px 12px; font-size: 12px; cursor: pointer; user-select: none; }
+  .chip .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; }
+  .chip.on { color: var(--text); border-color: var(--text-dim); }
+  .chip.off { opacity: .45; text-decoration: line-through; }
+  #search { background: var(--bg-card); border: 1px solid var(--line); border-radius: 6px;
+    color: var(--text); padding: 4px 10px; font-size: 12px; width: 170px; outline: none; }
+  #search:focus { border-color: var(--text-dim); }
+  .tool-btn { background: var(--bg-card); border: 1px solid var(--line); color: var(--text);
+    border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; }
+  .tool-btn:hover { border-color: var(--text-dim); }
+  .tool-btn.active { background: var(--accent); color: #1a1400; border-color: var(--accent); font-weight: 600; }
+
+  main { flex: 1; position: relative; }
+  canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; cursor: grab; }
+  canvas.dragging { cursor: grabbing; }
+
+  #panel { position: absolute; top: 12px; right: 12px; bottom: 12px; width: 340px; overflow-y: auto;
+    background: var(--bg-panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px;
+    display: none; box-shadow: 0 8px 32px rgba(0,0,0,.45); }
+  #panel.open { display: block; }
+  #panel h2 { font-size: 18px; margin-bottom: 4px; }
+  #panel .meta { font-size: 12px; color: var(--text-dim); margin-bottom: 12px; }
+  #panel .meta span { margin-right: 10px; }
+  .badge { display: inline-block; border-radius: 4px; padding: 1px 8px; font-size: 11px;
+    background: var(--bg-card); border: 1px solid var(--line); }
+  #panel h3 { font-size: 13px; color: var(--accent); margin: 14px 0 6px; }
+  #panel p.desc { font-size: 13px; line-height: 1.7; }
+  #panel ul { list-style: none; }
+  #panel ul li { font-size: 12.5px; line-height: 1.6; padding-left: 16px; position: relative; margin-bottom: 4px; }
+  #panel ul li::before { content: "·"; position: absolute; left: 4px; color: var(--text-dim); }
+  #panel .assess { font-size: 12.5px; line-height: 1.7; background: var(--bg-card);
+    border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 10px 12px; }
+  .link-list li { color: var(--math); cursor: pointer; text-decoration: underline dotted; }
+  .link-list li:hover { color: var(--accent); }
+  .std-item { font-size: 12px; line-height: 1.6; margin-bottom: 8px; color: var(--text-dim); }
+  .std-item code { color: var(--text); font-size: 11px; background: var(--bg-card);
+    border-radius: 4px; padding: 1px 6px; margin-right: 6px; }
+  .tb-item { font-size: 12px; color: var(--text-dim); line-height: 1.6; }
+  .close-btn { position: absolute; top: 10px; right: 12px; background: none; border: none;
+    color: var(--text-dim); font-size: 18px; cursor: pointer; }
+  .close-btn:hover { color: var(--text); }
+
+  #legend { position: absolute; left: 12px; bottom: 12px; background: var(--bg-panel);
+    border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; font-size: 12px;
+    color: var(--text-dim); line-height: 1.9; }
+  #legend .row { display: flex; align-items: center; gap: 8px; }
+  #legend .dot { width: 10px; height: 10px; border-radius: 50%; }
+  #legend .line { width: 22px; height: 0; border-top: 2px solid rgba(255,255,255,.4); }
+  #legend .line.dash { border-top-style: dashed; }
+  #gradeAxis { position: absolute; left: 12px; top: 12px; font-size: 11px; color: var(--text-dim);
+    background: var(--bg-panel); border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px; }
+
+  #tooltip { position: absolute; pointer-events: none; background: #0a0f18; border: 1px solid var(--line);
+    border-radius: 8px; padding: 8px 10px; font-size: 12px; display: none; max-width: 240px;
+    box-shadow: 0 4px 16px rgba(0,0,0,.5); z-index: 10; }
+  #tooltip .tt-name { font-weight: 600; margin-bottom: 2px; }
+  #tooltip .tt-meta { color: var(--text-dim); font-size: 11px; }
+</style>
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>学阶图谱 <small>China Skill Taxonomy · 中国小学学能图谱 v0.1</small></h1>
+    <div class="stats" id="stats"></div>
+  </header>
+  <div class="toolbar">
+    <span class="chip on" data-subject="数学"><span class="dot" style="background:var(--math)"></span>数学</span>
+    <span class="chip on" data-subject="语文"><span class="dot" style="background:var(--chinese)"></span>语文</span>
+    <span class="chip on" data-subject="英语"><span class="dot" style="background:var(--english)"></span>英语</span>
+    <input id="search" type="text" placeholder="搜索主题…">
+    <button class="tool-btn" id="btnLabels">显示全部名称</button>
+    <button class="tool-btn" id="btnAncestors">追溯全部先修</button>
+    <button class="tool-btn" id="btnDescendants">查看后续解锁</button>
+    <button class="tool-btn" id="btnReset">重置视图</button>
+  </div>
+  <main>
+    <canvas id="cv"></canvas>
+    <div id="gradeAxis"></div>
+    <div id="legend">
+      <div class="row"><span class="dot" style="background:var(--math)"></span>数学　<span class="dot" style="background:var(--chinese)"></span>语文　<span class="dot" style="background:var(--english)"></span>英语</div>
+      <div class="row"><span class="line"></span>硬依赖（不会先修就学不了）　<span class="line dash"></span>软依赖</div>
+      <div class="row">纵轴 = 年级（1 年级在上）· 圆点越大 = 枢纽主题</div>
+      <div class="row">点击圆点查看主题详情、先修链与解锁方向</div>
+    </div>
+    <div id="tooltip"></div>
+    <div id="panel">
+      <button class="close-btn" id="btnClose">×</button>
+      <h2 id="pName"></h2>
+      <div class="meta" id="pMeta"></div>
+      <h3>学什么</h3><p class="desc" id="pDesc"></p>
+      <h3>掌握证据（能做到这些才算会）</h3><ul id="pEvidence"></ul>
+      <h3>家长检查法</h3><div class="assess" id="pAssess"></div>
+      <h3>课标对齐</h3><div id="pStandards"></div>
+      <h3>教材位置</h3><div id="pTextbooks"></div>
+      <h3>先修（之前要先掌握）</h3><ul class="link-list" id="pPrereqs"></ul>
+      <h3>解锁（通向后续）</h3><ul class="link-list" id="pUnlocks"></ul>
+    </div>
+  </main>
+</div>
+<script src="data.js"></script>
+<script>
+(function () {
+  const D = window.TAXONOMY_DATA;
+  const topics = D.topics, deps = D.dependencies, clusters = D.clusters;
+  const byId = new Map(topics.map(t => [t.id, t]));
+
+  // ---------- 邻接表 ----------
+  const prereqs = new Map(), unlocks = new Map();
+  topics.forEach(t => { prereqs.set(t.id, []); unlocks.set(t.id, []); });
+  deps.forEach(d => { prereqs.get(d.topicId).push(d); unlocks.get(d.prerequisiteId).push(d); });
+
+  // ---------- 画布 ----------
+  const canvas = document.getElementById('cv');
+  const ctx = canvas.getContext('2d');
+  let W = 0, H = 0, DPR = Math.min(window.devicePixelRatio || 1, 2);
+  function resize() {
+    W = canvas.clientWidth; H = canvas.clientHeight;
+    canvas.width = W * DPR; canvas.height = H * DPR;
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  }
+  window.addEventListener('resize', resize);
+
+  // ---------- 布局：力导向 + 年级纵向锚定 ----------
+  const nodes = topics.map((t) => ({
+    ...t, x: 0, y: 0, vx: 0, vy: 0, r: 4 + (t.centrality || 0) * 260,
+    visible: true, highlight: 0, searchHit: false,
+  }));
+  const nodeById = new Map(nodes.map(n => [n.id, n]));
+  const edges = deps.map(d => ({ ...d, a: nodeById.get(d.topicId), b: nodeById.get(d.prerequisiteId) }));
+  const targetYOf = (n) => ((n.gradeRangeStart - .5) / 6) * (H - 80) + 40;
+  function initPositions() {
+    for (const n of nodes) {
+      n.x = W / 2 + (Math.random() - .5) * W * .55;
+      n.y = n.targetY = targetYOf(n);
+    }
+  }
+
+  function tick() {
+    const cx = W / 2;
+    for (let i = 0; i < nodes.length; i++) {
+      const a = nodes[i];
+      if (!a.visible) continue;
+      a.targetY = targetYOf(a);
+      // 斥力
+      for (let j = i + 1; j < nodes.length; j++) {
+        const b = nodes[j];
+        if (!b.visible) continue;
+        let dx = a.x - b.x, dy = (a.y - b.y) * 1.6;
+        let d2 = dx * dx + dy * dy;
+        if (d2 < 1) { dx = Math.random() - .5; dy = Math.random() - .5; d2 = 1; }
+        if (d2 > 400000) continue;
+        const f = 1400 / d2;
+        const d = Math.sqrt(d2);
+        a.vx += dx / d * f; a.vy += dy / d * f;
+        b.vx -= dx / d * f; b.vy -= dy / d * f;
+      }
+      // 年级锚定 + 向心力
+      a.vy += (a.targetY - a.y) * 0.045;
+      a.vx += (cx - a.x) * 0.012;
+      a.vx *= 0.82; a.vy *= 0.82;
+      // 速度上限，防止布局失稳
+      const VMAX = 18;
+      a.vx = Math.max(-VMAX, Math.min(VMAX, a.vx));
+      a.vy = Math.max(-VMAX, Math.min(VMAX, a.vy));
+      a.x += a.vx; a.y += a.vy;
+    }
+    // 弹簧
+    for (const e of edges) {
+      if (!e.a.visible || !e.b.visible) continue;
+      const dx = e.b.x - e.a.x, dy = (e.b.y - e.a.y) * 0.35;
+      const d = Math.max(6, Math.sqrt(dx * dx + dy * dy));
+      const rest = e.strength === 'hard' ? 46 : 70;
+      const f = (d - rest) * 0.02;
+      const fx = dx / d * f, fy = dy / d * f;
+      e.a.vx += fx; e.a.vy += fy; e.b.vx -= fx; e.b.vy -= fy;
+    }
+  }
+
+  // ---------- 交互状态 ----------
+  let selected = null, hovered = null, showAllLabels = false;
+  const activeSubjects = new Set(['数学', '语文', '英语']);
+  let traceMode = null; // 'ancestors' | 'descendants'
+  const traceSet = new Set();
+  const subjectColor = { '数学': getComputedStyle(document.documentElement).getPropertyValue('--math').trim(),
+    '语文': getComputedStyle(document.documentElement).getPropertyValue('--chinese').trim(),
+    '英语': getComputedStyle(document.documentElement).getPropertyValue('--english').trim() };
+
+  function closure(id, dir) {
+    const set = new Set([id]);
+    const stack = [id];
+    while (stack.length) {
+      const cur = stack.pop();
+      const list = dir === 'ancestors' ? prereqs.get(cur) : unlocks.get(cur);
+      for (const e of list) {
+        const nid = dir === 'ancestors' ? e.prerequisiteId : e.topicId;
+        if (!set.has(nid)) { set.add(nid); stack.push(nid); }
+      }
+    }
+    return set;
+  }
+
+  // ---------- 绘制 ----------
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    // 年级参考线
+    ctx.strokeStyle = 'rgba(255,255,255,.05)'; ctx.lineWidth = 1;
+    for (let g = 1; g <= 6; g++) {
+      const y = ((g - .5) / 6) * (H - 80) + 40;
+      ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
+      ctx.fillStyle = 'rgba(147,161,185,.5)'; ctx.font = '11px sans-serif';
+      ctx.fillText(g + ' 年级', 8, y - 5);
+    }
+    // 边
+    for (const e of edges) {
+      if (!e.a.visible || !e.b.visible) continue;
+      const isTrace = traceSet.size && traceSet.has(e.a.id) && traceSet.has(e.b.id);
+      const isSel = selected && (e.a.id === selected.id || e.b.id === selected.id);
+      const isHov = hovered && (e.a.id === hovered.id || e.b.id === hovered.id);
+      ctx.beginPath();
+      ctx.moveTo(e.a.x, e.a.y); ctx.lineTo(e.b.x, e.b.y);
+      if (e.strength === 'soft') ctx.setLineDash([4, 4]); else ctx.setLineDash([]);
+      if (isTrace) { ctx.strokeStyle = 'rgba(255,209,102,.55)'; ctx.lineWidth = 1.4; }
+      else if (isSel || isHov) { ctx.strokeStyle = 'rgba(255,255,255,.55)'; ctx.lineWidth = 1.3; }
+      else { ctx.strokeStyle = 'rgba(255,255,255,.13)'; ctx.lineWidth = .7; }
+      ctx.stroke();
+    }
+    ctx.setLineDash([]);
+    // 节点
+    for (const n of nodes) {
+      if (!n.visible) continue;
+      const color = subjectColor[n.subject];
+      const isSel = selected && n.id === selected.id;
+      const isHov = hovered && n.id === hovered.id;
+      const isTrace = traceSet.has(n.id);
+      const inFilter = activeSubjects.has(n.subject);
+      ctx.globalAlpha = inFilter ? 1 : 0.12;
+      ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+      ctx.fillStyle = color;
+      if (isSel || isHov || isTrace || n.searchHit) {
+        ctx.shadowColor = color; ctx.shadowBlur = 12;
+        ctx.fillStyle = n.searchHit ? '#ffd166' : color;
+      }
+      ctx.fill(); ctx.shadowBlur = 0;
+      if (isSel) { ctx.beginPath(); ctx.arc(n.x, n.y, n.r + 4, 0, Math.PI * 2);
+        ctx.strokeStyle = '#fff'; ctx.lineWidth = 2; ctx.stroke(); }
+      const showLabel = isSel || isHov || isTrace || showAllLabels ||
+        (n.r > 12 && (!selected || unlocks.get(n.id).length + prereqs.get(n.id).length > 3));
+      if (showLabel) {
+        ctx.globalAlpha = inFilter ? 1 : .3;
+        ctx.font = '11px system-ui, "PingFang SC", "Microsoft YaHei", sans-serif';
+        ctx.fillStyle = 'rgba(232,237,245,.92)';
+        ctx.textAlign = 'center';
+        ctx.fillText(n.name, n.x, n.y - n.r - 5);
+        ctx.textAlign = 'left';
+      }
+      ctx.globalAlpha = 1;
+    }
+  }
+
+  function loop() { tick(); draw(); requestAnimationFrame(loop); }
+
+  // ---------- 命中测试与事件 ----------
+  function canvasPos(ev) {
+    const r = canvas.getBoundingClientRect();
+    return { x: ev.clientX - r.left, y: ev.clientY - r.top };
+  }
+  function pick(p) {
+    let best = null, bd = Infinity;
+    for (const n of nodes) {
+      if (!n.visible) continue;
+      const d = Math.hypot(n.x - p.x, n.y - p.y);
+      if (d < n.r + 6 && d < bd) { bd = d; best = n; }
+    }
+    return best;
+  }
+  const tooltip = document.getElementById('tooltip');
+  canvas.addEventListener('mousemove', ev => {
+    const p = canvasPos(ev);
+    const n = pick(p);
+    hovered = n;
+    if (n) {
+      tooltip.style.display = 'block';
+      tooltip.style.left = (p.x + 14) + 'px';
+      tooltip.style.top = (p.y + 10) + 'px';
+      tooltip.innerHTML = `<div class="tt-name">${esc(n.name)}</div>
+        <div class="tt-meta">${n.subject} · ${n.domain} · ${n.gradeRangeStart}~${n.gradeRangeEnd} 年级<br>
+        先修 ${prereqs.get(n.id).length} · 解锁 ${unlocks.get(n.id).length}</div>`;
+    } else tooltip.style.display = 'none';
+  });
+  canvas.addEventListener('mouseleave', () => { tooltip.style.display = 'none'; hovered = null; });
+  canvas.addEventListener('click', ev => {
+    const n = pick(canvasPos(ev));
+    if (n) select(n); else { selected = null; document.getElementById('panel').classList.remove('open'); }
+  });
+
+  function esc(s) { return String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
+
+  // ---------- 详情面板 ----------
+  const stdByCode = new Map();
+  const standardsDoc = D.standards || [];
+  standardsDoc.forEach(s => stdByCode.set(s.code, s));
+  const bookNames = {};
+  const textbooksDoc = D.textbooks || {};
+  (textbooksDoc.versions || []).forEach(v => {
+    bookNames[v.slug] = { name: v.name, books: {} };
+    v.books.forEach(b => bookNames[v.slug].books[b.slug] = b);
+  });
+
+  function refText(ref) {
+    const m = ref.match(/^(pep-math|tongbian-chinese|pep-english):([1-6][ab])(?::(u[1-9]))?(?:#(.+))?$/);
+    if (!m) return ref;
+    const [, vslug, bslug, unitPart, blockPart] = m;
+    const v = bookNames[vslug]; if (!v) return ref;
+    const b = v.books[bslug]; if (!b) return ref;
+    const bookLabel = `${v.name.split('（')[0]} ${b.grade}年级${b.semester === '上' ? '上' : '下'}册`;
+    if (unitPart) {
+      const n = Number(unitPart.slice(1));
+      if (b.units && b.units[n - 1]) return `${bookLabel} · 第${n}单元「${b.units[n - 1]}」`;
+      return `${bookLabel} · 第${n}单元`;
+    }
+    if (blockPart) return `${bookLabel} · ${blockPart}`;
+    return bookLabel;
+  }
+
+  function linkItem(id, d) {
+    const t = byId.get(id);
+    const strength = d && d.strength === 'hard' ? '' : '（软）';
+    return `<li data-id="${id}">${esc(t.name)}${strength}</li>`;
+  }
+
+  function select(n) {
+    selected = n;
+    traceSet.clear(); traceMode = null;
+    document.querySelectorAll('.tool-btn').forEach(b => b.classList.remove('active'));
+    const panel = document.getElementById('panel');
+    document.getElementById('pName').textContent = n.name;
+    document.getElementById('pMeta').innerHTML =
+      `<span class="badge" style="color:${subjectColor[n.subject]};border-color:${subjectColor[n.subject]}">${n.subject}</span>
+       <span>${esc(n.domain)}</span><span>${n.gradeRangeStart}~${n.gradeRangeEnd} 年级</span><span>${esc(n.stage)}</span>`;
+    document.getElementById('pDesc').textContent = n.description;
+    document.getElementById('pEvidence').innerHTML = n.evidence.map(e => `<li>${esc(e)}</li>`).join('');
+    document.getElementById('pAssess').textContent = n.assessmentPrompt.replace(/\{\{name\}\}/g, '孩子');
+    document.getElementById('pStandards').innerHTML = n.standards.map(c => {
+      const s = stdByCode.get(c);
+      return s ? `<div class="std-item"><code>${esc(c)}</code>${esc(s.domain)}${s.theme ? ' · ' + esc(s.theme) : ''}：${esc(s.summary)}</div>` : '';
+    }).join('');
+    document.getElementById('pTextbooks').innerHTML = n.textbooks.map(r => `<div class="tb-item">· ${esc(refText(r))}</div>`).join('');
+    document.getElementById('pPrereqs').innerHTML = prereqs.get(n.id).map(d => linkItem(d.prerequisiteId, d)).join('') || '<li style="color:var(--text-dim)">（起点主题，无先修）</li>';
+    document.getElementById('pUnlocks').innerHTML = unlocks.get(n.id).map(d => linkItem(d.topicId, d)).join('') || '<li style="color:var(--text-dim)">（暂未解锁其他主题）</li>';
+    panel.classList.add('open');
+    panel.scrollTop = 0;
+  }
+  document.getElementById('panel').addEventListener('click', ev => {
+    const li = ev.target.closest('li[data-id]');
+    if (li) { const n = nodeById.get(li.dataset.id); if (n) select(n); }
+  });
+  document.getElementById('btnClose').onclick = () => {
+    selected = null; document.getElementById('panel').classList.remove('open');
+  };
+
+  // ---------- 工具栏 ----------
+  document.querySelectorAll('.chip').forEach(chip => {
+    chip.onclick = () => {
+      const s = chip.dataset.subject;
+      if (activeSubjects.has(s)) { activeSubjects.delete(s); chip.classList.remove('on'); chip.classList.add('off'); }
+      else { activeSubjects.add(s); chip.classList.add('on'); chip.classList.remove('off'); }
+      applyFilter();
+    };
+  });
+  function applyFilter() {
+    for (const n of nodes) n.visible = activeSubjects.has(n.subject);
+  }
+  const search = document.getElementById('search');
+  search.addEventListener('input', () => {
+    const q = search.value.trim();
+    nodes.forEach(n => { n.searchHit = !!q && n.name.includes(q); });
+    if (q) {
+      const hit = nodes.find(n => n.searchHit);
+      if (hit && !selected) select(hit);
+    }
+  });
+  document.getElementById('btnLabels').onclick = function () {
+    showAllLabels = !showAllLabels;
+    this.classList.toggle('active', showAllLabels);
+    this.textContent = showAllLabels ? '隐藏大部分名称' : '显示全部名称';
+  };
+  function trace(dir) {
+    if (!selected) { alert('请先点击一个主题'); return; }
+    if (traceMode === dir) { traceSet.clear(); traceMode = null; this.classList.remove('active'); return; }
+    document.querySelectorAll('.tool-btn').forEach(b => b.classList.remove('active'));
+    traceMode = dir;
+    this.classList.add('active');
+    traceSet.clear();
+    closure(selected.id, dir).forEach(id => traceSet.add(id));
+  }
+  document.getElementById('btnAncestors').onclick = function () { trace.call(this, 'ancestors'); };
+  document.getElementById('btnDescendants').onclick = function () { trace.call(this, 'descendants'); };
+  document.getElementById('btnReset').onclick = () => {
+    selected = null; traceSet.clear(); traceMode = null;
+    document.getElementById('panel').classList.remove('open');
+    document.querySelectorAll('.tool-btn').forEach(b => b.classList.remove('active'));
+    nodes.forEach(n => { n.x = W / 2 + (Math.random() - .5) * W * .55; n.y = targetYOf(n); n.vx = n.vy = 0; });
+  };
+
+  // ---------- 启动 ----------
+  const subjCount = {};
+  topics.forEach(t => subjCount[t.subject] = (subjCount[t.subject] || 0) + 1);
+  document.getElementById('stats').innerHTML =
+    `主题 <b>${topics.length}</b>（${Object.entries(subjCount).map(([k, v]) => k + ' ' + v).join(' · ')}） · ` +
+    `先修依赖 <b>${deps.length}</b> · 课标条目 <b>${standardsDoc.length}</b> · 域摘要 <b>${clusters.length}</b>`;
+  document.getElementById('gradeAxis').textContent = '纵轴：1 年级（上）→ 6 年级（下）';
+  resize();
+  initPositions();
+  loop();
+})();
+</script>
+</body>
+</html>

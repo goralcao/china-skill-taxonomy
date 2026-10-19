@@ -1,0 +1,179 @@
+# 学阶图谱 · China Skill Taxonomy
+
+**面向中国用户的小学「学什么」开源知识图谱** —— 把小学 1~6 年级的学习内容拆解为细粒度的「微主题」，连成先修依赖图，对齐《义务教育课程标准（2022年版）》与人教版/统编版教材。
+
+> **版本：** `v0.1.0` · **主题：** 188 · **先修依赖：** 385 · **课标条目：** 46 · **学科：** 数学 / 语文 / 英语
+
+本项目对标 [Marble Skill Taxonomy](https://github.com/withmarbleapp/os-taxonomy)（面向英美课标的同类开放数据），是其**国产化版本**：数据、课标、教材全部换成中国体系，许可证与组织方式保持一致。
+
+## 它是什么
+
+大多数中文课程数据要么是一份平铺的课标目录，要么锁死在某个产品里。本项目提供的是一张**连通的学习图谱**：
+
+- **188 个微主题** —— 每个主题是单一、可教、可检查的知识点或能力点（如「20以内进位加法」「比喻句与拟人句」「一般过去时」），每个主题都带：
+  - 一段家长能看懂的平实描述；
+  - 2~3 条**可观察的掌握证据**（能做到什么才算会）；
+  - 一条**家长检查法**（一个可以直接照着问的问题）；
+  - 类型标注（概念性 / 程序性 / 表征性 / 语言性 / 元认知）、所属学科与领域、年级区间。
+- **385 条先修依赖** —— 有向无环图：「主题 A 依赖先修 B」，每条边标注 `hard`（不会先修就学不了）或 `soft`（有帮助但非必需），并附一句**知识上的原因**。把边反向即得「解锁」——学了这个之后能通向什么。
+- **课标对齐** —— 46 条《义务教育课程标准（2022年版）》条目（数学四领域、语文六大学习任务群、英语主题范畴与六要素），每个微主题挂 1~3 条课标编号。
+- **教材对齐** —— 人教版数学（1~6 年级 12 册）、统编版语文（12 册）、人教版 PEP 英语（3~6 年级 8 册）的册次与单元目录，每个主题标注它通常出现的教材位置。
+- **39 条域摘要** —— 按（学科 × 领域 × 学段）写给家长的通俗总结，回答「这个阶段这个领域到底在学什么」。
+
+### 规模一览
+
+| 学科 | 主题数 | 依赖边 | 课标条目 |
+|---|---:|---:|---:|
+| 数学 | 96 | 189 | 18 |
+| 语文 | 55 | 111 | 18 |
+| 英语 | 37 | 85 | 10 |
+| **合计** | **188** | **385**（hard 270 / soft 115） | **46** |
+
+## 看看它
+
+可视化页面在 `viz/index.html`，直接用浏览器打开即可（无需服务器、无外部依赖）：
+
+- 每个圆点是一个微主题，颜色区分学科，**大小反映枢纽程度**（被多少主题依赖）；
+- **纵轴是年级**（1 年级在上，6 年级在下），可以直观看到知识沿年级的生长；
+- 实线是硬依赖、虚线是软依赖；
+- 点击任意主题，右侧展开详情：学什么、掌握证据、家长检查法、课标对齐、教材位置、先修链与解锁方向，详情里的先修/解锁条目可继续点击跳转；
+- 「追溯全部先修」可一键算出并高亮**学会某个主题前需要掌握的全部先修闭包**（对标 Marble 官网的 concept tracing）；
+- 支持按学科筛选、按名称搜索。
+
+![图谱预览](docs/graph-preview.png)
+
+![主题详情面板](docs/panel-preview.png)
+
+## 数据说明
+
+所有数据在 [`data/`](data) 目录，UTF-8 JSON，无运行时依赖，加载即用。字段定义见 [`schema/`](schema) 的 JSON Schema，计数与 SHA-256 校验和见 [`data/manifest.json`](data/manifest.json)。
+
+| 文件 | 内容 |
+|---|---|
+| `data/topics.json` | 微主题（图谱**节点**） |
+| `data/dependencies.json` | 先修依赖（图谱**边**） |
+| `data/curriculum-standards.json` | 课标条目（编号 + 概要 + 出处） |
+| `data/textbooks.json` | 教材版本、册次与单元目录 |
+| `data/clusters.json` | 家长友好的域摘要 |
+| `data/manifest.json` | 计数、分学科统计、逐文件校验和 |
+
+### 一个主题
+
+```json
+{
+  "id": "mt_num-10-recognition",
+  "type": "CONCEPTUAL",
+  "subject": "数学",
+  "domain": "数与代数",
+  "name": "10以内数的认识",
+  "description": "认识0到10各数，会数数、读数、写数，理解「几个」和「第几个」的区别，知道0表示没有，初步建立数感。",
+  "gradeRangeStart": 1,
+  "gradeRangeEnd": 1,
+  "stage": "第一学段（1~2年级）",
+  "centrality": 0.0321,
+  "evidence": ["能按顺序逐个点数物体并报出总数", "能分清「有几个」和「第几个」的不同问法", "会正确书写0到10各数"],
+  "assessmentPrompt": "问{{name}}：「桌上有5块积木，第3块是什么颜色？一共有几块？」他能分别回答吗？",
+  "standards": ["math-2022:S1:NA:NO"],
+  "textbooks": ["pep-math:1a:u3"]
+}
+```
+
+- `id` —— 稳定标识（`mt_` + 语义化短横线键），被依赖边和可视化引用。
+- `type` —— `CONCEPTUAL` 概念性 / `PROCEDURAL` 程序性 / `REPRESENTATIONAL` 表征性 / `LANGUAGE` 语言性 / `META` 元认知。
+- `stage` —— 学段（数学/语文：第一~第三学段；英语：一级/二级）。
+- `assessmentPrompt` —— 家长可直接照着做的检查，含 `{{name}}` 占位符（孩子的名字），展示前替换或删除。
+- `standards` —— 课标编号，键为 `<学科>-2022:<学段>:<领域/要素>`，在 `curriculum-standards.json` 中可查到对应概要。
+- `textbooks` —— 教材位置，格式为 `<版本>:<册次>[:u<单元号>][#块标签]`，如 `pep-math:1a:u3`（人教版数学一上第3单元）、`tongbian-chinese:1a#汉语拼音`（统编语文一上·汉语拼音块）。
+
+### 一条依赖
+
+```json
+{
+  "topicId": "mt_num-10-addsub",
+  "prerequisiteId": "mt_num-10-recognition",
+  "strength": "hard",
+  "reason": "先会数数认数才能把一组物体分成两部分"
+}
+```
+
+`topicId` **依赖** `prerequisiteId`。反向遍历即「解锁」。全图无环（`node scripts/validate.mjs` 会做拓扑校验）。
+
+## 快速开始
+
+```bash
+git clone <本仓库>
+cd china-skill-taxonomy
+
+# 数据校验（结构完整性、引用完整性、DAG 无环、SHA-256 校验和）
+node scripts/validate.mjs
+
+# 从 src/ 数据源重新生成 data/ 与 viz/data.js（一般不需要手动执行）
+python3 scripts/build.py
+```
+
+### 在代码里使用
+
+```js
+import topics from './data/topics.json' with { type: 'json' };
+import deps from './data/dependencies.json' with { type: 'json' };
+
+const byId = new Map(topics.topics.map(t => [t.id, t]));
+// 学会「异分母分数加减法」之前，需要先掌握什么
+const prereqs = deps.dependencies
+  .filter(d => d.topicId === 'mt_frac-addsub')
+  .map(d => byId.get(d.prerequisiteId).name);
+```
+
+```python
+import json
+
+topics = json.load(open('data/topics.json'))['topics']
+deps = json.load(open('data/dependencies.json'))['dependencies']
+
+by_id = {t['id']: t for t in topics}
+prereqs = [by_id[d['prerequisiteId']]['name']
+           for d in deps if d['topicId'] == 'mt_num-20-carry']
+print(prereqs)  # ['20以内数的认识与数位', '10以内数的分与合', '10以内加减法']
+```
+
+## 数据来源
+
+| 层 | 来源 | 说明 |
+|---|---|---|
+| 课程标准 | 《义务教育课程方案和课程标准（2022年版）》（教育部），原文见[国家中小学智慧教育平台](https://basic.smartedu.cn/) | 本项目**只收录课标的结构化编号与一句话概要，不转载原文**；引用策略与权利边界见 [PROVENANCE.md](PROVENANCE.md) |
+| 教材结构 | [国家中小学智慧教育平台「教材」栏目](https://basic.smartedu.cn/) + [TapXWorld/ChinaTextbook](https://github.com/TapXWorld/ChinaTextbook)（册次与版本结构） | 单元锚点采用通行版教材结构；2024 年秋季起启用的课标修订版教材映射列入路线图 |
+| 内容编写 | 本项目原创 | 主题描述、掌握证据、家长检查法、依赖关系均为原创撰写，未使用任何教材或课标原文 |
+
+**关于新教材**：依据 2022 年版课标修订的义务教育教科书自 2024 年秋季起在起始年级启用，2026 年秋季完成全国小学、初中替换。本项目的主题内容与课标对齐不受教材版本更替影响；`textbooks.json` 中的单元锚点以通行版结构记录，逐单元映射到新版教材是 v0.2 的计划（见 CHANGELOG.md）。
+
+**注意**：2022 年版数学课标已将「简易方程」调整至初中阶段，故本项目小学段不含该主题。
+
+## 许可证（分层，使用前请读）
+
+| 层 | 内容 | 许可证 |
+|---|---|---|
+| 数据库 | 数据集合、结构、ID、各类关系（`data/` 目录） | [ODbL 1.0](LICENSE) —— 可商用、需署名；衍生数据库须以相同许可保持开放 |
+| 内容 | 本项目原创中文文本（描述、证据、检查法、依赖理由、域摘要等） | [CC BY-SA 4.0](LICENSE-CONTENT) —— 需署名，衍生内容相同方式共享 |
+| 课标引用 | 课标编号与概要指向的原文 | **不属于本项目**，原文以国家中小学智慧教育平台公布为准，使用须遵守上游规定 |
+
+ODbL 区分「衍生数据库」与「产出作品」：你可以把本数据用于产品、模型或应用而**不必开源你的产品**，只需把对图谱本身的改进以相同许可开放。署名时请注明：
+
+> 学阶图谱 · China Skill Taxonomy (v0.1.0) · https://github.com/<your-org>/china-skill-taxonomy · licensed under ODbL 1.0 (database) and CC BY-SA 4.0 (content)
+
+## 路线图
+
+- [ ] v0.2：教学研究层（怎么教：教学法、学习活动、反馈与评估指导），对齐 Marble 的 `teaching-research.json`
+- [ ] v0.2：2024 版课标修订教材的单元级映射
+- [ ] v0.3：扩展数学教材版本（北师大版、苏教版）与英语版本（外研社版）
+- [ ] v0.4：科学、道德与法治学科；初中段（七至九年级）
+- [ ] 交互式网页版图谱（当前 `viz/index.html` 为本地版）
+
+## 贡献
+
+欢迎补充主题、修正依赖、完善课标与教材映射。请阅读 [CONTRIBUTING.md](CONTRIBUTING.md)，并确保 `node scripts/validate.mjs` 全部通过。
+
+## 致谢
+
+- 方法学对标 [Marble Skill Taxonomy](https://github.com/withmarbleapp/os-taxonomy)（© Generative Spark, Inc.）
+- 课标原文与电子教材：[国家中小学智慧教育平台](https://basic.smartedu.cn/)
+- 教材册次结构参考：[TapXWorld/ChinaTextbook](https://github.com/TapXWorld/ChinaTextbook)

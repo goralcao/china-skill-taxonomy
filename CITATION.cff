@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "如果本项目对你的研究或产品有帮助，请按以下信息引用。"
+title: "学阶图谱 · China Skill Taxonomy"
+abstract: >-
+  面向中国用户的小学「学什么」开源知识图谱：188 个微主题、385 条先修依赖、
+  对齐《义务教育课程标准（2022年版）》46 条课标条目与人教版/统编版教材结构。
+version: 0.1.0
+date-released: 2026-10-20
+license:
+  - ODbL-1.0
+  - CC-BY-SA-4.0
+repository-code: "https://github.com/<your-org>/china-skill-taxonomy"
+keywords:
+  - education
+  - knowledge-graph
+  - curriculum
+  - prerequisite
+  - 义务教育课程标准
+  - 小学
+  - 知识图谱

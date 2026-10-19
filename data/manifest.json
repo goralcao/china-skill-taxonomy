@@ -1,0 +1,50 @@
+{
+  "name": "学阶图谱 · China Skill Taxonomy",
+  "version": "v0.1.0",
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-20",
+  "counts": {
+    "topics": 188,
+    "dependencies": 385,
+    "curriculumStandards": 46,
+    "clusters": 39,
+    "hardEdges": 270,
+    "softEdges": 115
+  },
+  "bySubject": {
+    "数学": {
+      "topics": 96,
+      "edges": 189
+    },
+    "语文": {
+      "topics": 55,
+      "edges": 111
+    },
+    "英语": {
+      "topics": 37,
+      "edges": 85
+    }
+  },
+  "files": {
+    "topics.json": {
+      "sha256": "47fbee19842ec3662b312a936566292e9bf447e4d44c71f205f28b59fcd0bcbf",
+      "bytes": 162272
+    },
+    "dependencies.json": {
+      "sha256": "4e6b614a26d2f8d5a76ff8435bfff004dcd993046da888c508d43dd7b6dfab6b",
+      "bytes": 70204
+    },
+    "curriculum-standards.json": {
+      "sha256": "df1845357ee62e1c9b15d40448f956e5b9e0bc8b56c3323c236ee7eec3ce139c",
+      "bytes": 19201
+    },
+    "textbooks.json": {
+      "sha256": "25cd39837b748fea08277e335b1662fb426c6ea523a77ca70d16574ef1ad8e86",
+      "bytes": 14065
+    },
+    "clusters.json": {
+      "sha256": "0c34e184dd88ddae898998f3313f1f5e7272fe20131da1ddda6f947d9b628007",
+      "bytes": 15983
+    }
+  }
+}

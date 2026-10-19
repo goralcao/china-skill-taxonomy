@@ -1,0 +1,4407 @@
+{
+  "version": "v0.1.0",
+  "schemaVersion": 1,
+  "topics": [
+    {
+      "id": "mt_num-10-recognition",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "10以内数的认识",
+      "description": "认识0到10各数，会数数、读数、写数，理解「几个」和「第几个」的区别，知道0表示没有，初步建立数感。",
+      "gradeRangeStart": 1,
+      "gradeRangeEnd": 1,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能按顺序逐个点数物体并报出总数",
+        "能分清「有几个」和「第几个」的不同问法",
+        "会正确书写0到10各数"
+      ],
+      "assessmentPrompt": "问{{name}}：「桌上有5块积木，第3块是什么颜色？一共有几块？」他能分别回答吗？",
+      "standards": [
+        "math-2022:S1:NA:NO"
+      ],
+      "textbooks": [
+        "pep-math:1a:u3"
+      ],
+      "centrality": 0.0321
+    },
+    {
+      "id": "mt_num-10-composition",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "10以内数的分与合",
+      "description": "把一组物体分成两部分，体验分法不同但总数不变，熟悉2到10各数的组成，理解部分与整体的关系，为加减法做准备。",
+      "gradeRangeStart": 1,
+      "gradeRangeEnd": 1,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能把7个圆片分成两堆并说出两种分法",
+        "看到一堆能很快补想出另一堆的个数"
+      ],
+      "assessmentPrompt": "问{{name}}：「有8颗糖分给两个人，有哪几种分法？」他能有次序地说出几种吗？",
+      "standards": [
+        "math-2022:S1:NA:NO"
+      ],
+      "textbooks": [
+        "pep-math:1a:u5"
+      ],
+      "centrality": 0.0267
+    },
+    {
+      "id": "mt_num-10-addsub",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "10以内加减法",
+      "description": "理解加减法的含义，掌握10以内加减的口算方法，会看图列式，理解得数为0的算式表示的意思，能正确算出结果。",
+      "gradeRangeStart": 1,
+      "gradeRangeEnd": 1,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能看着一幅图列出两道加法和两道减法算式",
+        "能较快口算出10以内加减式并说清图意",
+        "能解释6减6得0表示的含义"
+      ],
+      "assessmentPrompt": "问{{name}}：「树上有4只鸟又飞来3只，怎样列式？得几？」他能列出算式并算出得数吗？",
+      "standards": [
+        "math-2022:S1:NA:NO"
+      ],
+      "textbooks": [
+        "pep-math:1a:u3"
+      ],
+      "centrality": 0.0374
+    },
+    {
+      "id": "mt_num-10-mixed",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "连加连减与加减混合",
+      "description": "学会连加、连减和加减混合算式的计算，掌握从左往右依次计算的顺序，会把分步口算的过程写成一道综合算式。",
+      "gradeRangeStart": 1,
+      "gradeRangeEnd": 1,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能按从左到右的顺序计算连加连减算式",
+        "能把两次分步计算合并成一道综合算式"
+      ],
+      "assessmentPrompt": "问{{name}}：「2加3再加4，先算哪一步？」他能按顺序算出得数并说出先算什么吗？",
+      "standards": [
+        "math-2022:S1:NA:NO"
+      ],
+      "textbooks": [
+        "pep-math:1a:u5"
+      ],
+      "centrality": 0.0107
+    },
+    {
+      "id": "mt_num-20-recognition",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "20以内数的认识与数位",
+      "description": "认识11到20各数，理解10个一是1个十，初步接触个位与十位，会读数写数，在捆小棒的活动中感受位值思想。",
+      "gradeRangeStart": 1,
+      "gradeRangeEnd": 1,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能用小棒演示10个一捆成1个十",
+        "会读写11到20各数并说出十位和个位"
+      ],
+      "assessmentPrompt": "问{{name}}：「15里面有1个什么和5个什么？」他能指着计数器说清楚吗？",
+      "standards": [
+        "math-2022:S1:NA:NO"
+      ],
+      "textbooks": [
+        "pep-math:1a:u6"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_num-20-carry",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "20以内进位加法",
+      "description": "学习9加几、8加几等进位加法，掌握凑十法，会把较小数拆出一部分与9或8凑成10，再算十几，理解进位道理。",
+      "gradeRangeStart": 1,
+      "gradeRangeEnd": 1,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能说出9加6先把6分成1和5再计算",
+        "能正确较快算出20以内进位加法"
+      ],
+      "assessmentPrompt": "问{{name}}：「9加5怎样凑十？」他能边摆小棒边讲出计算过程吗？",
+      "standards": [
+        "math-2022:S1:NA:NO"
+      ],
+      "textbooks": [
+        "pep-math:1a:u8"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_num-20-borrow",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "20以内退位减法",
+      "description": "学习十几减9、减8等退位减法，会用破十法或平十法计算，理解从十位退出一再减的道理，能正确进行口算。",
+      "gradeRangeStart": 1,
+      "gradeRangeEnd": 1,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能用破十法或平十法算出15减8",
+        "能根据一道减法算式写出相关的加法算式"
+      ],
+      "assessmentPrompt": "问{{name}}：「13减7，用破十法怎么算？」他能讲出先算什么再算什么吗？",
+      "standards": [
+        "math-2022:S1:NA:NO"
+      ],
+      "textbooks": [
+        "pep-math:1b:u2"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_num-100-recognition",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "100以内数的认识",
+      "description": "认识100以内的数，理解几十几和一百的组成，初步认识百位，掌握数位顺序，会十个十个、五个五个地数数。",
+      "gradeRangeStart": 1,
+      "gradeRangeEnd": 1,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能十个十个数和五个五个数地数到100",
+        "会读写100以内的数并说出个位十位百位"
+      ],
+      "assessmentPrompt": "问{{name}}：「100里面有几个十？85里面有几个十和几个一？」他能答对吗？",
+      "standards": [
+        "math-2022:S1:NA:NO"
+      ],
+      "textbooks": [
+        "pep-math:1b:u4"
+      ],
+      "centrality": 0.0481
+    },
+    {
+      "id": "mt_num-100-addsub",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "100以内加减法（口算）",
+      "description": "学会整十数加减以及两位数加减一位数、整十数的口算，理解相同数位才能相加减的道理，会解决简单的实际问题。",
+      "gradeRangeStart": 1,
+      "gradeRangeEnd": 1,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能口算出30加40、50减20的结果",
+        "能口算25加3并说清为什么要相同数位相加"
+      ],
+      "assessmentPrompt": "问{{name}}：「24加5，2和5能直接相加吗？」他能说清算法并算对吗？",
+      "standards": [
+        "math-2022:S1:NA:NO"
+      ],
+      "textbooks": [
+        "pep-math:1b:u6"
+      ],
+      "centrality": 0.0374
+    },
+    {
+      "id": "mt_num-100-pen",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "100以内笔算加减法",
+      "description": "学习用竖式计算两位数加减法，掌握相同数位对齐以及进位加、退位减的书写，会用交换加数等方法检查算得对不对。",
+      "gradeRangeStart": 2,
+      "gradeRangeEnd": 2,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能在竖式中正确写出进位和退位的标记",
+        "会用再算一遍或交换加数的方法验算"
+      ],
+      "assessmentPrompt": "问{{name}}：「47加36，竖式里7加6得13怎么办？」他能写出进位的1并算对吗？",
+      "standards": [
+        "math-2022:S2:NA:NO"
+      ],
+      "textbooks": [
+        "pep-math:2a:u2",
+        "pep-math:1b:u6"
+      ],
+      "centrality": 0.0374
+    },
+    {
+      "id": "mt_mul-meaning",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "乘法的意义",
+      "description": "认识乘法，理解乘法是求几个相同加数和的简便运算，会读写乘法算式并说出各部分名称，能把加法算式改写成乘法。",
+      "gradeRangeStart": 2,
+      "gradeRangeEnd": 2,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能把3个4相加的加法算式改写成乘法",
+        "能结合具体情境说出乘法算式表示的意思"
+      ],
+      "assessmentPrompt": "问{{name}}：「4组同学每组6人，用哪句乘法算式表示？」他能列式并说明意义吗？",
+      "standards": [
+        "math-2022:S1:NA:NO",
+        "math-2022:S1:NA:AR"
+      ],
+      "textbooks": [
+        "pep-math:2a:u4"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_mul-tables-2-6",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "2~6的乘法口诀",
+      "description": "编制并熟记2到6的乘法口诀，理解每句口诀的来源，能根据口诀直接说出积，也会由积联想出相关的乘法算式。",
+      "gradeRangeStart": 2,
+      "gradeRangeEnd": 2,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能按顺序背出2到6的口诀并打乱顺序回答",
+        "能写出四六二十四对应的两道算式"
+      ],
+      "assessmentPrompt": "问{{name}}：「四六得多少？能想到哪几句口诀？」他能脱口而出并举出算式吗？",
+      "standards": [
+        "math-2022:S1:NA:NO"
+      ],
+      "textbooks": [
+        "pep-math:2a:u4"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_mul-tables-7-9",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "7~9的乘法口诀",
+      "description": "继续编制并熟记7到9的乘法口诀，会用口诀解决购物算总价一类的简单乘法问题，逐步提高口算的速度和准确率。",
+      "gradeRangeStart": 2,
+      "gradeRangeEnd": 2,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能熟练背出7到9的乘法口诀",
+        "能用乘法口诀解决简单的购物计费问题"
+      ],
+      "assessmentPrompt": "问{{name}}：「买7本练习本每本8角，一共几角？」他能用口诀算出并说出用哪句吗？",
+      "standards": [
+        "math-2022:S1:NA:NO",
+        "math-2022:S1:NA:AR"
+      ],
+      "textbooks": [
+        "pep-math:2a:u6"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_div-avg",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "平均分与除法的意义",
+      "description": "认识平均分，经历把物体每几个分一份或平均分成几份的过程，理解除法算式的含义，会读写除法算式各部分的名称。",
+      "gradeRangeStart": 2,
+      "gradeRangeEnd": 2,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能把12个苹果按每4个一份分一分",
+        "能看图写出两道不同的除法算式并说意义"
+      ],
+      "assessmentPrompt": "问{{name}}：「10块饼干平均分给2人，怎样列除法算式？」他能动手分一分并列式吗？",
+      "standards": [
+        "math-2022:S1:NA:NO",
+        "math-2022:S1:NA:AR"
+      ],
+      "textbooks": [
+        "pep-math:2b:u2"
+      ],
+      "centrality": 0.0374
+    },
+    {
+      "id": "mt_div-tables-2-6",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "用2~6的乘法口诀求商",
+      "description": "理解乘除法之间的互逆关系，学会用2到6的乘法口诀求商，掌握除法算式的读法，会解决简单的平均分问题。",
+      "gradeRangeStart": 2,
+      "gradeRangeEnd": 2,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能根据12除以3想出口诀直接说出商",
+        "能说出乘法算式和除法算式之间的联系"
+      ],
+      "assessmentPrompt": "问{{name}}：「18除以6等于几？用哪句口诀想？」他能快速说出商吗？",
+      "standards": [
+        "math-2022:S1:NA:NO"
+      ],
+      "textbooks": [
+        "pep-math:2b:u2"
+      ],
+      "centrality": 0.0267
+    },
+    {
+      "id": "mt_div-tables-7-9",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "用7~9的乘法口诀求商",
+      "description": "用7到9的乘法口诀求商，解决包含除与等分除的实际问题，会比较同一句口诀对应的乘法和除法算式的得数。",
+      "gradeRangeStart": 2,
+      "gradeRangeEnd": 2,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能用口诀算出56除以8的商",
+        "能独立解决「有24元买6元一个的杯子」类问题"
+      ],
+      "assessmentPrompt": "问{{name}}：「42除以7商是几？」他能说出用哪句口诀想并讲出思路吗？",
+      "standards": [
+        "math-2022:S1:NA:NO",
+        "math-2022:S1:NA:AR"
+      ],
+      "textbooks": [
+        "pep-math:2b:u4"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_mixed-two-steps",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "两步混合运算",
+      "description": "学习加减乘除混合的两步计算，掌握同级运算从左往右、有括号先算括号里的规则，会列综合算式解决两步问题。",
+      "gradeRangeStart": 2,
+      "gradeRangeEnd": 2,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能正确计算30减5乘4并说明运算顺序",
+        "会在综合算式中正确使用小括号"
+      ],
+      "assessmentPrompt": "问{{name}}：「6乘3加10，先算什么？」他能按规则算出并说出运算顺序吗？",
+      "standards": [
+        "math-2022:S1:NA:NO",
+        "math-2022:S1:NA:AR"
+      ],
+      "textbooks": [
+        "pep-math:2b:u5"
+      ],
+      "centrality": 0.0267
+    },
+    {
+      "id": "mt_div-remainder",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "有余数的除法",
+      "description": "学习分后有剩余的情况，理解余数的含义，掌握余数必须比除数小的规律，会列竖式算出商和余数。",
+      "gradeRangeStart": 2,
+      "gradeRangeEnd": 2,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能在竖式中正确写出商和余数",
+        "能判断余数是4时除数可以是几"
+      ],
+      "assessmentPrompt": "问{{name}}：「23个苹果每盘放5个，余几个？余数要比谁小？」他能答对吗？",
+      "standards": [
+        "math-2022:S1:NA:NO"
+      ],
+      "textbooks": [
+        "pep-math:2b:u6"
+      ],
+      "centrality": 0.0053
+    },
+    {
+      "id": "mt_num-10000-recognition",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "万以内数的认识",
+      "description": "认识万以内的数，理解个十百千的计数单位与十进制关系，会读写中间或末尾有0的数，会比较两个数的大小。",
+      "gradeRangeStart": 2,
+      "gradeRangeEnd": 2,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能借助计数器拨出并读出三千零五十",
+        "会写出计数器上表示的数并说出数位"
+      ],
+      "assessmentPrompt": "问{{name}}：「计数器上千位3颗十位5颗，这个数是多少？」他能正确读出来吗？",
+      "standards": [
+        "math-2022:S1:NA:NO"
+      ],
+      "textbooks": [
+        "pep-math:2b:u7"
+      ],
+      "centrality": 0.0428
+    },
+    {
+      "id": "mt_addsub-10000",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "万以内的加法和减法",
+      "description": "掌握万以内整百整千数加减的口算和笔算，学会处理连续进位与连续退位，会用估算判断结果是不是合理。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能口算800加500并说明为什么得1300",
+        "能在竖式里正确标出连续进位的1"
+      ],
+      "assessmentPrompt": "问{{name}}：「907加486，竖式里要注意什么？」他能算出结果并验算吗？",
+      "standards": [
+        "math-2022:S2:NA:NO"
+      ],
+      "textbooks": [
+        "pep-math:3a:u2",
+        "pep-math:3a:u4"
+      ],
+      "centrality": 0.0267
+    },
+    {
+      "id": "mt_mass-g-kg",
+      "type": "REPRESENTATIONAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "克与千克",
+      "description": "建立克与千克的质量观念，知道1千克等于1000克，会用秤称出物体的质量，能对身边物品的轻重做出估测。",
+      "gradeRangeStart": 2,
+      "gradeRangeEnd": 2,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能用手掂一掂说出1千克和1克的差别",
+        "会说出一袋盐约重500克这样的合理估计"
+      ],
+      "assessmentPrompt": "问{{name}}：「一个鸡蛋大约多少克？两大瓶水呢？」他能做出合理的估计吗？",
+      "standards": [
+        "math-2022:S1:GG:GM"
+      ],
+      "textbooks": [
+        "pep-math:2b:u8"
+      ],
+      "centrality": 0.0107
+    },
+    {
+      "id": "mt_time-hms",
+      "type": "REPRESENTATIONAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "时、分、秒",
+      "description": "认识时、分、秒三个时间单位，知道相邻单位的进率是60，会认读钟表上的时刻，会计算经过的一段时间。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能准确读出钟面上的时刻并区分时针分针",
+        "能算出一节课从8时05分到8时45分有多长"
+      ],
+      "assessmentPrompt": "问{{name}}：「钟面上是8时15分，再过30分是几时几分？」他能看表算对吗？",
+      "standards": [
+        "math-2022:S1:GG:GM"
+      ],
+      "textbooks": [
+        "pep-math:3a:u1"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_unit-ton",
+      "type": "REPRESENTATIONAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "吨的认识",
+      "description": "认识吨这个较大的质量单位，知道1吨等于1000千克，能借助实例想象1吨有多重，会为物体选择合适的单位。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能举例说明哪些东西的质量用吨作单位",
+        "能说出3吨就是3个1000千克"
+      ],
+      "assessmentPrompt": "问{{name}}：「一头大象约重4吨，合多少千克？」他能换算并举出例子吗？",
+      "standards": [
+        "math-2022:S1:GG:GM"
+      ],
+      "textbooks": [
+        "pep-math:3a:u3"
+      ],
+      "centrality": 0.0107
+    },
+    {
+      "id": "mt_mult-1digit",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "多位数乘一位数",
+      "description": "掌握多位数乘一位数的口算与笔算，学会处理因数中间或末尾有0的情况，会用估算检查积的大小是否合理。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能在竖式里正确处理积的对位与进位",
+        "能口算整十整百数乘一位数的结果"
+      ],
+      "assessmentPrompt": "问{{name}}：「208乘4，积的十位上要注意什么？」他能算出832并说清0的处理吗？",
+      "standards": [
+        "math-2022:S2:NA:NO"
+      ],
+      "textbooks": [
+        "pep-math:3a:u6"
+      ],
+      "centrality": 0.0321
+    },
+    {
+      "id": "mt_div-1digit",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "除数是一位数的除法",
+      "description": "学会除数是一位数的口算与笔算除法，掌握列竖式试商的方法，会用乘法验算，理解商中间有0的算理。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能在竖式中正确算出商并处理不够商1的情况",
+        "能用乘法验算除法的结果是否正确"
+      ],
+      "assessmentPrompt": "问{{name}}：「306除以3，商是多少？怎样验算？」他能算出102并验算吗？",
+      "standards": [
+        "math-2022:S2:NA:NO"
+      ],
+      "textbooks": [
+        "pep-math:3b:u2"
+      ],
+      "centrality": 0.0267
+    },
+    {
+      "id": "mt_multiple",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "倍的认识",
+      "description": "建立倍的概念，理解一个数是另一个数的几倍就是有几个那么多，会看图列算式求一个数的几倍，解决倍数问题。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能说出红花5朵、黄花15朵时黄花是红花的3倍",
+        "会列算式求一个数的几倍是多少"
+      ],
+      "assessmentPrompt": "问{{name}}：「小明有6元，小红的钱是3倍，小红有几元？」他能画图并列式吗？",
+      "standards": [
+        "math-2022:S2:NA:AR"
+      ],
+      "textbooks": [
+        "pep-math:3a:u5"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_frac-intro",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "分数的初步认识",
+      "description": "认识几分之一和几分之几，理解平均分是产生分数的前提，会读写分数，知道分数各部分的名称。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能用折纸表示出一个正方形的四分之一",
+        "能正确读出并写出三分之一这样的分数"
+      ],
+      "assessmentPrompt": "问{{name}}：「一个月饼平均分成4块，每块是几分之几？」他能折一折并写出来吗？",
+      "standards": [
+        "math-2022:S2:NA:NO"
+      ],
+      "textbooks": [
+        "pep-math:3a:u8"
+      ],
+      "centrality": 0.0374
+    },
+    {
+      "id": "mt_frac-same-addsub",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "同分母分数加减法",
+      "description": "理解同分母分数加减就是几个分数单位相加减，会算出结果并说明分母不变的道理，解决简单的分数问题。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能算出五分之二加五分之一并解释只加分子",
+        "能结合分饼的情境说明1减几分之几的过程"
+      ],
+      "assessmentPrompt": "问{{name}}：「七分之三加七分之二，为什么分母不变？」他能算对并讲清道理吗？",
+      "standards": [
+        "math-2022:S2:NA:NO"
+      ],
+      "textbooks": [
+        "pep-math:3a:u8"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_dec-intro",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "小数的初步认识",
+      "description": "认识以元为单位的一位小数，理解十分之几可以写成零点几，会读写小数，感受小数与分数之间的联系。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能把3角写成0.3元并说明与十分之三的关系",
+        "能在生活中找出小数并正确读出来"
+      ],
+      "assessmentPrompt": "问{{name}}：「1元2角写成小数是多少元？」他能读写出小数并联系分数吗？",
+      "standards": [
+        "math-2022:S2:NA:NO"
+      ],
+      "textbooks": [
+        "pep-math:3b:u7"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_dec-addsub",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "一位小数加减法",
+      "description": "学习一位小数的加减法，理解相同数位对齐就是小数点对齐，会在竖式中正确计算，并解决购物情境中的问题。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能在竖式里把小数点对齐后再计算",
+        "能算出买两件商品一共花多少钱"
+      ],
+      "assessmentPrompt": "问{{name}}：「0.8加1.2，小数点为什么要对齐？」他能算对并举出生活例子吗？",
+      "standards": [
+        "math-2022:S2:NA:NO"
+      ],
+      "textbooks": [
+        "pep-math:3b:u7"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_calendar",
+      "type": "REPRESENTATIONAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "年、月、日与24时计时法",
+      "description": "认识年、月、日，记住各月的天数和大月小月，了解平年闰年，学会24时计时法，会计算经过的时间。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能说出一年有几个月、哪几个月是大月",
+        "能把晚上9时用24时计时法表示出来"
+      ],
+      "assessmentPrompt": "问{{name}}：「今年是平年还是闰年？2月有几天？」他能查日历说清楚吗？",
+      "standards": [
+        "math-2022:S2:GG:GM"
+      ],
+      "textbooks": [
+        "pep-math:3b:u6"
+      ],
+      "centrality": 0.0053
+    },
+    {
+      "id": "mt_big-num",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "大数的认识",
+      "description": "认识万以上的数，理解十进制计数法，会读写含有多级的大数，掌握改写和求近似数的方法，体会数位的价值。",
+      "gradeRangeStart": 4,
+      "gradeRangeEnd": 4,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能读出同时含万级和个级的八位数",
+        "能把整万数改写成用万作单位的数"
+      ],
+      "assessmentPrompt": "问{{name}}：「5080000由几个万和几个千组成？」他能分级读出来吗？",
+      "standards": [
+        "math-2022:S2:NA:NO"
+      ],
+      "textbooks": [
+        "pep-math:4a:u1"
+      ],
+      "centrality": 0.0107
+    },
+    {
+      "id": "mt_area-hectare",
+      "type": "REPRESENTATIONAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "公顷和平方千米",
+      "description": "认识公顷和平方千米这两个大面积单位，知道它们与平方米的进率，会借助实例建立表象并为土地选合适单位。",
+      "gradeRangeStart": 4,
+      "gradeRangeEnd": 4,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能说出1公顷相当于10000平方米",
+        "会为教室、操场、城市选合适的面积单位"
+      ],
+      "assessmentPrompt": "问{{name}}：「一个足球场大约多少公顷？」他能建立大小观念并说明吗？",
+      "standards": [
+        "math-2022:S2:GG:GM"
+      ],
+      "textbooks": [
+        "pep-math:4a:u2"
+      ],
+      "centrality": 0.0107
+    },
+    {
+      "id": "mt_mult-2digit",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "三位数乘两位数",
+      "description": "掌握三位数乘两位数的笔算方法，理解用第二个因数十位上的数乘时末位要对齐十位，会用积的变化规律简算。",
+      "gradeRangeStart": 4,
+      "gradeRangeEnd": 4,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能在竖式中正确处理第二次部分积的对位",
+        "能说出一个因数扩大10倍积会怎样变化"
+      ],
+      "assessmentPrompt": "问{{name}}：「145乘12，用1乘145的末位对哪一位？」他能算出1740吗？",
+      "standards": [
+        "math-2022:S2:NA:NO"
+      ],
+      "textbooks": [
+        "pep-math:4a:u4"
+      ],
+      "centrality": 0.0321
+    },
+    {
+      "id": "mt_div-2digit",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "除数是两位数的除法",
+      "description": "学习除数是两位数的除法笔算，会把除数看作接近的整十数试商，学会调商，理解每一次余数都要比除数小。",
+      "gradeRangeStart": 4,
+      "gradeRangeEnd": 4,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能把84看作80来试商并调商算对结果",
+        "能说出计算中每次余数必须比除数小"
+      ],
+      "assessmentPrompt": "问{{name}}：「350除以58，把58看作几十试商？」他能试商调商算得商6吗？",
+      "standards": [
+        "math-2022:S2:NA:NO"
+      ],
+      "textbooks": [
+        "pep-math:4a:u6"
+      ],
+      "centrality": 0.0267
+    },
+    {
+      "id": "mt_ops-order",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "四则运算",
+      "description": "掌握加减乘除混合运算的顺序，先乘除后加减，有括号先算括号里，认识中括号，会列综合算式解决两步问题。",
+      "gradeRangeStart": 4,
+      "gradeRangeEnd": 4,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能算出带中括号的式题并说明先算什么",
+        "能把分步算式列成含中括号的综合算式"
+      ],
+      "assessmentPrompt": "问{{name}}：「36加48除以6等于几？先算什么？」他能按顺序算对并解释吗？",
+      "standards": [
+        "math-2022:S2:NA:NO"
+      ],
+      "textbooks": [
+        "pep-math:4b:u1"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_ops-laws",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "运算律",
+      "description": "发现并理解加法交换律、结合律和乘法分配律，会用字母或符号表示规律，能运用运算律使计算变得简便。",
+      "gradeRangeStart": 4,
+      "gradeRangeEnd": 4,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能用25乘7乘4这类题说明乘法结合律",
+        "会给一道算式选择简便算法并讲出依据"
+      ],
+      "assessmentPrompt": "问{{name}}：「44乘25怎样算最简便？」他能用分配律算出1100吗？",
+      "standards": [
+        "math-2022:S2:NA:NO"
+      ],
+      "textbooks": [
+        "pep-math:4b:u3"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_dec-meaning",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "小数的意义和性质",
+      "description": "理解小数的意义，认识小数数位与计数单位，掌握小数的性质和大小比较的方法，会进行小数与单位的换算。",
+      "gradeRangeStart": 4,
+      "gradeRangeEnd": 4,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能说出0.35由3个0.1和5个0.01组成",
+        "能比较0.6和0.58的大小并说明理由"
+      ],
+      "assessmentPrompt": "问{{name}}：「0.7和0.70相等吗？为什么？」他能借助图示说清楚吗？",
+      "standards": [
+        "math-2022:S2:NA:NO"
+      ],
+      "textbooks": [
+        "pep-math:4b:u4"
+      ],
+      "centrality": 0.0321
+    },
+    {
+      "id": "mt_dec-addsub2",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "小数加减法",
+      "description": "掌握小数加减法的竖式计算，理解小数点对齐就是相同数位对齐，会运用运算律进行简便运算并解决实际问题。",
+      "gradeRangeStart": 4,
+      "gradeRangeEnd": 4,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能在竖式里对齐小数点后正确加减",
+        "能运用加法运算律使小数混合计算变简便"
+      ],
+      "assessmentPrompt": "问{{name}}：「12.5加3.08，怎样对位？」他能算出15.58并验算吗？",
+      "standards": [
+        "math-2022:S2:NA:NO"
+      ],
+      "textbooks": [
+        "pep-math:4b:u6"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_dec-mul",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "小数乘法",
+      "description": "掌握小数乘法的计算方法，先按整数乘法算出积再点小数点，理解积的小数位数与因数位数的关系，会求近似数。",
+      "gradeRangeStart": 5,
+      "gradeRangeEnd": 5,
+      "stage": "第三学段（5~6年级）",
+      "evidence": [
+        "能算出2.4乘0.3并说明积有几位小数",
+        "会根据要求用四舍五入求积的近似数"
+      ],
+      "assessmentPrompt": "问{{name}}：「0.25乘0.4，积有几位小数？」他能算出0.1并说明理由吗？",
+      "standards": [
+        "math-2022:S3:NA:NO"
+      ],
+      "textbooks": [
+        "pep-math:5a:u1"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_dec-div",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "小数除法",
+      "description": "学习小数除法，会把除数转化成整数再除，掌握小数点移动的规律，了解循环小数，会求商的近似数。",
+      "gradeRangeStart": 5,
+      "gradeRangeEnd": 5,
+      "stage": "第三学段（5~6年级）",
+      "evidence": [
+        "能把7.65除以0.5转化成除数是整数再算",
+        "能说出商是循环小数的特征"
+      ],
+      "assessmentPrompt": "问{{name}}：「5.6除以0.8，怎样移动小数点？」他能算出7并讲清方法吗？",
+      "standards": [
+        "math-2022:S3:NA:NO"
+      ],
+      "textbooks": [
+        "pep-math:5a:u3"
+      ],
+      "centrality": 0.0267
+    },
+    {
+      "id": "mt_factors",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "因数与倍数",
+      "description": "理解因数与倍数的意义，掌握有序找出一个数全部因数倍数的方法，认识质数合数，记住2、3、5的倍数特征。",
+      "gradeRangeStart": 5,
+      "gradeRangeEnd": 5,
+      "stage": "第三学段（5~6年级）",
+      "evidence": [
+        "能有次序地写出12的全部因数",
+        "能判断一个数是质数还是合数"
+      ],
+      "assessmentPrompt": "问{{name}}：「36的因数有哪些？它是质数吗？」他能找全并正确分类吗？",
+      "standards": [
+        "math-2022:S3:NA:NO"
+      ],
+      "textbooks": [
+        "pep-math:5b:u2"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_frac-meaning",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "分数的意义",
+      "description": "理解单位「1」的含义，认识分数单位，掌握分数与除法的关系，会比较分数的大小，理解分数的基本性质。",
+      "gradeRangeStart": 5,
+      "gradeRangeEnd": 5,
+      "stage": "第三学段（5~6年级）",
+      "evidence": [
+        "能说出四分之三的分数单位是什么",
+        "能用线段图表示全长的四分之三"
+      ],
+      "assessmentPrompt": "问{{name}}：「五分之四里面有几个五分之一？」他能画图说清楚吗？",
+      "standards": [
+        "math-2022:S3:NA:NO"
+      ],
+      "textbooks": [
+        "pep-math:5b:u4"
+      ],
+      "centrality": 0.0428
+    },
+    {
+      "id": "mt_frac-div",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "分数与除法",
+      "description": "理解分数的分子分母与除法算式中各量的对应关系，认识真分数、假分数和带分数，会进行假分数与整数的互化。",
+      "gradeRangeStart": 5,
+      "gradeRangeEnd": 5,
+      "stage": "第三学段（5~6年级）",
+      "evidence": [
+        "能说出3除以4等于四分之三的道理",
+        "能把二分之五化成带分数二又二分之一"
+      ],
+      "assessmentPrompt": "问{{name}}：「5除以7写成分数是什么？」他能写对并判断是不是真分数吗？",
+      "standards": [
+        "math-2022:S3:NA:NO"
+      ],
+      "textbooks": [
+        "pep-math:5b:u4"
+      ],
+      "centrality": 0.0267
+    },
+    {
+      "id": "mt_frac-reduce",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "约分与通分",
+      "description": "理解最大公因数与最小公倍数的意义，会列举找出两个数的公因数公倍数，掌握约分和通分的方法与依据。",
+      "gradeRangeStart": 5,
+      "gradeRangeEnd": 5,
+      "stage": "第三学段（5~6年级）",
+      "evidence": [
+        "能把十八分之十二约成最简分数四分之三",
+        "能把二分之一和三分之一通分后再比较"
+      ],
+      "assessmentPrompt": "问{{name}}：「二十四分之十八怎样约分？」他能用最大公因数约成四分之三吗？",
+      "standards": [
+        "math-2022:S3:NA:NO"
+      ],
+      "textbooks": [
+        "pep-math:5b:u4"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_frac-addsub",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "分数的加减法",
+      "description": "掌握同分母、异分母分数加减法和分数加减混合运算，理解先通分再加减的道理，会运用运算律进行简便计算。",
+      "gradeRangeStart": 5,
+      "gradeRangeEnd": 5,
+      "stage": "第三学段（5~6年级）",
+      "evidence": [
+        "能算出二分之一加四分之一并说明通分过程",
+        "能解决分数加减混合运算的实际问题"
+      ],
+      "assessmentPrompt": "问{{name}}：「三分之一加四分之一，先做什么？」他能算出十二分之七吗？",
+      "standards": [
+        "math-2022:S3:NA:NO"
+      ],
+      "textbooks": [
+        "pep-math:5b:u6"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_frac-mul",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "分数乘法",
+      "description": "理解分数乘法的意义，掌握分子分母分别相乘的计算法则，会进行分数乘加混合运算，解决求一个数几分之几的问题。",
+      "gradeRangeStart": 6,
+      "gradeRangeEnd": 6,
+      "stage": "第三学段（5~6年级）",
+      "evidence": [
+        "能算出五分之三乘十分之九并约分",
+        "能解决求一个数的几分之几是多少的问题"
+      ],
+      "assessmentPrompt": "问{{name}}：「四分之三的二分之一是多少？」他能列式算出八分之三吗？",
+      "standards": [
+        "math-2022:S3:NA:NO"
+      ],
+      "textbooks": [
+        "pep-math:6a:u1"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_frac-div2",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "分数除法",
+      "description": "理解分数除法的意义，掌握除以一个数等于乘这个数的倒数，会进行分数除加混合运算，解决相应的实际问题。",
+      "gradeRangeStart": 6,
+      "gradeRangeEnd": 6,
+      "stage": "第三学段（5~6年级）",
+      "evidence": [
+        "能说出除以三分之一就是乘3的道理",
+        "能算出分数除加混合算式的结果"
+      ],
+      "assessmentPrompt": "问{{name}}：「五分之二除以五分之四怎样算？」他能转化成乘法算出二分之一吗？",
+      "standards": [
+        "math-2022:S3:NA:NO"
+      ],
+      "textbooks": [
+        "pep-math:6a:u3"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_ratio",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "比的认识与基本性质",
+      "description": "认识比的意义和读写方法，理解比与分数、除法的联系，掌握比的基本性质，会化简比并解决按比分配的问题。",
+      "gradeRangeStart": 6,
+      "gradeRangeEnd": 6,
+      "stage": "第三学段（5~6年级）",
+      "evidence": [
+        "能读出3比2并说明各部分的名称",
+        "能把0.4比0.6化简成最简整数比"
+      ],
+      "assessmentPrompt": "问{{name}}：「牛奶和果汁按2比3混合，2比3表示什么？」他能说清比的意义吗？",
+      "standards": [
+        "math-2022:S3:NA:AR"
+      ],
+      "textbooks": [
+        "pep-math:6a:u4"
+      ],
+      "centrality": 0.0267
+    },
+    {
+      "id": "mt_percent-1",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "百分数的认识与互化",
+      "description": "认识百分数，理解百分数表示一个数是另一个数的百分之几，掌握百分数与小数、分数的互化，会比较大小。",
+      "gradeRangeStart": 6,
+      "gradeRangeEnd": 6,
+      "stage": "第三学段（5~6年级）",
+      "evidence": [
+        "能把0.45写成百分数并说明方法",
+        "能比较两个百分数的大小并排出顺序"
+      ],
+      "assessmentPrompt": "问{{name}}：「出勤率98%是什么意思？」他能解释含义并会互化吗？",
+      "standards": [
+        "math-2022:S3:NA:AR"
+      ],
+      "textbooks": [
+        "pep-math:6a:u6"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_percent-2",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "成数、税率与利率",
+      "description": "了解成数的含义，认识税率和利率，会解决折扣、纳税、利息等实际问题，体会百分数在生活中的广泛应用。",
+      "gradeRangeStart": 6,
+      "gradeRangeEnd": 6,
+      "stage": "第三学段（5~6年级）",
+      "evidence": [
+        "能说出「三成」表示百分之三十",
+        "能算出一定本金存一年的利息"
+      ],
+      "assessmentPrompt": "问{{name}}：「商品打八折，现价是原价的百分之几？」他能算出并举出例子吗？",
+      "standards": [
+        "math-2022:S3:NA:AR"
+      ],
+      "textbooks": [
+        "pep-math:6b:u2"
+      ],
+      "centrality": 0.0107
+    },
+    {
+      "id": "mt_negative",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "负数的初步认识",
+      "description": "认识正数和负数，理解0既不是正数也不是负数，会用正负数表示相反意义的量，能在数线上比较负数的大小。",
+      "gradeRangeStart": 6,
+      "gradeRangeEnd": 6,
+      "stage": "第三学段（5~6年级）",
+      "evidence": [
+        "能用负数表示零下5摄氏度的气温",
+        "能在数线上指出负三的位置并比较大小"
+      ],
+      "assessmentPrompt": "问{{name}}：「收入100元记作正100，支出80元记什么？」他能用正负数表示吗？",
+      "standards": [
+        "math-2022:S3:NA:NO"
+      ],
+      "textbooks": [
+        "pep-math:6b:u1"
+      ],
+      "centrality": 0.0053
+    },
+    {
+      "id": "mt_proportion",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "比例的意义与基本性质",
+      "description": "理解比例的意义，认识内项与外项，掌握比例的基本性质，会判断两个比能否组成比例，会求比例中的未知项。",
+      "gradeRangeStart": 6,
+      "gradeRangeEnd": 6,
+      "stage": "第三学段（5~6年级）",
+      "evidence": [
+        "能判断2比3和4比6能否组成比例",
+        "能根据比例的基本性质求出未知项"
+      ],
+      "assessmentPrompt": "问{{name}}：「2比3和6比9成比例吗？为什么？」他能用基本性质说明吗？",
+      "standards": [
+        "math-2022:S3:NA:AR"
+      ],
+      "textbooks": [
+        "pep-math:6b:u4"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_direct-inverse",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "正比例与反比例",
+      "description": "认识正比例和反比例关系，会根据比值一定或乘积一定判断两种量的关系，会用图像和表格分析量的变化规律。",
+      "gradeRangeStart": 6,
+      "gradeRangeEnd": 6,
+      "stage": "第三学段（5~6年级）",
+      "evidence": [
+        "能判断路程和时间是不是正比例关系",
+        "能举出生活中反比例的实例"
+      ],
+      "assessmentPrompt": "问{{name}}：「单价一定，总价和数量成什么比例？」他能根据比值判断吗？",
+      "standards": [
+        "math-2022:S3:NA:AR"
+      ],
+      "textbooks": [
+        "pep-math:6b:u4"
+      ],
+      "centrality": 0.0107
+    },
+    {
+      "id": "mt_average-mean",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "统计与概率",
+      "name": "平均数",
+      "description": "理解平均数的统计意义，知道平均数反映一组数据的整体水平，掌握总数除以份数的求法，会用移多补少帮助理解。",
+      "gradeRangeStart": 4,
+      "gradeRangeEnd": 4,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能算出小组同学的平均身高并说明方法",
+        "能说出平均数介于最大数和最小数之间"
+      ],
+      "assessmentPrompt": "问{{name}}：「三科成绩92、85、90，平均多少？」他能算出并解释意义吗？",
+      "standards": [
+        "math-2022:S2:SP"
+      ],
+      "textbooks": [
+        "pep-math:4b:u8"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_shape-3d",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "立体图形的认识",
+      "description": "认识长方体、正方体、圆柱和球四种立体图形，能直观辨认和分类，知道它们的名称，会描述形状的直观特征。",
+      "gradeRangeStart": 1,
+      "gradeRangeEnd": 1,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能在一堆物体中认出圆柱和球",
+        "能说出长方体有六个面这样的直观特征"
+      ],
+      "assessmentPrompt": "问{{name}}：「魔方、易拉罐、皮球各是什么形状？」他能摸一摸说清楚吗？",
+      "standards": [
+        "math-2022:S1:GG:GM"
+      ],
+      "textbooks": [
+        "pep-math:1a:u4"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_shape-2d",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "平面图形的认识",
+      "description": "从立体图形的面上认识长方形、正方形、圆、三角形和平行四边形，能直观辨认，会用图形拼摆出简单的图案。",
+      "gradeRangeStart": 1,
+      "gradeRangeEnd": 1,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能从长方体的一个面上描出长方形",
+        "能用七巧板拼出指定的平面图形"
+      ],
+      "assessmentPrompt": "问{{name}}：「硬币的面是什么形状？数学书的面呢？」他能分别指认吗？",
+      "standards": [
+        "math-2022:S1:GG:GM"
+      ],
+      "textbooks": [
+        "pep-math:1b:u1"
+      ],
+      "centrality": 0.0642
+    },
+    {
+      "id": "mt_position-basic",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "位置（上下前后左右）",
+      "description": "会用上下、前后、左右描述物体的相对位置，认识这些方位是相对的，会在具体情境中判断谁在谁的哪一边。",
+      "gradeRangeStart": 1,
+      "gradeRangeEnd": 1,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能说出自己前面是谁、后面是谁",
+        "能理解左手和右手是相对的这一事实"
+      ],
+      "assessmentPrompt": "问{{name}}：「文具盒在书桌的哪一面？你自己呢？」他能用方位词说清楚吗？",
+      "standards": [
+        "math-2022:S1:GG:PM"
+      ],
+      "textbooks": [
+        "pep-math:1a:u2"
+      ],
+      "centrality": 0.0107
+    },
+    {
+      "id": "mt_classify",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "统计与概率",
+      "name": "分类与整理",
+      "description": "学习按不同标准给物品分类，经历整理的过程，会用简单符号记录结果，初步体会分类标准不同结果就不同。",
+      "gradeRangeStart": 1,
+      "gradeRangeEnd": 1,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能按颜色或形状给卡片分类并数出个数",
+        "能用画勾或写数的方式记录分类结果"
+      ],
+      "assessmentPrompt": "问{{name}}：「这些卡片你能有几种分法？」他能按不同标准分类并记录吗？",
+      "standards": [
+        "math-2022:S1:SP"
+      ],
+      "textbooks": [
+        "pep-math:1b:u3"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_pattern",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "综合与实践",
+      "name": "找规律",
+      "description": "发现图形和数的简单排列规律，会用重复和递增的思路接着画、接着写，在观察和推理中培养有条理的思考习惯。",
+      "gradeRangeStart": 1,
+      "gradeRangeEnd": 1,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能接着画出有重复规律的图形串",
+        "能找出一列数的递增规律并续写"
+      ],
+      "assessmentPrompt": "问{{name}}：「红黄红黄后面该画什么？」他能说出规律并接着画吗？",
+      "standards": [
+        "math-2022:S1:PP"
+      ],
+      "textbooks": [
+        "pep-math:1b:u7"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_length-cm-m",
+      "type": "REPRESENTATIONAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "厘米和米",
+      "description": "认识长度单位厘米和米，建立1厘米、1米的长短观念，会用尺子测量物体和画线段，会比较估测物体的长度。",
+      "gradeRangeStart": 2,
+      "gradeRangeEnd": 2,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能用尺子量出数学书一条边的长度",
+        "能用手比划出1米大约有多长"
+      ],
+      "assessmentPrompt": "问{{name}}：「课桌高约70厘米，70厘米是几米？」他能量一量说一说吗？",
+      "standards": [
+        "math-2022:S1:GG:GM"
+      ],
+      "textbooks": [
+        "pep-math:2a:u1"
+      ],
+      "centrality": 0.0267
+    },
+    {
+      "id": "mt_angle-intro",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "角的初步认识",
+      "description": "初步认识角，知道角由一个顶点和两条边组成，会在图形中指出角，直观比较角的大小，认识直角。",
+      "gradeRangeStart": 2,
+      "gradeRangeEnd": 2,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能在长方形上指出三个角并指认顶点",
+        "能用三角板上的直角比出直角和锐角"
+      ],
+      "assessmentPrompt": "问{{name}}：「钟面上3时整，时针和分针组成什么角？」他能指出来吗？",
+      "standards": [
+        "math-2022:S1:GG:GM"
+      ],
+      "textbooks": [
+        "pep-math:2a:u3"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_observe-object",
+      "type": "REPRESENTATIONAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "观察物体",
+      "description": "学会从不同位置观察立体图形，知道看到的形状可能不同，能根据观察的位置判断看到的平面图形是什么。",
+      "gradeRangeStart": 2,
+      "gradeRangeEnd": 2,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能说出从前面和侧面看长方体各是什么形",
+        "能根据看到的形状猜出原来是什么物体"
+      ],
+      "assessmentPrompt": "问{{name}}：「从上面看圆柱看到什么形状？」他能搭一搭验证吗？",
+      "standards": [
+        "math-2022:S1:GG:GM"
+      ],
+      "textbooks": [
+        "pep-math:2a:u5"
+      ],
+      "centrality": 0.0107
+    },
+    {
+      "id": "mt_shape-move",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "图形的运动",
+      "description": "直观感知平移、旋转和轴对称现象，能识别生活中的图形运动，会判断一个图形是不是轴对称图形。",
+      "gradeRangeStart": 2,
+      "gradeRangeEnd": 2,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能指出电梯升降是平移、风车转动是旋转",
+        "能判断一棵树的图片是不是轴对称图形"
+      ],
+      "assessmentPrompt": "问{{name}}：「推拉窗户是什么运动？」他能举例说明三种运动吗？",
+      "standards": [
+        "math-2022:S1:GG:PM"
+      ],
+      "textbooks": [
+        "pep-math:2b:u3"
+      ],
+      "centrality": 0.0107
+    },
+    {
+      "id": "mt_direction",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "位置与方向",
+      "description": "认识东、南、西、北四个方向，会用指南针辨别方向，能在示意图上确定物体的相对方向，描述简单的路线图。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能用方向板标出校园里各建筑的方向",
+        "能描述从家到学校的行走路线"
+      ],
+      "assessmentPrompt": "问{{name}}：「学校在家的什么方向？」他能画出示意图并说明吗？",
+      "standards": [
+        "math-2022:S2:GG:PM"
+      ],
+      "textbooks": [
+        "pep-math:3b:u1"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_rect-perimeter",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "长方形和正方形的周长",
+      "description": "理解周长的含义，掌握长方形和正方形周长的计算方法，会运用公式解决不规则图形的周长和简单的实际问题。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能测量并算出课桌面的周长",
+        "能选择合适的方法计算组合图形的周长"
+      ],
+      "assessmentPrompt": "问{{name}}：「长5厘米宽3厘米的长方形周长是多少？」他能算出并说明算法吗？",
+      "standards": [
+        "math-2022:S2:GG:GM"
+      ],
+      "textbooks": [
+        "pep-math:3a:u7"
+      ],
+      "centrality": 0.0267
+    },
+    {
+      "id": "mt_area-intro",
+      "type": "REPRESENTATIONAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "面积与面积单位",
+      "description": "认识面积的含义，建立平方厘米、平方分米、平方米的单位观念，会比较面积的大小，区分面积与周长。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能说出用正方形摆一摆测量面积的方法",
+        "能区分一个图形的周长和面积两个概念"
+      ],
+      "assessmentPrompt": "问{{name}}：「课桌面的大小指的是什么？」他能指出面积并选单位吗？",
+      "standards": [
+        "math-2022:S2:GG:GM"
+      ],
+      "textbooks": [
+        "pep-math:3b:u5"
+      ],
+      "centrality": 0.0267
+    },
+    {
+      "id": "mt_rect-area",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "长方形和正方形的面积",
+      "description": "经历面积公式的推导过程，掌握长乘宽、边长乘边长的计算方法，会进行面积单位的换算并解决实际问题。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能借助方格纸推出长方形面积公式",
+        "能算出教室地面大约是多少平方米"
+      ],
+      "assessmentPrompt": "问{{name}}：「长方形长8米宽5米，面积是多少？」他能用公式算出吗？",
+      "standards": [
+        "math-2022:S2:GG:GM"
+      ],
+      "textbooks": [
+        "pep-math:3b:u5"
+      ],
+      "centrality": 0.0321
+    },
+    {
+      "id": "mt_lines",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "线段、射线、直线与相交平行",
+      "description": "认识线段、射线、直线的特征与区别，理解两点确定一条直线，认识相交与垂直，知道同一平面内两条直线互相平行。",
+      "gradeRangeStart": 4,
+      "gradeRangeEnd": 4,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能说出线段有两个端点、射线有一个端点",
+        "能用直尺和三角板画出互相垂直的线"
+      ],
+      "assessmentPrompt": "问{{name}}：「手电筒射出的光可以看成什么线？」他能说出理由并画一画吗？",
+      "standards": [
+        "math-2022:S2:GG:GM"
+      ],
+      "textbooks": [
+        "pep-math:4a:u3"
+      ],
+      "centrality": 0.0321
+    },
+    {
+      "id": "mt_angle-measure",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "角的度量与分类",
+      "description": "认识量角器并会量角和画角，掌握锐角、直角、钝角、平角、周角的特征与度数关系，会按指定度数画出角。",
+      "gradeRangeStart": 4,
+      "gradeRangeEnd": 4,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能量出五角星上每个角的度数并分类",
+        "能用一副三角板拼出75度这样的角"
+      ],
+      "assessmentPrompt": "问{{name}}：「这个角多少度？比直角大还是小？」他能用量角器量准吗？",
+      "standards": [
+        "math-2022:S2:GG:GM"
+      ],
+      "textbooks": [
+        "pep-math:4a:u3"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_parallelogram",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "平行四边形和梯形",
+      "description": "认识平行四边形和梯形的特征，理解各部分名称，知道平行四边形的不稳定性和梯形只有一组对边平行的特点。",
+      "gradeRangeStart": 4,
+      "gradeRangeEnd": 4,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能在一组四边形中找出梯形并说明理由",
+        "能画出平行四边形已知底边上的高"
+      ],
+      "assessmentPrompt": "问{{name}}：「这个四边形为什么是梯形？」他能指着边说明特征吗？",
+      "standards": [
+        "math-2022:S2:GG:GM"
+      ],
+      "textbooks": [
+        "pep-math:4a:u5"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_triangle",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "三角形的特性与分类",
+      "description": "认识三角形的特性和稳定性，理解三角形任意两边之和大于第三边，掌握内角和是180度，会按边和角分类。",
+      "gradeRangeStart": 4,
+      "gradeRangeEnd": 4,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能通过实验得出三角形的内角和是180度",
+        "能按边或角给三角形分类并说明标准"
+      ],
+      "assessmentPrompt": "问{{name}}：「3厘米、5厘米、9厘米的小棒能围成三角形吗？」他能用规律判断吗？",
+      "standards": [
+        "math-2022:S2:GG:GM"
+      ],
+      "textbooks": [
+        "pep-math:4b:u5"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_symmetry",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "轴对称",
+      "description": "进一步认识轴对称图形，理解对称轴的含义，能在方格纸上补全轴对称图形的另一半，会画出简单图形的对称轴。",
+      "gradeRangeStart": 4,
+      "gradeRangeEnd": 4,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能画出一个轴对称图形的全部对称轴",
+        "能根据图形的一半补全另一半"
+      ],
+      "assessmentPrompt": "问{{name}}：「数字8是轴对称图形吗？」他能找出对称轴并补全吗？",
+      "standards": [
+        "math-2022:S2:GG:PM"
+      ],
+      "textbooks": [
+        "pep-math:4b:u7"
+      ],
+      "centrality": 0.0107
+    },
+    {
+      "id": "mt_position-pairs",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "位置（数对）",
+      "description": "理解数对的含义，掌握用列和行两个数确定位置的方法，会在方格纸上用数对表示点，会用数对描述简单的路线。",
+      "gradeRangeStart": 5,
+      "gradeRangeEnd": 5,
+      "stage": "第三学段（5~6年级）",
+      "evidence": [
+        "能用数对表示自己在教室中的座位",
+        "能在方格纸上标出数对对应的点"
+      ],
+      "assessmentPrompt": "问{{name}}：「第3列第2行用数对怎么写？」他能写对并标出位置吗？",
+      "standards": [
+        "math-2022:S2:GG:PM"
+      ],
+      "textbooks": [
+        "pep-math:5a:u2"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_polygon-area",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "多边形的面积",
+      "description": "运用割补、转化推导平行四边形、三角形和梯形的面积公式，会计算组合图形的面积，体会转化的思想。",
+      "gradeRangeStart": 5,
+      "gradeRangeEnd": 5,
+      "stage": "第三学段（5~6年级）",
+      "evidence": [
+        "能把平行四边形转化成长方形推出公式",
+        "能说出组合图形由哪几个基本图形组成"
+      ],
+      "assessmentPrompt": "问{{name}}：「三角形面积为什么要除以2？」他能剪拼演示并算对面积吗？",
+      "standards": [
+        "math-2022:S3:GG:GM"
+      ],
+      "textbooks": [
+        "pep-math:5a:u6"
+      ],
+      "centrality": 0.0267
+    },
+    {
+      "id": "mt_cuboid",
+      "type": "REPRESENTATIONAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "长方体和正方体",
+      "description": "认识长方体和正方体的棱、面、顶点特征，会看展开图，掌握表面积的计算方法，能解决包装类的实际问题。",
+      "gradeRangeStart": 5,
+      "gradeRangeEnd": 5,
+      "stage": "第三学段（5~6年级）",
+      "evidence": [
+        "能数出长方体的棱并分成三组",
+        "能算出长方体的表面积并说明每个面的算法"
+      ],
+      "assessmentPrompt": "问{{name}}：「粉笔盒的表面积指哪些面？」他能指出来并算出数值吗？",
+      "standards": [
+        "math-2022:S3:GG:GM"
+      ],
+      "textbooks": [
+        "pep-math:5b:u3"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_volume",
+      "type": "REPRESENTATIONAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "体积与容积单位",
+      "description": "理解体积和容积的意义，认识立方厘米、立方分米、立方米，掌握单位间的进率，会计算长方体和正方体的体积。",
+      "gradeRangeStart": 5,
+      "gradeRangeEnd": 5,
+      "stage": "第三学段（5~6年级）",
+      "evidence": [
+        "能用1立方厘米的小正方体摆出指定体积",
+        "能区分一个容器的体积和容积的不同说法"
+      ],
+      "assessmentPrompt": "问{{name}}：「一个木箱的容积和体积一样吗？」他能举例说明区别吗？",
+      "standards": [
+        "math-2022:S3:GG:GM"
+      ],
+      "textbooks": [
+        "pep-math:5b:u3"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_circle",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "圆的认识",
+      "description": "认识圆各部分的名称，理解圆心、半径、直径之间的关系，掌握用圆规画圆的方法，直观感受圆是曲线图形。",
+      "gradeRangeStart": 6,
+      "gradeRangeEnd": 6,
+      "stage": "第三学段（5~6年级）",
+      "evidence": [
+        "能用圆规规范画出指定半径的圆",
+        "能说出同一个圆里直径是半径的两倍"
+      ],
+      "assessmentPrompt": "问{{name}}：「同一个圆里有多少条半径？」他能画圆并验证吗？",
+      "standards": [
+        "math-2022:S3:GG:GM"
+      ],
+      "textbooks": [
+        "pep-math:6a:u5"
+      ],
+      "centrality": 0.0321
+    },
+    {
+      "id": "mt_circle-measure",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "圆的周长与面积",
+      "description": "理解圆周率的意义，掌握圆的周长和面积公式，会进行简单的组合图形计算，解决有关圆的实际问题。",
+      "gradeRangeStart": 6,
+      "gradeRangeEnd": 6,
+      "stage": "第三学段（5~6年级）",
+      "evidence": [
+        "能通过测量得出周长总是直径的三倍多",
+        "能算出圆形花坛的周长和占地面积"
+      ],
+      "assessmentPrompt": "问{{name}}：「半径3米的圆周长是多少？」他能用公式算出并说依据吗？",
+      "standards": [
+        "math-2022:S3:GG:GM"
+      ],
+      "textbooks": [
+        "pep-math:6a:u5"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_sector",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "扇形",
+      "description": "认识扇形的特征，理解扇形由圆心角、两条半径和一段弧围成，会用圆心角的大小刻画扇形，能在组合图形中数出扇形。",
+      "gradeRangeStart": 6,
+      "gradeRangeEnd": 6,
+      "stage": "第三学段（5~6年级）",
+      "evidence": [
+        "能在圆中指出扇形并标出它的圆心角",
+        "能比较同一个圆中不同扇形的大小"
+      ],
+      "assessmentPrompt": "问{{name}}：「折扇展开是什么形状？」他能指认弧和圆心角吗？",
+      "standards": [
+        "math-2022:S3:GG:GM"
+      ],
+      "textbooks": [
+        "pep-math:6a:u5"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_cylinder",
+      "type": "REPRESENTATIONAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "圆柱与圆锥",
+      "description": "认识圆柱和圆锥的展开图与特征，掌握圆柱表面积和体积的计算方法，了解圆锥体积与圆柱的关系，会求容积。",
+      "gradeRangeStart": 6,
+      "gradeRangeEnd": 6,
+      "stage": "第三学段（5~6年级）",
+      "evidence": [
+        "能说出圆柱的侧面展开图是什么形状",
+        "能算出圆柱体积并与等底圆锥比较"
+      ],
+      "assessmentPrompt": "问{{name}}：「圆柱的侧面展开是长方形还是正方形？」他能展开说明吗？",
+      "standards": [
+        "math-2022:S3:GG:GM"
+      ],
+      "textbooks": [
+        "pep-math:6b:u3"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_data-collect",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "统计与概率",
+      "name": "数据收集整理",
+      "description": "学习用调查的方法收集数据，经历分类整理的过程，会用符号或简单的表呈现结果，能根据数据回答简单的问题。",
+      "gradeRangeStart": 2,
+      "gradeRangeEnd": 2,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能调查小组同学的生日并整理成记录表",
+        "能根据整理的结果回答最多和最少的问题"
+      ],
+      "assessmentPrompt": "问{{name}}：「班里同学最喜欢的水果是什么？」他能收集并整理出来吗？",
+      "standards": [
+        "math-2022:S1:SP"
+      ],
+      "textbooks": [
+        "pep-math:2b:u1"
+      ],
+      "centrality": 0.0321
+    },
+    {
+      "id": "mt_stats-table",
+      "type": "REPRESENTATIONAL",
+      "subject": "数学",
+      "domain": "统计与概率",
+      "name": "复式统计表",
+      "description": "认识复式统计表的结构，会把两组数据合并整理到一张表里，会看表头分析数据，根据数据进行比较和简单判断。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能把男女生两组数据合并成一张复式统计表",
+        "能根据表中数据回答谁多谁少的问题"
+      ],
+      "assessmentPrompt": "问{{name}}：「这张表里哪个月两个班都超过了30人？」他能看表回答吗？",
+      "standards": [
+        "math-2022:S2:SP"
+      ],
+      "textbooks": [
+        "pep-math:3b:u3"
+      ],
+      "centrality": 0.0267
+    },
+    {
+      "id": "mt_bar-chart",
+      "type": "REPRESENTATIONAL",
+      "subject": "数学",
+      "domain": "统计与概率",
+      "name": "条形统计图",
+      "description": "认识条形统计图的结构，会读图并根据数据绘制，能直观比较数量的多少，体会用条形图表示数据的优势。",
+      "gradeRangeStart": 4,
+      "gradeRangeEnd": 4,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能根据数据画出完整的条形统计图",
+        "能从图中读出数量并进行比较"
+      ],
+      "assessmentPrompt": "问{{name}}：「哪个月的降水最多？多多少？」他能看图说出并比较吗？",
+      "standards": [
+        "math-2022:S2:SP"
+      ],
+      "textbooks": [
+        "pep-math:4a:u7"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_probability",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "统计与概率",
+      "name": "可能性",
+      "description": "初步感受随机现象，理解可能性有大有小，会用一定、可能、不可能描述事件，能用分数表示可能性的大小。",
+      "gradeRangeStart": 5,
+      "gradeRangeEnd": 5,
+      "stage": "第三学段（5~6年级）",
+      "evidence": [
+        "能判断明天下雨是不可能还是可能的事件",
+        "能用几分之几表示摸到红球的可能性"
+      ],
+      "assessmentPrompt": "问{{name}}：「盒里2个红球3个白球，摸到红球的可能性多大？」他能用分数表示吗？",
+      "standards": [
+        "math-2022:S3:SP"
+      ],
+      "textbooks": [
+        "pep-math:5a:u4"
+      ],
+      "centrality": 0.0107
+    },
+    {
+      "id": "mt_line-chart",
+      "type": "REPRESENTATIONAL",
+      "subject": "数学",
+      "domain": "统计与概率",
+      "name": "折线统计图",
+      "description": "认识折线统计图的特点，会读图并根据数据绘制，能描述数量的增减变化趋势，体会折线图表示变化的优势。",
+      "gradeRangeStart": 5,
+      "gradeRangeEnd": 5,
+      "stage": "第三学段（5~6年级）",
+      "evidence": [
+        "能画出一个月气温变化的折线统计图",
+        "能描述某段时间数量的上升或下降趋势"
+      ],
+      "assessmentPrompt": "问{{name}}：「哪一段时间增长最快？」他能指着图说明理由吗？",
+      "standards": [
+        "math-2022:S3:SP"
+      ],
+      "textbooks": [
+        "pep-math:5b:u7"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_pie-chart",
+      "type": "REPRESENTATIONAL",
+      "subject": "数学",
+      "domain": "统计与概率",
+      "name": "扇形统计图",
+      "description": "认识扇形统计图的结构，理解用整个圆表示总体、扇形表示部分，会用百分数描述各部分与整体之间的关系。",
+      "gradeRangeStart": 6,
+      "gradeRangeEnd": 6,
+      "stage": "第三学段（5~6年级）",
+      "evidence": [
+        "能读出某一部分占总体的百分比",
+        "能根据百分比算出某一部分的具体数量"
+      ],
+      "assessmentPrompt": "问{{name}}：「喜欢篮球的占30%是什么意思？」他能解释并算出人数吗？",
+      "standards": [
+        "math-2022:S3:SP"
+      ],
+      "textbooks": [
+        "pep-math:6a:u7"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_stats-center",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "统计与概率",
+      "name": "平均数、中位数与众数",
+      "description": "理解平均数、中位数、众数的统计意义，会求一组数据的各个统计量，能根据问题的需要选择合适的数据代表。",
+      "gradeRangeStart": 6,
+      "gradeRangeEnd": 6,
+      "stage": "第三学段（5~6年级）",
+      "evidence": [
+        "能分别求出一组数据的三种统计量",
+        "能说明这组数据选用哪个数代表更合适"
+      ],
+      "assessmentPrompt": "问{{name}}：「这组数据用哪个数代表更合适？」他能计算并说明理由吗？",
+      "standards": [
+        "math-2022:S3:SP"
+      ],
+      "textbooks": [
+        "pep-math:6b:u6"
+      ],
+      "centrality": 0.0107
+    },
+    {
+      "id": "mt_optimize",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "综合与实践",
+      "name": "沏茶与烙饼问题",
+      "description": "学习用统筹的思想安排做事的顺序，体会合理安排可以节省时间，会用流程图或表格呈现方案并找出最优安排。",
+      "gradeRangeStart": 4,
+      "gradeRangeEnd": 4,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能设计出最省时间的沏茶顺序",
+        "能算出烙三张饼最少需要多少分钟"
+      ],
+      "assessmentPrompt": "问{{name}}：「怎样安排最省时间？」他能画出流程图说明吗？",
+      "standards": [
+        "math-2022:S2:PP"
+      ],
+      "textbooks": [
+        "pep-math:4a:u8"
+      ],
+      "centrality": 0.0107
+    },
+    {
+      "id": "mt_chicken-rabbit",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "综合与实践",
+      "name": "鸡兔同笼",
+      "description": "了解鸡兔同笼问题的特点，学会用假设法调整头数和脚数，也会用列表法尝试，体会假设与调整的解题策略。",
+      "gradeRangeStart": 4,
+      "gradeRangeEnd": 4,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能用假设法算出鸡和兔各有多少只",
+        "能用列表法验证答案是否正确"
+      ],
+      "assessmentPrompt": "问{{name}}：「假设全是鸡，脚少了怎么办？」他能边调整边算出答案吗？",
+      "standards": [
+        "math-2022:S2:PP"
+      ],
+      "textbooks": [
+        "pep-math:4b:u9"
+      ],
+      "centrality": 0.0107
+    },
+    {
+      "id": "mt_tree-plant",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "综合与实践",
+      "name": "植树问题",
+      "description": "认识间隔与段数的关系，掌握两端都栽、只栽一端、两端都不栽的规律，会用画图的方法建立简单的数学模型。",
+      "gradeRangeStart": 5,
+      "gradeRangeEnd": 5,
+      "stage": "第三学段（5~6年级）",
+      "evidence": [
+        "能用画图法发现段数与棵数之间的关系",
+        "能区分三种情况并列出相应的算式"
+      ],
+      "assessmentPrompt": "问{{name}}：「20米小路每5米栽一棵，两端都栽共几棵？」他能画图算对吗？",
+      "standards": [
+        "math-2022:S3:PP"
+      ],
+      "textbooks": [
+        "pep-math:5a:u7"
+      ],
+      "centrality": 0.0107
+    },
+    {
+      "id": "mt_find-defective",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "综合与实践",
+      "name": "找次品",
+      "description": "学会用天平找次品，掌握把物品尽量平均分成三份的方法，理解称的次数与物品数量的关系，体会优化策略。",
+      "gradeRangeStart": 5,
+      "gradeRangeEnd": 5,
+      "stage": "第三学段（5~6年级）",
+      "evidence": [
+        "能说出9个球至少称2次就能找到次品",
+        "能画出找次品的推理示意图"
+      ],
+      "assessmentPrompt": "问{{name}}：「为什么分成3份最好？」他能演示称的过程吗？",
+      "standards": [
+        "math-2022:S3:PP"
+      ],
+      "textbooks": [
+        "pep-math:5b:u8"
+      ],
+      "centrality": 0.0107
+    },
+    {
+      "id": "mt_phone-call",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "综合与实践",
+      "name": "打电话",
+      "description": "探索打电话中通知人数随时间增长的规律，理解每个人都不空闲最省时，会用图示和数据发现其中的规律。",
+      "gradeRangeStart": 5,
+      "gradeRangeEnd": 5,
+      "stage": "第三学段（5~6年级）",
+      "evidence": [
+        "能画出每一轮通知人数的示意图",
+        "能发现每过一分钟知道消息的人数翻倍"
+      ],
+      "assessmentPrompt": "问{{name}}：「第4分钟一共几人知道消息？」他能找出规律并算出吗？",
+      "standards": [
+        "math-2022:S3:PP"
+      ],
+      "textbooks": [
+        "pep-math:5b:u8"
+      ],
+      "centrality": 0.0107
+    },
+    {
+      "id": "mt_number-shape",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "综合与实践",
+      "name": "数与形",
+      "description": "体会数与形之间的联系，会用图形直观解释算式中的规律，借助形理解数的计算，感受数形结合思想的价值。",
+      "gradeRangeStart": 6,
+      "gradeRangeEnd": 6,
+      "stage": "第三学段（5~6年级）",
+      "evidence": [
+        "能用正方形点阵说明连续奇数相加的规律",
+        "能借助图形算出一组数的和"
+      ],
+      "assessmentPrompt": "问{{name}}：「1加3加5加7可以用什么图形来看？」他能画图算对吗？",
+      "standards": [
+        "math-2022:S3:PP"
+      ],
+      "textbooks": [
+        "pep-math:6a:u8"
+      ],
+      "centrality": 0.0107
+    },
+    {
+      "id": "mt_pigeonhole",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "综合与实践",
+      "name": "鸽巢问题",
+      "description": "了解鸽巢原理的基本形式，会把物体放入抽屉建立模型，理解至少数的含义，会用假设的方法说明其中的道理。",
+      "gradeRangeStart": 6,
+      "gradeRangeEnd": 6,
+      "stage": "第三学段（5~6年级）",
+      "evidence": [
+        "能说明4支铅笔放进3个笔盒的道理",
+        "能把实际问题转化成抽屉的模型"
+      ],
+      "assessmentPrompt": "问{{name}}：「为什么总有一个人至少分到2个？」他能讲出道理吗？",
+      "standards": [
+        "math-2022:S3:PP"
+      ],
+      "textbooks": [
+        "pep-math:6b:u5"
+      ],
+      "centrality": 0.0107
+    },
+    {
+      "id": "mt_measure-compare",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "综合与实践",
+      "name": "量一量、比一比",
+      "description": "综合运用测量和比较的方法，量一量身边物体的长度并比一比长短，会用身边的常见物品作单位估计长度。",
+      "gradeRangeStart": 2,
+      "gradeRangeEnd": 2,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能量出黑板和讲台的长度并进行比较",
+        "能用一拃或一步估计一段距离"
+      ],
+      "assessmentPrompt": "问{{name}}：「教室大约有几拃长？」他能先估一估再量一量验证吗？",
+      "standards": [
+        "math-2022:S1:PP"
+      ],
+      "textbooks": [
+        "pep-math:2a:u1"
+      ],
+      "centrality": 0.0053
+    },
+    {
+      "id": "mt_pinyin-initials",
+      "type": "LANGUAGE",
+      "subject": "语文",
+      "domain": "汉语拼音",
+      "name": "声母的认读",
+      "description": "认识二十三个声母，读准每个声母的发音并记住字形，能按顺序背诵声母表，为拼读音节打好基础。",
+      "gradeRangeStart": 1,
+      "gradeRangeEnd": 1,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能按顺序背诵二十三个声母",
+        "看到声母卡片能脱口读出正确发音",
+        "能区分字形相近的b和d"
+      ],
+      "assessmentPrompt": "问{{name}}：「声母一共有几个？能从b开始按顺序背一遍吗？」他能不卡壳地背下来吗？",
+      "standards": [
+        "chinese-2022:S1:BQ"
+      ],
+      "textbooks": [
+        "tongbian-chinese:1a#汉语拼音"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_pinyin-finals",
+      "type": "LANGUAGE",
+      "subject": "语文",
+      "domain": "汉语拼音",
+      "name": "韵母与四声",
+      "description": "学习单韵母、复韵母和鼻韵母，掌握四个声调的读法，知道声调不同意思就不同，为拼音打基础。",
+      "gradeRangeStart": 1,
+      "gradeRangeEnd": 1,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能读准六个单韵母和常见复韵母",
+        "能按顺序背诵韵母表",
+        "能一边打手势一边读出四个声调"
+      ],
+      "assessmentPrompt": "问{{name}}：「ā á ǎ à 四个声调分别怎么读？mā和mà意思一样吗？」他能读出区别吗？",
+      "standards": [
+        "chinese-2022:S1:BQ"
+      ],
+      "textbooks": [
+        "tongbian-chinese:1a#汉语拼音"
+      ],
+      "centrality": 0.0107
+    },
+    {
+      "id": "mt_pinyin-whole",
+      "type": "LANGUAGE",
+      "subject": "语文",
+      "domain": "汉语拼音",
+      "name": "整体认读音节",
+      "description": "认识十六个整体认读音节，知道它们不用拼读、直接呼读，看到就能读出正确读音，为识字阅读提速。",
+      "gradeRangeStart": 1,
+      "gradeRangeEnd": 1,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能按顺序背出整体认读音节表",
+        "看到zhi、ri等音节能直接读出",
+        "能区分整体认读与拼读的不同"
+      ],
+      "assessmentPrompt": "问{{name}}：「ri是要拼的音节还是整体认读？整体认读音节有几个？」他能说清楚吗？",
+      "standards": [
+        "chinese-2022:S1:BQ"
+      ],
+      "textbooks": [
+        "tongbian-chinese:1a#汉语拼音"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_pinyin-blending",
+      "type": "PROCEDURAL",
+      "subject": "语文",
+      "domain": "汉语拼音",
+      "name": "音节的拼读",
+      "description": "学会声母和韵母相拼的方法，快速拼出两拼音节和三拼音节，声母轻短韵母重，音节读音准确到位。",
+      "gradeRangeStart": 1,
+      "gradeRangeEnd": 1,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能正确拼读b和ā相拼成bā",
+        "能分出声母、介母、韵母拼出三拼音节",
+        "拼读时声调不错位"
+      ],
+      "assessmentPrompt": "问{{name}}：「x-i-ǎ怎么拼？huā的声母和韵母分别是什么？」他能拼读出来吗？",
+      "standards": [
+        "chinese-2022:S1:BQ"
+      ],
+      "textbooks": [
+        "tongbian-chinese:1a#汉语拼音"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_pinyin-reading",
+      "type": "META",
+      "subject": "语文",
+      "domain": "汉语拼音",
+      "name": "借助拼音识字和阅读",
+      "description": "养成识字先看拼音的习惯，遇到生字能借助拼音读准字音，从注音读物开始练习独立阅读浅近故事。",
+      "gradeRangeStart": 1,
+      "gradeRangeEnd": 1,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "拿到带拼音的书会先读拼音再读字",
+        "遇到不认识的字主动看拼音猜读音",
+        "能借助拼音读完一篇注音小故事"
+      ],
+      "assessmentPrompt": "问{{name}}：「故事里有不认识的字，除了问人还能怎么办？」他会主动看拼音解决吗？",
+      "standards": [
+        "chinese-2022:S1:BQ"
+      ],
+      "textbooks": [
+        "tongbian-chinese:1a#汉语拼音"
+      ],
+      "centrality": 0.0267
+    },
+    {
+      "id": "mt_char-pictographic",
+      "type": "CONCEPTUAL",
+      "subject": "语文",
+      "domain": "识字与写字",
+      "name": "象形字与识字方法",
+      "description": "通过象形字感受汉字像画一样的特点，了解古人造字的智慧，学会按字形联想字义的识字方法。",
+      "gradeRangeStart": 1,
+      "gradeRangeEnd": 1,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "看到「日」「火」能说出字形像什么",
+        "能用自己的话讲出一个象形字的意思",
+        "能用看图联想的办法记住新字"
+      ],
+      "assessmentPrompt": "问{{name}}：「「火」字为什么有撇和点？「山」字三笔像什么？」他能讲出字形和字义的联系吗？",
+      "standards": [
+        "chinese-2022:S1:BQ"
+      ],
+      "textbooks": [
+        "tongbian-chinese:1a#识字"
+      ],
+      "centrality": 0.0267
+    },
+    {
+      "id": "mt_char-radical",
+      "type": "CONCEPTUAL",
+      "subject": "语文",
+      "domain": "识字与写字",
+      "name": "偏旁部首与字形结构",
+      "description": "认识常见偏旁部首，知道偏旁多与字义有关，了解左右、上下等字形结构，帮助记住字形不乱写。",
+      "gradeRangeStart": 1,
+      "gradeRangeEnd": 1,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能说出「河」为什么是三点水",
+        "能分清左右结构和上下结构的字",
+        "能按偏旁把学过的字归类"
+      ],
+      "assessmentPrompt": "问{{name}}：「「打」和「拍」为什么都是提手旁？「草」的偏旁表示什么？」他能讲出来吗？",
+      "standards": [
+        "chinese-2022:S1:BQ"
+      ],
+      "textbooks": [
+        "tongbian-chinese:1a#识字"
+      ],
+      "centrality": 0.0267
+    },
+    {
+      "id": "mt_char-stroke",
+      "type": "PROCEDURAL",
+      "subject": "语文",
+      "domain": "识字与写字",
+      "name": "基本笔画与笔顺规则",
+      "description": "学习横竖撇点折等基本笔画，掌握先横后竖、先里头后封口等笔顺规则，为把字写正确打基础。",
+      "gradeRangeStart": 1,
+      "gradeRangeEnd": 1,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能按正确笔顺写完「火」「水」等字",
+        "能说出哪类字要先里头后封口",
+        "书空时笔画顺序不颠倒"
+      ],
+      "assessmentPrompt": "问{{name}}：「「飞」字先写哪一笔？「口」字为什么最后封口？」他能边书空边讲规则吗？",
+      "standards": [
+        "chinese-2022:S1:BQ"
+      ],
+      "textbooks": [
+        "tongbian-chinese:1a#识字"
+      ],
+      "centrality": 0.0107
+    },
+    {
+      "id": "mt_char-writing",
+      "type": "PROCEDURAL",
+      "subject": "语文",
+      "domain": "识字与写字",
+      "name": "铅笔字的书写规范",
+      "description": "掌握正确的握笔和坐姿，学习在田字格里把字写端正匀称，养成提笔即练字、卷面干净的习惯。",
+      "gradeRangeStart": 1,
+      "gradeRangeEnd": 1,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "写字时握笔姿势正确，胸口离桌一拳",
+        "写的字能在田字格里摆稳不歪斜",
+        "作业本上的字大小一致卷面干净"
+      ],
+      "assessmentPrompt": "问{{name}}：「看看你写的「我」字，哪一笔写出了格子？握笔姿势对吗？」他能自己调整好吗？",
+      "standards": [
+        "chinese-2022:S1:BQ"
+      ],
+      "textbooks": [
+        "tongbian-chinese:1a#识字"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_char-phonetic-order",
+      "type": "PROCEDURAL",
+      "subject": "语文",
+      "domain": "识字与写字",
+      "name": "音序查字法",
+      "description": "认识音序就是音节第一个字母的大写，学会按字母表顺序在字典中查找汉字，先读准字音再查字。",
+      "gradeRangeStart": 1,
+      "gradeRangeEnd": 1,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "知道查「中」要先找大写字母Z",
+        "能按音序在字典里找到一个学过的字",
+        "查字前会先读出字的正确读音"
+      ],
+      "assessmentPrompt": "问{{name}}：「不认识「燕」字，想知道读音和意思，用字典怎么查？」他能说出按音序查的步骤吗？",
+      "standards": [
+        "chinese-2022:S1:BQ"
+      ],
+      "textbooks": [
+        "tongbian-chinese:1a#语文园地"
+      ],
+      "centrality": 0.0107
+    },
+    {
+      "id": "mt_char-radical-lookup",
+      "type": "PROCEDURAL",
+      "subject": "语文",
+      "domain": "识字与写字",
+      "name": "部首查字法",
+      "description": "学会找部首、数笔画、翻正文的步骤，对知道字形但读不准音的字，能用部首查字法独立解决。",
+      "gradeRangeStart": 2,
+      "gradeRangeEnd": 2,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "遇到不认识的字能先判断部首",
+        "能数准部首之外的笔画数",
+        "查到的义项能结合句子选对意思"
+      ],
+      "assessmentPrompt": "问{{name}}：「「魁」字不认识，用部首查字法该怎么查？」他能说出找部首、数笔画两步吗？",
+      "standards": [
+        "chinese-2022:S1:BQ"
+      ],
+      "textbooks": [
+        "tongbian-chinese:2a"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_char-homophone",
+      "type": "CONCEPTUAL",
+      "subject": "语文",
+      "domain": "识字与写字",
+      "name": "形近字与同音字辨析",
+      "description": "比较字形相近或读音相同的字，学会用偏旁和字义区分它们，写字用词时减少错别字的情况。",
+      "gradeRangeStart": 2,
+      "gradeRangeEnd": 2,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能分清「睛」和「晴」的不同偏旁",
+        "能结合句子选对「再」和「在」",
+        "听写后能自己发现并改掉同音错字"
+      ],
+      "assessmentPrompt": "问{{name}}：「「喝水」和「口渴」为什么用字不同？」他能从偏旁和字义上讲清楚吗？",
+      "standards": [
+        "chinese-2022:S1:BQ"
+      ],
+      "textbooks": [
+        "tongbian-chinese:2a"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_word-understand",
+      "type": "META",
+      "subject": "语文",
+      "domain": "词语积累",
+      "name": "理解词语的方法",
+      "description": "学习查字典、联系上下文、拆字解词等方法理解词义，遇到不认识的词知道主动想办法弄明白。",
+      "gradeRangeStart": 2,
+      "gradeRangeEnd": 2,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能用换偏旁的方法猜出「羡慕」的意思",
+        "读课文遇到生词会先联系句子猜一猜",
+        "会主动用字典验证自己猜得对不对"
+      ],
+      "assessmentPrompt": "问{{name}}：「「刻苦」是什么意思？除了问人，你还能用什么办法知道？」他能说出两种方法吗？",
+      "standards": [
+        "chinese-2022:S1:BQ"
+      ],
+      "textbooks": [
+        "tongbian-chinese:2a"
+      ],
+      "centrality": 0.0267
+    },
+    {
+      "id": "mt_word-accumulate",
+      "type": "LANGUAGE",
+      "subject": "语文",
+      "domain": "词语积累",
+      "name": "词语的归类与积累",
+      "description": "按主题、季节、场景等给词语分类，建立自己的词语积累本，让好词好句越攒越多、随用随取。",
+      "gradeRangeStart": 2,
+      "gradeRangeEnd": 2,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能把春天相关的词语归类写出五个以上",
+        "有自己的摘抄本并坚持记录好词",
+        "说话写话时能用上积累过的词语"
+      ],
+      "assessmentPrompt": "问{{name}}：「说说你积累过哪些写天气的词？是从哪课或哪本书抄来的？」他能列举并说出出处吗？",
+      "standards": [
+        "chinese-2022:S1:BQ"
+      ],
+      "textbooks": [
+        "tongbian-chinese:2a"
+      ],
+      "centrality": 0.0267
+    },
+    {
+      "id": "mt_word-idiom",
+      "type": "LANGUAGE",
+      "subject": "语文",
+      "domain": "词语积累",
+      "name": "成语与四字词语",
+      "description": "接触常见成语和四字词语，知道成语多有来历和故事，能在口头和书面表达中试着恰当运用。",
+      "gradeRangeStart": 2,
+      "gradeRangeEnd": 2,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能说出五个学过的成语并讲讲意思",
+        "能讲出「守株待兔」讲的是什么故事",
+        "说话时能恰当用出一个成语"
+      ],
+      "assessmentPrompt": "问{{name}}：「「亡羊补牢」是什么意思？它想说明什么道理？」他能用自己的话讲明白吗？",
+      "standards": [
+        "chinese-2022:S1:BQ"
+      ],
+      "textbooks": [
+        "tongbian-chinese:2b"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_sent-complete",
+      "type": "LANGUAGE",
+      "subject": "语文",
+      "domain": "句子与标点",
+      "name": "完整句与句子成分",
+      "description": "认识句子由词组成，知道完整的话要有谁和做什么，学习把句子说完整、写通顺，不丢成分。",
+      "gradeRangeStart": 1,
+      "gradeRangeEnd": 1,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能把「小鸟」扩展成完整的一句话",
+        "能听出「在公园里」不是完整的句子",
+        "写的每句话都有说清楚的部分"
+      ],
+      "assessmentPrompt": "问{{name}}：「「高高兴兴去上学」少了谁？怎样改才完整？」他能补出缺少的部分吗？",
+      "standards": [
+        "chinese-2022:S1:BQ"
+      ],
+      "textbooks": [
+        "tongbian-chinese:1a#课文"
+      ],
+      "centrality": 0.0588
+    },
+    {
+      "id": "mt_punct-basic",
+      "type": "LANGUAGE",
+      "subject": "语文",
+      "domain": "句子与标点",
+      "name": "逗号、句号、问号与感叹号",
+      "description": "认识四种基本标点，知道句号表陈述、问号表提问、感叹号表强烈感情，朗读时会按标点停顿。",
+      "gradeRangeStart": 1,
+      "gradeRangeEnd": 1,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "写完一句话会用句号收尾",
+        "提问的句子末尾用问号",
+        "朗读时遇到逗号句号会自然停顿"
+      ],
+      "assessmentPrompt": "问{{name}}：「「今天真热啊」后面该用什么号？读的时候语气该怎样？」他能读出语气吗？",
+      "standards": [
+        "chinese-2022:S1:BQ"
+      ],
+      "textbooks": [
+        "tongbian-chinese:1a#课文"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_sent-ba-bei",
+      "type": "LANGUAGE",
+      "subject": "语文",
+      "domain": "句子与标点",
+      "name": "把字句与被字句",
+      "description": "了解把字句和被字句的结构，学会两种句式互换，表达时知道何时强调动作、何时强调对象。",
+      "gradeRangeStart": 2,
+      "gradeRangeEnd": 2,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能把「风吹跑了帽子」改成把字句",
+        "能把把字句换成被字句而意思不变",
+        "说话时能选用合适的句式表达"
+      ],
+      "assessmentPrompt": "问{{name}}：「「雨水打湿了衣服」用把字句怎么说？换成被字句呢？」他能两句都改对吗？",
+      "standards": [
+        "chinese-2022:S1:BQ"
+      ],
+      "textbooks": [
+        "tongbian-chinese:2a"
+      ],
+      "centrality": 0.0107
+    },
+    {
+      "id": "mt_sent-rhetoric",
+      "type": "LANGUAGE",
+      "subject": "语文",
+      "domain": "句子与标点",
+      "name": "比喻句与拟人句",
+      "description": "认识比喻句和拟人句，知道比喻要有相似点、拟人要把物当人写，感受这样写更生动形象。",
+      "gradeRangeStart": 2,
+      "gradeRangeEnd": 2,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能指出课文里哪个句子是比喻",
+        "能仿照例子写一个比喻句",
+        "能把「花儿开了」改写成拟人句"
+      ],
+      "assessmentPrompt": "问{{name}}：「「红红的脸蛋像苹果」把什么比作什么？为什么像？」他能说清相似点吗？",
+      "standards": [
+        "chinese-2022:S1:BQ",
+        "chinese-2022:S1:LR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:2b"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_sent-extend",
+      "type": "LANGUAGE",
+      "subject": "语文",
+      "domain": "句子与标点",
+      "name": "扩句与把句子写具体",
+      "description": "学习给句子添加修饰成分，把时间、地点、样子写具体，让一句话变成几句有意思、有画面的话。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能把「小鸟飞」扩写成三四句具体的话",
+        "扩句时会加上形容词和表示地点的词",
+        "读自己的扩句能听出画面感"
+      ],
+      "assessmentPrompt": "问{{name}}：「「小朋友在玩」太简单了，加上时间地点和怎么玩，说给爸爸听好吗？」他能说得更具体吗？",
+      "standards": [
+        "chinese-2022:S2:BQ"
+      ],
+      "textbooks": [
+        "tongbian-chinese:3a"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_sent-conjunction",
+      "type": "LANGUAGE",
+      "subject": "语文",
+      "domain": "句子与标点",
+      "name": "关联词语",
+      "description": "认识因为所以、虽然但是等常见关联词，知道它们表示因果、转折等关系，能把两句话连成一句。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能根据句意选对「因为……所以……」",
+        "能用「虽然……但是……」改写两个句子",
+        "说话写话时用上关联词表意更清楚"
+      ],
+      "assessmentPrompt": "问{{name}}：「「下雨了」和「运动会取消」用哪组关联词连成一句？」他能连对吗？",
+      "standards": [
+        "chinese-2022:S2:BQ"
+      ],
+      "textbooks": [
+        "tongbian-chinese:3a"
+      ],
+      "centrality": 0.0107
+    },
+    {
+      "id": "mt_sent-quote",
+      "type": "LANGUAGE",
+      "subject": "语文",
+      "domain": "句子与标点",
+      "name": "冒号、引号与直述转述",
+      "description": "学习冒号和引号的用法，会写人物对话；知道直述改成转述时要换人称和标点，意思不能改变。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "写对话时冒号引号位置正确",
+        "能把直接说的话改成转述句",
+        "直述转述后句子的意思没变"
+      ],
+      "assessmentPrompt": "问{{name}}：「小明说：「我明天去图书馆」改成转述句该怎么说？」他能改对人称吗？",
+      "standards": [
+        "chinese-2022:S2:BQ"
+      ],
+      "textbooks": [
+        "tongbian-chinese:3a"
+      ],
+      "centrality": 0.0321
+    },
+    {
+      "id": "mt_punct-advanced",
+      "type": "LANGUAGE",
+      "subject": "语文",
+      "domain": "句子与标点",
+      "name": "顿号、分号与书名号",
+      "description": "学习顿号用于并列词语、分号用于并列分句、书名号标明书名篇名，标点使用更规范更完整。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "列举水果时用顿号隔开",
+        "知道《西游记》外面要加书名号",
+        "分句并列时尝试用分号连接"
+      ],
+      "assessmentPrompt": "问{{name}}：「「苹果 香蕉 橘子」中间用什么号？《安徒生童话》怎么标？」他能写对吗？",
+      "standards": [
+        "chinese-2022:S2:BQ"
+      ],
+      "textbooks": [
+        "tongbian-chinese:3b"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_sent-fix",
+      "type": "META",
+      "subject": "语文",
+      "domain": "句子与标点",
+      "name": "修改病句",
+      "description": "了解成分残缺、重复啰嗦、搭配不当等常见问题，学习读一读、找一找、改一改的修改步骤。",
+      "gradeRangeStart": 4,
+      "gradeRangeEnd": 4,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能听出「我穿着一件外套和帽子」的问题",
+        "能删掉句子里重复多余的词",
+        "改完病句会再读一遍检查"
+      ],
+      "assessmentPrompt": "问{{name}}：「「我基本上全部写完了」哪里有问题？怎么改？」他能找出并改对吗？",
+      "standards": [
+        "chinese-2022:S2:BQ"
+      ],
+      "textbooks": [
+        "tongbian-chinese:4a"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_sent-compress",
+      "type": "PROCEDURAL",
+      "subject": "语文",
+      "domain": "句子与标点",
+      "name": "缩句与提取主干",
+      "description": "学习去掉修饰成分、保留句子主干，抓住谁做什么或什么怎么样，为提升概括能力打基础。",
+      "gradeRangeStart": 4,
+      "gradeRangeEnd": 4,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能把长定语句子缩成最短的主谓句",
+        "缩句后句子的原意没有改变",
+        "能说出自己是怎样找出主干的"
+      ],
+      "assessmentPrompt": "问{{name}}：「「美丽的蝴蝶在花丛中翩翩起舞」缩成最简的句子是什么？」他能缩对吗？",
+      "standards": [
+        "chinese-2022:S2:BQ"
+      ],
+      "textbooks": [
+        "tongbian-chinese:4a"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_read-aloud",
+      "type": "META",
+      "subject": "语文",
+      "domain": "阅读",
+      "name": "朗读",
+      "description": "学习用普通话正确流利地朗读，读准字音、不丢字加字，注意标点处的停顿，读出不同语气。",
+      "gradeRangeStart": 1,
+      "gradeRangeEnd": 1,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "朗读课文时字音准确、句子连贯",
+        "读到问号语气自然上扬",
+        "能按标点符号停够时间"
+      ],
+      "assessmentPrompt": "问{{name}}：「读一段课文给爸爸听，注意逗号句号的停顿。」他能读得流利有语气吗？",
+      "standards": [
+        "chinese-2022:S1:LR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:1a#课文",
+        "tongbian-chinese:1b#和大人一起读"
+      ],
+      "centrality": 0.0267
+    },
+    {
+      "id": "mt_read-silent",
+      "type": "META",
+      "subject": "语文",
+      "domain": "阅读",
+      "name": "默读",
+      "description": "练习不出声、不动唇地默读，边读边思考，逐步提高默读速度和理解程度，让阅读量慢慢扩大。",
+      "gradeRangeStart": 2,
+      "gradeRangeEnd": 2,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "默读时嘴唇不动、不出声音",
+        "能从头到尾默读完一篇短文",
+        "读完能说出文章大概讲了什么"
+      ],
+      "assessmentPrompt": "问{{name}}：「这篇小故事不出声读，读完告诉妈妈讲了什么。」他能默读后答上来吗？",
+      "standards": [
+        "chinese-2022:S1:LR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:2a"
+      ],
+      "centrality": 0.0374
+    },
+    {
+      "id": "mt_read-mark",
+      "type": "META",
+      "subject": "语文",
+      "domain": "阅读",
+      "name": "圈画关键词与批注",
+      "description": "学习一边读一边圈出关键词语，在书页空白处写下简短体会和疑问，让思考在书上留下痕迹。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "读书时手里拿笔圈出好词好句",
+        "能在旁边写下一两句自己的感受",
+        "再读时能凭批注想起当时的想法"
+      ],
+      "assessmentPrompt": "问{{name}}：「这篇课文你最欣赏哪句？圈出来，在旁边写一句为什么。」他会动笔写吗？",
+      "standards": [
+        "chinese-2022:S2:LR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:3a"
+      ],
+      "centrality": 0.0321
+    },
+    {
+      "id": "mt_read-predict",
+      "type": "META",
+      "subject": "语文",
+      "domain": "阅读",
+      "name": "预测与推想",
+      "description": "学会根据题目、插图和上文线索猜想故事发展，读完再回头验证，让阅读像猜谜一样有参与感。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "读故事前会根据题目猜一猜内容",
+        "能说出「接下来可能会……」并讲理由",
+        "读完会对照猜测说说差在哪里"
+      ],
+      "assessmentPrompt": "问{{name}}：「看到题目你先猜会发生什么？读完跟你猜的一样吗？」他能讲出依据吗？",
+      "standards": [
+        "chinese-2022:S2:LR",
+        "chinese-2022:S2:CR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:3a:u4"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_read-question",
+      "type": "META",
+      "subject": "语文",
+      "domain": "阅读",
+      "name": "提问策略",
+      "description": "学习从不同角度提出问题，分清能从文中找到答案的问题和需要动脑筋思考的问题，带着问题读。",
+      "gradeRangeStart": 4,
+      "gradeRangeEnd": 4,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能针对课文内容提出两三个问题",
+        "能区分哪题文中直接有答案",
+        "会筛选出最值得思考的问题"
+      ],
+      "assessmentPrompt": "问{{name}}：「这篇课文你能提出什么问题？哪个问题课文里没写答案？」他能分清吗？",
+      "standards": [
+        "chinese-2022:S2:CR",
+        "chinese-2022:S2:LR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:4a:u2"
+      ],
+      "centrality": 0.0321
+    },
+    {
+      "id": "mt_read-speed",
+      "type": "META",
+      "subject": "语文",
+      "domain": "阅读",
+      "name": "提高阅读速度",
+      "description": "学习连词成句地读、扩大视线范围、暂时跳过不影响理解的词句，在读懂的基础上把速度提上来。",
+      "gradeRangeStart": 5,
+      "gradeRangeEnd": 5,
+      "stage": "第三学段（5~6年级）",
+      "evidence": [
+        "读长课文时不再逐字点读",
+        "限时读完能答对主要内容题",
+        "能说出自己是用什么方法读快的"
+      ],
+      "assessmentPrompt": "问{{name}}：「这篇五百字的文章两分钟读完，能说出大意吗？」他能既快又读懂吗？",
+      "standards": [
+        "chinese-2022:S3:LR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:5a:u2"
+      ],
+      "centrality": 0.0267
+    },
+    {
+      "id": "mt_read-purpose",
+      "type": "META",
+      "subject": "语文",
+      "domain": "阅读",
+      "name": "有目的地阅读",
+      "description": "读书前先明确目的，据此选择浏览、精读或查找等读法，让阅读为解决生活和学习中的真实问题服务。",
+      "gradeRangeStart": 6,
+      "gradeRangeEnd": 6,
+      "stage": "第三学段（5~6年级）",
+      "evidence": [
+        "读书前能说出「我想了解什么」",
+        "会根据目的换着用浏览和细读",
+        "能从长文中快速找到需要的信息"
+      ],
+      "assessmentPrompt": "问{{name}}：「想了解大熊猫爱吃什么，这本书该从头细读还是挑着读？」他会选方法吗？",
+      "standards": [
+        "chinese-2022:S3:PR",
+        "chinese-2022:S3:LR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:6a:u3"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_read-ancient",
+      "type": "META",
+      "subject": "语文",
+      "domain": "阅读",
+      "name": "借助注释与插图理解古诗文",
+      "description": "学习把注释、插图和已有经验结合起来读古诗文，看懂诗句写的场景和情感，不依赖逐句翻译。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "读古诗会先看注释再读诗句",
+        "能借助插图说出诗里画的什么场景",
+        "能用自己的话讲讲诗句大意"
+      ],
+      "assessmentPrompt": "问{{name}}：「这首古诗的注释告诉了你什么？插图里画的是哪一句？」他能对上吗？",
+      "standards": [
+        "chinese-2022:S2:LR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:3a",
+        "tongbian-chinese:3a#课文"
+      ],
+      "centrality": 0.0107
+    },
+    {
+      "id": "mt_read-main",
+      "type": "META",
+      "subject": "语文",
+      "domain": "阅读",
+      "name": "把握文章的主要内容",
+      "description": "学习用串联段意、抓记叙要素等方法概括文章主要内容，抓住主干不遗漏重点，也不堆砌细节。",
+      "gradeRangeStart": 4,
+      "gradeRangeEnd": 4,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "读完故事能按起因经过结果讲一遍",
+        "概括时不加入自己的评论",
+        "能控制在一两句话说清主要内容"
+      ],
+      "assessmentPrompt": "问{{name}}：「这篇课文主要内容是什么？用一两句话讲讲。」他能概括完整吗？",
+      "standards": [
+        "chinese-2022:S2:PR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:4a"
+      ],
+      "centrality": 0.0321
+    },
+    {
+      "id": "mt_read-feel",
+      "type": "META",
+      "subject": "语文",
+      "domain": "阅读",
+      "name": "体会文章的思想感情",
+      "description": "通过有感情地朗读、抓关键语句和联系自身生活，走进作者的情感世界，说说自己受到的触动。",
+      "gradeRangeStart": 4,
+      "gradeRangeEnd": 4,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能找出表达情感的关键句并说明理由",
+        "朗读时语气随情感变化",
+        "能联系自己的经历谈体会"
+      ],
+      "assessmentPrompt": "问{{name}}：「作者写这件事想表达什么？你生活中有过类似感受吗？」他能说出触动吗？",
+      "standards": [
+        "chinese-2022:S2:LR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:4b"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_read-appreciate",
+      "type": "META",
+      "subject": "语文",
+      "domain": "阅读",
+      "name": "初步赏析语言表达",
+      "description": "学习发现课文语言的妙处，从用词、句式和修辞角度说说好在哪里，并试着在自己的习作中借鉴。",
+      "gradeRangeStart": 5,
+      "gradeRangeEnd": 5,
+      "stage": "第三学段（5~6年级）",
+      "evidence": [
+        "能说出一个句子好在哪里",
+        "能发现作者用词的特别之处",
+        "习作中会模仿课文的一种写法"
+      ],
+      "assessmentPrompt": "问{{name}}：「「探出头来」的「探」字换成「长」好不好？为什么？」他能品出区别吗？",
+      "standards": [
+        "chinese-2022:S3:LR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:5a"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_write-picture",
+      "type": "LANGUAGE",
+      "subject": "语文",
+      "domain": "习作",
+      "name": "看图写话",
+      "description": "学习按顺序观察图画，用完整通顺的话写清时间、人物和事情，给每幅图配上一两句像样的话。",
+      "gradeRangeStart": 1,
+      "gradeRangeEnd": 1,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能按顺序说出图上有什么",
+        "写的话有时间地点和人物",
+        "句子基本通顺，会用学过的标点"
+      ],
+      "assessmentPrompt": "问{{name}}：「图上都有谁？在什么地方做什么？用三句话写下来。」他能写完整吗？",
+      "standards": [
+        "chinese-2022:S1:LR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:1b"
+      ],
+      "centrality": 0.0267
+    },
+    {
+      "id": "mt_write-imitate",
+      "type": "LANGUAGE",
+      "subject": "语文",
+      "domain": "习作",
+      "name": "仿写与写话",
+      "description": "模仿课文的句式和段落结构练习写话，从一句到几句，把阅读中学到的表达用到自己的话里。",
+      "gradeRangeStart": 2,
+      "gradeRangeEnd": 2,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能照样子写出一句结构相同的句子",
+        "能把课文里的一个好词用进自己的话",
+        "写话从一句话写到三五句话"
+      ],
+      "assessmentPrompt": "问{{name}}：「课文说「白云像棉花糖」，照着样子写一句。」他能仿出比喻句吗？",
+      "standards": [
+        "chinese-2022:S1:LR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:2a",
+        "tongbian-chinese:2a#写话"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_write-diary",
+      "type": "LANGUAGE",
+      "subject": "语文",
+      "domain": "习作",
+      "name": "学写日记",
+      "description": "了解日记的格式，学会记下当天印象最深的事和自己的心里感受，养成每天动笔记录的习惯。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "写的日记有日期和天气",
+        "能记下一件当天发生的事",
+        "写出自己当时的心情或想法"
+      ],
+      "assessmentPrompt": "问{{name}}：「今天最开心的事是什么？按日记格式写一段，记得带上日期。」他能写规范吗？",
+      "standards": [
+        "chinese-2022:S2:PR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:3a:u2"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_write-observe",
+      "type": "LANGUAGE",
+      "subject": "语文",
+      "domain": "习作",
+      "name": "观察与把事物写清楚",
+      "description": "学习用眼看、耳听、鼻闻等多种感官观察事物，按一定顺序把特点写清楚，写出自己的发现。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能连续观察一种事物并记录变化",
+        "写事物能按从外到内的顺序",
+        "用到表示颜色形状声音的词"
+      ],
+      "assessmentPrompt": "问{{name}}：「连着三天观察绿豆芽，把变化写下来。」他能写出每天的不同吗？",
+      "standards": [
+        "chinese-2022:S2:LR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:3a:u5"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_write-imagine",
+      "type": "LANGUAGE",
+      "subject": "语文",
+      "domain": "习作",
+      "name": "想象作文",
+      "description": "展开大胆又合理的想象，编写童话故事或设想未来，让故事有起因、经过和结果，情节连贯。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能编出一个有开头结尾的故事",
+        "想象的情节符合角色特点",
+        "故事里有完整的经过不跳脱"
+      ],
+      "assessmentPrompt": "问{{name}}：「假如你会飞，会发生什么？编个故事讲给家人听。」他能讲出完整情节吗？",
+      "standards": [
+        "chinese-2022:S2:LR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:3a:u3"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_write-narrative",
+      "type": "LANGUAGE",
+      "subject": "语文",
+      "domain": "习作",
+      "name": "记叙文的六要素",
+      "description": "了解时间、地点、人物和事情的起因、经过、结果六要素，学习按顺序把一件事写清楚写完整。",
+      "gradeRangeStart": 4,
+      "gradeRangeEnd": 4,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "作文里能交代清楚六要素",
+        "经过部分写得最详细",
+        "段落按事情发展顺序排列"
+      ],
+      "assessmentPrompt": "问{{name}}：「这篇记事作文的时间地点人物、起因经过结果都全吗？」他能指出来吗？",
+      "standards": [
+        "chinese-2022:S2:LR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:4a:u5"
+      ],
+      "centrality": 0.0321
+    },
+    {
+      "id": "mt_write-person",
+      "type": "LANGUAGE",
+      "subject": "语文",
+      "domain": "习作",
+      "name": "人物描写",
+      "description": "学习通过外貌、语言、动作等描写表现人物特点，用具体贴切的事例写出人物的性格和品质。",
+      "gradeRangeStart": 4,
+      "gradeRangeEnd": 4,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能写出人物最有特点的外貌",
+        "用上人物说的话来表现性格",
+        "所选事例能支撑人物特点"
+      ],
+      "assessmentPrompt": "问{{name}}：「写爸爸爱读书，除了直接说，还能写哪个事例？」他能选对事例吗？",
+      "standards": [
+        "chinese-2022:S2:LR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:4b:u7"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_write-application",
+      "type": "LANGUAGE",
+      "subject": "语文",
+      "domain": "习作",
+      "name": "书信与应用文",
+      "description": "了解书信、留言条、通知等应用文的格式和用途，能根据对象和目的写出得体的实用短文。",
+      "gradeRangeStart": 4,
+      "gradeRangeEnd": 4,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "写信格式正确，称呼顶格写",
+        "留言条写清事由和时间",
+        "能根据对象选择恰当的语气"
+      ],
+      "assessmentPrompt": "问{{name}}：「给奶奶写封信，格式对吗？语气合适吗？」他能写规范吗？",
+      "standards": [
+        "chinese-2022:S2:PR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:4a:u7"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_write-revise",
+      "type": "META",
+      "subject": "语文",
+      "domain": "习作",
+      "name": "修改习作与互评",
+      "description": "学习写完后自己朗读修改，从字词、句子到内容逐层检查，也能有礼貌地指出同学作文的优点和建议。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "写完会出声读一遍再修改",
+        "能改出用词不当或标点错误",
+        "能说出同学习作的一个优点和一条建议"
+      ],
+      "assessmentPrompt": "问{{name}}：「把你的作文读一遍，听听哪里拗口，自己先改一处。」他能发现并改好吗？",
+      "standards": [
+        "chinese-2022:S2:LR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:3a"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_write-center",
+      "type": "LANGUAGE",
+      "subject": "语文",
+      "domain": "习作",
+      "name": "围绕中心意思写",
+      "description": "作文先想清楚中心，再围绕中心选择材料、安排详略，做到重点突出，不写与中心无关的内容。",
+      "gradeRangeStart": 6,
+      "gradeRangeEnd": 6,
+      "stage": "第三学段（5~6年级）",
+      "evidence": [
+        "动笔前能说出这篇要表达什么",
+        "所选事例都服务于一个中心",
+        "重点部分写得详细，其余简略"
+      ],
+      "assessmentPrompt": "问{{name}}：「这篇作文想表达什么？哪段最能说明它？」他能讲出中心吗？",
+      "standards": [
+        "chinese-2022:S3:LR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:6a:u5"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_write-summary",
+      "type": "LANGUAGE",
+      "subject": "语文",
+      "domain": "习作",
+      "name": "写作品梗概",
+      "description": "学习在读懂全书的基础上提炼主要情节，保留主干、删去细节，用连贯的语言写出作品梗概。",
+      "gradeRangeStart": 6,
+      "gradeRangeEnd": 6,
+      "stage": "第三学段（5~6年级）",
+      "evidence": [
+        "梗概保留了主要人物和关键情节",
+        "字数明显短于原著且语句连贯",
+        "没有加入自己的评论和感受"
+      ],
+      "assessmentPrompt": "问{{name}}：「刚读完的这本书主要讲了什么？写一段梗概。」他能抓住主要情节吗？",
+      "standards": [
+        "chinese-2022:S3:PR",
+        "chinese-2022:S3:WB"
+      ],
+      "textbooks": [
+        "tongbian-chinese:6b:u2"
+      ],
+      "centrality": 0.0267
+    },
+    {
+      "id": "mt_oral-listen",
+      "type": "META",
+      "subject": "语文",
+      "domain": "口语交际",
+      "name": "听故事、讲故事",
+      "description": "学会认真听别人讲故事，记住主要内容，再清楚大方地讲给别人听，声音响亮、语句完整。",
+      "gradeRangeStart": 1,
+      "gradeRangeEnd": 1,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "听故事能记住人物和情节",
+        "讲故事时看着对方、声音适中",
+        "能按顺序讲完不遗漏关键情节"
+      ],
+      "assessmentPrompt": "问{{name}}：「刚讲的故事里都有谁？发生了什么？你来讲给奶奶听。」他能复述出来吗？",
+      "standards": [
+        "chinese-2022:S1:PR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:1a#口语交际"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_oral-discuss",
+      "type": "META",
+      "subject": "语文",
+      "domain": "口语交际",
+      "name": "讨论与发表意见",
+      "description": "学习围绕一个话题清楚地说出自己的想法，认真听别人发言后再补充，做到不打断、说清理由。",
+      "gradeRangeStart": 2,
+      "gradeRangeEnd": 2,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "讨论时能说出自己的观点",
+        "能回应别人的不同意见",
+        "发言时用上「我认为」「因为」等说法"
+      ],
+      "assessmentPrompt": "问{{name}}：「春游去哪儿？说说你的想法和理由。」他能说清观点吗？",
+      "standards": [
+        "chinese-2022:S1:PR",
+        "chinese-2022:S1:CR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:2a#口语交际"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_oral-retell",
+      "type": "META",
+      "subject": "语文",
+      "domain": "口语交际",
+      "name": "转述与复述",
+      "description": "学习把听到的内容用自己的话转述出来，注意人称转换和要点完整，把长话说得简短清楚。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能复述故事的主要情节",
+        "转述时人称转换正确",
+        "转述时抓住要点不啰嗦"
+      ],
+      "assessmentPrompt": "问{{name}}：「老师通知明天带绘画工具，回家怎么跟爸爸说？」他能转述清楚吗？",
+      "standards": [
+        "chinese-2022:S2:PR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:3a#口语交际"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_oral-debate",
+      "type": "META",
+      "subject": "语文",
+      "domain": "口语交际",
+      "name": "辩论与演讲",
+      "description": "学习围绕话题表明立场、列举理由，听出对方观点的漏洞再有礼貌地反驳，当众演讲大方有条理。",
+      "gradeRangeStart": 5,
+      "gradeRangeEnd": 5,
+      "stage": "第三学段（5~6年级）",
+      "evidence": [
+        "能说出自己观点的两三条理由",
+        "能针对对方发言提出不同看法",
+        "演讲时声音响亮、条理清楚"
+      ],
+      "assessmentPrompt": "问{{name}}：「「小学生该不该玩手机」你怎么看？说三条理由。」他能自圆其说吗？",
+      "standards": [
+        "chinese-2022:S3:CR",
+        "chinese-2022:S3:PR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:5a#口语交际"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_poem-recite",
+      "type": "META",
+      "subject": "语文",
+      "domain": "古诗文与整本书阅读",
+      "name": "古诗文的背诵与积累",
+      "description": "在诵读中背诵浅近的古诗和儿歌，不急于求成，读得多了自然成诵，感受语言文字的韵律之美。",
+      "gradeRangeStart": 1,
+      "gradeRangeEnd": 1,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能背诵十首以上学过的古诗",
+        "背诵时节奏自然、尾字押韵",
+        "能说出最喜欢的一首为什么喜欢"
+      ],
+      "assessmentPrompt": "问{{name}}：「学过的古诗背两首给爸爸听，注意节奏。」他能有节奏地背出来吗？",
+      "standards": [
+        "chinese-2022:S1:BQ",
+        "chinese-2022:S1:LR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:1a"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_poem-understand",
+      "type": "META",
+      "subject": "语文",
+      "domain": "古诗文与整本书阅读",
+      "name": "借助注释理解古诗大意",
+      "description": "在背诵积累的基础上学习借助注释理解古诗大意，能用自己的话说出诗句写的景物和其中情感。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能结合注释讲出诗句的意思",
+        "能说出诗里写了哪些景物",
+        "能体会诗人表达的感情"
+      ],
+      "assessmentPrompt": "问{{name}}：「这首古诗哪句看不懂？看看注释怎么说的，讲讲整句的意思。」他能借助注释讲对吗？",
+      "standards": [
+        "chinese-2022:S2:LR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:3a"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_book-reading",
+      "type": "META",
+      "subject": "语文",
+      "domain": "古诗文与整本书阅读",
+      "name": "整本书阅读",
+      "description": "从短篇阅读过渡到整本书，制定简单的阅读计划，坚持每天读一点，读完和家人朋友分享感受。",
+      "gradeRangeStart": 2,
+      "gradeRangeEnd": 2,
+      "stage": "第一学段（1~2年级）",
+      "evidence": [
+        "能按计划坚持读完一本注音读物",
+        "读的时候记住前面的情节",
+        "读完能跟家人讲讲书里的故事"
+      ],
+      "assessmentPrompt": "问{{name}}：「这本童话读到哪里了？计划一周读完，今天读了吗？」他能按计划读完吗？",
+      "standards": [
+        "chinese-2022:S1:WB"
+      ],
+      "textbooks": [
+        "tongbian-chinese:2a#快乐读书吧",
+        "tongbian-chinese:2b#快乐读书吧"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_book-classic",
+      "type": "META",
+      "subject": "语文",
+      "domain": "古诗文与整本书阅读",
+      "name": "名著与经典阅读",
+      "description": "阅读中外名著和经典作品，学习做读书笔记、写阅读感受，在经典中认识更广阔的世界和人生。",
+      "gradeRangeStart": 5,
+      "gradeRangeEnd": 5,
+      "stage": "第三学段（5~6年级）",
+      "evidence": [
+        "能读完一本长篇名著并说出主要内容",
+        "笔记里有好句摘抄和自己的感想",
+        "能比较两个人物形象的不同"
+      ],
+      "assessmentPrompt": "问{{name}}：「这本名著里你最喜欢哪个人物？为什么？写两句笔记。」他能写出感受吗？",
+      "standards": [
+        "chinese-2022:S3:WB"
+      ],
+      "textbooks": [
+        "tongbian-chinese:5a#快乐读书吧",
+        "tongbian-chinese:5b#快乐读书吧"
+      ],
+      "centrality": 0.0321
+    },
+    {
+      "id": "mt_en-letter-name",
+      "type": "LANGUAGE",
+      "subject": "英语",
+      "domain": "字母与语音",
+      "name": "字母的名称与认读",
+      "description": "认识26个英文字母的大小写，知道每个字母的名称和顺序，能按顺序背诵字母表，建立字母与读音的对应意识。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "一级（3~4年级）",
+      "evidence": [
+        "能按顺序认读26个英文字母的大小写",
+        "能听读音找出对应的字母"
+      ],
+      "assessmentPrompt": "问{{name}}：「字母表从A到Z背一遍，再随便指几个字母说说名字」。他能做到吗？",
+      "standards": [
+        "english-2022:L1:LK"
+      ],
+      "textbooks": [
+        "pep-english:3a:u1"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_en-letter-write",
+      "type": "PROCEDURAL",
+      "subject": "英语",
+      "domain": "字母与语音",
+      "name": "字母的书写规范",
+      "description": "学习26个字母在四线三格中的占位和笔顺，做到大小写书写工整规范，为抄写单词和句子打好基础。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "一级（3~4年级）",
+      "evidence": [
+        "能在四线三格中规范写出字母大小写",
+        "能按正确笔顺书写易混淆字母"
+      ],
+      "assessmentPrompt": "问{{name}}：「在本子上按笔顺写一遍大写B和小写b，再看看占格对不对」。他写得规范吗？",
+      "standards": [
+        "english-2022:L1:LK"
+      ],
+      "textbooks": [
+        "pep-english:3a:u1"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_en-phonics",
+      "type": "LANGUAGE",
+      "subject": "英语",
+      "domain": "字母与语音",
+      "name": "字母音与自然拼读启蒙",
+      "description": "在字母名称音基础上学习字母在单词中的常见发音，尝试把音素拼合成简单单词，迈出自主拼读第一步。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "一级（3~4年级）",
+      "evidence": [
+        "能说出常见字母在单词里的发音",
+        "能拼读出cat、pig这类简单单词"
+      ],
+      "assessmentPrompt": "问{{name}}：「看到c-a-t这个单词，能不能一个音一个音拼出来」。他能拼读吗？",
+      "standards": [
+        "english-2022:L1:LK"
+      ],
+      "textbooks": [
+        "pep-english:3a:u1"
+      ],
+      "centrality": 0.0481
+    },
+    {
+      "id": "mt_en-spelling-rules",
+      "type": "LANGUAGE",
+      "subject": "英语",
+      "domain": "字母与语音",
+      "name": "常见字母组合的发音规则",
+      "description": "归纳常见字母组合的发音，接触重音意识，能根据规则尝试读出生词，逐步提高识记单词的效率。",
+      "gradeRangeStart": 4,
+      "gradeRangeEnd": 4,
+      "stage": "一级（3~4年级）",
+      "evidence": [
+        "能读出含有常见字母组合的单词",
+        "能借助发音规则试读没学过的生词"
+      ],
+      "assessmentPrompt": "问{{name}}：「看到tree、rain这样的词，能不能用学过的组合读音规则读出来」。他能读对吗？",
+      "standards": [
+        "english-2022:L1:LK"
+      ],
+      "textbooks": [
+        "pep-english:4a"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_en-num-color",
+      "type": "LANGUAGE",
+      "subject": "英语",
+      "domain": "词汇",
+      "name": "数字与颜色词汇",
+      "description": "学习数字和颜色的英文名称，能在数数、问答年龄、描述物品颜色等日常情境中听说认读这些基础词汇。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "一级（3~4年级）",
+      "evidence": [
+        "能说出6种以上颜色的英文名称",
+        "能数出并说出1到10的英文数字"
+      ],
+      "assessmentPrompt": "问{{name}}：「指着红色的苹果说red，再数数几本书用到one到ten」。他说得对吗？",
+      "standards": [
+        "english-2022:L1:LK"
+      ],
+      "textbooks": [
+        "pep-english:3a:u1"
+      ],
+      "centrality": 0.0267
+    },
+    {
+      "id": "mt_en-body-stationery",
+      "type": "LANGUAGE",
+      "subject": "英语",
+      "domain": "词汇",
+      "name": "身体部位与文具词汇",
+      "description": "学习眼睛、鼻子等身体部位和钢笔、尺子等文具的英文名称，能在指认物品、谈论学习用品时正确使用。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "一级（3~4年级）",
+      "evidence": [
+        "能指认说出6种身体部位的英文名称",
+        "能说出文具盒里物品的英文名称"
+      ],
+      "assessmentPrompt": "问{{name}}：「指指自己的眼睛、鼻子说英文，再拿起铅笔说说它叫什么」。他都认识吗？",
+      "standards": [
+        "english-2022:L1:LK"
+      ],
+      "textbooks": [
+        "pep-english:3a:u3"
+      ],
+      "centrality": 0.0481
+    },
+    {
+      "id": "mt_en-family",
+      "type": "LANGUAGE",
+      "subject": "英语",
+      "domain": "词汇",
+      "name": "家庭成员词汇",
+      "description": "学习爸爸妈妈、兄弟姐妹等家庭成员的英文称呼，能介绍自己的家庭，了解中外家庭称谓表达的差异。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "一级（3~4年级）",
+      "evidence": [
+        "能用英文介绍自己的家庭成员",
+        "能听懂并说出长辈亲属的称谓"
+      ],
+      "assessmentPrompt": "问{{name}}：「拿一张全家福，用英文介绍上面每位家人」。他能介绍吗？",
+      "standards": [
+        "english-2022:L1:LK"
+      ],
+      "textbooks": [
+        "pep-english:3b:u2"
+      ],
+      "centrality": 0.0374
+    },
+    {
+      "id": "mt_en-animals",
+      "type": "LANGUAGE",
+      "subject": "英语",
+      "domain": "词汇",
+      "name": "动物词汇",
+      "description": "学习常见动物的英文名称，能用简单句描述动物的样子，在观察和谈论中培养热爱自然的兴趣。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "一级（3~4年级）",
+      "evidence": [
+        "能说出8种常见动物的英文名称",
+        "能用简单句描述一种动物的特征"
+      ],
+      "assessmentPrompt": "问{{name}}：「看到熊猫的图片，能不能说出panda并形容一下它」。他能表达吗？",
+      "standards": [
+        "english-2022:L1:LK"
+      ],
+      "textbooks": [
+        "pep-english:3a:u4"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_en-food",
+      "type": "LANGUAGE",
+      "subject": "英语",
+      "domain": "词汇",
+      "name": "食物与饮料词汇",
+      "description": "学习面包、牛奶、米饭等食物饮料的英文名称，能在点餐、谈论一日三餐的情境中听说认读这些词汇。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "一级（3~4年级）",
+      "evidence": [
+        "能说出6种食物和饮料的英文名称",
+        "能用简单的句子表达想吃的食物"
+      ],
+      "assessmentPrompt": "问{{name}}：「假装开午饭，用英文说出想吃的东西」。他能说出几样？",
+      "standards": [
+        "english-2022:L1:LK"
+      ],
+      "textbooks": [
+        "pep-english:3a:u5"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_en-weather",
+      "type": "LANGUAGE",
+      "subject": "英语",
+      "domain": "词汇",
+      "name": "天气词汇",
+      "description": "学习晴雨冷暖等天气和季节的英文表达，能谈论当地天气，能根据天气选择合适的衣着和活动。",
+      "gradeRangeStart": 4,
+      "gradeRangeEnd": 4,
+      "stage": "一级（3~4年级）",
+      "evidence": [
+        "能说出4种以上天气状况的英文名称",
+        "能用简单的句子描述今天天气"
+      ],
+      "assessmentPrompt": "问{{name}}：「看看窗外，用英文说说今天是什么天气」。他能说出来吗？",
+      "standards": [
+        "english-2022:L1:LK"
+      ],
+      "textbooks": [
+        "pep-english:4b:u3"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_en-clothes",
+      "type": "LANGUAGE",
+      "subject": "英语",
+      "domain": "词汇",
+      "name": "服装词汇",
+      "description": "学习帽子、外套、裙子等服装的英文名称，能描述自己和他人的穿着，谈论衣物所属和购买的话题。",
+      "gradeRangeStart": 4,
+      "gradeRangeEnd": 4,
+      "stage": "一级（3~4年级）",
+      "evidence": [
+        "能说出5件自己衣物的英文名称",
+        "能描述家人今天穿了什么"
+      ],
+      "assessmentPrompt": "问{{name}}：「看看自己和爸爸今天穿的衣服，用英文各说一件」。他说得出吗？",
+      "standards": [
+        "english-2022:L1:LK"
+      ],
+      "textbooks": [
+        "pep-english:4b:u5"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_en-jobs",
+      "type": "LANGUAGE",
+      "subject": "英语",
+      "domain": "词汇",
+      "name": "职业词汇",
+      "description": "学习医生、司机、教师等常见职业的英文名称，能谈论家人和他人的职业，了解不同职业的劳动内容。",
+      "gradeRangeStart": 4,
+      "gradeRangeEnd": 4,
+      "stage": "一级（3~4年级）",
+      "evidence": [
+        "能说出5种常见职业的英文名称",
+        "能介绍家人从事的职业"
+      ],
+      "assessmentPrompt": "问{{name}}：「问问爸爸妈妈是做什么工作的，用英文说说他们的职业」。他知道吗？",
+      "standards": [
+        "english-2022:L1:LK"
+      ],
+      "textbooks": [
+        "pep-english:4a:u6"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_en-places",
+      "type": "LANGUAGE",
+      "subject": "英语",
+      "domain": "词汇",
+      "name": "学校与场所词汇",
+      "description": "学习教室、图书馆、操场等学校和社区场所的英文名称，能说出场所的位置和功能，为问路指路打基础。",
+      "gradeRangeStart": 4,
+      "gradeRangeEnd": 4,
+      "stage": "一级（3~4年级）",
+      "evidence": [
+        "能说出学校5个场所的英文名称",
+        "能说出图书馆、超市等社区场所的英文"
+      ],
+      "assessmentPrompt": "问{{name}}：「从校门走到教室，用英文说说路过哪些场所」。他说得出来吗？",
+      "standards": [
+        "english-2022:L1:LK"
+      ],
+      "textbooks": [
+        "pep-english:4a:u1"
+      ],
+      "centrality": 0.0267
+    },
+    {
+      "id": "mt_en-activities",
+      "type": "LANGUAGE",
+      "subject": "英语",
+      "domain": "词汇",
+      "name": "日常活动与爱好短语",
+      "description": "学习踢球、看书、看电视等日常活动和爱好的短语，能谈论课余生活，为描述日常作息积累动词短语。",
+      "gradeRangeStart": 4,
+      "gradeRangeEnd": 4,
+      "stage": "一级（3~4年级）",
+      "evidence": [
+        "能说出5个日常活动的英文短语",
+        "能谈论自己喜欢的一项爱好"
+      ],
+      "assessmentPrompt": "问{{name}}：「放学后通常做什么？用英文说出三件事」。他能说出来吗？",
+      "standards": [
+        "english-2022:L1:LK"
+      ],
+      "textbooks": [
+        "pep-english:4a:u4"
+      ],
+      "centrality": 0.0481
+    },
+    {
+      "id": "mt_en-transport",
+      "type": "LANGUAGE",
+      "subject": "英语",
+      "domain": "词汇",
+      "name": "交通方式与问路词汇",
+      "description": "学习公交、地铁、自行车等交通工具和街道、路口等问路常用词，能谈论出行方式，听懂简单路线指引。",
+      "gradeRangeStart": 5,
+      "gradeRangeEnd": 5,
+      "stage": "二级（5~6年级）",
+      "evidence": [
+        "能说出4种交通工具的英文名称",
+        "能听懂并说出左转右转等指路用语"
+      ],
+      "assessmentPrompt": "问{{name}}：「从家到学校怎么走？用英文说说坐什么车、在哪儿转弯」。他能讲清楚吗？",
+      "standards": [
+        "english-2022:L2:LK"
+      ],
+      "textbooks": [
+        "pep-english:5a:u2"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_en-demonstratives",
+      "type": "LANGUAGE",
+      "subject": "英语",
+      "domain": "语法",
+      "name": "指示代词",
+      "description": "学习这个、那个、这些、那些的英文表达，能用指示代词指认近处和远处的人或物，说对单复数形式。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "一级（3~4年级）",
+      "evidence": [
+        "能用this、that指认近处和远处的物品",
+        "能区分these和those所指标物的多少"
+      ],
+      "assessmentPrompt": "问{{name}}：「指着近处的杯子说this cup，再指着远处的树说that tree」。他用对了吗？",
+      "standards": [
+        "english-2022:L1:LK"
+      ],
+      "textbooks": [
+        "pep-english:3a:u3"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_en-pronouns",
+      "type": "LANGUAGE",
+      "subject": "英语",
+      "domain": "语法",
+      "name": "人称代词与物主代词",
+      "description": "学习你我他等人称代词和我的、你的等物主代词，能在介绍家人、谈论物品所属时正确选择代词形式。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "一级（3~4年级）",
+      "evidence": [
+        "能正确使用he、she谈论家人",
+        "能用my、your说明物品归属"
+      ],
+      "assessmentPrompt": "问{{name}}：「介绍妹妹该用she还是he？说这是我的书包该用哪个词」。他用对了吗？",
+      "standards": [
+        "english-2022:L1:LK"
+      ],
+      "textbooks": [
+        "pep-english:3b:u2"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_en-be-verb",
+      "type": "LANGUAGE",
+      "subject": "英语",
+      "domain": "语法",
+      "name": "be动词与名词单复数",
+      "description": "学习be动词与主语人称的搭配，理解名词单复数的变化，能用正确句式描述人或事物的特征。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "一级（3~4年级）",
+      "evidence": [
+        "能按主语选对be动词的三种形式",
+        "能说出apples这类名词的复数形式"
+      ],
+      "assessmentPrompt": "问{{name}}：「说说I、he、they后面分别接哪个be动词，再把一个苹果变成复数」。他说得对吗？",
+      "standards": [
+        "english-2022:L1:LK"
+      ],
+      "textbooks": [
+        "pep-english:3b:u3"
+      ],
+      "centrality": 0.0588
+    },
+    {
+      "id": "mt_en-yes-no-questions",
+      "type": "LANGUAGE",
+      "subject": "英语",
+      "domain": "语法",
+      "name": "一般疑问句与肯否定回答",
+      "description": "学习用be动词构成一般疑问句，能用肯定和否定方式回答，在猜测、确认的日常情境中开展简单问答。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "一级（3~4年级）",
+      "evidence": [
+        "能读正确Is it a cat这类问句",
+        "能用Yes和No做出肯定否定回答"
+      ],
+      "assessmentPrompt": "问{{name}}：「蒙眼猜动物，用Is it a...提问，再用yes或no回答」。他会问答吗？",
+      "standards": [
+        "english-2022:L1:LK"
+      ],
+      "textbooks": [
+        "pep-english:3a:u4"
+      ],
+      "centrality": 0.0267
+    },
+    {
+      "id": "mt_en-wh-questions",
+      "type": "LANGUAGE",
+      "subject": "英语",
+      "domain": "语法",
+      "name": "特殊疑问句",
+      "description": "学习疑问词引导的特殊疑问句，能询问人的身份、姓名和所在地点，听懂问题并作出简单回答。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "一级（3~4年级）",
+      "evidence": [
+        "能用Who's that询问对方是谁",
+        "能回答Where are you from这类问题"
+      ],
+      "assessmentPrompt": "问{{name}}：「新同学来了，用英文问问他叫什么、来自哪里」。他会问吗？",
+      "standards": [
+        "english-2022:L1:LK"
+      ],
+      "textbooks": [
+        "pep-english:3b:u1"
+      ],
+      "centrality": 0.0267
+    },
+    {
+      "id": "mt_en-prepositions",
+      "type": "LANGUAGE",
+      "subject": "英语",
+      "domain": "语法",
+      "name": "方位介词",
+      "description": "学习表示位置关系的方位介词，能描述物品在桌上、盒子里等位置，听懂按方位摆放物品的指令。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "一级（3~4年级）",
+      "evidence": [
+        "能用in、on、under描述物品位置",
+        "能听懂把物品放到某处的指令"
+      ],
+      "assessmentPrompt": "问{{name}}：「把书放在椅子下面，用英文说说书现在在哪里」。他说对了吗？",
+      "standards": [
+        "english-2022:L1:LK"
+      ],
+      "textbooks": [
+        "pep-english:3a:u4"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_en-present-simple",
+      "type": "LANGUAGE",
+      "subject": "英语",
+      "domain": "语法",
+      "name": "一般现在时与第三人称单数",
+      "description": "学习一般现在时表达习惯和常态，掌握动词第三人称单数的变化，能描述日常作息并询问他人的生活规律。",
+      "gradeRangeStart": 5,
+      "gradeRangeEnd": 5,
+      "stage": "二级（5~6年级）",
+      "evidence": [
+        "能正确使用动词的三单形式造句",
+        "能描述自己每天的生活安排"
+      ],
+      "assessmentPrompt": "问{{name}}：「用英文说说爸爸每天几点起床，注意动词要不要变化」。他说对了吗？",
+      "standards": [
+        "english-2022:L2:LK"
+      ],
+      "textbooks": [
+        "pep-english:5a:u1"
+      ],
+      "centrality": 0.0374
+    },
+    {
+      "id": "mt_en-progressive",
+      "type": "LANGUAGE",
+      "subject": "英语",
+      "domain": "语法",
+      "name": "现在进行时",
+      "description": "学习现在进行时的句型结构，能描述此时此刻正在发生的动作，区分正在做和经常做的不同。",
+      "gradeRangeStart": 5,
+      "gradeRangeEnd": 5,
+      "stage": "二级（5~6年级）",
+      "evidence": [
+        "能用She is reading描述正在做的事",
+        "能区分正在做和经常做的表达差别"
+      ],
+      "assessmentPrompt": "问{{name}}：「看看妈妈正在做什么，用英文说一句现在正在进行的句子」。他说得对吗？",
+      "standards": [
+        "english-2022:L2:LK"
+      ],
+      "textbooks": [
+        "pep-english:5b:u6"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_en-going-to",
+      "type": "LANGUAGE",
+      "subject": "英语",
+      "domain": "语法",
+      "name": "一般将来时",
+      "description": "学习一般将来时的基本结构，能表达自己的计划和打算，谈论周末和假期的安排，并询问他人的出行计划。",
+      "gradeRangeStart": 6,
+      "gradeRangeEnd": 6,
+      "stage": "二级（5~6年级）",
+      "evidence": [
+        "能用打算做某事说出自己的计划",
+        "能询问别人将要做什么"
+      ],
+      "assessmentPrompt": "问{{name}}：「用英文说说周末打算做什么，再问问家人有什么计划」。他会表达吗？",
+      "standards": [
+        "english-2022:L2:LK"
+      ],
+      "textbooks": [
+        "pep-english:6a:u3"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_en-past-tense",
+      "type": "LANGUAGE",
+      "subject": "英语",
+      "domain": "语法",
+      "name": "一般过去时",
+      "description": "学习动词过去式的变化和was、were的用法，能讲述已经发生的事情，区分现在和过去的不同表达。",
+      "gradeRangeStart": 6,
+      "gradeRangeEnd": 6,
+      "stage": "二级（5~6年级）",
+      "evidence": [
+        "能正确说出常见动词的过去式",
+        "能讲述上周末做过的一件事"
+      ],
+      "assessmentPrompt": "问{{name}}：「用英文讲讲昨天做了什么，说说动词该用什么形式」。他用对了吗？",
+      "standards": [
+        "english-2022:L2:LK"
+      ],
+      "textbooks": [
+        "pep-english:6b:u2"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_en-comparatives",
+      "type": "LANGUAGE",
+      "subject": "英语",
+      "domain": "语法",
+      "name": "形容词比较级",
+      "description": "学习形容词比较级的变化和than的用法，能比较两个人或事物的高矮、胖瘦、长短等差异并说明理由。",
+      "gradeRangeStart": 6,
+      "gradeRangeEnd": 6,
+      "stage": "二级（5~6年级）",
+      "evidence": [
+        "能正确使用形容词的比较级形式",
+        "能说出两人高矮比较的完整句子"
+      ],
+      "assessmentPrompt": "问{{name}}：「比比你和哥哥谁高，用英文说一句带比较级的句子」。他说得对吗？",
+      "standards": [
+        "english-2022:L2:LK"
+      ],
+      "textbooks": [
+        "pep-english:6b:u1"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_en-greetings",
+      "type": "LANGUAGE",
+      "subject": "英语",
+      "domain": "听说",
+      "name": "问候与自我介绍",
+      "description": "学习见面问候、道别、自我介绍的基本表达，能主动用英语打招呼，说出自己的姓名、年龄等基本情况。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "一级（3~4年级）",
+      "evidence": [
+        "能主动用英语跟人打招呼道别",
+        "能用简单的句子介绍名字和年龄"
+      ],
+      "assessmentPrompt": "问{{name}}：「见到新朋友，用英文问候并介绍自己」。他能做到吗？",
+      "standards": [
+        "english-2022:L1:PS"
+      ],
+      "textbooks": [
+        "pep-english:3a:u1"
+      ],
+      "centrality": 0.0107
+    },
+    {
+      "id": "mt_en-listening",
+      "type": "META",
+      "subject": "英语",
+      "domain": "听说",
+      "name": "听指令与获取关键信息",
+      "description": "培养专注倾听的习惯，能听懂课堂指令和简短对话，抓住数字、颜色等关键信息，边听边做出反应。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "一级（3~4年级）",
+      "evidence": [
+        "能听懂并执行简单的动作指令",
+        "能听出对话中的数字和颜色信息"
+      ],
+      "assessmentPrompt": "问{{name}}：「用英语说三条动作指令，看他能不能只听一遍就做对」。他能做到吗？",
+      "standards": [
+        "english-2022:L1:ST"
+      ],
+      "textbooks": [
+        "pep-english:3a"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_en-speaking-routine",
+      "type": "LANGUAGE",
+      "subject": "英语",
+      "domain": "听说",
+      "name": "日常话题的口头表达",
+      "description": "能围绕学校生活、家庭、爱好等日常话题进行简单交流，会提问也会回答，做到声音清楚、大胆开口。",
+      "gradeRangeStart": 4,
+      "gradeRangeEnd": 4,
+      "stage": "一级（3~4年级）",
+      "evidence": [
+        "能就日常话题连续说出三五句话",
+        "能在对话中主动提出一个问题"
+      ],
+      "assessmentPrompt": "问{{name}}：「用英文聊聊他的一天，看能不能说上三五句」。他说得流畅吗？",
+      "standards": [
+        "english-2022:L1:PS"
+      ],
+      "textbooks": [
+        "pep-english:4a"
+      ],
+      "centrality": 0.0321
+    },
+    {
+      "id": "mt_en-describing",
+      "type": "LANGUAGE",
+      "subject": "英语",
+      "domain": "听说",
+      "name": "连贯描述人与事物",
+      "description": "能按一定顺序连贯描述人物的外貌性格和事物的特征，语句之间有连接，别人不需追问就能听明白。",
+      "gradeRangeStart": 5,
+      "gradeRangeEnd": 5,
+      "stage": "二级（5~6年级）",
+      "evidence": [
+        "能连贯描述一位老师的长相和性格",
+        "能按顺序描述自己的房间摆设"
+      ],
+      "assessmentPrompt": "问{{name}}：「用英文讲讲他最好的朋友长什么样、性格如何，说四五句」。他讲得清楚吗？",
+      "standards": [
+        "english-2022:L2:PS"
+      ],
+      "textbooks": [
+        "pep-english:5a:u1"
+      ],
+      "centrality": 0.0267
+    },
+    {
+      "id": "mt_en-copying",
+      "type": "PROCEDURAL",
+      "subject": "英语",
+      "domain": "读写",
+      "name": "抄写与仿写句子",
+      "description": "能按规范抄写单词和句子，注意字母占格、词间距和标点，通过仿写基本句型巩固书写和句式的掌握。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "一级（3~4年级）",
+      "evidence": [
+        "能抄写句子做到字母规范间距匀称",
+        "能仿照例句写出一个新句子"
+      ],
+      "assessmentPrompt": "问{{name}}：「照着例句抄一遍，再仿照样子自己写一句」。他写得规范吗？",
+      "standards": [
+        "english-2022:L1:LK"
+      ],
+      "textbooks": [
+        "pep-english:3a:u1"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_en-reading-pictures",
+      "type": "META",
+      "subject": "英语",
+      "domain": "读写",
+      "name": "图文匹配与阅读理解",
+      "description": "能借助图画和上下文理解简单图文材料，完成配对、判断等阅读任务，读懂配图小故事的大意。",
+      "gradeRangeStart": 3,
+      "gradeRangeEnd": 3,
+      "stage": "一级（3~4年级）",
+      "evidence": [
+        "能把图片和对应的英文句子配对",
+        "能看懂配图小故事讲了什么"
+      ],
+      "assessmentPrompt": "问{{name}}：「看一幅配图短文，说说图里是谁、在做什么」。他读懂了吗？",
+      "standards": [
+        "english-2022:L1:ST"
+      ],
+      "textbooks": [
+        "pep-english:3a:u3"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_en-guessing-words",
+      "type": "META",
+      "subject": "英语",
+      "domain": "读写",
+      "name": "借助上下文与图片猜词义",
+      "description": "遇到不认识的单词时，能借助上下文情节、插图和生活经验猜测词义，减少一遇生词就查词典的依赖。",
+      "gradeRangeStart": 4,
+      "gradeRangeEnd": 4,
+      "stage": "一级（3~4年级）",
+      "evidence": [
+        "能借助插图猜出故事中生词的意思",
+        "能联系上下文说出生词的大致含义"
+      ],
+      "assessmentPrompt": "问{{name}}：「读一小段英文，问他某个生词可能是什么意思」。他会猜吗？",
+      "standards": [
+        "english-2022:L1:ST"
+      ],
+      "textbooks": [
+        "pep-english:4a"
+      ],
+      "centrality": 0.0267
+    },
+    {
+      "id": "mt_en-writing-short",
+      "type": "LANGUAGE",
+      "subject": "英语",
+      "domain": "读写",
+      "name": "写几句话介绍日常生活",
+      "description": "能围绕日常生活写出意思连贯的几句话，注意句子开头大写和句末标点，写后通读检查并改正错误。",
+      "gradeRangeStart": 4,
+      "gradeRangeEnd": 4,
+      "stage": "一级（3~4年级）",
+      "evidence": [
+        "能写出三五句话介绍自己的一天",
+        "能做到句首大写句末有标点"
+      ],
+      "assessmentPrompt": "问{{name}}：「用英文写三句话介绍今天做了什么，看看标点和大小写」。他写得好吗？",
+      "standards": [
+        "english-2022:L1:PS"
+      ],
+      "textbooks": [
+        "pep-english:4b:u2"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_en-writing-passage",
+      "type": "LANGUAGE",
+      "subject": "英语",
+      "domain": "读写",
+      "name": "写小短文",
+      "description": "能围绕一个话题写成有开头有结尾的小短文，句子之间用简单词语连接，能根据要点增删内容、修改草稿。",
+      "gradeRangeStart": 5,
+      "gradeRangeEnd": 5,
+      "stage": "二级（5~6年级）",
+      "evidence": [
+        "能写出五句以上的话题小短文",
+        "能用连接词把句子连成一段话"
+      ],
+      "assessmentPrompt": "问{{name}}：「以我的周末为题写一小段英文，看看有没有开头结尾和连接」。他写成了吗？",
+      "standards": [
+        "english-2022:L2:PS"
+      ],
+      "textbooks": [
+        "pep-english:5a:u2"
+      ],
+      "centrality": 0.016
+    },
+    {
+      "id": "mt_en-culture",
+      "type": "META",
+      "subject": "英语",
+      "domain": "文化与学习策略",
+      "name": "中外节日与文化差异",
+      "description": "了解中外主要节日的名称和习俗，比较饮食、礼仪等方面的文化差异，养成尊重不同文化的交际意识。",
+      "gradeRangeStart": 5,
+      "gradeRangeEnd": 5,
+      "stage": "二级（5~6年级）",
+      "evidence": [
+        "能说出中外各一个节日的英文名称",
+        "能比较出两国过节习俗的一处不同"
+      ],
+      "assessmentPrompt": "问{{name}}：「春节和圣诞节各有什么不一样？用英文说说一处区别」。他知道吗？",
+      "standards": [
+        "english-2022:L2:PSOC"
+      ],
+      "textbooks": [
+        "pep-english:5a"
+      ],
+      "centrality": 0.0214
+    },
+    {
+      "id": "mt_en-learning-strategies",
+      "type": "META",
+      "subject": "英语",
+      "domain": "文化与学习策略",
+      "name": "借助工具与资源学习英语",
+      "description": "学会使用图画、词典、录音等工具和资源辅助学习，养成预习复习、及时纠错的习惯，愿意与同伴合作。",
+      "gradeRangeStart": 5,
+      "gradeRangeEnd": 5,
+      "stage": "二级（5~6年级）",
+      "evidence": [
+        "遇到生词会想到查图画词典",
+        "能说出两种课余学英语的办法"
+      ],
+      "assessmentPrompt": "问{{name}}：「遇到不会的单词怎么办？除了问老师还能想什么办法」。他说得出吗？",
+      "standards": [
+        "english-2022:L2:ST"
+      ],
+      "textbooks": [
+        "pep-english:5a"
+      ],
+      "centrality": 0.0107
+    }
+  ]
+}
