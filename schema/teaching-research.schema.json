@@ -1,0 +1,97 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "teaching-research.schema.json",
+  "title": "教学研究记录",
+  "type": "object",
+  "required": ["name", "version", "schemaVersion", "taxonomyVersion", "topicFileSha256",
+               "authorship", "coverage", "records"],
+  "properties": {
+    "name": { "type": "string" },
+    "version": { "type": "string" },
+    "schemaVersion": { "type": "integer" },
+    "taxonomyVersion": { "type": "string" },
+    "topicFileSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "authorship": { "type": "object" },
+    "coverage": {
+      "type": "object",
+      "required": ["subjects", "missingTopicIds"],
+      "properties": {
+        "subjects": { "type": "object" },
+        "missingTopicIds": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["topicId", "topicName", "subject", "gradeRangeStart", "gradeRangeEnd",
+                     "pedagogy", "learn", "assess", "sources", "confidence", "verified"],
+        "properties": {
+          "topicId": { "type": "string", "pattern": "^mt_[a-z0-9-]+$" },
+          "topicName": { "type": "string" },
+          "subject": { "enum": ["数学", "语文", "英语"] },
+          "gradeRangeStart": { "type": "integer", "minimum": 1, "maximum": 6 },
+          "gradeRangeEnd": { "type": "integer", "minimum": 1, "maximum": 6 },
+          "pedagogy": { "type": "string", "minLength": 60, "maxLength": 200 },
+          "learn": {
+            "type": "object",
+            "required": ["summary", "activities", "constraints"],
+            "properties": {
+              "summary": { "type": "string", "minLength": 30, "maxLength": 120 },
+              "activities": {
+                "type": "array", "minItems": 2, "maxItems": 3,
+                "items": {
+                  "type": "object",
+                  "required": ["action", "insight", "feedback", "rationale"],
+                  "properties": {
+                    "action": { "type": "string", "minLength": 8, "maxLength": 80 },
+                    "insight": { "type": "string", "minLength": 8, "maxLength": 80 },
+                    "feedback": { "type": "string", "minLength": 8, "maxLength": 80 },
+                    "rationale": { "type": "string", "minLength": 8, "maxLength": 80 }
+                  }
+                }
+              },
+              "constraints": {
+                "type": "array", "minItems": 1, "maxItems": 3,
+                "items": { "type": "string", "minLength": 6, "maxLength": 80 }
+              }
+            }
+          },
+          "assess": {
+            "type": "object",
+            "required": ["task", "levels", "errors", "nextMoves"],
+            "properties": {
+              "task": { "type": "string", "minLength": 8, "maxLength": 120 },
+              "levels": {
+                "type": "array", "minItems": 2, "maxItems": 3,
+                "items": { "type": "string", "minLength": 6, "maxLength": 80 }
+              },
+              "errors": {
+                "type": "array", "minItems": 1, "maxItems": 4,
+                "items": { "type": "string", "minLength": 4, "maxLength": 80 }
+              },
+              "nextMoves": {
+                "type": "array", "minItems": 1, "maxItems": 3,
+                "items": { "type": "string", "minLength": 6, "maxLength": 80 }
+              }
+            }
+          },
+          "sources": {
+            "type": "array", "minItems": 1, "maxItems": 3,
+            "items": {
+              "type": "object",
+              "required": ["claim", "source"],
+              "properties": {
+                "claim": { "type": "string", "minLength": 6, "maxLength": 100 },
+                "source": { "type": "string" },
+                "url": { "type": "string" }
+              }
+            }
+          },
+          "confidence": { "enum": ["high", "medium", "low"] },
+          "verified": { "enum": [false] }
+        }
+      }
+    }
+  }
+}

@@ -126,6 +126,7 @@
       <h3>家长检查法</h3><div class="assess" id="pAssess"></div>
       <h3>课标对齐</h3><div id="pStandards"></div>
       <h3>教材位置</h3><div id="pTextbooks"></div>
+      <h3>教学研究</h3><div id="pResearch"></div>
       <h3>先修（之前要先掌握）</h3><ul class="link-list" id="pPrereqs"></ul>
       <h3>解锁（通向后续）</h3><ul class="link-list" id="pUnlocks"></ul>
     </div>
@@ -362,6 +363,34 @@
     return `<li data-id="${id}">${esc(t.name)}${strength}</li>`;
   }
 
+  // 教学研究层（当前覆盖数学；语文、英语主题会显示缺失提示）
+  const researchByTopic = new Map((D.research?.records ?? []).map(r => [r.topicId, r]));
+  const confLabel = { high: '高', medium: '中', low: '低' };
+  function renderResearch(n) {
+    const box = document.getElementById('pResearch');
+    const rec = researchByTopic.get(n.id);
+    if (!rec) {
+      const cov = D.research?.coverage?.subjects?.[n.subject];
+      box.innerHTML = `<div class="tb-item">该主题暂无教学研究记录${cov ? `（当前覆盖：${n.subject} ${cov.covered}/${cov.total}）` : ''}。</div>`;
+      return;
+    }
+    const acts = rec.learn.activities.map((a, i) =>
+      `<li><b>活动${i + 1}：</b>${esc(a.action)}<br>
+        <span style="color:var(--text-dim)">期望体会：${esc(a.insight)}<br>
+        反馈建议：${esc(a.feedback)}<br>安排理由：${esc(a.rationale)}</span></li>`).join('');
+    box.innerHTML = `
+      <div class="tb-item" style="margin-bottom:8px"><b style="color:var(--text)">教学要点：</b>${esc(rec.pedagogy)}</div>
+      <div class="std-item"><b style="color:var(--text)">学习指导：</b>${esc(rec.learn.summary)}</div>
+      <ul>${acts}</ul>
+      <div class="tb-item" style="margin-top:6px"><b style="color:var(--text)">注意边界：</b>${rec.learn.constraints.map(esc).join('；')}</div>
+      <div class="assess" style="margin-top:8px"><b>诊断任务：</b>${esc(rec.assess.task)}<br>
+        ${rec.assess.levels.map(l => `<span style="color:var(--text-dim)">· ${esc(l)}</span><br>`).join('')}
+        <span style="color:var(--text-dim)">典型错误：${rec.assess.errors.map(esc).join('；')}</span><br>
+        <span style="color:var(--text-dim)">下一步：${rec.assess.nextMoves.map(esc).join('；')}</span></div>
+      <div class="tb-item" style="margin-top:8px">来源：${rec.sources.map(s => esc(s.source)).join('；')} ·
+        置信度 ${confLabel[rec.confidence] ?? rec.confidence} · AI 撰写、未经实证验证</div>`;
+  }
+
   function select(n) {
     selected = n;
     traceSet.clear(); traceMode = null;
@@ -379,6 +408,7 @@
       return s ? `<div class="std-item"><code>${esc(c)}</code>${esc(s.domain)}${s.theme ? ' · ' + esc(s.theme) : ''}：${esc(s.summary)}</div>` : '';
     }).join('');
     document.getElementById('pTextbooks').innerHTML = n.textbooks.map(r => `<div class="tb-item">· ${esc(refText(r))}</div>`).join('');
+    renderResearch(n);
     document.getElementById('pPrereqs').innerHTML = prereqs.get(n.id).map(d => linkItem(d.prerequisiteId, d)).join('') || '<li style="color:var(--text-dim)">（起点主题，无先修）</li>';
     document.getElementById('pUnlocks').innerHTML = unlocks.get(n.id).map(d => linkItem(d.topicId, d)).join('') || '<li style="color:var(--text-dim)">（暂未解锁其他主题）</li>';
     panel.classList.add('open');
@@ -405,14 +435,16 @@
     for (const n of nodes) n.visible = activeSubjects.has(n.subject);
   }
   const search = document.getElementById('search');
-  search.addEventListener('input', () => {
+  function runSearch() {
     const q = search.value.trim();
     nodes.forEach(n => { n.searchHit = !!q && n.name.includes(q); });
-    if (q) {
-      const hit = nodes.find(n => n.searchHit);
-      if (hit && !selected) select(hit);
-    }
-  });
+    if (!q) return;
+    const hit = nodes.find(n => n.searchHit);
+    const stillMatches = selected && selected.name.includes(q);
+    if (hit && !stillMatches) select(hit);
+  }
+  search.addEventListener('input', runSearch);
+  search.addEventListener('keydown', (ev) => { if (ev.key === 'Enter') runSearch(); });
   document.getElementById('btnLabels').onclick = function () {
     showAllLabels = !showAllLabels;
     this.classList.toggle('active', showAllLabels);
@@ -437,11 +469,14 @@
   };
 
   // ---------- 启动 ----------
+  document.querySelector('header h1 small').textContent =
+    `China Skill Taxonomy · 中国小学学能图谱 ${D.version}`;
   const subjCount = {};
   topics.forEach(t => subjCount[t.subject] = (subjCount[t.subject] || 0) + 1);
   document.getElementById('stats').innerHTML =
     `主题 <b>${topics.length}</b>（${Object.entries(subjCount).map(([k, v]) => k + ' ' + v).join(' · ')}） · ` +
-    `先修依赖 <b>${deps.length}</b> · 课标条目 <b>${standardsDoc.length}</b> · 域摘要 <b>${clusters.length}</b>`;
+    `先修依赖 <b>${deps.length}</b> · 课标条目 <b>${standardsDoc.length}</b> · 域摘要 <b>${clusters.length}</b> · ` +
+    `教学研究 <b>${(D.research?.records ?? []).length}</b>`;
   document.getElementById('gradeAxis').textContent = '纵轴：1 年级（上）→ 6 年级（下）';
   resize();
   initPositions();

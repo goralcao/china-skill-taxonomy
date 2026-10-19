@@ -36,16 +36,32 @@
 - 全部主题的描述、掌握证据（evidence）、家长检查法（assessmentPrompt）、依赖理由（reason）、域摘要（summary）均为本项目**原创撰写**，未复制任何教材、课标或第三方资料原文，适用 CC BY-SA 4.0（见 [LICENSE-CONTENT](LICENSE-CONTENT)）。
 - 依赖关系（先修图）依据通行教学顺序与知识逻辑整理：同一技能的深化（口算→笔算）、概念先于程序、低年级先于高年级等。它是**教学共识的组织方式**，不构成任何官方教学进度规定；实际教学请以学校安排为准。
 
-## 4. 方法学参考
+## 4. 教学研究层（v0.2 新增）
+
+- **位置**：`data/teaching-research.json`，通过 `topicId` 联结 `topics.json`，并以 `topicFileSha256` 绑定 `topics.json` 的字节（图谱变更后必须重新构建）。
+- **撰写方式**：全部 96 条记录（覆盖全部数学主题）由 AI 撰写，撰写依据为 `topics.json` 中各主题的年级、教材位置与掌握证据，以及下表三类公开来源；撰写后经过结构化校验（字段完整性、长度约束、活动可操作性、来源白名单、覆盖清单一致性）。
+- **来源白名单**（每条记录至少引用其一，`url` 可为空）：
+  1. 《义务教育数学课程标准（2022年版）》—— https://basic.smartedu.cn/
+  2. 人教版《义务教育教科书·数学》教师教学用书 —— https://www.pep.com.cn/
+  3. 人教版《义务教育教科书·数学》—— 无 URL
+- **诚实披露**（与 Marble 项目同标准）：
+  - 记录是**研究启发的建议**（教学要点、学习活动、诊断任务），不是经验证有效的干预方案；
+  - 来源**未逐条重新联网复核**，`verified` 固定为 `false`，`confidence` 是撰写时的自评而非证据评级；
+  - 活动是「可以这样做」的提案，不构成教学效果承诺；
+  - 覆盖为部分覆盖：数学 96/96，语文 0/55，英语 0/37，缺失清单见 `coverage.missingTopicIds`；缺失不意味着相关主题无法施教。
+- **合规边界**：记录内容为原创撰写，未复制教材、教参或课标原文；涉及教学进度与范围时以《义务教育数学课程标准（2022年版）》小学段为准（简易方程不在小学段）。
+
+## 5. 方法学参考
 
 本项目在数据组织方式（微主题 + 先修 DAG + 课标对齐 + 分层许可 + 校验和）上对标 [Marble Skill Taxonomy](https://github.com/withmarbleapp/os-taxonomy)（© Generative Spark, Inc.，ODbL 1.0 + CC BY-SA 4.0）。本项目**未使用**其任何数据、文本或标识符，两者内容完全独立。
 
 ## 5. 构建与校验
 
-- `scripts/build.py`：从 `src/` 数据源（主题模块、课标模块、教材目录模块）生成 `data/*.json` 与 `viz/data.js`，并计算 SHA-256 校验和写入 `data/manifest.json`。
-- `scripts/validate.mjs`：校验校验和、结构完整性、引用完整性（边端点、课标编号、教材册次/单元号/块标签）、DAG 无环、先修年级规则、域摘要唯一性。
+- `scripts/build.py`：从 `src/` 数据源（主题模块、课标模块、教材目录模块、教学研究模块）生成 `data/*.json` 与 `viz/data.js`，并计算 SHA-256 校验和写入 `data/manifest.json`。
+- `scripts/validate.mjs`：校验校验和、结构完整性、引用完整性（边端点、课标编号、教材册次/单元号/块标签）、DAG 无环、先修年级规则、域摘要唯一性，以及教学研究层的主题联结、覆盖清单与 `topicFileSha256` 绑定。
+- `scripts/teaching-research.test.mjs`：教学研究层专项测试（`node --test`）。
 - 修改数据后请重新运行：
 
 ```bash
-python3 scripts/build.py && node scripts/validate.mjs
+python3 scripts/build.py && node scripts/validate.mjs && node --test scripts/teaching-research.test.mjs
 ```

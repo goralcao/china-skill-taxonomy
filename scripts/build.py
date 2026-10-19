@@ -32,8 +32,10 @@ import textbooks as tb  # noqa: E402
 import topics_chinese  # noqa: E402
 import topics_english  # noqa: E402
 import topics_math  # noqa: E402
+import teaching_research_math_a  # noqa: E402
+import teaching_research_math_b  # noqa: E402
 
-VERSION = "v0.1.0"
+VERSION = "v0.2.0"
 SCHEMA_VERSION = 1
 
 MODULES = [
@@ -41,6 +43,23 @@ MODULES = [
     ("语文", topics_chinese),
     ("英语", topics_english),
 ]
+
+RESEARCH_MODULES = [teaching_research_math_a, teaching_research_math_b]
+
+RESEARCH_AUTHORSHIP = {
+    "authoredBy": "AI 撰写（教学研究层）",
+    "review": "经结构化校验（字段完整性、长度约束、来源白名单、主题联结、覆盖清单），"
+              "并经过 build 阶段的引用完整性校验；未经实证验证。",
+    "caveat": "本层是研究启发性建议（教学要点、学习活动、诊断任务），"
+              "不是经验证有效的干预方案；引用来源未逐条重新联网复核，"
+              "历史上标为 verified 的字段不构成新的证据评级。",
+}
+
+ALLOWED_SOURCES = {
+    "《义务教育数学课程标准（2022年版）》": "https://basic.smartedu.cn/",
+    "人教版《义务教育教科书·数学》教师教学用书": "https://www.pep.com.cn/",
+    "人教版《义务教育教科书·数学》": "",
+}
 
 STAGE_BY_GRADE = {
     1: "第一学段（1~2年级）",
@@ -186,6 +205,61 @@ def build_clusters():
     return {"version": VERSION, "schemaVersion": SCHEMA_VERSION, "clusters": clusters}
 
 
+def build_teaching_research(topics, topics_sha256):
+    """教学研究层：按 topicId 联结到 topics.json，并绑定 topics.json 的字节校验和。"""
+    topic_by_id = {t["id"]: t for t in topics}
+    records = []
+    for mod in RESEARCH_MODULES:
+        for r in mod.RECORDS:
+            topic_id = "mt_" + r["topic"]
+            t = topic_by_id.get(topic_id)
+            if t is None:
+                raise SystemExit(f"教学研究记录指向不存在的主题: {topic_id}")
+            if t["subject"] != mod.SUBJECT:
+                raise SystemExit(f"教学研究记录学科不符: {topic_id}")
+            for s in r["sources"]:
+                if s["source"] not in ALLOWED_SOURCES:
+                    raise SystemExit(f"教学研究记录使用了清单外来源: {s['source']}")
+                if s.get("url") is None:
+                    s["url"] = ALLOWED_SOURCES[s["source"]]
+            records.append({
+                "topicId": topic_id,
+                "topicName": t["name"],
+                "subject": t["subject"],
+                "gradeRangeStart": t["gradeRangeStart"],
+                "gradeRangeEnd": t["gradeRangeEnd"],
+                "pedagogy": r["pedagogy"],
+                "learn": {
+                    "summary": r["summary"],
+                    "activities": r["activities"],
+                    "constraints": r["constraints"],
+                },
+                "assess": r["assess"],
+                "sources": r["sources"],
+                "confidence": r["confidence"],
+                "verified": False,
+            })
+    # 覆盖清单：明确哪些主题暂无教学研究记录
+    covered = {rec["topicId"] for rec in records}
+    missing = [t["id"] for t in topics if t["id"] not in covered]
+    by_subject = {}
+    for t in topics:
+        s = by_subject.setdefault(t["subject"], {"covered": 0, "total": 0})
+        s["total"] += 1
+        if t["id"] in covered:
+            s["covered"] += 1
+    return {
+        "name": "学阶图谱教学研究层",
+        "version": VERSION,
+        "schemaVersion": SCHEMA_VERSION,
+        "taxonomyVersion": VERSION,
+        "topicFileSha256": topics_sha256,
+        "authorship": RESEARCH_AUTHORSHIP,
+        "coverage": {"subjects": by_subject, "missingTopicIds": missing},
+        "records": records,
+    }
+
+
 def main():
     DATA.mkdir(exist_ok=True)
     VIZ.mkdir(exist_ok=True)
@@ -205,7 +279,15 @@ def main():
             "bytes": (DATA / name).stat().st_size,
         }
 
-    topics = artifacts["topics.json"]["topics"]
+    # 教学研究层在 topics.json 落盘后生成，绑定其 SHA-256（与 Marble 的 topicFileSha256 同思路）
+    topics_obj = artifacts["topics.json"]
+    research = build_teaching_research(topics_obj["topics"], checksums["topics.json"]["sha256"])
+    checksums["teaching-research.json"] = {
+        "sha256": dump_json(DATA / "teaching-research.json", research),
+        "bytes": (DATA / "teaching-research.json").stat().st_size,
+    }
+
+    topics = topics_obj["topics"]
     deps = artifacts["dependencies.json"]["dependencies"]
     standards = artifacts["curriculum-standards.json"]["standards"]
     clusters = artifacts["clusters.json"]["clusters"]
@@ -228,6 +310,7 @@ def main():
             "dependencies": len(deps),
             "curriculumStandards": len(standards),
             "clusters": len(clusters),
+            "teachingResearchRecords": len(research["records"]),
             "hardEdges": sum(1 for d in deps if d["strength"] == "hard"),
             "softEdges": sum(1 for d in deps if d["strength"] == "soft"),
         },
@@ -250,15 +333,17 @@ def main():
         "standards": standards,
         "textbooks": artifacts["textbooks.json"],
         "clusters": clusters,
+        "research": research,
     }
     js = "window.TAXONOMY_DATA = " + json.dumps(viz_payload, ensure_ascii=False) + ";\n"
     (VIZ / "data.js").write_text(js, encoding="utf-8")
 
     print("构建完成：")
-    for name in list(artifacts) + ["manifest.json"]:
+    for name in list(artifacts) + ["teaching-research.json", "manifest.json"]:
         print(f"  data/{name}  {checksums[name]['bytes']:>8} bytes")
     print(f"  viz/data.js  {(VIZ / 'data.js').stat().st_size:>8} bytes")
-    print(f"  主题 {len(topics)} · 依赖边 {len(deps)} · 课标条目 {len(standards)} · 域摘要 {len(clusters)}")
+    print(f"  主题 {len(topics)} · 依赖边 {len(deps)} · 课标条目 {len(standards)} · "
+          f"域摘要 {len(clusters)} · 教学研究记录 {len(research['records'])}")
 
 
 if __name__ == "__main__":

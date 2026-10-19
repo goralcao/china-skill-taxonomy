@@ -163,6 +163,64 @@ for (const t of topics) {
   }
 }
 
+/* ---------- 6.5 教学研究层 ---------- */
+const research = read('teaching-research.json');
+const topicsSha = createHash('sha256').update(raw('topics.json')).digest('hex');
+if (research.topicFileSha256 !== topicsSha) {
+  fail(`teaching-research.json 的 topicFileSha256 与 data/topics.json 实际字节不符（图谱变更后需重新构建）`);
+}
+if (research.taxonomyVersion !== topicsDoc.version) {
+  fail(`教学研究层 taxonomyVersion(${research.taxonomyVersion}) 与 topics.json version(${topicsDoc.version}) 不一致`);
+}
+const researchTopics = new Set();
+for (const rec of research.records) {
+  const where = rec.topicId;
+  if (researchTopics.has(where)) fail(`教学研究记录重复: ${where}`);
+  researchTopics.add(where);
+  const t = byId.get(where);
+  if (!t) { fail(`教学研究记录指向不存在的主题: ${where}`); continue; }
+  if (rec.topicName !== t.name) fail(`教学研究记录 topicName 与主题不符: ${where}`);
+  if (rec.subject !== t.subject) fail(`教学研究记录学科与主题不符: ${where}`);
+  if (rec.gradeRangeStart !== t.gradeRangeStart || rec.gradeRangeEnd !== t.gradeRangeEnd) {
+    fail(`教学研究记录年级与主题不符: ${where}`);
+  }
+  if (rec.verified !== false) fail(`教学研究记录 verified 必须为 false: ${where}`);
+  if (!['high', 'medium', 'low'].includes(rec.confidence)) fail(`教学研究记录 confidence 非法: ${where}`);
+  if (!rec.pedagogy || rec.pedagogy.length < 60 || rec.pedagogy.length > 200) {
+    fail(`教学研究记录 pedagogy 长度越界: ${where}`);
+  }
+  if (!rec.learn?.summary || !Array.isArray(rec.learn?.activities) || rec.learn.activities.length < 2) {
+    fail(`教学研究记录 learn 字段不完整: ${where}`);
+  }
+  for (const a of rec.learn.activities) {
+    for (const f of ['action', 'insight', 'feedback', 'rationale']) {
+      if (!a[f] || a[f].length > 80) fail(`教学研究记录活动字段 ${f} 不合规: ${where}`);
+    }
+  }
+  if (!rec.assess?.task || !Array.isArray(rec.assess.levels) || rec.assess.levels.length < 2) {
+    fail(`教学研究记录 assess 字段不完整: ${where}`);
+  }
+  if (!Array.isArray(rec.sources) || rec.sources.length < 1) fail(`教学研究记录缺少来源: ${where}`);
+}
+// 覆盖清单必须与实际情况一致
+const expectedMissing = topics.filter(t => !researchTopics.has(t.id)).map(t => t.id).sort();
+const actualMissing = [...research.coverage.missingTopicIds].sort();
+if (JSON.stringify(expectedMissing) !== JSON.stringify(actualMissing)) {
+  fail(`教学研究覆盖清单 missingTopicIds 与实际不符（期望 ${expectedMissing.length} 个，实际 ${actualMissing.length} 个）`);
+}
+const researchBySubject = {};
+for (const t of topics) {
+  const s = researchBySubject[t.subject] = researchBySubject[t.subject] || { covered: 0, total: 0 };
+  s.total += 1;
+  if (researchTopics.has(t.id)) s.covered += 1;
+}
+for (const [subject, cnt] of Object.entries(researchBySubject)) {
+  const declared = research.coverage.subjects[subject];
+  if (!declared || declared.total !== cnt.total || declared.covered !== cnt.covered) {
+    fail(`教学研究覆盖清单与 ${subject} 实际不符: 声明 ${JSON.stringify(declared)}，实际 ${JSON.stringify(cnt)}`);
+  }
+}
+
 /* ---------- 7. 域摘要 ---------- */
 const clusterKeys = new Set();
 for (const c of clustersDoc.clusters) {
@@ -186,6 +244,7 @@ console.log('-----------------------------------');
 console.log(`主题 ${topics.length}（${Object.entries(perSubject).map(([k, v]) => `${k} ${v}`).join('，')}）`);
 console.log(`依赖边 ${deps.length}（hard ${deps.filter((d) => d.strength === 'hard').length} / soft ${deps.filter((d) => d.strength === 'soft').length}）`);
 console.log(`课标条目 ${standardsDoc.standards.length} · 教材版本 ${textbooksDoc.versions.length} · 域摘要 ${clustersDoc.clusters.length}`);
+console.log(`教学研究记录 ${research.records.length}（数学 ${researchBySubject['数学']?.covered ?? 0}/${researchBySubject['数学']?.total ?? 0}，语文 ${researchBySubject['语文']?.covered ?? 0}，英语 ${researchBySubject['英语']?.covered ?? 0}）`);
 console.log(`DAG 拓扑排序: ${sorted}/${topics.length}`);
 if (warnings.length) {
   console.log(`\n警告 ${warnings.length} 条:`);
