@@ -132,6 +132,36 @@
   /* 教材直达链接 */
   .tb-links a { color: var(--math); text-decoration: underline dotted; }
   .tb-links a:hover { color: var(--accent); }
+  .tb-sep { font-size: 11px; color: var(--accent); font-weight: 600; margin: 10px 0 6px;
+    border-top: 1px dashed var(--line); padding-top: 8px; }
+  .tb-note { font-size: 11.5px; color: var(--text-dim); line-height: 1.7; margin: 6px 0 0;
+    border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 8px 10px;
+    background: var(--bg-card); }
+
+  /* ---------- 教材版本对照 ---------- */
+  #tbModal { position: fixed; inset: 0; display: none; z-index: 60;
+    background: rgba(4,8,14,.72); }
+  #tbModal.open { display: flex; align-items: center; justify-content: center; padding: 18px; }
+  #tbModal .tb-card { position: relative; width: min(880px, 100%); max-height: 88vh;
+    overflow: auto; background: var(--bg-panel); border: 1px solid var(--line);
+    border-radius: 12px; padding: 18px 20px; }
+  #tbModal h2 { font-size: 16px; margin-bottom: 2px; padding-right: 30px; }
+  #tbModal .tb-sub { font-size: 12px; color: var(--text-dim); margin-bottom: 14px; line-height: 1.7; }
+  .tb-cmp { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 720px) { .tb-cmp { grid-template-columns: 1fr; } }
+  .tb-col { border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px;
+    background: var(--bg-card); min-width: 0; }
+  .tb-col h4 { font-size: 12.5px; margin-bottom: 8px; color: var(--text); }
+  .tb-book { margin-bottom: 12px; }
+  .tb-book:last-child { margin-bottom: 0; }
+  .tb-bookname { font-size: 12px; font-weight: 600; color: var(--text); }
+  .tb-col .src { font-size: 11px; margin: 2px 0 6px; }
+  .tb-col .src a { color: var(--math); text-decoration: underline dotted; }
+  .tb-unit { font-size: 12px; line-height: 1.55; padding: 3px 6px; border-radius: 6px;
+    color: var(--text-dim); }
+  .tb-unit.hit { background: rgba(255,200,60,.13); color: var(--text); font-weight: 600; }
+  .tb-unit .tag { font-size: 10px; color: var(--accent); margin-left: 5px; font-weight: 400; }
+  .tb-lesson { font-size: 11px; color: var(--text-dim); padding: 1px 6px 1px 22px; line-height: 1.5; }
 
   /* 轻提示 */
   #toast { position: absolute; left: 50%; bottom: 26px; transform: translateX(-50%);
@@ -322,6 +352,12 @@
     </div>
   </main>
 </div>
+<div id="tbModal"><div class="tb-card">
+  <button class="close-btn" id="btnTbClose">×</button>
+  <h2 id="tbTitle"></h2>
+  <div class="tb-sub" id="tbSub"></div>
+  <div class="tb-cmp" id="tbBody"></div>
+</div></div>
 <script src="data.js"></script>
 <script>
 (function () {
@@ -740,6 +776,9 @@
         if (std) lines.push(`   - 课标：${std}`);
         const tbk = (t.textbooks || []).map(refText).join('；');
         if (tbk) lines.push(`   - 教材：${tbk}`);
+        const tbk24 = (t.textbooks2024 || []).map(refText).join('；');
+        if (tbk24) lines.push(`   - 教材（2024年版课标修订）：${tbk24}`);
+        if (t.textbookNote2024) lines.push(`   - 修订说明：${t.textbookNote2024}`);
         lines.push('');
       });
     });
@@ -829,15 +868,117 @@
   // ---------- 教材直达链接 ----------
   function textbookLinkHtml(ref) {
     const label = refText(ref);
-    const m = ref.match(/^(pep-math|tongbian-chinese|pep-english):([1-6][ab])/);
+    const m = ref.match(/^(pep-math|tongbian-chinese|pep-english)(-2024)?:([1-6][ab])/);
     let links = `<a href="https://basic.smartedu.cn/" target="_blank" rel="noopener">智慧教育平台</a>`;
     if (m) {
-      const v = (D.textbooks?.versions || []).find(x => x.slug === m[1]);
-      const p = v && v.books.find(b => b.slug === m[2])?.chinaTextbookPath;
+      const v = (D.textbooks?.versions || []).find(x => x.slug === m[1] + (m[2] || ''));
+      const b = v && v.books.find(x => x.slug === m[3]);
+      // 2024 版：电子课本网在线目录（源站真实链接）
+      if (b?.source) links += ` · <a href="${esc(b.source)}" target="_blank" rel="noopener">在线目录</a>`;
+      const p = b?.chinaTextbookPath;
       const repo = D.textbooks?.sources?.chinaTextbook?.repo || 'https://github.com/TapXWorld/ChinaTextbook';
       if (p) links += ` · <a href="${repo}/blob/master/${encodeURI(p)}" target="_blank" rel="noopener">原书 PDF</a>`;
     }
     return `<div class="tb-item">· ${esc(label)} <span class="tb-links">${links}</span></div>`;
+  }
+
+  // ---------- 教材版本对照（现役 vs 2024 年版课标修订教材） ----------
+  const TYPE_LABEL = { activity: '综合与实践', enrichment: '数学广角', intro: '入学导学', revision: '复习与关联' };
+  function parseRef(ref) {
+    const m = ref.match(/^(pep-math|tongbian-chinese|pep-english)(-2024)?:([1-6][ab])(?::(u[1-9][0-9]?))?(?:#(.+))?$/);
+    if (!m) return null;
+    return { vslug: m[1] + (m[2] || ''), bslug: m[3], unit: m[4] ? Number(m[4].slice(1)) : null, act: m[5] || null };
+  }
+
+  /** 一栏教材版本：按册次分组渲染完整单元树，命中本知识点的单元高亮并展开课节 */
+  function bookColumnHtml(refs, label) {
+    const byBook = new Map();
+    for (const ref of refs) {
+      const p = parseRef(ref); if (!p) continue;
+      const key = p.vslug + ':' + p.bslug;
+      if (!byBook.has(key)) byBook.set(key, []);
+      byBook.get(key).push(p);
+    }
+    let h = `<div class="tb-col"><h4>${esc(label)}</h4>`;
+    if (!byBook.size) h += `<div class="tb-unit">（无引用）</div>`;
+    for (const [key, hits] of byBook) {
+      const [vslug, bslug] = key.split(':');
+      const v = bookNames[vslug]; if (!v) continue;
+      const b = v.books[bslug]; if (!b) continue;
+      const hitUnits = new Set(hits.filter(x => x.unit).map(x => x.unit));
+      const hitActs = new Set(hits.filter(x => x.act).map(x => x.act));
+      h += `<div class="tb-book"><div class="tb-bookname">${esc(v.name.split('（')[0])} · ${b.grade}年级${b.semester === '上' ? '上' : '下'}册</div>`;
+      const src = [];
+      if (b.source) src.push(`<a href="${esc(b.source)}" target="_blank" rel="noopener">在线目录</a>`);
+      if (b.chinaTextbookPath) {
+        const repo = D.textbooks?.sources?.chinaTextbook?.repo || 'https://github.com/TapXWorld/ChinaTextbook';
+        src.push(`<a href="${repo}/blob/master/${encodeURI(b.chinaTextbookPath)}" target="_blank" rel="noopener">原书 PDF</a>`);
+      }
+      if (src.length) h += `<div class="src">${src.join(' · ')}</div>`;
+      let unitIdx = 0;
+      for (const u of (b.units || [])) {
+        const isObj = typeof u === 'object';
+        const name = isObj ? u.name : u;
+        const type = isObj ? u.type : 'unit';
+        if (isObj && type !== 'unit') {
+          const hit = hitActs.has(name);
+          h += `<div class="tb-unit${hit ? ' hit' : ''}">☆ ${esc(name)}`
+            + `${type && TYPE_LABEL[type] ? `<span class="tag">${TYPE_LABEL[type]}</span>` : ''}`
+            + `${hit ? '<span class="tag">本知识点</span>' : ''}</div>`;
+          continue;
+        }
+        unitIdx += 1;
+        const hit = hitUnits.has(unitIdx);
+        h += `<div class="tb-unit${hit ? ' hit' : ''}">${esc(name)}${hit ? '<span class="tag">本知识点</span>' : ''}</div>`;
+        if (hit && isObj) for (const l of (u.lessons || [])) h += `<div class="tb-lesson">${esc(l)}</div>`;
+      }
+      if (b.appendix?.length) {
+        h += `<div class="tb-unit" style="opacity:.75">附录：${esc(b.appendix.join('、'))}</div>`;
+      }
+      h += `</div>`;
+    }
+    return h + `</div>`;
+  }
+
+  function textbookCompare(n) {
+    document.getElementById('tbTitle').textContent = `教材版本对照 · ${n.name}`;
+    const note = n.textbookNote2024;
+    document.getElementById('tbSub').textContent = note
+      ? `修订说明：${note}`
+      : '高亮行为该知识点在对应版本教材中的所在单元。';
+    const oldRefs = n.textbooks || [];
+    const newRefs = n.textbooks2024 || [];
+    const cols = [];
+    if (oldRefs.length) cols.push(bookColumnHtml(oldRefs, '现役教材（修订前）'));
+    if (newRefs.length) cols.push(bookColumnHtml(newRefs, '2024 年版课标修订教材'));
+    else cols.push(`<div class="tb-col"><h4>2024 年版课标修订教材</h4>
+      <div class="tb-unit">该知识点所在册次尚未发布 2024 版教材，暂沿用左侧现役版本。</div></div>`);
+    document.getElementById('tbBody').innerHTML = cols.join('');
+    document.getElementById('tbModal').classList.add('open');
+  }
+  document.getElementById('btnTbClose').onclick = () =>
+    document.getElementById('tbModal').classList.remove('open');
+  document.getElementById('tbModal').addEventListener('click', ev => {
+    if (ev.target.id === 'tbModal') document.getElementById('tbModal').classList.remove('open');
+  });
+
+  /** 详情面板「教材位置」：旧版引用 + 2024 版引用/说明 + 版本对照入口 */
+  function renderTextbooksHtml(n) {
+    const oldRefs = n.textbooks || [];
+    const newRefs = n.textbooks2024 || [];
+    const note = n.textbookNote2024;
+    let h = oldRefs.map(textbookLinkHtml).join('');
+    if (newRefs.length || note) {
+      h += `<div class="tb-sep">2024 年版课标修订教材</div>`;
+      h += newRefs.map(textbookLinkHtml).join('');
+      if (note) h += `<div class="tb-note">${esc(note)}</div>`;
+      if (oldRefs.length && newRefs.length) {
+        h += `<div style="margin-top:8px"><button class="act-btn" id="btnTbCompare" style="min-width:0">📖 教材版本对照</button></div>`;
+      }
+    } else {
+      h += `<div class="tb-note" style="border-left-color:var(--line)">该知识点所在册次尚未发布 2024 版教材，以上为现役版本。</div>`;
+    }
+    return h;
   }
 
   // ---------- 绘制 ----------
@@ -1171,18 +1312,22 @@
   });
 
   function refText(ref) {
-    const m = ref.match(/^(pep-math|tongbian-chinese|pep-english):([1-6][ab])(?::(u[1-9]))?(?:#(.+))?$/);
+    const m = ref.match(/^(pep-math|tongbian-chinese|pep-english)(-2024)?:([1-6][ab])(?::(u[1-9][0-9]?))?(?:#(.+))?$/);
     if (!m) return ref;
-    const [, vslug, bslug, unitPart, blockPart] = m;
-    const v = bookNames[vslug]; if (!v) return ref;
+    const [, vslug, y2024, bslug, unitPart, actPart] = m;
+    const v = bookNames[vslug + (y2024 || '')]; if (!v) return ref;
     const b = v.books[bslug]; if (!b) return ref;
     const bookLabel = `${v.name.split('（')[0]} ${b.grade}年级${b.semester === '上' ? '上' : '下'}册`;
+    if (actPart) return `${bookLabel} · ${actPart}`;
     if (unitPart) {
       const n = Number(unitPart.slice(1));
-      if (b.units && b.units[n - 1]) return `${bookLabel} · 第${n}单元「${b.units[n - 1]}」`;
+      // 2024 版 units 为对象数组，uN 只数常规单元（type === 'unit'）；旧版为纯字符串数组
+      const unitList = (b.units || []).filter(u => (typeof u === 'object' ? u.type === 'unit' : true));
+      const u = unitList[n - 1];
+      const name = typeof u === 'object' ? u.name : u;
+      if (name) return `${bookLabel} · 第${n}单元「${name}」`;
       return `${bookLabel} · 第${n}单元`;
     }
-    if (blockPart) return `${bookLabel} · ${blockPart}`;
     return bookLabel;
   }
 
@@ -1245,7 +1390,9 @@
       const s = stdByCode.get(c);
       return s ? `<div class="std-item"><code>${esc(c)}</code>${esc(s.domain)}${s.theme ? ' · ' + esc(s.theme) : ''}：${esc(s.summary)}</div>` : '';
     }).join('');
-    document.getElementById('pTextbooks').innerHTML = n.textbooks.map(textbookLinkHtml).join('');
+    document.getElementById('pTextbooks').innerHTML = renderTextbooksHtml(n);
+    const cmpBtn = document.getElementById('btnTbCompare');
+    if (cmpBtn) cmpBtn.onclick = () => textbookCompare(n);
     renderResearch(n);
     document.getElementById('pPrereqs').innerHTML = prereqs.get(n.id).map(d => linkItem(d.prerequisiteId, d)).join('') || '<li style="color:var(--text-dim)">（起点主题，无先修）</li>';
     document.getElementById('pUnlocks').innerHTML = unlocks.get(n.id).map(d => linkItem(d.topicId, d)).join('') || '<li style="color:var(--text-dim)">（暂未解锁其他主题）</li>';

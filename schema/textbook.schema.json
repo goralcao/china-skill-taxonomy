@@ -16,6 +16,7 @@
         "properties": {
           "slug": { "type": "string", "pattern": "^[a-z-]+$" },
           "name": { "type": "string" },
+          "edition": { "type": "string" },
           "subject": { "enum": ["数学", "语文", "英语"] },
           "gradeStart": { "type": "integer", "minimum": 1, "maximum": 6 },
           "note": { "type": "string" },
@@ -29,11 +30,54 @@
                 "slug": { "type": "string", "pattern": "^[1-6][ab]$" },
                 "grade": { "type": "integer", "minimum": 1, "maximum": 6 },
                 "semester": { "enum": ["上", "下"] },
-                "units": { "type": "array", "items": { "type": "string" } },
-                "blocks": { "type": "array", "items": { "type": "string" } }
+                "edition": { "type": "string" },
+                "title": { "type": "string" },
+                "source": { "type": "string" },
+                "chinaTextbookPath": { "type": "string" },
+                "units": {
+                  "type": "array",
+                  "items": {
+                    "oneOf": [
+                      { "type": "string" },
+                      {
+                        "type": "object",
+                        "required": ["name"],
+                        "properties": {
+                          "name": { "type": "string", "minLength": 1 },
+                          "type": { "enum": ["unit", "activity", "enrichment", "intro", "revision"] },
+                          "page": { "type": "integer", "minimum": 1 },
+                          "lessons": {
+                            "type": "array",
+                            "items": { "type": "string", "minLength": 1 }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                "blocks": { "type": "array", "items": { "type": "string" } },
+                "appendix": { "type": "array", "items": { "type": "string" } }
               }
             }
           }
+        }
+      }
+    },
+    "unitMap2024": {
+      "description": "知识点 key → 2024 年版教材单元引用与迁移说明（与 topics.json 的 textbooks2024 同源）",
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["refs"],
+        "properties": {
+          "refs": {
+            "type": "array", "maxItems": 4,
+            "items": {
+              "type": "string",
+              "pattern": "^(pep-math-2024|tongbian-chinese-2024|pep-english-2024):[1-6][ab](:u[1-9][0-9]?)?(#[^#]+)?$"
+            }
+          },
+          "note": { "type": "string", "minLength": 4, "maxLength": 120 }
         }
       }
     },

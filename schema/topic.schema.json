@@ -41,6 +41,18 @@
               "type": "string",
               "pattern": "^(pep-math:[1-6][ab](:u[1-9])?|tongbian-chinese:[1-6][ab](:u[1-8])?(#[^#]+)?|pep-english:[3-6][ab](:u[1-6])?)$"
             }
+          },
+          "textbooks2024": {
+            "description": "2024 年版课标修订教材的单元级引用；空数组表示所在册次尚未被替换，仍沿用 textbooks 旧版引用",
+            "type": "array", "maxItems": 4,
+            "items": {
+              "type": "string",
+              "pattern": "^(pep-math-2024|tongbian-chinese-2024|pep-english-2024):[1-6][ab](:u[1-9][0-9]?)?(#[^#]+)?$"
+            }
+          },
+          "textbookNote2024": {
+            "description": "2024 版教材的内容迁移/重组说明（可选）",
+            "type": "string", "minLength": 4, "maxLength": 120
           }
         }
       }

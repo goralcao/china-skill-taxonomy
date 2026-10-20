@@ -6,16 +6,17 @@
     python3 scripts/build.py
 
 产物：
-    data/topics.json               主题节点（图谱节点）
+    data/topics.json               主题节点（图谱节点，含 textbooks2024 修订版教材引用）
     data/dependencies.json         先修依赖边
     data/curriculum-standards.json 课程标准条目
-    data/textbooks.json            教材目录
+    data/textbooks.json            教材目录（含 2024 年版课标修订教材与 unitMap2024 映射层）
     data/clusters.json             家长友好的域摘要
     data/manifest.json             计数与 SHA-256 校验和
     viz/data.js                    可视化用的内嵌数据（离线可用）
 """
 import hashlib
 import json
+import re
 import sys
 from datetime import date
 from pathlib import Path
@@ -28,8 +29,10 @@ VIZ = ROOT / "viz"
 sys.path.insert(0, str(SRC))
 
 import standards as std  # noqa: E402
+import textbook_map_2024 as tmap24  # noqa: E402
 import textbook_paths  # noqa: E402
 import textbooks as tb  # noqa: E402
+import textbooks_2024 as tb24  # noqa: E402
 import topics_chinese  # noqa: E402
 import topics_english  # noqa: E402
 import topics_math  # noqa: E402
@@ -39,7 +42,7 @@ import teaching_research_chinese_a  # noqa: E402
 import teaching_research_chinese_b  # noqa: E402
 import teaching_research_english  # noqa: E402
 
-VERSION = "v0.6.0"
+VERSION = "v0.7.0"
 SCHEMA_VERSION = 1
 
 MODULES = [
@@ -135,6 +138,9 @@ def build_domain_index():
 # 领域编号只依赖 src/ 数据，构建期算一次即可
 DOMAIN_INDEX = build_domain_index()
 
+# 全部主题 key（2024 版教材映射的构建期校验用）
+TOPIC_KEYS = {t["key"] for _s, mod in MODULES for t in mod.TOPICS}
+
 
 def cluster_id_of(subject, domain, stage):
     num = DOMAIN_INDEX.get((subject, domain))
@@ -165,7 +171,12 @@ def build_topics():
                 "assessmentPrompt": t["assessment"],
                 "standards": t["standards"],
                 "textbooks": t["textbooks"],
+                # 2024 年版课标修订教材的单元级映射（可能为空数组：该知识点所在册次尚未被替换）
+                "textbooks2024": list(tmap24.MAP_2024.get(t["key"], {}).get("refs", [])),
             })
+            note24 = tmap24.MAP_2024.get(t["key"], {}).get("note")
+            if note24:
+                topics[-1]["textbookNote2024"] = note24
     for t in topics:
         t["clusterId"] = cluster_id_of(t["subject"], t["domain"], t["stage"])
     # 中心度：无向度 / (N-1)，便于前端按枢纽主题布局
@@ -213,6 +224,68 @@ def build_standards():
     }
 
 
+def build_textbooks_2024():
+    """2024 年版课标修订教材（src/textbooks_2024.py 的真实目录）。
+
+    与旧版条目的差异：units 为对象数组（name/type/page/lessons），
+    其中 type ∈ unit（常规单元）/ activity（综合与实践活动）/ enrichment（数学广角）
+    / intro（入学导学）/ revision（复习与关联）；书条目另带 edition/title/source。
+    """
+    versions = []
+    for ed in tb24.EDITIONS:
+        books = []
+        for bk in ed["books"]:
+            book = {
+                "slug": bk["slug"],
+                "grade": bk["grade"],
+                "semester": bk["semester"],
+                "edition": bk["edition"],
+                "title": bk["title"],
+                "source": bk["source"],
+                "units": bk["units"],
+            }
+            if "appendix" in bk:
+                book["appendix"] = bk["appendix"]
+            books.append(book)
+        versions.append({
+            "slug": ed["slug"],
+            "name": ed["name"],
+            "edition": ed["edition"],
+            "subject": ed["subject"],
+            "gradeStart": ed["gradeStart"],
+            "note": ed["note"],
+            "books": books,
+        })
+    return versions
+
+
+def check_unit_map_2024():
+    """构建期校验：映射 key 必须存在于主题，refs 必须能解析到 2024 版目录。"""
+    index = {}
+    for ed in tb24.EDITIONS:
+        books = {}
+        for bk in ed["books"]:
+            unit_count = sum(1 for u in bk["units"] if u["type"] == "unit")
+            acts = {u["name"] for u in bk["units"] if u["type"] in ("activity", "enrichment")}
+            books[bk["slug"]] = (unit_count, acts)
+        index[ed["slug"]] = books
+    for key, entry in tmap24.MAP_2024.items():
+        if key not in TOPIC_KEYS:
+            raise SystemExit(f"unitMap2024 指向不存在的主题 key: {key}")
+        for ref in entry["refs"]:
+            m = re.match(r"^(pep-math-2024|tongbian-chinese-2024|pep-english-2024):([1-6][ab])(?::(u[1-9][0-9]?))?(?:#(.+))?$", ref)
+            if not m:
+                raise SystemExit(f"unitMap2024 引用格式非法: {key} -> {ref}")
+            vslug, bslug, unit, act = m.groups()
+            if vslug not in index or bslug not in index[vslug]:
+                raise SystemExit(f"unitMap2024 引用版本/册次不存在: {key} -> {ref}")
+            unit_count, acts = index[vslug][bslug]
+            if unit and not (1 <= int(unit[1:]) <= unit_count):
+                raise SystemExit(f"unitMap2024 引用单元序号越界: {key} -> {ref}（该册共 {unit_count} 个常规单元）")
+            if act and act not in acts:
+                raise SystemExit(f"unitMap2024 引用活动不存在: {key} -> {ref}")
+
+
 def build_textbooks():
     versions = []
     for v in tb.DETAILED_VERSIONS:
@@ -239,14 +312,18 @@ def build_textbooks():
         if "unitCounts" in v:
             entry["unitCounts"] = v["unitCounts"]
         versions.append(entry)
+    versions.extend(build_textbooks_2024())
     return {
         "version": VERSION,
         "schemaVersion": SCHEMA_VERSION,
         "sources": {
             "smartedu": tb.SMARTEDU,
             "chinaTextbook": {**tb.CHINATEXTBOOK, "repo": textbook_paths.CHINA_TEXTBOOK_REPO},
+            "dzkbw": tb24.SOURCE,
         },
         "versions": versions,
+        # 知识点 → 2024 版单元映射层（与 topic.textbooks2024 同源；供独立消费与双向校验）
+        "unitMap2024": tmap24.MAP_2024,
         "chinaTextbookPrimaryVersions": tb.CHINATEXTBOOK_PRIMARY_VERSIONS,
     }
 
@@ -330,6 +407,7 @@ def main():
     DATA.mkdir(exist_ok=True)
     VIZ.mkdir(exist_ok=True)
 
+    check_unit_map_2024()
     topics_obj = build_topics()
     artifacts = {
         "topics.json": topics_obj,
@@ -409,8 +487,11 @@ def main():
     for name in list(artifacts) + ["teaching-research.json", "manifest.json"]:
         print(f"  data/{name}  {checksums[name]['bytes']:>8} bytes")
     print(f"  viz/data.js  {(VIZ / 'data.js').stat().st_size:>8} bytes")
+    n2024 = sum(1 for t in topics if t["textbooks2024"])
     print(f"  主题 {len(topics)} · 依赖边 {len(deps)} · 课标条目 {len(standards)} · "
           f"域摘要 {len(clusters)} · 教学研究记录 {len(research['records'])}")
+    print(f"  2024 版教材版本 {len(artifacts['textbooks.json']['versions']) - 3} · "
+          f"映射条目 {len(tmap24.MAP_2024)} · 已关联 2024 引用的主题 {n2024}")
 
 
 if __name__ == "__main__":

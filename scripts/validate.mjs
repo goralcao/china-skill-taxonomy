@@ -11,6 +11,7 @@
  *   5. 先修年级不晚于主题年级（prerequisite.gradeRangeEnd <= topic.gradeRangeStart）
  *   6. 课标编号可解析、教材引用可解析（版本/册次/单元号/块标签均存在）
  *   7. 域摘要 (学科, 领域, 学段) 不重复
+ *   8. 2024 年版课标修订教材引用可解析，且 unitMap2024 与主题字段双向一致
  */
 import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
@@ -50,7 +51,7 @@ const seenIds = new Set();
 for (const t of topics) {
   const where = t.id ?? t.name ?? '(未知主题)';
   for (const f of ['id', 'type', 'subject', 'domain', 'name', 'description', 'gradeRangeStart',
-    'gradeRangeEnd', 'stage', 'evidence', 'assessmentPrompt', 'standards', 'textbooks']) {
+    'gradeRangeEnd', 'stage', 'evidence', 'assessmentPrompt', 'standards', 'textbooks', 'textbooks2024']) {
     if (t[f] === undefined || t[f] === null) fail(`主题 ${where} 缺少字段 ${f}`);
   }
   if (seenIds.has(t.id)) fail(`主题 id 重复: ${t.id}`);
@@ -160,6 +161,72 @@ for (const t of topics) {
     if (grade > t.gradeRangeEnd) {
       warn(`主题 ${t.name}（${t.gradeRangeStart}~${t.gradeRangeEnd} 年级）引用了更高年级教材: ${ref}`);
     }
+  }
+}
+
+/* ---------- 6.4 2024 年版课标修订教材引用 ---------- */
+const RE_2024 = /^(pep-math-2024|tongbian-chinese-2024|pep-english-2024):([1-6][ab])(?::(u[1-9][0-9]?))?(?:#(.+))?$/;
+const map2024 = textbooksDoc.unitMap2024 ?? {};
+for (const [key, entry] of Object.entries(map2024)) {
+  const t = topics.find((x) => x.id === 'mt_' + key);
+  if (!t) { fail(`unitMap2024 指向不存在的主题: ${key}`); continue; }
+  if (!Array.isArray(entry.refs) || entry.refs.length > 4) fail(`unitMap2024 refs 非法: ${key}`);
+  if (entry.note !== undefined && (typeof entry.note !== 'string' || entry.note.length < 4 || entry.note.length > 120)) {
+    fail(`unitMap2024 note 非法: ${key}`);
+  }
+  // 双向一致：映射条目 ↔ 主题字段
+  const a = JSON.stringify([...(t.textbooks2024 ?? [])].sort());
+  const b = JSON.stringify([...(entry.refs ?? [])].sort());
+  if (a !== b) fail(`unitMap2024 与主题 textbooks2024 不一致: ${key}`);
+  if (entry.note !== undefined && t.textbookNote2024 !== entry.note) {
+    fail(`unitMap2024 与主题 textbookNote2024 不一致: ${key}`);
+  }
+  if (entry.note === undefined && t.textbookNote2024 !== undefined) {
+    fail(`主题 textbooks2024 映射 ${key} 缺少 note（主题却有 textbookNote2024）`);
+  }
+}
+for (const t of topics) {
+  const declared = t.textbooks2024;
+  if (!Array.isArray(declared)) { fail(`主题 ${t.name} textbooks2024 不是数组`); continue; }
+  const entry = map2024[t.id.slice(3)];
+  if (entry === undefined && declared.length) fail(`主题 ${t.name} textbooks2024 非空但 unitMap2024 无对应条目`);
+  if (t.textbookNote2024 !== undefined
+      && (typeof t.textbookNote2024 !== 'string' || t.textbookNote2024.length < 4 || t.textbookNote2024.length > 120)) {
+    fail(`主题 ${t.name} textbookNote2024 非法`);
+  }
+  for (const ref of declared) {
+    const m = ref.match(RE_2024);
+    if (!m) { fail(`主题 ${t.name} 2024 教材引用格式非法: ${ref}`); continue; }
+    const [, vslug, bslug, unitPart, actPart] = m;
+    const { book, error } = bookByRef(vslug, bslug);
+    if (error) { fail(`主题 ${t.name} 2024 教材引用无效: ${ref}（${error}）`); continue; }
+    const units = Array.isArray(book.units) ? book.units : [];
+    if (unitPart) {
+      const n = Number(unitPart.slice(1));
+      // 2024 版 units 为对象数组；uN 只数常规单元（type === 'unit'）
+      const limit = units.filter((u) => typeof u === 'object' && u.type === 'unit').length;
+      if (n > limit) fail(`主题 ${t.name} 2024 教材引用单元序号越界: ${ref}（该册共 ${limit} 个常规单元）`);
+    }
+    if (actPart) {
+      const ok = units.some((u) => typeof u === 'object'
+        && (u.type === 'activity' || u.type === 'enrichment') && u.name === actPart);
+      if (!ok) fail(`主题 ${t.name} 2024 教材引用活动不存在: ${ref}`);
+    }
+    if (book.grade !== Number(bslug[0])) fail(`主题 ${t.name} 2024 教材引用册次与年级不符: ${ref}`);
+  }
+}
+// 覆盖提示：旧版引用册次已被 2024 版替换、但暂无 2024 单元引用的主题
+const REPLACED_BOOKS = new Set(['1a', '1b', '2a', '2b', '3a', '3b', '4a']);
+for (const t of topics) {
+  const affected = t.textbooks.some((r) => {
+    const m = r.match(/^(?:pep-math|tongbian-chinese|pep-english):([1-6][ab])/);
+    return m && REPLACED_BOOKS.has(m[1]);
+  });
+  if (affected && !(t.textbooks2024 ?? []).length) {
+    const hasNote = map2024[t.id.slice(3)]?.note;
+    warn(hasNote
+      ? `主题 ${t.name} 所在册次已被 2024 版替换，暂无单元引用（已有迁移说明：${hasNote}）`
+      : `主题 ${t.name} 所在册次已被 2024 版替换，但暂无 2024 教材映射`);
   }
 }
 
@@ -279,6 +346,7 @@ console.log(`主题 ${topics.length}（${Object.entries(perSubject).map(([k, v])
 console.log(`依赖边 ${deps.length}（hard ${deps.filter((d) => d.strength === 'hard').length} / soft ${deps.filter((d) => d.strength === 'soft').length}）`);
 console.log(`课标条目 ${standardsDoc.standards.length} · 教材版本 ${textbooksDoc.versions.length} · 域摘要 ${clustersDoc.clusters.length}`);
 console.log(`教学研究记录 ${research.records.length}（数学 ${researchBySubject['数学']?.covered ?? 0}/${researchBySubject['数学']?.total ?? 0}，语文 ${researchBySubject['语文']?.covered ?? 0}，英语 ${researchBySubject['英语']?.covered ?? 0}）`);
+console.log(`2024 版教材映射 ${Object.keys(map2024).length} 条（已关联主题 ${topics.filter((t) => (t.textbooks2024 ?? []).length).length}，其中内容迁移说明 ${Object.values(map2024).filter((e) => e.note).length} 条）`);
 console.log(`DAG 拓扑排序: ${sorted}/${topics.length}`);
 if (warnings.length) {
   console.log(`\n警告 ${warnings.length} 条:`);

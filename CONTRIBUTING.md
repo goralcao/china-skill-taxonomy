@@ -6,11 +6,13 @@
 
 ```
 src/            数据源（Python 模块，data/*.json 由此生成，请勿直接改 data/）
-  standards.py        课标条目
-  textbooks.py        教材目录
-  topics_math.py      数学主题、依赖边、域摘要
-  topics_chinese.py   语文学科
-  topics_english.py   英语学科
+  standards.py          课标条目
+  textbooks.py          现役教材目录
+  textbooks_2024.py     2024 年版课标修订教材目录（18 册，v0.7 起）
+  textbook_map_2024.py  知识点 → 2024 版单元映射（v0.7 起）
+  topics_math.py        数学主题、依赖边、域摘要
+  topics_chinese.py     语文学科
+  topics_english.py     英语学科
 schema/         JSON Schema（数据结构契约）
 scripts/
   build.py       由 src/ 生成 data/ 与 viz/data.js
@@ -29,7 +31,8 @@ viz/            可视化页面
    - `evidence` 2~3 条**可观察**的掌握证据（「能……」「会……」），不写「掌握……知识」这类不可观察的表述；
    - `assessment` 含 `{{name}}` 占位符的家长检查问题；
    - `standards` 1~3 个，只能使用 `src/standards.py` 中已定义的编号；
-   - `textbooks` 格式 `<版本>:<册次>[:u<单元号>][#块标签]`，册次与单元号必须真实存在。
+   - `textbooks` 格式 `<版本>:<册次>[:u<单元号>][#块标签]`，册次与单元号必须真实存在；
+   - 所在册次已被 2024 版替换时，请在 `src/textbook_map_2024.py` 补一条映射（`refs` 用 `版本-2024:册次:uN` 或 `版本-2024:册次#活动名`，内容有迁移的附 `note`），构建期会自动校验引用可解析。
 3. 依赖边规则：
    - `(A, B, strength, reason)` 表示 A 的先修是 B；`B.gradeEnd ≤ A.gradeStart`；
    - `hard` 用于「不会先修就学不了」，`soft` 用于「有帮助但非必需」；
