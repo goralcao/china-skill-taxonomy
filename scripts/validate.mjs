@@ -221,17 +221,51 @@ for (const [subject, cnt] of Object.entries(researchBySubject)) {
   }
 }
 
-/* ---------- 7. 域摘要 ---------- */
+/* ---------- 7. 域摘要与层级 ---------- */
+const topicIdSet = new Set(topics.map(t => t.id));
 const clusterKeys = new Set();
+const clusterIds = new Set();
 for (const c of clustersDoc.clusters) {
   const key = `${c.subject}|${c.domain}|${c.stage}`;
   if (clusterKeys.has(key)) fail(`域摘要重复: ${key}`);
   clusterKeys.add(key);
   if (!SUBJECTS.has(c.subject)) fail(`域摘要学科非法: ${c.subject}`);
+  if (!c.id) fail(`域摘要缺少 id: ${key}`);
+  else if (clusterIds.has(c.id)) fail(`域摘要 id 重复: ${c.id}`);
+  else clusterIds.add(c.id);
+  if (!Array.isArray(c.topicIds) || !c.topicIds.length) fail(`域摘要 topicIds 为空: ${key}`);
+  else for (const tid of c.topicIds) {
+    if (!topicIdSet.has(tid)) fail(`域摘要 ${key} 引用了不存在的主题: ${tid}`);
+  }
 }
+const topicToCluster = new Map();
 for (const t of topics) {
   const key = `${t.subject}|${t.domain}|${t.stage}`;
   if (!clusterKeys.has(key)) warn(`主题 ${t.name} 缺少对应域摘要: ${key}`);
+  if (!t.clusterId) fail(`主题缺少 clusterId: ${t.id}`);
+  else {
+    if (!clusterIds.has(t.clusterId)) fail(`主题 ${t.id} 的 clusterId 不存在: ${t.clusterId}`);
+    if (topicToCluster.has(t.clusterId) && topicToCluster.get(t.clusterId) !== t.id) {
+      // 同簇多主题是正常的，仅检查主题未被重复登记到多个簇
+    }
+    topicToCluster.set(t.id, t.clusterId);
+  }
+}
+// 双向一致：簇登记的主题 ↔ 主题声明的簇
+for (const c of clustersDoc.clusters) {
+  for (const tid of c.topicIds || []) {
+    const t = topics.find(x => x.id === tid);
+    if (t && t.clusterId !== c.id) fail(`主题 ${tid} 的 clusterId(${t.clusterId}) 与簇登记(${c.id})不一致`);
+  }
+}
+// 每个主题恰好属于一个簇
+{
+  const seen = new Set();
+  for (const c of clustersDoc.clusters) for (const tid of c.topicIds || []) {
+    if (seen.has(tid)) fail(`主题被多个簇登记: ${tid}`);
+    seen.add(tid);
+  }
+  for (const t of topics) if (!seen.has(t.id)) fail(`主题未被任何簇登记: ${t.id}`);
 }
 
 /* ---------- 报告 ---------- */

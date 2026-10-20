@@ -11,12 +11,17 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["subject", "domain", "stage", "summary"],
+        "required": ["id", "subject", "domain", "stage", "summary", "topicIds"],
         "properties": {
+          "id": { "type": "string", "pattern": "^cl-(math|chinese|english)-d[1-9]-[a-z][0-9]$" },
           "subject": { "enum": ["数学", "语文", "英语"] },
           "domain": { "type": "string" },
           "stage": { "type": "string" },
-          "summary": { "type": "string", "minLength": 40, "maxLength": 250 }
+          "summary": { "type": "string", "minLength": 40, "maxLength": 250 },
+          "topicIds": {
+            "type": "array", "minItems": 1,
+            "items": { "type": "string", "pattern": "^mt_[a-z0-9-]+$" }
+          }
         }
       }
     }

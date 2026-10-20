@@ -39,7 +39,7 @@ import teaching_research_chinese_a  # noqa: E402
 import teaching_research_chinese_b  # noqa: E402
 import teaching_research_english  # noqa: E402
 
-VERSION = "v0.4.0"
+VERSION = "v0.5.0"
 SCHEMA_VERSION = 1
 
 MODULES = [
@@ -109,6 +109,40 @@ def stage_of(subject: str, grade: int) -> str:
     return STAGE_BY_GRADE[grade]
 
 
+SUBJECT_SLUG = {"数学": "math", "语文": "chinese", "英语": "english"}
+STAGE_SLUG = {
+    "第一学段（1~2年级）": "s1",
+    "第二学段（3~4年级）": "s2",
+    "第三学段（5~6年级）": "s3",
+    "一级（3~4年级）": "l1",
+    "二级（5~6年级）": "l2",
+}
+
+
+def build_domain_index():
+    """按学科内首次出现顺序给领域编号，用于生成稳定的领域簇 id。"""
+    idx, counters = {}, {}
+    for subject, mod in MODULES:
+        counters[subject] = {}
+        for t in mod.TOPICS:
+            d = t["domain"]
+            if d not in counters[subject]:
+                counters[subject][d] = len(counters[subject]) + 1
+            idx[(subject, d)] = counters[subject][d]
+    return idx
+
+
+# 领域编号只依赖 src/ 数据，构建期算一次即可
+DOMAIN_INDEX = build_domain_index()
+
+
+def cluster_id_of(subject, domain, stage):
+    num = DOMAIN_INDEX.get((subject, domain))
+    if num is None:
+        raise SystemExit(f"领域簇缺少领域：{subject}/{domain}")
+    return f"cl-{SUBJECT_SLUG[subject]}-d{num}-{STAGE_SLUG[stage]}"
+
+
 def build_topics():
     topics, key_to_id = [], {}
     for subject, mod in MODULES:
@@ -132,6 +166,8 @@ def build_topics():
                 "standards": t["standards"],
                 "textbooks": t["textbooks"],
             })
+    for t in topics:
+        t["clusterId"] = cluster_id_of(t["subject"], t["domain"], t["stage"])
     # 中心度：无向度 / (N-1)，便于前端按枢纽主题布局
     degree = {t["id"]: 0 for t in topics}
     for _, mod in MODULES:
@@ -215,15 +251,22 @@ def build_textbooks():
     }
 
 
-def build_clusters():
+def build_clusters(topics):
+    """领域簇：以（学科 × 领域 × 学段）分组，并反向登记其下知识点 id。"""
+    by_cid = {}
+    for t in topics:
+        by_cid.setdefault(t["clusterId"], []).append(t["id"])
     clusters = []
     for subject, mod in MODULES:
         for c in mod.CLUSTERS:
+            cid = cluster_id_of(subject, c["domain"], c["stage"])
             clusters.append({
+                "id": cid,
                 "subject": subject,
                 "domain": c["domain"],
                 "stage": c["stage"],
                 "summary": c["summary"],
+                "topicIds": by_cid.get(cid, []),
             })
     return {"version": VERSION, "schemaVersion": SCHEMA_VERSION, "clusters": clusters}
 
@@ -287,12 +330,13 @@ def main():
     DATA.mkdir(exist_ok=True)
     VIZ.mkdir(exist_ok=True)
 
+    topics_obj = build_topics()
     artifacts = {
-        "topics.json": build_topics(),
+        "topics.json": topics_obj,
         "dependencies.json": build_dependencies(),
         "curriculum-standards.json": build_standards(),
         "textbooks.json": build_textbooks(),
-        "clusters.json": build_clusters(),
+        "clusters.json": build_clusters(topics_obj["topics"]),
     }
 
     checksums = {}

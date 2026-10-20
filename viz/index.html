@@ -43,6 +43,10 @@
     border-radius: 6px; padding: 4px 10px; font-size: 12px; cursor: pointer; }
   .tool-btn:hover { border-color: var(--text-dim); }
   .tool-btn.active { background: var(--accent); color: #1a1400; border-color: var(--accent); font-weight: 600; }
+  .layout-btn { background: transparent; border: 1px solid var(--line); color: var(--text-dim);
+    border-radius: 6px; padding: 4px 12px; font-size: 12px; cursor: pointer; }
+  .layout-btn:hover { border-color: var(--text-dim); color: var(--text); }
+  .layout-btn.active { background: var(--accent); color: #1a1400; border-color: var(--accent); font-weight: 600; }
 
   main { flex: 1; position: relative; }
   canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; cursor: grab; }
@@ -136,6 +140,24 @@
   #gradeAxis { position: absolute; left: 12px; top: 12px; font-size: 11px; color: var(--text-dim);
     background: var(--bg-panel); border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px; }
 
+  /* ---------- 热力矩阵（学科 × 年级）---------- */
+  #heatmap { position: absolute; inset: 0; display: none; padding: 26px 30px; overflow: auto; }
+  #heatmap.open { display: block; }
+  #heatmap .hm-wrap { max-width: 1000px; margin: 0 auto; }
+  #heatmap h2 { font-size: 16px; margin-bottom: 4px; }
+  #heatmap .hm-hint { font-size: 12px; color: var(--text-dim); margin-bottom: 16px; line-height: 1.7; }
+  #heatmap .hm-grid { display: grid; grid-template-columns: 92px repeat(6, 1fr); gap: 5px; }
+  #heatmap .hm-head { font-size: 11px; color: var(--text-dim); text-align: center;
+    padding: 5px 0; font-weight: 600; }
+  #heatmap .hm-row { font-size: 12.5px; display: flex; align-items: center; }
+  #heatmap .hm-row b { font-weight: 600; }
+  #heatmap .hm-cell { height: 52px; border-radius: 6px; display: flex; align-items: center;
+    justify-content: center; font-size: 12.5px; font-weight: 600; cursor: pointer;
+    border: 1px solid transparent; transition: transform .12s, border-color .12s;
+    color: rgba(255,255,255,.9); }
+  #heatmap .hm-cell:hover { transform: scale(1.05); border-color: var(--text); }
+  #heatmap .hm-cell.zero { cursor: default; color: var(--text-dim); font-weight: 400; }
+
   #tooltip { position: absolute; pointer-events: none; background: #0a0f18; border: 1px solid var(--line);
     border-radius: 8px; padding: 8px 10px; font-size: 12px; display: none; max-width: 240px;
     box-shadow: 0 4px 16px rgba(0,0,0,.5); z-index: 10; }
@@ -154,9 +176,15 @@
     <span class="chip on" data-subject="语文"><span class="dot" style="background:var(--chinese)"></span>语文</span>
     <span class="chip on" data-subject="英语"><span class="dot" style="background:var(--english)"></span>英语</span>
     <input id="search" type="text" placeholder="搜索主题…">
+    <span style="width:6px"></span>
+    <span style="font-size:12px;color:var(--text-dim)">布局</span>
+    <button class="layout-btn active" data-layout="star">星图</button>
+    <button class="layout-btn" data-layout="scroll">长卷</button>
+    <button class="layout-btn" data-layout="heat">热力</button>
+    <span style="width:10px"></span>
     <button class="tool-btn" id="btnLabels">显示全部名称</button>
-    <button class="tool-btn" id="btnAncestors">追溯全部先修</button>
-    <button class="tool-btn" id="btnDescendants">查看后续解锁</button>
+    <button class="tool-btn" id="btnAncestors" data-trace-btn>追溯全部先修</button>
+    <button class="tool-btn" id="btnDescendants" data-trace-btn>查看后续解锁</button>
     <span style="width:8px"></span>
     <button class="tool-btn" id="btnMasterCount" title="点击隐藏已掌握的主题，专注待学">未标记掌握</button>
     <button class="tool-btn" id="btnClearMaster" title="清空全部掌握标记" style="display:none">清空标记</button>
@@ -175,6 +203,11 @@
     <div id="tooltip"></div>
     <div id="toast"></div>
     <div id="printArea"></div>
+    <div id="heatmap"><div class="hm-wrap">
+      <h2>知识点密度矩阵</h2>
+      <div class="hm-hint">行 = 学科，列 = 年级；格子颜色越深，表示该学科该年级的知识点越密集。点击任意格子可跳转回图谱并聚焦该学科。</div>
+      <div class="hm-grid" id="hmGrid"></div>
+    </div></div>
     <div id="panel">
       <button class="close-btn" id="btnClose">×</button>
       <h2 id="pName"></h2>
@@ -185,14 +218,16 @@
       </div>
       <div id="pDiag"></div>
       <div id="pPath"></div>
-      <h3>学什么</h3><p class="desc" id="pDesc"></p>
-      <h3>掌握证据（能做到这些才算会）</h3><ul id="pEvidence"></ul>
-      <h3>家长检查法</h3><div class="assess" id="pAssess"></div>
-      <h3>课标对齐</h3><div id="pStandards"></div>
-      <h3>教材位置</h3><div id="pTextbooks"></div>
-      <h3>教学研究</h3><div id="pResearch"></div>
-      <h3>先修（之前要先掌握）</h3><ul class="link-list" id="pPrereqs"></ul>
-      <h3>解锁（通向后续）</h3><ul class="link-list" id="pUnlocks"></ul>
+      <div id="pTopicOnly">
+        <h3>学什么</h3><p class="desc" id="pDesc"></p>
+        <h3>掌握证据（能做到这些才算会）</h3><ul id="pEvidence"></ul>
+        <h3>家长检查法</h3><div class="assess" id="pAssess"></div>
+        <h3>课标对齐</h3><div id="pStandards"></div>
+        <h3>教材位置</h3><div id="pTextbooks"></div>
+        <h3>教学研究</h3><div id="pResearch"></div>
+        <h3>先修（之前要先掌握）</h3><ul class="link-list" id="pPrereqs"></ul>
+        <h3>解锁（通向后续）</h3><ul class="link-list" id="pUnlocks"></ul>
+      </div>
     </div>
   </main>
 </div>
@@ -222,57 +257,180 @@
   // ---------- 布局：力导向 + 年级纵向锚定 ----------
   const nodes = topics.map((t) => ({
     ...t, x: 0, y: 0, vx: 0, vy: 0, r: 4 + (t.centrality || 0) * 260,
-    visible: true, highlight: 0, searchHit: false,
+    visible: true, highlight: 0, searchHit: false, kind: 'topic',
   }));
   const nodeById = new Map(nodes.map(n => [n.id, n]));
   const edges = deps.map(d => ({ ...d, a: nodeById.get(d.topicId), b: nodeById.get(d.prerequisiteId) }));
+
+  // ---------- 层级容器：学科 → 领域簇 → 知识点 ----------
+  const SUBJECT_LIST = ['数学', '语文', '英语'];
+  const clusterById = new Map(clusters.map(c => [c.id, c]));
+  const subjectNodes = SUBJECT_LIST.map(s => ({
+    id: 'subj-' + s, kind: 'subject', name: s, subject: s,
+    x: 0, y: 0, r: 18, visible: true,
+  }));
+  const clusterNodes = clusters.map(c => ({
+    id: c.id, kind: 'cluster', name: c.domain, subject: c.subject,
+    domain: c.domain, stage: c.stage, summary: c.summary, topicIds: c.topicIds,
+    x: 0, y: 0, r: 6 + Math.sqrt(c.topicIds.length) * 2.2, visible: true,
+  }));
+  const containerById = new Map([...subjectNodes, ...clusterNodes].map(n => [n.id, n]));
+  // 绘制顺序：容器在下、知识点在上；拾取时反向遍历（优先命中知识点）
+  const renderNodes = [...subjectNodes, ...clusterNodes, ...nodes];
+  const renderById = new Map(renderNodes.map(n => [n.id, n]));
+
+  // 归属边（层级关系，与依赖边分开渲染）
+  const memberEdges = [];
+  for (const c of clusterNodes) {
+    memberEdges.push({ from: c, to: containerById.get('subj-' + c.subject), kind: 'sub' });
+  }
+  for (const n of nodes) {
+    const c = containerById.get(n.clusterId);
+    if (c) memberEdges.push({ from: n, to: c, kind: 'kp' });
+  }
+
+  // 折叠状态：存被折叠容器的 id
+  const collapsed = new Set();
+  let layoutMode = 'star';   // 'star' | 'scroll' | 'heat'
+
+  // 热力矩阵数据：学科 × 年级 的知识点条数
+  const heatCounts = {};
+  for (const t of topics) {
+    for (let g = t.gradeRangeStart; g <= t.gradeRangeEnd; g++) {
+      const k = t.subject + '|' + g;
+      heatCounts[k] = (heatCounts[k] || 0) + 1;
+    }
+  }
+  // 学科节点计数
+  for (const s of subjectNodes) {
+    s.count = topics.filter(t => t.subject === s.subject).length;
+  }
+
   const targetYOf = (n) => ((n.gradeRangeStart - .5) / 6) * (H - 80) + 40;
   function initPositions() {
+    for (const s of subjectNodes) {
+      s.x = W * (0.16 + 0.34 * SUBJECT_LIST.indexOf(s.subject));
+      s.y = H * 0.5;
+    }
+    for (const c of clusterNodes) {
+      const si = SUBJECT_LIST.indexOf(c.subject);
+      c.x = W * (0.16 + 0.34 * si);
+      c.y = H * 0.5;
+    }
     for (const n of nodes) {
       n.x = W / 2 + (Math.random() - .5) * W * .55;
       n.y = n.targetY = targetYOf(n);
     }
   }
 
+  /** 册次序号：从第一个教材引用取（1a=1年级上 → 0，1b → 1，… 6b → 11）*/
+  function termIndexOf(n) {
+    for (const r of n.textbooks || []) {
+      const m = r.match(/:([1-6])([ab])/);
+      if (m) return (Number(m[1]) - 1) * 2 + (m[2] === 'b' ? 1 : 0);
+    }
+    return (n.gradeRangeStart - 1) * 2;   // 回退：按起始年级
+  }
+
+  /** 容器位置 = 其下可见子节点的质心（每帧重算，天然跟随布局）*/
+  function updateContainerPositions() {
+    const acc = new Map();
+    for (const c of clusterNodes) acc.set(c.id, { x: 0, y: 0, n: 0 });
+    for (const n of nodes) {
+      if (!n.visible) continue;
+      const a = acc.get(n.clusterId);
+      if (a) { a.x += n.x; a.y += n.y; a.n++; }
+    }
+    for (const c of clusterNodes) {
+      const a = acc.get(c.id);
+      if (a && a.n) { c.x = a.x / a.n; c.y = a.y / a.n; }
+      c.visible = activeSubjects.has(c.subject) && !collapsed.has('subj-' + c.subject);
+    }
+    const sacc = new Map();
+    for (const s of subjectNodes) sacc.set(s.id, { x: 0, y: 0, n: 0 });
+    for (const c of clusterNodes) {
+      if (!c.visible) continue;
+      const a = sacc.get('subj-' + c.subject);
+      if (a) { a.x += c.x; a.y += c.y; a.n++; }
+    }
+    for (const s of subjectNodes) {
+      const a = sacc.get(s.id);
+      if (a && a.n) { s.x = a.x / a.n; s.y = a.y / a.n; }
+      s.visible = activeSubjects.has(s.subject);
+    }
+  }
+
   function tick() {
     const cx = W / 2;
-    for (let i = 0; i < nodes.length; i++) {
-      const a = nodes[i];
-      if (!a.visible) continue;
-      a.targetY = targetYOf(a);
-      // 斥力
-      for (let j = i + 1; j < nodes.length; j++) {
-        const b = nodes[j];
-        if (!b.visible) continue;
-        let dx = a.x - b.x, dy = (a.y - b.y) * 1.6;
-        let d2 = dx * dx + dy * dy;
-        if (d2 < 1) { dx = Math.random() - .5; dy = Math.random() - .5; d2 = 1; }
-        if (d2 > 400000) continue;
-        const f = 1400 / d2;
-        const d = Math.sqrt(d2);
-        a.vx += dx / d * f; a.vy += dy / d * f;
-        b.vx -= dx / d * f; b.vy -= dy / d * f;
+    const colW = (W - 60) / 12;
+    const laneTop = 62, laneH = (H - 130) / SUBJECT_LIST.length;
+
+    if (layoutMode === 'scroll') {
+      // 长卷：横轴 = 册次（1年级上 → 6年级下），纵轴 = 学科泳道
+      const cells = new Map();
+      for (const n of nodes) {
+        if (!n.visible) continue;
+        const key = n.subject + '|' + termIndexOf(n);
+        if (!cells.has(key)) cells.set(key, []);
+        cells.get(key).push(n);
       }
-      // 年级锚定 + 向心力
-      a.vy += (a.targetY - a.y) * 0.045;
-      a.vx += (cx - a.x) * 0.012;
-      a.vx *= 0.82; a.vy *= 0.82;
-      // 速度上限，防止布局失稳
-      const VMAX = 18;
-      a.vx = Math.max(-VMAX, Math.min(VMAX, a.vx));
-      a.vy = Math.max(-VMAX, Math.min(VMAX, a.vy));
-      a.x += a.vx; a.y += a.vy;
+      for (const [, list] of cells) {
+        const col = termIndexOf(list[0]);
+        const si = SUBJECT_LIST.indexOf(list[0].subject);
+        list.sort((a, b) => a.name.localeCompare(b.name, 'zh'));
+        const step = Math.min(17, (laneH - 10) / Math.max(list.length, 1));
+        list.forEach((n, k) => {
+          n.targetX = 30 + (col + .5) * colW;
+          n.targetY = laneTop + si * laneH + laneH / 2 + (k - (list.length - 1) / 2) * step;
+        });
+      }
+      for (const n of nodes) {
+        if (!n.visible) continue;
+        n.vx += (n.targetX - n.x) * 0.05;
+        n.vy += (n.targetY - n.y) * 0.05;
+        n.vx *= 0.78; n.vy *= 0.78;
+        n.x += n.vx; n.y += n.vy;
+      }
+    } else {
+      // 星图：力导向 + 年级纵轴锚定 + 向所属领域簇靠拢
+      for (let i = 0; i < nodes.length; i++) {
+        const a = nodes[i];
+        if (!a.visible) continue;
+        a.targetY = targetYOf(a);
+        const c = containerById.get(a.clusterId);   // 容器节点（带实时坐标）
+        a.targetX = (c && isFinite(c.x)) ? c.x : cx;
+        for (let j = i + 1; j < nodes.length; j++) {
+          const b = nodes[j];
+          if (!b.visible) continue;
+          let dx = a.x - b.x, dy = (a.y - b.y) * 1.6;
+          let d2 = dx * dx + dy * dy;
+          if (d2 < 1) { dx = Math.random() - .5; dy = Math.random() - .5; d2 = 1; }
+          if (d2 > 400000) continue;
+          const f = 1400 / d2;
+          const d = Math.sqrt(d2);
+          a.vx += dx / d * f; a.vy += dy / d * f;
+          b.vx -= dx / d * f; b.vy -= dy / d * f;
+        }
+        a.vy += (a.targetY - a.y) * 0.045;
+        a.vx += (a.targetX - a.x) * 0.028;
+        a.vx *= 0.82; a.vy *= 0.82;
+        const VMAX = 18;
+        a.vx = Math.max(-VMAX, Math.min(VMAX, a.vx));
+        a.vy = Math.max(-VMAX, Math.min(VMAX, a.vy));
+        a.x += a.vx; a.y += a.vy;
+      }
+      // 依赖弹簧
+      for (const e of edges) {
+        if (!e.a.visible || !e.b.visible) continue;
+        const dx = e.b.x - e.a.x, dy = (e.b.y - e.a.y) * 0.35;
+        const d = Math.max(6, Math.sqrt(dx * dx + dy * dy));
+        const rest = e.strength === 'hard' ? 46 : 70;
+        const f = (d - rest) * 0.02;
+        const fx = dx / d * f, fy = dy / d * f;
+        e.a.vx += fx; e.a.vy += fy; e.b.vx -= fx; e.b.vy -= fy;
+      }
     }
-    // 弹簧
-    for (const e of edges) {
-      if (!e.a.visible || !e.b.visible) continue;
-      const dx = e.b.x - e.a.x, dy = (e.b.y - e.a.y) * 0.35;
-      const d = Math.max(6, Math.sqrt(dx * dx + dy * dy));
-      const rest = e.strength === 'hard' ? 46 : 70;
-      const f = (d - rest) * 0.02;
-      const fx = dx / d * f, fy = dy / d * f;
-      e.a.vx += fx; e.a.vy += fy; e.b.vx -= fx; e.b.vy -= fy;
-    }
+    updateContainerPositions();
   }
 
   // ---------- 交互状态 ----------
@@ -482,6 +640,57 @@
     toast('已导出 Markdown 文件');
   }
 
+  // ---------- 容器（学科 / 领域簇）详情 ----------
+  function renderContainerPanel(n) {
+    const isSubj = n.kind === 'subject';
+    const ids = descendantTopicIds(n);
+    const doneN = ids.filter(id => mastered.has(id)).length;
+    const pct = ids.length ? Math.round(doneN / ids.length * 100) : 0;
+
+    document.getElementById('pName').textContent = n.name;
+    document.getElementById('pMeta').innerHTML =
+      `<span class="badge" style="color:${subjectColor[n.subject]};border-color:${subjectColor[n.subject]}">${n.subject}</span>` +
+      `<span>${isSubj ? '学科' : '领域簇'}</span>` +
+      (isSubj ? '' : `<span>${esc(n.stage)}</span>`) +
+      `<span>下辖 ${ids.length} 个知识点</span>`;
+
+    const allDone = ids.length > 0 && doneN === ids.length;
+    const mb = document.getElementById('btnMaster');
+    mb.textContent = allDone ? '↩️ 取消整组掌握' : (isSubj ? '✅ 整学科已掌握' : '✅ 整簇已掌握');
+    mb.classList.toggle('on', allDone);
+
+    let membersHtml;
+    if (isSubj) {
+      membersHtml = `<ul class="link-list">${clusterNodes.filter(c => c.subject === n.subject).map(c =>
+        `<li data-id="${c.id}">${esc(c.domain)} <span style="color:var(--text-dim)">（${c.topicIds.length}）· ${esc(c.stage)}</span></li>`).join('')}</ul>`;
+    } else {
+      const ts = ids.map(id => nodeById.get(id)).filter(Boolean);
+      membersHtml = `<ul class="link-list">${ts.map(t =>
+        `<li data-id="${t.id}"><span${mastered.has(t.id) ? ' style="color:var(--accent)"' : ''}>${esc(t.name)}</span></li>`).join('')}</ul>`;
+    }
+
+    document.getElementById('pDiag').innerHTML = `
+      <h3>${isSubj ? '下辖领域簇' : '下辖知识点'}</h3>
+      ${membersHtml}
+      <div class="diag" style="margin-top:10px">
+        <div>共 <b>${ids.length}</b> 个知识点，已掌握 <b>${doneN}</b> 个（${pct}%）</div>
+        <div class="diag-bar"><i class="done" style="width:${pct}%"></i><i class="todo" style="width:${100 - pct}%"></i></div>
+      </div>`;
+    if (!isSubj && n.summary) {
+      document.getElementById('pDiag').innerHTML +=
+        `<h3>这个领域在学什么</h3><p class="desc">${esc(n.summary)}</p>`;
+    }
+    document.getElementById('pPath').innerHTML = '';
+  }
+
+  function toggleCollapse(n) {
+    const id = n.kind === 'subject' ? 'subj-' + n.subject : n.id;
+    if (collapsed.has(id)) collapsed.delete(id); else collapsed.add(id);
+    applyFilter();
+    select(n);
+    toast(collapsed.has(id) ? `已折叠「${n.name}」` : `已展开「${n.name}」`);
+  }
+
   const toastTimer = { t: null };
   function toast(msg) {
     const el = document.getElementById('toast');
@@ -507,15 +716,40 @@
   // ---------- 绘制 ----------
   function draw() {
     ctx.clearRect(0, 0, W, H);
-    // 年级参考线
+    // 参考线：星图=年级横线；长卷=册次竖线
     ctx.strokeStyle = 'rgba(255,255,255,.05)'; ctx.lineWidth = 1;
-    for (let g = 1; g <= 6; g++) {
-      const y = ((g - .5) / 6) * (H - 80) + 40;
-      ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
-      ctx.fillStyle = 'rgba(147,161,185,.5)'; ctx.font = '11px sans-serif';
-      ctx.fillText(g + ' 年级', 8, y - 5);
+    if (layoutMode === 'scroll') {
+      const cw = (W - 60) / 12;
+      for (let col = 0; col < 12; col++) {
+        const x = 30 + (col + .5) * cw;
+        ctx.beginPath(); ctx.moveTo(x, 44); ctx.lineTo(x, H - 30); ctx.stroke();
+        const g = Math.floor(col / 2) + 1;
+        const s = col % 2 ? '下' : '上';
+        ctx.fillStyle = 'rgba(147,161,185,.55)'; ctx.font = '10px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText(`${g}年级${s}`, x, 36);
+        ctx.textAlign = 'left';
+      }
+    } else {
+      for (let g = 1; g <= 6; g++) {
+        const y = ((g - .5) / 6) * (H - 80) + 40;
+        ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
+        ctx.fillStyle = 'rgba(147,161,185,.5)'; ctx.font = '11px sans-serif';
+        ctx.fillText(g + ' 年级', 8, y - 5);
+      }
     }
-    // 边
+    // 归属边（层级：知识点 → 领域簇 → 学科），极淡，只作分组视觉提示
+    ctx.setLineDash([]);
+    for (const e of memberEdges) {
+      if (!e.from.visible || !e.to.visible) continue;
+      ctx.beginPath();
+      ctx.moveTo(e.from.x, e.from.y); ctx.lineTo(e.to.x, e.to.y);
+      ctx.strokeStyle = e.kind === 'sub' ? 'rgba(255,255,255,.13)' : 'rgba(255,255,255,.06)';
+      ctx.lineWidth = e.kind === 'sub' ? 1.1 : .6;
+      ctx.stroke();
+    }
+
+    // 依赖边
     for (const e of edges) {
       if (!e.a.visible || !e.b.visible) continue;
       const isTrace = traceSet.size && traceSet.has(e.a.id) && traceSet.has(e.b.id);
@@ -530,14 +764,39 @@
       ctx.stroke();
     }
     ctx.setLineDash([]);
-    // 节点
-    for (const n of nodes) {
+    // 节点（容器在下、知识点在上）
+    for (const n of renderNodes) {
       if (!n.visible) continue;
       const color = subjectColor[n.subject];
       const isSel = selected && n.id === selected.id;
       const isHov = hovered && n.id === hovered.id;
       const isTrace = traceSet.has(n.id);
       const inFilter = activeSubjects.has(n.subject);
+
+      // ---------- 学科 / 领域簇容器：空心圆环 + 计数 ----------
+      if (n.kind === 'subject' || n.kind === 'cluster') {
+        const isSubj = n.kind === 'subject';
+        const fold = isSubj ? collapsed.has('subj-' + n.subject) : collapsed.has(n.id);
+        ctx.globalAlpha = inFilter ? 1 : 0.12;
+        ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(10,15,24,.88)'; ctx.fill();
+        ctx.strokeStyle = color; ctx.lineWidth = isSubj ? 2.6 : 1.7;
+        if (!fold) { ctx.shadowColor = color; ctx.shadowBlur = isSubj ? 14 : 7; }
+        ctx.stroke(); ctx.shadowBlur = 0;
+        // 中心计数
+        ctx.font = `${isSubj ? 12 : 10}px system-ui, "PingFang SC", sans-serif`;
+        ctx.fillStyle = color; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+        ctx.fillText(String(isSubj ? (n.count || 0) : (n.topicIds || []).length), n.x, n.y);
+        ctx.textBaseline = 'alphabetic';
+        // 名称 + 折叠标记
+        ctx.font = `${isSubj ? 15 : 11.5}px system-ui, "PingFang SC", sans-serif`;
+        ctx.fillStyle = 'rgba(232,237,245,.95)'; ctx.textAlign = 'center';
+        ctx.fillText(n.name + (fold ? ' ▸' : ''), n.x, n.y - n.r - 6);
+        ctx.textAlign = 'left';
+        ctx.globalAlpha = 1;
+        continue;
+      }
+
       ctx.globalAlpha = inFilter ? 1 : 0.12;
       ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
       ctx.fillStyle = color;
@@ -576,12 +835,23 @@
   }
   function pick(p) {
     let best = null, bd = Infinity;
-    for (const n of nodes) {
+    // 反向遍历：绘制顺序是容器→知识点，反向即优先命中知识点
+    for (let i = renderNodes.length - 1; i >= 0; i--) {
+      const n = renderNodes[i];
       if (!n.visible) continue;
       const d = Math.hypot(n.x - p.x, n.y - p.y);
       if (d < n.r + 6 && d < bd) { bd = d; best = n; }
     }
     return best;
+  }
+
+  /** 某个容器（学科/领域簇）下所有知识点 id */
+  function descendantTopicIds(node) {
+    if (node.kind === 'subject') {
+      return topics.filter(t => t.subject === node.subject).map(t => t.id);
+    }
+    if (node.kind === 'cluster') return [...node.topicIds];
+    return [node.id];
   }
   const tooltip = document.getElementById('tooltip');
   canvas.addEventListener('mousemove', ev => {
@@ -600,7 +870,9 @@
   canvas.addEventListener('mouseleave', () => { tooltip.style.display = 'none'; hovered = null; });
   canvas.addEventListener('click', ev => {
     const n = pick(canvasPos(ev));
-    if (n) select(n); else { selected = null; document.getElementById('panel').classList.remove('open'); }
+    if (!n) { selected = null; document.getElementById('panel').classList.remove('open'); return; }
+    if (n.kind === 'subject' || n.kind === 'cluster') toggleCollapse(n);
+    else select(n);
   });
 
   function esc(s) { return String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
@@ -669,8 +941,17 @@
   function select(n) {
     selected = n;
     traceSet.clear(); traceMode = null;
-    document.querySelectorAll('.tool-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('[data-trace-btn]').forEach(b => b.classList.remove('active'));
     const panel = document.getElementById('panel');
+    const isContainer = n.kind === 'subject' || n.kind === 'cluster';
+    document.getElementById('pTopicOnly').style.display = isContainer ? 'none' : '';
+    document.getElementById('btnPath').style.display = isContainer ? 'none' : '';
+    if (isContainer) {
+      renderContainerPanel(n);
+      panel.classList.add('open');
+      panel.scrollTop = 0;
+      return;
+    }
     document.getElementById('pName').textContent = n.name;
     document.getElementById('pMeta').innerHTML =
       `<span class="badge" style="color:${subjectColor[n.subject]};border-color:${subjectColor[n.subject]}">${n.subject}</span>
@@ -705,6 +986,18 @@
   // ---------- 行动区：标记已掌握 / 生成学习路径 ----------
   document.getElementById('btnMaster').onclick = function () {
     if (!selected) { toast('请先点击一个主题'); return; }
+    // 容器：整组标记/取消
+    if (selected.kind === 'subject' || selected.kind === 'cluster') {
+      const ids = descendantTopicIds(selected);
+      const allDone = ids.length > 0 && ids.every(id => mastered.has(id));
+      ids.forEach(id => { if (allDone) mastered.delete(id); else mastered.add(id); });
+      saveMastered(); syncMasterUI();
+      renderContainerPanel(selected);
+      toast(allDone
+        ? `已取消「${selected.name}」下 ${ids.length} 个知识点的掌握标记`
+        : `已将「${selected.name}」下 ${ids.length} 个知识点标记为已掌握`);
+      return;
+    }
     if (mastered.has(selected.id)) mastered.delete(selected.id);
     else mastered.add(selected.id);
     saveMastered(); syncMasterUI();
@@ -723,6 +1016,57 @@
       toast(`已生成 ${d.order.length} 步学习路径（待补 ${d.todo.length}）`);
     }
   };
+  // ---------- 布局切换 ----------
+  function setLayout(mode) {
+    layoutMode = mode;
+    document.querySelectorAll('.layout-btn').forEach(b =>
+      b.classList.toggle('active', b.dataset.layout === mode));
+    const showHm = mode === 'heat';
+    document.getElementById('heatmap').classList.toggle('open', showHm);
+    canvas.style.display = showHm ? 'none' : 'block';
+    document.getElementById('gradeAxis').style.display = showHm ? 'none' : '';
+    document.getElementById('legend').style.display = showHm ? 'none' : '';
+    if (showHm) buildHeatmap();
+  }
+  document.querySelectorAll('.layout-btn').forEach(b => {
+    b.onclick = () => setLayout(b.dataset.layout);
+  });
+
+  function buildHeatmap() {
+    const grid = document.getElementById('hmGrid');
+    const max = Math.max(1, ...Object.values(heatCounts));
+    let html = '<div class="hm-head"></div>';
+    for (let g = 1; g <= 6; g++) html += `<div class="hm-head">${g} 年级</div>`;
+    for (const s of SUBJECT_LIST) {
+      html += `<div class="hm-row"><span class="dot" style="display:inline-block;width:9px;height:9px;
+        border-radius:50%;background:${subjectColor[s]};margin-right:7px"></span><b>${s}</b></div>`;
+      for (let g = 1; g <= 6; g++) {
+        const c = heatCounts[s + '|' + g] || 0;
+        const t = c ? 0.16 + 0.60 * (c / max) : 0.05;
+        html += `<div class="hm-cell${c ? '' : ' zero'}" style="background:rgba(79,143,247,${t.toFixed(3)})"
+          data-subj="${s}" data-grade="${g}" title="${s} ${g} 年级：${c} 个知识点">${c || '·'}</div>`;
+      }
+    }
+    grid.innerHTML = html;
+  }
+
+  document.getElementById('heatmap').addEventListener('click', ev => {
+    const cell = ev.target.closest('.hm-cell[data-subj]');
+    if (!cell || cell.classList.contains('zero')) return;
+    const s = cell.dataset.subj, g = Number(cell.dataset.grade);
+    // 聚焦该学科，切到长卷按册次定位，并选中该年级首个主题
+    for (const x of [...activeSubjects]) if (x !== s) activeSubjects.delete(x);
+    activeSubjects.add(s);
+    document.querySelectorAll('.chip').forEach(c => {
+      const on = activeSubjects.has(c.dataset.subject);
+      c.classList.toggle('on', on); c.classList.toggle('off', !on);
+    });
+    applyFilter();
+    setLayout('scroll');
+    const hit = nodes.find(n => n.visible && n.gradeRangeStart <= g && n.gradeRangeEnd >= g);
+    if (hit) { select(hit); toast(`${s} ${g} 年级 · 已定位「${hit.name}」`); }
+  });
+
   function syncMasterUI() {
     const btn = document.getElementById('btnMasterCount');
     const clear = document.getElementById('btnClearMaster');
@@ -746,7 +1090,11 @@
   });
   function applyFilter() {
     for (const n of nodes) {
+      // 折叠学科 = 隐藏其下全部知识点；折叠领域簇 = 隐藏该簇知识点
+      const subjHidden = collapsed.has('subj-' + n.subject);
+      const clHidden = collapsed.has(n.clusterId);
       n.visible = activeSubjects.has(n.subject)
+        && !subjHidden && !clHidden
         && !(hideMastered && mastered.has(n.id));
     }
   }
@@ -815,6 +1163,15 @@
     `教学研究 <b>${(D.research?.records ?? []).length}</b>`;
   document.getElementById('gradeAxis').textContent = '纵轴：1 年级（上）→ 6 年级（下）';
   syncMasterUI();
+
+  // 调试句柄：便于控制台排查与自动化验证
+  window.__viz = {
+    nodes, clusterNodes, subjectNodes,
+    get collapsed() { return collapsed; },
+    get layoutMode() { return layoutMode; },
+    toggleCollapse, select, setLayout,
+  };
+
   resize();
   initPositions();
   loop();
