@@ -34,8 +34,11 @@ import topics_english  # noqa: E402
 import topics_math  # noqa: E402
 import teaching_research_math_a  # noqa: E402
 import teaching_research_math_b  # noqa: E402
+import teaching_research_chinese_a  # noqa: E402
+import teaching_research_chinese_b  # noqa: E402
+import teaching_research_english  # noqa: E402
 
-VERSION = "v0.2.0"
+VERSION = "v0.3.0"
 SCHEMA_VERSION = 1
 
 MODULES = [
@@ -44,7 +47,13 @@ MODULES = [
     ("英语", topics_english),
 ]
 
-RESEARCH_MODULES = [teaching_research_math_a, teaching_research_math_b]
+RESEARCH_MODULES = [
+    teaching_research_math_a,
+    teaching_research_math_b,
+    teaching_research_chinese_a,
+    teaching_research_chinese_b,
+    teaching_research_english,
+]
 
 RESEARCH_AUTHORSHIP = {
     "authoredBy": "AI 撰写（教学研究层）",
@@ -59,6 +68,12 @@ ALLOWED_SOURCES = {
     "《义务教育数学课程标准（2022年版）》": "https://basic.smartedu.cn/",
     "人教版《义务教育教科书·数学》教师教学用书": "https://www.pep.com.cn/",
     "人教版《义务教育教科书·数学》": "",
+    "《义务教育语文课程标准（2022年版）》": "https://basic.smartedu.cn/",
+    "统编版《义务教育教科书·语文》教师教学用书": "",
+    "统编版《义务教育教科书·语文》": "",
+    "《义务教育英语课程标准（2022年版）》": "https://basic.smartedu.cn/",
+    "人教版《义务教育教科书·英语（PEP）》教师教学用书": "",
+    "人教版《义务教育教科书·英语（PEP）》": "",
 }
 
 STAGE_BY_GRADE = {

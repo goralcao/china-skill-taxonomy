@@ -1,6 +1,6 @@
 {
   "name": "学阶图谱 · China Skill Taxonomy",
-  "version": "v0.2.0",
+  "version": "v0.3.0",
   "schemaVersion": 1,
   "generatedAt": "2026-10-20",
   "counts": {
@@ -8,7 +8,7 @@
     "dependencies": 385,
     "curriculumStandards": 46,
     "clusters": 39,
-    "teachingResearchRecords": 96,
+    "teachingResearchRecords": 188,
     "hardEdges": 270,
     "softEdges": 115
   },
@@ -28,28 +28,28 @@
   },
   "files": {
     "topics.json": {
-      "sha256": "576f31e073b2cf1d54db8ecca7b6daea8d2386277845644e7c8c9cb1ed1398aa",
+      "sha256": "1bce5dc55af600f1edada33143a97539cb9d4e5628357174fc0911d934b47fa0",
       "bytes": 162272
     },
     "dependencies.json": {
-      "sha256": "5ac177f73daf875c61ed710fb36b34c0356c4bea71054f8d2cfa531ad484b164",
+      "sha256": "bb6908cdd6241b2b5fad98791baf1bfcd35d5c1fb051e252faae9790adcb36f4",
       "bytes": 70204
     },
     "curriculum-standards.json": {
-      "sha256": "16f100e617a91b29d6109796cc4669839842004e66eb0b469b7d723da5cf70a6",
+      "sha256": "b5b8a54c89605e23d8eefc6e72c2801654e8f57962b2f4cde515af6eb3ae6d60",
       "bytes": 19201
     },
     "textbooks.json": {
-      "sha256": "096e5976e9645515a5a5b4795f49528d85661ffde1ee4b3c7092acbb447de5bb",
+      "sha256": "3c3fdbd5610f332aee15421e84f3bbcc879a123a5525245ce79370e2cf734d8f",
       "bytes": 14065
     },
     "clusters.json": {
-      "sha256": "ee3e1591c3032714b606d4c63d87287039504da30ff3b43235d96ef434e996a7",
+      "sha256": "806562bf11c0e4e18db27dbb5ad96d39a6bc71f607ccf7bc5ab75a99451cc8f2",
       "bytes": 15983
     },
     "teaching-research.json": {
-      "sha256": "e5eb8704ecbffd7dd1fabe8309b0ffbf02815df739954ee537aa516251e7d3f2",
-      "bytes": 286374
+      "sha256": "a61a658480caf50b545f712a3bd5051f4dc5ee29096efba50cb72d5e4918c8ed",
+      "bytes": 577775
     }
   }
 }
