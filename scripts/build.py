@@ -36,17 +36,19 @@ import textbooks_2024 as tb24  # noqa: E402
 import topics_chinese  # noqa: E402
 import topics_english  # noqa: E402
 import topics_math  # noqa: E402
+import topics_math_junior  # noqa: E402
 import teaching_research_math_a  # noqa: E402
 import teaching_research_math_b  # noqa: E402
 import teaching_research_chinese_a  # noqa: E402
 import teaching_research_chinese_b  # noqa: E402
 import teaching_research_english  # noqa: E402
 
-VERSION = "v0.7.0"
+VERSION = "v0.8.0"
 SCHEMA_VERSION = 1
 
 MODULES = [
     ("数学", topics_math),
+    ("数学", topics_math_junior),
     ("语文", topics_chinese),
     ("英语", topics_english),
 ]
@@ -87,6 +89,9 @@ STAGE_BY_GRADE = {
     4: "第二学段（3~4年级）",
     5: "第三学段（5~6年级）",
     6: "第三学段（5~6年级）",
+    7: "第四学段（7~9年级）",
+    8: "第四学段（7~9年级）",
+    9: "第四学段（7~9年级）",
 }
 ENGLISH_STAGE_BY_GRADE = {
     3: "一级（3~4年级）",
@@ -117,6 +122,7 @@ STAGE_SLUG = {
     "第一学段（1~2年级）": "s1",
     "第二学段（3~4年级）": "s2",
     "第三学段（5~6年级）": "s3",
+    "第四学段（7~9年级）": "s4",
     "一级（3~4年级）": "l1",
     "二级（5~6年级）": "l2",
 }

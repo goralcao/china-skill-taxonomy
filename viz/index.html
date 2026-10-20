@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>学阶图谱 · 中国小学学能图谱</title>
+<title>学阶图谱 · 中国 K9 学能图谱</title>
 <style>
   :root {
     --bg: #0e1420;
@@ -195,7 +195,7 @@
   #heatmap .hm-wrap { max-width: 1000px; margin: 0 auto; }
   #heatmap h2 { font-size: 16px; margin-bottom: 4px; }
   #heatmap .hm-hint { font-size: 12px; color: var(--text-dim); margin-bottom: 16px; line-height: 1.7; }
-  #heatmap .hm-grid { display: grid; grid-template-columns: 92px repeat(6, 1fr); gap: 5px; }
+  #heatmap .hm-grid { display: grid; grid-template-columns: 92px repeat(var(--hm-cols, 6), 1fr); gap: 5px; }
   #heatmap .hm-head { font-size: 11px; color: var(--text-dim); text-align: center;
     padding: 5px 0; font-weight: 600; }
   #heatmap .hm-row { font-size: 12.5px; display: flex; align-items: center; }
@@ -266,7 +266,7 @@
 
     /* 热力矩阵 */
     #heatmap { padding: 14px 10px; }
-    #heatmap .hm-grid { grid-template-columns: 50px repeat(6, 1fr); gap: 3px; }
+    #heatmap .hm-grid { grid-template-columns: 50px repeat(var(--hm-cols, 6), 1fr); gap: 3px; }
     #heatmap .hm-cell { height: 44px; font-size: 11px; }
     #heatmap h2 { font-size: 14.5px; }
     #heatmap .hm-hint { font-size: 11px; margin-bottom: 12px; }
@@ -283,7 +283,7 @@
 <body>
 <div id="app">
   <header>
-    <h1>学阶图谱 <small>China Skill Taxonomy · 中国小学学能图谱 v0.1</small></h1>
+    <h1>学阶图谱 <small>China Skill Taxonomy · 中国 K9 学能图谱 v0.8</small></h1>
     <div class="stats" id="stats"></div>
   </header>
   <div class="toolbar">
@@ -316,7 +316,7 @@
         <div class="row"><span class="dot" style="background:var(--math)"></span>数学　<span class="dot" style="background:var(--chinese)"></span>语文　<span class="dot" style="background:var(--english)"></span>英语</div>
         <div class="row"><span class="line"></span>硬依赖（不会先修就学不了）　<span class="line dash"></span>软依赖</div>
         <div class="row">大圆环 = 学科 · 中圆环 = 领域簇（数字为下辖知识点数）</div>
-        <div class="row">纵轴 = 年级（1 年级在上）· 圆点越大 = 枢纽主题</div>
+        <div class="row">纵轴 = 年级（1 年级在上，含初中 7~9 年级）· 圆点越大 = 枢纽主题</div>
         <div class="row"><span class="dot" style="background:var(--accent)"></span>金色圆环 = 已掌握（点击主题可标记，自动保存）</div>
         <div class="row">点击圆点查看详情；「生成学习路径」按依赖拓扑排出完整步骤</div>
       </div>
@@ -390,6 +390,10 @@
   const nodeById = new Map(nodes.map(n => [n.id, n]));
   const edges = deps.map(d => ({ ...d, a: nodeById.get(d.topicId), b: nodeById.get(d.prerequisiteId) }));
 
+  // 年级/册次上限：从数据驱动（小学 1~6，初中扩充后含 7~9），避免硬编码 6
+  const MAX_GRADE = Math.max(...topics.map(t => t.gradeRangeEnd));
+  const MAX_TERM = MAX_GRADE * 2;   // 册次列数 = 年级 × 2（上下册）
+
   // ---------- 层级容器：学科 → 领域簇 → 知识点 ----------
   const SUBJECT_LIST = ['数学', '语文', '英语'];
   const clusterById = new Map(clusters.map(c => [c.id, c]));
@@ -438,7 +442,7 @@
     s.count = topics.filter(t => t.subject === s.subject).length;
   }
 
-  const targetYOf = (n) => ((n.gradeRangeStart - .5) / 6) * (H - 80) + 40;
+  const targetYOf = (n) => ((n.gradeRangeStart - .5) / MAX_GRADE) * (H - 80) + 40;
   function initPositions() {
     for (const s of subjectNodes) {
       s.x = W * (0.16 + 0.34 * SUBJECT_LIST.indexOf(s.subject));
@@ -458,7 +462,7 @@
   /** 册次序号：从第一个教材引用取（1a=1年级上 → 0，1b → 1，… 6b → 11）*/
   function termIndexOf(n) {
     for (const r of n.textbooks || []) {
-      const m = r.match(/:([1-6])([ab])/);
+      const m = r.match(/:([1-9])([ab])/);
       if (m) return (Number(m[1]) - 1) * 2 + (m[2] === 'b' ? 1 : 0);
     }
     return (n.gradeRangeStart - 1) * 2;   // 回退：按起始年级
@@ -511,11 +515,11 @@
 
   function tick() {
     const cx = W / 2;
-    const colW = (W - 60) / 12;
+    const colW = (W - 60) / MAX_TERM;
     const laneTop = 62, laneH = (H - 130) / SUBJECT_LIST.length;
 
     if (layoutMode === 'scroll') {
-      // 长卷：横轴 = 册次（1年级上 → 6年级下），纵轴 = 学科泳道
+      // 长卷：横轴 = 册次（1年级上 → 9年级下），纵轴 = 学科泳道
       const cells = new Map();
       for (const n of nodes) {
         if (!n.visible) continue;
@@ -868,7 +872,7 @@
   // ---------- 教材直达链接 ----------
   function textbookLinkHtml(ref) {
     const label = refText(ref);
-    const m = ref.match(/^(pep-math|tongbian-chinese|pep-english)(-2024)?:([1-6][ab])/);
+    const m = ref.match(/^(pep-math|tongbian-chinese|pep-english)(-2024)?:([1-9][ab])/);
     let links = `<a href="https://basic.smartedu.cn/" target="_blank" rel="noopener">智慧教育平台</a>`;
     if (m) {
       const v = (D.textbooks?.versions || []).find(x => x.slug === m[1] + (m[2] || ''));
@@ -885,7 +889,7 @@
   // ---------- 教材版本对照（现役 vs 2024 年版课标修订教材） ----------
   const TYPE_LABEL = { activity: '综合与实践', enrichment: '数学广角', intro: '入学导学', revision: '复习与关联' };
   function parseRef(ref) {
-    const m = ref.match(/^(pep-math|tongbian-chinese|pep-english)(-2024)?:([1-6][ab])(?::(u[1-9][0-9]?))?(?:#(.+))?$/);
+    const m = ref.match(/^(pep-math|tongbian-chinese|pep-english)(-2024)?:([1-9][ab])(?::(u[1-9][0-9]?))?(?:#(.+))?$/);
     if (!m) return null;
     return { vslug: m[1] + (m[2] || ''), bslug: m[3], unit: m[4] ? Number(m[4].slice(1)) : null, act: m[5] || null };
   }
@@ -993,14 +997,14 @@
     // 参考线：星图=年级横线；长卷=册次竖线
     ctx.strokeStyle = 'rgba(255,255,255,.05)'; ctx.lineWidth = lw(1);
     if (layoutMode === 'scroll') {
-      const cw = (W - 60) / 12;
-      for (let col = 0; col < 12; col++) {
+      const cw = (W - 60) / MAX_TERM;
+      for (let col = 0; col < MAX_TERM; col++) {
         const x = 30 + (col + .5) * cw;
         ctx.beginPath(); ctx.moveTo(x, 44); ctx.lineTo(x, H - 30); ctx.stroke();
       }
     } else {
-      for (let g = 1; g <= 6; g++) {
-        const y = ((g - .5) / 6) * (H - 80) + 40;
+      for (let g = 1; g <= MAX_GRADE; g++) {
+        const y = ((g - .5) / MAX_GRADE) * (H - 80) + 40;
         ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
       }
     }
@@ -1312,7 +1316,7 @@
   });
 
   function refText(ref) {
-    const m = ref.match(/^(pep-math|tongbian-chinese|pep-english)(-2024)?:([1-6][ab])(?::(u[1-9][0-9]?))?(?:#(.+))?$/);
+    const m = ref.match(/^(pep-math|tongbian-chinese|pep-english)(-2024)?:([1-9][ab])(?::(u[1-9][0-9]?))?(?:#(.+))?$/);
     if (!m) return ref;
     const [, vslug, y2024, bslug, unitPart, actPart] = m;
     const v = bookNames[vslug + (y2024 || '')]; if (!v) return ref;
@@ -1473,11 +1477,11 @@
     const grid = document.getElementById('hmGrid');
     const max = Math.max(1, ...Object.values(heatCounts));
     let html = '<div class="hm-head"></div>';
-    for (let g = 1; g <= 6; g++) html += `<div class="hm-head">${g} 年级</div>`;
+    for (let g = 1; g <= MAX_GRADE; g++) html += `<div class="hm-head">${g} 年级</div>`;
     for (const s of SUBJECT_LIST) {
       html += `<div class="hm-row"><span class="dot" style="display:inline-block;width:9px;height:9px;
         border-radius:50%;background:${subjectColor[s]};margin-right:7px"></span><b>${s}</b></div>`;
-      for (let g = 1; g <= 6; g++) {
+      for (let g = 1; g <= MAX_GRADE; g++) {
         const c = heatCounts[s + '|' + g] || 0;
         const t = c ? 0.16 + 0.60 * (c / max) : 0.05;
         html += `<div class="hm-cell${c ? '' : ' zero'}" style="background:rgba(79,143,247,${t.toFixed(3)})"
@@ -1606,19 +1610,22 @@
 
   // ---------- 启动 ----------
   document.querySelector('header h1 small').textContent =
-    `China Skill Taxonomy · 中国小学学能图谱 ${D.version}`;
+    `China Skill Taxonomy · 中国 K9 学能图谱 ${D.version}`;
   const subjCount = {};
   topics.forEach(t => subjCount[t.subject] = (subjCount[t.subject] || 0) + 1);
   document.getElementById('stats').innerHTML =
     `主题 <b>${topics.length}</b>（${Object.entries(subjCount).map(([k, v]) => k + ' ' + v).join(' · ')}） · ` +
     `先修依赖 <b>${deps.length}</b> · 课标条目 <b>${standardsDoc.length}</b> · 域摘要 <b>${clusters.length}</b> · ` +
     `教学研究 <b>${(D.research?.records ?? []).length}</b>`;
-  document.getElementById('gradeAxis').textContent = '纵轴：1 年级（上）→ 6 年级（下）';
+  document.getElementById('gradeAxis').textContent = '纵轴：1 年级（上）→ ' + MAX_GRADE + ' 年级（下）';
+  // 热力矩阵列数随年级上限动态变化
+  document.documentElement.style.setProperty('--hm-cols', MAX_GRADE);
   syncMasterUI();
 
   // 调试句柄：便于控制台排查与自动化验证
   window.__viz = {
     nodes, clusterNodes, subjectNodes,
+    MAX_GRADE, MAX_TERM,
     get collapsed() { return collapsed; },
     get layoutMode() { return layoutMode; },
     get alpha() { return alpha; },

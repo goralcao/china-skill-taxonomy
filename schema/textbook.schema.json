@@ -18,7 +18,7 @@
           "name": { "type": "string" },
           "edition": { "type": "string" },
           "subject": { "enum": ["数学", "语文", "英语"] },
-          "gradeStart": { "type": "integer", "minimum": 1, "maximum": 6 },
+          "gradeStart": { "type": "integer", "minimum": 1, "maximum": 9 },
           "note": { "type": "string" },
           "unitCounts": { "type": "object" },
           "books": {
@@ -27,8 +27,8 @@
               "type": "object",
               "required": ["slug", "grade", "semester"],
               "properties": {
-                "slug": { "type": "string", "pattern": "^[1-6][ab]$" },
-                "grade": { "type": "integer", "minimum": 1, "maximum": 6 },
+                "slug": { "type": "string", "pattern": "^[1-9][ab]$" },
+                "grade": { "type": "integer", "minimum": 1, "maximum": 9 },
                 "semester": { "enum": ["上", "下"] },
                 "edition": { "type": "string" },
                 "title": { "type": "string" },
@@ -74,7 +74,7 @@
             "type": "array", "maxItems": 4,
             "items": {
               "type": "string",
-              "pattern": "^(pep-math-2024|tongbian-chinese-2024|pep-english-2024):[1-6][ab](:u[1-9][0-9]?)?(#[^#]+)?$"
+              "pattern": "^(pep-math-2024|tongbian-chinese-2024|pep-english-2024):[1-9][ab](:u[1-9][0-9]?)?(#[^#]+)?$"
             }
           },
           "note": { "type": "string", "minLength": 4, "maxLength": 120 }

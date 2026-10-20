@@ -1,5 +1,5 @@
 {
-  "version": "v0.7.0",
+  "version": "v0.8.0",
   "schemaVersion": 1,
   "topics": [
     {
@@ -30,7 +30,7 @@
       ],
       "textbookNote2024": "10 以内数的认识拆分为「5以内」与「6～10」两个单元，连续编排。",
       "clusterId": "cl-math-d1-s1",
-      "centrality": 0.0321
+      "centrality": 0.0223
     },
     {
       "id": "mt_num-10-composition",
@@ -59,7 +59,7 @@
       ],
       "textbookNote2024": "分与合在第一单元，数的组成在第二单元。",
       "clusterId": "cl-math-d1-s1",
-      "centrality": 0.0267
+      "centrality": 0.0186
     },
     {
       "id": "mt_num-10-addsub",
@@ -88,7 +88,7 @@
         "pep-math-2024:1a:u2"
       ],
       "clusterId": "cl-math-d1-s1",
-      "centrality": 0.0374
+      "centrality": 0.026
     },
     {
       "id": "mt_num-10-mixed",
@@ -116,7 +116,7 @@
       ],
       "textbookNote2024": "连加、连减与加减混合编排在第二单元末。",
       "clusterId": "cl-math-d1-s1",
-      "centrality": 0.0107
+      "centrality": 0.0074
     },
     {
       "id": "mt_num-20-recognition",
@@ -144,7 +144,7 @@
       ],
       "textbookNote2024": "新增「10的再认识」，从计数单位与位值制角度理解十进制。",
       "clusterId": "cl-math-d1-s1",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_num-20-carry",
@@ -171,7 +171,7 @@
         "pep-math-2024:1a:u5"
       ],
       "clusterId": "cl-math-d1-s1",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_num-20-borrow",
@@ -198,7 +198,7 @@
         "pep-math-2024:1b:u2"
       ],
       "clusterId": "cl-math-d1-s1",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_num-100-recognition",
@@ -225,7 +225,7 @@
         "pep-math-2024:1b:u3"
       ],
       "clusterId": "cl-math-d1-s1",
-      "centrality": 0.0481
+      "centrality": 0.0335
     },
     {
       "id": "mt_num-100-addsub",
@@ -254,7 +254,7 @@
       ],
       "textbookNote2024": "100 以内简单加减法在「100以内数的认识」单元，口算加减法单设第四单元。",
       "clusterId": "cl-math-d1-s1",
-      "centrality": 0.0374
+      "centrality": 0.026
     },
     {
       "id": "mt_num-100-pen",
@@ -283,7 +283,7 @@
       ],
       "textbookNote2024": "100 以内加减法整体移至一年级下册，笔算单设第五单元。",
       "clusterId": "cl-math-d1-s1",
-      "centrality": 0.0374
+      "centrality": 0.026
     },
     {
       "id": "mt_mul-meaning",
@@ -312,7 +312,7 @@
       ],
       "textbookNote2024": "表内乘法集中在二上「1~6的表内乘法」。",
       "clusterId": "cl-math-d1-s1",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_mul-tables-2-6",
@@ -339,7 +339,7 @@
         "pep-math-2024:2a:u2"
       ],
       "clusterId": "cl-math-d1-s1",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_mul-tables-7-9",
@@ -367,7 +367,7 @@
         "pep-math-2024:2a:u5"
       ],
       "clusterId": "cl-math-d1-s1",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_div-avg",
@@ -396,7 +396,7 @@
       ],
       "textbookNote2024": "表内除法集中在二上「1～6的表内除法」。",
       "clusterId": "cl-math-d1-s1",
-      "centrality": 0.0374
+      "centrality": 0.026
     },
     {
       "id": "mt_div-tables-2-6",
@@ -423,7 +423,7 @@
         "pep-math-2024:2a:u3"
       ],
       "clusterId": "cl-math-d1-s1",
-      "centrality": 0.0267
+      "centrality": 0.0186
     },
     {
       "id": "mt_div-tables-7-9",
@@ -451,7 +451,7 @@
         "pep-math-2024:2a:u5"
       ],
       "clusterId": "cl-math-d1-s1",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_mixed-two-steps",
@@ -480,7 +480,7 @@
       ],
       "textbookNote2024": "混合运算集中调整至三年级上册第二单元。",
       "clusterId": "cl-math-d1-s1",
-      "centrality": 0.0267
+      "centrality": 0.0186
     },
     {
       "id": "mt_div-remainder",
@@ -507,7 +507,7 @@
         "pep-math-2024:2b:u1"
       ],
       "clusterId": "cl-math-d1-s1",
-      "centrality": 0.0053
+      "centrality": 0.0037
     },
     {
       "id": "mt_num-10000-recognition",
@@ -534,7 +534,7 @@
         "pep-math-2024:2b:u3"
       ],
       "clusterId": "cl-math-d1-s1",
-      "centrality": 0.0428
+      "centrality": 0.0297
     },
     {
       "id": "mt_addsub-10000",
@@ -562,7 +562,7 @@
         "pep-math-2024:2b:u4"
       ],
       "clusterId": "cl-math-d1-s2",
-      "centrality": 0.0267
+      "centrality": 0.0186
     },
     {
       "id": "mt_mass-g-kg",
@@ -590,7 +590,7 @@
       ],
       "textbookNote2024": "克与千克由二下调整至三上综合与实践「曹冲称象的故事」（质量单位）。",
       "clusterId": "cl-math-d2-s1",
-      "centrality": 0.0107
+      "centrality": 0.0074
     },
     {
       "id": "mt_time-hms",
@@ -618,7 +618,7 @@
       ],
       "textbookNote2024": "时、分、秒由三上调整至二下综合与实践「时间在哪里」。",
       "clusterId": "cl-math-d2-s2",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_unit-ton",
@@ -646,7 +646,7 @@
       ],
       "textbookNote2024": "吨的认识融入三上「曹冲称象的故事」的质量单位学习。",
       "clusterId": "cl-math-d2-s2",
-      "centrality": 0.0107
+      "centrality": 0.0074
     },
     {
       "id": "mt_mult-1digit",
@@ -673,7 +673,7 @@
         "pep-math-2024:3a:u4"
       ],
       "clusterId": "cl-math-d1-s2",
-      "centrality": 0.0321
+      "centrality": 0.0223
     },
     {
       "id": "mt_div-1digit",
@@ -700,7 +700,7 @@
         "pep-math-2024:3b:u2"
       ],
       "clusterId": "cl-math-d1-s2",
-      "centrality": 0.0267
+      "centrality": 0.0186
     },
     {
       "id": "mt_multiple",
@@ -729,7 +729,7 @@
       ],
       "textbookNote2024": "「倍的认识」不再独立设单元：二下「数量间的乘除关系」初步学习，三上「多位数乘一位数」深化。",
       "clusterId": "cl-math-d1-s2",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_frac-intro",
@@ -756,7 +756,7 @@
         "pep-math-2024:3a:u6"
       ],
       "clusterId": "cl-math-d1-s2",
-      "centrality": 0.0374
+      "centrality": 0.026
     },
     {
       "id": "mt_frac-same-addsub",
@@ -783,7 +783,7 @@
         "pep-math-2024:3a:u6"
       ],
       "clusterId": "cl-math-d1-s2",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_dec-intro",
@@ -810,7 +810,7 @@
         "pep-math-2024:3b:u6"
       ],
       "clusterId": "cl-math-d1-s2",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_dec-addsub",
@@ -837,7 +837,7 @@
         "pep-math-2024:3b:u6"
       ],
       "clusterId": "cl-math-d1-s2",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_calendar",
@@ -865,7 +865,7 @@
       ],
       "textbookNote2024": "年、月、日调整为三下综合与实践「年、月、日的秘密」。",
       "clusterId": "cl-math-d2-s2",
-      "centrality": 0.0053
+      "centrality": 0.0037
     },
     {
       "id": "mt_big-num",
@@ -893,7 +893,7 @@
       ],
       "textbookNote2024": "「大数的认识」更名「万以上数的认识」并精简。",
       "clusterId": "cl-math-d1-s2",
-      "centrality": 0.0107
+      "centrality": 0.0074
     },
     {
       "id": "mt_area-hectare",
@@ -919,7 +919,7 @@
       "textbooks2024": [],
       "textbookNote2024": "公顷和平方千米后移至五年级上册「多边形的面积」（2027 秋启用），暂未收录新版目录。",
       "clusterId": "cl-math-d2-s2",
-      "centrality": 0.0107
+      "centrality": 0.0074
     },
     {
       "id": "mt_mult-2digit",
@@ -947,7 +947,7 @@
       ],
       "textbookNote2024": "「三位数乘两位数」与两位数乘两位数整合为「多位数乘两位数」。",
       "clusterId": "cl-math-d1-s2",
-      "centrality": 0.0321
+      "centrality": 0.0223
     },
     {
       "id": "mt_div-2digit",
@@ -973,7 +973,7 @@
       "textbooks2024": [],
       "textbookNote2024": "除数是两位数的除法调整至四年级下册（2027 春启用），暂未收录新版目录。",
       "clusterId": "cl-math-d1-s2",
-      "centrality": 0.0267
+      "centrality": 0.0186
     },
     {
       "id": "mt_ops-order",
@@ -998,7 +998,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s2",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_ops-laws",
@@ -1023,7 +1023,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s2",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_dec-meaning",
@@ -1048,7 +1048,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s2",
-      "centrality": 0.0321
+      "centrality": 0.0223
     },
     {
       "id": "mt_dec-addsub2",
@@ -1073,7 +1073,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s2",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_dec-mul",
@@ -1098,7 +1098,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s3",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_dec-div",
@@ -1123,7 +1123,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s3",
-      "centrality": 0.0267
+      "centrality": 0.0186
     },
     {
       "id": "mt_factors",
@@ -1148,7 +1148,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s3",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_frac-meaning",
@@ -1173,7 +1173,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s3",
-      "centrality": 0.0428
+      "centrality": 0.0297
     },
     {
       "id": "mt_frac-div",
@@ -1198,7 +1198,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s3",
-      "centrality": 0.0267
+      "centrality": 0.0186
     },
     {
       "id": "mt_frac-reduce",
@@ -1223,7 +1223,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s3",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_frac-addsub",
@@ -1248,7 +1248,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s3",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_frac-mul",
@@ -1273,7 +1273,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s3",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_frac-div2",
@@ -1298,7 +1298,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s3",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_ratio",
@@ -1323,7 +1323,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s3",
-      "centrality": 0.0267
+      "centrality": 0.0186
     },
     {
       "id": "mt_percent-1",
@@ -1348,7 +1348,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s3",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_percent-2",
@@ -1373,7 +1373,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s3",
-      "centrality": 0.0107
+      "centrality": 0.0074
     },
     {
       "id": "mt_negative",
@@ -1398,7 +1398,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s3",
-      "centrality": 0.0053
+      "centrality": 0.0037
     },
     {
       "id": "mt_proportion",
@@ -1423,7 +1423,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s3",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_direct-inverse",
@@ -1448,7 +1448,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s3",
-      "centrality": 0.0107
+      "centrality": 0.0074
     },
     {
       "id": "mt_average-mean",
@@ -1473,7 +1473,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d3-s2",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_shape-3d",
@@ -1501,7 +1501,7 @@
       ],
       "textbookNote2024": "「认识图形」更名「认识立体图形」，先立体后平面。",
       "clusterId": "cl-math-d2-s1",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_shape-2d",
@@ -1528,7 +1528,7 @@
         "pep-math-2024:1b:u1"
       ],
       "clusterId": "cl-math-d2-s1",
-      "centrality": 0.0642
+      "centrality": 0.0446
     },
     {
       "id": "mt_position-basic",
@@ -1557,7 +1557,7 @@
       ],
       "textbookNote2024": "新版无独立「位置」单元：相对位置融入入学「数学游戏」，「第几」在第一单元。",
       "clusterId": "cl-math-d2-s1",
-      "centrality": 0.0107
+      "centrality": 0.0074
     },
     {
       "id": "mt_classify",
@@ -1585,7 +1585,7 @@
       ],
       "textbookNote2024": "分类与整理由一下调整至二上第一单元，增加多标准逐层分类。",
       "clusterId": "cl-math-d3-s1",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_pattern",
@@ -1614,7 +1614,7 @@
       ],
       "textbookNote2024": "新版无独立「找规律」单元，规律探索融入「100以内数的认识」与乘法口诀学习。",
       "clusterId": "cl-math-d4-s1",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_length-cm-m",
@@ -1641,7 +1641,7 @@
         "pep-math-2024:2a:u4"
       ],
       "clusterId": "cl-math-d2-s1",
-      "centrality": 0.0267
+      "centrality": 0.0186
     },
     {
       "id": "mt_angle-intro",
@@ -1669,7 +1669,7 @@
       ],
       "textbookNote2024": "角的初步认识由二上调整至三上「线和角」单元。",
       "clusterId": "cl-math-d2-s1",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_observe-object",
@@ -1697,7 +1697,7 @@
       ],
       "textbookNote2024": "观察物体由二上调整至三上第一单元。",
       "clusterId": "cl-math-d2-s1",
-      "centrality": 0.0107
+      "centrality": 0.0074
     },
     {
       "id": "mt_shape-move",
@@ -1725,7 +1725,7 @@
       ],
       "textbookNote2024": "图形的运动由二下调整至三下「生活中的运动现象」。",
       "clusterId": "cl-math-d2-s1",
-      "centrality": 0.0107
+      "centrality": 0.0074
     },
     {
       "id": "mt_direction",
@@ -1753,7 +1753,7 @@
       ],
       "textbookNote2024": "位置与方向（东、南、西、北）由三下调整至二上综合与实践「校园小导游」。",
       "clusterId": "cl-math-d2-s2",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_rect-perimeter",
@@ -1781,7 +1781,7 @@
       ],
       "textbookNote2024": "周长内容调整至三下「长方形和正方形」单元。",
       "clusterId": "cl-math-d2-s2",
-      "centrality": 0.0267
+      "centrality": 0.0186
     },
     {
       "id": "mt_area-intro",
@@ -1808,7 +1808,7 @@
         "pep-math-2024:3b:u4"
       ],
       "clusterId": "cl-math-d2-s2",
-      "centrality": 0.0267
+      "centrality": 0.0186
     },
     {
       "id": "mt_rect-area",
@@ -1835,7 +1835,7 @@
         "pep-math-2024:3b:u4"
       ],
       "clusterId": "cl-math-d2-s2",
-      "centrality": 0.0321
+      "centrality": 0.0223
     },
     {
       "id": "mt_lines",
@@ -1863,7 +1863,7 @@
       ],
       "textbookNote2024": "线段、射线、直线由四上「线的认识」下移至三上「线和角」。",
       "clusterId": "cl-math-d2-s2",
-      "centrality": 0.0321
+      "centrality": 0.0223
     },
     {
       "id": "mt_angle-measure",
@@ -1891,7 +1891,7 @@
       ],
       "textbookNote2024": "「角的度量」调整为四上第二单元（原第三单元）。",
       "clusterId": "cl-math-d2-s2",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_parallelogram",
@@ -1918,7 +1918,7 @@
         "pep-math-2024:4a:u5"
       ],
       "clusterId": "cl-math-d2-s2",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_triangle",
@@ -1943,7 +1943,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s2",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_symmetry",
@@ -1968,7 +1968,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s2",
-      "centrality": 0.0107
+      "centrality": 0.0074
     },
     {
       "id": "mt_position-pairs",
@@ -1993,7 +1993,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s3",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_polygon-area",
@@ -2018,7 +2018,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s3",
-      "centrality": 0.0267
+      "centrality": 0.0186
     },
     {
       "id": "mt_cuboid",
@@ -2043,7 +2043,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s3",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_volume",
@@ -2068,7 +2068,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s3",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_circle",
@@ -2093,7 +2093,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s3",
-      "centrality": 0.0321
+      "centrality": 0.0223
     },
     {
       "id": "mt_circle-measure",
@@ -2118,7 +2118,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s3",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_sector",
@@ -2143,7 +2143,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s3",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_cylinder",
@@ -2168,7 +2168,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s3",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_data-collect",
@@ -2196,7 +2196,7 @@
       ],
       "textbookNote2024": "数据收集整理由二下调整至三下「数据的收集与整理」。",
       "clusterId": "cl-math-d3-s1",
-      "centrality": 0.0321
+      "centrality": 0.0223
     },
     {
       "id": "mt_stats-table",
@@ -2224,7 +2224,7 @@
       ],
       "textbookNote2024": "复式统计表并入三下「数据的收集与整理」单元。",
       "clusterId": "cl-math-d3-s2",
-      "centrality": 0.0267
+      "centrality": 0.0186
     },
     {
       "id": "mt_bar-chart",
@@ -2252,7 +2252,7 @@
       ],
       "textbookNote2024": "单式与复式条形统计图合并为「条形统计图」单元。",
       "clusterId": "cl-math-d3-s2",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_probability",
@@ -2277,7 +2277,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d3-s3",
-      "centrality": 0.0107
+      "centrality": 0.0074
     },
     {
       "id": "mt_line-chart",
@@ -2302,7 +2302,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d3-s3",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_pie-chart",
@@ -2327,7 +2327,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d3-s3",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_stats-center",
@@ -2352,7 +2352,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d3-s3",
-      "centrality": 0.0107
+      "centrality": 0.0074
     },
     {
       "id": "mt_optimize",
@@ -2378,7 +2378,7 @@
       "textbooks2024": [],
       "textbookNote2024": "新版不再单设「数学广角——优化」，沏茶、烙饼问题融入各单元练习。",
       "clusterId": "cl-math-d4-s2",
-      "centrality": 0.0107
+      "centrality": 0.0074
     },
     {
       "id": "mt_chicken-rabbit",
@@ -2406,7 +2406,7 @@
       ],
       "textbookNote2024": "鸡兔同笼由四下调整至四上「复习与关联」选学内容。",
       "clusterId": "cl-math-d4-s2",
-      "centrality": 0.0107
+      "centrality": 0.0074
     },
     {
       "id": "mt_tree-plant",
@@ -2431,7 +2431,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d4-s3",
-      "centrality": 0.0107
+      "centrality": 0.0074
     },
     {
       "id": "mt_find-defective",
@@ -2456,7 +2456,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d4-s3",
-      "centrality": 0.0107
+      "centrality": 0.0074
     },
     {
       "id": "mt_phone-call",
@@ -2481,7 +2481,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d4-s3",
-      "centrality": 0.0107
+      "centrality": 0.0074
     },
     {
       "id": "mt_number-shape",
@@ -2506,7 +2506,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d4-s3",
-      "centrality": 0.0107
+      "centrality": 0.0074
     },
     {
       "id": "mt_pigeonhole",
@@ -2531,7 +2531,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d4-s3",
-      "centrality": 0.0107
+      "centrality": 0.0074
     },
     {
       "id": "mt_measure-compare",
@@ -2560,7 +2560,2057 @@
       ],
       "textbookNote2024": "估测与测量融入「厘米和米」及综合与实践「身体上的尺子」。",
       "clusterId": "cl-math-d4-s1",
-      "centrality": 0.0053
+      "centrality": 0.0037
+    },
+    {
+      "id": "mt_junior-rational-concept",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "有理数的认识",
+      "description": "认识正数、负数和零，理解有理数包含整数和分数，会用正数和负数表示相反意义的量，能把有理数按正负和整数分数分类。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能用正负数表示收入与支出、零上零下等相反意义的量",
+        "能说出给定的数是正整数、负整数、正分数还是零"
+      ],
+      "assessmentPrompt": "问{{name}}：「气温从 3℃ 降到 -2℃，变化了多少？」他能正确说出下降了 5℃ 吗？",
+      "standards": [
+        "math-2022:S4:NA:NS"
+      ],
+      "textbooks": [
+        "pep-math:7a:u1"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.026
+    },
+    {
+      "id": "mt_junior-number-axis",
+      "type": "REPRESENTATIONAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "数轴",
+      "description": "理解数轴的三要素（原点、正方向、单位长度），会把有理数在数轴上表示出来，借助数轴直观比较大小、理解相反数和绝对值。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能画出带原点、箭头和单位长度的数轴",
+        "能把给定的有理数准确标在数轴上"
+      ],
+      "assessmentPrompt": "让{{name}}在数轴上标出 -3、0、2.5，并说出谁在谁的右边。他能做对吗？",
+      "standards": [
+        "math-2022:S4:NA:NS"
+      ],
+      "textbooks": [
+        "pep-math:7a:u1"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.0186
+    },
+    {
+      "id": "mt_junior-opposite-absolute",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "相反数与绝对值",
+      "description": "理解相反数（只有符号不同的两个数）和绝对值（数轴上点到原点的距离）的意义，会求一个数的相反数与绝对值。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说出 -5 的相反数是 5、0 的相反数是 0",
+        "能求出 |-7|、|3| 等绝对值并解释其几何意义"
+      ],
+      "assessmentPrompt": "问{{name}}：「| -4 | 等于多少？它的意义是什么？」他能说出 4 并解释是距离吗？",
+      "standards": [
+        "math-2022:S4:NA:NS"
+      ],
+      "textbooks": [
+        "pep-math:7a:u1"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.0149
+    },
+    {
+      "id": "mt_junior-rational-compare",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "有理数大小比较",
+      "description": "掌握有理数比较大小的法则：正数大于零大于负数，两个负数绝对值大的反而小，会借助数轴或绝对值熟练比较。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能比较任意两个有理数的大小并说出依据",
+        "会按从小到大顺序排列一组有理数"
+      ],
+      "assessmentPrompt": "让{{name}}比较 -1.5 和 -0.8 的大小，他能说出 -1.5 更小并解释原因吗？",
+      "standards": [
+        "math-2022:S4:NA:NS"
+      ],
+      "textbooks": [
+        "pep-math:7a:u1"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.0149
+    },
+    {
+      "id": "mt_junior-rational-add",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "有理数加法",
+      "description": "理解有理数加法的运算法则，会分同号、异号、与零相加三类情况计算，掌握加法交换律和结合律。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能正确计算同号、异号两数相加",
+        "会在连加中运用交换律结合律使计算简便"
+      ],
+      "assessmentPrompt": "让{{name}}算 (-3)+5 和 (-4)+(-6)，他能说清符号怎么定吗？",
+      "standards": [
+        "math-2022:S4:NA:NS"
+      ],
+      "textbooks": [
+        "pep-math:7a:u2"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.0149
+    },
+    {
+      "id": "mt_junior-rational-sub",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "有理数减法",
+      "description": "理解减法是加法的逆运算，掌握「减去一个数等于加上它的相反数」的法则，会把减法统一成加法计算。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能把减法算式转化为加法再计算",
+        "能正确计算含负数的减法"
+      ],
+      "assessmentPrompt": "问{{name}}：「3 - (-2) 怎么算？」他能转化为 3+2=5 吗？",
+      "standards": [
+        "math-2022:S4:NA:NS"
+      ],
+      "textbooks": [
+        "pep-math:7a:u2"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.0037
+    },
+    {
+      "id": "mt_junior-rational-mul",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "有理数乘法",
+      "description": "掌握有理数乘法法则（同号得正、异号得负、绝对值相乘），理解乘积符号规律，会运用乘法交换律、结合律与分配律。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能确定多个有理数相乘的符号",
+        "会运用分配律简化含有括号的乘法"
+      ],
+      "assessmentPrompt": "让{{name}}算 (-2)×3×(-4)，他能先判断符号为正再得 24 吗？",
+      "standards": [
+        "math-2022:S4:NA:NS"
+      ],
+      "textbooks": [
+        "pep-math:7a:u2"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.026
+    },
+    {
+      "id": "mt_junior-rational-div",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "有理数除法",
+      "description": "理解除法是乘法的逆运算，掌握「除以一个数等于乘它的倒数」的法则，会进行有理数除法运算。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能把除法转化为乘法再计算",
+        "能正确处理 0 不能作除数的情况"
+      ],
+      "assessmentPrompt": "问{{name}}：「(-12)÷(-3) 得几？」他能转化为 (-12)×(-1/3)=4 吗？",
+      "standards": [
+        "math-2022:S4:NA:NS"
+      ],
+      "textbooks": [
+        "pep-math:7a:u2"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.0112
+    },
+    {
+      "id": "mt_junior-rational-power",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "有理数的乘方",
+      "description": "理解乘方表示几个相同因数的乘积，分清底数、指数，会计算有理数乘方，区分 -aⁿ 与 (-a)ⁿ 的不同。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说出 3⁴ 的底数、指数并计算",
+        "能区分 (-2)² 与 -2² 的差别"
+      ],
+      "assessmentPrompt": "让{{name}}算 (-3)² 和 -3²，他能得出 9 与 -9 并解释区别吗？",
+      "standards": [
+        "math-2022:S4:NA:NS"
+      ],
+      "textbooks": [
+        "pep-math:7a:u2"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.0149
+    },
+    {
+      "id": "mt_junior-sci-notation",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "科学记数法与近似数",
+      "description": "会用科学记数法表示绝对值很大或很小的数（a×10ⁿ，1≤|a|<10），理解近似数和有效数字，会对结果取近似。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能把 300000000 写成 3×10⁸",
+        "能按要求的精确度对一个数四舍五入"
+      ],
+      "assessmentPrompt": "问{{name}}：「地球半径约 6400km 用科学记数法怎么写？」他能写成 6.4×10³km 吗？",
+      "standards": [
+        "math-2022:S4:NA:NS"
+      ],
+      "textbooks": [
+        "pep-math:7a:u2"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.0037
+    },
+    {
+      "id": "mt_junior-square-root",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "平方根与算术平方根",
+      "description": "理解平方根与算术平方根的概念，会求非负数的平方根和算术平方根，认识√符号及其非负性。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说出 9 的平方根是 ±3、算术平方根是 3",
+        "理解 √a 中 a≥0 且 √a≥0"
+      ],
+      "assessmentPrompt": "问{{name}}：「16 的算术平方根是多少？它的平方根呢？」他能分别回答 4 和 ±4 吗？",
+      "standards": [
+        "math-2022:S4:NA:NS"
+      ],
+      "textbooks": [
+        "pep-math:7b:u2"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.0223
+    },
+    {
+      "id": "mt_junior-cube-root",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "立方根",
+      "description": "理解立方根的概念，会求一个数的立方根，区分平方根与立方根在符号和根的个数上的不同。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说出 8 的立方根是 2、-8 的立方根是 -2",
+        "理解任意实数都有唯一立方根"
+      ],
+      "assessmentPrompt": "问{{name}}：「-27 的立方根是多少？」他能回答 -3 吗？",
+      "standards": [
+        "math-2022:S4:NA:NS"
+      ],
+      "textbooks": [
+        "pep-math:7b:u2"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.0074
+    },
+    {
+      "id": "mt_junior-real-number",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "实数",
+      "description": "认识无理数，理解实数由有理数和无理数组成，实数与数轴上的点一一对应，会比较实数的大小并进行简单运算。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能举出 π、√2 等无理数的例子",
+        "理解每一个实数都对应数轴上一个点"
+      ],
+      "assessmentPrompt": "问{{name}}：「√2 是有理数吗？它在数轴上的哪里？」他能说清是无理数并大致定位吗？",
+      "standards": [
+        "math-2022:S4:NA:NS"
+      ],
+      "textbooks": [
+        "pep-math:7b:u2"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.0186
+    },
+    {
+      "id": "mt_junior-algebraic-expr",
+      "type": "REPRESENTATIONAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "代数式",
+      "description": "会用字母表示数，理解代数式是用运算符号把数和字母连接而成的式子，会把实际问题中的数量关系列成代数式。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能把「a 的 3 倍与 b 的和」写成 3a+b",
+        "会规范书写代数式（数字在前、乘号省略等）"
+      ],
+      "assessmentPrompt": "让{{name}}把「小明今年 x 岁，爸爸比他大 28 岁」用式子表示爸爸的年龄。他能写出 x+28 吗？",
+      "standards": [
+        "math-2022:S4:NA:NS"
+      ],
+      "textbooks": [
+        "pep-math:7a:u3"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.0186
+    },
+    {
+      "id": "mt_junior-expr-value",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "代数式的值",
+      "description": "理解代数式的值随字母取值变化，会给代数式中的字母代入具体数值求结果，注意代入时的书写格式与符号。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能把 a=2,b=3 代入 2a+b 算出 7",
+        "代入负数或分数时会正确加括号"
+      ],
+      "assessmentPrompt": "让{{name}}求当 x=3 时 x²-2x 的值，他能算得 3 吗？",
+      "standards": [
+        "math-2022:S4:NA:NS"
+      ],
+      "textbooks": [
+        "pep-math:7a:u3"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.0037
+    },
+    {
+      "id": "mt_junior-monomial-poly",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "整式",
+      "description": "理解单项式与多项式的概念，认识系数、次数、项与常数项，会把多项式按某一字母的降幂或升幂排列。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说出 3x²y 的系数和次数",
+        "能区分单项式、多项式并指出多项式的项数"
+      ],
+      "assessmentPrompt": "问{{name}}：「2a²-3a+1 是几次几项式？」他能回答二次三项式吗？",
+      "standards": [
+        "math-2022:S4:NA:NS"
+      ],
+      "textbooks": [
+        "pep-math:7a:u4"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.026
+    },
+    {
+      "id": "mt_junior-like-terms",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "合并同类项",
+      "description": "理解同类项（所含字母相同且相同字母指数也相同），会把同类项的系数相加、字母部分不变进行合并。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能判断哪些项是同类项",
+        "会正确合并 3x+5x=8x 等"
+      ],
+      "assessmentPrompt": "让{{name}}合并 4ab-2ab+3a，他能得 2ab+3a 吗？",
+      "standards": [
+        "math-2022:S4:NA:NS"
+      ],
+      "textbooks": [
+        "pep-math:7a:u4"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.0149
+    },
+    {
+      "id": "mt_junior-integral-addsub",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "整式的加减",
+      "description": "掌握去括号法则（括号前是负号时各项变号），会进行整式的加减运算，先化简再代入求值。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "会正确去掉含负号的括号",
+        "会先化简整式再代入数值计算"
+      ],
+      "assessmentPrompt": "让{{name}}算 (3x-2)-(x+4)，他能化简得 2x-6 吗？",
+      "standards": [
+        "math-2022:S4:NA:NS"
+      ],
+      "textbooks": [
+        "pep-math:7a:u4"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.0186
+    },
+    {
+      "id": "mt_junior-integral-powmul",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "幂的运算",
+      "description": "掌握同底数幂的乘除、幂的乘方与积的乘方法则，会进行幂的运算并保持底数与指数的正确对应。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "会算 aᵐ·aⁿ=aᵐ⁺ⁿ、 (aᵐ)ⁿ=aᵐⁿ、(ab)ⁿ=aⁿbⁿ",
+        "会区分幂的运算与整式加减的不同"
+      ],
+      "assessmentPrompt": "让{{name}}算 x³·x⁴ 和 (x²)³，他能得 x⁷ 和 x⁶ 吗？",
+      "standards": [
+        "math-2022:S4:NA:NS"
+      ],
+      "textbooks": [
+        "pep-math:8a:u4"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.0149
+    },
+    {
+      "id": "mt_junior-mul-formula",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "整式的乘法与乘法公式",
+      "description": "会进行单项式乘单项式、单项式乘多项式、多项式乘多项式；掌握平方差公式与完全平方公式并用于简便计算。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "会展开 (a+b)(a-b)=a²-b²、(a+b)²=a²+2ab+b²",
+        "能逆用公式进行因式分解或简便运算"
+      ],
+      "assessmentPrompt": "让{{name}}算 (2x+1)(2x-1)，他能得 4x²-1 吗？",
+      "standards": [
+        "math-2022:S4:NA:NS"
+      ],
+      "textbooks": [
+        "pep-math:8a:u4"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.0149
+    },
+    {
+      "id": "mt_junior-factorization",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "因式分解",
+      "description": "理解因式分解是把一个多项式化为几个整式乘积的形式，掌握提公因式法、公式法（平方差、完全平方）和十字相乘法。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能用提公因式法分解 3x²+6x=3x(x+2)",
+        "能用平方差公式分解 a²-9=(a+3)(a-3)"
+      ],
+      "assessmentPrompt": "让{{name}}分解 x²-4x+4，他能写成 (x-2)² 吗？",
+      "standards": [
+        "math-2022:S4:NA:NS"
+      ],
+      "textbooks": [
+        "pep-math:8a:u5"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.0112
+    },
+    {
+      "id": "mt_junior-fraction-concept",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "分式",
+      "description": "理解分式是两个整式相除（分母含字母）的式子，掌握分式有意义、值为零的条件以及分式的基本性质。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说出分式分母不能为零",
+        "会运用基本性质约分和通分"
+      ],
+      "assessmentPrompt": "问{{name}}：「分式 x/(x-1) 在什么情况下无意义？」他能说 x=1 时吗？",
+      "standards": [
+        "math-2022:S4:NA:NS"
+      ],
+      "textbooks": [
+        "pep-math:8a:u6"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.0112
+    },
+    {
+      "id": "mt_junior-fraction-op",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "分式的运算",
+      "description": "会进行分式的乘除、加减和乘方运算，混合运算时先乘方再乘除最后加减，结果化为最简分式。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "会通分后计算异分母分式加减",
+        "会把除法转化为乘法再约分"
+      ],
+      "assessmentPrompt": "让{{name}}算 1/x + 1/y，他能通分得 (x+y)/(xy) 吗？",
+      "standards": [
+        "math-2022:S4:NA:NS"
+      ],
+      "textbooks": [
+        "pep-math:8a:u6"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.0223
+    },
+    {
+      "id": "mt_junior-fractional-equation",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "分式方程",
+      "description": "理解分式方程是分母中含未知数的方程，会化为整式方程求解，并检验根是否使原方程分母为零（增根）。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "会两边同乘最简公分母化为整式方程",
+        "解完会代回检验并舍去增根"
+      ],
+      "assessmentPrompt": "让{{name}}解 2/x = 1/(x-1)，他能求出 x=2 并检验吗？",
+      "standards": [
+        "math-2022:S4:NA:EI"
+      ],
+      "textbooks": [
+        "pep-math:8a:u6"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.0074
+    },
+    {
+      "id": "mt_junior-quadratic-radical",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "二次根式",
+      "description": "理解二次根式 √a（a≥0）的意义，掌握其性质，会判断式子是否为二次根式并确定被开方数范围。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说出 √a 中 a≥0 且 √a≥0",
+        "会求使 √(x-3) 有意义的 x 的范围"
+      ],
+      "assessmentPrompt": "问{{name}}：「√(2-x) 有意义时 x 应满足什么？」他能说 x≤2 吗？",
+      "standards": [
+        "math-2022:S4:NA:NS"
+      ],
+      "textbooks": [
+        "pep-math:8b:u1"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.0112
+    },
+    {
+      "id": "mt_junior-radical-op",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "二次根式的运算",
+      "description": "掌握二次根式的乘除与加减法则，会化简二次根式、把同类二次根式合并，进行混合运算。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "会把 √8 化为 2√2 再合并",
+        "会按先乘除后加减的顺序计算根式混合式"
+      ],
+      "assessmentPrompt": "让{{name}}算 √12 + √3，他能得 3√3 吗？",
+      "standards": [
+        "math-2022:S4:NA:NS"
+      ],
+      "textbooks": [
+        "pep-math:8b:u1"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.0186
+    },
+    {
+      "id": "mt_junior-linear-eq1-concept",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "一元一次方程",
+      "description": "理解方程、一元一次方程和等式的基本性质，能从实际问题中找出等量关系并列出方程。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能判断一个方程是否为一元一次方程",
+        "会根据等式性质在两边同加同减同乘同除"
+      ],
+      "assessmentPrompt": "让{{name}}把「某数加 5 等于 12」列成方程，他能写 x+5=12 吗？",
+      "standards": [
+        "math-2022:S4:NA:EI"
+      ],
+      "textbooks": [
+        "pep-math:7a:u5"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.0223
+    },
+    {
+      "id": "mt_junior-linear-eq1-solve",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "解一元一次方程",
+      "description": "掌握解一元一次方程的一般步骤（去分母、去括号、移项、合并同类项、系数化为1），会解含括号和分母的方程。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能按步骤解出 2(x-1)=3x+4 一类方程",
+        "移项时自觉变号、去分母时各项都乘"
+      ],
+      "assessmentPrompt": "让{{name}}解 (x+1)/2 = 3，他能得 x=5 并写出步骤吗？",
+      "standards": [
+        "math-2022:S4:NA:EI"
+      ],
+      "textbooks": [
+        "pep-math:7a:u5"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.0223
+    },
+    {
+      "id": "mt_junior-linear-eq1-app",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "一元一次方程应用",
+      "description": "会用一元一次方程解决行程、工程、配套、利润等实际问题，关键是设元、找等量关系、列并解方程、检验作答。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能从题意中抽象出等量关系",
+        "会检验解是否符合实际意义"
+      ],
+      "assessmentPrompt": "给{{name}}一道「甲乙相距 60km，相向而行…」的题，他能设未知数并列出对应方程吗？",
+      "standards": [
+        "math-2022:S4:NA:EI"
+      ],
+      "textbooks": [
+        "pep-math:7a:u5"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.0074
+    },
+    {
+      "id": "mt_junior-linear-system-concept",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "二元一次方程组",
+      "description": "理解二元一次方程及其解、二元一次方程组的概念，能判断一组数是否为方程组的解。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说出二元一次方程含两个未知数且次数为1",
+        "会检验一对数是否满足方程组"
+      ],
+      "assessmentPrompt": "问{{name}}：「x=2,y=1 是 x+y=3 的解吗？」他能代入验证吗？",
+      "standards": [
+        "math-2022:S4:NA:EI"
+      ],
+      "textbooks": [
+        "pep-math:7b:u4"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.0149
+    },
+    {
+      "id": "mt_junior-elimination",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "消元法解二元一次方程组",
+      "description": "掌握代入消元法和加减消元法，会把二元一次方程组转化为一元一次方程求解，会选择简便的消元方式。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "会用代入法处理一个未知数系数为1的方程组",
+        "会用加减法消去系数成倍数关系的未知数"
+      ],
+      "assessmentPrompt": "让{{name}}解 {x+y=5, x-y=1}，他能得 x=3,y=2 吗？",
+      "standards": [
+        "math-2022:S4:NA:EI"
+      ],
+      "textbooks": [
+        "pep-math:7b:u4"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.0149
+    },
+    {
+      "id": "mt_junior-linear-system-app",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "二元一次方程组应用",
+      "description": "会用二元一次方程组解决鸡兔同笼、行程、浓度等实际问题，能设两个未知数、列两个方程组成方程组。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能从题中提炼两个独立等量关系",
+        "会对结果进行合理性检验"
+      ],
+      "assessmentPrompt": "给{{name}}一道「共 35 头 94 足」的鸡兔题，他能列出方程组并解出鸡兔各多少吗？",
+      "standards": [
+        "math-2022:S4:NA:EI"
+      ],
+      "textbooks": [
+        "pep-math:7b:u4"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.0074
+    },
+    {
+      "id": "mt_junior-ternary-system",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "三元一次方程组",
+      "description": "理解含有三个未知数的一次方程组，会用消元思想逐步化为二元、再化为一元求解（选学内容）。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "会先消去一个未知数得到二元方程组",
+        "能类比二元一次方程组的解法求解"
+      ],
+      "assessmentPrompt": "让{{name}}解一个简单的三元一次方程组，他能分步消元得出结果吗？",
+      "standards": [
+        "math-2022:S4:NA:EI"
+      ],
+      "textbooks": [
+        "pep-math:7b:u4"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.0074
+    },
+    {
+      "id": "mt_junior-inequality",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "不等式及其性质",
+      "description": "理解不等号与不等式的概念，掌握不等式的三条基本性质（尤其两边乘或除以负数时不等号方向改变）。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能区分不等式与等式性质的不同",
+        "知道乘负数时不等号要反向"
+      ],
+      "assessmentPrompt": "问{{name}}：「若 a<b，则 -2a 与 -2b 谁大？」他能说 -2a > -2b 吗？",
+      "standards": [
+        "math-2022:S4:NA:EI"
+      ],
+      "textbooks": [
+        "pep-math:7b:u5"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.0074
+    },
+    {
+      "id": "mt_junior-linear-inequality-1",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "一元一次不等式",
+      "description": "理解一元一次不等式，掌握其解法步骤（与解方程类似，但系数化为负要变号），会在数轴上表示解集。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能解类似 2x-3 > 5 的不等式",
+        "会在数轴上正确画出解集（空心/实心点）"
+      ],
+      "assessmentPrompt": "让{{name}}解 3x+1 ≤ 7，他能得 x≤2 并在数轴上表示吗？",
+      "standards": [
+        "math-2022:S4:NA:EI"
+      ],
+      "textbooks": [
+        "pep-math:7b:u5"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.0149
+    },
+    {
+      "id": "mt_junior-linear-inequality-system",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "一元一次不等式组",
+      "description": "理解不等式组及其解集是各不等式解集的公共部分，会用数轴求两个（或多个）不等式解集的交集。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "会分别解组内每个不等式",
+        "能在数轴上取公共部分得到不等式组解集"
+      ],
+      "assessmentPrompt": "让{{name}}解 {x>1, x<4}，他能说出 1<x<4 吗？",
+      "standards": [
+        "math-2022:S4:NA:EI"
+      ],
+      "textbooks": [
+        "pep-math:7b:u5"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.0037
+    },
+    {
+      "id": "mt_junior-quad-eq-concept",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "一元二次方程",
+      "description": "理解一元二次方程的概念与一般形式 ax²+bx+c=0（a≠0），能判断一个方程是否为一元二次方程。",
+      "gradeRangeStart": 9,
+      "gradeRangeEnd": 9,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说出一般形式中 a≠0 的原因",
+        "会把方程化为一般形式并指出 a,b,c"
+      ],
+      "assessmentPrompt": "问{{name}}：「x²+2x=3 是一元二次方程吗？」他能化为 x²+2x-3=0 并肯定吗？",
+      "standards": [
+        "math-2022:S4:NA:EI"
+      ],
+      "textbooks": [
+        "pep-math:9a:u1"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.0149
+    },
+    {
+      "id": "mt_junior-quad-eq-solve",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "一元二次方程的解法",
+      "description": "掌握直接开平方法、配方法、公式法和因式分解法解一元二次方程，会依方程特点选择最简方法。",
+      "gradeRangeStart": 9,
+      "gradeRangeEnd": 9,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能用配方法把 x²+6x 配成完全平方式",
+        "会套用求根公式 x=(-b±√Δ)/2a"
+      ],
+      "assessmentPrompt": "让{{name}}解 x²-4x-5=0，他能因式分解得 (x-5)(x+1)=0 并解出吗？",
+      "standards": [
+        "math-2022:S4:NA:EI"
+      ],
+      "textbooks": [
+        "pep-math:9a:u1"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.0149
+    },
+    {
+      "id": "mt_junior-quad-discriminant",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "根的判别式与根与系数关系",
+      "description": "理解判别式 Δ=b²-4ac 决定一元二次方程实根的个数，掌握根与系数的关系（韦达定理）并用于不求根的判断。",
+      "gradeRangeStart": 9,
+      "gradeRangeEnd": 9,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能由 Δ 的正负零判断根的情况",
+        "会由 x₁+x₂=-b/a、x₁x₂=c/a 求关系式"
+      ],
+      "assessmentPrompt": "问{{name}}：「方程 x²-x-2=0 有几个实根？」他能算 Δ=9>0 说有两个吗？",
+      "standards": [
+        "math-2022:S4:NA:EI"
+      ],
+      "textbooks": [
+        "pep-math:9a:u1"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.0112
+    },
+    {
+      "id": "mt_junior-function-concept",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "函数概念与表示",
+      "description": "理解常量与变量、函数的概念（一个变量随另一个变量确定地变化），会用解析法、列表法、图像法表示函数并求函数值。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说出函数关系中自变量与因变量的对应",
+        "会给自变量取值求函数值"
+      ],
+      "assessmentPrompt": "问{{name}}：「y=2x+1 中 x=3 时 y 是多少？」他能算得 7 吗？",
+      "standards": [
+        "math-2022:S4:NA:FN"
+      ],
+      "textbooks": [
+        "pep-math:8b:u4"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.0186
+    },
+    {
+      "id": "mt_junior-linear-function",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "一次函数",
+      "description": "理解一次函数 y=kx+b（k≠0）与正比例函数，会画其图像（一条直线），认识 k、b 对图像的影响。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说出 y=2x 的图像过原点、呈上升直线",
+        "知道 k>0 上升、k<0 下降、b 决定与 y 轴交点"
+      ],
+      "assessmentPrompt": "让{{name}}说出 y=-x+2 的图像走向和 y 轴交点，他能说下降、交于 (0,2) 吗？",
+      "standards": [
+        "math-2022:S4:NA:FN"
+      ],
+      "textbooks": [
+        "pep-math:8b:u5"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.0149
+    },
+    {
+      "id": "mt_junior-linear-prop",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "一次函数的应用",
+      "description": "会用一次函数模型解决实际问题（如行程、费用），能根据图像或表格确定解析式，并解释斜率的实际意义。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "会从两点坐标求出一次函数解析式",
+        "会解释 k 在实际问题中表示的变化率"
+      ],
+      "assessmentPrompt": "给{{name}}两组对应数据，他能求出一次函数并预测另一点的值吗？",
+      "standards": [
+        "math-2022:S4:NA:FN"
+      ],
+      "textbooks": [
+        "pep-math:8b:u5"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.0074
+    },
+    {
+      "id": "mt_junior-inverse-proportional",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "反比例函数",
+      "description": "理解反比例函数 y=k/x（k≠0），会画其双曲线图像，认识 k 的正负决定图像所在象限及增减性。",
+      "gradeRangeStart": 9,
+      "gradeRangeEnd": 9,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说出 k>0 时图像在一三象限",
+        "知道自变量 x 不能为零"
+      ],
+      "assessmentPrompt": "让{{name}}说出 y=6/x 的图像位置，他能说在一三象限、每个象限内 y 随 x 增大而减小吗？",
+      "standards": [
+        "math-2022:S4:NA:FN"
+      ],
+      "textbooks": [
+        "pep-math:9a:u3"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.0074
+    },
+    {
+      "id": "mt_junior-quad-function",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "二次函数",
+      "description": "理解二次函数 y=ax²+bx+c（a≠0）的概念，会画其抛物线图像，认识开口方向、对称轴、顶点等特征。",
+      "gradeRangeStart": 9,
+      "gradeRangeEnd": 9,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说出 a>0 开口向上、a<0 开口向下",
+        "知道抛物线关于对称轴对称"
+      ],
+      "assessmentPrompt": "问{{name}}：「y=x² 与 y=-x² 的开口方向有何不同？」他能说一上一下吗？",
+      "standards": [
+        "math-2022:S4:NA:FN"
+      ],
+      "textbooks": [
+        "pep-math:9a:u2"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.0149
+    },
+    {
+      "id": "mt_junior-quad-graph",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "二次函数的图像与性质",
+      "description": "掌握通过配方 y=a(x-h)²+k 确定抛物线的顶点 (h,k) 和对称轴 x=h，会依 a、h、k 分析增减性与最值。",
+      "gradeRangeStart": 9,
+      "gradeRangeEnd": 9,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "会把一般式配方为顶点式",
+        "能由顶点式直接说出顶点和对称轴"
+      ],
+      "assessmentPrompt": "让{{name}}把 y=x²-2x+3 配成 (x-1)²+2，他能说出顶点 (1,2) 吗？",
+      "standards": [
+        "math-2022:S4:NA:FN"
+      ],
+      "textbooks": [
+        "pep-math:9a:u2"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.0149
+    },
+    {
+      "id": "mt_junior-quad-app",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "二次函数的应用",
+      "description": "会用二次函数模型解决最大（小）值问题（如面积、利润），理解抛物线顶点对应的最值及其实际含义。",
+      "gradeRangeStart": 9,
+      "gradeRangeEnd": 9,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能从实际问题中建立二次函数关系式",
+        "会用顶点求最大利润或最大面积"
+      ],
+      "assessmentPrompt": "给{{name}}一道「用 20m 篱笆围矩形菜地，怎样面积最大」的题，他能建二次函数并求最值吗？",
+      "standards": [
+        "math-2022:S4:NA:FN"
+      ],
+      "textbooks": [
+        "pep-math:9a:u2"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.0112
+    },
+    {
+      "id": "mt_junior-function-eq-relation",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "函数与方程、不等式的关系",
+      "description": "理解一次函数图像与一元一次方程、一元一次不等式的联系：解方程即求图像与 x 轴交点，解不等式即看图像在 x 轴上方/下方的部分。",
+      "gradeRangeStart": 9,
+      "gradeRangeEnd": 9,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说出 ax+b=0 的解是直线 y=ax+b 与 x 轴交点的横坐标",
+        "会由图像直观解 ax+b>0"
+      ],
+      "assessmentPrompt": "问{{name}}：「从 y=2x-4 的图像怎么看 2x-4>0 的解？」他能说 x>2（图像在 x 轴上方）吗？",
+      "standards": [
+        "math-2022:S4:NA:FN"
+      ],
+      "textbooks": [
+        "pep-math:9a:u2"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d1-s4",
+      "centrality": 0.0112
+    },
+    {
+      "id": "mt_junior-geom-basic",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "几何图形初步",
+      "description": "认识常见的立体图形和平面图形，理解点、线、面、体的关系，会从立体图形中抽象出平面图形，认识几何研究的基本对象。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能区分圆柱、圆锥、球等立体图形和长方形、圆等平面图形",
+        "理解包围体的是面、面与面相交于线、线与线相交于点"
+      ],
+      "assessmentPrompt": "让{{name}}说出身边一个盒子的面、棱、顶点分别是什么图形，他能分清立体与平面吗？",
+      "standards": [
+        "math-2022:S4:GG:GP"
+      ],
+      "textbooks": [
+        "pep-math:7a:u6"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d2-s4",
+      "centrality": 0.0112
+    },
+    {
+      "id": "mt_junior-line-segment",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "直线、射线、线段",
+      "description": "理解直线、射线、线段的区别与联系，会比较线段长短、进行线段的和差运算，理解两点之间线段最短和两点确定一条直线。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能区分直线、射线、线段能否延长、有无端点",
+        "会利用中点把一条线段分成相等的两段"
+      ],
+      "assessmentPrompt": "问{{name}}：「两点之间什么最短？」他能说线段，并解释中点的含义吗？",
+      "standards": [
+        "math-2022:S4:GG:GP"
+      ],
+      "textbooks": [
+        "pep-math:7a:u6"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d2-s4",
+      "centrality": 0.0223
+    },
+    {
+      "id": "mt_junior-angle",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "角",
+      "description": "理解角是由两条有公共端点的射线组成的图形，会用量角器度量和画角，认识度分秒的换算。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "会正确读出或量出一个角的度数",
+        "会进行 1°=60′、1′=60″ 的换算"
+      ],
+      "assessmentPrompt": "让{{name}}用量角器画一个 50° 的角，他能画得接近并读数吗？",
+      "standards": [
+        "math-2022:S4:GG:GP"
+      ],
+      "textbooks": [
+        "pep-math:7a:u6"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d2-s4",
+      "centrality": 0.026
+    },
+    {
+      "id": "mt_junior-angle-rel",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "角的比较与余角补角",
+      "description": "会比较两个角的大小，理解角的和差，认识余角（和为90°）与补角（和为180°）以及等角的余角、补角相等。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "会用量角器或叠合法比较两个角",
+        "能说出 ∠α 的余角是 90°−α、补角是 180°−α"
+      ],
+      "assessmentPrompt": "问{{name}}：「30° 的余角和补角分别是多少？」他能说 60° 和 150° 吗？",
+      "standards": [
+        "math-2022:S4:GG:GP"
+      ],
+      "textbooks": [
+        "pep-math:7a:u6"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d2-s4",
+      "centrality": 0.0223
+    },
+    {
+      "id": "mt_junior-intersecting-lines",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "相交线",
+      "description": "理解两条直线相交形成对顶角和邻补角，掌握对顶角相等，认识邻补角互补，为研究垂线打下基础。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说出对顶角相等、邻补角互补",
+        "会在相交线图形中识别对顶角"
+      ],
+      "assessmentPrompt": "让{{name}}在一个相交线图中标出对顶角，他能说它们度数相等吗？",
+      "standards": [
+        "math-2022:S4:GG:GP"
+      ],
+      "textbooks": [
+        "pep-math:7b:u1"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d2-s4",
+      "centrality": 0.0186
+    },
+    {
+      "id": "mt_junior-vertical-perp",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "垂线",
+      "description": "理解垂直是相交的特殊情况，掌握过一点画已知直线的垂线，认识垂线段最短及点到直线的距离。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "会用三角板过一点作已知直线的垂线",
+        "理解点到直线的距离是垂线段的长度"
+      ],
+      "assessmentPrompt": "问{{name}}：「从直线外一点到这条直线的所有线段中哪条最短？」他能说垂线段吗？",
+      "standards": [
+        "math-2022:S4:GG:GP"
+      ],
+      "textbooks": [
+        "pep-math:7b:u1"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d2-s4",
+      "centrality": 0.0112
+    },
+    {
+      "id": "mt_junior-parallel-lines",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "平行线",
+      "description": "理解平行线的概念，掌握平行线的判定（同位角、内错角、同旁内角）与性质，会进行简单的平行线推理。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能识别同位角、内错角、同旁内角",
+        "会由「同位角相等」推出两直线平行，反之由平行推角相等"
+      ],
+      "assessmentPrompt": "让{{name}}说明为什么「内错角相等则两直线平行」，他能说清判定思路吗？",
+      "standards": [
+        "math-2022:S4:GG:GP"
+      ],
+      "textbooks": [
+        "pep-math:7b:u1"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d2-s4",
+      "centrality": 0.0149
+    },
+    {
+      "id": "mt_junior-translation",
+      "type": "REPRESENTATIONAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "图形的平移",
+      "description": "理解平移是图形沿某一方向移动而不改变形状和大小的变换，会画平移前后的图形，认识平移的性质（对应点连线平行且相等）。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说出平移不改变图形的形状和大小",
+        "会按给定方向和距离画平移图形"
+      ],
+      "assessmentPrompt": "让{{name}}把一个三角形向右平移 3 格，他能保持形状不变正确画出吗？",
+      "standards": [
+        "math-2022:S4:GG:GT"
+      ],
+      "textbooks": [
+        "pep-math:7b:u1"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d2-s4",
+      "centrality": 0.0112
+    },
+    {
+      "id": "mt_junior-proposition-theorem",
+      "type": "META",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "定义、命题、定理与证明",
+      "description": "理解定义、命题（真命题与假命题）、定理和证明的意义，会区分命题的题设与结论，初步体会几何推理的严谨性。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说出「如果…那么…」形式的命题的题设与结论",
+        "知道定理是经过证明的真命题"
+      ],
+      "assessmentPrompt": "让{{name}}把「对顶角相等」改写成「如果…那么…」的形式，他能分清题设结论吗？",
+      "standards": [
+        "math-2022:S4:GG:GP"
+      ],
+      "textbooks": [
+        "pep-math:7b:u1"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d2-s4",
+      "centrality": 0.0112
+    },
+    {
+      "id": "mt_junior-triangle-basic",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "三角形",
+      "description": "理解三角形的边、角、高、中线、角平分线，掌握三角形三边关系（两边之和大于第三边）和内角和 180°，了解多边形及其内角和。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能由三边关系判断三条线段能否围成三角形",
+        "会求 n 边形的内角和 (n−2)×180°"
+      ],
+      "assessmentPrompt": "问{{name}}：「3、4、8 能组成三角形吗？」他能说不能（3+4<8）吗？",
+      "standards": [
+        "math-2022:S4:GG:GP"
+      ],
+      "textbooks": [
+        "pep-math:8a:u1"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d2-s4",
+      "centrality": 0.0335
+    },
+    {
+      "id": "mt_junior-triangle-congruence",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "三角形全等",
+      "description": "理解全等三角形的概念与性质，掌握判定方法 SSS、SAS、ASA、AAS 以及直角三角形专用的 HL，会进行简单的全等证明。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说出全等三角形对应边、对应角相等",
+        "会根据已知边角条件选择恰当的判定定理"
+      ],
+      "assessmentPrompt": "让{{name}}说明两个三角形全等（已知两边夹角），他能选用 SAS 并写清对应吗？",
+      "standards": [
+        "math-2022:S4:GG:GP"
+      ],
+      "textbooks": [
+        "pep-math:8a:u2"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d2-s4",
+      "centrality": 0.0223
+    },
+    {
+      "id": "mt_junior-angle-bisector",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "角平分线",
+      "description": "理解角平分线的概念与性质（角平分线上的点到两边距离相等）及其逆定理，会作已知角的平分线。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "会尺规作一个角的平分线",
+        "能运用角平分线性质进行证明或计算"
+      ],
+      "assessmentPrompt": "问{{name}}：「角平分线上一点到两边的距离有什么关系？」他能说相等吗？",
+      "standards": [
+        "math-2022:S4:GG:GP"
+      ],
+      "textbooks": [
+        "pep-math:8a:u2"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d2-s4",
+      "centrality": 0.0074
+    },
+    {
+      "id": "mt_junior-perp-bisector",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "线段垂直平分线",
+      "description": "理解线段垂直平分线的概念与性质（线上的点到线段两端距离相等）及其逆定理，会作线段的垂直平分线。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "会尺规作线段的垂直平分线",
+        "能运用垂直平分线性质解题"
+      ],
+      "assessmentPrompt": "问{{name}}：「垂直平分线上一点到线段两端的距离相等吗？」他能肯定并解释吗？",
+      "standards": [
+        "math-2022:S4:GG:GP"
+      ],
+      "textbooks": [
+        "pep-math:8a:u2"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d2-s4",
+      "centrality": 0.0112
+    },
+    {
+      "id": "mt_junior-axis-symmetry",
+      "type": "REPRESENTATIONAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "轴对称与等腰三角形",
+      "description": "理解轴对称和轴对称图形的概念，掌握等腰三角形的性质（等边对等角、三线合一）与判定（等角对等边），会作对称轴。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能找出轴对称图形的对称轴",
+        "会由等腰三角形「三线合一」进行证明"
+      ],
+      "assessmentPrompt": "问{{name}}：「等腰三角形顶角的平分线、底边中线、底边高有什么关系？」他能说三线合一吗？",
+      "standards": [
+        "math-2022:S4:GG:GT"
+      ],
+      "textbooks": [
+        "pep-math:8a:u3"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d2-s4",
+      "centrality": 0.0074
+    },
+    {
+      "id": "mt_junior-pythagorean",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "勾股定理",
+      "description": "掌握勾股定理（直角三角形两直角边平方和等于斜边平方）及其逆定理，会用于计算线段长度和判断直角三角形。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能由直角边 3、4 算出斜边 5",
+        "会用逆定理判断三边 5、12、13 是否构成直角三角形"
+      ],
+      "assessmentPrompt": "让{{name}}算直角边为 6、8 的斜边，他能得 10 吗？",
+      "standards": [
+        "math-2022:S4:GG:GP"
+      ],
+      "textbooks": [
+        "pep-math:8b:u2"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d2-s4",
+      "centrality": 0.0223
+    },
+    {
+      "id": "mt_junior-quad-basic",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "多边形与四边形",
+      "description": "认识四边形、平行四边形、特殊四边形之间的关系，理解四边形的内角和、外角和，会从边的位置关系认识平行四边形。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说出四边形内角和为 360°",
+        "理解平行四边形是特殊的四边形"
+      ],
+      "assessmentPrompt": "问{{name}}：「四边形内角和是多少？」他能由三角形内角和推出 360° 吗？",
+      "standards": [
+        "math-2022:S4:GG:GP"
+      ],
+      "textbooks": [
+        "pep-math:8b:u3"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d2-s4",
+      "centrality": 0.0149
+    },
+    {
+      "id": "mt_junior-parallelogram",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "平行四边形",
+      "description": "掌握平行四边形的性质（对边平行且相等、对角相等、对角线互相平分）与判定（从边、角、对角线三个角度），会进行推理。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能由一组对边平行且相等判定平行四边形",
+        "会运用对角线互相平分性质解题"
+      ],
+      "assessmentPrompt": "让{{name}}证明一个四边形的对角线互相平分则它是平行四边形，他能写清步骤吗？",
+      "standards": [
+        "math-2022:S4:GG:GP"
+      ],
+      "textbooks": [
+        "pep-math:8b:u3"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d2-s4",
+      "centrality": 0.0186
+    },
+    {
+      "id": "mt_junior-special-parallelogram",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "矩形、菱形、正方形",
+      "description": "理解矩形、菱形、正方形分别是特殊的平行四边形，掌握它们各自的性质与判定，认识它们之间的包含关系。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说出矩形四个角是直角、菱形四边相等",
+        "理解正方形既是矩形又是菱形"
+      ],
+      "assessmentPrompt": "问{{name}}：「正方形、矩形、菱形之间是什么关系？」他能说出包含与特例关系吗？",
+      "standards": [
+        "math-2022:S4:GG:GP"
+      ],
+      "textbooks": [
+        "pep-math:8b:u3"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d2-s4",
+      "centrality": 0.0074
+    },
+    {
+      "id": "mt_junior-trapezoid",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "梯形",
+      "description": "认识梯形及等腰梯形、直角梯形，掌握等腰梯形性质（同一底上的两底角相等），会进行相关计算与简单证明。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能区分梯形与一般四边形",
+        "会运用等腰梯形性质求角或边"
+      ],
+      "assessmentPrompt": "问{{name}}：「等腰梯形同一底上的两个角有什么关系？」他能说相等吗？",
+      "standards": [
+        "math-2022:S4:GG:GP"
+      ],
+      "textbooks": [
+        "pep-math:8b:u3"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d2-s4",
+      "centrality": 0.0037
+    },
+    {
+      "id": "mt_junior-circle-basic",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "圆的基本概念与性质",
+      "description": "理解圆、弦、弧、圆心角、圆周角等基本概念，掌握圆心角与弧、弦的关系，以及圆周角定理（圆周角等于所对圆心角的一半）。",
+      "gradeRangeStart": 9,
+      "gradeRangeEnd": 9,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能识别同弧所对的圆心角与圆周角",
+        "会由圆周角定理求角度"
+      ],
+      "assessmentPrompt": "问{{name}}：「同弧所对的圆周角是圆心角的几分之几？」他能说一半吗？",
+      "standards": [
+        "math-2022:S4:GG:GP"
+      ],
+      "textbooks": [
+        "pep-math:9a:u5"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d2-s4",
+      "centrality": 0.0112
+    },
+    {
+      "id": "mt_junior-line-circle",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "直线与圆的位置关系",
+      "description": "理解直线与圆相离、相切、相交三种位置关系，掌握切线的判定与性质、切线长定理，会进行圆的有关计算与证明。",
+      "gradeRangeStart": 9,
+      "gradeRangeEnd": 9,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能由圆心到直线的距离与半径比较判断位置关系",
+        "会运用「切线垂直于过切点的半径」解题"
+      ],
+      "assessmentPrompt": "问{{name}}：「如何判定一条线是圆的切线？」他能说「经过半径外端且垂直于半径」吗？",
+      "standards": [
+        "math-2022:S4:GG:GP"
+      ],
+      "textbooks": [
+        "pep-math:9a:u6"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d2-s4",
+      "centrality": 0.0112
+    },
+    {
+      "id": "mt_junior-coord-system",
+      "type": "REPRESENTATIONAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "平面直角坐标系",
+      "description": "理解平面直角坐标系由两条互相垂直的数轴组成，会由点的位置写坐标、由坐标描点，认识各象限内坐标的符号。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说出点 (3,-2) 在第四象限",
+        "会求点到坐标轴的距离"
+      ],
+      "assessmentPrompt": "让{{name}}在平面直角坐标系中标出 (-2,3)，他能正确放到第二象限吗？",
+      "standards": [
+        "math-2022:S4:GG:GC"
+      ],
+      "textbooks": [
+        "pep-math:7b:u3"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d2-s4",
+      "centrality": 0.0149
+    },
+    {
+      "id": "mt_junior-coord-application",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "坐标方法的简单应用",
+      "description": "会用坐标表示地理位置（建立适当坐标系），理解用坐标表示平移（点 (x,y) 平移后坐标的变化规律）。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "会建立坐标系描述一个区域内地点的位置",
+        "会说向右平移 a 个单位则 x 加 a"
+      ],
+      "assessmentPrompt": "问{{name}}：「点 (1,2) 向右平移 3 个单位后的坐标是多少？」他能说 (4,2) 吗？",
+      "standards": [
+        "math-2022:S4:GG:GC"
+      ],
+      "textbooks": [
+        "pep-math:7b:u3"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d2-s4",
+      "centrality": 0.0112
+    },
+    {
+      "id": "mt_junior-rotation",
+      "type": "REPRESENTATIONAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "图形的旋转",
+      "description": "理解旋转是图形绕定点按某个方向转动一定角度的变换，掌握旋转的性质（对应点到旋转中心距离相等、对应角相等），认识旋转对称图形。",
+      "gradeRangeStart": 9,
+      "gradeRangeEnd": 9,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说出旋转三要素：中心、方向、角度",
+        "会画简单图形绕点旋转后的位置"
+      ],
+      "assessmentPrompt": "让{{name}}把一个正方形绕中心旋转 90°，他能保持形状和大小画出吗？",
+      "standards": [
+        "math-2022:S4:GG:GT"
+      ],
+      "textbooks": [
+        "pep-math:9a:u4"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d2-s4",
+      "centrality": 0.0112
+    },
+    {
+      "id": "mt_junior-central-symmetry",
+      "type": "REPRESENTATIONAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "中心对称",
+      "description": "理解中心对称与中心对称图形的概念，掌握性质（对称点连线经过对称中心且被平分），会判断和作出中心对称图形。",
+      "gradeRangeStart": 9,
+      "gradeRangeEnd": 9,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说出平行四边形是中心对称图形",
+        "会找两个图形成中心对称时的对称中心"
+      ],
+      "assessmentPrompt": "问{{name}}：「平行四边形是不是中心对称图形？对称中心在哪？」他能说对角线交点吗？",
+      "standards": [
+        "math-2022:S4:GG:GT"
+      ],
+      "textbooks": [
+        "pep-math:9a:u4"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d2-s4",
+      "centrality": 0.0074
+    },
+    {
+      "id": "mt_junior-similarity",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "相似三角形",
+      "description": "理解相似图形的概念，掌握相似三角形的判定（两角对应相等、两边成比例且夹角相等、三边成比例）与性质（对应线段成比例、面积比等于相似比平方）。",
+      "gradeRangeStart": 9,
+      "gradeRangeEnd": 9,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能由两角相等判定两三角形相似",
+        "会利用相似比求未知边长"
+      ],
+      "assessmentPrompt": "让{{name}}在两个三角形已知两组角分别相等时判定相似，他能说出依据吗？",
+      "standards": [
+        "math-2022:S4:GG:GT"
+      ],
+      "textbooks": [
+        "pep-math:9b:u2"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d2-s4",
+      "centrality": 0.0186
+    },
+    {
+      "id": "mt_junior-projection-view",
+      "type": "REPRESENTATIONAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "投影与视图",
+      "description": "理解平行投影与中心投影，会画简单立体图形的三视图（主视图、左视图、俯视图），能由视图想象立体形状。",
+      "gradeRangeStart": 9,
+      "gradeRangeEnd": 9,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "会按要求画出柱体、锥体的三视图",
+        "能由三视图还原基本几何体"
+      ],
+      "assessmentPrompt": "让{{name}}画一个正方体的三视图，他能画出三个相同的正方形吗？",
+      "standards": [
+        "math-2022:S4:GG:GT"
+      ],
+      "textbooks": [
+        "pep-math:9b:u4"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d2-s4",
+      "centrality": 0.0074
+    },
+    {
+      "id": "mt_junior-trig-ratio",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "锐角三角函数",
+      "description": "理解正弦、余弦、正切的定义（直角三角形中边的比值），熟记特殊角（30°、45°、60°）的三角函数值，会解直角三角形。",
+      "gradeRangeStart": 9,
+      "gradeRangeEnd": 9,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说出 sin30°=1/2、tan45°=1 等特殊值",
+        "会用 sinA=a/c 等求直角三角形未知边"
+      ],
+      "assessmentPrompt": "问{{name}}：「sin30° 等于多少？」他能说 1/2 吗？",
+      "standards": [
+        "math-2022:S4:GG:GT"
+      ],
+      "textbooks": [
+        "pep-math:9b:u3"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d2-s4",
+      "centrality": 0.0149
+    },
+    {
+      "id": "mt_junior-data-collect",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "统计与概率",
+      "name": "数据的收集、整理与描述",
+      "description": "经历统计调查的全过程：设计问卷、收集数据，用表格整理，用条形图、扇形图、折线图和直方图描述数据并从中获取信息。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能区分全面调查与抽样调查",
+        "会画频数分布直方图呈现数据分布"
+      ],
+      "assessmentPrompt": "给{{name}}一组调查数据，他能整理成频数分布表并画出直方图吗？",
+      "standards": [
+        "math-2022:S4:SP:SA"
+      ],
+      "textbooks": [
+        "pep-math:7b:u6"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d3-s4",
+      "centrality": 0.0112
+    },
+    {
+      "id": "mt_junior-statistics-survey",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "统计与概率",
+      "name": "统计调查与抽样",
+      "description": "理解全面调查与抽样调查的适用情形，认识总体、个体、样本与样本容量，体会用样本估计总体的思想。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能判断一个问题适合全面调查还是抽样调查",
+        "会说明样本应具有代表性"
+      ],
+      "assessmentPrompt": "问{{name}}：「了解一批灯泡寿命该用哪种调查？」他能说抽样调查吗？",
+      "standards": [
+        "math-2022:S4:SP:SA"
+      ],
+      "textbooks": [
+        "pep-math:7b:u6"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d3-s4",
+      "centrality": 0.0037
+    },
+    {
+      "id": "mt_junior-data-analysis",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "统计与概率",
+      "name": "数据的分析",
+      "description": "理解平均数、中位数、众数等集中趋势量数，掌握方差等离散程度量数，会用统计量描述一组数据的特征并做比较。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "会计算一组数据的平均数、中位数、众数",
+        "理解方差越小数据越稳定"
+      ],
+      "assessmentPrompt": "给{{name}}两组数据，他能分别算出平均数和方差并说哪组更稳定吗？",
+      "standards": [
+        "math-2022:S4:SP:SA"
+      ],
+      "textbooks": [
+        "pep-math:8b:u6"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d3-s4",
+      "centrality": 0.0112
+    },
+    {
+      "id": "mt_junior-variance",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "统计与概率",
+      "name": "方差",
+      "description": "理解方差是衡量一组数据波动大小的统计量，掌握其计算公式，会用方差比较两组数据的稳定性。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "会按公式 s²=Σ(xᵢ−x̄)²/n 计算方差",
+        "会由方差大小判断成绩或产量的稳定性"
+      ],
+      "assessmentPrompt": "让{{name}}比较甲乙两组数据的方差，他能说方差小的一组更稳定吗？",
+      "standards": [
+        "math-2022:S4:SP:SA"
+      ],
+      "textbooks": [
+        "pep-math:8b:u6"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d3-s4",
+      "centrality": 0.0074
+    },
+    {
+      "id": "mt_junior-probability-concept",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "统计与概率",
+      "name": "概率初步",
+      "description": "理解必然事件、不可能事件与随机事件，认识概率表示事件发生可能性的大小，会用列举法（树状图、列表）求简单事件的概率。",
+      "gradeRangeStart": 9,
+      "gradeRangeEnd": 9,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能区分三类事件并给概率赋值（0或1或之间）",
+        "会用树状图或列表枚举等可能结果"
+      ],
+      "assessmentPrompt": "问{{name}}：「抛一枚硬币正面朝上的概率是多少？」他能说 1/2 吗？",
+      "standards": [
+        "math-2022:S4:SP:PR"
+      ],
+      "textbooks": [
+        "pep-math:9b"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d3-s4",
+      "centrality": 0.0074
+    },
+    {
+      "id": "mt_junior-probability-calc",
+      "type": "PROCEDURAL",
+      "subject": "数学",
+      "domain": "统计与概率",
+      "name": "用频率估计概率",
+      "description": "理解大量重复试验中频率稳定于概率，会用频率估计事件发生的概率，认识概率与频率的联系与区别。",
+      "gradeRangeStart": 9,
+      "gradeRangeEnd": 9,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说出试验次数越多频率越接近概率",
+        "会根据多次试验的频率估计概率"
+      ],
+      "assessmentPrompt": "让{{name}}由「抛钮扣 100 次正面 48 次」估计正面概率，他能说约 0.48 吗？",
+      "standards": [
+        "math-2022:S4:SP:PR"
+      ],
+      "textbooks": [
+        "pep-math:9b"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d3-s4",
+      "centrality": 0.0074
+    },
+    {
+      "id": "mt_junior-math-practice",
+      "type": "META",
+      "subject": "数学",
+      "domain": "综合与实践",
+      "name": "数学建模与项目式学习",
+      "description": "在真实情境中综合运用数与代数、图形与几何、统计与概率的知识发现问题、提出并解决问题，经历完整的数学建模与项目式学习过程。",
+      "gradeRangeStart": 9,
+      "gradeRangeEnd": 9,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能将一个生活问题转化为数学问题并建立模型",
+        "会用所学多个领域的知识协同解决一个综合任务"
+      ],
+      "assessmentPrompt": "给{{name}}一个跨学科的真实任务（如设计测量大树高度），他能综合三角函数与相似知识拿出方案吗？",
+      "standards": [
+        "math-2022:S4:PP"
+      ],
+      "textbooks": [
+        "pep-math:9a"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-math-d4-s4",
+      "centrality": 0.0149
     },
     {
       "id": "mt_pinyin-initials",
@@ -2590,7 +4640,7 @@
       ],
       "textbookNote2024": "汉语拼音集中编排于第二至第四单元。",
       "clusterId": "cl-chinese-d1-s1",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_pinyin-finals",
@@ -2620,7 +4670,7 @@
       ],
       "textbookNote2024": "单韵母在第二单元，复韵母与鼻韵母在第四单元。",
       "clusterId": "cl-chinese-d1-s1",
-      "centrality": 0.0107
+      "centrality": 0.0074
     },
     {
       "id": "mt_pinyin-whole",
@@ -2650,7 +4700,7 @@
       ],
       "textbookNote2024": "整体认读音节随拼音单元与语文园地学习。",
       "clusterId": "cl-chinese-d1-s1",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_pinyin-blending",
@@ -2679,7 +4729,7 @@
         "tongbian-chinese-2024:1a:u3"
       ],
       "clusterId": "cl-chinese-d1-s1",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_pinyin-reading",
@@ -2709,7 +4759,7 @@
       ],
       "textbookNote2024": "拼音学完后进入阅读单元，借助拼音识字和阅读。",
       "clusterId": "cl-chinese-d1-s1",
-      "centrality": 0.0267
+      "centrality": 0.0186
     },
     {
       "id": "mt_char-pictographic",
@@ -2739,7 +4789,7 @@
       ],
       "textbookNote2024": "识字单元：一上「识字」（金木水火土、日月山川等）与一下「识字」。",
       "clusterId": "cl-chinese-d2-s1",
-      "centrality": 0.0267
+      "centrality": 0.0186
     },
     {
       "id": "mt_char-radical",
@@ -2768,7 +4818,7 @@
         "tongbian-chinese-2024:1b:u1"
       ],
       "clusterId": "cl-chinese-d2-s1",
-      "centrality": 0.0267
+      "centrality": 0.0186
     },
     {
       "id": "mt_char-stroke",
@@ -2798,7 +4848,7 @@
       ],
       "textbookNote2024": "笔画笔顺在识字与汉语拼音单元中学习。",
       "clusterId": "cl-chinese-d2-s1",
-      "centrality": 0.0107
+      "centrality": 0.0074
     },
     {
       "id": "mt_char-writing",
@@ -2827,7 +4877,7 @@
         "tongbian-chinese-2024:1b:u1"
       ],
       "clusterId": "cl-chinese-d2-s1",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_char-phonetic-order",
@@ -2857,7 +4907,7 @@
       ],
       "textbookNote2024": "音序查字法依托汉语拼音，在拼音单元语文园地中学习。",
       "clusterId": "cl-chinese-d2-s1",
-      "centrality": 0.0107
+      "centrality": 0.0074
     },
     {
       "id": "mt_char-radical-lookup",
@@ -2886,7 +4936,7 @@
       ],
       "textbookNote2024": "部首查字法调整至二上识字单元。",
       "clusterId": "cl-chinese-d2-s1",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_char-homophone",
@@ -2915,7 +4965,7 @@
         "tongbian-chinese-2024:2a:u3"
       ],
       "clusterId": "cl-chinese-d2-s1",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_word-understand",
@@ -2944,7 +4994,7 @@
         "tongbian-chinese-2024:2a:u4"
       ],
       "clusterId": "cl-chinese-d3-s1",
-      "centrality": 0.0267
+      "centrality": 0.0186
     },
     {
       "id": "mt_word-accumulate",
@@ -2973,7 +5023,7 @@
         "tongbian-chinese-2024:2a:u2"
       ],
       "clusterId": "cl-chinese-d3-s1",
-      "centrality": 0.0267
+      "centrality": 0.0186
     },
     {
       "id": "mt_word-idiom",
@@ -3003,7 +5053,7 @@
       ],
       "textbookNote2024": "成语积累融入识字单元（神州谣、传统节日）与寓言单元。",
       "clusterId": "cl-chinese-d3-s1",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_sent-complete",
@@ -3033,7 +5083,7 @@
       ],
       "textbookNote2024": "句子学习从一上阅读单元开始。",
       "clusterId": "cl-chinese-d4-s1",
-      "centrality": 0.0588
+      "centrality": 0.0409
     },
     {
       "id": "mt_punct-basic",
@@ -3062,7 +5112,7 @@
         "tongbian-chinese-2024:1a:u7"
       ],
       "clusterId": "cl-chinese-d4-s1",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_sent-ba-bei",
@@ -3091,7 +5141,7 @@
         "tongbian-chinese-2024:2a:u4"
       ],
       "clusterId": "cl-chinese-d4-s1",
-      "centrality": 0.0107
+      "centrality": 0.0074
     },
     {
       "id": "mt_sent-rhetoric",
@@ -3122,7 +5172,7 @@
       ],
       "textbookNote2024": "比喻与拟人融入二下古诗/春天单元与想象单元。",
       "clusterId": "cl-chinese-d4-s1",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_sent-extend",
@@ -3151,7 +5201,7 @@
       ],
       "textbookNote2024": "把句子写具体融入三上习作「我们眼中的缤纷世界」。",
       "clusterId": "cl-chinese-d4-s2",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_sent-conjunction",
@@ -3180,7 +5230,7 @@
       ],
       "textbookNote2024": "关联词语学习分散在三上各阅读单元与语文园地。",
       "clusterId": "cl-chinese-d4-s2",
-      "centrality": 0.0107
+      "centrality": 0.0074
     },
     {
       "id": "mt_sent-quote",
@@ -3209,7 +5259,7 @@
       ],
       "textbookNote2024": "冒号、引号与直述转述在对话丰富的课文单元（如「在牛肚子里旅行」）中学习。",
       "clusterId": "cl-chinese-d4-s2",
-      "centrality": 0.0321
+      "centrality": 0.0223
     },
     {
       "id": "mt_punct-advanced",
@@ -3238,7 +5288,7 @@
       ],
       "textbookNote2024": "顿号、分号与书名号在三下「古诗三首」「纸的发明」等单元学习。",
       "clusterId": "cl-chinese-d4-s2",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_sent-fix",
@@ -3267,7 +5317,7 @@
       ],
       "textbookNote2024": "修改病句分散在四上各单元语文园地与阅读练习。",
       "clusterId": "cl-chinese-d4-s2",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_sent-compress",
@@ -3296,7 +5346,7 @@
       ],
       "textbookNote2024": "缩句与提取主干分散在四上各单元语文园地。",
       "clusterId": "cl-chinese-d4-s2",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_read-aloud",
@@ -3326,7 +5376,7 @@
         "tongbian-chinese-2024:1b:u2"
       ],
       "clusterId": "cl-chinese-d5-s1",
-      "centrality": 0.0267
+      "centrality": 0.0186
     },
     {
       "id": "mt_read-silent",
@@ -3356,7 +5406,7 @@
       ],
       "textbookNote2024": "默读训练自二上阅读单元开始。",
       "clusterId": "cl-chinese-d5-s1",
-      "centrality": 0.0374
+      "centrality": 0.026
     },
     {
       "id": "mt_read-mark",
@@ -3386,7 +5436,7 @@
       ],
       "textbookNote2024": "圈画与批注在预测单元和写景单元中训练。",
       "clusterId": "cl-chinese-d5-s2",
-      "centrality": 0.0321
+      "centrality": 0.0223
     },
     {
       "id": "mt_read-predict",
@@ -3416,7 +5466,7 @@
       ],
       "textbookNote2024": "第三单元（「总也倒不了的老屋」等）为预测阅读策略单元。",
       "clusterId": "cl-chinese-d5-s2",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_read-question",
@@ -3446,7 +5496,7 @@
       ],
       "textbookNote2024": "四上第二单元为提问策略单元（与旧版单元主题一致）。",
       "clusterId": "cl-chinese-d5-s2",
-      "centrality": 0.0321
+      "centrality": 0.0223
     },
     {
       "id": "mt_read-speed",
@@ -3472,7 +5522,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-chinese-d5-s3",
-      "centrality": 0.0267
+      "centrality": 0.0186
     },
     {
       "id": "mt_read-purpose",
@@ -3499,7 +5549,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-chinese-d5-s3",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_read-ancient",
@@ -3530,7 +5580,7 @@
       ],
       "textbookNote2024": "古诗三首集中于三上第二单元；文言文「守株待兔」在三下第二单元。",
       "clusterId": "cl-chinese-d5-s2",
-      "centrality": 0.0107
+      "centrality": 0.0074
     },
     {
       "id": "mt_read-main",
@@ -3560,7 +5610,7 @@
       ],
       "textbookNote2024": "把握主要内容融入神话单元与写景单元。",
       "clusterId": "cl-chinese-d5-s2",
-      "centrality": 0.0321
+      "centrality": 0.0223
     },
     {
       "id": "mt_read-feel",
@@ -3586,7 +5636,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-chinese-d5-s2",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_read-appreciate",
@@ -3612,7 +5662,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-chinese-d5-s3",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_write-picture",
@@ -3642,7 +5692,7 @@
       ],
       "textbookNote2024": "写话融入一下阅读单元（新版目录未单列写话栏目）。",
       "clusterId": "cl-chinese-d6-s1",
-      "centrality": 0.0267
+      "centrality": 0.0186
     },
     {
       "id": "mt_write-imitate",
@@ -3673,7 +5723,7 @@
       ],
       "textbookNote2024": "仿写与写话融入二上阅读单元。",
       "clusterId": "cl-chinese-d6-s1",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_write-diary",
@@ -3702,7 +5752,7 @@
       ],
       "textbookNote2024": "三上第二单元习作「写日记」。",
       "clusterId": "cl-chinese-d6-s2",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_write-observe",
@@ -3731,7 +5781,7 @@
       ],
       "textbookNote2024": "三上第五单元习作「我们眼中的缤纷世界」。",
       "clusterId": "cl-chinese-d6-s2",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_write-imagine",
@@ -3761,7 +5811,7 @@
       ],
       "textbookNote2024": "续写故事、我来编童话。",
       "clusterId": "cl-chinese-d6-s2",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_write-narrative",
@@ -3790,7 +5840,7 @@
       ],
       "textbookNote2024": "四上第五单元习作「生活万花筒」。",
       "clusterId": "cl-chinese-d6-s2",
-      "centrality": 0.0321
+      "centrality": 0.0223
     },
     {
       "id": "mt_write-person",
@@ -3816,7 +5866,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-chinese-d6-s2",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_write-application",
@@ -3845,7 +5895,7 @@
       ],
       "textbookNote2024": "四上第八单元习作「写信」。",
       "clusterId": "cl-chinese-d6-s2",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_write-revise",
@@ -3875,7 +5925,7 @@
       ],
       "textbookNote2024": "习作修改与互评融入各习作单元。",
       "clusterId": "cl-chinese-d6-s2",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_write-center",
@@ -3901,7 +5951,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-chinese-d6-s3",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_write-summary",
@@ -3928,7 +5978,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-chinese-d6-s3",
-      "centrality": 0.0267
+      "centrality": 0.0186
     },
     {
       "id": "mt_oral-listen",
@@ -3958,7 +6008,7 @@
       ],
       "textbookNote2024": "快乐读书吧与识字单元中的听故事、讲故事活动。",
       "clusterId": "cl-chinese-d7-s1",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_oral-discuss",
@@ -3989,7 +6039,7 @@
       ],
       "textbookNote2024": "口语交际融入二上各单元（新版二上目录未单列口语交际栏目）。",
       "clusterId": "cl-chinese-d7-s1",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_oral-retell",
@@ -4019,7 +6069,7 @@
       ],
       "textbookNote2024": "三上第一、三单元设口语交际。",
       "clusterId": "cl-chinese-d7-s2",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_oral-debate",
@@ -4046,7 +6096,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-chinese-d7-s3",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_poem-recite",
@@ -4078,7 +6128,7 @@
       ],
       "textbookNote2024": "古诗文分布于一下第四单元「静夜思」、第六单元「古诗二首」等。",
       "clusterId": "cl-chinese-d8-s1",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_poem-understand",
@@ -4108,7 +6158,7 @@
       ],
       "textbookNote2024": "借助注释理解古诗：三上「古诗三首」、三下「古诗三首」。",
       "clusterId": "cl-chinese-d8-s2",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_book-reading",
@@ -4139,7 +6189,7 @@
       ],
       "textbookNote2024": "快乐读书吧：二上「读读童话故事」、三上「在那奇妙的王国里」。",
       "clusterId": "cl-chinese-d8-s1",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_book-classic",
@@ -4166,7 +6216,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-chinese-d8-s3",
-      "centrality": 0.0321
+      "centrality": 0.0223
     },
     {
       "id": "mt_en-letter-name",
@@ -4194,7 +6244,7 @@
       ],
       "textbookNote2024": "字母名称音在「Letters and sounds」预备段与 Unit 1 中学习。",
       "clusterId": "cl-english-d1-l1",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_en-letter-write",
@@ -4222,7 +6272,7 @@
       ],
       "textbookNote2024": "字母书写规范在「Letters and sounds」预备段学习。",
       "clusterId": "cl-english-d1-l1",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_en-phonics",
@@ -4250,7 +6300,7 @@
       ],
       "textbookNote2024": "字母音与自然拼读依托「Letters and sounds」板块（见附录 2 Chants）。",
       "clusterId": "cl-english-d1-l1",
-      "centrality": 0.0481
+      "centrality": 0.0335
     },
     {
       "id": "mt_en-spelling-rules",
@@ -4278,7 +6328,7 @@
       ],
       "textbookNote2024": "新版未单设语音单元，字母组合发音规则融入各单元。",
       "clusterId": "cl-english-d1-l1",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_en-num-color",
@@ -4307,7 +6357,7 @@
       ],
       "textbookNote2024": "颜色调整至第五单元「The colourful world」，数字调整至第六单元「Useful numbers」。",
       "clusterId": "cl-english-d2-l1",
-      "centrality": 0.0267
+      "centrality": 0.0186
     },
     {
       "id": "mt_en-body-stationery",
@@ -4335,7 +6385,7 @@
       ],
       "textbookNote2024": "身体部位词汇融入动物单元（动物身体部位）；文具词汇散见于项目活动。",
       "clusterId": "cl-english-d2-l1",
-      "centrality": 0.0481
+      "centrality": 0.0335
     },
     {
       "id": "mt_en-family",
@@ -4363,7 +6413,7 @@
       ],
       "textbookNote2024": "家庭成员由三下第二单元提前至三上第二单元「Different families」。",
       "clusterId": "cl-english-d2-l1",
-      "centrality": 0.0374
+      "centrality": 0.026
     },
     {
       "id": "mt_en-animals",
@@ -4392,7 +6442,7 @@
       ],
       "textbookNote2024": "动物话题拆分：宠物在「Different families」，野生动物在「Amazing animals」。",
       "clusterId": "cl-english-d2-l1",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_en-food",
@@ -4421,7 +6471,7 @@
       ],
       "textbookNote2024": "食物话题调整为三上「Plants around us」（植物的产出）与三下「Healthy food」。",
       "clusterId": "cl-english-d2-l1",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_en-weather",
@@ -4449,7 +6499,7 @@
       ],
       "textbookNote2024": "天气话题由四下调整至四上「The weather and us」。",
       "clusterId": "cl-english-d2-l1",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_en-clothes",
@@ -4477,7 +6527,7 @@
       ],
       "textbookNote2024": "服装话题由四下调整至四上「Changing for the seasons」。",
       "clusterId": "cl-english-d2-l1",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_en-jobs",
@@ -4505,7 +6555,7 @@
       ],
       "textbookNote2024": "职业话题调整为四上「Helping in the community」。",
       "clusterId": "cl-english-d2-l1",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_en-places",
@@ -4534,7 +6584,7 @@
       ],
       "textbookNote2024": "场所话题调整为四上「Places we live in」等社区主题单元。",
       "clusterId": "cl-english-d2-l1",
-      "centrality": 0.0267
+      "centrality": 0.0186
     },
     {
       "id": "mt_en-activities",
@@ -4563,7 +6613,7 @@
       ],
       "textbookNote2024": "日常活动融入「Helping at home」「The weather and us」等单元。",
       "clusterId": "cl-english-d2-l1",
-      "centrality": 0.0481
+      "centrality": 0.0335
     },
     {
       "id": "mt_en-transport",
@@ -4591,7 +6641,7 @@
       ],
       "textbookNote2024": "交通与问路话题融入五年级各单元。",
       "clusterId": "cl-english-d2-l2",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_en-demonstratives",
@@ -4619,7 +6669,7 @@
         "pep-english-2024:3a:u3"
       ],
       "clusterId": "cl-english-d3-l1",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_en-pronouns",
@@ -4648,7 +6698,7 @@
       ],
       "textbookNote2024": "人称代词与物主代词由三下提前至三上第一、二单元。",
       "clusterId": "cl-english-d3-l1",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_en-be-verb",
@@ -4677,7 +6727,7 @@
       ],
       "textbookNote2024": "be 动词与名词单复数由三下提前至三上家庭与朋友话题单元。",
       "clusterId": "cl-english-d3-l1",
-      "centrality": 0.0588
+      "centrality": 0.0409
     },
     {
       "id": "mt_en-yes-no-questions",
@@ -4706,7 +6756,7 @@
       ],
       "textbookNote2024": "一般疑问句融入三上第一、二单元问句情境。",
       "clusterId": "cl-english-d3-l1",
-      "centrality": 0.0267
+      "centrality": 0.0186
     },
     {
       "id": "mt_en-wh-questions",
@@ -4735,7 +6785,7 @@
       ],
       "textbookNote2024": "特殊疑问句由三下提前至三上；各单元以 Big question 组织。",
       "clusterId": "cl-english-d3-l1",
-      "centrality": 0.0267
+      "centrality": 0.0186
     },
     {
       "id": "mt_en-prepositions",
@@ -4764,7 +6814,7 @@
       ],
       "textbookNote2024": "方位介词融入「Plants around us」与家庭话题。",
       "clusterId": "cl-english-d3-l1",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_en-present-simple",
@@ -4793,7 +6843,7 @@
       ],
       "textbookNote2024": "一般现在时融入五年级日常话题单元。",
       "clusterId": "cl-english-d3-l2",
-      "centrality": 0.0374
+      "centrality": 0.026
     },
     {
       "id": "mt_en-progressive",
@@ -4819,7 +6869,7 @@
       "textbooks2024": [],
       "textbookNote2024": "现在进行时在新版中的分布待五年级下册（2027 春）目录收录后确认。",
       "clusterId": "cl-english-d3-l2",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_en-going-to",
@@ -4844,7 +6894,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-english-d3-l2",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_en-past-tense",
@@ -4869,7 +6919,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-english-d3-l2",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_en-comparatives",
@@ -4894,7 +6944,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-english-d3-l2",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_en-greetings",
@@ -4923,7 +6973,7 @@
       ],
       "textbookNote2024": "问候话题在三上「Making friends」与三下「Meeting new people」。",
       "clusterId": "cl-english-d4-l1",
-      "centrality": 0.0107
+      "centrality": 0.0074
     },
     {
       "id": "mt_en-listening",
@@ -4952,7 +7002,7 @@
       ],
       "textbookNote2024": "听话题贯穿三上各单元。",
       "clusterId": "cl-english-d4-l1",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_en-speaking-routine",
@@ -4981,7 +7031,7 @@
       ],
       "textbookNote2024": "口头表达依托四上各单元 Project。",
       "clusterId": "cl-english-d4-l1",
-      "centrality": 0.0321
+      "centrality": 0.0223
     },
     {
       "id": "mt_en-describing",
@@ -5009,7 +7059,7 @@
         "pep-english-2024:5a:u6"
       ],
       "clusterId": "cl-english-d4-l2",
-      "centrality": 0.0267
+      "centrality": 0.0186
     },
     {
       "id": "mt_en-copying",
@@ -5037,7 +7087,7 @@
         "pep-english-2024:3a:u5"
       ],
       "clusterId": "cl-english-d5-l1",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_en-reading-pictures",
@@ -5066,7 +7116,7 @@
       ],
       "textbookNote2024": "图文阅读融入动物与家庭单元；四上起设 Reading time。",
       "clusterId": "cl-english-d5-l1",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_en-guessing-words",
@@ -5094,7 +7144,7 @@
         "pep-english-2024:4a:u3"
       ],
       "clusterId": "cl-english-d5-l1",
-      "centrality": 0.0267
+      "centrality": 0.0186
     },
     {
       "id": "mt_en-writing-short",
@@ -5123,7 +7173,7 @@
       ],
       "textbookNote2024": "写几句话融入四上各单元 Project。",
       "clusterId": "cl-english-d5-l1",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_en-writing-passage",
@@ -5151,7 +7201,7 @@
         "pep-english-2024:5a:u5"
       ],
       "clusterId": "cl-english-d5-l2",
-      "centrality": 0.016
+      "centrality": 0.0112
     },
     {
       "id": "mt_en-culture",
@@ -5179,7 +7229,7 @@
       ],
       "textbookNote2024": "节日与文化话题见于五年级各单元及 Revision「New Year's party」。",
       "clusterId": "cl-english-d6-l2",
-      "centrality": 0.0214
+      "centrality": 0.0149
     },
     {
       "id": "mt_en-learning-strategies",
@@ -5207,7 +7257,7 @@
       ],
       "textbookNote2024": "学习策略调整为三下「Learning better」单元。",
       "clusterId": "cl-english-d6-l2",
-      "centrality": 0.0107
+      "centrality": 0.0074
     }
   ]
 }

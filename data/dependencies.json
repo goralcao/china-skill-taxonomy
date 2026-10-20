@@ -1,5 +1,5 @@
 {
-  "version": "v0.7.0",
+  "version": "v0.8.0",
   "schemaVersion": 1,
   "dependencies": [
     {
@@ -1135,6 +1135,912 @@
       "prerequisiteId": "mt_classify",
       "strength": "soft",
       "reason": "建立抽屉模型要先按属性给物体分类"
+    },
+    {
+      "topicId": "mt_junior-number-axis",
+      "prerequisiteId": "mt_junior-rational-concept",
+      "strength": "hard",
+      "reason": "数轴是有理数直观表示的前提"
+    },
+    {
+      "topicId": "mt_junior-opposite-absolute",
+      "prerequisiteId": "mt_junior-rational-concept",
+      "strength": "hard",
+      "reason": "相反数与绝对值建立在有理数之上"
+    },
+    {
+      "topicId": "mt_junior-opposite-absolute",
+      "prerequisiteId": "mt_junior-number-axis",
+      "strength": "hard",
+      "reason": "相反数与绝对值借助数轴理解"
+    },
+    {
+      "topicId": "mt_junior-rational-compare",
+      "prerequisiteId": "mt_junior-number-axis",
+      "strength": "hard",
+      "reason": "比较大小常用数轴"
+    },
+    {
+      "topicId": "mt_junior-rational-compare",
+      "prerequisiteId": "mt_junior-opposite-absolute",
+      "strength": "hard",
+      "reason": "两个负数比较要用绝对值"
+    },
+    {
+      "topicId": "mt_junior-rational-add",
+      "prerequisiteId": "mt_junior-rational-concept",
+      "strength": "hard",
+      "reason": "先认识有理数才谈得上运算"
+    },
+    {
+      "topicId": "mt_junior-rational-add",
+      "prerequisiteId": "mt_junior-rational-compare",
+      "strength": "soft",
+      "reason": "加法结果的大小与比较有关"
+    },
+    {
+      "topicId": "mt_junior-rational-sub",
+      "prerequisiteId": "mt_junior-rational-add",
+      "strength": "hard",
+      "reason": "减法是加法的逆运算"
+    },
+    {
+      "topicId": "mt_junior-rational-mul",
+      "prerequisiteId": "mt_junior-rational-concept",
+      "strength": "hard",
+      "reason": "乘法是求几个相同加数和的简便运算"
+    },
+    {
+      "topicId": "mt_junior-rational-mul",
+      "prerequisiteId": "mt_junior-rational-add",
+      "strength": "soft",
+      "reason": "连乘要与连加区分"
+    },
+    {
+      "topicId": "mt_junior-rational-div",
+      "prerequisiteId": "mt_junior-rational-mul",
+      "strength": "hard",
+      "reason": "除法是乘法的逆运算"
+    },
+    {
+      "topicId": "mt_junior-rational-power",
+      "prerequisiteId": "mt_junior-rational-mul",
+      "strength": "hard",
+      "reason": "乘方是相同因数乘法的简写"
+    },
+    {
+      "topicId": "mt_junior-rational-power",
+      "prerequisiteId": "mt_junior-opposite-absolute",
+      "strength": "soft",
+      "reason": "要区分 (-a)ⁿ 与 -aⁿ"
+    },
+    {
+      "topicId": "mt_junior-sci-notation",
+      "prerequisiteId": "mt_junior-rational-power",
+      "strength": "hard",
+      "reason": "科学记数法涉及 10 的整数次幂"
+    },
+    {
+      "topicId": "mt_junior-square-root",
+      "prerequisiteId": "mt_junior-rational-concept",
+      "strength": "soft",
+      "reason": "开方是乘方的逆思考"
+    },
+    {
+      "topicId": "mt_junior-square-root",
+      "prerequisiteId": "mt_junior-rational-mul",
+      "strength": "soft",
+      "reason": "开平方与平方互逆"
+    },
+    {
+      "topicId": "mt_junior-cube-root",
+      "prerequisiteId": "mt_junior-square-root",
+      "strength": "hard",
+      "reason": "立方根类比平方根学习"
+    },
+    {
+      "topicId": "mt_junior-real-number",
+      "prerequisiteId": "mt_junior-square-root",
+      "strength": "hard",
+      "reason": "无理数由开方引入"
+    },
+    {
+      "topicId": "mt_junior-real-number",
+      "prerequisiteId": "mt_junior-cube-root",
+      "strength": "hard",
+      "reason": "实数包含有理数与无理数"
+    },
+    {
+      "topicId": "mt_junior-real-number",
+      "prerequisiteId": "mt_junior-rational-concept",
+      "strength": "hard",
+      "reason": "有理数只是实数的一部分"
+    },
+    {
+      "topicId": "mt_junior-real-number",
+      "prerequisiteId": "mt_junior-number-axis",
+      "strength": "hard",
+      "reason": "实数与数轴上的点一一对应"
+    },
+    {
+      "topicId": "mt_junior-algebraic-expr",
+      "prerequisiteId": "mt_junior-rational-concept",
+      "strength": "soft",
+      "reason": "字母可以表示数"
+    },
+    {
+      "topicId": "mt_junior-expr-value",
+      "prerequisiteId": "mt_junior-algebraic-expr",
+      "strength": "hard",
+      "reason": "先有代数式才能代入求值"
+    },
+    {
+      "topicId": "mt_junior-monomial-poly",
+      "prerequisiteId": "mt_junior-algebraic-expr",
+      "strength": "hard",
+      "reason": "整式是代数式的一类"
+    },
+    {
+      "topicId": "mt_junior-like-terms",
+      "prerequisiteId": "mt_junior-monomial-poly",
+      "strength": "hard",
+      "reason": "同类项概念建立在整式之上"
+    },
+    {
+      "topicId": "mt_junior-integral-addsub",
+      "prerequisiteId": "mt_junior-like-terms",
+      "strength": "hard",
+      "reason": "合并同类项才能做整式加减"
+    },
+    {
+      "topicId": "mt_junior-integral-addsub",
+      "prerequisiteId": "mt_junior-monomial-poly",
+      "strength": "hard",
+      "reason": "加减的对象是多项式"
+    },
+    {
+      "topicId": "mt_junior-integral-powmul",
+      "prerequisiteId": "mt_junior-rational-power",
+      "strength": "hard",
+      "reason": "幂的运算是乘方的推广"
+    },
+    {
+      "topicId": "mt_junior-integral-powmul",
+      "prerequisiteId": "mt_junior-monomial-poly",
+      "strength": "soft",
+      "reason": "幂的底数常是整式"
+    },
+    {
+      "topicId": "mt_junior-mul-formula",
+      "prerequisiteId": "mt_junior-integral-powmul",
+      "strength": "hard",
+      "reason": "乘法公式是幂运算的直接应用"
+    },
+    {
+      "topicId": "mt_junior-mul-formula",
+      "prerequisiteId": "mt_junior-integral-addsub",
+      "strength": "soft",
+      "reason": "多项式乘法含加减去括号"
+    },
+    {
+      "topicId": "mt_junior-factorization",
+      "prerequisiteId": "mt_junior-mul-formula",
+      "strength": "hard",
+      "reason": "因式分解与整式乘法互逆"
+    },
+    {
+      "topicId": "mt_junior-factorization",
+      "prerequisiteId": "mt_junior-like-terms",
+      "strength": "soft",
+      "reason": "提公因式要先识别同类项"
+    },
+    {
+      "topicId": "mt_junior-fraction-concept",
+      "prerequisiteId": "mt_junior-rational-div",
+      "strength": "hard",
+      "reason": "分式是除法关系的代数表达"
+    },
+    {
+      "topicId": "mt_junior-fraction-concept",
+      "prerequisiteId": "mt_junior-monomial-poly",
+      "strength": "hard",
+      "reason": "分式的分子分母都是整式"
+    },
+    {
+      "topicId": "mt_junior-fraction-op",
+      "prerequisiteId": "mt_junior-fraction-concept",
+      "strength": "hard",
+      "reason": "先理解分式才能运算"
+    },
+    {
+      "topicId": "mt_junior-fraction-op",
+      "prerequisiteId": "mt_junior-integral-addsub",
+      "strength": "hard",
+      "reason": "通分约分与整式加减思路相通"
+    },
+    {
+      "topicId": "mt_junior-fraction-op",
+      "prerequisiteId": "mt_junior-mul-formula",
+      "strength": "soft",
+      "reason": "分式乘除会用到乘法公式"
+    },
+    {
+      "topicId": "mt_junior-fractional-equation",
+      "prerequisiteId": "mt_junior-fraction-op",
+      "strength": "hard",
+      "reason": "解分式方程依赖分式运算"
+    },
+    {
+      "topicId": "mt_junior-fractional-equation",
+      "prerequisiteId": "mt_junior-linear-eq1-solve",
+      "strength": "hard",
+      "reason": "最终化为整式方程求解"
+    },
+    {
+      "topicId": "mt_junior-quadratic-radical",
+      "prerequisiteId": "mt_junior-real-number",
+      "strength": "hard",
+      "reason": "二次根式要求被开方数非负"
+    },
+    {
+      "topicId": "mt_junior-quadratic-radical",
+      "prerequisiteId": "mt_junior-square-root",
+      "strength": "hard",
+      "reason": "二次根式类比算术平方根"
+    },
+    {
+      "topicId": "mt_junior-radical-op",
+      "prerequisiteId": "mt_junior-quadratic-radical",
+      "strength": "hard",
+      "reason": "先认识二次根式才能运算"
+    },
+    {
+      "topicId": "mt_junior-radical-op",
+      "prerequisiteId": "mt_junior-like-terms",
+      "strength": "soft",
+      "reason": "合并同类二次根式"
+    },
+    {
+      "topicId": "mt_junior-linear-eq1-concept",
+      "prerequisiteId": "mt_junior-algebraic-expr",
+      "strength": "hard",
+      "reason": "方程是用等号连结的代数式"
+    },
+    {
+      "topicId": "mt_junior-linear-eq1-solve",
+      "prerequisiteId": "mt_junior-linear-eq1-concept",
+      "strength": "hard",
+      "reason": "先有方程概念才谈解法"
+    },
+    {
+      "topicId": "mt_junior-linear-eq1-solve",
+      "prerequisiteId": "mt_junior-integral-addsub",
+      "strength": "hard",
+      "reason": "移项与合并同类项靠整式加减"
+    },
+    {
+      "topicId": "mt_junior-linear-eq1-app",
+      "prerequisiteId": "mt_junior-linear-eq1-solve",
+      "strength": "hard",
+      "reason": "列方程后须会解"
+    },
+    {
+      "topicId": "mt_junior-linear-eq1-app",
+      "prerequisiteId": "mt_junior-linear-eq1-concept",
+      "strength": "hard",
+      "reason": "找等量关系是列方程的起点"
+    },
+    {
+      "topicId": "mt_junior-linear-system-concept",
+      "prerequisiteId": "mt_junior-linear-eq1-concept",
+      "strength": "hard",
+      "reason": "二元是一次方程的推广"
+    },
+    {
+      "topicId": "mt_junior-elimination",
+      "prerequisiteId": "mt_junior-linear-system-concept",
+      "strength": "hard",
+      "reason": "先有方程组才有消元法"
+    },
+    {
+      "topicId": "mt_junior-elimination",
+      "prerequisiteId": "mt_junior-linear-eq1-solve",
+      "strength": "hard",
+      "reason": "消元后回到一元一次方程"
+    },
+    {
+      "topicId": "mt_junior-linear-system-app",
+      "prerequisiteId": "mt_junior-elimination",
+      "strength": "hard",
+      "reason": "解方程组是应用的核心步骤"
+    },
+    {
+      "topicId": "mt_junior-linear-system-app",
+      "prerequisiteId": "mt_junior-linear-system-concept",
+      "strength": "hard",
+      "reason": "建模需要两个等量关系"
+    },
+    {
+      "topicId": "mt_junior-ternary-system",
+      "prerequisiteId": "mt_junior-elimination",
+      "strength": "hard",
+      "reason": "三元消元类比二元"
+    },
+    {
+      "topicId": "mt_junior-ternary-system",
+      "prerequisiteId": "mt_junior-linear-system-concept",
+      "strength": "hard",
+      "reason": "是二元一次方程组的推广"
+    },
+    {
+      "topicId": "mt_junior-inequality",
+      "prerequisiteId": "mt_junior-rational-compare",
+      "strength": "hard",
+      "reason": "不等式性质类比大小比较"
+    },
+    {
+      "topicId": "mt_junior-linear-inequality-1",
+      "prerequisiteId": "mt_junior-inequality",
+      "strength": "hard",
+      "reason": "先有不等式性质才谈解法"
+    },
+    {
+      "topicId": "mt_junior-linear-inequality-1",
+      "prerequisiteId": "mt_junior-linear-eq1-solve",
+      "strength": "soft",
+      "reason": "解法与解方程类似"
+    },
+    {
+      "topicId": "mt_junior-linear-inequality-system",
+      "prerequisiteId": "mt_junior-linear-inequality-1",
+      "strength": "hard",
+      "reason": "不等式组由各不等式组成"
+    },
+    {
+      "topicId": "mt_junior-quad-eq-concept",
+      "prerequisiteId": "mt_junior-linear-eq1-concept",
+      "strength": "hard",
+      "reason": "一元二次方程是一元的推广"
+    },
+    {
+      "topicId": "mt_junior-quad-eq-concept",
+      "prerequisiteId": "mt_junior-monomial-poly",
+      "strength": "soft",
+      "reason": "一般形式含有二次项"
+    },
+    {
+      "topicId": "mt_junior-quad-eq-solve",
+      "prerequisiteId": "mt_junior-quad-eq-concept",
+      "strength": "hard",
+      "reason": "先有概念才有解法"
+    },
+    {
+      "topicId": "mt_junior-quad-eq-solve",
+      "prerequisiteId": "mt_junior-factorization",
+      "strength": "hard",
+      "reason": "因式分解法是基本解法之一"
+    },
+    {
+      "topicId": "mt_junior-quad-eq-solve",
+      "prerequisiteId": "mt_junior-radical-op",
+      "strength": "soft",
+      "reason": "公式法含开平方"
+    },
+    {
+      "topicId": "mt_junior-quad-discriminant",
+      "prerequisiteId": "mt_junior-quad-eq-concept",
+      "strength": "hard",
+      "reason": "判别式研究根的情况"
+    },
+    {
+      "topicId": "mt_junior-quad-discriminant",
+      "prerequisiteId": "mt_junior-radical-op",
+      "strength": "soft",
+      "reason": "判别式是根号下的式子"
+    },
+    {
+      "topicId": "mt_junior-function-concept",
+      "prerequisiteId": "mt_junior-algebraic-expr",
+      "strength": "hard",
+      "reason": "函数解析式本质是代数式"
+    },
+    {
+      "topicId": "mt_junior-function-concept",
+      "prerequisiteId": "mt_junior-coord-system",
+      "strength": "hard",
+      "reason": "函数常用坐标平面表示"
+    },
+    {
+      "topicId": "mt_junior-linear-function",
+      "prerequisiteId": "mt_junior-function-concept",
+      "strength": "hard",
+      "reason": "一次函数是函数的特例"
+    },
+    {
+      "topicId": "mt_junior-linear-function",
+      "prerequisiteId": "mt_junior-linear-eq1-concept",
+      "strength": "soft",
+      "reason": "一次函数图像与一次方程相关"
+    },
+    {
+      "topicId": "mt_junior-linear-prop",
+      "prerequisiteId": "mt_junior-linear-function",
+      "strength": "hard",
+      "reason": "性质建立在对函数的认识之上"
+    },
+    {
+      "topicId": "mt_junior-linear-prop",
+      "prerequisiteId": "mt_junior-coord-application",
+      "strength": "hard",
+      "reason": "由已知点求解析式"
+    },
+    {
+      "topicId": "mt_junior-inverse-proportional",
+      "prerequisiteId": "mt_junior-function-concept",
+      "strength": "hard",
+      "reason": "反比例函数也是函数"
+    },
+    {
+      "topicId": "mt_junior-inverse-proportional",
+      "prerequisiteId": "mt_junior-fraction-op",
+      "strength": "hard",
+      "reason": "y=k/x 是分式形式"
+    },
+    {
+      "topicId": "mt_junior-quad-function",
+      "prerequisiteId": "mt_junior-function-concept",
+      "strength": "hard",
+      "reason": "二次函数是函数的特例"
+    },
+    {
+      "topicId": "mt_junior-quad-function",
+      "prerequisiteId": "mt_junior-integral-powmul",
+      "strength": "soft",
+      "reason": "解析式含二次项"
+    },
+    {
+      "topicId": "mt_junior-quad-graph",
+      "prerequisiteId": "mt_junior-quad-function",
+      "strength": "hard",
+      "reason": "图像与性质须结合研究"
+    },
+    {
+      "topicId": "mt_junior-quad-graph",
+      "prerequisiteId": "mt_junior-monomial-poly",
+      "strength": "hard",
+      "reason": "配方是多项式变形"
+    },
+    {
+      "topicId": "mt_junior-quad-graph",
+      "prerequisiteId": "mt_junior-quad-eq-solve",
+      "strength": "soft",
+      "reason": "顶点与方程的根相关"
+    },
+    {
+      "topicId": "mt_junior-quad-app",
+      "prerequisiteId": "mt_junior-quad-graph",
+      "strength": "hard",
+      "reason": "最值问题依赖顶点"
+    },
+    {
+      "topicId": "mt_junior-quad-app",
+      "prerequisiteId": "mt_junior-quad-discriminant",
+      "strength": "soft",
+      "reason": "判别式判断实根情况"
+    },
+    {
+      "topicId": "mt_junior-function-eq-relation",
+      "prerequisiteId": "mt_junior-linear-function",
+      "strength": "hard",
+      "reason": "图像与方程、不等式相通"
+    },
+    {
+      "topicId": "mt_junior-function-eq-relation",
+      "prerequisiteId": "mt_junior-linear-inequality-1",
+      "strength": "hard",
+      "reason": "由图像看不等式解集"
+    },
+    {
+      "topicId": "mt_junior-function-eq-relation",
+      "prerequisiteId": "mt_junior-quad-function",
+      "strength": "soft",
+      "reason": "二次函数同样适用"
+    },
+    {
+      "topicId": "mt_junior-line-segment",
+      "prerequisiteId": "mt_junior-geom-basic",
+      "strength": "hard",
+      "reason": "点线面体是几何基本对象"
+    },
+    {
+      "topicId": "mt_junior-angle",
+      "prerequisiteId": "mt_junior-geom-basic",
+      "strength": "hard",
+      "reason": "角由射线组成"
+    },
+    {
+      "topicId": "mt_junior-angle-rel",
+      "prerequisiteId": "mt_junior-angle",
+      "strength": "hard",
+      "reason": "先认识角才比较大小"
+    },
+    {
+      "topicId": "mt_junior-intersecting-lines",
+      "prerequisiteId": "mt_junior-angle",
+      "strength": "hard",
+      "reason": "两条直线相交形成角"
+    },
+    {
+      "topicId": "mt_junior-intersecting-lines",
+      "prerequisiteId": "mt_junior-line-segment",
+      "strength": "hard",
+      "reason": "相交线是线段的延伸"
+    },
+    {
+      "topicId": "mt_junior-vertical-perp",
+      "prerequisiteId": "mt_junior-intersecting-lines",
+      "strength": "hard",
+      "reason": "垂直是相交的特殊情形"
+    },
+    {
+      "topicId": "mt_junior-vertical-perp",
+      "prerequisiteId": "mt_junior-angle-rel",
+      "strength": "soft",
+      "reason": "垂直得到直角"
+    },
+    {
+      "topicId": "mt_junior-parallel-lines",
+      "prerequisiteId": "mt_junior-intersecting-lines",
+      "strength": "hard",
+      "reason": "平行线被截产生角的关系"
+    },
+    {
+      "topicId": "mt_junior-parallel-lines",
+      "prerequisiteId": "mt_junior-angle-rel",
+      "strength": "hard",
+      "reason": "同位角、内错角由此而来"
+    },
+    {
+      "topicId": "mt_junior-translation",
+      "prerequisiteId": "mt_junior-line-segment",
+      "strength": "soft",
+      "reason": "平移的对象是线段和图形"
+    },
+    {
+      "topicId": "mt_junior-translation",
+      "prerequisiteId": "mt_junior-angle",
+      "strength": "soft",
+      "reason": "平移不改变角的大小"
+    },
+    {
+      "topicId": "mt_junior-proposition-theorem",
+      "prerequisiteId": "mt_junior-intersecting-lines",
+      "strength": "soft",
+      "reason": "推理建立在图形关系上"
+    },
+    {
+      "topicId": "mt_junior-proposition-theorem",
+      "prerequisiteId": "mt_junior-parallel-lines",
+      "strength": "soft",
+      "reason": "平行线判定需严谨证明"
+    },
+    {
+      "topicId": "mt_junior-triangle-basic",
+      "prerequisiteId": "mt_junior-line-segment",
+      "strength": "hard",
+      "reason": "三角形由三条线段围成"
+    },
+    {
+      "topicId": "mt_junior-triangle-basic",
+      "prerequisiteId": "mt_junior-angle-rel",
+      "strength": "hard",
+      "reason": "内角和关系依赖角"
+    },
+    {
+      "topicId": "mt_junior-triangle-congruence",
+      "prerequisiteId": "mt_junior-triangle-basic",
+      "strength": "hard",
+      "reason": "全等先要认识三角形"
+    },
+    {
+      "topicId": "mt_junior-triangle-congruence",
+      "prerequisiteId": "mt_junior-proposition-theorem",
+      "strength": "hard",
+      "reason": "全等证明需要推理格式"
+    },
+    {
+      "topicId": "mt_junior-angle-bisector",
+      "prerequisiteId": "mt_junior-triangle-congruence",
+      "strength": "hard",
+      "reason": "角平分线常出现在全等证明"
+    },
+    {
+      "topicId": "mt_junior-angle-bisector",
+      "prerequisiteId": "mt_junior-angle",
+      "strength": "hard",
+      "reason": "平分线把一个角分成两等份"
+    },
+    {
+      "topicId": "mt_junior-perp-bisector",
+      "prerequisiteId": "mt_junior-triangle-congruence",
+      "strength": "hard",
+      "reason": "垂直平分线用于证明线段相等"
+    },
+    {
+      "topicId": "mt_junior-perp-bisector",
+      "prerequisiteId": "mt_junior-vertical-perp",
+      "strength": "hard",
+      "reason": "垂直平分线包含垂直关系"
+    },
+    {
+      "topicId": "mt_junior-axis-symmetry",
+      "prerequisiteId": "mt_junior-triangle-basic",
+      "strength": "hard",
+      "reason": "等腰三角形首先是三角形"
+    },
+    {
+      "topicId": "mt_junior-axis-symmetry",
+      "prerequisiteId": "mt_junior-angle-rel",
+      "strength": "soft",
+      "reason": "轴对称保持角度不变"
+    },
+    {
+      "topicId": "mt_junior-pythagorean",
+      "prerequisiteId": "mt_junior-triangle-basic",
+      "strength": "hard",
+      "reason": "勾股定理针对直角三角形"
+    },
+    {
+      "topicId": "mt_junior-pythagorean",
+      "prerequisiteId": "mt_junior-square-root",
+      "strength": "hard",
+      "reason": "求边长常需开平方"
+    },
+    {
+      "topicId": "mt_junior-pythagorean",
+      "prerequisiteId": "mt_junior-radical-op",
+      "strength": "soft",
+      "reason": "结果多为二次根式"
+    },
+    {
+      "topicId": "mt_junior-quad-basic",
+      "prerequisiteId": "mt_junior-triangle-basic",
+      "strength": "hard",
+      "reason": "多边形可化为三角形研究"
+    },
+    {
+      "topicId": "mt_junior-quad-basic",
+      "prerequisiteId": "mt_junior-angle-rel",
+      "strength": "hard",
+      "reason": "内角和由三角形推出"
+    },
+    {
+      "topicId": "mt_junior-parallelogram",
+      "prerequisiteId": "mt_junior-quad-basic",
+      "strength": "hard",
+      "reason": "平行四边形是特殊四边形"
+    },
+    {
+      "topicId": "mt_junior-parallelogram",
+      "prerequisiteId": "mt_junior-parallel-lines",
+      "strength": "hard",
+      "reason": "对边平行是核心特征"
+    },
+    {
+      "topicId": "mt_junior-parallelogram",
+      "prerequisiteId": "mt_junior-triangle-congruence",
+      "strength": "hard",
+      "reason": "对角线分出的三角形全等"
+    },
+    {
+      "topicId": "mt_junior-special-parallelogram",
+      "prerequisiteId": "mt_junior-parallelogram",
+      "strength": "hard",
+      "reason": "矩形菱形正方形是特例"
+    },
+    {
+      "topicId": "mt_junior-special-parallelogram",
+      "prerequisiteId": "mt_junior-pythagorean",
+      "strength": "soft",
+      "reason": "矩形的对角线与边长成直角三角形"
+    },
+    {
+      "topicId": "mt_junior-trapezoid",
+      "prerequisiteId": "mt_junior-quad-basic",
+      "strength": "hard",
+      "reason": "梯形属于四边形"
+    },
+    {
+      "topicId": "mt_junior-circle-basic",
+      "prerequisiteId": "mt_junior-angle",
+      "strength": "hard",
+      "reason": "圆周角、圆心角离不开角"
+    },
+    {
+      "topicId": "mt_junior-circle-basic",
+      "prerequisiteId": "mt_junior-triangle-basic",
+      "strength": "soft",
+      "reason": "圆中常构造三角形"
+    },
+    {
+      "topicId": "mt_junior-line-circle",
+      "prerequisiteId": "mt_junior-circle-basic",
+      "strength": "hard",
+      "reason": "切线是直线与圆的特殊位置"
+    },
+    {
+      "topicId": "mt_junior-line-circle",
+      "prerequisiteId": "mt_junior-perp-bisector",
+      "strength": "hard",
+      "reason": "圆心在弦的垂直平分线上"
+    },
+    {
+      "topicId": "mt_junior-line-circle",
+      "prerequisiteId": "mt_junior-pythagorean",
+      "strength": "hard",
+      "reason": "切线长、弦长计算用勾股定理"
+    },
+    {
+      "topicId": "mt_junior-coord-system",
+      "prerequisiteId": "mt_junior-number-axis",
+      "strength": "hard",
+      "reason": "平面直角坐标系是两条数轴"
+    },
+    {
+      "topicId": "mt_junior-coord-system",
+      "prerequisiteId": "mt_junior-line-segment",
+      "strength": "soft",
+      "reason": "两轴互相垂直成线段"
+    },
+    {
+      "topicId": "mt_junior-coord-application",
+      "prerequisiteId": "mt_junior-coord-system",
+      "strength": "hard",
+      "reason": "应用建立在坐标系之上"
+    },
+    {
+      "topicId": "mt_junior-coord-application",
+      "prerequisiteId": "mt_junior-translation",
+      "strength": "hard",
+      "reason": "坐标可表示平移"
+    },
+    {
+      "topicId": "mt_junior-rotation",
+      "prerequisiteId": "mt_junior-angle",
+      "strength": "hard",
+      "reason": "旋转要明确旋转角"
+    },
+    {
+      "topicId": "mt_junior-rotation",
+      "prerequisiteId": "mt_junior-triangle-basic",
+      "strength": "soft",
+      "reason": "旋转的对象是平面图形"
+    },
+    {
+      "topicId": "mt_junior-central-symmetry",
+      "prerequisiteId": "mt_junior-rotation",
+      "strength": "hard",
+      "reason": "中心对称是旋转 180° 的特例"
+    },
+    {
+      "topicId": "mt_junior-central-symmetry",
+      "prerequisiteId": "mt_junior-parallelogram",
+      "strength": "hard",
+      "reason": "平行四边形是中心对称图形"
+    },
+    {
+      "topicId": "mt_junior-similarity",
+      "prerequisiteId": "mt_junior-triangle-basic",
+      "strength": "hard",
+      "reason": "相似首先研究三角形"
+    },
+    {
+      "topicId": "mt_junior-similarity",
+      "prerequisiteId": "mt_junior-triangle-congruence",
+      "strength": "soft",
+      "reason": "相似是全等的一般化"
+    },
+    {
+      "topicId": "mt_junior-similarity",
+      "prerequisiteId": "mt_junior-rational-mul",
+      "strength": "soft",
+      "reason": "相似比涉及乘法"
+    },
+    {
+      "topicId": "mt_junior-projection-view",
+      "prerequisiteId": "mt_junior-geom-basic",
+      "strength": "hard",
+      "reason": "三视图从立体图形抽象而来"
+    },
+    {
+      "topicId": "mt_junior-projection-view",
+      "prerequisiteId": "mt_junior-line-segment",
+      "strength": "soft",
+      "reason": "视图由线段围出"
+    },
+    {
+      "topicId": "mt_junior-trig-ratio",
+      "prerequisiteId": "mt_junior-pythagorean",
+      "strength": "hard",
+      "reason": "三角函数定义在直角三角形上"
+    },
+    {
+      "topicId": "mt_junior-trig-ratio",
+      "prerequisiteId": "mt_junior-rational-div",
+      "strength": "hard",
+      "reason": "三角函数是边长的比值"
+    },
+    {
+      "topicId": "mt_junior-trig-ratio",
+      "prerequisiteId": "mt_junior-similarity",
+      "strength": "soft",
+      "reason": "相似三角形对应边成比例"
+    },
+    {
+      "topicId": "mt_junior-statistics-survey",
+      "prerequisiteId": "mt_junior-data-collect",
+      "strength": "hard",
+      "reason": "抽样调查是数据收集的方式之一"
+    },
+    {
+      "topicId": "mt_junior-data-analysis",
+      "prerequisiteId": "mt_junior-data-collect",
+      "strength": "hard",
+      "reason": "分析建立在已整理的数据上"
+    },
+    {
+      "topicId": "mt_junior-variance",
+      "prerequisiteId": "mt_junior-data-analysis",
+      "strength": "hard",
+      "reason": "方差刻画数据的离散程度"
+    },
+    {
+      "topicId": "mt_junior-variance",
+      "prerequisiteId": "mt_junior-rational-mul",
+      "strength": "soft",
+      "reason": "方差公式含平方和"
+    },
+    {
+      "topicId": "mt_junior-probability-concept",
+      "prerequisiteId": "mt_junior-data-collect",
+      "strength": "soft",
+      "reason": "频率统计为概率铺垫"
+    },
+    {
+      "topicId": "mt_junior-probability-calc",
+      "prerequisiteId": "mt_junior-probability-concept",
+      "strength": "hard",
+      "reason": "先有概率概念才会计算"
+    },
+    {
+      "topicId": "mt_junior-probability-calc",
+      "prerequisiteId": "mt_junior-fraction-op",
+      "strength": "hard",
+      "reason": "等可能概率常表示为分数"
+    },
+    {
+      "topicId": "mt_junior-math-practice",
+      "prerequisiteId": "mt_junior-quad-app",
+      "strength": "soft",
+      "reason": "建模常借助二次函数最值"
+    },
+    {
+      "topicId": "mt_junior-math-practice",
+      "prerequisiteId": "mt_junior-trig-ratio",
+      "strength": "soft",
+      "reason": "综合任务常用三角函数测高"
+    },
+    {
+      "topicId": "mt_junior-math-practice",
+      "prerequisiteId": "mt_junior-similarity",
+      "strength": "soft",
+      "reason": "相似可用于实际测量"
+    },
+    {
+      "topicId": "mt_junior-math-practice",
+      "prerequisiteId": "mt_junior-data-analysis",
+      "strength": "soft",
+      "reason": "项目式学习常含数据分析"
     },
     {
       "topicId": "mt_pinyin-initials",

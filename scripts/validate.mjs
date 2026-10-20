@@ -59,8 +59,8 @@ for (const t of topics) {
   if (!/^mt_[a-z0-9-]+$/.test(t.id)) fail(`主题 id 格式非法: ${t.id}`);
   if (!TOPIC_TYPES.has(t.type)) fail(`主题 ${where} type 非法: ${t.type}`);
   if (!SUBJECTS.has(t.subject)) fail(`主题 ${where} subject 非法: ${t.subject}`);
-  if (!(t.gradeRangeStart >= 1 && t.gradeRangeStart <= 6)) fail(`主题 ${where} gradeRangeStart 越界`);
-  if (!(t.gradeRangeEnd >= 1 && t.gradeRangeEnd <= 6)) fail(`主题 ${where} gradeRangeEnd 越界`);
+  if (!(t.gradeRangeStart >= 1 && t.gradeRangeStart <= 9)) fail(`主题 ${where} gradeRangeStart 越界`);
+  if (!(t.gradeRangeEnd >= 1 && t.gradeRangeEnd <= 9)) fail(`主题 ${where} gradeRangeEnd 越界`);
   if (t.gradeRangeStart > t.gradeRangeEnd) fail(`主题 ${where} 年级区间颠倒`);
   if (t.subject === '英语' && t.gradeRangeStart < 3) fail(`英语主题 ${where} 年级小于 3`);
   if (!Array.isArray(t.evidence) || t.evidence.length < 2 || t.evidence.length > 3) {
@@ -136,7 +136,7 @@ const bookByRef = (vslug, bslug) => {
 };
 for (const t of topics) {
   for (const ref of t.textbooks) {
-    const m = ref.match(/^(pep-math|tongbian-chinese|pep-english):([1-6][ab])(?::(u[1-9]))?(?:#(.+))?$/);
+    const m = ref.match(/^(pep-math|tongbian-chinese|pep-english):([1-9][ab])(?::(u[1-9][0-9]?))?(?:#(.+))?$/);
     if (!m) {
       fail(`主题 ${t.name} 教材引用格式非法: ${ref}`);
       continue;
@@ -165,7 +165,7 @@ for (const t of topics) {
 }
 
 /* ---------- 6.4 2024 年版课标修订教材引用 ---------- */
-const RE_2024 = /^(pep-math-2024|tongbian-chinese-2024|pep-english-2024):([1-6][ab])(?::(u[1-9][0-9]?))?(?:#(.+))?$/;
+const RE_2024 = /^(pep-math-2024|tongbian-chinese-2024|pep-english-2024):([1-9][ab])(?::(u[1-9][0-9]?))?(?:#(.+))?$/;
 const map2024 = textbooksDoc.unitMap2024 ?? {};
 for (const [key, entry] of Object.entries(map2024)) {
   const t = topics.find((x) => x.id === 'mt_' + key);
@@ -219,7 +219,7 @@ for (const t of topics) {
 const REPLACED_BOOKS = new Set(['1a', '1b', '2a', '2b', '3a', '3b', '4a']);
 for (const t of topics) {
   const affected = t.textbooks.some((r) => {
-    const m = r.match(/^(?:pep-math|tongbian-chinese|pep-english):([1-6][ab])/);
+    const m = r.match(/^(?:pep-math|tongbian-chinese|pep-english):([1-9][ab])/);
     return m && REPLACED_BOOKS.has(m[1]);
   });
   if (affected && !(t.textbooks2024 ?? []).length) {
