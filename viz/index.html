@@ -74,6 +74,58 @@
     color: var(--text-dim); font-size: 18px; cursor: pointer; }
   .close-btn:hover { color: var(--text); }
 
+  /* ---------- 行动区 ---------- */
+  .actions { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0 4px; }
+  .act-btn { flex: 1 1 auto; min-width: 118px; text-align: center; border: 1px solid var(--line);
+    background: var(--bg-card); color: var(--text); border-radius: 8px; padding: 7px 10px;
+    font-size: 12.5px; cursor: pointer; transition: border-color .15s, background .15s; }
+  .act-btn:hover { border-color: var(--text-dim); }
+  .act-btn.on { background: var(--accent); color: #1a1400; border-color: var(--accent); font-weight: 600; }
+  .act-btn.ghost { background: transparent; color: var(--text-dim); }
+  .act-btn.ghost:hover { color: var(--text); }
+
+  /* ---------- 掌握诊断 ---------- */
+  .diag { border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px;
+    background: var(--bg-card); font-size: 12.5px; line-height: 1.7; }
+  .diag-bar { display: flex; height: 7px; border-radius: 4px; overflow: hidden;
+    background: rgba(255,255,255,.08); margin: 7px 0 9px; }
+  .diag-bar i { display: block; height: 100%; }
+  .diag-bar i.done { background: var(--accent); }
+  .diag-bar i.todo { background: var(--math); }
+  .diag b { color: var(--text); }
+  .diag .next { margin-top: 7px; }
+  .diag .next .li { color: var(--accent); cursor: pointer; text-decoration: underline dotted; }
+
+  /* ---------- 学习路径 ---------- */
+  .path-stage { font-size: 12px; color: var(--accent); margin: 10px 0 4px; font-weight: 600; }
+  .path-step { display: flex; gap: 8px; align-items: baseline; font-size: 12.5px;
+    line-height: 1.65; padding: 2px 0; }
+  .path-step .num { flex: 0 0 22px; text-align: right; color: var(--text-dim); font-size: 11px; }
+  .path-step .nm { cursor: pointer; text-decoration: underline dotted; color: var(--text); }
+  .path-step .nm:hover { color: var(--accent); }
+  .path-step.is-done .nm { color: var(--text-dim); text-decoration: line-through; }
+  .path-step.is-target .nm { color: var(--accent); font-weight: 600; }
+  .path-hint { font-size: 11.5px; color: var(--text-dim); line-height: 1.6; margin-top: 8px; }
+
+  /* 教材直达链接 */
+  .tb-links a { color: var(--math); text-decoration: underline dotted; }
+  .tb-links a:hover { color: var(--accent); }
+
+  /* 轻提示 */
+  #toast { position: absolute; left: 50%; bottom: 26px; transform: translateX(-50%);
+    background: #0a0f18; border: 1px solid var(--line); color: var(--text); border-radius: 8px;
+    padding: 8px 14px; font-size: 12.5px; box-shadow: 0 6px 20px rgba(0,0,0,.5);
+    opacity: 0; pointer-events: none; transition: opacity .25s; z-index: 20; }
+  #toast.show { opacity: 1; }
+
+  /* 打印：只输出学习路径 */
+  @media print {
+    body { overflow: visible; background: #fff; color: #000; }
+    #app, #toast, #legend, #gradeAxis, #tooltip { display: none !important; }
+    #printArea { display: block !important; }
+  }
+  #printArea { display: none; }
+
   #legend { position: absolute; left: 12px; bottom: 12px; background: var(--bg-panel);
     border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; font-size: 12px;
     color: var(--text-dim); line-height: 1.9; }
@@ -105,6 +157,9 @@
     <button class="tool-btn" id="btnLabels">显示全部名称</button>
     <button class="tool-btn" id="btnAncestors">追溯全部先修</button>
     <button class="tool-btn" id="btnDescendants">查看后续解锁</button>
+    <span style="width:8px"></span>
+    <button class="tool-btn" id="btnMasterCount" title="点击隐藏已掌握的主题，专注待学">未标记掌握</button>
+    <button class="tool-btn" id="btnClearMaster" title="清空全部掌握标记" style="display:none">清空标记</button>
     <button class="tool-btn" id="btnReset">重置视图</button>
   </div>
   <main>
@@ -114,13 +169,22 @@
       <div class="row"><span class="dot" style="background:var(--math)"></span>数学　<span class="dot" style="background:var(--chinese)"></span>语文　<span class="dot" style="background:var(--english)"></span>英语</div>
       <div class="row"><span class="line"></span>硬依赖（不会先修就学不了）　<span class="line dash"></span>软依赖</div>
       <div class="row">纵轴 = 年级（1 年级在上）· 圆点越大 = 枢纽主题</div>
-      <div class="row">点击圆点查看主题详情、先修链与解锁方向</div>
+      <div class="row"><span class="dot" style="background:var(--accent)"></span>金色圆环 = 已掌握（点击主题可标记，自动保存）</div>
+      <div class="row">点击圆点查看详情；「生成学习路径」按依赖拓扑排出完整步骤</div>
     </div>
     <div id="tooltip"></div>
+    <div id="toast"></div>
+    <div id="printArea"></div>
     <div id="panel">
       <button class="close-btn" id="btnClose">×</button>
       <h2 id="pName"></h2>
       <div class="meta" id="pMeta"></div>
+      <div class="actions">
+        <button class="act-btn" id="btnMaster">✅ 标记已掌握</button>
+        <button class="act-btn" id="btnPath">🗺️ 生成学习路径</button>
+      </div>
+      <div id="pDiag"></div>
+      <div id="pPath"></div>
       <h3>学什么</h3><p class="desc" id="pDesc"></p>
       <h3>掌握证据（能做到这些才算会）</h3><ul id="pEvidence"></ul>
       <h3>家长检查法</h3><div class="assess" id="pAssess"></div>
@@ -234,6 +298,212 @@
     return set;
   }
 
+  // ---------- 已掌握状态（localStorage 持久化）----------
+  const MKEY = 'cst-mastered-v1';
+  function loadMastered() {
+    try { return new Set(JSON.parse(localStorage.getItem(MKEY) || '[]')); }
+    catch (e) { return new Set(); }
+  }
+  function saveMastered() {
+    try { localStorage.setItem(MKEY, JSON.stringify([...mastered])); }
+    catch (e) { /* 隐私模式下忽略 */ }
+  }
+  const mastered = loadMastered();
+  let hideMastered = false;
+
+  // ---------- 学习路径：先修闭包 + 拓扑排序 ----------
+  function prereqClosure(id, hardOnly) {
+    const set = new Set([id]);
+    const stack = [id];
+    while (stack.length) {
+      const cur = stack.pop();
+      for (const e of prereqs.get(cur)) {
+        if (hardOnly && e.strength !== 'hard') continue;
+        if (!set.has(e.prerequisiteId)) { set.add(e.prerequisiteId); stack.push(e.prerequisiteId); }
+      }
+    }
+    return set;
+  }
+
+  /** 返回拓扑序（目标主题在最后），保证每个先修都排在依赖它的主题之前。 */
+  function pathOrder(targetId, hardOnly) {
+    const ids = [...prereqClosure(targetId, hardOnly)];
+    const indeg = new Map(ids.map(i => [i, 0]));
+    const adj = new Map(ids.map(i => [i, []]));
+    for (const d of deps) {
+      if (!indeg.has(d.topicId) || !indeg.has(d.prerequisiteId)) continue;
+      if (hardOnly && d.strength !== 'hard') continue;
+      adj.get(d.prerequisiteId).push(d.topicId);
+      indeg.set(d.topicId, indeg.get(d.topicId) + 1);
+    }
+    const key = i => { const t = byId.get(i); return t.gradeRangeStart * 100 + t.gradeRangeEnd; };
+    const cmp = (a, b) => (key(a) - key(b)) || byId.get(a).name.localeCompare(byId.get(b).name, 'zh');
+    const ready = ids.filter(i => indeg.get(i) === 0).sort(cmp);
+    const out = [];
+    while (ready.length) {
+      const cur = ready.shift();
+      out.push(cur);
+      for (const nxt of adj.get(cur)) {
+        indeg.set(nxt, indeg.get(nxt) - 1);
+        if (indeg.get(nxt) === 0) {
+          let lo = 0, hi = ready.length;
+          while (lo < hi) { const mid = (lo + hi) >> 1; if (cmp(ready[mid], nxt) < 0) lo = mid + 1; else hi = mid; }
+          ready.splice(lo, 0, nxt);
+        }
+      }
+    }
+    return out;
+  }
+
+  /** 缺口诊断：已会 / 待补 / 边界集（下一步最该学）。 */
+  function diagnose(targetId, hardOnly) {
+    const order = pathOrder(targetId, hardOnly);
+    const inPath = new Set(order);
+    const done = [], todo = [];
+    for (const id of order) (mastered.has(id) ? done : todo).push(id);
+    const frontier = todo.filter(id =>
+      prereqs.get(id).every(e => e.strength !== 'hard'
+        || !inPath.has(e.prerequisiteId)
+        || mastered.has(e.prerequisiteId)));
+    return { order, done, todo, frontier };
+  }
+
+  let pathHardOnly = true;   // 默认只走硬依赖（最短必需路径）
+  let pathShown = false;     // 当前面板是否已展示路径
+
+  function gradeStageLabel(t) {
+    if (t.gradeRangeStart === t.gradeRangeEnd) return t.gradeRangeStart + ' 年级';
+    return t.gradeRangeStart + '~' + t.gradeRangeEnd + ' 年级';
+  }
+
+  function renderDiag(n) {
+    const box = document.getElementById('pDiag');
+    const d = diagnose(n.id, pathHardOnly);
+    const total = d.order.length;
+    const pct = total ? Math.round(d.done.length / total * 100) : 0;
+    const nextHtml = d.frontier.length
+      ? d.frontier.slice(0, 6).map(id => `<span class="li" data-id="${id}">${esc(byId.get(id).name)}</span>`).join('　')
+      : '<span style="color:var(--text-dim)">（先完成下列路径中的前序主题）</span>';
+    box.innerHTML = `
+      <h3>掌握诊断</h3>
+      <div class="diag">
+        <div>通往「${esc(n.name)}」共 <b>${total}</b> 步：已会 <b>${d.done.length}</b> · 待补 <b>${d.todo.length}</b>（${pct}%）</div>
+        <div class="diag-bar"><i class="done" style="width:${pct}%"></i><i class="todo" style="width:${100 - pct}%"></i></div>
+        <div class="next"><b>下一步最该学：</b>${nextHtml}</div>
+      </div>`;
+    document.getElementById('btnMaster').textContent = mastered.has(n.id) ? '↩️ 取消已掌握' : '✅ 标记已掌握';
+    document.getElementById('btnMaster').classList.toggle('on', mastered.has(n.id));
+  }
+
+  function renderPath(n) {
+    const box = document.getElementById('pPath');
+    if (!pathShown) { box.innerHTML = ''; return; }
+    const d = diagnose(n.id, pathHardOnly);
+    const stages = [];
+    for (const id of d.order) {
+      const t = byId.get(id);
+      const label = gradeStageLabel(t);
+      let s = stages[stages.length - 1];
+      if (!s || s.label !== label) { s = { label, items: [] }; stages.push(s); }
+      s.items.push(id);
+    }
+    let step = 0;
+    const html = stages.map((s, si) => `
+      <div class="path-stage">第 ${si + 1} 阶段 · ${esc(s.label)}</div>
+      ${s.items.map(id => {
+        step++;
+        const t = byId.get(id);
+        const cls = ['path-step'];
+        if (mastered.has(id)) cls.push('is-done');
+        if (id === n.id) cls.push('is-target');
+        const tag = id === n.id ? '（目标）' : (mastered.has(id) ? '（已会）' : '');
+        return `<div class="${cls.join(' ')}"><span class="num">${step}.</span>
+          <span class="nm" data-id="${id}">${esc(t.name)} ${tag}</span></div>`;
+      }).join('')}`).join('');
+    box.innerHTML = `
+      <h3>学习路径（${pathHardOnly ? '最短必需' : '含辅助'} · ${d.order.length} 步）</h3>
+      ${html}
+      <div class="actions">
+        <button class="act-btn ghost" id="btnToggleHard">${pathHardOnly ? '含软依赖' : '仅硬依赖'}</button>
+        <button class="act-btn ghost" id="btnExport">导出 Markdown</button>
+        <button class="act-btn ghost" id="btnPrint">打印</button>
+      </div>
+      <div class="path-hint">路径按依赖拓扑排序：先修在前、目标在后。点击任一步骤可跳转查看该主题。</div>`;
+    document.getElementById('btnToggleHard').onclick = () => {
+      pathHardOnly = !pathHardOnly; renderPath(n); renderDiag(n);
+    };
+    document.getElementById('btnExport').onclick = () => exportMarkdown(n);
+    document.getElementById('btnPrint').onclick = () => window.print();
+  }
+
+  function exportMarkdown(n) {
+    const d = diagnose(n.id, pathHardOnly);
+    const lines = [`# 学习路径：${n.name}`, '',
+      `- 学科：${n.subject} · ${n.domain}`,
+      `- 年级：${n.gradeRangeStart}~${n.gradeRangeEnd} 年级`,
+      `- 模式：${pathHardOnly ? '最短必需（仅硬依赖）' : '含辅助（含软依赖）'}`,
+      `- 总步数：${d.order.length}`, '',
+      `> 数据来源：学阶图谱 · China Skill Taxonomy ${D.version}（ODbL 1.0 / CC BY-SA 4.0）`, ''];
+    const stages = [];
+    for (const id of d.order) {
+      const t = byId.get(id);
+      const label = gradeStageLabel(t);
+      let s = stages[stages.length - 1];
+      if (!s || s.label !== label) { s = { label, items: [] }; stages.push(s); }
+      s.items.push(id);
+    }
+    let step = 0;
+    stages.forEach((s, si) => {
+      lines.push(`## 第 ${si + 1} 阶段 · ${s.label}`, '');
+      s.items.forEach(id => {
+        step++;
+        const t = byId.get(id);
+        const rec = researchByTopic.get(id);
+        const mark = mastered.has(id) ? '[x]' : '[ ]';
+        lines.push(`${step}. ${mark} **${t.name}**${id === n.id ? ' ← 目标' : ''}`);
+        lines.push(`   - 学什么：${t.description}`);
+        if (rec) lines.push(`   - 怎么教：${rec.pedagogy}`);
+        const std = (t.standards || []).join(', ');
+        if (std) lines.push(`   - 课标：${std}`);
+        const tbk = (t.textbooks || []).map(refText).join('；');
+        if (tbk) lines.push(`   - 教材：${tbk}`);
+        lines.push('');
+      });
+    });
+    const blob = new Blob([lines.join('\n')], { type: 'text/markdown;charset=utf-8' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = `学习路径-${n.name}.md`;
+    a.click();
+    URL.revokeObjectURL(a.href);
+    document.getElementById('printArea').innerHTML =
+      `<h1>学习路径：${esc(n.name)}</h1><ol>` +
+      d.order.map(id => `<li>${esc(byId.get(id).name)}${mastered.has(id) ? '（已会）' : ''}</li>`).join('') + '</ol>';
+    toast('已导出 Markdown 文件');
+  }
+
+  const toastTimer = { t: null };
+  function toast(msg) {
+    const el = document.getElementById('toast');
+    el.textContent = msg; el.classList.add('show');
+    clearTimeout(toastTimer.t);
+    toastTimer.t = setTimeout(() => el.classList.remove('show'), 2200);
+  }
+
+  // ---------- 教材直达链接 ----------
+  function textbookLinkHtml(ref) {
+    const label = refText(ref);
+    const m = ref.match(/^(pep-math|tongbian-chinese|pep-english):([1-6][ab])/);
+    let links = `<a href="https://basic.smartedu.cn/" target="_blank" rel="noopener">智慧教育平台</a>`;
+    if (m) {
+      const v = (D.textbooks?.versions || []).find(x => x.slug === m[1]);
+      const p = v && v.books.find(b => b.slug === m[2])?.chinaTextbookPath;
+      const repo = D.textbooks?.sources?.chinaTextbook?.repo || 'https://github.com/TapXWorld/ChinaTextbook';
+      if (p) links += ` · <a href="${repo}/blob/master/${encodeURI(p)}" target="_blank" rel="noopener">原书 PDF</a>`;
+    }
+    return `<div class="tb-item">· ${esc(label)} <span class="tb-links">${links}</span></div>`;
+  }
+
   // ---------- 绘制 ----------
   function draw() {
     ctx.clearRect(0, 0, W, H);
@@ -276,7 +546,12 @@
         ctx.fillStyle = n.searchHit ? '#ffd166' : color;
       }
       ctx.fill(); ctx.shadowBlur = 0;
-      if (isSel) { ctx.beginPath(); ctx.arc(n.x, n.y, n.r + 4, 0, Math.PI * 2);
+      // 已掌握：金色圆环
+      if (mastered.has(n.id)) {
+        ctx.beginPath(); ctx.arc(n.x, n.y, n.r + 3, 0, Math.PI * 2);
+        ctx.strokeStyle = 'rgba(255,209,102,.85)'; ctx.lineWidth = 2; ctx.stroke();
+      }
+      if (isSel) { ctx.beginPath(); ctx.arc(n.x, n.y, n.r + 6, 0, Math.PI * 2);
         ctx.strokeStyle = '#fff'; ctx.lineWidth = 2; ctx.stroke(); }
       const showLabel = isSel || isHov || isTrace || showAllLabels ||
         (n.r > 12 && (!selected || unlocks.get(n.id).length + prereqs.get(n.id).length > 3));
@@ -407,20 +682,58 @@
       const s = stdByCode.get(c);
       return s ? `<div class="std-item"><code>${esc(c)}</code>${esc(s.domain)}${s.theme ? ' · ' + esc(s.theme) : ''}：${esc(s.summary)}</div>` : '';
     }).join('');
-    document.getElementById('pTextbooks').innerHTML = n.textbooks.map(r => `<div class="tb-item">· ${esc(refText(r))}</div>`).join('');
+    document.getElementById('pTextbooks').innerHTML = n.textbooks.map(textbookLinkHtml).join('');
     renderResearch(n);
     document.getElementById('pPrereqs').innerHTML = prereqs.get(n.id).map(d => linkItem(d.prerequisiteId, d)).join('') || '<li style="color:var(--text-dim)">（起点主题，无先修）</li>';
     document.getElementById('pUnlocks').innerHTML = unlocks.get(n.id).map(d => linkItem(d.topicId, d)).join('') || '<li style="color:var(--text-dim)">（暂未解锁其他主题）</li>';
+    renderDiag(n);
+    renderPath(n);
     panel.classList.add('open');
     panel.scrollTop = 0;
   }
   document.getElementById('panel').addEventListener('click', ev => {
-    const li = ev.target.closest('li[data-id]');
-    if (li) { const n = nodeById.get(li.dataset.id); if (n) select(n); }
+    if (ev.target.closest('a')) return;   // 教材直达链接不拦截
+    const el = ev.target.closest('[data-id]');
+    if (el) { const n = nodeById.get(el.dataset.id); if (n) select(n); }
   });
   document.getElementById('btnClose').onclick = () => {
-    selected = null; document.getElementById('panel').classList.remove('open');
+    selected = null; pathShown = false;
+    document.getElementById('panel').classList.remove('open');
+    document.getElementById('btnPath').classList.remove('on');
   };
+
+  // ---------- 行动区：标记已掌握 / 生成学习路径 ----------
+  document.getElementById('btnMaster').onclick = function () {
+    if (!selected) { toast('请先点击一个主题'); return; }
+    if (mastered.has(selected.id)) mastered.delete(selected.id);
+    else mastered.add(selected.id);
+    saveMastered(); syncMasterUI();
+    const wasMastered = mastered.has(selected.id);
+    renderDiag(selected); renderPath(selected);
+    toast(wasMastered ? '已标记为已掌握' : '已取消掌握标记');
+  };
+  document.getElementById('btnPath').onclick = function () {
+    if (!selected) { toast('请先点击一个主题'); return; }
+    pathShown = !pathShown;
+    this.classList.toggle('on', pathShown);
+    this.textContent = pathShown ? '🗺️ 收起学习路径' : '🗺️ 生成学习路径';
+    renderPath(selected);
+    if (pathShown) {
+      const d = diagnose(selected.id, pathHardOnly);
+      toast(`已生成 ${d.order.length} 步学习路径（待补 ${d.todo.length}）`);
+    }
+  };
+  function syncMasterUI() {
+    const btn = document.getElementById('btnMasterCount');
+    const clear = document.getElementById('btnClearMaster');
+    if (btn) {
+      btn.textContent = hideMastered
+        ? `隐藏已掌握 ${mastered.size}`
+        : (mastered.size ? `已掌握 ${mastered.size}` : '未标记掌握');
+      btn.classList.toggle('active', hideMastered);
+    }
+    if (clear) clear.style.display = mastered.size ? '' : 'none';
+  }
 
   // ---------- 工具栏 ----------
   document.querySelectorAll('.chip').forEach(chip => {
@@ -432,7 +745,10 @@
     };
   });
   function applyFilter() {
-    for (const n of nodes) n.visible = activeSubjects.has(n.subject);
+    for (const n of nodes) {
+      n.visible = activeSubjects.has(n.subject)
+        && !(hideMastered && mastered.has(n.id));
+    }
   }
   const search = document.getElementById('search');
   function runSearch() {
@@ -461,8 +777,28 @@
   }
   document.getElementById('btnAncestors').onclick = function () { trace.call(this, 'ancestors'); };
   document.getElementById('btnDescendants').onclick = function () { trace.call(this, 'descendants'); };
+  document.getElementById('btnMasterCount').onclick = function () {
+    hideMastered = !hideMastered;
+    this.classList.toggle('active', hideMastered);
+    this.textContent = hideMastered ? `隐藏已掌握 ${mastered.size}` : (mastered.size ? `已掌握 ${mastered.size}` : '未标记掌握');
+    applyFilter();
+  };
+  document.getElementById('btnClearMaster').onclick = function () {
+    if (!mastered.size) return;
+    if (!confirm(`确定清空全部 ${mastered.size} 个掌握标记？`)) return;
+    mastered.clear(); saveMastered(); syncMasterUI();
+    hideMastered = false;
+    const mc = document.getElementById('btnMasterCount');
+    mc.classList.remove('active'); mc.textContent = '未标记掌握';
+    this.style.display = 'none';
+    applyFilter();
+    if (selected) { renderDiag(selected); renderPath(selected); }
+    toast('已清空全部掌握标记');
+  };
   document.getElementById('btnReset').onclick = () => {
-    selected = null; traceSet.clear(); traceMode = null;
+    selected = null; traceSet.clear(); traceMode = null; pathShown = false;
+    document.getElementById('btnPath').classList.remove('on');
+    document.getElementById('btnPath').textContent = '🗺️ 生成学习路径';
     document.getElementById('panel').classList.remove('open');
     document.querySelectorAll('.tool-btn').forEach(b => b.classList.remove('active'));
     nodes.forEach(n => { n.x = W / 2 + (Math.random() - .5) * W * .55; n.y = targetYOf(n); n.vx = n.vy = 0; });
@@ -478,6 +814,7 @@
     `先修依赖 <b>${deps.length}</b> · 课标条目 <b>${standardsDoc.length}</b> · 域摘要 <b>${clusters.length}</b> · ` +
     `教学研究 <b>${(D.research?.records ?? []).length}</b>`;
   document.getElementById('gradeAxis').textContent = '纵轴：1 年级（上）→ 6 年级（下）';
+  syncMasterUI();
   resize();
   initPositions();
   loop();

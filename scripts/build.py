@@ -28,6 +28,7 @@ VIZ = ROOT / "viz"
 sys.path.insert(0, str(SRC))
 
 import standards as std  # noqa: E402
+import textbook_paths  # noqa: E402
 import textbooks as tb  # noqa: E402
 import topics_chinese  # noqa: E402
 import topics_english  # noqa: E402
@@ -38,7 +39,7 @@ import teaching_research_chinese_a  # noqa: E402
 import teaching_research_chinese_b  # noqa: E402
 import teaching_research_english  # noqa: E402
 
-VERSION = "v0.3.0"
+VERSION = "v0.4.0"
 SCHEMA_VERSION = 1
 
 MODULES = [
@@ -180,12 +181,16 @@ def build_textbooks():
     versions = []
     for v in tb.DETAILED_VERSIONS:
         books = []
+        paths = textbook_paths.PATHS.get(v["slug"], {})
         for slug, grade, semester, units, blocks in v["books"]:
             book = {"slug": slug, "grade": grade, "semester": semester}
             if units:
                 book["units"] = units
             if blocks:
                 book["blocks"] = blocks
+            # ChinaTextbook 仓库内的真实 PDF 路径（用于可视化层生成直达链接）
+            if slug in paths:
+                book["chinaTextbookPath"] = paths[slug]
             books.append(book)
         entry = {
             "slug": v["slug"],
@@ -201,7 +206,10 @@ def build_textbooks():
     return {
         "version": VERSION,
         "schemaVersion": SCHEMA_VERSION,
-        "sources": {"smartedu": tb.SMARTEDU, "chinaTextbook": tb.CHINATEXTBOOK},
+        "sources": {
+            "smartedu": tb.SMARTEDU,
+            "chinaTextbook": {**tb.CHINATEXTBOOK, "repo": textbook_paths.CHINA_TEXTBOOK_REPO},
+        },
         "versions": versions,
         "chinaTextbookPrimaryVersions": tb.CHINATEXTBOOK_PRIMARY_VERSIONS,
     }
