@@ -49,7 +49,8 @@
   .layout-btn.active { background: var(--accent); color: #1a1400; border-color: var(--accent); font-weight: 600; }
 
   main { flex: 1; position: relative; }
-  canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; cursor: grab; }
+  canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; cursor: grab;
+    touch-action: none; -webkit-tap-highlight-color: transparent; }
   canvas.dragging { cursor: grabbing; }
 
   #panel { position: absolute; top: 12px; right: 12px; bottom: 12px; width: 340px; overflow-y: auto;
@@ -138,7 +139,8 @@
   #legend .line { width: 22px; height: 0; border-top: 2px solid rgba(255,255,255,.4); }
   #legend .line.dash { border-top-style: dashed; }
   #gradeAxis { position: absolute; left: 12px; top: 12px; font-size: 11px; color: var(--text-dim);
-    background: var(--bg-panel); border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px; }
+    background: var(--bg-panel); border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px;
+    pointer-events: none; }   /* 纯提示信息，不拦截下方节点的点击 */
 
   /* ---------- 热力矩阵（学科 × 年级）---------- */
   #heatmap { position: absolute; inset: 0; display: none; padding: 26px 30px; overflow: auto; }
@@ -163,6 +165,62 @@
     box-shadow: 0 4px 16px rgba(0,0,0,.5); z-index: 10; }
   #tooltip .tt-name { font-weight: 600; margin-bottom: 2px; }
   #tooltip .tt-meta { color: var(--text-dim); font-size: 11px; }
+
+  /* 图例折叠开关：仅窄屏出现 */
+  .legend-toggle { display: none; background: var(--bg-panel); border: 1px solid var(--line);
+    color: var(--text-dim); border-radius: 8px; padding: 5px 11px; font-size: 11.5px; cursor: pointer; }
+
+  /* ---------- 移动端适配 ---------- */
+  @media (max-width: 720px) {
+    header { padding: 8px 12px; gap: 6px; }
+    header h1 { font-size: 15px; }
+    header h1 small { display: none; }          /* 窄屏隐藏长副标题，避免换行 */
+    .stats { font-size: 11px; line-height: 1.65; }
+
+    /* 工具栏：横向滚动，不换行挤压 */
+    .toolbar { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch;
+      padding: 6px 10px; gap: 6px; scrollbar-width: none; }
+    .toolbar::-webkit-scrollbar { display: none; }
+    .toolbar > * { flex: 0 0 auto; }
+    .toolbar > span[style*="width"] { display: none; }
+    #search { width: 104px; }
+    .chip { padding: 3px 9px; font-size: 11.5px; }
+    .tool-btn, .layout-btn { padding: 4px 9px; font-size: 11.5px; }
+
+    /* 详情面板：底部抽屉 */
+    #panel { top: auto; left: 0; right: 0; bottom: 0; width: auto; max-height: 58vh;
+      padding: 18px 14px 26px; border-radius: 16px 16px 0 0;
+      border-left: none; border-right: none; border-bottom: none; }
+    #panel h2 { font-size: 17px; padding-right: 26px; }
+    #panel h3 { margin: 13px 0 5px; }
+    #panel p.desc { font-size: 12.5px; }
+    .act-btn { min-width: 104px; }
+
+    /* 图例：默认收起，点「图例」展开 */
+    #legend { left: auto; right: 10px; bottom: auto; top: 52px;
+      padding: 0; background: none; border: none; }
+    .legend-toggle { display: inline-block; }
+    #legendBody { display: none; }
+    #legend.open #legendBody { display: block; background: var(--bg-panel);
+      border: 1px solid var(--line); border-radius: 10px; padding: 9px 12px;
+      margin-top: 6px; max-width: 76vw; }
+
+    #gradeAxis { left: 10px; top: 52px; font-size: 10px; padding: 4px 8px; }
+
+    /* 热力矩阵 */
+    #heatmap { padding: 14px 10px; }
+    #heatmap .hm-grid { grid-template-columns: 50px repeat(6, 1fr); gap: 3px; }
+    #heatmap .hm-cell { height: 36px; font-size: 11px; }
+    #heatmap h2 { font-size: 14.5px; }
+    #heatmap .hm-hint { font-size: 11px; margin-bottom: 12px; }
+  }
+
+  /* 超窄屏（横屏手机 / 小屏）：进一步压缩 */
+  @media (max-height: 480px) {
+    header { padding: 6px 10px; }
+    .stats { display: none; }
+    #panel { max-height: 66vh; }
+  }
 </style>
 </head>
 <body>
@@ -194,11 +252,15 @@
     <canvas id="cv"></canvas>
     <div id="gradeAxis"></div>
     <div id="legend">
-      <div class="row"><span class="dot" style="background:var(--math)"></span>数学　<span class="dot" style="background:var(--chinese)"></span>语文　<span class="dot" style="background:var(--english)"></span>英语</div>
-      <div class="row"><span class="line"></span>硬依赖（不会先修就学不了）　<span class="line dash"></span>软依赖</div>
-      <div class="row">纵轴 = 年级（1 年级在上）· 圆点越大 = 枢纽主题</div>
-      <div class="row"><span class="dot" style="background:var(--accent)"></span>金色圆环 = 已掌握（点击主题可标记，自动保存）</div>
-      <div class="row">点击圆点查看详情；「生成学习路径」按依赖拓扑排出完整步骤</div>
+      <button class="legend-toggle" id="btnLegend">图例</button>
+      <div id="legendBody">
+        <div class="row"><span class="dot" style="background:var(--math)"></span>数学　<span class="dot" style="background:var(--chinese)"></span>语文　<span class="dot" style="background:var(--english)"></span>英语</div>
+        <div class="row"><span class="line"></span>硬依赖（不会先修就学不了）　<span class="line dash"></span>软依赖</div>
+        <div class="row">大圆环 = 学科 · 中圆环 = 领域簇（数字为下辖知识点数）</div>
+        <div class="row">纵轴 = 年级（1 年级在上）· 圆点越大 = 枢纽主题</div>
+        <div class="row"><span class="dot" style="background:var(--accent)"></span>金色圆环 = 已掌握（点击主题可标记，自动保存）</div>
+        <div class="row">点击圆点查看详情；「生成学习路径」按依赖拓扑排出完整步骤</div>
+      </div>
     </div>
     <div id="tooltip"></div>
     <div id="toast"></div>
@@ -251,6 +313,7 @@
     W = canvas.clientWidth; H = canvas.clientHeight;
     canvas.width = W * DPR; canvas.height = H * DPR;
     ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    reheat(0.6);
   }
   window.addEventListener('resize', resize);
 
@@ -292,6 +355,10 @@
   // 折叠状态：存被折叠容器的 id
   const collapsed = new Set();
   let layoutMode = 'star';   // 'star' | 'scroll' | 'heat'
+  // 退火：布局收敛后节点趋于静止，便于触摸点击；交互时重新加热
+  let alpha = 1;
+  const ALPHA_MIN = 0.03, ALPHA_DECAY = 0.975;   // 约 2.5 秒收敛，之后节点基本静止
+  function reheat(a) { alpha = Math.max(alpha, a ?? 1); }
 
   // 热力矩阵数据：学科 × 年级 的知识点条数
   const heatCounts = {};
@@ -330,6 +397,15 @@
       if (m) return (Number(m[1]) - 1) * 2 + (m[2] === 'b' ? 1 : 0);
     }
     return (n.gradeRangeStart - 1) * 2;   // 回退：按起始年级
+  }
+
+  /** 把节点约束在画布内（留 PAD 边距），避免斥力把它推出可视区 */
+  function clampNode(n) {
+    const PAD = 12;
+    const lox = PAD + n.r, hix = W - PAD - n.r;
+    const loy = PAD + n.r, hiy = H - PAD - n.r;
+    n.x = (hix < lox) ? W / 2 : Math.max(lox, Math.min(hix, n.x));
+    n.y = (hiy < loy) ? H / 2 : Math.max(loy, Math.min(hiy, n.y));
   }
 
   /** 容器位置 = 其下可见子节点的质心（每帧重算，天然跟随布局）*/
@@ -389,7 +465,8 @@
         n.vx += (n.targetX - n.x) * 0.05;
         n.vy += (n.targetY - n.y) * 0.05;
         n.vx *= 0.78; n.vy *= 0.78;
-        n.x += n.vx; n.y += n.vy;
+        n.x += n.vx * alpha; n.y += n.vy * alpha;
+        clampNode(n);
       }
     } else {
       // 星图：力导向 + 年级纵轴锚定 + 向所属领域簇靠拢
@@ -417,7 +494,8 @@
         const VMAX = 18;
         a.vx = Math.max(-VMAX, Math.min(VMAX, a.vx));
         a.vy = Math.max(-VMAX, Math.min(VMAX, a.vy));
-        a.x += a.vx; a.y += a.vy;
+        a.x += a.vx * alpha; a.y += a.vy * alpha;
+        clampNode(a);
       }
       // 依赖弹簧
       for (const e of edges) {
@@ -826,7 +904,10 @@
     }
   }
 
-  function loop() { tick(); draw(); requestAnimationFrame(loop); }
+  function loop() {
+    if (alpha > ALPHA_MIN) alpha = Math.max(ALPHA_MIN, alpha * ALPHA_DECAY);
+    tick(); draw(); requestAnimationFrame(loop);
+  }
 
   // ---------- 命中测试与事件 ----------
   function canvasPos(ev) {
@@ -840,7 +921,13 @@
       const n = renderNodes[i];
       if (!n.visible) continue;
       const d = Math.hypot(n.x - p.x, n.y - p.y);
-      if (d < n.r + 6 && d < bd) { bd = d; best = n; }
+      if (n.kind === 'subject' || n.kind === 'cluster') {
+        // 容器是空心圆环：只在环带附近命中，避免圆环内部空白误触
+        const ring = Math.abs(d - n.r);
+        if (ring < 9 && ring < bd) { bd = ring; best = n; }
+      } else if (d < n.r + 8 && d < bd) {   // 触摸友好：略放大命中半径
+        bd = d; best = n;
+      }
     }
     return best;
   }
@@ -854,8 +941,18 @@
     return [node.id];
   }
   const tooltip = document.getElementById('tooltip');
-  canvas.addEventListener('mousemove', ev => {
+  // 指针交互：统一支持鼠标与触摸。触摸时按「按下—抬起位移」判定为点击，避免误触。
+  let downPos = null, downMoved = false;
+  const TAP_SLOP = 10;
+  canvas.addEventListener('pointerdown', ev => {
+    downPos = canvasPos(ev);
+    downMoved = false;
+    try { canvas.setPointerCapture(ev.pointerId); } catch (e) { /* 忽略 */ }
+  });
+  canvas.addEventListener('pointermove', ev => {
     const p = canvasPos(ev);
+    if (downPos && Math.hypot(p.x - downPos.x, p.y - downPos.y) > TAP_SLOP) downMoved = true;
+    if (ev.pointerType !== 'mouse') return;    // 触摸拖动中不显示悬停提示
     const n = pick(p);
     hovered = n;
     if (n) {
@@ -867,13 +964,19 @@
         先修 ${prereqs.get(n.id).length} · 解锁 ${unlocks.get(n.id).length}</div>`;
     } else tooltip.style.display = 'none';
   });
-  canvas.addEventListener('mouseleave', () => { tooltip.style.display = 'none'; hovered = null; });
-  canvas.addEventListener('click', ev => {
-    const n = pick(canvasPos(ev));
-    if (!n) { selected = null; document.getElementById('panel').classList.remove('open'); return; }
-    if (n.kind === 'subject' || n.kind === 'cluster') toggleCollapse(n);
-    else select(n);
+  canvas.addEventListener('pointerup', ev => {
+    const p = canvasPos(ev);
+    if (downPos && !downMoved) {
+      const n = pick(p);
+      if (!n) { selected = null; document.getElementById('panel').classList.remove('open'); }
+      else if (n.kind === 'subject' || n.kind === 'cluster') toggleCollapse(n);
+      else select(n);
+    }
+    downPos = null;
   });
+  function hideTooltip() { tooltip.style.display = 'none'; hovered = null; downPos = null; }
+  canvas.addEventListener('pointerleave', hideTooltip);
+  canvas.addEventListener('pointercancel', hideTooltip);
 
   function esc(s) { return String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
 
@@ -1026,7 +1129,14 @@
     canvas.style.display = showHm ? 'none' : 'block';
     document.getElementById('gradeAxis').style.display = showHm ? 'none' : '';
     document.getElementById('legend').style.display = showHm ? 'none' : '';
+    // 切换视图时收起详情面板，避免遮挡（移动端尤其明显）
+    selected = null;
+    document.getElementById('panel').classList.remove('open');
+    pathShown = false;
+    const bp = document.getElementById('btnPath');
+    if (bp) { bp.classList.remove('on'); bp.textContent = '🗺️ 生成学习路径'; }
     if (showHm) buildHeatmap();
+    reheat(1);
   }
   document.querySelectorAll('.layout-btn').forEach(b => {
     b.onclick = () => setLayout(b.dataset.layout);
@@ -1097,6 +1207,7 @@
         && !subjHidden && !clHidden
         && !(hideMastered && mastered.has(n.id));
     }
+    reheat(0.6);
   }
   const search = document.getElementById('search');
   function runSearch() {
@@ -1125,6 +1236,13 @@
   }
   document.getElementById('btnAncestors').onclick = function () { trace.call(this, 'ancestors'); };
   document.getElementById('btnDescendants').onclick = function () { trace.call(this, 'descendants'); };
+  // 图例折叠（窄屏）
+  document.getElementById('btnLegend').onclick = function () {
+    const lg = document.getElementById('legend');
+    lg.classList.toggle('open');
+    this.textContent = lg.classList.contains('open') ? '收起图例' : '图例';
+  };
+
   document.getElementById('btnMasterCount').onclick = function () {
     hideMastered = !hideMastered;
     this.classList.toggle('active', hideMastered);
@@ -1169,7 +1287,9 @@
     nodes, clusterNodes, subjectNodes,
     get collapsed() { return collapsed; },
     get layoutMode() { return layoutMode; },
-    toggleCollapse, select, setLayout,
+    get alpha() { return alpha; },
+    get size() { return { W, H }; },
+    toggleCollapse, select, setLayout, reheat,
   };
 
   resize();
