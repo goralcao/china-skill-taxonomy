@@ -39,7 +39,7 @@ import teaching_research_chinese_a  # noqa: E402
 import teaching_research_chinese_b  # noqa: E402
 import teaching_research_english  # noqa: E402
 
-VERSION = "v0.5.1"
+VERSION = "v0.6.0"
 SCHEMA_VERSION = 1
 
 MODULES = [
