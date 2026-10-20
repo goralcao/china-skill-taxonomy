@@ -39,11 +39,12 @@ import topics_math  # noqa: E402
 import topics_math_junior  # noqa: E402
 import teaching_research_math_a  # noqa: E402
 import teaching_research_math_b  # noqa: E402
+import teaching_research_math_junior  # noqa: E402
 import teaching_research_chinese_a  # noqa: E402
 import teaching_research_chinese_b  # noqa: E402
 import teaching_research_english  # noqa: E402
 
-VERSION = "v0.8.0"
+VERSION = "v0.9.0"
 SCHEMA_VERSION = 1
 
 MODULES = [
@@ -56,6 +57,7 @@ MODULES = [
 RESEARCH_MODULES = [
     teaching_research_math_a,
     teaching_research_math_b,
+    teaching_research_math_junior,
     teaching_research_chinese_a,
     teaching_research_chinese_b,
     teaching_research_english,
