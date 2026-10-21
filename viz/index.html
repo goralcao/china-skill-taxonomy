@@ -213,6 +213,38 @@
   #tooltip .tt-name { font-weight: 600; margin-bottom: 2px; }
   #tooltip .tt-meta { color: var(--text-dim); font-size: 11px; }
 
+  /* ---------- 搜索下拉（结果可点选直达）---------- */
+  .search-wrap { position: relative; display: inline-flex; }
+  .search-list { position: absolute; top: calc(100% + 4px); left: 0; min-width: 280px; max-width: 360px;
+    max-height: 330px; overflow-y: auto; background: var(--bg-panel); border: 1px solid var(--line);
+    border-radius: 10px; padding: 4px; display: none; z-index: 40; box-shadow: 0 10px 32px rgba(0,0,0,.5); }
+  .search-list.open { display: block; }
+  .search-list .sl-item { display: flex; align-items: center; gap: 8px; padding: 7px 9px;
+    border-radius: 6px; cursor: pointer; font-size: 12.5px; }
+  .search-list .sl-item:hover, .search-list .sl-item.cur { background: var(--bg-card); }
+  .search-list .sl-item .sl-dot { width: 8px; height: 8px; border-radius: 50%; flex: 0 0 auto; }
+  .search-list .sl-item .sl-name { flex: 1 1 auto; white-space: nowrap; overflow: hidden;
+    text-overflow: ellipsis; }
+  .search-list .sl-item .sl-meta { color: var(--text-dim); font-size: 11px; flex: 0 0 auto; }
+  .search-list .sl-empty { padding: 9px 10px; color: var(--text-dim); font-size: 11.5px; text-align: center; }
+
+  /* ---------- 筛选下拉 ---------- */
+  .fsel { background: var(--bg-card); border: 1px solid var(--line); border-radius: 6px;
+    color: var(--text); padding: 7px 8px; font-size: 12px; min-height: 34px; outline: none; cursor: pointer; }
+  .fsel:focus { border-color: var(--text-dim); }
+  .fsel.active { border-color: var(--accent); color: var(--accent); }
+
+  /* ---------- 掌握进度 ---------- */
+  #progress { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 11.5px;
+    color: var(--text-dim); padding: 6px 16px; border-bottom: 1px solid var(--line); background: var(--bg-panel); }
+  #progress .pg { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; user-select: none; }
+  #progress .pg .pg-dot { width: 8px; height: 8px; border-radius: 50%; }
+  #progress .pg-bar { display: inline-block; width: 74px; height: 6px; border-radius: 3px;
+    background: var(--bg-card); border: 1px solid var(--line); overflow: hidden; }
+  #progress .pg-bar i { display: block; height: 100%; width: 0; background: var(--accent); transition: width .25s; }
+  #progress .pg-num { color: var(--text); font-variant-numeric: tabular-nums; }
+  #progress .pg-all { cursor: default; border-left: 1px solid var(--line); padding-left: 12px; }
+
   /* 图例折叠开关：仅窄屏出现 */
   .legend-toggle { display: none; background: var(--bg-panel); border: 1px solid var(--line);
     color: var(--text-dim); border-radius: 8px; padding: 5px 11px; font-size: 11.5px; cursor: pointer; }
@@ -240,6 +272,13 @@
     .layout-btn .full { display: none; }
     .layout-btn .abbr { display: inline; }
     #btnMore { min-width: 30px; }
+
+    /* 搜索下拉与筛选：窄屏收窄，避免溢出 */
+    .search-list { min-width: 210px; max-width: 76vw; max-height: 42vh; }
+    .fsel { padding: 5px 6px; font-size: 11px; min-height: 30px; max-width: 96px; }
+    #progress { padding: 4px 10px; gap: 8px; font-size: 10.5px; }
+    #progress .pg-bar { width: 44px; }
+    #progress .pg-all { padding-left: 8px; }
 
     /* 详情面板：底部抽屉（含安全区） */
     #panel { top: auto; left: 0; right: 0; bottom: 0; width: auto; max-height: 58vh;
@@ -276,6 +315,7 @@
   @media (max-height: 480px) {
     header { padding: 6px 10px; }
     .stats { display: none; }
+    #progress { display: none; }
     #panel { max-height: 66vh; }
   }
 </style>
@@ -286,11 +326,17 @@
     <h1>学阶图谱 <small>China Skill Taxonomy · 中国 K9 学能图谱 v0.8</small></h1>
     <div class="stats" id="stats"></div>
   </header>
+  <div id="progress"></div>
   <div class="toolbar">
     <span class="chip on" data-subject="数学"><span class="dot" style="background:var(--math)"></span>数学</span>
     <span class="chip on" data-subject="语文"><span class="dot" style="background:var(--chinese)"></span>语文</span>
     <span class="chip on" data-subject="英语"><span class="dot" style="background:var(--english)"></span>英语</span>
-    <input id="search" type="text" placeholder="搜索主题…">
+    <span class="search-wrap">
+      <input id="search" type="text" placeholder="搜索主题…（/ 键聚焦）" autocomplete="off">
+      <div class="search-list" id="searchList"></div>
+    </span>
+    <select class="fsel" id="gradeSel" aria-label="按年级筛选"></select>
+    <select class="fsel" id="domainSel" aria-label="按领域筛选"></select>
     <span class="toolbar-sep"></span>
     <span class="layout-label">布局</span>
     <button class="layout-btn active" data-layout="star" title="星图布局"><span class="full">星图</span><span class="abbr">星</span></button>
@@ -318,7 +364,10 @@
         <div class="row">大圆环 = 学科 · 中圆环 = 领域簇（数字为下辖知识点数）</div>
         <div class="row">纵轴 = 年级（1 年级在上，含初中 7~9 年级）· 圆点越大 = 枢纽主题</div>
         <div class="row"><span class="dot" style="background:var(--accent)"></span>金色圆环 = 已掌握（点击主题可标记，自动保存）</div>
+        <div class="row">悬停圆点会点亮它的先修/解锁邻居并淡出其余；拖动圆点可固定位置（重置视图解除）</div>
         <div class="row">点击圆点查看详情；「生成学习路径」按依赖拓扑排出完整步骤</div>
+        <div class="row">键盘：↑↓ 切换主题 · <code>/</code> 聚焦搜索 · <code>m</code> 标记已掌握 · <code>Esc</code> 关闭面板</div>
+        <div class="row">筛选与选中状态会写入网址，可直接复制分享到某个知识点</div>
       </div>
     </div>
     <div id="tooltip"></div>
@@ -486,8 +535,14 @@
       const a = acc.get(n.clusterId);
       if (a) { a.x += n.x; a.y += n.y; a.n++; }
     }
+    const filterActive = gradeFilter > 0 || domainFilter !== '';
     for (const c of clusterNodes) {
-      c.visible = activeSubjects.has(c.subject) && !collapsed.has('subj-' + c.subject);
+      let vis = activeSubjects.has(c.subject) && !collapsed.has('subj-' + c.subject);
+      // 有筛选时，知识点被全部筛掉的领域簇不再显示；折叠态例外（要留住圆环供展开）
+      if (vis && filterActive && !collapsed.has(c.id)) {
+        vis = c.topicIds.some(id => { const t = nodeById.get(id); return t && t.visible; });
+      }
+      c.visible = vis;
       const a = acc.get(c.id);
       if (a && a.n) { c.x = a.x / a.n; c.y = a.y / a.n; continue; }
       const s = containerById.get('subj-' + c.subject);
@@ -517,6 +572,8 @@
     const cx = W / 2;
     const colW = (W - 60) / MAX_TERM;
     const laneTop = 62, laneH = (H - 130) / SUBJECT_LIST.length;
+    // 被拖拽 / 已固定的节点速度清零，位置完全由指针或用户决定
+    for (const n of nodes) if (n.pinned || n === dragNode) { n.vx = 0; n.vy = 0; }
 
     if (layoutMode === 'scroll') {
       // 长卷：横轴 = 册次（1年级上 → 9年级下），纵轴 = 学科泳道
@@ -539,6 +596,7 @@
       }
       for (const n of nodes) {
         if (!n.visible) continue;
+        if (n.pinned || n === dragNode) continue;
         n.vx += (n.targetX - n.x) * 0.05;
         n.vy += (n.targetY - n.y) * 0.05;
         n.vx *= 0.78; n.vy *= 0.78;
@@ -565,6 +623,8 @@
           a.vx += dx / d * f; a.vy += dy / d * f;
           b.vx -= dx / d * f; b.vy -= dy / d * f;
         }
+        // 固定节点仍参与斥力（把别人推开），但自己不移动
+        if (a.pinned || a === dragNode) continue;
         a.vy += (a.targetY - a.y) * 0.045;
         a.vx += (a.targetX - a.x) * 0.028;
         a.vx *= 0.82; a.vy *= 0.82;
@@ -593,6 +653,14 @@
   const activeSubjects = new Set(['数学', '语文', '英语']);
   let traceMode = null; // 'ancestors' | 'descendants'
   const traceSet = new Set();
+
+  // ---------- v0.12 交互状态：悬停聚焦 / 拖拽固定 / 年级与领域筛选 / 深链 / 键盘 ----------
+  let hoverSet = null;                  // null = 不聚焦；非空时只点亮集合内节点
+  let downNode = null, dragNode = null, dragOff = { x: 0, y: 0 };
+  let gradeFilter = 0;                  // 0 = 全部年级
+  let domainFilter = '';                // '' = 全部领域
+  let focusTarget = null, focusFrames = 0;
+  let searchHits = [], selIndex = -1;
   const subjectColor = { '数学': getComputedStyle(document.documentElement).getPropertyValue('--math').trim(),
     '语文': getComputedStyle(document.documentElement).getPropertyValue('--chinese').trim(),
     '英语': getComputedStyle(document.documentElement).getPropertyValue('--english').trim() };
@@ -1010,6 +1078,7 @@
     }
     // 归属边（层级：知识点 → 领域簇 → 学科），极淡，只作分组视觉提示
     ctx.setLineDash([]);
+    ctx.globalAlpha = hoverSet ? 0.28 : 1;
     for (const e of memberEdges) {
       if (!e.from.visible || !e.to.visible) continue;
       ctx.beginPath();
@@ -1025,6 +1094,9 @@
       const isTrace = traceSet.size && traceSet.has(e.a.id) && traceSet.has(e.b.id);
       const isSel = selected && (e.a.id === selected.id || e.b.id === selected.id);
       const isHov = hovered && (e.a.id === hovered.id || e.b.id === hovered.id);
+      // 悬停聚焦：只点亮「两端都在邻域里」的依赖边
+      const inFocus = !hoverSet || isTrace || isSel || (hoverSet.has(e.a.id) && hoverSet.has(e.b.id));
+      ctx.globalAlpha = inFocus ? 1 : 0.2;
       ctx.beginPath();
       ctx.moveTo(e.a.x, e.a.y); ctx.lineTo(e.b.x, e.b.y);
       if (e.strength === 'soft') ctx.setLineDash([4 / k, 4 / k]); else ctx.setLineDash([]);
@@ -1034,6 +1106,7 @@
       ctx.stroke();
     }
     ctx.setLineDash([]);
+    ctx.globalAlpha = 1;
     // 节点（容器在下、知识点在上）
     for (const n of renderNodes) {
       if (!n.visible) continue;
@@ -1042,12 +1115,15 @@
       const isHov = hovered && n.id === hovered.id;
       const isTrace = traceSet.has(n.id);
       const inFilter = activeSubjects.has(n.subject);
+      // 悬停聚焦时，邻域外的节点淡出（选中/追溯/搜索命中始终保留）
+      const inFocus = !hoverSet || hoverSet.has(n.id) || isSel || isTrace || n.searchHit;
+      const baseAlpha = (inFilter ? 1 : 0.12) * (inFocus ? 1 : 0.2);
 
       // ---------- 学科 / 领域簇容器：空心圆环 + 计数 ----------
       if (n.kind === 'subject' || n.kind === 'cluster') {
         const isSubj = n.kind === 'subject';
         const fold = isSubj ? collapsed.has('subj-' + n.subject) : collapsed.has(n.id);
-        ctx.globalAlpha = inFilter ? 1 : 0.12;
+        ctx.globalAlpha = baseAlpha;
         ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
         ctx.fillStyle = 'rgba(10,15,24,.88)'; ctx.fill();
         ctx.strokeStyle = color; ctx.lineWidth = lw(isSubj ? 2.6 : 1.7);
@@ -1062,7 +1138,7 @@
         continue;
       }
 
-      ctx.globalAlpha = inFilter ? 1 : 0.12;
+      ctx.globalAlpha = baseAlpha;
       ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
       ctx.fillStyle = color;
       if (isSel || isHov || isTrace || n.searchHit) {
@@ -1075,6 +1151,13 @@
         ctx.beginPath(); ctx.arc(n.x, n.y, n.r + 3 / k, 0, Math.PI * 2);
         ctx.strokeStyle = 'rgba(255,209,102,.85)'; ctx.lineWidth = lw(2); ctx.stroke();
       }
+      // 已固定位置的节点：白色虚线环
+      if (n.pinned) {
+        ctx.setLineDash([3 / k, 3 / k]);
+        ctx.beginPath(); ctx.arc(n.x, n.y, n.r + 5 / k, 0, Math.PI * 2);
+        ctx.strokeStyle = 'rgba(255,255,255,.5)'; ctx.lineWidth = lw(1.2); ctx.stroke();
+        ctx.setLineDash([]);
+      }
       if (isSel) { ctx.beginPath(); ctx.arc(n.x, n.y, n.r + 6 / k, 0, Math.PI * 2);
         ctx.strokeStyle = '#fff'; ctx.lineWidth = lw(2); ctx.stroke(); }
       ctx.globalAlpha = 1;
@@ -1085,6 +1168,7 @@
     const degOf = n => n.kind === 'topic' ? prereqs.get(n.id).length + unlocks.get(n.id).length : 999;
     const prio = n =>
       (n.id === (selected && selected.id) || n === hovered || traceSet.has(n.id) || n.searchHit) ? 3
+      : (hoverSet && hoverSet.has(n.id)) ? 2
       : n.kind === 'subject' ? 2 : n.kind === 'cluster' ? 1 : 0;
     const tier = showAllLabels ? 2 : k >= 2.5 ? 2 : k >= 1.2 ? 1 : 0;
     const CAP = [18, 45, 130][tier];
@@ -1126,7 +1210,9 @@
       count++;
       ctx.font = `${fsz}px system-ui, "PingFang SC", "Microsoft YaHei", sans-serif`;
       ctx.fillStyle = n.kind === 'topic' ? 'rgba(232,237,245,.92)' : 'rgba(232,237,245,.95)';
-      ctx.globalAlpha = activeSubjects.has(n.subject) ? 1 : .3;
+      const foc = !hoverSet || hoverSet.has(n.id) ||
+        (selected && n.id === selected.id) || traceSet.has(n.id) || n.searchHit;
+      ctx.globalAlpha = activeSubjects.has(n.subject) ? (foc ? 1 : .3) : .25;
       ctx.fillText(text, sx, sy + h - 3);
       ctx.globalAlpha = 1;
     }
@@ -1150,6 +1236,17 @@
       if (alpha <= ALPHA_MIN && Math.abs(panV.x) <= 0.12 && Math.abs(panV.y) <= 0.12 && pointers.size === 0) {
         dirty = false;
       }
+    }
+    // 聚焦跟随：布局收敛期间持续把目标节点居中（最多 150 帧）
+    if (focusTarget) {
+      const narrow = window.matchMedia('(max-width: 720px)').matches;
+      const panelOpen = document.getElementById('panel').classList.contains('open');
+      const cx = narrow ? W / 2 : (W - (panelOpen ? 352 : 0)) / 2;
+      const cy = narrow ? H * 0.32 : H / 2;
+      view.x = cx - focusTarget.x * view.k;
+      view.y = cy - focusTarget.y * view.k;
+      dirty = true;
+      if (++focusFrames > 150) focusTarget = null;
     }
     rafId = requestAnimationFrame(frame);
   }
@@ -1200,7 +1297,22 @@
     return [node.id];
   }
   const tooltip = document.getElementById('tooltip');
-  // 指针手势：单击选择 / 单指拖动平移（带惯性）/ 双指捏合缩放 / 滚轮与双击缩放
+  /** 悬停聚焦：把「悬停节点 + 它的邻居」记为高亮集合，其余在绘制时淡出 */
+  function updateHoverSet() {
+    if (!hovered) { hoverSet = null; wake(); return; }
+    const s = new Set([hovered.id]);
+    if (hovered.kind === 'topic') {
+      for (const d of prereqs.get(hovered.id) || []) s.add(d.prerequisiteId);
+      for (const d of unlocks.get(hovered.id) || []) s.add(d.topicId);
+    } else if (hovered.kind === 'cluster') {
+      for (const id of hovered.topicIds) s.add(id);
+    } else if (hovered.kind === 'subject') {
+      for (const t of topics) if (t.subject === hovered.subject) s.add(t.id);
+    }
+    hoverSet = s;
+    wake();
+  }
+  // 指针手势：单击选择 / 单指拖动平移（带惯性）/ 拖动节点 / 双指捏合缩放 / 滚轮与双击缩放
   const pointers = new Map();          // pointerId -> 最近屏幕坐标
   let gesture = null;                  // 'tap' 待定 | 'pan' | 'pinch'
   let downInfo = null;                 // {x, y}
@@ -1215,6 +1327,13 @@
       gesture = 'tap';
       downInfo = { x: ev.clientX, y: ev.clientY };
       panV.x = panV.y = 0;
+      // 记录按下时命中的节点：拖动它可固定位置（容器位置由子节点质心决定，不参与拖动）
+      const wp = screenToWorld(canvasPos(ev));
+      const dn = pick(wp);
+      if (dn && dn.kind === 'topic') {
+        downNode = dn;
+        dragOff = { x: wp.x - dn.x, y: wp.y - dn.y };
+      } else downNode = null;
     } else if (pointers.size === 2) {
       gesture = 'pinch';
       const [a, b] = [...pointers.values()];
@@ -1227,7 +1346,11 @@
     if (!pointers.has(ev.pointerId)) {
       if (ev.pointerType !== 'mouse') return;
       const n = pick(screenToWorld(canvasPos(ev)));
-      hovered = n;
+      if (n !== hovered) {
+        hovered = n;
+        updateHoverSet();
+        canvas.style.cursor = n ? 'pointer' : 'grab';
+      }
       if (n) {
         const p = canvasPos(ev);
         tooltip.style.display = 'block';
@@ -1252,14 +1375,23 @@
       if (pinchDist > 0) zoomAt(cx, cy, d / pinchDist);
       pinchDist = d;
       wake();
-    } else if (pointers.size === 1 && (gesture === 'tap' || gesture === 'pan')) {
+    } else if (pointers.size === 1 && (gesture === 'tap' || gesture === 'pan' || gesture === 'drag')) {
       const dx = cur.x - prev.x, dy = cur.y - prev.y;
       if (gesture === 'tap' && downInfo &&
           Math.hypot(cur.x - downInfo.x, cur.y - downInfo.y) > TAP_SLOP) {
-        gesture = 'pan';
+        // 压在知识点上拖动 = 拖节点；空白处拖动 = 平移画布
+        if (downNode) { gesture = 'drag'; dragNode = downNode; }
+        else gesture = 'pan';
+        canvas.classList.add('dragging');
         tooltip.style.display = 'none';
       }
-      if (gesture === 'pan') {
+      if (gesture === 'drag' && dragNode) {
+        const w = screenToWorld(canvasPos(ev));
+        dragNode.x = w.x - dragOff.x; dragNode.y = w.y - dragOff.y;
+        dragNode.vx = dragNode.vy = 0;
+        clampNode(dragNode);
+        reheat(0.32);
+      } else if (gesture === 'pan') {
         view.x += dx; view.y += dy;
         panV.x = panV.x * 0.6 + dx * 0.4;
         panV.y = panV.y * 0.6 + dy * 0.4;
@@ -1273,19 +1405,31 @@
       if (pointers.size < 2) { gesture = pointers.size === 1 ? 'pan' : null; pinchDist = 0; downInfo = null; }
       return;
     }
+    if (gesture === 'drag') {
+      if (dragNode) {
+        dragNode.pinned = true;
+        toast(`已固定「${dragNode.name}」的位置 · 重置视图可解除`);
+      }
+      dragNode = null; downNode = null;
+      canvas.classList.remove('dragging');
+      if (pointers.size === 0) { gesture = null; downInfo = null; }
+      wake();
+      return;
+    }
     if (gesture === 'tap' && downInfo) {
       const n = pick(screenToWorld(canvasPos(ev)));
       if (!n) { selected = null; pathShown = false; document.getElementById('panel').classList.remove('open'); }
       else if (n.kind === 'subject' || n.kind === 'cluster') toggleCollapse(n);
       else select(n);
     } else if (gesture === 'pan') {
+      canvas.classList.remove('dragging');
       // 松手后进入惯性滑动（loop 内衰减）
     }
-    if (pointers.size === 0) { gesture = null; downInfo = null; }
+    if (pointers.size === 0) { gesture = null; downInfo = null; downNode = null; }
   });
   function hideTooltip() {
-    tooltip.style.display = 'none'; hovered = null;
-    pointers.clear(); gesture = null; downInfo = null;
+    tooltip.style.display = 'none'; hovered = null; updateHoverSet();
+    pointers.clear(); gesture = null; downInfo = null; downNode = null;
   }
   canvas.addEventListener('pointerleave', hideTooltip);
   canvas.addEventListener('pointercancel', hideTooltip);
@@ -1404,6 +1548,7 @@
     renderPath(n);
     panel.classList.add('open');
     panel.scrollTop = 0;
+    writeHash();
     wake();
   }
   document.getElementById('panel').addEventListener('click', ev => {
@@ -1467,6 +1612,7 @@
     const bp = document.getElementById('btnPath');
     if (bp) { bp.classList.remove('on'); bp.textContent = '🗺️ 生成学习路径'; }
     if (showHm) buildHeatmap();
+    writeHash();
     reheat(1);
   }
   document.querySelectorAll('.layout-btn').forEach(b => {
@@ -1509,6 +1655,7 @@
   });
 
   function syncMasterUI() {
+    renderProgress();
     const btn = document.getElementById('btnMasterCount');
     const clear = document.getElementById('btnClearMaster');
     if (btn) {
@@ -1529,29 +1676,187 @@
       applyFilter();
     };
   });
+  function syncChips() {
+    document.querySelectorAll('.chip').forEach(c => {
+      const on = activeSubjects.has(c.dataset.subject);
+      c.classList.toggle('on', on); c.classList.toggle('off', !on);
+    });
+  }
+  /** 应用年级/领域筛选时，自动展开命中的领域簇（否则窄屏默认折叠会让筛选结果为空）*/
+  function autoExpandForFilter() {
+    if (!gradeFilter && !domainFilter) return;
+    const keep = new Set();
+    for (const n of nodes) {
+      const okG = !gradeFilter || (n.gradeRangeStart <= gradeFilter && n.gradeRangeEnd >= gradeFilter);
+      const okD = !domainFilter || n.domain === domainFilter;
+      if (okG && okD && activeSubjects.has(n.subject)) {
+        keep.add(n.clusterId);
+        collapsed.delete('subj-' + n.subject);
+      }
+    }
+    for (const id of keep) collapsed.delete(id);
+  }
   function applyFilter() {
     for (const n of nodes) {
       // 折叠学科 = 隐藏其下全部知识点；折叠领域簇 = 隐藏该簇知识点
       const subjHidden = collapsed.has('subj-' + n.subject);
       const clHidden = collapsed.has(n.clusterId);
+      const okGrade = !gradeFilter || (n.gradeRangeStart <= gradeFilter && n.gradeRangeEnd >= gradeFilter);
+      const okDomain = !domainFilter || n.domain === domainFilter;
       n.visible = activeSubjects.has(n.subject)
-        && !subjHidden && !clHidden
+        && !subjHidden && !clHidden && okGrade && okDomain
         && !(hideMastered && mastered.has(n.id));
     }
     reheat(0.6);
+    writeHash();
   }
+  // ---------- 搜索：下拉结果列表（可点选直达 + 键盘操作）----------
   const search = document.getElementById('search');
+  const searchList = document.getElementById('searchList');
   function runSearch() {
-    const q = search.value.trim();
-    nodes.forEach(n => { n.searchHit = !!q && n.name.includes(q); });
+    const q = search.value.trim().toLowerCase();
+    nodes.forEach(n => {
+      n.searchHit = !!q && (n.name.toLowerCase().includes(q) || n.domain.toLowerCase().includes(q));
+    });
+    if (!q) { searchHits = []; selIndex = -1; closeSearchList(); wake(); return; }
+    // 排序：完全命中优先 → 前缀命中 → 年级 → 名称
+    searchHits = nodes.filter(n => n.searchHit).sort((a, b) => {
+      const sa = a.name.toLowerCase(), sb = b.name.toLowerCase();
+      const ra = sa === q ? 0 : sa.startsWith(q) ? 1 : 2;
+      const rb = sb === q ? 0 : sb.startsWith(q) ? 1 : 2;
+      return ra - rb || a.gradeRangeStart - b.gradeRangeStart || sa.localeCompare(sb, 'zh');
+    });
+    selIndex = searchHits.length ? 0 : -1;
+    renderSearchList();
     wake();
-    if (!q) return;
-    const hit = nodes.find(n => n.searchHit);
-    const stillMatches = selected && selected.name.includes(q);
-    if (hit && !stillMatches) select(hit);
   }
+  /** 窄屏工具栏是横向滚动容器，会裁剪绝对定位子元素：改用 fixed 定位到输入框下方 */
+  function positionSearchList() {
+    if (!window.matchMedia('(max-width: 720px)').matches) {
+      searchList.style.position = ''; searchList.style.top = '';
+      searchList.style.left = ''; searchList.style.width = ''; searchList.style.maxWidth = '';
+      return;
+    }
+    const r = search.getBoundingClientRect();
+    searchList.style.position = 'fixed';
+    searchList.style.top = (r.bottom + 4) + 'px';
+    searchList.style.left = '8px';
+    searchList.style.width = (window.innerWidth - 16) + 'px';
+    searchList.style.maxWidth = 'none';
+  }
+  function renderSearchList() {
+    const q = search.value.trim();
+    if (!q) { closeSearchList(); return; }
+    positionSearchList();
+    if (!searchHits.length) {
+      searchList.innerHTML = '<div class="sl-empty">没有匹配的主题，换个说法试试</div>';
+      searchList.classList.add('open');
+      return;
+    }
+    const shown = searchHits.slice(0, 40);
+    searchList.innerHTML = shown.map((n, i) =>
+      `<div class="sl-item${i === selIndex ? ' cur' : ''}" data-i="${i}">
+         <span class="sl-dot" style="background:${subjectColor[n.subject]}"></span>
+         <span class="sl-name">${esc(n.name)}</span>
+         <span class="sl-meta">${n.subject} · ${n.gradeRangeStart}~${n.gradeRangeEnd}年级</span>
+       </div>`).join('') +
+      (searchHits.length > shown.length
+        ? `<div class="sl-empty">还有 ${searchHits.length - shown.length} 个，继续输入可缩小范围</div>` : '');
+    searchList.classList.add('open');
+  }
+  function closeSearchList() { searchList.classList.remove('open'); }
+  function pickSearch(i) {
+    const n = searchHits[i];
+    if (!n) return;
+    // 目标若被当前筛选/折叠隐藏，自动放宽条件再选中
+    if (!n.visible) {
+      if (!activeSubjects.has(n.subject)) { activeSubjects.add(n.subject); syncChips(); }
+      if (gradeFilter && !(n.gradeRangeStart <= gradeFilter && n.gradeRangeEnd >= gradeFilter)) {
+        gradeFilter = 0; document.getElementById('gradeSel').value = '0';
+        document.getElementById('gradeSel').classList.remove('active');
+      }
+      if (domainFilter && n.domain !== domainFilter) {
+        domainFilter = ''; document.getElementById('domainSel').value = '';
+        document.getElementById('domainSel').classList.remove('active');
+      }
+      if (collapsed.has(n.clusterId)) collapsed.delete(n.clusterId);
+      if (collapsed.has('subj-' + n.subject)) collapsed.delete('subj-' + n.subject);
+      applyFilter();
+    }
+    closeSearchList();
+    select(n);
+    focusOn(n);
+  }
+  searchList.addEventListener('mousedown', ev => {
+    const it = ev.target.closest('.sl-item');
+    if (!it) return;
+    ev.preventDefault();          // 避免输入框先失焦导致列表关闭
+    pickSearch(Number(it.dataset.i));
+  });
+  searchList.addEventListener('click', ev => {   // 触摸端：click 兜底
+    const it = ev.target.closest('.sl-item');
+    if (it) pickSearch(Number(it.dataset.i));
+  });
   search.addEventListener('input', runSearch);
-  search.addEventListener('keydown', (ev) => { if (ev.key === 'Enter') runSearch(); });
+  search.addEventListener('keydown', ev => {
+    if (ev.key === 'ArrowDown' || ev.key === 'ArrowUp') {
+      if (!searchHits.length) return;
+      ev.preventDefault();
+      const step = ev.key === 'ArrowDown' ? 1 : -1;
+      selIndex = (selIndex + step + searchHits.length) % searchHits.length;
+      renderSearchList();
+      const cur = searchList.querySelector('.sl-item.cur');
+      if (cur) cur.scrollIntoView({ block: 'nearest' });
+    } else if (ev.key === 'Enter') {
+      ev.preventDefault();
+      pickSearch(selIndex < 0 ? 0 : selIndex);
+    } else if (ev.key === 'Escape') {
+      closeSearchList(); search.blur();
+    }
+  });
+  search.addEventListener('blur', () => setTimeout(closeSearchList, 150));
+  document.addEventListener('pointerdown', ev => {
+    if (!ev.target.closest('.search-wrap')) closeSearchList();
+  });
+
+  // ---------- 年级 / 领域筛选 ----------
+  const gradeSel = document.getElementById('gradeSel');
+  const domainSel = document.getElementById('domainSel');
+  gradeSel.innerHTML = '<option value="0">全部年级</option>' +
+    Array.from({ length: MAX_GRADE }, (_, i) => `<option value="${i + 1}">${i + 1} 年级</option>`).join('');
+  (function buildDomainOptions() {
+    const bySubj = new Map();
+    for (const t of topics) {
+      if (!bySubj.has(t.subject)) bySubj.set(t.subject, new Set());
+      bySubj.get(t.subject).add(t.domain);
+    }
+    let html = '<option value="">全部领域</option>';
+    for (const s of SUBJECT_LIST) {
+      const ds = bySubj.get(s);
+      if (!ds || !ds.size) continue;
+      html += `<optgroup label="${s}">` + [...ds].sort((a, b) => a.localeCompare(b, 'zh'))
+        .map(d => `<option value="${esc(d)}">${esc(d)}</option>`).join('') + '</optgroup>';
+    }
+    domainSel.innerHTML = html;
+  })();
+  gradeSel.addEventListener('change', () => {
+    gradeFilter = Number(gradeSel.value) || 0;
+    gradeSel.classList.toggle('active', !!gradeFilter);
+    autoExpandForFilter();
+    applyFilter();
+  });
+  domainSel.addEventListener('change', () => {
+    domainFilter = domainSel.value;
+    domainSel.classList.toggle('active', !!domainFilter);
+    if (domainFilter) {
+      // 自动开启包含该领域的学科，避免选了却什么都看不到
+      const subs = new Set(topics.filter(t => t.domain === domainFilter).map(t => t.subject));
+      subs.forEach(s => activeSubjects.add(s));
+      syncChips();
+    }
+    autoExpandForFilter();
+    applyFilter();
+  });
   document.getElementById('btnLabels').onclick = function () {
     showAllLabels = !showAllLabels;
     this.classList.toggle('active', showAllLabels);
@@ -1601,12 +1906,145 @@
     document.getElementById('btnPath').textContent = '🗺️ 生成学习路径';
     document.getElementById('panel').classList.remove('open');
     document.querySelectorAll('.more-menu .tool-btn').forEach(b => b.classList.remove('active'));
-    nodes.forEach(n => { n.x = W / 2 + (Math.random() - .5) * W * .55; n.y = targetYOf(n); n.vx = n.vy = 0; });
+    nodes.forEach(n => { n.x = W / 2 + (Math.random() - .5) * W * .55; n.y = targetYOf(n); n.vx = n.vy = 0; n.pinned = false; });
     // 复位视图变换（回到全图鸟瞰）
     view.x = 0; view.y = 0; view.k = 1;
     initPositions();
     reheat(1);
   };
+
+  // ---------- 深链：选中主题 / 筛选 / 布局写入网址，可复制分享到具体知识点 ----------
+  let hashLock = false;
+  function writeHash() {
+    if (hashLock) return;
+    clearTimeout(writeHash._t);
+    writeHash._t = setTimeout(() => {
+      const s = SUBJECT_LIST.filter(x => activeSubjects.has(x));
+      const isDefault = !selected && s.length === SUBJECT_LIST.length
+        && !gradeFilter && !domainFilter && layoutMode === 'star';
+      if (isDefault && !location.hash) return;      // 全默认且原本无 hash：不污染地址栏
+      const p = new URLSearchParams();
+      if (selected && selected.kind === 'topic') p.set('t', selected.id);
+      if (s.length !== SUBJECT_LIST.length) p.set('s', s.join('+'));
+      if (gradeFilter) p.set('g', String(gradeFilter));
+      if (domainFilter) p.set('d', domainFilter);
+      p.set('l', layoutMode);
+      const next = '#' + p.toString();
+      if (location.hash === next) return;
+      hashLock = true;
+      try { history.replaceState(null, '', next); } catch (e) { location.hash = p.toString(); }
+      setTimeout(() => { hashLock = false; }, 0);
+    }, 260);
+  }
+  function readHash() {
+    hashLock = true;                                  // 还原期间不回写，避免抖动
+    setTimeout(() => { hashLock = false; }, 60);
+    const raw = location.hash.replace(/^#/, '');
+    if (!raw) return false;
+    const p = new URLSearchParams(raw);
+    const s = p.get('s');
+    if (s) {
+      const arr = s.split('+').filter(x => SUBJECT_LIST.includes(x));
+      if (arr.length) { activeSubjects.clear(); arr.forEach(x => activeSubjects.add(x)); syncChips(); }
+    }
+    const g = Number(p.get('g'));
+    if (g >= 1 && g <= MAX_GRADE) {
+      gradeFilter = g; gradeSel.value = String(g); gradeSel.classList.add('active');
+    }
+    const d = p.get('d');
+    if (d) { domainFilter = d; domainSel.value = d; domainSel.classList.add('active'); }
+    autoExpandForFilter();
+    const l = p.get('l');
+    if ((l === 'star' || l === 'scroll' || l === 'heat') && l !== layoutMode) setLayout(l);
+    const t = p.get('t');
+    const n = t && nodeById.get(t);
+    if (n) {
+      if (!activeSubjects.has(n.subject)) { activeSubjects.add(n.subject); syncChips(); }
+      if (collapsed.has(n.clusterId)) collapsed.delete(n.clusterId);
+      if (collapsed.has('subj-' + n.subject)) collapsed.delete('subj-' + n.subject);
+      applyFilter();
+      select(n);
+      focusOn(n);
+    }
+    return true;
+  }
+  window.addEventListener('hashchange', () => { if (!hashLock) readHash(); });
+
+  /** 把某个节点居中（布局收敛过程中持续跟随，避免聚焦到半空）*/
+  function focusOn(n) {
+    if (!n) return;
+    focusTarget = n; focusFrames = 0;
+    if (view.k < 1.6) {
+      const narrow = window.matchMedia('(max-width: 720px)').matches;
+      zoomAt(narrow ? W / 2 : W / 2, narrow ? H * 0.32 : H / 2, 1.6 / view.k);
+    }
+    wake();
+  }
+
+  // ---------- 键盘导航：↑↓ 切换主题 · / 聚焦搜索 · m 标记掌握 · Esc 关闭 ----------
+  function orderedTopics() {
+    return nodes.filter(n => n.visible && n.kind === 'topic').sort((a, b) =>
+      (a.gradeRangeStart - b.gradeRangeStart)
+      || (SUBJECT_LIST.indexOf(a.subject) - SUBJECT_LIST.indexOf(b.subject))
+      || a.name.localeCompare(b.name, 'zh'));
+  }
+  document.addEventListener('keydown', ev => {
+    const tag = (ev.target && ev.target.tagName || '').toLowerCase();
+    const typing = tag === 'input' || tag === 'textarea' || tag === 'select';
+    if (ev.key === 'Escape') {
+      if (searchList.classList.contains('open')) { closeSearchList(); return; }
+      if (typing) { ev.target.blur(); return; }
+      const tbm = document.getElementById('tbModal');
+      if (tbm && tbm.classList.contains('open')) { document.getElementById('btnTbClose').click(); return; }
+      if (document.getElementById('panel').classList.contains('open')) {
+        document.getElementById('btnClose').click();
+      }
+      return;
+    }
+    if (typing) return;
+    if (ev.key === '/') { ev.preventDefault(); search.focus(); search.select(); return; }
+    if (ev.key === 'm' || ev.key === 'M') {
+      if (selected) document.getElementById('btnMaster').click();
+      return;
+    }
+    if (ev.key === 'ArrowDown' || ev.key === 'ArrowRight' || ev.key === 'ArrowUp' || ev.key === 'ArrowLeft') {
+      const list = orderedTopics();
+      if (!list.length) { toast('当前筛选下没有可浏览的主题'); return; }
+      ev.preventDefault();
+      const step = (ev.key === 'ArrowDown' || ev.key === 'ArrowRight') ? 1 : -1;
+      let i = selected ? list.findIndex(x => x.id === selected.id) : -1;
+      i = i < 0 ? (step > 0 ? 0 : list.length - 1) : (i + step + list.length) % list.length;
+      select(list[i]);
+      focusOn(list[i]);
+    }
+  });
+
+  // ---------- 掌握进度：按学科显示已掌握比例 ----------
+  function renderProgress() {
+    const box = document.getElementById('progress');
+    if (!box) return;
+    let done = 0;
+    const rows = SUBJECT_LIST.map(s => {
+      const tot = topics.filter(t => t.subject === s).length;
+      const got = topics.filter(t => t.subject === s && mastered.has(t.id)).length;
+      done += got;
+      const pct = tot ? Math.round(got / tot * 100) : 0;
+      return `<span class="pg" data-subject="${s}" title="${s}：已掌握 ${got}/${tot}（${pct}%）· 点击可开关该学科">
+        <span class="pg-dot" style="background:${subjectColor[s]}"></span>${s}
+        <span class="pg-bar"><i style="width:${pct}%"></i></span>
+        <span class="pg-num">${pct}%</span></span>`;
+    });
+    const pctAll = topics.length ? Math.round(done / topics.length * 100) : 0;
+    box.innerHTML = '<span>掌握进度</span>' + rows.join('') +
+      `<span class="pg pg-all">总体 <span class="pg-bar"><i style="width:${pctAll}%"></i></span>
+       <span class="pg-num">${done}/${topics.length} · ${pctAll}%</span></span>`;
+  }
+  document.getElementById('progress').addEventListener('click', ev => {
+    const el = ev.target.closest('.pg[data-subject]');
+    if (!el) return;
+    const chip = document.querySelector('.chip[data-subject="' + el.dataset.subject + '"]');
+    if (chip) chip.click();
+  });
 
   // ---------- 启动 ----------
   document.querySelector('header h1 small').textContent =
@@ -1631,7 +2069,14 @@
     get alpha() { return alpha; },
     get view() { return { ...view }; },
     get size() { return { W, H }; },
-    toggleCollapse, select, setLayout, reheat,
+    get hoverSet() { return hoverSet ? [...hoverSet] : null; },
+    get filters() { return { grade: gradeFilter, domain: domainFilter, subjects: [...activeSubjects] }; },
+    get pinned() { return nodes.filter(n => n.pinned).map(n => n.id); },
+    get searchHits() { return searchHits.map(n => n.id); },
+    get gesture() { return gesture; },
+    get downNode() { return downNode && downNode.id; },
+    get dragNode() { return dragNode && dragNode.id; },
+    toggleCollapse, select, setLayout, reheat, focusOn, applyFilter,
   };
 
   resize();
@@ -1640,7 +2085,9 @@
   if (window.matchMedia('(max-width: 720px)').matches) {
     for (const c of clusterNodes) collapsed.add(c.id);
   }
+  readHash();        // 先按网址还原（筛选 / 布局 / 选中主题），再统一过滤
   applyFilter();
+  renderProgress();
   wake();
 })();
 </script>
