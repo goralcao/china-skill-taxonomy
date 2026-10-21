@@ -1,5 +1,5 @@
 {
-  "version": "v0.9.0",
+  "version": "v0.10.0",
   "schemaVersion": 1,
   "topics": [
     {
@@ -30,7 +30,7 @@
       ],
       "textbookNote2024": "10 以内数的认识拆分为「5以内」与「6～10」两个单元，连续编排。",
       "clusterId": "cl-math-d1-s1",
-      "centrality": 0.0223
+      "centrality": 0.0153
     },
     {
       "id": "mt_num-10-composition",
@@ -59,7 +59,7 @@
       ],
       "textbookNote2024": "分与合在第一单元，数的组成在第二单元。",
       "clusterId": "cl-math-d1-s1",
-      "centrality": 0.0186
+      "centrality": 0.0128
     },
     {
       "id": "mt_num-10-addsub",
@@ -88,7 +88,7 @@
         "pep-math-2024:1a:u2"
       ],
       "clusterId": "cl-math-d1-s1",
-      "centrality": 0.026
+      "centrality": 0.0179
     },
     {
       "id": "mt_num-10-mixed",
@@ -116,7 +116,7 @@
       ],
       "textbookNote2024": "连加、连减与加减混合编排在第二单元末。",
       "clusterId": "cl-math-d1-s1",
-      "centrality": 0.0074
+      "centrality": 0.0051
     },
     {
       "id": "mt_num-20-recognition",
@@ -144,7 +144,7 @@
       ],
       "textbookNote2024": "新增「10的再认识」，从计数单位与位值制角度理解十进制。",
       "clusterId": "cl-math-d1-s1",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_num-20-carry",
@@ -171,7 +171,7 @@
         "pep-math-2024:1a:u5"
       ],
       "clusterId": "cl-math-d1-s1",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_num-20-borrow",
@@ -198,7 +198,7 @@
         "pep-math-2024:1b:u2"
       ],
       "clusterId": "cl-math-d1-s1",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_num-100-recognition",
@@ -225,7 +225,7 @@
         "pep-math-2024:1b:u3"
       ],
       "clusterId": "cl-math-d1-s1",
-      "centrality": 0.0335
+      "centrality": 0.023
     },
     {
       "id": "mt_num-100-addsub",
@@ -254,7 +254,7 @@
       ],
       "textbookNote2024": "100 以内简单加减法在「100以内数的认识」单元，口算加减法单设第四单元。",
       "clusterId": "cl-math-d1-s1",
-      "centrality": 0.026
+      "centrality": 0.0179
     },
     {
       "id": "mt_num-100-pen",
@@ -283,7 +283,7 @@
       ],
       "textbookNote2024": "100 以内加减法整体移至一年级下册，笔算单设第五单元。",
       "clusterId": "cl-math-d1-s1",
-      "centrality": 0.026
+      "centrality": 0.0179
     },
     {
       "id": "mt_mul-meaning",
@@ -312,7 +312,7 @@
       ],
       "textbookNote2024": "表内乘法集中在二上「1~6的表内乘法」。",
       "clusterId": "cl-math-d1-s1",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_mul-tables-2-6",
@@ -339,7 +339,7 @@
         "pep-math-2024:2a:u2"
       ],
       "clusterId": "cl-math-d1-s1",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_mul-tables-7-9",
@@ -367,7 +367,7 @@
         "pep-math-2024:2a:u5"
       ],
       "clusterId": "cl-math-d1-s1",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_div-avg",
@@ -396,7 +396,7 @@
       ],
       "textbookNote2024": "表内除法集中在二上「1～6的表内除法」。",
       "clusterId": "cl-math-d1-s1",
-      "centrality": 0.026
+      "centrality": 0.0179
     },
     {
       "id": "mt_div-tables-2-6",
@@ -423,7 +423,7 @@
         "pep-math-2024:2a:u3"
       ],
       "clusterId": "cl-math-d1-s1",
-      "centrality": 0.0186
+      "centrality": 0.0128
     },
     {
       "id": "mt_div-tables-7-9",
@@ -451,7 +451,7 @@
         "pep-math-2024:2a:u5"
       ],
       "clusterId": "cl-math-d1-s1",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_mixed-two-steps",
@@ -480,7 +480,7 @@
       ],
       "textbookNote2024": "混合运算集中调整至三年级上册第二单元。",
       "clusterId": "cl-math-d1-s1",
-      "centrality": 0.0186
+      "centrality": 0.0128
     },
     {
       "id": "mt_div-remainder",
@@ -507,7 +507,7 @@
         "pep-math-2024:2b:u1"
       ],
       "clusterId": "cl-math-d1-s1",
-      "centrality": 0.0037
+      "centrality": 0.0026
     },
     {
       "id": "mt_num-10000-recognition",
@@ -534,7 +534,7 @@
         "pep-math-2024:2b:u3"
       ],
       "clusterId": "cl-math-d1-s1",
-      "centrality": 0.0297
+      "centrality": 0.0205
     },
     {
       "id": "mt_addsub-10000",
@@ -562,7 +562,7 @@
         "pep-math-2024:2b:u4"
       ],
       "clusterId": "cl-math-d1-s2",
-      "centrality": 0.0186
+      "centrality": 0.0128
     },
     {
       "id": "mt_mass-g-kg",
@@ -590,7 +590,7 @@
       ],
       "textbookNote2024": "克与千克由二下调整至三上综合与实践「曹冲称象的故事」（质量单位）。",
       "clusterId": "cl-math-d2-s1",
-      "centrality": 0.0074
+      "centrality": 0.0051
     },
     {
       "id": "mt_time-hms",
@@ -618,7 +618,7 @@
       ],
       "textbookNote2024": "时、分、秒由三上调整至二下综合与实践「时间在哪里」。",
       "clusterId": "cl-math-d2-s2",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_unit-ton",
@@ -646,7 +646,7 @@
       ],
       "textbookNote2024": "吨的认识融入三上「曹冲称象的故事」的质量单位学习。",
       "clusterId": "cl-math-d2-s2",
-      "centrality": 0.0074
+      "centrality": 0.0051
     },
     {
       "id": "mt_mult-1digit",
@@ -673,7 +673,7 @@
         "pep-math-2024:3a:u4"
       ],
       "clusterId": "cl-math-d1-s2",
-      "centrality": 0.0223
+      "centrality": 0.0153
     },
     {
       "id": "mt_div-1digit",
@@ -700,7 +700,7 @@
         "pep-math-2024:3b:u2"
       ],
       "clusterId": "cl-math-d1-s2",
-      "centrality": 0.0186
+      "centrality": 0.0128
     },
     {
       "id": "mt_multiple",
@@ -729,7 +729,7 @@
       ],
       "textbookNote2024": "「倍的认识」不再独立设单元：二下「数量间的乘除关系」初步学习，三上「多位数乘一位数」深化。",
       "clusterId": "cl-math-d1-s2",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_frac-intro",
@@ -756,7 +756,7 @@
         "pep-math-2024:3a:u6"
       ],
       "clusterId": "cl-math-d1-s2",
-      "centrality": 0.026
+      "centrality": 0.0179
     },
     {
       "id": "mt_frac-same-addsub",
@@ -783,7 +783,7 @@
         "pep-math-2024:3a:u6"
       ],
       "clusterId": "cl-math-d1-s2",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_dec-intro",
@@ -810,7 +810,7 @@
         "pep-math-2024:3b:u6"
       ],
       "clusterId": "cl-math-d1-s2",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_dec-addsub",
@@ -837,7 +837,7 @@
         "pep-math-2024:3b:u6"
       ],
       "clusterId": "cl-math-d1-s2",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_calendar",
@@ -865,7 +865,7 @@
       ],
       "textbookNote2024": "年、月、日调整为三下综合与实践「年、月、日的秘密」。",
       "clusterId": "cl-math-d2-s2",
-      "centrality": 0.0037
+      "centrality": 0.0026
     },
     {
       "id": "mt_big-num",
@@ -893,7 +893,7 @@
       ],
       "textbookNote2024": "「大数的认识」更名「万以上数的认识」并精简。",
       "clusterId": "cl-math-d1-s2",
-      "centrality": 0.0074
+      "centrality": 0.0051
     },
     {
       "id": "mt_area-hectare",
@@ -919,7 +919,7 @@
       "textbooks2024": [],
       "textbookNote2024": "公顷和平方千米后移至五年级上册「多边形的面积」（2027 秋启用），暂未收录新版目录。",
       "clusterId": "cl-math-d2-s2",
-      "centrality": 0.0074
+      "centrality": 0.0051
     },
     {
       "id": "mt_mult-2digit",
@@ -947,7 +947,7 @@
       ],
       "textbookNote2024": "「三位数乘两位数」与两位数乘两位数整合为「多位数乘两位数」。",
       "clusterId": "cl-math-d1-s2",
-      "centrality": 0.0223
+      "centrality": 0.0153
     },
     {
       "id": "mt_div-2digit",
@@ -973,7 +973,7 @@
       "textbooks2024": [],
       "textbookNote2024": "除数是两位数的除法调整至四年级下册（2027 春启用），暂未收录新版目录。",
       "clusterId": "cl-math-d1-s2",
-      "centrality": 0.0186
+      "centrality": 0.0128
     },
     {
       "id": "mt_ops-order",
@@ -998,7 +998,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s2",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_ops-laws",
@@ -1023,7 +1023,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s2",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_dec-meaning",
@@ -1048,7 +1048,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s2",
-      "centrality": 0.0223
+      "centrality": 0.0153
     },
     {
       "id": "mt_dec-addsub2",
@@ -1073,7 +1073,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s2",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_dec-mul",
@@ -1098,7 +1098,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s3",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_dec-div",
@@ -1123,7 +1123,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s3",
-      "centrality": 0.0186
+      "centrality": 0.0128
     },
     {
       "id": "mt_factors",
@@ -1148,7 +1148,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s3",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_frac-meaning",
@@ -1173,7 +1173,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s3",
-      "centrality": 0.0297
+      "centrality": 0.0205
     },
     {
       "id": "mt_frac-div",
@@ -1198,7 +1198,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s3",
-      "centrality": 0.0186
+      "centrality": 0.0128
     },
     {
       "id": "mt_frac-reduce",
@@ -1223,7 +1223,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s3",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_frac-addsub",
@@ -1248,7 +1248,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s3",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_frac-mul",
@@ -1273,7 +1273,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s3",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_frac-div2",
@@ -1298,7 +1298,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s3",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_ratio",
@@ -1323,7 +1323,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s3",
-      "centrality": 0.0186
+      "centrality": 0.0128
     },
     {
       "id": "mt_percent-1",
@@ -1348,7 +1348,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s3",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_percent-2",
@@ -1373,7 +1373,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s3",
-      "centrality": 0.0074
+      "centrality": 0.0051
     },
     {
       "id": "mt_negative",
@@ -1398,7 +1398,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s3",
-      "centrality": 0.0037
+      "centrality": 0.0026
     },
     {
       "id": "mt_proportion",
@@ -1423,7 +1423,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s3",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_direct-inverse",
@@ -1448,7 +1448,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s3",
-      "centrality": 0.0074
+      "centrality": 0.0051
     },
     {
       "id": "mt_average-mean",
@@ -1473,7 +1473,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d3-s2",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_shape-3d",
@@ -1501,7 +1501,7 @@
       ],
       "textbookNote2024": "「认识图形」更名「认识立体图形」，先立体后平面。",
       "clusterId": "cl-math-d2-s1",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_shape-2d",
@@ -1528,7 +1528,7 @@
         "pep-math-2024:1b:u1"
       ],
       "clusterId": "cl-math-d2-s1",
-      "centrality": 0.0446
+      "centrality": 0.0307
     },
     {
       "id": "mt_position-basic",
@@ -1557,7 +1557,7 @@
       ],
       "textbookNote2024": "新版无独立「位置」单元：相对位置融入入学「数学游戏」，「第几」在第一单元。",
       "clusterId": "cl-math-d2-s1",
-      "centrality": 0.0074
+      "centrality": 0.0051
     },
     {
       "id": "mt_classify",
@@ -1585,7 +1585,7 @@
       ],
       "textbookNote2024": "分类与整理由一下调整至二上第一单元，增加多标准逐层分类。",
       "clusterId": "cl-math-d3-s1",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_pattern",
@@ -1614,7 +1614,7 @@
       ],
       "textbookNote2024": "新版无独立「找规律」单元，规律探索融入「100以内数的认识」与乘法口诀学习。",
       "clusterId": "cl-math-d4-s1",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_length-cm-m",
@@ -1641,7 +1641,7 @@
         "pep-math-2024:2a:u4"
       ],
       "clusterId": "cl-math-d2-s1",
-      "centrality": 0.0186
+      "centrality": 0.0128
     },
     {
       "id": "mt_angle-intro",
@@ -1669,7 +1669,7 @@
       ],
       "textbookNote2024": "角的初步认识由二上调整至三上「线和角」单元。",
       "clusterId": "cl-math-d2-s1",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_observe-object",
@@ -1697,7 +1697,7 @@
       ],
       "textbookNote2024": "观察物体由二上调整至三上第一单元。",
       "clusterId": "cl-math-d2-s1",
-      "centrality": 0.0074
+      "centrality": 0.0051
     },
     {
       "id": "mt_shape-move",
@@ -1725,7 +1725,7 @@
       ],
       "textbookNote2024": "图形的运动由二下调整至三下「生活中的运动现象」。",
       "clusterId": "cl-math-d2-s1",
-      "centrality": 0.0074
+      "centrality": 0.0051
     },
     {
       "id": "mt_direction",
@@ -1753,7 +1753,7 @@
       ],
       "textbookNote2024": "位置与方向（东、南、西、北）由三下调整至二上综合与实践「校园小导游」。",
       "clusterId": "cl-math-d2-s2",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_rect-perimeter",
@@ -1781,7 +1781,7 @@
       ],
       "textbookNote2024": "周长内容调整至三下「长方形和正方形」单元。",
       "clusterId": "cl-math-d2-s2",
-      "centrality": 0.0186
+      "centrality": 0.0128
     },
     {
       "id": "mt_area-intro",
@@ -1808,7 +1808,7 @@
         "pep-math-2024:3b:u4"
       ],
       "clusterId": "cl-math-d2-s2",
-      "centrality": 0.0186
+      "centrality": 0.0128
     },
     {
       "id": "mt_rect-area",
@@ -1835,7 +1835,7 @@
         "pep-math-2024:3b:u4"
       ],
       "clusterId": "cl-math-d2-s2",
-      "centrality": 0.0223
+      "centrality": 0.0153
     },
     {
       "id": "mt_lines",
@@ -1863,7 +1863,7 @@
       ],
       "textbookNote2024": "线段、射线、直线由四上「线的认识」下移至三上「线和角」。",
       "clusterId": "cl-math-d2-s2",
-      "centrality": 0.0223
+      "centrality": 0.0153
     },
     {
       "id": "mt_angle-measure",
@@ -1891,7 +1891,7 @@
       ],
       "textbookNote2024": "「角的度量」调整为四上第二单元（原第三单元）。",
       "clusterId": "cl-math-d2-s2",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_parallelogram",
@@ -1918,7 +1918,7 @@
         "pep-math-2024:4a:u5"
       ],
       "clusterId": "cl-math-d2-s2",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_triangle",
@@ -1943,7 +1943,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s2",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_symmetry",
@@ -1968,7 +1968,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s2",
-      "centrality": 0.0074
+      "centrality": 0.0051
     },
     {
       "id": "mt_position-pairs",
@@ -1993,7 +1993,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s3",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_polygon-area",
@@ -2018,7 +2018,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s3",
-      "centrality": 0.0186
+      "centrality": 0.0128
     },
     {
       "id": "mt_cuboid",
@@ -2043,7 +2043,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s3",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_volume",
@@ -2068,7 +2068,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s3",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_circle",
@@ -2093,7 +2093,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s3",
-      "centrality": 0.0223
+      "centrality": 0.0153
     },
     {
       "id": "mt_circle-measure",
@@ -2118,7 +2118,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s3",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_sector",
@@ -2143,7 +2143,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s3",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_cylinder",
@@ -2168,7 +2168,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s3",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_data-collect",
@@ -2196,7 +2196,7 @@
       ],
       "textbookNote2024": "数据收集整理由二下调整至三下「数据的收集与整理」。",
       "clusterId": "cl-math-d3-s1",
-      "centrality": 0.0223
+      "centrality": 0.0153
     },
     {
       "id": "mt_stats-table",
@@ -2224,7 +2224,7 @@
       ],
       "textbookNote2024": "复式统计表并入三下「数据的收集与整理」单元。",
       "clusterId": "cl-math-d3-s2",
-      "centrality": 0.0186
+      "centrality": 0.0128
     },
     {
       "id": "mt_bar-chart",
@@ -2252,7 +2252,7 @@
       ],
       "textbookNote2024": "单式与复式条形统计图合并为「条形统计图」单元。",
       "clusterId": "cl-math-d3-s2",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_probability",
@@ -2277,7 +2277,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d3-s3",
-      "centrality": 0.0074
+      "centrality": 0.0051
     },
     {
       "id": "mt_line-chart",
@@ -2302,7 +2302,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d3-s3",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_pie-chart",
@@ -2327,7 +2327,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d3-s3",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_stats-center",
@@ -2352,7 +2352,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d3-s3",
-      "centrality": 0.0074
+      "centrality": 0.0051
     },
     {
       "id": "mt_optimize",
@@ -2378,7 +2378,7 @@
       "textbooks2024": [],
       "textbookNote2024": "新版不再单设「数学广角——优化」，沏茶、烙饼问题融入各单元练习。",
       "clusterId": "cl-math-d4-s2",
-      "centrality": 0.0074
+      "centrality": 0.0051
     },
     {
       "id": "mt_chicken-rabbit",
@@ -2406,7 +2406,7 @@
       ],
       "textbookNote2024": "鸡兔同笼由四下调整至四上「复习与关联」选学内容。",
       "clusterId": "cl-math-d4-s2",
-      "centrality": 0.0074
+      "centrality": 0.0051
     },
     {
       "id": "mt_tree-plant",
@@ -2431,7 +2431,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d4-s3",
-      "centrality": 0.0074
+      "centrality": 0.0051
     },
     {
       "id": "mt_find-defective",
@@ -2456,7 +2456,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d4-s3",
-      "centrality": 0.0074
+      "centrality": 0.0051
     },
     {
       "id": "mt_phone-call",
@@ -2481,7 +2481,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d4-s3",
-      "centrality": 0.0074
+      "centrality": 0.0051
     },
     {
       "id": "mt_number-shape",
@@ -2506,7 +2506,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d4-s3",
-      "centrality": 0.0074
+      "centrality": 0.0051
     },
     {
       "id": "mt_pigeonhole",
@@ -2531,7 +2531,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d4-s3",
-      "centrality": 0.0074
+      "centrality": 0.0051
     },
     {
       "id": "mt_measure-compare",
@@ -2560,7 +2560,7 @@
       ],
       "textbookNote2024": "估测与测量融入「厘米和米」及综合与实践「身体上的尺子」。",
       "clusterId": "cl-math-d4-s1",
-      "centrality": 0.0037
+      "centrality": 0.0026
     },
     {
       "id": "mt_junior-rational-concept",
@@ -2585,7 +2585,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.026
+      "centrality": 0.0179
     },
     {
       "id": "mt_junior-number-axis",
@@ -2610,7 +2610,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0186
+      "centrality": 0.0128
     },
     {
       "id": "mt_junior-opposite-absolute",
@@ -2635,7 +2635,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_junior-rational-compare",
@@ -2660,7 +2660,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_junior-rational-add",
@@ -2685,7 +2685,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_junior-rational-sub",
@@ -2710,7 +2710,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0037
+      "centrality": 0.0026
     },
     {
       "id": "mt_junior-rational-mul",
@@ -2735,7 +2735,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.026
+      "centrality": 0.0179
     },
     {
       "id": "mt_junior-rational-div",
@@ -2760,7 +2760,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_junior-rational-power",
@@ -2785,7 +2785,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_junior-sci-notation",
@@ -2810,7 +2810,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0037
+      "centrality": 0.0026
     },
     {
       "id": "mt_junior-square-root",
@@ -2835,7 +2835,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0223
+      "centrality": 0.0153
     },
     {
       "id": "mt_junior-cube-root",
@@ -2860,7 +2860,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0074
+      "centrality": 0.0051
     },
     {
       "id": "mt_junior-real-number",
@@ -2885,7 +2885,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0186
+      "centrality": 0.0128
     },
     {
       "id": "mt_junior-algebraic-expr",
@@ -2910,7 +2910,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0186
+      "centrality": 0.0128
     },
     {
       "id": "mt_junior-expr-value",
@@ -2935,7 +2935,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0037
+      "centrality": 0.0026
     },
     {
       "id": "mt_junior-monomial-poly",
@@ -2960,7 +2960,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.026
+      "centrality": 0.0179
     },
     {
       "id": "mt_junior-like-terms",
@@ -2985,7 +2985,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_junior-integral-addsub",
@@ -3010,7 +3010,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0186
+      "centrality": 0.0128
     },
     {
       "id": "mt_junior-integral-powmul",
@@ -3035,7 +3035,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_junior-mul-formula",
@@ -3060,7 +3060,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_junior-factorization",
@@ -3085,7 +3085,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_junior-fraction-concept",
@@ -3110,7 +3110,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_junior-fraction-op",
@@ -3135,7 +3135,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0223
+      "centrality": 0.0153
     },
     {
       "id": "mt_junior-fractional-equation",
@@ -3160,7 +3160,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0074
+      "centrality": 0.0051
     },
     {
       "id": "mt_junior-quadratic-radical",
@@ -3185,7 +3185,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_junior-radical-op",
@@ -3210,7 +3210,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0186
+      "centrality": 0.0128
     },
     {
       "id": "mt_junior-linear-eq1-concept",
@@ -3235,7 +3235,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0223
+      "centrality": 0.0153
     },
     {
       "id": "mt_junior-linear-eq1-solve",
@@ -3260,7 +3260,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0223
+      "centrality": 0.0153
     },
     {
       "id": "mt_junior-linear-eq1-app",
@@ -3285,7 +3285,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0074
+      "centrality": 0.0051
     },
     {
       "id": "mt_junior-linear-system-concept",
@@ -3310,7 +3310,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_junior-elimination",
@@ -3335,7 +3335,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_junior-linear-system-app",
@@ -3360,7 +3360,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0074
+      "centrality": 0.0051
     },
     {
       "id": "mt_junior-ternary-system",
@@ -3385,7 +3385,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0074
+      "centrality": 0.0051
     },
     {
       "id": "mt_junior-inequality",
@@ -3410,7 +3410,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0074
+      "centrality": 0.0051
     },
     {
       "id": "mt_junior-linear-inequality-1",
@@ -3435,7 +3435,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_junior-linear-inequality-system",
@@ -3460,7 +3460,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0037
+      "centrality": 0.0026
     },
     {
       "id": "mt_junior-quad-eq-concept",
@@ -3485,7 +3485,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_junior-quad-eq-solve",
@@ -3510,7 +3510,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_junior-quad-discriminant",
@@ -3535,7 +3535,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_junior-function-concept",
@@ -3560,7 +3560,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0186
+      "centrality": 0.0128
     },
     {
       "id": "mt_junior-linear-function",
@@ -3585,7 +3585,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_junior-linear-prop",
@@ -3610,7 +3610,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0074
+      "centrality": 0.0051
     },
     {
       "id": "mt_junior-inverse-proportional",
@@ -3635,7 +3635,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0074
+      "centrality": 0.0051
     },
     {
       "id": "mt_junior-quad-function",
@@ -3660,7 +3660,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_junior-quad-graph",
@@ -3685,7 +3685,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_junior-quad-app",
@@ -3710,7 +3710,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_junior-function-eq-relation",
@@ -3735,7 +3735,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_junior-geom-basic",
@@ -3760,7 +3760,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s4",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_junior-line-segment",
@@ -3785,7 +3785,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s4",
-      "centrality": 0.0223
+      "centrality": 0.0153
     },
     {
       "id": "mt_junior-angle",
@@ -3810,7 +3810,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s4",
-      "centrality": 0.026
+      "centrality": 0.0179
     },
     {
       "id": "mt_junior-angle-rel",
@@ -3835,7 +3835,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s4",
-      "centrality": 0.0223
+      "centrality": 0.0153
     },
     {
       "id": "mt_junior-intersecting-lines",
@@ -3860,7 +3860,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s4",
-      "centrality": 0.0186
+      "centrality": 0.0128
     },
     {
       "id": "mt_junior-vertical-perp",
@@ -3885,7 +3885,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s4",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_junior-parallel-lines",
@@ -3910,7 +3910,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s4",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_junior-translation",
@@ -3935,7 +3935,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s4",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_junior-proposition-theorem",
@@ -3960,7 +3960,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s4",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_junior-triangle-basic",
@@ -3985,7 +3985,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s4",
-      "centrality": 0.0335
+      "centrality": 0.023
     },
     {
       "id": "mt_junior-triangle-congruence",
@@ -4010,7 +4010,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s4",
-      "centrality": 0.0223
+      "centrality": 0.0153
     },
     {
       "id": "mt_junior-angle-bisector",
@@ -4035,7 +4035,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s4",
-      "centrality": 0.0074
+      "centrality": 0.0051
     },
     {
       "id": "mt_junior-perp-bisector",
@@ -4060,7 +4060,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s4",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_junior-axis-symmetry",
@@ -4085,7 +4085,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s4",
-      "centrality": 0.0074
+      "centrality": 0.0051
     },
     {
       "id": "mt_junior-pythagorean",
@@ -4110,7 +4110,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s4",
-      "centrality": 0.0223
+      "centrality": 0.0153
     },
     {
       "id": "mt_junior-quad-basic",
@@ -4135,7 +4135,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s4",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_junior-parallelogram",
@@ -4160,7 +4160,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s4",
-      "centrality": 0.0186
+      "centrality": 0.0128
     },
     {
       "id": "mt_junior-special-parallelogram",
@@ -4185,7 +4185,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s4",
-      "centrality": 0.0074
+      "centrality": 0.0051
     },
     {
       "id": "mt_junior-trapezoid",
@@ -4210,7 +4210,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s4",
-      "centrality": 0.0037
+      "centrality": 0.0026
     },
     {
       "id": "mt_junior-circle-basic",
@@ -4235,7 +4235,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s4",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_junior-line-circle",
@@ -4260,7 +4260,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s4",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_junior-coord-system",
@@ -4285,7 +4285,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s4",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_junior-coord-application",
@@ -4310,7 +4310,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s4",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_junior-rotation",
@@ -4335,7 +4335,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s4",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_junior-central-symmetry",
@@ -4360,7 +4360,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s4",
-      "centrality": 0.0074
+      "centrality": 0.0051
     },
     {
       "id": "mt_junior-similarity",
@@ -4385,7 +4385,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s4",
-      "centrality": 0.0186
+      "centrality": 0.0128
     },
     {
       "id": "mt_junior-projection-view",
@@ -4410,7 +4410,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s4",
-      "centrality": 0.0074
+      "centrality": 0.0051
     },
     {
       "id": "mt_junior-trig-ratio",
@@ -4435,7 +4435,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d2-s4",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_junior-data-collect",
@@ -4460,7 +4460,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d3-s4",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_junior-statistics-survey",
@@ -4485,7 +4485,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d3-s4",
-      "centrality": 0.0037
+      "centrality": 0.0026
     },
     {
       "id": "mt_junior-data-analysis",
@@ -4510,7 +4510,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d3-s4",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_junior-variance",
@@ -4535,7 +4535,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d3-s4",
-      "centrality": 0.0074
+      "centrality": 0.0051
     },
     {
       "id": "mt_junior-probability-concept",
@@ -4560,7 +4560,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d3-s4",
-      "centrality": 0.0074
+      "centrality": 0.0051
     },
     {
       "id": "mt_junior-probability-calc",
@@ -4585,7 +4585,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d3-s4",
-      "centrality": 0.0074
+      "centrality": 0.0051
     },
     {
       "id": "mt_junior-math-practice",
@@ -4610,7 +4610,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-math-d4-s4",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_pinyin-initials",
@@ -4640,7 +4640,7 @@
       ],
       "textbookNote2024": "汉语拼音集中编排于第二至第四单元。",
       "clusterId": "cl-chinese-d1-s1",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_pinyin-finals",
@@ -4670,7 +4670,7 @@
       ],
       "textbookNote2024": "单韵母在第二单元，复韵母与鼻韵母在第四单元。",
       "clusterId": "cl-chinese-d1-s1",
-      "centrality": 0.0074
+      "centrality": 0.0051
     },
     {
       "id": "mt_pinyin-whole",
@@ -4700,7 +4700,7 @@
       ],
       "textbookNote2024": "整体认读音节随拼音单元与语文园地学习。",
       "clusterId": "cl-chinese-d1-s1",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_pinyin-blending",
@@ -4729,7 +4729,7 @@
         "tongbian-chinese-2024:1a:u3"
       ],
       "clusterId": "cl-chinese-d1-s1",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_pinyin-reading",
@@ -4759,7 +4759,7 @@
       ],
       "textbookNote2024": "拼音学完后进入阅读单元，借助拼音识字和阅读。",
       "clusterId": "cl-chinese-d1-s1",
-      "centrality": 0.0186
+      "centrality": 0.0128
     },
     {
       "id": "mt_char-pictographic",
@@ -4789,7 +4789,7 @@
       ],
       "textbookNote2024": "识字单元：一上「识字」（金木水火土、日月山川等）与一下「识字」。",
       "clusterId": "cl-chinese-d2-s1",
-      "centrality": 0.0186
+      "centrality": 0.0128
     },
     {
       "id": "mt_char-radical",
@@ -4818,7 +4818,7 @@
         "tongbian-chinese-2024:1b:u1"
       ],
       "clusterId": "cl-chinese-d2-s1",
-      "centrality": 0.0186
+      "centrality": 0.0128
     },
     {
       "id": "mt_char-stroke",
@@ -4848,7 +4848,7 @@
       ],
       "textbookNote2024": "笔画笔顺在识字与汉语拼音单元中学习。",
       "clusterId": "cl-chinese-d2-s1",
-      "centrality": 0.0074
+      "centrality": 0.0051
     },
     {
       "id": "mt_char-writing",
@@ -4877,7 +4877,7 @@
         "tongbian-chinese-2024:1b:u1"
       ],
       "clusterId": "cl-chinese-d2-s1",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_char-phonetic-order",
@@ -4907,7 +4907,7 @@
       ],
       "textbookNote2024": "音序查字法依托汉语拼音，在拼音单元语文园地中学习。",
       "clusterId": "cl-chinese-d2-s1",
-      "centrality": 0.0074
+      "centrality": 0.0051
     },
     {
       "id": "mt_char-radical-lookup",
@@ -4936,7 +4936,7 @@
       ],
       "textbookNote2024": "部首查字法调整至二上识字单元。",
       "clusterId": "cl-chinese-d2-s1",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_char-homophone",
@@ -4965,7 +4965,7 @@
         "tongbian-chinese-2024:2a:u3"
       ],
       "clusterId": "cl-chinese-d2-s1",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_word-understand",
@@ -4994,7 +4994,7 @@
         "tongbian-chinese-2024:2a:u4"
       ],
       "clusterId": "cl-chinese-d3-s1",
-      "centrality": 0.0186
+      "centrality": 0.0128
     },
     {
       "id": "mt_word-accumulate",
@@ -5023,7 +5023,7 @@
         "tongbian-chinese-2024:2a:u2"
       ],
       "clusterId": "cl-chinese-d3-s1",
-      "centrality": 0.0186
+      "centrality": 0.0128
     },
     {
       "id": "mt_word-idiom",
@@ -5053,7 +5053,7 @@
       ],
       "textbookNote2024": "成语积累融入识字单元（神州谣、传统节日）与寓言单元。",
       "clusterId": "cl-chinese-d3-s1",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_sent-complete",
@@ -5083,7 +5083,7 @@
       ],
       "textbookNote2024": "句子学习从一上阅读单元开始。",
       "clusterId": "cl-chinese-d4-s1",
-      "centrality": 0.0409
+      "centrality": 0.0281
     },
     {
       "id": "mt_punct-basic",
@@ -5112,7 +5112,7 @@
         "tongbian-chinese-2024:1a:u7"
       ],
       "clusterId": "cl-chinese-d4-s1",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_sent-ba-bei",
@@ -5141,7 +5141,7 @@
         "tongbian-chinese-2024:2a:u4"
       ],
       "clusterId": "cl-chinese-d4-s1",
-      "centrality": 0.0074
+      "centrality": 0.0051
     },
     {
       "id": "mt_sent-rhetoric",
@@ -5172,7 +5172,7 @@
       ],
       "textbookNote2024": "比喻与拟人融入二下古诗/春天单元与想象单元。",
       "clusterId": "cl-chinese-d4-s1",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_sent-extend",
@@ -5201,7 +5201,7 @@
       ],
       "textbookNote2024": "把句子写具体融入三上习作「我们眼中的缤纷世界」。",
       "clusterId": "cl-chinese-d4-s2",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_sent-conjunction",
@@ -5230,7 +5230,7 @@
       ],
       "textbookNote2024": "关联词语学习分散在三上各阅读单元与语文园地。",
       "clusterId": "cl-chinese-d4-s2",
-      "centrality": 0.0074
+      "centrality": 0.0051
     },
     {
       "id": "mt_sent-quote",
@@ -5259,7 +5259,7 @@
       ],
       "textbookNote2024": "冒号、引号与直述转述在对话丰富的课文单元（如「在牛肚子里旅行」）中学习。",
       "clusterId": "cl-chinese-d4-s2",
-      "centrality": 0.0223
+      "centrality": 0.0153
     },
     {
       "id": "mt_punct-advanced",
@@ -5288,7 +5288,7 @@
       ],
       "textbookNote2024": "顿号、分号与书名号在三下「古诗三首」「纸的发明」等单元学习。",
       "clusterId": "cl-chinese-d4-s2",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_sent-fix",
@@ -5317,7 +5317,7 @@
       ],
       "textbookNote2024": "修改病句分散在四上各单元语文园地与阅读练习。",
       "clusterId": "cl-chinese-d4-s2",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_sent-compress",
@@ -5346,7 +5346,7 @@
       ],
       "textbookNote2024": "缩句与提取主干分散在四上各单元语文园地。",
       "clusterId": "cl-chinese-d4-s2",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_read-aloud",
@@ -5376,7 +5376,7 @@
         "tongbian-chinese-2024:1b:u2"
       ],
       "clusterId": "cl-chinese-d5-s1",
-      "centrality": 0.0186
+      "centrality": 0.0128
     },
     {
       "id": "mt_read-silent",
@@ -5406,7 +5406,7 @@
       ],
       "textbookNote2024": "默读训练自二上阅读单元开始。",
       "clusterId": "cl-chinese-d5-s1",
-      "centrality": 0.026
+      "centrality": 0.0179
     },
     {
       "id": "mt_read-mark",
@@ -5436,7 +5436,7 @@
       ],
       "textbookNote2024": "圈画与批注在预测单元和写景单元中训练。",
       "clusterId": "cl-chinese-d5-s2",
-      "centrality": 0.0223
+      "centrality": 0.0153
     },
     {
       "id": "mt_read-predict",
@@ -5466,7 +5466,7 @@
       ],
       "textbookNote2024": "第三单元（「总也倒不了的老屋」等）为预测阅读策略单元。",
       "clusterId": "cl-chinese-d5-s2",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_read-question",
@@ -5496,7 +5496,7 @@
       ],
       "textbookNote2024": "四上第二单元为提问策略单元（与旧版单元主题一致）。",
       "clusterId": "cl-chinese-d5-s2",
-      "centrality": 0.0223
+      "centrality": 0.0153
     },
     {
       "id": "mt_read-speed",
@@ -5522,7 +5522,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-chinese-d5-s3",
-      "centrality": 0.0186
+      "centrality": 0.0128
     },
     {
       "id": "mt_read-purpose",
@@ -5549,7 +5549,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-chinese-d5-s3",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_read-ancient",
@@ -5580,7 +5580,7 @@
       ],
       "textbookNote2024": "古诗三首集中于三上第二单元；文言文「守株待兔」在三下第二单元。",
       "clusterId": "cl-chinese-d5-s2",
-      "centrality": 0.0074
+      "centrality": 0.0051
     },
     {
       "id": "mt_read-main",
@@ -5610,7 +5610,7 @@
       ],
       "textbookNote2024": "把握主要内容融入神话单元与写景单元。",
       "clusterId": "cl-chinese-d5-s2",
-      "centrality": 0.0223
+      "centrality": 0.0153
     },
     {
       "id": "mt_read-feel",
@@ -5636,7 +5636,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-chinese-d5-s2",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_read-appreciate",
@@ -5662,7 +5662,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-chinese-d5-s3",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_write-picture",
@@ -5692,7 +5692,7 @@
       ],
       "textbookNote2024": "写话融入一下阅读单元（新版目录未单列写话栏目）。",
       "clusterId": "cl-chinese-d6-s1",
-      "centrality": 0.0186
+      "centrality": 0.0128
     },
     {
       "id": "mt_write-imitate",
@@ -5723,7 +5723,7 @@
       ],
       "textbookNote2024": "仿写与写话融入二上阅读单元。",
       "clusterId": "cl-chinese-d6-s1",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_write-diary",
@@ -5752,7 +5752,7 @@
       ],
       "textbookNote2024": "三上第二单元习作「写日记」。",
       "clusterId": "cl-chinese-d6-s2",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_write-observe",
@@ -5781,7 +5781,7 @@
       ],
       "textbookNote2024": "三上第五单元习作「我们眼中的缤纷世界」。",
       "clusterId": "cl-chinese-d6-s2",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_write-imagine",
@@ -5811,7 +5811,7 @@
       ],
       "textbookNote2024": "续写故事、我来编童话。",
       "clusterId": "cl-chinese-d6-s2",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_write-narrative",
@@ -5840,7 +5840,7 @@
       ],
       "textbookNote2024": "四上第五单元习作「生活万花筒」。",
       "clusterId": "cl-chinese-d6-s2",
-      "centrality": 0.0223
+      "centrality": 0.0153
     },
     {
       "id": "mt_write-person",
@@ -5866,7 +5866,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-chinese-d6-s2",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_write-application",
@@ -5895,7 +5895,7 @@
       ],
       "textbookNote2024": "四上第八单元习作「写信」。",
       "clusterId": "cl-chinese-d6-s2",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_write-revise",
@@ -5925,7 +5925,7 @@
       ],
       "textbookNote2024": "习作修改与互评融入各习作单元。",
       "clusterId": "cl-chinese-d6-s2",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_write-center",
@@ -5951,7 +5951,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-chinese-d6-s3",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_write-summary",
@@ -5978,7 +5978,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-chinese-d6-s3",
-      "centrality": 0.0186
+      "centrality": 0.0128
     },
     {
       "id": "mt_oral-listen",
@@ -6008,7 +6008,7 @@
       ],
       "textbookNote2024": "快乐读书吧与识字单元中的听故事、讲故事活动。",
       "clusterId": "cl-chinese-d7-s1",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_oral-discuss",
@@ -6039,7 +6039,7 @@
       ],
       "textbookNote2024": "口语交际融入二上各单元（新版二上目录未单列口语交际栏目）。",
       "clusterId": "cl-chinese-d7-s1",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_oral-retell",
@@ -6069,7 +6069,7 @@
       ],
       "textbookNote2024": "三上第一、三单元设口语交际。",
       "clusterId": "cl-chinese-d7-s2",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_oral-debate",
@@ -6096,7 +6096,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-chinese-d7-s3",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_poem-recite",
@@ -6128,7 +6128,7 @@
       ],
       "textbookNote2024": "古诗文分布于一下第四单元「静夜思」、第六单元「古诗二首」等。",
       "clusterId": "cl-chinese-d8-s1",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_poem-understand",
@@ -6158,7 +6158,7 @@
       ],
       "textbookNote2024": "借助注释理解古诗：三上「古诗三首」、三下「古诗三首」。",
       "clusterId": "cl-chinese-d8-s2",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_book-reading",
@@ -6189,7 +6189,7 @@
       ],
       "textbookNote2024": "快乐读书吧：二上「读读童话故事」、三上「在那奇妙的王国里」。",
       "clusterId": "cl-chinese-d8-s1",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_book-classic",
@@ -6216,7 +6216,1695 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-chinese-d8-s3",
-      "centrality": 0.0223
+      "centrality": 0.0153
+    },
+    {
+      "id": "mt_junior-cn-regular-script",
+      "type": "LANGUAGE",
+      "subject": "语文",
+      "domain": "识字与写字",
+      "name": "楷书与行楷书写",
+      "description": "能用硬笔规范、端正、整洁地书写楷书，并初步学习行楷，提高书写速度；体会字形结构与章法之美。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "书写楷书时笔画到位、间架结构合理",
+        "能在保持清晰的前提下用行楷连贯书写"
+      ],
+      "assessmentPrompt": "让{{name}}用硬笔抄写一段课文，观察字迹是否工整、结构是否合理。",
+      "standards": [
+        "chinese-2022:S4:BQ"
+      ],
+      "textbooks": [
+        "tongbian-chinese:7a:u1"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d2-s4",
+      "centrality": 0.0051
+    },
+    {
+      "id": "mt_junior-cn-confusable-chars",
+      "type": "LANGUAGE",
+      "subject": "语文",
+      "domain": "识字与写字",
+      "name": "易错字与多音字",
+      "description": "梳理形近字、同音字和多音字，能在语境中准确辨析与书写，减少错别字，积累常见多音字的读音规律。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 8,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能区分常见形近字并正确组词",
+        "能根据语境判断多音字的正确读音"
+      ],
+      "assessmentPrompt": "给{{name}}一组形近/多音字，看他能否在句中正确选用与注音。",
+      "standards": [
+        "chinese-2022:S4:BQ"
+      ],
+      "textbooks": [
+        "tongbian-chinese:7a:u2"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d2-s4",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-cn-calligraphy",
+      "type": "LANGUAGE",
+      "subject": "语文",
+      "domain": "识字与写字",
+      "name": "书法欣赏与汉字文化",
+      "description": "欣赏楷书、行书等书体，了解汉字演变与书法常识，在临摹中感受汉字的文化内涵与书写乐趣。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 8,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说出楷书与行书的基本特点",
+        "能在临摹中体会笔画的提按与节奏"
+      ],
+      "assessmentPrompt": "请{{name}}临摹一段字并说说对某书体的观感。",
+      "standards": [
+        "chinese-2022:S4:BQ"
+      ],
+      "textbooks": [
+        "tongbian-chinese:7a:u1"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d2-s4",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-cn-word-emotion",
+      "type": "LANGUAGE",
+      "subject": "语文",
+      "domain": "词语积累",
+      "name": "词语的感情色彩",
+      "description": "认识词语的褒义、贬义与中性，能在写作与阅读中体会感情色彩对表达态度的作用，避免误用。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能判断词语属于褒义、贬义还是中性",
+        "能体会同一意思用不同色彩词语的表达差异"
+      ],
+      "assessmentPrompt": "让{{name}}给一组近义词语标注感情色彩并造句。",
+      "standards": [
+        "chinese-2022:S4:BQ"
+      ],
+      "textbooks": [
+        "tongbian-chinese:7a:u2"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d3-s4",
+      "centrality": 0.0077
+    },
+    {
+      "id": "mt_junior-cn-synonym",
+      "type": "LANGUAGE",
+      "subject": "语文",
+      "domain": "词语积累",
+      "name": "近义词辨析与运用",
+      "description": "辨析近义词的语义轻重、范围大小与搭配习惯，在语境中选择最准确的词语，提升表达的精确度。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说出近义词之间的细微差别",
+        "能根据语境选用恰当的词语"
+      ],
+      "assessmentPrompt": "请{{name}}比较两三个近义词并各造一个句子。",
+      "standards": [
+        "chinese-2022:S4:BQ"
+      ],
+      "textbooks": [
+        "tongbian-chinese:7a:u3"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d3-s4",
+      "centrality": 0.0051
+    },
+    {
+      "id": "mt_junior-cn-idioms",
+      "type": "LANGUAGE",
+      "subject": "语文",
+      "domain": "词语积累",
+      "name": "成语积累与运用",
+      "description": "积累常见成语，理解其出处与含义，能在口语和写作中正确、得体地运用，避免望文生义。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 8,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能解释常见成语的意思并说明出处",
+        "能在作文中恰当地使用成语"
+      ],
+      "assessmentPrompt": "让{{name}}解释几个成语并尝试在一段话里运用。",
+      "standards": [
+        "chinese-2022:S4:BQ"
+      ],
+      "textbooks": [
+        "tongbian-chinese:7a:u4"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d3-s4",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-cn-context-meaning",
+      "type": "LANGUAGE",
+      "subject": "语文",
+      "domain": "词语积累",
+      "name": "语境中理解词语",
+      "description": "学习结合上下文推断词语的含义，区分词语的本义、引申义与语境义，不依赖死记硬背。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能根据上下文说出陌生词语的大致意思",
+        "能区分布位词的本义与文中义"
+      ],
+      "assessmentPrompt": "给{{name}}一段带生词的话，请他联系上下文猜词义。",
+      "standards": [
+        "chinese-2022:S4:BQ"
+      ],
+      "textbooks": [
+        "tongbian-chinese:7a:u3"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d3-s4",
+      "centrality": 0.0077
+    },
+    {
+      "id": "mt_junior-cn-figurative-meaning",
+      "type": "LANGUAGE",
+      "subject": "语文",
+      "domain": "词语积累",
+      "name": "词语的语境义与引申义",
+      "description": "理解词语在具体语境中的临时意义与引申用法，体会作者遣词的匠心和语言的表现力。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 8,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能指出文中词语的特殊用法",
+        "能说明某词在语境中被赋予的新意"
+      ],
+      "assessmentPrompt": "请{{name}}挑出文中一个词，说说它的语境义与平时意思有何不同。",
+      "standards": [
+        "chinese-2022:S4:BQ",
+        "chinese-2022:S4:LR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:8a:u3"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d3-s4",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-cn-classical-words",
+      "type": "LANGUAGE",
+      "subject": "语文",
+      "domain": "词语积累",
+      "name": "文言实词（常见）",
+      "description": "积累常见文言实词（如走、去、兵、走、亡、数）的常用义项，能结合语境推断词义，为文言文阅读打基础。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说出常见文言实词的主要义项",
+        "能在句中准确翻译实词"
+      ],
+      "assessmentPrompt": "给{{name}}几句文言文，请他解释加点的实词。",
+      "standards": [
+        "chinese-2022:S4:BQ"
+      ],
+      "textbooks": [
+        "tongbian-chinese:7a:u4"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d3-s4",
+      "centrality": 0.0077
+    },
+    {
+      "id": "mt_junior-cn-classical-function",
+      "type": "LANGUAGE",
+      "subject": "语文",
+      "domain": "词语积累",
+      "name": "文言虚词（之乎者也）",
+      "description": "掌握之、乎、者、也、以、而、于等常见文言虚词的用法，理解其在句中的语法作用与语气。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 9,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说出常见虚词在不同句子中的用法",
+        "能借助虚词疏通文句的意思"
+      ],
+      "assessmentPrompt": "让{{name}}分析句中“之/而/以”的作用。",
+      "standards": [
+        "chinese-2022:S4:BQ"
+      ],
+      "textbooks": [
+        "tongbian-chinese:8b:u3"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d3-s4",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-cn-punctuation",
+      "type": "LANGUAGE",
+      "subject": "语文",
+      "domain": "句子与标点",
+      "name": "标点符号（引破省）",
+      "description": "掌握引号、破折号、省略号等重点标点的常见用法，能正确标点并体会标点对语气和文意的作用。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说明引号、破折号、省略号的常见用法",
+        "能正确使用这些标点改写句子"
+      ],
+      "assessmentPrompt": "给{{name}}一段缺标点的文字，请他补上合适的标点。",
+      "standards": [
+        "chinese-2022:S4:BQ"
+      ],
+      "textbooks": [
+        "tongbian-chinese:7a:u2"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d4-s4",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-cn-rhetoric",
+      "type": "LANGUAGE",
+      "subject": "语文",
+      "domain": "句子与标点",
+      "name": "常见修辞手法",
+      "description": "识别并运用比喻、拟人、排比、对偶等修辞手法，体会其对形象描绘与情感表达的作用。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能判断句子使用的修辞手法",
+        "能在写作中恰当运用一两种修辞"
+      ],
+      "assessmentPrompt": "请{{name}}找出文中的修辞并说说好处。",
+      "standards": [
+        "chinese-2022:S4:LR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:7a:u1"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d4-s4",
+      "centrality": 0.0051
+    },
+    {
+      "id": "mt_junior-cn-sentence-transform",
+      "type": "LANGUAGE",
+      "subject": "语文",
+      "domain": "句子与标点",
+      "name": "句式变换与病句修改",
+      "description": "掌握主动句与被动句、肯定句与否定句、长句与短句的变换，能识别并修改搭配不当、语序混乱等常见病句。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能在不改变原意下变换句式",
+        "能找出并改正常见的病句"
+      ],
+      "assessmentPrompt": "让{{name}}改写一个长句并修改几个病句。",
+      "standards": [
+        "chinese-2022:S4:BQ"
+      ],
+      "textbooks": [
+        "tongbian-chinese:8a:u4"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d4-s4",
+      "centrality": 0.0051
+    },
+    {
+      "id": "mt_junior-cn-complex-sentence",
+      "type": "LANGUAGE",
+      "subject": "语文",
+      "domain": "句子与标点",
+      "name": "复句与关联词",
+      "description": "认识并列、递进、因果、转折、条件等复句关系，正确使用关联词，使句子逻辑清晰、语意连贯。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能判断复句的逻辑关系",
+        "能选用恰当的关联词连句"
+      ],
+      "assessmentPrompt": "请{{name}}用一组关联词造一个复句并说明关系。",
+      "standards": [
+        "chinese-2022:S4:BQ"
+      ],
+      "textbooks": [
+        "tongbian-chinese:8a:u4"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d4-s4",
+      "centrality": 0.0051
+    },
+    {
+      "id": "mt_junior-cn-paragraph",
+      "type": "LANGUAGE",
+      "subject": "语文",
+      "domain": "句子与标点",
+      "name": "段落结构与层次",
+      "description": "理解段落的中心句、过渡句与层次关系，能划分段落层次并概括段意，提升阅读理解与谋篇能力。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能找出段落的中心句",
+        "能划分一段文字的层次并概括"
+      ],
+      "assessmentPrompt": "给{{name}}一段文字，请他划层次并说每段大意。",
+      "standards": [
+        "chinese-2022:S4:BQ",
+        "chinese-2022:S4:PR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:8a:u4"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d4-s4",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-cn-reading-method",
+      "type": "REPRESENTATIONAL",
+      "subject": "语文",
+      "domain": "阅读",
+      "name": "朗读与默读",
+      "description": "学习用恰当的语速、语调和重音朗读，体会情感；掌握默读方法，做到不出声、不指读、有一定速度。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "朗读时能根据内容调整语气语调",
+        "默读一段文字能把握主要意思"
+      ],
+      "assessmentPrompt": "请{{name}}朗读一段课文并注意语气，再说说大意。",
+      "standards": [
+        "chinese-2022:S4:LR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:7a:u1"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d5-s4",
+      "centrality": 0.0051
+    },
+    {
+      "id": "mt_junior-cn-narrative-reading",
+      "type": "REPRESENTATIONAL",
+      "subject": "语文",
+      "domain": "阅读",
+      "name": "记叙文阅读",
+      "description": "把握记叙文的要素（时间、地点、人物、事件），理解记叙顺序与详略，体会人物形象与作者情感。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能概括记叙文的六要素",
+        "能分析人物的言行体会形象"
+      ],
+      "assessmentPrompt": "让{{name}}读一篇记叙文，说说主要人物与事件。",
+      "standards": [
+        "chinese-2022:S4:LR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:7a:u3"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d5-s4",
+      "centrality": 0.0153
+    },
+    {
+      "id": "mt_junior-cn-info-extract",
+      "type": "REPRESENTATIONAL",
+      "subject": "语文",
+      "domain": "阅读",
+      "name": "文意概括与信息提取",
+      "description": "学习提取文本的关键信息，用简洁语言概括段落与全文大意，初步掌握略读与扫读的方法。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能从文中提取关键的事实信息",
+        "能用一两句话概括文章大意"
+      ],
+      "assessmentPrompt": "给{{name}}一篇短文，请他概括主要内容并提取要点。",
+      "standards": [
+        "chinese-2022:S4:LR",
+        "chinese-2022:S4:PR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:7a:u3"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d5-s4",
+      "centrality": 0.0153
+    },
+    {
+      "id": "mt_junior-cn-detail-description",
+      "type": "REPRESENTATIONAL",
+      "subject": "语文",
+      "domain": "阅读",
+      "name": "细节描写与体会",
+      "description": "关注人物、景物、场面的细节描写，体会细节对刻画形象、渲染气氛和表达情感的作用。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能找出文中的细节描写",
+        "能说明某处细节的表达效果"
+      ],
+      "assessmentPrompt": "请{{name}}挑一处细节描写并说说它的作用。",
+      "standards": [
+        "chinese-2022:S4:LR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:7a:u4"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d5-s4",
+      "centrality": 0.0051
+    },
+    {
+      "id": "mt_junior-cn-annotate-reading",
+      "type": "REPRESENTATIONAL",
+      "subject": "语文",
+      "domain": "阅读",
+      "name": "圈点批注阅读法",
+      "description": "学习在读书时圈点勾画、写下批注，记录疑问、感受与发现，把被动阅读变成主动思考。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 8,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能在书中做简单的圈点批注",
+        "能就批注与别人交流想法"
+      ],
+      "assessmentPrompt": "让{{name}}读一段文字并写两三条批注。",
+      "standards": [
+        "chinese-2022:S4:LR",
+        "chinese-2022:S4:CR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:7b:u3"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d5-s4",
+      "centrality": 0.0051
+    },
+    {
+      "id": "mt_junior-cn-expository-reading",
+      "type": "REPRESENTATIONAL",
+      "subject": "语文",
+      "domain": "阅读",
+      "name": "说明文阅读",
+      "description": "把握说明对象与特征，识别举例子、列数字、作比较等说明方法，体会说明文语言的准确与严谨。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说出说明对象及其特征",
+        "能识别常见的说明方法"
+      ],
+      "assessmentPrompt": "给{{name}}一篇说明文，请他找出说明方法并说作用。",
+      "standards": [
+        "chinese-2022:S4:PR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:8a:u5"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d5-s4",
+      "centrality": 0.0051
+    },
+    {
+      "id": "mt_junior-cn-news-reading",
+      "type": "REPRESENTATIONAL",
+      "subject": "语文",
+      "domain": "阅读",
+      "name": "新闻阅读",
+      "description": "了解新闻的要素与结构（标题、导语、主体），能区分消息、特写等不同体裁，把握客观报道的特点。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说出新闻的六要素",
+        "能区分消息与新闻特写"
+      ],
+      "assessmentPrompt": "让{{name}}读一则消息，找出标题、导语和主体。",
+      "standards": [
+        "chinese-2022:S4:PR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:8a:u1"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d5-s4",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-cn-modern-poem",
+      "type": "REPRESENTATIONAL",
+      "subject": "语文",
+      "domain": "阅读",
+      "name": "现代诗歌阅读",
+      "description": "诵读现代诗歌，体会意象、节奏与情感，理解诗人的表达意图，初步尝试诗歌的欣赏与创作。",
+      "gradeRangeStart": 9,
+      "gradeRangeEnd": 9,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说出诗中主要的意象",
+        "能体会诗歌蕴含的情感"
+      ],
+      "assessmentPrompt": "请{{name}}朗读一首现代诗并说说读出了什么情感。",
+      "standards": [
+        "chinese-2022:S4:LR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:9a:u1"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d5-s4",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-cn-argument-reading",
+      "type": "REPRESENTATIONAL",
+      "subject": "语文",
+      "domain": "阅读",
+      "name": "议论文阅读",
+      "description": "把握议论文的论点、论据与论证，能区分事实与观点，理清论证思路，评价论证的合理性。",
+      "gradeRangeStart": 9,
+      "gradeRangeEnd": 9,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能找出文章的中心论点",
+        "能区分论据是事实还是道理"
+      ],
+      "assessmentPrompt": "给{{name}}一篇议论文，请他概括论点并列出论据。",
+      "standards": [
+        "chinese-2022:S4:CR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:9a:u2"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d5-s4",
+      "centrality": 0.0077
+    },
+    {
+      "id": "mt_junior-cn-argument-analysis",
+      "type": "REPRESENTATIONAL",
+      "subject": "语文",
+      "domain": "阅读",
+      "name": "论证方法分析",
+      "description": "识别举例论证、道理论证、对比论证、比喻论证等方法，分析其如何支撑论点，提升思辨性阅读能力。",
+      "gradeRangeStart": 9,
+      "gradeRangeEnd": 9,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说出文中使用的论证方法",
+        "能分析某论证方法的作用"
+      ],
+      "assessmentPrompt": "请{{name}}指出文中一种论证方法并说明其作用。",
+      "standards": [
+        "chinese-2022:S4:CR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:9a:u4"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d5-s4",
+      "centrality": 0.0051
+    },
+    {
+      "id": "mt_junior-cn-fiction-reading",
+      "type": "REPRESENTATIONAL",
+      "subject": "语文",
+      "domain": "阅读",
+      "name": "小说阅读",
+      "description": "把握小说的情节、人物与环境三要素，体会塑造人物的方法，理解主题，感受不同类型小说的魅力。",
+      "gradeRangeStart": 9,
+      "gradeRangeEnd": 9,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能梳理小说的主要情节",
+        "能分析人物性格及塑造方法"
+      ],
+      "assessmentPrompt": "让{{name}}读一篇小说，说说人物形象与主题。",
+      "standards": [
+        "chinese-2022:S4:LR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:9a:u3"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d5-s4",
+      "centrality": 0.0102
+    },
+    {
+      "id": "mt_junior-cn-drama-reading",
+      "type": "REPRESENTATIONAL",
+      "subject": "语文",
+      "domain": "阅读",
+      "name": "戏剧阅读",
+      "description": "了解戏剧的冲突、台词与舞台说明，通过朗读台词体会人物性格与矛盾冲突，理解剧本的演出性。",
+      "gradeRangeStart": 9,
+      "gradeRangeEnd": 9,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说出剧本的主要冲突",
+        "能通过台词分析人物"
+      ],
+      "assessmentPrompt": "请{{name}}分角色朗读一段台词并说说人物特点。",
+      "standards": [
+        "chinese-2022:S4:LR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:9b:u4"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d5-s4",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-cn-classical-prose",
+      "type": "REPRESENTATIONAL",
+      "subject": "语文",
+      "domain": "阅读",
+      "name": "文言文阅读",
+      "description": "借助注释与工具书阅读浅易文言文，疏通文意，理解基本内容，积累文言词汇与句式。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能借助注释读懂浅易文言文大意",
+        "能翻译文中的重点句子"
+      ],
+      "assessmentPrompt": "给{{name}}一段文言文，请他结合注释说说大意。",
+      "standards": [
+        "chinese-2022:S4:CR",
+        "chinese-2022:S4:BQ"
+      ],
+      "textbooks": [
+        "tongbian-chinese:7a:u4"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d5-s4",
+      "centrality": 0.0102
+    },
+    {
+      "id": "mt_junior-cn-classical-poem",
+      "type": "REPRESENTATIONAL",
+      "subject": "语文",
+      "domain": "阅读",
+      "name": "古诗词鉴赏",
+      "description": "诵读古诗词，理解诗意与意境，体会作者的思想情感，欣赏语言与表现手法，积累经典名篇。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 9,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说出诗词的大意与情感",
+        "能赏析名句的语言或手法"
+      ],
+      "assessmentPrompt": "让{{name}}背诵并讲解一首古诗词的意境。",
+      "standards": [
+        "chinese-2022:S4:LR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:7a:u4"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d5-s4",
+      "centrality": 0.0051
+    },
+    {
+      "id": "mt_junior-cn-noncontinuous",
+      "type": "REPRESENTATIONAL",
+      "subject": "语文",
+      "domain": "阅读",
+      "name": "非连续性文本阅读",
+      "description": "阅读图表、说明书、广告、地图等非连续性文本，提取并整合信息，做出判断与简单推论。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 9,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能从图表中提取关键信息",
+        "能综合多则材料得出结论"
+      ],
+      "assessmentPrompt": "给{{name}}一份图表加一段说明，请他提取信息并作答。",
+      "standards": [
+        "chinese-2022:S4:PR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:8b:u2"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d5-s4",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-cn-comparison-reading",
+      "type": "REPRESENTATIONAL",
+      "subject": "语文",
+      "domain": "阅读",
+      "name": "比较阅读与群文阅读",
+      "description": "围绕同一主题或写法把多篇文本放在一起比较，发现异同，建构更丰富的理解，提升整合阅读能力。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 9,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能找出多篇文本的相同点",
+        "能比较不同文本的表达差异"
+      ],
+      "assessmentPrompt": "请{{name}}比较两篇同题文章，说说写法异同。",
+      "standards": [
+        "chinese-2022:S4:LR",
+        "chinese-2022:S4:CR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:8b:u3"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d5-s4",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-cn-reading-inquiry",
+      "type": "REPRESENTATIONAL",
+      "subject": "语文",
+      "domain": "阅读",
+      "name": "阅读中的质疑与探究",
+      "description": "在阅读中提出问题、查阅资料、形成自己的见解，学习有理有据地表达看法，养成批判性思维。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 9,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能就文本提出有价值的问题",
+        "能结合资料支撑自己的观点"
+      ],
+      "assessmentPrompt": "让{{name}}就一篇课文提一个问题并尝试解答。",
+      "standards": [
+        "chinese-2022:S4:CR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:8b:u4"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d5-s4",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-cn-recite-accumulate",
+      "type": "LANGUAGE",
+      "subject": "语文",
+      "domain": "古诗文与整本书阅读",
+      "name": "古诗文默写与积累",
+      "description": "背诵并准确默写课标推荐的古诗文名篇，积累文言词汇与名句，做到不写错别字。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 9,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能背诵规定的古诗文篇目",
+        "默写字迹正确、无错别字"
+      ],
+      "assessmentPrompt": "请{{name}}默写一首古诗文，检查有无错别字。",
+      "standards": [
+        "chinese-2022:S4:BQ",
+        "chinese-2022:S4:WB"
+      ],
+      "textbooks": [
+        "tongbian-chinese:7a:u4"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d8-s4",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-cn-classical-recite",
+      "type": "LANGUAGE",
+      "subject": "语文",
+      "domain": "古诗文与整本书阅读",
+      "name": "文言文朗读与背诵",
+      "description": "正确朗读文言文，读准停顿与语气，背诵经典段落，在诵读中培养文言语感。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能正确断句、读出文言节奏",
+        "能背诵规定的文言段落"
+      ],
+      "assessmentPrompt": "让{{name}}朗读并背诵一段文言文。",
+      "standards": [
+        "chinese-2022:S4:BQ"
+      ],
+      "textbooks": [
+        "tongbian-chinese:7a:u4"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d8-s4",
+      "centrality": 0.0051
+    },
+    {
+      "id": "mt_junior-cn-classical-translation",
+      "type": "PROCEDURAL",
+      "subject": "语文",
+      "domain": "古诗文与整本书阅读",
+      "name": "文言文翻译",
+      "description": "掌握“留、对、删、补、调”等翻译方法，落实关键实词与句式，做到信、达、雅兼顾。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 9,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能运用直译为主的方法翻译句子",
+        "能补全省略、调整语序"
+      ],
+      "assessmentPrompt": "给{{name}}几个文言句子，请他翻译并说明方法。",
+      "standards": [
+        "chinese-2022:S4:BQ",
+        "chinese-2022:S4:CR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:8b:u3"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d8-s4",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-cn-book-method",
+      "type": "META",
+      "subject": "语文",
+      "domain": "古诗文与整本书阅读",
+      "name": "整本书阅读方法",
+      "description": "学习制定阅读计划，运用批注、摘抄、思维导图等方法阅读整本书，并撰写读书笔记与心得。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能为自己定一份整本书阅读计划",
+        "能写出有条理的读书笔记"
+      ],
+      "assessmentPrompt": "请{{name}}展示一本书的笔记或思维导图。",
+      "standards": [
+        "chinese-2022:S4:WB"
+      ],
+      "textbooks": [
+        "tongbian-chinese:7a:u6"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d8-s4",
+      "centrality": 0.0358
+    },
+    {
+      "id": "mt_junior-cn-book-zhaohua",
+      "type": "REPRESENTATIONAL",
+      "subject": "语文",
+      "domain": "古诗文与整本书阅读",
+      "name": "名著《朝花夕拾》",
+      "description": "阅读鲁迅的回忆性散文集，了解主要内容与人物形象，体会作者的情感与语言风格。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说出书中几篇的主要人物与内容",
+        "能体会作者的复杂情感"
+      ],
+      "assessmentPrompt": "让{{name}}讲讲《朝花夕拾》里印象最深的一篇。",
+      "standards": [
+        "chinese-2022:S4:WB"
+      ],
+      "textbooks": [
+        "tongbian-chinese:7a:u6"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d8-s4",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-cn-book-xiyou",
+      "type": "REPRESENTATIONAL",
+      "subject": "语文",
+      "domain": "古诗文与整本书阅读",
+      "name": "名著《西游记》",
+      "description": "阅读古典神魔小说《西游记》，梳理主要情节，分析孙悟空等人物形象，感受想象的魅力。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能讲述几个经典故事",
+        "能分析孙悟空等人物特点"
+      ],
+      "assessmentPrompt": "请{{name}}讲一个《西游记》故事并说说人物。",
+      "standards": [
+        "chinese-2022:S4:WB"
+      ],
+      "textbooks": [
+        "tongbian-chinese:7a:u6"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d8-s4",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-cn-book-luotuo",
+      "type": "REPRESENTATIONAL",
+      "subject": "语文",
+      "domain": "古诗文与整本书阅读",
+      "name": "名著《骆驼祥子》",
+      "description": "阅读老舍的长篇小说，了解祥子三起三落的人生，理解旧社会对普通人的压迫这一主题。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能梳理祥子命运的变化",
+        "能说出小说反映的社会问题"
+      ],
+      "assessmentPrompt": "让{{name}}说说祥子为何最终堕落。",
+      "standards": [
+        "chinese-2022:S4:WB"
+      ],
+      "textbooks": [
+        "tongbian-chinese:7b:u6"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d8-s4",
+      "centrality": 0.0051
+    },
+    {
+      "id": "mt_junior-cn-book-haidiliang",
+      "type": "REPRESENTATIONAL",
+      "subject": "语文",
+      "domain": "古诗文与整本书阅读",
+      "name": "名著《海底两万里》",
+      "description": "阅读凡尔纳的科幻名著，跟随尼摩船长海底探险，感受科学想象与冒险精神。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说出书中的主要冒险经历",
+        "能体会科幻作品的想象特点"
+      ],
+      "assessmentPrompt": "请{{name}}介绍书中一次惊险的航行。",
+      "standards": [
+        "chinese-2022:S4:WB"
+      ],
+      "textbooks": [
+        "tongbian-chinese:7b:u6"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d8-s4",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-cn-book-hongxing",
+      "type": "REPRESENTATIONAL",
+      "subject": "语文",
+      "domain": "古诗文与整本书阅读",
+      "name": "名著《红星照耀中国》",
+      "description": "阅读纪实作品，了解红军与根据地的真实面貌，学习从事实中形成对历史的认识。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说出书中的主要人物与事件",
+        "能体会纪实作品的真实感"
+      ],
+      "assessmentPrompt": "让{{name}}讲讲书中一位红军将领的故事。",
+      "standards": [
+        "chinese-2022:S4:WB"
+      ],
+      "textbooks": [
+        "tongbian-chinese:8a:u6"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d8-s4",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-cn-book-kunchong",
+      "type": "REPRESENTATIONAL",
+      "subject": "语文",
+      "domain": "古诗文与整本书阅读",
+      "name": "名著《昆虫记》",
+      "description": "阅读法布尔的科学小品，在生动描写中了解昆虫习性，体会科学与文学的结合。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说出几种昆虫的特点",
+        "能体会作品的文学笔法"
+      ],
+      "assessmentPrompt": "请{{name}}介绍一种昆虫及作者的观察方法。",
+      "standards": [
+        "chinese-2022:S4:WB"
+      ],
+      "textbooks": [
+        "tongbian-chinese:8a:u6"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d8-s4",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-cn-book-fuel",
+      "type": "REPRESENTATIONAL",
+      "subject": "语文",
+      "domain": "古诗文与整本书阅读",
+      "name": "名著《傅雷家书》",
+      "description": "阅读傅雷写给孩子的书信，感受父子深情与为人、为学、为艺的道理，学习书信体表达。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说出书中谈论的主要话题",
+        "能体会书信中的情感与教导"
+      ],
+      "assessmentPrompt": "让{{name}}读一封家书并说说最受触动的话。",
+      "standards": [
+        "chinese-2022:S4:WB"
+      ],
+      "textbooks": [
+        "tongbian-chinese:8b:u6"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d8-s4",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-cn-book-steel",
+      "type": "REPRESENTATIONAL",
+      "subject": "语文",
+      "domain": "古诗文与整本书阅读",
+      "name": "名著《钢铁是怎样炼成的》",
+      "description": "阅读苏联革命题材小说，认识保尔·柯察金，理解“生命的意义”，感受理想与信念的力量。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能讲述保尔的主要经历",
+        "能说出“生命的意义”段落的内涵"
+      ],
+      "assessmentPrompt": "请{{name}}谈谈保尔最打动他的地方。",
+      "standards": [
+        "chinese-2022:S4:WB"
+      ],
+      "textbooks": [
+        "tongbian-chinese:8b:u6"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d8-s4",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-cn-book-aq",
+      "type": "REPRESENTATIONAL",
+      "subject": "语文",
+      "domain": "古诗文与整本书阅读",
+      "name": "名著《艾青诗选》",
+      "description": "诵读艾青的诗歌，体会其对土地与光明的深沉情感，感受现代自由诗的形式与力量。",
+      "gradeRangeStart": 9,
+      "gradeRangeEnd": 9,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说出艾青诗歌的常见意象",
+        "能体会诗中炽热的爱国情感"
+      ],
+      "assessmentPrompt": "让{{name}}朗诵一首艾青的诗并说说感受。",
+      "standards": [
+        "chinese-2022:S4:WB"
+      ],
+      "textbooks": [
+        "tongbian-chinese:9a:u6"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d8-s4",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-cn-book-shuihu",
+      "type": "REPRESENTATIONAL",
+      "subject": "语文",
+      "domain": "古诗文与整本书阅读",
+      "name": "名著《水浒传》",
+      "description": "阅读古典章回小说《水浒传》，梳理英雄聚义的主要情节，分析典型人物的性格与命运。",
+      "gradeRangeStart": 9,
+      "gradeRangeEnd": 9,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能讲述几个经典回目故事",
+        "能分析林冲、武松等人物性格"
+      ],
+      "assessmentPrompt": "请{{name}}讲一个水浒故事并说说人物。",
+      "standards": [
+        "chinese-2022:S4:WB"
+      ],
+      "textbooks": [
+        "tongbian-chinese:9a:u6"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d8-s4",
+      "centrality": 0.0051
+    },
+    {
+      "id": "mt_junior-cn-book-sanguo",
+      "type": "REPRESENTATIONAL",
+      "subject": "语文",
+      "domain": "古诗文与整本书阅读",
+      "name": "名著《三国演义》",
+      "description": "阅读古典历史小说《三国演义》，了解三国纷争的主要情节，感受谋略描写与人物塑造。",
+      "gradeRangeStart": 9,
+      "gradeRangeEnd": 9,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说出几个著名战役或计谋",
+        "能分析刘备、曹操等人特点"
+      ],
+      "assessmentPrompt": "让{{name}}讲一个三国故事并说明理由喜欢。",
+      "standards": [
+        "chinese-2022:S4:WB"
+      ],
+      "textbooks": [
+        "tongbian-chinese:9a:u6"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d8-s4",
+      "centrality": 0.0051
+    },
+    {
+      "id": "mt_junior-cn-book-jianai",
+      "type": "REPRESENTATIONAL",
+      "subject": "语文",
+      "domain": "古诗文与整本书阅读",
+      "name": "名著《简·爱》",
+      "description": "阅读外国名著《简·爱》，理解简·爱追求独立与尊严的形象，体会小说的自述语调与主题。",
+      "gradeRangeStart": 9,
+      "gradeRangeEnd": 9,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说出简·爱的主要经历",
+        "能说出她追求平等自尊的表现"
+      ],
+      "assessmentPrompt": "请{{name}}谈谈简·爱最可贵的地方。",
+      "standards": [
+        "chinese-2022:S4:WB"
+      ],
+      "textbooks": [
+        "tongbian-chinese:9b:u6"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d8-s4",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-cn-book-rulin",
+      "type": "REPRESENTATIONAL",
+      "subject": "语文",
+      "domain": "古诗文与整本书阅读",
+      "name": "名著《儒林外史》",
+      "description": "阅读讽刺小说《儒林外史》，认识科举制度下形形色色的人物，体会讽刺笔法与批判主题。",
+      "gradeRangeStart": 9,
+      "gradeRangeEnd": 9,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能说出书中一两个典型人物",
+        "能体会讽刺手法的作用"
+      ],
+      "assessmentPrompt": "让{{name}}讲一个讽刺故事并说说笑点背后。",
+      "standards": [
+        "chinese-2022:S4:WB"
+      ],
+      "textbooks": [
+        "tongbian-chinese:9b:u6"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d8-s4",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-cn-writing-outline",
+      "type": "PROCEDURAL",
+      "subject": "语文",
+      "domain": "习作",
+      "name": "写作构思与列提纲",
+      "description": "动笔前先审题、立意、选材，列出写作提纲，明确中心与段落安排，避免写到哪算到哪。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能围绕题目确定中心思想",
+        "能列出清晰的段落提纲"
+      ],
+      "assessmentPrompt": "让{{name}}就一个题目口述或写出写作提纲。",
+      "standards": [
+        "chinese-2022:S4:LR",
+        "chinese-2022:S4:PR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:7a:u3"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d6-s4",
+      "centrality": 0.0051
+    },
+    {
+      "id": "mt_junior-cn-writing-narrative",
+      "type": "PROCEDURAL",
+      "subject": "语文",
+      "domain": "习作",
+      "name": "记叙文写作（写人记事）",
+      "description": "写内容具体、有真情实感的记叙文，把事情写清楚、把人物写鲜活，做到首尾呼应、详略得当。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能把一件事写完整有条理",
+        "能通过细节表现人物"
+      ],
+      "assessmentPrompt": "请{{name}}写一篇写人记事的短文并自评详略。",
+      "standards": [
+        "chinese-2022:S4:LR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:7a:u3"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d6-s4",
+      "centrality": 0.0179
+    },
+    {
+      "id": "mt_junior-cn-writing-scenery",
+      "type": "PROCEDURAL",
+      "subject": "语文",
+      "domain": "习作",
+      "name": "写景状物记叙文",
+      "description": "学习按一定顺序观察并描写景物或物件，运用修辞把特点写具体，融情于景。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能按顺序描写一处景物",
+        "能运用修辞写出景物特点"
+      ],
+      "assessmentPrompt": "让{{name}}写一段景物描写并说说顺序。",
+      "standards": [
+        "chinese-2022:S4:LR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:7a:u1"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d6-s4",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-cn-writing-imagination",
+      "type": "PROCEDURAL",
+      "subject": "语文",
+      "domain": "习作",
+      "name": "想象类作文",
+      "description": "围绕给定情境展开合理想象，编写故事或科幻小品，做到想象有据、情节有趣、立意清晰。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能编出有情节的小故事",
+        "想象合乎逻辑、不混乱"
+      ],
+      "assessmentPrompt": "请{{name}}写一个想象片段并说说灵感来源。",
+      "standards": [
+        "chinese-2022:S4:LR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:7a:u6"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d6-s4",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-cn-writing-micro",
+      "type": "PROCEDURAL",
+      "subject": "语文",
+      "domain": "习作",
+      "name": "微写作与片段写作",
+      "description": "练习写简短的片段（描写、说明、抒情、议论），在有限篇幅内把一点写透，提升语言凝练度。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 8,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能写一段集中描写的话",
+        "片段中心明确、语言简洁"
+      ],
+      "assessmentPrompt": "给{{name}}一个小话题，请他写 100 字左右的片段。",
+      "standards": [
+        "chinese-2022:S4:PR",
+        "chinese-2022:S4:LR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:7b:u4"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d6-s4",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-cn-writing-detail",
+      "type": "PROCEDURAL",
+      "subject": "语文",
+      "domain": "习作",
+      "name": "细节描写写作",
+      "description": "学习用动作、神态、语言、心理等细节把内容写生动，避免空洞概括，让文章有画面感。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 8,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能用一个细节表现人物心情",
+        "描写具体而不啰嗦"
+      ],
+      "assessmentPrompt": "让{{name}}把“他很紧张”改写成一段细节描写。",
+      "standards": [
+        "chinese-2022:S4:LR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:7a:u4"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d6-s4",
+      "centrality": 0.0051
+    },
+    {
+      "id": "mt_junior-cn-writing-narration-order",
+      "type": "PROCEDURAL",
+      "subject": "语文",
+      "domain": "习作",
+      "name": "记叙顺序（顺倒插叙）",
+      "description": "了解顺叙、倒叙、插叙的不同效果，能在写作中合理安排叙述顺序，制造悬念或补充交代。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能判断文章的叙事顺序",
+        "能运用倒叙或插叙写片段"
+      ],
+      "assessmentPrompt": "请{{name}}用倒叙改写一件事的 opening。",
+      "standards": [
+        "chinese-2022:S4:LR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:8a:u4"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d6-s4",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-cn-writing-expository",
+      "type": "PROCEDURAL",
+      "subject": "语文",
+      "domain": "习作",
+      "name": "说明文写作",
+      "description": "围绕一个对象写说明文，抓住特征、安排顺序、恰当使用说明方法，语言准确平实。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能抓住说明对象的特征",
+        "能运用举例子等说明方法"
+      ],
+      "assessmentPrompt": "让{{name}}写一段说明文介绍一件物品。",
+      "standards": [
+        "chinese-2022:S4:PR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:8a:u5"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d6-s4",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-cn-writing-practical",
+      "type": "PROCEDURAL",
+      "subject": "语文",
+      "domain": "习作",
+      "name": "应用文写作（书信通知）",
+      "description": "掌握书信、通知、留言、申请书等常见应用文的格式与用语，做到格式规范、目的清楚、用语得体。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能写出格式正确的书信",
+        "通知要素齐全、用语得体"
+      ],
+      "assessmentPrompt": "请{{name}}写一封书信或一则通知并互评格式。",
+      "standards": [
+        "chinese-2022:S4:PR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:7b:u4"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d6-s4",
+      "centrality": 0.0051
+    },
+    {
+      "id": "mt_junior-cn-writing-speech",
+      "type": "PROCEDURAL",
+      "subject": "语文",
+      "domain": "习作",
+      "name": "演讲稿写作",
+      "description": "学习写有针对性、有感染力的演讲稿，观点鲜明、条理清楚、注意与听众的交流感。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 9,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能写出观点明确的演讲稿",
+        "语言有鼓动性与交流感"
+      ],
+      "assessmentPrompt": "让{{name}}就一个话题写一段演讲稿并试讲。",
+      "standards": [
+        "chinese-2022:S4:PR",
+        "chinese-2022:S4:CR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:8b:u4"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d6-s4",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-cn-writing-argument",
+      "type": "PROCEDURAL",
+      "subject": "语文",
+      "domain": "习作",
+      "name": "议论文写作",
+      "description": "围绕一个观点写简单的议论文，提出论点、用事实或道理论证、得出结论，做到有理有据。",
+      "gradeRangeStart": 9,
+      "gradeRangeEnd": 9,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能明确提出自己的论点",
+        "能用论据支撑并组织论证"
+      ],
+      "assessmentPrompt": "请{{name}}就“中学生是否该做家务”写一篇小评论。",
+      "standards": [
+        "chinese-2022:S4:CR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:9a:u2"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d6-s4",
+      "centrality": 0.0051
+    },
+    {
+      "id": "mt_junior-cn-writing-revision",
+      "type": "PROCEDURAL",
+      "subject": "语文",
+      "domain": "习作",
+      "name": "作文修改与升格",
+      "description": "学习从内容、结构、语言三方面修改自己的作文，增删调换、锤炼词句，让文章更通顺更有力。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能找出自己作文中的问题",
+        "能有针对性地修改升格"
+      ],
+      "assessmentPrompt": "让{{name}}修改自己的一篇作文并说明改了什么。",
+      "standards": [
+        "chinese-2022:S4:LR",
+        "chinese-2022:S4:PR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:8a:u4"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d6-s4",
+      "centrality": 0.0051
+    },
+    {
+      "id": "mt_junior-cn-writing-language",
+      "type": "PROCEDURAL",
+      "subject": "语文",
+      "domain": "习作",
+      "name": "语言锤炼与修改",
+      "description": "在写作中推敲词语与句式，删去啰嗦、改掉别扭，追求准确、连贯、有表现力的表达。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 9,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能发现并改掉啰嗦的句子",
+        "能换用更贴切的词语"
+      ],
+      "assessmentPrompt": "给{{name}}几句平淡的话，请他锤炼得更生动。",
+      "standards": [
+        "chinese-2022:S4:PR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:8b:u4"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d6-s4",
+      "centrality": 0.0051
+    },
+    {
+      "id": "mt_junior-cn-retell",
+      "type": "PROCEDURAL",
+      "subject": "语文",
+      "domain": "口语交际",
+      "name": "复述与转述",
+      "description": "学习简要复述与详细复述，能抓住要点把内容说清楚；掌握转述，准确传达他人意思。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能抓住要点复述故事",
+        "转述时不遗漏关键信息"
+      ],
+      "assessmentPrompt": "让{{name}}听完一段话后复述或转述给家长。",
+      "standards": [
+        "chinese-2022:S4:PR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:7b:u3"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d7-s4",
+      "centrality": 0.0051
+    },
+    {
+      "id": "mt_junior-cn-speech-talk",
+      "type": "PROCEDURAL",
+      "subject": "语文",
+      "domain": "口语交际",
+      "name": "即席讲话与演讲",
+      "description": "能在短暂准备后围绕话题即席发言，也能做较完整的演讲，做到仪态大方、条理清楚。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能围绕话题有条理地发言",
+        "演讲时眼神交流与语气得当"
+      ],
+      "assessmentPrompt": "请{{name}}就一个熟悉话题做一两分钟即席讲话。",
+      "standards": [
+        "chinese-2022:S4:PR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:8b:u4"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d7-s4",
+      "centrality": 0.0077
+    },
+    {
+      "id": "mt_junior-cn-discuss-debate",
+      "type": "PROCEDURAL",
+      "subject": "语文",
+      "domain": "口语交际",
+      "name": "讨论与辩论",
+      "description": "在讨论中倾听他人、表达己见、求同存异；在辩论中明确立场、用理由支撑观点、礼貌反驳。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 9,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能围绕议题有条理地发言",
+        "能礼貌地回应不同意见"
+      ],
+      "assessmentPrompt": "让{{name}}参与一次班级讨论并说说自己的观点。",
+      "standards": [
+        "chinese-2022:S4:PR",
+        "chinese-2022:S4:CR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:8b:u4"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d7-s4",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-cn-interview",
+      "type": "PROCEDURAL",
+      "subject": "语文",
+      "domain": "口语交际",
+      "name": "采访与应对",
+      "description": "学习设计采访问题、礼貌发问、记录要点，并能根据情境得体应对、即兴表达。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能围绕目的设计采访问题",
+        "应对时用语得体、反应自然"
+      ],
+      "assessmentPrompt": "请{{name}}采访一位家人并汇报收获。",
+      "standards": [
+        "chinese-2022:S4:PR"
+      ],
+      "textbooks": [
+        "tongbian-chinese:8a:u1"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d7-s4",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-cn-project-learning",
+      "type": "META",
+      "subject": "语文",
+      "domain": "综合性学习",
+      "name": "综合性学习与项目探究",
+      "description": "围绕真实问题开展跨学科探究，搜集整理资料、合作完成任务，用报告或展示呈现成果。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 9,
+      "stage": "第四学段（7~9年级）",
+      "evidence": [
+        "能围绕问题制定探究计划",
+        "能用报告或展板呈现成果"
+      ],
+      "assessmentPrompt": "让{{name}}展示一次综合性学习的成果与过程。",
+      "standards": [
+        "chinese-2022:S4:IL"
+      ],
+      "textbooks": [
+        "tongbian-chinese:7b:u2"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-chinese-d9-s4",
+      "centrality": 0.0026
     },
     {
       "id": "mt_en-letter-name",
@@ -6244,7 +7932,7 @@
       ],
       "textbookNote2024": "字母名称音在「Letters and sounds」预备段与 Unit 1 中学习。",
       "clusterId": "cl-english-d1-l1",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_en-letter-write",
@@ -6272,7 +7960,7 @@
       ],
       "textbookNote2024": "字母书写规范在「Letters and sounds」预备段学习。",
       "clusterId": "cl-english-d1-l1",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_en-phonics",
@@ -6300,7 +7988,7 @@
       ],
       "textbookNote2024": "字母音与自然拼读依托「Letters and sounds」板块（见附录 2 Chants）。",
       "clusterId": "cl-english-d1-l1",
-      "centrality": 0.0335
+      "centrality": 0.023
     },
     {
       "id": "mt_en-spelling-rules",
@@ -6328,7 +8016,7 @@
       ],
       "textbookNote2024": "新版未单设语音单元，字母组合发音规则融入各单元。",
       "clusterId": "cl-english-d1-l1",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_en-num-color",
@@ -6357,7 +8045,7 @@
       ],
       "textbookNote2024": "颜色调整至第五单元「The colourful world」，数字调整至第六单元「Useful numbers」。",
       "clusterId": "cl-english-d2-l1",
-      "centrality": 0.0186
+      "centrality": 0.0128
     },
     {
       "id": "mt_en-body-stationery",
@@ -6385,7 +8073,7 @@
       ],
       "textbookNote2024": "身体部位词汇融入动物单元（动物身体部位）；文具词汇散见于项目活动。",
       "clusterId": "cl-english-d2-l1",
-      "centrality": 0.0335
+      "centrality": 0.023
     },
     {
       "id": "mt_en-family",
@@ -6413,7 +8101,7 @@
       ],
       "textbookNote2024": "家庭成员由三下第二单元提前至三上第二单元「Different families」。",
       "clusterId": "cl-english-d2-l1",
-      "centrality": 0.026
+      "centrality": 0.0179
     },
     {
       "id": "mt_en-animals",
@@ -6442,7 +8130,7 @@
       ],
       "textbookNote2024": "动物话题拆分：宠物在「Different families」，野生动物在「Amazing animals」。",
       "clusterId": "cl-english-d2-l1",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_en-food",
@@ -6471,7 +8159,7 @@
       ],
       "textbookNote2024": "食物话题调整为三上「Plants around us」（植物的产出）与三下「Healthy food」。",
       "clusterId": "cl-english-d2-l1",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_en-weather",
@@ -6499,7 +8187,7 @@
       ],
       "textbookNote2024": "天气话题由四下调整至四上「The weather and us」。",
       "clusterId": "cl-english-d2-l1",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_en-clothes",
@@ -6527,7 +8215,7 @@
       ],
       "textbookNote2024": "服装话题由四下调整至四上「Changing for the seasons」。",
       "clusterId": "cl-english-d2-l1",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_en-jobs",
@@ -6555,7 +8243,7 @@
       ],
       "textbookNote2024": "职业话题调整为四上「Helping in the community」。",
       "clusterId": "cl-english-d2-l1",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_en-places",
@@ -6584,7 +8272,7 @@
       ],
       "textbookNote2024": "场所话题调整为四上「Places we live in」等社区主题单元。",
       "clusterId": "cl-english-d2-l1",
-      "centrality": 0.0186
+      "centrality": 0.0128
     },
     {
       "id": "mt_en-activities",
@@ -6613,7 +8301,7 @@
       ],
       "textbookNote2024": "日常活动融入「Helping at home」「The weather and us」等单元。",
       "clusterId": "cl-english-d2-l1",
-      "centrality": 0.0335
+      "centrality": 0.023
     },
     {
       "id": "mt_en-transport",
@@ -6641,7 +8329,7 @@
       ],
       "textbookNote2024": "交通与问路话题融入五年级各单元。",
       "clusterId": "cl-english-d2-l2",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_en-demonstratives",
@@ -6669,7 +8357,7 @@
         "pep-english-2024:3a:u3"
       ],
       "clusterId": "cl-english-d3-l1",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_en-pronouns",
@@ -6698,7 +8386,7 @@
       ],
       "textbookNote2024": "人称代词与物主代词由三下提前至三上第一、二单元。",
       "clusterId": "cl-english-d3-l1",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_en-be-verb",
@@ -6727,7 +8415,7 @@
       ],
       "textbookNote2024": "be 动词与名词单复数由三下提前至三上家庭与朋友话题单元。",
       "clusterId": "cl-english-d3-l1",
-      "centrality": 0.0409
+      "centrality": 0.0281
     },
     {
       "id": "mt_en-yes-no-questions",
@@ -6756,7 +8444,7 @@
       ],
       "textbookNote2024": "一般疑问句融入三上第一、二单元问句情境。",
       "clusterId": "cl-english-d3-l1",
-      "centrality": 0.0186
+      "centrality": 0.0128
     },
     {
       "id": "mt_en-wh-questions",
@@ -6785,7 +8473,7 @@
       ],
       "textbookNote2024": "特殊疑问句由三下提前至三上；各单元以 Big question 组织。",
       "clusterId": "cl-english-d3-l1",
-      "centrality": 0.0186
+      "centrality": 0.0128
     },
     {
       "id": "mt_en-prepositions",
@@ -6814,7 +8502,7 @@
       ],
       "textbookNote2024": "方位介词融入「Plants around us」与家庭话题。",
       "clusterId": "cl-english-d3-l1",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_en-present-simple",
@@ -6843,7 +8531,7 @@
       ],
       "textbookNote2024": "一般现在时融入五年级日常话题单元。",
       "clusterId": "cl-english-d3-l2",
-      "centrality": 0.026
+      "centrality": 0.0179
     },
     {
       "id": "mt_en-progressive",
@@ -6869,7 +8557,7 @@
       "textbooks2024": [],
       "textbookNote2024": "现在进行时在新版中的分布待五年级下册（2027 春）目录收录后确认。",
       "clusterId": "cl-english-d3-l2",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_en-going-to",
@@ -6894,7 +8582,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-english-d3-l2",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_en-past-tense",
@@ -6919,7 +8607,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-english-d3-l2",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_en-comparatives",
@@ -6944,7 +8632,7 @@
       ],
       "textbooks2024": [],
       "clusterId": "cl-english-d3-l2",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_en-greetings",
@@ -6973,7 +8661,7 @@
       ],
       "textbookNote2024": "问候话题在三上「Making friends」与三下「Meeting new people」。",
       "clusterId": "cl-english-d4-l1",
-      "centrality": 0.0074
+      "centrality": 0.0051
     },
     {
       "id": "mt_en-listening",
@@ -7002,7 +8690,7 @@
       ],
       "textbookNote2024": "听话题贯穿三上各单元。",
       "clusterId": "cl-english-d4-l1",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_en-speaking-routine",
@@ -7031,7 +8719,7 @@
       ],
       "textbookNote2024": "口头表达依托四上各单元 Project。",
       "clusterId": "cl-english-d4-l1",
-      "centrality": 0.0223
+      "centrality": 0.0153
     },
     {
       "id": "mt_en-describing",
@@ -7059,7 +8747,7 @@
         "pep-english-2024:5a:u6"
       ],
       "clusterId": "cl-english-d4-l2",
-      "centrality": 0.0186
+      "centrality": 0.0128
     },
     {
       "id": "mt_en-copying",
@@ -7087,7 +8775,7 @@
         "pep-english-2024:3a:u5"
       ],
       "clusterId": "cl-english-d5-l1",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_en-reading-pictures",
@@ -7116,7 +8804,7 @@
       ],
       "textbookNote2024": "图文阅读融入动物与家庭单元；四上起设 Reading time。",
       "clusterId": "cl-english-d5-l1",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_en-guessing-words",
@@ -7144,7 +8832,7 @@
         "pep-english-2024:4a:u3"
       ],
       "clusterId": "cl-english-d5-l1",
-      "centrality": 0.0186
+      "centrality": 0.0128
     },
     {
       "id": "mt_en-writing-short",
@@ -7173,7 +8861,7 @@
       ],
       "textbookNote2024": "写几句话融入四上各单元 Project。",
       "clusterId": "cl-english-d5-l1",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_en-writing-passage",
@@ -7201,7 +8889,7 @@
         "pep-english-2024:5a:u5"
       ],
       "clusterId": "cl-english-d5-l2",
-      "centrality": 0.0112
+      "centrality": 0.0077
     },
     {
       "id": "mt_en-culture",
@@ -7229,7 +8917,7 @@
       ],
       "textbookNote2024": "节日与文化话题见于五年级各单元及 Revision「New Year's party」。",
       "clusterId": "cl-english-d6-l2",
-      "centrality": 0.0149
+      "centrality": 0.0102
     },
     {
       "id": "mt_en-learning-strategies",
@@ -7257,7 +8945,1399 @@
       ],
       "textbookNote2024": "学习策略调整为三下「Learning better」单元。",
       "clusterId": "cl-english-d6-l2",
-      "centrality": 0.0074
+      "centrality": 0.0051
+    },
+    {
+      "id": "mt_junior-en-phonetics",
+      "type": "LANGUAGE",
+      "subject": "英语",
+      "domain": "字母与语音",
+      "name": "国际音标与拼读",
+      "description": "学习 48 个国际音标，掌握元音与辅音的发音要领，能借助音标拼读生词，减少对汉字注音的依赖。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能认读并正确发出主要音标",
+        "能借助音标拼读出陌生单词"
+      ],
+      "assessmentPrompt": "让{{name}}看几个带音标的生词，请他拼读出来。",
+      "standards": [
+        "english-2022:L3:LK"
+      ],
+      "textbooks": [
+        "pep-english:7a:u1"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d1-l3",
+      "centrality": 0.0051
+    },
+    {
+      "id": "mt_junior-en-pronunciation",
+      "type": "LANGUAGE",
+      "subject": "英语",
+      "domain": "字母与语音",
+      "name": "语音语调与连读",
+      "description": "在朗读中体会句子重音、语调与连读、弱读等语音现象，让口语更自然流利，提升听音辨义能力。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 8,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "朗读时能体现基本的重音与语调",
+        "能听辨简单的连读与弱读"
+      ],
+      "assessmentPrompt": "请{{name}}朗读一个句子并注意语调与连读。",
+      "standards": [
+        "english-2022:L3:LK"
+      ],
+      "textbooks": [
+        "pep-english:7a:u2"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d1-l3",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-en-spelling",
+      "type": "LANGUAGE",
+      "subject": "英语",
+      "domain": "字母与语音",
+      "name": "拼写与读音规则",
+      "description": "掌握常见字母及字母组合的发音规则，利用读音规律记忆单词拼写，减少死记硬背和拼写错误。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能说出常见字母组合的读音",
+        "能按读音规律拼写出单词"
+      ],
+      "assessmentPrompt": "给{{name}}几个符合同一规则的词，看他能否归纳拼写规律。",
+      "standards": [
+        "english-2022:L3:LK"
+      ],
+      "textbooks": [
+        "pep-english:7a:u1"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d1-l3",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-en-vocab-school",
+      "type": "LANGUAGE",
+      "subject": "英语",
+      "domain": "词汇",
+      "name": "学校与学科词汇",
+      "description": "掌握学校生活、课程学科、人物称谓等基础词汇，能在真实情境中准确指称身边的事物与关系。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能说出主要学科与校园场所的名称",
+        "能用这些词简单介绍自己的学校"
+      ],
+      "assessmentPrompt": "让{{name}}用英语介绍自己的学校和课程表。",
+      "standards": [
+        "english-2022:L3:LK",
+        "english-2022:L3:PS"
+      ],
+      "textbooks": [
+        "pep-english:7a:u2"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d2-l3",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-en-vocab-theme",
+      "type": "LANGUAGE",
+      "subject": "英语",
+      "domain": "词汇",
+      "name": "个人与家庭主题词汇",
+      "description": "围绕个人情况、家庭与朋友积累主题词汇，能用英语介绍自己、家人和日常安排。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能说出家庭成员与外貌性格的词汇",
+        "能介绍自己的爱好与日常"
+      ],
+      "assessmentPrompt": "请{{name}}用英语介绍家人和自己的爱好。",
+      "standards": [
+        "english-2022:L3:LK",
+        "english-2022:L3:PS"
+      ],
+      "textbooks": [
+        "pep-english:7a:u3"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d2-l3",
+      "centrality": 0.0102
+    },
+    {
+      "id": "mt_junior-en-vocab-food",
+      "type": "LANGUAGE",
+      "subject": "英语",
+      "domain": "词汇",
+      "name": "饮食与健康词汇",
+      "description": "积累食物、饮料、三餐与健康生活的词汇，能讨论喜好、点餐与简单的健康建议。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 8,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能说出常见食物与饮料的名称",
+        "能用英语表达饮食喜好与建议"
+      ],
+      "assessmentPrompt": "让{{name}}用英语点一份餐并说两句健康建议。",
+      "standards": [
+        "english-2022:L3:LK",
+        "english-2022:L3:PS"
+      ],
+      "textbooks": [
+        "pep-english:7a:u7"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d2-l3",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-en-vocab-travel",
+      "type": "LANGUAGE",
+      "subject": "英语",
+      "domain": "词汇",
+      "name": "交通旅行词汇",
+      "description": "积累交通方式、问路、地点与旅行的词汇，能就出行与假期进行简单交流。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能说出常见交通工具与地点",
+        "能询问并描述一段出行"
+      ],
+      "assessmentPrompt": "请{{name}}用英语说一次假期出行的安排。",
+      "standards": [
+        "english-2022:L3:LK",
+        "english-2022:L3:PSOC"
+      ],
+      "textbooks": [
+        "pep-english:8a:u1"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d2-l3",
+      "centrality": 0.0051
+    },
+    {
+      "id": "mt_junior-en-vocab-expand",
+      "type": "LANGUAGE",
+      "subject": "英语",
+      "domain": "词汇",
+      "name": "社会与自然话题词汇",
+      "description": "围绕社会交往、科学技术、自然生态等话题扩充词汇量，为更深入的阅读与表达提供语言材料。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能就科技或自然话题说出相关词汇",
+        "词汇量随阅读稳步增长"
+      ],
+      "assessmentPrompt": "给{{name}}一个话题，请他用英语说出相关的词。",
+      "standards": [
+        "english-2022:L3:LK",
+        "english-2022:L3:PSOC",
+        "english-2022:L3:PN"
+      ],
+      "textbooks": [
+        "pep-english:8b:u7"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d2-l3",
+      "centrality": 0.0077
+    },
+    {
+      "id": "mt_junior-en-vocab-environment",
+      "type": "LANGUAGE",
+      "subject": "英语",
+      "domain": "词汇",
+      "name": "环境生态词汇",
+      "description": "积累环境保护、污染与可持续发展相关词汇，能就守护地球的话题表达观点与行动建议。",
+      "gradeRangeStart": 9,
+      "gradeRangeEnd": 9,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能说出环保相关的核心词汇",
+        "能就环境问题表达简单看法"
+      ],
+      "assessmentPrompt": "让{{name}}用英语谈一谈怎样保护环境。",
+      "standards": [
+        "english-2022:L3:LK",
+        "english-2022:L3:PN"
+      ],
+      "textbooks": [
+        "pep-english:9a:u13"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d2-l3",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-en-phrasal-verbs",
+      "type": "LANGUAGE",
+      "subject": "英语",
+      "domain": "词汇",
+      "name": "短语动词与固定搭配",
+      "description": "积累常见短语动词与固定搭配，理解其在语境中的整体含义，提升表达的地道程度。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 9,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能说出常见短语动词的意思",
+        "能在句中正确使用搭配"
+      ],
+      "assessmentPrompt": "请{{name}}用几个短语动词各造一个句子。",
+      "standards": [
+        "english-2022:L3:LK"
+      ],
+      "textbooks": [
+        "pep-english:8a:u9"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d2-l3",
+      "centrality": 0.0051
+    },
+    {
+      "id": "mt_junior-en-word-formation",
+      "type": "LANGUAGE",
+      "subject": "英语",
+      "domain": "词汇",
+      "name": "构词法（前后缀）",
+      "description": "了解前缀、后缀与合成等构词规律，能通过已知词根推测新词含义，扩大词汇量。",
+      "gradeRangeStart": 9,
+      "gradeRangeEnd": 9,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能识别常见前缀后缀的含义",
+        "能由词根推测派生词的意思"
+      ],
+      "assessmentPrompt": "给{{name}}一个词根，请他列出几个派生词并说含义。",
+      "standards": [
+        "english-2022:L3:LK"
+      ],
+      "textbooks": [
+        "pep-english:9a:u1"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d2-l3",
+      "centrality": 0.0051
+    },
+    {
+      "id": "mt_junior-en-idioms-proverbs",
+      "type": "LANGUAGE",
+      "subject": "英语",
+      "domain": "词汇",
+      "name": "英语习语与谚语",
+      "description": "接触常见英语习语与谚语，理解其比喻义与文化意涵，体会语言背后的思维方式。",
+      "gradeRangeStart": 9,
+      "gradeRangeEnd": 9,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能说出几条常见谚语的意思",
+        "能体会习语的比喻用法"
+      ],
+      "assessmentPrompt": "请{{name}}解释一条英语谚语并造句。",
+      "standards": [
+        "english-2022:L3:LK",
+        "english-2022:L3:PSOC"
+      ],
+      "textbooks": [
+        "pep-english:9a:u11"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d2-l3",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-en-articles",
+      "type": "CONCEPTUAL",
+      "subject": "英语",
+      "domain": "语法",
+      "name": "冠词 a/an/the",
+      "description": "理解不定冠词、定冠词与零冠词的用法区别，能在名词前正确选用，避免遗漏或误用。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能说出 a/an/the 的基本区别",
+        "能在句中正确使用冠词"
+      ],
+      "assessmentPrompt": "让{{name}}在一段短文里补全合适的冠词。",
+      "standards": [
+        "english-2022:L3:LK"
+      ],
+      "textbooks": [
+        "pep-english:7a:u2"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d3-l3",
+      "centrality": 0.0051
+    },
+    {
+      "id": "mt_junior-en-count-noncount",
+      "type": "CONCEPTUAL",
+      "subject": "英语",
+      "domain": "语法",
+      "name": "可数不可数名词",
+      "description": "区分可数与不可数名词，掌握 some/any、量词与名词单复数的一致，能正确表达数量。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能判断名词是否可数",
+        "能选用恰当的量词表达"
+      ],
+      "assessmentPrompt": "请{{name}}给一组名词分类并造数量句。",
+      "standards": [
+        "english-2022:L3:LK"
+      ],
+      "textbooks": [
+        "pep-english:7a:u6"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d3-l3",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-en-pronouns",
+      "type": "CONCEPTUAL",
+      "subject": "英语",
+      "domain": "语法",
+      "name": "代词（人称物主反身）",
+      "description": "掌握人称、物主与反身代词的形式与用法，理解主宾格与所有格在句中的角色。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能正确使用主格与宾格",
+        "能区分形容词性与名词性物主代词"
+      ],
+      "assessmentPrompt": "让{{name}}用代词改写几个句子。",
+      "standards": [
+        "english-2022:L3:LK"
+      ],
+      "textbooks": [
+        "pep-english:7a:u3"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d3-l3",
+      "centrality": 0.0077
+    },
+    {
+      "id": "mt_junior-en-prepositions",
+      "type": "CONCEPTUAL",
+      "subject": "英语",
+      "domain": "语法",
+      "name": "介词与介词短语",
+      "description": "学习表示时间、地点、方式的介词及介词短语，能准确表达方位、时间与伴随关系。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 8,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能区分 in/on/at 等时间介词",
+        "能用地点的介词描述方位"
+      ],
+      "assessmentPrompt": "请{{name}}用介词描述物品的位置。",
+      "standards": [
+        "english-2022:L3:LK"
+      ],
+      "textbooks": [
+        "pep-english:7a:u5"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d3-l3",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-en-present-continuous",
+      "type": "CONCEPTUAL",
+      "subject": "英语",
+      "domain": "语法",
+      "name": "现在进行时",
+      "description": "理解现在进行时的结构与用法，描述正在发生的动作，并区分其与一般现在时的不同。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能正确构成 be + doing",
+        "能区分现在进行时与一般现在时"
+      ],
+      "assessmentPrompt": "让{{name}}看图用现在进行时造句。",
+      "standards": [
+        "english-2022:L3:LK"
+      ],
+      "textbooks": [
+        "pep-english:7a:u6"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d3-l3",
+      "centrality": 0.0077
+    },
+    {
+      "id": "mt_junior-en-past-simple",
+      "type": "CONCEPTUAL",
+      "subject": "英语",
+      "domain": "语法",
+      "name": "一般过去时",
+      "description": "掌握规则与不规则动词的过去式，用一般过去时叙述已发生的事情，并会提出 did 引导的疑问。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 8,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能写出常见动词的过去式",
+        "能用过去时讲述一段经历"
+      ],
+      "assessmentPrompt": "请{{name}}用过去时讲一件上周发生的事。",
+      "standards": [
+        "english-2022:L3:LK"
+      ],
+      "textbooks": [
+        "pep-english:7b:u11"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d3-l3",
+      "centrality": 0.0102
+    },
+    {
+      "id": "mt_junior-en-adverbs",
+      "type": "CONCEPTUAL",
+      "subject": "英语",
+      "domain": "语法",
+      "name": "频度与时间副词",
+      "description": "学习 often、usually、never 等频度副词及时间副词的位置与用法，使句子信息更丰富准确。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 8,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能说出常见频度副词的含义",
+        "能把副词放在正确的位置"
+      ],
+      "assessmentPrompt": "让{{name}}用频度副词描述自己的习惯。",
+      "standards": [
+        "english-2022:L3:LK"
+      ],
+      "textbooks": [
+        "pep-english:7b:u2"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d3-l3",
+      "centrality": 0.0051
+    },
+    {
+      "id": "mt_junior-en-future",
+      "type": "CONCEPTUAL",
+      "subject": "英语",
+      "domain": "语法",
+      "name": "一般将来时",
+      "description": "掌握 will 与 be going to 表达将来的区别，能对计划与预测进行表达，并理解其与条件句的联系。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能区分 will 与 be going to",
+        "能谈论未来的计划与打算"
+      ],
+      "assessmentPrompt": "请{{name}}用将来时说说周末计划。",
+      "standards": [
+        "english-2022:L3:LK"
+      ],
+      "textbooks": [
+        "pep-english:8a:u6"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d3-l3",
+      "centrality": 0.0077
+    },
+    {
+      "id": "mt_junior-en-comparative",
+      "type": "CONCEPTUAL",
+      "subject": "英语",
+      "domain": "语法",
+      "name": "比较级与最高级",
+      "description": "掌握形容词与副词的比较级、最高级构成与用法，能对人物、事物进行有层次的比较。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能正确构成比较级与最高级",
+        "能用 than 与最高级句型比较"
+      ],
+      "assessmentPrompt": "让{{name}}用比较级比较两位同学或两件事。",
+      "standards": [
+        "english-2022:L3:LK"
+      ],
+      "textbooks": [
+        "pep-english:8a:u3"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d3-l3",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-en-modal",
+      "type": "CONCEPTUAL",
+      "subject": "英语",
+      "domain": "语法",
+      "name": "情态动词",
+      "description": "学习 can、could、must、should 等情态动词，表达能力、许可、推测与建议，体会语气强弱。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 9,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能区分 must 与 should 的语气",
+        "能用情态动词提建议或表推测"
+      ],
+      "assessmentPrompt": "请{{name}}用 should 给同学提一条建议。",
+      "standards": [
+        "english-2022:L3:LK"
+      ],
+      "textbooks": [
+        "pep-english:8a:u9"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d3-l3",
+      "centrality": 0.0051
+    },
+    {
+      "id": "mt_junior-en-if-clause",
+      "type": "CONCEPTUAL",
+      "subject": "英语",
+      "domain": "语法",
+      "name": "条件状语从句",
+      "description": "理解 if 引导的条件句（主将从现），能用“如果……就……”结构表达假设与结果。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能说出 if 条件句的时态规则",
+        "能用 if 造句表达假设"
+      ],
+      "assessmentPrompt": "让{{name}}用 if 造一个关于学习与生活的句子。",
+      "standards": [
+        "english-2022:L3:LK"
+      ],
+      "textbooks": [
+        "pep-english:8a:u10"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d3-l3",
+      "centrality": 0.0051
+    },
+    {
+      "id": "mt_junior-en-present-perfect",
+      "type": "CONCEPTUAL",
+      "subject": "英语",
+      "domain": "语法",
+      "name": "现在完成时",
+      "description": "掌握 have/has + 过去分词的构成，用现在完成时表达过去发生并与现在相关的经历与状态。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能正确构成现在完成时",
+        "能区分它与一般过去时"
+      ],
+      "assessmentPrompt": "请{{name}}用现在完成时说一段经历。",
+      "standards": [
+        "english-2022:L3:LK"
+      ],
+      "textbooks": [
+        "pep-english:8b:u10"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d3-l3",
+      "centrality": 0.0077
+    },
+    {
+      "id": "mt_junior-en-passive",
+      "type": "CONCEPTUAL",
+      "subject": "英语",
+      "domain": "语法",
+      "name": "被动语态",
+      "description": "理解被动语态的结构与用法，能在需要强调受事或未知施事时把句子转为被动，注意时态一致。",
+      "gradeRangeStart": 9,
+      "gradeRangeEnd": 9,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能说出被动语态的构成",
+        "能把主动句改为被动句"
+      ],
+      "assessmentPrompt": "让{{name}}把一个一般现在/过去的主动句改为被动。",
+      "standards": [
+        "english-2022:L3:LK"
+      ],
+      "textbooks": [
+        "pep-english:9a:u6"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d3-l3",
+      "centrality": 0.0051
+    },
+    {
+      "id": "mt_junior-en-object-clause",
+      "type": "CONCEPTUAL",
+      "subject": "英语",
+      "domain": "语法",
+      "name": "宾语从句",
+      "description": "学习由 that、if/whether 及疑问词引导的宾语从句，注意陈述语序与时态呼应。",
+      "gradeRangeStart": 9,
+      "gradeRangeEnd": 9,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能识别宾语从句的引导词",
+        "能把疑问句变为陈述语序的从句"
+      ],
+      "assessmentPrompt": "请{{name}}把“他来了吗？”变成宾语从句。",
+      "standards": [
+        "english-2022:L3:LK"
+      ],
+      "textbooks": [
+        "pep-english:9a:u3"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d3-l3",
+      "centrality": 0.0051
+    },
+    {
+      "id": "mt_junior-en-attributive",
+      "type": "CONCEPTUAL",
+      "subject": "英语",
+      "domain": "语法",
+      "name": "定语从句",
+      "description": "初步学习由 who、which、that 引导的定语从句，用从句修饰名词，使表达更简洁丰富。",
+      "gradeRangeStart": 9,
+      "gradeRangeEnd": 9,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能说出定语从句的引导词",
+        "能用 that/which 修饰一个名词"
+      ],
+      "assessmentPrompt": "让{{name}}用一个定语从句描述一个人或物。",
+      "standards": [
+        "english-2022:L3:LK"
+      ],
+      "textbooks": [
+        "pep-english:9a:u9"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d3-l3",
+      "centrality": 0.0051
+    },
+    {
+      "id": "mt_junior-en-infinitive",
+      "type": "CONCEPTUAL",
+      "subject": "英语",
+      "domain": "语法",
+      "name": "非谓语动词",
+      "description": "了解动词不定式与动名词作宾语、状语等用法，体会英语中“动词套动词”的表达方式。",
+      "gradeRangeStart": 9,
+      "gradeRangeEnd": 9,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能识别 to do 与 doing 作宾语",
+        "能写出含不定式的句子"
+      ],
+      "assessmentPrompt": "请{{name}}用 want to / enjoy doing 各造一句。",
+      "standards": [
+        "english-2022:L3:LK"
+      ],
+      "textbooks": [
+        "pep-english:9a:u10"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d3-l3",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-en-reporting",
+      "type": "CONCEPTUAL",
+      "subject": "英语",
+      "domain": "语法",
+      "name": "直接引语与间接引语",
+      "description": "学习把直接引语改为间接引语，掌握人称、时态与指示词的变化规则。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 9,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能说出引语转换的时态变化",
+        "能把一句直接引语转为间接引语"
+      ],
+      "assessmentPrompt": "让{{name}}把“I am happy.”改成间接引语。",
+      "standards": [
+        "english-2022:L3:LK"
+      ],
+      "textbooks": [
+        "pep-english:8b:u10"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d3-l3",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-en-tenses-review",
+      "type": "CONCEPTUAL",
+      "subject": "英语",
+      "domain": "语法",
+      "name": "时态综合与辨析",
+      "description": "系统梳理初中所学主要时态，能在语境中准确选用，避免时态混用，提高表达的准确性。",
+      "gradeRangeStart": 9,
+      "gradeRangeEnd": 9,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能列出主要时态及其结构",
+        "能根据语境选用正确时态"
+      ],
+      "assessmentPrompt": "给{{name}}一段文字，请他判断并修正时态错误。",
+      "standards": [
+        "english-2022:L3:LK"
+      ],
+      "textbooks": [
+        "pep-english:9a:u1"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d3-l3",
+      "centrality": 0.0051
+    },
+    {
+      "id": "mt_junior-en-listening",
+      "type": "REPRESENTATIONAL",
+      "subject": "英语",
+      "domain": "听说",
+      "name": "听力理解与策略",
+      "description": "在听的过程中运用预测、抓关键词、记要点等策略，理解主旨与细节，提升获取信息的能力。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "听前能根据题目预测内容",
+        "能抓住对话或独白的关键信息"
+      ],
+      "assessmentPrompt": "放一段录音，让{{name}}说出主旨并记录要点。",
+      "standards": [
+        "english-2022:L3:ST",
+        "english-2022:L3:PS"
+      ],
+      "textbooks": [
+        "pep-english:7a:u2"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d4-l3",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-en-oral-daily",
+      "type": "PROCEDURAL",
+      "subject": "英语",
+      "domain": "听说",
+      "name": "日常交际口语",
+      "description": "掌握问候、介绍、请求、建议、感谢等日常交际用语，能就熟悉话题进行简短得体的交流。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能就熟悉话题进行简短对话",
+        "用语基本得体、发音可懂"
+      ],
+      "assessmentPrompt": "请{{name}}用英语和你进行一段日常问候与自我介绍。",
+      "standards": [
+        "english-2022:L3:PS"
+      ],
+      "textbooks": [
+        "pep-english:7a:u3"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d4-l3",
+      "centrality": 0.0077
+    },
+    {
+      "id": "mt_junior-en-role-play",
+      "type": "PROCEDURAL",
+      "subject": "英语",
+      "domain": "听说",
+      "name": "情景对话与角色扮演",
+      "description": "在购物、用餐、就医、约会等模拟情境中扮演角色，把所学功能用语活用到真实交流里。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能在情境中自然接话",
+        "能运用恰当的交际策略"
+      ],
+      "assessmentPrompt": "让{{name}}参与一次情景对话并互评表现。",
+      "standards": [
+        "english-2022:L3:PS",
+        "english-2022:L3:PSOC"
+      ],
+      "textbooks": [
+        "pep-english:7b:u1"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d4-l3",
+      "centrality": 0.0128
+    },
+    {
+      "id": "mt_junior-en-asking-direction",
+      "type": "PROCEDURAL",
+      "subject": "英语",
+      "domain": "听说",
+      "name": "问路与指路",
+      "description": "掌握问路与指路的功能用语，能借助方位介词清晰描述路线，在陌生环境中进行地点交流。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能提出关于地点的问句",
+        "能用方位词清楚地指路"
+      ],
+      "assessmentPrompt": "请{{name}}用英语问并描述如何去最近的图书馆。",
+      "standards": [
+        "english-2022:L3:PSOC"
+      ],
+      "textbooks": [
+        "pep-english:7b:u8"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d4-l3",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-en-shopping",
+      "type": "PROCEDURAL",
+      "subject": "英语",
+      "domain": "听说",
+      "name": "购物与价格交际",
+      "description": "掌握购物场景的常用表达，能询问价格、谈论尺码颜色、表达喜好与决定，完成真实交易对话。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 8,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能询问并回答价格与尺码",
+        "能礼貌地完成一次购物对话"
+      ],
+      "assessmentPrompt": "让{{name}}用英语完成一次买衣服的对话。",
+      "standards": [
+        "english-2022:L3:PSOC"
+      ],
+      "textbooks": [
+        "pep-english:7b:u10"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d4-l3",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-en-phone-internet",
+      "type": "PROCEDURAL",
+      "subject": "英语",
+      "domain": "听说",
+      "name": "电话与网络交际",
+      "description": "学习电话留言、在线邀请与礼貌请求等交际用语，能在现代沟通场景中清楚、得体地表达。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 9,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能礼貌地提出请求或邀请",
+        "能转达或留下电话信息"
+      ],
+      "assessmentPrompt": "请{{name}}用英语打一个邀请朋友的电话或留言。",
+      "standards": [
+        "english-2022:L3:PSOC"
+      ],
+      "textbooks": [
+        "pep-english:9a:u3"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d4-l3",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-en-oral-narrative",
+      "type": "PROCEDURAL",
+      "subject": "英语",
+      "domain": "听说",
+      "name": "口头描述与叙述",
+      "description": "能围绕人物、事件或经历做较连贯的口头描述，运用连接词使表达有条理，内容较完整。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能围绕一个话题连贯地说几句话",
+        "能使用连接词组织内容"
+      ],
+      "assessmentPrompt": "让{{name}}用英语口头描述一次旅行或经历。",
+      "standards": [
+        "english-2022:L3:PS"
+      ],
+      "textbooks": [
+        "pep-english:8a:u1"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d4-l3",
+      "centrality": 0.0051
+    },
+    {
+      "id": "mt_junior-en-oral-discuss",
+      "type": "PROCEDURAL",
+      "subject": "英语",
+      "domain": "听说",
+      "name": "口头讨论与观点表达",
+      "description": "能在讨论中清晰表达观点、给出理由并回应他人，学习用英语就熟悉话题交换意见。",
+      "gradeRangeStart": 9,
+      "gradeRangeEnd": 9,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能表明自己的观点并给出理由",
+        "能礼貌地回应不同看法"
+      ],
+      "assessmentPrompt": "请{{name}}就“是否该每天运动”发表看法并说理。",
+      "standards": [
+        "english-2022:L3:PS"
+      ],
+      "textbooks": [
+        "pep-english:9a:u7"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d4-l3",
+      "centrality": 0.0051
+    },
+    {
+      "id": "mt_junior-en-debate-speech",
+      "type": "PROCEDURAL",
+      "subject": "英语",
+      "domain": "听说",
+      "name": "英语演讲与辩论",
+      "description": "能就熟悉话题做简短演讲或参与简易辩论，做到观点明确、条理清楚、用语较得体。",
+      "gradeRangeStart": 9,
+      "gradeRangeEnd": 9,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能围绕话题做一两分钟发言",
+        "论点清晰、有简单论证"
+      ],
+      "assessmentPrompt": "让{{name}}就一个校园话题做一次简短英文演讲。",
+      "standards": [
+        "english-2022:L3:PS",
+        "english-2022:L3:ST"
+      ],
+      "textbooks": [
+        "pep-english:9a:u7"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d4-l3",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-en-reading-skills",
+      "type": "REPRESENTATIONAL",
+      "subject": "英语",
+      "domain": "读写",
+      "name": "阅读技能（略读扫读猜词）",
+      "description": "掌握略读抓大意、扫读找细节、借上下文猜词义等阅读微技能，提升阅读速度与独立性。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能快速说出文章大意",
+        "能借助上下文猜出陌生词义"
+      ],
+      "assessmentPrompt": "给{{name}}一篇短文，请他略读说大意、扫读找细节。",
+      "standards": [
+        "english-2022:L3:LK"
+      ],
+      "textbooks": [
+        "pep-english:7a:u4"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d5-l3",
+      "centrality": 0.0077
+    },
+    {
+      "id": "mt_junior-en-read-narrative",
+      "type": "REPRESENTATIONAL",
+      "subject": "英语",
+      "domain": "读写",
+      "name": "叙事类文本阅读",
+      "description": "阅读故事、传记等叙事文本，把握时间线与情节，理解人物动机与作者态度。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能梳理叙事的情节顺序",
+        "能说出人物的主要特点"
+      ],
+      "assessmentPrompt": "让{{name}}读一篇故事并复述主要情节。",
+      "standards": [
+        "english-2022:L3:LK",
+        "english-2022:L3:PS"
+      ],
+      "textbooks": [
+        "pep-english:8b:u6"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d5-l3",
+      "centrality": 0.0051
+    },
+    {
+      "id": "mt_junior-en-read-instruction",
+      "type": "REPRESENTATIONAL",
+      "subject": "英语",
+      "domain": "读写",
+      "name": "说明指示类阅读",
+      "description": "阅读说明、规则、指南等说明性文本，提取步骤与要点，理解作者如何清晰传达信息。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 9,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能找出说明文的步骤或要点",
+        "能按指示完成一项任务"
+      ],
+      "assessmentPrompt": "给{{name}}一段说明文字，请他提取做法或要点。",
+      "standards": [
+        "english-2022:L3:LK",
+        "english-2022:L3:PSOC"
+      ],
+      "textbooks": [
+        "pep-english:9a:u8"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d5-l3",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-en-reading-comprehension",
+      "type": "REPRESENTATIONAL",
+      "subject": "英语",
+      "domain": "读写",
+      "name": "阅读理解（主旨细节推断）",
+      "description": "在获取信息基础上做主旨归纳、细节判断与简单推断，能回答 wh- 问题与推理题。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能归纳段落或文章主旨",
+        "能根据文意做合理推断"
+      ],
+      "assessmentPrompt": "请{{name}}读一篇短文并回答主旨与推断题。",
+      "standards": [
+        "english-2022:L3:LK"
+      ],
+      "textbooks": [
+        "pep-english:8a:u5"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d5-l3",
+      "centrality": 0.0077
+    },
+    {
+      "id": "mt_junior-en-note-taking",
+      "type": "PROCEDURAL",
+      "subject": "英语",
+      "domain": "读写",
+      "name": "记笔记与信息整理",
+      "description": "学习在听读时记录关键词、用思维导图整理信息，把输入转化为可复用的学习资料。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 9,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能记下听读的关键词",
+        "能用图表梳理信息结构"
+      ],
+      "assessmentPrompt": "让{{name}}听一段材料并整理成要点笔记。",
+      "standards": [
+        "english-2022:L3:ST"
+      ],
+      "textbooks": [
+        "pep-english:8b:u2"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d5-l3",
+      "centrality": 0.0077
+    },
+    {
+      "id": "mt_junior-en-writing-sentence",
+      "type": "PROCEDURAL",
+      "subject": "英语",
+      "domain": "读写",
+      "name": "句子写作与连词成句",
+      "description": "从写正确、完整的简单句起步，学习主谓宾结构与连词成句，避免残缺句与中式英语。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能写出主谓宾完整的句子",
+        "能正确使用大小写与标点"
+      ],
+      "assessmentPrompt": "请{{name}}把几个单词连成正确的英文句子。",
+      "standards": [
+        "english-2022:L3:LK"
+      ],
+      "textbooks": [
+        "pep-english:7a:u4"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d5-l3",
+      "centrality": 0.0051
+    },
+    {
+      "id": "mt_junior-en-writing-paragraph",
+      "type": "PROCEDURAL",
+      "subject": "英语",
+      "domain": "读写",
+      "name": "段落写作",
+      "description": "学习写围绕一个中心的段落，用主题句引领、支持句展开，做到条理清楚、首尾呼应。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能写出一个清晰的段落主题句",
+        "段落有支持句并围绕中心"
+      ],
+      "assessmentPrompt": "让{{name}}围绕一个话题写一个英文段落。",
+      "standards": [
+        "english-2022:L3:LK"
+      ],
+      "textbooks": [
+        "pep-english:8a:u5"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d5-l3",
+      "centrality": 0.0102
+    },
+    {
+      "id": "mt_junior-en-writing-narration",
+      "type": "PROCEDURAL",
+      "subject": "英语",
+      "domain": "读写",
+      "name": "记叙文写作（经历）",
+      "description": "用英语写一段个人经历或故事，按时间顺序组织，运用过去时态，内容具体有细节。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能按时间顺序写清经历",
+        "能正确运用过去时态"
+      ],
+      "assessmentPrompt": "请{{name}}用英语写一篇关于一次旅行的短文。",
+      "standards": [
+        "english-2022:L3:LK",
+        "english-2022:L3:PS"
+      ],
+      "textbooks": [
+        "pep-english:8a:u1"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d5-l3",
+      "centrality": 0.0077
+    },
+    {
+      "id": "mt_junior-en-writing-email",
+      "type": "PROCEDURAL",
+      "subject": "英语",
+      "domain": "读写",
+      "name": "应用文写作（邮件日记）",
+      "description": "掌握电子邮件、日记、便条等常见应用文的格式与语气，能就熟悉话题写简短得体的应用文。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能写出格式正确的英文邮件",
+        "日记用语与时态得当"
+      ],
+      "assessmentPrompt": "让{{name}}写一封英文邮件邀请朋友参加活动。",
+      "standards": [
+        "english-2022:L3:LK",
+        "english-2022:L3:PSOC"
+      ],
+      "textbooks": [
+        "pep-english:8a:u9"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d5-l3",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-en-writing-composition",
+      "type": "PROCEDURAL",
+      "subject": "英语",
+      "domain": "读写",
+      "name": "话题作文写作",
+      "description": "围绕给定话题写结构完整的短文，做到有开头结尾、要点齐全、句式有变化、少语法错误。",
+      "gradeRangeStart": 9,
+      "gradeRangeEnd": 9,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能围绕话题写出完整短文",
+        "能使用连接词使行文连贯"
+      ],
+      "assessmentPrompt": "请{{name}}就“如何学好英语”写一篇英文短文。",
+      "standards": [
+        "english-2022:L3:LK",
+        "english-2022:L3:PS"
+      ],
+      "textbooks": [
+        "pep-english:9a:u1"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d5-l3",
+      "centrality": 0.0077
+    },
+    {
+      "id": "mt_junior-en-summary",
+      "type": "PROCEDURAL",
+      "subject": "英语",
+      "domain": "读写",
+      "name": "信息归纳与摘要",
+      "description": "学习用自己的话概括读听所得，删去细节、保留要点，写出简洁准确的英文摘要。",
+      "gradeRangeStart": 9,
+      "gradeRangeEnd": 9,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能区分要点与细节",
+        "能写出简洁的英文摘要"
+      ],
+      "assessmentPrompt": "给{{name}}一段材料，请他用英文写出三句摘要。",
+      "standards": [
+        "english-2022:L3:LK",
+        "english-2022:L3:ST"
+      ],
+      "textbooks": [
+        "pep-english:9a:u13"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d5-l3",
+      "centrality": 0.0077
+    },
+    {
+      "id": "mt_junior-en-cultural-comparison",
+      "type": "CONCEPTUAL",
+      "subject": "英语",
+      "domain": "文化与学习策略",
+      "name": "中外文化对比",
+      "description": "围绕节日、饮食、礼仪等主题比较中外文化异同，在对比中理解文化差异、尊重多样性。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 8,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能说出中外某一节日的差异",
+        "能理解并尊重文化差异"
+      ],
+      "assessmentPrompt": "让{{name}}比较中秋与某西方节日并谈看法。",
+      "standards": [
+        "english-2022:L3:PSOC"
+      ],
+      "textbooks": [
+        "pep-english:8a:u4"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d6-l3",
+      "centrality": 0.0077
+    },
+    {
+      "id": "mt_junior-en-english-countries",
+      "type": "CONCEPTUAL",
+      "subject": "英语",
+      "domain": "文化与学习策略",
+      "name": "英语国家文化常识",
+      "description": "了解主要英语国家的地理、名胜与风土人情等常识，拓宽文化视野，增进对语言背景的理解。",
+      "gradeRangeStart": 8,
+      "gradeRangeEnd": 9,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能说出几个英语国家的基本常识",
+        "能把文化常识与语言学习联系起来"
+      ],
+      "assessmentPrompt": "请{{name}}介绍一个英语国家的一处名胜或习俗。",
+      "standards": [
+        "english-2022:L3:PSOC"
+      ],
+      "textbooks": [
+        "pep-english:9a:u10"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d6-l3",
+      "centrality": 0.0026
+    },
+    {
+      "id": "mt_junior-en-cross-cultural",
+      "type": "META",
+      "subject": "英语",
+      "domain": "文化与学习策略",
+      "name": "跨文化交际意识",
+      "description": "在真实或模拟交际中体会语用差异，学会得体表达、避免文化误解，培养跨文化沟通意识。",
+      "gradeRangeStart": 9,
+      "gradeRangeEnd": 9,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能在交际中注意语用得体",
+        "能识别常见的文化误解"
+      ],
+      "assessmentPrompt": "让{{name}}谈谈一次可能因文化差异产生的误会。",
+      "standards": [
+        "english-2022:L3:PSOC"
+      ],
+      "textbooks": [
+        "pep-english:9a:u3"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d6-l3",
+      "centrality": 0.0051
+    },
+    {
+      "id": "mt_junior-en-learning-strategies",
+      "type": "META",
+      "subject": "英语",
+      "domain": "文化与学习策略",
+      "name": "英语学习策略",
+      "description": "制定可行的学习计划，借助词典、音频与网络资源自主学习，运用认知与调控策略管理学习过程。",
+      "gradeRangeStart": 7,
+      "gradeRangeEnd": 7,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能制定并执行英语学习计划",
+        "遇到困难会主动利用资源"
+      ],
+      "assessmentPrompt": "请{{name}}说说自己学英语的方法与计划。",
+      "standards": [
+        "english-2022:L3:ST"
+      ],
+      "textbooks": [
+        "pep-english:7a:u1"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d6-l3",
+      "centrality": 0.0051
+    },
+    {
+      "id": "mt_junior-en-test-skills",
+      "type": "META",
+      "subject": "英语",
+      "domain": "文化与学习策略",
+      "name": "学习评价与应试策略",
+      "description": "了解听说读写各类任务的要求，掌握审题、时间分配与检查等应试策略，以平常心看待评价。",
+      "gradeRangeStart": 9,
+      "gradeRangeEnd": 9,
+      "stage": "三级（7~9年级）",
+      "evidence": [
+        "能说出常见题型的解题思路",
+        "考后会反思与调整方法"
+      ],
+      "assessmentPrompt": "让{{name}}分享一次考试后的反思与改进办法。",
+      "standards": [
+        "english-2022:L3:ST"
+      ],
+      "textbooks": [
+        "pep-english:9a:u14"
+      ],
+      "textbooks2024": [],
+      "clusterId": "cl-english-d6-l3",
+      "centrality": 0.0026
     }
   ]
 }

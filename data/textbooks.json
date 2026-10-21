@@ -1,5 +1,5 @@
 {
-  "version": "v0.9.0",
+  "version": "v0.10.0",
   "schemaVersion": 1,
   "sources": {
     "smartedu": {
@@ -308,7 +308,7 @@
       "name": "统编版语文（义务教育教科书·语文）",
       "subject": "语文",
       "gradeStart": 1,
-      "note": "教育部统编教材，人民教育出版社出版；ChinaTextbook 收录。",
+      "note": "教育部统编教材，人民教育出版社出版；ChinaTextbook 收录。初中 7~9 年级为统编版（national unified edition），按主题单元编排，目录为通行单元主题（与现行统编教材一致）。",
       "books": [
         {
           "slug": "1a",
@@ -471,6 +471,84 @@
             "语文园地"
           ],
           "chinaTextbookPath": "小学/语文/统编版/义务教育教科书·语文六年级下册.pdf"
+        },
+        {
+          "slug": "7a",
+          "grade": 7,
+          "semester": "上",
+          "units": [
+            "第一单元 四季美景",
+            "第二单元 至爱亲情",
+            "第三单元 学习生活",
+            "第四单元 人生之舟",
+            "第五单元 动物与人",
+            "第六单元 想象之翼"
+          ]
+        },
+        {
+          "slug": "7b",
+          "grade": 7,
+          "semester": "下",
+          "units": [
+            "第一单元 群星闪耀",
+            "第二单元 家国情怀",
+            "第三单元 凡人小事",
+            "第四单元 修身正己",
+            "第五单元 哲理之思",
+            "第六单元 科幻探险"
+          ]
+        },
+        {
+          "slug": "8a",
+          "grade": 8,
+          "semester": "上",
+          "units": [
+            "第一单元 新闻",
+            "第二单元 人物传记",
+            "第三单元 山川美景",
+            "第四单元 情感哲思",
+            "第五单元 说明事物",
+            "第六单元 情操志趣"
+          ]
+        },
+        {
+          "slug": "8b",
+          "grade": 8,
+          "semester": "下",
+          "units": [
+            "第一单元 民风民俗",
+            "第二单元 科技之光",
+            "第三单元 古诗文",
+            "第四单元 演讲",
+            "第五单元 游记",
+            "第六单元 古诗文（二）"
+          ]
+        },
+        {
+          "slug": "9a",
+          "grade": 9,
+          "semester": "上",
+          "units": [
+            "第一单元 诗歌",
+            "第二单元 议论",
+            "第三单元 小说",
+            "第四单元 议论（二）",
+            "第五单元 小说（二）",
+            "第六单元 古诗文"
+          ]
+        },
+        {
+          "slug": "9b",
+          "grade": 9,
+          "semester": "下",
+          "units": [
+            "第一单元 诗歌（二）",
+            "第二单元 小说",
+            "第三单元 古诗文",
+            "第四单元 戏剧",
+            "第五单元 古诗文（二）",
+            "第六单元 古诗文（三）"
+          ]
         }
       ],
       "unitCounts": {
@@ -493,7 +571,7 @@
       "name": "人教版PEP英语（义务教育教科书·英语，三年级起点）",
       "subject": "英语",
       "gradeStart": 3,
-      "note": "人民教育出版社，吴欣主编；ChinaTextbook 收录。英语课从三年级起始，故 grade 3~6 对应课标一级（3~4年级）与二级（5~6年级）。",
+      "note": "人民教育出版社，吴欣主编；ChinaTextbook 收录。英语课从三年级起始，grade 3~6 对应课标一级（3~4年级）与二级（5~6年级），grade 7~9 对应三级（7~9年级）；九年级为全一册（无上下分册）。",
       "books": [
         {
           "slug": "3a",
@@ -604,6 +682,97 @@
             "Then and now"
           ],
           "chinaTextbookPath": "小学/英语/人教版（PEP）（三年级起点）（主编：吴欣）/义务教育教科书·英语（三年级起点）六年级下册.pdf"
+        },
+        {
+          "slug": "7a",
+          "grade": 7,
+          "semester": "上",
+          "units": [
+            "Starter Units",
+            "Unit 1 My name's Gina",
+            "Unit 2 This is my sister",
+            "Unit 3 Is this your pencil",
+            "Unit 4 Where's my schoolbag",
+            "Unit 5 Do you have a soccer ball",
+            "Unit 6 Do you like bananas",
+            "Unit 7 How much are these socks",
+            "Unit 8 When is your birthday",
+            "Unit 9 My favorite subject is science"
+          ]
+        },
+        {
+          "slug": "7b",
+          "grade": 7,
+          "semester": "下",
+          "units": [
+            "Unit 1 Can you play the guitar",
+            "Unit 2 What time do you go to school",
+            "Unit 3 How do you get to school",
+            "Unit 4 Don't eat in class",
+            "Unit 5 Why do you like pandas",
+            "Unit 6 I'm watching TV",
+            "Unit 7 It's raining",
+            "Unit 8 Is there a post office near here",
+            "Unit 9 What does he look like",
+            "Unit 10 I'd like some noodles",
+            "Unit 11 How was your school trip",
+            "Unit 12 What did you do last weekend"
+          ]
+        },
+        {
+          "slug": "8a",
+          "grade": 8,
+          "semester": "上",
+          "units": [
+            "Unit 1 Where did you go on vacation",
+            "Unit 2 How often do you exercise",
+            "Unit 3 I'm more outgoing than my sister",
+            "Unit 4 What's the best movie theater",
+            "Unit 5 Do you want to watch a game show",
+            "Unit 6 I'm going to study computer science",
+            "Unit 7 Will people have robots",
+            "Unit 8 How do you make a banana milk shake",
+            "Unit 9 Can you come to my party",
+            "Unit 10 If you go to the party, you'll have a great time"
+          ]
+        },
+        {
+          "slug": "8b",
+          "grade": 8,
+          "semester": "下",
+          "units": [
+            "Unit 1 What's the matter",
+            "Unit 2 I'll help to clean up the city parks",
+            "Unit 3 Could you please clean your room",
+            "Unit 4 Why don't you talk to your parents",
+            "Unit 5 What were you doing when the rainstorm came",
+            "Unit 6 An old man tried to move the mountains",
+            "Unit 7 What's the highest mountain in the world",
+            "Unit 8 Have you read Treasure Island yet",
+            "Unit 9 Have you ever been to a museum",
+            "Unit 10 I've had this bike for three years"
+          ]
+        },
+        {
+          "slug": "9a",
+          "grade": 9,
+          "semester": "全一册",
+          "units": [
+            "Unit 1 How can we become good learners",
+            "Unit 2 I think that mooncakes are delicious",
+            "Unit 3 Could you please tell me where the restrooms are",
+            "Unit 4 I used to be afraid of the dark",
+            "Unit 5 What are the shirts made of",
+            "Unit 6 When was it invented",
+            "Unit 7 Teenagers should be allowed to choose their own clothes",
+            "Unit 8 It must belong to Carla",
+            "Unit 9 I like music that I can dance to",
+            "Unit 10 You're supposed to shake hands",
+            "Unit 11 Sad movies make me cry",
+            "Unit 12 Life is full of the unexpected",
+            "Unit 13 We're trying to save the earth",
+            "Unit 14 I remember meeting all of you in Grade 7"
+          ]
         }
       ]
     },

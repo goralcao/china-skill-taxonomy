@@ -1,5 +1,5 @@
 {
-  "version": "v0.9.0",
+  "version": "v0.10.0",
   "schemaVersion": 1,
   "dependencies": [
     {
@@ -2709,6 +2709,408 @@
       "reason": "读懂注释和插图的方法也适用于古诗"
     },
     {
+      "topicId": "mt_junior-cn-confusable-chars",
+      "prerequisiteId": "mt_junior-cn-regular-script",
+      "strength": "soft",
+      "reason": "书写规范是辨析易错字的基础"
+    },
+    {
+      "topicId": "mt_junior-cn-calligraphy",
+      "prerequisiteId": "mt_junior-cn-regular-script",
+      "strength": "soft",
+      "reason": "先写好楷书再欣赏书法"
+    },
+    {
+      "topicId": "mt_junior-cn-synonym",
+      "prerequisiteId": "mt_junior-cn-word-emotion",
+      "strength": "soft",
+      "reason": "感情色彩是近义词辨析的一维"
+    },
+    {
+      "topicId": "mt_junior-cn-context-meaning",
+      "prerequisiteId": "mt_junior-cn-word-emotion",
+      "strength": "soft",
+      "reason": "语境理解建立在词语色彩之上"
+    },
+    {
+      "topicId": "mt_junior-cn-figurative-meaning",
+      "prerequisiteId": "mt_junior-cn-context-meaning",
+      "strength": "hard",
+      "reason": "语境义是语境理解的深化"
+    },
+    {
+      "topicId": "mt_junior-cn-idioms",
+      "prerequisiteId": "mt_junior-cn-synonym",
+      "strength": "soft",
+      "reason": "成语是词语积累的进阶"
+    },
+    {
+      "topicId": "mt_junior-cn-classical-words",
+      "prerequisiteId": "mt_junior-cn-context-meaning",
+      "strength": "soft",
+      "reason": "文言实词也需语境推断"
+    },
+    {
+      "topicId": "mt_junior-cn-classical-function",
+      "prerequisiteId": "mt_junior-cn-classical-words",
+      "strength": "hard",
+      "reason": "虚词建立在实词认知之上"
+    },
+    {
+      "topicId": "mt_junior-cn-rhetoric",
+      "prerequisiteId": "mt_junior-cn-word-emotion",
+      "strength": "soft",
+      "reason": "修辞常借助词语色彩"
+    },
+    {
+      "topicId": "mt_junior-cn-sentence-transform",
+      "prerequisiteId": "mt_junior-cn-complex-sentence",
+      "strength": "soft",
+      "reason": "句式变换涉及复句"
+    },
+    {
+      "topicId": "mt_junior-cn-paragraph",
+      "prerequisiteId": "mt_junior-cn-complex-sentence",
+      "strength": "soft",
+      "reason": "段落由句子层次构成"
+    },
+    {
+      "topicId": "mt_junior-cn-punctuation",
+      "prerequisiteId": "mt_junior-cn-rhetoric",
+      "strength": "soft",
+      "reason": "标点助力语气与修辞表达"
+    },
+    {
+      "topicId": "mt_junior-cn-info-extract",
+      "prerequisiteId": "mt_junior-cn-reading-method",
+      "strength": "hard",
+      "reason": "概括信息先会朗读默读"
+    },
+    {
+      "topicId": "mt_junior-cn-narrative-reading",
+      "prerequisiteId": "mt_junior-cn-info-extract",
+      "strength": "hard",
+      "reason": "读记叙文先会提取信息"
+    },
+    {
+      "topicId": "mt_junior-cn-detail-description",
+      "prerequisiteId": "mt_junior-cn-narrative-reading",
+      "strength": "soft",
+      "reason": "细节体会建立在读懂叙事上"
+    },
+    {
+      "topicId": "mt_junior-cn-annotate-reading",
+      "prerequisiteId": "mt_junior-cn-narrative-reading",
+      "strength": "soft",
+      "reason": "批注是主动读记叙的方法"
+    },
+    {
+      "topicId": "mt_junior-cn-expository-reading",
+      "prerequisiteId": "mt_junior-cn-info-extract",
+      "strength": "soft",
+      "reason": "说明文也需提取信息"
+    },
+    {
+      "topicId": "mt_junior-cn-news-reading",
+      "prerequisiteId": "mt_junior-cn-info-extract",
+      "strength": "soft",
+      "reason": "新闻阅读以提取要素为先"
+    },
+    {
+      "topicId": "mt_junior-cn-classical-prose",
+      "prerequisiteId": "mt_junior-cn-classical-words",
+      "strength": "hard",
+      "reason": "文言阅读依赖实词积累"
+    },
+    {
+      "topicId": "mt_junior-cn-classical-poem",
+      "prerequisiteId": "mt_junior-cn-classical-prose",
+      "strength": "soft",
+      "reason": "诗词鉴赏建立在文言语感上"
+    },
+    {
+      "topicId": "mt_junior-cn-classical-recite",
+      "prerequisiteId": "mt_junior-cn-classical-prose",
+      "strength": "hard",
+      "reason": "背诵以读懂为前提"
+    },
+    {
+      "topicId": "mt_junior-cn-recite-accumulate",
+      "prerequisiteId": "mt_junior-cn-classical-recite",
+      "strength": "hard",
+      "reason": "默写建立在背诵之上"
+    },
+    {
+      "topicId": "mt_junior-cn-classical-translation",
+      "prerequisiteId": "mt_junior-cn-classical-prose",
+      "strength": "hard",
+      "reason": "翻译以理解文意为基础"
+    },
+    {
+      "topicId": "mt_junior-cn-modern-poem",
+      "prerequisiteId": "mt_junior-cn-classical-poem",
+      "strength": "soft",
+      "reason": "现代诗鉴赏承接古诗鉴赏"
+    },
+    {
+      "topicId": "mt_junior-cn-argument-reading",
+      "prerequisiteId": "mt_junior-cn-info-extract",
+      "strength": "hard",
+      "reason": "读议论文先会抓要点"
+    },
+    {
+      "topicId": "mt_junior-cn-argument-analysis",
+      "prerequisiteId": "mt_junior-cn-argument-reading",
+      "strength": "hard",
+      "reason": "分析论证建立在读论说文上"
+    },
+    {
+      "topicId": "mt_junior-cn-fiction-reading",
+      "prerequisiteId": "mt_junior-cn-narrative-reading",
+      "strength": "soft",
+      "reason": "小说是记叙文的深化"
+    },
+    {
+      "topicId": "mt_junior-cn-drama-reading",
+      "prerequisiteId": "mt_junior-cn-fiction-reading",
+      "strength": "soft",
+      "reason": "戏剧与小说同属文学体裁"
+    },
+    {
+      "topicId": "mt_junior-cn-noncontinuous",
+      "prerequisiteId": "mt_junior-cn-info-extract",
+      "strength": "hard",
+      "reason": "非连文本核心也是提取信息"
+    },
+    {
+      "topicId": "mt_junior-cn-comparison-reading",
+      "prerequisiteId": "mt_junior-cn-narrative-reading",
+      "strength": "soft",
+      "reason": "比较阅读需先会单篇阅读"
+    },
+    {
+      "topicId": "mt_junior-cn-reading-inquiry",
+      "prerequisiteId": "mt_junior-cn-annotate-reading",
+      "strength": "hard",
+      "reason": "质疑探究建立在批注习惯上"
+    },
+    {
+      "topicId": "mt_junior-cn-book-method",
+      "prerequisiteId": "mt_junior-cn-reading-method",
+      "strength": "hard",
+      "reason": "整本书阅读以基本读法为前提"
+    },
+    {
+      "topicId": "mt_junior-cn-book-zhaohua",
+      "prerequisiteId": "mt_junior-cn-book-method",
+      "strength": "soft",
+      "reason": "用方法读《朝花夕拾》"
+    },
+    {
+      "topicId": "mt_junior-cn-book-xiyou",
+      "prerequisiteId": "mt_junior-cn-book-method",
+      "strength": "soft",
+      "reason": "用方法读《西游记》"
+    },
+    {
+      "topicId": "mt_junior-cn-book-luotuo",
+      "prerequisiteId": "mt_junior-cn-book-method",
+      "strength": "soft",
+      "reason": "用方法读《骆驼祥子》"
+    },
+    {
+      "topicId": "mt_junior-cn-book-haidiliang",
+      "prerequisiteId": "mt_junior-cn-book-method",
+      "strength": "soft",
+      "reason": "用方法读《海底两万里》"
+    },
+    {
+      "topicId": "mt_junior-cn-book-hongxing",
+      "prerequisiteId": "mt_junior-cn-book-method",
+      "strength": "soft",
+      "reason": "用方法读《红星照耀中国》"
+    },
+    {
+      "topicId": "mt_junior-cn-book-kunchong",
+      "prerequisiteId": "mt_junior-cn-book-method",
+      "strength": "soft",
+      "reason": "用方法读《昆虫记》"
+    },
+    {
+      "topicId": "mt_junior-cn-book-fuel",
+      "prerequisiteId": "mt_junior-cn-book-method",
+      "strength": "soft",
+      "reason": "用方法读《傅雷家书》"
+    },
+    {
+      "topicId": "mt_junior-cn-book-steel",
+      "prerequisiteId": "mt_junior-cn-book-method",
+      "strength": "soft",
+      "reason": "用方法读《钢铁是怎样炼成的》"
+    },
+    {
+      "topicId": "mt_junior-cn-book-aq",
+      "prerequisiteId": "mt_junior-cn-book-method",
+      "strength": "soft",
+      "reason": "用方法读《艾青诗选》"
+    },
+    {
+      "topicId": "mt_junior-cn-book-shuihu",
+      "prerequisiteId": "mt_junior-cn-book-method",
+      "strength": "soft",
+      "reason": "用方法读《水浒传》"
+    },
+    {
+      "topicId": "mt_junior-cn-book-sanguo",
+      "prerequisiteId": "mt_junior-cn-book-method",
+      "strength": "soft",
+      "reason": "用方法读《三国演义》"
+    },
+    {
+      "topicId": "mt_junior-cn-book-jianai",
+      "prerequisiteId": "mt_junior-cn-book-method",
+      "strength": "soft",
+      "reason": "用方法读《简·爱》"
+    },
+    {
+      "topicId": "mt_junior-cn-book-rulin",
+      "prerequisiteId": "mt_junior-cn-book-method",
+      "strength": "soft",
+      "reason": "用方法读《儒林外史》"
+    },
+    {
+      "topicId": "mt_junior-cn-book-luotuo",
+      "prerequisiteId": "mt_junior-cn-narrative-reading",
+      "strength": "soft",
+      "reason": "长篇小说承接记叙文阅读"
+    },
+    {
+      "topicId": "mt_junior-cn-book-shuihu",
+      "prerequisiteId": "mt_junior-cn-fiction-reading",
+      "strength": "soft",
+      "reason": "章回小说承接小说阅读"
+    },
+    {
+      "topicId": "mt_junior-cn-book-sanguo",
+      "prerequisiteId": "mt_junior-cn-fiction-reading",
+      "strength": "soft",
+      "reason": "历史小说承接小说阅读"
+    },
+    {
+      "topicId": "mt_junior-cn-writing-narrative",
+      "prerequisiteId": "mt_junior-cn-writing-outline",
+      "strength": "hard",
+      "reason": "动笔前先列提纲"
+    },
+    {
+      "topicId": "mt_junior-cn-writing-scenery",
+      "prerequisiteId": "mt_junior-cn-writing-narrative",
+      "strength": "soft",
+      "reason": "写景是记叙的变体"
+    },
+    {
+      "topicId": "mt_junior-cn-writing-imagination",
+      "prerequisiteId": "mt_junior-cn-writing-narrative",
+      "strength": "soft",
+      "reason": "想象作文承接记叙"
+    },
+    {
+      "topicId": "mt_junior-cn-writing-detail",
+      "prerequisiteId": "mt_junior-cn-detail-description",
+      "strength": "hard",
+      "reason": "写作细节来自阅读体会"
+    },
+    {
+      "topicId": "mt_junior-cn-writing-detail",
+      "prerequisiteId": "mt_junior-cn-writing-narrative",
+      "strength": "soft",
+      "reason": "细节让叙事更生动"
+    },
+    {
+      "topicId": "mt_junior-cn-writing-micro",
+      "prerequisiteId": "mt_junior-cn-writing-narrative",
+      "strength": "soft",
+      "reason": "微写作是短文训练"
+    },
+    {
+      "topicId": "mt_junior-cn-writing-narration-order",
+      "prerequisiteId": "mt_junior-cn-writing-narrative",
+      "strength": "hard",
+      "reason": "叙事顺序服务于记叙"
+    },
+    {
+      "topicId": "mt_junior-cn-writing-expository",
+      "prerequisiteId": "mt_junior-cn-expository-reading",
+      "strength": "hard",
+      "reason": "会读说明文才会写"
+    },
+    {
+      "topicId": "mt_junior-cn-writing-practical",
+      "prerequisiteId": "mt_junior-cn-writing-outline",
+      "strength": "soft",
+      "reason": "应用文也需构思"
+    },
+    {
+      "topicId": "mt_junior-cn-writing-speech",
+      "prerequisiteId": "mt_junior-cn-speech-talk",
+      "strength": "hard",
+      "reason": "演讲稿承接口语训练"
+    },
+    {
+      "topicId": "mt_junior-cn-writing-argument",
+      "prerequisiteId": "mt_junior-cn-argument-reading",
+      "strength": "hard",
+      "reason": "会读议论文才会写"
+    },
+    {
+      "topicId": "mt_junior-cn-writing-argument",
+      "prerequisiteId": "mt_junior-cn-argument-analysis",
+      "strength": "soft",
+      "reason": "写作需懂得论证方法"
+    },
+    {
+      "topicId": "mt_junior-cn-writing-revision",
+      "prerequisiteId": "mt_junior-cn-writing-narrative",
+      "strength": "hard",
+      "reason": "修改以有初稿为前提"
+    },
+    {
+      "topicId": "mt_junior-cn-writing-language",
+      "prerequisiteId": "mt_junior-cn-writing-revision",
+      "strength": "soft",
+      "reason": "语言锤炼是修改的一环"
+    },
+    {
+      "topicId": "mt_junior-cn-writing-language",
+      "prerequisiteId": "mt_junior-cn-sentence-transform",
+      "strength": "soft",
+      "reason": "改句助力语言锤炼"
+    },
+    {
+      "topicId": "mt_junior-cn-speech-talk",
+      "prerequisiteId": "mt_junior-cn-retell",
+      "strength": "hard",
+      "reason": "即席讲话建立在复述表达上"
+    },
+    {
+      "topicId": "mt_junior-cn-discuss-debate",
+      "prerequisiteId": "mt_junior-cn-speech-talk",
+      "strength": "soft",
+      "reason": "讨论辩论是口语的进阶"
+    },
+    {
+      "topicId": "mt_junior-cn-interview",
+      "prerequisiteId": "mt_junior-cn-retell",
+      "strength": "soft",
+      "reason": "采访依赖清楚的表达"
+    },
+    {
+      "topicId": "mt_junior-cn-project-learning",
+      "prerequisiteId": "mt_junior-cn-writing-practical",
+      "strength": "soft",
+      "reason": "成果常用应用文呈现"
+    },
+    {
       "topicId": "mt_en-letter-write",
       "prerequisiteId": "mt_en-letter-name",
       "strength": "hard",
@@ -3217,6 +3619,342 @@
       "prerequisiteId": "mt_en-culture",
       "strength": "soft",
       "reason": "了解文化差异有助选择学习资源"
+    },
+    {
+      "topicId": "mt_junior-en-pronunciation",
+      "prerequisiteId": "mt_junior-en-phonetics",
+      "strength": "hard",
+      "reason": "先会音标再练语调连读"
+    },
+    {
+      "topicId": "mt_junior-en-spelling",
+      "prerequisiteId": "mt_junior-en-phonetics",
+      "strength": "soft",
+      "reason": "读音规则建立在音标之上"
+    },
+    {
+      "topicId": "mt_junior-en-vocab-theme",
+      "prerequisiteId": "mt_junior-en-vocab-school",
+      "strength": "soft",
+      "reason": "主题词汇在基础词汇上扩展"
+    },
+    {
+      "topicId": "mt_junior-en-vocab-food",
+      "prerequisiteId": "mt_junior-en-vocab-theme",
+      "strength": "soft",
+      "reason": "饮食词汇是个人主题的延伸"
+    },
+    {
+      "topicId": "mt_junior-en-vocab-travel",
+      "prerequisiteId": "mt_junior-en-vocab-theme",
+      "strength": "soft",
+      "reason": "旅行词汇是生活主题扩展"
+    },
+    {
+      "topicId": "mt_junior-en-vocab-expand",
+      "prerequisiteId": "mt_junior-en-vocab-travel",
+      "strength": "soft",
+      "reason": "社会自然词汇是话题进阶"
+    },
+    {
+      "topicId": "mt_junior-en-vocab-environment",
+      "prerequisiteId": "mt_junior-en-vocab-expand",
+      "strength": "soft",
+      "reason": "环境生态是话题词汇的深化"
+    },
+    {
+      "topicId": "mt_junior-en-phrasal-verbs",
+      "prerequisiteId": "mt_junior-en-vocab-theme",
+      "strength": "soft",
+      "reason": "短语动词建立在主题词汇上"
+    },
+    {
+      "topicId": "mt_junior-en-word-formation",
+      "prerequisiteId": "mt_junior-en-phrasal-verbs",
+      "strength": "soft",
+      "reason": "构词法助力词汇扩充"
+    },
+    {
+      "topicId": "mt_junior-en-idioms-proverbs",
+      "prerequisiteId": "mt_junior-en-word-formation",
+      "strength": "soft",
+      "reason": "习语需一定词汇量打底"
+    },
+    {
+      "topicId": "mt_junior-en-count-noncount",
+      "prerequisiteId": "mt_junior-en-articles",
+      "strength": "soft",
+      "reason": "冠词与名词可数性相关"
+    },
+    {
+      "topicId": "mt_junior-en-pronouns",
+      "prerequisiteId": "mt_junior-en-articles",
+      "strength": "soft",
+      "reason": "代词与冠词同属限定词范畴"
+    },
+    {
+      "topicId": "mt_junior-en-prepositions",
+      "prerequisiteId": "mt_junior-en-pronouns",
+      "strength": "soft",
+      "reason": "介词短语常替代代词位置"
+    },
+    {
+      "topicId": "mt_junior-en-present-continuous",
+      "prerequisiteId": "mt_junior-en-pronouns",
+      "strength": "soft",
+      "reason": "进行时离不开 be 动词"
+    },
+    {
+      "topicId": "mt_junior-en-past-simple",
+      "prerequisiteId": "mt_junior-en-present-continuous",
+      "strength": "soft",
+      "reason": "过去时在进行时之后学"
+    },
+    {
+      "topicId": "mt_junior-en-adverbs",
+      "prerequisiteId": "mt_junior-en-present-continuous",
+      "strength": "soft",
+      "reason": "频度副词修饰动作"
+    },
+    {
+      "topicId": "mt_junior-en-future",
+      "prerequisiteId": "mt_junior-en-past-simple",
+      "strength": "soft",
+      "reason": "将来时承接过去时体系"
+    },
+    {
+      "topicId": "mt_junior-en-comparative",
+      "prerequisiteId": "mt_junior-en-adverbs",
+      "strength": "soft",
+      "reason": "比较级涉及副词"
+    },
+    {
+      "topicId": "mt_junior-en-modal",
+      "prerequisiteId": "mt_junior-en-future",
+      "strength": "soft",
+      "reason": "情态动词承接将来表达"
+    },
+    {
+      "topicId": "mt_junior-en-if-clause",
+      "prerequisiteId": "mt_junior-en-future",
+      "strength": "hard",
+      "reason": "条件句常用将来时表结果"
+    },
+    {
+      "topicId": "mt_junior-en-present-perfect",
+      "prerequisiteId": "mt_junior-en-past-simple",
+      "strength": "hard",
+      "reason": "现在完成时建立在过去时上"
+    },
+    {
+      "topicId": "mt_junior-en-reporting",
+      "prerequisiteId": "mt_junior-en-present-perfect",
+      "strength": "soft",
+      "reason": "引语转换涉及时态呼应"
+    },
+    {
+      "topicId": "mt_junior-en-passive",
+      "prerequisiteId": "mt_junior-en-modal",
+      "strength": "soft",
+      "reason": "被动语态含情态被动"
+    },
+    {
+      "topicId": "mt_junior-en-object-clause",
+      "prerequisiteId": "mt_junior-en-passive",
+      "strength": "soft",
+      "reason": "从句承接句子结构"
+    },
+    {
+      "topicId": "mt_junior-en-attributive",
+      "prerequisiteId": "mt_junior-en-object-clause",
+      "strength": "soft",
+      "reason": "定语从句与宾语从句同属复合句"
+    },
+    {
+      "topicId": "mt_junior-en-infinitive",
+      "prerequisiteId": "mt_junior-en-attributive",
+      "strength": "soft",
+      "reason": "非谓语承接从句后的表达"
+    },
+    {
+      "topicId": "mt_junior-en-tenses-review",
+      "prerequisiteId": "mt_junior-en-present-perfect",
+      "strength": "hard",
+      "reason": "时态综合复习需先学各时态"
+    },
+    {
+      "topicId": "mt_junior-en-tenses-review",
+      "prerequisiteId": "mt_junior-en-if-clause",
+      "strength": "soft",
+      "reason": "综合复习涵盖条件句"
+    },
+    {
+      "topicId": "mt_junior-en-oral-daily",
+      "prerequisiteId": "mt_junior-en-listening",
+      "strength": "soft",
+      "reason": "听懂是开口交际的前提"
+    },
+    {
+      "topicId": "mt_junior-en-role-play",
+      "prerequisiteId": "mt_junior-en-oral-daily",
+      "strength": "hard",
+      "reason": "情景对话建立在日常交际上"
+    },
+    {
+      "topicId": "mt_junior-en-asking-direction",
+      "prerequisiteId": "mt_junior-en-role-play",
+      "strength": "soft",
+      "reason": "问路是情景交际的一种"
+    },
+    {
+      "topicId": "mt_junior-en-shopping",
+      "prerequisiteId": "mt_junior-en-role-play",
+      "strength": "soft",
+      "reason": "购物是情景交际的一种"
+    },
+    {
+      "topicId": "mt_junior-en-phone-internet",
+      "prerequisiteId": "mt_junior-en-role-play",
+      "strength": "soft",
+      "reason": "电话网络是交际场景拓展"
+    },
+    {
+      "topicId": "mt_junior-en-oral-narrative",
+      "prerequisiteId": "mt_junior-en-oral-daily",
+      "strength": "hard",
+      "reason": "叙述建立在基本口语上"
+    },
+    {
+      "topicId": "mt_junior-en-oral-discuss",
+      "prerequisiteId": "mt_junior-en-oral-narrative",
+      "strength": "hard",
+      "reason": "讨论需连贯表达观点"
+    },
+    {
+      "topicId": "mt_junior-en-debate-speech",
+      "prerequisiteId": "mt_junior-en-oral-discuss",
+      "strength": "hard",
+      "reason": "演讲辩论是口语的进阶"
+    },
+    {
+      "topicId": "mt_junior-en-read-narrative",
+      "prerequisiteId": "mt_junior-en-reading-skills",
+      "strength": "hard",
+      "reason": "叙事阅读先会阅读技能"
+    },
+    {
+      "topicId": "mt_junior-en-read-instruction",
+      "prerequisiteId": "mt_junior-en-reading-skills",
+      "strength": "hard",
+      "reason": "说明阅读先会阅读技能"
+    },
+    {
+      "topicId": "mt_junior-en-reading-comprehension",
+      "prerequisiteId": "mt_junior-en-read-narrative",
+      "strength": "hard",
+      "reason": "理解建立在读懂文本上"
+    },
+    {
+      "topicId": "mt_junior-en-note-taking",
+      "prerequisiteId": "mt_junior-en-reading-comprehension",
+      "strength": "soft",
+      "reason": "记笔记以理解为基础"
+    },
+    {
+      "topicId": "mt_junior-en-writing-sentence",
+      "prerequisiteId": "mt_junior-en-reading-skills",
+      "strength": "soft",
+      "reason": "写句建立在语言输入上"
+    },
+    {
+      "topicId": "mt_junior-en-writing-paragraph",
+      "prerequisiteId": "mt_junior-en-writing-sentence",
+      "strength": "hard",
+      "reason": "段落由句子组成"
+    },
+    {
+      "topicId": "mt_junior-en-writing-narration",
+      "prerequisiteId": "mt_junior-en-writing-paragraph",
+      "strength": "hard",
+      "reason": "记叙文写作先会写段落"
+    },
+    {
+      "topicId": "mt_junior-en-writing-narration",
+      "prerequisiteId": "mt_junior-en-past-simple",
+      "strength": "soft",
+      "reason": "经历写作常用过去时"
+    },
+    {
+      "topicId": "mt_junior-en-writing-email",
+      "prerequisiteId": "mt_junior-en-writing-paragraph",
+      "strength": "soft",
+      "reason": "应用文也需段落组织"
+    },
+    {
+      "topicId": "mt_junior-en-writing-composition",
+      "prerequisiteId": "mt_junior-en-writing-paragraph",
+      "strength": "hard",
+      "reason": "话题作文建立在段落之上"
+    },
+    {
+      "topicId": "mt_junior-en-writing-composition",
+      "prerequisiteId": "mt_junior-en-writing-narration",
+      "strength": "soft",
+      "reason": "作文常含叙事成分"
+    },
+    {
+      "topicId": "mt_junior-en-summary",
+      "prerequisiteId": "mt_junior-en-note-taking",
+      "strength": "hard",
+      "reason": "摘要建立在信息整理上"
+    },
+    {
+      "topicId": "mt_junior-en-summary",
+      "prerequisiteId": "mt_junior-en-reading-comprehension",
+      "strength": "soft",
+      "reason": "摘要需先会阅读理解"
+    },
+    {
+      "topicId": "mt_junior-en-writing-composition",
+      "prerequisiteId": "mt_junior-en-summary",
+      "strength": "soft",
+      "reason": "写作常需先概括要点"
+    },
+    {
+      "topicId": "mt_junior-en-cultural-comparison",
+      "prerequisiteId": "mt_junior-en-vocab-expand",
+      "strength": "soft",
+      "reason": "文化对比需话题词汇支撑"
+    },
+    {
+      "topicId": "mt_junior-en-english-countries",
+      "prerequisiteId": "mt_junior-en-cultural-comparison",
+      "strength": "soft",
+      "reason": "国家常识是文化对比的延伸"
+    },
+    {
+      "topicId": "mt_junior-en-cross-cultural",
+      "prerequisiteId": "mt_junior-en-cultural-comparison",
+      "strength": "hard",
+      "reason": "跨文化意识建立在文化对比上"
+    },
+    {
+      "topicId": "mt_junior-en-cross-cultural",
+      "prerequisiteId": "mt_junior-en-role-play",
+      "strength": "soft",
+      "reason": "得体交际需跨文化意识"
+    },
+    {
+      "topicId": "mt_junior-en-test-skills",
+      "prerequisiteId": "mt_junior-en-learning-strategies",
+      "strength": "soft",
+      "reason": "应试策略是学习策略一环"
+    },
+    {
+      "topicId": "mt_junior-en-note-taking",
+      "prerequisiteId": "mt_junior-en-learning-strategies",
+      "strength": "soft",
+      "reason": "记笔记是认知策略的一部分"
     }
   ]
 }

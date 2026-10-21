@@ -1,5 +1,5 @@
 {
-  "version": "v0.9.0",
+  "version": "v0.10.0",
   "schemaVersion": 1,
   "clusters": [
     {
@@ -533,6 +533,145 @@
       ]
     },
     {
+      "id": "cl-chinese-d2-s4",
+      "subject": "语文",
+      "domain": "识字与写字",
+      "stage": "第四学段（7~9年级）",
+      "summary": "从规范书写楷书、初步学习行楷，到辨析形近字、多音字与易错字，再到欣赏书法、体会汉字文化。重点是把字写对、写美，并养成借助语境和工具书独立识字的习惯，为阅读与写作打下扎实基础。",
+      "topicIds": [
+        "mt_junior-cn-regular-script",
+        "mt_junior-cn-confusable-chars",
+        "mt_junior-cn-calligraphy"
+      ]
+    },
+    {
+      "id": "cl-chinese-d3-s4",
+      "subject": "语文",
+      "domain": "词语积累",
+      "stage": "第四学段（7~9年级）",
+      "summary": "在小学积累之上，进一步辨析近义词、体会词语的感情色彩与语境义，积累成语，并开始系统梳理文言实词与虚词。重点是从死记硬背走向在语境中准确理解与运用，为古诗文阅读和写作表达提供语言材料。",
+      "topicIds": [
+        "mt_junior-cn-word-emotion",
+        "mt_junior-cn-synonym",
+        "mt_junior-cn-idioms",
+        "mt_junior-cn-context-meaning",
+        "mt_junior-cn-figurative-meaning",
+        "mt_junior-cn-classical-words",
+        "mt_junior-cn-classical-function"
+      ]
+    },
+    {
+      "id": "cl-chinese-d4-s4",
+      "subject": "语文",
+      "domain": "句子与标点",
+      "stage": "第四学段（7~9年级）",
+      "summary": "掌握引号、破折号、省略号等重点标点的用法，识别常见修辞，学习句式变换、病句修改和复句关联词，理解段落的层次结构。重点是让句子更规范、连贯、有逻辑，为阅读和写作中的语感打底。",
+      "topicIds": [
+        "mt_junior-cn-punctuation",
+        "mt_junior-cn-rhetoric",
+        "mt_junior-cn-sentence-transform",
+        "mt_junior-cn-complex-sentence",
+        "mt_junior-cn-paragraph"
+      ]
+    },
+    {
+      "id": "cl-chinese-d5-s4",
+      "subject": "语文",
+      "domain": "阅读",
+      "stage": "第四学段（7~9年级）",
+      "summary": "从朗读默读、提取信息、读记叙文，拓展到说明文、新闻、现代诗、议论文、小说、戏剧等多种体裁，并能读浅易文言文、鉴赏古诗词、处理非连续性文本与进行比较阅读。重点是形成文体意识、质疑探究的习惯和基本的文学鉴赏能力。",
+      "topicIds": [
+        "mt_junior-cn-reading-method",
+        "mt_junior-cn-narrative-reading",
+        "mt_junior-cn-info-extract",
+        "mt_junior-cn-detail-description",
+        "mt_junior-cn-annotate-reading",
+        "mt_junior-cn-expository-reading",
+        "mt_junior-cn-news-reading",
+        "mt_junior-cn-modern-poem",
+        "mt_junior-cn-argument-reading",
+        "mt_junior-cn-argument-analysis",
+        "mt_junior-cn-fiction-reading",
+        "mt_junior-cn-drama-reading",
+        "mt_junior-cn-classical-prose",
+        "mt_junior-cn-classical-poem",
+        "mt_junior-cn-noncontinuous",
+        "mt_junior-cn-comparison-reading",
+        "mt_junior-cn-reading-inquiry"
+      ]
+    },
+    {
+      "id": "cl-chinese-d8-s4",
+      "subject": "语文",
+      "domain": "古诗文与整本书阅读",
+      "stage": "第四学段（7~9年级）",
+      "summary": "背诵默写经典古诗文，借助注释阅读浅易文言文并学习翻译，系统阅读《朝花夕拾》《西游记》《水浒传》《简·爱》等中外名著。重点是积累文言语感、掌握整本书阅读方法，在厚实阅读中形成自己的见解。",
+      "topicIds": [
+        "mt_junior-cn-recite-accumulate",
+        "mt_junior-cn-classical-recite",
+        "mt_junior-cn-classical-translation",
+        "mt_junior-cn-book-method",
+        "mt_junior-cn-book-zhaohua",
+        "mt_junior-cn-book-xiyou",
+        "mt_junior-cn-book-luotuo",
+        "mt_junior-cn-book-haidiliang",
+        "mt_junior-cn-book-hongxing",
+        "mt_junior-cn-book-kunchong",
+        "mt_junior-cn-book-fuel",
+        "mt_junior-cn-book-steel",
+        "mt_junior-cn-book-aq",
+        "mt_junior-cn-book-shuihu",
+        "mt_junior-cn-book-sanguo",
+        "mt_junior-cn-book-jianai",
+        "mt_junior-cn-book-rulin"
+      ]
+    },
+    {
+      "id": "cl-chinese-d6-s4",
+      "subject": "语文",
+      "domain": "习作",
+      "stage": "第四学段（7~9年级）",
+      "summary": "从审题列提纲、写人记事、写景状物，到微写作、细节描写、叙事顺序，再到说明文、应用文、演讲稿和简单议论文，最后学习修改升格与语言锤炼。重点是有内容、有顺序、有真情，并能对自己的文章做有理据的修改。",
+      "topicIds": [
+        "mt_junior-cn-writing-outline",
+        "mt_junior-cn-writing-narrative",
+        "mt_junior-cn-writing-scenery",
+        "mt_junior-cn-writing-imagination",
+        "mt_junior-cn-writing-micro",
+        "mt_junior-cn-writing-detail",
+        "mt_junior-cn-writing-narration-order",
+        "mt_junior-cn-writing-expository",
+        "mt_junior-cn-writing-practical",
+        "mt_junior-cn-writing-speech",
+        "mt_junior-cn-writing-argument",
+        "mt_junior-cn-writing-revision",
+        "mt_junior-cn-writing-language"
+      ]
+    },
+    {
+      "id": "cl-chinese-d7-s4",
+      "subject": "语文",
+      "domain": "口语交际",
+      "stage": "第四学段（7~9年级）",
+      "summary": "从复述与转述，到即席讲话、演讲、讨论辩论与采访应对，逐步提升当众表达与倾听合作的能力。重点是说得清楚、听得认真、应对得体，并在交流中学会尊重不同意见。",
+      "topicIds": [
+        "mt_junior-cn-retell",
+        "mt_junior-cn-speech-talk",
+        "mt_junior-cn-discuss-debate",
+        "mt_junior-cn-interview"
+      ]
+    },
+    {
+      "id": "cl-chinese-d9-s4",
+      "subject": "语文",
+      "domain": "综合性学习",
+      "stage": "第四学段（7~9年级）",
+      "summary": "围绕真实问题开展跨学科项目探究，经历提出问题、搜集资料、合作完成、展示成果的全过程，用报告或展板呈现。重点是融通听说读写，在真实任务中发展语文综合素养与应用意识。",
+      "topicIds": [
+        "mt_junior-cn-project-learning"
+      ]
+    },
+    {
       "id": "cl-english-d1-l1",
       "subject": "英语",
       "domain": "字母与语音",
@@ -657,6 +796,115 @@
       "topicIds": [
         "mt_en-culture",
         "mt_en-learning-strategies"
+      ]
+    },
+    {
+      "id": "cl-english-d1-l3",
+      "subject": "英语",
+      "domain": "字母与语音",
+      "stage": "三级（7~9年级）",
+      "summary": "从音标拼读、读音规则到语音语调与连读，逐步把“见词能读、听音能写”变成习惯。重点是建立正确的语音基础，为词汇记忆、听力辨音和口语流利度打底。",
+      "topicIds": [
+        "mt_junior-en-phonetics",
+        "mt_junior-en-pronunciation",
+        "mt_junior-en-spelling"
+      ]
+    },
+    {
+      "id": "cl-english-d2-l3",
+      "subject": "英语",
+      "domain": "词汇",
+      "stage": "三级（7~9年级）",
+      "summary": "围绕个人、家庭、学校、社会、自然等主题持续扩充词汇，学习短语动词、固定搭配与构词法，并接触习语谚语。重点是从背单词走向在语境中理解与运用，并借助构词法规律扩大词汇量。",
+      "topicIds": [
+        "mt_junior-en-vocab-school",
+        "mt_junior-en-vocab-theme",
+        "mt_junior-en-vocab-food",
+        "mt_junior-en-vocab-travel",
+        "mt_junior-en-vocab-expand",
+        "mt_junior-en-vocab-environment",
+        "mt_junior-en-phrasal-verbs",
+        "mt_junior-en-word-formation",
+        "mt_junior-en-idioms-proverbs"
+      ]
+    },
+    {
+      "id": "cl-english-d3-l3",
+      "subject": "英语",
+      "domain": "语法",
+      "stage": "三级（7~9年级）",
+      "summary": "系统学习冠词、名词、代词、介词、四大时态、比较级、情态动词、条件句、现在完成时，直至被动语态、宾语从句、定语从句、非谓语动词与引语转换。重点是建立清晰的语法体系，能在语境中准确选用时态与句型。",
+      "topicIds": [
+        "mt_junior-en-articles",
+        "mt_junior-en-count-noncount",
+        "mt_junior-en-pronouns",
+        "mt_junior-en-prepositions",
+        "mt_junior-en-present-continuous",
+        "mt_junior-en-past-simple",
+        "mt_junior-en-adverbs",
+        "mt_junior-en-future",
+        "mt_junior-en-comparative",
+        "mt_junior-en-modal",
+        "mt_junior-en-if-clause",
+        "mt_junior-en-present-perfect",
+        "mt_junior-en-passive",
+        "mt_junior-en-object-clause",
+        "mt_junior-en-attributive",
+        "mt_junior-en-infinitive",
+        "mt_junior-en-reporting",
+        "mt_junior-en-tenses-review"
+      ]
+    },
+    {
+      "id": "cl-english-d4-l3",
+      "subject": "英语",
+      "domain": "听说",
+      "stage": "三级（7~9年级）",
+      "summary": "从听力策略、日常交际，到情景角色扮演、问路购物，再到口头叙述、讨论与演讲辩论。重点是敢开口、听得懂，并在真实或模拟情境中得体、连贯地交流。",
+      "topicIds": [
+        "mt_junior-en-listening",
+        "mt_junior-en-oral-daily",
+        "mt_junior-en-role-play",
+        "mt_junior-en-asking-direction",
+        "mt_junior-en-shopping",
+        "mt_junior-en-phone-internet",
+        "mt_junior-en-oral-narrative",
+        "mt_junior-en-oral-discuss",
+        "mt_junior-en-debate-speech"
+      ]
+    },
+    {
+      "id": "cl-english-d5-l3",
+      "subject": "英语",
+      "domain": "读写",
+      "stage": "三级（7~9年级）",
+      "summary": "阅读方面掌握略读扫读猜词、叙事与说明类文本阅读及主旨细节推断；写作方面从写正确句子，到段落、记叙文、应用文，再到话题作文与英文摘要。重点是输入与输出相互促进，提升语篇能力。",
+      "topicIds": [
+        "mt_junior-en-reading-skills",
+        "mt_junior-en-read-narrative",
+        "mt_junior-en-read-instruction",
+        "mt_junior-en-reading-comprehension",
+        "mt_junior-en-note-taking",
+        "mt_junior-en-writing-sentence",
+        "mt_junior-en-writing-paragraph",
+        "mt_junior-en-writing-narration",
+        "mt_junior-en-writing-email",
+        "mt_junior-en-writing-composition",
+        "mt_junior-en-summary"
+      ]
+    },
+    {
+      "id": "cl-english-d6-l3",
+      "subject": "英语",
+      "domain": "文化与学习策略",
+      "stage": "三级（7~9年级）",
+      "summary": "在对比中外文化、了解英语国家常识中培养跨文化交际意识；同时掌握制定计划、利用资源、记笔记、应试反思等学习策略。重点是成为会学、善学、有文化意识的英语学习者。",
+      "topicIds": [
+        "mt_junior-en-cultural-comparison",
+        "mt_junior-en-english-countries",
+        "mt_junior-en-cross-cultural",
+        "mt_junior-en-learning-strategies",
+        "mt_junior-en-test-skills"
       ]
     }
   ]

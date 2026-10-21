@@ -34,7 +34,9 @@ import textbook_paths  # noqa: E402
 import textbooks as tb  # noqa: E402
 import textbooks_2024 as tb24  # noqa: E402
 import topics_chinese  # noqa: E402
+import topics_chinese_junior  # noqa: E402
 import topics_english  # noqa: E402
+import topics_english_junior  # noqa: E402
 import topics_math  # noqa: E402
 import topics_math_junior  # noqa: E402
 import teaching_research_math_a  # noqa: E402
@@ -44,14 +46,16 @@ import teaching_research_chinese_a  # noqa: E402
 import teaching_research_chinese_b  # noqa: E402
 import teaching_research_english  # noqa: E402
 
-VERSION = "v0.9.0"
+VERSION = "v0.10.0"
 SCHEMA_VERSION = 1
 
 MODULES = [
     ("数学", topics_math),
     ("数学", topics_math_junior),
     ("语文", topics_chinese),
+    ("语文", topics_chinese_junior),
     ("英语", topics_english),
+    ("英语", topics_english_junior),
 ]
 
 RESEARCH_MODULES = [
@@ -100,6 +104,9 @@ ENGLISH_STAGE_BY_GRADE = {
     4: "一级（3~4年级）",
     5: "二级（5~6年级）",
     6: "二级（5~6年级）",
+    7: "三级（7~9年级）",
+    8: "三级（7~9年级）",
+    9: "三级（7~9年级）",
 }
 
 
@@ -127,14 +134,20 @@ STAGE_SLUG = {
     "第四学段（7~9年级）": "s4",
     "一级（3~4年级）": "l1",
     "二级（5~6年级）": "l2",
+    "三级（7~9年级）": "l3",
 }
 
 
 def build_domain_index():
-    """按学科内首次出现顺序给领域编号，用于生成稳定的领域簇 id。"""
+    """按学科内首次出现顺序给领域编号，用于生成稳定的领域簇 id。
+
+    注意：领域编号需跨同一学科的全部模块累加（小学 + 初中），
+    不能在每个模块处重置计数器，否则后加载的模块会把领域重新从 1 编号，
+    与先加载模块的同名/异名领域发生簇 id 冲突。
+    """
     idx, counters = {}, {}
     for subject, mod in MODULES:
-        counters[subject] = {}
+        counters.setdefault(subject, {})
         for t in mod.TOPICS:
             d = t["domain"]
             if d not in counters[subject]:
