@@ -140,6 +140,11 @@ for (const t of topics) {
 }
 
 const versionBySlug = new Map(textbooksDoc.versions.map((v) => [v.slug, v]));
+// 教材引用正则按数据动态生成（新增版本无需改这里）；长 slug 在前，避免被前缀先匹配
+const RE_TEXTBOOK = new RegExp('^(' +
+  textbooksDoc.versions.map((v) => v.slug).sort((a, b) => b.length - a.length)
+    .map((s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|') +
+  '):([1-9][ab])(?::(u[1-9][0-9]?))?(?:#(.+))?$');
 const bookByRef = (vslug, bslug) => {
   const v = versionBySlug.get(vslug);
   if (!v) return { error: `不存在的教材版本: ${vslug}` };
@@ -149,8 +154,7 @@ const bookByRef = (vslug, bslug) => {
 };
 for (const t of topics) {
   for (const ref of t.textbooks) {
-    const m = ref.match(
-      /^(pep-math|tongbian-chinese|pep-english|pep-physics|pep-chemistry|tongbian-history|pep-geography):([1-9][ab])(?::(u[1-9][0-9]?))?(?:#(.+))?$/);
+    const m = ref.match(RE_TEXTBOOK);
     if (!m) {
       fail(`主题 ${t.name} 教材引用格式非法: ${ref}`);
       continue;
@@ -229,6 +233,54 @@ for (const t of topics) {
     if (book.grade !== Number(bslug[0])) fail(`主题 ${t.name} 2024 教材引用册次与年级不符: ${ref}`);
   }
 }
+/* ---------- 6.5 其他教材版本映射（v0.15：北师大版/苏教版数学、外研社版英语） ---------- */
+const mapAlt = textbooksDoc.unitMapAlt ?? {};
+const ALT_SLUGS = new Set(['bnu-math', 'sj-math', 'fltrp-english']);
+for (const [key, entry] of Object.entries(mapAlt)) {
+  const t = topics.find((x) => x.id === 'mt_' + key);
+  if (!t) { fail(`unitMapAlt 指向不存在的主题: ${key}`); continue; }
+  if (!Array.isArray(entry.refs) || !entry.refs.length || entry.refs.length > 6) {
+    fail(`unitMapAlt refs 非法: ${key}`); continue;
+  }
+  // note 由多个版本合并而成，上限放宽到 400
+  if (entry.note !== undefined
+      && (typeof entry.note !== 'string' || entry.note.length < 4 || entry.note.length > 400)) {
+    fail(`unitMapAlt note 非法: ${key}`);
+  }
+  const a = JSON.stringify([...(t.textbooksAlt ?? [])].sort());
+  const b = JSON.stringify([...(entry.refs ?? [])].sort());
+  if (a !== b) fail(`unitMapAlt 与主题 textbooksAlt 不一致: ${key}`);
+  if (entry.note !== undefined && t.textbookNoteAlt !== entry.note) {
+    fail(`unitMapAlt 与主题 textbookNoteAlt 不一致: ${key}`);
+  }
+  if (entry.note === undefined && t.textbookNoteAlt !== undefined) {
+    fail(`主题 textbooksAlt 映射 ${key} 缺少 note（主题却有 textbookNoteAlt）`);
+  }
+  for (const ref of entry.refs ?? []) {
+    const m = ref.match(RE_TEXTBOOK);
+    if (!m) { fail(`主题 ${t.name} 其他版本教材引用格式非法: ${ref}`); continue; }
+    const [, vslug, bslug, unitPart] = m;
+    if (!ALT_SLUGS.has(vslug)) fail(`主题 ${t.name} 其他版本引用不属于替代版本: ${ref}`);
+    const { book, error } = bookByRef(vslug, bslug);
+    if (error) { fail(`主题 ${t.name} 其他版本教材引用无效: ${ref}（${error}）`); continue; }
+    if (unitPart) {
+      const n = Number(unitPart.slice(1));
+      const limit = (book.units ?? []).length;
+      if (n > limit) fail(`主题 ${t.name} 其他版本教材引用单元序号越界: ${ref}（该册共 ${limit} 个单元）`);
+    }
+    if (book.grade !== Number(bslug[0])) fail(`主题 ${t.name} 其他版本教材引用册次与年级不符: ${ref}`);
+    if (book.grade > t.gradeRangeEnd) {
+      warn(`主题 ${t.name}（${t.gradeRangeStart}~${t.gradeRangeEnd} 年级）其他版本引用了更高年级教材: ${ref}`);
+    }
+  }
+}
+for (const t of topics) {
+  const declared = t.textbooksAlt ?? [];
+  if (declared.length && mapAlt[t.id.slice(3)] === undefined) {
+    fail(`主题 ${t.name} textbooksAlt 非空但 unitMapAlt 无对应条目`);
+  }
+}
+
 // 覆盖提示：旧版引用册次已被 2024 版替换、但暂无 2024 单元引用的主题
 const REPLACED_BOOKS = new Set(['1a', '1b', '2a', '2b', '3a', '3b', '4a']);
 for (const t of topics) {
@@ -363,6 +415,7 @@ const researchSummary = Object.entries(researchBySubject)
   .map(([s, c]) => `${s} ${c.covered}/${c.total}`).join('，');
 console.log(`教学研究记录 ${research.records.length}（${researchSummary}）`);
 console.log(`2024 版教材映射 ${Object.keys(map2024).length} 条（已关联主题 ${topics.filter((t) => (t.textbooks2024 ?? []).length).length}，其中内容迁移说明 ${Object.values(map2024).filter((e) => e.note).length} 条）`);
+console.log(`其他教材版本映射 ${Object.keys(mapAlt).length} 条（已关联主题 ${topics.filter((t) => (t.textbooksAlt ?? []).length).length}）`);
 console.log(`DAG 拓扑排序: ${sorted}/${topics.length}`);
 if (warnings.length) {
   console.log(`\n警告 ${warnings.length} 条:`);

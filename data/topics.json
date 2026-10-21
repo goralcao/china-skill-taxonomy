@@ -1,5 +1,5 @@
 {
-  "version": "v0.14.0",
+  "version": "v0.15.0",
   "schemaVersion": 1,
   "topics": [
     {
@@ -28,7 +28,14 @@
         "pep-math-2024:1a:u1",
         "pep-math-2024:1a:u2"
       ],
+      "textbooksAlt": [
+        "bnu-math:1a:u2",
+        "sj-math:1a:u2",
+        "sj-math:1a:u4",
+        "sj-math:1a:u6"
+      ],
       "textbookNote2024": "10 以内数的认识拆分为「5以内」与「6～10」两个单元，连续编排。",
+      "textbookNoteAlt": "北师大版10以内数的认识集中在一上第一单元「生活中的数」，人教版拆成1~5与6~10两个单元。；苏教版把 10 以内数拆成「0～5」「6～9」「10 的认识」三个单元依次编排。",
       "clusterId": "cl-math-d1-s1",
       "centrality": 0.0102
     },
@@ -57,7 +64,13 @@
         "pep-math-2024:1a:u1",
         "pep-math-2024:1a:u2"
       ],
+      "textbooksAlt": [
+        "bnu-math:1a:u2",
+        "bnu-math:1a:u3",
+        "sj-math:1a:u2"
+      ],
       "textbookNote2024": "分与合在第一单元，数的组成在第二单元。",
+      "textbookNoteAlt": "北师大版：分与合随加减法一起出现，北师大版在一上「5以内数加与减」引入，人教版单列于认识单元。；苏教版：分与合在「一 0～5的认识和加减法」中先行学习，为加减法作准备。",
       "clusterId": "cl-math-d1-s1",
       "centrality": 0.0085
     },
@@ -87,6 +100,14 @@
         "pep-math-2024:1a:u1",
         "pep-math-2024:1a:u2"
       ],
+      "textbooksAlt": [
+        "bnu-math:1a:u3",
+        "bnu-math:1a:u6",
+        "sj-math:1a:u2",
+        "sj-math:1a:u4",
+        "sj-math:1a:u6"
+      ],
+      "textbookNoteAlt": "北师大版按5以内、10以内两段编排加减法，人教版集中在「6~10的认识和加减法」。；苏教版：加减法随三段认数单元分步出现，10 的加减法单列在第四单元。",
       "clusterId": "cl-math-d1-s1",
       "centrality": 0.0119
     },
@@ -114,7 +135,12 @@
       "textbooks2024": [
         "pep-math-2024:1a:u2"
       ],
+      "textbooksAlt": [
+        "bnu-math:1a:u6",
+        "sj-math:1a:u4"
+      ],
       "textbookNote2024": "连加、连减与加减混合编排在第二单元末。",
+      "textbookNoteAlt": "北师大版：连加连减与加减混合编排在一上第四单元「10以内数加与减」末段。；苏教版：连加、连减与加减混合编排在「二 6～9的认识和加减法」单元末。",
       "clusterId": "cl-math-d1-s1",
       "centrality": 0.0034
     },
@@ -142,7 +168,13 @@
       "textbooks2024": [
         "pep-math-2024:1a:u4"
       ],
+      "textbooksAlt": [
+        "bnu-math:1b:u1",
+        "sj-math:1a:u8",
+        "sj-math:1b:u5"
+      ],
       "textbookNote2024": "新增「10的再认识」，从计数单位与位值制角度理解十进制。",
+      "textbookNoteAlt": "北师大版把11~20各数的认识与20以内加法合为一下第一单元，人教版在一上单设「11~20各数的认识」。；苏教版：一上只认识 11～19，20 及更大的数在一年级下册「认识20~99」继续。",
       "clusterId": "cl-math-d1-s1",
       "centrality": 0.0068
     },
@@ -170,6 +202,11 @@
       "textbooks2024": [
         "pep-math-2024:1a:u5"
       ],
+      "textbooksAlt": [
+        "bnu-math:1b:u1",
+        "sj-math:1b:u1"
+      ],
+      "textbookNoteAlt": "北师大版：20以内进位加法与数的认识同单元，人教版在一上末设「20以内的进位加法」。；苏教版：进位加法集中在一下第一单元，比人教版一上「20以内的进位加法」晚一学期。",
       "clusterId": "cl-math-d1-s1",
       "centrality": 0.0068
     },
@@ -197,6 +234,11 @@
       "textbooks2024": [
         "pep-math-2024:1b:u2"
       ],
+      "textbooksAlt": [
+        "bnu-math:1b:u4",
+        "sj-math:1b:u1"
+      ],
+      "textbookNoteAlt": "北师大版：退位减法单设一下第三单元「20以内数与减法」，与人教版一下第二单元对应。；苏教版：退位减法与进位加法同在一年级下册第一单元，成对编排。",
       "clusterId": "cl-math-d1-s1",
       "centrality": 0.0068
     },
@@ -224,6 +266,12 @@
       "textbooks2024": [
         "pep-math-2024:1b:u3"
       ],
+      "textbooksAlt": [
+        "bnu-math:1b:u5",
+        "sj-math:1b:u5",
+        "sj-math:1b:u6"
+      ],
+      "textbookNoteAlt": "北师大版：100以内数的认识在一下第四单元，与人教版一下第四单元位置一致。；苏教版：百以内数的认识在一下第四单元「认识20~99」，数感培养见综合实践「50有多大」。",
       "clusterId": "cl-math-d1-s1",
       "centrality": 0.0153
     },
@@ -252,7 +300,12 @@
         "pep-math-2024:1b:u3",
         "pep-math-2024:1b:u4"
       ],
+      "textbooksAlt": [
+        "bnu-math:1b:u7",
+        "sj-math:1b:u7"
+      ],
       "textbookNote2024": "100 以内简单加减法在「100以内数的认识」单元，口算加减法单设第四单元。",
+      "textbookNoteAlt": "北师大版：口算加减法单设一下第五单元「100以内数加与减（一）」。；苏教版：口算在一下第五单元，按「加、减整十数」与「加、减一位数」两步推进。",
       "clusterId": "cl-math-d1-s1",
       "centrality": 0.0119
     },
@@ -281,7 +334,14 @@
       "textbooks2024": [
         "pep-math-2024:1b:u5"
       ],
+      "textbooksAlt": [
+        "bnu-math:2a:u1",
+        "bnu-math:2b:u1",
+        "sj-math:2a:u7",
+        "sj-math:2b:u6"
+      ],
       "textbookNote2024": "100 以内加减法整体移至一年级下册，笔算单设第五单元。",
+      "textbookNoteAlt": "北师大版笔算加减法拆成二上「（二）」与二下「（三）」两段，人教版集中在二上一个单元。；苏教版：笔算先在二上「两位数加、减两位数」，再由二下「两、三位数的加法和减法」扩展。",
       "clusterId": "cl-math-d1-s1",
       "centrality": 0.0119
     },
@@ -310,7 +370,12 @@
       "textbooks2024": [
         "pep-math-2024:2a:u2"
       ],
+      "textbooksAlt": [
+        "bnu-math:2a:u4",
+        "sj-math:2a:u1"
+      ],
       "textbookNote2024": "表内乘法集中在二上「1~6的表内乘法」。",
+      "textbookNoteAlt": "北师大版：乘法意义在二上第三单元「数一数与乘法」，从同数连加引入，人教版称「表内乘法（一）」。；苏教版：乘法意义在二上「一 1-6的表内乘法」开篇，先认识几个几再认识乘法。",
       "clusterId": "cl-math-d1-s1",
       "centrality": 0.0068
     },
@@ -338,6 +403,11 @@
       "textbooks2024": [
         "pep-math-2024:2a:u2"
       ],
+      "textbooksAlt": [
+        "bnu-math:2a:u5",
+        "sj-math:2a:u1"
+      ],
+      "textbookNoteAlt": "北师大版称「乘法口诀（一）」，与人教版2~6的乘法口诀对应。；苏教版：口诀顺序与人教版不同：苏教版先学 5、6 的口诀，再学 1～4 的口诀。",
       "clusterId": "cl-math-d1-s1",
       "centrality": 0.0068
     },
@@ -366,6 +436,11 @@
       "textbooks2024": [
         "pep-math-2024:2a:u5"
       ],
+      "textbooksAlt": [
+        "bnu-math:2a:u9",
+        "sj-math:2a:u4"
+      ],
+      "textbookNoteAlt": "北师大版称「乘法口诀（二）」，编排在二上第七单元。；苏教版：7～9 的乘法口诀与用口诀求商合并为「三 7-9的表内乘除法」一个单元。",
       "clusterId": "cl-math-d1-s1",
       "centrality": 0.0068
     },
@@ -394,7 +469,12 @@
       "textbooks2024": [
         "pep-math-2024:2a:u3"
       ],
+      "textbooksAlt": [
+        "bnu-math:2a:u7",
+        "sj-math:2a:u2"
+      ],
       "textbookNote2024": "表内除法集中在二上「1～6的表内除法」。",
+      "textbookNoteAlt": "北师大版：平均分与除法意义在二上第五单元「分一分与除法」，人教版放在二下第二单元。；苏教版：平均分与除法在二上第二单元，与人教版二下「表内除法（一）」相差一学期。",
       "clusterId": "cl-math-d1-s1",
       "centrality": 0.0119
     },
@@ -422,6 +502,12 @@
       "textbooks2024": [
         "pep-math-2024:2a:u3"
       ],
+      "textbooksAlt": [
+        "bnu-math:2a:u7",
+        "bnu-math:2a:u10",
+        "sj-math:2a:u2"
+      ],
+      "textbookNoteAlt": "北师大版：用口诀求商紧随除法意义之后，北师大版二年级即完成，人教版在二下。；苏教版：用 1～6 的口诀求商紧随平均分编排，与乘法单元交替进行。",
       "clusterId": "cl-math-d1-s1",
       "centrality": 0.0085
     },
@@ -450,6 +536,12 @@
       "textbooks2024": [
         "pep-math-2024:2a:u5"
       ],
+      "textbooksAlt": [
+        "bnu-math:2a:u10",
+        "bnu-math:2b:u3",
+        "sj-math:2a:u4"
+      ],
+      "textbookNoteAlt": "北师大版：7~9口诀求商在二上「乘除法的应用（一）」与二下「除法的应用」中完成。；苏教版：7～9 的求商与乘法口诀同单元完成，不单设「表内除法（二）」。",
       "clusterId": "cl-math-d1-s1",
       "centrality": 0.0051
     },
@@ -478,7 +570,13 @@
       "textbooks2024": [
         "pep-math-2024:3a:u2"
       ],
+      "textbooksAlt": [
+        "bnu-math:2a:u10",
+        "bnu-math:2b:u3",
+        "sj-math:2b:u2"
+      ],
       "textbookNote2024": "混合运算集中调整至三年级上册第二单元。",
+      "textbookNoteAlt": "北师大版两步运算随乘除法应用单元渗透，未单设「混合运算」；人教版在二下第五单元单设。；苏教版二年级不单设「混合运算」单元，两步运算融入二下「简单的数量关系（二)」。",
       "clusterId": "cl-math-d1-s1",
       "centrality": 0.0085
     },
@@ -506,6 +604,11 @@
       "textbooks2024": [
         "pep-math-2024:2b:u1"
       ],
+      "textbooksAlt": [
+        "bnu-math:2b:u3",
+        "sj-math:2a:u9"
+      ],
+      "textbookNoteAlt": "北师大版：有余数的除法并入二下「除法的应用」，人教版在二下第六单元单设。；苏教版：有余数的除法在二上第六单元，比人教版二下的安排早一学期。",
       "clusterId": "cl-math-d1-s1",
       "centrality": 0.0017
     },
@@ -533,6 +636,11 @@
       "textbooks2024": [
         "pep-math-2024:2b:u3"
       ],
+      "textbooksAlt": [
+        "bnu-math:2b:u5",
+        "sj-math:2b:u5"
+      ],
+      "textbookNoteAlt": "北师大版称「生活中的大数」，从生活情境认识万以内的数，人教版称「万以内数的认识」。；苏教版：万以内数分两步：二上「认识三位数」、二下「五 认识四位数」。",
       "clusterId": "cl-math-d1-s1",
       "centrality": 0.0136
     },
@@ -561,6 +669,12 @@
       "textbooks2024": [
         "pep-math-2024:2b:u4"
       ],
+      "textbooksAlt": [
+        "bnu-math:2b:u8",
+        "bnu-math:3a:u4",
+        "sj-math:2b:u6"
+      ],
+      "textbookNoteAlt": "北师大版：大数加减分「（一）」「（二）」两段，跨二下与三上，人教版集中在三上两个单元。；苏教版：万以内加减法集中在二下「两、三位数的加法和减法」，比人教版三上早一学期。",
       "clusterId": "cl-math-d1-s2",
       "centrality": 0.0085
     },
@@ -588,7 +702,12 @@
       "textbooks2024": [
         "pep-math-2024:3a#曹冲称象的故事"
       ],
+      "textbooksAlt": [
+        "bnu-math:2a:u3",
+        "sj-math:2b:u1"
+      ],
       "textbookNote2024": "克与千克由二下调整至三上综合与实践「曹冲称象的故事」（质量单位）。",
+      "textbookNoteAlt": "北师大版克与千克后移至三年级「测量（二）」，二年级「测量（一）」只涉及长度单位，此处取最接近的测量单元。；苏教版质量单位（克、千克）在三上「曹冲称象的故事」，二年级最接近的是二下「厘米和米」的测量经验。",
       "clusterId": "cl-math-d2-s1",
       "centrality": 0.0034
     },
@@ -616,7 +735,12 @@
       "textbooks2024": [
         "pep-math-2024:2b#时间在哪里"
       ],
+      "textbooksAlt": [
+        "bnu-math:1a:u9",
+        "sj-math:3a:u2"
+      ],
       "textbookNote2024": "时、分、秒由三上调整至二下综合与实践「时间在哪里」。",
+      "textbookNoteAlt": "北师大版把认识钟表与时间安排放入一上综合实践「记录我的一天」，人教版在三上第一单元单设「时、分、秒」。；苏教版：时、分、秒与经过时间在三年级上册综合与实践「一天的时间」中学习。",
       "clusterId": "cl-math-d2-s2",
       "centrality": 0.0051
     },
@@ -644,7 +768,12 @@
       "textbooks2024": [
         "pep-math-2024:3a#曹冲称象的故事"
       ],
+      "textbooksAlt": [
+        "bnu-math:3a:u2",
+        "sj-math:3a:u4"
+      ],
       "textbookNote2024": "吨的认识融入三上「曹冲称象的故事」的质量单位学习。",
+      "textbookNoteAlt": "北师大版：吨的认识并入三上第二单元「测量（二）」，与人教版三上第三单元「测量」一致。；苏教版：吨随三上综合与实践「曹冲称象的故事」的质量单位一并认识。",
       "clusterId": "cl-math-d2-s2",
       "centrality": 0.0034
     },
@@ -672,6 +801,11 @@
       "textbooks2024": [
         "pep-math-2024:3a:u4"
       ],
+      "textbooksAlt": [
+        "bnu-math:3b:u1",
+        "sj-math:3a:u3"
+      ],
+      "textbookNoteAlt": "北师大版称「整数乘法（一）」在三下，人教版在三上「多位数乘一位数」。；苏教版：两、三位数乘一位数在三上第二单元，含乘数中间或末尾有 0 的情况。",
       "clusterId": "cl-math-d1-s2",
       "centrality": 0.0102
     },
@@ -699,6 +833,11 @@
       "textbooks2024": [
         "pep-math-2024:3b:u2"
       ],
+      "textbooksAlt": [
+        "bnu-math:3b:u5",
+        "sj-math:3a:u9"
+      ],
+      "textbookNoteAlt": "北师大版称「整数除法（一）」在三下，人教版在三下「除数是一位数的除法」。；苏教版：两、三位数除以一位数在三上第六单元，与人教版三下相差一学期。",
       "clusterId": "cl-math-d1-s2",
       "centrality": 0.0085
     },
@@ -727,7 +866,13 @@
         "pep-math-2024:2b:u2",
         "pep-math-2024:3a:u4"
       ],
+      "textbooksAlt": [
+        "bnu-math:2a:u10",
+        "bnu-math:3a:u8",
+        "sj-math:3a:u11"
+      ],
       "textbookNote2024": "「倍的认识」不再独立设单元：二下「数量间的乘除关系」初步学习，三上「多位数乘一位数」深化。",
+      "textbookNoteAlt": "北师大版未单设「倍的认识」，倍数关系融入二上、三上「乘除法的应用」单元。；苏教版不单设「倍的认识」，倍数关系融入三上「七 数量关系的分析（一）」。",
       "clusterId": "cl-math-d1-s2",
       "centrality": 0.0051
     },
@@ -755,6 +900,11 @@
       "textbooks2024": [
         "pep-math-2024:3a:u6"
       ],
+      "textbooksAlt": [
+        "bnu-math:3b:u6",
+        "sj-math:3b:u6"
+      ],
+      "textbookNoteAlt": "北师大版旧版分数的初步认识在三下第六单元「认识分数」；2026春版三下目录已无独立分数单元，暂指向同册「动手做」。；苏教版：分数的初步认识在三下第六单元，比人教版三上晚一学年。",
       "clusterId": "cl-math-d1-s2",
       "centrality": 0.0119
     },
@@ -782,6 +932,11 @@
       "textbooks2024": [
         "pep-math-2024:3a:u6"
       ],
+      "textbooksAlt": [
+        "bnu-math:3b:u6",
+        "sj-math:3b:u6"
+      ],
+      "textbookNoteAlt": "北师大版同分母分数加减法集中在五下第一单元「分数加减法」，晚于人教版三上；此处取三年级最接近单元。；苏教版：同分母分数加减与分数的初步认识同在三下第六单元。",
       "clusterId": "cl-math-d1-s2",
       "centrality": 0.0051
     },
@@ -809,6 +964,11 @@
       "textbooks2024": [
         "pep-math-2024:3b:u6"
       ],
+      "textbooksAlt": [
+        "bnu-math:3a:u9",
+        "sj-math:2a:u8"
+      ],
+      "textbookNoteAlt": "北师大版：小数的初步认识在三上第七单元「认识小数」，与人教版三下相比提前一学期。；苏教版三年级不学小数，十进制与元角分的经验来自二上综合与实践「欢乐购物街」。",
       "clusterId": "cl-math-d1-s2",
       "centrality": 0.0068
     },
@@ -836,6 +996,11 @@
       "textbooks2024": [
         "pep-math-2024:3b:u6"
       ],
+      "textbooksAlt": [
+        "bnu-math:3a:u9",
+        "sj-math:2a:u8"
+      ],
+      "textbookNoteAlt": "北师大版：一位小数加减法与认识小数同单元，人教版在三下「小数的初步认识」中一并处理。；苏教版：一位小数加减法系统学习在五上「小数乘法和除法（一）」，低年级仅有元角分经验。",
       "clusterId": "cl-math-d1-s2",
       "centrality": 0.0051
     },
@@ -863,7 +1028,12 @@
       "textbooks2024": [
         "pep-math-2024:3b#年、月、日的秘密"
       ],
+      "textbooksAlt": [
+        "bnu-math:3a:u11",
+        "sj-math:3b:u2"
+      ],
       "textbookNote2024": "年、月、日调整为三下综合与实践「年、月、日的秘密」。",
+      "textbookNoteAlt": "北师大版：年、月、日与24时计时法在三上综合实践「探索年月日的秘密」，人教版在三下第六单元。；苏教版：年、月、日与记时知识编排为三下综合与实践「年、月、日的秘密」。",
       "clusterId": "cl-math-d2-s2",
       "centrality": 0.0017
     },
@@ -891,7 +1061,13 @@
       "textbooks2024": [
         "pep-math-2024:4a:u1"
       ],
+      "textbooksAlt": [
+        "bnu-math:4a:u1",
+        "sj-math:4a:u7",
+        "sj-math:4b:u2"
+      ],
       "textbookNote2024": "「大数的认识」更名「万以上数的认识」并精简。",
+      "textbookNoteAlt": "北师大版称「认识更大的数」，与人教版四上「大数的认识」对应。；苏教版：大数分两段：四上「五 多位数的认识」与四下「二 认识多位数」。",
       "clusterId": "cl-math-d1-s2",
       "centrality": 0.0034
     },
@@ -917,7 +1093,13 @@
         "pep-math:4a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "bnu-math:3a:u2",
+        "sj-math:4a:u2",
+        "sj-math:4a:u8"
+      ],
       "textbookNote2024": "公顷和平方千米后移至五年级上册「多边形的面积」（2027 秋启用），暂未收录新版目录。",
+      "textbookNoteAlt": "北师大版公顷和平方千米随「测量」系列单元渗透，未单设单元；人教版在四上第二单元单设。；苏教版：公顷与平方千米随面积单位学习，见于四上「周长与面积」及综合与实践「度量衡的故事」。",
       "clusterId": "cl-math-d2-s2",
       "centrality": 0.0034
     },
@@ -945,7 +1127,13 @@
       "textbooks2024": [
         "pep-math-2024:4a:u3"
       ],
+      "textbooksAlt": [
+        "bnu-math:4a:u4",
+        "sj-math:3b:u3",
+        "sj-math:4b:u3"
+      ],
       "textbookNote2024": "「三位数乘两位数」与两位数乘两位数整合为「多位数乘两位数」。",
+      "textbookNoteAlt": "北师大版称「整数乘法（二）」，与人教版「三位数乘两位数」对应。；苏教版：两位数乘两位数在三下第三单元，三位数乘两位数在四下第三单元分段学习。",
       "clusterId": "cl-math-d1-s2",
       "centrality": 0.0102
     },
@@ -971,7 +1159,13 @@
         "pep-math:4a:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "bnu-math:3b:u5",
+        "bnu-math:4a:u9",
+        "sj-math:4a:u1"
+      ],
       "textbookNote2024": "除数是两位数的除法调整至四年级下册（2027 春启用），暂未收录新版目录。",
+      "textbookNoteAlt": "北师大版：旧版四上第六单元为「除法」；2026秋版四上未单设除法单元，相关内容并入「运用数量关系解决问题」。；苏教版：两、三位数除以两位数在四上第一单元，比人教版四上第六单元更早。",
       "clusterId": "cl-math-d1-s2",
       "centrality": 0.0085
     },
@@ -997,6 +1191,12 @@
         "pep-math:4b:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "bnu-math:3a:u1",
+        "sj-math:3a:u1",
+        "sj-math:4a:u5"
+      ],
+      "textbookNoteAlt": "北师大版四则混合运算提前至三上第一单元「混合运算」，人教版在四下第一单元。；苏教版：混合运算与数量关系分三上（一）、四上（二）两段递进，不单设四则运算单元。",
       "clusterId": "cl-math-d1-s2",
       "centrality": 0.0068
     },
@@ -1022,6 +1222,11 @@
         "pep-math:4b:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "bnu-math:4a:u6",
+        "sj-math:4b:u6"
+      ],
+      "textbookNoteAlt": "北师大版：运算律在四上第五单元，人教版在四下第三单元。；苏教版：运算律在四下第六单元，与人教版四下第三单元位置相近。",
       "clusterId": "cl-math-d1-s2",
       "centrality": 0.0051
     },
@@ -1047,6 +1252,11 @@
         "pep-math:4b:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "bnu-math:4b:u1",
+        "sj-math:4b:u2"
+      ],
+      "textbookNoteAlt": "北师大版：小数的意义和性质在四下第一单元，与人教版四下位置一致。；苏教版小数的意义与性质后置到五上「小数乘法和除法（一）」，四年级依托四下「认识多位数」的数位顺序。",
       "clusterId": "cl-math-d1-s2",
       "centrality": 0.0102
     },
@@ -1072,6 +1282,11 @@
         "pep-math:4b:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "bnu-math:4b:u1",
+        "sj-math:4b:u2"
+      ],
+      "textbookNoteAlt": "北师大版把小数加减法与意义合并为「小数的意义和加减法」，人教版拆成两个单元。；苏教版：小数加减法随五上「小数乘法和除法（一）」学习，四年级阶段以多位数的数位对齐经验为基础。",
       "clusterId": "cl-math-d1-s2",
       "centrality": 0.0068
     },
@@ -1097,6 +1312,12 @@
         "pep-math:5a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "bnu-math:4b:u3",
+        "bnu-math:5a:u4",
+        "sj-math:5a:u7"
+      ],
+      "textbookNoteAlt": "北师大版小数乘法在四下与五上两次出现，呈螺旋上升；人教版集中在五上第一单元。；苏教版：小数乘法在五上「四 小数乘法和除法（一）」，六上再有（二）加深。",
       "clusterId": "cl-math-d1-s3",
       "centrality": 0.0051
     },
@@ -1122,6 +1343,12 @@
         "pep-math:5a:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "bnu-math:5a:u1",
+        "bnu-math:5a:u4",
+        "sj-math:5a:u7"
+      ],
+      "textbookNoteAlt": "北师大版：旧版五上第一单元即「小数除法」；2026秋版五上改为「小数的再认识和加减法」，除法并入小数运算体系。；苏教版：小数除法与乘法同单元编排，六上「小数乘法和除法（二）」继续。",
       "clusterId": "cl-math-d1-s3",
       "centrality": 0.0085
     },
@@ -1147,6 +1374,12 @@
         "pep-math:5b:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "bnu-math:5a:u9",
+        "sj-math:5a:u9",
+        "sj-math:5b:u3"
+      ],
+      "textbookNoteAlt": "北师大版称「倍数与因数」且编排在五上第七单元，人教版称「因数与倍数」在五下第二单元。；苏教版：因数与倍数分五上第六单元、五下第三单元两段，与人教版五下集中编排不同。",
       "clusterId": "cl-math-d1-s3",
       "centrality": 0.0051
     },
@@ -1172,6 +1405,11 @@
         "pep-math:5b:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "bnu-math:5b:u1",
+        "sj-math:5b:u4"
+      ],
+      "textbookNoteAlt": "北师大版未单设「分数的意义」，随五下第一单元「分数加减法」引入；人教版在五下第四单元单设。；苏教版：分数的意义与性质在五下第四单元，承接三下「分数的初步认识」。",
       "clusterId": "cl-math-d1-s3",
       "centrality": 0.0136
     },
@@ -1197,6 +1435,11 @@
         "pep-math:5b:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "bnu-math:5b:u1",
+        "sj-math:5b:u4"
+      ],
+      "textbookNoteAlt": "北师大版：分数与除法的关系随五下分数加减法单元建立，人教版并入「分数的意义和性质」。；苏教版：分数与除法的关系、真假分数互化同在五下「分数的意义和性质」单元。",
       "clusterId": "cl-math-d1-s3",
       "centrality": 0.0085
     },
@@ -1222,6 +1465,12 @@
         "pep-math:5b:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "bnu-math:5b:u1",
+        "sj-math:5a:u9",
+        "sj-math:5b:u4"
+      ],
+      "textbookNoteAlt": "北师大版：约分与通分在北师大版随「分数加减法」学习，人教版在五下「分数的意义和性质」集中编排。；苏教版：约分通分在五下第四单元，公因数公倍数的工具知识见五上「因数与倍数」。",
       "clusterId": "cl-math-d1-s3",
       "centrality": 0.0068
     },
@@ -1247,6 +1496,11 @@
         "pep-math:5b:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "bnu-math:5b:u1",
+        "sj-math:5b:u5"
+      ],
+      "textbookNoteAlt": "北师大版：分数加减法为五下第一单元，人教版在五下第六单元。；苏教版：分数加减法在五下第五单元，与人教版五下第六单元对应。",
       "clusterId": "cl-math-d1-s3",
       "centrality": 0.0068
     },
@@ -1272,6 +1526,11 @@
         "pep-math:6a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "bnu-math:5b:u3",
+        "sj-math:6a:u3"
+      ],
+      "textbookNoteAlt": "北师大版分数乘法在五下第三单元，比人教版六上第一单元提前一学期。；苏教版不单设「分数乘法」，分数乘除并入六上「三 数与运算的再认识」。",
       "clusterId": "cl-math-d1-s3",
       "centrality": 0.0051
     },
@@ -1297,6 +1556,12 @@
         "pep-math:6a:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "bnu-math:5b:u6",
+        "bnu-math:6a:u1",
+        "sj-math:6a:u3"
+      ],
+      "textbookNoteAlt": "北师大版：分数除法在五下第五单元首次出现，2026秋版六上第一单元再次处理，人教版只在六上。；苏教版：分数除法与乘法同在六上「数与运算的再认识」，与人教版六上分设两单元不同。",
       "clusterId": "cl-math-d1-s3",
       "centrality": 0.0051
     },
@@ -1322,6 +1587,11 @@
         "pep-math:6a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "bnu-math:6a:u6",
+        "sj-math:6a:u4"
+      ],
+      "textbookNoteAlt": "北师大版：比的认识在六上第五单元，与人教版六上第四单元对应。；苏教版：比与比例合并为六上「四 比和比例」，六下「四 比例」继续学习。",
       "clusterId": "cl-math-d1-s3",
       "centrality": 0.0085
     },
@@ -1347,6 +1617,11 @@
         "pep-math:6a:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "bnu-math:6a:u9",
+        "sj-math:6a:u3"
+      ],
+      "textbookNoteAlt": "北师大版称「百分数的认识与应用（一）」，与人教版六上「百分数（一）」对应。；苏教版不单设「百分数」单元，百分数的认识并入六上「数与运算的再认识」。",
       "clusterId": "cl-math-d1-s3",
       "centrality": 0.0051
     },
@@ -1372,6 +1647,11 @@
         "pep-math:6b:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "bnu-math:6a:u9",
+        "sj-math:6a:u4"
+      ],
+      "textbookNoteAlt": "北师大版：成数、税率与利率并入六上「百分数的认识与应用」，北师大版未设「百分数（二）」。；苏教版：折扣、成数与利率等百分数应用随六上「比和比例」单元的实际问题展开。",
       "clusterId": "cl-math-d1-s3",
       "centrality": 0.0034
     },
@@ -1397,6 +1677,11 @@
         "pep-math:6b:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "bnu-math:4a:u1",
+        "sj-math:6a:u3"
+      ],
+      "textbookNoteAlt": "北师大版：旧版负数在四上第七单元「生活中的负数」；2026秋版四上目录未见独立负数单元，暂指向「认识更大的数」。；苏教版负数的初步认识未单设单元，并入六上「数与运算的再认识」。",
       "clusterId": "cl-math-d1-s3",
       "centrality": 0.0017
     },
@@ -1422,6 +1707,11 @@
         "pep-math:6b:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "bnu-math:6b:u2",
+        "sj-math:6b:u4"
+      ],
+      "textbookNoteAlt": "北师大版：比例的意义与基本性质在六下第二单元，与人教版六下第四单元对应。；苏教版：比例的意义与基本性质在六下第四单元，六上「比和比例」先行铺垫。",
       "clusterId": "cl-math-d1-s3",
       "centrality": 0.0051
     },
@@ -1447,6 +1737,11 @@
         "pep-math:6b:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "bnu-math:6b:u4",
+        "sj-math:6b:u6"
+      ],
+      "textbookNoteAlt": "北师大版把正比例与反比例单设为六下第四单元，人教版合并在「比例」单元内。；苏教版：正比例与反比例单设为六下第六单元，与人教版六下第四单元内容对应。",
       "clusterId": "cl-math-d1-s3",
       "centrality": 0.0034
     },
@@ -1472,6 +1767,12 @@
         "pep-math:4b:u8"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "bnu-math:4b:u8",
+        "bnu-math:4a:u10",
+        "sj-math:3b:u4"
+      ],
+      "textbookNoteAlt": "北师大版：平均数并入「数据的表示和分析」，人教版在四下「平均数与条形统计图」中单设。；苏教版：平均数随三下「统计表和条形统计图（一）」学习，早于人教版四下。",
       "clusterId": "cl-math-d3-s2",
       "centrality": 0.0051
     },
@@ -1499,7 +1800,12 @@
       "textbooks2024": [
         "pep-math-2024:1a:u3"
       ],
+      "textbooksAlt": [
+        "bnu-math:1a:u8",
+        "sj-math:1a:u5"
+      ],
       "textbookNote2024": "「认识图形」更名「认识立体图形」，先立体后平面。",
+      "textbookNoteAlt": "北师大版：立体图形的认识在一上第五单元「有趣的立体图形」，人教版在一上第四单元「认识图形（一）」。；苏教版：立体图形在一上「图形的初步认识（一）」，与人教版一上「认识图形（一）」对应。",
       "clusterId": "cl-math-d2-s1",
       "centrality": 0.0068
     },
@@ -1527,6 +1833,11 @@
       "textbooks2024": [
         "pep-math-2024:1b:u1"
       ],
+      "textbooksAlt": [
+        "bnu-math:1b:u8",
+        "sj-math:1b:u2"
+      ],
+      "textbookNoteAlt": "北师大版：平面图形的认识在一下第六单元「有趣的平面图形（一）」，人教版在一下第一单元「认识图形（二）」。；苏教版：平面图形在一年级下册「图形的初步认识（二）」，承接一上的立体图形。",
       "clusterId": "cl-math-d2-s1",
       "centrality": 0.0203
     },
@@ -1555,7 +1866,12 @@
         "pep-math-2024:1a#数学游戏",
         "pep-math-2024:1a:u1"
       ],
+      "textbooksAlt": [
+        "bnu-math:1a:u4",
+        "sj-math:1a:u3"
+      ],
       "textbookNote2024": "新版无独立「位置」单元：相对位置融入入学「数学游戏」，「第几」在第一单元。",
+      "textbookNoteAlt": "北师大版：上下前后左右在北师大版一上综合实践「介绍我的教室」中学习，人教版单设「位置」单元。；苏教版无独立「位置」单元，相对位置在一上综合与实践「生活中的位置」中学习。",
       "clusterId": "cl-math-d2-s1",
       "centrality": 0.0034
     },
@@ -1583,7 +1899,12 @@
       "textbooks2024": [
         "pep-math-2024:2a:u1"
       ],
+      "textbooksAlt": [
+        "bnu-math:1a:u5",
+        "sj-math:1b:u4"
+      ],
       "textbookNote2024": "分类与整理由一下调整至二上第一单元，增加多标准逐层分类。",
+      "textbookNoteAlt": "北师大版：分类与整理在北师大版一上第三单元「整理与分类」，人教版在一下第三单元。；苏教版：分类整理以「第三单元 数据分类（一）」呈现，名称与编排均不同于人教版。",
       "clusterId": "cl-math-d3-s1",
       "centrality": 0.0068
     },
@@ -1612,7 +1933,14 @@
         "pep-math-2024:1b:u3",
         "pep-math-2024:2a:u2"
       ],
+      "textbooksAlt": [
+        "bnu-math:1b:u3",
+        "bnu-math:1a:u7",
+        "sj-math:1a:u1",
+        "sj-math:1b:u5"
+      ],
       "textbookNote2024": "新版无独立「找规律」单元，规律探索融入「100以内数的认识」与乘法口诀学习。",
+      "textbookNoteAlt": "北师大版一年级未单设「找规律」，规律意识在一下综合实践「设计教室装饰图」中培养，三下再设「关系与规律」。；苏教版一年级未单设「找规律」，规律探索融入「数学游戏分享」与「认识20~99」百数表。",
       "clusterId": "cl-math-d4-s1",
       "centrality": 0.0068
     },
@@ -1640,6 +1968,11 @@
       "textbooks2024": [
         "pep-math-2024:2a:u4"
       ],
+      "textbooksAlt": [
+        "bnu-math:2a:u3",
+        "sj-math:2b:u1"
+      ],
+      "textbookNoteAlt": "北师大版：厘米和米在二上第二单元「测量（一）」，人教版在二上第一单元「长度单位」。；苏教版：厘米和米在二下第一单元，比人教版二上「长度单位」晚一学期。",
       "clusterId": "cl-math-d2-s1",
       "centrality": 0.0085
     },
@@ -1667,7 +2000,12 @@
       "textbooks2024": [
         "pep-math-2024:3a:u5"
       ],
+      "textbooksAlt": [
+        "bnu-math:2b:u6",
+        "sj-math:2b:u7"
+      ],
       "textbookNote2024": "角的初步认识由二上调整至三上「线和角」单元。",
+      "textbookNoteAlt": "北师大版：角的初步认识并入二下「有趣的平面图形（二）」，人教版在二上第三单元单设。；苏教版：角的初步认识在二下「图形的初步认识（三)」，角的度量另在三下「一 角」。",
       "clusterId": "cl-math-d2-s1",
       "centrality": 0.0051
     },
@@ -1695,7 +2033,12 @@
       "textbooks2024": [
         "pep-math-2024:3a:u1"
       ],
+      "textbooksAlt": [
+        "bnu-math:2b:u2",
+        "sj-math:1b:u9"
+      ],
       "textbookNote2024": "观察物体由二上调整至三上第一单元。",
+      "textbookNoteAlt": "北师大版观察物体后移至三上「我们生活的空间（一）」，二年级对应内容为「图形大变身（二）」。；苏教版：观察物体（一）在一年级下册第七单元，早于人教版二上；加深版在三上第八单元。",
       "clusterId": "cl-math-d2-s1",
       "centrality": 0.0034
     },
@@ -1723,7 +2066,12 @@
       "textbooks2024": [
         "pep-math-2024:3b:u1"
       ],
+      "textbooksAlt": [
+        "bnu-math:2a:u8",
+        "sj-math:2b:u7"
+      ],
       "textbookNote2024": "图形的运动由二下调整至三下「生活中的运动现象」。",
+      "textbookNoteAlt": "北师大版图形的运动自二年级起分阶段编排，人教版集中在二下「图形的运动（一）」。；苏教版平移、旋转与轴对称系统编排在三上第五单元，二年级对应「图形的初步认识（三)」。",
       "clusterId": "cl-math-d2-s1",
       "centrality": 0.0034
     },
@@ -1751,7 +2099,13 @@
       "textbooks2024": [
         "pep-math-2024:2a#校园小导游"
       ],
+      "textbooksAlt": [
+        "bnu-math:2a:u6",
+        "bnu-math:3a:u5",
+        "sj-math:2a:u5"
+      ],
       "textbookNote2024": "位置与方向（东、南、西、北）由三下调整至二上综合与实践「校园小导游」。",
+      "textbookNoteAlt": "北师大版：方向与路线先出现在二上综合实践「画校园路线图」，系统学习在三上「我们生活的空间（一）」。；苏教版：方向在二上综合与实践「生活中的方向」，比人教版三下早一学年。",
       "clusterId": "cl-math-d2-s2",
       "centrality": 0.0051
     },
@@ -1779,7 +2133,12 @@
       "textbooks2024": [
         "pep-math-2024:3b:u3"
       ],
+      "textbooksAlt": [
+        "bnu-math:3b:u3",
+        "sj-math:3b:u5"
+      ],
       "textbookNote2024": "周长内容调整至三下「长方形和正方形」单元。",
+      "textbookNoteAlt": "北师大版：周长在三下第三单元，与人教版三上第七单元「长方形和正方形」相比延后一学期。；苏教版：周长在三下「五 长方形和正方形」中与面积一并学习，四上另有「周长与面积」。",
       "clusterId": "cl-math-d2-s2",
       "centrality": 0.0085
     },
@@ -1807,6 +2166,12 @@
       "textbooks2024": [
         "pep-math-2024:3b:u4"
       ],
+      "textbooksAlt": [
+        "bnu-math:3a:u2",
+        "bnu-math:3b:u3",
+        "sj-math:3b:u5"
+      ],
+      "textbookNoteAlt": "北师大版面积未单列于三年级：2026春版三下只设「周长」，面积与面积单位随测量系列单元推进。；苏教版：面积与面积单位在三下「长方形和正方形」单元建立。",
       "clusterId": "cl-math-d2-s2",
       "centrality": 0.0085
     },
@@ -1834,6 +2199,11 @@
       "textbooks2024": [
         "pep-math-2024:3b:u4"
       ],
+      "textbooksAlt": [
+        "bnu-math:3b:u3",
+        "sj-math:3b:u5"
+      ],
+      "textbookNoteAlt": "北师大版：长方形与正方形面积随三下「周长」单元展开，旧版在三下第五单元「面积」单独编排。；苏教版：长方形、正方形面积公式在三下第五单元推导，四上再作拓展。",
       "clusterId": "cl-math-d2-s2",
       "centrality": 0.0102
     },
@@ -1861,7 +2231,13 @@
       "textbooks2024": [
         "pep-math-2024:3a:u5"
       ],
+      "textbooksAlt": [
+        "bnu-math:4a:u3",
+        "sj-math:3b:u1",
+        "sj-math:4b:u7"
+      ],
       "textbookNote2024": "线段、射线、直线由四上「线的认识」下移至三上「线和角」。",
+      "textbookNoteAlt": "北师大版：线段、射线、直线与相交平行在四上第二单元「线与角」，人教版拆到四上第三单元「角的度量」。；苏教版不单设「线段、射线、直线」单元，相关内容随三下「角」与四下四边形单元学习。",
       "clusterId": "cl-math-d2-s2",
       "centrality": 0.0102
     },
@@ -1889,7 +2265,12 @@
       "textbooks2024": [
         "pep-math-2024:4a:u2"
       ],
+      "textbooksAlt": [
+        "bnu-math:4a:u3",
+        "sj-math:3b:u1"
+      ],
       "textbookNote2024": "「角的度量」调整为四上第二单元（原第三单元）。",
+      "textbookNoteAlt": "北师大版：角的度量与分类同属四上第二单元「线与角」，人教版在四上第三单元。；苏教版：角的度量与分类在三下第一单元「角」，早于人教版四上。",
       "clusterId": "cl-math-d2-s2",
       "centrality": 0.0068
     },
@@ -1917,6 +2298,11 @@
       "textbooks2024": [
         "pep-math-2024:4a:u5"
       ],
+      "textbooksAlt": [
+        "bnu-math:4b:u2",
+        "sj-math:4b:u7"
+      ],
+      "textbookNoteAlt": "北师大版：平行四边形和梯形并入四下第二单元「认识三角形和四边形」，人教版在四上第五单元单设。；苏教版：平行四边形与梯形同三角形合为四下第七单元，与人教版分设两单元不同。",
       "clusterId": "cl-math-d2-s2",
       "centrality": 0.0051
     },
@@ -1942,6 +2328,11 @@
         "pep-math:4b:u5"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "bnu-math:4b:u2",
+        "sj-math:4b:u7"
+      ],
+      "textbookNoteAlt": "北师大版：三角形与四边形合为四下第二单元；2026秋版五上再设「三角形的再认识」深化。；苏教版：三角形的特性与分类在四下「七 三角形、平行四边形和梯形」中学习。",
       "clusterId": "cl-math-d2-s2",
       "centrality": 0.0068
     },
@@ -1967,6 +2358,12 @@
         "pep-math:4b:u7"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "bnu-math:2a:u8",
+        "bnu-math:3b:u2",
+        "sj-math:4b:u1"
+      ],
+      "textbookNoteAlt": "北师大版：轴对称归入「图形的运动」系列，二年级（一）、三年级（二），比人教版四下「图形的运动（二）」早。；苏教版：轴对称先在三上第五单元初步认识，四下第一单元再系统学习补全与对称轴。",
       "clusterId": "cl-math-d2-s2",
       "centrality": 0.0034
     },
@@ -1992,6 +2389,12 @@
         "pep-math:5a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "bnu-math:5a:u8",
+        "bnu-math:5b:u7",
+        "sj-math:4b:u8"
+      ],
+      "textbookNoteAlt": "北师大版称「确定位置」，先在五上「图形的位置与运动（一）」铺垫，五下第六单元系统学习数对。；苏教版：用数对确定位置在四下第八单元「确定位置」，早于人教版五上。",
       "clusterId": "cl-math-d2-s3",
       "centrality": 0.0051
     },
@@ -2017,6 +2420,11 @@
         "pep-math:5a:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "bnu-math:5a:u6",
+        "sj-math:5a:u5"
+      ],
+      "textbookNoteAlt": "北师大版：多边形的面积在五上第五单元，与人教版五上第六单元对应。；苏教版：多边形的面积在五上第三单元，与人教版五上第六单元对应。",
       "clusterId": "cl-math-d2-s3",
       "centrality": 0.0085
     },
@@ -2042,6 +2450,12 @@
         "pep-math:5b:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "bnu-math:5b:u2",
+        "bnu-math:5b:u4",
+        "sj-math:1a:u5"
+      ],
+      "textbookNoteAlt": "北师大版把长方体拆成五下「（一）」「（二）」两个单元，人教版合为一个单元。；苏教版修订版未单设「长方体和正方体」单元，立体图形启蒙见一上「图形的初步认识（一）」。",
       "clusterId": "cl-math-d2-s3",
       "centrality": 0.0068
     },
@@ -2067,6 +2481,11 @@
         "pep-math:5b:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "bnu-math:5b:u4",
+        "sj-math:4a:u2"
+      ],
+      "textbookNoteAlt": "北师大版：体积与容积单位在五下第四单元「长方体（二）」，人教版并入「长方体和正方体」。；苏教版体积与容积单位后置，五年级阶段最接近的是四上「周长与面积」的面积与测量经验。",
       "clusterId": "cl-math-d2-s3",
       "centrality": 0.0068
     },
@@ -2092,6 +2511,11 @@
         "pep-math:6a:u5"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "bnu-math:6a:u2",
+        "sj-math:5b:u6"
+      ],
+      "textbookNoteAlt": "北师大版：圆的认识在六上第二单元，与人教版六上第五单元对应。；苏教版「圆」分五下第六单元与六上第五单元两段，圆的认识在五下完成。",
       "clusterId": "cl-math-d2-s3",
       "centrality": 0.0102
     },
@@ -2117,6 +2541,11 @@
         "pep-math:6a:u5"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "bnu-math:6a:u2",
+        "sj-math:6a:u8"
+      ],
+      "textbookNoteAlt": "北师大版：圆的周长与面积与圆的认识同在六上第二单元，人教版亦合并在「圆」单元。；苏教版：圆的周长与面积在六上第五单元，与人教版六上第五单元的安排一致。",
       "clusterId": "cl-math-d2-s3",
       "centrality": 0.0068
     },
@@ -2142,6 +2571,11 @@
         "pep-math:6a:u5"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "bnu-math:6a:u2",
+        "sj-math:6a:u8"
+      ],
+      "textbookNoteAlt": "北师大版：扇形随六上「圆」单元认识，北师大版未单设单元。；苏教版：扇形随六上「五 圆」认识，扇形统计图另在六下第一单元学习。",
       "clusterId": "cl-math-d2-s3",
       "centrality": 0.0068
     },
@@ -2167,6 +2601,11 @@
         "pep-math:6b:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "bnu-math:6b:u1",
+        "sj-math:6b:u2"
+      ],
+      "textbookNoteAlt": "北师大版：圆柱与圆锥为六下第一单元，与人教版六下第三单元对应。；苏教版：圆柱与圆锥在六下第二单元，与人教版六下第三单元对应。",
       "clusterId": "cl-math-d2-s3",
       "centrality": 0.0068
     },
@@ -2194,7 +2633,13 @@
       "textbooks2024": [
         "pep-math-2024:3b:u5"
       ],
+      "textbooksAlt": [
+        "bnu-math:2b:u9",
+        "sj-math:1b:u4",
+        "sj-math:2b:u4"
+      ],
       "textbookNote2024": "数据收集整理由二下调整至三下「数据的收集与整理」。",
+      "textbookNoteAlt": "北师大版数据收集整理以二下第七单元「分类」为基础，系统调查与记录在三上第八单元。；苏教版不用「数据收集整理」之名，而设「数据分类（一）（二）」两段递进。",
       "clusterId": "cl-math-d3-s1",
       "centrality": 0.0102
     },
@@ -2222,7 +2667,13 @@
       "textbooks2024": [
         "pep-math-2024:3b:u5"
       ],
+      "textbooksAlt": [
+        "bnu-math:3a:u10",
+        "bnu-math:3b:u9",
+        "sj-math:3b:u4"
+      ],
       "textbookNote2024": "复式统计表并入三下「数据的收集与整理」单元。",
+      "textbookNoteAlt": "北师大版称「调查与记录」「数据的整理与表示」，未单设复式统计表单元。；苏教版把统计表与条形统计图合并为「四 统计表和条形统计图（一）」。",
       "clusterId": "cl-math-d3-s2",
       "centrality": 0.0085
     },
@@ -2250,7 +2701,13 @@
       "textbooks2024": [
         "pep-math-2024:4a:u6"
       ],
+      "textbooksAlt": [
+        "bnu-math:4a:u10",
+        "bnu-math:4b:u8",
+        "sj-math:3b:u4"
+      ],
       "textbookNote2024": "单式与复式条形统计图合并为「条形统计图」单元。",
+      "textbookNoteAlt": "北师大版：条形统计图并入四上、四下「数据的表示和分析」单元，人教版在四上第七单元单设。；苏教版：条形统计图在三下「统计表和条形统计图（一）」，比人教版四上早一学年。",
       "clusterId": "cl-math-d3-s2",
       "centrality": 0.0051
     },
@@ -2276,6 +2733,11 @@
         "pep-math:5a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "bnu-math:5a:u10",
+        "sj-math:5a:u8"
+      ],
+      "textbookNoteAlt": "北师大版：可能性在五上第八单元，人教版在五上第四单元。；苏教版：可能性在五上第五单元，与人教版五上第四单元对应。",
       "clusterId": "cl-math-d3-s3",
       "centrality": 0.0034
     },
@@ -2301,6 +2763,11 @@
         "pep-math:5b:u7"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "bnu-math:5b:u10",
+        "sj-math:5b:u2"
+      ],
+      "textbookNoteAlt": "北师大版：折线统计图并入五下第八单元「数据的表示和分析」，人教版在五下第七单元单设。；苏教版：折线统计图在五下第二单元，比人教版五下第七单元更早。",
       "clusterId": "cl-math-d3-s3",
       "centrality": 0.0051
     },
@@ -2326,6 +2793,11 @@
         "pep-math:6a:u7"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "bnu-math:6a:u11",
+        "sj-math:6b:u1"
+      ],
+      "textbookNoteAlt": "北师大版：扇形统计图在六上第九单元「数据的表示和分析（三）」，与人教版六上第七单元对应。；苏教版：扇形统计图在六下第一单元，与人教版六上第七单元相差一学期。",
       "clusterId": "cl-math-d3-s3",
       "centrality": 0.0051
     },
@@ -2351,6 +2823,12 @@
         "pep-math:6b:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "bnu-math:6a:u11",
+        "bnu-math:4b:u8",
+        "sj-math:6b:u7"
+      ],
+      "textbookNoteAlt": "北师大版：平均数、中位数与众数并入「数据的表示和分析」系列单元，人教版在六下「整理和复习」中处理。；苏教版：中位数、众数在苏教版随六下总复习「统计与可能性」板块梳理，平均数此前已学。",
       "clusterId": "cl-math-d3-s3",
       "centrality": 0.0034
     },
@@ -2376,7 +2854,13 @@
         "pep-math:4a:u8"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "bnu-math:4a:u7",
+        "bnu-math:4b:u7",
+        "sj-math:3a:u2"
+      ],
       "textbookNote2024": "新版不再单设「数学广角——优化」，沏茶、烙饼问题融入各单元练习。",
+      "textbookNoteAlt": "北师大版：沏茶、烙饼等统筹优化问题在北师大版归入四上、四下「数学好玩」栏目，人教版在四上数学广角。；苏教版无「数学广角——优化」，统筹安排在综合与实践「一天的时间·合理安排一天的时间」。",
       "clusterId": "cl-math-d4-s2",
       "centrality": 0.0034
     },
@@ -2404,7 +2888,12 @@
       "textbooks2024": [
         "pep-math-2024:4a:u7"
       ],
+      "textbooksAlt": [
+        "bnu-math:4b:u7",
+        "sj-math:4b:u5"
+      ],
       "textbookNote2024": "鸡兔同笼由四下调整至四上「复习与关联」选学内容。",
+      "textbookNoteAlt": "北师大版：2026秋版五上「数学好玩」即为鸡兔同笼，晚于人教版四下数学广角；此处取年级上限内的四下数学好玩。；苏教版无「鸡兔同笼」专题，假设与调整归入四下「五 解决问题的策略」。",
       "clusterId": "cl-math-d4-s2",
       "centrality": 0.0034
     },
@@ -2430,6 +2919,11 @@
         "pep-math:5a:u7"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "bnu-math:4a:u7",
+        "sj-math:3a:u10"
+      ],
+      "textbookNoteAlt": "北师大版未单设植树问题，间隔与计数规律在四上「数学好玩 数图形的学问」中渗透。；苏教版以三上综合与实践「间隔排列」承载间隔规律，替代人教版「植树问题」。",
       "clusterId": "cl-math-d4-s3",
       "centrality": 0.0034
     },
@@ -2455,6 +2949,12 @@
         "pep-math:5b:u8"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "bnu-math:2b:u7",
+        "bnu-math:5b:u9",
+        "sj-math:5b:u7"
+      ],
+      "textbookNoteAlt": "北师大版找次品未单设单元，逻辑推理训练在二下「数学好玩 有趣的推理」与五下「数学好玩」中完成。；苏教版无「找次品」专题，推理与优化归入五下「七 解决问题的策略」。",
       "clusterId": "cl-math-d4-s3",
       "centrality": 0.0034
     },
@@ -2480,6 +2980,11 @@
         "pep-math:5b:u8"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "bnu-math:5b:u9",
+        "sj-math:5b:u7"
+      ],
+      "textbookNoteAlt": "北师大版：打电话等方案优化问题归入五下「数学好玩」，人教版在五下数学广角。；苏教版无「打电话」专题，倍增规律随「解决问题的策略」与综合实践活动渗透。",
       "clusterId": "cl-math-d4-s3",
       "centrality": 0.0034
     },
@@ -2505,6 +3010,11 @@
         "pep-math:6a:u8"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "bnu-math:6a:u8",
+        "sj-math:5a:u11"
+      ],
+      "textbookNoteAlt": "北师大版：数形结合思想分散在六上「数学好玩」与四上「数图形的学问」，北师大版未在六上单设「数与形」。；苏教版以五上综合与实践「钉子板上的多边形」承载数形结合，替代人教版「数与形」。",
       "clusterId": "cl-math-d4-s3",
       "centrality": 0.0034
     },
@@ -2530,6 +3040,11 @@
         "pep-math:6b:u5"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "bnu-math:6b:u5",
+        "sj-math:6b:u3"
+      ],
+      "textbookNoteAlt": "北师大版：鸽巢问题未单设单元，同类抽屉原理活动在六下「数学好玩」栏目；人教版在六下数学广角。；苏教版无「鸽巢问题」专题，相关推理归入六下「三 解决问题的策略」。",
       "clusterId": "cl-math-d4-s3",
       "centrality": 0.0034
     },
@@ -2558,7 +3073,13 @@
         "pep-math-2024:2a:u4",
         "pep-math-2024:2a#身体上的尺子"
       ],
+      "textbooksAlt": [
+        "bnu-math:2a:u3",
+        "bnu-math:2b:u10",
+        "sj-math:2b:u1"
+      ],
       "textbookNote2024": "估测与测量融入「厘米和米」及综合与实践「身体上的尺子」。",
+      "textbookNoteAlt": "北师大版：对应北师大版二下综合实践「发现身体上的尺子」，人教版在二上「长度单位」中安排量一量比一比。；苏教版：估测与实测比较依托二下「厘米和米」及综合与实践「我们的'身体尺'」。",
       "clusterId": "cl-math-d4-s1",
       "centrality": 0.0017
     },
@@ -2584,6 +3105,7 @@
         "pep-math:7a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0119
     },
@@ -2609,6 +3131,7 @@
         "pep-math:7a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0085
     },
@@ -2634,6 +3157,7 @@
         "pep-math:7a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0068
     },
@@ -2659,6 +3183,7 @@
         "pep-math:7a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0068
     },
@@ -2684,6 +3209,7 @@
         "pep-math:7a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0068
     },
@@ -2709,6 +3235,7 @@
         "pep-math:7a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0017
     },
@@ -2734,6 +3261,7 @@
         "pep-math:7a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0119
     },
@@ -2759,6 +3287,7 @@
         "pep-math:7a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0051
     },
@@ -2784,6 +3313,7 @@
         "pep-math:7a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0068
     },
@@ -2809,6 +3339,7 @@
         "pep-math:7a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0017
     },
@@ -2834,6 +3365,7 @@
         "pep-math:7b:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0102
     },
@@ -2859,6 +3391,7 @@
         "pep-math:7b:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0034
     },
@@ -2884,6 +3417,7 @@
         "pep-math:7b:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0085
     },
@@ -2909,6 +3443,7 @@
         "pep-math:7a:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0085
     },
@@ -2934,6 +3469,7 @@
         "pep-math:7a:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0017
     },
@@ -2959,6 +3495,7 @@
         "pep-math:7a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0119
     },
@@ -2984,6 +3521,7 @@
         "pep-math:7a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0068
     },
@@ -3009,6 +3547,7 @@
         "pep-math:7a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0085
     },
@@ -3034,6 +3573,7 @@
         "pep-math:8a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0068
     },
@@ -3059,6 +3599,7 @@
         "pep-math:8a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0068
     },
@@ -3084,6 +3625,7 @@
         "pep-math:8a:u5"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0051
     },
@@ -3109,6 +3651,7 @@
         "pep-math:8a:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0051
     },
@@ -3134,6 +3677,7 @@
         "pep-math:8a:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0102
     },
@@ -3159,6 +3703,7 @@
         "pep-math:8a:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0034
     },
@@ -3184,6 +3729,7 @@
         "pep-math:8b:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0051
     },
@@ -3209,6 +3755,7 @@
         "pep-math:8b:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0085
     },
@@ -3234,6 +3781,7 @@
         "pep-math:7a:u5"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0102
     },
@@ -3259,6 +3807,7 @@
         "pep-math:7a:u5"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0102
     },
@@ -3284,6 +3833,7 @@
         "pep-math:7a:u5"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0034
     },
@@ -3309,6 +3859,7 @@
         "pep-math:7b:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0068
     },
@@ -3334,6 +3885,7 @@
         "pep-math:7b:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0068
     },
@@ -3359,6 +3911,7 @@
         "pep-math:7b:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0034
     },
@@ -3384,6 +3937,7 @@
         "pep-math:7b:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0034
     },
@@ -3409,6 +3963,7 @@
         "pep-math:7b:u5"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0034
     },
@@ -3434,6 +3989,7 @@
         "pep-math:7b:u5"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0068
     },
@@ -3459,6 +4015,7 @@
         "pep-math:7b:u5"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0017
     },
@@ -3484,6 +4041,7 @@
         "pep-math:9a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0068
     },
@@ -3509,6 +4067,7 @@
         "pep-math:9a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0068
     },
@@ -3534,6 +4093,7 @@
         "pep-math:9a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0051
     },
@@ -3559,6 +4119,7 @@
         "pep-math:8b:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0085
     },
@@ -3584,6 +4145,7 @@
         "pep-math:8b:u5"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0068
     },
@@ -3609,6 +4171,7 @@
         "pep-math:8b:u5"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0034
     },
@@ -3634,6 +4197,7 @@
         "pep-math:9a:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0034
     },
@@ -3659,6 +4223,7 @@
         "pep-math:9a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0068
     },
@@ -3684,6 +4249,7 @@
         "pep-math:9a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0068
     },
@@ -3709,6 +4275,7 @@
         "pep-math:9a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0051
     },
@@ -3734,6 +4301,7 @@
         "pep-math:9a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
       "centrality": 0.0051
     },
@@ -3759,6 +4327,7 @@
         "pep-math:7a:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d2-s4",
       "centrality": 0.0051
     },
@@ -3784,6 +4353,7 @@
         "pep-math:7a:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d2-s4",
       "centrality": 0.0102
     },
@@ -3809,6 +4379,7 @@
         "pep-math:7a:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d2-s4",
       "centrality": 0.0119
     },
@@ -3834,6 +4405,7 @@
         "pep-math:7a:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d2-s4",
       "centrality": 0.0102
     },
@@ -3859,6 +4431,7 @@
         "pep-math:7b:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d2-s4",
       "centrality": 0.0085
     },
@@ -3884,6 +4457,7 @@
         "pep-math:7b:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d2-s4",
       "centrality": 0.0051
     },
@@ -3909,6 +4483,7 @@
         "pep-math:7b:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d2-s4",
       "centrality": 0.0068
     },
@@ -3934,6 +4509,7 @@
         "pep-math:7b:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d2-s4",
       "centrality": 0.0051
     },
@@ -3959,6 +4535,7 @@
         "pep-math:7b:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d2-s4",
       "centrality": 0.0051
     },
@@ -3984,6 +4561,7 @@
         "pep-math:8a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d2-s4",
       "centrality": 0.0153
     },
@@ -4009,6 +4587,7 @@
         "pep-math:8a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d2-s4",
       "centrality": 0.0102
     },
@@ -4034,6 +4613,7 @@
         "pep-math:8a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d2-s4",
       "centrality": 0.0034
     },
@@ -4059,6 +4639,7 @@
         "pep-math:8a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d2-s4",
       "centrality": 0.0051
     },
@@ -4084,6 +4665,7 @@
         "pep-math:8a:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d2-s4",
       "centrality": 0.0034
     },
@@ -4109,6 +4691,7 @@
         "pep-math:8b:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d2-s4",
       "centrality": 0.0102
     },
@@ -4134,6 +4717,7 @@
         "pep-math:8b:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d2-s4",
       "centrality": 0.0068
     },
@@ -4159,6 +4743,7 @@
         "pep-math:8b:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d2-s4",
       "centrality": 0.0085
     },
@@ -4184,6 +4769,7 @@
         "pep-math:8b:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d2-s4",
       "centrality": 0.0034
     },
@@ -4209,6 +4795,7 @@
         "pep-math:8b:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d2-s4",
       "centrality": 0.0017
     },
@@ -4234,6 +4821,7 @@
         "pep-math:9a:u5"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d2-s4",
       "centrality": 0.0051
     },
@@ -4259,6 +4847,7 @@
         "pep-math:9a:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d2-s4",
       "centrality": 0.0051
     },
@@ -4284,6 +4873,7 @@
         "pep-math:7b:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d2-s4",
       "centrality": 0.0068
     },
@@ -4309,6 +4899,7 @@
         "pep-math:7b:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d2-s4",
       "centrality": 0.0051
     },
@@ -4334,6 +4925,7 @@
         "pep-math:9a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d2-s4",
       "centrality": 0.0051
     },
@@ -4359,6 +4951,7 @@
         "pep-math:9a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d2-s4",
       "centrality": 0.0034
     },
@@ -4384,6 +4977,7 @@
         "pep-math:9b:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d2-s4",
       "centrality": 0.0085
     },
@@ -4409,6 +5003,7 @@
         "pep-math:9b:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d2-s4",
       "centrality": 0.0034
     },
@@ -4434,6 +5029,7 @@
         "pep-math:9b:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d2-s4",
       "centrality": 0.0068
     },
@@ -4459,6 +5055,7 @@
         "pep-math:7b:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d3-s4",
       "centrality": 0.0051
     },
@@ -4484,6 +5081,7 @@
         "pep-math:7b:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d3-s4",
       "centrality": 0.0017
     },
@@ -4509,6 +5107,7 @@
         "pep-math:8b:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d3-s4",
       "centrality": 0.0051
     },
@@ -4534,6 +5133,7 @@
         "pep-math:8b:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d3-s4",
       "centrality": 0.0034
     },
@@ -4559,6 +5159,7 @@
         "pep-math:9b"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d3-s4",
       "centrality": 0.0034
     },
@@ -4584,6 +5185,7 @@
         "pep-math:9b"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d3-s4",
       "centrality": 0.0034
     },
@@ -4609,6 +5211,7 @@
         "pep-math:9a"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-math-d4-s4",
       "centrality": 0.0068
     },
@@ -4638,6 +5241,7 @@
         "tongbian-chinese-2024:1a:u2",
         "tongbian-chinese-2024:1a:u3"
       ],
+      "textbooksAlt": [],
       "textbookNote2024": "汉语拼音集中编排于第二至第四单元。",
       "clusterId": "cl-chinese-d1-s1",
       "centrality": 0.0068
@@ -4668,6 +5272,7 @@
         "tongbian-chinese-2024:1a:u2",
         "tongbian-chinese-2024:1a:u4"
       ],
+      "textbooksAlt": [],
       "textbookNote2024": "单韵母在第二单元，复韵母与鼻韵母在第四单元。",
       "clusterId": "cl-chinese-d1-s1",
       "centrality": 0.0034
@@ -4698,6 +5303,7 @@
         "tongbian-chinese-2024:1a:u3",
         "tongbian-chinese-2024:1a:u4"
       ],
+      "textbooksAlt": [],
       "textbookNote2024": "整体认读音节随拼音单元与语文园地学习。",
       "clusterId": "cl-chinese-d1-s1",
       "centrality": 0.0051
@@ -4728,6 +5334,7 @@
         "tongbian-chinese-2024:1a:u2",
         "tongbian-chinese-2024:1a:u3"
       ],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d1-s1",
       "centrality": 0.0068
     },
@@ -4757,6 +5364,7 @@
         "tongbian-chinese-2024:1a:u4",
         "tongbian-chinese-2024:1a:u5"
       ],
+      "textbooksAlt": [],
       "textbookNote2024": "拼音学完后进入阅读单元，借助拼音识字和阅读。",
       "clusterId": "cl-chinese-d1-s1",
       "centrality": 0.0085
@@ -4787,6 +5395,7 @@
         "tongbian-chinese-2024:1a:u1",
         "tongbian-chinese-2024:1b:u1"
       ],
+      "textbooksAlt": [],
       "textbookNote2024": "识字单元：一上「识字」（金木水火土、日月山川等）与一下「识字」。",
       "clusterId": "cl-chinese-d2-s1",
       "centrality": 0.0085
@@ -4817,6 +5426,7 @@
         "tongbian-chinese-2024:1a:u1",
         "tongbian-chinese-2024:1b:u1"
       ],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d2-s1",
       "centrality": 0.0085
     },
@@ -4846,6 +5456,7 @@
         "tongbian-chinese-2024:1a:u1",
         "tongbian-chinese-2024:1a:u2"
       ],
+      "textbooksAlt": [],
       "textbookNote2024": "笔画笔顺在识字与汉语拼音单元中学习。",
       "clusterId": "cl-chinese-d2-s1",
       "centrality": 0.0034
@@ -4876,6 +5487,7 @@
         "tongbian-chinese-2024:1a:u1",
         "tongbian-chinese-2024:1b:u1"
       ],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d2-s1",
       "centrality": 0.0051
     },
@@ -4905,6 +5517,7 @@
         "tongbian-chinese-2024:1a:u2",
         "tongbian-chinese-2024:1a:u3"
       ],
+      "textbooksAlt": [],
       "textbookNote2024": "音序查字法依托汉语拼音，在拼音单元语文园地中学习。",
       "clusterId": "cl-chinese-d2-s1",
       "centrality": 0.0034
@@ -4934,6 +5547,7 @@
       "textbooks2024": [
         "tongbian-chinese-2024:2a:u2"
       ],
+      "textbooksAlt": [],
       "textbookNote2024": "部首查字法调整至二上识字单元。",
       "clusterId": "cl-chinese-d2-s1",
       "centrality": 0.0068
@@ -4964,6 +5578,7 @@
         "tongbian-chinese-2024:2a:u2",
         "tongbian-chinese-2024:2a:u3"
       ],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d2-s1",
       "centrality": 0.0051
     },
@@ -4993,6 +5608,7 @@
         "tongbian-chinese-2024:2a:u3",
         "tongbian-chinese-2024:2a:u4"
       ],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d3-s1",
       "centrality": 0.0085
     },
@@ -5022,6 +5638,7 @@
         "tongbian-chinese-2024:2a:u1",
         "tongbian-chinese-2024:2a:u2"
       ],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d3-s1",
       "centrality": 0.0085
     },
@@ -5051,6 +5668,7 @@
         "tongbian-chinese-2024:2b:u3",
         "tongbian-chinese-2024:2b:u5"
       ],
+      "textbooksAlt": [],
       "textbookNote2024": "成语积累融入识字单元（神州谣、传统节日）与寓言单元。",
       "clusterId": "cl-chinese-d3-s1",
       "centrality": 0.0051
@@ -5081,6 +5699,7 @@
         "tongbian-chinese-2024:1a:u5",
         "tongbian-chinese-2024:1a:u7"
       ],
+      "textbooksAlt": [],
       "textbookNote2024": "句子学习从一上阅读单元开始。",
       "clusterId": "cl-chinese-d4-s1",
       "centrality": 0.0186
@@ -5111,6 +5730,7 @@
         "tongbian-chinese-2024:1a:u5",
         "tongbian-chinese-2024:1a:u7"
       ],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d4-s1",
       "centrality": 0.0068
     },
@@ -5140,6 +5760,7 @@
         "tongbian-chinese-2024:2a:u3",
         "tongbian-chinese-2024:2a:u4"
       ],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d4-s1",
       "centrality": 0.0034
     },
@@ -5170,6 +5791,7 @@
         "tongbian-chinese-2024:2b:u1",
         "tongbian-chinese-2024:2b:u4"
       ],
+      "textbooksAlt": [],
       "textbookNote2024": "比喻与拟人融入二下古诗/春天单元与想象单元。",
       "clusterId": "cl-chinese-d4-s1",
       "centrality": 0.0051
@@ -5199,6 +5821,7 @@
       "textbooks2024": [
         "tongbian-chinese-2024:3a:u5"
       ],
+      "textbooksAlt": [],
       "textbookNote2024": "把句子写具体融入三上习作「我们眼中的缤纷世界」。",
       "clusterId": "cl-chinese-d4-s2",
       "centrality": 0.0068
@@ -5228,6 +5851,7 @@
       "textbooks2024": [
         "tongbian-chinese-2024:3a"
       ],
+      "textbooksAlt": [],
       "textbookNote2024": "关联词语学习分散在三上各阅读单元与语文园地。",
       "clusterId": "cl-chinese-d4-s2",
       "centrality": 0.0034
@@ -5257,6 +5881,7 @@
       "textbooks2024": [
         "tongbian-chinese-2024:3a:u4"
       ],
+      "textbooksAlt": [],
       "textbookNote2024": "冒号、引号与直述转述在对话丰富的课文单元（如「在牛肚子里旅行」）中学习。",
       "clusterId": "cl-chinese-d4-s2",
       "centrality": 0.0102
@@ -5286,6 +5911,7 @@
       "textbooks2024": [
         "tongbian-chinese-2024:3b:u4"
       ],
+      "textbooksAlt": [],
       "textbookNote2024": "顿号、分号与书名号在三下「古诗三首」「纸的发明」等单元学习。",
       "clusterId": "cl-chinese-d4-s2",
       "centrality": 0.0068
@@ -5315,6 +5941,7 @@
       "textbooks2024": [
         "tongbian-chinese-2024:4a"
       ],
+      "textbooksAlt": [],
       "textbookNote2024": "修改病句分散在四上各单元语文园地与阅读练习。",
       "clusterId": "cl-chinese-d4-s2",
       "centrality": 0.0068
@@ -5344,6 +5971,7 @@
       "textbooks2024": [
         "tongbian-chinese-2024:4a"
       ],
+      "textbooksAlt": [],
       "textbookNote2024": "缩句与提取主干分散在四上各单元语文园地。",
       "clusterId": "cl-chinese-d4-s2",
       "centrality": 0.0051
@@ -5375,6 +6003,7 @@
         "tongbian-chinese-2024:1a:u5",
         "tongbian-chinese-2024:1b:u2"
       ],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d5-s1",
       "centrality": 0.0085
     },
@@ -5404,6 +6033,7 @@
         "tongbian-chinese-2024:2a:u3",
         "tongbian-chinese-2024:2a:u4"
       ],
+      "textbooksAlt": [],
       "textbookNote2024": "默读训练自二上阅读单元开始。",
       "clusterId": "cl-chinese-d5-s1",
       "centrality": 0.0119
@@ -5434,6 +6064,7 @@
         "tongbian-chinese-2024:3a:u3",
         "tongbian-chinese-2024:3a:u6"
       ],
+      "textbooksAlt": [],
       "textbookNote2024": "圈画与批注在预测单元和写景单元中训练。",
       "clusterId": "cl-chinese-d5-s2",
       "centrality": 0.0102
@@ -5464,6 +6095,7 @@
       "textbooks2024": [
         "tongbian-chinese-2024:3a:u3"
       ],
+      "textbooksAlt": [],
       "textbookNote2024": "第三单元（「总也倒不了的老屋」等）为预测阅读策略单元。",
       "clusterId": "cl-chinese-d5-s2",
       "centrality": 0.0051
@@ -5494,6 +6126,7 @@
       "textbooks2024": [
         "tongbian-chinese-2024:4a:u2"
       ],
+      "textbooksAlt": [],
       "textbookNote2024": "四上第二单元为提问策略单元（与旧版单元主题一致）。",
       "clusterId": "cl-chinese-d5-s2",
       "centrality": 0.0102
@@ -5521,6 +6154,7 @@
         "tongbian-chinese:5a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d5-s3",
       "centrality": 0.0085
     },
@@ -5548,6 +6182,7 @@
         "tongbian-chinese:6a:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d5-s3",
       "centrality": 0.0051
     },
@@ -5578,6 +6213,7 @@
         "tongbian-chinese-2024:3a:u2",
         "tongbian-chinese-2024:3b:u2"
       ],
+      "textbooksAlt": [],
       "textbookNote2024": "古诗三首集中于三上第二单元；文言文「守株待兔」在三下第二单元。",
       "clusterId": "cl-chinese-d5-s2",
       "centrality": 0.0034
@@ -5608,6 +6244,7 @@
         "tongbian-chinese-2024:4a:u4",
         "tongbian-chinese-2024:4a:u6"
       ],
+      "textbooksAlt": [],
       "textbookNote2024": "把握主要内容融入神话单元与写景单元。",
       "clusterId": "cl-chinese-d5-s2",
       "centrality": 0.0102
@@ -5635,6 +6272,7 @@
         "tongbian-chinese:4b"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d5-s2",
       "centrality": 0.0051
     },
@@ -5661,6 +6299,7 @@
         "tongbian-chinese:5a"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d5-s3",
       "centrality": 0.0051
     },
@@ -5690,6 +6329,7 @@
         "tongbian-chinese-2024:1b:u2",
         "tongbian-chinese-2024:1b:u3"
       ],
+      "textbooksAlt": [],
       "textbookNote2024": "写话融入一下阅读单元（新版目录未单列写话栏目）。",
       "clusterId": "cl-chinese-d6-s1",
       "centrality": 0.0085
@@ -5721,6 +6361,7 @@
         "tongbian-chinese-2024:2a:u1",
         "tongbian-chinese-2024:2a:u3"
       ],
+      "textbooksAlt": [],
       "textbookNote2024": "仿写与写话融入二上阅读单元。",
       "clusterId": "cl-chinese-d6-s1",
       "centrality": 0.0068
@@ -5750,6 +6391,7 @@
       "textbooks2024": [
         "tongbian-chinese-2024:3a:u2"
       ],
+      "textbooksAlt": [],
       "textbookNote2024": "三上第二单元习作「写日记」。",
       "clusterId": "cl-chinese-d6-s2",
       "centrality": 0.0068
@@ -5779,6 +6421,7 @@
       "textbooks2024": [
         "tongbian-chinese-2024:3a:u5"
       ],
+      "textbooksAlt": [],
       "textbookNote2024": "三上第五单元习作「我们眼中的缤纷世界」。",
       "clusterId": "cl-chinese-d6-s2",
       "centrality": 0.0068
@@ -5809,6 +6452,7 @@
         "tongbian-chinese-2024:3a:u3",
         "tongbian-chinese-2024:3a:u4"
       ],
+      "textbooksAlt": [],
       "textbookNote2024": "续写故事、我来编童话。",
       "clusterId": "cl-chinese-d6-s2",
       "centrality": 0.0051
@@ -5838,6 +6482,7 @@
       "textbooks2024": [
         "tongbian-chinese-2024:4a:u5"
       ],
+      "textbooksAlt": [],
       "textbookNote2024": "四上第五单元习作「生活万花筒」。",
       "clusterId": "cl-chinese-d6-s2",
       "centrality": 0.0102
@@ -5865,6 +6510,7 @@
         "tongbian-chinese:4b:u7"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d6-s2",
       "centrality": 0.0068
     },
@@ -5893,6 +6539,7 @@
       "textbooks2024": [
         "tongbian-chinese-2024:4a:u8"
       ],
+      "textbooksAlt": [],
       "textbookNote2024": "四上第八单元习作「写信」。",
       "clusterId": "cl-chinese-d6-s2",
       "centrality": 0.0051
@@ -5923,6 +6570,7 @@
         "tongbian-chinese-2024:3a:u4",
         "tongbian-chinese-2024:3a:u6"
       ],
+      "textbooksAlt": [],
       "textbookNote2024": "习作修改与互评融入各习作单元。",
       "clusterId": "cl-chinese-d6-s2",
       "centrality": 0.0051
@@ -5950,6 +6598,7 @@
         "tongbian-chinese:6a:u5"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d6-s3",
       "centrality": 0.0068
     },
@@ -5977,6 +6626,7 @@
         "tongbian-chinese:6b:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d6-s3",
       "centrality": 0.0085
     },
@@ -6006,6 +6656,7 @@
         "tongbian-chinese-2024:1a:u1",
         "tongbian-chinese-2024:1b:u1"
       ],
+      "textbooksAlt": [],
       "textbookNote2024": "快乐读书吧与识字单元中的听故事、讲故事活动。",
       "clusterId": "cl-chinese-d7-s1",
       "centrality": 0.0051
@@ -6037,6 +6688,7 @@
         "tongbian-chinese-2024:2a:u1",
         "tongbian-chinese-2024:2a:u4"
       ],
+      "textbooksAlt": [],
       "textbookNote2024": "口语交际融入二上各单元（新版二上目录未单列口语交际栏目）。",
       "clusterId": "cl-chinese-d7-s1",
       "centrality": 0.0068
@@ -6067,6 +6719,7 @@
         "tongbian-chinese-2024:3a:u1",
         "tongbian-chinese-2024:3a:u3"
       ],
+      "textbooksAlt": [],
       "textbookNote2024": "三上第一、三单元设口语交际。",
       "clusterId": "cl-chinese-d7-s2",
       "centrality": 0.0051
@@ -6095,6 +6748,7 @@
         "tongbian-chinese:5a#口语交际"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d7-s3",
       "centrality": 0.0068
     },
@@ -6126,6 +6780,7 @@
         "tongbian-chinese-2024:1b:u4",
         "tongbian-chinese-2024:1b:u6"
       ],
+      "textbooksAlt": [],
       "textbookNote2024": "古诗文分布于一下第四单元「静夜思」、第六单元「古诗二首」等。",
       "clusterId": "cl-chinese-d8-s1",
       "centrality": 0.0068
@@ -6156,6 +6811,7 @@
         "tongbian-chinese-2024:3a:u2",
         "tongbian-chinese-2024:3b:u1"
       ],
+      "textbooksAlt": [],
       "textbookNote2024": "借助注释理解古诗：三上「古诗三首」、三下「古诗三首」。",
       "clusterId": "cl-chinese-d8-s2",
       "centrality": 0.0051
@@ -6187,6 +6843,7 @@
         "tongbian-chinese-2024:2a:u1",
         "tongbian-chinese-2024:3a:u4"
       ],
+      "textbooksAlt": [],
       "textbookNote2024": "快乐读书吧：二上「读读童话故事」、三上「在那奇妙的王国里」。",
       "clusterId": "cl-chinese-d8-s1",
       "centrality": 0.0051
@@ -6215,6 +6872,7 @@
         "tongbian-chinese:5b#快乐读书吧"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d8-s3",
       "centrality": 0.0102
     },
@@ -6240,6 +6898,7 @@
         "tongbian-chinese:7a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d2-s4",
       "centrality": 0.0034
     },
@@ -6265,6 +6924,7 @@
         "tongbian-chinese:7a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d2-s4",
       "centrality": 0.0017
     },
@@ -6290,6 +6950,7 @@
         "tongbian-chinese:7a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d2-s4",
       "centrality": 0.0017
     },
@@ -6315,6 +6976,7 @@
         "tongbian-chinese:7a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d3-s4",
       "centrality": 0.0051
     },
@@ -6340,6 +7002,7 @@
         "tongbian-chinese:7a:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d3-s4",
       "centrality": 0.0034
     },
@@ -6365,6 +7028,7 @@
         "tongbian-chinese:7a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d3-s4",
       "centrality": 0.0017
     },
@@ -6390,6 +7054,7 @@
         "tongbian-chinese:7a:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d3-s4",
       "centrality": 0.0051
     },
@@ -6416,6 +7081,7 @@
         "tongbian-chinese:8a:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d3-s4",
       "centrality": 0.0017
     },
@@ -6441,6 +7107,7 @@
         "tongbian-chinese:7a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d3-s4",
       "centrality": 0.0051
     },
@@ -6466,6 +7133,7 @@
         "tongbian-chinese:8b:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d3-s4",
       "centrality": 0.0017
     },
@@ -6491,6 +7159,7 @@
         "tongbian-chinese:7a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d4-s4",
       "centrality": 0.0017
     },
@@ -6516,6 +7185,7 @@
         "tongbian-chinese:7a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d4-s4",
       "centrality": 0.0034
     },
@@ -6541,6 +7211,7 @@
         "tongbian-chinese:8a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d4-s4",
       "centrality": 0.0034
     },
@@ -6566,6 +7237,7 @@
         "tongbian-chinese:8a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d4-s4",
       "centrality": 0.0034
     },
@@ -6592,6 +7264,7 @@
         "tongbian-chinese:8a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d4-s4",
       "centrality": 0.0017
     },
@@ -6617,6 +7290,7 @@
         "tongbian-chinese:7a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d5-s4",
       "centrality": 0.0034
     },
@@ -6642,6 +7316,7 @@
         "tongbian-chinese:7a:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d5-s4",
       "centrality": 0.0102
     },
@@ -6668,6 +7343,7 @@
         "tongbian-chinese:7a:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d5-s4",
       "centrality": 0.0102
     },
@@ -6693,6 +7369,7 @@
         "tongbian-chinese:7a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d5-s4",
       "centrality": 0.0034
     },
@@ -6719,6 +7396,7 @@
         "tongbian-chinese:7b:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d5-s4",
       "centrality": 0.0034
     },
@@ -6744,6 +7422,7 @@
         "tongbian-chinese:8a:u5"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d5-s4",
       "centrality": 0.0034
     },
@@ -6769,6 +7448,7 @@
         "tongbian-chinese:8a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d5-s4",
       "centrality": 0.0017
     },
@@ -6794,6 +7474,7 @@
         "tongbian-chinese:9a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d5-s4",
       "centrality": 0.0017
     },
@@ -6819,6 +7500,7 @@
         "tongbian-chinese:9a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d5-s4",
       "centrality": 0.0051
     },
@@ -6844,6 +7526,7 @@
         "tongbian-chinese:9a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d5-s4",
       "centrality": 0.0034
     },
@@ -6869,6 +7552,7 @@
         "tongbian-chinese:9a:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d5-s4",
       "centrality": 0.0068
     },
@@ -6894,6 +7578,7 @@
         "tongbian-chinese:9b:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d5-s4",
       "centrality": 0.0017
     },
@@ -6920,6 +7605,7 @@
         "tongbian-chinese:7a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d5-s4",
       "centrality": 0.0068
     },
@@ -6945,6 +7631,7 @@
         "tongbian-chinese:7a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d5-s4",
       "centrality": 0.0034
     },
@@ -6970,6 +7657,7 @@
         "tongbian-chinese:8b:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d5-s4",
       "centrality": 0.0017
     },
@@ -6996,6 +7684,7 @@
         "tongbian-chinese:8b:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d5-s4",
       "centrality": 0.0017
     },
@@ -7021,6 +7710,7 @@
         "tongbian-chinese:8b:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d5-s4",
       "centrality": 0.0017
     },
@@ -7047,6 +7737,7 @@
         "tongbian-chinese:7a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d8-s4",
       "centrality": 0.0017
     },
@@ -7072,6 +7763,7 @@
         "tongbian-chinese:7a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d8-s4",
       "centrality": 0.0034
     },
@@ -7098,6 +7790,7 @@
         "tongbian-chinese:8b:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d8-s4",
       "centrality": 0.0017
     },
@@ -7123,6 +7816,7 @@
         "tongbian-chinese:7a:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d8-s4",
       "centrality": 0.0237
     },
@@ -7148,6 +7842,7 @@
         "tongbian-chinese:7a:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d8-s4",
       "centrality": 0.0017
     },
@@ -7173,6 +7868,7 @@
         "tongbian-chinese:7a:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d8-s4",
       "centrality": 0.0017
     },
@@ -7198,6 +7894,7 @@
         "tongbian-chinese:7b:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d8-s4",
       "centrality": 0.0034
     },
@@ -7223,6 +7920,7 @@
         "tongbian-chinese:7b:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d8-s4",
       "centrality": 0.0017
     },
@@ -7248,6 +7946,7 @@
         "tongbian-chinese:8a:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d8-s4",
       "centrality": 0.0017
     },
@@ -7273,6 +7972,7 @@
         "tongbian-chinese:8a:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d8-s4",
       "centrality": 0.0017
     },
@@ -7298,6 +7998,7 @@
         "tongbian-chinese:8b:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d8-s4",
       "centrality": 0.0017
     },
@@ -7323,6 +8024,7 @@
         "tongbian-chinese:8b:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d8-s4",
       "centrality": 0.0017
     },
@@ -7348,6 +8050,7 @@
         "tongbian-chinese:9a:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d8-s4",
       "centrality": 0.0017
     },
@@ -7373,6 +8076,7 @@
         "tongbian-chinese:9a:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d8-s4",
       "centrality": 0.0034
     },
@@ -7398,6 +8102,7 @@
         "tongbian-chinese:9a:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d8-s4",
       "centrality": 0.0034
     },
@@ -7423,6 +8128,7 @@
         "tongbian-chinese:9b:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d8-s4",
       "centrality": 0.0017
     },
@@ -7448,6 +8154,7 @@
         "tongbian-chinese:9b:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d8-s4",
       "centrality": 0.0017
     },
@@ -7474,6 +8181,7 @@
         "tongbian-chinese:7a:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d6-s4",
       "centrality": 0.0034
     },
@@ -7499,6 +8207,7 @@
         "tongbian-chinese:7a:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d6-s4",
       "centrality": 0.0119
     },
@@ -7524,6 +8233,7 @@
         "tongbian-chinese:7a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d6-s4",
       "centrality": 0.0017
     },
@@ -7549,6 +8259,7 @@
         "tongbian-chinese:7a:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d6-s4",
       "centrality": 0.0017
     },
@@ -7575,6 +8286,7 @@
         "tongbian-chinese:7b:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d6-s4",
       "centrality": 0.0017
     },
@@ -7600,6 +8312,7 @@
         "tongbian-chinese:7a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d6-s4",
       "centrality": 0.0034
     },
@@ -7625,6 +8338,7 @@
         "tongbian-chinese:8a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d6-s4",
       "centrality": 0.0017
     },
@@ -7650,6 +8364,7 @@
         "tongbian-chinese:8a:u5"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d6-s4",
       "centrality": 0.0017
     },
@@ -7675,6 +8390,7 @@
         "tongbian-chinese:7b:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d6-s4",
       "centrality": 0.0034
     },
@@ -7701,6 +8417,7 @@
         "tongbian-chinese:8b:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d6-s4",
       "centrality": 0.0017
     },
@@ -7726,6 +8443,7 @@
         "tongbian-chinese:9a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d6-s4",
       "centrality": 0.0034
     },
@@ -7752,6 +8470,7 @@
         "tongbian-chinese:8a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d6-s4",
       "centrality": 0.0034
     },
@@ -7777,6 +8496,7 @@
         "tongbian-chinese:8b:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d6-s4",
       "centrality": 0.0034
     },
@@ -7802,6 +8522,7 @@
         "tongbian-chinese:7b:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d7-s4",
       "centrality": 0.0034
     },
@@ -7827,6 +8548,7 @@
         "tongbian-chinese:8b:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d7-s4",
       "centrality": 0.0051
     },
@@ -7853,6 +8575,7 @@
         "tongbian-chinese:8b:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d7-s4",
       "centrality": 0.0017
     },
@@ -7878,6 +8601,7 @@
         "tongbian-chinese:8a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d7-s4",
       "centrality": 0.0017
     },
@@ -7903,6 +8627,7 @@
         "tongbian-chinese:7b:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chinese-d9-s4",
       "centrality": 0.0017
     },
@@ -7930,7 +8655,12 @@
       "textbooks2024": [
         "pep-english-2024:3a:u1"
       ],
+      "textbooksAlt": [
+        "fltrp-english:3a:u1",
+        "fltrp-english:3a:u2"
+      ],
       "textbookNote2024": "字母名称音在「Letters and sounds」预备段与 Unit 1 中学习。",
+      "textbookNoteAlt": "外研社版：外研版无独立字母单元，字母认读随三上预备单元 Welcome to school 与 Unit 1 呈现。",
       "clusterId": "cl-english-d1-l1",
       "centrality": 0.0051
     },
@@ -7958,7 +8688,12 @@
       "textbooks2024": [
         "pep-english-2024:3a:u1"
       ],
+      "textbooksAlt": [
+        "fltrp-english:3a:u1",
+        "fltrp-english:3a:u2"
+      ],
       "textbookNote2024": "字母书写规范在「Letters and sounds」预备段学习。",
+      "textbookNoteAlt": "外研社版：外研版书写规范训练并入三上预备单元与 Unit 1 的抄写活动，未单设书写单元。",
       "clusterId": "cl-english-d1-l1",
       "centrality": 0.0051
     },
@@ -7986,7 +8721,12 @@
       "textbooks2024": [
         "pep-english-2024:3a:u1"
       ],
+      "textbooksAlt": [
+        "fltrp-english:3a:u2",
+        "fltrp-english:3a:u3"
+      ],
       "textbookNote2024": "字母音与自然拼读依托「Letters and sounds」板块（见附录 2 Chants）。",
+      "textbookNoteAlt": "外研社版：外研版字母音与拼读渗透在三上各单元的语音板块，人教版 PEP 同样无独立拼读单元。",
       "clusterId": "cl-english-d1-l1",
       "centrality": 0.0153
     },
@@ -8014,7 +8754,12 @@
       "textbooks2024": [
         "pep-english-2024:4a"
       ],
+      "textbooksAlt": [
+        "fltrp-english:4a:u1",
+        "fltrp-english:4a:u3"
+      ],
       "textbookNote2024": "新版未单设语音单元，字母组合发音规则融入各单元。",
+      "textbookNoteAlt": "外研社版：外研版未单列字母组合发音单元，四年级上的语音练习随各单元话题推进。",
       "clusterId": "cl-english-d1-l1",
       "centrality": 0.0068
     },
@@ -8043,7 +8788,12 @@
         "pep-english-2024:3a:u5",
         "pep-english-2024:3a:u6"
       ],
+      "textbooksAlt": [
+        "fltrp-english:3a:u4",
+        "fltrp-english:3a:u5"
+      ],
       "textbookNote2024": "颜色调整至第五单元「The colourful world」，数字调整至第六单元「Useful numbers」。",
+      "textbookNoteAlt": "外研社版：外研版颜色（Unit 3）与数字（Unit 4）分设两个单元，人教版 PEP 合并编排在三上前三单元。",
       "clusterId": "cl-english-d2-l1",
       "centrality": 0.0085
     },
@@ -8071,7 +8821,12 @@
       "textbooks2024": [
         "pep-english-2024:3a:u3"
       ],
+      "textbooksAlt": [
+        "fltrp-english:3a:u3",
+        "fltrp-english:3b:u2"
+      ],
       "textbookNote2024": "身体部位词汇融入动物单元（动物身体部位）；文具词汇散见于项目活动。",
+      "textbookNoteAlt": "外研社版：外研版文具在三上 Unit 2 My school things，身体部位在三下 Unit 2 Know your body，跨学期。",
       "clusterId": "cl-english-d2-l1",
       "centrality": 0.0153
     },
@@ -8099,7 +8854,11 @@
       "textbooks2024": [
         "pep-english-2024:3a:u2"
       ],
+      "textbooksAlt": [
+        "fltrp-english:3a:u6"
+      ],
       "textbookNote2024": "家庭成员由三下第二单元提前至三上第二单元「Different families」。",
+      "textbookNoteAlt": "外研社版：外研版家庭话题在三上 Unit 5 We're family，人教版 PEP 在三下 My family，早一学期。",
       "clusterId": "cl-english-d2-l1",
       "centrality": 0.0119
     },
@@ -8128,7 +8887,11 @@
         "pep-english-2024:3a:u2",
         "pep-english-2024:3a:u3"
       ],
+      "textbooksAlt": [
+        "fltrp-english:3b:u1"
+      ],
       "textbookNote2024": "动物话题拆分：宠物在「Different families」，野生动物在「Amazing animals」。",
+      "textbookNoteAlt": "外研社版：外研版动物话题在三下 Unit 1 Animal friends，人教版 PEP 在三上 We love animals，晚一学期。",
       "clusterId": "cl-english-d2-l1",
       "centrality": 0.0068
     },
@@ -8157,7 +8920,11 @@
         "pep-english-2024:3a:u4",
         "pep-english-2024:3b:u4"
       ],
+      "textbooksAlt": [
+        "fltrp-english:3b:u3"
+      ],
       "textbookNote2024": "食物话题调整为三上「Plants around us」（植物的产出）与三下「Healthy food」。",
+      "textbookNoteAlt": "外研社版：外研版食物话题在三下 Unit 3 Yummy food，人教版 PEP 在三上 Let's eat!，晚一学期。",
       "clusterId": "cl-english-d2-l1",
       "centrality": 0.0068
     },
@@ -8185,7 +8952,12 @@
       "textbooks2024": [
         "pep-english-2024:4a:u5"
       ],
+      "textbooksAlt": [
+        "fltrp-english:4a:u3",
+        "fltrp-english:4a:u4"
+      ],
       "textbookNote2024": "天气话题由四下调整至四上「The weather and us」。",
+      "textbookNoteAlt": "外研社版：外研版天气与季节分设四上 Unit 3、Unit 4，人教版 PEP 的天气单元在四下 Weather。",
       "clusterId": "cl-english-d2-l1",
       "centrality": 0.0051
     },
@@ -8213,7 +8985,11 @@
       "textbooks2024": [
         "pep-english-2024:4a:u6"
       ],
+      "textbooksAlt": [
+        "fltrp-english:4b:u6"
+      ],
       "textbookNote2024": "服装话题由四下调整至四上「Changing for the seasons」。",
+      "textbookNoteAlt": "外研社版：外研版服装话题在四下 Unit 6 Cool clothes，与人教版 PEP 四下 My clothes 册次相同。",
       "clusterId": "cl-english-d2-l1",
       "centrality": 0.0051
     },
@@ -8241,7 +9017,11 @@
       "textbooks2024": [
         "pep-english-2024:4a:u4"
       ],
+      "textbooksAlt": [
+        "fltrp-english:4b:u1"
+      ],
       "textbookNote2024": "职业话题调整为四上「Helping in the community」。",
+      "textbookNoteAlt": "外研社版：外研版职业话题在四下 Unit 1 People at work，人教版 PEP 在四上 Meet my family。",
       "clusterId": "cl-english-d2-l1",
       "centrality": 0.0068
     },
@@ -8270,7 +9050,12 @@
         "pep-english-2024:4a:u3",
         "pep-english-2024:4a:u4"
       ],
+      "textbooksAlt": [
+        "fltrp-english:4a:u5",
+        "fltrp-english:4a:u6"
+      ],
       "textbookNote2024": "场所话题调整为四上「Places we live in」等社区主题单元。",
+      "textbookNoteAlt": "外研社版：外研版场所与方位问答集中在四上 Unit 5 Let's go!、Unit 6 Find your way。",
       "clusterId": "cl-english-d2-l1",
       "centrality": 0.0085
     },
@@ -8299,7 +9084,12 @@
         "pep-english-2024:4a:u1",
         "pep-english-2024:4a:u5"
       ],
+      "textbooksAlt": [
+        "fltrp-english:4a:u1",
+        "fltrp-english:4b:u5"
+      ],
       "textbookNote2024": "日常活动融入「Helping at home」「The weather and us」等单元。",
+      "textbookNoteAlt": "外研社版：外研版活动短语分布在四上 Unit 1 I love sports 与四下 Unit 5 School activities。",
       "clusterId": "cl-english-d2-l1",
       "centrality": 0.0153
     },
@@ -8327,7 +9117,12 @@
       "textbooks2024": [
         "pep-english-2024:5a"
       ],
+      "textbooksAlt": [
+        "fltrp-english:4a:u5",
+        "fltrp-english:4a:u6"
+      ],
       "textbookNote2024": "交通与问路话题融入五年级各单元。",
+      "textbookNoteAlt": "外研社版：外研版出行与问路提前到四上，人教版 PEP 的交通方式单元在五上 Ways to go to school。",
       "clusterId": "cl-english-d2-l2",
       "centrality": 0.0051
     },
@@ -8356,6 +9151,10 @@
         "pep-english-2024:3a:u1",
         "pep-english-2024:3a:u3"
       ],
+      "textbooksAlt": [
+        "fltrp-english:3a:u3"
+      ],
+      "textbookNoteAlt": "外研社版：外研版指示代词随三上 Unit 2 指认文具的句型出现，教材不单设语法单元。",
       "clusterId": "cl-english-d3-l1",
       "centrality": 0.0068
     },
@@ -8384,7 +9183,12 @@
         "pep-english-2024:3a:u1",
         "pep-english-2024:3a:u2"
       ],
+      "textbooksAlt": [
+        "fltrp-english:3a:u6",
+        "fltrp-english:3b:u1"
+      ],
       "textbookNote2024": "人称代词与物主代词由三下提前至三上第一、二单元。",
+      "textbookNoteAlt": "外研社版：外研版人称与物主代词随三上 We're family、三下 Animal friends 的话题句型渗透。",
       "clusterId": "cl-english-d3-l1",
       "centrality": 0.0068
     },
@@ -8413,7 +9217,12 @@
         "pep-english-2024:3a:u1",
         "pep-english-2024:3a:u2"
       ],
+      "textbooksAlt": [
+        "fltrp-english:3a:u6",
+        "fltrp-english:3b:u2"
+      ],
       "textbookNote2024": "be 动词与名词单复数由三下提前至三上家庭与朋友话题单元。",
+      "textbookNoteAlt": "外研社版：外研版 be 动词与名词复数在三年级上下册话题句型中反复复现，无独立语法板块。",
       "clusterId": "cl-english-d3-l1",
       "centrality": 0.0186
     },
@@ -8442,7 +9251,12 @@
         "pep-english-2024:3a:u1",
         "pep-english-2024:3a:u2"
       ],
+      "textbooksAlt": [
+        "fltrp-english:3a:u3",
+        "fltrp-english:3b:u3"
+      ],
       "textbookNote2024": "一般疑问句融入三上第一、二单元问句情境。",
+      "textbookNoteAlt": "外研社版：外研版一般疑问句随三上、三下的猜测与确认活动出现，不单列疑问句单元。",
       "clusterId": "cl-english-d3-l1",
       "centrality": 0.0085
     },
@@ -8471,7 +9285,12 @@
         "pep-english-2024:3a:u1",
         "pep-english-2024:3a:u2"
       ],
+      "textbooksAlt": [
+        "fltrp-english:3b:u4",
+        "fltrp-english:3b:u5"
+      ],
       "textbookNote2024": "特殊疑问句由三下提前至三上；各单元以 Big question 组织。",
+      "textbookNoteAlt": "外研社版：外研版特殊疑问句集中在三下以 What 引导的 Unit 4、Unit 5，人教版 PEP 在三下第一单元。",
       "clusterId": "cl-english-d3-l1",
       "centrality": 0.0085
     },
@@ -8500,7 +9319,11 @@
         "pep-english-2024:3a:u4",
         "pep-english-2024:3a:u2"
       ],
+      "textbooksAlt": [
+        "fltrp-english:3a:u7"
+      ],
       "textbookNote2024": "方位介词融入「Plants around us」与家庭话题。",
+      "textbookNoteAlt": "外研社版：外研版方位介词随三上 Unit 6 My sweet home 描述房间与物品位置呈现。",
       "clusterId": "cl-english-d3-l1",
       "centrality": 0.0051
     },
@@ -8529,7 +9352,11 @@
         "pep-english-2024:5a:u1",
         "pep-english-2024:5a:u4"
       ],
+      "textbooksAlt": [
+        "fltrp-english:5b:u7"
+      ],
       "textbookNote2024": "一般现在时融入五年级日常话题单元。",
+      "textbookNoteAlt": "外研社版：外研版旧版五下 Module 7 讲一般现在时与三单（My father goes to work...），人教版 PEP 在五上。",
       "clusterId": "cl-english-d3-l2",
       "centrality": 0.0119
     },
@@ -8555,7 +9382,11 @@
         "pep-english:5b:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "fltrp-english:5b:u10"
+      ],
       "textbookNote2024": "现在进行时在新版中的分布待五年级下册（2027 春）目录收录后确认。",
+      "textbookNoteAlt": "外研社版：外研版现在进行时主要在六下 Module 3~5，超出本主题年级上限，暂取五下 Module 10 的现在时语篇。",
       "clusterId": "cl-english-d3-l2",
       "centrality": 0.0068
     },
@@ -8581,6 +9412,11 @@
         "pep-english:6a:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "fltrp-english:5a:u5",
+        "fltrp-english:6b:u2"
+      ],
+      "textbookNoteAlt": "外研社版：外研版 be going to 见于五上 Look into the future 与六下 Module 2，人教版 PEP 在六上第三单元。",
       "clusterId": "cl-english-d3-l2",
       "centrality": 0.0068
     },
@@ -8606,6 +9442,11 @@
         "pep-english:6b:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "fltrp-english:5b:u1",
+        "fltrp-english:5b:u2"
+      ],
+      "textbookNoteAlt": "外研社版：外研版一般过去时提前到五下 Module 1、Module 2，人教版 PEP 在六下 Last weekend，晚一学年。",
       "clusterId": "cl-english-d3-l2",
       "centrality": 0.0068
     },
@@ -8631,6 +9472,10 @@
         "pep-english:6b:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [
+        "fltrp-english:5b:u5"
+      ],
+      "textbookNoteAlt": "外研社版：外研版无独立比较级单元，形容词与 too...for 用法集中在五下 Module 5，人教版 PEP 在六下第一单元。",
       "clusterId": "cl-english-d3-l2",
       "centrality": 0.0051
     },
@@ -8659,7 +9504,12 @@
         "pep-english-2024:3a:u1",
         "pep-english-2024:3b:u1"
       ],
+      "textbooksAlt": [
+        "fltrp-english:3a:u1",
+        "fltrp-english:3a:u2"
+      ],
       "textbookNote2024": "问候话题在三上「Making friends」与三下「Meeting new people」。",
+      "textbookNoteAlt": "外研社版：外研版问候与自我介绍在三上 Welcome to school、Unit 1 Let's be friends!，人教版 PEP 在三上 Hello!。",
       "clusterId": "cl-english-d4-l1",
       "centrality": 0.0034
     },
@@ -8688,7 +9538,12 @@
         "pep-english-2024:3a:u1",
         "pep-english-2024:3a:u3"
       ],
+      "textbooksAlt": [
+        "fltrp-english:3a:u1",
+        "fltrp-english:3a:u4"
+      ],
       "textbookNote2024": "听话题贯穿三上各单元。",
+      "textbookNoteAlt": "外研社版：外研版不单设听力单元，听指令与抓关键信息贯穿三上预备单元及各单元听说活动。",
       "clusterId": "cl-english-d4-l1",
       "centrality": 0.0068
     },
@@ -8717,7 +9572,12 @@
         "pep-english-2024:4a:u1",
         "pep-english-2024:4a:u4"
       ],
+      "textbooksAlt": [
+        "fltrp-english:4a:u1",
+        "fltrp-english:4a:u2"
+      ],
       "textbookNote2024": "口头表达依托四上各单元 Project。",
+      "textbookNoteAlt": "外研社版：外研版口头表达依托四上各单元的项目与拓展板块，人教版 PEP 同样没有独立的口语单元。",
       "clusterId": "cl-english-d4-l1",
       "centrality": 0.0102
     },
@@ -8746,6 +9606,11 @@
         "pep-english-2024:5a:u1",
         "pep-english-2024:5a:u6"
       ],
+      "textbooksAlt": [
+        "fltrp-english:5a:u4",
+        "fltrp-english:5b:u5"
+      ],
+      "textbookNoteAlt": "外研社版：外研版连贯描述依托五上 Unit 4 A better me 与五下 Module 5 的形容词语篇。",
       "clusterId": "cl-english-d4-l2",
       "centrality": 0.0085
     },
@@ -8774,6 +9639,11 @@
         "pep-english-2024:3a:u1",
         "pep-english-2024:3a:u5"
       ],
+      "textbooksAlt": [
+        "fltrp-english:3a:u1",
+        "fltrp-english:3a:u2"
+      ],
+      "textbookNoteAlt": "外研社版：外研版抄写与仿写随三上预备单元与 Unit 1 的书写练习进行，不单设书写单元。",
       "clusterId": "cl-english-d5-l1",
       "centrality": 0.0051
     },
@@ -8802,7 +9672,12 @@
         "pep-english-2024:3a:u2",
         "pep-english-2024:3a:u3"
       ],
+      "textbooksAlt": [
+        "fltrp-english:3a:u3",
+        "fltrp-english:3b:u1"
+      ],
       "textbookNote2024": "图文阅读融入动物与家庭单元；四上起设 Reading time。",
+      "textbookNoteAlt": "外研社版：外研版图文匹配阅读融入三上 Unit 2、三下 Unit 1 的配图语篇，无独立阅读单元。",
       "clusterId": "cl-english-d5-l1",
       "centrality": 0.0051
     },
@@ -8831,6 +9706,11 @@
         "pep-english-2024:4a:u2",
         "pep-english-2024:4a:u3"
       ],
+      "textbooksAlt": [
+        "fltrp-english:4a:u3",
+        "fltrp-english:4a:u6"
+      ],
+      "textbookNoteAlt": "外研社版：外研版猜词义训练融入四上各单元阅读语篇，人教版 PEP 也没有单独的词汇策略单元。",
       "clusterId": "cl-english-d5-l1",
       "centrality": 0.0085
     },
@@ -8859,7 +9739,12 @@
         "pep-english-2024:4a:u1",
         "pep-english-2024:4a:u4"
       ],
+      "textbooksAlt": [
+        "fltrp-english:4a:u1",
+        "fltrp-english:4b:u5"
+      ],
       "textbookNote2024": "写几句话融入四上各单元 Project。",
+      "textbookNoteAlt": "外研社版：外研版写几句话依托四上 Unit 1 与四下 Unit 5 的写作任务，人教版 PEP 在四下第二单元。",
       "clusterId": "cl-english-d5-l1",
       "centrality": 0.0068
     },
@@ -8888,6 +9773,11 @@
         "pep-english-2024:5a:u1",
         "pep-english-2024:5a:u5"
       ],
+      "textbooksAlt": [
+        "fltrp-english:5a:u4",
+        "fltrp-english:5b:u6"
+      ],
+      "textbookNoteAlt": "外研社版：外研版小短文写作依托五上 A better me 与五下 Module 6 的旅行话题语篇。",
       "clusterId": "cl-english-d5-l2",
       "centrality": 0.0051
     },
@@ -8915,7 +9805,11 @@
       "textbooks2024": [
         "pep-english-2024:5a:u6"
       ],
+      "textbooksAlt": [
+        "fltrp-english:5a:u6"
+      ],
       "textbookNote2024": "节日与文化话题见于五年级各单元及 Revision「New Year's party」。",
+      "textbookNoteAlt": "外研社版：外研版单设五上 Unit 6 Enjoy the festivals 讲节日与文化，人教版 PEP 分散在五上各单元。",
       "clusterId": "cl-english-d6-l2",
       "centrality": 0.0068
     },
@@ -8943,7 +9837,11 @@
       "textbooks2024": [
         "pep-english-2024:3b:u3"
       ],
+      "textbooksAlt": [
+        "fltrp-english:5a:u4"
+      ],
       "textbookNote2024": "学习策略调整为三下「Learning better」单元。",
+      "textbookNoteAlt": "外研社版：外研版无独立学习策略单元，自查与复习依托各单元 Wrap up、Check it 板块，此处取五上 A better me。",
       "clusterId": "cl-english-d6-l2",
       "centrality": 0.0034
     },
@@ -8969,6 +9867,7 @@
         "pep-english:7a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d1-l3",
       "centrality": 0.0034
     },
@@ -8994,6 +9893,7 @@
         "pep-english:7a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d1-l3",
       "centrality": 0.0017
     },
@@ -9019,6 +9919,7 @@
         "pep-english:7a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d1-l3",
       "centrality": 0.0017
     },
@@ -9045,6 +9946,7 @@
         "pep-english:7a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d2-l3",
       "centrality": 0.0017
     },
@@ -9071,6 +9973,7 @@
         "pep-english:7a:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d2-l3",
       "centrality": 0.0068
     },
@@ -9097,6 +10000,7 @@
         "pep-english:7a:u7"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d2-l3",
       "centrality": 0.0017
     },
@@ -9123,6 +10027,7 @@
         "pep-english:8a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d2-l3",
       "centrality": 0.0034
     },
@@ -9150,6 +10055,7 @@
         "pep-english:8b:u7"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d2-l3",
       "centrality": 0.0051
     },
@@ -9176,6 +10082,7 @@
         "pep-english:9a:u13"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d2-l3",
       "centrality": 0.0017
     },
@@ -9201,6 +10108,7 @@
         "pep-english:8a:u9"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d2-l3",
       "centrality": 0.0034
     },
@@ -9226,6 +10134,7 @@
         "pep-english:9a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d2-l3",
       "centrality": 0.0034
     },
@@ -9252,6 +10161,7 @@
         "pep-english:9a:u11"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d2-l3",
       "centrality": 0.0017
     },
@@ -9277,6 +10187,7 @@
         "pep-english:7a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d3-l3",
       "centrality": 0.0034
     },
@@ -9302,6 +10213,7 @@
         "pep-english:7a:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d3-l3",
       "centrality": 0.0017
     },
@@ -9327,6 +10239,7 @@
         "pep-english:7a:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d3-l3",
       "centrality": 0.0051
     },
@@ -9352,6 +10265,7 @@
         "pep-english:7a:u5"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d3-l3",
       "centrality": 0.0017
     },
@@ -9377,6 +10291,7 @@
         "pep-english:7a:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d3-l3",
       "centrality": 0.0051
     },
@@ -9402,6 +10317,7 @@
         "pep-english:7b:u11"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d3-l3",
       "centrality": 0.0068
     },
@@ -9427,6 +10343,7 @@
         "pep-english:7b:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d3-l3",
       "centrality": 0.0034
     },
@@ -9452,6 +10369,7 @@
         "pep-english:8a:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d3-l3",
       "centrality": 0.0051
     },
@@ -9477,6 +10395,7 @@
         "pep-english:8a:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d3-l3",
       "centrality": 0.0017
     },
@@ -9502,6 +10421,7 @@
         "pep-english:8a:u9"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d3-l3",
       "centrality": 0.0034
     },
@@ -9527,6 +10447,7 @@
         "pep-english:8a:u10"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d3-l3",
       "centrality": 0.0034
     },
@@ -9552,6 +10473,7 @@
         "pep-english:8b:u10"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d3-l3",
       "centrality": 0.0051
     },
@@ -9577,6 +10499,7 @@
         "pep-english:9a:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d3-l3",
       "centrality": 0.0034
     },
@@ -9602,6 +10525,7 @@
         "pep-english:9a:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d3-l3",
       "centrality": 0.0034
     },
@@ -9627,6 +10551,7 @@
         "pep-english:9a:u9"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d3-l3",
       "centrality": 0.0034
     },
@@ -9652,6 +10577,7 @@
         "pep-english:9a:u10"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d3-l3",
       "centrality": 0.0017
     },
@@ -9677,6 +10603,7 @@
         "pep-english:8b:u10"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d3-l3",
       "centrality": 0.0017
     },
@@ -9702,6 +10629,7 @@
         "pep-english:9a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d3-l3",
       "centrality": 0.0034
     },
@@ -9728,6 +10656,7 @@
         "pep-english:7a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d4-l3",
       "centrality": 0.0017
     },
@@ -9753,6 +10682,7 @@
         "pep-english:7a:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d4-l3",
       "centrality": 0.0051
     },
@@ -9779,6 +10709,7 @@
         "pep-english:7b:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d4-l3",
       "centrality": 0.0085
     },
@@ -9804,6 +10735,7 @@
         "pep-english:7b:u8"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d4-l3",
       "centrality": 0.0017
     },
@@ -9829,6 +10761,7 @@
         "pep-english:7b:u10"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d4-l3",
       "centrality": 0.0017
     },
@@ -9854,6 +10787,7 @@
         "pep-english:9a:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d4-l3",
       "centrality": 0.0017
     },
@@ -9879,6 +10813,7 @@
         "pep-english:8a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d4-l3",
       "centrality": 0.0034
     },
@@ -9904,6 +10839,7 @@
         "pep-english:9a:u7"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d4-l3",
       "centrality": 0.0034
     },
@@ -9930,6 +10866,7 @@
         "pep-english:9a:u7"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d4-l3",
       "centrality": 0.0017
     },
@@ -9955,6 +10892,7 @@
         "pep-english:7a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d5-l3",
       "centrality": 0.0051
     },
@@ -9981,6 +10919,7 @@
         "pep-english:8b:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d5-l3",
       "centrality": 0.0034
     },
@@ -10007,6 +10946,7 @@
         "pep-english:9a:u8"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d5-l3",
       "centrality": 0.0017
     },
@@ -10032,6 +10972,7 @@
         "pep-english:8a:u5"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d5-l3",
       "centrality": 0.0051
     },
@@ -10057,6 +10998,7 @@
         "pep-english:8b:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d5-l3",
       "centrality": 0.0051
     },
@@ -10082,6 +11024,7 @@
         "pep-english:7a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d5-l3",
       "centrality": 0.0034
     },
@@ -10107,6 +11050,7 @@
         "pep-english:8a:u5"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d5-l3",
       "centrality": 0.0068
     },
@@ -10133,6 +11077,7 @@
         "pep-english:8a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d5-l3",
       "centrality": 0.0051
     },
@@ -10159,6 +11104,7 @@
         "pep-english:8a:u9"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d5-l3",
       "centrality": 0.0017
     },
@@ -10185,6 +11131,7 @@
         "pep-english:9a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d5-l3",
       "centrality": 0.0051
     },
@@ -10211,6 +11158,7 @@
         "pep-english:9a:u13"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d5-l3",
       "centrality": 0.0051
     },
@@ -10236,6 +11184,7 @@
         "pep-english:8a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d6-l3",
       "centrality": 0.0051
     },
@@ -10261,6 +11210,7 @@
         "pep-english:9a:u10"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d6-l3",
       "centrality": 0.0017
     },
@@ -10286,6 +11236,7 @@
         "pep-english:9a:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d6-l3",
       "centrality": 0.0034
     },
@@ -10311,6 +11262,7 @@
         "pep-english:7a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d6-l3",
       "centrality": 0.0034
     },
@@ -10336,6 +11288,7 @@
         "pep-english:9a:u14"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-english-d6-l3",
       "centrality": 0.0017
     },
@@ -10362,6 +11315,7 @@
         "pep-physics:8a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d1-s4",
       "centrality": 0.0068
     },
@@ -10387,6 +11341,7 @@
         "pep-physics:8a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d1-s4",
       "centrality": 0.0068
     },
@@ -10412,6 +11367,7 @@
         "pep-physics:8a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d1-s4",
       "centrality": 0.0051
     },
@@ -10437,6 +11393,7 @@
         "pep-physics:8a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d1-s4",
       "centrality": 0.0085
     },
@@ -10464,6 +11421,7 @@
         "pep-physics:8a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d1-s4",
       "centrality": 0.0034
     },
@@ -10490,6 +11448,7 @@
         "pep-physics:8a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d2-s4",
       "centrality": 0.0017
     },
@@ -10516,6 +11475,7 @@
         "pep-physics:8a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d2-s4",
       "centrality": 0.0017
     },
@@ -10542,6 +11502,7 @@
         "pep-physics:8a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d2-s4",
       "centrality": 0.0017
     },
@@ -10567,6 +11528,7 @@
         "pep-physics:8a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d2-s4",
       "centrality": 0.0034
     },
@@ -10595,6 +11557,7 @@
         "pep-physics:8a:u5"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d2-s4",
       "centrality": 0.0034
     },
@@ -10621,6 +11584,7 @@
         "pep-physics:8a:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d3-s4",
       "centrality": 0.0051
     },
@@ -10648,6 +11612,7 @@
         "pep-physics:8a:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d3-s4",
       "centrality": 0.0034
     },
@@ -10674,6 +11639,7 @@
         "pep-physics:8a:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d3-s4",
       "centrality": 0.0034
     },
@@ -10700,6 +11666,7 @@
         "pep-physics:8a:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d3-s4",
       "centrality": 0.0034
     },
@@ -10727,6 +11694,7 @@
         "pep-physics:8a:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d3-s4",
       "centrality": 0.0085
     },
@@ -10753,6 +11721,7 @@
         "pep-physics:8a:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d4-s4",
       "centrality": 0.0034
     },
@@ -10778,6 +11747,7 @@
         "pep-physics:8a:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d4-s4",
       "centrality": 0.0085
     },
@@ -10803,6 +11773,7 @@
         "pep-physics:8a:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d4-s4",
       "centrality": 0.0034
     },
@@ -10830,6 +11801,7 @@
         "pep-physics:8a:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d4-s4",
       "centrality": 0.0051
     },
@@ -10856,6 +11828,7 @@
         "pep-physics:8a:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d4-s4",
       "centrality": 0.0017
     },
@@ -10881,6 +11854,7 @@
         "pep-physics:8b:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d5-s4",
       "centrality": 0.0153
     },
@@ -10907,6 +11881,7 @@
         "pep-physics:8b:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d5-s4",
       "centrality": 0.0017
     },
@@ -10933,6 +11908,7 @@
         "pep-physics:8b:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d5-s4",
       "centrality": 0.0034
     },
@@ -10959,6 +11935,7 @@
         "pep-physics:8b:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d5-s4",
       "centrality": 0.0085
     },
@@ -10987,6 +11964,7 @@
         "pep-physics:8b:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d5-s4",
       "centrality": 0.0034
     },
@@ -11012,6 +11990,7 @@
         "pep-physics:8b:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d6-s4",
       "centrality": 0.0051
     },
@@ -11038,6 +12017,7 @@
         "pep-physics:8b:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d6-s4",
       "centrality": 0.0051
     },
@@ -11064,6 +12044,7 @@
         "pep-physics:8b:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d6-s4",
       "centrality": 0.0017
     },
@@ -11091,6 +12072,7 @@
         "pep-physics:8b:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d6-s4",
       "centrality": 0.0051
     },
@@ -11117,6 +12099,7 @@
         "pep-physics:8b:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d6-s4",
       "centrality": 0.0051
     },
@@ -11143,6 +12126,7 @@
         "pep-physics:8b:u5"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d7-s4",
       "centrality": 0.0068
     },
@@ -11169,6 +12153,7 @@
         "pep-physics:8b:u5"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d7-s4",
       "centrality": 0.0051
     },
@@ -11194,6 +12179,7 @@
         "pep-physics:8b:u5"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d7-s4",
       "centrality": 0.0034
     },
@@ -11222,6 +12208,7 @@
         "pep-physics:8b:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d7-s4",
       "centrality": 0.0051
     },
@@ -11250,6 +12237,7 @@
         "pep-physics:8b:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d7-s4",
       "centrality": 0.0034
     },
@@ -11275,6 +12263,7 @@
         "pep-physics:9a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d8-s4",
       "centrality": 0.0034
     },
@@ -11301,6 +12290,7 @@
         "pep-physics:9a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d8-s4",
       "centrality": 0.0068
     },
@@ -11328,6 +12318,7 @@
         "pep-physics:9a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d8-s4",
       "centrality": 0.0034
     },
@@ -11355,6 +12346,7 @@
         "pep-physics:9a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d8-s4",
       "centrality": 0.0051
     },
@@ -11381,6 +12373,7 @@
         "pep-physics:9a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d8-s4",
       "centrality": 0.0051
     },
@@ -11408,6 +12401,7 @@
         "pep-physics:9a:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d9-s4",
       "centrality": 0.0051
     },
@@ -11435,6 +12429,7 @@
         "pep-physics:9a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d9-s4",
       "centrality": 0.0034
     },
@@ -11462,6 +12457,7 @@
         "pep-physics:9a:u5"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d9-s4",
       "centrality": 0.0051
     },
@@ -11491,6 +12487,7 @@
         "pep-physics:9a:u7"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d9-s4",
       "centrality": 0.0051
     },
@@ -11519,6 +12516,7 @@
         "pep-physics:9a:u8"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d9-s4",
       "centrality": 0.0051
     },
@@ -11545,6 +12543,7 @@
         "pep-physics:9a:u9"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d10-s4",
       "centrality": 0.0034
     },
@@ -11571,6 +12570,7 @@
         "pep-physics:9a:u9"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d10-s4",
       "centrality": 0.0017
     },
@@ -11597,6 +12597,7 @@
         "pep-physics:9a:u10"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d10-s4",
       "centrality": 0.0051
     },
@@ -11624,6 +12625,7 @@
         "pep-physics:9a:u10"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d10-s4",
       "centrality": 0.0034
     },
@@ -11652,6 +12654,7 @@
         "pep-physics:9a:u10"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-physics-d10-s4",
       "centrality": 0.0068
     },
@@ -11678,6 +12681,7 @@
         "pep-chemistry:9a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chemistry-d1-s4",
       "centrality": 0.0051
     },
@@ -11704,6 +12708,7 @@
         "pep-chemistry:9a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chemistry-d1-s4",
       "centrality": 0.0085
     },
@@ -11729,6 +12734,7 @@
         "pep-chemistry:9a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chemistry-d1-s4",
       "centrality": 0.0068
     },
@@ -11755,6 +12761,7 @@
         "pep-chemistry:9a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chemistry-d1-s4",
       "centrality": 0.0085
     },
@@ -11781,6 +12788,7 @@
         "pep-chemistry:9a:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chemistry-d2-s4",
       "centrality": 0.0051
     },
@@ -11807,6 +12815,7 @@
         "pep-chemistry:9a:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chemistry-d2-s4",
       "centrality": 0.0017
     },
@@ -11832,6 +12841,7 @@
         "pep-chemistry:9a:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chemistry-d2-s4",
       "centrality": 0.0102
     },
@@ -11858,6 +12868,7 @@
         "pep-chemistry:9a:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chemistry-d2-s4",
       "centrality": 0.0068
     },
@@ -11883,6 +12894,7 @@
         "pep-chemistry:9a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chemistry-d3-s4",
       "centrality": 0.0051
     },
@@ -11908,6 +12920,7 @@
         "pep-chemistry:9a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chemistry-d3-s4",
       "centrality": 0.0051
     },
@@ -11933,6 +12946,7 @@
         "pep-chemistry:9a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chemistry-d3-s4",
       "centrality": 0.0051
     },
@@ -11958,6 +12972,7 @@
         "pep-chemistry:9a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chemistry-d3-s4",
       "centrality": 0.0085
     },
@@ -11983,6 +12998,7 @@
         "pep-chemistry:9a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chemistry-d3-s4",
       "centrality": 0.0051
     },
@@ -12009,6 +13025,7 @@
         "pep-chemistry:9a:u5"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chemistry-d4-s4",
       "centrality": 0.0051
     },
@@ -12034,6 +13051,7 @@
         "pep-chemistry:9a:u5"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chemistry-d4-s4",
       "centrality": 0.0051
     },
@@ -12059,6 +13077,7 @@
         "pep-chemistry:9a:u5"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chemistry-d4-s4",
       "centrality": 0.0017
     },
@@ -12084,6 +13103,7 @@
         "pep-chemistry:9a:u5"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chemistry-d4-s4",
       "centrality": 0.0051
     },
@@ -12109,6 +13129,7 @@
         "pep-chemistry:9a:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chemistry-d5-s4",
       "centrality": 0.0051
     },
@@ -12134,6 +13155,7 @@
         "pep-chemistry:9a:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chemistry-d5-s4",
       "centrality": 0.0085
     },
@@ -12159,6 +13181,7 @@
         "pep-chemistry:9a:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chemistry-d5-s4",
       "centrality": 0.0051
     },
@@ -12184,6 +13207,7 @@
         "pep-chemistry:9a:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chemistry-d5-s4",
       "centrality": 0.0051
     },
@@ -12209,6 +13233,7 @@
         "pep-chemistry:9a:u7"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chemistry-d6-s4",
       "centrality": 0.0068
     },
@@ -12234,6 +13259,7 @@
         "pep-chemistry:9a:u7"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chemistry-d6-s4",
       "centrality": 0.0085
     },
@@ -12259,6 +13285,7 @@
         "pep-chemistry:9a:u7"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chemistry-d6-s4",
       "centrality": 0.0034
     },
@@ -12285,6 +13312,7 @@
         "pep-chemistry:9a:u7"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chemistry-d6-s4",
       "centrality": 0.0051
     },
@@ -12310,6 +13338,7 @@
         "pep-chemistry:9b:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chemistry-d7-s4",
       "centrality": 0.0017
     },
@@ -12336,6 +13365,7 @@
         "pep-chemistry:9b:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chemistry-d7-s4",
       "centrality": 0.0085
     },
@@ -12361,6 +13391,7 @@
         "pep-chemistry:9b:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chemistry-d7-s4",
       "centrality": 0.0017
     },
@@ -12387,6 +13418,7 @@
         "pep-chemistry:9b:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chemistry-d7-s4",
       "centrality": 0.0051
     },
@@ -12412,6 +13444,7 @@
         "pep-chemistry:9b:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chemistry-d8-s4",
       "centrality": 0.0068
     },
@@ -12437,6 +13470,7 @@
         "pep-chemistry:9b:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chemistry-d8-s4",
       "centrality": 0.0034
     },
@@ -12462,6 +13496,7 @@
         "pep-chemistry:9b:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chemistry-d8-s4",
       "centrality": 0.0034
     },
@@ -12487,6 +13522,7 @@
         "pep-chemistry:9b:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chemistry-d8-s4",
       "centrality": 0.0051
     },
@@ -12512,6 +13548,7 @@
         "pep-chemistry:9b:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chemistry-d9-s4",
       "centrality": 0.0085
     },
@@ -12537,6 +13574,7 @@
         "pep-chemistry:9b:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chemistry-d9-s4",
       "centrality": 0.0051
     },
@@ -12563,6 +13601,7 @@
         "pep-chemistry:9b:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chemistry-d9-s4",
       "centrality": 0.0068
     },
@@ -12588,6 +13627,7 @@
         "pep-chemistry:9b:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chemistry-d9-s4",
       "centrality": 0.0051
     },
@@ -12614,6 +13654,7 @@
         "pep-chemistry:9b:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chemistry-d9-s4",
       "centrality": 0.0034
     },
@@ -12640,6 +13681,7 @@
         "pep-chemistry:9a:u8"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chemistry-d10-s4",
       "centrality": 0.0051
     },
@@ -12665,6 +13707,7 @@
         "pep-chemistry:9a:u8"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chemistry-d10-s4",
       "centrality": 0.0068
     },
@@ -12690,6 +13733,7 @@
         "pep-chemistry:9b:u5"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chemistry-d10-s4",
       "centrality": 0.0017
     },
@@ -12715,6 +13759,7 @@
         "pep-chemistry:9b:u5"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-chemistry-d10-s4",
       "centrality": 0.0034
     },
@@ -12740,6 +13785,7 @@
         "tongbian-history:7a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d1-s4",
       "centrality": 0.0051
     },
@@ -12766,6 +13812,7 @@
         "tongbian-history:7a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d1-s4",
       "centrality": 0.0068
     },
@@ -12791,6 +13838,7 @@
         "tongbian-history:7a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d1-s4",
       "centrality": 0.0051
     },
@@ -12817,6 +13865,7 @@
         "tongbian-history:7a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d1-s4",
       "centrality": 0.0085
     },
@@ -12842,6 +13891,7 @@
         "tongbian-history:7a:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d1-s4",
       "centrality": 0.0051
     },
@@ -12868,6 +13918,7 @@
         "tongbian-history:7a:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d1-s4",
       "centrality": 0.0085
     },
@@ -12893,6 +13944,7 @@
         "tongbian-history:7a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d2-s4",
       "centrality": 0.0034
     },
@@ -12918,6 +13970,7 @@
         "tongbian-history:7a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d2-s4",
       "centrality": 0.0034
     },
@@ -12943,6 +13996,7 @@
         "tongbian-history:7a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d2-s4",
       "centrality": 0.0051
     },
@@ -12968,6 +14022,7 @@
         "tongbian-history:7a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d2-s4",
       "centrality": 0.0068
     },
@@ -12993,6 +14048,7 @@
         "tongbian-history:7a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d2-s4",
       "centrality": 0.0034
     },
@@ -13018,6 +14074,7 @@
         "tongbian-history:7a:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d2-s4",
       "centrality": 0.0034
     },
@@ -13043,6 +14100,7 @@
         "tongbian-history:7a:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d2-s4",
       "centrality": 0.0085
     },
@@ -13069,6 +14127,7 @@
         "tongbian-history:7a:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d2-s4",
       "centrality": 0.0017
     },
@@ -13094,6 +14153,7 @@
         "tongbian-history:7a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d2-s4",
       "centrality": 0.0051
     },
@@ -13119,6 +14179,7 @@
         "tongbian-history:7a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d2-s4",
       "centrality": 0.0034
     },
@@ -13144,6 +14205,7 @@
         "tongbian-history:7b:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d2-s4",
       "centrality": 0.0034
     },
@@ -13169,6 +14231,7 @@
         "tongbian-history:7b:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d2-s4",
       "centrality": 0.0034
     },
@@ -13194,6 +14257,7 @@
         "tongbian-history:7b:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d2-s4",
       "centrality": 0.0051
     },
@@ -13219,6 +14283,7 @@
         "tongbian-history:7b:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d2-s4",
       "centrality": 0.0051
     },
@@ -13244,6 +14309,7 @@
         "tongbian-history:7b:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d2-s4",
       "centrality": 0.0051
     },
@@ -13269,6 +14335,7 @@
         "tongbian-history:7b:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d2-s4",
       "centrality": 0.0017
     },
@@ -13295,6 +14362,7 @@
         "tongbian-history:7b:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d2-s4",
       "centrality": 0.0051
     },
@@ -13320,6 +14388,7 @@
         "tongbian-history:8a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d3-s4",
       "centrality": 0.0034
     },
@@ -13345,6 +14414,7 @@
         "tongbian-history:8a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d3-s4",
       "centrality": 0.0034
     },
@@ -13370,6 +14440,7 @@
         "tongbian-history:8a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d3-s4",
       "centrality": 0.0051
     },
@@ -13395,6 +14466,7 @@
         "tongbian-history:8a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d3-s4",
       "centrality": 0.0068
     },
@@ -13420,6 +14492,7 @@
         "tongbian-history:8a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d3-s4",
       "centrality": 0.0034
     },
@@ -13445,6 +14518,7 @@
         "tongbian-history:8a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d3-s4",
       "centrality": 0.0034
     },
@@ -13470,6 +14544,7 @@
         "tongbian-history:8a:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d3-s4",
       "centrality": 0.0051
     },
@@ -13495,6 +14570,7 @@
         "tongbian-history:8a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d3-s4",
       "centrality": 0.0051
     },
@@ -13520,6 +14596,7 @@
         "tongbian-history:8a:u5"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d3-s4",
       "centrality": 0.0034
     },
@@ -13545,6 +14622,7 @@
         "tongbian-history:8a:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d3-s4",
       "centrality": 0.0051
     },
@@ -13570,6 +14648,7 @@
         "tongbian-history:8a:u7"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d3-s4",
       "centrality": 0.0034
     },
@@ -13596,6 +14675,7 @@
         "tongbian-history:8a:u8"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d3-s4",
       "centrality": 0.0034
     },
@@ -13621,6 +14701,7 @@
         "tongbian-history:8b:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d4-s4",
       "centrality": 0.0085
     },
@@ -13646,6 +14727,7 @@
         "tongbian-history:8b:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d4-s4",
       "centrality": 0.0034
     },
@@ -13671,6 +14753,7 @@
         "tongbian-history:8b:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d4-s4",
       "centrality": 0.0034
     },
@@ -13696,6 +14779,7 @@
         "tongbian-history:8b:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d4-s4",
       "centrality": 0.0051
     },
@@ -13721,6 +14805,7 @@
         "tongbian-history:8b:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d4-s4",
       "centrality": 0.0034
     },
@@ -13746,6 +14831,7 @@
         "tongbian-history:8b:u5"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d4-s4",
       "centrality": 0.0017
     },
@@ -13772,6 +14858,7 @@
         "tongbian-history:8b:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d4-s4",
       "centrality": 0.0017
     },
@@ -13797,6 +14884,7 @@
         "tongbian-history:9a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d5-s4",
       "centrality": 0.0034
     },
@@ -13822,6 +14910,7 @@
         "tongbian-history:9a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d5-s4",
       "centrality": 0.0034
     },
@@ -13847,6 +14936,7 @@
         "tongbian-history:9a:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d5-s4",
       "centrality": 0.0034
     },
@@ -13872,6 +14962,7 @@
         "tongbian-history:9a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d5-s4",
       "centrality": 0.0017
     },
@@ -13897,6 +14988,7 @@
         "tongbian-history:9a:u5"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d6-s4",
       "centrality": 0.0051
     },
@@ -13922,6 +15014,7 @@
         "tongbian-history:9a:u5"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d6-s4",
       "centrality": 0.0034
     },
@@ -13947,6 +15040,7 @@
         "tongbian-history:9a:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d6-s4",
       "centrality": 0.0051
     },
@@ -13972,6 +15066,7 @@
         "tongbian-history:9a:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d6-s4",
       "centrality": 0.0017
     },
@@ -13997,6 +15092,7 @@
         "tongbian-history:9a:u7"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d6-s4",
       "centrality": 0.0068
     },
@@ -14022,6 +15118,7 @@
         "tongbian-history:9a:u7"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d6-s4",
       "centrality": 0.0034
     },
@@ -14047,6 +15144,7 @@
         "tongbian-history:9b:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d6-s4",
       "centrality": 0.0017
     },
@@ -14073,6 +15171,7 @@
         "tongbian-history:9b:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d6-s4",
       "centrality": 0.0034
     },
@@ -14098,6 +15197,7 @@
         "tongbian-history:9b:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d7-s4",
       "centrality": 0.0034
     },
@@ -14123,6 +15223,7 @@
         "tongbian-history:9b:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d7-s4",
       "centrality": 0.0034
     },
@@ -14148,6 +15249,7 @@
         "tongbian-history:9b:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d7-s4",
       "centrality": 0.0051
     },
@@ -14175,6 +15277,7 @@
         "tongbian-history:9b:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-history-d7-s4",
       "centrality": 0.0034
     },
@@ -14200,6 +15303,7 @@
         "pep-geography:7a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d1-s4",
       "centrality": 0.0051
     },
@@ -14225,6 +15329,7 @@
         "pep-geography:7a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d1-s4",
       "centrality": 0.0085
     },
@@ -14250,6 +15355,7 @@
         "pep-geography:7a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d1-s4",
       "centrality": 0.0169
     },
@@ -14275,6 +15381,7 @@
         "pep-geography:7a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d1-s4",
       "centrality": 0.0068
     },
@@ -14300,6 +15407,7 @@
         "pep-geography:7a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d1-s4",
       "centrality": 0.0051
     },
@@ -14325,6 +15433,7 @@
         "pep-geography:7a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d1-s4",
       "centrality": 0.0068
     },
@@ -14350,6 +15459,7 @@
         "pep-geography:7a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d1-s4",
       "centrality": 0.0068
     },
@@ -14375,6 +15485,7 @@
         "pep-geography:7a:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d2-s4",
       "centrality": 0.0136
     },
@@ -14400,6 +15511,7 @@
         "pep-geography:7a:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d2-s4",
       "centrality": 0.0034
     },
@@ -14425,6 +15537,7 @@
         "pep-geography:7a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d2-s4",
       "centrality": 0.0051
     },
@@ -14450,6 +15563,7 @@
         "pep-geography:7a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d2-s4",
       "centrality": 0.0068
     },
@@ -14475,6 +15589,7 @@
         "pep-geography:7a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d2-s4",
       "centrality": 0.0068
     },
@@ -14500,6 +15615,7 @@
         "pep-geography:7a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d2-s4",
       "centrality": 0.0186
     },
@@ -14525,6 +15641,7 @@
         "pep-geography:7a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d2-s4",
       "centrality": 0.0068
     },
@@ -14550,6 +15667,7 @@
         "pep-geography:7b:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d3-s4",
       "centrality": 0.0119
     },
@@ -14575,6 +15693,7 @@
         "pep-geography:7b:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d3-s4",
       "centrality": 0.0034
     },
@@ -14600,6 +15719,7 @@
         "pep-geography:7b:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d3-s4",
       "centrality": 0.0034
     },
@@ -14625,6 +15745,7 @@
         "pep-geography:7b:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d3-s4",
       "centrality": 0.0051
     },
@@ -14650,6 +15771,7 @@
         "pep-geography:7b:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d3-s4",
       "centrality": 0.0034
     },
@@ -14675,6 +15797,7 @@
         "pep-geography:7b:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d3-s4",
       "centrality": 0.0017
     },
@@ -14700,6 +15823,7 @@
         "pep-geography:7b:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d3-s4",
       "centrality": 0.0034
     },
@@ -14725,6 +15849,7 @@
         "pep-geography:7b:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d3-s4",
       "centrality": 0.0034
     },
@@ -14750,6 +15875,7 @@
         "pep-geography:7b:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d3-s4",
       "centrality": 0.0034
     },
@@ -14775,6 +15901,7 @@
         "pep-geography:7b:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d3-s4",
       "centrality": 0.0034
     },
@@ -14800,6 +15927,7 @@
         "pep-geography:7b:u5"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d3-s4",
       "centrality": 0.0034
     },
@@ -14825,6 +15953,7 @@
         "pep-geography:8a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d4-s4",
       "centrality": 0.0119
     },
@@ -14850,6 +15979,7 @@
         "pep-geography:8a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d4-s4",
       "centrality": 0.0068
     },
@@ -14875,6 +16005,7 @@
         "pep-geography:8a:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d4-s4",
       "centrality": 0.0034
     },
@@ -14900,6 +16031,7 @@
         "pep-geography:8a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d4-s4",
       "centrality": 0.0136
     },
@@ -14925,6 +16057,7 @@
         "pep-geography:8a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d4-s4",
       "centrality": 0.0169
     },
@@ -14950,6 +16083,7 @@
         "pep-geography:8a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d4-s4",
       "centrality": 0.0051
     },
@@ -14975,6 +16109,7 @@
         "pep-geography:8a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d4-s4",
       "centrality": 0.0034
     },
@@ -15000,6 +16135,7 @@
         "pep-geography:8a:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d4-s4",
       "centrality": 0.0068
     },
@@ -15025,6 +16161,7 @@
         "pep-geography:8a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d5-s4",
       "centrality": 0.0068
     },
@@ -15050,6 +16187,7 @@
         "pep-geography:8a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d5-s4",
       "centrality": 0.0051
     },
@@ -15075,6 +16213,7 @@
         "pep-geography:8a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d5-s4",
       "centrality": 0.0051
     },
@@ -15100,6 +16239,7 @@
         "pep-geography:8b:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d5-s4",
       "centrality": 0.0153
     },
@@ -15125,6 +16265,7 @@
         "pep-geography:8b:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d5-s4",
       "centrality": 0.0034
     },
@@ -15150,6 +16291,7 @@
         "pep-geography:8b:u3"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d5-s4",
       "centrality": 0.0034
     },
@@ -15175,6 +16317,7 @@
         "pep-geography:8b:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d5-s4",
       "centrality": 0.0034
     },
@@ -15200,6 +16343,7 @@
         "pep-geography:8b:u5"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d5-s4",
       "centrality": 0.0034
     },
@@ -15226,6 +16370,7 @@
         "pep-geography:8b:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d5-s4",
       "centrality": 0.0051
     },
@@ -15251,6 +16396,7 @@
         "pep-geography:8b:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d6-s4",
       "centrality": 0.0051
     },
@@ -15276,6 +16422,7 @@
         "pep-geography:8b:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d6-s4",
       "centrality": 0.0051
     },
@@ -15301,6 +16448,7 @@
         "pep-geography:8b:u6"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d6-s4",
       "centrality": 0.0034
     },
@@ -15326,6 +16474,7 @@
         "pep-geography:7a:u4"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d7-s4",
       "centrality": 0.0085
     },
@@ -15351,6 +16500,7 @@
         "pep-geography:7a:u5"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d7-s4",
       "centrality": 0.0017
     },
@@ -15376,6 +16526,7 @@
         "pep-geography:7a:u2"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d7-s4",
       "centrality": 0.0068
     },
@@ -15402,6 +16553,7 @@
         "pep-geography:8b:u1"
       ],
       "textbooks2024": [],
+      "textbooksAlt": [],
       "clusterId": "cl-geography-d7-s4",
       "centrality": 0.0034
     }

@@ -30,6 +30,9 @@ sys.path.insert(0, str(SRC))
 
 import standards as std  # noqa: E402
 import textbook_map_2024 as tmap24  # noqa: E402
+import textbook_map_bnu_math as tmap_bnu  # noqa: E402
+import textbook_map_sj_math as tmap_sj  # noqa: E402
+import textbook_map_fltrp_english as tmap_fltrp  # noqa: E402
 import textbook_paths  # noqa: E402
 import textbooks as tb  # noqa: E402
 import textbooks_2024 as tb24  # noqa: E402
@@ -56,7 +59,7 @@ import teaching_research_chemistry_junior  # noqa: E402
 import teaching_research_history_junior  # noqa: E402
 import teaching_research_geography_junior  # noqa: E402
 
-VERSION = "v0.14.0"
+VERSION = "v0.15.0"
 SCHEMA_VERSION = 1
 
 MODULES = [
@@ -193,8 +196,36 @@ def build_domain_index():
 # 领域编号只依赖 src/ 数据，构建期算一次即可
 DOMAIN_INDEX = build_domain_index()
 
-# 全部主题 key（2024 版教材映射的构建期校验用）
+# 全部主题 key（2024 版教材映射与替代版本映射的构建期校验用）
 TOPIC_KEYS = {t["key"] for _s, mod in MODULES for t in mod.TOPICS}
+
+# ---------- 替代教材版本映射层（v0.15：北师大版/苏教版数学、外研社版英语）----------
+# 与 2024 版映射同构：主题的 textbooks 主引用不变，另建一份「知识点 → 其他版本单元」映射，
+# 供详情面板并排查看同一知识点在不同版本教材中的位置。
+ALT_MAPS = [
+    ("bnu-math", "北师大版", tmap_bnu.MAP_BNU_MATH),
+    ("sj-math", "苏教版", tmap_sj.MAP_SJ_MATH),
+    ("fltrp-english", "外研社版", tmap_fltrp.MAP_FLTRP_ENGLISH),
+]
+ALT_SLUGS = tuple(slug for slug, _label, _m in ALT_MAPS)
+
+
+def build_alt_map():
+    """同一主题可能被多个替代版本收录，按主题 key 合并 refs，并给 note 加版本前缀。"""
+    merged = {}
+    for slug, label, mapping in ALT_MAPS:
+        for key, entry in mapping.items():
+            e = merged.setdefault(key, {"refs": [], "note": None})
+            e["refs"].extend(entry.get("refs", []))
+            note = entry.get("note")
+            if note:
+                # note 可能已自带版本名（子模块撰写时常见），避免前缀重复
+                part = note if note.startswith(label) else f"{label}：{note}"
+                e["note"] = (e["note"] + "；" if e["note"] else "") + part
+    return merged
+
+
+MAP_ALT = build_alt_map()
 
 
 def cluster_id_of(subject, domain, stage):
@@ -228,10 +259,15 @@ def build_topics():
                 "textbooks": t["textbooks"],
                 # 2024 年版课标修订教材的单元级映射（可能为空数组：该知识点所在册次尚未被替换）
                 "textbooks2024": list(tmap24.MAP_2024.get(t["key"], {}).get("refs", [])),
+                # 其他教材版本（北师大版/苏教版数学、外研社版英语）的单元级映射
+                "textbooksAlt": list(MAP_ALT.get(t["key"], {}).get("refs", [])),
             })
             note24 = tmap24.MAP_2024.get(t["key"], {}).get("note")
             if note24:
                 topics[-1]["textbookNote2024"] = note24
+            note_alt = MAP_ALT.get(t["key"], {}).get("note")
+            if note_alt:
+                topics[-1]["textbookNoteAlt"] = note_alt
     for t in topics:
         t["clusterId"] = cluster_id_of(t["subject"], t["domain"], t["stage"])
     # 中心度：无向度 / (N-1)，便于前端按枢纽主题布局
@@ -341,6 +377,32 @@ def check_unit_map_2024():
                 raise SystemExit(f"unitMap2024 引用活动不存在: {key} -> {ref}")
 
 
+def check_unit_map_alt():
+    """构建期校验：替代版本映射的 key 必须存在，refs 必须能解析到对应版本目录。"""
+    index = {}
+    for v in tb.DETAILED_VERSIONS:
+        if v["slug"] not in ALT_SLUGS:
+            continue
+        index[v["slug"]] = {b[0]: len(b[3]) for b in v["books"]}
+    for slug, _label, _m in ALT_MAPS:
+        if slug not in index:
+            raise SystemExit(f"替代版本 {slug} 未登记在 textbooks.py 的 DETAILED_VERSIONS 中")
+    for key, entry in MAP_ALT.items():
+        if key not in TOPIC_KEYS:
+            raise SystemExit(f"unitMapAlt 指向不存在的主题 key: {key}")
+        for ref in entry["refs"]:
+            m = re.match(r"^(%s):([1-9][ab]):u([1-9][0-9]?)$" % "|".join(ALT_SLUGS), ref)
+            if not m:
+                raise SystemExit(f"unitMapAlt 引用格式非法: {key} -> {ref}")
+            vslug, bslug, unit = m.groups()
+            if vslug not in index or bslug not in index[vslug]:
+                raise SystemExit(f"unitMapAlt 引用版本/册次不存在: {key} -> {ref}")
+            if not (1 <= int(unit) <= index[vslug][bslug]):
+                raise SystemExit(
+                    f"unitMapAlt 引用单元序号越界: {key} -> {ref}"
+                    f"（该册共 {index[vslug][bslug]} 个单元）")
+
+
 def build_textbooks():
     versions = []
     for v in tb.DETAILED_VERSIONS:
@@ -379,6 +441,8 @@ def build_textbooks():
         "versions": versions,
         # 知识点 → 2024 版单元映射层（与 topic.textbooks2024 同源；供独立消费与双向校验）
         "unitMap2024": tmap24.MAP_2024,
+        # 知识点 → 其他教材版本单元映射层（与 topic.textbooksAlt 同源）
+        "unitMapAlt": MAP_ALT,
         "chinaTextbookPrimaryVersions": tb.CHINATEXTBOOK_PRIMARY_VERSIONS,
     }
 
@@ -463,6 +527,7 @@ def main():
     VIZ.mkdir(exist_ok=True)
 
     check_unit_map_2024()
+    check_unit_map_alt()
     topics_obj = build_topics()
     artifacts = {
         "topics.json": topics_obj,

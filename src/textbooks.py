@@ -224,6 +224,17 @@ DETAILED_VERSIONS.extend([
     textbooks_geography.GEOGRAPHY_VERSION,
 ])
 
+# —— 替代教材版本（v0.15 新增：北师大版/苏教版数学、外研社版英语，主题主引用仍为人教版）——
+import textbooks_bnu_math  # noqa: E402
+import textbooks_fltrp_english  # noqa: E402
+import textbooks_sj_math  # noqa: E402
+
+DETAILED_VERSIONS.extend([
+    textbooks_bnu_math.BNU_MATH_VERSION,
+    textbooks_sj_math.SJ_MATH_VERSION,
+    textbooks_fltrp_english.FLTRP_ENGLISH_VERSION,
+])
+
 # ChinaTextbook 收录的小学教材版本清单（仅作来源记录，主题暂未对齐这些版本）
 CHINATEXTBOOK_PRIMARY_VERSIONS = {
     "语文": ["统编版"],
