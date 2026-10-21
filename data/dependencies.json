@@ -1,5 +1,5 @@
 {
-  "version": "v0.15.0",
+  "version": "v0.16.0",
   "schemaVersion": 1,
   "dependencies": [
     {
@@ -5767,6 +5767,822 @@
       "prerequisiteId": "mt_junior-geo-local-survey",
       "strength": "soft",
       "reason": "家乡调查是典型的实践任务"
+    },
+    {
+      "topicId": "mt_sci-plants-around",
+      "prerequisiteId": "mt_sci-inquiry",
+      "strength": "hard",
+      "reason": "观察植物先要学会有序观察和记录"
+    },
+    {
+      "topicId": "mt_sci-human-self",
+      "prerequisiteId": "mt_sci-inquiry",
+      "strength": "hard",
+      "reason": "认识身体器官要靠感官观察"
+    },
+    {
+      "topicId": "mt_sci-objects-around",
+      "prerequisiteId": "mt_sci-inquiry",
+      "strength": "hard",
+      "reason": "描述物体特征要用多种感官"
+    },
+    {
+      "topicId": "mt_sci-weather",
+      "prerequisiteId": "mt_sci-inquiry",
+      "strength": "hard",
+      "reason": "观测天气从学会观察记录开始"
+    },
+    {
+      "topicId": "mt_sci-weather",
+      "prerequisiteId": "mt_sci-measure",
+      "strength": "hard",
+      "reason": "气温降水要用工具测量并读数"
+    },
+    {
+      "topicId": "mt_sci-motion",
+      "prerequisiteId": "mt_sci-measure",
+      "strength": "hard",
+      "reason": "比较运动快慢要测距离和时间"
+    },
+    {
+      "topicId": "mt_sci-tools",
+      "prerequisiteId": "mt_sci-measure",
+      "strength": "hard",
+      "reason": "选择工具从会使用测量工具开始"
+    },
+    {
+      "topicId": "mt_sci-micro",
+      "prerequisiteId": "mt_sci-inquiry",
+      "strength": "hard",
+      "reason": "观察微小世界要用放大镜和显微镜"
+    },
+    {
+      "topicId": "mt_sci-scientist",
+      "prerequisiteId": "mt_sci-inquiry",
+      "strength": "hard",
+      "reason": "科学精神从探究实践的体验中领悟"
+    },
+    {
+      "topicId": "mt_sci-human-self",
+      "prerequisiteId": "mt_sci-plants-around",
+      "strength": "soft",
+      "reason": "同属一年级观察类主题，方法相通"
+    },
+    {
+      "topicId": "mt_sci-animals-common",
+      "prerequisiteId": "mt_sci-plants-around",
+      "strength": "soft",
+      "reason": "观察动植物的方法相通"
+    },
+    {
+      "topicId": "mt_sci-dinosaur",
+      "prerequisiteId": "mt_sci-animals-common",
+      "strength": "hard",
+      "reason": "认识恐龙先认识身边的动物"
+    },
+    {
+      "topicId": "mt_sci-animal-life",
+      "prerequisiteId": "mt_sci-animals-common",
+      "strength": "hard",
+      "reason": "动物的一生从认识动物开始"
+    },
+    {
+      "topicId": "mt_sci-breathing",
+      "prerequisiteId": "mt_sci-human-self",
+      "strength": "hard",
+      "reason": "呼吸消化是认识人体的深入"
+    },
+    {
+      "topicId": "mt_sci-plant-growth",
+      "prerequisiteId": "mt_sci-plants-around",
+      "strength": "hard",
+      "reason": "植物生长从观察植物开始"
+    },
+    {
+      "topicId": "mt_sci-micro",
+      "prerequisiteId": "mt_sci-plants-around",
+      "strength": "soft",
+      "reason": "微生物也是生物，先认识动植物"
+    },
+    {
+      "topicId": "mt_sci-bio-env",
+      "prerequisiteId": "mt_sci-plants-around",
+      "strength": "hard",
+      "reason": "生物与环境先要认识动植物"
+    },
+    {
+      "topicId": "mt_sci-bio-env",
+      "prerequisiteId": "mt_sci-earth-home",
+      "strength": "soft",
+      "reason": "环境包括生物与非生物因素"
+    },
+    {
+      "topicId": "mt_sci-health",
+      "prerequisiteId": "mt_sci-breathing",
+      "strength": "hard",
+      "reason": "健康生活建立在器官知识之上"
+    },
+    {
+      "topicId": "mt_sci-bio-diversity",
+      "prerequisiteId": "mt_sci-micro",
+      "strength": "hard",
+      "reason": "认识多样性要看到微生物"
+    },
+    {
+      "topicId": "mt_sci-bio-diversity",
+      "prerequisiteId": "mt_sci-animal-life",
+      "strength": "soft",
+      "reason": "多样性是动物一生的延伸"
+    },
+    {
+      "topicId": "mt_sci-bio-diversity",
+      "prerequisiteId": "mt_sci-plants-around",
+      "strength": "soft",
+      "reason": "多样性也来自对植物的长期观察"
+    },
+    {
+      "topicId": "mt_sci-magnet",
+      "prerequisiteId": "mt_sci-objects-around",
+      "strength": "hard",
+      "reason": "磁铁是身边的物体，先会观察特性"
+    },
+    {
+      "topicId": "mt_sci-water",
+      "prerequisiteId": "mt_sci-inquiry",
+      "strength": "hard",
+      "reason": "三态变化靠观察实验发现"
+    },
+    {
+      "topicId": "mt_sci-air",
+      "prerequisiteId": "mt_sci-water",
+      "strength": "hard",
+      "reason": "空气和水都是重要物质，方法相通"
+    },
+    {
+      "topicId": "mt_sci-sound",
+      "prerequisiteId": "mt_sci-motion",
+      "strength": "soft",
+      "reason": "声音由物体振动产生"
+    },
+    {
+      "topicId": "mt_sci-sound",
+      "prerequisiteId": "mt_sci-air",
+      "strength": "hard",
+      "reason": "空气传声实验是声音单元的核心"
+    },
+    {
+      "topicId": "mt_sci-circuit",
+      "prerequisiteId": "mt_sci-magnet",
+      "strength": "soft",
+      "reason": "电与磁同属电磁相互作用"
+    },
+    {
+      "topicId": "mt_sci-force",
+      "prerequisiteId": "mt_sci-motion",
+      "strength": "hard",
+      "reason": "运动和力是同一主题的深入"
+    },
+    {
+      "topicId": "mt_sci-heat",
+      "prerequisiteId": "mt_sci-water",
+      "strength": "soft",
+      "reason": "热传递常借水的三态变化来观察"
+    },
+    {
+      "topicId": "mt_sci-light",
+      "prerequisiteId": "mt_sci-water",
+      "strength": "soft",
+      "reason": "光的折射常借水来观察"
+    },
+    {
+      "topicId": "mt_sci-matter-change",
+      "prerequisiteId": "mt_sci-water",
+      "strength": "hard",
+      "reason": "物质变化从水的三态变化入门"
+    },
+    {
+      "topicId": "mt_sci-matter-change",
+      "prerequisiteId": "mt_sci-heat",
+      "strength": "soft",
+      "reason": "变化常伴随吸热放热"
+    },
+    {
+      "topicId": "mt_sci-earth-home",
+      "prerequisiteId": "mt_sci-plants-around",
+      "strength": "soft",
+      "reason": "地球家园先认识上面的植物"
+    },
+    {
+      "topicId": "mt_sci-direction",
+      "prerequisiteId": "mt_sci-earth-home",
+      "strength": "soft",
+      "reason": "辨方向先认识头顶的太阳"
+    },
+    {
+      "topicId": "mt_sci-one-earth",
+      "prerequisiteId": "mt_sci-earth-home",
+      "strength": "soft",
+      "reason": "只有一个地球是地球家园的延续"
+    },
+    {
+      "topicId": "mt_sci-rock",
+      "prerequisiteId": "mt_sci-earth-home",
+      "strength": "soft",
+      "reason": "岩石土壤是地球家园的组成部分"
+    },
+    {
+      "topicId": "mt_sci-earth-surface",
+      "prerequisiteId": "mt_sci-rock",
+      "strength": "hard",
+      "reason": "地表变化从认识岩石土壤开始"
+    },
+    {
+      "topicId": "mt_sci-environment",
+      "prerequisiteId": "mt_sci-one-earth",
+      "strength": "hard",
+      "reason": "环境与我们是资源有限主题的深入"
+    },
+    {
+      "topicId": "mt_sci-environment",
+      "prerequisiteId": "mt_sci-bio-env",
+      "strength": "soft",
+      "reason": "环境问题影响生态平衡"
+    },
+    {
+      "topicId": "mt_sci-earth-motion",
+      "prerequisiteId": "mt_sci-direction",
+      "strength": "hard",
+      "reason": "地球运动先从借助太阳辨方向学起"
+    },
+    {
+      "topicId": "mt_sci-earth-motion",
+      "prerequisiteId": "mt_sci-earth-home",
+      "strength": "soft",
+      "reason": "地球运动是地球家园知识的深入"
+    },
+    {
+      "topicId": "mt_sci-universe",
+      "prerequisiteId": "mt_sci-earth-motion",
+      "strength": "hard",
+      "reason": "宇宙从地球运动扩展到太阳系"
+    },
+    {
+      "topicId": "mt_sci-house",
+      "prerequisiteId": "mt_sci-objects-around",
+      "strength": "soft",
+      "reason": "选材建房要认识物体特性"
+    },
+    {
+      "topicId": "mt_sci-tools",
+      "prerequisiteId": "mt_sci-house",
+      "strength": "soft",
+      "reason": "造房子是早期的技术活动"
+    },
+    {
+      "topicId": "mt_sci-boat",
+      "prerequisiteId": "mt_sci-tools",
+      "strength": "hard",
+      "reason": "船的研究是工具与技术的综合运用"
+    },
+    {
+      "topicId": "mt_sci-boat",
+      "prerequisiteId": "mt_sci-water",
+      "strength": "soft",
+      "reason": "船在水中行驶，先认识水的性质"
+    },
+    {
+      "topicId": "mt_sci-time",
+      "prerequisiteId": "mt_sci-earth-motion",
+      "strength": "hard",
+      "reason": "计量时间依赖日月运行的规律"
+    },
+    {
+      "topicId": "mt_sci-time",
+      "prerequisiteId": "mt_sci-tools",
+      "strength": "soft",
+      "reason": "计时工具的选用属于技术问题"
+    },
+    {
+      "topicId": "mt_sci-engineer",
+      "prerequisiteId": "mt_sci-tools",
+      "strength": "hard",
+      "reason": "工程设计是工具与技术的综合"
+    },
+    {
+      "topicId": "mt_sci-engineer",
+      "prerequisiteId": "mt_sci-boat",
+      "strength": "soft",
+      "reason": "小船研制是典型的工程经历"
+    },
+    {
+      "topicId": "mt_sci-engineer",
+      "prerequisiteId": "mt_sci-house",
+      "strength": "soft",
+      "reason": "造房子是最早的工程设计体验"
+    },
+    {
+      "topicId": "mt_mor-p-campus",
+      "prerequisiteId": "mt_mor-p-adapt",
+      "strength": "hard",
+      "reason": "适应小学生是校园生活的前提"
+    },
+    {
+      "topicId": "mt_mor-p-habit",
+      "prerequisiteId": "mt_mor-p-campus",
+      "strength": "soft",
+      "reason": "习惯在校规班规中养成"
+    },
+    {
+      "topicId": "mt_mor-p-civility",
+      "prerequisiteId": "mt_mor-p-habit",
+      "strength": "soft",
+      "reason": "文明礼貌是良好习惯的表现"
+    },
+    {
+      "topicId": "mt_mor-p-self",
+      "prerequisiteId": "mt_mor-p-adapt",
+      "strength": "soft",
+      "reason": "新面貌从适应新身份开始"
+    },
+    {
+      "topicId": "mt_mor-p-growup",
+      "prerequisiteId": "mt_mor-p-self",
+      "strength": "hard",
+      "reason": "一起长大以认识自我为基础"
+    },
+    {
+      "topicId": "mt_mor-p-optimistic",
+      "prerequisiteId": "mt_mor-p-self",
+      "strength": "soft",
+      "reason": "乐观从认识自我开始"
+    },
+    {
+      "topicId": "mt_mor-p-teen",
+      "prerequisiteId": "mt_mor-p-optimistic",
+      "strength": "soft",
+      "reason": "少年成长以乐观心态为基础"
+    },
+    {
+      "topicId": "mt_mor-p-teen",
+      "prerequisiteId": "mt_mor-p-communicate",
+      "strength": "soft",
+      "reason": "青春期交往从同伴交往学起"
+    },
+    {
+      "topicId": "mt_mor-p-selfhealth",
+      "prerequisiteId": "mt_mor-p-optimistic",
+      "strength": "soft",
+      "reason": "健康成长延续乐观心态的培养"
+    },
+    {
+      "topicId": "mt_mor-p-selfhealth",
+      "prerequisiteId": "mt_mor-p-teen",
+      "strength": "soft",
+      "reason": "完善自我是少年成长的深化"
+    },
+    {
+      "topicId": "mt_mor-p-goodchild",
+      "prerequisiteId": "mt_mor-p-family",
+      "strength": "soft",
+      "reason": "好儿童从爱家人做起"
+    },
+    {
+      "topicId": "mt_mor-p-class",
+      "prerequisiteId": "mt_mor-p-campus",
+      "strength": "hard",
+      "reason": "班级生活是校园生活的延续"
+    },
+    {
+      "topicId": "mt_mor-p-collective",
+      "prerequisiteId": "mt_mor-p-class",
+      "strength": "hard",
+      "reason": "集体成长从班级生活开始"
+    },
+    {
+      "topicId": "mt_mor-p-family-duty",
+      "prerequisiteId": "mt_mor-p-family",
+      "strength": "hard",
+      "reason": "家庭责任从爱家人开始"
+    },
+    {
+      "topicId": "mt_mor-p-communicate",
+      "prerequisiteId": "mt_mor-p-growup",
+      "strength": "soft",
+      "reason": "交往从与同伴一起长大开始"
+    },
+    {
+      "topicId": "mt_mor-p-family-comm",
+      "prerequisiteId": "mt_mor-p-family-duty",
+      "strength": "hard",
+      "reason": "家庭沟通以承担责任为基础"
+    },
+    {
+      "topicId": "mt_mor-p-public",
+      "prerequisiteId": "mt_mor-p-class",
+      "strength": "soft",
+      "reason": "公共意识从班级生活中萌发"
+    },
+    {
+      "topicId": "mt_mor-p-occupation",
+      "prerequisiteId": "mt_mor-p-public",
+      "strength": "soft",
+      "reason": "各行各业服务公共生活"
+    },
+    {
+      "topicId": "mt_mor-p-labor",
+      "prerequisiteId": "mt_mor-p-occupation",
+      "strength": "hard",
+      "reason": "劳动光荣从理解职业分工开始"
+    },
+    {
+      "topicId": "mt_mor-p-info",
+      "prerequisiteId": "mt_mor-p-public",
+      "strength": "hard",
+      "reason": "信息素养从公共生活规则学起"
+    },
+    {
+      "topicId": "mt_mor-p-consume",
+      "prerequisiteId": "mt_mor-p-public",
+      "strength": "soft",
+      "reason": "消费是公共生活的组成部分"
+    },
+    {
+      "topicId": "mt_mor-p-life-source",
+      "prerequisiteId": "mt_mor-p-occupation",
+      "strength": "hard",
+      "reason": "美好生活来自各行各业劳动"
+    },
+    {
+      "topicId": "mt_mor-p-life-source",
+      "prerequisiteId": "mt_mor-p-labor",
+      "strength": "hard",
+      "reason": "美好生活来自劳动创造"
+    },
+    {
+      "topicId": "mt_mor-p-law",
+      "prerequisiteId": "mt_mor-p-public",
+      "strength": "soft",
+      "reason": "法律从公共规则讲起"
+    },
+    {
+      "topicId": "mt_mor-p-law",
+      "prerequisiteId": "mt_mor-p-info",
+      "strength": "soft",
+      "reason": "网络生活也有法律边界"
+    },
+    {
+      "topicId": "mt_mor-p-citizen",
+      "prerequisiteId": "mt_mor-p-law",
+      "strength": "hard",
+      "reason": "公民身份从认识法律开始"
+    },
+    {
+      "topicId": "mt_mor-p-minor",
+      "prerequisiteId": "mt_mor-p-teen",
+      "strength": "hard",
+      "reason": "未成年人保护从少年成长谈起"
+    },
+    {
+      "topicId": "mt_mor-p-legal-rights",
+      "prerequisiteId": "mt_mor-p-law",
+      "strength": "hard",
+      "reason": "维权从知法开始"
+    },
+    {
+      "topicId": "mt_mor-p-legal-rights",
+      "prerequisiteId": "mt_mor-p-citizen",
+      "strength": "soft",
+      "reason": "维权以公民权利为依据"
+    },
+    {
+      "topicId": "mt_mor-p-ecoprotection",
+      "prerequisiteId": "mt_mor-p-nature",
+      "strength": "soft",
+      "reason": "爱护地球从感恩自然开始"
+    },
+    {
+      "topicId": "mt_mor-p-ecoprotection",
+      "prerequisiteId": "mt_mor-p-public",
+      "strength": "soft",
+      "reason": "环保是公共责任的延伸"
+    },
+    {
+      "topicId": "mt_mor-p-holiday",
+      "prerequisiteId": "mt_mor-p-family",
+      "strength": "hard",
+      "reason": "过节从家庭团聚开始"
+    },
+    {
+      "topicId": "mt_mor-p-virtue",
+      "prerequisiteId": "mt_mor-p-holiday",
+      "strength": "soft",
+      "reason": "传统美德藏在节日习俗里"
+    },
+    {
+      "topicId": "mt_mor-p-nature",
+      "prerequisiteId": "mt_mor-p-hometown",
+      "strength": "soft",
+      "reason": "自然从家乡的山水认识起"
+    },
+    {
+      "topicId": "mt_mor-p-hometown",
+      "prerequisiteId": "mt_mor-p-family",
+      "strength": "soft",
+      "reason": "家乡从家人和生活的地方认识起"
+    },
+    {
+      "topicId": "mt_mor-p-motherland",
+      "prerequisiteId": "mt_mor-p-hometown",
+      "strength": "hard",
+      "reason": "祖国从家乡扩展而来"
+    },
+    {
+      "topicId": "mt_mor-p-motherland",
+      "prerequisiteId": "mt_mor-p-goodchild",
+      "strength": "soft",
+      "reason": "爱国启蒙从好儿童教育开始"
+    },
+    {
+      "topicId": "mt_mor-p-local-culture",
+      "prerequisiteId": "mt_mor-p-hometown",
+      "strength": "hard",
+      "reason": "家乡文化从认识家乡开始"
+    },
+    {
+      "topicId": "mt_mor-p-worldcivil",
+      "prerequisiteId": "mt_mor-p-holiday",
+      "strength": "soft",
+      "reason": "多样文明从比较各国节日开始"
+    },
+    {
+      "topicId": "mt_mor-p-dream",
+      "prerequisiteId": "mt_mor-p-growup",
+      "strength": "soft",
+      "reason": "梦想从成长愿望出发"
+    },
+    {
+      "topicId": "mt_mor-p-party-history",
+      "prerequisiteId": "mt_mor-p-motherland",
+      "strength": "hard",
+      "reason": "党史从热爱祖国开始"
+    },
+    {
+      "topicId": "mt_mor-p-party-history",
+      "prerequisiteId": "mt_mor-p-local-culture",
+      "strength": "soft",
+      "reason": "复兴中华连着家乡文化"
+    },
+    {
+      "topicId": "mt_mor-p-newera",
+      "prerequisiteId": "mt_mor-p-party-history",
+      "strength": "hard",
+      "reason": "新时代从百年党史接续而来"
+    },
+    {
+      "topicId": "mt_mor-p-betterworld",
+      "prerequisiteId": "mt_mor-p-worldcivil",
+      "strength": "hard",
+      "reason": "让世界更美好从尊重文明多样性开始"
+    },
+    {
+      "topicId": "mt_mor-p-betterworld",
+      "prerequisiteId": "mt_mor-p-ecoprotection",
+      "strength": "soft",
+      "reason": "全球问题包括环境议题"
+    },
+    {
+      "topicId": "mt_mor-p-betterworld",
+      "prerequisiteId": "mt_mor-p-newera",
+      "strength": "soft",
+      "reason": "大国担当以国家成就为基础"
+    },
+    {
+      "topicId": "mt_mor-j-life",
+      "prerequisiteId": "mt_mor-p-selfhealth",
+      "strength": "soft",
+      "reason": "生命教育从小学健全人格延续"
+    },
+    {
+      "topicId": "mt_mor-j-youth",
+      "prerequisiteId": "mt_mor-p-teen",
+      "strength": "soft",
+      "reason": "青春期专题从小学少年成长衔接"
+    },
+    {
+      "topicId": "mt_mor-j-youth",
+      "prerequisiteId": "mt_mor-j-life",
+      "strength": "hard",
+      "reason": "珍惜青春以认识生命价值为前提"
+    },
+    {
+      "topicId": "mt_mor-j-vigor",
+      "prerequisiteId": "mt_mor-j-youth",
+      "strength": "hard",
+      "reason": "情绪管理是青春期专题的深化"
+    },
+    {
+      "topicId": "mt_mor-j-growth",
+      "prerequisiteId": "mt_mor-j-dream",
+      "strength": "hard",
+      "reason": "成长的时空以少年有梦为起点"
+    },
+    {
+      "topicId": "mt_mor-j-goodlife",
+      "prerequisiteId": "mt_mor-j-dream",
+      "strength": "soft",
+      "reason": "人生观教育从梦想谈起"
+    },
+    {
+      "topicId": "mt_mor-j-goodlife",
+      "prerequisiteId": "mt_mor-j-growth",
+      "strength": "soft",
+      "reason": "美好人生在成长关系中展开"
+    },
+    {
+      "topicId": "mt_mor-j-society",
+      "prerequisiteId": "mt_mor-j-law-society",
+      "strength": "hard",
+      "reason": "走进社会先认识法治社会"
+    },
+    {
+      "topicId": "mt_mor-j-society",
+      "prerequisiteId": "mt_mor-p-public",
+      "strength": "soft",
+      "reason": "社会认知从小学公共生活启蒙"
+    },
+    {
+      "topicId": "mt_mor-j-duty",
+      "prerequisiteId": "mt_mor-j-society",
+      "strength": "soft",
+      "reason": "责任在社会参与中培养"
+    },
+    {
+      "topicId": "mt_mor-j-duty",
+      "prerequisiteId": "mt_mor-j-goodlife",
+      "strength": "soft",
+      "reason": "担当是美好人生的实践路径"
+    },
+    {
+      "topicId": "mt_mor-j-duty",
+      "prerequisiteId": "mt_mor-p-labor",
+      "strength": "soft",
+      "reason": "责任意识从小学劳动体验开始"
+    },
+    {
+      "topicId": "mt_mor-j-future",
+      "prerequisiteId": "mt_mor-j-dreamcn",
+      "strength": "soft",
+      "reason": "少年未来与中国梦相连"
+    },
+    {
+      "topicId": "mt_mor-j-future",
+      "prerequisiteId": "mt_mor-p-dream",
+      "strength": "soft",
+      "reason": "人生规划从童年梦想出发"
+    },
+    {
+      "topicId": "mt_mor-j-future",
+      "prerequisiteId": "mt_mor-j-duty",
+      "strength": "soft",
+      "reason": "职业选择以责任意识为参照"
+    },
+    {
+      "topicId": "mt_mor-j-law-society",
+      "prerequisiteId": "mt_mor-p-law",
+      "strength": "hard",
+      "reason": "法律学习从小学法治启蒙衔接"
+    },
+    {
+      "topicId": "mt_mor-j-order",
+      "prerequisiteId": "mt_mor-j-law-society",
+      "strength": "hard",
+      "reason": "社会秩序靠规则与法律维护"
+    },
+    {
+      "topicId": "mt_mor-j-order",
+      "prerequisiteId": "mt_mor-j-society",
+      "strength": "soft",
+      "reason": "秩序是社会生活的公共品"
+    },
+    {
+      "topicId": "mt_mor-j-constitution",
+      "prerequisiteId": "mt_mor-j-order",
+      "strength": "hard",
+      "reason": "宪法是治国安邦的总章程"
+    },
+    {
+      "topicId": "mt_mor-j-constitution",
+      "prerequisiteId": "mt_mor-p-citizen",
+      "strength": "hard",
+      "reason": "宪法学习从小学公民教育起步"
+    },
+    {
+      "topicId": "mt_mor-j-rights",
+      "prerequisiteId": "mt_mor-j-constitution",
+      "strength": "hard",
+      "reason": "权利义务由宪法予以规定"
+    },
+    {
+      "topicId": "mt_mor-j-rights",
+      "prerequisiteId": "mt_mor-p-legal-rights",
+      "strength": "soft",
+      "reason": "权利义务从小学维权启蒙衔接"
+    },
+    {
+      "topicId": "mt_mor-j-system",
+      "prerequisiteId": "mt_mor-j-constitution",
+      "strength": "hard",
+      "reason": "国家制度依据宪法确立"
+    },
+    {
+      "topicId": "mt_mor-j-lawchina",
+      "prerequisiteId": "mt_mor-j-rights",
+      "strength": "hard",
+      "reason": "法治中国以权利保障为核心"
+    },
+    {
+      "topicId": "mt_mor-j-lawchina",
+      "prerequisiteId": "mt_mor-j-system",
+      "strength": "hard",
+      "reason": "法治中国依托制度与机构运行"
+    },
+    {
+      "topicId": "mt_mor-j-tradition",
+      "prerequisiteId": "mt_mor-p-virtue",
+      "strength": "soft",
+      "reason": "传统文化从传统美德启蒙开始"
+    },
+    {
+      "topicId": "mt_mor-j-party",
+      "prerequisiteId": "mt_mor-j-constitution",
+      "strength": "hard",
+      "reason": "党的领导是宪法确立的根本原则"
+    },
+    {
+      "topicId": "mt_mor-j-party",
+      "prerequisiteId": "mt_mor-p-party-history",
+      "strength": "hard",
+      "reason": "党史学习从小学百年追梦延续"
+    },
+    {
+      "topicId": "mt_mor-j-party",
+      "prerequisiteId": "mt_mor-j-interest",
+      "strength": "soft",
+      "reason": "党的领导与国家利益紧密相连"
+    },
+    {
+      "topicId": "mt_mor-j-interest",
+      "prerequisiteId": "mt_mor-j-duty",
+      "strength": "soft",
+      "reason": "国家利益是社会责任的升华"
+    },
+    {
+      "topicId": "mt_mor-j-interest",
+      "prerequisiteId": "mt_mor-p-motherland",
+      "strength": "soft",
+      "reason": "国家利益从热爱祖国起步"
+    },
+    {
+      "topicId": "mt_mor-j-newera",
+      "prerequisiteId": "mt_mor-j-party",
+      "strength": "hard",
+      "reason": "新时代叙事从党的领导讲起"
+    },
+    {
+      "topicId": "mt_mor-j-journey",
+      "prerequisiteId": "mt_mor-j-newera",
+      "strength": "hard",
+      "reason": "新征程接新时代的历史方位"
+    },
+    {
+      "topicId": "mt_mor-j-dreamcn",
+      "prerequisiteId": "mt_mor-j-journey",
+      "strength": "hard",
+      "reason": "中国梦在新征程中实现"
+    },
+    {
+      "topicId": "mt_mor-j-world",
+      "prerequisiteId": "mt_mor-j-interest",
+      "strength": "soft",
+      "reason": "世界图景从国家利益出发理解"
+    },
+    {
+      "topicId": "mt_mor-j-world",
+      "prerequisiteId": "mt_mor-p-betterworld",
+      "strength": "soft",
+      "reason": "世界认知从小学共同世界启蒙"
+    },
+    {
+      "topicId": "mt_mor-j-chinaworld",
+      "prerequisiteId": "mt_mor-j-world",
+      "strength": "hard",
+      "reason": "中国角色放在世界格局中看"
+    },
+    {
+      "topicId": "mt_mor-j-chinaworld",
+      "prerequisiteId": "mt_mor-j-dreamcn",
+      "strength": "soft",
+      "reason": "大国担当以民族复兴为底气"
     }
   ]
 }

@@ -235,6 +235,15 @@ DETAILED_VERSIONS.extend([
     textbooks_fltrp_english.FLTRP_ENGLISH_VERSION,
 ])
 
+# —— 小学科学与道德与法治（v0.16 新增）——
+import textbooks_morality  # noqa: E402
+import textbooks_science  # noqa: E402
+
+DETAILED_VERSIONS.extend([
+    textbooks_science.SCIENCE_VERSION,
+    textbooks_morality.MORALITY_VERSION,
+])
+
 # ChinaTextbook 收录的小学教材版本清单（仅作来源记录，主题暂未对齐这些版本）
 CHINATEXTBOOK_PRIMARY_VERSIONS = {
     "语文": ["统编版"],

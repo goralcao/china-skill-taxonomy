@@ -44,7 +44,7 @@ for (const [name, info] of Object.entries(manifest.files ?? {})) {
 
 /* ---------- 2. 结构校验 ---------- */
 const TOPIC_TYPES = new Set(['CONCEPTUAL', 'PROCEDURAL', 'REPRESENTATIONAL', 'LANGUAGE', 'META']);
-const SUBJECTS = new Set(['数学', '语文', '英语', '物理', '化学', '历史', '地理']);
+const SUBJECTS = new Set(['数学', '语文', '英语', '物理', '化学', '历史', '地理', '科学', '道德与法治']);
 // 各学科学段的开设年级区间（初中科目并非都覆盖 7~9）
 const SUBJECT_GRADE_RANGE = {
   数学: [1, 9], 语文: [1, 9], 英语: [3, 9],
@@ -52,6 +52,8 @@ const SUBJECT_GRADE_RANGE = {
   化学: [9, 9],   // 初中化学仅在九年级开设
   历史: [7, 9],
   地理: [7, 8],   // 人教版初中地理在七、八年级开设
+  科学: [1, 6],   // 小学科学在一至六年级开设
+  道德与法治: [1, 9], // 义务教育阶段全学段开设
 };
 
 const topics = topicsDoc.topics;

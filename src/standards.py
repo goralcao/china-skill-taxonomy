@@ -235,3 +235,10 @@ STANDARDS.extend(standards_physics.PHYSICS_STANDARDS)
 STANDARDS.extend(standards_chemistry.CHEMISTRY_STANDARDS)
 STANDARDS.extend(standards_history.HISTORY_STANDARDS)
 STANDARDS.extend(standards_geography.GEOGRAPHY_STANDARDS)
+
+# —— 小学科学 / 道德与法治（v0.16 新增）——
+import standards_morality  # noqa: E402
+import standards_science  # noqa: E402
+
+STANDARDS.extend(standards_science.SCIENCE_STANDARDS)
+STANDARDS.extend(standards_morality.MORALITY_STANDARDS)

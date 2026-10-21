@@ -1,5 +1,5 @@
 {
-  "version": "v0.15.0",
+  "version": "v0.16.0",
   "schemaVersion": 1,
   "clusters": [
     {
@@ -1410,6 +1410,403 @@
         "mt_junior-geo-stat-chart",
         "mt_junior-geo-map-apply",
         "mt_junior-geo-practice"
+      ]
+    },
+    {
+      "id": "cl-science-d1-s1",
+      "subject": "科学",
+      "domain": "生命科学",
+      "stage": "第一学段（1~2年级）",
+      "summary": "从观察周围的植物和我们自己的身体开始，认识常见的动物，再通过恐龙故事接触远古生命。重点是学会用多种感官有序观察，把看到的现象说清楚、画出来，对生命保持好奇。",
+      "topicIds": [
+        "mt_sci-plants-around",
+        "mt_sci-human-self",
+        "mt_sci-animals-common",
+        "mt_sci-dinosaur"
+      ]
+    },
+    {
+      "id": "cl-science-d1-s2",
+      "subject": "科学",
+      "domain": "生命科学",
+      "stage": "第二学段（3~4年级）",
+      "summary": "了解动物的一生要经历哪些阶段，认识人体的呼吸与消化系统怎样协同工作，并亲手种植、持续观察一株植物的生长。重点是理解生命是一个有阶段的过程，器官之间互相配合。",
+      "topicIds": [
+        "mt_sci-animal-life",
+        "mt_sci-breathing",
+        "mt_sci-plant-growth"
+      ]
+    },
+    {
+      "id": "cl-science-d1-s3",
+      "subject": "科学",
+      "domain": "生命科学",
+      "stage": "第三学段（5~6年级）",
+      "summary": "进入微观与系统层面：用放大镜和显微镜看微生物，分析生物与环境的关系、食物链与生态平衡，认识生物多样性及其保护，最后落实到自己的健康生活。重点是建立「生物离不开环境、环境需要保护」的观念。",
+      "topicIds": [
+        "mt_sci-micro",
+        "mt_sci-bio-env",
+        "mt_sci-health",
+        "mt_sci-bio-diversity"
+      ]
+    },
+    {
+      "id": "cl-science-d2-s1",
+      "subject": "科学",
+      "domain": "物质科学",
+      "stage": "第一学段（1~2年级）",
+      "summary": "观察身边物体的轻重、软硬、颜色等特征，并玩磁铁、认识磁铁吸铁和两极的性质。重点是学会用特征词描述物体，并在动手玩中发现磁铁的有趣规律。",
+      "topicIds": [
+        "mt_sci-objects-around",
+        "mt_sci-magnet"
+      ]
+    },
+    {
+      "id": "cl-science-d2-s2",
+      "subject": "科学",
+      "domain": "物质科学",
+      "stage": "第二学段（3~4年级）",
+      "summary": "研究水与溶解、物体的运动，再深入到空气、声音和简单电路：空气占据空间、声音由振动产生、电流要成回路。重点是动手做实验，用证据说明物质和现象的性质。",
+      "topicIds": [
+        "mt_sci-water",
+        "mt_sci-motion",
+        "mt_sci-air",
+        "mt_sci-sound",
+        "mt_sci-circuit"
+      ]
+    },
+    {
+      "id": "cl-science-d2-s3",
+      "subject": "科学",
+      "domain": "物质科学",
+      "stage": "第三学段（5~6年级）",
+      "summary": "学习运动和力（重力、弹力、摩擦力）、热与温度的传递、光的直线传播与反射折射，最后能区分物理变化与化学变化。重点是会用测力计等工具测量，并用实验证据解释现象。",
+      "topicIds": [
+        "mt_sci-force",
+        "mt_sci-heat",
+        "mt_sci-light",
+        "mt_sci-matter-change"
+      ]
+    },
+    {
+      "id": "cl-science-d3-s1",
+      "subject": "科学",
+      "domain": "地球与宇宙科学",
+      "stage": "第一学段（1~2年级）",
+      "summary": "认识地球是人类和动植物共同的家园，知道生物生长离不开水、空气、阳光和土壤，初步形成「地球只有一个」的意识。",
+      "topicIds": [
+        "mt_sci-earth-home"
+      ]
+    },
+    {
+      "id": "cl-science-d3-s2",
+      "subject": "科学",
+      "domain": "地球与宇宙科学",
+      "stage": "第二学段（3~4年级）",
+      "summary": "学会用工具观测天气并制作天气日历，用太阳、北极星和指南针辨别方向；了解岩石与土壤的组成，认识地球资源有限。重点是会用工具、会记录，把现象和数据联系起来。",
+      "topicIds": [
+        "mt_sci-weather",
+        "mt_sci-direction",
+        "mt_sci-one-earth",
+        "mt_sci-rock"
+      ]
+    },
+    {
+      "id": "cl-science-d3-s3",
+      "subject": "科学",
+      "domain": "地球与宇宙科学",
+      "stage": "第三学段（5~6年级）",
+      "summary": "理解地球表面在风化、侵蚀、沉积和火山地震中不断变化，认识人类活动对环境的压力，用模型演示地球自转公转带来的昼夜与四季，并把视野扩展到太阳系和宇宙。重点是建立动态的、系统的地球观。",
+      "topicIds": [
+        "mt_sci-earth-surface",
+        "mt_sci-environment",
+        "mt_sci-earth-motion",
+        "mt_sci-universe"
+      ]
+    },
+    {
+      "id": "cl-science-d4-s1",
+      "subject": "科学",
+      "domain": "技术与工程",
+      "stage": "第一学段（1~2年级）",
+      "summary": "以「造房子」为起点认识建筑的结构与材料，在小组合作中搭建简易房屋模型，体验「想法—制作—测试」的最初循环。",
+      "topicIds": [
+        "mt_sci-house"
+      ]
+    },
+    {
+      "id": "cl-science-d4-s3",
+      "subject": "科学",
+      "domain": "技术与工程",
+      "stage": "第三学段（5~6年级）",
+      "summary": "认识杠杆、斜面等简单机械，完整经历「船的研究」「小小工程师」等工程设计全过程，并制作水钟、日晷等计时工具。重点是按约束条件迭代改进，在权衡中优化方案。",
+      "topicIds": [
+        "mt_sci-tools",
+        "mt_sci-boat",
+        "mt_sci-time",
+        "mt_sci-engineer"
+      ]
+    },
+    {
+      "id": "cl-science-d5-s1",
+      "subject": "科学",
+      "domain": "科学态度与方法",
+      "stage": "第一学段（1~2年级）",
+      "summary": "科学学习的基本功：用多种感官有序观察，用图画和文字如实记录，区分看到的现象与想到的解释，并根据对象选择合适的测量工具。",
+      "topicIds": [
+        "mt_sci-inquiry",
+        "mt_sci-measure"
+      ]
+    },
+    {
+      "id": "cl-science-d5-s3",
+      "subject": "科学",
+      "domain": "科学态度与方法",
+      "stage": "第三学段（5~6年级）",
+      "summary": "通过科学家的真实研究故事，理解「提出问题—作出假设—搜集证据—接受质疑」的完整过程，学习实事求是与勇于修正的科学态度，把六年探究实践内化为科学精神。",
+      "topicIds": [
+        "mt_sci-scientist"
+      ]
+    },
+    {
+      "id": "cl-morality-d1-s1",
+      "subject": "道德与法治",
+      "domain": "入学教育与学校生活",
+      "stage": "第一学段（1~2年级）",
+      "summary": "帮助孩子完成从幼儿园到小学的过渡：认识新校园新老师，了解上课、课间、午餐的基本规则，养成整理、卫生、倾听等好习惯，学会礼貌待人。重点是建立对学校的归属感和安全感，让「上学」成为一件值得期待的事。",
+      "topicIds": [
+        "mt_mor-p-adapt",
+        "mt_mor-p-campus",
+        "mt_mor-p-habit",
+        "mt_mor-p-civility"
+      ]
+    },
+    {
+      "id": "cl-morality-d2-s1",
+      "subject": "道德与法治",
+      "domain": "自我成长与心理健康",
+      "stage": "第一学段（1~2年级）",
+      "summary": "从认识自己的长相爱好和长处开始，看到自己一年年学会的新本领，初步接触情绪与梦想。重点是让孩子觉得「我和别人不一样，但我很棒」，遇到不开心知道有办法。",
+      "topicIds": [
+        "mt_mor-p-self",
+        "mt_mor-p-growup",
+        "mt_mor-p-optimistic"
+      ]
+    },
+    {
+      "id": "cl-morality-d2-s2",
+      "subject": "道德与法治",
+      "domain": "自我成长与心理健康",
+      "stage": "第二学段（3~4年级）",
+      "summary": "进入青春期预备期：了解身体和心理的初步变化，学会悦纳自己、与父母老师沟通，正确看待同伴影响。重点是平稳度过「小大人」阶段，遇到困惑愿意说出来。",
+      "topicIds": [
+        "mt_mor-p-teen"
+      ]
+    },
+    {
+      "id": "cl-morality-d2-s3",
+      "subject": "道德与法治",
+      "domain": "自我成长与心理健康",
+      "stage": "第三学段（5~6年级）",
+      "summary": "学会客观评价自己、接纳不完美，用积极的办法应对挫折与压力，理解宽容、诚实、勇敢等品格的价值。重点是形成稳定的自我认同，把格局从「别人怎么看我」扩展到「我想成为什么样的人」。",
+      "topicIds": [
+        "mt_mor-p-selfhealth"
+      ]
+    },
+    {
+      "id": "cl-morality-d3-s1",
+      "subject": "道德与法治",
+      "domain": "家庭与同伴交往",
+      "stage": "第一学段（1~2年级）",
+      "summary": "认识家庭成员的角色与辛劳，自己的事情自己做、家里的事情帮着做；在班级里承担岗位、为集体出力。重点是让孩子在家庭和班级两个小集体中找到自己的位置和责任。",
+      "topicIds": [
+        "mt_mor-p-family",
+        "mt_mor-p-class"
+      ]
+    },
+    {
+      "id": "cl-morality-d3-s2",
+      "subject": "道德与法治",
+      "domain": "家庭与同伴交往",
+      "stage": "第二学段（3~4年级）",
+      "summary": "学习交往的方法：主动打招呼、学会倾听、换位思考、诚实守信，能分辨玩笑与欺负；在小组合作中分工协作，用商量方式参与家庭事务。重点是建立健康的同伴关系与家庭沟通模式。",
+      "topicIds": [
+        "mt_mor-p-collective",
+        "mt_mor-p-family-duty",
+        "mt_mor-p-communicate"
+      ]
+    },
+    {
+      "id": "cl-morality-d3-s3",
+      "subject": "道德与法治",
+      "domain": "家庭与同伴交往",
+      "stage": "第三学段（5~6年级）",
+      "summary": "理解家庭沟通中的换位思考，能用恰当方式表达需求和感受，在家庭结构变化中调整自己的角色。重点是让家成为可以说心里话的地方。",
+      "topicIds": [
+        "mt_mor-p-family-comm"
+      ]
+    },
+    {
+      "id": "cl-morality-d4-s2",
+      "subject": "道德与法治",
+      "domain": "公共生活与法治启蒙",
+      "stage": "第二学段（3~4年级）",
+      "summary": "认识公共空间与公共设施需要共同维护，了解社会分工、尊重普通劳动者，参加劳动实践；辨别网络信息的真假，做文明的消费者。重点是走出小家，看到「大家」的运转靠每一个人的守规则与肯付出。",
+      "topicIds": [
+        "mt_mor-p-public",
+        "mt_mor-p-occupation",
+        "mt_mor-p-labor",
+        "mt_mor-p-info",
+        "mt_mor-p-consume",
+        "mt_mor-p-life-source"
+      ]
+    },
+    {
+      "id": "cl-morality-d4-s3",
+      "subject": "道德与法治",
+      "domain": "公共生活与法治启蒙",
+      "stage": "第三学段（5~6年级）",
+      "summary": "建立法治观念的底子：认识身边的法律与违法行为，了解公民的基本权利和义务、国家对未成年人的六大保护，知道维权有途径、法律面前人人平等。重点是既不做违法的事，也懂得用法律保护自己。",
+      "topicIds": [
+        "mt_mor-p-ecoprotection",
+        "mt_mor-p-law",
+        "mt_mor-p-citizen",
+        "mt_mor-p-minor",
+        "mt_mor-p-legal-rights"
+      ]
+    },
+    {
+      "id": "cl-morality-d5-s1",
+      "subject": "道德与法治",
+      "domain": "文化传承与家国情怀",
+      "stage": "第一学段（1~2年级）",
+      "summary": "过好传统节日、了解节日里的情感与习俗，听传统美德和革命先辈的小故事，从家乡的山水特产认识祖国，知道台湾、香港、澳门是祖国不可分割的一部分。重点是把「爱国」落在看得见、摸得着的节日、家乡和故事里。",
+      "topicIds": [
+        "mt_mor-p-holiday",
+        "mt_mor-p-nature",
+        "mt_mor-p-virtue",
+        "mt_mor-p-dream",
+        "mt_mor-p-hometown",
+        "mt_mor-p-motherland"
+      ]
+    },
+    {
+      "id": "cl-morality-d5-s2",
+      "subject": "道德与法治",
+      "domain": "文化传承与家国情怀",
+      "stage": "第二学段（3~4年级）",
+      "summary": "走访家乡的老手艺、老风俗，为家乡文化做记录和宣传。重点是让孩子在了解家乡的过程中建立文化认同，愿意做传承的小使者。",
+      "topicIds": [
+        "mt_mor-p-local-culture"
+      ]
+    },
+    {
+      "id": "cl-morality-d5-s3",
+      "subject": "道德与法治",
+      "domain": "文化传承与家国情怀",
+      "stage": "第三学段（5~6年级）",
+      "summary": "把视野扩展到世界：了解不同国家的文化成就与风俗，理解多样性是人类的共同财富，学会尊重差异、平等交流。重点是既为中华文化自豪，也能欣赏其他文明。",
+      "topicIds": [
+        "mt_mor-p-worldcivil"
+      ]
+    },
+    {
+      "id": "cl-morality-d6-s1",
+      "subject": "道德与法治",
+      "domain": "党史国史与时代使命",
+      "stage": "第一学段（1~2年级）",
+      "summary": "知道红领巾是红旗的一角，理解「爱学习、爱劳动、爱祖国」的好儿童标准，向榜样看齐。重点是政治认同的启蒙：把「祖国」和「我」联系起来。",
+      "topicIds": [
+        "mt_mor-p-goodchild"
+      ]
+    },
+    {
+      "id": "cl-morality-d6-s3",
+      "subject": "道德与法治",
+      "domain": "党史国史与时代使命",
+      "stage": "第三学段（5~6年级）",
+      "summary": "了解建党、建国、改革开放到新时代的百年征程，理解「没有共产党就没有新中国」，认识中国梦与自己成长的联系；进一步了解中国在国际事务中的担当。重点是建立历史眼光，把个人梦想融入国家发展。",
+      "topicIds": [
+        "mt_mor-p-party-history",
+        "mt_mor-p-newera",
+        "mt_mor-p-betterworld"
+      ]
+    },
+    {
+      "id": "cl-morality-d7-s4",
+      "subject": "道德与法治",
+      "domain": "生命安全与健康教育",
+      "stage": "第四学段（7~9年级）",
+      "summary": "从认识生命的独特与价值，到把握青春期的身心变化、学会与情绪相处、培养健康情趣，再到理解人生态度决定人生走向。重点是帮助孩子建立稳定的自我认同和积极的生命观，遇到困惑知道向谁求助、用什么方法。",
+      "topicIds": [
+        "mt_mor-j-life",
+        "mt_mor-j-youth",
+        "mt_mor-j-vigor"
+      ]
+    },
+    {
+      "id": "cl-morality-d8-s4",
+      "subject": "道德与法治",
+      "domain": "道德修养与心理成长",
+      "stage": "第四学段（7~9年级）",
+      "summary": "以「少年有梦」为起点，处理师生、同伴与网络交往，理解奋斗与奉献是美好人生的底色；进而走进社会、承担责任，最终把个人规划与职业理想、国家需要结合起来。重点是完成从「被照顾的孩子」到「有担当的少年」的转变。",
+      "topicIds": [
+        "mt_mor-j-dream",
+        "mt_mor-j-growth",
+        "mt_mor-j-goodlife",
+        "mt_mor-j-society",
+        "mt_mor-j-duty",
+        "mt_mor-j-future"
+      ]
+    },
+    {
+      "id": "cl-morality-d9-s4",
+      "subject": "道德与法治",
+      "domain": "法治教育",
+      "stage": "第四学段（7~9年级）",
+      "summary": "一条清晰的法治主线：从认识法律与法治社会，到理解宪法至上、公民权利义务相统一，再到国家制度与国家机构的运行，最后落脚全面依法治国的格局。重点是既树立对法律的信仰，也掌握依法维权、有序参与的方法。",
+      "topicIds": [
+        "mt_mor-j-law-society",
+        "mt_mor-j-order",
+        "mt_mor-j-constitution",
+        "mt_mor-j-rights",
+        "mt_mor-j-system",
+        "mt_mor-j-lawchina"
+      ]
+    },
+    {
+      "id": "cl-morality-d10-s4",
+      "subject": "道德与法治",
+      "domain": "中华优秀传统文化",
+      "stage": "第四学段（7~9年级）",
+      "summary": "系统了解中华优秀传统文化的主要内容与核心思想理念，认识它在当代的创造性转化与创新性发展。重点是建立文化认同与文化自信，能理性区分精华与糟粕。",
+      "topicIds": [
+        "mt_mor-j-tradition"
+      ]
+    },
+    {
+      "id": "cl-morality-d11-s4",
+      "subject": "道德与法治",
+      "domain": "党史与革命传统",
+      "stage": "第四学段（7~9年级）",
+      "summary": "了解中国共产党的性质、宗旨与执政理念，理解党的全面领导是历史的选择、人民的选择，认识党在革命、建设、改革中的中流砥柱作用。重点是理解「没有共产党就没有新中国、就没有中国特色社会主义」的历史逻辑。",
+      "topicIds": [
+        "mt_mor-j-party"
+      ]
+    },
+    {
+      "id": "cl-morality-d12-s4",
+      "subject": "道德与法治",
+      "domain": "国情与时代使命",
+      "stage": "第四学段（7~9年级）",
+      "summary": "从维护国家利益与总体国家安全观出发，认识新时代的历史方位、新征程的战略安排与中国式现代化的路径，理解中国梦与个人梦的关系；最后把中国放在世界多极化、经济全球化的格局中，认识人类命运共同体理念与大国担当。重点是建立历史纵深与全球视野，增强做中国人的志气、骨气、底气。",
+      "topicIds": [
+        "mt_mor-j-interest",
+        "mt_mor-j-newera",
+        "mt_mor-j-journey",
+        "mt_mor-j-dreamcn",
+        "mt_mor-j-world",
+        "mt_mor-j-chinaworld"
       ]
     }
   ]

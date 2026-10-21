@@ -1,16 +1,16 @@
 {
   "name": "学阶图谱 · China Skill Taxonomy",
-  "version": "v0.15.0",
+  "version": "v0.16.0",
   "schemaVersion": 1,
   "generatedAt": "2026-10-22",
   "counts": {
-    "topics": 591,
-    "dependencies": 961,
-    "curriculumStandards": 88,
-    "clusters": 91,
+    "topics": 691,
+    "dependencies": 1097,
+    "curriculumStandards": 123,
+    "clusters": 124,
     "teachingResearchRecords": 591,
-    "hardEdges": 583,
-    "softEdges": 378
+    "hardEdges": 649,
+    "softEdges": 448
   },
   "bySubject": {
     "数学": {
@@ -40,32 +40,40 @@
     "地理": {
       "topics": 49,
       "edges": 93
+    },
+    "科学": {
+      "topics": 39,
+      "edges": 52
+    },
+    "道德与法治": {
+      "topics": 61,
+      "edges": 84
     }
   },
   "files": {
     "topics.json": {
-      "sha256": "b252d469fdae193b2820e02d0db75e39f171fa37694586a0422c88c6076e1114",
-      "bytes": 622260
+      "sha256": "197e018fbf3f7d4c2ef40cdffa55272cf8508f786f2bd1b3c7ee5e1af2f98903",
+      "bytes": 721666
     },
     "dependencies.json": {
-      "sha256": "b0700dfa3aa54e875ec5d72a01c3935fcd0206d513165549a62a1ffbbb81e37d",
-      "bytes": 180676
+      "sha256": "3e9cc41c6055695ab344995b45a59af5cd89f9bf0c0466709ded62ec14a11f98",
+      "bytes": 204461
     },
     "curriculum-standards.json": {
-      "sha256": "039b33cee77ba367e96ea41675212a61f750e9ac1d824346e80c74851650bdd5",
-      "bytes": 40326
+      "sha256": "08545d7341f599383486de76bfa56c73d567c8638162f2a72f77630d9cf7b5e7",
+      "bytes": 59275
     },
     "textbooks.json": {
-      "sha256": "e38176acc3b6b28d496a01477190c3255534606fdbdf8a8fcbb44c77e052bdc9",
-      "bytes": 177468
+      "sha256": "ace2178c37b2ee20a05cd19a928beba0dc23c5f83fadac60f2945d098ceb01f4",
+      "bytes": 187362
     },
     "clusters.json": {
-      "sha256": "24c26d310a8b2b57f6e93167c3961ece757730ca3f96177180959ceb2518ed8e",
-      "bytes": 65900
+      "sha256": "e3d904dbef46b382c42fb1ace9b52d87f97dde61489b774d4fa57f510f086174",
+      "bytes": 83649
     },
     "teaching-research.json": {
-      "sha256": "addb432e9a0355edecd57166a7bc2cd2a28734faaeb236bd9635b581e2fc7a06",
-      "bytes": 1618081
+      "sha256": "da6af4772315bbcc652e782af0bf6b15c9d70e375e8273b42f8fc56b58ec5d21",
+      "bytes": 1620821
     }
   }
 }

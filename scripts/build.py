@@ -46,6 +46,9 @@ import topics_physics_junior  # noqa: E402
 import topics_chemistry_junior  # noqa: E402
 import topics_history_junior  # noqa: E402
 import topics_geography_junior  # noqa: E402
+import topics_science  # noqa: E402
+import topics_morality_primary  # noqa: E402
+import topics_morality_junior  # noqa: E402
 import teaching_research_math_a  # noqa: E402
 import teaching_research_math_b  # noqa: E402
 import teaching_research_math_junior  # noqa: E402
@@ -59,7 +62,7 @@ import teaching_research_chemistry_junior  # noqa: E402
 import teaching_research_history_junior  # noqa: E402
 import teaching_research_geography_junior  # noqa: E402
 
-VERSION = "v0.15.0"
+VERSION = "v0.16.0"
 SCHEMA_VERSION = 1
 
 MODULES = [
@@ -73,6 +76,9 @@ MODULES = [
     ("化学", topics_chemistry_junior),
     ("历史", topics_history_junior),
     ("地理", topics_geography_junior),
+    ("科学", topics_science),
+    ("道德与法治", topics_morality_primary),
+    ("道德与法治", topics_morality_junior),
 ]
 
 RESEARCH_MODULES = [
@@ -122,6 +128,13 @@ ALLOWED_SOURCES = {
     "《义务教育地理课程标准（2022年版）》": "https://basic.smartedu.cn/",
     "人教版《义务教育教科书·地理》教师教学用书": "https://www.pep.com.cn/",
     "人教版《义务教育教科书·地理》": "",
+    # —— v0.16：小学科学 / 道德与法治 ——
+    "《义务教育科学课程标准（2022年版）》": "https://basic.smartedu.cn/",
+    "教科版《义务教育教科书·科学》教师教学用书": "",
+    "教科版《义务教育教科书·科学》": "",
+    "《义务教育道德与法治课程标准（2022年版）》": "https://basic.smartedu.cn/",
+    "统编版《义务教育教科书·道德与法治》教师教学用书": "",
+    "统编版《义务教育教科书·道德与法治》": "",
 }
 
 STAGE_BY_GRADE = {
@@ -163,7 +176,8 @@ def stage_of(subject: str, grade: int) -> str:
 
 
 SUBJECT_SLUG = {"数学": "math", "语文": "chinese", "英语": "english",
-                "物理": "physics", "化学": "chemistry", "历史": "history", "地理": "geography"}
+                "物理": "physics", "化学": "chemistry", "历史": "history", "地理": "geography",
+                "科学": "science", "道德与法治": "morality"}
 STAGE_SLUG = {
     "第一学段（1~2年级）": "s1",
     "第二学段（3~4年级）": "s2",

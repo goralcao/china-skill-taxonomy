@@ -19,6 +19,8 @@
     --chemistry: #fb923c;
     --history: #22d3ee;
     --geography: #a3e635;
+    --science: #f472b6;
+    --morality: #fbbf24;
     --accent: #ffd166;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -447,7 +449,7 @@
   const MAX_TERM = MAX_GRADE * 2;   // 册次列数 = 年级 × 2（上下册）
 
   // ---------- 层级容器：学科 → 领域簇 → 知识点 ----------
-  const SUBJECT_LIST = ['数学', '语文', '英语', '物理', '化学', '历史', '地理'];
+  const SUBJECT_LIST = ['数学', '语文', '英语', '物理', '化学', '历史', '地理', '科学', '道德与法治'];
   const clusterById = new Map(clusters.map(c => [c.id, c]));
   const subjectNodes = SUBJECT_LIST.map(s => ({
     id: 'subj-' + s, kind: 'subject', name: s, subject: s,
@@ -671,6 +673,7 @@
     '数学': cssVar('--math'), '语文': cssVar('--chinese'), '英语': cssVar('--english'),
     '物理': cssVar('--physics'), '化学': cssVar('--chemistry'),
     '历史': cssVar('--history'), '地理': cssVar('--geography'),
+    '科学': cssVar('--science'), '道德与法治': cssVar('--morality'),
   };
   // 学科筛选按钮与图例配色按数据动态生成（新增学科无需改 DOM）
   (function buildSubjectUI() {
