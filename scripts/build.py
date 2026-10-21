@@ -63,8 +63,10 @@ import teaching_research_history_junior  # noqa: E402
 import teaching_research_geography_junior  # noqa: E402
 import teaching_research_science  # noqa: E402
 import teaching_research_morality  # noqa: E402
+import topics_biology_junior  # noqa: E402
+import teaching_research_biology_junior  # noqa: E402
 
-VERSION = "v0.17.0"
+VERSION = "v0.18.0"
 SCHEMA_VERSION = 1
 
 MODULES = [
@@ -81,6 +83,7 @@ MODULES = [
     ("科学", topics_science),
     ("道德与法治", topics_morality_primary),
     ("道德与法治", topics_morality_junior),
+    ("生物", topics_biology_junior),
 ]
 
 RESEARCH_MODULES = [
@@ -98,6 +101,7 @@ RESEARCH_MODULES = [
     teaching_research_geography_junior,
     teaching_research_science,
     teaching_research_morality,
+    teaching_research_biology_junior,
 ]
 
 RESEARCH_AUTHORSHIP = {
@@ -139,6 +143,10 @@ ALLOWED_SOURCES = {
     "《义务教育道德与法治课程标准（2022年版）》": "https://basic.smartedu.cn/",
     "统编版《义务教育教科书·道德与法治》教师教学用书": "",
     "统编版《义务教育教科书·道德与法治》": "",
+    # —— v0.18：初中生物 ——
+    "《义务教育生物学课程标准（2022年版）》": "https://basic.smartedu.cn/",
+    "人教版《义务教育教科书·生物学》教师教学用书": "https://www.pep.com.cn/",
+    "人教版《义务教育教科书·生物学》": "",
 }
 
 STAGE_BY_GRADE = {
@@ -181,7 +189,7 @@ def stage_of(subject: str, grade: int) -> str:
 
 SUBJECT_SLUG = {"数学": "math", "语文": "chinese", "英语": "english",
                 "物理": "physics", "化学": "chemistry", "历史": "history", "地理": "geography",
-                "科学": "science", "道德与法治": "morality"}
+                "科学": "science", "道德与法治": "morality", "生物": "biology"}
 STAGE_SLUG = {
     "第一学段（1~2年级）": "s1",
     "第二学段（3~4年级）": "s2",

@@ -2,6 +2,31 @@
 
 本项目遵循[语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [v0.18.0] - 2026-10-22
+
+本轮补齐路线图的最后一门学科：**初中生物（7~8 年级）的数据层与教学研究层**，`coverage.missingTopicIds` 清空，K9 **十大学科 742 个微主题教学研究全量覆盖**。生物学科源文件（`src/topics_biology_junior.py`、`src/teaching_research_biology_junior.py`、`src/standards_biology.py`、`src/textbooks_biology.py`）全部按既有 schema 撰写并通过 build 校验；教学研究 51 条每条含教学要点与常见错误、2~3 个可操作学习活动（期望体会/反馈建议/安排理由）、教学边界、三级水平诊断任务（含典型错误与下一步动作）与白名单来源引用；来源限于生物课标与人教版《义务教育教科书·生物学》及教师教学用书，`verified` 一律为 false。
+
+### 新增
+
+- **初中生物主题 51 个**（`src/topics_biology_junior.py`）：按人教版七上、七下、八上、八下四册单元组织，覆盖生物与环境、细胞与微观结构、生物体结构层次、绿色植物、生物圈中的人、动物类群、微生物、生物多样性、生殖发育与遗传、生物进化、健康生活、科学探究 12 个领域；先修依赖边 51 条（hard 24 / soft 27），先修年级均不高于主题年级。
+- **初中生物教学研究 51 条**（`src/teaching_research_biology_junior.py`）：与 51 个主题 1:1 对应，落点在探究过程与迷思概念（如「呼吸不等于吸气动作」「体/肺循环路径混淆」「动脉血看含氧量而非血管名」「病毒没有细胞结构」「植物无性生殖≠有性生殖」）。
+- **生物学课标条目 7 条**（`src/standards_biology.py`，slug `biology-2022`）：生物体的结构层次、生物的多样性、生物与环境、植物的生活、人体生理与健康、遗传与进化、生物学与社会·跨学科实践（均为第四学段 S4）。
+- **人教版生物教材 4 册**（`src/textbooks_biology.py`，slug `pep-biology`）：七年级上/下、八年级上/下，单元为通行版目录；每个主题标注通常出现的册次与单元。
+
+### 变更
+
+- **`scripts/build.py`**：`MODULES` 追加 `("生物", topics_biology_junior)`；`RESEARCH_MODULES` 追加 `teaching_research_biology_junior`；`SUBJECT_SLUG` 增加 `生物: "biology"`；`ALLOWED_SOURCES` 预登记生物课标与人教版生物教材/教参来源白名单；版本号升至 v0.18.0。
+- **`src/standards.py` / `src/textbooks.py`**：分别 `extend` 生物的课标与教材版本数据。
+- **`scripts/validate.mjs`**：`SUBJECTS` 与 `SUBJECT_GRADE_RANGE` 增加「生物」（7~8 年级）。
+- **`viz/index.html`**：`SUBJECT_LIST` 与学科配色新增「生物」（翠绿 `#43b581`，避开既有的英语绿与地理黄绿）；学科筛选、图例、布局泳道、热力矩阵、深链分享均按列表数据驱动，自动纳入新学科。
+- 主题 691 → **742**；依赖边 1097 → **1148**；课标条目 123 → **130**；域摘要 124 → **136**；教学研究记录 691 → **742**；教材版本 15 → **16**。
+
+### 验证
+
+- `python3 scripts/build.py`：构建通过（742 主题 · 1148 边 · 130 课标 · 136 域摘要 · **742 教学研究** · 16 个教材版本）；
+- `node scripts/validate.mjs`：全部校验通过（DAG 742/742；教学研究记录 742/742 全学科覆盖）；
+- `node --test scripts/teaching-research.test.mjs`：5/5 通过（字段完整性、长度约束、来源白名单、未标 verified、覆盖清单一致性）。
+
 ## [v0.17.0] - 2026-10-22
 
 本轮按路线图补齐最后两个学科的教学研究层：**小学科学 39 条 + 道德与法治 61 条**，`coverage.missingTopicIds` 清空，K9 九大学科 691 个微主题**教学研究全量覆盖**。两套记录全部按既有 schema 撰写并通过 build 校验，每条含教学要点与常见错误、2~3 个可操作学习活动（期望体会/反馈建议/安排理由）、教学边界、三级水平诊断任务（含典型错误与下一步动作）与白名单来源引用；来源限于科学/道法课标与教科版/统编版教材条目，`verified` 一律为 false。

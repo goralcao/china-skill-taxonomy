@@ -244,6 +244,13 @@ DETAILED_VERSIONS.extend([
     textbooks_morality.MORALITY_VERSION,
 ])
 
+# —— 初中生物（v0.18 新增）——
+import textbooks_biology  # noqa: E402
+
+DETAILED_VERSIONS.extend([
+    textbooks_biology.BIOLOGY_VERSION,
+])
+
 # ChinaTextbook 收录的小学教材版本清单（仅作来源记录，主题暂未对齐这些版本）
 CHINATEXTBOOK_PRIMARY_VERSIONS = {
     "语文": ["统编版"],

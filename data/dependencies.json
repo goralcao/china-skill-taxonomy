@@ -1,5 +1,5 @@
 {
-  "version": "v0.17.0",
+  "version": "v0.18.0",
   "schemaVersion": 1,
   "dependencies": [
     {
@@ -6583,6 +6583,312 @@
       "prerequisiteId": "mt_mor-j-dreamcn",
       "strength": "soft",
       "reason": "大国担当以民族复兴为底气"
+    },
+    {
+      "topicId": "mt_junior-bio-biotic-environment",
+      "prerequisiteId": "mt_junior-bio-biotic-features",
+      "strength": "hard",
+      "reason": "先认识生物特征，才能判断环境对生物的影响"
+    },
+    {
+      "topicId": "mt_junior-bio-ecosystem",
+      "prerequisiteId": "mt_junior-bio-biotic-environment",
+      "strength": "hard",
+      "reason": "理解生物与环境的相互关系才能建立生态系统概念"
+    },
+    {
+      "topicId": "mt_junior-bio-biosphere",
+      "prerequisiteId": "mt_junior-bio-ecosystem",
+      "strength": "hard",
+      "reason": "生态系统是生物圈的组成部分"
+    },
+    {
+      "topicId": "mt_junior-bio-cell-structure",
+      "prerequisiteId": "mt_junior-bio-microscope",
+      "strength": "hard",
+      "reason": "需借助显微镜才能观察细胞结构"
+    },
+    {
+      "topicId": "mt_junior-bio-cell-life",
+      "prerequisiteId": "mt_junior-bio-cell-structure",
+      "strength": "hard",
+      "reason": "细胞的生活依赖其结构"
+    },
+    {
+      "topicId": "mt_junior-bio-cell-division",
+      "prerequisiteId": "mt_junior-bio-cell-life",
+      "strength": "hard",
+      "reason": "细胞分裂是细胞生命活动的一部分"
+    },
+    {
+      "topicId": "mt_junior-bio-cell-differentiation",
+      "prerequisiteId": "mt_junior-bio-cell-division",
+      "strength": "hard",
+      "reason": "分裂后细胞分化形成不同组织"
+    },
+    {
+      "topicId": "mt_junior-bio-plant-structure",
+      "prerequisiteId": "mt_junior-bio-cell-differentiation",
+      "strength": "hard",
+      "reason": "组织构成器官进而形成植物体"
+    },
+    {
+      "topicId": "mt_junior-bio-animal-structure",
+      "prerequisiteId": "mt_junior-bio-cell-differentiation",
+      "strength": "hard",
+      "reason": "动物体由细胞、组织、器官、系统构成"
+    },
+    {
+      "topicId": "mt_junior-bio-seed-plant",
+      "prerequisiteId": "mt_junior-bio-plant-structure",
+      "strength": "soft",
+      "reason": "了解植物结构有助于认识种子植物"
+    },
+    {
+      "topicId": "mt_junior-bio-plant-life",
+      "prerequisiteId": "mt_junior-bio-seed-plant",
+      "strength": "hard",
+      "reason": "种子萌发是被子植物一生的起点"
+    },
+    {
+      "topicId": "mt_junior-bio-transport-water",
+      "prerequisiteId": "mt_junior-bio-plant-life",
+      "strength": "soft",
+      "reason": "植物体结构支持水分运输"
+    },
+    {
+      "topicId": "mt_junior-bio-photosynthesis",
+      "prerequisiteId": "mt_junior-bio-plant-life",
+      "strength": "hard",
+      "reason": "光合作用依赖叶片等器官的结构"
+    },
+    {
+      "topicId": "mt_junior-bio-respiration-plant",
+      "prerequisiteId": "mt_junior-bio-photosynthesis",
+      "strength": "hard",
+      "reason": "呼吸作用是光合产物的利用过程"
+    },
+    {
+      "topicId": "mt_junior-bio-photosynthesis",
+      "prerequisiteId": "mt_junior-bio-cell-structure",
+      "strength": "soft",
+      "reason": "叶绿体是光合作用的场所"
+    },
+    {
+      "topicId": "mt_junior-bio-human-origin",
+      "prerequisiteId": "mt_junior-bio-animal-structure",
+      "strength": "soft",
+      "reason": "人体结构层次与动物体一致"
+    },
+    {
+      "topicId": "mt_junior-bio-nutrition",
+      "prerequisiteId": "mt_junior-bio-human-origin",
+      "strength": "soft",
+      "reason": "营养是生命活动的物质基础"
+    },
+    {
+      "topicId": "mt_junior-bio-circulation",
+      "prerequisiteId": "mt_junior-bio-nutrition",
+      "strength": "hard",
+      "reason": "循环系统运输消化吸收的营养物质"
+    },
+    {
+      "topicId": "mt_junior-bio-respiration-human",
+      "prerequisiteId": "mt_junior-bio-circulation",
+      "strength": "hard",
+      "reason": "血液把氧送到细胞并运走二氧化碳"
+    },
+    {
+      "topicId": "mt_junior-bio-excretion",
+      "prerequisiteId": "mt_junior-bio-circulation",
+      "strength": "hard",
+      "reason": "循环将代谢废物运至排泄器官"
+    },
+    {
+      "topicId": "mt_junior-bio-nervous-system",
+      "prerequisiteId": "mt_junior-bio-circulation",
+      "strength": "soft",
+      "reason": "神经系统调节各系统协调"
+    },
+    {
+      "topicId": "mt_junior-bio-sense-organs",
+      "prerequisiteId": "mt_junior-bio-nervous-system",
+      "strength": "hard",
+      "reason": "眼耳是神经系统的感觉器官"
+    },
+    {
+      "topicId": "mt_junior-bio-human-biosphere",
+      "prerequisiteId": "mt_junior-bio-excretion",
+      "strength": "soft",
+      "reason": "人体代谢影响生物圈"
+    },
+    {
+      "topicId": "mt_junior-bio-nematoda-annelida",
+      "prerequisiteId": "mt_junior-bio-porifera-cnidaria",
+      "strength": "soft",
+      "reason": "按进化顺序由低等到高等学习"
+    },
+    {
+      "topicId": "mt_junior-bio-mollusca-arthropoda",
+      "prerequisiteId": "mt_junior-bio-nematoda-annelida",
+      "strength": "soft",
+      "reason": "节肢动物比环节动物更高等"
+    },
+    {
+      "topicId": "mt_junior-bio-fish",
+      "prerequisiteId": "mt_junior-bio-mollusca-arthropoda",
+      "strength": "soft",
+      "reason": "脊椎动物从鱼类开始"
+    },
+    {
+      "topicId": "mt_junior-bio-amphibian-reptile",
+      "prerequisiteId": "mt_junior-bio-fish",
+      "strength": "hard",
+      "reason": "两栖类由鱼类进化而来"
+    },
+    {
+      "topicId": "mt_junior-bio-bird",
+      "prerequisiteId": "mt_junior-bio-amphibian-reptile",
+      "strength": "soft",
+      "reason": "鸟类由爬行类进化而来"
+    },
+    {
+      "topicId": "mt_junior-bio-mammal",
+      "prerequisiteId": "mt_junior-bio-bird",
+      "strength": "soft",
+      "reason": "哺乳类结构更复杂"
+    },
+    {
+      "topicId": "mt_junior-bio-animal-behavior",
+      "prerequisiteId": "mt_junior-bio-mammal",
+      "strength": "soft",
+      "reason": "在认识动物类群后学习其行为"
+    },
+    {
+      "topicId": "mt_junior-bio-bacteria-fungus",
+      "prerequisiteId": "mt_junior-bio-animal-structure",
+      "strength": "soft",
+      "reason": "对比单细胞生物与多细胞生物"
+    },
+    {
+      "topicId": "mt_junior-bio-virus",
+      "prerequisiteId": "mt_junior-bio-bacteria-fungus",
+      "strength": "hard",
+      "reason": "病毒比细菌更简单，需借宿主增殖"
+    },
+    {
+      "topicId": "mt_junior-bio-microbe-role",
+      "prerequisiteId": "mt_junior-bio-bacteria-fungus",
+      "strength": "soft",
+      "reason": "微生物参与物质循环"
+    },
+    {
+      "topicId": "mt_junior-bio-classification",
+      "prerequisiteId": "mt_junior-bio-mammal",
+      "strength": "hard",
+      "reason": "先认识各类群才能学习分类"
+    },
+    {
+      "topicId": "mt_junior-bio-classification",
+      "prerequisiteId": "mt_junior-bio-microbe-role",
+      "strength": "soft",
+      "reason": "微生物也是分类对象"
+    },
+    {
+      "topicId": "mt_junior-bio-biodiversity",
+      "prerequisiteId": "mt_junior-bio-classification",
+      "strength": "hard",
+      "reason": "分类是认识生物多样性的基础"
+    },
+    {
+      "topicId": "mt_junior-bio-plant-reproduction",
+      "prerequisiteId": "mt_junior-bio-plant-life",
+      "strength": "soft",
+      "reason": "生殖延续植物的一生"
+    },
+    {
+      "topicId": "mt_junior-bio-insect-reproduction",
+      "prerequisiteId": "mt_junior-bio-animal-behavior",
+      "strength": "soft",
+      "reason": "昆虫行为与其生殖发育相关"
+    },
+    {
+      "topicId": "mt_junior-bio-ar-reproduction",
+      "prerequisiteId": "mt_junior-bio-insect-reproduction",
+      "strength": "soft",
+      "reason": "比较不同动物的生殖发育"
+    },
+    {
+      "topicId": "mt_junior-bio-gene-trait",
+      "prerequisiteId": "mt_junior-bio-cell-structure",
+      "strength": "soft",
+      "reason": "性状由细胞内的基因控制"
+    },
+    {
+      "topicId": "mt_junior-bio-gene-dominant",
+      "prerequisiteId": "mt_junior-bio-gene-trait",
+      "strength": "hard",
+      "reason": "显隐性是基因控制的性状表现"
+    },
+    {
+      "topicId": "mt_junior-bio-sex-inheritance",
+      "prerequisiteId": "mt_junior-bio-gene-dominant",
+      "strength": "hard",
+      "reason": "性别由性染色体上的基因决定"
+    },
+    {
+      "topicId": "mt_junior-bio-variation",
+      "prerequisiteId": "mt_junior-bio-gene-dominant",
+      "strength": "soft",
+      "reason": "变异来自基因的重新组合与环境"
+    },
+    {
+      "topicId": "mt_junior-bio-life-origin",
+      "prerequisiteId": "mt_junior-bio-biodiversity",
+      "strength": "soft",
+      "reason": "生命起源是多样性的起点"
+    },
+    {
+      "topicId": "mt_junior-bio-evolution",
+      "prerequisiteId": "mt_junior-bio-life-origin",
+      "strength": "hard",
+      "reason": "进化解释生物多样性的形成"
+    },
+    {
+      "topicId": "mt_junior-bio-evolution",
+      "prerequisiteId": "mt_junior-bio-variation",
+      "strength": "soft",
+      "reason": "变异为进化提供原材料"
+    },
+    {
+      "topicId": "mt_junior-bio-infectious-disease",
+      "prerequisiteId": "mt_junior-bio-microbe-role",
+      "strength": "soft",
+      "reason": "病原生物引发传染病"
+    },
+    {
+      "topicId": "mt_junior-bio-drug-firstaid",
+      "prerequisiteId": "mt_junior-bio-infectious-disease",
+      "strength": "soft",
+      "reason": "用药与急救应对疾病"
+    },
+    {
+      "topicId": "mt_junior-bio-health-self",
+      "prerequisiteId": "mt_junior-bio-drug-firstaid",
+      "strength": "soft",
+      "reason": "健康生活是整体目标"
+    },
+    {
+      "topicId": "mt_junior-bio-inquiry",
+      "prerequisiteId": "mt_junior-bio-biotic-survey",
+      "strength": "hard",
+      "reason": "调查是科学探究的基本方法之一"
+    },
+    {
+      "topicId": "mt_junior-bio-inquiry",
+      "prerequisiteId": "mt_junior-bio-microscope",
+      "strength": "soft",
+      "reason": "观察需遵循探究规范"
     }
   ]
 }

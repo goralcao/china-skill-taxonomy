@@ -242,3 +242,8 @@ import standards_science  # noqa: E402
 
 STANDARDS.extend(standards_science.SCIENCE_STANDARDS)
 STANDARDS.extend(standards_morality.MORALITY_STANDARDS)
+
+# —— 初中生物（v0.18 新增，第四学段 7~8 年级）——
+import standards_biology  # noqa: E402
+
+STANDARDS.extend(standards_biology.BIOLOGY_STANDARDS)

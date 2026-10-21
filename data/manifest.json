@@ -1,16 +1,16 @@
 {
   "name": "学阶图谱 · China Skill Taxonomy",
-  "version": "v0.17.0",
+  "version": "v0.18.0",
   "schemaVersion": 1,
   "generatedAt": "2026-10-22",
   "counts": {
-    "topics": 691,
-    "dependencies": 1097,
-    "curriculumStandards": 123,
-    "clusters": 124,
-    "teachingResearchRecords": 691,
-    "hardEdges": 649,
-    "softEdges": 448
+    "topics": 742,
+    "dependencies": 1148,
+    "curriculumStandards": 130,
+    "clusters": 136,
+    "teachingResearchRecords": 742,
+    "hardEdges": 673,
+    "softEdges": 475
   },
   "bySubject": {
     "数学": {
@@ -48,32 +48,36 @@
     "道德与法治": {
       "topics": 61,
       "edges": 84
+    },
+    "生物": {
+      "topics": 51,
+      "edges": 51
     }
   },
   "files": {
     "topics.json": {
-      "sha256": "09c5d4e00684cc37f1d18dc87804dabd6d6a35be7ef72cf8b8946f4d395a9273",
-      "bytes": 721666
+      "sha256": "338b750eef38169a559a4faac92255338dc0de30c10aee5f2b3ff6ccb351cab0",
+      "bytes": 772815
     },
     "dependencies.json": {
-      "sha256": "be46890b3a0754e0b25dd152352c6e1815f141a12191040508ce20c49b821729",
-      "bytes": 204461
+      "sha256": "7ef776c8dd5de0d0b899cef4a071ca79de0f696c81289d5b444bc4c1fe889084",
+      "bytes": 214515
     },
     "curriculum-standards.json": {
-      "sha256": "2926a0236645775f792cb63d6da1f288377a248003e4b55ad29a11d51ab6df73",
-      "bytes": 59275
+      "sha256": "bfd72ba0786c27a600892a5af0e33bea4f571d47abb1af6b62e152a833e9bbb4",
+      "bytes": 63277
     },
     "textbooks.json": {
-      "sha256": "32c4bd57507c8a9bda83e9edee205d895ee0ec30edcef15858075463c3283f95",
-      "bytes": 187362
+      "sha256": "85277d7dbbbc2e63d4e4f14faa3af9f662ea8788c7ed2696b8a70b4f994b4749",
+      "bytes": 188665
     },
     "clusters.json": {
-      "sha256": "dea01b48f73eb112c00d55ea6e6bc97a7c386db11316dcf3ddb09ff742bd272b",
-      "bytes": 83649
+      "sha256": "b0f3197b52e8a885d757ec8a00442eadf904e7fad6e039b9de4d007b80d55e5e",
+      "bytes": 89478
     },
     "teaching-research.json": {
-      "sha256": "b63b3383e3735fe36cfee4dd3c6e6fc60737366a624af538c004dd8840415c19",
-      "bytes": 1906497
+      "sha256": "a91a363d58f2a3b7d09e0aee96e01f70d3e283f7480ec1de8d372ba8c1d7039b",
+      "bytes": 2031446
     }
   }
 }

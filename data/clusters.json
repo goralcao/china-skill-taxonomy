@@ -1,5 +1,5 @@
 {
-  "version": "v0.17.0",
+  "version": "v0.18.0",
   "schemaVersion": 1,
   "clusters": [
     {
@@ -1807,6 +1807,165 @@
         "mt_mor-j-dreamcn",
         "mt_mor-j-world",
         "mt_mor-j-chinaworld"
+      ]
+    },
+    {
+      "id": "cl-biology-d1-s4",
+      "subject": "生物",
+      "domain": "生物与环境",
+      "stage": "第四学段（7~9年级）",
+      "summary": "带孩子观察身边的生物，理解生物与非生物的区别，认识生物与环境相互依存，建立生态系统与生物圈的整体观念。",
+      "topicIds": [
+        "mt_junior-bio-biotic-features",
+        "mt_junior-bio-biotic-survey",
+        "mt_junior-bio-biotic-environment",
+        "mt_junior-bio-ecosystem",
+        "mt_junior-bio-biosphere"
+      ]
+    },
+    {
+      "id": "cl-biology-d2-s4",
+      "subject": "生物",
+      "domain": "细胞与微观结构",
+      "stage": "第四学段（7~9年级）",
+      "summary": "借助显微镜走进微观世界，认识细胞是生命活动的基本单位，了解细胞的结构、生活与分裂。",
+      "topicIds": [
+        "mt_junior-bio-microscope",
+        "mt_junior-bio-cell-structure",
+        "mt_junior-bio-cell-life",
+        "mt_junior-bio-cell-division"
+      ]
+    },
+    {
+      "id": "cl-biology-d3-s4",
+      "subject": "生物",
+      "domain": "生物体结构层次",
+      "stage": "第四学段（7~9年级）",
+      "summary": "从细胞到组织、器官、系统，理解多细胞生物如何由小到大、由简单到复杂地构建起来。",
+      "topicIds": [
+        "mt_junior-bio-cell-differentiation",
+        "mt_junior-bio-plant-structure",
+        "mt_junior-bio-animal-structure"
+      ]
+    },
+    {
+      "id": "cl-biology-d4-s4",
+      "subject": "生物",
+      "domain": "绿色植物",
+      "stage": "第四学段（7~9年级）",
+      "summary": "观察种子的萌发与开花结果，认识绿色植物如何吸水、制造有机物、参与水循环，是生物圈的「生产者」。",
+      "topicIds": [
+        "mt_junior-bio-seed-plant",
+        "mt_junior-bio-plant-life",
+        "mt_junior-bio-transport-water",
+        "mt_junior-bio-photosynthesis",
+        "mt_junior-bio-respiration-plant"
+      ]
+    },
+    {
+      "id": "cl-biology-d5-s4",
+      "subject": "生物",
+      "domain": "生物圈中的人",
+      "stage": "第四学段（7~9年级）",
+      "summary": "围绕人体的营养、呼吸、循环、排泄与调节，认识各系统如何协调配合，理解健康的生活方式。",
+      "topicIds": [
+        "mt_junior-bio-human-origin",
+        "mt_junior-bio-nutrition",
+        "mt_junior-bio-respiration-human",
+        "mt_junior-bio-circulation",
+        "mt_junior-bio-excretion",
+        "mt_junior-bio-nervous-system",
+        "mt_junior-bio-sense-organs",
+        "mt_junior-bio-human-biosphere"
+      ]
+    },
+    {
+      "id": "cl-biology-d6-s4",
+      "subject": "生物",
+      "domain": "动物类群",
+      "stage": "第四学段（7~9年级）",
+      "summary": "按进化顺序认识无脊椎动物到脊椎动物的主要类群，理解形态结构与其生活环境的适应。",
+      "topicIds": [
+        "mt_junior-bio-porifera-cnidaria",
+        "mt_junior-bio-nematoda-annelida",
+        "mt_junior-bio-mollusca-arthropoda",
+        "mt_junior-bio-fish",
+        "mt_junior-bio-amphibian-reptile",
+        "mt_junior-bio-bird",
+        "mt_junior-bio-mammal",
+        "mt_junior-bio-animal-behavior"
+      ]
+    },
+    {
+      "id": "cl-biology-d7-s4",
+      "subject": "生物",
+      "domain": "微生物",
+      "stage": "第四学段（7~9年级）",
+      "summary": "认识细菌、真菌和病毒，了解它们在物质循环、食品、疾病中的双重角色。",
+      "topicIds": [
+        "mt_junior-bio-bacteria-fungus",
+        "mt_junior-bio-virus",
+        "mt_junior-bio-microbe-role"
+      ]
+    },
+    {
+      "id": "cl-biology-d8-s4",
+      "subject": "生物",
+      "domain": "生物多样性",
+      "stage": "第四学段（7~9年级）",
+      "summary": "学习给生物分类，理解物种、基因与生态系统三个层次的多样性及其保护意义。",
+      "topicIds": [
+        "mt_junior-bio-classification",
+        "mt_junior-bio-biodiversity"
+      ]
+    },
+    {
+      "id": "cl-biology-d9-s4",
+      "subject": "生物",
+      "domain": "生殖发育与遗传",
+      "stage": "第四学段（7~9年级）",
+      "summary": "从植物的繁衍到昆虫、两栖动物和鸟的生殖发育，再到基因、性状与遗传规律，理解生命如何延续。",
+      "topicIds": [
+        "mt_junior-bio-plant-reproduction",
+        "mt_junior-bio-insect-reproduction",
+        "mt_junior-bio-ar-reproduction",
+        "mt_junior-bio-gene-trait",
+        "mt_junior-bio-gene-dominant",
+        "mt_junior-bio-sex-inheritance",
+        "mt_junior-bio-variation"
+      ]
+    },
+    {
+      "id": "cl-biology-d10-s4",
+      "subject": "生物",
+      "domain": "生物进化",
+      "stage": "第四学段（7~9年级）",
+      "summary": "借助化石等证据，理解生命起源与达尔文的自然选择，认识生物多样性的由来。",
+      "topicIds": [
+        "mt_junior-bio-life-origin",
+        "mt_junior-bio-evolution"
+      ]
+    },
+    {
+      "id": "cl-biology-d11-s4",
+      "subject": "生物",
+      "domain": "健康生活",
+      "stage": "第四学段（7~9年级）",
+      "summary": "认识传染病与免疫、安全用药与急救，学会从身体、心理和社会适应三方面维护健康。",
+      "topicIds": [
+        "mt_junior-bio-infectious-disease",
+        "mt_junior-bio-drug-firstaid",
+        "mt_junior-bio-health-self"
+      ]
+    },
+    {
+      "id": "cl-biology-d12-s4",
+      "subject": "生物",
+      "domain": "科学探究",
+      "stage": "第四学段（7~9年级）",
+      "summary": "经历提出问题、作出假设、实验验证的完整过程，培养用证据说话的科学态度。",
+      "topicIds": [
+        "mt_junior-bio-inquiry"
       ]
     }
   ]
