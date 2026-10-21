@@ -224,3 +224,14 @@ STANDARDS = [
      "学习策略", "认知、交际、调控与资源策略",
      "制定学习计划，利用多种资源自主学习；运用认知、交际与调控策略，监控并调整英语学习过程。"),
 ]
+
+# —— 初中物理 / 化学 / 历史 / 地理（v0.13 新增，均为第四学段 7~9 年级）——
+import standards_chemistry  # noqa: E402
+import standards_geography  # noqa: E402
+import standards_history  # noqa: E402
+import standards_physics  # noqa: E402
+
+STANDARDS.extend(standards_physics.PHYSICS_STANDARDS)
+STANDARDS.extend(standards_chemistry.CHEMISTRY_STANDARDS)
+STANDARDS.extend(standards_history.HISTORY_STANDARDS)
+STANDARDS.extend(standards_geography.GEOGRAPHY_STANDARDS)

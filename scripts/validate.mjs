@@ -44,7 +44,15 @@ for (const [name, info] of Object.entries(manifest.files ?? {})) {
 
 /* ---------- 2. 结构校验 ---------- */
 const TOPIC_TYPES = new Set(['CONCEPTUAL', 'PROCEDURAL', 'REPRESENTATIONAL', 'LANGUAGE', 'META']);
-const SUBJECTS = new Set(['数学', '语文', '英语']);
+const SUBJECTS = new Set(['数学', '语文', '英语', '物理', '化学', '历史', '地理']);
+// 各学科学段的开设年级区间（初中科目并非都覆盖 7~9）
+const SUBJECT_GRADE_RANGE = {
+  数学: [1, 9], 语文: [1, 9], 英语: [3, 9],
+  物理: [8, 9],   // 初中物理自八年级开设
+  化学: [9, 9],   // 初中化学仅在九年级开设
+  历史: [7, 9],
+  地理: [7, 8],   // 人教版初中地理在七、八年级开设
+};
 
 const topics = topicsDoc.topics;
 const seenIds = new Set();
@@ -62,7 +70,12 @@ for (const t of topics) {
   if (!(t.gradeRangeStart >= 1 && t.gradeRangeStart <= 9)) fail(`主题 ${where} gradeRangeStart 越界`);
   if (!(t.gradeRangeEnd >= 1 && t.gradeRangeEnd <= 9)) fail(`主题 ${where} gradeRangeEnd 越界`);
   if (t.gradeRangeStart > t.gradeRangeEnd) fail(`主题 ${where} 年级区间颠倒`);
-  if (t.subject === '英语' && t.gradeRangeStart < 3) fail(`英语主题 ${where} 年级小于 3`);
+  const range = SUBJECT_GRADE_RANGE[t.subject];
+  if (range) {
+    if (t.gradeRangeStart < range[0] || t.gradeRangeEnd > range[1]) {
+      fail(`${t.subject}主题 ${where} 年级 ${t.gradeRangeStart}~${t.gradeRangeEnd} 越出该学科学段区间 ${range[0]}~${range[1]}`);
+    }
+  }
   if (!Array.isArray(t.evidence) || t.evidence.length < 2 || t.evidence.length > 3) {
     fail(`主题 ${where} evidence 应为 2~3 条`);
   }
@@ -136,7 +149,8 @@ const bookByRef = (vslug, bslug) => {
 };
 for (const t of topics) {
   for (const ref of t.textbooks) {
-    const m = ref.match(/^(pep-math|tongbian-chinese|pep-english):([1-9][ab])(?::(u[1-9][0-9]?))?(?:#(.+))?$/);
+    const m = ref.match(
+      /^(pep-math|tongbian-chinese|pep-english|pep-physics|pep-chemistry|tongbian-history|pep-geography):([1-9][ab])(?::(u[1-9][0-9]?))?(?:#(.+))?$/);
     if (!m) {
       fail(`主题 ${t.name} 教材引用格式非法: ${ref}`);
       continue;
@@ -345,7 +359,9 @@ console.log('-----------------------------------');
 console.log(`主题 ${topics.length}（${Object.entries(perSubject).map(([k, v]) => `${k} ${v}`).join('，')}）`);
 console.log(`依赖边 ${deps.length}（hard ${deps.filter((d) => d.strength === 'hard').length} / soft ${deps.filter((d) => d.strength === 'soft').length}）`);
 console.log(`课标条目 ${standardsDoc.standards.length} · 教材版本 ${textbooksDoc.versions.length} · 域摘要 ${clustersDoc.clusters.length}`);
-console.log(`教学研究记录 ${research.records.length}（数学 ${researchBySubject['数学']?.covered ?? 0}/${researchBySubject['数学']?.total ?? 0}，语文 ${researchBySubject['语文']?.covered ?? 0}，英语 ${researchBySubject['英语']?.covered ?? 0}）`);
+const researchSummary = Object.entries(researchBySubject)
+  .map(([s, c]) => `${s} ${c.covered}/${c.total}`).join('，');
+console.log(`教学研究记录 ${research.records.length}（${researchSummary}）`);
 console.log(`2024 版教材映射 ${Object.keys(map2024).length} 条（已关联主题 ${topics.filter((t) => (t.textbooks2024 ?? []).length).length}，其中内容迁移说明 ${Object.values(map2024).filter((e) => e.note).length} 条）`);
 console.log(`DAG 拓扑排序: ${sorted}/${topics.length}`);
 if (warnings.length) {

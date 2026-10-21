@@ -39,6 +39,10 @@ import topics_english  # noqa: E402
 import topics_english_junior  # noqa: E402
 import topics_math  # noqa: E402
 import topics_math_junior  # noqa: E402
+import topics_physics_junior  # noqa: E402
+import topics_chemistry_junior  # noqa: E402
+import topics_history_junior  # noqa: E402
+import topics_geography_junior  # noqa: E402
 import teaching_research_math_a  # noqa: E402
 import teaching_research_math_b  # noqa: E402
 import teaching_research_math_junior  # noqa: E402
@@ -48,7 +52,7 @@ import teaching_research_english  # noqa: E402
 import teaching_research_chinese_junior  # noqa: E402
 import teaching_research_english_junior  # noqa: E402
 
-VERSION = "v0.12.0"
+VERSION = "v0.13.0"
 SCHEMA_VERSION = 1
 
 MODULES = [
@@ -58,6 +62,10 @@ MODULES = [
     ("语文", topics_chinese_junior),
     ("英语", topics_english),
     ("英语", topics_english_junior),
+    ("物理", topics_physics_junior),
+    ("化学", topics_chemistry_junior),
+    ("历史", topics_history_junior),
+    ("地理", topics_geography_junior),
 ]
 
 RESEARCH_MODULES = [
@@ -130,7 +138,8 @@ def stage_of(subject: str, grade: int) -> str:
     return STAGE_BY_GRADE[grade]
 
 
-SUBJECT_SLUG = {"数学": "math", "语文": "chinese", "英语": "english"}
+SUBJECT_SLUG = {"数学": "math", "语文": "chinese", "英语": "english",
+                "物理": "physics", "化学": "chemistry", "历史": "history", "地理": "geography"}
 STAGE_SLUG = {
     "第一学段（1~2年级）": "s1",
     "第二学段（3~4年级）": "s2",
@@ -515,7 +524,9 @@ def main():
     n2024 = sum(1 for t in topics if t["textbooks2024"])
     print(f"  主题 {len(topics)} · 依赖边 {len(deps)} · 课标条目 {len(standards)} · "
           f"域摘要 {len(clusters)} · 教学研究记录 {len(research['records'])}")
-    print(f"  2024 版教材版本 {len(artifacts['textbooks.json']['versions']) - 3} · "
+    # 2024 版条数以 slug 后缀识别，不能用「总数 - 基础版本数」硬减（新增学科会算错）
+    v2024 = sum(1 for v in artifacts['textbooks.json']['versions'] if v["slug"].endswith("-2024"))
+    print(f"  教材版本 {len(artifacts['textbooks.json']['versions'])}（含 2024 版 {v2024}）· "
           f"映射条目 {len(tmap24.MAP_2024)} · 已关联 2024 引用的主题 {n2024}")
 
 

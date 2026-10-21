@@ -1,5 +1,5 @@
 {
-  "version": "v0.12.0",
+  "version": "v0.13.0",
   "schemaVersion": 1,
   "clusters": [
     {
@@ -905,6 +905,511 @@
         "mt_junior-en-cross-cultural",
         "mt_junior-en-learning-strategies",
         "mt_junior-en-test-skills"
+      ]
+    },
+    {
+      "id": "cl-physics-d1-s4",
+      "subject": "物理",
+      "domain": "测量与机械运动",
+      "stage": "第四学段（7~9年级）",
+      "summary": "从会用刻度尺、停表准确读数开始，学习怎样判断误差、怎样让测量更可靠；再用参照物、速度和运动图像描述物体怎样运动，最后亲手测量平均速度。孩子不只是套公式，还要能把生活中的快慢、动静转化为可测量、可比较的数据。",
+      "topicIds": [
+        "mt_junior-ph-length-time-measurement",
+        "mt_junior-ph-measurement-error",
+        "mt_junior-ph-reference-motion",
+        "mt_junior-ph-speed-motion-graph",
+        "mt_junior-ph-average-speed-experiment"
+      ]
+    },
+    {
+      "id": "cl-physics-d2-s4",
+      "subject": "物理",
+      "domain": "声与光",
+      "stage": "第四学段（7~9年级）",
+      "summary": "通过振动、传播、音调和响度理解声音，并学会从声源、传播和接收环节控制噪声；再用光路图研究直线传播、反射、折射、色散和透镜成像。学习落点是能做实验、会画图，能解释镜子、眼镜、相机和通信中的声光现象。",
+      "topicIds": [
+        "mt_junior-ph-sound-generation-propagation",
+        "mt_junior-ph-sound-characteristics-control",
+        "mt_junior-ph-light-reflection",
+        "mt_junior-ph-light-refraction-color",
+        "mt_junior-ph-lens-imaging"
+      ]
+    },
+    {
+      "id": "cl-physics-d3-s4",
+      "subject": "物理",
+      "domain": "物态变化",
+      "stage": "第四学段（7~9年级）",
+      "summary": "围绕温度测量和固、液、气三态转化，认识熔化、凝固、汽化、液化、升华、凝华及其吸放热特点，并从图像中读取变化过程。孩子将把白气、露、霜、沸腾和晾晒等熟悉现象连成完整知识网，理解自然界水循环中的能量转移。",
+      "topicIds": [
+        "mt_junior-ph-temperature-state",
+        "mt_junior-ph-melting-freezing",
+        "mt_junior-ph-vaporization-liquefaction",
+        "mt_junior-ph-sublimation-deposition",
+        "mt_junior-ph-water-cycle-phasechange"
+      ]
+    },
+    {
+      "id": "cl-physics-d4-s4",
+      "subject": "物理",
+      "domain": "质量与密度",
+      "stage": "第四学段（7~9年级）",
+      "summary": "先学会用天平测质量、用量筒或尺寸测体积，再理解密度为什么能够体现物质特性。通过公式计算和完整实验，孩子能测出固体、液体密度，判断误差方向，并用数据鉴别材料、分析空心与轻量化选材，把测量技能用于真实物品。",
+      "topicIds": [
+        "mt_junior-ph-mass-measurement",
+        "mt_junior-ph-density-concept",
+        "mt_junior-ph-density-calculation",
+        "mt_junior-ph-density-measurement",
+        "mt_junior-ph-density-application"
+      ]
+    },
+    {
+      "id": "cl-physics-d5-s4",
+      "subject": "物理",
+      "domain": "力与运动",
+      "stage": "第四学段（7~9年级）",
+      "summary": "从力的相互作用、三要素和示意图入门，进一步认识弹力、重力、惯性、二力平衡与摩擦。重点是把“物体为什么动、为什么停”转化成规范受力图和证据推理，并能通过控制变量实验研究摩擦，解释刹车、安全带、鞋底花纹等生活设计。",
+      "topicIds": [
+        "mt_junior-ph-force-basics",
+        "mt_junior-ph-elastic-gravity",
+        "mt_junior-ph-newton-first-inertia",
+        "mt_junior-ph-two-force-balance",
+        "mt_junior-ph-friction"
+      ]
+    },
+    {
+      "id": "cl-physics-d6-s4",
+      "subject": "物理",
+      "domain": "压强与浮力",
+      "stage": "第四学段（7~9年级）",
+      "summary": "从压力作用面积引出固体压强，再研究液体、大气和流动气体的压强规律，最后用阿基米德原理和受力平衡判断物体浮沉。孩子会计算，也会用实验验证，能够解释水坝、吸盘、机翼、轮船、潜水艇等现象背后的共同物理规律。",
+      "topicIds": [
+        "mt_junior-ph-pressure",
+        "mt_junior-ph-liquid-pressure",
+        "mt_junior-ph-atmospheric-fluid-pressure",
+        "mt_junior-ph-buoyancy-archimedes",
+        "mt_junior-ph-float-sink"
+      ]
+    },
+    {
+      "id": "cl-physics-d7-s4",
+      "subject": "物理",
+      "domain": "功与机械能",
+      "stage": "第四学段（7~9年级）",
+      "summary": "学习什么情况下力真正做功，怎样用功率比较做功快慢，并认识动能、势能和机械能转化。随后研究杠杆、滑轮及机械效率，理解机械可以省力或改变方向，却不能无条件省功。重点是会画力臂、能算功和效率，也能评价工具设计是否合理。",
+      "topicIds": [
+        "mt_junior-ph-work-power",
+        "mt_junior-ph-kinetic-potential-energy",
+        "mt_junior-ph-mechanical-energy",
+        "mt_junior-ph-lever-balance",
+        "mt_junior-ph-pulley-efficiency"
+      ]
+    },
+    {
+      "id": "cl-physics-d8-s4",
+      "subject": "物理",
+      "domain": "热与内能",
+      "stage": "第四学段（7~9年级）",
+      "summary": "从分子运动进入内能的微观解释，区分温度、热量和内能，掌握比热容与热量计算；再了解内燃机、热值、热机效率和能量守恒。孩子要能从能量流向分析加热、做功和燃烧，理解能量总量守恒并不等于所有能量都能被有效利用。",
+      "topicIds": [
+        "mt_junior-ph-molecular-motion",
+        "mt_junior-ph-internal-energy",
+        "mt_junior-ph-specific-heat",
+        "mt_junior-ph-heat-engine",
+        "mt_junior-ph-energy-conservation"
+      ]
+    },
+    {
+      "id": "cl-physics-d9-s4",
+      "subject": "物理",
+      "domain": "电与磁",
+      "stage": "第四学段（7~9年级）",
+      "summary": "从连接和识读串并联电路开始，逐步学习电流、电压、电阻、欧姆定律、电功率和家庭安全用电，再认识电流的磁效应、电动机与发电机。孩子需要兼顾规范实验、故障排查和定量计算，能够把铭牌、电费、保险装置等生活问题与电学规律对应起来。",
+      "topicIds": [
+        "mt_junior-ph-current-circuit",
+        "mt_junior-ph-voltage-resistance",
+        "mt_junior-ph-ohm-law",
+        "mt_junior-ph-electric-power-safety",
+        "mt_junior-ph-electromagnetism"
+      ]
+    },
+    {
+      "id": "cl-physics-d10-s4",
+      "subject": "物理",
+      "domain": "信息与能源",
+      "stage": "第四学段（7~9年级）",
+      "summary": "认识电磁波、光纤、卫星和网络怎样传递信息，比较不同通信方式的特点；同时学习能源分类、核能、太阳能及其环境影响。最终通过家庭或校园用能调查，把功率、效率、费用和可持续性放在一起权衡，形成有数据支持的节能或供能方案。",
+      "topicIds": [
+        "mt_junior-ph-electromagnetic-wave",
+        "mt_junior-ph-modern-communication",
+        "mt_junior-ph-energy-classification",
+        "mt_junior-ph-nuclear-solar-energy",
+        "mt_junior-ph-sustainable-energy-project"
+      ]
+    },
+    {
+      "id": "cl-chemistry-d1-s4",
+      "subject": "化学",
+      "domain": "化学实验基础",
+      "stage": "第四学段（7~9年级）",
+      "summary": "化学从动手开始：先认识试管、烧杯、酒精灯、量筒、天平等常用仪器，学会取药、称量、量取、加热和检查装置气密性；同时学会用「有没有新物质生成」判断物理变化与化学变化，区分物理性质与化学性质。这一块是后面所有实验和物质学习的地基，重点是操作规范、观察细致和安全意识。",
+      "topicIds": [
+        "mt_junior-che-lab-instrument",
+        "mt_junior-che-lab-reagent",
+        "mt_junior-che-lab-heating",
+        "mt_junior-che-change-property"
+      ]
+    },
+    {
+      "id": "cl-chemistry-d2-s4",
+      "subject": "化学",
+      "domain": "空气与氧气",
+      "stage": "第四学段（7~9年级）",
+      "summary": "从身边的空气入手，知道空气是氮气、氧气为主的混合物，学会用实验测定氧气含量；认识空气污染的来源与防治，会看空气质量报告；重点研究氧气的性质与实验室制法，掌握高锰酸钾、过氧化氢制氧气的装置、收集与验满，理解催化剂的作用。孩子在这里第一次完整经历「制取一种气体」的全过程。",
+      "topicIds": [
+        "mt_junior-che-air-composition",
+        "mt_junior-che-air-pollution",
+        "mt_junior-che-oxygen-property",
+        "mt_junior-che-oxygen-prepare"
+      ]
+    },
+    {
+      "id": "cl-chemistry-d3-s4",
+      "subject": "化学",
+      "domain": "物质构成的奥秘",
+      "stage": "第四学段（7~9年级）",
+      "summary": "从看得见的水、铁走进看不见的微粒世界：认识物质由分子、原子构成，了解原子的结构、核外电子排布和离子的形成，理解元素、元素符号与物质分类，最后学会用化合价书写化学式。这一块最抽象，也是初中化学的分水岭，孩子如果在这里建立微观图景，后面的方程式和酸碱盐会顺畅很多。",
+      "topicIds": [
+        "mt_junior-che-particle",
+        "mt_junior-che-atom-structure",
+        "mt_junior-che-ion-mass",
+        "mt_junior-che-element",
+        "mt_junior-che-valence-formula"
+      ]
+    },
+    {
+      "id": "cl-chemistry-d4-s4",
+      "subject": "化学",
+      "domain": "水与氢气",
+      "stage": "第四学段（7~9年级）",
+      "summary": "通过电解水实验认识水的组成，学会沉淀、过滤、吸附、蒸馏等净水方法并亲自动手过滤，区分硬水与软水；讨论淡水资源紧缺与水体污染，形成节水护水的意识；最后学习氢气密度最小、可燃烧的性质、实验室制法与点燃前必须验纯的安全常识。",
+      "topicIds": [
+        "mt_junior-che-water-composition",
+        "mt_junior-che-water-purify",
+        "mt_junior-che-water-resource",
+        "mt_junior-che-hydrogen"
+      ]
+    },
+    {
+      "id": "cl-chemistry-d5-s4",
+      "subject": "化学",
+      "domain": "化学方程式与计算",
+      "stage": "第四学段（7~9年级）",
+      "summary": "从实验事实中归纳质量守恒定律，再学会用化学方程式简洁地表示反应：会写、会配平、会根据方程式做质量的简单计算。这一块把前面零散的反应变成可推理、可计算的工具体系，是初中化学最重要的能力关口，孩子需要把「写—配—算」练成稳定的步骤。",
+      "topicIds": [
+        "mt_junior-che-mass-conservation",
+        "mt_junior-che-equation-write",
+        "mt_junior-che-equation-balance",
+        "mt_junior-che-equation-calc"
+      ]
+    },
+    {
+      "id": "cl-chemistry-d6-s4",
+      "subject": "化学",
+      "domain": "碳和碳的氧化物",
+      "stage": "第四学段（7~9年级）",
+      "summary": "认识金刚石、石墨等碳单质结构不同性质不同，掌握碳的可燃性与还原性；重点研究二氧化碳的性质、实验室制取、检验与验满，并把一氧化碳与之对比，了解其可燃性、还原性和毒性。这一块把「结构决定性质、性质决定用途」的观念落到实处，也顺带练熟了制取气体的一般思路。",
+      "topicIds": [
+        "mt_junior-che-carbon-simple",
+        "mt_junior-che-co2-property",
+        "mt_junior-che-co2-prepare",
+        "mt_junior-che-co-property"
+      ]
+    },
+    {
+      "id": "cl-chemistry-d7-s4",
+      "subject": "化学",
+      "domain": "金属与金属材料",
+      "stage": "第四学段（7~9年级）",
+      "summary": "从金属的共性物理性质和合金的优点出发，学习金属与氧气、与酸、与盐溶液的反应规律和置换反应，掌握金属活动性顺序并能判断反应能否发生；最后了解炼铁的原理与含杂质的简单计算，认识金属锈蚀的条件与防锈、回收的意义。",
+      "topicIds": [
+        "mt_junior-che-metal-alloy",
+        "mt_junior-che-metal-chem",
+        "mt_junior-che-metal-activity",
+        "mt_junior-che-iron-smelt"
+      ]
+    },
+    {
+      "id": "cl-chemistry-d8-s4",
+      "subject": "化学",
+      "domain": "溶液",
+      "stage": "第四学段（7~9年级）",
+      "summary": "理解溶液均一、稳定的特征，会判断溶质与溶剂，区分溶液、悬浊液、乳浊液与乳化作用；掌握饱和溶液与不饱和溶液的转化，读懂溶解度与溶解度曲线，能据此选择结晶方法；最后学会溶质质量分数的计算与用天平、量筒配制一定浓度的溶液，这是实验考查的高频内容。",
+      "topicIds": [
+        "mt_junior-che-solution-form",
+        "mt_junior-che-saturated-crystal",
+        "mt_junior-che-solubility",
+        "mt_junior-che-concentration"
+      ]
+    },
+    {
+      "id": "cl-chemistry-d9-s4",
+      "subject": "化学",
+      "domain": "酸碱盐",
+      "stage": "第四学段（7~9年级）",
+      "summary": "学习盐酸、硫酸和氢氧化钠、氢氧化钙的性质与通性，理解中和反应及其在改良土壤、处理废水中的应用，会用指示剂和pH试纸判断酸碱性与强弱；再认识食盐、纯碱、小苏打、石灰石等常见盐，掌握复分解反应发生的条件，了解氮磷钾肥的作用与简单鉴别。",
+      "topicIds": [
+        "mt_junior-che-acid",
+        "mt_junior-che-base",
+        "mt_junior-che-neutralization",
+        "mt_junior-che-ph",
+        "mt_junior-che-salt-fertilizer"
+      ]
+    },
+    {
+      "id": "cl-chemistry-d10-s4",
+      "subject": "化学",
+      "domain": "化学与社会发展",
+      "stage": "第四学段（7~9年级）",
+      "summary": "把化学放回生活：理解燃烧三条件与灭火原理、火场自救常识，认识煤石油天然气等化石燃料与氢能太阳能等新能源，了解营养素、食品安全与合理用药，区分天然材料、金属材料与合成材料，讨论白色污染、酸雨、温室效应。重点是让孩子能用化学知识解释生活现象并做出负责任的选择。",
+      "topicIds": [
+        "mt_junior-che-combustion",
+        "mt_junior-che-energy",
+        "mt_junior-che-health",
+        "mt_junior-che-material-env"
+      ]
+    },
+    {
+      "id": "cl-history-d1-s4",
+      "subject": "历史",
+      "domain": "史学方法与史料实证",
+      "stage": "第四学段（7~9年级）",
+      "summary": "这是学历史的「工具箱」：先会看时间轴、换算世纪年代，能分清文献、实物、口述和图像四类史料；再学着用两条以上的材料互相印证，说话讲证据；最后练习把事件放回当时的条件下做因果分析和人物评价。家长可以在家玩「按时间排序」「这则材料能证明什么」这样的小练习。",
+      "topicIds": [
+        "mt_junior-his-chronology",
+        "mt_junior-his-source-type",
+        "mt_junior-his-historical-map",
+        "mt_junior-his-evidence-analysis",
+        "mt_junior-his-cause-effect",
+        "mt_junior-his-historical-explanation"
+      ]
+    },
+    {
+      "id": "cl-history-d2-s4",
+      "subject": "历史",
+      "domain": "中国古代史",
+      "stage": "第四学段（7~9年级）",
+      "summary": "从元谋人、北京人一路走到鸦片战争前的清朝，重点是把朝代顺序摆清楚，把制度与事件讲明白：分封、郡县、科举、行省怎么变，丝绸之路上跑了什么，江南是怎么开发出来的，西藏、新疆、台湾又是怎样被纳入管辖。孩子能说出「为什么会发生」和「带来了什么」，就算真正学会了。",
+      "topicIds": [
+        "mt_junior-his-prehistoric",
+        "mt_junior-his-early-agriculture",
+        "mt_junior-his-xia-shang-zhou",
+        "mt_junior-his-chunqiu-zhanguo",
+        "mt_junior-his-hundred-schools",
+        "mt_junior-his-qin-unify",
+        "mt_junior-his-han-unity",
+        "mt_junior-his-han-culture",
+        "mt_junior-his-three-kingdoms-develop",
+        "mt_junior-his-northern-wei",
+        "mt_junior-his-sui-tang-rise",
+        "mt_junior-his-tang-downfall",
+        "mt_junior-his-song-liao-jin",
+        "mt_junior-his-song-economy",
+        "mt_junior-his-ming-autocracy",
+        "mt_junior-his-qing-frontier",
+        "mt_junior-his-ming-qing-culture"
+      ]
+    },
+    {
+      "id": "cl-history-d3-s4",
+      "subject": "历史",
+      "domain": "中国近代史",
+      "stage": "第四学段（7~9年级）",
+      "summary": "从虎门销烟到渡江战役，线索是两件事：一是列强侵略把中国一步步推入半殖民地半封建社会，二是各阶层一次次救亡图存的探索——洋务、维新、革命、新民主主义革命，最后在中国共产党领导下取得胜利。孩子能把不平等条约按时间排出来，并说出前因后果，这一块就扎实了。",
+      "topicIds": [
+        "mt_junior-his-opium-war",
+        "mt_junior-his-second-opium-taiping",
+        "mt_junior-his-self-strengthening",
+        "mt_junior-his-jiawu-war",
+        "mt_junior-his-wuxu-reform",
+        "mt_junior-his-boxer-xinchou",
+        "mt_junior-his-xinhai-revolution",
+        "mt_junior-his-may4-ccp",
+        "mt_junior-his-revolutionary-road",
+        "mt_junior-his-resistance-war",
+        "mt_junior-his-liberation-war",
+        "mt_junior-his-modern-economy-life"
+      ]
+    },
+    {
+      "id": "cl-history-d4-s4",
+      "subject": "历史",
+      "domain": "中国现代史",
+      "stage": "第四学段（7~9年级）",
+      "summary": "新中国是怎么站起来的、制度是怎么建立的、走过哪些弯路、又是怎样通过改革开放富起来的。还要知道民族区域自治与祖国统一大业，中国香港、中国澳门回归的年份与意义，以及一个中国原则；再到国防外交和科技、生活的变化。家长可以聊聊家里这些年来的变化，历史就活了。",
+      "topicIds": [
+        "mt_junior-his-prc-founding",
+        "mt_junior-his-socialist-transformation",
+        "mt_junior-his-construction-exploration",
+        "mt_junior-his-reform-opening",
+        "mt_junior-his-ethnic-reunification",
+        "mt_junior-his-diplomacy-defense",
+        "mt_junior-his-science-life"
+      ]
+    },
+    {
+      "id": "cl-history-d5-s4",
+      "subject": "历史",
+      "domain": "世界古代史",
+      "stage": "第四学段（7~9年级）",
+      "summary": "看其他文明怎么起步：尼罗河、两河、印度河三大文明的金字塔、《汉谟拉比法典》、种姓制度与佛教；希腊的城邦民主为什么只能少数人享有，罗马从共和国到帝国怎样兴衰；中世纪欧洲的庄园、城市与大学，日本大化改新与阿拉伯帝国的桥梁作用。重点是建立文明的多样与交流眼光。",
+      "topicIds": [
+        "mt_junior-his-ancient-river-civilizations",
+        "mt_junior-his-greek-roman-world",
+        "mt_junior-his-medieval-europe",
+        "mt_junior-his-medieval-asia"
+      ]
+    },
+    {
+      "id": "cl-history-d6-s4",
+      "subject": "历史",
+      "domain": "世界近代史",
+      "stage": "第四学段（7~9年级）",
+      "summary": "文艺复兴、新航路开辟打开近代之门，殖民掠夺与三角贸易带来资本原始积累的血腥一面；英国、美国、法国三次革命把资本主义制度确立下来；两次工业革命重塑生产与生活，也催生马克思主义与国际工人运动；同时俄国、日本等国家通过改革跟进，殖民地人民开始抗争。",
+      "topicIds": [
+        "mt_junior-his-renaissance-navigation",
+        "mt_junior-his-early-colonialism",
+        "mt_junior-his-british-revolution",
+        "mt_junior-his-american-french-revolutions",
+        "mt_junior-his-industrial-revolution",
+        "mt_junior-his-marxism-labour",
+        "mt_junior-his-capitalism-expansion",
+        "mt_junior-his-second-industrial"
+      ]
+    },
+    {
+      "id": "cl-history-d7-s4",
+      "subject": "历史",
+      "domain": "世界现代史",
+      "stage": "第四学段（7~9年级）",
+      "summary": "一战与凡尔赛体系埋下隐患，经济大危机下出现罗斯福新政与法西斯两条道路，二战以反法西斯同盟的胜利告终；战后进入冷战，西欧走向联合，苏联解体后多极化加速，联合国、全球化与新一轮科技革命改变了世界。重点是理解和平与发展为何成为时代主题，以及人类面临的共同挑战。",
+      "topicIds": [
+        "mt_junior-his-world-war-one",
+        "mt_junior-his-soviet-revolution",
+        "mt_junior-his-crisis-and-war",
+        "mt_junior-his-postwar-world"
+      ]
+    },
+    {
+      "id": "cl-geography-d1-s4",
+      "subject": "地理",
+      "domain": "地球与地图",
+      "stage": "第四学段（7~9年级）",
+      "summary": "从认识地球的形状与大小，到用地球仪和经纬网给地点定位，再到理解地球自转公转带来的昼夜更替、四季与五带，最后学会读地图的三要素和等高线地形图。重点是把球面位置、运动规律和图上判读三件事打通，做到能在图上找到地方、说出原因。",
+      "topicIds": [
+        "mt_junior-geo-earth-shape",
+        "mt_junior-geo-globe",
+        "mt_junior-geo-latlon",
+        "mt_junior-geo-earth-motion",
+        "mt_junior-geo-motion-effect",
+        "mt_junior-geo-map-element",
+        "mt_junior-geo-contour"
+      ]
+    },
+    {
+      "id": "cl-geography-d2-s4",
+      "subject": "地理",
+      "domain": "世界自然地理",
+      "stage": "第四学段（7~9年级）",
+      "summary": "先看全球海陆分布与七大洲四大洋，再用板块运动解释海陆轮廓与火山地震；接着从天气、气温、降水入手，认识世界主要气候类型及其影响因素。重点是养成读图习惯，能看懂气温曲线和降水柱状图，并把气候特征与纬度、海陆、地形联系起来解释。",
+      "topicIds": [
+        "mt_junior-geo-land-ocean",
+        "mt_junior-geo-plate",
+        "mt_junior-geo-weather",
+        "mt_junior-geo-temperature",
+        "mt_junior-geo-precipitation",
+        "mt_junior-geo-climate-type",
+        "mt_junior-geo-climate-factor"
+      ]
+    },
+    {
+      "id": "cl-geography-d3-s4",
+      "subject": "地理",
+      "domain": "世界区域地理",
+      "stage": "第四学段（7~9年级）",
+      "summary": "以亚洲为起点，依次认识日本、东南亚、印度、俄罗斯、中东与西亚、欧洲西部、撒哈拉以南非洲、澳大利亚、美国与巴西以及极地地区。重点不是背地名，而是用位置、地形、气候去解释一个地方的产业、人口与生活方式，并学会比较两个区域的异同。",
+      "topicIds": [
+        "mt_junior-geo-asia",
+        "mt_junior-geo-japan",
+        "mt_junior-geo-seasia",
+        "mt_junior-geo-india",
+        "mt_junior-geo-russia",
+        "mt_junior-geo-mideast",
+        "mt_junior-geo-europe-west",
+        "mt_junior-geo-africa",
+        "mt_junior-geo-australia",
+        "mt_junior-geo-americas",
+        "mt_junior-geo-polar"
+      ]
+    },
+    {
+      "id": "cl-geography-d4-s4",
+      "subject": "地理",
+      "domain": "中国自然地理",
+      "stage": "第四学段（7~9年级）",
+      "summary": "从疆域、行政区划、人口与民族，到地形地势、气候、河流湖泊、自然灾害和自然资源。重点是能在地图上落实位置，理解西高东低的地势和显著的季风如何塑造了我国的河流水文与灾害分布，并认识总量丰富、人均不足的资源国情。",
+      "topicIds": [
+        "mt_junior-geo-cn-territory",
+        "mt_junior-geo-cn-admin",
+        "mt_junior-geo-cn-population",
+        "mt_junior-geo-cn-topography",
+        "mt_junior-geo-cn-climate",
+        "mt_junior-geo-cn-river",
+        "mt_junior-geo-cn-disaster",
+        "mt_junior-geo-cn-resource"
+      ]
+    },
+    {
+      "id": "cl-geography-d5-s4",
+      "subject": "地理",
+      "domain": "中国经济与区域差异",
+      "stage": "第四学段（7~9年级）",
+      "summary": "先学农业、工业与交通运输的分布逻辑，再以秦岭—淮河一线为抓手理解四大地理区域的划分，逐个认识北方、南方、西北和青藏地区的自然特征与产业特点，最后把中国的发展放在世界坐标中看。重点是理解因地制宜与人地协调的道理。",
+      "topicIds": [
+        "mt_junior-geo-cn-agriculture",
+        "mt_junior-geo-cn-industry",
+        "mt_junior-geo-cn-transport",
+        "mt_junior-geo-region-diff",
+        "mt_junior-geo-region-north",
+        "mt_junior-geo-region-south",
+        "mt_junior-geo-region-northwest",
+        "mt_junior-geo-region-tibet",
+        "mt_junior-geo-cn-world"
+      ]
+    },
+    {
+      "id": "cl-geography-d6-s4",
+      "subject": "地理",
+      "domain": "乡土地理",
+      "stage": "第四学段（7~9年级）",
+      "summary": "把地理知识落回自己生活的地方：学习设计调查方案、实地收集资料，从位置、地形、气候、产业等方面描述家乡特征，并针对家乡发展中遇到的问题提出改进建议。重点是让孩子学会观察身边、用证据说话，形成热爱家乡与可持续发展的意识。",
+      "topicIds": [
+        "mt_junior-geo-local-survey",
+        "mt_junior-geo-local-feature",
+        "mt_junior-geo-local-develop"
+      ]
+    },
+    {
+      "id": "cl-geography-d7-s4",
+      "subject": "地理",
+      "domain": "地理工具与实践",
+      "stage": "第四学段（7~9年级）",
+      "summary": "掌握地理学习的基本工具：判读气候资料图、阅读各类统计图表、按需要选择纸质或电子地图，并在野外观察、社会调查和跨学科主题探究中综合运用。重点是把图、表、实地观察结合起来发现问题、合作探究并清楚地表达结论。",
+      "topicIds": [
+        "mt_junior-geo-climate-chart",
+        "mt_junior-geo-stat-chart",
+        "mt_junior-geo-map-apply",
+        "mt_junior-geo-practice"
       ]
     }
   ]

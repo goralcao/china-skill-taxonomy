@@ -1,5 +1,5 @@
 {
-  "version": "v0.12.0",
+  "version": "v0.13.0",
   "schemaVersion": 1,
   "dependencies": [
     {
@@ -3955,6 +3955,1818 @@
       "prerequisiteId": "mt_junior-en-learning-strategies",
       "strength": "soft",
       "reason": "记笔记是认知策略的一部分"
+    },
+    {
+      "topicId": "mt_junior-ph-measurement-error",
+      "prerequisiteId": "mt_junior-ph-length-time-measurement",
+      "strength": "hard",
+      "reason": "规范读数是分析测量误差的基础"
+    },
+    {
+      "topicId": "mt_junior-ph-reference-motion",
+      "prerequisiteId": "mt_junior-ph-length-time-measurement",
+      "strength": "soft",
+      "reason": "位置变化需要长度和时间作参照"
+    },
+    {
+      "topicId": "mt_junior-ph-speed-motion-graph",
+      "prerequisiteId": "mt_junior-ph-reference-motion",
+      "strength": "hard",
+      "reason": "先明确运动状态才能描述速度"
+    },
+    {
+      "topicId": "mt_junior-ph-speed-motion-graph",
+      "prerequisiteId": "mt_junior-ph-length-time-measurement",
+      "strength": "hard",
+      "reason": "速度计算依赖路程与时间测量"
+    },
+    {
+      "topicId": "mt_junior-ph-average-speed-experiment",
+      "prerequisiteId": "mt_junior-ph-speed-motion-graph",
+      "strength": "hard",
+      "reason": "平均速度实验以速度公式为依据"
+    },
+    {
+      "topicId": "mt_junior-ph-average-speed-experiment",
+      "prerequisiteId": "mt_junior-ph-measurement-error",
+      "strength": "hard",
+      "reason": "实验结论需要处理测量误差"
+    },
+    {
+      "topicId": "mt_junior-ph-sound-characteristics-control",
+      "prerequisiteId": "mt_junior-ph-sound-generation-propagation",
+      "strength": "hard",
+      "reason": "声音特性建立在振动与传播认识上"
+    },
+    {
+      "topicId": "mt_junior-ph-light-refraction-color",
+      "prerequisiteId": "mt_junior-ph-light-reflection",
+      "strength": "soft",
+      "reason": "先掌握基本光路再研究折射光路"
+    },
+    {
+      "topicId": "mt_junior-ph-lens-imaging",
+      "prerequisiteId": "mt_junior-ph-light-refraction-color",
+      "strength": "hard",
+      "reason": "透镜成像本质依赖光的折射"
+    },
+    {
+      "topicId": "mt_junior-ph-lens-imaging",
+      "prerequisiteId": "mt_junior-ph-measurement-error",
+      "strength": "soft",
+      "reason": "测焦距和像距需要规范测量"
+    },
+    {
+      "topicId": "mt_junior-ph-melting-freezing",
+      "prerequisiteId": "mt_junior-ph-temperature-state",
+      "strength": "hard",
+      "reason": "研究熔化曲线先要准确测温"
+    },
+    {
+      "topicId": "mt_junior-ph-vaporization-liquefaction",
+      "prerequisiteId": "mt_junior-ph-temperature-state",
+      "strength": "hard",
+      "reason": "观察沸腾规律需要测量温度"
+    },
+    {
+      "topicId": "mt_junior-ph-sublimation-deposition",
+      "prerequisiteId": "mt_junior-ph-temperature-state",
+      "strength": "soft",
+      "reason": "冷热条件帮助判断升华与凝华"
+    },
+    {
+      "topicId": "mt_junior-ph-water-cycle-phasechange",
+      "prerequisiteId": "mt_junior-ph-melting-freezing",
+      "strength": "hard",
+      "reason": "水循环包含固液之间的变化"
+    },
+    {
+      "topicId": "mt_junior-ph-water-cycle-phasechange",
+      "prerequisiteId": "mt_junior-ph-vaporization-liquefaction",
+      "strength": "hard",
+      "reason": "云雨形成依赖汽化与液化"
+    },
+    {
+      "topicId": "mt_junior-ph-water-cycle-phasechange",
+      "prerequisiteId": "mt_junior-ph-sublimation-deposition",
+      "strength": "hard",
+      "reason": "霜雪现象涉及升华与凝华"
+    },
+    {
+      "topicId": "mt_junior-ph-density-concept",
+      "prerequisiteId": "mt_junior-ph-mass-measurement",
+      "strength": "hard",
+      "reason": "密度定义需要先理解并测量质量"
+    },
+    {
+      "topicId": "mt_junior-ph-density-concept",
+      "prerequisiteId": "mt_junior-ph-length-time-measurement",
+      "strength": "soft",
+      "reason": "规则物体体积由长度测量获得"
+    },
+    {
+      "topicId": "mt_junior-ph-density-calculation",
+      "prerequisiteId": "mt_junior-ph-density-concept",
+      "strength": "hard",
+      "reason": "公式计算以理解密度定义为前提"
+    },
+    {
+      "topicId": "mt_junior-ph-density-measurement",
+      "prerequisiteId": "mt_junior-ph-density-calculation",
+      "strength": "hard",
+      "reason": "实验数据需要代入密度公式处理"
+    },
+    {
+      "topicId": "mt_junior-ph-density-measurement",
+      "prerequisiteId": "mt_junior-ph-measurement-error",
+      "strength": "hard",
+      "reason": "密度实验需要分析质量体积误差"
+    },
+    {
+      "topicId": "mt_junior-ph-density-application",
+      "prerequisiteId": "mt_junior-ph-density-measurement",
+      "strength": "hard",
+      "reason": "材料鉴别需要获得可靠密度数据"
+    },
+    {
+      "topicId": "mt_junior-ph-elastic-gravity",
+      "prerequisiteId": "mt_junior-ph-force-basics",
+      "strength": "hard",
+      "reason": "弹力和重力都是具体的力"
+    },
+    {
+      "topicId": "mt_junior-ph-newton-first-inertia",
+      "prerequisiteId": "mt_junior-ph-reference-motion",
+      "strength": "hard",
+      "reason": "惯性规律讨论物体运动状态"
+    },
+    {
+      "topicId": "mt_junior-ph-two-force-balance",
+      "prerequisiteId": "mt_junior-ph-force-basics",
+      "strength": "hard",
+      "reason": "判断平衡先要会表示物体受力"
+    },
+    {
+      "topicId": "mt_junior-ph-two-force-balance",
+      "prerequisiteId": "mt_junior-ph-newton-first-inertia",
+      "strength": "hard",
+      "reason": "平衡状态对应运动状态不变"
+    },
+    {
+      "topicId": "mt_junior-ph-friction",
+      "prerequisiteId": "mt_junior-ph-force-basics",
+      "strength": "hard",
+      "reason": "摩擦力分析依赖力的方向和作用点"
+    },
+    {
+      "topicId": "mt_junior-ph-friction",
+      "prerequisiteId": "mt_junior-ph-two-force-balance",
+      "strength": "soft",
+      "reason": "匀速测摩擦利用二力平衡"
+    },
+    {
+      "topicId": "mt_junior-ph-pressure",
+      "prerequisiteId": "mt_junior-ph-force-basics",
+      "strength": "hard",
+      "reason": "压强计算首先要确定压力大小"
+    },
+    {
+      "topicId": "mt_junior-ph-liquid-pressure",
+      "prerequisiteId": "mt_junior-ph-pressure",
+      "strength": "hard",
+      "reason": "液体内部压强延伸自压强概念"
+    },
+    {
+      "topicId": "mt_junior-ph-liquid-pressure",
+      "prerequisiteId": "mt_junior-ph-density-concept",
+      "strength": "soft",
+      "reason": "液体压强变化与液体密度有关"
+    },
+    {
+      "topicId": "mt_junior-ph-atmospheric-fluid-pressure",
+      "prerequisiteId": "mt_junior-ph-pressure",
+      "strength": "hard",
+      "reason": "大气压和流体压强属于压强现象"
+    },
+    {
+      "topicId": "mt_junior-ph-buoyancy-archimedes",
+      "prerequisiteId": "mt_junior-ph-liquid-pressure",
+      "strength": "hard",
+      "reason": "浮力源于物体上下表面压强差"
+    },
+    {
+      "topicId": "mt_junior-ph-buoyancy-archimedes",
+      "prerequisiteId": "mt_junior-ph-force-basics",
+      "strength": "hard",
+      "reason": "测浮力需要正确分析物体受力"
+    },
+    {
+      "topicId": "mt_junior-ph-float-sink",
+      "prerequisiteId": "mt_junior-ph-buoyancy-archimedes",
+      "strength": "hard",
+      "reason": "浮沉判断要先求或比较浮力"
+    },
+    {
+      "topicId": "mt_junior-ph-float-sink",
+      "prerequisiteId": "mt_junior-ph-two-force-balance",
+      "strength": "hard",
+      "reason": "漂浮和悬浮状态满足受力平衡"
+    },
+    {
+      "topicId": "mt_junior-ph-float-sink",
+      "prerequisiteId": "mt_junior-ph-density-concept",
+      "strength": "soft",
+      "reason": "物体平均密度可辅助判断浮沉"
+    },
+    {
+      "topicId": "mt_junior-ph-work-power",
+      "prerequisiteId": "mt_junior-ph-force-basics",
+      "strength": "hard",
+      "reason": "做功计算需要先确定作用力"
+    },
+    {
+      "topicId": "mt_junior-ph-work-power",
+      "prerequisiteId": "mt_junior-ph-speed-motion-graph",
+      "strength": "soft",
+      "reason": "比较做功快慢涉及时间与速度"
+    },
+    {
+      "topicId": "mt_junior-ph-kinetic-potential-energy",
+      "prerequisiteId": "mt_junior-ph-speed-motion-graph",
+      "strength": "hard",
+      "reason": "动能大小与物体速度密切相关"
+    },
+    {
+      "topicId": "mt_junior-ph-kinetic-potential-energy",
+      "prerequisiteId": "mt_junior-ph-force-basics",
+      "strength": "soft",
+      "reason": "能量大小通过做功能力表现"
+    },
+    {
+      "topicId": "mt_junior-ph-mechanical-energy",
+      "prerequisiteId": "mt_junior-ph-kinetic-potential-energy",
+      "strength": "hard",
+      "reason": "机械能由动能和势能构成"
+    },
+    {
+      "topicId": "mt_junior-ph-lever-balance",
+      "prerequisiteId": "mt_junior-ph-force-basics",
+      "strength": "hard",
+      "reason": "杠杆研究力及其作用效果"
+    },
+    {
+      "topicId": "mt_junior-ph-lever-balance",
+      "prerequisiteId": "mt_junior-ph-two-force-balance",
+      "strength": "soft",
+      "reason": "杠杆平衡需要综合多个力的作用"
+    },
+    {
+      "topicId": "mt_junior-ph-pulley-efficiency",
+      "prerequisiteId": "mt_junior-ph-work-power",
+      "strength": "hard",
+      "reason": "机械效率建立在功的分类计算上"
+    },
+    {
+      "topicId": "mt_junior-ph-pulley-efficiency",
+      "prerequisiteId": "mt_junior-ph-lever-balance",
+      "strength": "soft",
+      "reason": "滑轮同样属于简单机械"
+    },
+    {
+      "topicId": "mt_junior-ph-molecular-motion",
+      "prerequisiteId": "mt_junior-ph-water-cycle-phasechange",
+      "strength": "soft",
+      "reason": "物态变化可由分子运动进一步解释"
+    },
+    {
+      "topicId": "mt_junior-ph-internal-energy",
+      "prerequisiteId": "mt_junior-ph-molecular-motion",
+      "strength": "hard",
+      "reason": "内能概念建立在分子动理论上"
+    },
+    {
+      "topicId": "mt_junior-ph-internal-energy",
+      "prerequisiteId": "mt_junior-ph-water-cycle-phasechange",
+      "strength": "soft",
+      "reason": "物态变化中的吸放热属于能量转移"
+    },
+    {
+      "topicId": "mt_junior-ph-specific-heat",
+      "prerequisiteId": "mt_junior-ph-internal-energy",
+      "strength": "hard",
+      "reason": "比热容研究热传递引起的内能改变"
+    },
+    {
+      "topicId": "mt_junior-ph-specific-heat",
+      "prerequisiteId": "mt_junior-ph-mass-measurement",
+      "strength": "soft",
+      "reason": "热量计算需要准确获得物体质量"
+    },
+    {
+      "topicId": "mt_junior-ph-heat-engine",
+      "prerequisiteId": "mt_junior-ph-internal-energy",
+      "strength": "hard",
+      "reason": "热机利用内能做功并发生能量转化"
+    },
+    {
+      "topicId": "mt_junior-ph-energy-conservation",
+      "prerequisiteId": "mt_junior-ph-mechanical-energy",
+      "strength": "hard",
+      "reason": "机械能转化是能量守恒的典型实例"
+    },
+    {
+      "topicId": "mt_junior-ph-energy-conservation",
+      "prerequisiteId": "mt_junior-ph-heat-engine",
+      "strength": "hard",
+      "reason": "热机过程体现能量转化与损失去向"
+    },
+    {
+      "topicId": "mt_junior-ph-voltage-resistance",
+      "prerequisiteId": "mt_junior-ph-current-circuit",
+      "strength": "hard",
+      "reason": "测量电压和研究电阻需要完整电路"
+    },
+    {
+      "topicId": "mt_junior-ph-ohm-law",
+      "prerequisiteId": "mt_junior-ph-voltage-resistance",
+      "strength": "hard",
+      "reason": "欧姆定律联系电流电压和电阻"
+    },
+    {
+      "topicId": "mt_junior-ph-ohm-law",
+      "prerequisiteId": "mt_junior-ph-current-circuit",
+      "strength": "hard",
+      "reason": "电路计算依赖串并联电流关系"
+    },
+    {
+      "topicId": "mt_junior-ph-electric-power-safety",
+      "prerequisiteId": "mt_junior-ph-ohm-law",
+      "strength": "hard",
+      "reason": "实际功率和电路分析需要欧姆定律"
+    },
+    {
+      "topicId": "mt_junior-ph-electric-power-safety",
+      "prerequisiteId": "mt_junior-ph-work-power",
+      "strength": "soft",
+      "reason": "电功率沿用单位时间做功思想"
+    },
+    {
+      "topicId": "mt_junior-ph-electromagnetism",
+      "prerequisiteId": "mt_junior-ph-current-circuit",
+      "strength": "hard",
+      "reason": "电流磁效应需要先理解电流和电路"
+    },
+    {
+      "topicId": "mt_junior-ph-electromagnetism",
+      "prerequisiteId": "mt_junior-ph-force-basics",
+      "strength": "soft",
+      "reason": "电动机原理涉及磁场对导线的力"
+    },
+    {
+      "topicId": "mt_junior-ph-electromagnetic-wave",
+      "prerequisiteId": "mt_junior-ph-electromagnetism",
+      "strength": "hard",
+      "reason": "电磁波认识承接电与磁的联系"
+    },
+    {
+      "topicId": "mt_junior-ph-modern-communication",
+      "prerequisiteId": "mt_junior-ph-electromagnetic-wave",
+      "strength": "hard",
+      "reason": "现代无线通信以电磁波为载体"
+    },
+    {
+      "topicId": "mt_junior-ph-energy-classification",
+      "prerequisiteId": "mt_junior-ph-energy-conservation",
+      "strength": "hard",
+      "reason": "能源利用本质是能量转化与转移"
+    },
+    {
+      "topicId": "mt_junior-ph-nuclear-solar-energy",
+      "prerequisiteId": "mt_junior-ph-energy-classification",
+      "strength": "hard",
+      "reason": "比较新能源前需统一分类标准"
+    },
+    {
+      "topicId": "mt_junior-ph-sustainable-energy-project",
+      "prerequisiteId": "mt_junior-ph-energy-classification",
+      "strength": "hard",
+      "reason": "方案设计需要认识不同能源特点"
+    },
+    {
+      "topicId": "mt_junior-ph-sustainable-energy-project",
+      "prerequisiteId": "mt_junior-ph-nuclear-solar-energy",
+      "strength": "soft",
+      "reason": "供能方案可比较核能与太阳能"
+    },
+    {
+      "topicId": "mt_junior-ph-sustainable-energy-project",
+      "prerequisiteId": "mt_junior-ph-electric-power-safety",
+      "strength": "hard",
+      "reason": "用电调查需要会算能耗并确保安全"
+    },
+    {
+      "topicId": "mt_junior-ph-sustainable-energy-project",
+      "prerequisiteId": "mt_junior-ph-heat-engine",
+      "strength": "soft",
+      "reason": "评价能源方案需要考虑转化效率"
+    },
+    {
+      "topicId": "mt_junior-che-lab-reagent",
+      "prerequisiteId": "mt_junior-che-lab-instrument",
+      "strength": "hard",
+      "reason": "取用药品先要认识仪器与操作规范"
+    },
+    {
+      "topicId": "mt_junior-che-lab-heating",
+      "prerequisiteId": "mt_junior-che-lab-instrument",
+      "strength": "hard",
+      "reason": "加热与组装装置以认识仪器为前提"
+    },
+    {
+      "topicId": "mt_junior-che-lab-heating",
+      "prerequisiteId": "mt_junior-che-lab-reagent",
+      "strength": "soft",
+      "reason": "加热前须先把药品装入试管"
+    },
+    {
+      "topicId": "mt_junior-che-change-property",
+      "prerequisiteId": "mt_junior-che-lab-instrument",
+      "strength": "soft",
+      "reason": "判断变化类型要靠实验观察"
+    },
+    {
+      "topicId": "mt_junior-che-air-composition",
+      "prerequisiteId": "mt_junior-che-lab-heating",
+      "strength": "soft",
+      "reason": "测氧气含量实验要求装置气密"
+    },
+    {
+      "topicId": "mt_junior-che-air-pollution",
+      "prerequisiteId": "mt_junior-che-air-composition",
+      "strength": "soft",
+      "reason": "污染物是空气成分之外的物质"
+    },
+    {
+      "topicId": "mt_junior-che-oxygen-property",
+      "prerequisiteId": "mt_junior-che-air-composition",
+      "strength": "hard",
+      "reason": "先知道空气含氧再研究其性质"
+    },
+    {
+      "topicId": "mt_junior-che-oxygen-property",
+      "prerequisiteId": "mt_junior-che-change-property",
+      "strength": "soft",
+      "reason": "燃烧现象要用化学变化解释"
+    },
+    {
+      "topicId": "mt_junior-che-oxygen-prepare",
+      "prerequisiteId": "mt_junior-che-oxygen-property",
+      "strength": "hard",
+      "reason": "先认识氧气性质才好收集验满"
+    },
+    {
+      "topicId": "mt_junior-che-oxygen-prepare",
+      "prerequisiteId": "mt_junior-che-lab-heating",
+      "strength": "hard",
+      "reason": "制氧气用到加热与收集装置"
+    },
+    {
+      "topicId": "mt_junior-che-particle",
+      "prerequisiteId": "mt_junior-che-change-property",
+      "strength": "soft",
+      "reason": "化学变化要从微粒角度解释"
+    },
+    {
+      "topicId": "mt_junior-che-atom-structure",
+      "prerequisiteId": "mt_junior-che-particle",
+      "strength": "hard",
+      "reason": "原子是构成分子的微粒"
+    },
+    {
+      "topicId": "mt_junior-che-ion-mass",
+      "prerequisiteId": "mt_junior-che-atom-structure",
+      "strength": "hard",
+      "reason": "离子由原子得失电子形成"
+    },
+    {
+      "topicId": "mt_junior-che-element",
+      "prerequisiteId": "mt_junior-che-atom-structure",
+      "strength": "hard",
+      "reason": "元素按质子数定义"
+    },
+    {
+      "topicId": "mt_junior-che-element",
+      "prerequisiteId": "mt_junior-che-ion-mass",
+      "strength": "soft",
+      "reason": "元素符号与离子符号写法相通"
+    },
+    {
+      "topicId": "mt_junior-che-valence-formula",
+      "prerequisiteId": "mt_junior-che-element",
+      "strength": "hard",
+      "reason": "写化学式先认识元素与化合价"
+    },
+    {
+      "topicId": "mt_junior-che-valence-formula",
+      "prerequisiteId": "mt_junior-che-ion-mass",
+      "strength": "soft",
+      "reason": "化合价与离子所带电荷有关"
+    },
+    {
+      "topicId": "mt_junior-che-water-composition",
+      "prerequisiteId": "mt_junior-che-element",
+      "strength": "hard",
+      "reason": "水的组成由氢氧元素确定"
+    },
+    {
+      "topicId": "mt_junior-che-water-purify",
+      "prerequisiteId": "mt_junior-che-lab-reagent",
+      "strength": "soft",
+      "reason": "过滤等操作依赖基本实验技能"
+    },
+    {
+      "topicId": "mt_junior-che-water-purify",
+      "prerequisiteId": "mt_junior-che-water-composition",
+      "strength": "soft",
+      "reason": "净水不改变水的组成"
+    },
+    {
+      "topicId": "mt_junior-che-water-resource",
+      "prerequisiteId": "mt_junior-che-water-purify",
+      "strength": "soft",
+      "reason": "保护水资源须了解净水方法"
+    },
+    {
+      "topicId": "mt_junior-che-hydrogen",
+      "prerequisiteId": "mt_junior-che-water-composition",
+      "strength": "hard",
+      "reason": "氢气由电解水的实验引入"
+    },
+    {
+      "topicId": "mt_junior-che-hydrogen",
+      "prerequisiteId": "mt_junior-che-oxygen-prepare",
+      "strength": "soft",
+      "reason": "制氢气类比制气体的收集方法"
+    },
+    {
+      "topicId": "mt_junior-che-mass-conservation",
+      "prerequisiteId": "mt_junior-che-particle",
+      "strength": "hard",
+      "reason": "守恒要从原子数目不变解释"
+    },
+    {
+      "topicId": "mt_junior-che-mass-conservation",
+      "prerequisiteId": "mt_junior-che-change-property",
+      "strength": "hard",
+      "reason": "守恒定律研究的是化学变化"
+    },
+    {
+      "topicId": "mt_junior-che-equation-write",
+      "prerequisiteId": "mt_junior-che-mass-conservation",
+      "strength": "hard",
+      "reason": "书写方程式须遵守质量守恒"
+    },
+    {
+      "topicId": "mt_junior-che-equation-write",
+      "prerequisiteId": "mt_junior-che-valence-formula",
+      "strength": "hard",
+      "reason": "写方程式先要会写化学式"
+    },
+    {
+      "topicId": "mt_junior-che-equation-balance",
+      "prerequisiteId": "mt_junior-che-equation-write",
+      "strength": "hard",
+      "reason": "配平是书写化学方程式的关键"
+    },
+    {
+      "topicId": "mt_junior-che-equation-calc",
+      "prerequisiteId": "mt_junior-che-equation-balance",
+      "strength": "hard",
+      "reason": "计算建立在配平后的方程式上"
+    },
+    {
+      "topicId": "mt_junior-che-equation-calc",
+      "prerequisiteId": "mt_junior-che-equation-write",
+      "strength": "soft",
+      "reason": "计算前须先写出化学方程式"
+    },
+    {
+      "topicId": "mt_junior-che-carbon-simple",
+      "prerequisiteId": "mt_junior-che-oxygen-property",
+      "strength": "soft",
+      "reason": "碳在氧气中燃烧是典型性质"
+    },
+    {
+      "topicId": "mt_junior-che-carbon-simple",
+      "prerequisiteId": "mt_junior-che-equation-write",
+      "strength": "soft",
+      "reason": "碳的反应常用化学方程式表示"
+    },
+    {
+      "topicId": "mt_junior-che-co2-property",
+      "prerequisiteId": "mt_junior-che-carbon-simple",
+      "strength": "hard",
+      "reason": "二氧化碳由含碳物质转化而来"
+    },
+    {
+      "topicId": "mt_junior-che-co2-prepare",
+      "prerequisiteId": "mt_junior-che-co2-property",
+      "strength": "hard",
+      "reason": "先知道性质才好选择收集检验"
+    },
+    {
+      "topicId": "mt_junior-che-co2-prepare",
+      "prerequisiteId": "mt_junior-che-oxygen-prepare",
+      "strength": "soft",
+      "reason": "制取气体的思路与制氧气相通"
+    },
+    {
+      "topicId": "mt_junior-che-co-property",
+      "prerequisiteId": "mt_junior-che-co2-property",
+      "strength": "hard",
+      "reason": "两种碳的氧化物需对比学习"
+    },
+    {
+      "topicId": "mt_junior-che-co-property",
+      "prerequisiteId": "mt_junior-che-carbon-simple",
+      "strength": "soft",
+      "reason": "碳不充分燃烧会生成一氧化碳"
+    },
+    {
+      "topicId": "mt_junior-che-metal-chem",
+      "prerequisiteId": "mt_junior-che-metal-alloy",
+      "strength": "soft",
+      "reason": "先认识金属通性再研究化学性质"
+    },
+    {
+      "topicId": "mt_junior-che-metal-chem",
+      "prerequisiteId": "mt_junior-che-oxygen-property",
+      "strength": "soft",
+      "reason": "金属与氧气反应承接氧气性质"
+    },
+    {
+      "topicId": "mt_junior-che-metal-activity",
+      "prerequisiteId": "mt_junior-che-metal-chem",
+      "strength": "hard",
+      "reason": "活动性顺序由反应能否发生得出"
+    },
+    {
+      "topicId": "mt_junior-che-iron-smelt",
+      "prerequisiteId": "mt_junior-che-metal-chem",
+      "strength": "hard",
+      "reason": "炼铁原理是金属氧化物的还原"
+    },
+    {
+      "topicId": "mt_junior-che-iron-smelt",
+      "prerequisiteId": "mt_junior-che-co-property",
+      "strength": "hard",
+      "reason": "炼铁用一氧化碳作还原剂"
+    },
+    {
+      "topicId": "mt_junior-che-iron-smelt",
+      "prerequisiteId": "mt_junior-che-equation-calc",
+      "strength": "soft",
+      "reason": "炼铁计算要作含杂质换算"
+    },
+    {
+      "topicId": "mt_junior-che-solution-form",
+      "prerequisiteId": "mt_junior-che-lab-reagent",
+      "strength": "soft",
+      "reason": "配制溶液要用到称量与量取"
+    },
+    {
+      "topicId": "mt_junior-che-saturated-crystal",
+      "prerequisiteId": "mt_junior-che-solution-form",
+      "strength": "hard",
+      "reason": "饱和是溶解限度的临界状态"
+    },
+    {
+      "topicId": "mt_junior-che-solubility",
+      "prerequisiteId": "mt_junior-che-saturated-crystal",
+      "strength": "hard",
+      "reason": "溶解度以饱和状态为基础"
+    },
+    {
+      "topicId": "mt_junior-che-concentration",
+      "prerequisiteId": "mt_junior-che-solution-form",
+      "strength": "hard",
+      "reason": "质量分数描述溶液的组成"
+    },
+    {
+      "topicId": "mt_junior-che-concentration",
+      "prerequisiteId": "mt_junior-che-lab-reagent",
+      "strength": "hard",
+      "reason": "配制溶液要用天平与量筒"
+    },
+    {
+      "topicId": "mt_junior-che-concentration",
+      "prerequisiteId": "mt_junior-che-solubility",
+      "strength": "soft",
+      "reason": "溶解限度决定能否配成所需浓度"
+    },
+    {
+      "topicId": "mt_junior-che-acid",
+      "prerequisiteId": "mt_junior-che-metal-chem",
+      "strength": "soft",
+      "reason": "酸与金属反应承接金属的化学性质"
+    },
+    {
+      "topicId": "mt_junior-che-acid",
+      "prerequisiteId": "mt_junior-che-solution-form",
+      "strength": "soft",
+      "reason": "酸的性质在溶液中表现"
+    },
+    {
+      "topicId": "mt_junior-che-base",
+      "prerequisiteId": "mt_junior-che-acid",
+      "strength": "soft",
+      "reason": "酸碱对照学习便于比较通性"
+    },
+    {
+      "topicId": "mt_junior-che-neutralization",
+      "prerequisiteId": "mt_junior-che-acid",
+      "strength": "hard",
+      "reason": "中和反应必须有酸参加"
+    },
+    {
+      "topicId": "mt_junior-che-neutralization",
+      "prerequisiteId": "mt_junior-che-base",
+      "strength": "hard",
+      "reason": "中和反应必须有碱参加"
+    },
+    {
+      "topicId": "mt_junior-che-ph",
+      "prerequisiteId": "mt_junior-che-acid",
+      "strength": "soft",
+      "reason": "检验酸碱性先要认识酸"
+    },
+    {
+      "topicId": "mt_junior-che-ph",
+      "prerequisiteId": "mt_junior-che-base",
+      "strength": "soft",
+      "reason": "检验酸碱性先要认识碱"
+    },
+    {
+      "topicId": "mt_junior-che-ph",
+      "prerequisiteId": "mt_junior-che-neutralization",
+      "strength": "soft",
+      "reason": "pH 变化可判断中和进行程度"
+    },
+    {
+      "topicId": "mt_junior-che-salt-fertilizer",
+      "prerequisiteId": "mt_junior-che-neutralization",
+      "strength": "hard",
+      "reason": "中和反应的产物之一是盐"
+    },
+    {
+      "topicId": "mt_junior-che-salt-fertilizer",
+      "prerequisiteId": "mt_junior-che-equation-balance",
+      "strength": "soft",
+      "reason": "复分解反应方程式也需要配平"
+    },
+    {
+      "topicId": "mt_junior-che-combustion",
+      "prerequisiteId": "mt_junior-che-oxygen-property",
+      "strength": "hard",
+      "reason": "燃烧是物质与氧气的反应"
+    },
+    {
+      "topicId": "mt_junior-che-combustion",
+      "prerequisiteId": "mt_junior-che-change-property",
+      "strength": "soft",
+      "reason": "燃烧属于化学变化"
+    },
+    {
+      "topicId": "mt_junior-che-energy",
+      "prerequisiteId": "mt_junior-che-combustion",
+      "strength": "hard",
+      "reason": "燃料利用建立在燃烧原理之上"
+    },
+    {
+      "topicId": "mt_junior-che-energy",
+      "prerequisiteId": "mt_junior-che-co2-property",
+      "strength": "soft",
+      "reason": "燃料燃烧会产生二氧化碳"
+    },
+    {
+      "topicId": "mt_junior-che-energy",
+      "prerequisiteId": "mt_junior-che-hydrogen",
+      "strength": "soft",
+      "reason": "氢气是理想的高能清洁燃料"
+    },
+    {
+      "topicId": "mt_junior-che-health",
+      "prerequisiteId": "mt_junior-che-element",
+      "strength": "soft",
+      "reason": "化学元素与人体健康密切相关"
+    },
+    {
+      "topicId": "mt_junior-che-material-env",
+      "prerequisiteId": "mt_junior-che-energy",
+      "strength": "soft",
+      "reason": "材料与环境问题多源于能源利用"
+    },
+    {
+      "topicId": "mt_junior-che-material-env",
+      "prerequisiteId": "mt_junior-che-co2-property",
+      "strength": "soft",
+      "reason": "温室效应与二氧化碳排放有关"
+    },
+    {
+      "topicId": "mt_junior-his-source-type",
+      "prerequisiteId": "mt_junior-his-chronology",
+      "strength": "soft",
+      "reason": "先有时序框架再谈史料分类"
+    },
+    {
+      "topicId": "mt_junior-his-historical-map",
+      "prerequisiteId": "mt_junior-his-chronology",
+      "strength": "soft",
+      "reason": "读图要先确定所处时段"
+    },
+    {
+      "topicId": "mt_junior-his-evidence-analysis",
+      "prerequisiteId": "mt_junior-his-source-type",
+      "strength": "hard",
+      "reason": "辨析先要知道史料类型"
+    },
+    {
+      "topicId": "mt_junior-his-evidence-analysis",
+      "prerequisiteId": "mt_junior-his-historical-map",
+      "strength": "soft",
+      "reason": "图像也是一种待证史料"
+    },
+    {
+      "topicId": "mt_junior-his-cause-effect",
+      "prerequisiteId": "mt_junior-his-evidence-analysis",
+      "strength": "hard",
+      "reason": "因果判断依赖可靠证据"
+    },
+    {
+      "topicId": "mt_junior-his-historical-explanation",
+      "prerequisiteId": "mt_junior-his-cause-effect",
+      "strength": "hard",
+      "reason": "解释建立在因果分析之上"
+    },
+    {
+      "topicId": "mt_junior-his-prehistoric",
+      "prerequisiteId": "mt_junior-his-source-type",
+      "strength": "soft",
+      "reason": "化石属于实物史料"
+    },
+    {
+      "topicId": "mt_junior-his-early-agriculture",
+      "prerequisiteId": "mt_junior-his-prehistoric",
+      "strength": "hard",
+      "reason": "农耕出现晚于采集狩猎阶段"
+    },
+    {
+      "topicId": "mt_junior-his-xia-shang-zhou",
+      "prerequisiteId": "mt_junior-his-early-agriculture",
+      "strength": "soft",
+      "reason": "农业定居是国家产生的基础"
+    },
+    {
+      "topicId": "mt_junior-his-xia-shang-zhou",
+      "prerequisiteId": "mt_junior-his-evidence-analysis",
+      "strength": "soft",
+      "reason": "甲骨与青铜可互为佐证"
+    },
+    {
+      "topicId": "mt_junior-his-chunqiu-zhanguo",
+      "prerequisiteId": "mt_junior-his-xia-shang-zhou",
+      "strength": "hard",
+      "reason": "东周变局承接西周制度"
+    },
+    {
+      "topicId": "mt_junior-his-chunqiu-zhanguo",
+      "prerequisiteId": "mt_junior-his-cause-effect",
+      "strength": "soft",
+      "reason": "变法是典型因果案例"
+    },
+    {
+      "topicId": "mt_junior-his-hundred-schools",
+      "prerequisiteId": "mt_junior-his-chunqiu-zhanguo",
+      "strength": "hard",
+      "reason": "百家争鸣源于战国剧变"
+    },
+    {
+      "topicId": "mt_junior-his-hundred-schools",
+      "prerequisiteId": "mt_junior-his-historical-explanation",
+      "strength": "soft",
+      "reason": "评价诸子要回到当时"
+    },
+    {
+      "topicId": "mt_junior-his-qin-unify",
+      "prerequisiteId": "mt_junior-his-chunqiu-zhanguo",
+      "strength": "hard",
+      "reason": "商鞅变法奠定统一的根基"
+    },
+    {
+      "topicId": "mt_junior-his-han-unity",
+      "prerequisiteId": "mt_junior-his-qin-unify",
+      "strength": "hard",
+      "reason": "汉承秦制又发展大一统"
+    },
+    {
+      "topicId": "mt_junior-his-han-unity",
+      "prerequisiteId": "mt_junior-his-historical-map",
+      "strength": "hard",
+      "reason": "丝路要用历史地图呈现"
+    },
+    {
+      "topicId": "mt_junior-his-han-culture",
+      "prerequisiteId": "mt_junior-his-han-unity",
+      "strength": "soft",
+      "reason": "文化繁荣依托统一的国家"
+    },
+    {
+      "topicId": "mt_junior-his-three-kingdoms-develop",
+      "prerequisiteId": "mt_junior-his-han-unity",
+      "strength": "hard",
+      "reason": "东汉末年分裂演成三国"
+    },
+    {
+      "topicId": "mt_junior-his-northern-wei",
+      "prerequisiteId": "mt_junior-his-three-kingdoms-develop",
+      "strength": "hard",
+      "reason": "北朝继承北方的民族交融"
+    },
+    {
+      "topicId": "mt_junior-his-sui-tang-rise",
+      "prerequisiteId": "mt_junior-his-northern-wei",
+      "strength": "soft",
+      "reason": "隋唐盛世承接北方的融合"
+    },
+    {
+      "topicId": "mt_junior-his-tang-downfall",
+      "prerequisiteId": "mt_junior-his-sui-tang-rise",
+      "strength": "hard",
+      "reason": "衰变发生在盛世的制度上"
+    },
+    {
+      "topicId": "mt_junior-his-song-liao-jin",
+      "prerequisiteId": "mt_junior-his-tang-downfall",
+      "strength": "soft",
+      "reason": "唐末藩镇割据引出分裂"
+    },
+    {
+      "topicId": "mt_junior-his-song-economy",
+      "prerequisiteId": "mt_junior-his-song-liao-jin",
+      "strength": "soft",
+      "reason": "政权格局影响经济形态"
+    },
+    {
+      "topicId": "mt_junior-his-song-economy",
+      "prerequisiteId": "mt_junior-his-three-kingdoms-develop",
+      "strength": "soft",
+      "reason": "江南开发为南移奠基"
+    },
+    {
+      "topicId": "mt_junior-his-ming-autocracy",
+      "prerequisiteId": "mt_junior-his-song-liao-jin",
+      "strength": "hard",
+      "reason": "行省制度为明代所沿袭"
+    },
+    {
+      "topicId": "mt_junior-his-qing-frontier",
+      "prerequisiteId": "mt_junior-his-ming-autocracy",
+      "strength": "soft",
+      "reason": "清的政治框架源自明代"
+    },
+    {
+      "topicId": "mt_junior-his-ming-qing-culture",
+      "prerequisiteId": "mt_junior-his-song-economy",
+      "strength": "soft",
+      "reason": "明清经济承接宋代积累"
+    },
+    {
+      "topicId": "mt_junior-his-ming-qing-culture",
+      "prerequisiteId": "mt_junior-his-ming-autocracy",
+      "strength": "soft",
+      "reason": "集权与海禁影响科技外贸"
+    },
+    {
+      "topicId": "mt_junior-his-opium-war",
+      "prerequisiteId": "mt_junior-his-ming-qing-culture",
+      "strength": "soft",
+      "reason": "闭关自守埋下落后的隐患"
+    },
+    {
+      "topicId": "mt_junior-his-second-opium-taiping",
+      "prerequisiteId": "mt_junior-his-opium-war",
+      "strength": "hard",
+      "reason": "半殖民地加深引发再起战端"
+    },
+    {
+      "topicId": "mt_junior-his-self-strengthening",
+      "prerequisiteId": "mt_junior-his-second-opium-taiping",
+      "strength": "hard",
+      "reason": "内忧外患逼出洋务自强"
+    },
+    {
+      "topicId": "mt_junior-his-jiawu-war",
+      "prerequisiteId": "mt_junior-his-self-strengthening",
+      "strength": "soft",
+      "reason": "甲午战败宣告自强努力失败"
+    },
+    {
+      "topicId": "mt_junior-his-wuxu-reform",
+      "prerequisiteId": "mt_junior-his-jiawu-war",
+      "strength": "hard",
+      "reason": "瓜分危机催生制度变革"
+    },
+    {
+      "topicId": "mt_junior-his-boxer-xinchou",
+      "prerequisiteId": "mt_junior-his-jiawu-war",
+      "strength": "soft",
+      "reason": "危机加深才有义和团兴起"
+    },
+    {
+      "topicId": "mt_junior-his-xinhai-revolution",
+      "prerequisiteId": "mt_junior-his-wuxu-reform",
+      "strength": "soft",
+      "reason": "改良失败之后转向革命"
+    },
+    {
+      "topicId": "mt_junior-his-xinhai-revolution",
+      "prerequisiteId": "mt_junior-his-boxer-xinchou",
+      "strength": "soft",
+      "reason": "清廷失信使共和成为共识"
+    },
+    {
+      "topicId": "mt_junior-his-may4-ccp",
+      "prerequisiteId": "mt_junior-his-xinhai-revolution",
+      "strength": "hard",
+      "reason": "共和未成转向思想与政治革命"
+    },
+    {
+      "topicId": "mt_junior-his-may4-ccp",
+      "prerequisiteId": "mt_junior-his-historical-explanation",
+      "strength": "soft",
+      "reason": "评价五四要回到当时环境"
+    },
+    {
+      "topicId": "mt_junior-his-revolutionary-road",
+      "prerequisiteId": "mt_junior-his-may4-ccp",
+      "strength": "hard",
+      "reason": "有了党组织才有武装斗争"
+    },
+    {
+      "topicId": "mt_junior-his-resistance-war",
+      "prerequisiteId": "mt_junior-his-revolutionary-road",
+      "strength": "hard",
+      "reason": "长征之后党领导全民族抗战"
+    },
+    {
+      "topicId": "mt_junior-his-resistance-war",
+      "prerequisiteId": "mt_junior-his-jiawu-war",
+      "strength": "soft",
+      "reason": "日本侵华由来已久且步步深入"
+    },
+    {
+      "topicId": "mt_junior-his-liberation-war",
+      "prerequisiteId": "mt_junior-his-resistance-war",
+      "strength": "hard",
+      "reason": "战后力量对比决定和战走向"
+    },
+    {
+      "topicId": "mt_junior-his-modern-economy-life",
+      "prerequisiteId": "mt_junior-his-self-strengthening",
+      "strength": "soft",
+      "reason": "近代工业从洋务企业起步"
+    },
+    {
+      "topicId": "mt_junior-his-modern-economy-life",
+      "prerequisiteId": "mt_junior-his-evidence-analysis",
+      "strength": "soft",
+      "reason": "报刊照片是近代新史料"
+    },
+    {
+      "topicId": "mt_junior-his-prc-founding",
+      "prerequisiteId": "mt_junior-his-liberation-war",
+      "strength": "hard",
+      "reason": "解放战争胜利才有新中国"
+    },
+    {
+      "topicId": "mt_junior-his-prc-founding",
+      "prerequisiteId": "mt_junior-his-historical-explanation",
+      "strength": "soft",
+      "reason": "评价开国大典要用史实"
+    },
+    {
+      "topicId": "mt_junior-his-socialist-transformation",
+      "prerequisiteId": "mt_junior-his-prc-founding",
+      "strength": "hard",
+      "reason": "政权巩固之后才能搞建设"
+    },
+    {
+      "topicId": "mt_junior-his-construction-exploration",
+      "prerequisiteId": "mt_junior-his-socialist-transformation",
+      "strength": "hard",
+      "reason": "制度确立才进入建设阶段"
+    },
+    {
+      "topicId": "mt_junior-his-reform-opening",
+      "prerequisiteId": "mt_junior-his-construction-exploration",
+      "strength": "hard",
+      "reason": "总结教训才走改革开放"
+    },
+    {
+      "topicId": "mt_junior-his-ethnic-reunification",
+      "prerequisiteId": "mt_junior-his-prc-founding",
+      "strength": "soft",
+      "reason": "建国之初确立民族区域自治"
+    },
+    {
+      "topicId": "mt_junior-his-ethnic-reunification",
+      "prerequisiteId": "mt_junior-his-reform-opening",
+      "strength": "soft",
+      "reason": "一国两制在新时期提出"
+    },
+    {
+      "topicId": "mt_junior-his-diplomacy-defense",
+      "prerequisiteId": "mt_junior-his-prc-founding",
+      "strength": "soft",
+      "reason": "外交政策自建国之日起确立"
+    },
+    {
+      "topicId": "mt_junior-his-science-life",
+      "prerequisiteId": "mt_junior-his-reform-opening",
+      "strength": "soft",
+      "reason": "科技飞跃与生活改善始于改革"
+    },
+    {
+      "topicId": "mt_junior-his-ancient-river-civilizations",
+      "prerequisiteId": "mt_junior-his-source-type",
+      "strength": "soft",
+      "reason": "石碑与法典是实物史料"
+    },
+    {
+      "topicId": "mt_junior-his-greek-roman-world",
+      "prerequisiteId": "mt_junior-his-ancient-river-civilizations",
+      "strength": "soft",
+      "reason": "地中海文明承接东方成果"
+    },
+    {
+      "topicId": "mt_junior-his-medieval-europe",
+      "prerequisiteId": "mt_junior-his-greek-roman-world",
+      "strength": "hard",
+      "reason": "中世纪制度脱胎于罗马时代"
+    },
+    {
+      "topicId": "mt_junior-his-medieval-asia",
+      "prerequisiteId": "mt_junior-his-chronology",
+      "strength": "soft",
+      "reason": "要摆准亚洲各国的年代"
+    },
+    {
+      "topicId": "mt_junior-his-renaissance-navigation",
+      "prerequisiteId": "mt_junior-his-medieval-europe",
+      "strength": "hard",
+      "reason": "近代化萌芽于中世纪城市"
+    },
+    {
+      "topicId": "mt_junior-his-renaissance-navigation",
+      "prerequisiteId": "mt_junior-his-han-unity",
+      "strength": "soft",
+      "reason": "丝路勾起欧洲对东方的向往"
+    },
+    {
+      "topicId": "mt_junior-his-early-colonialism",
+      "prerequisiteId": "mt_junior-his-renaissance-navigation",
+      "strength": "hard",
+      "reason": "航路开辟之后才有殖民"
+    },
+    {
+      "topicId": "mt_junior-his-british-revolution",
+      "prerequisiteId": "mt_junior-his-early-colonialism",
+      "strength": "soft",
+      "reason": "海外收益壮大了新贵族"
+    },
+    {
+      "topicId": "mt_junior-his-american-french-revolutions",
+      "prerequisiteId": "mt_junior-his-british-revolution",
+      "strength": "soft",
+      "reason": "英国制度观念影响法美"
+    },
+    {
+      "topicId": "mt_junior-his-industrial-revolution",
+      "prerequisiteId": "mt_junior-his-british-revolution",
+      "strength": "hard",
+      "reason": "君主立宪提供了制度前提"
+    },
+    {
+      "topicId": "mt_junior-his-marxism-labour",
+      "prerequisiteId": "mt_junior-his-industrial-revolution",
+      "strength": "hard",
+      "reason": "工人处境催生马克思主义"
+    },
+    {
+      "topicId": "mt_junior-his-capitalism-expansion",
+      "prerequisiteId": "mt_junior-his-industrial-revolution",
+      "strength": "hard",
+      "reason": "工业扩张推动各国变革"
+    },
+    {
+      "topicId": "mt_junior-his-second-industrial",
+      "prerequisiteId": "mt_junior-his-industrial-revolution",
+      "strength": "hard",
+      "reason": "第二次是第一次的深化"
+    },
+    {
+      "topicId": "mt_junior-his-world-war-one",
+      "prerequisiteId": "mt_junior-his-second-industrial",
+      "strength": "hard",
+      "reason": "列强发展不平衡导致大战"
+    },
+    {
+      "topicId": "mt_junior-his-soviet-revolution",
+      "prerequisiteId": "mt_junior-his-marxism-labour",
+      "strength": "hard",
+      "reason": "十月革命实践社会主义理论"
+    },
+    {
+      "topicId": "mt_junior-his-crisis-and-war",
+      "prerequisiteId": "mt_junior-his-world-war-one",
+      "strength": "soft",
+      "reason": "战后条约埋下新的战火"
+    },
+    {
+      "topicId": "mt_junior-his-crisis-and-war",
+      "prerequisiteId": "mt_junior-his-soviet-revolution",
+      "strength": "soft",
+      "reason": "苏联改变了战争的力量格局"
+    },
+    {
+      "topicId": "mt_junior-his-postwar-world",
+      "prerequisiteId": "mt_junior-his-crisis-and-war",
+      "strength": "hard",
+      "reason": "战后格局由二战直接塑造"
+    },
+    {
+      "topicId": "mt_junior-his-postwar-world",
+      "prerequisiteId": "mt_junior-his-historical-explanation",
+      "strength": "soft",
+      "reason": "评价冷战要区分事实与立场"
+    },
+    {
+      "topicId": "mt_junior-geo-globe",
+      "prerequisiteId": "mt_junior-geo-earth-shape",
+      "strength": "hard",
+      "reason": "地球仪是按地球真实形状制作的模型"
+    },
+    {
+      "topicId": "mt_junior-geo-latlon",
+      "prerequisiteId": "mt_junior-geo-globe",
+      "strength": "hard",
+      "reason": "经纬度要借助地球仪来理解"
+    },
+    {
+      "topicId": "mt_junior-geo-latlon",
+      "prerequisiteId": "mt_junior-geo-earth-shape",
+      "strength": "soft",
+      "reason": "定位以地球是球体为前提"
+    },
+    {
+      "topicId": "mt_junior-geo-earth-motion",
+      "prerequisiteId": "mt_junior-geo-globe",
+      "strength": "hard",
+      "reason": "自转公转常用地球仪演示"
+    },
+    {
+      "topicId": "mt_junior-geo-earth-motion",
+      "prerequisiteId": "mt_junior-geo-earth-shape",
+      "strength": "soft",
+      "reason": "运动建立在球体形状之上"
+    },
+    {
+      "topicId": "mt_junior-geo-motion-effect",
+      "prerequisiteId": "mt_junior-geo-earth-motion",
+      "strength": "hard",
+      "reason": "地理现象由地球运动产生"
+    },
+    {
+      "topicId": "mt_junior-geo-motion-effect",
+      "prerequisiteId": "mt_junior-geo-latlon",
+      "strength": "soft",
+      "reason": "五带与昼夜长短由纬度决定"
+    },
+    {
+      "topicId": "mt_junior-geo-map-element",
+      "prerequisiteId": "mt_junior-geo-globe",
+      "strength": "soft",
+      "reason": "地图是地球表面的平面缩小"
+    },
+    {
+      "topicId": "mt_junior-geo-contour",
+      "prerequisiteId": "mt_junior-geo-map-element",
+      "strength": "hard",
+      "reason": "读等高线图先要会用比例尺方向"
+    },
+    {
+      "topicId": "mt_junior-geo-land-ocean",
+      "prerequisiteId": "mt_junior-geo-globe",
+      "strength": "hard",
+      "reason": "大洲大洋的位置靠地球仪建立"
+    },
+    {
+      "topicId": "mt_junior-geo-plate",
+      "prerequisiteId": "mt_junior-geo-land-ocean",
+      "strength": "hard",
+      "reason": "板块运动解释海陆轮廓与分布"
+    },
+    {
+      "topicId": "mt_junior-geo-weather",
+      "prerequisiteId": "mt_junior-geo-map-element",
+      "strength": "soft",
+      "reason": "看天气图需要基本的读图能力"
+    },
+    {
+      "topicId": "mt_junior-geo-temperature",
+      "prerequisiteId": "mt_junior-geo-latlon",
+      "strength": "hard",
+      "reason": "气温分布随纬度高低而变化"
+    },
+    {
+      "topicId": "mt_junior-geo-temperature",
+      "prerequisiteId": "mt_junior-geo-weather",
+      "strength": "soft",
+      "reason": "气温是描述天气的基本要素"
+    },
+    {
+      "topicId": "mt_junior-geo-precipitation",
+      "prerequisiteId": "mt_junior-geo-weather",
+      "strength": "soft",
+      "reason": "降水也是描述天气的要素"
+    },
+    {
+      "topicId": "mt_junior-geo-precipitation",
+      "prerequisiteId": "mt_junior-geo-latlon",
+      "strength": "soft",
+      "reason": "降水分布与所处纬度有关"
+    },
+    {
+      "topicId": "mt_junior-geo-climate-type",
+      "prerequisiteId": "mt_junior-geo-temperature",
+      "strength": "hard",
+      "reason": "判断气候类型先看气温资料"
+    },
+    {
+      "topicId": "mt_junior-geo-climate-type",
+      "prerequisiteId": "mt_junior-geo-precipitation",
+      "strength": "hard",
+      "reason": "降水季节分配决定气候类型"
+    },
+    {
+      "topicId": "mt_junior-geo-climate-type",
+      "prerequisiteId": "mt_junior-geo-motion-effect",
+      "strength": "soft",
+      "reason": "五带是气候带划分的基础"
+    },
+    {
+      "topicId": "mt_junior-geo-climate-factor",
+      "prerequisiteId": "mt_junior-geo-latlon",
+      "strength": "soft",
+      "reason": "纬度位置是首要影响因素"
+    },
+    {
+      "topicId": "mt_junior-geo-climate-factor",
+      "prerequisiteId": "mt_junior-geo-climate-type",
+      "strength": "soft",
+      "reason": "因素用来解释类型的分布"
+    },
+    {
+      "topicId": "mt_junior-geo-asia",
+      "prerequisiteId": "mt_junior-geo-land-ocean",
+      "strength": "hard",
+      "reason": "认识亚洲先要认清大陆与大洋"
+    },
+    {
+      "topicId": "mt_junior-geo-asia",
+      "prerequisiteId": "mt_junior-geo-climate-factor",
+      "strength": "soft",
+      "reason": "亚洲气候成因靠因素分析"
+    },
+    {
+      "topicId": "mt_junior-geo-asia",
+      "prerequisiteId": "mt_junior-geo-contour",
+      "strength": "soft",
+      "reason": "读亚洲地形图要会看等高线"
+    },
+    {
+      "topicId": "mt_junior-geo-japan",
+      "prerequisiteId": "mt_junior-geo-asia",
+      "strength": "soft",
+      "reason": "日本位于亚洲东部"
+    },
+    {
+      "topicId": "mt_junior-geo-japan",
+      "prerequisiteId": "mt_junior-geo-plate",
+      "strength": "hard",
+      "reason": "多火山地震由板块位置解释"
+    },
+    {
+      "topicId": "mt_junior-geo-seasia",
+      "prerequisiteId": "mt_junior-geo-asia",
+      "strength": "soft",
+      "reason": "东南亚属于亚洲的东南部"
+    },
+    {
+      "topicId": "mt_junior-geo-seasia",
+      "prerequisiteId": "mt_junior-geo-climate-type",
+      "strength": "hard",
+      "reason": "本区属于热带气候类型"
+    },
+    {
+      "topicId": "mt_junior-geo-india",
+      "prerequisiteId": "mt_junior-geo-asia",
+      "strength": "soft",
+      "reason": "印度位于亚洲南部"
+    },
+    {
+      "topicId": "mt_junior-geo-india",
+      "prerequisiteId": "mt_junior-geo-climate-type",
+      "strength": "hard",
+      "reason": "热带季风气候是核心特征"
+    },
+    {
+      "topicId": "mt_junior-geo-india",
+      "prerequisiteId": "mt_junior-geo-climate-chart",
+      "strength": "soft",
+      "reason": "靠降水柱状图判断旱雨两季"
+    },
+    {
+      "topicId": "mt_junior-geo-russia",
+      "prerequisiteId": "mt_junior-geo-asia",
+      "strength": "soft",
+      "reason": "俄罗斯地跨亚洲北部"
+    },
+    {
+      "topicId": "mt_junior-geo-russia",
+      "prerequisiteId": "mt_junior-geo-land-ocean",
+      "strength": "soft",
+      "reason": "要认清其所临的大洋"
+    },
+    {
+      "topicId": "mt_junior-geo-mideast",
+      "prerequisiteId": "mt_junior-geo-land-ocean",
+      "strength": "hard",
+      "reason": "三洲五海的位置是核心"
+    },
+    {
+      "topicId": "mt_junior-geo-europe-west",
+      "prerequisiteId": "mt_junior-geo-climate-type",
+      "strength": "hard",
+      "reason": "温带海洋性气候决定畜牧业"
+    },
+    {
+      "topicId": "mt_junior-geo-europe-west",
+      "prerequisiteId": "mt_junior-geo-land-ocean",
+      "strength": "soft",
+      "reason": "要认清其西临的大洋"
+    },
+    {
+      "topicId": "mt_junior-geo-africa",
+      "prerequisiteId": "mt_junior-geo-climate-type",
+      "strength": "hard",
+      "reason": "热带草原气候是主要背景"
+    },
+    {
+      "topicId": "mt_junior-geo-africa",
+      "prerequisiteId": "mt_junior-geo-latlon",
+      "strength": "soft",
+      "reason": "本区主要位于低纬度地带"
+    },
+    {
+      "topicId": "mt_junior-geo-australia",
+      "prerequisiteId": "mt_junior-geo-land-ocean",
+      "strength": "soft",
+      "reason": "要认清其孤立的海陆位置"
+    },
+    {
+      "topicId": "mt_junior-geo-australia",
+      "prerequisiteId": "mt_junior-geo-climate-type",
+      "strength": "soft",
+      "reason": "气候类型呈半环状分布"
+    },
+    {
+      "topicId": "mt_junior-geo-americas",
+      "prerequisiteId": "mt_junior-geo-latlon",
+      "strength": "soft",
+      "reason": "两国分处北半球与南半球"
+    },
+    {
+      "topicId": "mt_junior-geo-americas",
+      "prerequisiteId": "mt_junior-geo-climate-type",
+      "strength": "soft",
+      "reason": "两国气候类型差异明显"
+    },
+    {
+      "topicId": "mt_junior-geo-polar",
+      "prerequisiteId": "mt_junior-geo-latlon",
+      "strength": "hard",
+      "reason": "极地位置由高纬度确定"
+    },
+    {
+      "topicId": "mt_junior-geo-polar",
+      "prerequisiteId": "mt_junior-geo-earth-motion",
+      "strength": "hard",
+      "reason": "极昼极夜由地球公转产生"
+    },
+    {
+      "topicId": "mt_junior-geo-cn-territory",
+      "prerequisiteId": "mt_junior-geo-land-ocean",
+      "strength": "hard",
+      "reason": "先看世界海陆再定中国位置"
+    },
+    {
+      "topicId": "mt_junior-geo-cn-territory",
+      "prerequisiteId": "mt_junior-geo-latlon",
+      "strength": "hard",
+      "reason": "描述疆域需要经纬度位置"
+    },
+    {
+      "topicId": "mt_junior-geo-cn-admin",
+      "prerequisiteId": "mt_junior-geo-cn-territory",
+      "strength": "hard",
+      "reason": "行政区划建立在疆域之上"
+    },
+    {
+      "topicId": "mt_junior-geo-cn-population",
+      "prerequisiteId": "mt_junior-geo-cn-admin",
+      "strength": "soft",
+      "reason": "人口分布按省级行政区描述"
+    },
+    {
+      "topicId": "mt_junior-geo-cn-population",
+      "prerequisiteId": "mt_junior-geo-cn-territory",
+      "strength": "soft",
+      "reason": "人口多少与国土面积有关"
+    },
+    {
+      "topicId": "mt_junior-geo-cn-topography",
+      "prerequisiteId": "mt_junior-geo-contour",
+      "strength": "hard",
+      "reason": "认读中国地形要会看等高线"
+    },
+    {
+      "topicId": "mt_junior-geo-cn-topography",
+      "prerequisiteId": "mt_junior-geo-cn-territory",
+      "strength": "soft",
+      "reason": "地形分布要落在国土范围内"
+    },
+    {
+      "topicId": "mt_junior-geo-cn-climate",
+      "prerequisiteId": "mt_junior-geo-climate-type",
+      "strength": "hard",
+      "reason": "中国气候属于世界气候类型"
+    },
+    {
+      "topicId": "mt_junior-geo-cn-climate",
+      "prerequisiteId": "mt_junior-geo-climate-factor",
+      "strength": "hard",
+      "reason": "季风成因靠影响因素分析"
+    },
+    {
+      "topicId": "mt_junior-geo-cn-climate",
+      "prerequisiteId": "mt_junior-geo-climate-chart",
+      "strength": "hard",
+      "reason": "判读中国气候要靠资料图"
+    },
+    {
+      "topicId": "mt_junior-geo-cn-climate",
+      "prerequisiteId": "mt_junior-geo-cn-territory",
+      "strength": "soft",
+      "reason": "位置决定热量与水分条件"
+    },
+    {
+      "topicId": "mt_junior-geo-cn-river",
+      "prerequisiteId": "mt_junior-geo-cn-topography",
+      "strength": "hard",
+      "reason": "河流流向受地势高低制约"
+    },
+    {
+      "topicId": "mt_junior-geo-cn-river",
+      "prerequisiteId": "mt_junior-geo-cn-climate",
+      "strength": "hard",
+      "reason": "河流水文特征取决于降水"
+    },
+    {
+      "topicId": "mt_junior-geo-cn-disaster",
+      "prerequisiteId": "mt_junior-geo-cn-climate",
+      "strength": "hard",
+      "reason": "旱涝灾害与季风进退相关"
+    },
+    {
+      "topicId": "mt_junior-geo-cn-disaster",
+      "prerequisiteId": "mt_junior-geo-cn-topography",
+      "strength": "soft",
+      "reason": "地质灾害多与地形有关"
+    },
+    {
+      "topicId": "mt_junior-geo-cn-resource",
+      "prerequisiteId": "mt_junior-geo-cn-climate",
+      "strength": "soft",
+      "reason": "水资源分布与降水相关"
+    },
+    {
+      "topicId": "mt_junior-geo-cn-resource",
+      "prerequisiteId": "mt_junior-geo-cn-river",
+      "strength": "soft",
+      "reason": "水资源主要看河湖的多少"
+    },
+    {
+      "topicId": "mt_junior-geo-cn-resource",
+      "prerequisiteId": "mt_junior-geo-cn-territory",
+      "strength": "soft",
+      "reason": "总量丰富来自辽阔的国土"
+    },
+    {
+      "topicId": "mt_junior-geo-cn-agriculture",
+      "prerequisiteId": "mt_junior-geo-cn-climate",
+      "strength": "hard",
+      "reason": "作物分布取决于热量与降水"
+    },
+    {
+      "topicId": "mt_junior-geo-cn-agriculture",
+      "prerequisiteId": "mt_junior-geo-cn-topography",
+      "strength": "hard",
+      "reason": "因地制宜首先要看地形"
+    },
+    {
+      "topicId": "mt_junior-geo-cn-industry",
+      "prerequisiteId": "mt_junior-geo-cn-resource",
+      "strength": "hard",
+      "reason": "工业布局依赖自然资源分布"
+    },
+    {
+      "topicId": "mt_junior-geo-cn-industry",
+      "prerequisiteId": "mt_junior-geo-cn-transport",
+      "strength": "soft",
+      "reason": "工业多沿交通干线分布"
+    },
+    {
+      "topicId": "mt_junior-geo-cn-transport",
+      "prerequisiteId": "mt_junior-geo-cn-topography",
+      "strength": "hard",
+      "reason": "铁路走向受地形条件限制"
+    },
+    {
+      "topicId": "mt_junior-geo-cn-transport",
+      "prerequisiteId": "mt_junior-geo-cn-admin",
+      "strength": "soft",
+      "reason": "交通枢纽多为省会城市"
+    },
+    {
+      "topicId": "mt_junior-geo-region-diff",
+      "prerequisiteId": "mt_junior-geo-cn-climate",
+      "strength": "hard",
+      "reason": "气候是区域划分的主导因素"
+    },
+    {
+      "topicId": "mt_junior-geo-region-diff",
+      "prerequisiteId": "mt_junior-geo-cn-topography",
+      "strength": "hard",
+      "reason": "地形是划分区域的重要依据"
+    },
+    {
+      "topicId": "mt_junior-geo-region-diff",
+      "prerequisiteId": "mt_junior-geo-cn-admin",
+      "strength": "soft",
+      "reason": "区域范围要按省区来描述"
+    },
+    {
+      "topicId": "mt_junior-geo-region-north",
+      "prerequisiteId": "mt_junior-geo-region-diff",
+      "strength": "hard",
+      "reason": "先有分区再学各区域特征"
+    },
+    {
+      "topicId": "mt_junior-geo-region-north",
+      "prerequisiteId": "mt_junior-geo-cn-agriculture",
+      "strength": "hard",
+      "reason": "旱作农业是北方核心内容"
+    },
+    {
+      "topicId": "mt_junior-geo-region-south",
+      "prerequisiteId": "mt_junior-geo-region-diff",
+      "strength": "hard",
+      "reason": "先有分区再学各区域特征"
+    },
+    {
+      "topicId": "mt_junior-geo-region-south",
+      "prerequisiteId": "mt_junior-geo-cn-agriculture",
+      "strength": "hard",
+      "reason": "水田农业是南方核心内容"
+    },
+    {
+      "topicId": "mt_junior-geo-region-northwest",
+      "prerequisiteId": "mt_junior-geo-region-diff",
+      "strength": "hard",
+      "reason": "先有分区再学各区域特征"
+    },
+    {
+      "topicId": "mt_junior-geo-region-northwest",
+      "prerequisiteId": "mt_junior-geo-cn-climate",
+      "strength": "soft",
+      "reason": "干旱主要由海陆位置造成"
+    },
+    {
+      "topicId": "mt_junior-geo-region-tibet",
+      "prerequisiteId": "mt_junior-geo-region-diff",
+      "strength": "hard",
+      "reason": "先有分区再学各区域特征"
+    },
+    {
+      "topicId": "mt_junior-geo-region-tibet",
+      "prerequisiteId": "mt_junior-geo-cn-topography",
+      "strength": "hard",
+      "reason": "高寒特征由海拔高度决定"
+    },
+    {
+      "topicId": "mt_junior-geo-cn-world",
+      "prerequisiteId": "mt_junior-geo-cn-industry",
+      "strength": "soft",
+      "reason": "发展成就以产业实力为基础"
+    },
+    {
+      "topicId": "mt_junior-geo-cn-world",
+      "prerequisiteId": "mt_junior-geo-region-diff",
+      "strength": "soft",
+      "reason": "认识区域差异才能谈协调发展"
+    },
+    {
+      "topicId": "mt_junior-geo-local-survey",
+      "prerequisiteId": "mt_junior-geo-map-apply",
+      "strength": "hard",
+      "reason": "调查家乡要会选择并使用地图"
+    },
+    {
+      "topicId": "mt_junior-geo-local-feature",
+      "prerequisiteId": "mt_junior-geo-local-survey",
+      "strength": "hard",
+      "reason": "特征归纳建立在调查资料上"
+    },
+    {
+      "topicId": "mt_junior-geo-local-feature",
+      "prerequisiteId": "mt_junior-geo-region-diff",
+      "strength": "hard",
+      "reason": "家乡特征要放在所属区域中看"
+    },
+    {
+      "topicId": "mt_junior-geo-local-develop",
+      "prerequisiteId": "mt_junior-geo-local-feature",
+      "strength": "hard",
+      "reason": "提出建议要先摸清家乡特征"
+    },
+    {
+      "topicId": "mt_junior-geo-local-develop",
+      "prerequisiteId": "mt_junior-geo-cn-world",
+      "strength": "soft",
+      "reason": "把家乡放进国家发展背景中看"
+    },
+    {
+      "topicId": "mt_junior-geo-climate-chart",
+      "prerequisiteId": "mt_junior-geo-temperature",
+      "strength": "hard",
+      "reason": "气温曲线是资料图的一部分"
+    },
+    {
+      "topicId": "mt_junior-geo-climate-chart",
+      "prerequisiteId": "mt_junior-geo-precipitation",
+      "strength": "hard",
+      "reason": "降水柱状图同样要会读"
+    },
+    {
+      "topicId": "mt_junior-geo-stat-chart",
+      "prerequisiteId": "mt_junior-geo-climate-chart",
+      "strength": "soft",
+      "reason": "统计图表与资料图读法相通"
+    },
+    {
+      "topicId": "mt_junior-geo-map-apply",
+      "prerequisiteId": "mt_junior-geo-map-element",
+      "strength": "hard",
+      "reason": "选用地图先要懂地图三要素"
+    },
+    {
+      "topicId": "mt_junior-geo-map-apply",
+      "prerequisiteId": "mt_junior-geo-contour",
+      "strength": "soft",
+      "reason": "出行选址有时要看地形图"
+    },
+    {
+      "topicId": "mt_junior-geo-practice",
+      "prerequisiteId": "mt_junior-geo-map-apply",
+      "strength": "hard",
+      "reason": "实践活动离不开地图的运用"
+    },
+    {
+      "topicId": "mt_junior-geo-practice",
+      "prerequisiteId": "mt_junior-geo-local-survey",
+      "strength": "soft",
+      "reason": "家乡调查是典型的实践任务"
     }
   ]
 }

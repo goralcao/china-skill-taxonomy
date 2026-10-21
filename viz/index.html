@@ -15,6 +15,10 @@
     --math: #4f8ff7;
     --chinese: #f76e6e;
     --english: #3ecf9a;
+    --physics: #a78bfa;
+    --chemistry: #fb923c;
+    --history: #22d3ee;
+    --geography: #a3e635;
     --accent: #ffd166;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -328,9 +332,7 @@
   </header>
   <div id="progress"></div>
   <div class="toolbar">
-    <span class="chip on" data-subject="数学"><span class="dot" style="background:var(--math)"></span>数学</span>
-    <span class="chip on" data-subject="语文"><span class="dot" style="background:var(--chinese)"></span>语文</span>
-    <span class="chip on" data-subject="英语"><span class="dot" style="background:var(--english)"></span>英语</span>
+    <span id="subjectChips"></span>
     <span class="search-wrap">
       <input id="search" type="text" placeholder="搜索主题…（/ 键聚焦）" autocomplete="off">
       <div class="search-list" id="searchList"></div>
@@ -359,7 +361,7 @@
     <div id="legend">
       <button class="legend-toggle" id="btnLegend">图例</button>
       <div id="legendBody">
-        <div class="row"><span class="dot" style="background:var(--math)"></span>数学　<span class="dot" style="background:var(--chinese)"></span>语文　<span class="dot" style="background:var(--english)"></span>英语</div>
+        <div class="row" id="legendSubjects"></div>
         <div class="row"><span class="line"></span>硬依赖（不会先修就学不了）　<span class="line dash"></span>软依赖</div>
         <div class="row">大圆环 = 学科 · 中圆环 = 领域簇（数字为下辖知识点数）</div>
         <div class="row">纵轴 = 年级（1 年级在上，含初中 7~9 年级）· 圆点越大 = 枢纽主题</div>
@@ -444,7 +446,7 @@
   const MAX_TERM = MAX_GRADE * 2;   // 册次列数 = 年级 × 2（上下册）
 
   // ---------- 层级容器：学科 → 领域簇 → 知识点 ----------
-  const SUBJECT_LIST = ['数学', '语文', '英语'];
+  const SUBJECT_LIST = ['数学', '语文', '英语', '物理', '化学', '历史', '地理'];
   const clusterById = new Map(clusters.map(c => [c.id, c]));
   const subjectNodes = SUBJECT_LIST.map(s => ({
     id: 'subj-' + s, kind: 'subject', name: s, subject: s,
@@ -492,14 +494,15 @@
   }
 
   const targetYOf = (n) => ((n.gradeRangeStart - .5) / MAX_GRADE) * (H - 80) + 40;
+  // 学科横向锚点：按学科数均分画布宽度（学科增减时自动适配，不再硬编码三列）
+  const subjectX = (i) => W * (0.5 + (i - (SUBJECT_LIST.length - 1) / 2) * (0.8 / SUBJECT_LIST.length));
   function initPositions() {
     for (const s of subjectNodes) {
-      s.x = W * (0.16 + 0.34 * SUBJECT_LIST.indexOf(s.subject));
+      s.x = subjectX(SUBJECT_LIST.indexOf(s.subject));
       s.y = H * 0.5;
     }
     for (const c of clusterNodes) {
-      const si = SUBJECT_LIST.indexOf(c.subject);
-      c.x = W * (0.16 + 0.34 * si);
+      c.x = subjectX(SUBJECT_LIST.indexOf(c.subject));
       c.y = H * 0.5;
     }
     for (const n of nodes) {
@@ -564,7 +567,7 @@
       s.visible = activeSubjects.has(s.subject);
       const a = sacc.get(s.id);
       if (a && a.n) { s.x = a.x / a.n; s.y = a.y / a.n; }
-      else { s.x = W * (0.16 + 0.34 * SUBJECT_LIST.indexOf(s.subject)); s.y = H * 0.5; }
+      else { s.x = subjectX(SUBJECT_LIST.indexOf(s.subject)); s.y = H * 0.5; }
     }
   }
 
@@ -650,7 +653,8 @@
 
   // ---------- 交互状态 ----------
   let selected = null, hovered = null, showAllLabels = false;
-  const activeSubjects = new Set(['数学', '语文', '英语']);
+  // 默认全部学科可见（按 SUBJECT_LIST 初始化，新增学科自动纳入）
+  const activeSubjects = new Set(SUBJECT_LIST);
   let traceMode = null; // 'ancestors' | 'descendants'
   const traceSet = new Set();
 
@@ -661,9 +665,22 @@
   let domainFilter = '';                // '' = 全部领域
   let focusTarget = null, focusFrames = 0;
   let searchHits = [], selIndex = -1;
-  const subjectColor = { '数学': getComputedStyle(document.documentElement).getPropertyValue('--math').trim(),
-    '语文': getComputedStyle(document.documentElement).getPropertyValue('--chinese').trim(),
-    '英语': getComputedStyle(document.documentElement).getPropertyValue('--english').trim() };
+  const cssVar = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+  const subjectColor = {
+    '数学': cssVar('--math'), '语文': cssVar('--chinese'), '英语': cssVar('--english'),
+    '物理': cssVar('--physics'), '化学': cssVar('--chemistry'),
+    '历史': cssVar('--history'), '地理': cssVar('--geography'),
+  };
+  // 学科筛选按钮与图例配色按数据动态生成（新增学科无需改 DOM）
+  (function buildSubjectUI() {
+    const chips = SUBJECT_LIST.map(s =>
+      `<span class="chip on" data-subject="${s}"><span class="dot" style="background:${subjectColor[s]}"></span>${s}</span>`).join('');
+    const box = document.getElementById('subjectChips');
+    if (box) box.innerHTML = chips;
+    const lg = document.getElementById('legendSubjects');
+    if (lg) lg.innerHTML = SUBJECT_LIST.map(s =>
+      `<span class="dot" style="background:${subjectColor[s]}"></span>${s}　`).join('');
+  })();
 
   function closure(id, dir) {
     const set = new Set([id]);

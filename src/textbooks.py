@@ -211,6 +211,19 @@ DETAILED_VERSIONS = [
     },
 ]
 
+# —— 初中物理 / 化学 / 历史 / 地理（v0.13 新增）——
+import textbooks_chemistry  # noqa: E402
+import textbooks_geography  # noqa: E402
+import textbooks_history  # noqa: E402
+import textbooks_physics  # noqa: E402
+
+DETAILED_VERSIONS.extend([
+    textbooks_physics.PHYSICS_VERSION,
+    textbooks_chemistry.CHEMISTRY_VERSION,
+    textbooks_history.HISTORY_VERSION,
+    textbooks_geography.GEOGRAPHY_VERSION,
+])
+
 # ChinaTextbook 收录的小学教材版本清单（仅作来源记录，主题暂未对齐这些版本）
 CHINATEXTBOOK_PRIMARY_VERSIONS = {
     "语文": ["统编版"],
