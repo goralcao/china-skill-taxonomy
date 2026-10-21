@@ -51,8 +51,12 @@ import teaching_research_chinese_b  # noqa: E402
 import teaching_research_english  # noqa: E402
 import teaching_research_chinese_junior  # noqa: E402
 import teaching_research_english_junior  # noqa: E402
+import teaching_research_physics_junior  # noqa: E402
+import teaching_research_chemistry_junior  # noqa: E402
+import teaching_research_history_junior  # noqa: E402
+import teaching_research_geography_junior  # noqa: E402
 
-VERSION = "v0.13.0"
+VERSION = "v0.14.0"
 SCHEMA_VERSION = 1
 
 MODULES = [
@@ -77,6 +81,10 @@ RESEARCH_MODULES = [
     teaching_research_english,
     teaching_research_chinese_junior,
     teaching_research_english_junior,
+    teaching_research_physics_junior,
+    teaching_research_chemistry_junior,
+    teaching_research_history_junior,
+    teaching_research_geography_junior,
 ]
 
 RESEARCH_AUTHORSHIP = {
@@ -98,6 +106,19 @@ ALLOWED_SOURCES = {
     "《义务教育英语课程标准（2022年版）》": "https://basic.smartedu.cn/",
     "人教版《义务教育教科书·英语（PEP）》教师教学用书": "",
     "人教版《义务教育教科书·英语（PEP）》": "",
+    # —— v0.14：初中物理 / 化学 / 历史 / 地理 ——
+    "《义务教育物理课程标准（2022年版）》": "https://basic.smartedu.cn/",
+    "人教版《义务教育教科书·物理》教师教学用书": "https://www.pep.com.cn/",
+    "人教版《义务教育教科书·物理》": "",
+    "《义务教育化学课程标准（2022年版）》": "https://basic.smartedu.cn/",
+    "人教版《义务教育教科书·化学》教师教学用书": "https://www.pep.com.cn/",
+    "人教版《义务教育教科书·化学》": "",
+    "《义务教育历史课程标准（2022年版）》": "https://basic.smartedu.cn/",
+    "统编版《义务教育教科书·历史》教师教学用书": "",
+    "统编版《义务教育教科书·历史》": "",
+    "《义务教育地理课程标准（2022年版）》": "https://basic.smartedu.cn/",
+    "人教版《义务教育教科书·地理》教师教学用书": "https://www.pep.com.cn/",
+    "人教版《义务教育教科书·地理》": "",
 }
 
 STAGE_BY_GRADE = {

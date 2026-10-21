@@ -1041,7 +1041,9 @@
     if (oldRefs.length) cols.push(bookColumnHtml(oldRefs, '现役教材（修订前）'));
     if (newRefs.length) cols.push(bookColumnHtml(newRefs, '2024 年版课标修订教材'));
     else cols.push(`<div class="tb-col"><h4>2024 年版课标修订教材</h4>
-      <div class="tb-unit">该知识点所在册次尚未发布 2024 版教材，暂沿用左侧现役版本。</div></div>`);
+      <div class="tb-unit">${SUBJECTS_2024.has(n.subject)
+        ? '该知识点所在册次尚未发布 2024 版教材，暂沿用左侧现役版本。'
+        : '本学科暂未接入 2024 年版修订教材目录，暂沿用左侧现役版本。'}</div></div>`);
     document.getElementById('tbBody').innerHTML = cols.join('');
     document.getElementById('tbModal').classList.add('open');
   }
@@ -1065,7 +1067,9 @@
         h += `<div style="margin-top:8px"><button class="act-btn" id="btnTbCompare" style="min-width:0">📖 教材版本对照</button></div>`;
       }
     } else {
-      h += `<div class="tb-note" style="border-left-color:var(--line)">该知识点所在册次尚未发布 2024 版教材，以上为现役版本。</div>`;
+      h += `<div class="tb-note" style="border-left-color:var(--line)">${SUBJECTS_2024.has(n.subject)
+        ? '该知识点所在册次尚未发布 2024 版教材，以上为现役版本。'
+        : '本学科暂未接入 2024 年版修订教材目录，以上为现役版本。'}</div>`;
     }
     return h;
   }
@@ -1471,6 +1475,9 @@
   standardsDoc.forEach(s => stdByCode.set(s.code, s));
   const bookNames = {};
   const textbooksDoc = D.textbooks || {};
+  // 有 2024 版修订目录的学科（数学/语文/英语）；其余学科措辞不同，避免误导
+  const SUBJECTS_2024 = new Set((textbooksDoc.versions || [])
+    .filter(v => /-2024$/.test(v.slug) && v.subject).map(v => v.subject));
   (textbooksDoc.versions || []).forEach(v => {
     bookNames[v.slug] = { name: v.name, books: {} };
     v.books.forEach(b => bookNames[v.slug].books[b.slug] = b);
