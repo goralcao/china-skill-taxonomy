@@ -61,8 +61,10 @@ import teaching_research_physics_junior  # noqa: E402
 import teaching_research_chemistry_junior  # noqa: E402
 import teaching_research_history_junior  # noqa: E402
 import teaching_research_geography_junior  # noqa: E402
+import teaching_research_science  # noqa: E402
+import teaching_research_morality  # noqa: E402
 
-VERSION = "v0.16.0"
+VERSION = "v0.17.0"
 SCHEMA_VERSION = 1
 
 MODULES = [
@@ -94,6 +96,8 @@ RESEARCH_MODULES = [
     teaching_research_chemistry_junior,
     teaching_research_history_junior,
     teaching_research_geography_junior,
+    teaching_research_science,
+    teaching_research_morality,
 ]
 
 RESEARCH_AUTHORSHIP = {
