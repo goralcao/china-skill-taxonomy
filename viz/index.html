@@ -97,6 +97,10 @@
     border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 10px 12px; }
   .link-list li { color: var(--math); cursor: pointer; text-decoration: underline dotted; }
   .link-list li:hover { color: var(--accent); }
+  .link-list li:active { color: var(--accent); }
+  /* 触屏：去掉双击缩放带来的点击延迟，并让按钮的按压立即生效 */
+  button, select, .chip, .tool-btn, .layout-btn, .link-list li, #legend summary {
+    touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
   .std-item { font-size: 12px; line-height: 1.6; margin-bottom: 8px; color: var(--text-dim); }
   .std-item code { color: var(--text); font-size: 11px; background: var(--bg-card);
     border-radius: 4px; padding: 1px 6px; margin-right: 6px; }
@@ -326,11 +330,16 @@
       padding: 14px 14px calc(18px + env(safe-area-inset-bottom, 0px));
       border-radius: 16px 16px 0 0;
       border-left: none; border-right: none; border-bottom: none;
-      overscroll-behavior: contain; }
+      overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
     #panel h2 { font-size: 17px; padding-right: 26px; }
     #panel h3 { margin: 13px 0 5px; }
     #panel p.desc { font-size: 12.5px; }
-    .act-btn { min-width: 104px; }
+    /* 列表项做成整行可点，手指不必精确落在文字上 */
+    .link-list { margin: 6px 0; padding: 0; list-style: none; }
+    .link-list li { display: flex; align-items: center; min-height: 36px;
+      padding: 3px 2px 3px 13px; line-height: 1.5; position: relative; }
+    .link-list li::before { content: '·'; position: absolute; left: 2px; opacity: .7; }
+    .act-btn { min-width: 104px; min-height: 42px; }
     .close-btn { min-width: 40px; min-height: 40px; }
 
     /* 图例：窄屏也在左下角，展开后宽度收窄、可滚动 */
@@ -1355,9 +1364,11 @@
     const r = canvas.getBoundingClientRect();
     return { x: ev.clientX - r.left, y: ev.clientY - r.top };
   }
-  function pick(p) {   // p = 世界坐标
+  function pick(p, pointerType = 'mouse') {   // p = 世界坐标；触摸时放大命中容差
     let best = null, bd = Infinity;
-    const touchTol = 8 / view.k, ringTol = 9 / view.k;
+    const coarse = pointerType === 'touch' || pointerType === 'pen';
+    const touchTol = (coarse ? 24 : 8) / view.k;
+    const ringTol = (coarse ? 20 : 9) / view.k;
     // 反向遍历：绘制顺序是容器→知识点，反向即优先命中知识点
     for (let i = renderNodes.length - 1; i >= 0; i--) {
       const n = renderNodes[i];
@@ -1402,12 +1413,15 @@
   const pointers = new Map();          // pointerId -> 最近屏幕坐标
   let gesture = null;                  // 'tap' 待定 | 'pan' | 'pinch'
   let downInfo = null;                 // {x, y}
+  let downType = 'mouse';              // 本次按下的指针类型（触摸容差更大）
   let pinchDist = 0;
   const panV = { x: 0, y: 0 };         // 平移惯性速度
   const TAP_SLOP = 10;
+  const slopOf = () => (downType === 'mouse' ? TAP_SLOP : 16);
 
   canvas.addEventListener('pointerdown', ev => {
     try { canvas.setPointerCapture(ev.pointerId); } catch (e) { /* 忽略 */ }
+    downType = ev.pointerType || 'mouse';
     pointers.set(ev.pointerId, { x: ev.clientX, y: ev.clientY });
     if (pointers.size === 1) {
       gesture = 'tap';
@@ -1415,7 +1429,7 @@
       panV.x = panV.y = 0;
       // 记录按下时命中的节点：拖动它可固定位置（容器位置由子节点质心决定，不参与拖动）
       const wp = screenToWorld(canvasPos(ev));
-      const dn = pick(wp);
+      const dn = pick(wp, downType);
       if (dn && dn.kind === 'topic') {
         downNode = dn;
         dragOff = { x: wp.x - dn.x, y: wp.y - dn.y };
@@ -1442,9 +1456,18 @@
         tooltip.style.display = 'block';
         tooltip.style.left = (p.x + 14) + 'px';
         tooltip.style.top = (p.y + 10) + 'px';
-        tooltip.innerHTML = `<div class="tt-name">${esc(n.name)}</div>
-          <div class="tt-meta">${n.subject} · ${n.domain} · ${n.gradeRangeStart}~${n.gradeRangeEnd} 年级<br>
-          先修 ${prereqs.get(n.id).length} · 解锁 ${unlocks.get(n.id).length}</div>`;
+        if (n.kind === 'topic') {
+          tooltip.innerHTML = `<div class="tt-name">${esc(n.name)}</div>
+            <div class="tt-meta">${n.subject} · ${n.domain} · ${n.gradeRangeStart}~${n.gradeRangeEnd} 年级<br>
+            先修 ${(prereqs.get(n.id) || []).length} · 解锁 ${(unlocks.get(n.id) || []).length}</div>`;
+        } else {
+          const cnt = n.kind === 'subject'
+            ? topics.filter(t => t.subject === n.subject).length
+            : (n.topicIds ? n.topicIds.length : 0);
+          tooltip.innerHTML = `<div class="tt-name">${esc(n.name)}</div>
+            <div class="tt-meta">${n.kind === 'subject' ? '学科' : '领域簇'} · 下辖 ${cnt} 个知识点<br>
+            点击${n.kind === 'subject' ? '展开/收起该学科' : '查看该领域'}</div>`;
+        }
       } else tooltip.style.display = 'none';
       return;
     }
@@ -1464,7 +1487,7 @@
     } else if (pointers.size === 1 && (gesture === 'tap' || gesture === 'pan' || gesture === 'drag')) {
       const dx = cur.x - prev.x, dy = cur.y - prev.y;
       if (gesture === 'tap' && downInfo &&
-          Math.hypot(cur.x - downInfo.x, cur.y - downInfo.y) > TAP_SLOP) {
+          Math.hypot(cur.x - downInfo.x, cur.y - downInfo.y) > slopOf()) {
         // 压在知识点上拖动 = 拖节点；空白处拖动 = 平移画布
         if (downNode) { gesture = 'drag'; dragNode = downNode; }
         else gesture = 'pan';
@@ -1485,6 +1508,12 @@
       }
     }
   });
+  function applyTap(ev) {
+    const n = pick(screenToWorld(canvasPos(ev)), downType);
+    if (!n) { selected = null; pathShown = false; document.getElementById('panel').classList.remove('open'); }
+    else if (n.kind === 'subject' || n.kind === 'cluster') toggleCollapse(n);
+    else select(n);
+  }
   canvas.addEventListener('pointerup', ev => {
     pointers.delete(ev.pointerId);
     if (gesture === 'pinch') {
@@ -1503,10 +1532,7 @@
       return;
     }
     if (gesture === 'tap' && downInfo) {
-      const n = pick(screenToWorld(canvasPos(ev)));
-      if (!n) { selected = null; pathShown = false; document.getElementById('panel').classList.remove('open'); }
-      else if (n.kind === 'subject' || n.kind === 'cluster') toggleCollapse(n);
-      else select(n);
+      applyTap(ev);
     } else if (gesture === 'pan') {
       canvas.classList.remove('dragging');
       // 松手后进入惯性滑动（loop 内衰减）
@@ -1517,8 +1543,18 @@
     tooltip.style.display = 'none'; hovered = null; updateHoverSet();
     pointers.clear(); gesture = null; downInfo = null; downNode = null;
   }
-  canvas.addEventListener('pointerleave', hideTooltip);
-  canvas.addEventListener('pointercancel', hideTooltip);
+  // 触摸抬起时浏览器也会派发 pointerleave/out：不能当成「离开画布」丢弃点击
+  canvas.addEventListener('pointerleave', ev => {
+    if (ev.pointerType && ev.pointerType !== 'mouse') return;
+    hideTooltip();
+  });
+  canvas.addEventListener('pointercancel', ev => {
+    // iOS 等触屏在轻微抖动时可能把点击判定为取消；位移仍在阈值内就按点击处理
+    if (gesture === 'tap' && downInfo) {
+      applyTap({ clientX: downInfo.x, clientY: downInfo.y });
+    }
+    hideTooltip();
+  });
   // 滚轮缩放（桌面）与双击放大
   canvas.addEventListener('wheel', ev => {
     ev.preventDefault();
