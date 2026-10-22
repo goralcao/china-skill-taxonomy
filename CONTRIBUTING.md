@@ -5,20 +5,20 @@
 ## 目录结构
 
 ```
-src/            数据源（Python 模块，data/*.json 由此生成，请勿直接改 data/）
-  standards.py          课标条目
-  textbooks.py          现役教材目录
-  textbooks_2024.py     2024 年版课标修订教材目录（18 册，v0.7 起）
-  textbook_map_2024.py  知识点 → 2024 版单元映射（v0.7 起）
-  topics_math.py        数学主题、依赖边、域摘要
-  topics_chinese.py     语文学科
-  topics_english.py     英语学科
-schema/         JSON Schema（数据结构契约）
+src/                            数据源（Python 模块，data/*.json 由此生成，请勿直接改 data/）
+  topics_<subject>[_junior|_senior].py   各学科主题、依赖边、域摘要
+  standards_<subject>.py                 课标条目
+  textbooks[_<subject>].py               教材版本与册次目录（含 2024 版与多版本）
+  textbook_map_*.py                      知识点 → 教材单元映射
+  teaching_research_<subject>[_…].py     教学研究记录（与主题 1:1）
+  standards.py / textbooks.py            聚合入口（新增学科需在此注册）
 scripts/
   build.py       由 src/ 生成 data/ 与 viz/data.js
   validate.mjs   数据校验
-data/           构建产物（JSON 数据集 + manifest）
-viz/            可视化页面
+  teaching-research.test.mjs  教学研究层专项测试
+schema/          JSON Schema（数据结构契约）
+data/            构建产物（JSON 数据集 + manifest）
+viz/             可视化页面（index.html + data.js）
 ```
 
 ## 添加或修改主题
@@ -46,9 +46,20 @@ python3 scripts/build.py && node scripts/validate.mjs
 
 必须全部通过（无 `[fail]`）才算完成。
 
+## 添加或修改教学研究
+
+教学研究层与主题**严格 1:1**（每个主题恰好一条记录），编辑对应的 `src/teaching_research_*.py`：
+
+- `topic`：必须等于主题的 `key`，不得指向不存在的主题；
+- `pedagogy` 60~200 字，写教学要点与常见错误；`summary` 30~120 字；
+- `activities` 2~3 条，每条含 `action` / `insight` / `feedback` / `rationale`，各 ≤80 字；
+- `assess` 至少 2 个表现水平，含 `task` / `levels` / `errors` / `nextMoves`；
+- `sources` 至少 1 条，`source` 必须命中 `scripts/build.py` 中的来源白名单（课标 / 教材 / 教师教学用书）；
+- `confidence` 取 `high` / `medium` / `low`；`verified` 由构建自动填 `false`，不要手写。
+
 ## 提交前自查
 
-- [ ] `node scripts/validate.mjs` 通过；
+- [ ] `node scripts/validate.mjs` 与 `node --test scripts/teaching-research.test.mjs` 均通过；
 - [ ] 新主题的年级、课标编号、教材位置经过核对（课标看[国家中小学智慧教育平台](https://basic.smartedu.cn/)，教材看对应册次目录）；
 - [ ] 所有文本为原创中文表述，无 emoji，无教材/课标原文摘抄；
 - [ ] 如属较大改动，在 CHANGELOG.md 的「计划中」或未发布小节中说明。

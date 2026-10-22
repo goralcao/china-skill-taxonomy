@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>学阶图谱 · 中国 K9 学能图谱</title>
+<title>学阶图谱 · 中国 K12 学能图谱</title>
 <style>
   :root {
     --bg: #0e1420;
@@ -371,7 +371,7 @@
 <body>
 <div id="app">
   <header>
-    <h1>学阶图谱 <small>China Skill Taxonomy · 中国 K9 学能图谱 v0.8</small></h1>
+    <h1>学阶图谱 <small>China Skill Taxonomy · 中国 K12 学能图谱</small></h1>
     <div class="stats" id="stats"></div>
   </header>
   <div id="progress"></div>
@@ -2196,7 +2196,7 @@
 
   // ---------- 启动 ----------
   document.querySelector('header h1 small').textContent =
-    `China Skill Taxonomy · 中国 K9 学能图谱 ${D.version}`;
+    `China Skill Taxonomy · 中国 K12 学能图谱 ${D.version}`;
   const subjCount = {};
   topics.forEach(t => subjCount[t.subject] = (subjCount[t.subject] || 0) + 1);
   document.getElementById('stats').innerHTML =
