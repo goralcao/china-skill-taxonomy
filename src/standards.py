@@ -247,3 +247,10 @@ STANDARDS.extend(standards_morality.MORALITY_STANDARDS)
 import standards_biology  # noqa: E402
 
 STANDARDS.extend(standards_biology.BIOLOGY_STANDARDS)
+
+# —— 高中思想政治 / 技术（v0.21 新增，第五学段 10~12 年级）——
+import standards_politics  # noqa: E402
+import standards_tech  # noqa: E402
+
+STANDARDS.extend(standards_politics.POLITICS_STANDARDS)
+STANDARDS.extend(standards_tech.TECH_STANDARDS)

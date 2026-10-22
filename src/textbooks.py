@@ -264,6 +264,15 @@ DETAILED_VERSIONS.extend([
     textbooks_geography.GEOGRAPHY_SENIOR_VERSION,
 ])
 
+# —— 高中思想政治 / 技术（v0.21 新增）——
+import textbooks_politics  # noqa: E402
+import textbooks_tech  # noqa: E402
+
+DETAILED_VERSIONS.extend([
+    textbooks_politics.POLITICS_VERSION,
+    textbooks_tech.TECH_VERSION,
+])
+
 # ChinaTextbook 收录的小学教材版本清单（仅作来源记录，主题暂未对齐这些版本）
 CHINATEXTBOOK_PRIMARY_VERSIONS = {
     "语文": ["统编版"],

@@ -1,5 +1,5 @@
 {
-  "version": "v0.20.0",
+  "version": "v0.21.0",
   "schemaVersion": 1,
   "clusters": [
     {
@@ -2584,6 +2584,223 @@
         "mt_geo-s-environmental-security",
         "mt_geo-s-climate-change",
         "mt_geo-s-national-security-strategy"
+      ]
+    },
+    {
+      "id": "cl-politics-d1-s5",
+      "subject": "思想政治",
+      "domain": "中国特色社会主义",
+      "stage": "第五学段（10~12年级）",
+      "summary": "回答「中国走什么道路」。从社会形态更替、科学社会主义到新民主主义革命、社会主义改造与改革开放，理解只有中国特色社会主义才能发展中国，认识新时代与中国梦。",
+      "topicIds": [
+        "mt_pol-s-social-development",
+        "mt_pol-s-utopian-socialism",
+        "mt_pol-s-new-democratic",
+        "mt_pol-s-socialist-transformation",
+        "mt_pol-s-reform-opening",
+        "mt_pol-s-socialism-characteristics",
+        "mt_pol-s-new-era",
+        "mt_pol-s-chinese-dream"
+      ]
+    },
+    {
+      "id": "cl-politics-d2-s5",
+      "subject": "思想政治",
+      "domain": "经济与社会",
+      "stage": "第五学段（10~12年级）",
+      "summary": "理解我国经济制度与经济发展。从所有制、市场经济体制到企业经营、劳动就业、高质量发展、收入分配与社会保障，形成对我国经济运行的总体认识。",
+      "topicIds": [
+        "mt_pol-s-ownership",
+        "mt_pol-s-market-economy",
+        "mt_pol-s-enterprise",
+        "mt_pol-s-labor",
+        "mt_pol-s-high-quality",
+        "mt_pol-s-income-distribution",
+        "mt_pol-s-social-security",
+        "mt_pol-s-consumption"
+      ]
+    },
+    {
+      "id": "cl-politics-d3-s5",
+      "subject": "思想政治",
+      "domain": "政治与法治",
+      "stage": "第五学段（10~12年级）",
+      "summary": "理解我国的政治制度与法治建设。从党的领导、人民代表大会制度到多党合作、民族区域自治、基层民主，再到全面依法治国与依宪治国，增强政治认同与法治意识。",
+      "topicIds": [
+        "mt_pol-s-ccp-leadership",
+        "mt_pol-s-people-congress",
+        "mt_pol-s-party-system",
+        "mt_pol-s-ethnic-autonomy",
+        "mt_pol-s-grassroots-democracy",
+        "mt_pol-s-rule-of-law",
+        "mt_pol-s-constitution",
+        "mt_pol-s-gov-by-law"
+      ]
+    },
+    {
+      "id": "cl-politics-d4-s5",
+      "subject": "思想政治",
+      "domain": "哲学与文化",
+      "stage": "第五学段（10~12年级）",
+      "summary": "掌握马克思主义哲学与文化观。从哲学基本问题、唯物论、辩证法到实践认识论、历史唯物主义，再到文化作用与文化自信，学会用科学的世界观和方法论看问题。",
+      "topicIds": [
+        "mt_pol-s-philosophy-basic",
+        "mt_pol-s-materialism",
+        "mt_pol-s-dialectics",
+        "mt_pol-s-development",
+        "mt_pol-s-contradiction",
+        "mt_pol-s-practice",
+        "mt_pol-s-truth",
+        "mt_pol-s-historical-materialism",
+        "mt_pol-s-culture",
+        "mt_pol-s-cultural-confidence"
+      ]
+    },
+    {
+      "id": "cl-politics-d5-s5",
+      "subject": "思想政治",
+      "domain": "当代国际政治与经济",
+      "stage": "第五学段（10~12年级）",
+      "summary": "认识世界舞台上的中国。理解国际关系与国家利益、经济全球化、国际组织与中国外交政策，树立人类命运共同体意识。",
+      "topicIds": [
+        "mt_pol-s-international-relations",
+        "mt_pol-s-world-economy",
+        "mt_pol-s-international-org",
+        "mt_pol-s-china-diplomacy"
+      ]
+    },
+    {
+      "id": "cl-politics-d6-s5",
+      "subject": "思想政治",
+      "domain": "法律与生活",
+      "stage": "第五学段（10~12年级）",
+      "summary": "学会用法律保护自己。从民事权利义务、合同、婚姻家庭到劳动就业、纠纷解决与法律援助，掌握与生活密切相关的法律常识与维权途径。",
+      "topicIds": [
+        "mt_pol-s-civil-law",
+        "mt_pol-s-contract",
+        "mt_pol-s-marriage-family",
+        "mt_pol-s-labor-law",
+        "mt_pol-s-dispute",
+        "mt_pol-s-legal-aid"
+      ]
+    },
+    {
+      "id": "cl-politics-d7-s5",
+      "subject": "思想政治",
+      "domain": "逻辑与思维",
+      "stage": "第五学段（10~12年级）",
+      "summary": "训练科学思维。从概念、判断、推理到演绎归纳、辩证思维、创新思维与逻辑谬误识别，提升理性表达与批判性思考能力。",
+      "topicIds": [
+        "mt_pol-s-logic-concept",
+        "mt_pol-s-logic-judgment",
+        "mt_pol-s-deduction",
+        "mt_pol-s-induction",
+        "mt_pol-s-dialectical-thinking",
+        "mt_pol-s-innovative-thinking",
+        "mt_pol-s-logical-fallacy",
+        "mt_pol-s-scientific-thinking"
+      ]
+    },
+    {
+      "id": "cl-tech-d1-s5",
+      "subject": "技术",
+      "domain": "数据与计算",
+      "stage": "第五学段（10~12年级）",
+      "summary": "信息技术的第一课。从数据与编码、数制转换到编程、算法与数据可视化，培养用计算思维分析和解决问题的能力，是数字时代的基础素养。",
+      "topicIds": [
+        "mt_tech-s-data-coding",
+        "mt_tech-s-binary",
+        "mt_tech-s-data-analysis",
+        "mt_tech-s-python-basic",
+        "mt_tech-s-algorithm",
+        "mt_tech-s-control-structure",
+        "mt_tech-s-function",
+        "mt_tech-s-algorithm-case",
+        "mt_tech-s-data-visual",
+        "mt_tech-s-computational-thinking"
+      ]
+    },
+    {
+      "id": "cl-tech-d2-s5",
+      "subject": "技术",
+      "domain": "信息系统与社会",
+      "stage": "第五学段（10~12年级）",
+      "summary": "理解信息系统的运作与社会影响。从信息系统组成、网络、物联网、数据库到信息安全与数字素养，认识技术如何支撑社会运行并学会安全负责地使用。",
+      "topicIds": [
+        "mt_tech-s-information-system",
+        "mt_tech-s-network-basic",
+        "mt_tech-s-iot",
+        "mt_tech-s-database",
+        "mt_tech-s-information-security",
+        "mt_tech-s-information-society",
+        "mt_tech-s-human-computer",
+        "mt_tech-s-cloud"
+      ]
+    },
+    {
+      "id": "cl-tech-d3-s5",
+      "subject": "技术",
+      "domain": "技术与设计",
+      "stage": "第五学段（10~12年级）",
+      "summary": "通用技术的入门。从设计的一般过程与原则、技术图样、材料加工到模型制作与评价，学会用工程思维发现问题、构思方案并动手实现。",
+      "topicIds": [
+        "mt_tech-s-design-process",
+        "mt_tech-s-design-principle",
+        "mt_tech-s-technical-drawing",
+        "mt_tech-s-material",
+        "mt_tech-s-connection",
+        "mt_tech-s-model",
+        "mt_tech-s-design-evaluation",
+        "mt_tech-s-innovation-design"
+      ]
+    },
+    {
+      "id": "cl-tech-d4-s5",
+      "subject": "技术",
+      "domain": "系统与工程",
+      "stage": "第五学段（10~12年级）",
+      "summary": "把设计提升到系统层面。理解结构、流程、系统与控制，掌握反馈、优化、可靠性与可持续，用整体与联系的观点处理复杂技术问题。",
+      "topicIds": [
+        "mt_tech-s-structure",
+        "mt_tech-s-process",
+        "mt_tech-s-system",
+        "mt_tech-s-control",
+        "mt_tech-s-feedback",
+        "mt_tech-s-optimization",
+        "mt_tech-s-reliability",
+        "mt_tech-s-sustainability"
+      ]
+    },
+    {
+      "id": "cl-tech-d5-s5",
+      "subject": "技术",
+      "domain": "人工智能与电子控制",
+      "stage": "第五学段（10~12年级）",
+      "summary": "走向智能与创造。从数据结构、人工智能、机器学习到三维设计、电子控制、传感器与开源硬件，体验用技术实现智能装置与机器人。",
+      "topicIds": [
+        "mt_tech-s-data-structure",
+        "mt_tech-s-ai",
+        "mt_tech-s-machine-learning",
+        "mt_tech-s-digital-twin",
+        "mt_tech-s-electronic-control",
+        "mt_tech-s-sensor",
+        "mt_tech-s-arduino",
+        "mt_tech-s-robot"
+      ]
+    },
+    {
+      "id": "cl-tech-d6-s5",
+      "subject": "技术",
+      "domain": "网络与工程实践",
+      "stage": "第五学段（10~12年级）",
+      "summary": "综合应用与责任担当。理解网络协议、数据管理与大数据，通过工程设计、智能家居等项目实践，认识技术伦理与社会责任，尝试创新与创业。",
+      "topicIds": [
+        "mt_tech-s-network-protocol",
+        "mt_tech-s-data-management",
+        "mt_tech-s-engineering-design",
+        "mt_tech-s-smart-home",
+        "mt_tech-s-tech-ethics",
+        "mt_tech-s-innovation-entrepreneur"
       ]
     }
   ]

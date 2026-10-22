@@ -75,8 +75,12 @@ import topics_geography_senior  # noqa: E402
 import teaching_research_biology_senior  # noqa: E402
 import teaching_research_history_senior  # noqa: E402
 import teaching_research_geography_senior  # noqa: E402
+import topics_politics_senior  # noqa: E402
+import topics_tech_senior  # noqa: E402
+import teaching_research_politics_senior  # noqa: E402
+import teaching_research_tech_senior  # noqa: E402
 
-VERSION = "v0.20.0"
+VERSION = "v0.21.0"
 SCHEMA_VERSION = 1
 
 MODULES = [
@@ -99,6 +103,8 @@ MODULES = [
     ("生物", topics_biology_senior),
     ("历史", topics_history_senior),
     ("地理", topics_geography_senior),
+    ("思想政治", topics_politics_senior),
+    ("技术", topics_tech_senior),
 ]
 
 RESEARCH_MODULES = [
@@ -122,6 +128,8 @@ RESEARCH_MODULES = [
     teaching_research_biology_senior,
     teaching_research_history_senior,
     teaching_research_geography_senior,
+    teaching_research_politics_senior,
+    teaching_research_tech_senior,
 ]
 
 RESEARCH_AUTHORSHIP = {
@@ -191,6 +199,9 @@ ALLOWED_SOURCES = {
     "《普通高中地理课程标准（2017年版2020年修订）》": "https://basic.smartedu.cn/",
     "人教版《普通高中教科书·地理》教师教学用书": "https://www.pep.com.cn/",
     "人教版《普通高中教科书·地理》": "",
+    # —— v0.21：高中思想政治 / 技术 ——
+    "人教版《普通高中教科书·信息技术》教师教学用书": "https://www.pep.com.cn/",
+    "人教版《普通高中教科书·通用技术》教师教学用书": "https://www.pep.com.cn/",
 }
 
 STAGE_BY_GRADE = {

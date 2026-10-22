@@ -2,6 +2,32 @@
 
 本项目遵循[语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [v0.21.0] - 2026-10-22
+
+本轮按路线图启用 v0.19 预注册的学科管线，补齐**高中思想政治（52 个）与技术（48 个）**两门全新学科的数据层与教学研究层，对齐《普通高中思想政治课程标准（2017年版2020年修订）》《普通高中信息技术课程标准》《普通高中通用技术课程标准》与统编版/人教版教材。至此 K12 图谱达 **1109 个微主题、1497 条依赖边、170 条课标、188 条域摘要、1109 条教学研究记录、23 个教材版本**，**十二学科全部齐备**，`coverage.missingTopicIds` 清空。两科源文件（`src/topics_politics_senior.py`、`src/teaching_research_politics_senior.py`、`src/topics_tech_senior.py`、`src/teaching_research_tech_senior.py`）与课标/教材（`src/standards_politics.py`、`standards_tech.py`、`textbooks_politics.py`、`textbooks_tech.py`）全部按既有 schema 撰写并通过 build 校验；教学研究来源限于两科高中课标与教材及教师教学用书，`verified` 一律为 false。
+
+### 新增
+
+- **高中思想政治主题 52 个**（`src/topics_politics_senior.py`，key 前缀 `pol-s-`）：按统编版必修1（中国特色社会主义）、必修2（经济与社会）、必修3（政治与法治）、必修4（哲学与文化）、选必1（当代国际政治与经济）、选必2（法律与生活）、选必3（逻辑与思维）组织，覆盖 7 个领域；依赖边 45 条。
+- **高中思想政治教学研究 52 条**（`src/teaching_research_politics_senior.py`）：与 52 个主题 1:1 对应，落点在概念辨析与价值引导（如「空想到科学」「市场经济与政府」「人大制度」「矛盾分析法」「国家利益」「合同与违约」「三段论」）。
+- **高中技术主题 48 个**（`src/topics_tech_senior.py`，key 前缀 `tech-s-`）：整合信息技术（必修1 数据与计算、必修2 信息系统与社会）与通用技术（必修1 技术与设计1、必修2 技术与设计2）及主要选择性必修，覆盖数据与计算、信息系统与社会、技术与设计、系统与工程、人工智能与电子控制、网络与工程实践 6 个领域；依赖边 43 条。
+- **高中技术教学研究 48 条**（`src/teaching_research_tech_senior.py`）：与 48 个主题 1:1 对应，落点在动手实践与计算思维（如「数制转换」「算法与流程图」「信息安全」「三视图」「系统与反馈」「机器学习」「开源硬件」）。
+- **高中课标条目 13 条**：思想政治 7 条（S5:CS/ECON/POL/PHIL/INTL/LAW/LOGIC，slug `politics-2022`）、技术 6 条（S5:DATA/INFOSYS/DESIGN/SYSTEM/AI/PRACTICE，slug `tech-2022`）。
+- **教材 2 个版本 12 学期**：统编版高中思想政治 `pep-politics-senior`（10a~12b 六学期，含必修 1~4 与选必 1~3）、高中技术 `pep-tech-senior`（10a~12b 六学期，整合信息技术与通用技术）。
+
+### 变更
+
+- **`scripts/build.py`**：`import` 追加两科 topics 与 teaching_research；`MODULES` 追加 `("思想政治", topics_politics_senior), ("技术", topics_tech_senior)`；`RESEARCH_MODULES` 追加两科教学研究模块；`ALLOWED_SOURCES` 补信息技术/通用技术教师教学用书（思想政治教参已于 v0.19 预登记）；版本号升至 v0.21.0。
+- **`src/standards.py` / `src/textbooks.py`**：分别 `extend` 思想政治与技术的课标、教材版本数据。
+- **`scripts/validate.mjs` / `viz/index.html`**：无需改动——思想政治/技术的 `SUBJECTS`、`SUBJECT_GRADE_RANGE`（10~12）与学科配色已在 v0.19 预注册；筛选、图例、布局、热力矩阵、深链分享均数据驱动，自动纳入两科。
+- 主题 1009 → **1109**（初中 477 + 高中 367 + 小学 265）；依赖边 1409 → **1497**（hard 869 / soft 628）；课标条目 157 → **170**；域摘要 175 → **188**；教学研究记录 1009 → **1109**；教材版本 21 → **23**。
+
+### 验证
+
+- `python3 scripts/build.py`：构建通过（1109 主题 · 1497 边 · 170 课标 · 188 域摘要 · **1109 教学研究** · 23 个教材版本）；
+- `node scripts/validate.mjs`：全部校验通过（DAG 1109/1109；教学研究记录 1109/1109 十二学科覆盖；剩余 3 条警告为 v0.7 的 2024 版 note-only 主题预期提示）；
+- `node --test scripts/teaching-research.test.mjs`：5/5 通过（字段完整性、长度约束、来源白名单、未标 verified、覆盖清单一致性）。
+
 ## [v0.20.0] - 2026-10-22
 
 本轮按路线图继续扩展高中阶段，补齐**高中生物（58 个）、高中历史（57 个）、高中地理（50 个）**三科的数据层与教学研究层，对齐《普通高中课程标准（2017年版2020年修订）》与人教版高中教材（各 5 册）。至此 K12 图谱达 **1009 个微主题、1409 条依赖边、157 条课标、175 条域摘要、1009 条教学研究记录、21 个教材版本**，高中五科（物理/化学/生物/历史/地理）全部齐备，`coverage.missingTopicIds` 清空。三科源文件（`src/topics_biology_senior.py`、`src/teaching_research_biology_senior.py`、`src/topics_history_senior.py`、`src/teaching_research_history_senior.py`、`src/topics_geography_senior.py`、`src/teaching_research_geography_senior.py`）与课标/教材追加（`src/standards_biology.py`、`standards_history.py`、`standards_geography.py`、`textbooks_biology.py`、`textbooks_history.py`、`textbooks_geography.py`）全部按既有 schema 撰写并通过 build 校验；教学研究来源限于三科高中课标与人教版高中教材及教师教学用书，`verified` 一律为 false。

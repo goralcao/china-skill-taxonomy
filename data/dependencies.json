@@ -1,5 +1,5 @@
 {
-  "version": "v0.20.0",
+  "version": "v0.21.0",
   "schemaVersion": 1,
   "dependencies": [
     {
@@ -8455,6 +8455,534 @@
       "prerequisiteId": "mt_geo-s-environmental-security",
       "strength": "hard",
       "reason": "安全战略整合各类安全议题"
+    },
+    {
+      "topicId": "mt_pol-s-utopian-socialism",
+      "prerequisiteId": "mt_pol-s-social-development",
+      "strength": "hard",
+      "reason": "科学社会主义建立在社会发展规律认识之上"
+    },
+    {
+      "topicId": "mt_pol-s-new-democratic",
+      "prerequisiteId": "mt_pol-s-utopian-socialism",
+      "strength": "soft",
+      "reason": "新民主主义革命以社会主义思想传播为背景"
+    },
+    {
+      "topicId": "mt_pol-s-socialist-transformation",
+      "prerequisiteId": "mt_pol-s-new-democratic",
+      "strength": "hard",
+      "reason": "社会主义改造在新中国成立后展开"
+    },
+    {
+      "topicId": "mt_pol-s-reform-opening",
+      "prerequisiteId": "mt_pol-s-socialist-transformation",
+      "strength": "hard",
+      "reason": "改革开放总结社会主义建设的经验教训"
+    },
+    {
+      "topicId": "mt_pol-s-socialism-characteristics",
+      "prerequisiteId": "mt_pol-s-reform-opening",
+      "strength": "hard",
+      "reason": "中国特色社会主义在改革开放中开创"
+    },
+    {
+      "topicId": "mt_pol-s-new-era",
+      "prerequisiteId": "mt_pol-s-socialism-characteristics",
+      "strength": "hard",
+      "reason": "新时代是中国特色社会主义的发展阶段"
+    },
+    {
+      "topicId": "mt_pol-s-chinese-dream",
+      "prerequisiteId": "mt_pol-s-new-era",
+      "strength": "hard",
+      "reason": "中国梦是新时代的历史使命"
+    },
+    {
+      "topicId": "mt_pol-s-market-economy",
+      "prerequisiteId": "mt_pol-s-ownership",
+      "strength": "hard",
+      "reason": "市场经济体制以所有制为基础"
+    },
+    {
+      "topicId": "mt_pol-s-enterprise",
+      "prerequisiteId": "mt_pol-s-market-economy",
+      "strength": "hard",
+      "reason": "企业是市场经济活动的参加者"
+    },
+    {
+      "topicId": "mt_pol-s-labor",
+      "prerequisiteId": "mt_pol-s-enterprise",
+      "strength": "soft",
+      "reason": "劳动就业与企业经营相互联系"
+    },
+    {
+      "topicId": "mt_pol-s-high-quality",
+      "prerequisiteId": "mt_pol-s-market-economy",
+      "strength": "hard",
+      "reason": "高质量发展建立在市场经济体制之上"
+    },
+    {
+      "topicId": "mt_pol-s-income-distribution",
+      "prerequisiteId": "mt_pol-s-high-quality",
+      "strength": "soft",
+      "reason": "分配制度与经济发展水平相适应"
+    },
+    {
+      "topicId": "mt_pol-s-social-security",
+      "prerequisiteId": "mt_pol-s-income-distribution",
+      "strength": "soft",
+      "reason": "社会保障是再分配的重要方式"
+    },
+    {
+      "topicId": "mt_pol-s-consumption",
+      "prerequisiteId": "mt_pol-s-income-distribution",
+      "strength": "soft",
+      "reason": "消费受收入分配影响"
+    },
+    {
+      "topicId": "mt_pol-s-people-congress",
+      "prerequisiteId": "mt_pol-s-ccp-leadership",
+      "strength": "hard",
+      "reason": "人大制度在党的领导下运行"
+    },
+    {
+      "topicId": "mt_pol-s-party-system",
+      "prerequisiteId": "mt_pol-s-ccp-leadership",
+      "strength": "soft",
+      "reason": "多党合作以党的领导为前提"
+    },
+    {
+      "topicId": "mt_pol-s-ethnic-autonomy",
+      "prerequisiteId": "mt_pol-s-people-congress",
+      "strength": "soft",
+      "reason": "民族区域自治是国家制度的一部分"
+    },
+    {
+      "topicId": "mt_pol-s-grassroots-democracy",
+      "prerequisiteId": "mt_pol-s-people-congress",
+      "strength": "soft",
+      "reason": "基层民主是人民当家作主的实践"
+    },
+    {
+      "topicId": "mt_pol-s-rule-of-law",
+      "prerequisiteId": "mt_pol-s-people-congress",
+      "strength": "hard",
+      "reason": "依法治国保障人民当家作主"
+    },
+    {
+      "topicId": "mt_pol-s-constitution",
+      "prerequisiteId": "mt_pol-s-rule-of-law",
+      "strength": "hard",
+      "reason": "依宪治国是全面依法治国的核心"
+    },
+    {
+      "topicId": "mt_pol-s-gov-by-law",
+      "prerequisiteId": "mt_pol-s-constitution",
+      "strength": "hard",
+      "reason": "法治政府以宪法为根本依据"
+    },
+    {
+      "topicId": "mt_pol-s-materialism",
+      "prerequisiteId": "mt_pol-s-philosophy-basic",
+      "strength": "hard",
+      "reason": "唯物主义是对哲学基本问题的回答"
+    },
+    {
+      "topicId": "mt_pol-s-dialectics",
+      "prerequisiteId": "mt_pol-s-materialism",
+      "strength": "hard",
+      "reason": "辩证法以唯物主义为基础"
+    },
+    {
+      "topicId": "mt_pol-s-development",
+      "prerequisiteId": "mt_pol-s-dialectics",
+      "strength": "hard",
+      "reason": "发展观是辩证法的重要内容"
+    },
+    {
+      "topicId": "mt_pol-s-contradiction",
+      "prerequisiteId": "mt_pol-s-development",
+      "strength": "hard",
+      "reason": "矛盾是发展的动力"
+    },
+    {
+      "topicId": "mt_pol-s-practice",
+      "prerequisiteId": "mt_pol-s-materialism",
+      "strength": "soft",
+      "reason": "实践观建立在物质决定意识之上"
+    },
+    {
+      "topicId": "mt_pol-s-truth",
+      "prerequisiteId": "mt_pol-s-practice",
+      "strength": "hard",
+      "reason": "真理以实践为检验标准"
+    },
+    {
+      "topicId": "mt_pol-s-historical-materialism",
+      "prerequisiteId": "mt_pol-s-practice",
+      "strength": "soft",
+      "reason": "历史唯物主义以实践观为基础"
+    },
+    {
+      "topicId": "mt_pol-s-culture",
+      "prerequisiteId": "mt_pol-s-historical-materialism",
+      "strength": "soft",
+      "reason": "文化作用与社会历史观相联系"
+    },
+    {
+      "topicId": "mt_pol-s-cultural-confidence",
+      "prerequisiteId": "mt_pol-s-culture",
+      "strength": "hard",
+      "reason": "文化自信建立在文化作用认识之上"
+    },
+    {
+      "topicId": "mt_pol-s-world-economy",
+      "prerequisiteId": "mt_pol-s-international-relations",
+      "strength": "hard",
+      "reason": "经济全球化以国际关系为背景"
+    },
+    {
+      "topicId": "mt_pol-s-international-org",
+      "prerequisiteId": "mt_pol-s-world-economy",
+      "strength": "soft",
+      "reason": "国际组织协调全球化中的合作"
+    },
+    {
+      "topicId": "mt_pol-s-china-diplomacy",
+      "prerequisiteId": "mt_pol-s-international-relations",
+      "strength": "hard",
+      "reason": "外交政策以国家利益为出发点"
+    },
+    {
+      "topicId": "mt_pol-s-contract",
+      "prerequisiteId": "mt_pol-s-civil-law",
+      "strength": "hard",
+      "reason": "合同是民事权利义务的具体化"
+    },
+    {
+      "topicId": "mt_pol-s-marriage-family",
+      "prerequisiteId": "mt_pol-s-civil-law",
+      "strength": "soft",
+      "reason": "婚姻家庭关系属民事法律关系"
+    },
+    {
+      "topicId": "mt_pol-s-labor-law",
+      "prerequisiteId": "mt_pol-s-contract",
+      "strength": "soft",
+      "reason": "劳动合同是合同的一种"
+    },
+    {
+      "topicId": "mt_pol-s-dispute",
+      "prerequisiteId": "mt_pol-s-contract",
+      "strength": "soft",
+      "reason": "合同纠纷通过纠纷解决机制处理"
+    },
+    {
+      "topicId": "mt_pol-s-legal-aid",
+      "prerequisiteId": "mt_pol-s-dispute",
+      "strength": "soft",
+      "reason": "法律援助服务于纠纷解决与维权"
+    },
+    {
+      "topicId": "mt_pol-s-logic-judgment",
+      "prerequisiteId": "mt_pol-s-logic-concept",
+      "strength": "hard",
+      "reason": "判断由概念构成"
+    },
+    {
+      "topicId": "mt_pol-s-deduction",
+      "prerequisiteId": "mt_pol-s-logic-judgment",
+      "strength": "hard",
+      "reason": "演绎推理以判断为前提"
+    },
+    {
+      "topicId": "mt_pol-s-induction",
+      "prerequisiteId": "mt_pol-s-logic-judgment",
+      "strength": "hard",
+      "reason": "归纳类比以判断为基础"
+    },
+    {
+      "topicId": "mt_pol-s-dialectical-thinking",
+      "prerequisiteId": "mt_pol-s-contradiction",
+      "strength": "soft",
+      "reason": "辩证思维运用矛盾分析法"
+    },
+    {
+      "topicId": "mt_pol-s-innovative-thinking",
+      "prerequisiteId": "mt_pol-s-dialectical-thinking",
+      "strength": "soft",
+      "reason": "创新思维以辩证思维为基础"
+    },
+    {
+      "topicId": "mt_pol-s-logical-fallacy",
+      "prerequisiteId": "mt_pol-s-deduction",
+      "strength": "soft",
+      "reason": "识别谬误需懂推理规则"
+    },
+    {
+      "topicId": "mt_pol-s-scientific-thinking",
+      "prerequisiteId": "mt_pol-s-induction",
+      "strength": "soft",
+      "reason": "科学思维综合运用各种推理"
+    },
+    {
+      "topicId": "mt_tech-s-binary",
+      "prerequisiteId": "mt_tech-s-data-coding",
+      "strength": "hard",
+      "reason": "编码以二进制表示为基础"
+    },
+    {
+      "topicId": "mt_tech-s-data-analysis",
+      "prerequisiteId": "mt_tech-s-data-coding",
+      "strength": "soft",
+      "reason": "数据处理以数据概念为基础"
+    },
+    {
+      "topicId": "mt_tech-s-python-basic",
+      "prerequisiteId": "mt_tech-s-binary",
+      "strength": "soft",
+      "reason": "编程需理解计算机数据表示"
+    },
+    {
+      "topicId": "mt_tech-s-algorithm",
+      "prerequisiteId": "mt_tech-s-python-basic",
+      "strength": "hard",
+      "reason": "算法实现依赖编程基础"
+    },
+    {
+      "topicId": "mt_tech-s-control-structure",
+      "prerequisiteId": "mt_tech-s-algorithm",
+      "strength": "hard",
+      "reason": "控制结构实现算法流程"
+    },
+    {
+      "topicId": "mt_tech-s-function",
+      "prerequisiteId": "mt_tech-s-control-structure",
+      "strength": "soft",
+      "reason": "函数建立在基本控制结构上"
+    },
+    {
+      "topicId": "mt_tech-s-algorithm-case",
+      "prerequisiteId": "mt_tech-s-control-structure",
+      "strength": "hard",
+      "reason": "排序查找需用循环分支实现"
+    },
+    {
+      "topicId": "mt_tech-s-data-visual",
+      "prerequisiteId": "mt_tech-s-data-analysis",
+      "strength": "hard",
+      "reason": "可视化建立在数据处理之上"
+    },
+    {
+      "topicId": "mt_tech-s-computational-thinking",
+      "prerequisiteId": "mt_tech-s-algorithm",
+      "strength": "soft",
+      "reason": "计算思维以算法设计为核心"
+    },
+    {
+      "topicId": "mt_tech-s-network-basic",
+      "prerequisiteId": "mt_tech-s-information-system",
+      "strength": "hard",
+      "reason": "网络是信息系统的组成"
+    },
+    {
+      "topicId": "mt_tech-s-iot",
+      "prerequisiteId": "mt_tech-s-network-basic",
+      "strength": "hard",
+      "reason": "物联网以网络连接为基础"
+    },
+    {
+      "topicId": "mt_tech-s-database",
+      "prerequisiteId": "mt_tech-s-information-system",
+      "strength": "hard",
+      "reason": "数据库是信息系统的数据基础"
+    },
+    {
+      "topicId": "mt_tech-s-information-security",
+      "prerequisiteId": "mt_tech-s-network-basic",
+      "strength": "soft",
+      "reason": "信息安全针对网络与系统风险"
+    },
+    {
+      "topicId": "mt_tech-s-information-society",
+      "prerequisiteId": "mt_tech-s-information-system",
+      "strength": "soft",
+      "reason": "信息社会以信息系统为支撑"
+    },
+    {
+      "topicId": "mt_tech-s-human-computer",
+      "prerequisiteId": "mt_tech-s-information-system",
+      "strength": "soft",
+      "reason": "人机交互是信息系统的界面"
+    },
+    {
+      "topicId": "mt_tech-s-cloud",
+      "prerequisiteId": "mt_tech-s-network-basic",
+      "strength": "soft",
+      "reason": "云计算依赖网络提供服务"
+    },
+    {
+      "topicId": "mt_tech-s-design-principle",
+      "prerequisiteId": "mt_tech-s-design-process",
+      "strength": "hard",
+      "reason": "设计原则贯穿设计过程"
+    },
+    {
+      "topicId": "mt_tech-s-technical-drawing",
+      "prerequisiteId": "mt_tech-s-design-process",
+      "strength": "soft",
+      "reason": "图样表达设计方案"
+    },
+    {
+      "topicId": "mt_tech-s-material",
+      "prerequisiteId": "mt_tech-s-design-process",
+      "strength": "soft",
+      "reason": "材料选择服务于设计"
+    },
+    {
+      "topicId": "mt_tech-s-connection",
+      "prerequisiteId": "mt_tech-s-material",
+      "strength": "hard",
+      "reason": "连接方式取决于材料与结构"
+    },
+    {
+      "topicId": "mt_tech-s-model",
+      "prerequisiteId": "mt_tech-s-technical-drawing",
+      "strength": "soft",
+      "reason": "模型制作依据图样"
+    },
+    {
+      "topicId": "mt_tech-s-design-evaluation",
+      "prerequisiteId": "mt_tech-s-design-principle",
+      "strength": "hard",
+      "reason": "评价依据设计原则"
+    },
+    {
+      "topicId": "mt_tech-s-innovation-design",
+      "prerequisiteId": "mt_tech-s-design-principle",
+      "strength": "soft",
+      "reason": "创新设计在原则基础上突破"
+    },
+    {
+      "topicId": "mt_tech-s-process",
+      "prerequisiteId": "mt_tech-s-structure",
+      "strength": "soft",
+      "reason": "流程与结构同属技术系统要素"
+    },
+    {
+      "topicId": "mt_tech-s-system",
+      "prerequisiteId": "mt_tech-s-process",
+      "strength": "hard",
+      "reason": "系统由流程与要素组织"
+    },
+    {
+      "topicId": "mt_tech-s-control",
+      "prerequisiteId": "mt_tech-s-system",
+      "strength": "hard",
+      "reason": "控制是系统运行的方式"
+    },
+    {
+      "topicId": "mt_tech-s-feedback",
+      "prerequisiteId": "mt_tech-s-control",
+      "strength": "hard",
+      "reason": "反馈是闭环控制的核心"
+    },
+    {
+      "topicId": "mt_tech-s-optimization",
+      "prerequisiteId": "mt_tech-s-system",
+      "strength": "hard",
+      "reason": "优化针对系统整体"
+    },
+    {
+      "topicId": "mt_tech-s-reliability",
+      "prerequisiteId": "mt_tech-s-structure",
+      "strength": "soft",
+      "reason": "可靠性涉及结构与安全"
+    },
+    {
+      "topicId": "mt_tech-s-sustainability",
+      "prerequisiteId": "mt_tech-s-system",
+      "strength": "soft",
+      "reason": "可持续是系统设计的目标"
+    },
+    {
+      "topicId": "mt_tech-s-ai",
+      "prerequisiteId": "mt_tech-s-data-structure",
+      "strength": "soft",
+      "reason": "人工智能以数据结构与算法为基础"
+    },
+    {
+      "topicId": "mt_tech-s-machine-learning",
+      "prerequisiteId": "mt_tech-s-ai",
+      "strength": "hard",
+      "reason": "机器学习是人工智能的核心方法"
+    },
+    {
+      "topicId": "mt_tech-s-digital-twin",
+      "prerequisiteId": "mt_tech-s-technical-drawing",
+      "strength": "soft",
+      "reason": "三维建模建立在图样表达之上"
+    },
+    {
+      "topicId": "mt_tech-s-electronic-control",
+      "prerequisiteId": "mt_tech-s-control",
+      "strength": "hard",
+      "reason": "电子控制是控制技术的实现"
+    },
+    {
+      "topicId": "mt_tech-s-sensor",
+      "prerequisiteId": "mt_tech-s-electronic-control",
+      "strength": "hard",
+      "reason": "传感器是电子控制的感知部件"
+    },
+    {
+      "topicId": "mt_tech-s-arduino",
+      "prerequisiteId": "mt_tech-s-sensor",
+      "strength": "hard",
+      "reason": "开源硬件整合传感器与执行器"
+    },
+    {
+      "topicId": "mt_tech-s-robot",
+      "prerequisiteId": "mt_tech-s-arduino",
+      "strength": "hard",
+      "reason": "机器人制作综合开源硬件与编程"
+    },
+    {
+      "topicId": "mt_tech-s-network-protocol",
+      "prerequisiteId": "mt_tech-s-network-basic",
+      "strength": "hard",
+      "reason": "网络协议是网络通信的规则"
+    },
+    {
+      "topicId": "mt_tech-s-data-management",
+      "prerequisiteId": "mt_tech-s-database",
+      "strength": "hard",
+      "reason": "数据管理建立在数据库之上"
+    },
+    {
+      "topicId": "mt_tech-s-engineering-design",
+      "prerequisiteId": "mt_tech-s-design-process",
+      "strength": "soft",
+      "reason": "工程设计沿用设计过程方法"
+    },
+    {
+      "topicId": "mt_tech-s-smart-home",
+      "prerequisiteId": "mt_tech-s-iot",
+      "strength": "hard",
+      "reason": "智能家居是物联网的应用"
+    },
+    {
+      "topicId": "mt_tech-s-tech-ethics",
+      "prerequisiteId": "mt_tech-s-information-security",
+      "strength": "soft",
+      "reason": "技术伦理涉及安全与隐私"
+    },
+    {
+      "topicId": "mt_tech-s-innovation-entrepreneur",
+      "prerequisiteId": "mt_tech-s-innovation-design",
+      "strength": "soft",
+      "reason": "创业以创新设计为起点"
     }
   ]
 }
