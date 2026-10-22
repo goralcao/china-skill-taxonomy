@@ -22,8 +22,8 @@
           "domain": { "type": "string", "minLength": 2, "maxLength": 12 },
           "name": { "type": "string", "minLength": 2, "maxLength": 24 },
           "description": { "type": "string", "minLength": 30, "maxLength": 120 },
-          "gradeRangeStart": { "type": "integer", "minimum": 1, "maximum": 9 },
-          "gradeRangeEnd": { "type": "integer", "minimum": 1, "maximum": 9 },
+          "gradeRangeStart": { "type": "integer", "minimum": 1, "maximum": 12 },
+          "gradeRangeEnd": { "type": "integer", "minimum": 1, "maximum": 12 },
           "stage": { "type": "string", "minLength": 4 },
           "centrality": { "type": "number", "minimum": 0, "maximum": 1 },
           "evidence": {

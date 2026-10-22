@@ -1,5 +1,5 @@
 {
-  "version": "v0.18.0",
+  "version": "v0.19.0",
   "schemaVersion": 1,
   "dependencies": [
     {
@@ -6889,6 +6889,624 @@
       "prerequisiteId": "mt_junior-bio-microscope",
       "strength": "soft",
       "reason": "观察需遵循探究规范"
+    },
+    {
+      "topicId": "mt_phys-s-kinematics",
+      "prerequisiteId": "mt_phys-s-particle",
+      "strength": "hard",
+      "reason": "研究运动学需先建立质点模型"
+    },
+    {
+      "topicId": "mt_phys-s-uniform-accel",
+      "prerequisiteId": "mt_phys-s-kinematics",
+      "strength": "hard",
+      "reason": "匀变速规律建立在速度加速度概念上"
+    },
+    {
+      "topicId": "mt_phys-s-ticker",
+      "prerequisiteId": "mt_phys-s-uniform-accel",
+      "strength": "soft",
+      "reason": "用打点计时器获取匀变速运动的实验数据"
+    },
+    {
+      "topicId": "mt_phys-s-free-fall",
+      "prerequisiteId": "mt_phys-s-uniform-accel",
+      "strength": "hard",
+      "reason": "自由落体是匀变速直线运动的特例"
+    },
+    {
+      "topicId": "mt_phys-s-forces-types",
+      "prerequisiteId": "mt_phys-s-free-fall",
+      "strength": "soft",
+      "reason": "受力分析需先理解重力等力的性质"
+    },
+    {
+      "topicId": "mt_phys-s-force-compose",
+      "prerequisiteId": "mt_phys-s-forces-types",
+      "strength": "hard",
+      "reason": "力的合成分解以认识各类力为前提"
+    },
+    {
+      "topicId": "mt_phys-s-newton-laws",
+      "prerequisiteId": "mt_phys-s-force-compose",
+      "strength": "hard",
+      "reason": "牛顿定律需用受力分析处理"
+    },
+    {
+      "topicId": "mt_phys-s-equilibrium",
+      "prerequisiteId": "mt_phys-s-newton-laws",
+      "strength": "hard",
+      "reason": "平衡是牛顿第二定律加速度为零的特例"
+    },
+    {
+      "topicId": "mt_phys-s-connected-body",
+      "prerequisiteId": "mt_phys-s-equilibrium",
+      "strength": "hard",
+      "reason": "连接体需先掌握隔离法与平衡/牛顿定律"
+    },
+    {
+      "topicId": "mt_phys-s-projectile",
+      "prerequisiteId": "mt_phys-s-newton-laws",
+      "strength": "hard",
+      "reason": "平抛是牛顿定律下的曲线运动"
+    },
+    {
+      "topicId": "mt_phys-s-circular",
+      "prerequisiteId": "mt_phys-s-projectile",
+      "strength": "soft",
+      "reason": "圆周运动是曲线运动的进一步"
+    },
+    {
+      "topicId": "mt_phys-s-celestial",
+      "prerequisiteId": "mt_phys-s-circular",
+      "strength": "hard",
+      "reason": "天体运动由圆周运动与万有引力规律支配"
+    },
+    {
+      "topicId": "mt_phys-s-work-power",
+      "prerequisiteId": "mt_phys-s-newton-laws",
+      "strength": "soft",
+      "reason": "做功与力、位移相关"
+    },
+    {
+      "topicId": "mt_phys-s-kinetic-theorem",
+      "prerequisiteId": "mt_phys-s-work-power",
+      "strength": "hard",
+      "reason": "动能定理由功与动能关系得出"
+    },
+    {
+      "topicId": "mt_phys-s-grav-potential",
+      "prerequisiteId": "mt_phys-s-work-power",
+      "strength": "soft",
+      "reason": "重力势能变化与重力做功相关"
+    },
+    {
+      "topicId": "mt_phys-s-mech-conservation",
+      "prerequisiteId": "mt_phys-s-kinetic-theorem",
+      "strength": "hard",
+      "reason": "机械能守恒可由动能定理推广"
+    },
+    {
+      "topicId": "mt_phys-s-mech-experiment",
+      "prerequisiteId": "mt_phys-s-mech-conservation",
+      "strength": "hard",
+      "reason": "实验验证守恒需在理解定律之后"
+    },
+    {
+      "topicId": "mt_phys-s-momentum",
+      "prerequisiteId": "mt_phys-s-mech-conservation",
+      "strength": "soft",
+      "reason": "学习动量需先有能量守恒基础"
+    },
+    {
+      "topicId": "mt_phys-s-momentum-theorem",
+      "prerequisiteId": "mt_phys-s-momentum",
+      "strength": "hard",
+      "reason": "动量定理是动量的定量关系"
+    },
+    {
+      "topicId": "mt_phys-s-momentum-conservation",
+      "prerequisiteId": "mt_phys-s-momentum-theorem",
+      "strength": "hard",
+      "reason": "动量守恒由动量定理在系统上推广"
+    },
+    {
+      "topicId": "mt_phys-s-collision",
+      "prerequisiteId": "mt_phys-s-momentum-conservation",
+      "strength": "hard",
+      "reason": "碰撞问题用动量守恒分析"
+    },
+    {
+      "topicId": "mt_phys-s-momentum-energy",
+      "prerequisiteId": "mt_phys-s-collision",
+      "strength": "hard",
+      "reason": "综合题需同时用动量与能量守恒"
+    },
+    {
+      "topicId": "mt_phys-s-charge-coulomb",
+      "prerequisiteId": "mt_phys-s-force-compose",
+      "strength": "soft",
+      "reason": "库仑力与力学中的力同为相互作用需先掌握"
+    },
+    {
+      "topicId": "mt_phys-s-electric-field",
+      "prerequisiteId": "mt_phys-s-charge-coulomb",
+      "strength": "hard",
+      "reason": "电场强度由电荷与库仑定律引出"
+    },
+    {
+      "topicId": "mt_phys-s-potential",
+      "prerequisiteId": "mt_phys-s-electric-field",
+      "strength": "hard",
+      "reason": "电势建立在电场概念之上"
+    },
+    {
+      "topicId": "mt_phys-s-capacitor",
+      "prerequisiteId": "mt_phys-s-potential",
+      "strength": "hard",
+      "reason": "电容与带电粒子运动需先懂电势差"
+    },
+    {
+      "topicId": "mt_phys-s-emf-ohm",
+      "prerequisiteId": "mt_phys-s-charge-coulomb",
+      "strength": "soft",
+      "reason": "电路以电荷与电场为基础"
+    },
+    {
+      "topicId": "mt_phys-s-electric-power",
+      "prerequisiteId": "mt_phys-s-emf-ohm",
+      "strength": "hard",
+      "reason": "电功率由电动势与电流决定"
+    },
+    {
+      "topicId": "mt_phys-s-resistance-law",
+      "prerequisiteId": "mt_phys-s-electric-power",
+      "strength": "soft",
+      "reason": "电阻定律解释导体对电流的阻碍"
+    },
+    {
+      "topicId": "mt_phys-s-multimeter",
+      "prerequisiteId": "mt_phys-s-resistance-law",
+      "strength": "hard",
+      "reason": "多用电表测量需先懂电阻与电路"
+    },
+    {
+      "topicId": "mt_phys-s-magnetic-field",
+      "prerequisiteId": "mt_phys-s-emf-ohm",
+      "strength": "soft",
+      "reason": "磁场学习需先有电场与电路基础"
+    },
+    {
+      "topicId": "mt_phys-s-ampere-force",
+      "prerequisiteId": "mt_phys-s-magnetic-field",
+      "strength": "hard",
+      "reason": "安培力由磁感应强度与电流决定"
+    },
+    {
+      "topicId": "mt_phys-s-lorentz-force",
+      "prerequisiteId": "mt_phys-s-ampere-force",
+      "strength": "hard",
+      "reason": "洛伦兹力是运动电荷的安培力"
+    },
+    {
+      "topicId": "mt_phys-s-em-induction",
+      "prerequisiteId": "mt_phys-s-lorentz-force",
+      "strength": "soft",
+      "reason": "电磁感应需先懂磁场对电荷的作用"
+    },
+    {
+      "topicId": "mt_phys-s-em-induction",
+      "prerequisiteId": "mt_phys-s-electric-field",
+      "strength": "soft",
+      "reason": "感应电场类比静电场"
+    },
+    {
+      "topicId": "mt_phys-s-alternating-transformer",
+      "prerequisiteId": "mt_phys-s-em-induction",
+      "strength": "hard",
+      "reason": "交变电流与变压器基于电磁感应"
+    },
+    {
+      "topicId": "mt_phys-s-shm",
+      "prerequisiteId": "mt_phys-s-circular",
+      "strength": "soft",
+      "reason": "简谐运动可用圆周运动投影理解"
+    },
+    {
+      "topicId": "mt_phys-s-pendulum",
+      "prerequisiteId": "mt_phys-s-shm",
+      "strength": "hard",
+      "reason": "单摆是简谐运动的实例"
+    },
+    {
+      "topicId": "mt_phys-s-mechanical-wave",
+      "prerequisiteId": "mt_phys-s-shm",
+      "strength": "hard",
+      "reason": "机械波由介质中质点简谐振动传播形成"
+    },
+    {
+      "topicId": "mt_phys-s-reflection-refraction",
+      "prerequisiteId": "mt_phys-s-mechanical-wave",
+      "strength": "soft",
+      "reason": "光具有波动性先理解波的基本性质"
+    },
+    {
+      "topicId": "mt_phys-s-light-interference",
+      "prerequisiteId": "mt_phys-s-reflection-refraction",
+      "strength": "soft",
+      "reason": "光的波动性由干涉衍射体现"
+    },
+    {
+      "topicId": "mt_phys-s-photoelectric",
+      "prerequisiteId": "mt_phys-s-light-interference",
+      "strength": "hard",
+      "reason": "光电效应揭示光的粒子性需先了解波动性"
+    },
+    {
+      "topicId": "mt_phys-s-molecular-kinetic",
+      "prerequisiteId": "mt_phys-s-mech-conservation",
+      "strength": "soft",
+      "reason": "分子动理论用能量观点看物质"
+    },
+    {
+      "topicId": "mt_phys-s-gas-law",
+      "prerequisiteId": "mt_phys-s-molecular-kinetic",
+      "strength": "hard",
+      "reason": "气体实验定律可由分子动理论解释"
+    },
+    {
+      "topicId": "mt_phys-s-thermo-laws",
+      "prerequisiteId": "mt_phys-s-gas-law",
+      "strength": "hard",
+      "reason": "热力学定律建立在气体定律与能量守恒之上"
+    },
+    {
+      "topicId": "mt_phys-s-nuclear-model",
+      "prerequisiteId": "mt_phys-s-electric-field",
+      "strength": "soft",
+      "reason": "α散射实验涉及带电粒子与电场"
+    },
+    {
+      "topicId": "mt_phys-s-bohr-model",
+      "prerequisiteId": "mt_phys-s-nuclear-model",
+      "strength": "hard",
+      "reason": "玻尔模型在核式结构基础上加入量子化"
+    },
+    {
+      "topicId": "mt_phys-s-radioactivity",
+      "prerequisiteId": "mt_phys-s-nuclear-model",
+      "strength": "hard",
+      "reason": "衰变是原子核的不稳定表现"
+    },
+    {
+      "topicId": "mt_chem-s-ionic-reaction",
+      "prerequisiteId": "mt_chem-s-classification",
+      "strength": "hard",
+      "reason": "先会对物质分类，才能判断哪些反应属于离子反应"
+    },
+    {
+      "topicId": "mt_chem-s-dispersion",
+      "prerequisiteId": "mt_chem-s-classification",
+      "strength": "soft",
+      "reason": "分散系是混合物分类视角下的具体体系"
+    },
+    {
+      "topicId": "mt_chem-s-ionic-equation",
+      "prerequisiteId": "mt_chem-s-ionic-reaction",
+      "strength": "hard",
+      "reason": "离子方程式是离子反应的符号表达"
+    },
+    {
+      "topicId": "mt_chem-s-redox",
+      "prerequisiteId": "mt_chem-s-classification",
+      "strength": "soft",
+      "reason": "分类后进一步用化合价视角认识氧化还原"
+    },
+    {
+      "topicId": "mt_chem-s-redox-multiview",
+      "prerequisiteId": "mt_chem-s-redox",
+      "strength": "hard",
+      "reason": "多角度认识建立在基础氧化还原概念之上"
+    },
+    {
+      "topicId": "mt_chem-s-chlorine",
+      "prerequisiteId": "mt_chem-s-sodium",
+      "strength": "soft",
+      "reason": "同属海水中重要元素，先钠后氯便于类比学习"
+    },
+    {
+      "topicId": "mt_chem-s-amount",
+      "prerequisiteId": "mt_chem-s-sodium",
+      "strength": "soft",
+      "reason": "物质的量作为计量工具服务于元素化合物学习"
+    },
+    {
+      "topicId": "mt_chem-s-molar-volume",
+      "prerequisiteId": "mt_chem-s-amount",
+      "strength": "hard",
+      "reason": "气体摩尔体积由物质的量概念延伸而来"
+    },
+    {
+      "topicId": "mt_chem-s-molar-conc",
+      "prerequisiteId": "mt_chem-s-amount",
+      "strength": "hard",
+      "reason": "物质的量浓度是物质的量的溶液表示"
+    },
+    {
+      "topicId": "mt_chem-s-solution-prep",
+      "prerequisiteId": "mt_chem-s-molar-conc",
+      "strength": "hard",
+      "reason": "配制溶液须先理解物质的量浓度"
+    },
+    {
+      "topicId": "mt_chem-s-iron",
+      "prerequisiteId": "mt_chem-s-aluminum",
+      "strength": "soft",
+      "reason": "先学铝再学铁，由轻金属过渡到过渡金属"
+    },
+    {
+      "topicId": "mt_chem-s-alloys",
+      "prerequisiteId": "mt_chem-s-iron",
+      "strength": "hard",
+      "reason": "合金常以铁、铝等金属为基体"
+    },
+    {
+      "topicId": "mt_chem-s-periodic-table",
+      "prerequisiteId": "mt_chem-s-atom-structure",
+      "strength": "hard",
+      "reason": "周期表位置由原子结构决定"
+    },
+    {
+      "topicId": "mt_chem-s-periodic-law",
+      "prerequisiteId": "mt_chem-s-periodic-table",
+      "strength": "hard",
+      "reason": "周期律是周期表位置所反映的性质规律"
+    },
+    {
+      "topicId": "mt_chem-s-chemical-bond",
+      "prerequisiteId": "mt_chem-s-periodic-law",
+      "strength": "soft",
+      "reason": "成键方式与元素在周期表中的位置相关"
+    },
+    {
+      "topicId": "mt_chem-s-electron-dot",
+      "prerequisiteId": "mt_chem-s-chemical-bond",
+      "strength": "hard",
+      "reason": "电子式是化学键的图示表达"
+    },
+    {
+      "topicId": "mt_chem-s-nitrogen",
+      "prerequisiteId": "mt_chem-s-sulfur",
+      "strength": "soft",
+      "reason": "按元素族顺序先硫后氮学习"
+    },
+    {
+      "topicId": "mt_chem-s-silicon",
+      "prerequisiteId": "mt_chem-s-sulfur",
+      "strength": "soft",
+      "reason": "同属非金属与材料主题，先硫后硅"
+    },
+    {
+      "topicId": "mt_chem-s-environment",
+      "prerequisiteId": "mt_chem-s-nitrogen",
+      "strength": "soft",
+      "reason": "氮氧化物是重要环境污染物之一"
+    },
+    {
+      "topicId": "mt_chem-s-equilibrium",
+      "prerequisiteId": "mt_chem-s-reaction-rate",
+      "strength": "hard",
+      "reason": "化学平衡是速率相等时的特殊状态"
+    },
+    {
+      "topicId": "mt_chem-s-weak-electrolyte",
+      "prerequisiteId": "mt_chem-s-equilibrium",
+      "strength": "soft",
+      "reason": "电离平衡是化学平衡的一种"
+    },
+    {
+      "topicId": "mt_chem-s-water-ph",
+      "prerequisiteId": "mt_chem-s-weak-electrolyte",
+      "strength": "hard",
+      "reason": "水的电离属弱电解质电离范畴"
+    },
+    {
+      "topicId": "mt_chem-s-hydrolysis",
+      "prerequisiteId": "mt_chem-s-water-ph",
+      "strength": "hard",
+      "reason": "盐类水解本质是水的电离平衡被打破"
+    },
+    {
+      "topicId": "mt_chem-s-precipitation",
+      "prerequisiteId": "mt_chem-s-hydrolysis",
+      "strength": "soft",
+      "reason": "沉淀溶解平衡与水解平衡同属水溶液平衡"
+    },
+    {
+      "topicId": "mt_chem-s-electrochem",
+      "prerequisiteId": "mt_chem-s-equilibrium",
+      "strength": "soft",
+      "reason": "电极反应方向可用平衡思想分析"
+    },
+    {
+      "topicId": "mt_chem-s-corrosion",
+      "prerequisiteId": "mt_chem-s-electrochem",
+      "strength": "hard",
+      "reason": "金属腐蚀本质是电化学过程"
+    },
+    {
+      "topicId": "mt_chem-s-isomerism",
+      "prerequisiteId": "mt_chem-s-organic-feature",
+      "strength": "hard",
+      "reason": "同分异构源于碳骨架与官能团排布差异"
+    },
+    {
+      "topicId": "mt_chem-s-alkane",
+      "prerequisiteId": "mt_chem-s-organic-feature",
+      "strength": "hard",
+      "reason": "烷烃是有机物结构特点的典型代表"
+    },
+    {
+      "topicId": "mt_chem-s-alkene-alkyne",
+      "prerequisiteId": "mt_chem-s-alkane",
+      "strength": "hard",
+      "reason": "不饱和烃在烷烃基础上引入双、三键"
+    },
+    {
+      "topicId": "mt_chem-s-benzene",
+      "prerequisiteId": "mt_chem-s-alkane",
+      "strength": "soft",
+      "reason": "苯作为特殊烃可与烷烃对比学习"
+    },
+    {
+      "topicId": "mt_chem-s-ethanol",
+      "prerequisiteId": "mt_chem-s-alkane",
+      "strength": "soft",
+      "reason": "醇由烃衍生，可对比结构与性质"
+    },
+    {
+      "topicId": "mt_chem-s-acetic-acid",
+      "prerequisiteId": "mt_chem-s-ethanol",
+      "strength": "hard",
+      "reason": "乙酸可由乙醇氧化得到，性质前后衔接"
+    },
+    {
+      "topicId": "mt_chem-s-nutrients",
+      "prerequisiteId": "mt_chem-s-ethanol",
+      "strength": "soft",
+      "reason": "营养物质含醇、酸等已学官能团"
+    },
+    {
+      "topicId": "mt_chem-s-energy-level",
+      "prerequisiteId": "mt_chem-s-atomic-structure-s",
+      "strength": "hard",
+      "reason": "构造原理是原子结构排布的深化"
+    },
+    {
+      "topicId": "mt_chem-s-covalent-bond",
+      "prerequisiteId": "mt_chem-s-energy-level",
+      "strength": "soft",
+      "reason": "成键与电子在能级上的排布相关"
+    },
+    {
+      "topicId": "mt_chem-s-vsepr",
+      "prerequisiteId": "mt_chem-s-covalent-bond",
+      "strength": "hard",
+      "reason": "分子构型由共价键的成键方式决定"
+    },
+    {
+      "topicId": "mt_chem-s-intermolecular",
+      "prerequisiteId": "mt_chem-s-covalent-bond",
+      "strength": "soft",
+      "reason": "分子间作用力与共价键同涉电子作用"
+    },
+    {
+      "topicId": "mt_chem-s-crystal",
+      "prerequisiteId": "mt_chem-s-intermolecular",
+      "strength": "hard",
+      "reason": "晶体类型取决于微粒间作用力"
+    },
+    {
+      "topicId": "mt_chem-s-halohydrocarbon",
+      "prerequisiteId": "mt_chem-s-hydrocarbon",
+      "strength": "hard",
+      "reason": "卤代烃由烃取代衍生而来"
+    },
+    {
+      "topicId": "mt_chem-s-alcohol-phenol-aldehyde",
+      "prerequisiteId": "mt_chem-s-hydrocarbon",
+      "strength": "soft",
+      "reason": "含氧衍生物以烃为母体骨架"
+    },
+    {
+      "topicId": "mt_chem-s-ester",
+      "prerequisiteId": "mt_chem-s-alcohol-phenol-aldehyde",
+      "strength": "hard",
+      "reason": "酯由醇与酸脱水生成"
+    },
+    {
+      "topicId": "mt_chem-s-biomacromolecule",
+      "prerequisiteId": "mt_chem-s-ester",
+      "strength": "soft",
+      "reason": "生物大分子含酯键等已学结构"
+    },
+    {
+      "topicId": "mt_chem-s-polymer",
+      "prerequisiteId": "mt_chem-s-biomacromolecule",
+      "strength": "soft",
+      "reason": "合成高分子与生物大分子思路相通"
+    },
+    {
+      "topicId": "mt_chem-s-green-chemistry",
+      "prerequisiteId": "mt_chem-s-environment",
+      "strength": "soft",
+      "reason": "绿色化学是环境保护的理念升华"
+    },
+    {
+      "topicId": "mt_chem-s-society-issues",
+      "prerequisiteId": "mt_chem-s-green-chemistry",
+      "strength": "hard",
+      "reason": "综合议题以绿色化学理念为统领"
+    },
+    {
+      "topicId": "mt_chem-s-sodium",
+      "prerequisiteId": "mt_chem-s-periodic-law",
+      "strength": "hard",
+      "reason": "钠的强活泼性可由周期律中金属性预测"
+    },
+    {
+      "topicId": "mt_chem-s-chlorine",
+      "prerequisiteId": "mt_chem-s-periodic-law",
+      "strength": "hard",
+      "reason": "氯的非金属性可由周期律预测"
+    },
+    {
+      "topicId": "mt_chem-s-iron",
+      "prerequisiteId": "mt_chem-s-periodic-law",
+      "strength": "hard",
+      "reason": "铁的价态多变可由周期表位置辅助理解"
+    },
+    {
+      "topicId": "mt_chem-s-sodium",
+      "prerequisiteId": "mt_chem-s-redox",
+      "strength": "soft",
+      "reason": "钠的活泼性用氧化还原电子转移理解"
+    },
+    {
+      "topicId": "mt_chem-s-organic-feature",
+      "prerequisiteId": "mt_chem-s-chemical-bond",
+      "strength": "hard",
+      "reason": "有机物以共价键为结构基础"
+    },
+    {
+      "topicId": "mt_chem-s-covalent-bond",
+      "prerequisiteId": "mt_chem-s-chemical-bond",
+      "strength": "hard",
+      "reason": "选必共价键是必修化学键的深化"
+    },
+    {
+      "topicId": "mt_chem-s-atomic-structure-s",
+      "prerequisiteId": "mt_chem-s-atom-structure",
+      "strength": "hard",
+      "reason": "选必原子结构以必修为基础"
+    },
+    {
+      "topicId": "mt_chem-s-hydrocarbon",
+      "prerequisiteId": "mt_chem-s-covalent-bond",
+      "strength": "hard",
+      "reason": "烃的结构依赖共价键与杂化"
+    },
+    {
+      "topicId": "mt_chem-s-hydrocarbon",
+      "prerequisiteId": "mt_chem-s-organic-feature",
+      "strength": "hard",
+      "reason": "选必烃需以必修有机基础为前提"
+    },
+    {
+      "topicId": "mt_chem-s-reaction-rate",
+      "prerequisiteId": "mt_chem-s-amount",
+      "strength": "soft",
+      "reason": "浓度计量与反应速率定量相关"
     }
   ]
 }

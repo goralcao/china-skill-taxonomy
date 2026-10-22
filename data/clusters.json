@@ -1,5 +1,5 @@
 {
-  "version": "v0.18.0",
+  "version": "v0.19.0",
   "schemaVersion": 1,
   "clusters": [
     {
@@ -1966,6 +1966,306 @@
       "summary": "经历提出问题、作出假设、实验验证的完整过程，培养用证据说话的科学态度。",
       "topicIds": [
         "mt_junior-bio-inquiry"
+      ]
+    },
+    {
+      "id": "cl-physics-d11-s5",
+      "subject": "物理",
+      "domain": "力学基础",
+      "stage": "第五学段（10~12年级）",
+      "summary": "高中物理的起点。把物体简化为质点，用位移、速度、加速度描述运动，再用匀变速规律和打点计时器把运动量化，是建立「物理建模」思维的第一课。",
+      "topicIds": [
+        "mt_phys-s-particle",
+        "mt_phys-s-kinematics",
+        "mt_phys-s-uniform-accel",
+        "mt_phys-s-ticker",
+        "mt_phys-s-free-fall"
+      ]
+    },
+    {
+      "id": "cl-physics-d12-s5",
+      "subject": "物理",
+      "domain": "力与牛顿定律",
+      "stage": "第五学段（10~12年级）",
+      "summary": "力是改变运动的原因。从重力、弹力、摩擦力入手，学会受力分析与合成分解，再用牛顿三定律解释从平衡到加速的各种现象，是力学的核心方法。",
+      "topicIds": [
+        "mt_phys-s-forces-types",
+        "mt_phys-s-force-compose",
+        "mt_phys-s-newton-laws",
+        "mt_phys-s-equilibrium",
+        "mt_phys-s-connected-body"
+      ]
+    },
+    {
+      "id": "cl-physics-d13-s5",
+      "subject": "物理",
+      "domain": "曲线运动与万有引力",
+      "stage": "第五学段（10~12年级）",
+      "summary": "运动从直线走向曲线。平抛和圆周运动拓展了运动图像，向心力揭示圆周的动力学，万有引力定律更解释天体运行与宇宙速度，气势恢宏。",
+      "topicIds": [
+        "mt_phys-s-projectile",
+        "mt_phys-s-circular",
+        "mt_phys-s-celestial"
+      ]
+    },
+    {
+      "id": "cl-physics-d14-s5",
+      "subject": "物理",
+      "domain": "机械能",
+      "stage": "第五学段（10~12年级）",
+      "summary": "用「能量」的新视角看运动。功与功率、动能定理、重力势能到机械能守恒，让孩子学会不追踪每一步细节，而用守恒直接得到结果。",
+      "topicIds": [
+        "mt_phys-s-work-power",
+        "mt_phys-s-kinetic-theorem",
+        "mt_phys-s-grav-potential",
+        "mt_phys-s-mech-conservation",
+        "mt_phys-s-mech-experiment"
+      ]
+    },
+    {
+      "id": "cl-physics-d15-s5",
+      "subject": "物理",
+      "domain": "动量与守恒",
+      "stage": "第五学段（10~12年级）",
+      "summary": "高一年级的综合提升。动量、动量定理与动量守恒专门处理碰撞与打击；动量与能量两条守恒律联手，是高中力学压轴题的根本武器。",
+      "topicIds": [
+        "mt_phys-s-momentum",
+        "mt_phys-s-momentum-theorem",
+        "mt_phys-s-momentum-conservation",
+        "mt_phys-s-collision",
+        "mt_phys-s-momentum-energy"
+      ]
+    },
+    {
+      "id": "cl-physics-d16-s5",
+      "subject": "物理",
+      "domain": "静电场",
+      "stage": "第五学段（10~12年级）",
+      "summary": "进入电磁学。从电荷、库仑定律到电场强度、电势与电容，孩子第一次接触看不见却真实的「场」，并用类平抛理解带电粒子的运动。",
+      "topicIds": [
+        "mt_phys-s-charge-coulomb",
+        "mt_phys-s-electric-field",
+        "mt_phys-s-potential",
+        "mt_phys-s-capacitor"
+      ]
+    },
+    {
+      "id": "cl-physics-d17-s5",
+      "subject": "物理",
+      "domain": "电路与电能",
+      "stage": "第五学段（10~12年级）",
+      "summary": "把电场知识落到可操作的电路上。电动势、闭合电路欧姆定律、电功率与电阻定律，配合多用电表的实际操作，连接理论与生活用电。",
+      "topicIds": [
+        "mt_phys-s-emf-ohm",
+        "mt_phys-s-electric-power",
+        "mt_phys-s-resistance-law",
+        "mt_phys-s-multimeter"
+      ]
+    },
+    {
+      "id": "cl-physics-d18-s5",
+      "subject": "物理",
+      "domain": "磁场与电磁感应",
+      "stage": "第五学段（10~12年级）",
+      "summary": "高中电磁学的顶峰。磁感应强度、安培力、洛伦兹力描述磁场对电流与电荷的作用，电磁感应与变压器、电磁波则揭示了电与磁如何相互转化。",
+      "topicIds": [
+        "mt_phys-s-magnetic-field",
+        "mt_phys-s-ampere-force",
+        "mt_phys-s-lorentz-force",
+        "mt_phys-s-em-induction",
+        "mt_phys-s-alternating-transformer"
+      ]
+    },
+    {
+      "id": "cl-physics-d19-s5",
+      "subject": "物理",
+      "domain": "机械振动与波",
+      "stage": "第五学段（10~12年级）",
+      "summary": "研究周期性运动与传播。简谐运动、单摆到机械波，再到干涉衍射，让孩子理解「振动如何变成波、波如何叠加」，为光学打底。",
+      "topicIds": [
+        "mt_phys-s-shm",
+        "mt_phys-s-pendulum",
+        "mt_phys-s-mechanical-wave"
+      ]
+    },
+    {
+      "id": "cl-physics-d20-s5",
+      "subject": "物理",
+      "domain": "光",
+      "stage": "第五学段（10~12年级）",
+      "summary": "光既是波也是粒子。从反射折射到全反射、干涉衍射，再到光电效应，带孩子完成从经典波动到量子微粒的认知跨越，体会波粒二象性。",
+      "topicIds": [
+        "mt_phys-s-reflection-refraction",
+        "mt_phys-s-light-interference",
+        "mt_phys-s-photoelectric"
+      ]
+    },
+    {
+      "id": "cl-physics-d21-s5",
+      "subject": "物理",
+      "domain": "热学",
+      "stage": "第五学段（10~12年级）",
+      "summary": "从微观分子到宏观热现象。分子动理论、气体实验定律到热力学两大定律，帮助孩子用统计与能量观念理解温度、压强与方向性。",
+      "topicIds": [
+        "mt_phys-s-molecular-kinetic",
+        "mt_phys-s-gas-law",
+        "mt_phys-s-thermo-laws"
+      ]
+    },
+    {
+      "id": "cl-physics-d22-s5",
+      "subject": "物理",
+      "domain": "原子与原子核",
+      "stage": "第五学段（10~12年级）",
+      "summary": "探索物质的最深处。从核式结构、玻尔能级跃迁到衰变与质能关系，带孩子看到经典物理之外、现代物理与核能的图景。",
+      "topicIds": [
+        "mt_phys-s-nuclear-model",
+        "mt_phys-s-bohr-model",
+        "mt_phys-s-radioactivity"
+      ]
+    },
+    {
+      "id": "cl-chemistry-d11-s5",
+      "subject": "化学",
+      "domain": "物质分类与变化",
+      "stage": "第五学段（10~12年级）",
+      "summary": "高中化学入门，教孩子用分类观看世界，认识离子反应、离子方程式和氧化还原。核心是从化合价升降与电子转移理解反应本质，为后续所有元素化学打基础。",
+      "topicIds": [
+        "mt_chem-s-classification",
+        "mt_chem-s-dispersion",
+        "mt_chem-s-ionic-reaction",
+        "mt_chem-s-ionic-equation",
+        "mt_chem-s-redox",
+        "mt_chem-s-redox-multiview"
+      ]
+    },
+    {
+      "id": "cl-chemistry-d12-s5",
+      "subject": "化学",
+      "domain": "海水中的重要元素",
+      "stage": "第五学段（10~12年级）",
+      "summary": "围绕钠、氯等海水富集元素，学习典型金属与非金属的性质，并引入「物质的量」这一把宏观与微观连起来的核心计量工具，体会化学的定量之美。",
+      "topicIds": [
+        "mt_chem-s-sodium",
+        "mt_chem-s-chlorine",
+        "mt_chem-s-amount",
+        "mt_chem-s-molar-volume",
+        "mt_chem-s-molar-conc",
+        "mt_chem-s-solution-prep"
+      ]
+    },
+    {
+      "id": "cl-chemistry-d13-s5",
+      "subject": "化学",
+      "domain": "铁与金属材料",
+      "stage": "第五学段（10~12年级）",
+      "summary": "以铁、铝为代表学习过渡金属与轻金属，理解合金「硬度更大、熔点更低」的实用价值，初步体会「结构决定性质」在金属材料中的体现。",
+      "topicIds": [
+        "mt_chem-s-aluminum",
+        "mt_chem-s-iron",
+        "mt_chem-s-alloys"
+      ]
+    },
+    {
+      "id": "cl-chemistry-d14-s5",
+      "subject": "化学",
+      "domain": "物质结构与元素周期律",
+      "stage": "第五学段（10~12年级）",
+      "summary": "从原子结构出发认识元素周期表与周期律，建立「位置—结构—性质」三者关系。这是高中化学的枢纽，让孩子学会用周期律预测未知元素的性质。",
+      "topicIds": [
+        "mt_chem-s-atom-structure",
+        "mt_chem-s-periodic-table",
+        "mt_chem-s-periodic-law",
+        "mt_chem-s-chemical-bond",
+        "mt_chem-s-electron-dot"
+      ]
+    },
+    {
+      "id": "cl-chemistry-d15-s5",
+      "subject": "化学",
+      "domain": "非金属与化工",
+      "stage": "第五学段（10~12年级）",
+      "summary": "学习硫、氮、硅等非金属及其化合物的性质与转化，联系酸雨、材料与环境保护等真实议题，看到化学与工业、生态的紧密关联。",
+      "topicIds": [
+        "mt_chem-s-sulfur",
+        "mt_chem-s-nitrogen",
+        "mt_chem-s-silicon",
+        "mt_chem-s-environment"
+      ]
+    },
+    {
+      "id": "cl-chemistry-d16-s5",
+      "subject": "化学",
+      "domain": "化学反应与能量",
+      "stage": "第五学段（10~12年级）",
+      "summary": "进入反应原理层面：反应速率、化学平衡、溶液中的离子平衡（电离、水解、沉淀）以及电化学。核心是平衡思想——条件改变，平衡移动。",
+      "topicIds": [
+        "mt_chem-s-reaction-rate",
+        "mt_chem-s-equilibrium",
+        "mt_chem-s-weak-electrolyte",
+        "mt_chem-s-water-ph",
+        "mt_chem-s-hydrolysis",
+        "mt_chem-s-precipitation",
+        "mt_chem-s-electrochem",
+        "mt_chem-s-corrosion"
+      ]
+    },
+    {
+      "id": "cl-chemistry-d17-s5",
+      "subject": "化学",
+      "domain": "有机化合物基础",
+      "stage": "第五学段（10~12年级）",
+      "summary": "初步认识以碳为骨架的有机物世界，理解同分异构、官能团与「结构决定性质」，认识烃、醇、酸、营养物质，为选必有机化学铺路。",
+      "topicIds": [
+        "mt_chem-s-organic-feature",
+        "mt_chem-s-isomerism",
+        "mt_chem-s-alkane",
+        "mt_chem-s-alkene-alkyne",
+        "mt_chem-s-benzene",
+        "mt_chem-s-ethanol",
+        "mt_chem-s-acetic-acid",
+        "mt_chem-s-nutrients"
+      ]
+    },
+    {
+      "id": "cl-chemistry-d18-s5",
+      "subject": "化学",
+      "domain": "原子与分子结构",
+      "stage": "第五学段（10~12年级）",
+      "summary": "从量子化视角深入原子结构，学习共价键、杂化、分子空间构型与晶体类型。这是「结构决定性质」最精微的演绎，解释物质为何千差万别。",
+      "topicIds": [
+        "mt_chem-s-atomic-structure-s",
+        "mt_chem-s-energy-level",
+        "mt_chem-s-covalent-bond",
+        "mt_chem-s-vsepr",
+        "mt_chem-s-intermolecular",
+        "mt_chem-s-crystal"
+      ]
+    },
+    {
+      "id": "cl-chemistry-d19-s5",
+      "subject": "化学",
+      "domain": "有机化学",
+      "stage": "第五学段（10~12年级）",
+      "summary": "系统学习烃及其衍生物、生物大分子与合成高分子，建立「价—类二维」认识框架，初步掌握有机合成路线的逆向设计，是高中有机的集大成。",
+      "topicIds": [
+        "mt_chem-s-hydrocarbon",
+        "mt_chem-s-halohydrocarbon",
+        "mt_chem-s-alcohol-phenol-aldehyde",
+        "mt_chem-s-ester",
+        "mt_chem-s-biomacromolecule",
+        "mt_chem-s-polymer"
+      ]
+    },
+    {
+      "id": "cl-chemistry-d20-s5",
+      "subject": "化学",
+      "domain": "化学与社会",
+      "stage": "第五学段（10~12年级）",
+      "summary": "站在社会维度看化学：绿色化学从源头减污、原子经济，资源能源材料环境综合议题则教孩子辩证看待化工发展的利与弊，树立可持续观念。",
+      "topicIds": [
+        "mt_chem-s-green-chemistry",
+        "mt_chem-s-society-issues"
       ]
     }
   ]

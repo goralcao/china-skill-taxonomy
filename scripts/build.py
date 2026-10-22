@@ -65,8 +65,12 @@ import teaching_research_science  # noqa: E402
 import teaching_research_morality  # noqa: E402
 import topics_biology_junior  # noqa: E402
 import teaching_research_biology_junior  # noqa: E402
+import topics_physics_senior  # noqa: E402
+import topics_chemistry_senior  # noqa: E402
+import teaching_research_physics_senior  # noqa: E402
+import teaching_research_chemistry_senior  # noqa: E402
 
-VERSION = "v0.18.0"
+VERSION = "v0.19.0"
 SCHEMA_VERSION = 1
 
 MODULES = [
@@ -84,6 +88,8 @@ MODULES = [
     ("道德与法治", topics_morality_primary),
     ("道德与法治", topics_morality_junior),
     ("生物", topics_biology_junior),
+    ("物理", topics_physics_senior),
+    ("化学", topics_chemistry_senior),
 ]
 
 RESEARCH_MODULES = [
@@ -102,6 +108,8 @@ RESEARCH_MODULES = [
     teaching_research_science,
     teaching_research_morality,
     teaching_research_biology_junior,
+    teaching_research_physics_senior,
+    teaching_research_chemistry_senior,
 ]
 
 RESEARCH_AUTHORSHIP = {
@@ -147,6 +155,20 @@ ALLOWED_SOURCES = {
     "《义务教育生物学课程标准（2022年版）》": "https://basic.smartedu.cn/",
     "人教版《义务教育教科书·生物学》教师教学用书": "https://www.pep.com.cn/",
     "人教版《义务教育教科书·生物学》": "",
+    # —— v0.19：高中物理 / 化学 / 思想政治 / 技术 ——
+    "《普通高中物理课程标准（2017年版2020年修订）》": "https://basic.smartedu.cn/",
+    "人教版《普通高中教科书·物理》教师教学用书": "https://www.pep.com.cn/",
+    "人教版《普通高中教科书·物理》": "",
+    "《普通高中化学课程标准（2017年版2020年修订）》": "https://basic.smartedu.cn/",
+    "人教版《普通高中教科书·化学》教师教学用书": "https://www.pep.com.cn/",
+    "人教版《普通高中教科书·化学》": "",
+    "《普通高中思想政治课程标准（2017年版2020年修订）》": "https://basic.smartedu.cn/",
+    "人教版《普通高中教科书·思想政治》教师教学用书": "https://www.pep.com.cn/",
+    "人教版《普通高中教科书·思想政治》": "",
+    "《普通高中信息技术课程标准（2017年版2020年修订）》": "https://basic.smartedu.cn/",
+    "《普通高中通用技术课程标准（2017年版2020年修订）》": "https://basic.smartedu.cn/",
+    "人教版《普通高中教科书·信息技术》": "",
+    "人教版《普通高中教科书·通用技术》": "",
 }
 
 STAGE_BY_GRADE = {
@@ -159,6 +181,9 @@ STAGE_BY_GRADE = {
     7: "第四学段（7~9年级）",
     8: "第四学段（7~9年级）",
     9: "第四学段（7~9年级）",
+    10: "第五学段（10~12年级）",
+    11: "第五学段（10~12年级）",
+    12: "第五学段（10~12年级）",
 }
 ENGLISH_STAGE_BY_GRADE = {
     3: "一级（3~4年级）",
@@ -168,6 +193,9 @@ ENGLISH_STAGE_BY_GRADE = {
     7: "三级（7~9年级）",
     8: "三级（7~9年级）",
     9: "三级（7~9年级）",
+    10: "四级（10~12年级）",
+    11: "四级（10~12年级）",
+    12: "四级（10~12年级）",
 }
 
 
@@ -189,7 +217,8 @@ def stage_of(subject: str, grade: int) -> str:
 
 SUBJECT_SLUG = {"数学": "math", "语文": "chinese", "英语": "english",
                 "物理": "physics", "化学": "chemistry", "历史": "history", "地理": "geography",
-                "科学": "science", "道德与法治": "morality", "生物": "biology"}
+                "科学": "science", "道德与法治": "morality", "生物": "biology",
+                "思想政治": "politics", "技术": "tech"}
 STAGE_SLUG = {
     "第一学段（1~2年级）": "s1",
     "第二学段（3~4年级）": "s2",
@@ -198,6 +227,8 @@ STAGE_SLUG = {
     "一级（3~4年级）": "l1",
     "二级（5~6年级）": "l2",
     "三级（7~9年级）": "l3",
+    "第五学段（10~12年级）": "s5",
+    "四级（10~12年级）": "l4",
 }
 
 

@@ -18,7 +18,7 @@
           "name": { "type": "string" },
           "edition": { "type": "string" },
           "subject": { "enum": ["数学", "语文", "英语"] },
-          "gradeStart": { "type": "integer", "minimum": 1, "maximum": 9 },
+          "gradeStart": { "type": "integer", "minimum": 1, "maximum": 12 },
           "note": { "type": "string" },
           "unitCounts": { "type": "object" },
           "books": {
@@ -27,8 +27,8 @@
               "type": "object",
               "required": ["slug", "grade", "semester"],
               "properties": {
-                "slug": { "type": "string", "pattern": "^[1-9][ab]$" },
-                "grade": { "type": "integer", "minimum": 1, "maximum": 9 },
+                "slug": { "type": "string", "pattern": "^\\d{1,2}[ab]$" },
+                "grade": { "type": "integer", "minimum": 1, "maximum": 12 },
                 "semester": { "enum": ["上", "下"] },
                 "edition": { "type": "string" },
                 "title": { "type": "string" },

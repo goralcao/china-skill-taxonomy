@@ -44,17 +44,19 @@ for (const [name, info] of Object.entries(manifest.files ?? {})) {
 
 /* ---------- 2. 结构校验 ---------- */
 const TOPIC_TYPES = new Set(['CONCEPTUAL', 'PROCEDURAL', 'REPRESENTATIONAL', 'LANGUAGE', 'META']);
-const SUBJECTS = new Set(['数学', '语文', '英语', '物理', '化学', '历史', '地理', '科学', '道德与法治', '生物']);
+const SUBJECTS = new Set(['数学', '语文', '英语', '物理', '化学', '历史', '地理', '科学', '道德与法治', '生物', '思想政治', '技术']);
 // 各学科学段的开设年级区间（初中科目并非都覆盖 7~9）
 const SUBJECT_GRADE_RANGE = {
   数学: [1, 9], 语文: [1, 9], 英语: [3, 9],
-  物理: [8, 9],   // 初中物理自八年级开设
-  化学: [9, 9],   // 初中化学仅在九年级开设
+  物理: [8, 12],  // 初中物理自八年级开设，高中延伸至十二年级
+  化学: [9, 12],  // 初中化学仅在九年级开设，高中延伸至十二年级
   历史: [7, 9],
   地理: [7, 8],   // 人教版初中地理在七、八年级开设
   科学: [1, 6],   // 小学科学在一至六年级开设
   道德与法治: [1, 9], // 义务教育阶段全学段开设
   生物: [7, 8],   // 初中生物在七、八年级开设
+  思想政治: [10, 12], // 高中思想政治（初中为道德与法治）
+  技术: [10, 12], // 高中技术（信息技术 + 通用技术）
 };
 
 const topics = topicsDoc.topics;
@@ -70,8 +72,8 @@ for (const t of topics) {
   if (!/^mt_[a-z0-9-]+$/.test(t.id)) fail(`主题 id 格式非法: ${t.id}`);
   if (!TOPIC_TYPES.has(t.type)) fail(`主题 ${where} type 非法: ${t.type}`);
   if (!SUBJECTS.has(t.subject)) fail(`主题 ${where} subject 非法: ${t.subject}`);
-  if (!(t.gradeRangeStart >= 1 && t.gradeRangeStart <= 9)) fail(`主题 ${where} gradeRangeStart 越界`);
-  if (!(t.gradeRangeEnd >= 1 && t.gradeRangeEnd <= 9)) fail(`主题 ${where} gradeRangeEnd 越界`);
+  if (!(t.gradeRangeStart >= 1 && t.gradeRangeStart <= 12)) fail(`主题 ${where} gradeRangeStart 越界`);
+  if (!(t.gradeRangeEnd >= 1 && t.gradeRangeEnd <= 12)) fail(`主题 ${where} gradeRangeEnd 越界`);
   if (t.gradeRangeStart > t.gradeRangeEnd) fail(`主题 ${where} 年级区间颠倒`);
   const range = SUBJECT_GRADE_RANGE[t.subject];
   if (range) {
@@ -147,7 +149,7 @@ const versionBySlug = new Map(textbooksDoc.versions.map((v) => [v.slug, v]));
 const RE_TEXTBOOK = new RegExp('^(' +
   textbooksDoc.versions.map((v) => v.slug).sort((a, b) => b.length - a.length)
     .map((s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|') +
-  '):([1-9][ab])(?::(u[1-9][0-9]?))?(?:#(.+))?$');
+  '):(\\d{1,2}[ab])(?::(u[1-9][0-9]?))?(?:#(.+))?$');
 const bookByRef = (vslug, bslug) => {
   const v = versionBySlug.get(vslug);
   if (!v) return { error: `不存在的教材版本: ${vslug}` };
@@ -176,9 +178,11 @@ for (const t of topics) {
     if (blockPart && !(book.blocks ?? []).includes(blockPart)) {
       fail(`主题 ${t.name} 教材引用块标签不存在: ${ref}`);
     }
-    if (book.grade !== Number(bslug[0])) fail(`主题 ${t.name} 教材引用册次与年级不符: ${ref}`);
+    // 册次年级可能为两位数（高中 10/11/12 年级），需解析完整前导数字而非仅首字符
+    const refGrade = Number(bslug.replace(/[ab]$/, ''));
+    if (book.grade !== refGrade) fail(`主题 ${t.name} 教材引用册次与年级不符: ${ref}`);
     // 允许引用更低年级的单元作为先修锚点；只对超出主题年级上限的引用告警
-    const grade = Number(bslug[0]);
+    const grade = refGrade;
     if (grade > t.gradeRangeEnd) {
       warn(`主题 ${t.name}（${t.gradeRangeStart}~${t.gradeRangeEnd} 年级）引用了更高年级教材: ${ref}`);
     }

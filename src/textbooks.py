@@ -251,6 +251,12 @@ DETAILED_VERSIONS.extend([
     textbooks_biology.BIOLOGY_VERSION,
 ])
 
+# —— 高中物理 / 化学（v0.19 新增）——
+DETAILED_VERSIONS.extend([
+    textbooks_physics.PHYSICS_SENIOR_VERSION,
+    textbooks_chemistry.CHEMISTRY_SENIOR_VERSION,
+])
+
 # ChinaTextbook 收录的小学教材版本清单（仅作来源记录，主题暂未对齐这些版本）
 CHINATEXTBOOK_PRIMARY_VERSIONS = {
     "语文": ["统编版"],

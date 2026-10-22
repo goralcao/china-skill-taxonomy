@@ -2,6 +2,36 @@
 
 本项目遵循[语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [v0.19.0] - 2026-10-22
+
+本轮启动**高中阶段（10~12 年级）扩展**：打通第五学段（10~12 年级）/ 英语四级学段管线，预注册高中独有学科**思想政治**、**技术**的学科管线（内容待 v0.21 填充）；首批补齐**高中物理（48 个）+ 高中化学（54 个）微主题的数据层与教学研究层**，对齐《普通高中课程标准（2017年版2020年修订）》与人教版高中教材（物理六册、化学五册）。至此 K12 图谱达 **844 个微主题、1251 条依赖边、141 条课标、158 条域摘要、844 条教学研究记录、18 个教材版本**，`coverage.missingTopicIds` 清空。高中物理/化学源文件（`src/topics_physics_senior.py`、`src/teaching_research_physics_senior.py`、`src/topics_chemistry_senior.py`、`src/teaching_research_chemistry_senior.py`、`src/standards_physics.py`（追加）、`src/standards_chemistry.py`（追加）、`src/textbooks_physics.py`（追加）、`src/textbooks_chemistry.py`（追加））全部按既有 schema 撰写并通过 build 校验；教学研究来源限于高中物理/化学课标与人教版高中教材及教师教学用书，`verified` 一律为 false。
+
+### 新增
+
+- **高中物理主题 48 个**（`src/topics_physics_senior.py`，key 前缀 `phys-s-`）：按人教版必修（10 年级两册）+ 选择性必修（11~12 年级三册）组织，覆盖力学、电磁学、热学、振动与波、原子物理、守恒与能量 12 个领域；依赖边 48 条（先修年级均不高于主题年级，并以初中物理为跨学段先修）。
+- **高中物理教学研究 48 条**（`src/teaching_research_physics_senior.py`）：与 48 个主题 1:1 对应，落点在建模困难与迷思概念（如「矢量合成与分解」「牛顿第二定律的瞬时性」「圆周运动向心力来源」「电场强度的比值定义」「楞次定律的阻碍含义」「动量守恒条件」）。
+- **高中化学主题 54 个**（`src/topics_chemistry_senior.py`，key 前缀 `chem-s-`）：按人教版必修（10 年级两册）+ 选择性必修（11~12 年级三册）组织，覆盖物质结构、化学反应原理、物质性质、有机化学、实验与 STSE 10 个领域；依赖边 55 条。
+- **高中化学教学研究 54 条**（`src/teaching_research_chemistry_senior.py`）：与 54 个主题 1:1 对应，落点在符号表征与定量迷思（如「物质的量桥梁」「氧化还原电子守恒」「化学平衡移动判据」「官能团决定性质」「同分异构枚举」）。
+- **高中物理课标条目 6 条**（`src/standards_physics.py` 追加，slug `physics-2022`，stage「第五学段（10~12年级）」）：机械运动与物理模型、电磁、机械振动与机械波、热学、原子与原子核、守恒。
+- **高中化学课标条目 5 条**（`src/standards_chemistry.py` 追加，slug `chemistry-2022`）：物质结构基础与化学反应规律、物质性质与转化、物质组成的定量研究、有机化学基础、实验与 STSE。
+- **人教版高中物理教材 6 册**（`src/textbooks_physics.py` 追加 `PHYSICS_SENIOR_VERSION`，slug `pep-physics-senior`）：10a/10b/11a/11b/12a/12b，单元按人教版现行目录。
+- **人教版高中化学教材 5 册**（`src/textbooks_chemistry.py` 追加 `CHEMISTRY_SENIOR_VERSION`，slug `pep-chemistry-senior`）：10a/10b/11a/11b/12a，单元按人教版现行目录。
+
+### 变更
+
+- **`scripts/build.py`**：`STAGE_BY_GRADE` 与 `ENGLISH_STAGE_BY_GRADE` 追加 10/11/12 年级 → 第五学段（10~12 年级）/ 四级（10~12 年级）；`SUBJECT_SLUG` 增加 `思想政治: "politics"`、`技术: "tech"`；`STAGE_SLUG` 增加 `第五学段（10~12年级）: "s5"`、`四级（10~12年级）: "l4"`；`ALLOWED_SOURCES` 预登记高中物理/化学/思想政治课标与人教版高中教材/教参/信息技术/通用技术来源白名单；`MODULES` 追加 `("物理", topics_physics_senior), ("化学", topics_chemistry_senior)`；`RESEARCH_MODULES` 追加 `teaching_research_physics_senior, teaching_research_chemistry_senior`；版本号升至 v0.19.0。
+- **`src/standards.py` / `src/textbooks.py`**：分别 `extend` 高中物理/化学的课标与教材版本数据。
+- **`scripts/validate.mjs`**：`SUBJECTS` 与 `SUBJECT_GRADE_RANGE` 增加「思想政治」（`[10,12]`）、「技术」（`[10,12]`），物理区间 `8~9` → `8~12`、化学 `9` → `9~12`；年级硬断言上限 `9` → `12`；教材引用册次年级提取由首字符改为完整前导数字（`Number(bslug.replace(/[ab]$/,''))`），以支持高中两位数册次（10/11/12 年级）的年级一致性校验；教材册次正则 `[1-9][ab]` 放宽至 `\d{1,2}[ab]`。
+- **`viz/index.html`**：`SUBJECT_LIST` 与学科配色新增「思想政治」（玫瑰红 `#f43f5e`）、「技术」（天蓝 `#06b6d4`）；学科筛选、图例、布局泳道、热力矩阵、深链分享均按列表数据驱动，自动纳入新学科与学段；两处年级正则 `/:([1-9])([ab])/`、`([1-9][ab])` 同步放宽至 `\d{1,2}` 以支持高中册次。
+- **`schema/*.schema.json`**：`gradeRangeStart/End`、`gradeStart`、`grade` 的 `maximum` 由 `9` 改为 `12`；`textbook.schema.json` 的 book slug pattern 由 `^[1-9][ab]$` 改为 `^\d{1,2}[ab]$`。
+- 主题 742 → **844**（初中 477 + 高中 102）；依赖边 1148 → **1251**（hard 736 / soft 515）；课标条目 130 → **141**；域摘要 136 → **158**；教学研究记录 742 → **844**；教材版本 16 → **18**。
+
+### 验证
+
+- `python3 scripts/build.py`：构建通过（844 主题 · 1251 边 · 141 课标 · 158 域摘要 · **844 教学研究** · 18 个教材版本）；
+- `node scripts/validate.mjs`：全部校验通过（DAG 844/844；教学研究记录 844/844 全学科覆盖；剩余 3 条警告为 v0.7 的 2024 版 note-only 主题预期提示）；
+- `node --test scripts/teaching-research.test.mjs`：5/5 通过（字段完整性、长度约束、来源白名单、未标 verified、覆盖清单一致性）。
+
 ## [v0.18.0] - 2026-10-22
 
 本轮补齐路线图的最后一门学科：**初中生物（7~8 年级）的数据层与教学研究层**，`coverage.missingTopicIds` 清空，K9 **十大学科 742 个微主题教学研究全量覆盖**。生物学科源文件（`src/topics_biology_junior.py`、`src/teaching_research_biology_junior.py`、`src/standards_biology.py`、`src/textbooks_biology.py`）全部按既有 schema 撰写并通过 build 校验；教学研究 51 条每条含教学要点与常见错误、2~3 个可操作学习活动（期望体会/反馈建议/安排理由）、教学边界、三级水平诊断任务（含典型错误与下一步动作）与白名单来源引用；来源限于生物课标与人教版《义务教育教科书·生物学》及教师教学用书，`verified` 一律为 false。
