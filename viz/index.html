@@ -189,9 +189,35 @@
   #printArea { display: none; }
 
   #legend { position: absolute; left: 12px; bottom: 12px; background: var(--bg-panel);
-    border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; font-size: 12px;
-    color: var(--text-dim); line-height: 1.9; }
-  #legend .row { display: flex; align-items: center; gap: 8px; }
+    border: 1px solid var(--line); border-radius: 10px; padding: 9px 14px 10px; font-size: 12px;
+    color: var(--text-dim); line-height: 1.8; width: 432px; max-width: calc(100vw - 40px);
+    max-height: min(62vh, 430px); overflow-y: auto; overscroll-behavior: contain;
+    box-shadow: 0 8px 28px rgba(0,0,0,.4); }
+  /* 收起态：只剩一个小胶囊按钮，不再遮挡图谱 */
+  #legend.collapsed { padding: 0; background: none; border: none; box-shadow: none;
+    max-height: none; overflow: visible; width: auto; max-width: none; }
+  #legend.collapsed #legendBody { display: none; }
+  #legend.collapsed .legend-toggle { display: inline-flex; align-items: center; gap: 6px; }
+  #legend:not(.collapsed) .legend-toggle { display: none; }
+  #legend .lg-head { display: flex; align-items: center; justify-content: space-between; gap: 14px;
+    margin-bottom: 3px; }
+  #legend .lg-title { color: var(--text); font-weight: 600; white-space: nowrap; }
+  #legend .lg-close { background: none; border: 1px solid var(--line); border-radius: 6px;
+    color: var(--text-dim); font-size: 11px; cursor: pointer; padding: 1px 7px; line-height: 1.7;
+    flex: 0 0 auto; white-space: nowrap; }
+  #legend .lg-close:hover { color: var(--text); border-color: var(--text-dim); }
+  #legend .row { display: flex; align-items: flex-start; gap: 8px; padding-left: 0; }
+  #legend .row .dot, #legend .row .line { flex: 0 0 auto; margin-top: 7px; }
+  #legend #legendSubjects { flex-wrap: wrap; gap: 2px 12px; }
+  #legend .lg-sub { display: inline-flex; align-items: center; gap: 5px; }
+  #legend .lg-sub .dot { margin-top: 0; }
+  #legend .lg-more { margin-top: 1px; }
+  #legend .lg-more summary { cursor: pointer; font-size: 11.5px; color: var(--text-dim);
+    list-style: none; display: flex; align-items: center; gap: 5px; }
+  #legend .lg-more summary::-webkit-details-marker { display: none; }
+  #legend .lg-more summary::before { content: '▸'; font-size: 9px; opacity: .8; }
+  #legend .lg-more[open] summary::before { content: '▾'; }
+  #legend .lg-more summary:hover { color: var(--text); }
   #legend .dot { width: 10px; height: 10px; border-radius: 50%; }
   #legend .line { width: 22px; height: 0; border-top: 2px solid rgba(255,255,255,.4); }
   #legend .line.dash { border-top-style: dashed; }
@@ -255,9 +281,14 @@
   #progress .pg-num { color: var(--text); font-variant-numeric: tabular-nums; }
   #progress .pg-all { cursor: default; border-left: 1px solid var(--line); padding-left: 12px; }
 
-  /* 图例折叠开关：仅窄屏出现 */
+  /* 图例折叠开关（收起态显示） */
   .legend-toggle { display: none; background: var(--bg-panel); border: 1px solid var(--line);
-    color: var(--text-dim); border-radius: 8px; padding: 5px 11px; font-size: 11.5px; cursor: pointer; }
+    color: var(--text-dim); border-radius: 999px; padding: 5px 12px 5px 9px; font-size: 11.5px;
+    cursor: pointer; box-shadow: 0 4px 16px rgba(0,0,0,.32); }
+  .legend-toggle:hover { color: var(--text); border-color: var(--text-dim); }
+  .legend-toggle .lg-ico { display: inline-flex; align-items: center; justify-content: center;
+    width: 14px; height: 14px; border-radius: 50%; border: 1px solid currentColor;
+    font-size: 9.5px; font-weight: 700; line-height: 1; }
 
   /* ---------- 移动端适配 ---------- */
   @media (max-width: 720px) {
@@ -302,14 +333,12 @@
     .act-btn { min-width: 104px; }
     .close-btn { min-width: 40px; min-height: 40px; }
 
-    /* 图例：默认收起，点「图例」展开 */
-    #legend { left: auto; right: 10px; bottom: auto; top: 44px;
-      padding: 0; background: none; border: none; }
-    .legend-toggle { display: inline-block; min-height: 30px; }
-    #legendBody { display: none; }
-    #legend.open #legendBody { display: block; background: var(--bg-panel);
-      border: 1px solid var(--line); border-radius: 10px; padding: 9px 12px;
-      margin-top: 6px; max-width: 76vw; }
+    /* 图例：窄屏也在左下角，展开后宽度收窄、可滚动 */
+    #legend { left: 10px; right: auto; bottom: 10px; top: auto; font-size: 11.5px;
+      line-height: 1.75; padding: 8px 12px 9px; width: 82vw; max-width: 82vw; max-height: 52vh; }
+    #legend.collapsed { padding: 0; background: none; border: none; width: auto; max-width: none;
+      max-height: none; }
+    .legend-toggle { min-height: 30px; }
 
     #gradeAxis { left: 10px; top: 44px; font-size: 10px; padding: 4px 8px; }
 
@@ -364,18 +393,25 @@
   <main>
     <canvas id="cv"></canvas>
     <div id="gradeAxis"></div>
-    <div id="legend">
-      <button class="legend-toggle" id="btnLegend">图例</button>
+    <div id="legend" class="collapsed">
+      <button class="legend-toggle" id="btnLegend" aria-expanded="false"
+              title="展开图例与操作说明"><span class="lg-ico">i</span>图例与说明</button>
       <div id="legendBody">
+        <div class="lg-head">
+          <span class="lg-title">图例与说明</span>
+          <button class="lg-close" id="btnLegendClose" title="收起，只保留左下角的小按钮">收起</button>
+        </div>
         <div class="row" id="legendSubjects"></div>
-        <div class="row"><span class="line"></span>硬依赖（不会先修就学不了）　<span class="line dash"></span>软依赖</div>
-        <div class="row">大圆环 = 学科 · 中圆环 = 领域簇（数字为下辖知识点数）</div>
-        <div class="row">纵轴 = 年级（1 年级在上，含初中 7~9 年级）· 圆点越大 = 枢纽主题</div>
+        <div class="row"><span class="line"></span>硬依赖（不会先修就学不了）<span class="line dash"></span>软依赖</div>
+        <div class="row">大圆环 = 学科 · 中圆环 = 领域簇（数字为其知识点数）</div>
+        <div class="row">圆点越大 = 越枢纽 · 纵轴 = 年级（上小下大，至高中 12 年级）</div>
         <div class="row"><span class="dot" style="background:var(--accent)"></span>金色圆环 = 已掌握（点击主题可标记，自动保存）</div>
-        <div class="row">悬停圆点会点亮它的先修/解锁邻居并淡出其余；拖动圆点可固定位置（重置视图解除）</div>
-        <div class="row">点击圆点查看详情；「生成学习路径」按依赖拓扑排出完整步骤</div>
-        <div class="row">键盘：↑↓ 切换主题 · <code>/</code> 聚焦搜索 · <code>m</code> 标记已掌握 · <code>Esc</code> 关闭面板</div>
-        <div class="row">筛选与选中状态会写入网址，可直接复制分享到某个知识点</div>
+        <details class="lg-more">
+          <summary>操作提示</summary>
+          <div class="row">悬停点亮先修/解锁邻居 · 拖动圆点固定位置 · 点击查看详情与学习路径</div>
+          <div class="row">键盘：↑↓ 切换 · <code>/</code> 搜索 · <code>m</code> 标记掌握 · <code>Esc</code> 关闭</div>
+          <div class="row">筛选与选中状态会写入网址，复制即可分享到某个知识点</div>
+        </details>
       </div>
     </div>
     <div id="tooltip"></div>
@@ -688,7 +724,7 @@
     if (box) box.innerHTML = chips;
     const lg = document.getElementById('legendSubjects');
     if (lg) lg.innerHTML = SUBJECT_LIST.map(s =>
-      `<span class="dot" style="background:${subjectColor[s]}"></span>${s}　`).join('');
+      `<span class="lg-sub"><span class="dot" style="background:${subjectColor[s]}"></span>${s}</span>`).join('');
   })();
 
   function closure(id, dir) {
@@ -1937,12 +1973,23 @@
   }
   document.getElementById('btnAncestors').onclick = function () { trace.call(this, 'ancestors'); };
   document.getElementById('btnDescendants').onclick = function () { trace.call(this, 'descendants'); };
-  // 图例折叠（窄屏）
-  document.getElementById('btnLegend').onclick = function () {
+  // 图例折叠（桌面与移动端通用，状态记忆在 localStorage）
+  (function legendToggle() {
     const lg = document.getElementById('legend');
-    lg.classList.toggle('open');
-    this.textContent = lg.classList.contains('open') ? '收起图例' : '图例';
-  };
+    const btn = document.getElementById('btnLegend');
+    const close = document.getElementById('btnLegendClose');
+    const KEY = 'stx.legend.open';
+    let open = false;
+    try { open = localStorage.getItem(KEY) === '1'; } catch (e) { /* 隐私模式忽略 */ }
+    function apply() {
+      lg.classList.toggle('collapsed', !open);
+      btn.setAttribute('aria-expanded', String(open));
+      try { localStorage.setItem(KEY, open ? '1' : '0'); } catch (e) { /* ignore */ }
+    }
+    apply();
+    btn.onclick = function () { open = true; apply(); };
+    close.onclick = function () { open = false; apply(); };
+  })();
 
   document.getElementById('btnMasterCount').onclick = function () {
     hideMastered = !hideMastered;
@@ -2060,7 +2107,10 @@
       if (tbm && tbm.classList.contains('open')) { document.getElementById('btnTbClose').click(); return; }
       if (document.getElementById('panel').classList.contains('open')) {
         document.getElementById('btnClose').click();
+        return;
       }
+      const lgd = document.getElementById('legend');
+      if (lgd && !lgd.classList.contains('collapsed')) document.getElementById('btnLegendClose').click();
       return;
     }
     if (typing) return;
