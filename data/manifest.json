@@ -1,16 +1,16 @@
 {
   "name": "学阶图谱 · China Skill Taxonomy",
-  "version": "v0.19.0",
+  "version": "v0.20.0",
   "schemaVersion": 1,
   "generatedAt": "2026-10-22",
   "counts": {
-    "topics": 844,
-    "dependencies": 1251,
-    "curriculumStandards": 141,
-    "clusters": 158,
-    "teachingResearchRecords": 844,
-    "hardEdges": 736,
-    "softEdges": 515
+    "topics": 1009,
+    "dependencies": 1409,
+    "curriculumStandards": 157,
+    "clusters": 175,
+    "teachingResearchRecords": 1009,
+    "hardEdges": 821,
+    "softEdges": 588
   },
   "bySubject": {
     "数学": {
@@ -34,12 +34,12 @@
       "edges": 122
     },
     "历史": {
-      "topics": 58,
-      "edges": 73
+      "topics": 115,
+      "edges": 128
     },
     "地理": {
-      "topics": 49,
-      "edges": 93
+      "topics": 99,
+      "edges": 140
     },
     "科学": {
       "topics": 39,
@@ -50,34 +50,34 @@
       "edges": 84
     },
     "生物": {
-      "topics": 51,
-      "edges": 51
+      "topics": 109,
+      "edges": 107
     }
   },
   "files": {
     "topics.json": {
-      "sha256": "35ccb88dba5de83d3688e171b25923e08fddc0b38c4669d962b5719b4d1fd084",
-      "bytes": 873687
+      "sha256": "1498cd169c82a5a1da52e6362e1d716407ca3218ce77e41f5f9c65372f505c10",
+      "bytes": 1031945
     },
     "dependencies.json": {
-      "sha256": "1fac951f066d77606632b91291bfd64d6e1d56cb76c705d5387159567687826f",
-      "bytes": 234419
+      "sha256": "af10d968aa1f7761c90a84ab906ecffcc4c2ab79dadd9e3b637b11284df8aa66",
+      "bytes": 265345
     },
     "curriculum-standards.json": {
-      "sha256": "f1b698b1eb1ec0f212d62b35c2982c92214779a13add0b329055c71782116f16",
-      "bytes": 68979
+      "sha256": "3791d86993adb4500e12fd2f351fabd90f626127486de1be38a757c209bc77a3",
+      "bytes": 77170
     },
     "textbooks.json": {
-      "sha256": "af6d1c179810e832978cdcde2326f031c4876da4b13a889907c9e6cdc68427d6",
-      "bytes": 192890
+      "sha256": "eca653c3128f38a5eae3d6304070de5e4575e0ad9a8e4407513a92d03b07057c",
+      "bytes": 200584
     },
     "clusters.json": {
-      "sha256": "b82773d7a25bac2d0c94427b76e9640ca2836ea529043aed7965c3b97978dd9b",
-      "bytes": 101480
+      "sha256": "8ec6317447e5a7d1a3ba4e0efc0310cbf00f354dbb81792b6417f833eaab84c9",
+      "bytes": 114332
     },
     "teaching-research.json": {
-      "sha256": "67cc20f5dc7ec71ff8e79a4209d1cc1ea45ad7fdd437b6bbc25935cccd148c05",
-      "bytes": 2259061
+      "sha256": "82a115252e1636b776860cecb6816077e328601f932b0c6774a97e4df80c8234",
+      "bytes": 2609329
     }
   }
 }

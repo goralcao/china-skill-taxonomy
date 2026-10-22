@@ -2,6 +2,35 @@
 
 本项目遵循[语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [v0.20.0] - 2026-10-22
+
+本轮按路线图继续扩展高中阶段，补齐**高中生物（58 个）、高中历史（57 个）、高中地理（50 个）**三科的数据层与教学研究层，对齐《普通高中课程标准（2017年版2020年修订）》与人教版高中教材（各 5 册）。至此 K12 图谱达 **1009 个微主题、1409 条依赖边、157 条课标、175 条域摘要、1009 条教学研究记录、21 个教材版本**，高中五科（物理/化学/生物/历史/地理）全部齐备，`coverage.missingTopicIds` 清空。三科源文件（`src/topics_biology_senior.py`、`src/teaching_research_biology_senior.py`、`src/topics_history_senior.py`、`src/teaching_research_history_senior.py`、`src/topics_geography_senior.py`、`src/teaching_research_geography_senior.py`）与课标/教材追加（`src/standards_biology.py`、`standards_history.py`、`standards_geography.py`、`textbooks_biology.py`、`textbooks_history.py`、`textbooks_geography.py`）全部按既有 schema 撰写并通过 build 校验；教学研究来源限于三科高中课标与人教版高中教材及教师教学用书，`verified` 一律为 false。
+
+### 新增
+
+- **高中生物主题 58 个**（`src/topics_biology_senior.py`，key 前缀 `bio-s-`）：按人教版必修1（分子与细胞）、必修2（遗传与进化）、选必1（稳态与调节）、选必2（生物与环境）、选必3（生物技术与工程）五册组织，覆盖分子与细胞、遗传与进化、稳态与调节、生物与环境、生物技术与工程 5 个领域；依赖边 56 条。
+- **高中生物教学研究 58 条**（`src/teaching_research_biology_senior.py`）：与 58 个主题 1:1 对应，落点在建模与迷思概念（如「细胞学说」「光合与呼吸」「减数分裂」「基因表达」「稳态调节」「生态系统能量流动」「基因工程伦理」）。
+- **高中历史主题 57 个**（`src/topics_history_senior.py`，key 前缀 `hist-s-`）：按人教版必修《中外历史纲要》上/下与选必1（国家制度与社会治理）、选必2（经济与社会生活）、选必3（文化交流与传播）五册组织，覆盖中国古代史、中国近现代史、世界古代中世纪史、世界近现代史、国家制度与社会治理、经济与社会生活、文化交流与传播 7 个领域；依赖边 55 条。
+- **高中历史教学研究 57 条**（`src/teaching_research_history_senior.py`）：与 57 个主题 1:1 对应，落点在史料实证与辩证评价（如「中华文明多元一体」「秦统一评价」「辛亥革命功过」「工业革命影响」「冷战与多极化」「文化交流」）。
+- **高中地理主题 50 个**（`src/topics_geography_senior.py`，key 前缀 `geo-s-`）：按人教版必修1（自然地理）、必修2（人文地理）、选必1（自然地理基础）、选必2（区域发展）、选必3（资源、环境与国家安全）五册组织，覆盖自然地理、人文地理、自然地理基础、区域发展、资源环境与国家安全 5 个领域；依赖边 47 条。
+- **高中地理教学研究 50 条**（`src/teaching_research_geography_senior.py`）：与 50 个主题 1:1 对应，落点在原理应用与空间思维（如「大气受热」「热力环流」「地球运动」「气候类型判断」「洋流渔场」「区域协调发展」「粮食与能源安全」）。
+- **高中课标条目 16 条**：生物 7 条（S5:CELL/METAB/GENE/EVOL/HOME/ECO/BIOTECH）、历史 4 条（S5:MAND/GOV/ECO/CULT）、地理 5 条（S5:NAT1/HUM2/NATA/REGION/SECURITY），均追加至对应 `standards_*.py`（slug 复用 `biology-2022` / `history-2022` / `geography-2022`，stage 为「第五学段（10~12年级）」）。
+- **人教版高中教材 15 册（3 个版本）**：生物 `pep-biology-senior`（10a/10b/11a/11b/12a 五册）、历史 `pep-history-senior`（10a/10b/11a/11b/12a 五册）、地理 `pep-geography-senior`（10a/10b/11a/11b/12a 五册），单元按人教版现行目录，分别追加至 `textbooks_biology.py` / `textbooks_history.py` / `textbooks_geography.py`。
+
+### 变更
+
+- **`scripts/build.py`**：`import` 追加三科 topics 与 teaching_research；`MODULES` 追加 `("生物", topics_biology_senior), ("历史", topics_history_senior), ("地理", topics_geography_senior)`；`RESEARCH_MODULES` 追加三科教学研究模块；`ALLOWED_SOURCES` 预登记高中生物/历史/地理课标与人教版高中教材/教参来源白名单；版本号升至 v0.20.0。
+- **`src/standards.py` / `src/textbooks.py`**：课标无需额外改动（自动聚合 `BIOLOGY_STANDARDS` 等）；`textbooks.py` 的 `DETAILED_VERSIONS` 追加三套高中版本。
+- **`scripts/validate.mjs`**：`SUBJECT_GRADE_RANGE` 将历史 `[7,9]` → `[7,12]`、地理 `[7,8]` → `[7,12]`、生物 `[7,8]` → `[7,12]`，以容纳高中延伸。
+- **`viz/index.html`**：无需改动——学科配色、筛选、图例、布局泳道、热力矩阵、深链分享均按数据驱动，自动纳入三科高中主题；高中两位数册次（10/11/12）正则已在 v0.19 放宽。
+- 主题 844 → **1009**（初中 477 + 高中 267）；依赖边 1251 → **1409**（hard 821 / soft 588）；课标条目 141 → **157**；域摘要 158 → **175**；教学研究记录 844 → **1009**；教材版本 18 → **21**。
+
+### 验证
+
+- `python3 scripts/build.py`：构建通过（1009 主题 · 1409 边 · 157 课标 · 175 域摘要 · **1009 教学研究** · 21 个教材版本）；
+- `node scripts/validate.mjs`：全部校验通过（DAG 1009/1009；教学研究记录 1009/1009 全学科覆盖；剩余 3 条警告为 v0.7 的 2024 版 note-only 主题预期提示）；
+- `node --test scripts/teaching-research.test.mjs`：5/5 通过（字段完整性、长度约束、来源白名单、未标 verified、覆盖清单一致性）。
+
 ## [v0.19.0] - 2026-10-22
 
 本轮启动**高中阶段（10~12 年级）扩展**：打通第五学段（10~12 年级）/ 英语四级学段管线，预注册高中独有学科**思想政治**、**技术**的学科管线（内容待 v0.21 填充）；首批补齐**高中物理（48 个）+ 高中化学（54 个）微主题的数据层与教学研究层**，对齐《普通高中课程标准（2017年版2020年修订）》与人教版高中教材（物理六册、化学五册）。至此 K12 图谱达 **844 个微主题、1251 条依赖边、141 条课标、158 条域摘要、844 条教学研究记录、18 个教材版本**，`coverage.missingTopicIds` 清空。高中物理/化学源文件（`src/topics_physics_senior.py`、`src/teaching_research_physics_senior.py`、`src/topics_chemistry_senior.py`、`src/teaching_research_chemistry_senior.py`、`src/standards_physics.py`（追加）、`src/standards_chemistry.py`（追加）、`src/textbooks_physics.py`（追加）、`src/textbooks_chemistry.py`（追加））全部按既有 schema 撰写并通过 build 校验；教学研究来源限于高中物理/化学课标与人教版高中教材及教师教学用书，`verified` 一律为 false。

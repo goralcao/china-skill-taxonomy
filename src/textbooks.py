@@ -257,6 +257,13 @@ DETAILED_VERSIONS.extend([
     textbooks_chemistry.CHEMISTRY_SENIOR_VERSION,
 ])
 
+# —— 高中生物 / 历史 / 地理（v0.20 新增）——
+DETAILED_VERSIONS.extend([
+    textbooks_biology.BIOLOGY_SENIOR_VERSION,
+    textbooks_history.HISTORY_SENIOR_VERSION,
+    textbooks_geography.GEOGRAPHY_SENIOR_VERSION,
+])
+
 # ChinaTextbook 收录的小学教材版本清单（仅作来源记录，主题暂未对齐这些版本）
 CHINATEXTBOOK_PRIMARY_VERSIONS = {
     "语文": ["统编版"],

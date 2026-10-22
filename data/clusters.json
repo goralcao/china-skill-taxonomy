@@ -1,5 +1,5 @@
 {
-  "version": "v0.19.0",
+  "version": "v0.20.0",
   "schemaVersion": 1,
   "clusters": [
     {
@@ -2266,6 +2266,324 @@
       "topicIds": [
         "mt_chem-s-green-chemistry",
         "mt_chem-s-society-issues"
+      ]
+    },
+    {
+      "id": "cl-biology-d13-s5",
+      "subject": "生物",
+      "domain": "分子与细胞",
+      "stage": "第五学段（10~12年级）",
+      "summary": "高中生物的起点。从细胞是生命活动基本单位出发，认识细胞多样又统一的结构，再深入到组成分子、物质运输与能量转换，最后理解细胞的增殖与分化。让孩子建立「结构决定功能、生命依赖物质与能量」的基本观念。",
+      "topicIds": [
+        "mt_bio-s-cell-life",
+        "mt_bio-s-cell-diversity",
+        "mt_bio-s-cell-elements",
+        "mt_bio-s-proteins",
+        "mt_bio-s-nucleic-acid",
+        "mt_bio-s-sugars-lipids",
+        "mt_bio-s-cell-membrane",
+        "mt_bio-s-organelles",
+        "mt_bio-s-nucleus",
+        "mt_bio-s-transport",
+        "mt_bio-s-enzyme",
+        "mt_bio-s-atp",
+        "mt_bio-s-photosynthesis",
+        "mt_bio-s-cell-respiration",
+        "mt_bio-s-cell-proliferation",
+        "mt_bio-s-cell-differentiation"
+      ]
+    },
+    {
+      "id": "cl-biology-d14-s5",
+      "subject": "生物",
+      "domain": "遗传与进化",
+      "stage": "第五学段（10~12年级）",
+      "summary": "揭示生命如何代代相传又不断演化。从孟德尔遗传定律到减数分裂与受精，再从DNA是遗传物质到基因表达，最后用现代进化理论解释多样性与适应性的来源。这是连接微观分子与宏观生命的桥梁。",
+      "topicIds": [
+        "mt_bio-s-segregation",
+        "mt_bio-s-free-combination",
+        "mt_bio-s-meiosis",
+        "mt_bio-s-fertilization",
+        "mt_bio-s-sex-linked",
+        "mt_bio-s-dna-hereditary",
+        "mt_bio-s-dna-structure",
+        "mt_bio-s-dna-replication",
+        "mt_bio-s-gene-expression",
+        "mt_bio-s-gene-mutation",
+        "mt_bio-s-chromosome-variation",
+        "mt_bio-s-evolution-theory"
+      ]
+    },
+    {
+      "id": "cl-biology-d15-s5",
+      "subject": "生物",
+      "domain": "稳态与调节",
+      "stage": "第五学段（10~12年级）",
+      "summary": "理解机体如何保持稳定。围绕内环境稳态，分别认识神经调节的快速精准、体液调节的缓慢持久、免疫调节的防御清除，以及植物激素的灵活调节。让孩子看到生命系统靠多重网络协同维持平衡。",
+      "topicIds": [
+        "mt_bio-s-internal-environment",
+        "mt_bio-s-homeostasis",
+        "mt_bio-s-neuron",
+        "mt_bio-s-synapse",
+        "mt_bio-s-nervous-system",
+        "mt_bio-s-hormones",
+        "mt_bio-s-blood-glucose",
+        "mt_bio-s-immune-basis",
+        "mt_bio-s-immune-response",
+        "mt_bio-s-plant-hormones",
+        "mt_bio-s-plant-other-hormones"
+      ]
+    },
+    {
+      "id": "cl-biology-d1-s5",
+      "subject": "生物",
+      "domain": "生物与环境",
+      "stage": "第五学段（10~12年级）",
+      "summary": "把视野从个体推向群体与系统。从种群特征、群落结构到生态系统的能量流动与物质循环，再到生物多样性保护与可持续发展。帮孩子建立人与自然和谐共生的生态观。",
+      "topicIds": [
+        "mt_bio-s-population",
+        "mt_bio-s-population-growth",
+        "mt_bio-s-community",
+        "mt_bio-s-succession",
+        "mt_bio-s-ecosystem-structure",
+        "mt_bio-s-ecosystem-function",
+        "mt_bio-s-ecosystem-stability",
+        "mt_bio-s-biodiversity",
+        "mt_bio-s-sustainable"
+      ]
+    },
+    {
+      "id": "cl-biology-d16-s5",
+      "subject": "生物",
+      "domain": "生物技术与工程",
+      "stage": "第五学段（10~12年级）",
+      "summary": "了解人类如何改造生命。从传统发酵到现代发酵工程，从细胞工程到基因工程和蛋白质工程，同时正视其安全性与伦理边界。让孩子既看到技术的力量，也学会审慎与责任。",
+      "topicIds": [
+        "mt_bio-s-fermentation-microbe",
+        "mt_bio-s-fermentation-engineering",
+        "mt_bio-s-plant-cell-engineering",
+        "mt_bio-s-animal-cell-engineering",
+        "mt_bio-s-cell-engineering-app",
+        "mt_bio-s-gene-engineering",
+        "mt_bio-s-gene-engineering-app",
+        "mt_bio-s-protein-engineering",
+        "mt_bio-s-biotech-safety",
+        "mt_bio-s-biotech-ethics"
+      ]
+    },
+    {
+      "id": "cl-history-d2-s5",
+      "subject": "历史",
+      "domain": "中国古代史",
+      "stage": "第五学段（10~12年级）",
+      "summary": "从中华文明起源到明清，梳理统一多民族国家形成、发展与巩固的主线，理解中央集权制度、经济文化繁荣与民族交融如何塑造古代中国。",
+      "topicIds": [
+        "mt_hist-s-early-civilization",
+        "mt_hist-s-qin-han-unification",
+        "mt_hist-s-han-dynasty",
+        "mt_hist-s-three-kingdoms",
+        "mt_hist-s-sui-tang",
+        "mt_hist-s-song-yuan",
+        "mt_hist-s-song-economy",
+        "mt_hist-s-ming-qing",
+        "mt_hist-s-ming-qing-economy"
+      ]
+    },
+    {
+      "id": "cl-history-d8-s5",
+      "subject": "历史",
+      "domain": "中国近现代史",
+      "stage": "第五学段（10~12年级）",
+      "summary": "从鸦片战争到中国特色社会主义新时代，认识中国人民反抗侵略、探索救国道路、实现民族独立与复兴的历程，理解中国共产党领导的历史必然性。",
+      "topicIds": [
+        "mt_hist-s-opium-war",
+        "mt_hist-s-taiping-reform",
+        "mt_hist-s-hundred-days",
+        "mt_hist-s-1911-revolution",
+        "mt_hist-s-warlord-mayfourth",
+        "mt_hist-s-ccp-founding",
+        "mt_hist-s-agrarian-war",
+        "mt_hist-s-anti-japanese-war",
+        "mt_hist-s-liberation-war",
+        "mt_hist-s-prc-founding",
+        "mt_hist-s-socialist-construction",
+        "mt_hist-s-reform-opening",
+        "mt_hist-s-new-era"
+      ]
+    },
+    {
+      "id": "cl-history-d9-s5",
+      "subject": "历史",
+      "domain": "世界古代中世纪史",
+      "stage": "第五学段（10~12年级）",
+      "summary": "从古代文明的多元起源到中古时期的区域文明，理解不同文明各具特色又通过商贸、征战与宗教相互交流，形成世界文明的多样格局。",
+      "topicIds": [
+        "mt_hist-s-ancient-civilization",
+        "mt_hist-s-ancient-empires",
+        "mt_hist-s-medieval-europe",
+        "mt_hist-s-medieval-asia-africa"
+      ]
+    },
+    {
+      "id": "cl-history-d10-s5",
+      "subject": "历史",
+      "domain": "世界近现代史",
+      "stage": "第五学段（10~12年级）",
+      "summary": "从新航路开辟到当代世界，梳理资本主义、社会主义与民族解放运动的发展，理解两次世界大战、冷战与全球化如何塑造现代世界。",
+      "topicIds": [
+        "mt_hist-s-age-discovery",
+        "mt_hist-s-renaissance-reformation",
+        "mt_hist-s-bourgeois-revolution",
+        "mt_hist-s-industrial-revolution",
+        "mt_hist-s-marxism",
+        "mt_hist-s-colonial-system",
+        "mt_hist-s-national-independence",
+        "mt_hist-s-october-revolution",
+        "mt_hist-s-world-wars",
+        "mt_hist-s-cold-war",
+        "mt_hist-s-postwar-development",
+        "mt_hist-s-contemporary-world"
+      ]
+    },
+    {
+      "id": "cl-history-d11-s5",
+      "subject": "历史",
+      "domain": "国家制度与社会治理",
+      "stage": "第五学段（10~12年级）",
+      "summary": "从政治制度、官员选拔、法律教化、民族关系、基层治理到货币税收，横向理解中外国家制度与社会治理的历史经验与现实意义。",
+      "topicIds": [
+        "mt_hist-s-china-political-system",
+        "mt_hist-s-west-political-system",
+        "mt_hist-s-official-selection",
+        "mt_hist-s-law-morality",
+        "mt_hist-s-ethnic-relations",
+        "mt_hist-s-grassroots-governance",
+        "mt_hist-s-currency-tax"
+      ]
+    },
+    {
+      "id": "cl-history-d12-s5",
+      "subject": "历史",
+      "domain": "经济与社会生活",
+      "stage": "第五学段（10~12年级）",
+      "summary": "围绕食物生产、工具劳作、商业贸易、聚落居住、交通与医疗，纵向理解经济活动如何改变人类的日常生活与社会面貌。",
+      "topicIds": [
+        "mt_hist-s-food-production",
+        "mt_hist-s-tools-labor",
+        "mt_hist-s-trade-daily",
+        "mt_hist-s-settlement",
+        "mt_hist-s-transport",
+        "mt_hist-s-medicine-health"
+      ]
+    },
+    {
+      "id": "cl-history-d13-s5",
+      "subject": "历史",
+      "domain": "文化交流与传播",
+      "stage": "第五学段（10~12年级）",
+      "summary": "从中华文化与世界文化的多样形态出发，理解人口迁徙、商路贸易与战争在文化交流中的作用，认识文化遗产传承与保护的价值。",
+      "topicIds": [
+        "mt_hist-s-chinese-culture",
+        "mt_hist-s-world-culture",
+        "mt_hist-s-migration",
+        "mt_hist-s-silk-road",
+        "mt_hist-s-war-culture",
+        "mt_hist-s-cultural-heritage"
+      ]
+    },
+    {
+      "id": "cl-geography-d8-s5",
+      "subject": "地理",
+      "domain": "自然地理",
+      "stage": "第五学段（10~12年级）",
+      "summary": "高中地理的起点。从地球的宇宙环境、大气与水圈到地貌、植被土壤与自然灾害，建立对自然地理要素及其相互联系的整体认识。",
+      "topicIds": [
+        "mt_geo-s-earth-universe",
+        "mt_geo-s-solar-system",
+        "mt_geo-s-earth-layers",
+        "mt_geo-s-atmosphere",
+        "mt_geo-s-atmospheric-heating",
+        "mt_geo-s-atmospheric-circulation",
+        "mt_geo-s-water-cycle",
+        "mt_geo-s-ocean-current",
+        "mt_geo-s-landform",
+        "mt_geo-s-vegetation",
+        "mt_geo-s-soil",
+        "mt_geo-s-natural-disaster"
+      ]
+    },
+    {
+      "id": "cl-geography-d9-s5",
+      "subject": "地理",
+      "domain": "人文地理",
+      "stage": "第五学段（10~12年级）",
+      "summary": "关注人与地的关系。人口分布与迁移、城镇化与空间结构、农业工业服务业区位、交通布局与可持续发展，理解人类活动的空间规律。",
+      "topicIds": [
+        "mt_geo-s-population",
+        "mt_geo-s-population-capacity",
+        "mt_geo-s-urbanization",
+        "mt_geo-s-urban-structure",
+        "mt_geo-s-rural",
+        "mt_geo-s-agriculture-location",
+        "mt_geo-s-industry-location",
+        "mt_geo-s-service-location",
+        "mt_geo-s-transport-layout",
+        "mt_geo-s-sustainable-development"
+      ]
+    },
+    {
+      "id": "cl-geography-d10-s5",
+      "subject": "地理",
+      "domain": "自然地理基础",
+      "stage": "第五学段（10~12年级）",
+      "summary": "在必修基础上深化。地球运动的地理意义、内外力与板块构造、天气系统与气候类型、洋流与水体、自然环境的整体性与差异性，构成自然地理的核心原理。",
+      "topicIds": [
+        "mt_geo-s-earth-rotation",
+        "mt_geo-s-earth-revolution",
+        "mt_geo-s-internal-force",
+        "mt_geo-s-external-force",
+        "mt_geo-s-plate-tectonics",
+        "mt_geo-s-front-cyclone",
+        "mt_geo-s-climate-type",
+        "mt_geo-s-ocean-current-senior",
+        "mt_geo-s-water-balance",
+        "mt_geo-s-natural-integration",
+        "mt_geo-s-natural-difference",
+        "mt_geo-s-snow-line"
+      ]
+    },
+    {
+      "id": "cl-geography-d11-s5",
+      "subject": "地理",
+      "domain": "区域发展",
+      "stage": "第五学段（10~12年级）",
+      "summary": "把原理用于真实区域。区域含义与发展条件、资源开发与生态治理、城市群与产业转移、资源调配与区域协调，培养区域认知与综合思维。",
+      "topicIds": [
+        "mt_geo-s-region-concept",
+        "mt_geo-s-region-development",
+        "mt_geo-s-resource-development",
+        "mt_geo-s-ecological-restoration",
+        "mt_geo-s-river-basin",
+        "mt_geo-s-urban-agglomeration",
+        "mt_geo-s-industrial-transfer",
+        "mt_geo-s-resource-allocation",
+        "mt_geo-s-regional-coordination"
+      ]
+    },
+    {
+      "id": "cl-geography-d12-s5",
+      "subject": "地理",
+      "domain": "资源环境与国家安全",
+      "stage": "第五学段（10~12年级）",
+      "summary": "落脚于国家战略。自然环境的服务功能、粮食能源水资源安全、环境安全与气候变化、总体国家安全观，理解资源环境与国家安全的内在联系。",
+      "topicIds": [
+        "mt_geo-s-natural-service",
+        "mt_geo-s-food-security",
+        "mt_geo-s-energy-security",
+        "mt_geo-s-water-security",
+        "mt_geo-s-environmental-security",
+        "mt_geo-s-climate-change",
+        "mt_geo-s-national-security-strategy"
       ]
     }
   ]

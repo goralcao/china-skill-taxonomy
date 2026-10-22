@@ -69,8 +69,14 @@ import topics_physics_senior  # noqa: E402
 import topics_chemistry_senior  # noqa: E402
 import teaching_research_physics_senior  # noqa: E402
 import teaching_research_chemistry_senior  # noqa: E402
+import topics_biology_senior  # noqa: E402
+import topics_history_senior  # noqa: E402
+import topics_geography_senior  # noqa: E402
+import teaching_research_biology_senior  # noqa: E402
+import teaching_research_history_senior  # noqa: E402
+import teaching_research_geography_senior  # noqa: E402
 
-VERSION = "v0.19.0"
+VERSION = "v0.20.0"
 SCHEMA_VERSION = 1
 
 MODULES = [
@@ -90,6 +96,9 @@ MODULES = [
     ("生物", topics_biology_junior),
     ("物理", topics_physics_senior),
     ("化学", topics_chemistry_senior),
+    ("生物", topics_biology_senior),
+    ("历史", topics_history_senior),
+    ("地理", topics_geography_senior),
 ]
 
 RESEARCH_MODULES = [
@@ -110,6 +119,9 @@ RESEARCH_MODULES = [
     teaching_research_biology_junior,
     teaching_research_physics_senior,
     teaching_research_chemistry_senior,
+    teaching_research_biology_senior,
+    teaching_research_history_senior,
+    teaching_research_geography_senior,
 ]
 
 RESEARCH_AUTHORSHIP = {
@@ -169,6 +181,16 @@ ALLOWED_SOURCES = {
     "《普通高中通用技术课程标准（2017年版2020年修订）》": "https://basic.smartedu.cn/",
     "人教版《普通高中教科书·信息技术》": "",
     "人教版《普通高中教科书·通用技术》": "",
+    # —— v0.20：高中生物 / 历史 / 地理 ——
+    "《普通高中生物学课程标准（2017年版2020年修订）》": "https://basic.smartedu.cn/",
+    "人教版《普通高中教科书·生物学》教师教学用书": "https://www.pep.com.cn/",
+    "人教版《普通高中教科书·生物学》": "",
+    "《普通高中历史课程标准（2017年版2020年修订）》": "https://basic.smartedu.cn/",
+    "统编版《普通高中教科书·历史》教师教学用书": "",
+    "统编版《普通高中教科书·历史》": "",
+    "《普通高中地理课程标准（2017年版2020年修订）》": "https://basic.smartedu.cn/",
+    "人教版《普通高中教科书·地理》教师教学用书": "https://www.pep.com.cn/",
+    "人教版《普通高中教科书·地理》": "",
 }
 
 STAGE_BY_GRADE = {

@@ -1,5 +1,5 @@
 {
-  "version": "v0.19.0",
+  "version": "v0.20.0",
   "schemaVersion": 1,
   "dependencies": [
     {
@@ -7507,6 +7507,954 @@
       "prerequisiteId": "mt_chem-s-amount",
       "strength": "soft",
       "reason": "浓度计量与反应速率定量相关"
+    },
+    {
+      "topicId": "mt_bio-s-cell-diversity",
+      "prerequisiteId": "mt_bio-s-cell-life",
+      "strength": "hard",
+      "reason": "先建立细胞是基本单位的认识，才能讨论细胞的多样与统一"
+    },
+    {
+      "topicId": "mt_bio-s-cell-elements",
+      "prerequisiteId": "mt_bio-s-cell-life",
+      "strength": "soft",
+      "reason": "认识细胞组成需先有细胞概念"
+    },
+    {
+      "topicId": "mt_bio-s-proteins",
+      "prerequisiteId": "mt_bio-s-cell-elements",
+      "strength": "hard",
+      "reason": "蛋白质是组成细胞的重要有机物"
+    },
+    {
+      "topicId": "mt_bio-s-nucleic-acid",
+      "prerequisiteId": "mt_bio-s-cell-elements",
+      "strength": "soft",
+      "reason": "核酸也是细胞的组成有机物"
+    },
+    {
+      "topicId": "mt_bio-s-sugars-lipids",
+      "prerequisiteId": "mt_bio-s-cell-elements",
+      "strength": "soft",
+      "reason": "糖类和脂质同为细胞化合物"
+    },
+    {
+      "topicId": "mt_bio-s-cell-membrane",
+      "prerequisiteId": "mt_bio-s-cell-diversity",
+      "strength": "hard",
+      "reason": "细胞膜是真核细胞的基本结构"
+    },
+    {
+      "topicId": "mt_bio-s-organelles",
+      "prerequisiteId": "mt_bio-s-cell-membrane",
+      "strength": "soft",
+      "reason": "细胞器位于细胞膜之内的细胞质中"
+    },
+    {
+      "topicId": "mt_bio-s-nucleus",
+      "prerequisiteId": "mt_bio-s-organelles",
+      "strength": "soft",
+      "reason": "细胞核与细胞器共同构成真核细胞结构"
+    },
+    {
+      "topicId": "mt_bio-s-transport",
+      "prerequisiteId": "mt_bio-s-cell-membrane",
+      "strength": "hard",
+      "reason": "跨膜运输以细胞膜的结构为基础"
+    },
+    {
+      "topicId": "mt_bio-s-enzyme",
+      "prerequisiteId": "mt_bio-s-proteins",
+      "strength": "hard",
+      "reason": "多数酶的本质是蛋白质"
+    },
+    {
+      "topicId": "mt_bio-s-atp",
+      "prerequisiteId": "mt_bio-s-enzyme",
+      "strength": "soft",
+      "reason": "ATP的合成常需酶的催化"
+    },
+    {
+      "topicId": "mt_bio-s-photosynthesis",
+      "prerequisiteId": "mt_bio-s-atp",
+      "strength": "hard",
+      "reason": "光合作用需要ATP参与能量转换"
+    },
+    {
+      "topicId": "mt_bio-s-photosynthesis",
+      "prerequisiteId": "mt_bio-s-organelles",
+      "strength": "soft",
+      "reason": "光合作用在叶绿体这一细胞器中进行"
+    },
+    {
+      "topicId": "mt_bio-s-cell-respiration",
+      "prerequisiteId": "mt_bio-s-atp",
+      "strength": "hard",
+      "reason": "细胞呼吸释放的能量用于合成ATP"
+    },
+    {
+      "topicId": "mt_bio-s-cell-proliferation",
+      "prerequisiteId": "mt_bio-s-nucleus",
+      "strength": "hard",
+      "reason": "有丝分裂中染色体的变化由细胞核主导"
+    },
+    {
+      "topicId": "mt_bio-s-cell-differentiation",
+      "prerequisiteId": "mt_bio-s-cell-proliferation",
+      "strength": "hard",
+      "reason": "分化建立在细胞分裂产生子细胞之后"
+    },
+    {
+      "topicId": "mt_bio-s-free-combination",
+      "prerequisiteId": "mt_bio-s-segregation",
+      "strength": "hard",
+      "reason": "自由组合定律以一对因子的分离为前提"
+    },
+    {
+      "topicId": "mt_bio-s-meiosis",
+      "prerequisiteId": "mt_bio-s-segregation",
+      "strength": "soft",
+      "reason": "减数分裂从细胞层面解释分离定律"
+    },
+    {
+      "topicId": "mt_bio-s-sex-linked",
+      "prerequisiteId": "mt_bio-s-meiosis",
+      "strength": "hard",
+      "reason": "伴性遗传依赖性染色体在减数分裂中的行为"
+    },
+    {
+      "topicId": "mt_bio-s-fertilization",
+      "prerequisiteId": "mt_bio-s-meiosis",
+      "strength": "hard",
+      "reason": "受精作用与减数分裂共同维持染色体数目"
+    },
+    {
+      "topicId": "mt_bio-s-dna-hereditary",
+      "prerequisiteId": "mt_bio-s-segregation",
+      "strength": "soft",
+      "reason": "遗传因子的物质本质是DNA"
+    },
+    {
+      "topicId": "mt_bio-s-dna-structure",
+      "prerequisiteId": "mt_bio-s-dna-hereditary",
+      "strength": "hard",
+      "reason": "先确认DNA是遗传物质再研究其结构"
+    },
+    {
+      "topicId": "mt_bio-s-dna-replication",
+      "prerequisiteId": "mt_bio-s-dna-structure",
+      "strength": "hard",
+      "reason": "复制以双螺旋结构为模板"
+    },
+    {
+      "topicId": "mt_bio-s-gene-expression",
+      "prerequisiteId": "mt_bio-s-dna-structure",
+      "strength": "hard",
+      "reason": "遗传信息表达基于DNA的碱基序列"
+    },
+    {
+      "topicId": "mt_bio-s-gene-mutation",
+      "prerequisiteId": "mt_bio-s-dna-replication",
+      "strength": "hard",
+      "reason": "突变发生在DNA复制等过程中"
+    },
+    {
+      "topicId": "mt_bio-s-chromosome-variation",
+      "prerequisiteId": "mt_bio-s-meiosis",
+      "strength": "hard",
+      "reason": "染色体数目变异与减数分裂异常相关"
+    },
+    {
+      "topicId": "mt_bio-s-evolution-theory",
+      "prerequisiteId": "mt_bio-s-gene-mutation",
+      "strength": "hard",
+      "reason": "突变和重组为进化提供原材料"
+    },
+    {
+      "topicId": "mt_bio-s-evolution-theory",
+      "prerequisiteId": "mt_bio-s-chromosome-variation",
+      "strength": "soft",
+      "reason": "染色体变异同样参与进化"
+    },
+    {
+      "topicId": "mt_bio-s-evolution-theory",
+      "prerequisiteId": "mt_bio-s-free-combination",
+      "strength": "soft",
+      "reason": "可遗传变异离不开遗传规律"
+    },
+    {
+      "topicId": "mt_bio-s-homeostasis",
+      "prerequisiteId": "mt_bio-s-internal-environment",
+      "strength": "hard",
+      "reason": "稳态是内环境的相对稳定状态"
+    },
+    {
+      "topicId": "mt_bio-s-neuron",
+      "prerequisiteId": "mt_bio-s-homeostasis",
+      "strength": "soft",
+      "reason": "神经调节参与维持稳态"
+    },
+    {
+      "topicId": "mt_bio-s-synapse",
+      "prerequisiteId": "mt_bio-s-neuron",
+      "strength": "hard",
+      "reason": "兴奋在神经元间通过突触传递"
+    },
+    {
+      "topicId": "mt_bio-s-nervous-system",
+      "prerequisiteId": "mt_bio-s-synapse",
+      "strength": "soft",
+      "reason": "分级调节建立在突触传递之上"
+    },
+    {
+      "topicId": "mt_bio-s-hormones",
+      "prerequisiteId": "mt_bio-s-homeostasis",
+      "strength": "soft",
+      "reason": "体液调节是稳态调节网络的一部分"
+    },
+    {
+      "topicId": "mt_bio-s-blood-glucose",
+      "prerequisiteId": "mt_bio-s-hormones",
+      "strength": "hard",
+      "reason": "血糖平衡主要由激素调节"
+    },
+    {
+      "topicId": "mt_bio-s-immune-basis",
+      "prerequisiteId": "mt_bio-s-homeostasis",
+      "strength": "soft",
+      "reason": "免疫调节也是稳态调节网络的一部分"
+    },
+    {
+      "topicId": "mt_bio-s-immune-response",
+      "prerequisiteId": "mt_bio-s-immune-basis",
+      "strength": "hard",
+      "reason": "特异性免疫建立在免疫系统组成之上"
+    },
+    {
+      "topicId": "mt_bio-s-plant-hormones",
+      "prerequisiteId": "mt_bio-s-homeostasis",
+      "strength": "soft",
+      "reason": "植物也通过调节维持生命活动稳定"
+    },
+    {
+      "topicId": "mt_bio-s-plant-other-hormones",
+      "prerequisiteId": "mt_bio-s-plant-hormones",
+      "strength": "hard",
+      "reason": "其他激素与生长素共同调节植物"
+    },
+    {
+      "topicId": "mt_bio-s-population-growth",
+      "prerequisiteId": "mt_bio-s-population",
+      "strength": "hard",
+      "reason": "数量变化建立在数量特征之上"
+    },
+    {
+      "topicId": "mt_bio-s-community",
+      "prerequisiteId": "mt_bio-s-population",
+      "strength": "soft",
+      "reason": "群落由多个种群集合而成"
+    },
+    {
+      "topicId": "mt_bio-s-succession",
+      "prerequisiteId": "mt_bio-s-community",
+      "strength": "hard",
+      "reason": "演替是群落随时间被替代的过程"
+    },
+    {
+      "topicId": "mt_bio-s-ecosystem-structure",
+      "prerequisiteId": "mt_bio-s-community",
+      "strength": "hard",
+      "reason": "生态系统包含生物群落及其环境"
+    },
+    {
+      "topicId": "mt_bio-s-ecosystem-function",
+      "prerequisiteId": "mt_bio-s-ecosystem-structure",
+      "strength": "hard",
+      "reason": "能量流动与物质循环依赖营养结构"
+    },
+    {
+      "topicId": "mt_bio-s-ecosystem-stability",
+      "prerequisiteId": "mt_bio-s-ecosystem-function",
+      "strength": "hard",
+      "reason": "稳定性建立在结构与功能协调之上"
+    },
+    {
+      "topicId": "mt_bio-s-biodiversity",
+      "prerequisiteId": "mt_bio-s-ecosystem-stability",
+      "strength": "soft",
+      "reason": "生物多样性是稳定性的基础"
+    },
+    {
+      "topicId": "mt_bio-s-sustainable",
+      "prerequisiteId": "mt_bio-s-biodiversity",
+      "strength": "hard",
+      "reason": "协调发展需以保护多样性为前提"
+    },
+    {
+      "topicId": "mt_bio-s-fermentation-engineering",
+      "prerequisiteId": "mt_bio-s-fermentation-microbe",
+      "strength": "hard",
+      "reason": "工业发酵建立在微生物代谢知识上"
+    },
+    {
+      "topicId": "mt_bio-s-plant-cell-engineering",
+      "prerequisiteId": "mt_bio-s-nucleus",
+      "strength": "soft",
+      "reason": "细胞工程依赖细胞全能性与核的控制作用"
+    },
+    {
+      "topicId": "mt_bio-s-animal-cell-engineering",
+      "prerequisiteId": "mt_bio-s-plant-cell-engineering",
+      "strength": "soft",
+      "reason": "动物与植物细胞工程原理相通"
+    },
+    {
+      "topicId": "mt_bio-s-cell-engineering-app",
+      "prerequisiteId": "mt_bio-s-animal-cell-engineering",
+      "strength": "hard",
+      "reason": "应用建立在各项细胞工程技术之上"
+    },
+    {
+      "topicId": "mt_bio-s-gene-engineering",
+      "prerequisiteId": "mt_bio-s-dna-structure",
+      "strength": "hard",
+      "reason": "基因工程操作以DNA结构与复制为基础"
+    },
+    {
+      "topicId": "mt_bio-s-gene-engineering-app",
+      "prerequisiteId": "mt_bio-s-gene-engineering",
+      "strength": "hard",
+      "reason": "应用建立在基因工程操作之上"
+    },
+    {
+      "topicId": "mt_bio-s-protein-engineering",
+      "prerequisiteId": "mt_bio-s-gene-engineering",
+      "strength": "hard",
+      "reason": "蛋白质工程以基因工程为基础"
+    },
+    {
+      "topicId": "mt_bio-s-biotech-safety",
+      "prerequisiteId": "mt_bio-s-gene-engineering-app",
+      "strength": "soft",
+      "reason": "安全评估针对已应用的生物技术"
+    },
+    {
+      "topicId": "mt_bio-s-biotech-ethics",
+      "prerequisiteId": "mt_bio-s-biotech-safety",
+      "strength": "hard",
+      "reason": "伦理讨论建立在安全性认识之上"
+    },
+    {
+      "topicId": "mt_hist-s-qin-han-unification",
+      "prerequisiteId": "mt_hist-s-early-civilization",
+      "strength": "hard",
+      "reason": "秦统一建立在早期国家与礼制传统之上"
+    },
+    {
+      "topicId": "mt_hist-s-han-dynasty",
+      "prerequisiteId": "mt_hist-s-qin-han-unification",
+      "strength": "hard",
+      "reason": "汉承秦制并巩固大一统"
+    },
+    {
+      "topicId": "mt_hist-s-three-kingdoms",
+      "prerequisiteId": "mt_hist-s-han-dynasty",
+      "strength": "soft",
+      "reason": "民族交融在汉代统一格局之后展开"
+    },
+    {
+      "topicId": "mt_hist-s-sui-tang",
+      "prerequisiteId": "mt_hist-s-three-kingdoms",
+      "strength": "hard",
+      "reason": "隋唐统一以民族交融和江南开发为基础"
+    },
+    {
+      "topicId": "mt_hist-s-song-yuan",
+      "prerequisiteId": "mt_hist-s-sui-tang",
+      "strength": "hard",
+      "reason": "宋元制度在隋唐制度基础上演进"
+    },
+    {
+      "topicId": "mt_hist-s-song-economy",
+      "prerequisiteId": "mt_hist-s-song-yuan",
+      "strength": "soft",
+      "reason": "经济变化发生在宋元政权格局之中"
+    },
+    {
+      "topicId": "mt_hist-s-ming-qing",
+      "prerequisiteId": "mt_hist-s-song-yuan",
+      "strength": "hard",
+      "reason": "明清统一多民族国家在前代基础上巩固"
+    },
+    {
+      "topicId": "mt_hist-s-ming-qing-economy",
+      "prerequisiteId": "mt_hist-s-ming-qing",
+      "strength": "soft",
+      "reason": "明清经济文化发展以国家统一为前提"
+    },
+    {
+      "topicId": "mt_hist-s-opium-war",
+      "prerequisiteId": "mt_hist-s-ming-qing-economy",
+      "strength": "hard",
+      "reason": "近代危机源于明清后期的封闭与落后"
+    },
+    {
+      "topicId": "mt_hist-s-taiping-reform",
+      "prerequisiteId": "mt_hist-s-opium-war",
+      "strength": "hard",
+      "reason": "太平天国与洋务运动是对列强冲击的回应"
+    },
+    {
+      "topicId": "mt_hist-s-hundred-days",
+      "prerequisiteId": "mt_hist-s-taiping-reform",
+      "strength": "soft",
+      "reason": "戊戌变法在洋务运动之后深化学习西方"
+    },
+    {
+      "topicId": "mt_hist-s-1911-revolution",
+      "prerequisiteId": "mt_hist-s-hundred-days",
+      "strength": "hard",
+      "reason": "辛亥革命在维新失败后转向革命"
+    },
+    {
+      "topicId": "mt_hist-s-warlord-mayfourth",
+      "prerequisiteId": "mt_hist-s-1911-revolution",
+      "strength": "hard",
+      "reason": "五四运动发生在民国初年军阀混战背景"
+    },
+    {
+      "topicId": "mt_hist-s-ccp-founding",
+      "prerequisiteId": "mt_hist-s-warlord-mayfourth",
+      "strength": "hard",
+      "reason": "中共成立以五四运动传播马克思主义为基础"
+    },
+    {
+      "topicId": "mt_hist-s-agrarian-war",
+      "prerequisiteId": "mt_hist-s-ccp-founding",
+      "strength": "hard",
+      "reason": "土地革命是中共成立后探索革命道路的实践"
+    },
+    {
+      "topicId": "mt_hist-s-anti-japanese-war",
+      "prerequisiteId": "mt_hist-s-agrarian-war",
+      "strength": "soft",
+      "reason": "抗战在土地革命与长征之后展开"
+    },
+    {
+      "topicId": "mt_hist-s-liberation-war",
+      "prerequisiteId": "mt_hist-s-anti-japanese-war",
+      "strength": "hard",
+      "reason": "解放战争紧接抗战胜利后的局势"
+    },
+    {
+      "topicId": "mt_hist-s-prc-founding",
+      "prerequisiteId": "mt_hist-s-liberation-war",
+      "strength": "hard",
+      "reason": "新中国成立是解放战争胜利的结果"
+    },
+    {
+      "topicId": "mt_hist-s-socialist-construction",
+      "prerequisiteId": "mt_hist-s-prc-founding",
+      "strength": "hard",
+      "reason": "社会主义建设在新中国成立后展开"
+    },
+    {
+      "topicId": "mt_hist-s-reform-opening",
+      "prerequisiteId": "mt_hist-s-socialist-construction",
+      "strength": "hard",
+      "reason": "改革开放总结社会主义建设探索的经验教训"
+    },
+    {
+      "topicId": "mt_hist-s-new-era",
+      "prerequisiteId": "mt_hist-s-reform-opening",
+      "strength": "hard",
+      "reason": "新时代是改革开放的继续深化"
+    },
+    {
+      "topicId": "mt_hist-s-ancient-empires",
+      "prerequisiteId": "mt_hist-s-ancient-civilization",
+      "strength": "hard",
+      "reason": "帝国扩张以早期文明为基础"
+    },
+    {
+      "topicId": "mt_hist-s-medieval-europe",
+      "prerequisiteId": "mt_hist-s-ancient-empires",
+      "strength": "soft",
+      "reason": "中古欧洲在古典文明解体后形成"
+    },
+    {
+      "topicId": "mt_hist-s-medieval-asia-africa",
+      "prerequisiteId": "mt_hist-s-ancient-empires",
+      "strength": "soft",
+      "reason": "中古亚洲非洲文明承接古代帝国传统"
+    },
+    {
+      "topicId": "mt_hist-s-age-discovery",
+      "prerequisiteId": "mt_hist-s-medieval-europe",
+      "strength": "hard",
+      "reason": "新航路开辟以中古后期欧洲发展为条件"
+    },
+    {
+      "topicId": "mt_hist-s-renaissance-reformation",
+      "prerequisiteId": "mt_hist-s-medieval-europe",
+      "strength": "hard",
+      "reason": "文艺复兴与宗教改革发生于中古后期欧洲"
+    },
+    {
+      "topicId": "mt_hist-s-bourgeois-revolution",
+      "prerequisiteId": "mt_hist-s-renaissance-reformation",
+      "strength": "hard",
+      "reason": "资产阶级革命以思想解放为先导"
+    },
+    {
+      "topicId": "mt_hist-s-industrial-revolution",
+      "prerequisiteId": "mt_hist-s-bourgeois-revolution",
+      "strength": "hard",
+      "reason": "工业革命在资本主义制度确立后展开"
+    },
+    {
+      "topicId": "mt_hist-s-marxism",
+      "prerequisiteId": "mt_hist-s-industrial-revolution",
+      "strength": "hard",
+      "reason": "马克思主义诞生于工业革命后的工人运动"
+    },
+    {
+      "topicId": "mt_hist-s-colonial-system",
+      "prerequisiteId": "mt_hist-s-industrial-revolution",
+      "strength": "hard",
+      "reason": "殖民体系形成以工业革命后的扩张为动力"
+    },
+    {
+      "topicId": "mt_hist-s-national-independence",
+      "prerequisiteId": "mt_hist-s-colonial-system",
+      "strength": "hard",
+      "reason": "民族独立运动是对殖民体系的抗争"
+    },
+    {
+      "topicId": "mt_hist-s-october-revolution",
+      "prerequisiteId": "mt_hist-s-world-wars",
+      "strength": "soft",
+      "reason": "十月革命发生在第一次世界大战之中"
+    },
+    {
+      "topicId": "mt_hist-s-world-wars",
+      "prerequisiteId": "mt_hist-s-colonial-system",
+      "strength": "hard",
+      "reason": "世界大战源于列强争夺与殖民体系矛盾"
+    },
+    {
+      "topicId": "mt_hist-s-cold-war",
+      "prerequisiteId": "mt_hist-s-world-wars",
+      "strength": "hard",
+      "reason": "冷战格局在二战后的国际秩序中形成"
+    },
+    {
+      "topicId": "mt_hist-s-postwar-development",
+      "prerequisiteId": "mt_hist-s-cold-war",
+      "strength": "soft",
+      "reason": "战后发展在冷战格局下展开"
+    },
+    {
+      "topicId": "mt_hist-s-contemporary-world",
+      "prerequisiteId": "mt_hist-s-cold-war",
+      "strength": "hard",
+      "reason": "当代趋势在冷战终结后进一步显现"
+    },
+    {
+      "topicId": "mt_hist-s-china-political-system",
+      "prerequisiteId": "mt_hist-s-ming-qing",
+      "strength": "soft",
+      "reason": "古代政治制度演变以明清集权为终点"
+    },
+    {
+      "topicId": "mt_hist-s-west-political-system",
+      "prerequisiteId": "mt_hist-s-bourgeois-revolution",
+      "strength": "soft",
+      "reason": "西方政体演变以近代革命为节点"
+    },
+    {
+      "topicId": "mt_hist-s-official-selection",
+      "prerequisiteId": "mt_hist-s-china-political-system",
+      "strength": "hard",
+      "reason": "选官制度是政治制度的重要组成"
+    },
+    {
+      "topicId": "mt_hist-s-law-morality",
+      "prerequisiteId": "mt_hist-s-china-political-system",
+      "strength": "soft",
+      "reason": "法律与教化服务于国家治理"
+    },
+    {
+      "topicId": "mt_hist-s-ethnic-relations",
+      "prerequisiteId": "mt_hist-s-ming-qing",
+      "strength": "soft",
+      "reason": "民族关系以统一多民族国家为背景"
+    },
+    {
+      "topicId": "mt_hist-s-grassroots-governance",
+      "prerequisiteId": "mt_hist-s-law-morality",
+      "strength": "soft",
+      "reason": "基层治理与法律教化相互配合"
+    },
+    {
+      "topicId": "mt_hist-s-currency-tax",
+      "prerequisiteId": "mt_hist-s-ming-qing-economy",
+      "strength": "soft",
+      "reason": "货币税收以经济发展为基础"
+    },
+    {
+      "topicId": "mt_hist-s-food-production",
+      "prerequisiteId": "mt_hist-s-ancient-civilization",
+      "strength": "soft",
+      "reason": "农业革命是文明产生的前提"
+    },
+    {
+      "topicId": "mt_hist-s-tools-labor",
+      "prerequisiteId": "mt_hist-s-food-production",
+      "strength": "hard",
+      "reason": "生产工具进步推动食物生产发展"
+    },
+    {
+      "topicId": "mt_hist-s-trade-daily",
+      "prerequisiteId": "mt_hist-s-tools-labor",
+      "strength": "soft",
+      "reason": "商贸发展以生产与工具进步为基础"
+    },
+    {
+      "topicId": "mt_hist-s-settlement",
+      "prerequisiteId": "mt_hist-s-food-production",
+      "strength": "soft",
+      "reason": "定居聚落以农业生产为前提"
+    },
+    {
+      "topicId": "mt_hist-s-transport",
+      "prerequisiteId": "mt_hist-s-trade-daily",
+      "strength": "soft",
+      "reason": "交通变革促进商贸与生活变化"
+    },
+    {
+      "topicId": "mt_hist-s-medicine-health",
+      "prerequisiteId": "mt_hist-s-industrial-revolution",
+      "strength": "soft",
+      "reason": "近代医学以科学革命与工业化为背景"
+    },
+    {
+      "topicId": "mt_hist-s-chinese-culture",
+      "prerequisiteId": "mt_hist-s-ming-qing-economy",
+      "strength": "soft",
+      "reason": "中华文化在长期历史中积淀形成"
+    },
+    {
+      "topicId": "mt_hist-s-world-culture",
+      "prerequisiteId": "mt_hist-s-ancient-civilization",
+      "strength": "soft",
+      "reason": "世界文化多样性源于古代文明多元"
+    },
+    {
+      "topicId": "mt_hist-s-migration",
+      "prerequisiteId": "mt_hist-s-colonial-system",
+      "strength": "soft",
+      "reason": "大规模迁徙与殖民扩张密切相关"
+    },
+    {
+      "topicId": "mt_hist-s-silk-road",
+      "prerequisiteId": "mt_hist-s-ancient-empires",
+      "strength": "soft",
+      "reason": "丝路贸易在古代帝国交流中形成"
+    },
+    {
+      "topicId": "mt_hist-s-war-culture",
+      "prerequisiteId": "mt_hist-s-world-wars",
+      "strength": "soft",
+      "reason": "战争与文化交锋以世界大战为典型"
+    },
+    {
+      "topicId": "mt_hist-s-cultural-heritage",
+      "prerequisiteId": "mt_hist-s-chinese-culture",
+      "strength": "hard",
+      "reason": "文化遗产保护以文化传承为前提"
+    },
+    {
+      "topicId": "mt_geo-s-solar-system",
+      "prerequisiteId": "mt_geo-s-earth-universe",
+      "strength": "hard",
+      "reason": "太阳影响建立在宇宙环境认识之上"
+    },
+    {
+      "topicId": "mt_geo-s-earth-layers",
+      "prerequisiteId": "mt_geo-s-earth-universe",
+      "strength": "soft",
+      "reason": "圈层结构是地球整体认识的一部分"
+    },
+    {
+      "topicId": "mt_geo-s-atmosphere",
+      "prerequisiteId": "mt_geo-s-earth-layers",
+      "strength": "hard",
+      "reason": "大气圈是地球外部圈层的组成"
+    },
+    {
+      "topicId": "mt_geo-s-atmospheric-heating",
+      "prerequisiteId": "mt_geo-s-atmosphere",
+      "strength": "hard",
+      "reason": "受热过程以大气的组成与分层为基础"
+    },
+    {
+      "topicId": "mt_geo-s-atmospheric-circulation",
+      "prerequisiteId": "mt_geo-s-atmospheric-heating",
+      "strength": "hard",
+      "reason": "大气运动源于冷热不均"
+    },
+    {
+      "topicId": "mt_geo-s-water-cycle",
+      "prerequisiteId": "mt_geo-s-atmosphere",
+      "strength": "soft",
+      "reason": "水循环与大气运动相互联系"
+    },
+    {
+      "topicId": "mt_geo-s-ocean-current",
+      "prerequisiteId": "mt_geo-s-atmospheric-circulation",
+      "strength": "soft",
+      "reason": "洋流受盛行风驱动"
+    },
+    {
+      "topicId": "mt_geo-s-landform",
+      "prerequisiteId": "mt_geo-s-earth-layers",
+      "strength": "soft",
+      "reason": "地貌塑造涉及岩石圈"
+    },
+    {
+      "topicId": "mt_geo-s-vegetation",
+      "prerequisiteId": "mt_geo-s-atmosphere",
+      "strength": "soft",
+      "reason": "植被分布受气候影响"
+    },
+    {
+      "topicId": "mt_geo-s-soil",
+      "prerequisiteId": "mt_geo-s-vegetation",
+      "strength": "soft",
+      "reason": "生物是成土的重要因素"
+    },
+    {
+      "topicId": "mt_geo-s-natural-disaster",
+      "prerequisiteId": "mt_geo-s-landform",
+      "strength": "soft",
+      "reason": "地质灾害与地貌、地质构造相关"
+    },
+    {
+      "topicId": "mt_geo-s-population-capacity",
+      "prerequisiteId": "mt_geo-s-population",
+      "strength": "hard",
+      "reason": "人口容量建立在人口分布认识之上"
+    },
+    {
+      "topicId": "mt_geo-s-urbanization",
+      "prerequisiteId": "mt_geo-s-population",
+      "strength": "hard",
+      "reason": "城镇化以人口迁移为基础"
+    },
+    {
+      "topicId": "mt_geo-s-urban-structure",
+      "prerequisiteId": "mt_geo-s-urbanization",
+      "strength": "hard",
+      "reason": "城镇空间结构在城镇化过程中形成"
+    },
+    {
+      "topicId": "mt_geo-s-rural",
+      "prerequisiteId": "mt_geo-s-population",
+      "strength": "soft",
+      "reason": "乡村聚落与人口分布相关"
+    },
+    {
+      "topicId": "mt_geo-s-agriculture-location",
+      "prerequisiteId": "mt_geo-s-rural",
+      "strength": "soft",
+      "reason": "农业区位与乡村生产相关"
+    },
+    {
+      "topicId": "mt_geo-s-industry-location",
+      "prerequisiteId": "mt_geo-s-agriculture-location",
+      "strength": "soft",
+      "reason": "工业区位与农业区位同属产业区位"
+    },
+    {
+      "topicId": "mt_geo-s-service-location",
+      "prerequisiteId": "mt_geo-s-industry-location",
+      "strength": "soft",
+      "reason": "服务业区位与产业区位分析相通"
+    },
+    {
+      "topicId": "mt_geo-s-transport-layout",
+      "prerequisiteId": "mt_geo-s-urban-structure",
+      "strength": "soft",
+      "reason": "交通布局与城镇空间结构相互影响"
+    },
+    {
+      "topicId": "mt_geo-s-sustainable-development",
+      "prerequisiteId": "mt_geo-s-urbanization",
+      "strength": "soft",
+      "reason": "可持续发展针对城镇化等问题"
+    },
+    {
+      "topicId": "mt_geo-s-earth-rotation",
+      "prerequisiteId": "mt_geo-s-atmospheric-heating",
+      "strength": "soft",
+      "reason": "地球运动影响太阳辐射分布"
+    },
+    {
+      "topicId": "mt_geo-s-earth-revolution",
+      "prerequisiteId": "mt_geo-s-earth-rotation",
+      "strength": "hard",
+      "reason": "公转意义建立在自转认识之上"
+    },
+    {
+      "topicId": "mt_geo-s-internal-force",
+      "prerequisiteId": "mt_geo-s-landform",
+      "strength": "hard",
+      "reason": "内力作用是地貌成因的深化"
+    },
+    {
+      "topicId": "mt_geo-s-external-force",
+      "prerequisiteId": "mt_geo-s-internal-force",
+      "strength": "hard",
+      "reason": "内外力共同塑造地貌"
+    },
+    {
+      "topicId": "mt_geo-s-plate-tectonics",
+      "prerequisiteId": "mt_geo-s-internal-force",
+      "strength": "hard",
+      "reason": "板块学说是内力作用的理论解释"
+    },
+    {
+      "topicId": "mt_geo-s-front-cyclone",
+      "prerequisiteId": "mt_geo-s-atmospheric-circulation",
+      "strength": "hard",
+      "reason": "天气系统建立在环流基础之上"
+    },
+    {
+      "topicId": "mt_geo-s-climate-type",
+      "prerequisiteId": "mt_geo-s-front-cyclone",
+      "strength": "hard",
+      "reason": "气候类型与天气系统密切相关"
+    },
+    {
+      "topicId": "mt_geo-s-ocean-current-senior",
+      "prerequisiteId": "mt_geo-s-ocean-current",
+      "strength": "hard",
+      "reason": "洋流影响是洋流知识的深化"
+    },
+    {
+      "topicId": "mt_geo-s-water-balance",
+      "prerequisiteId": "mt_geo-s-water-cycle",
+      "strength": "hard",
+      "reason": "陆地水体以水循环为背景"
+    },
+    {
+      "topicId": "mt_geo-s-natural-integration",
+      "prerequisiteId": "mt_geo-s-soil",
+      "strength": "soft",
+      "reason": "整体性涉及土壤等要素"
+    },
+    {
+      "topicId": "mt_geo-s-natural-difference",
+      "prerequisiteId": "mt_geo-s-natural-integration",
+      "strength": "hard",
+      "reason": "差异性与整体性相对又互补"
+    },
+    {
+      "topicId": "mt_geo-s-snow-line",
+      "prerequisiteId": "mt_geo-s-natural-difference",
+      "strength": "hard",
+      "reason": "垂直带谱是差异性的一种表现"
+    },
+    {
+      "topicId": "mt_geo-s-region-development",
+      "prerequisiteId": "mt_geo-s-region-concept",
+      "strength": "hard",
+      "reason": "区域发展以区域概念为基础"
+    },
+    {
+      "topicId": "mt_geo-s-resource-development",
+      "prerequisiteId": "mt_geo-s-region-development",
+      "strength": "hard",
+      "reason": "资源开发是区域发展的重要路径"
+    },
+    {
+      "topicId": "mt_geo-s-ecological-restoration",
+      "prerequisiteId": "mt_geo-s-natural-integration",
+      "strength": "soft",
+      "reason": "生态治理需理解环境整体性"
+    },
+    {
+      "topicId": "mt_geo-s-river-basin",
+      "prerequisiteId": "mt_geo-s-water-balance",
+      "strength": "soft",
+      "reason": "流域开发以水体知识为基础"
+    },
+    {
+      "topicId": "mt_geo-s-urban-agglomeration",
+      "prerequisiteId": "mt_geo-s-urban-structure",
+      "strength": "soft",
+      "reason": "城市群以城镇空间结构为基础"
+    },
+    {
+      "topicId": "mt_geo-s-industrial-transfer",
+      "prerequisiteId": "mt_geo-s-industry-location",
+      "strength": "soft",
+      "reason": "产业转移以工业区位为分析框架"
+    },
+    {
+      "topicId": "mt_geo-s-resource-allocation",
+      "prerequisiteId": "mt_geo-s-resource-development",
+      "strength": "soft",
+      "reason": "资源调配与资源开发相连"
+    },
+    {
+      "topicId": "mt_geo-s-regional-coordination",
+      "prerequisiteId": "mt_geo-s-industrial-transfer",
+      "strength": "soft",
+      "reason": "区域协调涉及产业转移"
+    },
+    {
+      "topicId": "mt_geo-s-natural-service",
+      "prerequisiteId": "mt_geo-s-natural-integration",
+      "strength": "soft",
+      "reason": "服务功能以环境整体性为基础"
+    },
+    {
+      "topicId": "mt_geo-s-food-security",
+      "prerequisiteId": "mt_geo-s-agriculture-location",
+      "strength": "soft",
+      "reason": "粮食安全以农业生产为基础"
+    },
+    {
+      "topicId": "mt_geo-s-energy-security",
+      "prerequisiteId": "mt_geo-s-resource-development",
+      "strength": "soft",
+      "reason": "能源安全与资源开发相关"
+    },
+    {
+      "topicId": "mt_geo-s-water-security",
+      "prerequisiteId": "mt_geo-s-water-balance",
+      "strength": "soft",
+      "reason": "水安全以水资源知识为基础"
+    },
+    {
+      "topicId": "mt_geo-s-environmental-security",
+      "prerequisiteId": "mt_geo-s-natural-service",
+      "strength": "soft",
+      "reason": "环境安全涉及服务功能受损"
+    },
+    {
+      "topicId": "mt_geo-s-climate-change",
+      "prerequisiteId": "mt_geo-s-atmospheric-heating",
+      "strength": "soft",
+      "reason": "气候变化与大气受热相关"
+    },
+    {
+      "topicId": "mt_geo-s-national-security-strategy",
+      "prerequisiteId": "mt_geo-s-environmental-security",
+      "strength": "hard",
+      "reason": "安全战略整合各类安全议题"
     }
   ]
 }
