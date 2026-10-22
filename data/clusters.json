@@ -1,5 +1,5 @@
 {
-  "version": "v0.21.0",
+  "version": "v0.22.0",
   "schemaVersion": 1,
   "clusters": [
     {
@@ -2801,6 +2801,309 @@
         "mt_tech-s-smart-home",
         "mt_tech-s-tech-ethics",
         "mt_tech-s-innovation-entrepreneur"
+      ]
+    },
+    {
+      "id": "cl-chinese-d10-s5",
+      "subject": "语文",
+      "domain": "文学阅读与写作",
+      "stage": "第五学段（10~12年级）",
+      "summary": "高中语文的主体。从现代诗歌、散文、小说、戏剧到革命传统与外国文学，学习鉴赏方法并尝试文学短评与创作，提升审美鉴赏与表达创造能力。",
+      "topicIds": [
+        "mt_chn-s-modern-poetry",
+        "mt_chn-s-poetic-image",
+        "mt_chn-s-poetry-recite",
+        "mt_chn-s-prose-appreciation",
+        "mt_chn-s-prose-language",
+        "mt_chn-s-lyric-prose",
+        "mt_chn-s-drama",
+        "mt_chn-s-tragedy",
+        "mt_chn-s-novel-appreciation",
+        "mt_chn-s-narrative-technique",
+        "mt_chn-s-revolutionary-literature",
+        "mt_chn-s-red-poetry",
+        "mt_chn-s-modern-chinese-fiction",
+        "mt_chn-s-modern-chinese-prose",
+        "mt_chn-s-foreign-fiction",
+        "mt_chn-s-foreign-drama",
+        "mt_chn-s-literary-essay",
+        "mt_chn-s-lu-xun",
+        "mt_chn-s-modern-poetry-topic",
+        "mt_chn-s-foreign-novel-topic",
+        "mt_chn-s-foreign-poetry",
+        "mt_chn-s-contemporary-fiction",
+        "mt_chn-s-contemporary-prose",
+        "mt_chn-s-world-literature",
+        "mt_chn-s-literary-theory"
+      ]
+    },
+    {
+      "id": "cl-chinese-d14-s5",
+      "subject": "语文",
+      "domain": "思辨性阅读与表达",
+      "stage": "第五学段（10~12年级）",
+      "summary": "训练理性思维。从议论性文本阅读、议论文写作到逻辑论证、谬误辨析与学术阅读，学会有条理、有依据地思考和表达。",
+      "topicIds": [
+        "mt_chn-s-argument-reading",
+        "mt_chn-s-argument-writing",
+        "mt_chn-s-logic-expression",
+        "mt_chn-s-fallacy",
+        "mt_chn-s-academic-reading",
+        "mt_chn-s-research-writing",
+        "mt_chn-s-argumentative-essay"
+      ]
+    },
+    {
+      "id": "cl-chinese-d11-s5",
+      "subject": "语文",
+      "domain": "实用性阅读与交流",
+      "stage": "第五学段（10~12年级）",
+      "summary": "面向真实生活。新闻通讯、科普文本、演讲辞、媒介信息与跨媒介表达，培养在信息社会中准确获取、得体交流与负责任传播的能力。",
+      "topicIds": [
+        "mt_chn-s-news-report",
+        "mt_chn-s-character-communication",
+        "mt_chn-s-science-text",
+        "mt_chn-s-media-literacy",
+        "mt_chn-s-speech",
+        "mt_chn-s-information-life",
+        "mt_chn-s-cross-media"
+      ]
+    },
+    {
+      "id": "cl-chinese-d12-s5",
+      "subject": "语文",
+      "domain": "文言文与古诗词",
+      "stage": "第五学段（10~12年级）",
+      "summary": "传承中华优秀传统文化。从先秦诸子、古诗词到唐宋诗词与经典研读，积累文言知识、掌握鉴赏方法，理解传统文化的思想价值。",
+      "topicIds": [
+        "mt_chn-s-classical-poetry",
+        "mt_chn-s-poetry-expression",
+        "mt_chn-s-pre-qin-prose",
+        "mt_chn-s-classical-argument",
+        "mt_chn-s-classical-translation",
+        "mt_chn-s-classical-poetry-song",
+        "mt_chn-s-classical-prose",
+        "mt_chn-s-classical-poetry-appreciation",
+        "mt_chn-s-confucius",
+        "mt_chn-s-zhuangzi"
+      ]
+    },
+    {
+      "id": "cl-chinese-d13-s5",
+      "subject": "语文",
+      "domain": "整本书阅读",
+      "stage": "第五学段（10~12年级）",
+      "summary": "读整本的书。《乡土中国》与《红楼梦》一学术一文学，学习建构阅读经验、撰写读书笔记与专题研究，养成深度阅读习惯。",
+      "topicIds": [
+        "mt_chn-s-rural-china",
+        "mt_chn-s-dream-red-chamber"
+      ]
+    },
+    {
+      "id": "cl-chinese-d15-s5",
+      "subject": "语文",
+      "domain": "语言积累与梳理",
+      "stage": "第五学段（10~12年级）",
+      "summary": "夯实语言根基。词语积累与辨析、语言规范与得体、修辞运用与语言现象探究，提升语感与准确生动的语言运用能力。",
+      "topicIds": [
+        "mt_chn-s-vocabulary",
+        "mt_chn-s-language-norm",
+        "mt_chn-s-language-explore",
+        "mt_chn-s-rhetoric"
+      ]
+    },
+    {
+      "id": "cl-math-d5-s5",
+      "subject": "数学",
+      "domain": "集合与逻辑",
+      "stage": "第五学段（10~12年级）",
+      "summary": "高中数学的语言基础。从集合的概念与运算到充分必要条件、量词命题，学会用准确的逻辑语言表达数学对象与关系。",
+      "topicIds": [
+        "mt_mat-s-sets",
+        "mt_mat-s-set-operations",
+        "mt_mat-s-logic",
+        "mt_mat-s-quantifier"
+      ]
+    },
+    {
+      "id": "cl-math-d6-s5",
+      "subject": "数学",
+      "domain": "函数与代数",
+      "stage": "第五学段（10~12年级）",
+      "summary": "高中数学的主线。从函数概念、性质到指数对数、三角函数，再到数列，用函数刻画变化规律，发展抽象与建模能力。",
+      "topicIds": [
+        "mt_mat-s-inequality",
+        "mt_mat-s-basic-inequality",
+        "mt_mat-s-function-concept",
+        "mt_mat-s-function-property",
+        "mt_mat-s-function-model",
+        "mt_mat-s-exponential",
+        "mt_mat-s-logarithm",
+        "mt_mat-s-function-zero",
+        "mt_mat-s-trig-concept",
+        "mt_mat-s-trig-identity",
+        "mt_mat-s-trig-graph",
+        "mt_mat-s-sequence",
+        "mt_mat-s-arithmetic",
+        "mt_mat-s-geometric",
+        "mt_mat-s-sequence-sum"
+      ]
+    },
+    {
+      "id": "cl-math-d7-s5",
+      "subject": "数学",
+      "domain": "几何与向量",
+      "stage": "第五学段（10~12年级）",
+      "summary": "数与形的结合。从平面向量、复数到立体几何、空间向量与圆锥曲线，用代数方法研究几何，发展直观想象与逻辑推理。",
+      "topicIds": [
+        "mt_mat-s-vector-concept",
+        "mt_mat-s-vector-coordinate",
+        "mt_mat-s-vector-application",
+        "mt_mat-s-complex",
+        "mt_mat-s-complex-geometry",
+        "mt_mat-s-solid-basic",
+        "mt_mat-s-solid-volume",
+        "mt_mat-s-solid-parallel",
+        "mt_mat-s-solid-vertical",
+        "mt_mat-s-space-vector",
+        "mt_mat-s-space-vector-application",
+        "mt_mat-s-line-equation",
+        "mt_mat-s-circle",
+        "mt_mat-s-line-circle",
+        "mt_mat-s-ellipse",
+        "mt_mat-s-hyperbola",
+        "mt_mat-s-parabola",
+        "mt_mat-s-conic-application"
+      ]
+    },
+    {
+      "id": "cl-math-d8-s5",
+      "subject": "数学",
+      "domain": "概率与统计",
+      "stage": "第五学段（10~12年级）",
+      "summary": "面对不确定性的科学。从抽样、统计描述到古典概型、随机变量与回归分析，学会用数据说话、用概率决策。",
+      "topicIds": [
+        "mt_mat-s-stat-sampling",
+        "mt_mat-s-stat-describe",
+        "mt_mat-s-prob-classical",
+        "mt_mat-s-prob-basic",
+        "mt_mat-s-prob-independence",
+        "mt_mat-s-counting-principle",
+        "mt_mat-s-permutation",
+        "mt_mat-s-binomial",
+        "mt_mat-s-random-variable",
+        "mt_mat-s-binomial-distribution",
+        "mt_mat-s-normal-distribution",
+        "mt_mat-s-expectation",
+        "mt_mat-s-correlation",
+        "mt_mat-s-regression",
+        "mt_mat-s-independence-test"
+      ]
+    },
+    {
+      "id": "cl-math-d9-s5",
+      "subject": "数学",
+      "domain": "导数与微积分初步",
+      "stage": "第五学段（10~12年级）",
+      "summary": "研究变化的工具。从导数概念、运算到用导数研究单调性、极值与最优化，体会微积分的思想力量。",
+      "topicIds": [
+        "mt_mat-s-derivative-concept",
+        "mt_mat-s-derivative-rule",
+        "mt_mat-s-derivative-application",
+        "mt_mat-s-derivative-optimization"
+      ]
+    },
+    {
+      "id": "cl-english-d7-l4",
+      "subject": "英语",
+      "domain": "人与自我",
+      "stage": "四级（10~12年级）",
+      "summary": "围绕个人成长与生活。从青少年生活、运动健康到未来规划、逆境成长与职业选择，用英语表达自我、认识自我。",
+      "topicIds": [
+        "mt_eng-s-teen-life",
+        "mt_eng-s-travel",
+        "mt_eng-s-sports",
+        "mt_eng-s-morals",
+        "mt_eng-s-money",
+        "mt_eng-s-future",
+        "mt_eng-s-first-aid",
+        "mt_eng-s-healthy-lifestyle",
+        "mt_eng-s-adversity",
+        "mt_eng-s-sharing",
+        "mt_eng-s-career"
+      ]
+    },
+    {
+      "id": "cl-english-d9-l4",
+      "subject": "英语",
+      "domain": "人与社会",
+      "stage": "四级（10~12年级）",
+      "summary": "面向社会生活与文化。从文化遗产、节日、音乐到多元文化、跨文化沟通与人物成就，用英语理解社会、沟通世界。",
+      "topicIds": [
+        "mt_eng-s-languages",
+        "mt_eng-s-cultural-heritage",
+        "mt_eng-s-internet",
+        "mt_eng-s-history",
+        "mt_eng-s-music",
+        "mt_eng-s-festivals",
+        "mt_eng-s-diverse-culture",
+        "mt_eng-s-achievement",
+        "mt_eng-s-body-language",
+        "mt_eng-s-scientists",
+        "mt_eng-s-bridging-culture",
+        "mt_eng-s-food-culture",
+        "mt_eng-s-art",
+        "mt_eng-s-poems",
+        "mt_eng-s-sci-fi"
+      ]
+    },
+    {
+      "id": "cl-english-d8-l4",
+      "subject": "英语",
+      "domain": "人与自然",
+      "stage": "四级（10~12年级）",
+      "summary": "关注自然与环境。从自然灾害、野生动物保护到太空探索、海洋探索与环境保护，用英语认识自然、思考人地关系。",
+      "topicIds": [
+        "mt_eng-s-disaster",
+        "mt_eng-s-wildlife",
+        "mt_eng-s-space",
+        "mt_eng-s-parks",
+        "mt_eng-s-farming",
+        "mt_eng-s-journey",
+        "mt_eng-s-environment",
+        "mt_eng-s-iconic",
+        "mt_eng-s-sea-exploration"
+      ]
+    },
+    {
+      "id": "cl-english-d10-l4",
+      "subject": "英语",
+      "domain": "语言知识",
+      "stage": "四级（10~12年级）",
+      "summary": "夯实语法基础。从句体系、非谓语动词、倒装强调、虚拟语气到被动语态与省略，掌握高中阶段的核心语法。",
+      "topicIds": [
+        "mt_eng-s-noun-clause",
+        "mt_eng-s-attributive",
+        "mt_eng-s-nonfinite",
+        "mt_eng-s-inversion",
+        "mt_eng-s-subjunctive",
+        "mt_eng-s-passive",
+        "mt_eng-s-ellipsis"
+      ]
+    },
+    {
+      "id": "cl-english-d11-l4",
+      "subject": "英语",
+      "domain": "学习策略",
+      "stage": "四级（10~12年级）",
+      "summary": "学会学习。阅读、写作、听力、翻译与应试策略，培养自主学习的计划、监控与反思能力。",
+      "topicIds": [
+        "mt_eng-s-reading-strategy",
+        "mt_eng-s-writing-strategy",
+        "mt_eng-s-listening-strategy",
+        "mt_eng-s-translation",
+        "mt_eng-s-argument-essay",
+        "mt_eng-s-exam-strategy"
       ]
     }
   ]

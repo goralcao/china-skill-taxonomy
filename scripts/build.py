@@ -79,8 +79,14 @@ import topics_politics_senior  # noqa: E402
 import topics_tech_senior  # noqa: E402
 import teaching_research_politics_senior  # noqa: E402
 import teaching_research_tech_senior  # noqa: E402
+import topics_chinese_senior  # noqa: E402
+import topics_math_senior  # noqa: E402
+import topics_english_senior  # noqa: E402
+import teaching_research_chinese_senior  # noqa: E402
+import teaching_research_math_senior  # noqa: E402
+import teaching_research_english_senior  # noqa: E402
 
-VERSION = "v0.21.0"
+VERSION = "v0.22.0"
 SCHEMA_VERSION = 1
 
 MODULES = [
@@ -105,6 +111,9 @@ MODULES = [
     ("地理", topics_geography_senior),
     ("思想政治", topics_politics_senior),
     ("技术", topics_tech_senior),
+    ("语文", topics_chinese_senior),
+    ("数学", topics_math_senior),
+    ("英语", topics_english_senior),
 ]
 
 RESEARCH_MODULES = [
@@ -130,6 +139,9 @@ RESEARCH_MODULES = [
     teaching_research_geography_senior,
     teaching_research_politics_senior,
     teaching_research_tech_senior,
+    teaching_research_chinese_senior,
+    teaching_research_math_senior,
+    teaching_research_english_senior,
 ]
 
 RESEARCH_AUTHORSHIP = {
@@ -202,6 +214,16 @@ ALLOWED_SOURCES = {
     # —— v0.21：高中思想政治 / 技术 ——
     "人教版《普通高中教科书·信息技术》教师教学用书": "https://www.pep.com.cn/",
     "人教版《普通高中教科书·通用技术》教师教学用书": "https://www.pep.com.cn/",
+    # —— v0.22：高中语文 / 数学 / 英语 ——
+    "《普通高中语文课程标准（2017年版2020年修订）》": "https://basic.smartedu.cn/",
+    "统编版《普通高中教科书·语文》教师教学用书": "",
+    "统编版《普通高中教科书·语文》": "",
+    "《普通高中数学课程标准（2017年版2020年修订）》": "https://basic.smartedu.cn/",
+    "人教A版《普通高中教科书·数学》教师教学用书": "https://www.pep.com.cn/",
+    "人教A版《普通高中教科书·数学》": "",
+    "《普通高中英语课程标准（2017年版2020年修订）》": "https://basic.smartedu.cn/",
+    "人教版《普通高中教科书·英语》教师教学用书": "https://www.pep.com.cn/",
+    "人教版《普通高中教科书·英语》": "",
 }
 
 STAGE_BY_GRADE = {

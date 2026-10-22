@@ -2,6 +2,35 @@
 
 本项目遵循[语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [v0.22.0] - 2026-10-22
+
+本轮完成路线图的最后一块拼图：**高中语文（55 个）、高中数学（56 个）、高中英语（48 个）**三科向 10~12 年级的延伸，补齐数据层与教学研究层，对齐《普通高中课程标准（2017年版2020年修订）》与统编版/人教版教材。至此 K12 图谱达 **1268 个微主题、1629 条依赖边、186 条课标、204 条域摘要、1268 条教学研究记录、26 个教材版本**，**高中九科（语数英 + 物化生 + 史地政 + 技术）全部齐备**，`coverage.missingTopicIds` 清空。三科源文件（`src/topics_chinese_senior.py`、`teaching_research_chinese_senior.py`、`topics_math_senior.py`、`teaching_research_math_senior.py`、`topics_english_senior.py`、`teaching_research_english_senior.py`）与课标/教材（`src/standards.py` 追加、`textbooks_chinese_senior.py`、`textbooks_math_senior.py`、`textbooks_english_senior.py`）全部按既有 schema 撰写并通过 build 校验；教学研究来源限于三科高中课标与教材及教师教学用书，`verified` 一律为 false。
+
+### 新增
+
+- **高中语文主题 55 个**（`src/topics_chinese_senior.py`，key 前缀 `chn-s-`）：按统编版必修上/下、选必上/中/下五册组织，覆盖文学阅读与写作、思辨性阅读与表达、实用性阅读与交流、文言文与古诗词、整本书阅读、语言积累与梳理 6 个领域；依赖边 44 条。
+- **高中语文教学研究 55 条**（`src/teaching_research_chinese_senior.py`）：与 55 个主题 1:1 对应，落点在文本解读与表达训练（如「意象与意境」「散文形散神聚」「议论文结构」「文言翻译」「整本书阅读」「文学短评」）。
+- **高中数学主题 56 个**（`src/topics_math_senior.py`，key 前缀 `mat-s-`）：按人教 A 版必修一/二、选必一/二/三组织，覆盖集合与逻辑、函数与代数、几何与向量、概率与统计、导数与微积分初步 5 个领域；依赖边 45 条。
+- **高中数学教学研究 56 条**（`src/teaching_research_math_senior.py`）：与 56 个主题 1:1 对应，落点在概念理解与解题方法（如「充分必要」「函数性质」「三角恒等变换」「圆锥曲线」「导数与最值」「随机变量」）。
+- **高中英语主题 48 个**（`src/topics_english_senior.py`，key 前缀 `eng-s-`）：按人教版必修 1~3、选必 1~4（编为六学期）组织，覆盖人与自我、人与社会、人与自然、语言知识、学习策略 5 个领域（stage 为「四级」）；依赖边 43 条。
+- **高中英语教学研究 48 条**（`src/teaching_research_english_senior.py`）：与 48 个主题 1:1 对应，落点在话题表达与语法运用（如「青少年生活」「跨文化沟通」「名词性从句」「非谓语动词」「虚拟语气」「议论文写作」）。
+- **高中课标条目 16 条**：语文 6 条（S5:LIT/THINK/PRACT/CLASSIC/WHOLE/LANG）、数学 5 条（S5:NA/GG/SP/CALC/LOGIC）、英语 5 条（L4:PS/PSOC/PN/LK/ST），追加至 `src/standards.py`。
+- **教材 3 个版本**：统编版高中语文 `tongbian-chinese-senior`（5 册）、人教 A 版高中数学 `pep-math-senior`（5 册）、人教版高中英语 `pep-english-senior`（6 学期）。
+
+### 变更
+
+- **`scripts/build.py`**：`import` 追加三科 topics 与 teaching_research；`MODULES` 追加 `("语文", topics_chinese_senior), ("数学", topics_math_senior), ("英语", topics_english_senior)`；`RESEARCH_MODULES` 追加三科教学研究模块；`ALLOWED_SOURCES` 补高中语文/数学/英语课标与教材/教参（数学用「人教A版」）；版本号升至 v0.22.0。
+- **`src/standards.py` / `src/textbooks.py`**：分别追加三科的课标条目与教材版本注册。
+- **`scripts/validate.mjs`**：`SUBJECT_GRADE_RANGE` 将数学 `[1,9]` → `[1,12]`、语文 `[1,9]` → `[1,12]`、英语 `[3,9]` → `[3,12]`，以容纳高中延伸。
+- **`viz/index.html`**：无需改动——学科配色、筛选、图例、布局、热力矩阵、深链分享均数据驱动，自动纳入三科高中主题。
+- 主题 1109 → **1268**（小学 265 + 初中 477 + 高中 526）；依赖边 1497 → **1629**（hard 942 / soft 687）；课标条目 170 → **186**；域摘要 188 → **204**；教学研究记录 1109 → **1268**；教材版本 23 → **26**。
+
+### 验证
+
+- `python3 scripts/build.py`：构建通过（1268 主题 · 1629 边 · 186 课标 · 204 域摘要 · **1268 教学研究** · 26 个教材版本）；
+- `node scripts/validate.mjs`：全部校验通过（DAG 1268/1268；教学研究记录 1268/1268 十二学科覆盖；剩余 3 条警告为 v0.7 的 2024 版 note-only 主题预期提示）；
+- `node --test scripts/teaching-research.test.mjs`：5/5 通过（字段完整性、长度约束、来源白名单、未标 verified、覆盖清单一致性）。
+
 ## [v0.21.0] - 2026-10-22
 
 本轮按路线图启用 v0.19 预注册的学科管线，补齐**高中思想政治（52 个）与技术（48 个）**两门全新学科的数据层与教学研究层，对齐《普通高中思想政治课程标准（2017年版2020年修订）》《普通高中信息技术课程标准》《普通高中通用技术课程标准》与统编版/人教版教材。至此 K12 图谱达 **1109 个微主题、1497 条依赖边、170 条课标、188 条域摘要、1109 条教学研究记录、23 个教材版本**，**十二学科全部齐备**，`coverage.missingTopicIds` 清空。两科源文件（`src/topics_politics_senior.py`、`src/teaching_research_politics_senior.py`、`src/topics_tech_senior.py`、`src/teaching_research_tech_senior.py`）与课标/教材（`src/standards_politics.py`、`standards_tech.py`、`textbooks_politics.py`、`textbooks_tech.py`）全部按既有 schema 撰写并通过 build 校验；教学研究来源限于两科高中课标与教材及教师教学用书，`verified` 一律为 false。

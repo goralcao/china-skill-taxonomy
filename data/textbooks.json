@@ -1,5 +1,5 @@
 {
-  "version": "v0.21.0",
+  "version": "v0.22.0",
   "schemaVersion": 1,
   "sources": {
     "smartedu": {
@@ -2455,6 +2455,226 @@
             "第四单元 智能家居应用设计",
             "第五单元 工程设计基础",
             "第六单元 技术伦理与创新"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "tongbian-chinese-senior",
+      "name": "统编版高中语文（普通高中教科书·语文）",
+      "subject": "语文",
+      "gradeStart": 10,
+      "note": "人民教育出版社。高中语文含必修上/下与选择性必修上/中/下共 5 册，按学期编为 5 个册次。单元为现行统编版目录。",
+      "books": [
+        {
+          "slug": "10a",
+          "grade": 10,
+          "semester": "上",
+          "units": [
+            "第一单元 青春激扬（诗歌）",
+            "第二单元 劳动光荣（新闻通讯）",
+            "第三单元 生命的诗意（古诗词）",
+            "第四单元 我们的家园（散文）",
+            "第五单元 整本书阅读《乡土中国》",
+            "第六单元 学习之道（议论）",
+            "第七单元 自然情怀（散文）",
+            "第八单元 词语积累与词语解释"
+          ]
+        },
+        {
+          "slug": "10b",
+          "grade": 10,
+          "semester": "下",
+          "units": [
+            "第一单元 中华文明之光（诸子散文）",
+            "第二单元 良知与悲悯（戏剧）",
+            "第三单元 探索与创新（科普）",
+            "第四单元 媒介素养",
+            "第五单元 使命与抱负（演讲）",
+            "第六单元 观察与批判（小说）",
+            "第七单元 整本书阅读《红楼梦》",
+            "第八单元 信息时代的语文生活"
+          ]
+        },
+        {
+          "slug": "11a",
+          "grade": 11,
+          "semester": "上",
+          "units": [
+            "第一单元 中国革命传统作品研习",
+            "第二单元 中国现当代作家作品研习",
+            "第三单元 外国作家作品研习",
+            "第四单元 语言积累、梳理与探究"
+          ]
+        },
+        {
+          "slug": "11b",
+          "grade": 11,
+          "semester": "下",
+          "units": [
+            "第一单元 中华传统文化经典研习",
+            "第二单元 中国现当代作家作品专题研讨",
+            "第三单元 外国作家作品专题研讨",
+            "第四单元 逻辑思维与表达"
+          ]
+        },
+        {
+          "slug": "12a",
+          "grade": 12,
+          "semester": "上",
+          "units": [
+            "第一单元 中华传统文化经典研习（先秦诸子）",
+            "第二单元 中国现当代作家作品专题研讨",
+            "第三单元 外国作家作品专题研讨",
+            "第四单元 学术论著研习"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "pep-math-senior",
+      "name": "人教 A 版高中数学（普通高中教科书·数学）",
+      "subject": "数学",
+      "gradeStart": 10,
+      "note": "人民教育出版社（A 版）。高中数学含必修第一/二册与选择性必修第一/二/三册共 5 册，按学期编为 5 个册次。单元为现行人教 A 版目录。",
+      "books": [
+        {
+          "slug": "10a",
+          "grade": 10,
+          "semester": "上",
+          "units": [
+            "第一章 集合与常用逻辑用语",
+            "第二章 一元二次函数、方程和不等式",
+            "第三章 函数的概念与性质",
+            "第四章 指数函数与对数函数",
+            "第五章 三角函数"
+          ]
+        },
+        {
+          "slug": "10b",
+          "grade": 10,
+          "semester": "下",
+          "units": [
+            "第六章 平面向量及其应用",
+            "第七章 复数",
+            "第八章 立体几何初步",
+            "第九章 统计",
+            "第十章 概率"
+          ]
+        },
+        {
+          "slug": "11a",
+          "grade": 11,
+          "semester": "上",
+          "units": [
+            "第一章 空间向量与立体几何",
+            "第二章 直线和圆的方程",
+            "第三章 圆锥曲线的方程"
+          ]
+        },
+        {
+          "slug": "11b",
+          "grade": 11,
+          "semester": "下",
+          "units": [
+            "第四章 数列",
+            "第五章 一元函数的导数及其应用"
+          ]
+        },
+        {
+          "slug": "12a",
+          "grade": 12,
+          "semester": "上",
+          "units": [
+            "第六章 计数原理",
+            "第七章 随机变量及其分布",
+            "第八章 成对数据的统计分析"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "pep-english-senior",
+      "name": "人教版高中英语（普通高中教科书·英语）",
+      "subject": "英语",
+      "gradeStart": 10,
+      "note": "人民教育出版社。高中英语含必修 1~3 与选择性必修 1~4 共 7 册，按学期编为 6 个册次（10b 合并必修2与必修3）。单元为现行人教版目录，单元名保留英文主题。",
+      "books": [
+        {
+          "slug": "10a",
+          "grade": 10,
+          "semester": "上",
+          "units": [
+            "Unit 1 Teenage Life",
+            "Unit 2 Travelling Around",
+            "Unit 3 Sports and Fitness",
+            "Unit 4 Natural Disasters",
+            "Unit 5 Languages Around the World"
+          ]
+        },
+        {
+          "slug": "10b",
+          "grade": 10,
+          "semester": "下",
+          "units": [
+            "Unit 1 Cultural Heritage（必修2）",
+            "Unit 2 Wildlife Protection（必修2）",
+            "Unit 3 The Internet（必修2）",
+            "Unit 4 History and Traditions（必修2）",
+            "Unit 5 Music（必修2）",
+            "Unit 1 Festivals and Celebrations（必修3）",
+            "Unit 2 Morals and Virtues（必修3）",
+            "Unit 3 Diverse Cultures（必修3）",
+            "Unit 4 Space Exploration（必修3）",
+            "Unit 5 The Value of Money（必修3）"
+          ]
+        },
+        {
+          "slug": "11a",
+          "grade": 11,
+          "semester": "上",
+          "units": [
+            "Unit 1 People of Achievement",
+            "Unit 2 Looking into the Future",
+            "Unit 3 Fascinating Parks",
+            "Unit 4 Body Language",
+            "Unit 5 Working the Land"
+          ]
+        },
+        {
+          "slug": "11b",
+          "grade": 11,
+          "semester": "下",
+          "units": [
+            "Unit 1 Science and Scientists",
+            "Unit 2 Bridging Cultures",
+            "Unit 3 Food and Culture",
+            "Unit 4 Journey Across a Vast Land",
+            "Unit 5 First Aid"
+          ]
+        },
+        {
+          "slug": "12a",
+          "grade": 12,
+          "semester": "上",
+          "units": [
+            "Unit 1 Art",
+            "Unit 2 Healthy Lifestyle",
+            "Unit 3 Environmental Protection",
+            "Unit 4 Adversity and Courage",
+            "Unit 5 Poems"
+          ]
+        },
+        {
+          "slug": "12b",
+          "grade": 12,
+          "semester": "下",
+          "units": [
+            "Unit 1 Science Fiction",
+            "Unit 2 Iconic Attractions",
+            "Unit 3 Sea Exploration",
+            "Unit 4 Sharing",
+            "Unit 5 Launching Your Career"
           ]
         }
       ]

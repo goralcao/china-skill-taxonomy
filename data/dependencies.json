@@ -1,5 +1,5 @@
 {
-  "version": "v0.21.0",
+  "version": "v0.22.0",
   "schemaVersion": 1,
   "dependencies": [
     {
@@ -8983,6 +8983,798 @@
       "prerequisiteId": "mt_tech-s-innovation-design",
       "strength": "soft",
       "reason": "创业以创新设计为起点"
+    },
+    {
+      "topicId": "mt_chn-s-poetic-image",
+      "prerequisiteId": "mt_chn-s-modern-poetry",
+      "strength": "hard",
+      "reason": "意象分析建立在诗歌鉴赏之上"
+    },
+    {
+      "topicId": "mt_chn-s-poetry-recite",
+      "prerequisiteId": "mt_chn-s-modern-poetry",
+      "strength": "soft",
+      "reason": "诵读以理解诗歌为基础"
+    },
+    {
+      "topicId": "mt_chn-s-prose-language",
+      "prerequisiteId": "mt_chn-s-prose-appreciation",
+      "strength": "hard",
+      "reason": "语言品味服务于散文鉴赏"
+    },
+    {
+      "topicId": "mt_chn-s-lyric-prose",
+      "prerequisiteId": "mt_chn-s-prose-appreciation",
+      "strength": "hard",
+      "reason": "写景抒情散文是散文鉴赏的深化"
+    },
+    {
+      "topicId": "mt_chn-s-narrative-technique",
+      "prerequisiteId": "mt_chn-s-novel-appreciation",
+      "strength": "hard",
+      "reason": "叙事技巧分析建立在小说鉴赏之上"
+    },
+    {
+      "topicId": "mt_chn-s-tragedy",
+      "prerequisiteId": "mt_chn-s-drama",
+      "strength": "hard",
+      "reason": "悲剧理解以戏剧鉴赏为基础"
+    },
+    {
+      "topicId": "mt_chn-s-modern-chinese-prose",
+      "prerequisiteId": "mt_chn-s-prose-appreciation",
+      "strength": "soft",
+      "reason": "现当代散文赏析以散文鉴赏为基础"
+    },
+    {
+      "topicId": "mt_chn-s-modern-chinese-fiction",
+      "prerequisiteId": "mt_chn-s-novel-appreciation",
+      "strength": "soft",
+      "reason": "现当代小说以小说鉴赏为基础"
+    },
+    {
+      "topicId": "mt_chn-s-foreign-fiction",
+      "prerequisiteId": "mt_chn-s-novel-appreciation",
+      "strength": "soft",
+      "reason": "外国小说以小说鉴赏为基础"
+    },
+    {
+      "topicId": "mt_chn-s-foreign-drama",
+      "prerequisiteId": "mt_chn-s-drama",
+      "strength": "soft",
+      "reason": "外国戏剧以戏剧鉴赏为基础"
+    },
+    {
+      "topicId": "mt_chn-s-red-poetry",
+      "prerequisiteId": "mt_chn-s-classical-poetry",
+      "strength": "soft",
+      "reason": "革命诗词借鉴古诗词鉴赏方法"
+    },
+    {
+      "topicId": "mt_chn-s-revolutionary-literature",
+      "prerequisiteId": "mt_chn-s-novel-appreciation",
+      "strength": "soft",
+      "reason": "革命作品研习以文学鉴赏为基础"
+    },
+    {
+      "topicId": "mt_chn-s-literary-essay",
+      "prerequisiteId": "mt_chn-s-prose-appreciation",
+      "strength": "soft",
+      "reason": "文学短评以作品鉴赏为前提"
+    },
+    {
+      "topicId": "mt_chn-s-lu-xun",
+      "prerequisiteId": "mt_chn-s-modern-chinese-fiction",
+      "strength": "hard",
+      "reason": "鲁迅专题建立在现当代小说研习之上"
+    },
+    {
+      "topicId": "mt_chn-s-modern-poetry-topic",
+      "prerequisiteId": "mt_chn-s-modern-poetry",
+      "strength": "hard",
+      "reason": "诗歌专题以现代诗歌鉴赏为基础"
+    },
+    {
+      "topicId": "mt_chn-s-foreign-novel-topic",
+      "prerequisiteId": "mt_chn-s-foreign-fiction",
+      "strength": "hard",
+      "reason": "外国小说专题以单篇鉴赏为基础"
+    },
+    {
+      "topicId": "mt_chn-s-foreign-poetry",
+      "prerequisiteId": "mt_chn-s-modern-poetry",
+      "strength": "soft",
+      "reason": "外国诗歌鉴赏以诗歌鉴赏为基础"
+    },
+    {
+      "topicId": "mt_chn-s-contemporary-fiction",
+      "prerequisiteId": "mt_chn-s-modern-chinese-fiction",
+      "strength": "hard",
+      "reason": "当代小说专题以现当代小说研习为基础"
+    },
+    {
+      "topicId": "mt_chn-s-contemporary-prose",
+      "prerequisiteId": "mt_chn-s-modern-chinese-prose",
+      "strength": "hard",
+      "reason": "当代散文专题以现当代散文研习为基础"
+    },
+    {
+      "topicId": "mt_chn-s-world-literature",
+      "prerequisiteId": "mt_chn-s-foreign-novel-topic",
+      "strength": "soft",
+      "reason": "世界文学专题以外国文学研习为基础"
+    },
+    {
+      "topicId": "mt_chn-s-literary-theory",
+      "prerequisiteId": "mt_chn-s-literary-essay",
+      "strength": "hard",
+      "reason": "文学评论方法以短评写作为基础"
+    },
+    {
+      "topicId": "mt_chn-s-argument-writing",
+      "prerequisiteId": "mt_chn-s-argument-reading",
+      "strength": "hard",
+      "reason": "议论文写作建立在议论阅读之上"
+    },
+    {
+      "topicId": "mt_chn-s-logic-expression",
+      "prerequisiteId": "mt_chn-s-argument-reading",
+      "strength": "hard",
+      "reason": "逻辑与论证以议论阅读为基础"
+    },
+    {
+      "topicId": "mt_chn-s-fallacy",
+      "prerequisiteId": "mt_chn-s-logic-expression",
+      "strength": "hard",
+      "reason": "谬误辨析建立在逻辑论证之上"
+    },
+    {
+      "topicId": "mt_chn-s-academic-reading",
+      "prerequisiteId": "mt_chn-s-logic-expression",
+      "strength": "hard",
+      "reason": "学术阅读以逻辑论证为基础"
+    },
+    {
+      "topicId": "mt_chn-s-research-writing",
+      "prerequisiteId": "mt_chn-s-academic-reading",
+      "strength": "hard",
+      "reason": "研究报告建立在学术阅读之上"
+    },
+    {
+      "topicId": "mt_chn-s-argumentative-essay",
+      "prerequisiteId": "mt_chn-s-argument-writing",
+      "strength": "hard",
+      "reason": "议论文升格以议论文写作为基础"
+    },
+    {
+      "topicId": "mt_chn-s-character-communication",
+      "prerequisiteId": "mt_chn-s-news-report",
+      "strength": "hard",
+      "reason": "人物通讯写作以新闻阅读为基础"
+    },
+    {
+      "topicId": "mt_chn-s-speech",
+      "prerequisiteId": "mt_chn-s-argument-writing",
+      "strength": "soft",
+      "reason": "演讲写作借鉴议论表达"
+    },
+    {
+      "topicId": "mt_chn-s-cross-media",
+      "prerequisiteId": "mt_chn-s-media-literacy",
+      "strength": "soft",
+      "reason": "跨媒介表达以媒介素养为基础"
+    },
+    {
+      "topicId": "mt_chn-s-information-life",
+      "prerequisiteId": "mt_chn-s-media-literacy",
+      "strength": "soft",
+      "reason": "信息生活以媒介辨识为基础"
+    },
+    {
+      "topicId": "mt_chn-s-science-text",
+      "prerequisiteId": "mt_chn-s-argument-reading",
+      "strength": "soft",
+      "reason": "科普阅读借鉴议论阅读方法"
+    },
+    {
+      "topicId": "mt_chn-s-poetry-expression",
+      "prerequisiteId": "mt_chn-s-classical-poetry",
+      "strength": "hard",
+      "reason": "表达技巧分析建立在古诗词鉴赏之上"
+    },
+    {
+      "topicId": "mt_chn-s-classical-argument",
+      "prerequisiteId": "mt_chn-s-pre-qin-prose",
+      "strength": "hard",
+      "reason": "文言议论以诸子散文阅读为基础"
+    },
+    {
+      "topicId": "mt_chn-s-classical-translation",
+      "prerequisiteId": "mt_chn-s-pre-qin-prose",
+      "strength": "hard",
+      "reason": "文言翻译建立在文言阅读之上"
+    },
+    {
+      "topicId": "mt_chn-s-classical-poetry-song",
+      "prerequisiteId": "mt_chn-s-poetry-expression",
+      "strength": "hard",
+      "reason": "唐宋诗词研习以表达技巧为基础"
+    },
+    {
+      "topicId": "mt_chn-s-classical-prose",
+      "prerequisiteId": "mt_chn-s-classical-argument",
+      "strength": "hard",
+      "reason": "古代散文研习以文言议论为基础"
+    },
+    {
+      "topicId": "mt_chn-s-classical-poetry-appreciation",
+      "prerequisiteId": "mt_chn-s-classical-poetry-song",
+      "strength": "hard",
+      "reason": "鉴赏深化以诗词研习为基础"
+    },
+    {
+      "topicId": "mt_chn-s-confucius",
+      "prerequisiteId": "mt_chn-s-pre-qin-prose",
+      "strength": "hard",
+      "reason": "儒家经典研读以诸子散文为基础"
+    },
+    {
+      "topicId": "mt_chn-s-zhuangzi",
+      "prerequisiteId": "mt_chn-s-pre-qin-prose",
+      "strength": "hard",
+      "reason": "庄子研读以诸子散文为基础"
+    },
+    {
+      "topicId": "mt_chn-s-dream-red-chamber",
+      "prerequisiteId": "mt_chn-s-novel-appreciation",
+      "strength": "soft",
+      "reason": "整本书阅读以小说鉴赏为基础"
+    },
+    {
+      "topicId": "mt_chn-s-language-norm",
+      "prerequisiteId": "mt_chn-s-vocabulary",
+      "strength": "hard",
+      "reason": "语言规范建立在词语积累之上"
+    },
+    {
+      "topicId": "mt_chn-s-rhetoric",
+      "prerequisiteId": "mt_chn-s-vocabulary",
+      "strength": "soft",
+      "reason": "修辞运用以词语积累为基础"
+    },
+    {
+      "topicId": "mt_chn-s-language-explore",
+      "prerequisiteId": "mt_chn-s-language-norm",
+      "strength": "hard",
+      "reason": "语言探究以语言规范为基础"
+    },
+    {
+      "topicId": "mt_mat-s-set-operations",
+      "prerequisiteId": "mt_mat-s-sets",
+      "strength": "hard",
+      "reason": "集合运算建立在集合概念之上"
+    },
+    {
+      "topicId": "mt_mat-s-logic",
+      "prerequisiteId": "mt_mat-s-sets",
+      "strength": "soft",
+      "reason": "充分必要条件用集合包含关系理解"
+    },
+    {
+      "topicId": "mt_mat-s-quantifier",
+      "prerequisiteId": "mt_mat-s-logic",
+      "strength": "hard",
+      "reason": "量词命题建立在命题逻辑之上"
+    },
+    {
+      "topicId": "mt_mat-s-inequality",
+      "prerequisiteId": "mt_mat-s-sets",
+      "strength": "soft",
+      "reason": "不等式解集用集合表示"
+    },
+    {
+      "topicId": "mt_mat-s-basic-inequality",
+      "prerequisiteId": "mt_mat-s-inequality",
+      "strength": "soft",
+      "reason": "基本不等式与二次不等式同属不等式"
+    },
+    {
+      "topicId": "mt_mat-s-function-concept",
+      "prerequisiteId": "mt_mat-s-sets",
+      "strength": "hard",
+      "reason": "函数定义域值域是集合"
+    },
+    {
+      "topicId": "mt_mat-s-function-property",
+      "prerequisiteId": "mt_mat-s-function-concept",
+      "strength": "hard",
+      "reason": "函数性质建立在函数概念之上"
+    },
+    {
+      "topicId": "mt_mat-s-function-model",
+      "prerequisiteId": "mt_mat-s-function-property",
+      "strength": "soft",
+      "reason": "建模需用函数性质分析"
+    },
+    {
+      "topicId": "mt_mat-s-exponential",
+      "prerequisiteId": "mt_mat-s-function-property",
+      "strength": "hard",
+      "reason": "指数函数是具体函数模型"
+    },
+    {
+      "topicId": "mt_mat-s-logarithm",
+      "prerequisiteId": "mt_mat-s-exponential",
+      "strength": "hard",
+      "reason": "对数是指数的逆运算"
+    },
+    {
+      "topicId": "mt_mat-s-function-zero",
+      "prerequisiteId": "mt_mat-s-function-property",
+      "strength": "hard",
+      "reason": "零点分析用函数图象与性质"
+    },
+    {
+      "topicId": "mt_mat-s-trig-concept",
+      "prerequisiteId": "mt_mat-s-function-concept",
+      "strength": "soft",
+      "reason": "三角函数是函数的一种"
+    },
+    {
+      "topicId": "mt_mat-s-trig-identity",
+      "prerequisiteId": "mt_mat-s-trig-concept",
+      "strength": "hard",
+      "reason": "恒等变换建立在三角函数定义上"
+    },
+    {
+      "topicId": "mt_mat-s-trig-graph",
+      "prerequisiteId": "mt_mat-s-trig-concept",
+      "strength": "hard",
+      "reason": "图象性质建立在三角函数定义上"
+    },
+    {
+      "topicId": "mt_mat-s-vector-coordinate",
+      "prerequisiteId": "mt_mat-s-vector-concept",
+      "strength": "hard",
+      "reason": "坐标运算建立在向量概念上"
+    },
+    {
+      "topicId": "mt_mat-s-vector-application",
+      "prerequisiteId": "mt_mat-s-vector-concept",
+      "strength": "hard",
+      "reason": "向量应用建立在向量运算上"
+    },
+    {
+      "topicId": "mt_mat-s-complex-geometry",
+      "prerequisiteId": "mt_mat-s-complex",
+      "strength": "hard",
+      "reason": "复数几何意义建立在复数概念上"
+    },
+    {
+      "topicId": "mt_mat-s-solid-volume",
+      "prerequisiteId": "mt_mat-s-solid-basic",
+      "strength": "hard",
+      "reason": "体积计算建立在几何体认识上"
+    },
+    {
+      "topicId": "mt_mat-s-solid-parallel",
+      "prerequisiteId": "mt_mat-s-solid-basic",
+      "strength": "hard",
+      "reason": "位置关系建立在几何体认识上"
+    },
+    {
+      "topicId": "mt_mat-s-solid-vertical",
+      "prerequisiteId": "mt_mat-s-solid-parallel",
+      "strength": "hard",
+      "reason": "垂直判定建立在位置关系之上"
+    },
+    {
+      "topicId": "mt_mat-s-space-vector",
+      "prerequisiteId": "mt_mat-s-vector-coordinate",
+      "strength": "hard",
+      "reason": "空间向量是平面向量的推广"
+    },
+    {
+      "topicId": "mt_mat-s-space-vector-application",
+      "prerequisiteId": "mt_mat-s-space-vector",
+      "strength": "hard",
+      "reason": "空间向量应用建立在运算之上"
+    },
+    {
+      "topicId": "mt_mat-s-line-equation",
+      "prerequisiteId": "mt_mat-s-vector-coordinate",
+      "strength": "soft",
+      "reason": "直线方程用坐标刻画"
+    },
+    {
+      "topicId": "mt_mat-s-circle",
+      "prerequisiteId": "mt_mat-s-line-equation",
+      "strength": "soft",
+      "reason": "圆的方程与直线方程同属解析几何"
+    },
+    {
+      "topicId": "mt_mat-s-line-circle",
+      "prerequisiteId": "mt_mat-s-circle",
+      "strength": "hard",
+      "reason": "直线与圆关系建立在圆方程上"
+    },
+    {
+      "topicId": "mt_mat-s-ellipse",
+      "prerequisiteId": "mt_mat-s-line-circle",
+      "strength": "hard",
+      "reason": "圆锥曲线建立在解析几何基础之上"
+    },
+    {
+      "topicId": "mt_mat-s-hyperbola",
+      "prerequisiteId": "mt_mat-s-ellipse",
+      "strength": "hard",
+      "reason": "双曲线与椭圆对比学习"
+    },
+    {
+      "topicId": "mt_mat-s-parabola",
+      "prerequisiteId": "mt_mat-s-ellipse",
+      "strength": "soft",
+      "reason": "抛物线同属圆锥曲线"
+    },
+    {
+      "topicId": "mt_mat-s-conic-application",
+      "prerequisiteId": "mt_mat-s-ellipse",
+      "strength": "hard",
+      "reason": "综合应用建立在圆锥曲线之上"
+    },
+    {
+      "topicId": "mt_mat-s-stat-describe",
+      "prerequisiteId": "mt_mat-s-stat-sampling",
+      "strength": "hard",
+      "reason": "用样本估计建立在抽样之上"
+    },
+    {
+      "topicId": "mt_mat-s-prob-basic",
+      "prerequisiteId": "mt_mat-s-prob-classical",
+      "strength": "hard",
+      "reason": "概率性质建立在古典概型之上"
+    },
+    {
+      "topicId": "mt_mat-s-prob-independence",
+      "prerequisiteId": "mt_mat-s-prob-basic",
+      "strength": "hard",
+      "reason": "独立性建立在概率性质之上"
+    },
+    {
+      "topicId": "mt_mat-s-counting-principle",
+      "prerequisiteId": "mt_mat-s-prob-classical",
+      "strength": "soft",
+      "reason": "计数原理服务于概率计算"
+    },
+    {
+      "topicId": "mt_mat-s-permutation",
+      "prerequisiteId": "mt_mat-s-counting-principle",
+      "strength": "hard",
+      "reason": "排列组合建立在计数原理上"
+    },
+    {
+      "topicId": "mt_mat-s-binomial",
+      "prerequisiteId": "mt_mat-s-permutation",
+      "strength": "soft",
+      "reason": "二项式定理用到组合数"
+    },
+    {
+      "topicId": "mt_mat-s-random-variable",
+      "prerequisiteId": "mt_mat-s-prob-independence",
+      "strength": "hard",
+      "reason": "随机变量建立在概率基础之上"
+    },
+    {
+      "topicId": "mt_mat-s-binomial-distribution",
+      "prerequisiteId": "mt_mat-s-random-variable",
+      "strength": "hard",
+      "reason": "二项分布是随机变量分布"
+    },
+    {
+      "topicId": "mt_mat-s-normal-distribution",
+      "prerequisiteId": "mt_mat-s-random-variable",
+      "strength": "soft",
+      "reason": "正态分布是连续型分布"
+    },
+    {
+      "topicId": "mt_mat-s-expectation",
+      "prerequisiteId": "mt_mat-s-random-variable",
+      "strength": "hard",
+      "reason": "均值方差由分布列计算"
+    },
+    {
+      "topicId": "mt_mat-s-correlation",
+      "prerequisiteId": "mt_mat-s-stat-describe",
+      "strength": "soft",
+      "reason": "相关分析建立在统计描述之上"
+    },
+    {
+      "topicId": "mt_mat-s-regression",
+      "prerequisiteId": "mt_mat-s-correlation",
+      "strength": "hard",
+      "reason": "回归建立在相关关系之上"
+    },
+    {
+      "topicId": "mt_mat-s-independence-test",
+      "prerequisiteId": "mt_mat-s-correlation",
+      "strength": "soft",
+      "reason": "独立性检验与相关分析相关"
+    },
+    {
+      "topicId": "mt_mat-s-derivative-rule",
+      "prerequisiteId": "mt_mat-s-derivative-concept",
+      "strength": "hard",
+      "reason": "求导法则建立在导数概念上"
+    },
+    {
+      "topicId": "mt_mat-s-derivative-application",
+      "prerequisiteId": "mt_mat-s-derivative-rule",
+      "strength": "hard",
+      "reason": "导数应用建立在求导运算上"
+    },
+    {
+      "topicId": "mt_mat-s-derivative-optimization",
+      "prerequisiteId": "mt_mat-s-derivative-application",
+      "strength": "hard",
+      "reason": "最优化建立在函数性质分析上"
+    },
+    {
+      "topicId": "mt_eng-s-travel",
+      "prerequisiteId": "mt_eng-s-teen-life",
+      "strength": "soft",
+      "reason": "旅行话题以青少年生活表达为基础"
+    },
+    {
+      "topicId": "mt_eng-s-sports",
+      "prerequisiteId": "mt_eng-s-teen-life",
+      "strength": "soft",
+      "reason": "运动话题属青少年生活范畴"
+    },
+    {
+      "topicId": "mt_eng-s-morals",
+      "prerequisiteId": "mt_eng-s-teen-life",
+      "strength": "soft",
+      "reason": "道德话题建立在自我认识之上"
+    },
+    {
+      "topicId": "mt_eng-s-money",
+      "prerequisiteId": "mt_eng-s-teen-life",
+      "strength": "soft",
+      "reason": "金钱观属自我成长话题"
+    },
+    {
+      "topicId": "mt_eng-s-future",
+      "prerequisiteId": "mt_eng-s-teen-life",
+      "strength": "hard",
+      "reason": "展望未来以自我认识为基础"
+    },
+    {
+      "topicId": "mt_eng-s-first-aid",
+      "prerequisiteId": "mt_eng-s-sports",
+      "strength": "soft",
+      "reason": "急救与运动安全相关"
+    },
+    {
+      "topicId": "mt_eng-s-healthy-lifestyle",
+      "prerequisiteId": "mt_eng-s-sports",
+      "strength": "hard",
+      "reason": "健康生活以运动健康话题为基础"
+    },
+    {
+      "topicId": "mt_eng-s-adversity",
+      "prerequisiteId": "mt_eng-s-future",
+      "strength": "soft",
+      "reason": "逆境成长与未来规划相关"
+    },
+    {
+      "topicId": "mt_eng-s-sharing",
+      "prerequisiteId": "mt_eng-s-morals",
+      "strength": "soft",
+      "reason": "志愿服务体现道德品质"
+    },
+    {
+      "topicId": "mt_eng-s-career",
+      "prerequisiteId": "mt_eng-s-future",
+      "strength": "hard",
+      "reason": "职业规划是展望未来的深化"
+    },
+    {
+      "topicId": "mt_eng-s-cultural-heritage",
+      "prerequisiteId": "mt_eng-s-history",
+      "strength": "hard",
+      "reason": "文化遗产以历史传统为背景"
+    },
+    {
+      "topicId": "mt_eng-s-history",
+      "prerequisiteId": "mt_eng-s-languages",
+      "strength": "soft",
+      "reason": "历史话题以文化语言学习为基础"
+    },
+    {
+      "topicId": "mt_eng-s-music",
+      "prerequisiteId": "mt_eng-s-festivals",
+      "strength": "soft",
+      "reason": "音乐与节日同属文化生活"
+    },
+    {
+      "topicId": "mt_eng-s-festivals",
+      "prerequisiteId": "mt_eng-s-cultural-heritage",
+      "strength": "soft",
+      "reason": "节日是文化遗产的一部分"
+    },
+    {
+      "topicId": "mt_eng-s-diverse-culture",
+      "prerequisiteId": "mt_eng-s-cultural-heritage",
+      "strength": "hard",
+      "reason": "多元文化以文化理解为基础"
+    },
+    {
+      "topicId": "mt_eng-s-internet",
+      "prerequisiteId": "mt_eng-s-languages",
+      "strength": "soft",
+      "reason": "互联网话题与语言学习相关"
+    },
+    {
+      "topicId": "mt_eng-s-achievement",
+      "prerequisiteId": "mt_eng-s-morals",
+      "strength": "soft",
+      "reason": "人物成就体现品质"
+    },
+    {
+      "topicId": "mt_eng-s-body-language",
+      "prerequisiteId": "mt_eng-s-diverse-culture",
+      "strength": "hard",
+      "reason": "肢体语言属跨文化交际"
+    },
+    {
+      "topicId": "mt_eng-s-bridging-culture",
+      "prerequisiteId": "mt_eng-s-diverse-culture",
+      "strength": "hard",
+      "reason": "跨文化沟通以多元文化理解为基础"
+    },
+    {
+      "topicId": "mt_eng-s-food-culture",
+      "prerequisiteId": "mt_eng-s-diverse-culture",
+      "strength": "soft",
+      "reason": "饮食文化是文化多样性的体现"
+    },
+    {
+      "topicId": "mt_eng-s-scientists",
+      "prerequisiteId": "mt_eng-s-achievement",
+      "strength": "hard",
+      "reason": "科学家话题以人物成就为基础"
+    },
+    {
+      "topicId": "mt_eng-s-art",
+      "prerequisiteId": "mt_eng-s-music",
+      "strength": "soft",
+      "reason": "艺术与音乐同属审美话题"
+    },
+    {
+      "topicId": "mt_eng-s-poems",
+      "prerequisiteId": "mt_eng-s-art",
+      "strength": "soft",
+      "reason": "诗歌鉴赏属文学艺术"
+    },
+    {
+      "topicId": "mt_eng-s-sci-fi",
+      "prerequisiteId": "mt_eng-s-future",
+      "strength": "soft",
+      "reason": "科幻以未来想象为基础"
+    },
+    {
+      "topicId": "mt_eng-s-wildlife",
+      "prerequisiteId": "mt_eng-s-disaster",
+      "strength": "soft",
+      "reason": "野生动物保护与自然话题相关"
+    },
+    {
+      "topicId": "mt_eng-s-space",
+      "prerequisiteId": "mt_eng-s-disaster",
+      "strength": "soft",
+      "reason": "太空探索同属人与自然话题"
+    },
+    {
+      "topicId": "mt_eng-s-parks",
+      "prerequisiteId": "mt_eng-s-wildlife",
+      "strength": "soft",
+      "reason": "公园与自然保护相关"
+    },
+    {
+      "topicId": "mt_eng-s-farming",
+      "prerequisiteId": "mt_eng-s-parks",
+      "strength": "soft",
+      "reason": "农业与自然利用相关"
+    },
+    {
+      "topicId": "mt_eng-s-journey",
+      "prerequisiteId": "mt_eng-s-parks",
+      "strength": "soft",
+      "reason": "旅行地理与自然景观相关"
+    },
+    {
+      "topicId": "mt_eng-s-environment",
+      "prerequisiteId": "mt_eng-s-wildlife",
+      "strength": "hard",
+      "reason": "环境保护以自然保护意识为基础"
+    },
+    {
+      "topicId": "mt_eng-s-iconic",
+      "prerequisiteId": "mt_eng-s-journey",
+      "strength": "hard",
+      "reason": "标志性景点以旅行表达为基础"
+    },
+    {
+      "topicId": "mt_eng-s-sea-exploration",
+      "prerequisiteId": "mt_eng-s-environment",
+      "strength": "soft",
+      "reason": "海洋探索与环境保护相关"
+    },
+    {
+      "topicId": "mt_eng-s-attributive",
+      "prerequisiteId": "mt_eng-s-noun-clause",
+      "strength": "soft",
+      "reason": "定语从句与名词性从句同属从句体系"
+    },
+    {
+      "topicId": "mt_eng-s-nonfinite",
+      "prerequisiteId": "mt_eng-s-attributive",
+      "strength": "soft",
+      "reason": "非谓语建立在从句与句子结构之上"
+    },
+    {
+      "topicId": "mt_eng-s-inversion",
+      "prerequisiteId": "mt_eng-s-nonfinite",
+      "strength": "soft",
+      "reason": "倒装建立在对句子成分的掌握上"
+    },
+    {
+      "topicId": "mt_eng-s-subjunctive",
+      "prerequisiteId": "mt_eng-s-nonfinite",
+      "strength": "soft",
+      "reason": "虚拟语气涉及谓语与非谓语形式"
+    },
+    {
+      "topicId": "mt_eng-s-passive",
+      "prerequisiteId": "mt_eng-s-attributive",
+      "strength": "soft",
+      "reason": "被动语态与句子结构相关"
+    },
+    {
+      "topicId": "mt_eng-s-ellipsis",
+      "prerequisiteId": "mt_eng-s-passive",
+      "strength": "soft",
+      "reason": "省略建立在句子结构掌握之上"
+    },
+    {
+      "topicId": "mt_eng-s-writing-strategy",
+      "prerequisiteId": "mt_eng-s-reading-strategy",
+      "strength": "hard",
+      "reason": "写作策略与阅读策略相辅相成"
+    },
+    {
+      "topicId": "mt_eng-s-listening-strategy",
+      "prerequisiteId": "mt_eng-s-reading-strategy",
+      "strength": "soft",
+      "reason": "听力与阅读同属输入技能"
+    },
+    {
+      "topicId": "mt_eng-s-translation",
+      "prerequisiteId": "mt_eng-s-writing-strategy",
+      "strength": "hard",
+      "reason": "翻译以写作表达为基础"
+    },
+    {
+      "topicId": "mt_eng-s-argument-essay",
+      "prerequisiteId": "mt_eng-s-writing-strategy",
+      "strength": "hard",
+      "reason": "议论文写作以写作策略为基础"
+    },
+    {
+      "topicId": "mt_eng-s-exam-strategy",
+      "prerequisiteId": "mt_eng-s-writing-strategy",
+      "strength": "soft",
+      "reason": "应试策略综合运用各项技能"
     }
   ]
 }

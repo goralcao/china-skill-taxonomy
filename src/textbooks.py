@@ -273,6 +273,17 @@ DETAILED_VERSIONS.extend([
     textbooks_tech.TECH_VERSION,
 ])
 
+# —— 高中语文 / 数学 / 英语（v0.22 新增）——
+import textbooks_chinese_senior  # noqa: E402
+import textbooks_english_senior  # noqa: E402
+import textbooks_math_senior  # noqa: E402
+
+DETAILED_VERSIONS.extend([
+    textbooks_chinese_senior.CHINESE_SENIOR_VERSION,
+    textbooks_math_senior.MATH_SENIOR_VERSION,
+    textbooks_english_senior.ENGLISH_SENIOR_VERSION,
+])
+
 # ChinaTextbook 收录的小学教材版本清单（仅作来源记录，主题暂未对齐这些版本）
 CHINATEXTBOOK_PRIMARY_VERSIONS = {
     "语文": ["统编版"],
