@@ -134,7 +134,7 @@
 不想装任何东西，clone 下来用浏览器打开就行：
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/goralcao/china-skill-taxonomy.git
 cd china-skill-taxonomy
 open viz/index.html        # macOS；Windows 用 start，Linux 用 xdg-open
 ```
@@ -329,7 +329,7 @@ china-skill-taxonomy/
   author       = {{China Skill Taxonomy contributors}},
   year         = {2026},
   version      = {v0.22.3},
-  url          = {https://github.com/<your-org>/china-skill-taxonomy},
+  url          = {https://github.com/goralcao/china-skill-taxonomy},
   note         = {Database licensed under ODbL 1.0; content under CC BY-SA 4.0}
 }
 ```
@@ -344,7 +344,7 @@ china-skill-taxonomy/
 
 ODbL 把「衍生数据库」和「产出作品」分开。拿这份数据做产品、训练模型、放进应用，都不需要开源你的产品；只有当你发布基于它的数据库时才需要同样开放。署名可以照抄这行：
 
-> 学阶图谱 · China Skill Taxonomy (v0.22.3) · https://github.com/&lt;your-org&gt;/china-skill-taxonomy · ODbL 1.0 (database) + CC BY-SA 4.0 (content)
+> 学阶图谱 · China Skill Taxonomy (v0.22.3) · https://github.com/goralcao/china-skill-taxonomy · ODbL 1.0 (database) + CC BY-SA 4.0 (content)
 
 ## 路线图
 
