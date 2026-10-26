@@ -1688,7 +1688,19 @@
   document.getElementById('panel').addEventListener('click', ev => {
     if (ev.target.closest('a')) return;   // 教材直达链接不拦截
     const el = ev.target.closest('[data-id]');
-    if (el) { const n = nodeById.get(el.dataset.id); if (n) select(n); }
+    if (!el) return;
+    const id = el.dataset.id;
+    // 列表里既有知识点，也有学科/领域簇（后者只在容器索引里）
+    const n = nodeById.get(id) || containerById.get(id);
+    if (!n) return;
+    if (n.kind === 'subject' || n.kind === 'cluster') {
+      const cid = n.kind === 'subject' ? 'subj-' + n.subject : n.id;
+      if (collapsed.has(cid)) { collapsed.delete(cid); applyFilter(); }  // 折叠态先展开，才算「进去了」
+      select(n);
+      wake();
+      return;
+    }
+    select(n);
   });
   document.getElementById('btnClose').onclick = () => {
     selected = null; pathShown = false;
