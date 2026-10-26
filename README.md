@@ -9,7 +9,7 @@
 覆盖 12 个学科、1~12 年级，每个主题配一份教学研究</p>
 
 <p>
-<img src="https://img.shields.io/badge/version-v0.24.0-blue?style=flat-square" alt="version">
+<img src="https://img.shields.io/badge/version-v0.25.0-blue?style=flat-square" alt="version">
 <img src="https://img.shields.io/badge/subjects-12-informational?style=flat-square" alt="subjects">
 <img src="https://img.shields.io/badge/topics-1268-brightgreen?style=flat-square" alt="topics">
 <img src="https://img.shields.io/badge/prerequisite%20edges-1635-blueviolet?style=flat-square" alt="prerequisite edges">
@@ -24,7 +24,7 @@
 
 在线预览：<https://acd118508358062b1.app.workbuddy.host/?sharecode=DHL4TJAQCG>
 
-> v0.24.0 · 主题 1268 · 先修依赖 1635（hard 947 / soft 688）· 课标条目 186 · 域摘要 204 · 教学研究 1268 · 教材版本 26 · 学科 12 · 课件 3
+> v0.25.0 · 主题 1268 · 先修依赖 1635（hard 947 / soft 688）· 课标条目 186 · 域摘要 204 · 教学研究 1268 · 教材版本 26 · 学科 12 · 课件 4
 
 ## 目录
 
@@ -97,38 +97,74 @@
 <img src="docs/screenshot-mobile.png" width="24%" alt="移动端：单指平移、双指缩放、底部抽屉详情">
 </div>
 
-## 课件层（试点）
+## 课件层
 
 教学研究是写给大人的，课件是给孩子自己走的。
 
 每个课件绑定一个 `topicId`，从图谱详情面板直达。走完会把完成状态写到本地，图谱上对应节点右上角出现一个绿点——和手动标记的「金色环」分开，因为「走完课件」不等于「真的掌握」。
 
-现在有三个样板，对应三种模板：
+现有四个：
 
-| 课件 | 模板 | 交互 | 时长 |
-|---|---|---|---|
-| 三年级数学 · 时、分、秒 | explain | 拖动钟面、两段动画（分针一圈 / 秒针一圈）、3 道判分题 | 16 分钟 |
-| 三年级数学 · 万以内的加法 | drill | 6 道题（含连续进位、连续退位、估算），答错给错因，看完结算 | 10 分钟 |
-| 高中物理 · 动量守恒 | explore | 四个滑杆调质量与速度，看碰撞前后总动量；可开摩擦做反例 | 16 分钟 |
+| 课件 | 教学结构 | 呈现方式 | 交互 | 时长 |
+|---|---|---|---|---|
+| 三年级数学 · 时、分、秒 | explain | 钟面 | 拖动分针、两段动画（分针一圈 / 秒针一圈）、3 道判分题 | 16 分钟 |
+| 三年级数学 · 万以内的加减法 | drill | **竖式** | 6 道竖式题，进位与借位可单独标出，答错给错因 | 10 分钟 |
+| 三年级数学 · 长方形和正方形的面积 | explain | **方格图** | 一格一格铺满、换尺寸验证长×宽、100 格推导面积进率 | 14 分钟 |
+| 高中物理 · 动量守恒 | explore | 参数模拟 | 四个滑杆调质量与速度，看碰前碰后总动量；可开摩擦做反例 | 16 分钟 |
 
-三个课件各自验证了一件事：内容能不能从教学研究带入、单文件能不能离线跑通、完成状态能不能回写图谱。
+<p align="center">
+  <img src="docs/screenshot-course-vertical.png" width="49%" alt="万以内的加减法：竖式呈现，进位标在前一位上方">
+  <img src="docs/screenshot-course-geometry.png" width="49%" alt="长方形面积：方格铺满数出 4×3=12">
+</p>
+
+### 为什么分「教学结构」和「呈现方式」两层
+
+只按教学结构分模板，所有课件都会长成「一段话 + 一个输入框」——竖式写成横式，几何只剩文字。而这恰好是学生最难靠文字理解的部分。
+
+所以拆成两层，两件正交的事：
+
+- **教学结构**（`explain` / `drill` / `explore` / `review`）决定顺序：先讲后练，还是先调参数再归纳。
+- **呈现方式**（`vertical` / `geometry` / `clock` / `numberline` / `coords` …）决定画法：数位怎么对齐、方格怎么铺、指针怎么转。
+
+组合起来才落得到具体主题：
+
+| 主题类型 | 组合 | 效果 |
+|---|---|---|
+| 四则运算 | drill + `vertical` | 进位小 1 直接写在前一位上方，漏没漏一眼看得出 |
+| 几何度量 | explain + `geometry` | 面积不是背公式，是一格一格数出来的 4×3=12 |
+| 时间与单位 | explain + `clock` | 分针转一圈时针走一大格，动画走完才给结论 |
+| 函数图像 | explore + `coords` | 参数改了曲线跟着动 |
+| 物理规律 | explore + `sim` | 开个摩擦开关，守恒变不守恒 |
+
+呈现器集中放在 `templates/renderers.js`，课件源文件用相对路径引用，构建时内联进单文件——同一套竖式代码只维护一份，不用在 1268 个课件里各抄一遍。
+
+### 课件与图谱是双向的
+
+课件不是终点页，是图谱上的一个入口。
+
+- **页首**一行位置条：`前置 A · B → 本课 C → 解锁 D · E`，每个名字都能点回图上对应节点。
+- **页尾**三块延伸：回去补一补（先修 + 每条依赖边的理由）、接着学（解锁主题，优先有课件的）、这一课在图谱里是什么（领域、学段、课标编号、教材册次单元）。
+- **图谱侧**：详情面板「打开课件（N 分钟）」，工具栏新增「▶ 有课件 N」开关，一键筛出所有能动手的主题。
+
+这些数据不用手写。构建时按 `topicId` 从 `dependencies.json` 现算邻域，写成 `window.__GRAPH` 注入课件；主题的依赖改了，课件里的延伸跟着改。
 
 | 文件 | 作用 |
 |---|---|
-| `courses/<topicId>/meta.json` | 元数据：模板、时长、课标、状态、版本 |
-| `courses/<topicId>/index.html` | 自包含课件，无外链、无追踪 |
+| `courses/<topicId>/meta.json` | 元数据：教学结构、呈现方式、时长、课标、状态、版本 |
+| `courses/<topicId>/index.html` | 课件（源文件引用共享模板，构建后内联为单文件） |
+| `templates/base.css` · `renderers.js` | 共享样式与呈现器 |
 | `data/courses.json` | 构建时生成的索引，随图谱一起加载 |
 
 加一个新课件：
 
 ```bash
-node scripts/new-course.mjs mt_time-hms --template=explain
+node scripts/new-course.mjs mt_rect-area --template=explain
 node scripts/validate-courses.mjs
 ```
 
 脚手架会自动带入主题描述、掌握证据、教学研究里的活动和常见错误，生成结构完整但需要改写的草稿。
 
-完整方案——四层架构、四种模板、质量门槛、生产流水线与路线图——见 [docs/COURSEWARE.md](docs/COURSEWARE.md)。
+完整方案——四层架构、教学结构与呈现方式的对应、质量门槛、生产流水线与路线图——见 [docs/COURSEWARE.md](docs/COURSEWARE.md)。
 
 ## 已知的不足
 
@@ -140,7 +176,7 @@ node scripts/validate-courses.mjs
 - 依赖图分成 67 个连通分量，最大的一块只占 7.6%。原因是跨模块、跨学科的边补得少，学习路径常常只能在本模块内走。补软依赖是下一步要做的，但每条都得能说清理由，不想为了连通而连通。
 - 186 条课标里有 11 条还没有主题挂靠，集中在语文低年级的表达类要求、英语一级的两个要素；这部分主题偏少。
 - 首屏要下载 4MB 的 `data.js`（gzip 后约 1MB），线上目前没有开压缩。数据分片是待办。
-- 课件只有 3 个（1268 个主题的 0.2%），四种模板落地了 explain / drill / explore 三种，review 模板还没做。管线通了，内容还没铺开。
+- 课件只有 4 个（1268 个主题的 0.3%），教学结构落地了 explain / drill / explore 三种，呈现器落地了竖式、方格、钟面、数轴、坐标系五种；review 结构与 sim / chart / diagram / equation 尚未实现。时分秒与动量守恒用的还是各自内嵌的实现，没收敛到公共呈现器。
 - 目前只有中文。术语和课标编号是中文体系的，翻成英文会失真，暂时没做。
 
 ## 覆盖范围
@@ -368,7 +404,7 @@ china-skill-taxonomy/
   title        = {学阶图谱 · China Skill Taxonomy},
   author       = {{China Skill Taxonomy contributors}},
   year         = {2026},
-  version      = {v0.24.0},
+  version      = {v0.25.0},
   url          = {https://github.com/goralcao/china-skill-taxonomy},
   note         = {Database licensed under ODbL 1.0; content under CC BY-SA 4.0}
 }
@@ -384,7 +420,7 @@ china-skill-taxonomy/
 
 ODbL 把「衍生数据库」和「产出作品」分开。拿这份数据做产品、训练模型、放进应用，都不需要开源你的产品；只有当你发布基于它的数据库时才需要同样开放。署名可以照抄这行：
 
-> 学阶图谱 · China Skill Taxonomy (v0.24.0) · https://github.com/goralcao/china-skill-taxonomy · ODbL 1.0 (database) + CC BY-SA 4.0 (content)
+> 学阶图谱 · China Skill Taxonomy (v0.25.0) · https://github.com/goralcao/china-skill-taxonomy · ODbL 1.0 (database) + CC BY-SA 4.0 (content)
 
 ## 路线图
 
@@ -400,7 +436,7 @@ ODbL 把「衍生数据库」和「产出作品」分开。拿这份数据做产
 | v0.13 ~ v0.15 | 初中物理、化学、历史、地理；多版本教材目录与跨版本映射 |
 | v0.16 ~ v0.18 | 科学、道德与法治、生物，十学科 742 主题全量覆盖 |
 | v0.19 ~ v0.22 | 高中九科补齐，1268 主题、十二学科全量覆盖 |
-| v0.22.1 ~ v0.24.0 | 图例可收缩、移动端触摸修复、README 与 CI 整理 |
+| v0.22.1 ~ v0.25.0 | 图例可收缩、移动端触摸修复、README 与 CI 整理 |
 
 还没做的：
 

@@ -1,14 +1,22 @@
 {
   "topicId": "mt_addsub-10000",
-  "title": "万以内的加法：连续进位怎么不出错",
+  "title": "万以内的加减法：进位和退位怎么不出错",
   "template": "drill",
+  "renderer": "vertical",
   "duration": 10,
   "interactions": 6,
   "grade": 3,
   "subject": "数学",
-  "standards": ["math-2022:S2:NA:NO"],
-  "prerequisites": ["mt_num-100-pen", "mt_num-10000-recognition"],
-  "next": ["mt_mult-1digit"],
+  "standards": [
+    "math-2022:S2:NA:NO"
+  ],
+  "prerequisites": [
+    "mt_num-100-pen",
+    "mt_num-10000-recognition"
+  ],
+  "next": [
+    "mt_mult-1digit"
+  ],
   "objectives": [
     "连续进位时每个进位都不漏",
     "连续退位时一级一级处理",
@@ -17,6 +25,6 @@
   "status": "reviewed",
   "author": "goral.cao",
   "license": "CC-BY-SA-4.0",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "updatedAt": "2026-10-27"
 }

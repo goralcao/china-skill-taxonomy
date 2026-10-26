@@ -1,0 +1,285 @@
+/* 学阶图谱课件 · 共享样式
+ * 源文件引用 templates/base.css（相对路径 ../../templates/），
+ * 构建时整段内联进单文件产物，见 scripts/build.py 的 sync_courses_to_viz。
+ */
+
+:root {
+  --bg: #0a0f18;
+  --panel: #0f1620;
+  --card: #141d29;
+  --line: #24303f;
+  --text: #e8edf5;
+  --dim: #8b98ab;
+  --accent: #ffd166;
+  --ok: #4ade80;
+  --bad: #f87171;
+  --carry: #60a5fa;
+  --borrow: #fb923c;
+  --geo: #a78bfa;
+  --num: #38bdf8;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-family: system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  padding: 0 16px calc(88px + env(safe-area-inset-bottom, 0px));
+  -webkit-text-size-adjust: 100%;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: rgba(10, 15, 24, .94);
+  backdrop-filter: blur(8px);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+header .back { color: var(--dim); text-decoration: none; font-size: 13px; }
+header .back:hover { color: var(--text); }
+
+main { max-width: 720px; margin: 0 auto; padding-top: 14px; }
+
+h1 { font-size: 21px; margin: 0 0 8px; line-height: 1.4; }
+h2 { font-size: 17px; margin: 0 0 10px; line-height: 1.5; }
+h1:focus, h2:focus { outline: none; }
+p { margin: 0 0 10px; }
+
+.muted { color: var(--dim); font-size: 13.5px; }
+.mono { font-variant-numeric: tabular-nums; }
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin: 14px 0;
+}
+.card.tip { border-left: 3px solid var(--accent); }
+.card.pitfall { border-left: 3px solid var(--bad); }
+.card.ok { border-left: 3px solid var(--ok); }
+.card:last-child { margin-bottom: 0; }
+
+/* 步骤 */
+.step { display: none; }
+.step.active { display: block; animation: fade .22s ease; }
+@keyframes fade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
+/* 底部导航 */
+footer {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px));
+  background: rgba(10, 15, 24, .96);
+  border-top: 1px solid var(--line);
+}
+footer .progress { flex: 1; font-size: 12px; color: var(--dim); }
+footer .bar { height: 3px; background: var(--line); border-radius: 2px; margin-top: 4px; overflow: hidden; }
+footer .bar > i { display: block; height: 100%; background: var(--accent); width: 0; transition: width .25s; }
+
+.btn {
+  padding: 11px 18px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--text);
+  font-size: 15px;
+  min-height: 44px;
+  cursor: pointer;
+  touch-action: manipulation;
+  font-family: inherit;
+}
+.btn:disabled { opacity: .4; cursor: default; }
+.btn.primary { background: var(--accent); color: #1a1300; border-color: var(--accent); font-weight: 600; }
+.btn.small { padding: 8px 13px; min-height: 38px; font-size: 13.5px; }
+.btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+input[type="number"], input[type="text"] {
+  font-family: inherit;
+  font-size: 20px;
+  font-variant-numeric: tabular-nums;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--text);
+  width: 140px;
+  text-align: center;
+}
+input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+/* ── 图谱位置条 ───────────────────────────────────────── */
+.gnav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  line-height: 1.9;
+  padding: 6px 10px;
+  margin: 0 0 14px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.gnav .gnav-label { color: var(--dim); font-size: 11.5px; padding: 0 1px; }
+.gnav a {
+  color: #cbd5e1;
+  text-decoration: underline;
+  text-decoration-color: rgba(203, 213, 225, .3);
+  text-underline-offset: 3px;
+  padding: 1px 1px;
+  white-space: nowrap;
+}
+.gnav a:hover { color: var(--accent); text-decoration-color: var(--accent); }
+.gnav a.self {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  padding: 1px 8px;
+}
+.gnav .sep { color: #3f4c5e; padding: 0 1px; }
+.gnav .gnav-pair { display: inline-flex; align-items: center; gap: 4px; white-space: nowrap; }
+
+/* ── 延伸区块 ─────────────────────────────────────────── */
+.extend { margin: 22px 0 8px; }
+.extend h3 { font-size: 15px; margin: 0 0 10px; color: var(--text); }
+.extend h3 small { font-weight: 400; color: var(--dim); font-size: 12.5px; margin-left: 6px; }
+.ext-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--panel);
+  margin-bottom: 8px;
+  text-decoration: none;
+  color: var(--text);
+  min-height: 46px;
+}
+.ext-item:hover { border-color: var(--accent); }
+.ext-item .who { flex: 1; min-width: 0; }
+.ext-item .who b { font-weight: 600; font-size: 14px; }
+.ext-item .who span { display: block; color: var(--dim); font-size: 12px; }
+.ext-item .tag {
+  font-size: 11px;
+  padding: 2px 7px;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  color: var(--dim);
+  white-space: nowrap;
+}
+.ext-item .tag.has { border-color: var(--ok); color: var(--ok); }
+.ext-note { font-size: 12.5px; color: var(--dim); margin: 2px 0 12px; }
+
+/* ── 呈现器通用容器 ───────────────────────────────────── */
+.viz {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px 12px;
+  margin: 14px 0;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+.viz svg { display: block; max-width: 100%; height: auto; touch-action: none; }
+@media (min-width: 640px) {
+  .viz svg { max-width: 430px; margin: 0 auto; }
+}
+
+.viz-cap { text-align: center; font-size: 12.5px; color: var(--dim); margin: -6px 0 14px; }
+.viz-cap b { color: var(--accent); font-weight: 600; }
+
+/* ── 竖式 ─────────────────────────────────────────────── */
+.vert {
+  display: inline-block;
+  font-family: "SF Mono", "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  font-size: 30px;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.14;
+  color: var(--text);
+  user-select: none;
+}
+.vert .vrow { display: grid; align-items: center; justify-items: center; }
+.vert .vrow > span { min-width: 1.14em; text-align: center; }
+.vert .vcarry > span { font-size: .46em; font-weight: 700; color: var(--carry); height: 1.05em; }
+.vert .vcarry > span.borrow { color: #fb923c; font-size: .62em; }
+.vert .vop { color: var(--dim); }
+.vert .vline {
+  height: 3px;
+  background: var(--text);
+  border-radius: 2px;
+  margin: 3px 0 5px;
+}
+.vert .vans > span { color: var(--accent); font-weight: 700; }
+.vert .vans > span.hide { color: transparent; }
+.vert .vrow > span.done { color: var(--ok); }
+.vert .vrow > span.pending { opacity: .34; }
+.vert .vdots { letter-spacing: .18em; color: var(--dim); }
+
+/* ── 几何 ─────────────────────────────────────────────── */
+.geo-grid { fill: none; stroke: var(--line); stroke-width: 1; }
+.geo-cell {
+  fill: transparent;
+  stroke: rgba(167, 139, 250, .22);
+  stroke-width: .8;
+  transition: fill .18s;
+}
+.geo-cell.on { fill: rgba(167, 139, 250, .52); stroke: rgba(200, 180, 255, .6); }
+.geo-outline { fill: none; stroke: var(--geo); stroke-width: 2.2; }
+.geo-label { fill: var(--text); font-size: 13px; font-family: inherit; }
+.geo-dim { stroke: var(--num); stroke-width: 1.6; }
+.geo-dim-text { fill: var(--num); font-size: 12.5px; font-family: inherit; }
+.geo-piece { transition: transform .5s cubic-bezier(.4, 0, .2, 1); }
+.geo-cut { stroke: var(--bad); stroke-width: 1.8; stroke-dasharray: 5 4; fill: none; }
+
+/* ── 数轴 ─────────────────────────────────────────────── */
+.nl-axis { stroke: var(--dim); stroke-width: 1.6; }
+.nl-tick { stroke: var(--dim); stroke-width: 1.2; }
+.nl-text { fill: var(--dim); font-size: 11.5px; font-family: inherit; text-anchor: middle; }
+.nl-point { fill: var(--num); }
+.nl-point-label { fill: var(--text); font-size: 12.5px; font-weight: 600; font-family: inherit; text-anchor: middle; }
+.nl-span { fill: rgba(56, 189, 248, .22); stroke: var(--num); stroke-width: 1; }
+.nl-handle { fill: var(--accent); cursor: grab; }
+.nl-handle:active { cursor: grabbing; }
+
+/* ── 坐标系 ───────────────────────────────────────────── */
+.cx-axis { stroke: var(--dim); stroke-width: 1.4; }
+.cx-grid { stroke: var(--line); stroke-width: .8; }
+.cx-text { fill: var(--dim); font-size: 11px; font-family: inherit; }
+.cx-curve { fill: none; stroke-width: 2.4; stroke-linecap: round; }
+.cx-dot { fill: var(--accent); }
+.cx-dot-label { fill: var(--text); font-size: 12px; font-family: inherit; }
+
+/* ── 钟面 ─────────────────────────────────────────────── */
+.ck-face { fill: var(--card); stroke: var(--line); stroke-width: 2; }
+.ck-tick { stroke: var(--dim); stroke-width: 1.4; }
+.ck-tick.major { stroke: var(--text); stroke-width: 2.4; }
+.ck-num { fill: var(--dim); font-size: 13px; font-family: inherit; text-anchor: middle; dominant-baseline: middle; }
+.ck-hand { stroke-linecap: round; }
+.ck-hand.hour { stroke: var(--text); stroke-width: 5; }
+.ck-hand.minute { stroke: var(--num); stroke-width: 3.4; }
+.ck-hand.second { stroke: var(--bad); stroke-width: 1.6; }
+.ck-hand.dim { opacity: .28; }
+.ck-center { fill: var(--accent); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}

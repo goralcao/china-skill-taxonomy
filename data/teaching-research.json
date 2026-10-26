@@ -1,9 +1,9 @@
 {
   "name": "学阶图谱教学研究层",
-  "version": "v0.24.0",
+  "version": "v0.25.0",
   "schemaVersion": 1,
-  "taxonomyVersion": "v0.24.0",
-  "topicFileSha256": "d1a49e442e55d7a9cb1991707d950f414996dec69b90df5cf5b1d4ed506362d6",
+  "taxonomyVersion": "v0.25.0",
+  "topicFileSha256": "967753d09f411e547677ecc91347bb32528e3055cbfa085174c819395ff5853b",
   "authorship": {
     "authoredBy": "AI 撰写（教学研究层）",
     "review": "经结构化校验（字段完整性、长度约束、来源白名单、主题联结、覆盖清单），并经过 build 阶段的引用完整性校验；未经实证验证。",

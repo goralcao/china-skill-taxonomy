@@ -108,13 +108,43 @@ for (const name of dirs) {
   const html = fs.readFileSync(htmlPath, 'utf8');
   const bytes = Buffer.byteLength(html, 'utf8');
 
-  if (/<script[^>]+src=/i.test(html)) fail(rel, 'HTML 引用了外部脚本（课件必须自包含）');
-  if (/<link[^>]+href=["']https?:/i.test(html)) fail(rel, 'HTML 引用了外部样式');
+  // 源文件允许引用 templates/ 下的共享样式与呈现器（构建时内联）；
+  // 除此之外的任何 <script src> / <link href> 都不允许。
+  const scriptSrcs = [...html.matchAll(/<script[^>]+src=["']([^"']+)["']/gi)].map(m => m[1]);
+  scriptSrcs.forEach(src => {
+    if (!/^(\.\.\/)+templates\/renderers\.js$/.test(src)) {
+      fail(rel, `HTML 引用了外部脚本：${src}（只允许 templates/renderers.js）`);
+    }
+  });
+  const linkHrefs = [...html.matchAll(/<link[^>]+href=["']([^"']+)["']/gi)].map(m => m[1]);
+  linkHrefs.forEach(href => {
+    if (!/^(\.\.\/)+templates\/base\.css$/.test(href)) {
+      fail(rel, `HTML 引用了外部样式：${href}（只允许 templates/base.css）`);
+    }
+  });
+  // renderer 白名单 + 是否真的调用了对应呈现器
+  const RENDERERS = ['text', 'vertical', 'geometry', 'numberline', 'coords', 'clock', 'sim', 'chart', 'diagram', 'equation'];
+  if (meta.renderer && !RENDERERS.includes(meta.renderer)) {
+    fail(rel, `meta.renderer=${meta.renderer} 不在白名单（${RENDERERS.join(' / ')}）`);
+  } else if (meta.renderer && meta.renderer !== 'text' && !html.includes('CR.' + meta.renderer + '(')) {
+    warn(rel, `renderer=${meta.renderer}，但没找到 CR.${meta.renderer}( 调用`);
+  }
+
   if (/<img[^>]+src=["']https?:/i.test(html)) fail(rel, 'HTML 引用了外部图片');
+  if (/(?:src|href)=["']https?:\/\//i.test(html)) fail(rel, 'HTML 引用了 http(s) 外部资源');
   if (bytes > MAX_BYTES) fail(rel, `单文件 ${(bytes / 1024).toFixed(0)}KB，超过 ${MAX_BYTES / 1024}KB 上限`);
   if (!/<html[^>]+lang=["']zh-CN["']/i.test(html)) fail(rel, '缺 <html lang="zh-CN">');
   if (!/<meta[^>]+name=["']viewport["']/i.test(html)) fail(rel, '缺 viewport meta');
   if (!/<title>[^<]{4,}<\/title>/i.test(html)) fail(rel, '缺 <title>');
+
+  // 7.5 构建产物必须完全自包含（源文件可以共享 templates/，产物不行）
+  const distPath = path.join(ROOT, 'viz', 'courses', path.basename(dir), 'index.html');
+  if (fs.existsSync(distPath)) {
+    const dist = fs.readFileSync(distPath, 'utf8');
+    if (/<script[^>]+src=/i.test(dist)) fail(rel, '构建产物里还有 <script src>，未被内联');
+    if (/<link[^>]+href=/i.test(dist)) fail(rel, '构建产物里还有 <link href>，未被内联');
+    if (!/window\.__GRAPH\s*=/.test(dist)) fail(rel, '构建产物缺 window.__GRAPH（图谱延伸数据未注入）');
+  }
 
   // 8. 交互步骤数一致：多步页面看 data-step，单页题库看 __ANSWERS 条数
   const answersMatch = html.match(/window\.__ANSWERS\s*=\s*(\[[\s\S]*?\]);/);

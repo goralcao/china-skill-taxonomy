@@ -377,6 +377,7 @@
   <div id="progress"></div>
   <div class="toolbar">
     <span id="subjectChips"></span>
+    <span class="chip" id="chipCourse" title="只显示已有动手课件的知识点" role="switch" aria-checked="false">▶ 有课件</span>
     <span class="search-wrap">
       <input id="search" type="text" placeholder="搜索主题…（/ 键聚焦）" autocomplete="off">
       <div class="search-list" id="searchList"></div>
@@ -607,7 +608,7 @@
       const a = acc.get(n.clusterId);
       if (a) { a.x += n.x; a.y += n.y; a.n++; }
     }
-    const filterActive = gradeFilter > 0 || domainFilter !== '';
+    const filterActive = gradeFilter > 0 || domainFilter !== '' || courseOnly;
     for (const c of clusterNodes) {
       let vis = activeSubjects.has(c.subject) && !collapsed.has('subj-' + c.subject);
       // 有筛选时，知识点被全部筛掉的领域簇不再显示；折叠态例外（要留住圆环供展开）
@@ -633,7 +634,9 @@
       if (a) { a.x += c.x; a.y += c.y; a.n++; }
     }
     for (const s of subjectNodes) {
-      s.visible = activeSubjects.has(s.subject);
+      // 有筛选时，域内一个可见知识点都没有的学科环也收起来，避免空环占位
+      const hasVisibleCluster = clusterNodes.some(c => c.subject === s.subject && c.visible);
+      s.visible = activeSubjects.has(s.subject) && (!filterActive || hasVisibleCluster);
       const a = sacc.get(s.id);
       if (a && a.n) { s.x = a.x / a.n; s.y = a.y / a.n; }
       else { s.x = subjectX(SUBJECT_LIST.indexOf(s.subject)); s.y = H * 0.5; }
@@ -724,6 +727,7 @@
   let selected = null, hovered = null, showAllLabels = false;
   // 默认全部学科可见（按 SUBJECT_LIST 初始化，新增学科自动纳入）
   const activeSubjects = new Set(SUBJECT_LIST);
+  let courseOnly = false;              // 只看有课件的知识点
   let traceMode = null; // 'ancestors' | 'descendants'
   const traceSet = new Set();
 
@@ -752,6 +756,30 @@
     const lg = document.getElementById('legendSubjects');
     if (lg) lg.innerHTML = SUBJECT_LIST.map(s =>
       `<span class="lg-sub"><span class="dot" style="background:${subjectColor[s]}"></span>${s}</span>`).join('');
+
+    // 「有课件」开关：只留下来能动手的那几个知识点
+    const chipCourse = document.getElementById('chipCourse');
+    if (chipCourse) {
+      const n = courseByTopic.size;
+      chipCourse.textContent = '▶ 有课件 ' + n;
+      if (!n) chipCourse.style.display = 'none';
+      chipCourse.onclick = () => {
+        courseOnly = !courseOnly;
+        chipCourse.classList.toggle('on', courseOnly);
+        chipCourse.setAttribute('aria-checked', String(courseOnly));
+        applyFilter();
+        if (courseOnly) {
+          // 力导向还在收敛，坐标会变：分几次贴合，最后一次等布局基本稳定
+          setTimeout(() => fitVisible(), 120);
+          setTimeout(() => fitVisible(), 900);
+          setTimeout(() => fitVisible(), 1800);
+        }
+        const shown = nodes.filter(x => x.visible).length;
+        toast(courseOnly
+          ? `只看有课件的 ${shown} 个知识点 · 点节点可打开课件`
+          : '已恢复全部知识点');
+      };
+    }
   })();
 
   function closure(id, dir) {
@@ -1872,7 +1900,7 @@
   }
 
   // ---------- 工具栏 ----------
-  document.querySelectorAll('.chip').forEach(chip => {
+  document.querySelectorAll('.chip:not(#chipCourse)').forEach(chip => {
     chip.onclick = () => {
       const s = chip.dataset.subject;
       if (activeSubjects.has(s)) { activeSubjects.delete(s); chip.classList.remove('on'); chip.classList.add('off'); }
@@ -1881,7 +1909,7 @@
     };
   });
   function syncChips() {
-    document.querySelectorAll('.chip').forEach(c => {
+    document.querySelectorAll('.chip:not(#chipCourse)').forEach(c => {
       const on = activeSubjects.has(c.dataset.subject);
       c.classList.toggle('on', on); c.classList.toggle('off', !on);
     });
@@ -1900,6 +1928,24 @@
     }
     for (const id of keep) collapsed.delete(id);
   }
+  /** 把视图缩放平移到「当前可见节点」的包围盒，避免筛完只剩几个点还停在鸟瞰 */
+  function fitVisible(pad = 90) {
+    const vis = nodes.filter(n => n.visible);
+    if (!vis.length) return;
+    let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+    for (const n of vis) {
+      minX = Math.min(minX, n.x); maxX = Math.max(maxX, n.x);
+      minY = Math.min(minY, n.y); maxY = Math.max(maxY, n.y);
+    }
+    const bw = Math.max(80, maxX - minX + pad * 2);
+    const bh = Math.max(80, maxY - minY + pad * 2);
+    const k = Math.min(W / bw, H / bh, 2.4);
+    view.k = k;
+    view.x = W / 2 - ((minX + maxX) / 2) * k;
+    view.y = H / 2 - ((minY + maxY) / 2) * k;
+    wake();
+  }
+
   function applyFilter() {
     for (const n of nodes) {
       // 折叠学科 = 隐藏其下全部知识点；折叠领域簇 = 隐藏该簇知识点
@@ -1909,7 +1955,8 @@
       const okDomain = !domainFilter || n.domain === domainFilter;
       n.visible = activeSubjects.has(n.subject)
         && !subjHidden && !clHidden && okGrade && okDomain
-        && !(hideMastered && mastered.has(n.id));
+        && !(hideMastered && mastered.has(n.id))
+        && (!courseOnly || courseByTopic.has(n.id));
     }
     reheat(0.6);
     writeHash();
@@ -2136,13 +2183,14 @@
     writeHash._t = setTimeout(() => {
       const s = SUBJECT_LIST.filter(x => activeSubjects.has(x));
       const isDefault = !selected && s.length === SUBJECT_LIST.length
-        && !gradeFilter && !domainFilter && layoutMode === 'star';
+        && !gradeFilter && !domainFilter && !courseOnly && layoutMode === 'star';
       if (isDefault && !location.hash) return;      // 全默认且原本无 hash：不污染地址栏
       const p = new URLSearchParams();
       if (selected && selected.kind === 'topic') p.set('t', selected.id);
       if (s.length !== SUBJECT_LIST.length) p.set('s', s.join('+'));
       if (gradeFilter) p.set('g', String(gradeFilter));
       if (domainFilter) p.set('d', domainFilter);
+      if (courseOnly) p.set('c', '1');
       p.set('l', layoutMode);
       const next = '#' + p.toString();
       if (location.hash === next) return;
@@ -2168,6 +2216,11 @@
     }
     const d = p.get('d');
     if (d) { domainFilter = d; domainSel.value = d; domainSel.classList.add('active'); }
+    if (p.get('c') === '1') {
+      courseOnly = true;
+      const cc = document.getElementById('chipCourse');
+      if (cc) { cc.classList.add('on'); cc.setAttribute('aria-checked', 'true'); }
+    }
     autoExpandForFilter();
     const l = p.get('l');
     if ((l === 'star' || l === 'scroll' || l === 'heat') && l !== layoutMode) setLayout(l);

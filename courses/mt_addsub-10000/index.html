@@ -3,176 +3,170 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>万以内的加法 · 学阶图谱课件</title>
+<title>万以内的加减法 · 学阶图谱课件</title>
+<link rel="stylesheet" href="../../templates/base.css">
 <style>
-  :root {
-    --bg: #0a0f18; --panel: #0f1620; --card: #141d29; --line: #24303f;
-    --text: #e8edf5; --dim: #8b98ab; --accent: #ffd166; --ok: #4ade80; --bad: #f87171;
-  }
-  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-  html, body { margin: 0; background: var(--bg); color: var(--text); line-height: 1.7;
-    font-family: system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
-  body { min-height: 100dvh; display: flex; flex-direction: column;
-    padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px)); }
-  header { position: sticky; top: 0; z-index: 5; display: flex; align-items: center; gap: 12px;
-    padding: 10px 14px; background: rgba(10,15,24,.92); border-bottom: 1px solid var(--line);
-    backdrop-filter: blur(8px); }
-  .back { color: var(--dim); text-decoration: none; font-size: 13px; white-space: nowrap; }
-  .back:hover { color: var(--text); }
-  .progress { flex: 1; display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--dim); }
-  .bar { flex: 1; height: 4px; background: var(--card); border-radius: 2px; overflow: hidden; }
-  .bar i { display: block; height: 100%; width: 0; background: var(--accent); transition: width .25s; }
-  main { width: 100%; max-width: 680px; margin: 0 auto; padding: 18px 16px 8px; flex: 1; }
-  h1 { font-size: 20px; margin: 0 0 4px; }
-  h2 { font-size: 17px; margin: 0 0 10px; }
-  p { margin: 0 0 12px; }
-  .muted { color: var(--dim); font-size: 13.5px; }
-  .kicker { font-size: 12px; color: var(--accent); letter-spacing: .06em; margin-bottom: 6px; }
-  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
-    padding: 14px 16px; margin: 14px 0; }
-  .card.tip { border-left: 3px solid var(--accent); border-radius: 0 10px 10px 0; }
-  .card.ok { border-left: 3px solid var(--ok); border-radius: 0 10px 10px 0;
-    background: rgba(74,222,128,.07); }
-  .card.pitfall { border-left: 3px solid var(--bad); border-radius: 0 10px 10px 0;
-    background: rgba(248,113,113,.06); }
-  .btn { padding: 11px 18px; border-radius: 10px; border: 1px solid var(--line);
-    background: var(--card); color: var(--text); font-size: 15px; cursor: pointer; min-height: 44px; }
-  .btn.primary { background: var(--accent); color: #1a1300; border-color: var(--accent); font-weight: 600; }
-  .btn:disabled { opacity: .45; cursor: default; }
-  .hidden { display: none !important; }
+  /* 题库专用样式 */
+  .stage { display: none; }
+  .stage.active { display: block; animation: fade .22s ease; }
 
-  .expr { font-size: 34px; font-weight: 700; letter-spacing: .02em; text-align: center;
-    margin: 18px 0 6px; font-variant-numeric: tabular-nums; }
-  .expr .blank { display: inline-block; min-width: 92px; border-bottom: 3px solid var(--accent);
-    color: var(--accent); }
-  .answer-row { display: flex; gap: 10px; align-items: center; justify-content: center;
-    margin: 16px 0; flex-wrap: wrap; }
-  input[type=number] { width: 150px; padding: 12px; font-size: 22px; text-align: center;
-    border-radius: 10px; border: 1px solid var(--line); background: var(--card); color: var(--text);
-    font-variant-numeric: tabular-nums; }
-  input[type=number]:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
-  .options { display: grid; gap: 10px; margin: 14px 0; }
-  .opt { text-align: left; padding: 13px 15px; border-radius: 10px; border: 1px solid var(--line);
-    background: var(--card); color: var(--text); font-size: 16px; cursor: pointer; }
-  .opt.right { border-color: var(--ok); background: rgba(74,222,128,.12); }
-  .opt.wrong { border-color: var(--bad); background: rgba(248,113,113,.12); }
-  footer { position: fixed; left: 0; right: 0; bottom: 0; z-index: 6;
-    display: flex; gap: 12px; justify-content: space-between; align-items: center;
-    padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px));
-    background: rgba(10,15,24,.96); border-top: 1px solid var(--line); backdrop-filter: blur(8px); }
-  .dots { display: flex; gap: 6px; }
-  .dots i { width: 8px; height: 8px; border-radius: 50%; background: var(--line); }
+  .qhead { display: flex; align-items: baseline; gap: 10px; margin-bottom: 4px; flex-wrap: wrap; }
+  .qhead h2 { margin: 0; }
+  .qhead .tag { font-size: 11.5px; color: var(--dim); border: 1px solid var(--line);
+    padding: 1px 8px; border-radius: 20px; white-space: nowrap; }
+
+  .dots { display: flex; gap: 6px; margin: 14px 0 16px; }
+  .dots i { flex: 1; height: 4px; border-radius: 2px; background: var(--line); }
   .dots i.on { background: var(--accent); }
   .dots i.ok { background: var(--ok); }
   .dots i.bad { background: var(--bad); }
-  .result .big { font-size: 30px; font-weight: 700; color: var(--accent); text-align: center; }
-  .next-card { display: block; text-decoration: none; color: var(--text);
-    border: 1px solid var(--line); border-radius: 12px; padding: 14px; margin-top: 14px;
-    background: var(--card); }
-  .next-card b { color: var(--accent); }
-  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-  h1:focus, h2:focus { outline: none; }
+
+  .answer-row { display: flex; gap: 10px; align-items: center; justify-content: center; margin: 16px 0 6px; }
+  .answer-row input { width: 168px; }
+
+  .options { display: grid; gap: 10px; margin: 16px 0; }
+  .opt { padding: 14px 16px; border-radius: 10px; border: 1px solid var(--line);
+    background: var(--card); color: var(--text); font-size: 16px; text-align: left;
+    min-height: 52px; cursor: pointer; font-family: inherit; touch-action: manipulation; }
+  .opt:hover { border-color: var(--accent); }
+  .opt.right { border-color: var(--ok); background: rgba(74,222,128,.12); }
+  .opt.wrong { border-color: var(--bad); background: rgba(248,113,113,.12); }
+
+  .toolbar { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0; }
+  .hintbox { font-size: 13.5px; color: var(--dim); min-height: 22px; }
+  .hintbox b { color: var(--accent); }
+
+  .score { font-size: 40px; font-weight: 700; color: var(--accent); line-height: 1.1; }
+  .score small { font-size: 15px; color: var(--dim); font-weight: 400; }
+
+  .stuck { background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+    padding: 12px 14px; margin: 14px 0; }
+  .stuck b { color: var(--accent); }
 </style>
 </head>
 <body>
 <header>
   <a class="back" href="../../viz/index.html#t=mt_addsub-10000">← 回到图谱</a>
-  <div class="progress">
-    <span id="pnum">准备</span>
-    <div class="bar"><i id="pbar"></i></div>
-  </div>
+  <span class="muted" style="margin-left:auto">数学 · 三年级 · 万以内的加减法</span>
 </header>
 
 <main>
-  <!-- 开场 -->
-  <section id="intro">
-    <div class="kicker">三年级 · 数学</div>
-    <h1>万以内的加法：连续进位怎么不出错</h1>
-    <p class="muted">10 分钟 · 6 道题 · 每题都能看提示</p>
-    <div class="card">
-      <p style="margin:0">907 加 486，个位满 10 进 1，十位又满 10 再进 1。中间漏掉一个「1」，答案就差了 100。</p>
-      <p style="margin:8px 0 0" class="muted">这组练习专门盯连续进位和连续退位，最后两题练估算——算完先估一估，能立刻发现离谱的答案。</p>
+  <div id="gnav"></div>
+
+  <!-- 引入：竖式为什么这么写 -->
+  <section class="stage active" id="intro">
+    <h1>进位和退位，一个都不漏</h1>
+    <p class="muted">万以内的加减法，难的不是算，是进位和退位。一题里碰上两次，就容易漏一次。</p>
+
+    <div class="viz" id="demoViz"></div>
+    <div class="viz-cap" id="demoCap">先看这一题：<b>345 + 278</b></div>
+
+    <div class="card tip">
+      <p style="margin:0 0 6px"><b>竖式的三条规矩</b></p>
+      <p style="margin:0" class="muted">① 相同数位对齐（个位对个位）　② 从个位算起　③ 满十进一，进的 1 写在<strong>前一位的上方</strong></p>
     </div>
-    <div class="answer-row" style="justify-content:flex-start">
-      <button class="btn primary" id="start">开始练习</button>
+
+    <div class="toolbar">
+      <button class="btn small" id="demoReplay">再看一遍进位</button>
+    </div>
+
+    <div class="stuck">
+      <b>横式看不出错在哪</b>
+      <p style="margin:6px 0 0" class="muted">横着写「345 + 278」，进位是心里的；竖着写，进位是纸上的。看到那个小 1，才知道自己漏了没有。</p>
     </div>
   </section>
 
-  <!-- 题目 -->
-  <section id="quiz" class="hidden" aria-live="polite">
-    <div id="qPrompt"></div>
-    <div id="qBody"></div>
-    <div class="answer-row">
-      <button class="btn" id="hintBtn">看提示</button>
-      <button class="btn primary" id="checkBtn">检查</button>
+  <!-- 练习 -->
+  <section class="stage" id="quiz">
+    <div class="dots" id="dots"></div>
+    <div class="qhead">
+      <h2 id="qLabel"></h2>
+      <span class="tag" id="qTag"></span>
     </div>
+    <div id="qViz"></div>
+    <div class="viz-cap" id="qCap"></div>
+    <div id="qBody"></div>
     <div id="feedback"></div>
+    <div class="toolbar">
+      <button class="btn small" id="hintBtn">看进位标记</button>
+      <button class="btn small" id="checkBtn">对答案</button>
+    </div>
+    <div class="hintbox" id="whyBox"></div>
   </section>
 
   <!-- 结算 -->
-  <section id="done" class="hidden">
-    <div class="result">
-      <div class="big" id="scoreText"></div>
-      <p class="muted" id="timeText"></p>
+  <section class="stage" id="summary">
+    <h2>做完了</h2>
+    <div class="card">
+      <div class="score" id="scoreText">—</div>
+      <p class="muted" style="margin:6px 0 0" id="timeText"></p>
+      <p style="margin:10px 0 0" id="advice"></p>
     </div>
-    <div class="card ok" id="advice"></div>
-    <a class="next-card" href="../../viz/index.html#t=mt_mult-1digit">
-      接着学：<b>多位数乘一位数</b><br>
-      <span class="muted">进位这件事，乘法里还要再用一次。</span>
-    </a>
-    <p class="muted" style="margin-top:14px">进度已记录，回到图谱会在这个知识点上显示完成标记。</p>
+    <div id="extend"></div>
   </section>
 </main>
 
 <footer>
-  <button class="btn" id="prev" disabled>上一题</button>
-  <div class="dots" id="dots" aria-hidden="true"></div>
-  <button class="btn" id="next" disabled>下一题</button>
+  <div class="progress">
+    <span id="pnum">准备</span>
+    <div class="bar"><i id="pbar"></i></div>
+  </div>
+  <button class="btn" id="prev">上一题</button>
+  <button class="btn primary" id="next">开始练习</button>
 </footer>
 
+<script src="../../templates/renderers.js"></script>
 <script>
 (function () {
   'use strict';
+
   var TOPIC_ID = 'mt_addsub-10000';
-  var COURSE_VERSION = '1.0.0';
+  var COURSE_VERSION = '2.0.0';
   var startedAt = Date.now();
 
-  /* 题库：type=number 用输入，type=choice 用选项 */
+  /* ── 题库：a/b/op 直接给竖式用，expr 供校验器复算 ───────── */
   var QUIZ = [
     {
-      id: 'q1', type: 'number', label: '先热身', expr: '345 + 278', answer: 623,
-      hint: '个位 5+8=13，写 3 向十位进 1；十位 4+7+1=12，再向百位进 1。',
+      id: 'q1', type: 'number', label: '先热身', tag: '一次进位',
+      a: 345, b: 278, op: '+', answer: 623, expr: '345+278',
+      hint: '个位 5+8=13，写 3，向十位进 1；十位 4+7+1=12，写 2，向百位进 1；百位 3+2+1=6。',
       why: '进位加的 1 要加进下一位，不是写在旁边就算完。'
     },
     {
-      id: 'q2', type: 'number', label: '连续进位', expr: '907 + 486', answer: 1393,
-      hint: '个位 7+6=13 进 1；十位 0+8+1=9 不进位；百位 9+4=13 再进 1，千位写 1。',
-      why: '这题最常错在百位：9+4=13 已经满 10，还要看十位有没有进位。'
+      id: 'q2', type: 'number', label: '两次进位', tag: '连续进位',
+      a: 907, b: 486, op: '+', answer: 1393, expr: '907+486',
+      hint: '个位 7+6=13 进 1；十位 0+8+1=9，不进位；百位 9+4=13 进 1，千位写 1。',
+      why: '这题最容易错在百位：9+4=13 已经满 10，可十位没进位，所以百位只进 1 位。'
     },
     {
-      id: 'q3', type: 'number', label: '连续退位', expr: '1000 − 365', answer: 635,
-      hint: '个位 0 不够减，从十位退；十位也是 0，继续向百位、千位退。退一次只降 1。',
-      why: '退位要一级一级退，退过的数不能又被退一次——标出退位点再算就不容易乱。'
+      id: 'q3', type: 'number', label: '连着借两次', tag: '连续退位',
+      a: 1000, b: 365, op: '-', answer: 635, expr: '1000-365',
+      hint: '个位 0 不够减，向十位借；十位是 0，继续向百位借；百位也是 0，再向千位借 1 当 10。',
+      why: '借位要一级一级借，借过的数不能又被借一次——先点上退位点再算。'
     },
     {
-      id: 'q4', type: 'number', label: '诊断题', expr: '745 + 268', answer: 1013,
+      id: 'q4', type: 'number', label: '两次都满十', tag: '诊断题',
+      a: 745, b: 268, op: '+', answer: 1013, expr: '745+268',
       hint: '个位 5+8=13 进 1；十位 4+6+1=11 再进 1；百位 7+2+1=10，千位写 1。',
-      why: '十位和百位都满 10，两个进位都要写，漏一个就差 100。'
+      why: '十位和百位都满 10，两个进位都要写；漏一个就差 100。'
     },
     {
-      id: 'q5', type: 'choice', label: '不算竖式，估一估：907 + 486 大约是多少？',
+      id: 'q5', type: 'choice', label: '不算竖式，估一估', tag: '估算',
+      prompt: '907 + 486 大约是多少？',
       answer: '1400 左右',
       options: ['1100 左右', '1400 左右', '1800 左右'],
-      hint: '把 907 看成 900，486 看成 500，合起来就是 1400。',
-      why: '估算是检查工具：算完发现离估计太远，基本就是进位或退位出了问题。'
+      hint: '907 看成 900，486 看成 500，合起来 1400。',
+      why: '估算是检查工具：算完发现离估计太远，基本就是进位出了问题。'
     },
     {
-      id: 'q6', type: 'number', label: '再来一道退位', expr: '602 − 378', answer: 224,
-      hint: '个位 2 不够减 8，向十位退；十位是 0，得先向百位退 1 变成 10，再退给个位。',
-      why: '十位是 0 时不能直接退，要先从百位借，这一步最容易漏。'
+      id: 'q6', type: 'number', label: '十位是 0 的退位', tag: '易错',
+      a: 602, b: 378, op: '-', answer: 224, expr: '602-378',
+      hint: '个位 2 不够减 8，向十位借；十位是 0，先从百位借 1 变成 10，再借给个位。',
+      why: '十位是 0 时不能直接借，要先从百位借。这一步漏了，整题就崩。'
     }
   ];
 
+  /* 校验器会读这段做复算 */
   window.__ANSWERS = [
     {"id":"q1","kind":"number","value":623,"expr":"345+278"},
     {"id":"q2","kind":"number","value":1393,"expr":"907+486"},
@@ -182,15 +176,44 @@
     {"id":"q6","kind":"number","value":224,"expr":"602-378"}
   ];
 
-  var idx = 0;
-  var firstTry = 0;
-  var tried = [];
-  var state = QUIZ.map(function () { return { attempts: 0, solved: false, first: false }; });
-
   var $ = function (id) { return document.getElementById(id); };
-  var dots = $('dots');
-  QUIZ.forEach(function () { var i = document.createElement('i'); dots.appendChild(i); });
-  var dotEls = [].slice.call(dots.children);
+  var idx = -1;                       // -1 = 引入页
+  var state = QUIZ.map(function () { return { attempts: 0, solved: false, first: false }; });
+  var firstTry = 0;
+  var currentViz = null;
+
+  /* ── 图谱位置条（数据来自构建时注入的 __GRAPH）─────────── */
+  var G = window.__GRAPH || null;
+  if (G && window.CR && CR.graphNav) {
+    CR.graphNav($('gnav'), G);
+  } else {
+    $('gnav').style.display = 'none';
+  }
+
+  /* ── 引入页演示：345 + 278，先不给答案，只演示进位 ─────── */
+  function demo() {
+    if (!window.CR) return;
+    $('demoViz').innerHTML = '';
+    var v = CR.vertical($('demoViz'), { a: 345, b: 278, op: '+', carries: false });
+    currentViz = v;
+    var i = 0;
+    (function step() {
+      if (i > 3) {
+        v.carries(true);
+        $('demoCap').innerHTML = '三位都算完了。<b>两个小 1</b> 就是两次进位——漏掉任何一个，答案就错。';
+        return;
+      }
+      v.reveal(i);
+      i++;
+      setTimeout(step, CR.reduced() ? 0 : 850);
+    })();
+  }
+  $('demoReplay').onclick = demo;
+
+  /* ── 题目渲染 ─────────────────────────────────────────── */
+  var dotsEl = $('dots');
+  QUIZ.forEach(function () { dotsEl.appendChild(document.createElement('i')); });
+  var dotEls = [].slice.call(dotsEl.children);
 
   function renderDots() {
     dotEls.forEach(function (d, i) {
@@ -201,38 +224,55 @@
   function updateBar() {
     var done = state.filter(function (s) { return s.solved; }).length;
     $('pbar').style.width = (done / QUIZ.length * 100) + '%';
-    $('pnum').textContent = '第 ' + (idx + 1) + ' / ' + QUIZ.length + ' 题';
+    $('pnum').textContent = idx < 0 ? '准备' : '第 ' + (idx + 1) + ' / ' + QUIZ.length + ' 题';
+  }
+
+  function stage(name) {
+    ['intro', 'quiz', 'summary'].forEach(function (k) {
+      $(k).classList.toggle('active', k === name);
+    });
   }
 
   function render() {
-    var q = QUIZ[idx];
-    var st = state[idx];
-    $('qPrompt').innerHTML = '<h2>' + q.label + '</h2>';
+    var q = QUIZ[idx], st = state[idx];
+    $('qLabel').textContent = q.label;
+    $('qTag').textContent = q.tag || '';
+    $('qViz').innerHTML = '';
+    $('qViz').className = 'viz';
+    currentViz = null;
+
     if (q.type === 'number') {
+      currentViz = CR.vertical($('qViz'), { a: q.a, b: q.b, op: q.op, carries: false });
+      $('qCap').innerHTML = '在竖式上算：<b>' + q.a + (q.op === '+' ? ' + ' : ' − ') + q.b + '</b>';
       $('qBody').innerHTML =
-        '<div class="expr"><span id="exprText">' + q.expr + '</span> = ' +
-        '<span class="blank" id="blank">?</span></div>' +
-        '<div class="answer-row"><input id="ans" type="number" inputmode="numeric" ' +
-        'aria-label="输入答案" placeholder="填答案" value="' + (st.lastValue || '') + '"></div>';
-      var input = $('ans');
-      input.addEventListener('keydown', function (e) { if (e.key === 'Enter') check(); });
-      input.focus();
+        '<div class="answer-row">' +
+        '<input id="ans" type="number" inputmode="numeric" aria-label="输入答案" placeholder="填答案" value="' + (st.lastValue || '') + '">' +
+        '</div>';
+      $('ans').addEventListener('keydown', function (e) { if (e.key === 'Enter') check(); });
+      if (!st.solved) setTimeout(function () { $('ans').focus(); }, 60);
     } else {
-      $('qBody').innerHTML = '<div class="options">' + q.options.map(function (o) {
-        return '<button class="opt" data-val="' + o + '">' + o + '</button>';
-      }).join('') + '</div>';
+      $('qViz').className = '';
+      $('qCap').innerHTML = '这题不用算，<b>估一估</b>';
+      $('qBody').innerHTML =
+        '<p style="font-size:17px;margin:14px 0">' + q.prompt + '</p>' +
+        '<div class="options">' + q.options.map(function (o) {
+          return '<button class="opt" data-val="' + o + '">' + o + '</button>';
+        }).join('') + '</div>';
       [].slice.call(document.querySelectorAll('.opt')).forEach(function (b) {
         b.onclick = function () { pickChoice(b); };
       });
     }
-    $('feedback').innerHTML = st.solved
-      ? '<div class="card ok">这题已经答对。' + q.hint + '</div>'
-      : '';
-    $('hintBtn').disabled = st.solved;
-    $('checkBtn').disabled = st.solved || q.type !== 'number';
+
+    $('feedback').innerHTML = st.solved ? '<div class="card ok">这题已经答对了。</div>' : '';
+    $('whyBox').innerHTML = st.attempts && !st.solved ? '<b>可能的错法：</b>' + q.why : '';
+    $('hintBtn').style.display = (st.solved || q.type !== 'number') ? 'none' : '';
+    $('hintBtn').disabled = false;
+    $('hintBtn').textContent = '看进位标记';
     $('checkBtn').style.display = q.type === 'number' ? '' : 'none';
+    $('checkBtn').disabled = st.solved;
     $('next').disabled = !st.solved && idx < QUIZ.length - 1;
-    $('prev').disabled = idx === 0;
+    $('next').textContent = (idx >= QUIZ.length - 1 && st.solved) ? '完成' : '下一题';
+    $('prev').disabled = idx <= 0;
     renderDots();
     updateBar();
   }
@@ -244,99 +284,129 @@
     if (st.first) firstTry++;
   }
 
+  function afterSolved(q) {
+    if (currentViz) currentViz.carries(true).reveal(99);
+    $('feedback').innerHTML = '<div class="card ok">对，答案是 <b>' + q.answer + '</b>。' + q.hint + '</div>';
+    $('whyBox').innerHTML = '';
+    var ansEl = $('ans');
+    if (ansEl) { ansEl.value = q.answer; ansEl.readOnly = true; }
+    $('hintBtn').style.display = 'none';
+    $('checkBtn').style.display = 'none';
+    $('next').disabled = false;
+    $('next').textContent = idx >= QUIZ.length - 1 ? '完成' : '下一题';
+    renderDots();
+    updateBar();
+  }
+
   function check() {
     var q = QUIZ[idx], st = state[idx];
     if (st.solved) return;
-    var v = $('ans').value.trim();
-    if (v === '') { $('feedback').innerHTML = '<div class="card tip">先填一个数。</div>'; return; }
+    var raw = $('ans').value.trim();
+    if (raw === '') { $('feedback').innerHTML = '<div class="card tip">先填一个数。</div>'; return; }
     st.attempts++;
-    st.lastValue = v;
-    if (Number(v) === q.answer) {
+    st.lastValue = raw;
+    if (Number(raw) === q.answer) {
       markSolved();
-      $('feedback').innerHTML = '<div class="card ok">对，' + q.answer + '。' + q.hint + '</div>';
-      $('blank').textContent = q.answer;
-      $('checkBtn').disabled = true;
-      $('next').disabled = false;
-      setTimeout(function () { if (idx < QUIZ.length - 1) go(idx + 1); else finish(); }, 700);
+      afterSolved(q);
     } else {
-      $('feedback').innerHTML = '<div class="card pitfall">再检查一遍：' + q.why + '</div>';
+      renderDots();
+      $('feedback').innerHTML = '<div class="card pitfall">再想想。先把这一位的进位或退位标出来，再往下算。</div>';
+      $('whyBox').innerHTML = '<b>可能的错法：</b>' + q.why;
+      $('next').disabled = true;
     }
-    renderDots();
   }
 
   function pickChoice(btn) {
     var q = QUIZ[idx], st = state[idx];
     if (st.solved) return;
     st.attempts++;
-    var right = btn.dataset.val === q.answer;
-    btn.classList.add(right ? 'right' : 'wrong');
-    if (right) {
+    if (btn.dataset.val === q.answer) {
+      btn.classList.add('right');
       markSolved();
-      $('feedback').innerHTML = '<div class="card ok">对。' + q.hint + '</div>';
-      $('next').disabled = false;
-      setTimeout(function () { if (idx < QUIZ.length - 1) go(idx + 1); else finish(); }, 700);
+      afterSolved(q);
     } else {
-      btn.disabled = true;
-      $('feedback').innerHTML = '<div class="card pitfall">不太对。' + q.why + '</div>';
+      btn.classList.add('wrong');
+      renderDots();
+      $('feedback').innerHTML = '<div class="card pitfall">不对。把两个数都往大一点估，再比一比。</div>';
+      $('whyBox').innerHTML = '<b>提示：</b>' + q.hint;
     }
-    renderDots();
   }
+
+  $('checkBtn').onclick = check;
+
+  /* 看进位标记：只给脚手架，不给答案 */
+  $('hintBtn').onclick = function () {
+    var q = QUIZ[idx];
+    if (!currentViz || q.type !== 'number') return;
+    currentViz.carries(true);
+    this.disabled = true;
+    this.textContent = '已标出进位';
+    $('feedback').innerHTML =
+      '<div class="card tip">进位 / 退位已经标在竖式上方了。' +
+      (q.op === '+' ? '那个小 1 要加进左边一位。' : '退位点表示这一位少了 1。') + '</div>';
+  };
 
   function go(n) {
     idx = Math.max(0, Math.min(QUIZ.length - 1, n));
+    stage('quiz');
     render();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  $('start').onclick = function () {
-    $('intro').classList.add('hidden');
-    $('quiz').classList.remove('hidden');
-    render();
+  $('prev').onclick = function () { if (idx > 0) go(idx - 1); };
+  $('next').onclick = function () {
+    if (idx < 0) { go(0); return; }
+    if (idx >= QUIZ.length - 1) { finish(); return; }
+    go(idx + 1);
   };
-  $('checkBtn').onclick = check;
-  $('hintBtn').onclick = function () {
-    var q = QUIZ[idx];
-    $('feedback').innerHTML = '<div class="card tip">' + q.hint + '</div>';
-    state[idx].attempts = Math.max(state[idx].attempts, 1);   // 看了提示就不算首次独立完成
-  };
-  $('prev').onclick = function () { go(idx - 1); };
-  $('next').onclick = function () { if (idx < QUIZ.length - 1) go(idx + 1); else finish(); };
 
+  /* ── 结算 ─────────────────────────────────────────────── */
   function finish() {
     var mins = Math.max(1, Math.round((Date.now() - startedAt) / 60000));
-    var solved = state.filter(function (s) { return s.solved; }).length;
-    $('quiz').classList.add('hidden');
-    $('done').classList.remove('hidden');
-    $('pbar').style.width = '100%';
-    $('pnum').textContent = '已完成';
-    $('scoreText').textContent = '一次答对 ' + firstTry + ' / ' + QUIZ.length;
-    $('timeText').textContent = '用时约 ' + mins + ' 分钟 · 做对 ' + solved + ' 题';
+    $('scoreText').innerHTML = firstTry + ' / ' + QUIZ.length + ' <small>一次答对</small>';
+    $('timeText').textContent = '用时约 ' + mins + ' 分钟';
+
     var advice;
-    if (firstTry >= 5) {
-      advice = '进位和退位都稳。下一步练「先点进位点再算」的速度，把 10 题压到 2 分钟内。';
-    } else if (firstTry >= 3) {
-      advice = '基本会算，容易在连续进位或十位为 0 的退位上漏一步。做题时先标进位点、退位点，再动笔。';
+    if (firstTry === QUIZ.length) {
+      advice = '这个水平可以往下走了：乘除法会大量复用「满十进一」的思路。';
+    } else if (firstTry >= QUIZ.length - 2) {
+      advice = '基本稳了。错的题多半是进位没标，做题时先把小 1 写上去再算。';
     } else {
-      advice = '先把每一步说清楚：个位满 10 向十位进 1，十位满 10 再向百位进 1。慢一点，别跳步。';
+      advice = '建议把「看进位标记」用熟：每算一位就标一次，比事后检查有效。';
     }
     $('advice').textContent = advice;
-    $('prev').disabled = true;
-    $('next').disabled = true;
+
     try {
       localStorage.setItem('stx.course.' + TOPIC_ID, JSON.stringify({
         done: true, score: firstTry / QUIZ.length, minutes: mins, at: Date.now(), v: COURSE_VERSION
       }));
-    } catch (e) {}
+    } catch (e) { /* 隐私模式忽略 */ }
+
+    stage('summary');
+    if (G && window.CR && CR.extend) {
+      CR.extend($('extend'), G, { score: firstTry + '/' + QUIZ.length });
+    }
+
+    $('next').textContent = '返回图谱…';
+    $('next').disabled = true;
+    // ?stay=1 用于本地预览：停在结算页，不自动跳回图谱
+    if (new URLSearchParams(location.search).get('stay') === '1') return;
+    var sc = new URLSearchParams(location.search).get('sharecode');
+    setTimeout(function () {
+      var q = new URLSearchParams();
+      if (sc) q.set('sharecode', sc);
+      q.set('done', '1');
+      q.set('score', firstTry + '/' + QUIZ.length);
+      q.set('minutes', String(mins));
+      location.href = '../../viz/index.html?' + q.toString() + '#t=' + TOPIC_ID;
+    }, 900);
   }
 
   document.addEventListener('keydown', function (e) {
-    var tag = (e.target.tagName || '').toLowerCase();
-    if (tag === 'input') return;
-    if (e.key === 'ArrowRight' && !$('next').disabled) $('next').click();
-    if (e.key === 'ArrowLeft' && !$('prev').disabled) $('prev').click();
+    if (e.key === 'ArrowRight' && $('next').disabled === false) $('next').click();
+    if (e.key === 'ArrowLeft' && $('prev').disabled === false) $('prev').click();
   });
 
-  // 线上分享链接鉴权参数
+  /* 线上分享链接用 ?sharecode= 鉴权，回跳时带上 */
   (function () {
     var sc = new URLSearchParams(location.search).get('sharecode');
     if (!sc) return;
@@ -350,7 +420,9 @@
     });
   })();
 
-  renderDots();
+  demo();
+  stage('intro');
+  updateBar();
 })();
 </script>
 </body>

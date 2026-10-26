@@ -87,7 +87,7 @@ import teaching_research_chinese_senior  # noqa: E402
 import teaching_research_math_senior  # noqa: E402
 import teaching_research_english_senior  # noqa: E402
 
-VERSION = "v0.24.0"
+VERSION = "v0.25.0"
 SCHEMA_VERSION = 1
 
 MODULES = [
@@ -630,27 +630,164 @@ def build_courses(topics):
     }
 
 
-def sync_courses_to_viz():
-    """把 courses/ 复制进 viz/courses/，并把回跳链接改写成部署后的相对路径。
+def load_textbook_labels():
+    """教材引用 → 人话：pep-math:3b:u5 → 人教版数学 · 3 年级下 第 5 单元"""
+    doc = json.loads((DATA / "textbooks.json").read_text(encoding="utf-8"))
+    labels = {}
+    for v in doc.get("versions", []):
+        short = v["name"].split("（")[0].strip()
+        for b in v.get("books", []):
+            labels[(v["slug"], b["slug"])] = (short, b.get("grade"), b.get("semester", ""))
+    return labels
 
-    源文件里课件在 courses/<id>/，回跳到 ../../viz/index.html；
-    发布目录只上传 viz/，所以副本里改成 ../../index.html。
+
+def textbook_label(ref, labels):
+    m = re.match(r"^([^:]+):(\d{1,2}[ab])(?::u(\d+))?$", str(ref))
+    if not m:
+        return str(ref)
+    hit = labels.get((m.group(1), m.group(2)))
+    if not hit:
+        return str(ref)
+    short, grade, sem = hit
+    text = f"{short} · {grade} 年级{sem}"
+    if m.group(3):
+        text += f" 第 {int(m.group(3))} 单元"
+    return text
+
+
+def build_graph_context(topic, topic_by_id, deps, course_state, tb_labels):
+    """课件页首尾要用的图谱邻域：先修、解锁、同领域兄弟。
+
+    course_state: {topicId: status}，用于在推荐里标出「已有课件」。
+    """
+    def pack(tid, strength):
+        t = topic_by_id.get(tid)
+        if not t:
+            return None
+        return {
+            "id": tid,
+            "name": t["name"],
+            "grade": t["gradeRangeStart"],
+            "subject": t["subject"],
+            "course": course_state.get(tid),
+            "hard": strength == "hard",
+        }
+
+    prereqs, unlocks = [], []
+    for d in deps:
+        if d["topicId"] == topic["id"]:
+            item = pack(d["prerequisiteId"], d["strength"])
+            if item:
+                item["reason"] = d.get("reason", "")
+                prereqs.append(item)
+        elif d["prerequisiteId"] == topic["id"]:
+            item = pack(d["topicId"], d["strength"])
+            if item:
+                unlocks.append(item)
+
+    # hard 优先，再按年级
+    prereqs.sort(key=lambda x: (not x["hard"], x["grade"]))
+    unlocks.sort(key=lambda x: (not x["hard"], x["grade"]))
+
+    siblings = [
+        pack(t["id"], "soft") for t in topic_by_id.values()
+        if t["domain"] == topic["domain"] and t["stage"] == topic["stage"] and t["id"] != topic["id"]
+    ]
+    siblings = sorted([x for x in siblings if x], key=lambda x: (not x["course"], x["grade"]))[:4]
+
+    return {
+        "id": topic["id"],
+        "name": topic["name"],
+        "subject": topic["subject"],
+        "domain": topic["domain"],
+        "stage": topic["stage"],
+        "grade": topic["gradeRangeStart"],
+        "gradeEnd": topic["gradeRangeEnd"],
+        "standards": topic.get("standards", []),
+        "textbooks": topic.get("textbooks", []),
+        "textbookLabels": [textbook_label(r, tb_labels) for r in topic.get("textbooks", [])],
+        "prereqs": prereqs,
+        "unlocks": unlocks,
+        "siblings": siblings,
+    }
+
+
+def sync_courses_to_viz(topics, deps):
+    """把 courses/ 打包进 viz/courses/。
+
+    做三件事：
+    1. 内联 templates/base.css 与 templates/renderers.js —— 发布产物必须是单文件、无外链；
+    2. 注入 window.__GRAPH —— 课件页首尾的「图谱位置」与延伸推荐都读它；
+    3. 改写回跳链接 —— 源文件写 ../../viz/index.html，发布目录里是 ../../index.html。
     """
     src = ROOT / "courses"
     dst = VIZ / "courses"
     if not src.exists():
         return 0
+
+    base_css_path = ROOT / "templates" / "base.css"
+    renderers_path = ROOT / "templates" / "renderers.js"
+    if not base_css_path.exists() or not renderers_path.exists():
+        raise SystemExit("缺 templates/base.css 或 templates/renderers.js，课件无法内联")
+    base_css = base_css_path.read_text(encoding="utf-8")
+    renderers = renderers_path.read_text(encoding="utf-8")
+
+    topic_by_id = {t["id"]: t for t in topics}
+    tb_labels = load_textbook_labels()
+
+    # 先扫一遍课件状态，推荐里才能标出「已有课件」
+    course_state = {}
+    for d in sorted(p for p in src.iterdir() if p.is_dir()):
+        mp = d / "meta.json"
+        if mp.exists():
+            m = json.loads(mp.read_text(encoding="utf-8"))
+            if m.get("topicId"):
+                course_state[m["topicId"]] = m.get("status", "draft")
+
     shutil.rmtree(dst, ignore_errors=True)
     n = 0
     for d in sorted(p for p in src.iterdir() if p.is_dir()):
-        meta = d / "meta.json"
-        html = d / "index.html"
-        if not (meta.exists() and html.exists()):
+        meta_path = d / "meta.json"
+        html_path = d / "index.html"
+        if not (meta_path.exists() and html_path.exists()):
             continue
+        meta = json.loads(meta_path.read_text(encoding="utf-8"))
+        topic = topic_by_id.get(meta.get("topicId"))
+        if not topic:
+            raise SystemExit(f"课件 {d.name}: topicId {meta.get('topicId')} 不在主题表里")
+
+        text = html_path.read_text(encoding="utf-8")
+
+        # 1) 内联样式与呈现器
+        # 注意：替换内容里有反斜杠（CSS/JS），必须用 lambda 避免被当成转义序列
+        text = re.sub(
+            r'[ \t]*<link[^>]*href="[^"]*templates/base\.css"[^>]*>',
+            lambda m: "<style>\n" + base_css + "\n</style>",
+            text,
+        )
+        text = re.sub(
+            r'[ \t]*<script[^>]*src="[^"]*templates/renderers\.js"[^>]*></script>',
+            lambda m: "<script>\n" + renderers + "\n</script>",
+            text,
+        )
+
+        # 2) 注入图谱邻域（放 head 末尾，早于页面主脚本执行）
+        ctx = build_graph_context(topic, topic_by_id, deps, course_state, tb_labels)
+        inject = (
+            "<script>window.__GRAPH = "
+            + json.dumps(ctx, ensure_ascii=False)
+            + ";</script>\n</head>"
+        )
+        if "</head>" not in text:
+            raise SystemExit(f"课件 {d.name}: 缺少 </head>，无法注入图谱数据")
+        text = text.replace("</head>", inject, 1)
+
+        # 3) 回跳路径
+        text = text.replace("../../viz/index.html", "../../index.html")
+
         target = dst / d.name
         target.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(meta, target / "meta.json")
-        text = html.read_text(encoding="utf-8").replace("../../viz/index.html", "../../index.html")
+        shutil.copy2(meta_path, target / "meta.json")
         (target / "index.html").write_text(text, encoding="utf-8")
         n += 1
     return n
@@ -792,7 +929,8 @@ def main():
         "research": research,
         "courses": artifacts["courses.json"],
     }
-    n_courses = sync_courses_to_viz()
+    n_courses = sync_courses_to_viz(artifacts["topics.json"]["topics"],
+                                    artifacts["dependencies.json"]["dependencies"])
     js = "window.TAXONOMY_DATA = " + json.dumps(viz_payload, ensure_ascii=False) + ";\n"
     (VIZ / "data.js").write_text(js, encoding="utf-8")
 

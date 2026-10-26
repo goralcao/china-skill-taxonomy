@@ -1,27 +1,28 @@
 {
-  "version": "v0.24.0",
+  "version": "v0.25.0",
   "schemaVersion": 1,
   "generatedAt": "2026-10-27",
   "counts": {
-    "total": 3,
+    "total": 4,
     "byTemplate": {
       "drill": 1,
       "explore": 1,
-      "explain": 1
+      "explain": 2
     },
     "byStatus": {
-      "reviewed": 3
+      "reviewed": 4
     },
     "bySubject": {
-      "数学": 2,
+      "数学": 3,
       "物理": 1
     }
   },
   "courses": [
     {
       "topicId": "mt_addsub-10000",
-      "title": "万以内的加法：连续进位怎么不出错",
+      "title": "万以内的加减法：进位和退位怎么不出错",
       "template": "drill",
+      "renderer": "vertical",
       "duration": 10,
       "interactions": 6,
       "grade": 3,
@@ -44,10 +45,10 @@
       "status": "reviewed",
       "author": "goral.cao",
       "license": "CC-BY-SA-4.0",
-      "version": "1.0.0",
+      "version": "2.0.0",
       "updatedAt": "2026-10-27",
       "path": "courses/mt_addsub-10000/",
-      "bytes": 16080
+      "bytes": 17177
     },
     {
       "topicId": "mt_phys-s-momentum-conservation",
@@ -78,6 +79,40 @@
       "updatedAt": "2026-10-27",
       "path": "courses/mt_phys-s-momentum-conservation/",
       "bytes": 16293
+    },
+    {
+      "topicId": "mt_rect-area",
+      "title": "长方形的面积：一行摆几个，摆几行",
+      "template": "explain",
+      "renderer": "geometry",
+      "duration": 14,
+      "interactions": 7,
+      "grade": 3,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S2:GG:GM"
+      ],
+      "prerequisites": [
+        "mt_area-intro",
+        "mt_rect-perimeter",
+        "mt_mult-1digit"
+      ],
+      "next": [
+        "mt_hectare",
+        "mt_polygon-area"
+      ],
+      "objectives": [
+        "能借助方格纸推出长方形面积公式",
+        "能算出教室地面大约是多少平方米",
+        "能用面积除以每块砖的面积算块数"
+      ],
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "path": "courses/mt_rect-area/",
+      "bytes": 18345
     },
     {
       "topicId": "mt_time-hms",

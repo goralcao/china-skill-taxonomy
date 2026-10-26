@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>长方形的面积 · 学阶图谱课件</title>
+<link rel="stylesheet" href="../../templates/base.css">
+<style>
+  .counter {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 8px;
+    margin: 4px 0 0;
+    font-variant-numeric: tabular-nums;
+  }
+  .counter .big { font-size: 34px; font-weight: 700; color: var(--accent); line-height: 1; }
+  .counter .unit { font-size: 14px; color: var(--dim); }
+
+  .formula {
+    text-align: center;
+    font-size: 20px;
+    font-variant-numeric: tabular-nums;
+    margin: 12px 0 4px;
+    color: var(--text);
+    min-height: 30px;
+  }
+  .formula b { color: var(--accent); }
+  .formula .q { color: var(--dim); }
+
+  .sizes { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin: 10px 0; }
+  .size-btn {
+    padding: 9px 16px; border-radius: 9px; border: 1px solid var(--line);
+    background: var(--card); color: var(--text); font-size: 14px; cursor: pointer;
+    min-height: 42px; font-family: inherit; touch-action: manipulation;
+    font-variant-numeric: tabular-nums;
+  }
+  .size-btn[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); font-weight: 600; }
+
+  .rows-table {
+    display: grid; gap: 6px; margin: 12px 0;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+  .rows-table div {
+    background: var(--card); border: 1px solid var(--line); border-radius: 8px;
+    padding: 8px 10px; font-size: 13.5px; text-align: center;
+  }
+  .rows-table b { display: block; font-size: 18px; color: var(--accent); }
+
+  .score { font-size: 38px; font-weight: 700; color: var(--accent); line-height: 1.1; }
+  .score small { font-size: 15px; color: var(--dim); font-weight: 400; }
+  .answer-row { display: flex; gap: 10px; align-items: center; justify-content: center; margin: 14px 0 4px; flex-wrap: wrap; }
+  .answer-row .unit { color: var(--dim); font-size: 14px; }
+  .quiz-q { font-size: 16px; margin: 16px 0 6px; }
+  .quiz-q b { color: var(--accent); }
+  .step-nav { display: flex; gap: 8px; flex-wrap: wrap; margin: 10px 0; }
+</style>
+</head>
+<body>
+<header>
+  <a class="back" href="../../viz/index.html#t=mt_rect-area">← 回到图谱</a>
+  <span class="muted" style="margin-left:auto">数学 · 三年级 · 长方形和正方形的面积</span>
+</header>
+
+<main>
+  <div id="gnav"></div>
+
+  <!-- 1 面积是什么 -->
+  <section class="step active" data-step="1">
+    <h1>面积，就是铺满了多少个格子</h1>
+    <p class="muted">长度量的是「一条线段有多长」，面积量的是「一块面有多大」。怎么量？拿小方格去铺。</p>
+
+    <div class="viz" id="introViz"></div>
+    <div class="viz-cap">每小格是 <b>1 平方厘米</b>，铺满就是它的面积</div>
+
+    <div class="card tip">
+      <p style="margin:0"><b>为什么用方格</b></p>
+      <p style="margin:6px 0 0" class="muted">边长 1 厘米的小正方形，面积就是 1 平方厘米。把它当尺子铺满，数出几个，就是几平方厘米。</p>
+    </div>
+    <div class="step-nav">
+      <button class="btn small" id="introCount">铺满它</button>
+    </div>
+  </section>
+
+  <!-- 2 一个一个数 -->
+  <section class="step" data-step="2">
+    <h2>长 4 厘米、宽 3 厘米，铺满要几个格子</h2>
+    <div class="viz" id="countViz"></div>
+    <div class="counter">
+      <span class="big" id="countNum">0</span>
+      <span class="unit">格（平方厘米）</span>
+    </div>
+    <div class="formula" id="countFormula">一行 <b>4</b> 个，摆 <b>3</b> 行</div>
+
+    <div class="step-nav">
+      <button class="btn small" id="countOne">一个一个数</button>
+      <button class="btn small" id="countRow">一行一行数</button>
+      <button class="btn small" id="countReset">重来</button>
+    </div>
+    <div class="card tip" id="countNote" style="display:none">
+      <p style="margin:0">数出来 <b>12</b> 格。一行 4 个、3 行，正好 4×3=12——<b>不用一格一格数，乘一下就行</b>。</p>
+    </div>
+  </section>
+
+  <!-- 3 换尺寸验证规律 -->
+  <section class="step" data-step="3">
+    <h2>换个尺寸，还成立吗</h2>
+    <p class="muted">如果「长乘宽」是真的，那不管换成多大的长方形，乘出来的数都该等于格子数。选一个试试。</p>
+
+    <div class="sizes" id="sizes"></div>
+    <div class="viz" id="varyViz"></div>
+    <div class="counter">
+      <span class="big" id="varyNum">0</span>
+      <span class="unit">格</span>
+    </div>
+    <div class="formula" id="varyFormula"></div>
+
+    <div class="card ok" id="varyNote" style="display:none">
+      <p style="margin:0">三种都试过了：<b>4×3=12</b>、<b>6×2=12</b>、<b>5×4=20</b>。<br>
+      格子的总数永远是「一行的个数 × 行数」，也就是 <b>长 × 宽</b>。</p>
+    </div>
+  </section>
+
+  <!-- 4 正方形 -->
+  <section class="step" data-step="4">
+    <h2>正方形是特殊的长方形</h2>
+    <p class="muted">长和宽一样长的时候，长方形就变成了正方形。</p>
+
+    <div class="viz" id="squareViz"></div>
+    <div class="formula" id="squareFormula"></div>
+
+    <div class="card tip">
+      <p style="margin:0">边长 4 厘米的正方形：4×4=16 平方厘米。<br>
+      <span class="muted">公式还是「长×宽」，只是长和宽相等，所以写成 <b>边长×边长</b>。</span></p>
+    </div>
+    <div class="step-nav">
+      <button class="btn small" id="squareCount">数一遍确认</button>
+    </div>
+  </section>
+
+  <!-- 5 单位换算 -->
+  <section class="step" data-step="5">
+    <h2>1 平方米为什么是 100 平方分米</h2>
+    <p class="muted">边长 1 米 = 10 分米。把 1 平方米切成 10×10 的小格，每格边长 1 分米。</p>
+
+    <div class="viz" id="unitViz"></div>
+    <div class="viz-cap">10 行 × 10 列 = <b>100</b> 个小格，每格 1 平方分米</div>
+
+    <div class="card pitfall">
+      <p style="margin:0"><b>最容易错的地方</b></p>
+      <p style="margin:6px 0 0" class="muted">长度进率是 10（1 米 = 10 分米），面积进率是 <b>100</b>（1 平方米 = 100 平方分米）。
+      因为长和宽都放大了 10 倍，10×10=100。</p>
+    </div>
+    <div class="step-nav">
+      <button class="btn small" id="unitFill">填满看看</button>
+    </div>
+  </section>
+
+  <!-- 6 判分 -->
+  <section class="step" data-step="6">
+    <h2>两道题，看你真会了没有</h2>
+
+    <p class="quiz-q">① 一块长方形菜地，长 <b>8 米</b>，宽 <b>5 米</b>。面积是多少平方米？</p>
+    <div class="answer-row">
+      <input id="a1" type="number" inputmode="numeric" aria-label="第一题答案" placeholder="填数字">
+      <span class="unit">平方米</span>
+      <button class="btn small" data-check="1">对答案</button>
+    </div>
+    <div id="fb1"></div>
+
+    <p class="quiz-q">② 房间长 <b>4 米</b>、宽 <b>3 米</b>，用边长 <b>2 分米</b> 的方砖铺满，至少要多少块？</p>
+    <div class="answer-row">
+      <input id="a2" type="number" inputmode="numeric" aria-label="第二题答案" placeholder="填数字">
+      <span class="unit">块</span>
+      <button class="btn small" data-check="2">对答案</button>
+    </div>
+    <div id="fb2"></div>
+  </section>
+
+  <!-- 7 小结 -->
+  <section class="step" data-step="7">
+    <h2>记住这三句</h2>
+    <div class="card">
+      <p style="margin:0 0 8px">① 面积是「铺满多少个单位方格」</p>
+      <p style="margin:0 0 8px">② 长方形 = 长 × 宽，正方形 = 边长 × 边长</p>
+      <p style="margin:0">③ 长度进率 10，面积进率 100</p>
+    </div>
+
+    <div class="card">
+      <div class="score" id="scoreText">—</div>
+      <p class="muted" style="margin:6px 0 0" id="timeText"></p>
+      <p style="margin:10px 0 0" id="advice"></p>
+    </div>
+
+    <div id="extend"></div>
+  </section>
+</main>
+
+<footer>
+  <div class="progress">
+    <span id="pnum">第 1 / 7 步</span>
+    <div class="bar"><i id="pbar"></i></div>
+  </div>
+  <button class="btn" id="prev">上一步</button>
+  <button class="btn primary" id="next">下一步</button>
+</footer>
+
+<script src="../../templates/renderers.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  var TOPIC_ID = 'mt_rect-area';
+  var COURSE_VERSION = '1.0.0';
+  var startedAt = Date.now();
+  var $ = function (id) { return document.getElementById(id); };
+
+  /* ── 图谱位置条 ─────────────────────────────────────── */
+  var G = window.__GRAPH || null;
+  if (G && window.CR && CR.graphNav) CR.graphNav($('gnav'), G);
+  else $('gnav').style.display = 'none';
+
+  /* ── 通用：在容器里画一个 w×h 的方格图 ─────────────── */
+  function drawGrid(host, w, h, unit) {
+    host.innerHTML = '';
+    return CR.geometry(host, {
+      preset: 'rectGrid', w: w, h: h,
+      unitW: w, unitH: h, unit: unit || ' 格'
+    });
+  }
+
+  /* ══ 第 1 步：铺满 ══════════════════════════════════ */
+  var intro = drawGrid($('introViz'), 5, 3, ' 厘米');
+  $('introCount').onclick = function () {
+    intro.reset();
+    intro.play(45);
+    this.disabled = true;
+    this.textContent = '已铺满';
+  };
+
+  /* ══ 第 2 步：一个一个数 / 一行一行数 ══════════════ */
+  var C_W = 4, C_H = 3;
+  var countViz = drawGrid($('countViz'), C_W, C_H, ' 厘米');
+  var countTimer = null;
+
+  function stopCount() { if (countTimer) { clearInterval(countTimer); countTimer = null; } }
+  function setCount(n) {
+    $('countNum').textContent = String(n);
+    countViz.reveal(n);
+    var rows = Math.floor(n / C_W);
+    $('countFormula').innerHTML = '一行 <b>' + C_W + '</b> 个，摆了 <b>' + rows + '</b> 行'
+      + (n === C_W * C_H ? '　→　' + C_W + ' × ' + C_H + ' = <b>' + (C_W * C_H) + '</b>' : '');
+    if (n >= C_W * C_H) $('countNote').style.display = '';
+  }
+
+  $('countOne').onclick = function () {
+    stopCount();
+    countViz.reset(); setCount(0);
+    var n = 0;
+    countTimer = setInterval(function () {
+      n++;
+      setCount(n);
+      if (n >= C_W * C_H) stopCount();
+    }, 180);
+  };
+
+  $('countRow').onclick = function () {
+    stopCount();
+    countViz.reset(); setCount(0);
+    var r = 0;
+    countTimer = setInterval(function () {
+      r++;
+      setCount(r * C_W);
+      if (r >= C_H) stopCount();
+    }, 620);
+  };
+
+  $('countReset').onclick = function () {
+    stopCount();
+    countViz.reset();
+    setCount(0);
+    $('countNote').style.display = 'none';
+  };
+
+  /* ══ 第 3 步：换尺寸 ════════════════════════════════ */
+  var SIZES = [{ w: 4, h: 3 }, { w: 6, h: 2 }, { w: 5, h: 4 }];
+  var tried = {};
+  var varyViz = null;
+
+  SIZES.forEach(function (sz, i) {
+    var b = document.createElement('button');
+    b.className = 'size-btn';
+    b.type = 'button';
+    b.textContent = sz.w + ' × ' + sz.h;
+    b.setAttribute('aria-pressed', 'false');
+    b.onclick = function () { pickSize(i); };
+    $('sizes').appendChild(b);
+  });
+
+  function pickSize(i) {
+    var sz = SIZES[i];
+    [].slice.call($('sizes').children).forEach(function (b, k) {
+      b.setAttribute('aria-pressed', k === i ? 'true' : 'false');
+    });
+    varyViz = drawGrid($('varyViz'), sz.w, sz.h, ' 厘米');
+    try { delete tried[i]; } catch (e) { tried[i] = false; }
+    tried[i] = false;
+
+    $('varyNum').textContent = '0';
+    $('varyFormula').innerHTML = '长 <b>' + sz.w + '</b> × 宽 <b>' + sz.h + '</b> = <span class="q">?</span>';
+
+    if (CR.reduced()) {
+      finishVary(i, sz);
+      return;
+    }
+    var n = 0;
+    var t = setInterval(function () {
+      n += sz.w;
+      varyViz.reveal(n);
+      $('varyNum').textContent = String(n);
+      $('varyFormula').innerHTML = '长 <b>' + sz.w + '</b> × 宽 <b>' + sz.h + '</b> = <span class="q">?</span>';
+      if (n >= sz.w * sz.h) {
+        clearInterval(t);
+        finishVary(i, sz);
+      }
+    }, 420);
+  }
+
+  function finishVary(i, sz) {
+    tried[i] = true;
+    $('varyFormula').innerHTML = '长 <b>' + sz.w + '</b> × 宽 <b>' + sz.h + '</b> = <b>' + (sz.w * sz.h) + '</b>';
+    if (Object.keys(tried).every(function (k) { return tried[k]; })) {
+      $('varyNote').style.display = '';
+    }
+  }
+
+  /* ══ 第 4 步：正方形 ════════════════════════════════ */
+  var squareViz = drawGrid($('squareViz'), 4, 4, ' 厘米');
+  $('squareFormula').innerHTML = '边长 <b>4</b> 厘米　→　4 × 4 = <b>16</b> 平方厘米';
+  $('squareCount').onclick = function () {
+    squareViz.reset();
+    squareViz.play(70);
+    this.disabled = true;
+    this.textContent = '已数完 16 格';
+  };
+
+  /* ══ 第 5 步：1 平方米 = 100 平方分米 ═══════════════ */
+  var unitViz = drawGrid($('unitViz'), 10, 10, ' 分米');
+  $('unitFill').onclick = function () {
+    unitViz.reveal(100);
+    this.disabled = true;
+    this.textContent = '100 格已填满';
+  };
+
+  /* ══ 第 6 步：判分 ══════════════════════════════════ */
+  var QUIZ = {
+    1: {
+      answer: 40,
+      hint: '8 × 5 = 40（平方米）',
+      why: '如果算出 26，那是把长乘宽当成了周长（(8+5)×2）。'
+    },
+    2: {
+      answer: 300,
+      hint: '房间 4 米×3 米 = 12 平方米 = 1200 平方分米；每块砖 2×2 = 4 平方分米；1200 ÷ 4 = 300 块。',
+      why: '错在单位：房间按米算、砖按分米算，不统一就直接除，答案会差 100 倍。'
+    }
+  };
+  var correct = {};
+
+  function checkQuiz(n) {
+    var q = QUIZ[n];
+    var el = $('a' + n);
+    var fb = $('fb' + n);
+    if (correct[n]) return;
+    var v = el.value.trim();
+    if (v === '') { fb.innerHTML = '<div class="card tip">先填一个数。</div>'; return; }
+    if (Number(v) === q.answer) {
+      correct[n] = true;
+      el.readOnly = true;
+      fb.innerHTML = '<div class="card ok">对。' + q.hint + '</div>';
+    } else {
+      fb.innerHTML = '<div class="card pitfall">不对。' + q.why + '</div>';
+    }
+  }
+
+  [].slice.call(document.querySelectorAll('[data-check]')).forEach(function (b) {
+    b.onclick = function () { checkQuiz(Number(b.dataset.check)); };
+  });
+  ['a1', 'a2'].forEach(function (id) {
+    $(id).addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') checkQuiz(Number(id.slice(1)));
+    });
+  });
+
+  /* ══ 步骤控制 ═══════════════════════════════════════ */
+  var sections = [].slice.call(document.querySelectorAll('.step'));
+  var total = sections.length;
+  var cur = 1;
+
+  function show(n) {
+    cur = Math.max(1, Math.min(total, n));
+    sections.forEach(function (s) {
+      s.classList.toggle('active', Number(s.dataset.step) === cur);
+    });
+    $('prev').disabled = cur === 1;
+    $('next').textContent = cur === total ? '完成' : '下一步';
+    $('pnum').textContent = '第 ' + cur + ' / ' + total + ' 步';
+    $('pbar').style.width = (cur / total * 100) + '%';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  $('prev').onclick = function () { show(cur - 1); };
+  $('next').onclick = function () {
+    if (cur === total) { finish(); return; }
+    show(cur + 1);
+  };
+
+  document.addEventListener('keydown', function (e) {
+    if (e.target.tagName === 'INPUT') return;
+    if (e.key === 'ArrowRight' && cur < total) show(cur + 1);
+    if (e.key === 'ArrowLeft' && cur > 1) show(cur - 1);
+  });
+
+  /* ══ 结算 ═══════════════════════════════════════════ */
+  function finish() {
+    var got = Object.keys(correct).length;
+    var mins = Math.max(1, Math.round((Date.now() - startedAt) / 60000));
+    $('scoreText').innerHTML = got + ' / 2 <small>答对</small>';
+    $('timeText').textContent = '用时约 ' + mins + ' 分钟';
+
+    var advice;
+    if (got === 2) advice = '两道都对。接着可以试「公顷和平方千米」，那只是把单位换得更大。';
+    else if (got === 1) advice = '面积公式会用了，卡在单位换算。记住：长度进率 10，面积进率 100。';
+    else advice = '先回到第 2 步数一遍格子，把「长×宽」和格子数对上，再来做应用题。';
+    $('advice').textContent = advice;
+
+    try {
+      localStorage.setItem('stx.course.' + TOPIC_ID, JSON.stringify({
+        done: true, score: got / 2, minutes: mins, at: Date.now(), v: COURSE_VERSION
+      }));
+    } catch (e) { /* 隐私模式忽略 */ }
+
+    if (G && window.CR && CR.extend) CR.extend($('extend'), G, { score: got + '/2' });
+
+    $('next').textContent = '返回图谱…';
+    $('next').disabled = true;
+    // ?stay=1 用于本地预览：停在结算页，不自动跳回图谱
+    if (new URLSearchParams(location.search).get('stay') === '1') return;
+    var sc = new URLSearchParams(location.search).get('sharecode');
+    setTimeout(function () {
+      var q = new URLSearchParams();
+      if (sc) q.set('sharecode', sc);
+      q.set('done', '1');
+      q.set('score', got + '/2');
+      q.set('minutes', String(mins));
+      location.href = '../../viz/index.html?' + q.toString() + '#t=' + TOPIC_ID;
+    }, 900);
+  }
+
+  /* 分享码透传 */
+  (function () {
+    var sc = new URLSearchParams(location.search).get('sharecode');
+    if (!sc) return;
+    [].slice.call(document.querySelectorAll('a[href*="index.html"]')).forEach(function (a) {
+      var href = a.getAttribute('href');
+      if (href.indexOf('sharecode=') >= 0) return;
+      var i = href.indexOf('#');
+      var base = i >= 0 ? href.slice(0, i) : href;
+      var tail = i >= 0 ? href.slice(i) : '';
+      a.setAttribute('href', base + '?sharecode=' + encodeURIComponent(sc) + tail);
+    });
+  })();
+
+  window.__ANSWERS = [
+    {"id":"a1","kind":"number","value":40,"expr":"8*5"},
+    {"id":"a2","kind":"number","value":300,"expr":"(4*10*3*10)/(2*2)"}
+  ];
+
+  show(1);
+})();
+</script>
+</body>
+</html>
