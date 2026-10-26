@@ -131,6 +131,7 @@ schema/course.schema.json
 | `pyramid` | 棱锥与空间角 | 线面角、二面角 | 3D 投影、作射影或垂线、标夹角并给出度数 |
 | `division` | 除法竖式 | 除数是一位数/两位数 | 试商、乘、减、落四步逐步揭示 |
 | `molecule` | 分子与原子 | 质量守恒、化学反应 | 断键、原子位移、成键、原子清点 |
+| `calendar` | 年历 | 年月日、平年闰年 | 12 个月按天数分色、二月可切年份 |
 | `clock` | 钟面 | 时、分、秒 | 三针联动、分针拖拽、指针高亮 |
 | `numberline` | 数轴 | 正负数、分数、小数、时间轴 | 区间高亮、可拖手柄 |
 | `coords` | 坐标系 | 一次函数、抛物线、统计 | 网格、曲线描边动画、散点 |
@@ -381,7 +382,7 @@ localStorage.setItem('stx.course.' + TOPIC_ID,
 
 - `templates/engine.js` 接管页面骨架与全部通用逻辑
 - 课件只剩 `content.json`（steps 数组）+ 一个 16 行的薄壳 `index.html`
-- 13 种步骤类型：`intro` / `text` / `vertical` / `geometry` / `solid` / `pyramid` / `division` / `molecule` / `numberline` / `clock` / `quiz` / `choice` / `summary`
+- 14 种步骤类型：`intro` / `text` / `vertical` / `geometry` / `solid` / `pyramid` / `division` / `molecule` / `calendar` / `numberline` / `clock` / `quiz` / `choice` / `summary`
 - 构建时把 content.json、engine.js、renderers.js、base.css 全部内联，产物仍是单文件
 
 写一节课从「复制 300 行 HTML」变成「写 60 行 JSON」。
@@ -404,6 +405,7 @@ localStorage.setItem('stx.course.' + TOPIC_ID,
 | 除数是一位数的除法 | 除法竖式 | 试商、落数、余数判断 |
 | 质量守恒定律 | 分子 | 断键、重组、原子清点 |
 | 空间角 | 棱锥 | 线面角射影、二面角垂线、度数 |
+| 年、月、日 | 年历 | 大月小月、二月切换 |
 
 ### 用技能生成课件
 

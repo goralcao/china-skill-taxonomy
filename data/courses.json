@@ -1,19 +1,19 @@
 {
-  "version": "v0.30.0",
+  "version": "v0.31.0",
   "schemaVersion": 1,
   "generatedAt": "2026-10-27",
   "counts": {
-    "total": 14,
+    "total": 15,
     "byTemplate": {
       "drill": 1,
-      "explain": 12,
+      "explain": 13,
       "explore": 1
     },
     "byStatus": {
-      "reviewed": 14
+      "reviewed": 15
     },
     "bySubject": {
-      "数学": 12,
+      "数学": 13,
       "化学": 1,
       "物理": 1
     }
@@ -51,6 +51,36 @@
       "updatedAt": "2026-10-27",
       "path": "courses/mt_addsub-10000/",
       "bytes": 17177
+    },
+    {
+      "topicId": "mt_calendar",
+      "title": "年、月、日：为什么二月只有 28 天",
+      "template": "explain",
+      "renderer": "calendar",
+      "duration": 12,
+      "interactions": 3,
+      "grade": 3,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S2:GG:GM"
+      ],
+      "prerequisites": [
+        "mt_time-hms"
+      ],
+      "next": [],
+      "objectives": [
+        "能说出大月、小月各有哪几个月，以及各有多少天",
+        "能判断一个年份是平年还是闰年，并说出二月天数",
+        "能用「7×31 + 4×30 + 二月天数」算出一年的天数"
+      ],
+      "cognitiveAction": "分解",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "path": "courses/mt_calendar/",
+      "bytes": 657
     },
     {
       "topicId": "mt_cuboid",

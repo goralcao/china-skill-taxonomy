@@ -1,6 +1,6 @@
-# 十三种步骤：字段、写法、什么时候用
+# 十四种步骤：字段、写法、什么时候用
 
-引擎型课件的 `content.json` 只有一个 `steps` 数组。每一步是一屏，类型共十三种。
+引擎型课件的 `content.json` 只有一个 `steps` 数组。每一步是一屏，类型共十四种。
 
 ```json
 {
@@ -27,6 +27,7 @@
 | `pyramid` | 棱锥与线面角 | `body{a,h}` | `caption` `note` `demoLabel` |
 | `division` | 除法竖式 | `body{a,b}` | `caption` `note` `demoLabel` |
 | `molecule` | 分子与原子 | `body{atoms,bondsBefore,bondsAfter}` | `caption` `note` `label` |
+| `calendar` | 年历 | `body{year}` | `caption` `note` `demoLabel` |
 | `numberline` | 数轴、量感 | `line{min,max,step,...}` | `marks[]` `span` `caption` |
 | `clock` | 钟面 | `absMinutes` | `caption` |
 | `quiz` | 填数字 | `question` `answer`(number) | `unit` `hint` `why` `title` |
@@ -171,6 +172,15 @@ preset：
 ```
 
 `atoms` 里每个原子给起始和终点坐标（画布中心为原点）；`bondsBefore` / `bondsAfter` 是原子下标的连线。演示四步：清点 → 断键 → 搬家 → 成键。原子种类和个数自动统计在底部。
+
+## calendar
+
+```json
+{ "type": "calendar", "title": "12 个月，三类天数", "body": { "year": 2023 },
+  "demoLabel": "▶ 一类一类看", "demoHint": "点下面的年份，二月会变。" }
+```
+
+12 个月排成 4×3，按大月/小月/二月上色。演示三类天数，底部可切 2023/2024 看二月 28↔29，总数随之变化。
 
 ## numberline
 

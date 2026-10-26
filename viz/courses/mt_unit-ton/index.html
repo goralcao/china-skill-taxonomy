@@ -335,7 +335,7 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 
 /* ── 立体图形 ─────────────────────────────────────────── */
 /* 拖得动，才看得出哪个面在后面 */
-.solid-svg, .pyr-svg, .mol-svg { width: 100%; height: auto; touch-action: none; }
+.solid-svg, .pyr-svg, .mol-svg, .cal-svg { width: 100%; height: auto; touch-action: none; }
 .solid-svg, .pyr-svg { cursor: grab; }
 .solid-svg:active, .pyr-svg:active { cursor: grabbing; }
 .viz text { fill: var(--text); font-family: inherit; }
@@ -345,7 +345,7 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 .viz .dunder { stroke: var(--dim); stroke-width: 1.5; }
 
 </style>
-<script>window.__GRAPH = {"id": "mt_unit-ton", "name": "吨的认识", "subject": "数学", "domain": "图形与几何", "stage": "第二学段（3~4年级）", "grade": 3, "gradeEnd": 3, "standards": ["math-2022:S1:GG:GM"], "textbooks": ["pep-math:3a:u3"], "textbookLabels": ["人教版数学 · 3 年级上 第 3 单元"], "prereqs": [{"id": "mt_mass-g-kg", "name": "克与千克", "grade": 2, "subject": "数学", "course": null, "hard": true, "reason": "吨与千克同属质量单位的换算体系"}, {"id": "mt_num-10000-recognition", "name": "万以内数的认识", "grade": 2, "subject": "数学", "course": null, "hard": false, "reason": "1吨等于1000千克的换算需要大数基础"}], "unlocks": [], "siblings": [{"id": "mt_time-hms", "name": "时、分、秒", "grade": 3, "subject": "数学", "course": "reviewed", "hard": false}, {"id": "mt_rect-perimeter", "name": "长方形和正方形的周长", "grade": 3, "subject": "数学", "course": "reviewed", "hard": false}, {"id": "mt_rect-area", "name": "长方形和正方形的面积", "grade": 3, "subject": "数学", "course": "reviewed", "hard": false}, {"id": "mt_calendar", "name": "年、月、日与24时计时法", "grade": 3, "subject": "数学", "course": null, "hard": false}]};</script>
+<script>window.__GRAPH = {"id": "mt_unit-ton", "name": "吨的认识", "subject": "数学", "domain": "图形与几何", "stage": "第二学段（3~4年级）", "grade": 3, "gradeEnd": 3, "standards": ["math-2022:S1:GG:GM"], "textbooks": ["pep-math:3a:u3"], "textbookLabels": ["人教版数学 · 3 年级上 第 3 单元"], "prereqs": [{"id": "mt_mass-g-kg", "name": "克与千克", "grade": 2, "subject": "数学", "course": null, "hard": true, "reason": "吨与千克同属质量单位的换算体系"}, {"id": "mt_num-10000-recognition", "name": "万以内数的认识", "grade": 2, "subject": "数学", "course": null, "hard": false, "reason": "1吨等于1000千克的换算需要大数基础"}], "unlocks": [], "siblings": [{"id": "mt_time-hms", "name": "时、分、秒", "grade": 3, "subject": "数学", "course": "reviewed", "hard": false}, {"id": "mt_calendar", "name": "年、月、日与24时计时法", "grade": 3, "subject": "数学", "course": "reviewed", "hard": false}, {"id": "mt_rect-perimeter", "name": "长方形和正方形的周长", "grade": 3, "subject": "数学", "course": "reviewed", "hard": false}, {"id": "mt_rect-area", "name": "长方形和正方形的面积", "grade": 3, "subject": "数学", "course": "reviewed", "hard": false}]};</script>
 </head>
 <body>
 <!-- 页面骨架由 templates/engine.js 生成；内容在 content.json -->
@@ -1995,6 +1995,146 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
     };
   }
 
+
+  /* ══════════════════════════════════════════════════════
+   * 年历
+   * 年月日最难记的是「哪几个月 31 天、二月到底几天」。
+   * 12 个格子一起摆出来，天数按类上色，二月可以切年份看 28/29。
+   * ══════════════════════════════════════════════════════ */
+  function calendar(el, spec) {
+    spec = spec || {};
+    var year = Number(spec.year || 2023);
+    var W = 380, H = 300;
+    var COL = { big: '#d97706', small: '#0d9488', feb: '#2563eb' };
+
+    var svg = s('svg', {
+      viewBox: '0 0 ' + W + ' ' + H, class: 'cal-svg', role: 'img',
+      'aria-label': '一年十二个月的天数'
+    }, el);
+
+    function isLeap(y) { return (y % 4 === 0 && y % 100 !== 0) || y % 400 === 0; }
+    function daysOf(y) {
+      return [31, isLeap(y) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    }
+    var BIG = [0, 2, 4, 6, 7, 9, 11];
+    var SMALL = [3, 5, 8, 10];
+    var FEB = 1;
+
+    var tw = 82, th = 60, gx = 9, gy = 10;
+    var x0 = (W - (4 * tw + 3 * gx)) / 2, y0 = 14;
+
+    function kind(i) { return i === FEB ? 'feb' : (BIG.indexOf(i) >= 0 ? 'big' : 'small'); }
+
+    var tiles = [], dayTexts = [];
+    for (var i = 0; i < 12; i++) {
+      var col = i % 4, row = Math.floor(i / 4);
+      var x = x0 + col * (tw + gx), y = y0 + row * (th + gy);
+      var k = kind(i);
+      var rect = s('rect', {
+        x: x, y: y, width: tw, height: th, rx: 10,
+        fill: COL[k], 'fill-opacity': 0.14, stroke: COL[k], 'stroke-width': 1.3
+      }, svg);
+      rect.style.transition = 'fill-opacity .3s ease, stroke-width .3s ease';
+      tiles.push(rect);
+
+      var mt = s('text', {
+        x: x + tw / 2, y: y + 24, 'text-anchor': 'middle',
+        style: 'font-size:14px;font-weight:600'
+      }, svg);
+      mt.textContent = (i + 1) + ' 月';
+
+      var dt = s('text', {
+        x: x + tw / 2, y: y + 46, 'text-anchor': 'middle',
+        style: 'font-size:13px;fill:var(--dim)'
+      }, svg);
+      dt.style.opacity = 0;
+      dt.style.transition = 'opacity .3s ease';
+      dayTexts.push(dt);
+    }
+
+    var chips = [];
+    [2023, 2024].forEach(function (y, idx) {
+      var g = s('g', { transform: 'translate(' + (W / 2 - 78 + idx * 80) + ',' + (H - 40) + ')' }, svg);
+      g.style.cursor = 'pointer';
+      var r = s('rect', { x: 0, y: 0, width: 72, height: 28, rx: 14,
+        fill: '#24303f', 'fill-opacity': 0.6, stroke: '#24303f' }, g);
+      var t = s('text', { x: 36, y: 19, 'text-anchor': 'middle', style: 'font-size:12.5px' }, g);
+      t.textContent = y + (isLeap(y) ? ' 闰' : ' 平');
+      g.addEventListener('pointerdown', function (e) {
+        e.stopPropagation();
+        year = y;
+        paint();
+      });
+      chips.push({ y: y, r: r, t: t });
+    });
+
+    var total = s('text', {
+      x: W / 2, y: H - 52, 'text-anchor': 'middle',
+      style: 'font-size:12.5px;fill:var(--dim)'
+    }, svg);
+    total.style.opacity = 0;
+    total.style.transition = 'opacity .3s ease';
+
+    var active = { big: false, small: false, feb: false };
+    function paint() {
+      var d = daysOf(year);
+      for (var i = 0; i < 12; i++) {
+        var k = kind(i);
+        var on = (k === 'big' && active.big) || (k === 'small' && active.small) || (k === 'feb' && active.feb);
+        tiles[i].setAttribute('fill-opacity', on ? 0.55 : (active[k] ? 0.07 : 0.14));
+        tiles[i].setAttribute('stroke-width', on ? 2.4 : 1.3);
+        dayTexts[i].textContent = d[i] + ' 天';
+        if ((k === 'big' && active.big) || (k === 'small' && active.small) || (k === 'feb' && active.feb)) {
+          dayTexts[i].style.opacity = 1;
+        }
+      }
+      total.textContent = '31×7 + 30×4 + ' + d[1] + ' = ' + (31 * 7 + 30 * 4 + d[1]) + ' 天';
+      chips.forEach(function (c) {
+        var on2 = c.y === year;
+        c.r.setAttribute('fill-opacity', on2 ? 0.9 : 0.35);
+        c.r.setAttribute('fill', on2 ? '#334155' : '#24303f');
+      });
+    }
+    paint();
+
+    var STEPS = [
+      { text: '一年有 12 个月，1 月到 12 月，先看它们各有多少天。', run: function () {} },
+      { text: '有 31 天的是大月：1、3、5、7、8、10、12 月，一共 7 个。', run: function () {
+        active.big = true; paint();
+      } },
+      { text: '有 30 天的是小月：4、6、9、11 月，一共 4 个。', run: function () {
+        active.small = true; paint();
+      } },
+      { text: '二月最特殊：平年 28 天，闰年 29 天。点下面的年份按钮自己看。', run: function () {
+        active.feb = true; paint();
+      } },
+      { text: '把三类加起来：31×7 + 30×4 + 二月天数。平年 365 天，闰年 366 天。', run: function () {
+        total.style.opacity = 1;
+      } }
+    ];
+
+    var idx = 0;
+    return {
+      el: svg,
+      next: function () {
+        if (idx >= STEPS.length) return null;
+        var st = STEPS[idx++];
+        st.run();
+        return { text: st.text, done: idx >= STEPS.length };
+      },
+      startDemo: function () {
+        idx = 0;
+        active = { big: false, small: false, feb: false };
+        dayTexts.forEach(function (t) { t.style.opacity = 0; });
+        total.style.opacity = 0;
+        year = 2023;
+        paint();
+        return this;
+      },
+      reset: function () { return this.startDemo(); }
+    };
+  }
+
   global.CR = {
     vertical: vertical,
     geometry: geometry,
@@ -2005,6 +2145,7 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
     division: division,
     molecule: molecule,
     pyramid: pyramid,
+    calendar: calendar,
     graphNav: graphNav,
     extend: extend,
     graphHref: graphHref,
@@ -2228,6 +2369,26 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
         var box = h('div', 'viz');
         f.appendChild(box);
         var ctrl = CR.pyramid(box, s.body || s);
+        if (s.caption) {
+          var cap = h('div', 'viz-cap');
+          cap.innerHTML = s.caption;
+          f.appendChild(cap);
+        }
+        attachDemo(f, ctrl, s);
+        if (s.note) {
+          var card = h('div', 'card' + (s.warn ? ' pitfall' : ' tip'));
+          card.innerHTML = '<p style="margin:0">' + s.note + '</p>';
+          f.appendChild(card);
+        }
+        return f;
+      },
+
+      calendar: function (s) {
+        var f = document.createDocumentFragment();
+        if (s.title) f.appendChild(h('h2', null, s.title));
+        var box = h('div', 'viz');
+        f.appendChild(box);
+        var ctrl = CR.calendar(box, s.body || s);
         if (s.caption) {
           var cap = h('div', 'viz-cap');
           cap.innerHTML = s.caption;
