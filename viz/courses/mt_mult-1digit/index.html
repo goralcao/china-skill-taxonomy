@@ -336,7 +336,7 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 /* ── 立体图形 ─────────────────────────────────────────── */
 /* 拖得动，才看得出哪个面在后面 */
 .solid-svg, .pyr-svg, .mol-svg, .cal-svg, .dec-svg, .tbl-svg, .cmp-svg, .law-svg, .tri-svg,
-.cnt-svg, .ang-svg, .qd-svg, .dgr-svg { width: 100%; height: auto; touch-action: none; }
+.cnt-svg, .ang-svg, .qd-svg, .dgr-svg, .m2-svg { width: 100%; height: auto; touch-action: none; }
 .solid-svg, .pyr-svg { cursor: grab; }
 .solid-svg:active, .pyr-svg:active { cursor: grabbing; }
 .viz text { fill: var(--text); font-family: inherit; }
@@ -346,7 +346,7 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 .viz .dunder { stroke: var(--dim); stroke-width: 1.5; }
 
 </style>
-<script>window.__GRAPH = {"id": "mt_mult-1digit", "name": "多位数乘一位数", "subject": "数学", "domain": "数与代数", "stage": "第二学段（3~4年级）", "grade": 3, "gradeEnd": 3, "standards": ["math-2022:S2:NA:NO"], "textbooks": ["pep-math:3a:u6"], "textbookLabels": ["人教版数学 · 3 年级上 第 6 单元"], "prereqs": [{"id": "mt_mul-tables-7-9", "name": "7~9的乘法口诀", "grade": 2, "subject": "数学", "course": null, "hard": true, "reason": "多位数乘一位数每一步都用乘法口诀"}, {"id": "mt_num-10000-recognition", "name": "万以内数的认识", "grade": 2, "subject": "数学", "course": null, "hard": true, "reason": "部分积按数位累加需要数位概念"}, {"id": "mt_addsub-10000", "name": "万以内的加法和减法", "grade": 3, "subject": "数学", "course": "reviewed", "hard": false, "reason": "各部分积相加用到万以内加减法"}], "unlocks": [{"id": "mt_div-1digit", "name": "除数是一位数的除法", "grade": 3, "subject": "数学", "course": "reviewed", "hard": true}, {"id": "mt_rect-area", "name": "长方形和正方形的面积", "grade": 3, "subject": "数学", "course": "reviewed", "hard": true}, {"id": "mt_mult-2digit", "name": "三位数乘两位数", "grade": 4, "subject": "数学", "course": null, "hard": true}], "siblings": [{"id": "mt_addsub-10000", "name": "万以内的加法和减法", "grade": 3, "subject": "数学", "course": "reviewed", "hard": false}, {"id": "mt_div-1digit", "name": "除数是一位数的除法", "grade": 3, "subject": "数学", "course": "reviewed", "hard": false}, {"id": "mt_multiple", "name": "倍的认识", "grade": 3, "subject": "数学", "course": "reviewed", "hard": false}, {"id": "mt_frac-intro", "name": "分数的初步认识", "grade": 3, "subject": "数学", "course": "reviewed", "hard": false}]};</script>
+<script>window.__GRAPH = {"id": "mt_mult-1digit", "name": "多位数乘一位数", "subject": "数学", "domain": "数与代数", "stage": "第二学段（3~4年级）", "grade": 3, "gradeEnd": 3, "standards": ["math-2022:S2:NA:NO"], "textbooks": ["pep-math:3a:u6"], "textbookLabels": ["人教版数学 · 3 年级上 第 6 单元"], "prereqs": [{"id": "mt_mul-tables-7-9", "name": "7~9的乘法口诀", "grade": 2, "subject": "数学", "course": null, "hard": true, "reason": "多位数乘一位数每一步都用乘法口诀"}, {"id": "mt_num-10000-recognition", "name": "万以内数的认识", "grade": 2, "subject": "数学", "course": null, "hard": true, "reason": "部分积按数位累加需要数位概念"}, {"id": "mt_addsub-10000", "name": "万以内的加法和减法", "grade": 3, "subject": "数学", "course": "reviewed", "hard": false, "reason": "各部分积相加用到万以内加减法"}], "unlocks": [{"id": "mt_div-1digit", "name": "除数是一位数的除法", "grade": 3, "subject": "数学", "course": "reviewed", "hard": true}, {"id": "mt_rect-area", "name": "长方形和正方形的面积", "grade": 3, "subject": "数学", "course": "reviewed", "hard": true}, {"id": "mt_mult-2digit", "name": "三位数乘两位数", "grade": 4, "subject": "数学", "course": "reviewed", "hard": true}], "siblings": [{"id": "mt_addsub-10000", "name": "万以内的加法和减法", "grade": 3, "subject": "数学", "course": "reviewed", "hard": false}, {"id": "mt_div-1digit", "name": "除数是一位数的除法", "grade": 3, "subject": "数学", "course": "reviewed", "hard": false}, {"id": "mt_multiple", "name": "倍的认识", "grade": 3, "subject": "数学", "course": "reviewed", "hard": false}, {"id": "mt_frac-intro", "name": "分数的初步认识", "grade": 3, "subject": "数学", "course": "reviewed", "hard": false}]};</script>
 </head>
 <body>
 <!-- 页面骨架由 templates/engine.js 生成；内容在 content.json -->
@@ -1588,12 +1588,18 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 
     var ops = [];
     var sh = steps;
+    // 除数是两位数时，用「四舍五入看成整十数」来试商
+    var est = '';
+    if (b >= 10) {
+      var near = Math.round(b / 10) * 10;
+      est = '（把 ' + b + ' 看成 ' + (near || 10) + ' 试商）';
+    }
     for (var k = 0; k < sh.length; k++) {
       var st = sh[k];
       var qEl = hidden(num(String(st.qd), st.col, 0));
       ops.push({
         els: [qEl],
-        text: (k === 0 ? st.cur + ' ÷ ' + b + ' 商 ' + st.qd : '把 ' + st.cur + ' 除以 ' + b + '，商 ' + st.qd) +
+        text: (k === 0 ? st.cur + ' ÷ ' + b + est + ' 商 ' + st.qd : '把 ' + st.cur + ' 除以 ' + b + '，商 ' + st.qd) +
               '，写在' + PLACE[n - 1 - st.col] + '上。'
       });
 
@@ -3225,9 +3231,124 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
     };
   }
 
+  /* ══════════════════════════════════════════════════════
+   * 多位数乘多位数（三位数乘两位数）
+   * 关键是两个「部分积」：用个位去乘，末位对齐个位；
+   * 用十位去乘，得数末位要对着十位——所以第二行向左错一位。
+   * ══════════════════════════════════════════════════════ */
+  function mult2(el, spec) {
+    spec = spec || {};
+    var a = String(spec.a == null ? '' : spec.a).replace(/\D/g, '');
+    var b = String(spec.b == null ? '' : spec.b).replace(/\D/g, '');
+    if (!a || !b) {
+      el.appendChild(h('p', 'muted', '乘法竖式需要两个因数。'));
+      return { el: el };
+    }
+    var db = b.split('').reverse().map(Number); // [个位, 十位, ...]
+    var n = a.length + b.length;
+    var total = Number(a) * Number(b);
+
+    var cellW = 32, cellH = 30, padL = 62, padT = 14;
+    // 右侧要给「即 ×××」标注留位
+    var padR = db.length > 1 ? 66 : 26;
+    var W = padL + n * cellW + padR;
+    var rows = 4 + db.length; // 0:被乘数 1:乘数 2:线 ..部分积.. 线 结果
+    var H = padT + (rows + 1) * cellH + 8;
+
+    var svg = s('svg', { viewBox: '0 0 ' + W + ' ' + H, class: 'm2-svg', role: 'img',
+      'aria-label': a + ' 乘 ' + b + ' 的竖式' }, el);
+    svg.style.width = '100%'; svg.style.height = 'auto'; svg.style.maxWidth = '340px';
+
+    function x(col) { return padL + col * cellW + cellW / 2; }
+    function y(row) { return padT + row * cellH + cellH * 0.72; }
+    // 把 str 右对齐到「第 (n-1-shift) 列」
+    function put(str, row, shift, cls, color) {
+      var g = s('g', null, svg);
+      for (var j = 0; j < str.length; j++) {
+        var col = n - str.length - shift + j;
+        var t = s('text', { x: x(col), y: y(row), 'text-anchor': 'middle',
+          class: cls || 'dnum' }, g);
+        if (color) t.setAttribute('fill', color);
+        t.textContent = str[j];
+      }
+      return g;
+    }
+    function rule(row) {
+      var x1 = padL - 8, x2 = padL + n * cellW - 4;
+      return s('line', { x1: x1, y1: y(row) - 4, x2: x2, y2: y(row) - 4, class: 'dbar' }, svg);
+    }
+
+    put(a, 0, 0);
+    var opT = s('text', { x: padL - 18, y: y(1), 'text-anchor': 'middle', class: 'dnum' }, svg);
+    opT.textContent = '×';
+    put(b, 1, 0);
+    rule(2);
+
+    // 两个部分积
+    var partials = [], pVals = [];
+    for (var k = 0; k < db.length; k++) {
+      var pv = Number(a) * db[k];
+      pVals.push(pv);
+      var pg = put(String(pv), 3 + k, k, 'dnum', k === 0 ? '#38bdf8' : '#fbbf24');
+      pg.style.opacity = 0; pg.style.transition = 'opacity .35s ease';
+      partials.push(pg);
+    }
+    rule(3 + db.length);
+    var resG = put(String(total), 4 + db.length, 0, 'dnum', '#4ade80');
+    resG.style.opacity = 0; resG.style.transition = 'opacity .35s ease';
+
+    // 十位那一步的「实际表示」标注
+    var noteEl = null;
+    if (db.length > 1 && db[1]) {
+      noteEl = s('text', { x: padL + n * cellW + 2, y: y(4) - 2, 'text-anchor': 'start',
+        style: 'font-size:10.5px;fill:var(--dim)' }, svg);
+      noteEl.textContent = '即 ' + (pVals[1] * 10);
+      noteEl.style.opacity = 0; noteEl.style.transition = 'opacity .35s ease';
+    }
+
+    var PLACE = ['个位', '十位', '百位'];
+    var STEPS = [];
+    STEPS.push({
+      text: '先用<b>个位</b>上的 ' + db[0] + ' 去乘 ' + a + '：' + a + ' × ' + db[0] + ' = <b>' +
+        pVals[0] + '</b>，末位和个位对齐。',
+      run: function () { partials[0].style.opacity = 1; }
+    });
+    if (db.length > 1) {
+      STEPS.push({
+        text: '再用<b>十位</b>上的 ' + db[1] + ' 去乘 ' + a + '：' + a + ' × ' + db[1] + ' = ' + pVals[1] +
+          '，得数的末位要对着十位，所以<b>向左错一位</b>写（它实际是 ' + (pVals[1] * 10) + '）。',
+        run: function () { partials[1].style.opacity = 1; if (noteEl) noteEl.style.opacity = 1; }
+      });
+    }
+    STEPS.push({
+      text: '把两次乘得的数<b>加起来</b>：' + pVals.join(' + ') + '（第二行是 ' + (pVals[1] ? pVals[1] * 10 : 0) +
+        '） = <b>' + total + '</b>。',
+      run: function () { resG.style.opacity = 1; }
+    });
+
+    var idx = 0;
+    return {
+      el: svg,
+      next: function () {
+        if (idx >= STEPS.length) return null;
+        var st = STEPS[idx++]; st.run();
+        return { text: st.text, done: idx >= STEPS.length };
+      },
+      startDemo: function () {
+        idx = 0;
+        partials.forEach(function (p) { p.style.opacity = 0; });
+        resG.style.opacity = 0;
+        if (noteEl) noteEl.style.opacity = 0;
+        return this;
+      },
+      reset: function () { return this.startDemo(); }
+    };
+  }
+
   global.CR = {
     vertical: vertical,
     geometry: geometry,
+    mult2: mult2,
     law: law,
     triangle: triangle,
     counter: counter,
@@ -3588,6 +3709,26 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
         var box = h('div', 'viz');
         f.appendChild(box);
         var ctrl = CR.triangle(box, s.body || s);
+        if (s.caption) {
+          var cap = h('div', 'viz-cap');
+          cap.innerHTML = s.caption;
+          f.appendChild(cap);
+        }
+        attachDemo(f, ctrl, s);
+        if (s.note) {
+          var card = h('div', 'card' + (s.warn ? ' pitfall' : ' tip'));
+          card.innerHTML = '<p style="margin:0">' + s.note + '</p>';
+          f.appendChild(card);
+        }
+        return f;
+      },
+
+      mult2: function (s) {
+        var f = document.createDocumentFragment();
+        if (s.title) f.appendChild(h('h2', null, s.title));
+        var box = h('div', 'viz');
+        f.appendChild(box);
+        var ctrl = CR.mult2(box, s.body || s);
         if (s.caption) {
           var cap = h('div', 'viz-cap');
           cap.innerHTML = s.caption;

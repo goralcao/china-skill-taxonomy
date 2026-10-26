@@ -34,6 +34,7 @@
 | `law` | 运算律（交换/结合/分配） | `body{mode,op,a,b,c}` | `caption` `note` `demoLabel` |
 | `triangle` | 三角形（分类/内角和/三边） | `body{mode,...}` | `caption` `note` `demoLabel` |
 | `counter` | 数位顺序表（大数） | `body{}` | `caption` `note` `demoLabel` |
+| `mult2` | 多位数乘法竖式 | `body{a,b}` | `caption` `note` `demoLabel` |
 | `angle` | 量角器 | `body{deg}` | `caption` `note` `demoLabel` |
 | `quad` | 平行四边形与梯形 | `body{shapes}` | `caption` `note` `demoLabel` |
 | `decGrid` | 百格图（小数意义/性质） | `body{mode,value,compare}` | `caption` `note` `demoLabel` |
@@ -259,6 +260,14 @@ preset：
 ```
 
 数位顺序表：九列数位按个级/万级/亿级分开。演示从「10 个一千是一万」一路满十进一到「10 个一千万是一亿」，收尾点明相邻计数单位进率都是十。
+
+## mult2
+
+```json
+{ "type": "mult2", "title": "145 × 12 的两步", "body": { "a": 145, "b": 12 } }
+```
+
+多位数乘多位数竖式（三位数乘两位数起步）。演示按标准笔算顺序：先个位去乘（末位对齐个位），再十位去乘（得数**向左错一位**，旁注它实际表示多少），最后两段部分积相加。部分积用两种颜色区分。
 
 ## angle
 

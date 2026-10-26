@@ -25,7 +25,7 @@ const flag = k => {
 const has = k => args.includes(`--${k}`);
 
 const TEMPLATES = ['explain', 'drill', 'explore', 'review'];
-const RENDERERS = ['text', 'vertical', 'geometry', 'solid', 'division', 'molecule', 'pyramid', 'calendar', 'decimalBar', 'barGroup', 'compass', 'numberline', 'coords', 'clock', 'sim', 'chart', 'diagram', 'equation', 'law', 'triangle', 'counter', 'angle', 'quad', 'decGrid'];
+const RENDERERS = ['text', 'vertical', 'geometry', 'solid', 'division', 'molecule', 'pyramid', 'calendar', 'decimalBar', 'barGroup', 'compass', 'numberline', 'coords', 'clock', 'sim', 'chart', 'diagram', 'equation', 'law', 'triangle', 'counter', 'angle', 'quad', 'decGrid', 'mult2'];
 
 const read = p => JSON.parse(fs.readFileSync(path.join(ROOT, p), 'utf8'));
 let topicsDoc, researchDoc, depsDoc, coursesDoc;

@@ -141,6 +141,7 @@ schema/course.schema.json
 | `angle` | 量角器 | 角的度量与分类 | 中心对顶点三步法、可拖动的边、实时读数与分类 |
 | `quad` | 平行四边形与梯形 | 四边形按平行组数分类 | 成对箭头标平行、逐个高亮、梯形的高 |
 | `decGrid` | 百格图 | 小数的意义与性质 | 1 格 0.01、一列 0.1；双图对比证明 0.3=0.30 |
+| `mult2` | 多位数乘法竖式 | 三位数乘两位数 | 两段部分积逐步揭示，十位一行向左错一位并标注实际值 |
 | `clock` | 钟面 | 时、分、秒 | 三针联动、分针拖拽、指针高亮 |
 | `numberline` | 数轴 | 正负数、分数、小数、时间轴 | 区间高亮、可拖手柄 |
 | `coords` | 坐标系 | 一次函数、抛物线、统计 | 网格、曲线描边动画、散点 |
@@ -391,7 +392,7 @@ localStorage.setItem('stx.course.' + TOPIC_ID,
 
 - `templates/engine.js` 接管页面骨架与全部通用逻辑
 - 课件只剩 `content.json`（steps 数组）+ 一个 16 行的薄壳 `index.html`
-- 23 种步骤类型：`intro` / `text` / `vertical` / `geometry` / `solid` / `pyramid` / `division` / `molecule` / `calendar` / `decimal` / `table` / `compass` / `law` / `triangle` / `counter` / `angle` / `quad` / `decGrid` / `numberline` / `clock` / `quiz` / `choice` / `summary`
+- 24 种步骤类型：`intro` / `text` / `vertical` / `geometry` / `solid` / `pyramid` / `division` / `mult2` / `molecule` / `calendar` / `decimal` / `table` / `compass` / `law` / `triangle` / `counter` / `angle` / `quad` / `decGrid` / `numberline` / `clock` / `quiz` / `choice` / `summary`
 - 构建时把 content.json、engine.js、renderers.js、base.css 全部内联，产物仍是单文件
 
 写一节课从「复制 300 行 HTML」变成「写 60 行 JSON」。

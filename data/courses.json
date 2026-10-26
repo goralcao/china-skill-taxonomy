@@ -1,19 +1,19 @@
 {
-  "version": "v0.34.0",
+  "version": "v0.35.0",
   "schemaVersion": 1,
   "generatedAt": "2026-10-27",
   "counts": {
-    "total": 29,
+    "total": 31,
     "byTemplate": {
       "drill": 1,
-      "explain": 27,
+      "explain": 29,
       "explore": 1
     },
     "byStatus": {
-      "reviewed": 29
+      "reviewed": 31
     },
     "bySubject": {
-      "数学": 27,
+      "数学": 29,
       "化学": 1,
       "物理": 1
     }
@@ -386,6 +386,39 @@
       "bytes": 669
     },
     {
+      "topicId": "mt_div-2digit",
+      "title": "除数是两位数的除法：把除数看成整十数来试商",
+      "template": "explain",
+      "renderer": "division",
+      "duration": 12,
+      "interactions": 2,
+      "grade": 4,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S2:NA:NO"
+      ],
+      "prerequisites": [
+        "mt_div-1digit",
+        "mt_mult-2digit"
+      ],
+      "next": [
+        "mt_ops-order"
+      ],
+      "objectives": [
+        "会用四舍五入把除数看成整十数来试商",
+        "掌握除数是两位数的笔算步骤：试商、乘、减、落",
+        "会调商：商大了往下调，商小了往上调"
+      ],
+      "cognitiveAction": "逼近",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "path": "courses/mt_div-2digit/",
+      "bytes": 705
+    },
+    {
       "topicId": "mt_frac-intro",
       "title": "分数的初步认识：把 1 平均分",
       "template": "explain",
@@ -546,6 +579,40 @@
       "updatedAt": "2026-10-27",
       "path": "courses/mt_mult-1digit/",
       "bytes": 663
+    },
+    {
+      "topicId": "mt_mult-2digit",
+      "title": "三位数乘两位数：两个部分积",
+      "template": "explain",
+      "renderer": "mult2",
+      "duration": 12,
+      "interactions": 2,
+      "grade": 4,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S2:NA:NO"
+      ],
+      "prerequisites": [
+        "mt_mult-1digit",
+        "mt_addsub-10000",
+        "mt_big-num"
+      ],
+      "next": [
+        "mt_div-2digit"
+      ],
+      "objectives": [
+        "掌握三位数乘两位数的笔算顺序：先乘个位，再乘十位",
+        "理解用十位上的数去乘时，得数末位要对着十位（向左错一位）",
+        "会把两个部分积相加得到最终结果"
+      ],
+      "cognitiveAction": "分解",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "path": "courses/mt_mult-2digit/",
+      "bytes": 681
     },
     {
       "topicId": "mt_multiple",
