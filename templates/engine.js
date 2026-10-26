@@ -228,6 +228,7 @@
         f.appendChild(q);
 
         var wrap = h('div', 'options');
+        var fbSlot = h('div');
         s.options.forEach(function (o) {
           var b = h('button', 'opt', o);
           b.type = 'button';
@@ -239,23 +240,23 @@
               b.classList.add('right');
               st.solved = true; st.first = st.attempts === 1;
               if (s.hint) {
-                var fb = h('div', 'card ok');
-                fb.innerHTML = s.hint;
-                f.appendChild(fb);
+                fbSlot.className = 'card ok';
+                fbSlot.innerHTML = s.hint;
               }
               syncNav();
             } else {
               b.classList.add('wrong');
-              if (s.why) {
-                var fb2 = h('div', 'card pitfall');
-                fb2.innerHTML = s.why;
-                f.appendChild(fb2);
+              var msg = (s.misconception && s.misconception[o]) || s.why;
+              if (msg) {
+                fbSlot.className = 'card pitfall';
+                fbSlot.innerHTML = msg;
               }
             }
           };
           wrap.appendChild(b);
         });
         f.appendChild(wrap);
+        f.appendChild(fbSlot);
         return f;
       },
 

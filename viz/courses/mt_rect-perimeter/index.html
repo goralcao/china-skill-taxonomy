@@ -1507,6 +1507,7 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
         f.appendChild(q);
 
         var wrap = h('div', 'options');
+        var fbSlot = h('div');
         s.options.forEach(function (o) {
           var b = h('button', 'opt', o);
           b.type = 'button';
@@ -1518,23 +1519,23 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
               b.classList.add('right');
               st.solved = true; st.first = st.attempts === 1;
               if (s.hint) {
-                var fb = h('div', 'card ok');
-                fb.innerHTML = s.hint;
-                f.appendChild(fb);
+                fbSlot.className = 'card ok';
+                fbSlot.innerHTML = s.hint;
               }
               syncNav();
             } else {
               b.classList.add('wrong');
-              if (s.why) {
-                var fb2 = h('div', 'card pitfall');
-                fb2.innerHTML = s.why;
-                f.appendChild(fb2);
+              var msg = (s.misconception && s.misconception[o]) || s.why;
+              if (msg) {
+                fbSlot.className = 'card pitfall';
+                fbSlot.innerHTML = msg;
               }
             }
           };
           wrap.appendChild(b);
         });
         f.appendChild(wrap);
+        f.appendChild(fbSlot);
         return f;
       },
 
@@ -1715,6 +1716,6 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 })(window);
 
 </script>
-<script>window.__CONTENT = {"topicId": "mt_rect-perimeter", "title": "长方形和正方形的周长", "subject": "数学", "grade": 3, "template": "explain", "renderer": "geometry", "version": "1.0.0", "steps": [{"type": "intro", "title": "周长是绕着走一圈的长度", "lead": "周长和「里面有多大」没关系。用绳子沿桌边围一圈，拉直量出来的长度，就是桌面周长。", "bullets": [{"text": "<b>四条边加起来</b>：围一圈要走过 4 条边，所以周长是四条边的总长。"}, {"text": "<b>不是面积</b>：同样周长的图形，里面可以差很多。", "warn": true}]}, {"type": "geometry", "title": "一条边一条边数", "shape": {"preset": "perimeter", "w": 190, "h": 104, "top": "5 米", "right": "3 米"}, "caption": "四条边依次是 <b>5、3、5、3</b> 米", "note": "围着走一圈，走过的就是这 4 条边。", "demoHint": "点一次走一条边，看周长怎么一点点加起来。", "demoLabel": "▶ 走一条边"}, {"type": "text", "title": "从「加四次」到「加两次」", "paras": ["周长 = 5 + 3 + 5 + 3 = <b>16</b> 米。", "长出现 2 次、宽出现 2 次，所以可以写成 <b>(5 + 3) × 2 = 16</b> 米。"], "note": "公式是「一条长加一条宽，再乘 2」。记成「长+宽」而不乘 2，是这一步最常见的丢分点。"}, {"type": "quiz", "title": "你来算", "question": "长方形长 6 米、宽 4 米，周长是多少米？", "answer": 20, "unit": "米", "hint": "(6 + 4) × 2 = 20", "why": "算成 10 的话，是只加了长和宽、忘了乘 2。"}, {"type": "geometry", "title": "正方形更简单：四条边一样长", "shape": {"preset": "perimeter", "w": 150, "h": 150, "top": "4 米", "right": "4 米"}, "caption": "边长 4 米，四条边都是 4", "note": "正方形周长 = 边长 × 4。", "demoHint": "点一次走一条边，看周长怎么一点点加起来。", "demoLabel": "▶ 走一条边"}, {"type": "quiz", "title": "正方形", "question": "正方形边长 4 米，周长是多少米？", "answer": 16, "unit": "米", "hint": "4 × 4 = 16", "why": "算成 8 是只加了两条边。"}, {"type": "choice", "title": "实际问题：怎样最省料", "question": "一面靠墙用篱笆围一个长 5 米、宽 3 米的长方形菜地，怎样围最省料？", "options": ["长边靠墙，用 11 米", "宽边靠墙，用 13 米", "四面都围，用 16 米"], "answer": "长边靠墙，用 11 米", "hint": "少围一条边，而且少的那条越长越省。少一条 5 米的长边：3 + 3 + 5 = 11 米。", "why": "靠墙的那条边不用围。少长边比少宽边省 2 米。"}, {"type": "summary", "title": "记住这两句", "points": ["周长是四条边的总长，不是里面的面积", "长方形 (长+宽)×2，正方形 边长×4"], "advice": "下一课「面积」会问「里面有多大」——那是另一件事，别和周长的公式混了。"}]};CourseEngine.mount(window.__CONTENT);</script>
+<script>window.__CONTENT = {"topicId": "mt_rect-perimeter", "title": "长方形和正方形的周长", "subject": "数学", "grade": 3, "template": "explain", "renderer": "geometry", "version": "1.0.0", "steps": [{"type": "intro", "title": "周长是绕着走一圈的长度", "lead": "周长和「里面有多大」没关系。用绳子沿桌边围一圈，拉直量出来的长度，就是桌面周长。", "bullets": [{"text": "<b>四条边加起来</b>：围一圈要走过 4 条边，所以周长是四条边的总长。"}, {"text": "<b>不是面积</b>：同样周长的图形，里面可以差很多。", "warn": true}]}, {"type": "geometry", "title": "一条边一条边数", "shape": {"preset": "perimeter", "w": 190, "h": 104, "top": "5 米", "right": "3 米"}, "caption": "四条边依次是 <b>5、3、5、3</b> 米", "note": "围着走一圈，走过的就是这 4 条边。", "demoHint": "点一次走一条边，看周长怎么一点点加起来。", "demoLabel": "▶ 走一条边"}, {"type": "text", "title": "从「加四次」到「加两次」", "paras": ["周长 = 5 + 3 + 5 + 3 = <b>16</b> 米。", "长出现 2 次、宽出现 2 次，所以可以写成 <b>(5 + 3) × 2 = 16</b> 米。"], "note": "公式是「一条长加一条宽，再乘 2」。记成「长+宽」而不乘 2，是这一步最常见的丢分点。"}, {"type": "quiz", "title": "你来算", "question": "长方形长 6 米、宽 4 米，周长是多少米？", "answer": 20, "unit": "米", "hint": "(6 + 4) × 2 = 20", "why": "算成 10 的话，是只加了长和宽、忘了乘 2。"}, {"type": "geometry", "title": "正方形更简单：四条边一样长", "shape": {"preset": "perimeter", "w": 150, "h": 150, "top": "4 米", "right": "4 米"}, "caption": "边长 4 米，四条边都是 4", "note": "正方形周长 = 边长 × 4。", "demoHint": "点一次走一条边，看周长怎么一点点加起来。", "demoLabel": "▶ 走一条边"}, {"type": "quiz", "title": "正方形", "question": "正方形边长 4 米，周长是多少米？", "answer": 16, "unit": "米", "hint": "4 × 4 = 16", "why": "算成 8 是只加了两条边。"}, {"type": "choice", "title": "实际问题：怎样最省料", "question": "一面靠墙用篱笆围一个长 5 米、宽 3 米的长方形菜地，怎样围最省料？", "options": ["长边靠墙，用 11 米", "宽边靠墙，用 13 米", "四面都围，用 16 米"], "answer": "长边靠墙，用 11 米", "misconception": {"宽边靠墙，用 13 米": "以为围的边越短越省，其实省下的是不围的那条边。", "四面都围，用 16 米": "忘了墙本身能当一条边，四面都围等于白围一面墙。"}, "hint": "少围一条边，而且少的那条越长越省。少一条 5 米的长边：3 + 3 + 5 = 11 米。", "why": "靠墙的那条边不用围。少长边比少宽边省 2 米。"}, {"type": "summary", "title": "记住这两句", "points": ["周长是四条边的总长，不是里面的面积", "长方形 (长+宽)×2，正方形 边长×4"], "advice": "下一课「面积」会问「里面有多大」——那是另一件事，别和周长的公式混了。"}]};CourseEngine.mount(window.__CONTENT);</script>
 </body>
 </html>

@@ -9,7 +9,7 @@
 覆盖 12 个学科、1~12 年级，每个主题配一份教学研究</p>
 
 <p>
-<img src="https://img.shields.io/badge/version-v0.26.1-blue?style=flat-square" alt="version">
+<img src="https://img.shields.io/badge/version-v0.26.2-blue?style=flat-square" alt="version">
 <img src="https://img.shields.io/badge/subjects-12-informational?style=flat-square" alt="subjects">
 <img src="https://img.shields.io/badge/topics-1268-brightgreen?style=flat-square" alt="topics">
 <img src="https://img.shields.io/badge/prerequisite%20edges-1635-blueviolet?style=flat-square" alt="prerequisite edges">
@@ -24,7 +24,7 @@
 
 在线预览：<https://acd118508358062b1.app.workbuddy.host/?sharecode=DHL4TJAQCG>
 
-> v0.26.1 · 主题 1268 · 先修依赖 1635（hard 947 / soft 688）· 课标条目 186 · 域摘要 204 · 教学研究 1268 · 教材版本 26 · 学科 12 · 课件 10
+> v0.26.2 · 主题 1268 · 先修依赖 1635（hard 947 / soft 688）· 课标条目 186 · 域摘要 204 · 教学研究 1268 · 教材版本 26 · 学科 12 · 课件 10
 
 ## 目录
 
@@ -417,6 +417,17 @@ china-skill-taxonomy/
 | [电子课本网](http://www.dzkbw.com/) | 2024 年版修订教材的单元目录 | 第三方网站，只记录册次和单元名 |
 | [国家中小学智慧教育平台](https://basic.smartedu.cn/) | 课标原文和电子教材的官方入口 | 官方平台，原文权利归发布方 |
 
+### 同类的技能项目
+
+课件层开工前扫过一遍现成的教育类 agent 技能，结论是它们做「一道题」「一节课」「一个知识点」，缺的正好是中间那张关系网。四家的取舍记在 [`docs/EDU-SKILLS-SURVEY.md`](docs/EDU-SKILLS-SURVEY.md)，这里只留结论：**没有一个被安装成依赖，也没有一行代码进仓库**；借的是几条设计规则（分步揭示、概念反馈、干扰项写迷思概念、计算内核与模板分离）。
+
+| 项目 | 做到哪一步 | 许可 | 这里用了什么 |
+|---|---|---|---|
+| [k12-teacher-skills](https://github.com/anthropics/k12-teacher-skills) | 一节课：教案、分层、形成性检测 | Apache-2.0 | 借 eval 评分表和「干扰项来自迷思概念」的做法 |
+| [math-viz-kit](https://github.com/edu-ai-builders/math-viz-kit) | 一个知识点：123 个单文件可视化 | 未声明许可证 | 借 `教学法规则库` 的 V1–V8，代码不可复制 |
+| [edulab](https://github.com/wy51ai/edulab) | 一道题：3D/2D 解题页与讲解视频 | Apache-2.0 | 借「计算内核 + 数据驱动模板」的架构 |
+| [awesome-agent4edu](https://github.com/xdelin/awesome-agent4edu) | 索引 | — | 按图索骥找上面的项目 |
+
 ### 各层的数据从哪来
 
 | 层 | 来源 | 怎么处理 |
@@ -438,7 +449,7 @@ china-skill-taxonomy/
   title        = {学阶图谱 · China Skill Taxonomy},
   author       = {{China Skill Taxonomy contributors}},
   year         = {2026},
-  version      = {v0.26.1},
+  version      = {v0.26.2},
   url          = {https://github.com/goralcao/china-skill-taxonomy},
   note         = {Database licensed under ODbL 1.0; content under CC BY-SA 4.0}
 }
@@ -454,7 +465,7 @@ china-skill-taxonomy/
 
 ODbL 把「衍生数据库」和「产出作品」分开。拿这份数据做产品、训练模型、放进应用，都不需要开源你的产品；只有当你发布基于它的数据库时才需要同样开放。署名可以照抄这行：
 
-> 学阶图谱 · China Skill Taxonomy (v0.26.1) · https://github.com/goralcao/china-skill-taxonomy · ODbL 1.0 (database) + CC BY-SA 4.0 (content)
+> 学阶图谱 · China Skill Taxonomy (v0.26.2) · https://github.com/goralcao/china-skill-taxonomy · ODbL 1.0 (database) + CC BY-SA 4.0 (content)
 
 ## 路线图
 
@@ -470,7 +481,7 @@ ODbL 把「衍生数据库」和「产出作品」分开。拿这份数据做产
 | v0.13 ~ v0.15 | 初中物理、化学、历史、地理；多版本教材目录与跨版本映射 |
 | v0.16 ~ v0.18 | 科学、道德与法治、生物，十学科 742 主题全量覆盖 |
 | v0.19 ~ v0.22 | 高中九科补齐，1268 主题、十二学科全量覆盖 |
-| v0.22.1 ~ v0.26.1 | 图例可收缩、移动端触摸修复、README 与 CI 整理 |
+| v0.22.1 ~ v0.26.2 | 图例可收缩、移动端触摸修复、课件演算、README 与 CI 整理 |
 
 还没做的：
 
@@ -499,3 +510,5 @@ python3 scripts/build.py && node scripts/validate.mjs && node --test scripts/tea
 - [国家中小学智慧教育平台](https://basic.smartedu.cn/)：课标原文与电子教材入口
 - [TapXWorld/ChinaTextbook](https://github.com/TapXWorld/ChinaTextbook)：教材册次与 PDF 索引
 - [电子课本网](http://www.dzkbw.com/)：2024 年版教材目录
+- [math-viz-kit](https://github.com/edu-ai-builders/math-viz-kit)：课件分步揭示与概念反馈的设计参照
+- [k12-teacher-skills](https://github.com/anthropics/k12-teacher-skills)：形成性检测与迷思概念干扰项的做法参照

@@ -175,6 +175,21 @@ for (const name of dirs) {
             quizzes++;
             if (!Array.isArray(st.options) || st.options.length < 2) fail(rel, `第 ${i + 1} 步 choice 选项不足`);
             else if (!st.options.includes(st.answer)) fail(rel, `第 ${i + 1} 步 choice.answer 不在选项里`);
+            if (st.misconception !== undefined) {
+              const mc = st.misconception;
+              if (!mc || typeof mc !== 'object' || Array.isArray(mc)) {
+                fail(rel, `第 ${i + 1} 步 choice.misconception 必须是「选项 → 错因」的对象`);
+              } else {
+                for (const [opt, why] of Object.entries(mc)) {
+                  if (!st.options.includes(opt)) fail(rel, `第 ${i + 1} 步 misconception 的「${opt}」不在选项里`);
+                  if (opt === st.answer) fail(rel, `第 ${i + 1} 步 misconception 不能给正确答案写错因`);
+                  if (typeof why !== 'string' || !why.trim()) fail(rel, `第 ${i + 1} 步 misconception「${opt}」缺错因`);
+                  else if (why.length > 80) fail(rel, `第 ${i + 1} 步 misconception「${opt}」超过 80 字`);
+                }
+                const missing = (st.options || []).filter(o => o !== st.answer && !mc[o]);
+                if (missing.length) warn(rel, `第 ${i + 1} 步 choice 有 ${missing.length} 个错项没写 misconception`);
+              }
+            }
           }
           if (st.type === 'vertical') {
             const pr = st.problem || {};

@@ -400,7 +400,7 @@ localStorage.setItem('stx.course.' + TOPIC_ID,
 ### 质量门槛
 
 - 数据校验、课件校验、教学研究测试三套并存，CI 全绿
-- 引擎型课件按 content.steps 检查：类型合法、quiz 答案是数字、choice 答案在选项里、vertical 算式成立、题目数与 meta.interactions 一致
+- 引擎型课件按 content.steps 检查：类型合法、quiz 答案是数字、choice 答案在选项里、`misconception` 的键必须是错项（不能是答案）、vertical 算式成立、题目数与 meta.interactions 一致
 - 产物必须零外链、含 `window.__GRAPH`
 
 ### 下一步

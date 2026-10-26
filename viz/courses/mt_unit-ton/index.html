@@ -1507,6 +1507,7 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
         f.appendChild(q);
 
         var wrap = h('div', 'options');
+        var fbSlot = h('div');
         s.options.forEach(function (o) {
           var b = h('button', 'opt', o);
           b.type = 'button';
@@ -1518,23 +1519,23 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
               b.classList.add('right');
               st.solved = true; st.first = st.attempts === 1;
               if (s.hint) {
-                var fb = h('div', 'card ok');
-                fb.innerHTML = s.hint;
-                f.appendChild(fb);
+                fbSlot.className = 'card ok';
+                fbSlot.innerHTML = s.hint;
               }
               syncNav();
             } else {
               b.classList.add('wrong');
-              if (s.why) {
-                var fb2 = h('div', 'card pitfall');
-                fb2.innerHTML = s.why;
-                f.appendChild(fb2);
+              var msg = (s.misconception && s.misconception[o]) || s.why;
+              if (msg) {
+                fbSlot.className = 'card pitfall';
+                fbSlot.innerHTML = msg;
               }
             }
           };
           wrap.appendChild(b);
         });
         f.appendChild(wrap);
+        f.appendChild(fbSlot);
         return f;
       },
 
@@ -1715,6 +1716,6 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 })(window);
 
 </script>
-<script>window.__CONTENT = {"topicId": "mt_unit-ton", "title": "吨的认识", "subject": "数学", "grade": 3, "template": "explain", "renderer": "numberline", "version": "1.0.0", "steps": [{"type": "intro", "title": "吨是给「很重的东西」用的单位", "lead": "一袋米 25 千克，一头牛 500 千克，一辆小汽车 1.5 吨。吨不像克和千克那样能拎在手上，它用来称大宗货物。", "bullets": [{"text": "<b>1 吨 = 1000 千克</b>，吨和千克之间隔了 1000，不是 100。"}, {"text": "<b>不能乱用</b>：一个人的体重写「50 吨」显然不对。", "warn": true}]}, {"type": "numberline", "title": "把吨放到千克的数轴上", "line": {"min": 0, "max": 2000, "step": 500, "marks": [{"v": 1000, "label": "1 吨"}, {"v": 500, "label": "半吨"}, {"v": 2000, "label": "2 吨"}], "span": [0, 1000]}, "caption": "0 到 1000 千克这一段，就是 <b>1 吨</b>"}, {"type": "text", "title": "换算是乘 1000 或除以 1000", "paras": ["吨换千克：<b>× 1000</b>。3 吨 = 3000 千克。", "千克换吨：<b>÷ 1000</b>。5000 千克 = 5 吨。"], "note": "进率是 1000，不是 100。写错这一位，答案会差十倍。"}, {"type": "quiz", "title": "吨换千克", "question": "3 吨 = ？千克", "answer": 3000, "unit": "千克", "hint": "3 × 1000 = 3000", "why": "写 300 是把进率当成 100 了。"}, {"type": "quiz", "title": "千克换吨", "question": "5000 千克 = ？吨", "answer": 5, "unit": "吨", "hint": "5000 ÷ 1000 = 5", "why": "写 500 是少除了一次 100。"}, {"type": "choice", "title": "估一估", "question": "下面哪个最接近 1 吨？", "options": ["一头成年牛", "一个三年级学生", "一台笔记本电脑"], "answer": "一头成年牛", "hint": "1 吨 = 1000 千克。成年牛大约 500~800 千克，是三个里最接近的。", "why": "学生约 30 千克，笔记本约 2 千克，都离 1 吨很远。"}, {"type": "summary", "title": "记住这两句", "points": ["1 吨 = 1000 千克，进率是 1000", "吨用来称很重的东西：货物、车辆、大批粮食"], "advice": "接着可以看「千米」——那是长度的 1000 倍关系，和吨是同一种「大单位」思路。"}]};CourseEngine.mount(window.__CONTENT);</script>
+<script>window.__CONTENT = {"topicId": "mt_unit-ton", "title": "吨的认识", "subject": "数学", "grade": 3, "template": "explain", "renderer": "numberline", "version": "1.0.0", "steps": [{"type": "intro", "title": "吨是给「很重的东西」用的单位", "lead": "一袋米 25 千克，一头牛 500 千克，一辆小汽车 1.5 吨。吨不像克和千克那样能拎在手上，它用来称大宗货物。", "bullets": [{"text": "<b>1 吨 = 1000 千克</b>，吨和千克之间隔了 1000，不是 100。"}, {"text": "<b>不能乱用</b>：一个人的体重写「50 吨」显然不对。", "warn": true}]}, {"type": "numberline", "title": "把吨放到千克的数轴上", "line": {"min": 0, "max": 2000, "step": 500, "marks": [{"v": 1000, "label": "1 吨"}, {"v": 500, "label": "半吨"}, {"v": 2000, "label": "2 吨"}], "span": [0, 1000]}, "caption": "0 到 1000 千克这一段，就是 <b>1 吨</b>"}, {"type": "text", "title": "换算是乘 1000 或除以 1000", "paras": ["吨换千克：<b>× 1000</b>。3 吨 = 3000 千克。", "千克换吨：<b>÷ 1000</b>。5000 千克 = 5 吨。"], "note": "进率是 1000，不是 100。写错这一位，答案会差十倍。"}, {"type": "quiz", "title": "吨换千克", "question": "3 吨 = ？千克", "answer": 3000, "unit": "千克", "hint": "3 × 1000 = 3000", "why": "写 300 是把进率当成 100 了。"}, {"type": "quiz", "title": "千克换吨", "question": "5000 千克 = ？吨", "answer": 5, "unit": "吨", "hint": "5000 ÷ 1000 = 5", "why": "写 500 是少除了一次 100。"}, {"type": "choice", "title": "估一估", "question": "下面哪个最接近 1 吨？", "options": ["一头成年牛", "一个三年级学生", "一台笔记本电脑"], "answer": "一头成年牛", "misconception": {"一个三年级学生": "把吨当成斤了——30 千克是 60 斤，离 1 吨还差得远。", "一台笔记本电脑": "2 千克只有 1 吨的五百分之一，差着三个数量级。"}, "hint": "1 吨 = 1000 千克。成年牛大约 500~800 千克，是三个里最接近的。", "why": "学生约 30 千克，笔记本约 2 千克，都离 1 吨很远。"}, {"type": "summary", "title": "记住这两句", "points": ["1 吨 = 1000 千克，进率是 1000", "吨用来称很重的东西：货物、车辆、大批粮食"], "advice": "接着可以看「千米」——那是长度的 1000 倍关系，和吨是同一种「大单位」思路。"}]};CourseEngine.mount(window.__CONTENT);</script>
 </body>
 </html>
