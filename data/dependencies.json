@@ -1,5 +1,5 @@
 {
-  "version": "v0.22.4",
+  "version": "v0.22.5",
   "schemaVersion": 1,
   "dependencies": [
     {
@@ -9249,6 +9249,12 @@
       "reason": "语言探究以语言规范为基础"
     },
     {
+      "topicId": "mt_chn-s-rural-china",
+      "prerequisiteId": "mt_junior-cn-book-method",
+      "strength": "hard",
+      "reason": "学术著作阅读要先有整本书阅读的方法"
+    },
+    {
       "topicId": "mt_mat-s-set-operations",
       "prerequisiteId": "mt_mat-s-sets",
       "strength": "hard",
@@ -9517,6 +9523,36 @@
       "prerequisiteId": "mt_mat-s-derivative-application",
       "strength": "hard",
       "reason": "最优化建立在函数性质分析上"
+    },
+    {
+      "topicId": "mt_mat-s-sequence",
+      "prerequisiteId": "mt_mat-s-function-concept",
+      "strength": "soft",
+      "reason": "数列可看作定义域为正整数的函数"
+    },
+    {
+      "topicId": "mt_mat-s-arithmetic",
+      "prerequisiteId": "mt_mat-s-sequence",
+      "strength": "hard",
+      "reason": "先理解通项公式与前n项和"
+    },
+    {
+      "topicId": "mt_mat-s-geometric",
+      "prerequisiteId": "mt_mat-s-sequence",
+      "strength": "hard",
+      "reason": "先理解通项公式与前n项和"
+    },
+    {
+      "topicId": "mt_mat-s-sequence-sum",
+      "prerequisiteId": "mt_mat-s-arithmetic",
+      "strength": "hard",
+      "reason": "等差求和建立在通项与性质上"
+    },
+    {
+      "topicId": "mt_mat-s-sequence-sum",
+      "prerequisiteId": "mt_mat-s-geometric",
+      "strength": "hard",
+      "reason": "等比求和要先掌握通项与公比"
     },
     {
       "topicId": "mt_eng-s-travel",

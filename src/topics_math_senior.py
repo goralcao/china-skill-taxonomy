@@ -745,6 +745,12 @@ EDGES = [
     ("mat-s-derivative-rule", "mat-s-derivative-concept", "hard", "求导法则建立在导数概念上"),
     ("mat-s-derivative-application", "mat-s-derivative-rule", "hard", "导数应用建立在求导运算上"),
     ("mat-s-derivative-optimization", "mat-s-derivative-application", "hard", "最优化建立在函数性质分析上"),
+    # 数列模块（v0.22.5 补连边：此前 4 个主题完全孤立）
+    ("mat-s-sequence", "mat-s-function-concept", "soft", "数列可看作定义域为正整数的函数"),
+    ("mat-s-arithmetic", "mat-s-sequence", "hard", "先理解通项公式与前n项和"),
+    ("mat-s-geometric", "mat-s-sequence", "hard", "先理解通项公式与前n项和"),
+    ("mat-s-sequence-sum", "mat-s-arithmetic", "hard", "等差求和建立在通项与性质上"),
+    ("mat-s-sequence-sum", "mat-s-geometric", "hard", "等比求和要先掌握通项与公比"),
 ]
 
 CLUSTERS = [

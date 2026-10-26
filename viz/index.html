@@ -1186,6 +1186,11 @@
     // 依赖边
     for (const e of edges) {
       if (!e.a.visible || !e.b.visible) continue;
+      // 视口裁剪：两端都在屏幕外就跳过（缩放后大部分边不需要绘制）
+      const ax = e.a.x * k + view.x, ay = e.a.y * k + view.y;
+      const bx = e.b.x * k + view.x, by = e.b.y * k + view.y;
+      if ((ax < -20 && bx < -20) || (ax > W + 20 && bx > W + 20) ||
+          (ay < -20 && by < -20) || (ay > H + 20 && by > H + 20)) continue;
       const isTrace = traceSet.size && traceSet.has(e.a.id) && traceSet.has(e.b.id);
       const isSel = selected && (e.a.id === selected.id || e.b.id === selected.id);
       const isHov = hovered && (e.a.id === hovered.id || e.b.id === hovered.id);
@@ -1205,6 +1210,10 @@
     // 节点（容器在下、知识点在上）
     for (const n of renderNodes) {
       if (!n.visible) continue;
+      // 视口裁剪：屏幕外的节点不参与绘制（含圆环与标签的余量）
+      const sx = n.x * k + view.x, sy = n.y * k + view.y;
+      const pad = (n.r + 26) * k;
+      if (sx < -pad || sx > W + pad || sy < -pad || sy > H + pad) continue;
       const color = subjectColor[n.subject];
       const isSel = selected && n.id === selected.id;
       const isHov = hovered && n.id === hovered.id;
@@ -1221,9 +1230,15 @@
         ctx.globalAlpha = baseAlpha;
         ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
         ctx.fillStyle = 'rgba(10,15,24,.88)'; ctx.fill();
+        // 发光用「半透明粗描边」模拟，避免 shadowBlur（每个容器都做高斯模糊，帧率杀手）
+        if (!fold) {
+          ctx.globalAlpha = baseAlpha * 0.16;
+          ctx.strokeStyle = color; ctx.lineWidth = lw(isSubj ? 9 : 6);
+          ctx.stroke();
+          ctx.globalAlpha = baseAlpha;
+        }
         ctx.strokeStyle = color; ctx.lineWidth = lw(isSubj ? 2.6 : 1.7);
-        if (!fold) { ctx.shadowColor = color; ctx.shadowBlur = (isSubj ? 14 : 7) / k; }
-        ctx.stroke(); ctx.shadowBlur = 0;
+        ctx.stroke();
         // 中心计数
         ctx.font = `${(isSubj ? 12 : 10) / k}px system-ui, "PingFang SC", sans-serif`;
         ctx.fillStyle = color; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
@@ -1285,6 +1300,7 @@
         }
       }
       const sx = n.x * k + view.x;
+      if (sx < -180 || sx > W + 180) continue;   // 屏幕外的标签不参与碰撞计算
       const isSubj = n.kind === 'subject';
       const fsz = isSubj ? 15 : n.kind === 'cluster' ? 11.5 : 11;
       const fold = n.kind === 'subject' ? collapsed.has('subj-' + n.subject)
@@ -1292,6 +1308,7 @@
       const text = n.kind === 'topic' ? n.name : n.name + (fold ? ' ▸' : '');
       const w = text.length * fsz + 10, h = fsz + 4;
       const sy = (n.y - n.r - 6 / k) * k + view.y - h;
+      if (sy < -40 || sy > H + 40) continue;
       const rect = { x: sx - w / 2, y: sy, w, h };
       if (!mandatory) {
         if (count >= CAP) continue;
@@ -1327,7 +1344,9 @@
     } else { panV.x = panV.y = 0; }
     if (alpha > ALPHA_MIN) { alpha = Math.max(ALPHA_MIN, alpha * ALPHA_DECAY); dirty = true; }
     if (dirty) {
-      tick(); draw();
+      // 只有布局还在收敛时才跑力导向；平移/缩放/选中只是重绘，tick 纯属浪费
+      if (alpha > ALPHA_MIN) tick();
+      draw();
       if (alpha <= ALPHA_MIN && Math.abs(panV.x) <= 0.12 && Math.abs(panV.y) <= 0.12 && pointers.size === 0) {
         dirty = false;
       }

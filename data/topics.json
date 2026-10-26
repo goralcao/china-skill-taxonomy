@@ -1,5 +1,5 @@
 {
-  "version": "v0.22.4",
+  "version": "v0.22.5",
   "schemaVersion": 1,
   "topics": [
     {
@@ -7818,7 +7818,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-chinese-d8-s4",
-      "centrality": 0.011
+      "centrality": 0.0118
     },
     {
       "id": "mt_junior-cn-book-zhaohua",
@@ -30309,7 +30309,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-chinese-d13-s5",
-      "centrality": 0.0
+      "centrality": 0.0008
     },
     {
       "id": "mt_chn-s-argument-reading",
@@ -31661,7 +31661,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-math-d6-s5",
-      "centrality": 0.0024
+      "centrality": 0.0032
     },
     {
       "id": "mt_mat-s-function-property",
@@ -32493,7 +32493,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-math-d6-s5",
-      "centrality": 0.0
+      "centrality": 0.0024
     },
     {
       "id": "mt_mat-s-arithmetic",
@@ -32519,7 +32519,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-math-d6-s5",
-      "centrality": 0.0
+      "centrality": 0.0016
     },
     {
       "id": "mt_mat-s-geometric",
@@ -32545,7 +32545,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-math-d6-s5",
-      "centrality": 0.0
+      "centrality": 0.0016
     },
     {
       "id": "mt_mat-s-sequence-sum",
@@ -32571,7 +32571,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-math-d6-s5",
-      "centrality": 0.0
+      "centrality": 0.0016
     },
     {
       "id": "mt_mat-s-derivative-concept",

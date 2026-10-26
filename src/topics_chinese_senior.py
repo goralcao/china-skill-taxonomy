@@ -733,6 +733,7 @@ EDGES = [
     ("chn-s-language-norm", "chn-s-vocabulary", "hard", "语言规范建立在词语积累之上"),
     ("chn-s-rhetoric", "chn-s-vocabulary", "soft", "修辞运用以词语积累为基础"),
     ("chn-s-language-explore", "chn-s-language-norm", "hard", "语言探究以语言规范为基础"),
+    ("chn-s-rural-china", "junior-cn-book-method", "hard", "学术著作阅读要先有整本书阅读的方法"),
 ]
 
 CLUSTERS = [

@@ -9,10 +9,10 @@
 覆盖 12 个学科、1~12 年级，每个主题配一份教学研究</p>
 
 <p>
-<img src="https://img.shields.io/badge/version-v0.22.4-blue?style=flat-square" alt="version">
+<img src="https://img.shields.io/badge/version-v0.22.5-blue?style=flat-square" alt="version">
 <img src="https://img.shields.io/badge/subjects-12-informational?style=flat-square" alt="subjects">
 <img src="https://img.shields.io/badge/topics-1268-brightgreen?style=flat-square" alt="topics">
-<img src="https://img.shields.io/badge/prerequisite%20edges-1629-blueviolet?style=flat-square" alt="prerequisite edges">
+<img src="https://img.shields.io/badge/prerequisite%20edges-1635-blueviolet?style=flat-square" alt="prerequisite edges">
 <img src="https://img.shields.io/badge/data-ODbL%201.0-orange?style=flat-square" alt="data license">
 <img src="https://img.shields.io/badge/content-CC%20BY--SA%204.0-yellow?style=flat-square" alt="content license">
 <img src="https://img.shields.io/badge/format-JSON%20%2B%20single--file%20HTML-success?style=flat-square" alt="format">
@@ -24,7 +24,7 @@
 
 在线预览：<https://acd118508358062b1.app.workbuddy.host/?sharecode=DHL4TJAQCG>
 
-> v0.22.4 · 主题 1268 · 先修依赖 1629（hard 942 / soft 687）· 课标条目 186 · 域摘要 204 · 教学研究 1268 · 教材版本 26 · 学科 12
+> v0.22.5 · 主题 1268 · 先修依赖 1635（hard 947 / soft 688）· 课标条目 186 · 域摘要 204 · 教学研究 1268 · 教材版本 26 · 学科 12
 
 ## 目录
 
@@ -66,7 +66,7 @@
 
 ### 依赖写成图，不写成目录
 
-1629 条边，每条标了 hard（不会先修就学不了）或 soft（有帮助但非必需），并附一句知识层面的理由，比如「动量守恒由动量定理在系统上推广」。
+1635 条边，每条标了 hard（不会先修就学不了）或 soft（有帮助但非必需），并附一句知识层面的理由，比如「动量守恒由动量定理在系统上推广」。
 
 边反过来读就是「学会这个能解锁什么」。初中到高中的跨学段连接也在里面，所以补前置能一直往回追到小学。
 
@@ -103,6 +103,9 @@
 - 教学研究是 AI 撰写、经结构校验，但没有实证验证，来源也没有逐条联网复核。当参考，别当处方。
 - 初中数学九下、初中语文和英语的部分册次仍用通行版目录，等修订版发布后替换。
 - 1200 多个节点挤在一张星图里，1440 宽的屏幕上会偏密。星图适合看整体结构；找具体内容建议用搜索，或者先按学科筛一遍。
+- 依赖图分成 67 个连通分量，最大的一块只占 7.6%。原因是跨模块、跨学科的边补得少，学习路径常常只能在本模块内走。补软依赖是下一步要做的，但每条都得能说清理由，不想为了连通而连通。
+- 186 条课标里有 11 条还没有主题挂靠，集中在语文低年级的表达类要求、英语一级的两个要素；这部分主题偏少。
+- 首屏要下载 4MB 的 `data.js`（gzip 后约 1MB），线上目前没有开压缩。数据分片是待办。
 - 目前只有中文。术语和课标编号是中文体系的，翻成英文会失真，暂时没做。
 
 ## 覆盖范围
@@ -111,7 +114,7 @@
 
 | 学科 | 主题数 | 依赖边 | 课标条目 | 教学研究 | 年级 |
 |---|---:|---:|---:|---:|---|
-| 数学 | 234（小学 96 + 初中 82 + 高中 56） | 385 | 32 | 234 | 1~12 |
+| 数学 | 234（小学 96 + 初中 82 + 高中 56） | 390 | 32 | 234 | 1~12 |
 | 语文 | 177（小学 55 + 初中 67 + 高中 55） | 222 | 30 | 177 | 1~12 |
 | 英语 | 140（小学 37 + 初中 55 + 高中 48） | 184 | 20 | 140 | 3~12 |
 | 物理 | 98（初中 50 + 高中 48） | 117 | 11 | 98 | 8~12 |
@@ -123,7 +126,7 @@
 | 道德与法治 | 61（小学 38 + 初中 23） | 84 | 21 | 61 | 1~9 |
 | 思想政治 | 52（高中） | 45 | 7 | 52 | 10~12 |
 | 技术 | 48（高中，信息技术 + 通用技术） | 43 | 6 | 48 | 10~12 |
-| **合计** | **1268** | **1629** | **186** | **1268** | 1~12 |
+| **合计** | **1268** | **1635** | **186** | **1268** | 1~12 |
 
 小学 265、初中 477、高中 526。学科按各自开设的年级建模：科学只在小学，思想政治和技术只在高中，物理从八年级开始。校验脚本按学科区间卡，越界会报错。
 
@@ -328,7 +331,7 @@ china-skill-taxonomy/
   title        = {学阶图谱 · China Skill Taxonomy},
   author       = {{China Skill Taxonomy contributors}},
   year         = {2026},
-  version      = {v0.22.4},
+  version      = {v0.22.5},
   url          = {https://github.com/goralcao/china-skill-taxonomy},
   note         = {Database licensed under ODbL 1.0; content under CC BY-SA 4.0}
 }
@@ -344,7 +347,7 @@ china-skill-taxonomy/
 
 ODbL 把「衍生数据库」和「产出作品」分开。拿这份数据做产品、训练模型、放进应用，都不需要开源你的产品；只有当你发布基于它的数据库时才需要同样开放。署名可以照抄这行：
 
-> 学阶图谱 · China Skill Taxonomy (v0.22.4) · https://github.com/goralcao/china-skill-taxonomy · ODbL 1.0 (database) + CC BY-SA 4.0 (content)
+> 学阶图谱 · China Skill Taxonomy (v0.22.5) · https://github.com/goralcao/china-skill-taxonomy · ODbL 1.0 (database) + CC BY-SA 4.0 (content)
 
 ## 路线图
 
@@ -360,7 +363,7 @@ ODbL 把「衍生数据库」和「产出作品」分开。拿这份数据做产
 | v0.13 ~ v0.15 | 初中物理、化学、历史、地理；多版本教材目录与跨版本映射 |
 | v0.16 ~ v0.18 | 科学、道德与法治、生物，十学科 742 主题全量覆盖 |
 | v0.19 ~ v0.22 | 高中九科补齐，1268 主题、十二学科全量覆盖 |
-| v0.22.1 ~ v0.22.4 | 图例可收缩、移动端触摸修复、README 与 CI 整理 |
+| v0.22.1 ~ v0.22.5 | 图例可收缩、移动端触摸修复、README 与 CI 整理 |
 
 还没做的：
 
