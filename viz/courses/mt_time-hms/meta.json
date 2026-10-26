@@ -14,6 +14,7 @@
     "说清时、分、秒三根针各走多远算一个单位",
     "算出从某一时刻到另一时刻经过多久"
   ],
+  "cognitiveAction": "分解",
   "status": "reviewed",
   "author": "goral.cao",
   "license": "CC-BY-SA-4.0",

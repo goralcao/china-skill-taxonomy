@@ -14,12 +14,13 @@
     "mt_frac-intro"
   ],
   "next": [
-    "mt_frac-compare"
+    "mt_frac-addsub"
   ],
   "objectives": [
     "理解同分母分数加减时分母不变",
     "能正确计算同分母分数的加减"
   ],
+  "cognitiveAction": "累积",
   "status": "reviewed",
   "author": "goral.cao",
   "license": "CC-BY-SA-4.0",

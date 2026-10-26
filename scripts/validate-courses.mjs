@@ -12,6 +12,7 @@ const ROOT = process.cwd();
 const COURSE_DIR = path.join(ROOT, 'courses');
 const TEMPLATES = ['explain', 'drill', 'explore', 'review'];
 const STATUSES = ['draft', 'reviewed', 'deprecated'];
+const ACTIONS = ['比较', '分解', '变换', '逼近', '累积', '模拟', '构造'];
 const MAX_BYTES = 300 * 1024;
 
 const fails = [];
@@ -87,6 +88,13 @@ for (const name of dirs) {
   // 5. 状态与许可
   if (!STATUSES.includes(meta.status)) fail(rel, `status 非法：${meta.status}`);
   if (meta.license !== 'CC-BY-SA-4.0') fail(rel, `license 必须是 CC-BY-SA-4.0，当前 ${meta.license}`);
+
+  // 5.1 认知动作：reviewed 的课件必须声明，且只能是一个
+  if (meta.cognitiveAction !== undefined && !ACTIONS.includes(meta.cognitiveAction)) {
+    fail(rel, `cognitiveAction 非法：${meta.cognitiveAction}（可选 ${ACTIONS.join(' / ')}）`);
+  } else if (meta.status === 'reviewed' && !meta.cognitiveAction) {
+    fail(rel, 'reviewed 的课件必须声明 cognitiveAction（一节课只承载一个认知动作）');
+  }
 
   // 6. duration / interactions 范围与比例
   if (typeof meta.duration !== 'number' || meta.duration < 5 || meta.duration > 25) {

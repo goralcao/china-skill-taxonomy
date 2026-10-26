@@ -12,8 +12,8 @@
   ],
   "prerequisites": [
     "mt_length-cm-m",
-    "mt_shape-recognition",
-    "mt_addsub-100"
+    "mt_shape-2d",
+    "mt_num-100-addsub"
   ],
   "next": [
     "mt_rect-area",
@@ -23,6 +23,7 @@
     "能测量并算出课桌面的周长",
     "能选择合适的方法计算组合图形的周长"
   ],
+  "cognitiveAction": "累积",
   "status": "reviewed",
   "author": "goral.cao",
   "license": "CC-BY-SA-4.0",

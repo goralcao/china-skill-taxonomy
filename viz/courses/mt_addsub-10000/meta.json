@@ -22,6 +22,7 @@
     "连续退位时一级一级处理",
     "用估算判断结果是否合理"
   ],
+  "cognitiveAction": "分解",
   "status": "reviewed",
   "author": "goral.cao",
   "license": "CC-BY-SA-4.0",

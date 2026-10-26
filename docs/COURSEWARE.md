@@ -397,6 +397,28 @@ localStorage.setItem('stx.course.' + TOPIC_ID,
 | 长方形和正方形的面积 | 方格 | 铺满计数、进率推导 |
 | 高中物理 · 动量守恒 | 模拟 | 滑杆 + 摩擦反例 |
 
+### 用技能生成课件
+
+`skills/k12-courseware/` 把四件事串成一条流程，避免「先写页面再想教学」：
+
+| 步骤 | 借自 | 产出 |
+|---|---|---|
+| 0 图谱定位 | 本项目 | 前置、解锁、课标、年级 |
+| 1 EVAL | math-viz-kit V1 | 一句话：核心动态关系，或「不值得做」 |
+| 2 教学设计 | k12-teacher-skills | 目标 3 条、前测、主线、检测题与迷思 |
+| 3 认知动作 | V7 | `cognitiveAction` 七选一 + renderer |
+| 4 排步骤 | V3/V4/V5/V8 | 8–10 步 `content.json` |
+| 5 数值内核 | edulab | 算式、进位、答案先算再写 |
+| 6 校验 | 本项目 | `validate-courses` + `score-course` |
+
+```bash
+node scripts/new-course.mjs mt_xxx --template=explain --renderer=vertical
+python3 scripts/build.py && node scripts/validate-courses.mjs
+node scripts/score-course.mjs mt_xxx
+```
+
+`score-course.mjs` 打十个维度：认知动作、分步揭示、概念反馈、迷思覆盖、图谱挂接、形成性评价、节奏、单文件、开场衔接、文案。低于 90 分不建议标 `reviewed`。它和校验脚本分工不同：校验管「对不对」，评分管「合不合理」。
+
 ### 质量门槛
 
 - 数据校验、课件校验、教学研究测试三套并存，CI 全绿

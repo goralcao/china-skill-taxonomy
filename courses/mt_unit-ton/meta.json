@@ -11,9 +11,10 @@
     "math-2022:S1:GG:GM"
   ],
   "prerequisites": [
-    "mt_unit-kg-g",
+    "mt_mass-g-kg",
     "mt_num-10000-recognition"
   ],
+  "next": [],
   "next": [
     "mt_unit-convert"
   ],
@@ -21,6 +22,7 @@
     "知道 1 吨 = 1000 千克",
     "能估计常见物体的质量是否达到 1 吨"
   ],
+  "cognitiveAction": "比较",
   "status": "reviewed",
   "author": "goral.cao",
   "license": "CC-BY-SA-4.0",

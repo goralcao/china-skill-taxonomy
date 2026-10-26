@@ -9,12 +9,13 @@
   "subject": "数学",
   "standards": ["math-2022:S2:GG:GM"],
   "prerequisites": ["mt_area-intro", "mt_rect-perimeter", "mt_mult-1digit"],
-  "next": ["mt_hectare", "mt_polygon-area"],
+  "next": ["mt_area-hectare", "mt_polygon-area"],
   "objectives": [
     "能借助方格纸推出长方形面积公式",
     "能算出教室地面大约是多少平方米",
     "能用面积除以每块砖的面积算块数"
   ],
+  "cognitiveAction": "累积",
   "status": "reviewed",
   "author": "goral.cao",
   "license": "CC-BY-SA-4.0",

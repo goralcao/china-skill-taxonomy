@@ -71,12 +71,22 @@ node scripts/new-course.mjs <topicId> --template=explain
 2. 给每个活动补一个可操作的动作（点、拖、输、选）
 3. 核对数字与事实：数学复算、文科核人名年代、英语核拼写
 
+整条流程（EVAL → 教学设计 → 认知动作 → 排步骤 → 算数值 → 校验）在 [`skills/k12-courseware/SKILL.md`](skills/k12-courseware/SKILL.md)，改之前建议先看一遍，能省掉返工。
+
 硬性要求（`node scripts/validate-courses.mjs` 会检查）：
 
 - 单文件，无外链脚本、样式、图片，体积小于 300KB
 - 至少一处 `.pitfall` 易错点，答案写进 `window.__ANSWERS` 且能被复算
 - `meta.interactions` 与 HTML 中 `data-step` 小节数一致
 - 课标编号必须属于该主题已有的 `standards`
+- `meta.prerequisites` / `meta.next` 必须是图谱里真实存在的边
+- 标 `reviewed` 的课件要有 `cognitiveAction`，检测题的每个错项要有 `misconception`
+
+再跑一次体检，低于 90 分先改：
+
+```bash
+node scripts/score-course.mjs <topicId>
+```
 
 把 `meta.status` 从 `draft` 改成 `reviewed` 之后，图谱上才会出现课件入口。
 

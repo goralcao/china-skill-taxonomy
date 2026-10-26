@@ -11,16 +11,17 @@
     "math-2022:S2:NA:AR"
   ],
   "prerequisites": [
-    "mt_mul-tables-2-6",
-    "mt_num-100-recognition"
+    "mt_mul-meaning",
+    "mt_num-100-addsub"
   ],
   "next": [
-    "mt_mult-1digit"
+    "mt_ratio"
   ],
   "objectives": [
     "理解「倍」表示几个几",
     "能求一个数的几倍是多少"
   ],
+  "cognitiveAction": "比较",
   "status": "reviewed",
   "author": "goral.cao",
   "license": "CC-BY-SA-4.0",

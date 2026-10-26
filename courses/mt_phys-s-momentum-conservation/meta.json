@@ -14,6 +14,7 @@
     "区分内力与外力对总动量的影响",
     "用动量守恒解释碰撞与反冲"
   ],
+  "cognitiveAction": "模拟",
   "status": "reviewed",
   "author": "goral.cao",
   "license": "CC-BY-SA-4.0",

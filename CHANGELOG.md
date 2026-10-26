@@ -2,6 +2,38 @@
 
 本项目遵循[语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [v0.27.0] - 2026-10-27
+
+把「怎么把一节课做好」从经验变成一条可执行、可打分的流程。
+
+**新增技能 `skills/k12-courseware/`**
+
+- `SKILL.md`：六步流程——图谱定位 → EVAL（值不值得可视化）→ 教学设计 → 定认知动作 → 排步骤 → 数值内核 → 校验打分
+- `references/pedagogy.md`：八条教学法规则逐条翻成本仓库字段，附目标/前测/主线/检测/分层模板
+- `references/steps.md`：九种步骤的字段、示例、使用场合
+- `references/graph.md`：前置/后续/课标三个字段的硬规则与常见错法
+- `references/rubric.md`：九维评分怎么读、分怎么补
+
+四条来源各管一段：math-viz-kit 管「值不值得做、怎么揭示」，k12-teacher-skills 管「目标与检测」，edulab 管「答案先算再写」，本仓库图谱管「学什么、学完去哪」。
+
+**新增 `scripts/score-course.mjs`**
+
+十个维度、100 分：认知动作 / 分步揭示 / 概念反馈 / 迷思覆盖 / 图谱挂接 / 形成性评价 / 节奏 / 单文件 / 开场衔接 / 文案。每项都给扣分理由，不是排名。
+
+- 手写页面只打能打的维度，显示「—」，不计入平均
+- CI 加了一道线：`--min 90`，只约束 `reviewed` 的课件
+- 顺手暴露并修正了 7 处 meta 与图谱不一致：`mt_mult-table`、`mt_shape-recognition`、`mt_addsub-100`、`mt_hectare`、`mt_unit-kg-g` 等并不存在的 id，以及写反方向的 `next`
+
+**元数据**
+
+- `meta.cognitiveAction` 七选一（比较/分解/变换/逼近/累积/模拟/构造），`reviewed` 必填
+- 10 节课件补齐；分数课的四道选择题补上 `misconception`
+
+**文档**
+
+- `docs/COURSEWARE.md` 增「用技能生成课件」；`CONTRIBUTING.md` 增评分门槛与图谱一致性要求
+- README 课件层加一段流程说明
+
 ## [v0.26.2] - 2026-10-27
 
 选择题答错时，说的是「你会怎么想错」，不是「再想想」。

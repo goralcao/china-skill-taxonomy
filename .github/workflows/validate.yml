@@ -33,3 +33,6 @@ jobs:
 
       - name: Validate built output
         run: node scripts/validate.mjs
+
+      - name: Score courses
+        run: node scripts/score-course.mjs --min 90
