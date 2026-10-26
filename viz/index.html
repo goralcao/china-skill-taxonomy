@@ -1711,7 +1711,10 @@
       courseBtn.style.display = '';
       courseBtn.textContent = (courseDone.has(n.id) ? '▶ 再看一遍课件' : '▶ 打开课件')
         + '（' + course.duration + ' 分钟）';
-      courseBtn.onclick = () => { location.href = course.path + 'index.html'; };
+      courseBtn.onclick = () => {
+        const sc = new URLSearchParams(location.search).get('sharecode');
+        location.href = course.path + 'index.html' + (sc ? '?sharecode=' + encodeURIComponent(sc) : '');
+      };
     } else {
       courseBtn.style.display = 'none';
     }

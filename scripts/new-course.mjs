@@ -188,6 +188,20 @@ ${stepsHtml}
     if (e.key === 'ArrowRight' && cur < total) show(cur + 1);
     if (e.key === 'ArrowLeft' && cur > 1) show(cur - 1);
   });
+  // 线上分享链接用 ?sharecode= 鉴权，回跳时带上
+  (function () {
+    var sc = new URLSearchParams(location.search).get('sharecode');
+    if (!sc) return;
+    [].slice.call(document.querySelectorAll('a[href*="index.html"]')).forEach(function (a) {
+      var href = a.getAttribute('href');
+      if (href.indexOf('sharecode=') >= 0) return;
+      var i = href.indexOf('#');
+      var base = i >= 0 ? href.slice(0, i) : href;
+      var tail = i >= 0 ? href.slice(i) : '';
+      a.setAttribute('href', base + '?sharecode=' + encodeURIComponent(sc) + tail);
+    });
+  })();
+
   show(1);
 })();
 </script>
