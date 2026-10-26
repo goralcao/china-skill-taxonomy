@@ -514,6 +514,13 @@
   // 绘制顺序：容器在下、知识点在上；拾取时反向遍历（优先命中知识点）
   const renderNodes = [...subjectNodes, ...clusterNodes, ...nodes];
   const renderById = new Map(renderNodes.map(n => [n.id, n]));
+  // 只读调试出口：自动化测试用来定位节点屏幕坐标，不影响页面行为
+  // view 在后面才声明，用 getter 延迟取，避免 TDZ
+  window.__viz = {
+    nodes,
+    get view() { return view; },
+    toScreen(n) { const v = this.view; return { x: n.x * v.k + v.x, y: n.y * v.k + v.y }; },
+  };
 
   // 课件层：只有 reviewed 的课件在图谱上露出入口；完成状态读同源 localStorage
   const courseList = (D.courses && D.courses.courses) || [];
@@ -611,9 +618,16 @@
     const filterActive = gradeFilter > 0 || domainFilter !== '' || courseOnly;
     for (const c of clusterNodes) {
       let vis = activeSubjects.has(c.subject) && !collapsed.has('subj-' + c.subject);
-      // 有筛选时，知识点被全部筛掉的领域簇不再显示；折叠态例外（要留住圆环供展开）
-      if (vis && filterActive && !collapsed.has(c.id)) {
-        vis = c.topicIds.some(id => { const t = nodeById.get(id); return t && t.visible; });
+      // 有筛选时，知识点被全部筛掉的领域簇不再显示。
+      // 折叠态通常要留住圆环供展开，但「只看课件」是强筛选，没可见知识点就不该留，
+      // 否则 12 个学科环会全部挂着 0，看起来像没筛。
+      if (vis && filterActive) {
+        const hasVisibleTopic = c.topicIds.some(id => {
+          const t = nodeById.get(id);
+          return t && t.visible;
+        });
+        if (courseOnly) vis = hasVisibleTopic;
+        else if (!collapsed.has(c.id)) vis = hasVisibleTopic;
       }
       c.visible = vis;
       const a = acc.get(c.id);
@@ -768,12 +782,6 @@
         chipCourse.classList.toggle('on', courseOnly);
         chipCourse.setAttribute('aria-checked', String(courseOnly));
         applyFilter();
-        if (courseOnly) {
-          // 力导向还在收敛，坐标会变：分几次贴合，最后一次等布局基本稳定
-          setTimeout(() => fitVisible(), 120);
-          setTimeout(() => fitVisible(), 900);
-          setTimeout(() => fitVisible(), 1800);
-        }
         const shown = nodes.filter(x => x.visible).length;
         toast(courseOnly
           ? `只看有课件的 ${shown} 个知识点 · 点节点可打开课件`
@@ -1221,6 +1229,7 @@
     ctx.setLineDash([]);
     ctx.globalAlpha = hoverSet ? 0.28 : 1;
     for (const e of memberEdges) {
+      if (courseOnly) break;            // 只看课件时没有容器，归属边一并不画
       if (!e.from.visible || !e.to.visible) continue;
       ctx.beginPath();
       ctx.moveTo(e.from.x, e.from.y); ctx.lineTo(e.to.x, e.to.y);
@@ -1272,8 +1281,10 @@
       // ---------- 学科 / 领域簇容器：空心圆环 + 计数 ----------
       if (n.kind === 'subject' || n.kind === 'cluster') {
         const isSubj = n.kind === 'subject';
+        // 只看课件时不画容器环：学科环会压在知识点上，反而看不清
+        if (courseOnly) continue;
         const fold = isSubj ? collapsed.has('subj-' + n.subject) : collapsed.has(n.id);
-        ctx.globalAlpha = baseAlpha;
+        ctx.globalAlpha = baseAlpha * (courseOnly ? 0.55 : 1);
         ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
         ctx.fillStyle = 'rgba(10,15,24,.88)'; ctx.fill();
         // 发光用「半透明粗描边」模拟，避免 shadowBlur（每个容器都做高斯模糊，帧率杀手）
@@ -1288,14 +1299,17 @@
         // 中心计数
         ctx.font = `${(isSubj ? 12 : 10) / k}px system-ui, "PingFang SC", sans-serif`;
         ctx.fillStyle = color; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-        ctx.fillText(String(isSubj ? (n.count || 0) : (n.topicIds || []).length), n.x, n.y);
+        const total = isSubj ? (n.count || 0) : (n.topicIds || []).length;
+        const shown = (courseOnly || gradeFilter || domainFilter) ? (n.visibleCount || 0) : total;
+        ctx.fillText(String(shown), n.x, n.y);
         ctx.textBaseline = 'alphabetic';
         ctx.globalAlpha = 1;
         continue;
       }
 
       ctx.globalAlpha = baseAlpha;
-      ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+      const nr = n.drawR || n.r;
+      ctx.beginPath(); ctx.arc(n.x, n.y, nr, 0, Math.PI * 2);
       ctx.fillStyle = color;
       if (isSel || isHov || isTrace || n.searchHit) {
         ctx.shadowColor = color; ctx.shadowBlur = 12 / k;
@@ -1305,22 +1319,22 @@
       // 完成过课件：右上角小绿点（与手动掌握的「金色环」区分）
       if (courseDone.has(n.id)) {
         ctx.beginPath();
-        ctx.arc(n.x + n.r * 0.72, n.y - n.r * 0.72, Math.max(2.2 / k, 1.8), 0, Math.PI * 2);
+        ctx.arc(n.x + nr * 0.72, n.y - nr * 0.72, Math.max(2.2 / k, 1.8), 0, Math.PI * 2);
         ctx.fillStyle = '#4ade80'; ctx.fill();
       }
       // 已掌握：金色圆环
       if (mastered.has(n.id)) {
-        ctx.beginPath(); ctx.arc(n.x, n.y, n.r + 3 / k, 0, Math.PI * 2);
+        ctx.beginPath(); ctx.arc(n.x, n.y, nr + 3 / k, 0, Math.PI * 2);
         ctx.strokeStyle = 'rgba(255,209,102,.85)'; ctx.lineWidth = lw(2); ctx.stroke();
       }
-      // 已固定位置的节点：白色虚线环
-      if (n.pinned) {
+      // 已固定位置的节点：白色虚线环（筛选态的自动钉住不算，不用画）
+      if (n.pinned && !n._autoPin) {
         ctx.setLineDash([3 / k, 3 / k]);
-        ctx.beginPath(); ctx.arc(n.x, n.y, n.r + 5 / k, 0, Math.PI * 2);
+        ctx.beginPath(); ctx.arc(n.x, n.y, nr + 5 / k, 0, Math.PI * 2);
         ctx.strokeStyle = 'rgba(255,255,255,.5)'; ctx.lineWidth = lw(1.2); ctx.stroke();
         ctx.setLineDash([]);
       }
-      if (isSel) { ctx.beginPath(); ctx.arc(n.x, n.y, n.r + 6 / k, 0, Math.PI * 2);
+      if (isSel) { ctx.beginPath(); ctx.arc(n.x, n.y, nr + 6 / k, 0, Math.PI * 2);
         ctx.strokeStyle = '#fff'; ctx.lineWidth = lw(2); ctx.stroke(); }
       ctx.globalAlpha = 1;
     }
@@ -1340,13 +1354,14 @@
       .sort((a, b) => prio(b) - prio(a) || b.r - a.r || degOf(b) - degOf(a));
     ctx.textAlign = 'center';
     for (const n of cand) {
+      if (courseOnly && n.kind !== 'topic') continue;   // 筛选态只标知识点
       const p = prio(n);
-      const mandatory = p === 3;
+      const mandatory = p === 3 || courseOnly;
       // 分层门槛（专家方案：L0 只留枢纽，L1 中频，L2 全量）
       if (!mandatory && !showAllLabels) {
         if (tier === 0) {
           if (n.kind === 'topic' && degOf(n) < 8) continue;
-          if (n.kind === 'cluster' && n.topicIds.length < 8) continue;
+          if (n.kind === 'cluster' && (courseOnly || n.topicIds.length < 8)) continue;
         } else if (tier === 1) {
           if (n.kind === 'topic' && n.r < 9 && degOf(n) < 4) continue;
         }
@@ -1359,7 +1374,9 @@
         : n.kind === 'cluster' ? collapsed.has(n.id) : false;
       const text = n.kind === 'topic' ? n.name : n.name + (fold ? ' ▸' : '');
       const w = text.length * fsz + 10, h = fsz + 4;
-      const sy = (n.y - n.r - 6 / k) * k + view.y - h;
+      const sy = n._labelBelow
+        ? (n.y + n.r + 6 / k) * k + view.y
+        : (n.y - n.r - 6 / k) * k + view.y - h;
       if (sy < -40 || sy > H + 40) continue;
       const rect = { x: sx - w / 2, y: sy, w, h };
       if (!mandatory) {
@@ -1449,7 +1466,7 @@
         // 容器是空心圆环：只在环带附近命中，避免圆环内部空白误触
         const ring = Math.abs(d - n.r);
         if (ring < ringTol && ring < bd) { bd = ring; best = n; }
-      } else if (d < n.r + touchTol && d < bd) {
+      } else if (d < (n.drawR || n.r) + touchTol && d < bd) {
         bd = d; best = n;
       }
     }
@@ -1928,6 +1945,47 @@
     }
     for (const id of keep) collapsed.delete(id);
   }
+  /** 只看课件时把这几个点按「年级从下往上、同学年横向排开」重新摆位，
+   *  否则同簇的几点会叠成一团。退出筛选时还原原坐标与固定状态。 */
+  function arrangeCourseOnly(on) {
+    if (on) {
+      const vis = nodes.filter(n => n.visible);
+      if (!vis.length) return;
+      const rows = new Map();
+      vis.forEach(n => {
+        if (!n._saved) n._saved = { x: n.x, y: n.y, pinned: n.pinned };
+        const g = n.gradeRangeStart;
+        if (!rows.has(g)) rows.set(g, []);
+        rows.get(g).push(n);
+      });
+      const grades = [...rows.keys()].sort((a, b) => a - b);
+      const cx = W / 2;
+      const top = H * 0.34, bottom = H * 0.68;
+      grades.forEach((g, gi) => {
+        const row = rows.get(g);
+        const y = grades.length === 1 ? H * 0.5 : top + (bottom - top) * gi / (grades.length - 1);
+        row.forEach((n, i) => {
+          n.x = cx + (i - (row.length - 1) / 2) * Math.min(180, (W - 200) / Math.max(row.length, 1));
+          n.y = y;
+          n._labelBelow = i % 2 === 1;   // 同排标签上下交替，窄屏才不会糊成一团
+          n.vx = n.vy = 0;
+          n.pinned = true;         // 临时钉住，别被力导向又拉回簇心
+          n._autoPin = true;
+        });
+      });
+      view.x = 0; view.y = 0; view.k = 1;
+    } else {
+      nodes.forEach(n => {
+        if (n._saved) {
+          n.x = n._saved.x; n.y = n._saved.y;
+          if (n._autoPin) n.pinned = n._saved.pinned;
+          n._saved = null; n._autoPin = false; n._labelBelow = false;
+        }
+      });
+      reheat(0.8);
+    }
+  }
+
   /** 把视图缩放平移到「当前可见节点」的包围盒，避免筛完只剩几个点还停在鸟瞰 */
   function fitVisible(pad = 90) {
     const vis = nodes.filter(n => n.visible);
@@ -1948,17 +2006,36 @@
 
   function applyFilter() {
     for (const n of nodes) {
-      // 折叠学科 = 隐藏其下全部知识点；折叠领域簇 = 隐藏该簇知识点
-      const subjHidden = collapsed.has('subj-' + n.subject);
-      const clHidden = collapsed.has(n.clusterId);
+      // 折叠学科 = 隐藏其下全部知识点；折叠领域簇 = 隐藏该簇知识点。
+      // 「只看课件」是强筛选：窄屏默认把学科全折叠了，此时不能再按折叠隐藏，
+      // 否则筛出来的 4 个点全被折叠挡掉，看起来就是「没过滤」。
+      const subjHidden = !courseOnly && collapsed.has('subj-' + n.subject);
+      const clHidden = !courseOnly && collapsed.has(n.clusterId);
       const okGrade = !gradeFilter || (n.gradeRangeStart <= gradeFilter && n.gradeRangeEnd >= gradeFilter);
       const okDomain = !domainFilter || n.domain === domainFilter;
       n.visible = activeSubjects.has(n.subject)
         && !subjHidden && !clHidden && okGrade && okDomain
         && !(hideMastered && mastered.has(n.id))
         && (!courseOnly || courseByTopic.has(n.id));
+      // 只看课件时把知识点放大，四个点要能被一眼找到、一眼点中
+      n.drawR = courseOnly ? n.r * 2.6 : 0;
     }
-    reheat(0.6);
+    // 容器上的数字要跟着筛选变，否则「234」会让人以为还有 234 个
+    const subjSeen = new Map();
+    for (const n of nodes) {
+      if (n.visible) subjSeen.set(n.subject, (subjSeen.get(n.subject) || 0) + 1);
+    }
+    for (const c of clusterNodes) {
+      let seen = 0;
+      for (const id of c.topicIds) { const t = nodeById.get(id); if (t && t.visible) seen++; }
+      c.visibleCount = seen;
+    }
+    for (const s of subjectNodes) s.visibleCount = subjSeen.get(s.subject) || 0;
+
+    arrangeCourseOnly(courseOnly);
+    // 容器的可见性在 layout() 里算，藏在 tick 内；必须 reheat 一小下才会重算，
+    // 否则只剩 wake() 重绘，学科环还停在上一帧的「全部可见」。
+    reheat(courseOnly ? 0.35 : 0.6);
     writeHash();
   }
   // ---------- 搜索：下拉结果列表（可点选直达 + 键盘操作）----------
