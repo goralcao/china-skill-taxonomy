@@ -1,5 +1,5 @@
 {
-  "version": "v0.23.0",
+  "version": "v0.23.1",
   "schemaVersion": 1,
   "generatedAt": "2026-10-27",
   "counts": {
@@ -19,8 +19,8 @@
       "topicId": "mt_time-hms",
       "title": "时、分、秒：钟面上一圈是多久",
       "template": "explain",
-      "duration": 12,
-      "interactions": 5,
+      "duration": 16,
+      "interactions": 8,
       "grade": 3,
       "subject": "数学",
       "standards": [
@@ -34,16 +34,16 @@
       ],
       "objectives": [
         "在钟面上读出几时几分",
-        "算出从某一时刻到另一时刻经过多久",
-        "跨过整点时把时间分成两段来算"
+        "说清时、分、秒三根针各走多远算一个单位",
+        "算出从某一时刻到另一时刻经过多久"
       ],
       "status": "reviewed",
       "author": "goral.cao",
       "license": "CC-BY-SA-4.0",
-      "version": "1.0.0",
+      "version": "2.0.0",
       "updatedAt": "2026-10-27",
       "path": "courses/mt_time-hms/",
-      "bytes": 20268
+      "bytes": 29730
     }
   ]
 }
