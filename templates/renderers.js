@@ -2101,9 +2101,346 @@
     };
   }
 
+  /* ══════════════════════════════════════════════════════
+   * 运算律：交换律 / 结合律 / 分配律
+   * 数换了位置、加了括号，和/积却不变；
+   * 分配律用面积模型把 a×(b+c) 拆成 a×b + a×c。
+   * ══════════════════════════════════════════════════════ */
+  function law(el, spec) {
+    spec = spec || {};
+    var mode = spec.mode || 'commute';
+    var op = spec.op || '+';
+    var a = spec.a, b = spec.b, c = spec.c;
+    var W = 360, H = 240;
+    var svg = s('svg', { viewBox: '0 0 ' + W + ' ' + H, class: 'law-svg', role: 'img' }, el);
+    svg.style.width = '100%'; svg.style.height = 'auto';
+    var opChar = op === '×' ? '×' : '+';
+    var BLUE = '#38bdf8', ORG = '#fbbf24', GRN = '#4ade80', VIO = '#a78bfa';
+
+    function tok(x, y, color, label, w, h) {
+      w = w || 46; h = h || 40;
+      var g = s('g', null, svg);
+      s('rect', { x: x - w / 2, y: y - h / 2, width: w, height: h, rx: 8,
+        fill: color, 'fill-opacity': 0.16, stroke: color, 'stroke-width': 1.8 }, g);
+      var t = s('text', { x: x, y: y + 6, 'text-anchor': 'middle',
+        style: 'font-size:18px;font-weight:600;fill:' + color }, g);
+      t.textContent = label;
+      return g;
+    }
+    function sym(x, y, ch, color) {
+      var t = s('text', { x: x, y: y + 7, 'text-anchor': 'middle',
+        style: 'font-size:20px;font-weight:700;fill:' + (color || 'var(--text)') }, svg);
+      t.textContent = ch;
+      return t;
+    }
+    function label(x, y, txt, color, size) {
+      var t = s('text', { x: x, y: y, 'text-anchor': 'middle',
+        style: 'font-size:' + (size || 13) + 'px;fill:' + (color || 'var(--dim)') }, svg);
+      t.textContent = txt;
+      return t;
+    }
+
+    var STEPS = [], reset = function () {}, idx = 0;
+
+    if (mode === 'commute') {
+      var val = op === '×' ? a * b : a + b;
+      var y1 = 80, y2 = 164;
+      tok(56, y1, BLUE, a); sym(98, y1, opChar); tok(140, y1, ORG, b);
+      sym(186, y1, '='); var R1 = tok(252, y1, GRN, '?', 54);
+      var A2 = tok(56, y2, BLUE, a); sym(98, y2, opChar); var B2 = tok(140, y2, ORG, b);
+      sym(186, y2, '='); var R2 = tok(252, y2, GRN, '?', 54);
+      var arrow = label(196, 124, '交换位置', VIO, 13); arrow.style.opacity = 0;
+      reset = function () {
+        R1.querySelector('text').textContent = '?';
+        R2.querySelector('text').textContent = '?';
+        A2.style.transition = B2.style.transition = 'transform .45s ease';
+        A2.setAttribute('transform', ''); B2.setAttribute('transform', '');
+        arrow.style.opacity = 0;
+      };
+      STEPS = [
+        { text: '左边：' + a + ' ' + opChar + ' ' + b + ' = <b>' + val + '</b>。',
+          run: function () { R1.querySelector('text').textContent = String(val); } },
+        { text: '右边把两个数<b>交换位置</b>，变成 ' + b + ' ' + opChar + ' ' + a + '，结果还是 <b>' + val + '</b>。',
+          run: function () {
+            A2.style.transition = B2.style.transition = 'transform .45s ease';
+            A2.setAttribute('transform', 'translate(' + (140 - 56) + ',0)');
+            B2.setAttribute('transform', 'translate(' + (56 - 140) + ',0)');
+            arrow.style.opacity = 1;
+            R2.querySelector('text').textContent = String(val);
+          } },
+        { text: '不管是 ' + a + ' ' + opChar + ' ' + b + ' 还是 ' + b + ' ' + opChar + ' ' + a + '，和（积）都一样 —— 这就是<b>' + (op === '×' ? '乘法' : '加法') + '交换律</b>。',
+          run: function () {} }
+      ];
+    } else if (mode === 'associate') {
+      var ab = op === '×' ? a * b : a + b;
+      var val1 = op === '×' ? ab * c : ab + c;
+      var bc = op === '×' ? b * c : b + c;
+      var val2 = op === '×' ? a * bc : a + bc;
+      var y1 = 80, y2 = 164;
+      s('text', { x: 26, y: y1 + 7, style: 'font-size:24px;fill:var(--dim)' }, svg).textContent = '(';
+      tok(62, y1, BLUE, a); sym(104, y1, opChar); tok(146, y1, ORG, b);
+      s('text', { x: 184, y: y1 + 7, style: 'font-size:24px;fill:var(--dim)' }, svg).textContent = ')';
+      sym(212, y1, opChar); tok(256, y1, VIO, c, 40);
+      sym(298, y1, '='); var R1 = tok(332, y1, GRN, '?', 48);
+      tok(62, y2, BLUE, a, 40); sym(102, y2, opChar);
+      s('text', { x: 130, y: y2 + 7, style: 'font-size:24px;fill:var(--dim)' }, svg).textContent = '(';
+      tok(166, y2, ORG, b); sym(208, y2, opChar); tok(250, y2, VIO, c, 40);
+      s('text', { x: 288, y: y2 + 7, style: 'font-size:24px;fill:var(--dim)' }, svg).textContent = ')';
+      sym(314, y2, '='); var R2 = tok(344, y2, GRN, '?', 32);
+      reset = function () { R1.querySelector('text').textContent = '?'; R2.querySelector('text').textContent = '?'; };
+      STEPS = [
+        { text: '先算前两个：' + a + ' ' + opChar + ' ' + b + ' = ' + ab + '，再和 ' + c + ' 算 → <b>' + val1 + '</b>。',
+          run: function () { R1.querySelector('text').textContent = String(val1); } },
+        { text: '换个算法，先算后两个：' + b + ' ' + opChar + ' ' + c + ' = ' + bc + '，再和 ' + a + ' 算 → <b>' + val2 + '</b>。',
+          run: function () { R2.querySelector('text').textContent = String(val2); } },
+        { text: '括号搬了位置，结果还是 <b>' + val1 + '</b> 不变 —— 这就是<b>' + (op === '×' ? '乘法' : '加法') + '结合律</b>。',
+          run: function () {} }
+      ];
+    } else { // distribute
+      var val = a * (b + c), abV = a * b, acV = a * c;
+      var y0 = 70;
+      // 按可用空间自适应：大数（如 25×(40+4)）也能装进画布
+      var u = Math.min(22, (W - 90) / (b + c), (H - y0 - 36) / a);
+      var rw = (b + c) * u, rh = a * u;
+      var x0 = (W - rw) / 2;
+      s('rect', { x: x0, y: y0, width: b * u, height: rh, rx: 4,
+        fill: BLUE, 'fill-opacity': 0.14, stroke: BLUE, 'stroke-width': 1.8 }, svg);
+      var rightG = s('g', null, svg);
+      s('rect', { x: x0 + b * u, y: y0, width: c * u, height: rh, rx: 4,
+        fill: ORG, 'fill-opacity': 0.14, stroke: ORG, 'stroke-width': 1.8 }, rightG);
+      var split = s('line', { x1: x0 + b * u, y1: y0, x2: x0 + b * u, y2: y0 + rh,
+        stroke: 'var(--dim)', 'stroke-width': 1.6, 'stroke-dasharray': '4 3' }, svg);
+      split.style.opacity = 0; split.style.transition = 'opacity .3s ease';
+      var topLabel = label(x0 + rw / 2, y0 - 12, a + ' × (' + b + ' + ' + c + ')', 'var(--text)', 15);
+      var leftLabel = label(x0 + b * u / 2, y0 + rh / 2 + 5, '', BLUE, 14);
+      var rightLabel = label(x0 + b * u + c * u / 2, y0 + rh / 2 + 5, '', ORG, 14);
+      var plus = label(x0 + b * u + c * u / 2 + 26, y0 + rh / 2 + 5, '+', 'var(--text)', 20);
+      plus.style.opacity = 0;
+      reset = function () {
+        split.style.opacity = 0; plus.style.opacity = 0;
+        rightG.style.transition = 'transform .4s ease';
+        rightG.setAttribute('transform', '');
+        leftLabel.textContent = ''; rightLabel.textContent = '';
+        topLabel.textContent = a + ' × (' + b + ' + ' + c + ')';
+      };
+      STEPS = [
+        { text: '先算括号里：' + b + ' + ' + c + ' = ' + (b + c) + '，再乘 ' + a + '：<b>' + a + ' × ' + (b + c) + ' = ' + val + '</b>。',
+          run: function () {} },
+        { text: '把宽（' + b + ' + ' + c + '）分成左右两段：' + b + ' 和 ' + c + '。',
+          run: function () { split.style.opacity = 1; } },
+        { text: '左边一块：高 ' + a + '、宽 ' + b + ' → 面积 <b>' + a + ' × ' + b + ' = ' + abV + '</b>。',
+          run: function () { leftLabel.textContent = a + '×' + b; } },
+        { text: '右边一块：高 ' + a + '、宽 ' + c + ' → 面积 <b>' + a + ' × ' + c + ' = ' + acV + '</b>。',
+          run: function () { rightLabel.textContent = a + '×' + c; } },
+        { text: '两块拼起来 = ' + abV + ' + ' + acV + ' = <b>' + val + '</b>，和 a×(b+c) 一样 —— 这就是<b>乘法分配律</b>。',
+          run: function () {
+            rightG.style.transition = 'transform .4s ease';
+            rightG.setAttribute('transform', 'translate(26,0)');
+            plus.style.opacity = 1;
+            topLabel.textContent = a + '×(' + b + '+' + c + ') = ' + a + '×' + b + '+' + a + '×' + c;
+          } }
+      ];
+    }
+
+    return {
+      el: svg,
+      next: function () {
+        if (idx >= STEPS.length) return null;
+        var st = STEPS[idx++]; st.run();
+        return { text: st.text, done: idx >= STEPS.length };
+      },
+      startDemo: function () { idx = 0; reset(); return this; },
+      reset: function () { return this.startDemo(); }
+    };
+  }
+
+  /* ══════════════════════════════════════════════════════
+   * 三角形：分类 / 内角和 / 三边关系
+   * 按角分、按边分；三个角拼成平角 = 180°；
+   * 任意两边之和要大于第三边才围得成。
+   * ══════════════════════════════════════════════════════ */
+  function triangle(el, spec) {
+    spec = spec || {};
+    var mode = spec.mode || 'classify';
+    var W = 360, H = 250;
+    var svg = s('svg', { viewBox: '0 0 ' + W + ' ' + H, class: 'tri-svg', role: 'img' }, el);
+    svg.style.width = '100%'; svg.style.height = 'auto';
+    var BLUE = '#38bdf8', ORG = '#fbbf24', GRN = '#4ade80', GEO = '#a78bfa';
+
+    // 由底角和底边长度算顶点（数学坐标，y 向上）
+    function verts(Adeg, Bdeg, base) {
+      var A = Adeg * Math.PI / 180, B = Bdeg * Math.PI / 180;
+      var t = base * Math.sin(B) / Math.sin(A + B);
+      return { x1: 0, y1: 0, x2: base, y2: 0, x3: t * Math.cos(A), y3: t * Math.sin(A) };
+    }
+    function placeInCell(v, cx, cy, scale) {
+      var xs = [v.x1, v.x2, v.x3], ys = [v.y1, v.y2, v.y3];
+      var minx = Math.min.apply(null, xs), maxx = Math.max.apply(null, xs);
+      var miny = Math.min.apply(null, ys), maxy = Math.max.apply(null, ys);
+      var w = maxx - minx || 1, h = maxy - miny || 1;
+      var sc = scale / Math.max(w, h);
+      function map(x, y) {
+        return { x: cx + (x - (minx + maxx) / 2) * sc, y: cy - (y - (miny + maxy) / 2) * sc };
+      }
+      return { p1: map(v.x1, v.y1), p2: map(v.x2, v.y2), p3: map(v.x3, v.y3) };
+    }
+    function classify(A, B, C) {
+      var ang = [A, B, C];
+      var byAngle = ang.some(function (x) { return x === 90; }) ? '直角'
+        : ang.some(function (x) { return x > 90; }) ? '钝角' : '锐角';
+      var uniq = ang.filter(function (x, i) { return ang.indexOf(x) === i; }).length;
+      var bySide = uniq === 1 ? '等边' : uniq === 2 ? '等腰' : '不等边';
+      return { byAngle: byAngle, bySide: bySide };
+    }
+    function shortName(cl) {
+      return cl.bySide === '等边' ? '等边' : (cl.bySide === '等腰' ? '等腰·' + cl.byAngle : '不等边·' + cl.byAngle);
+    }
+    function nameFor(cl) {
+      if (cl.bySide === '等边') return '这是<b>等边三角形</b>：三边相等、三角都是 60°，也是最特殊的锐角三角形。';
+      if (cl.bySide === '等腰') return '这是<b>等腰三角形</b>：两条边相等，按角看是' + cl.byAngle + '三角形。';
+      return '这是<b>不等边三角形</b>：三边都不等，按角看是' + cl.byAngle + '三角形。';
+    }
+
+    var STEPS = [], reset = function () {}, idx = 0;
+
+    if (mode === 'classify') {
+      var tris = spec.triangles || [];
+      var n = tris.length;
+      var cols = Math.min(3, n), rows = Math.ceil(n / cols);
+      var cellW = W / cols, cellH = (H - 6) / rows;
+      var cells = [];
+      tris.forEach(function (tr, i) {
+        var col = i % cols, row = Math.floor(i / cols);
+        var cx = cellW * (col + 0.5), cy = cellH * row + cellH / 2 - 4;
+        var v = verts(tr.A, tr.B, 100);
+        var m = placeInCell(v, cx, cy, cellH * 0.6);
+        var poly = s('polygon', { points: m.p1.x + ',' + m.p1.y + ' ' + m.p2.x + ',' + m.p2.y + ' ' + m.p3.x + ',' + m.p3.y,
+          fill: 'rgba(167,139,250,.10)', stroke: 'var(--geo)', 'stroke-width': 2, 'stroke-linejoin': 'round' }, svg);
+        var lt = s('text', { x: cx, y: cy + cellH * 0.34 + 8, 'text-anchor': 'middle',
+          style: 'font-size:11.5px;fill:var(--dim)' }, svg);
+        lt.textContent = '';
+        cells.push({ cl: classify(tr.A, tr.B, tr.C), label: lt, poly: poly });
+      });
+      reset = function () {
+        cells.forEach(function (c) { c.label.textContent = ''; c.poly.setAttribute('opacity', 1); });
+      };
+      STEPS = cells.map(function (c, i) {
+        return {
+          text: nameFor(c.cl),
+          run: function () {
+            cells.forEach(function (cc, j) {
+              cc.label.textContent = j === i ? shortName(cc.cl) : '';
+              cc.poly.setAttribute('opacity', j === i ? 1 : 0.3);
+            });
+          }
+        };
+      });
+      STEPS.push({
+        text: '按角：锐角 / 直角 / 钝角；按边：等边 / 等腰 / 不等边。同一个三角形可以从两个角度命名。',
+        run: function () {
+          cells.forEach(function (c) { c.label.textContent = shortName(c.cl); c.poly.setAttribute('opacity', 1); });
+        }
+      });
+    } else if (mode === 'angleSum') {
+      var A = spec.A, B = spec.B, C = spec.C;
+      // 顶部小三角形
+      var tv = verts(A, B, 110);
+      var tm = placeInCell(tv, W / 2, 56, 80);
+      s('polygon', { points: tm.p1.x + ',' + tm.p1.y + ' ' + tm.p2.x + ',' + tm.p2.y + ' ' + tm.p3.x + ',' + tm.p3.y,
+        fill: 'rgba(167,139,250,.10)', stroke: 'var(--geo)', 'stroke-width': 2, 'stroke-linejoin': 'round' }, svg);
+      function dot(p, color) { s('circle', { cx: p.x, cy: p.y, r: 4, fill: color }, svg); }
+      dot(tm.p1, BLUE); dot(tm.p2, ORG); dot(tm.p3, GRN);
+      var tl = s('text', { x: W / 2, y: 24, 'text-anchor': 'middle', style: 'font-size:12px;fill:var(--dim)' }, svg);
+      tl.textContent = '∠A=' + A + '°　∠B=' + B + '°　∠C=' + C + '°';
+      // 底部半圆：三块角拼成平角
+      var O = { x: W / 2, y: 200 }, R = 92;
+      function wedge(t0, t1) {
+        var pts = [O.x + ',' + O.y], N = 22, i;
+        for (i = 0; i <= N; i++) {
+          var th = (t0 + (t1 - t0) * i / N) * Math.PI / 180;
+          pts.push((O.x + R * Math.cos(th)).toFixed(1) + ',' + (O.y - R * Math.sin(th)).toFixed(1));
+        }
+        return 'M' + pts.join(' L') + ' Z';
+      }
+      s('line', { x1: O.x - R - 12, y1: O.y, x2: O.x + R + 12, y2: O.y, stroke: 'var(--dim)', 'stroke-width': 1.4 }, svg);
+      var secA = s('path', { d: wedge(0, A), fill: BLUE, 'fill-opacity': 0.5 }, svg); secA.style.opacity = 0; secA.style.transition = 'opacity .4s ease';
+      var secB = s('path', { d: wedge(A, A + B), fill: ORG, 'fill-opacity': 0.5 }, svg); secB.style.opacity = 0; secB.style.transition = 'opacity .4s ease';
+      var secC = s('path', { d: wedge(A + B, 180), fill: GRN, 'fill-opacity': 0.5 }, svg); secC.style.opacity = 0; secC.style.transition = 'opacity .4s ease';
+      var flatLabel = s('text', { x: O.x, y: O.y + 22, 'text-anchor': 'middle', style: 'font-size:13px;font-weight:600;fill:var(--text)' }, svg);
+      flatLabel.textContent = '平角 = 180°'; flatLabel.style.opacity = 0;
+      reset = function () {
+        secA.style.opacity = secB.style.opacity = secC.style.opacity = 0;
+        flatLabel.style.opacity = 0;
+      };
+      STEPS = [
+        { text: '三角形三个内角的和总是 <b>180°</b>。把三个角剪下来拼在一起看看。', run: function () {} },
+        { text: '∠A = ' + A + '°，先放上去。', run: function () { secA.style.opacity = 1; } },
+        { text: '∠B = ' + B + '°，紧挨着 ∠A。', run: function () { secB.style.opacity = 1; } },
+        { text: '∠C = ' + C + '°，补上最后一块。', run: function () { secC.style.opacity = 1; } },
+        { text: '三块拼在一起正好是一条<b>直线</b>——平角就是 180°。所以 ∠A + ∠B + ∠C = <b>180°</b>。', run: function () { flatLabel.style.opacity = 1; } }
+      ];
+    } else { // sides
+      var aL = spec.a, bL = spec.b, cL = spec.c;
+      var maxL = Math.max(aL, bL, cL), unit = 120 / maxL;
+      var colors = [BLUE, ORG, GRN], lens = [aL, bL, cL], names = ['a', 'b', 'c'];
+      var rods = [];
+      [72, 112, 152].forEach(function (ry, i) {
+        var len = lens[i] * unit, x1 = 40, x2 = 40 + len;
+        s('line', { x1: x1, y1: ry, x2: x2, y2: ry, stroke: colors[i], 'stroke-width': 6, 'stroke-linecap': 'round' }, svg);
+        s('text', { x: x2 + 8, y: ry + 5, style: 'font-size:13px;fill:' + colors[i] }, svg).textContent = names[i] + '=' + lens[i];
+        rods.push({ x1: x1, x2: x2, y: ry });
+      });
+      function chk(y, txt, color) {
+        var t = s('text', { x: 40, y: y, style: 'font-size:13px;fill:' + (color || 'var(--text)') }, svg);
+        t.textContent = txt; t.style.opacity = 0; return t;
+      }
+      var chk1 = chk(196, 'a + b = ' + (aL + bL) + ' > ' + cL + '  ✓', GRN),
+          chk2 = chk(216, 'a + c = ' + (aL + cL) + ' > ' + bL + '  ✓', GRN),
+          chk3 = chk(236, 'b + c = ' + (bL + cL) + ' > ' + aL + '  ✓', GRN);
+      // 由三边长度算三角形顶点
+      var cx2 = (bL * bL - aL * aL + cL * cL) / (2 * cL);
+      var cy2 = Math.sqrt(Math.max(0, bL * bL - cx2 * cx2));
+      var sc = 70 / Math.max(aL, bL, cL);
+      function m2(x, y) { return { x: W / 2 + (x - cL / 2) * sc, y: 200 - y * sc }; }
+      var T = [m2(0, 0), m2(cL, 0), m2(cx2, cy2)];
+      var triPath = s('polygon', { points: T[0].x + ',' + T[0].y + ' ' + T[1].x + ',' + T[1].y + ' ' + T[2].x + ',' + T[2].y,
+        fill: 'rgba(74,222,128,.12)', stroke: GRN, 'stroke-width': 2.4, 'stroke-linejoin': 'round' }, svg);
+      triPath.style.opacity = 0; triPath.style.transition = 'opacity .4s ease';
+      var ctr = null;
+      if (spec.counter) {
+        var co = spec.counter;
+        ctr = s('text', { x: 40, y: H - 8, style: 'font-size:12.5px;fill:var(--bad)' }, svg);
+        ctr.textContent = '反例：a=' + co.a + '、b=' + co.b + '、c=' + co.c + '，' + co.a + '+' + co.b + '=' + (co.a + co.b) + ' < ' + co.c + ' ✗ 围不成';
+        ctr.style.opacity = 0;
+      }
+      reset = function () { chk1.style.opacity = chk2.style.opacity = chk3.style.opacity = 0; triPath.style.opacity = 0; if (ctr) ctr.style.opacity = 0; };
+      STEPS = [
+        { text: '三条边长度：a=' + aL + '、b=' + bL + '、c=' + cL + '（单位：cm）。', run: function () {} },
+        { text: 'a + b = ' + (aL + bL) + '，和 c=' + cL + ' 比：' + (aL + bL) + ' > ' + cL + ' ✓', run: function () { chk1.style.opacity = 1; } },
+        { text: 'a + c = ' + (aL + cL) + '，和 b=' + bL + ' 比：' + (aL + cL) + ' > ' + bL + ' ✓', run: function () { chk2.style.opacity = 1; } },
+        { text: 'b + c = ' + (bL + cL) + '，和 a=' + aL + ' 比：' + (bL + cL) + ' > ' + aL + ' ✓', run: function () { chk3.style.opacity = 1; } },
+        { text: '三条都满足「<b>两边之和 > 第三边</b>」→ 能围成三角形！', run: function () { triPath.style.opacity = 1; } }
+      ];
+      if (ctr) STEPS.push({ text: ctr.textContent, run: function () { ctr.style.opacity = 1; } });
+    }
+
+    return {
+      el: svg,
+      next: function () {
+        if (idx >= STEPS.length) return null;
+        var st = STEPS[idx++]; st.run();
+        return { text: st.text, done: idx >= STEPS.length };
+      },
+      startDemo: function () { idx = 0; reset(); return this; },
+      reset: function () { return this.startDemo(); }
+    };
+  }
+
   global.CR = {
     vertical: vertical,
     geometry: geometry,
+    law: law,
+    triangle: triangle,
     numberline: numberline,
     coords: coords,
     clock: clock,

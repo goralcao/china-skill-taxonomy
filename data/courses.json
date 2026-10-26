@@ -1,19 +1,19 @@
 {
-  "version": "v0.32.0",
+  "version": "v0.33.0",
   "schemaVersion": 1,
   "generatedAt": "2026-10-27",
   "counts": {
-    "total": 20,
+    "total": 25,
     "byTemplate": {
       "drill": 1,
-      "explain": 18,
+      "explain": 23,
       "explore": 1
     },
     "byStatus": {
-      "reviewed": 20
+      "reviewed": 25
     },
     "bySubject": {
-      "数学": 18,
+      "数学": 23,
       "化学": 1,
       "物理": 1
     }
@@ -481,6 +481,72 @@
       "bytes": 654
     },
     {
+      "topicId": "mt_ops-laws-add",
+      "title": "加法运算律：交换与结合",
+      "template": "explain",
+      "renderer": "law",
+      "duration": 11,
+      "interactions": 2,
+      "grade": 4,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S2:NA:NO"
+      ],
+      "prerequisites": [
+        "mt_addsub-10000"
+      ],
+      "next": [
+        "mt_ops-laws-mul",
+        "mt_dec-addsub2"
+      ],
+      "objectives": [
+        "理解加法交换律：交换两个加数位置和不变",
+        "理解加法结合律：先加哪两个和不变，并能用来凑整",
+        "会用字母 a+b=b+a、(a+b)+c=a+(b+c) 表示规律"
+      ],
+      "cognitiveAction": "变换",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "path": "courses/mt_ops-laws-add/",
+      "bytes": 675
+    },
+    {
+      "topicId": "mt_ops-laws-mul",
+      "title": "乘法运算律：交换、结合与分配",
+      "template": "explain",
+      "renderer": "law",
+      "duration": 13,
+      "interactions": 2,
+      "grade": 4,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S2:NA:NO"
+      ],
+      "prerequisites": [
+        "mt_ops-laws-add",
+        "mt_mult-2digit"
+      ],
+      "next": [
+        "mt_dec-addsub2"
+      ],
+      "objectives": [
+        "理解乘法交换律和结合律，并能用来凑整",
+        "理解乘法分配律 a×(b+c)=a×b+a×c",
+        "会用面积模型把 25×44 拆成 25×40+25×4"
+      ],
+      "cognitiveAction": "变换",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "path": "courses/mt_ops-laws-mul/",
+      "bytes": 684
+    },
+    {
       "topicId": "mt_phys-s-momentum-conservation",
       "title": "动量守恒：内力再大也改不了总动量",
       "template": "explore",
@@ -645,6 +711,104 @@
       "updatedAt": "2026-10-27",
       "path": "courses/mt_time-hms/",
       "bytes": 30205
+    },
+    {
+      "topicId": "mt_triangle-angle",
+      "title": "三角形的内角和：180°",
+      "template": "explain",
+      "renderer": "triangle",
+      "duration": 12,
+      "interactions": 2,
+      "grade": 4,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S2:GG:GM"
+      ],
+      "prerequisites": [
+        "mt_triangle-classify"
+      ],
+      "next": [
+        "mt_triangle-sides"
+      ],
+      "objectives": [
+        "知道三角形的内角和是 180°",
+        "能利用内角和求未知角",
+        "理解三个角拼起来成平角就是 180° 的直观证明"
+      ],
+      "cognitiveAction": "变换",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "path": "courses/mt_triangle-angle/",
+      "bytes": 671
+    },
+    {
+      "topicId": "mt_triangle-classify",
+      "title": "三角形的分类：按角与按边",
+      "template": "explain",
+      "renderer": "triangle",
+      "duration": 12,
+      "interactions": 2,
+      "grade": 4,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S2:GG:GM"
+      ],
+      "prerequisites": [
+        "mt_shape-2d",
+        "mt_angle-measure"
+      ],
+      "next": [
+        "mt_triangle-angle",
+        "mt_triangle-sides"
+      ],
+      "objectives": [
+        "会按角把三角形分成锐角、直角、钝角三角形",
+        "会按边把三角形分成不等边、等腰、等边三角形",
+        "理解一个三角形可以兼顾两种分类"
+      ],
+      "cognitiveAction": "比较",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "path": "courses/mt_triangle-classify/",
+      "bytes": 678
+    },
+    {
+      "topicId": "mt_triangle-sides",
+      "title": "三角形的三边关系",
+      "template": "explain",
+      "renderer": "triangle",
+      "duration": 10,
+      "interactions": 2,
+      "grade": 4,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S2:GG:GM"
+      ],
+      "prerequisites": [
+        "mt_triangle-classify"
+      ],
+      "next": [
+        "mt_polygon-area"
+      ],
+      "objectives": [
+        "理解三角形任意两边之和必须大于第三边",
+        "会用「较短两边之和大于最长边」快速判断",
+        "能判断给定三条线段能否围成三角形"
+      ],
+      "cognitiveAction": "比较",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "path": "courses/mt_triangle-sides/",
+      "bytes": 666
     },
     {
       "topicId": "mt_unit-ton",

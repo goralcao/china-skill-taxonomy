@@ -1,0 +1,30 @@
+{
+  "topicId": "mt_triangle-angle",
+  "title": "三角形的内角和：180°",
+  "template": "explain",
+  "renderer": "triangle",
+  "duration": 12,
+  "interactions": 2,
+  "grade": 4,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S2:GG:GM"
+  ],
+  "prerequisites": [
+    "mt_triangle-classify"
+  ],
+  "next": [
+    "mt_triangle-sides"
+  ],
+  "objectives": [
+    "知道三角形的内角和是 180°",
+    "能利用内角和求未知角",
+    "理解三个角拼起来成平角就是 180° 的直观证明"
+  ],
+  "cognitiveAction": "变换",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-27"
+}

@@ -1,5 +1,5 @@
 {
-  "version": "v0.32.0",
+  "version": "v0.33.0",
   "schemaVersion": 1,
   "topics": [
     {
@@ -176,7 +176,7 @@
       "textbookNote2024": "新增「10的再认识」，从计数单位与位值制角度理解十进制。",
       "textbookNoteAlt": "北师大版把11~20各数的认识与20以内加法合为一下第一单元，人教版在一上单设「11~20各数的认识」。；苏教版：一上只认识 11～19，20 及更大的数在一年级下册「认识20~99」继续。",
       "clusterId": "cl-math-d1-s1",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_num-20-carry",
@@ -208,7 +208,7 @@
       ],
       "textbookNoteAlt": "北师大版：20以内进位加法与数的认识同单元，人教版在一上末设「20以内的进位加法」。；苏教版：进位加法集中在一下第一单元，比人教版一上「20以内的进位加法」晚一学期。",
       "clusterId": "cl-math-d1-s1",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_num-20-borrow",
@@ -240,7 +240,7 @@
       ],
       "textbookNoteAlt": "北师大版：退位减法单设一下第三单元「20以内数与减法」，与人教版一下第二单元对应。；苏教版：退位减法与进位加法同在一年级下册第一单元，成对编排。",
       "clusterId": "cl-math-d1-s1",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_num-100-recognition",
@@ -377,7 +377,7 @@
       "textbookNote2024": "表内乘法集中在二上「1~6的表内乘法」。",
       "textbookNoteAlt": "北师大版：乘法意义在二上第三单元「数一数与乘法」，从同数连加引入，人教版称「表内乘法（一）」。；苏教版：乘法意义在二上「一 1-6的表内乘法」开篇，先认识几个几再认识乘法。",
       "clusterId": "cl-math-d1-s1",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_mul-tables-2-6",
@@ -409,7 +409,7 @@
       ],
       "textbookNoteAlt": "北师大版称「乘法口诀（一）」，与人教版2~6的乘法口诀对应。；苏教版：口诀顺序与人教版不同：苏教版先学 5、6 的口诀，再学 1～4 的口诀。",
       "clusterId": "cl-math-d1-s1",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_mul-tables-7-9",
@@ -442,7 +442,7 @@
       ],
       "textbookNoteAlt": "北师大版称「乘法口诀（二）」，编排在二上第七单元。；苏教版：7～9 的乘法口诀与用口诀求商合并为「三 7-9的表内乘除法」一个单元。",
       "clusterId": "cl-math-d1-s1",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_div-avg",
@@ -676,7 +676,7 @@
       ],
       "textbookNoteAlt": "北师大版：大数加减分「（一）」「（二）」两段，跨二下与三上，人教版集中在三上两个单元。；苏教版：万以内加减法集中在二下「两、三位数的加法和减法」，比人教版三上早一学期。",
       "clusterId": "cl-math-d1-s2",
-      "centrality": 0.0039
+      "centrality": 0.0047
     },
     {
       "id": "mt_mass-g-kg",
@@ -970,7 +970,7 @@
       ],
       "textbookNoteAlt": "北师大版：小数的初步认识在三上第七单元「认识小数」，与人教版三下相比提前一学期。；苏教版三年级不学小数，十进制与元角分的经验来自二上综合与实践「欢乐购物街」。",
       "clusterId": "cl-math-d1-s2",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_dec-addsub",
@@ -1135,7 +1135,7 @@
       "textbookNote2024": "「三位数乘两位数」与两位数乘两位数整合为「多位数乘两位数」。",
       "textbookNoteAlt": "北师大版称「整数乘法（二）」，与人教版「三位数乘两位数」对应。；苏教版：两位数乘两位数在三下第三单元，三位数乘两位数在四下第三单元分段学习。",
       "clusterId": "cl-math-d1-s2",
-      "centrality": 0.0047
+      "centrality": 0.0055
     },
     {
       "id": "mt_div-2digit",
@@ -1198,7 +1198,7 @@
       ],
       "textbookNoteAlt": "北师大版四则混合运算提前至三上第一单元「混合运算」，人教版在四下第一单元。；苏教版：混合运算与数量关系分三上（一）、四上（二）两段递进，不单设四则运算单元。",
       "clusterId": "cl-math-d1-s2",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_ops-laws",
@@ -1288,7 +1288,7 @@
       ],
       "textbookNoteAlt": "北师大版把小数加减法与意义合并为「小数的意义和加减法」，人教版拆成两个单元。；苏教版：小数加减法随五上「小数乘法和除法（一）」学习，四年级阶段以多位数的数位对齐经验为基础。",
       "clusterId": "cl-math-d1-s2",
-      "centrality": 0.0032
+      "centrality": 0.0039
     },
     {
       "id": "mt_dec-mul",
@@ -1472,7 +1472,7 @@
       ],
       "textbookNoteAlt": "北师大版：约分与通分在北师大版随「分数加减法」学习，人教版在五下「分数的意义和性质」集中编排。；苏教版：约分通分在五下第四单元，公因数公倍数的工具知识见五上「因数与倍数」。",
       "clusterId": "cl-math-d1-s3",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_frac-addsub",
@@ -1502,7 +1502,7 @@
       ],
       "textbookNoteAlt": "北师大版：分数加减法为五下第一单元，人教版在五下第六单元。；苏教版：分数加减法在五下第五单元，与人教版五下第六单元对应。",
       "clusterId": "cl-math-d1-s3",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_frac-mul",
@@ -1807,7 +1807,7 @@
       "textbookNote2024": "「认识图形」更名「认识立体图形」，先立体后平面。",
       "textbookNoteAlt": "北师大版：立体图形的认识在一上第五单元「有趣的立体图形」，人教版在一上第四单元「认识图形（一）」。；苏教版：立体图形在一上「图形的初步认识（一）」，与人教版一上「认识图形（一）」对应。",
       "clusterId": "cl-math-d2-s1",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_shape-2d",
@@ -1839,7 +1839,7 @@
       ],
       "textbookNoteAlt": "北师大版：平面图形的认识在一下第六单元「有趣的平面图形（一）」，人教版在一下第一单元「认识图形（二）」。；苏教版：平面图形在一年级下册「图形的初步认识（二）」，承接一上的立体图形。",
       "clusterId": "cl-math-d2-s1",
-      "centrality": 0.0095
+      "centrality": 0.0102
     },
     {
       "id": "mt_position-basic",
@@ -1906,7 +1906,7 @@
       "textbookNote2024": "分类与整理由一下调整至二上第一单元，增加多标准逐层分类。",
       "textbookNoteAlt": "北师大版：分类与整理在北师大版一上第三单元「整理与分类」，人教版在一下第三单元。；苏教版：分类整理以「第三单元 数据分类（一）」呈现，名称与编排均不同于人教版。",
       "clusterId": "cl-math-d3-s1",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_pattern",
@@ -1942,7 +1942,7 @@
       "textbookNote2024": "新版无独立「找规律」单元，规律探索融入「100以内数的认识」与乘法口诀学习。",
       "textbookNoteAlt": "北师大版一年级未单设「找规律」，规律意识在一下综合实践「设计教室装饰图」中培养，三下再设「关系与规律」。；苏教版一年级未单设「找规律」，规律探索融入「数学游戏分享」与「认识20~99」百数表。",
       "clusterId": "cl-math-d4-s1",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_length-cm-m",
@@ -2272,7 +2272,7 @@
       "textbookNote2024": "「角的度量」调整为四上第二单元（原第三单元）。",
       "textbookNoteAlt": "北师大版：角的度量与分类同属四上第二单元「线与角」，人教版在四上第三单元。；苏教版：角的度量与分类在三下第一单元「角」，早于人教版四上。",
       "clusterId": "cl-math-d2-s2",
-      "centrality": 0.0032
+      "centrality": 0.0039
     },
     {
       "id": "mt_parallelogram",
@@ -2334,7 +2334,137 @@
       ],
       "textbookNoteAlt": "北师大版：三角形与四边形合为四下第二单元；2026秋版五上再设「三角形的再认识」深化。；苏教版：三角形的特性与分类在四下「七 三角形、平行四边形和梯形」中学习。",
       "clusterId": "cl-math-d2-s2",
-      "centrality": 0.0032
+      "centrality": 0.0031
+    },
+    {
+      "id": "mt_ops-laws-add",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "加法运算律",
+      "description": "通过具体算式发现加法交换律和加法结合律，理解两个数相加交换位置和不变、三个数相加先加哪两个和不变，会用字母表示规律。",
+      "gradeRangeStart": 4,
+      "gradeRangeEnd": 4,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能说出 28+17 与 17+28 结果相同的原因",
+        "能解释 (28+17)+23 与 28+(17+23) 为什么相等"
+      ],
+      "assessmentPrompt": "问{{name}}：「137+45+55 怎样加最简便？」他能先算 45+55 凑整吗？",
+      "standards": [
+        "math-2022:S2:NA:NO"
+      ],
+      "textbooks": [
+        "pep-math:4b:u3"
+      ],
+      "textbooks2024": [],
+      "textbooksAlt": [],
+      "clusterId": "cl-math-d1-s2",
+      "centrality": 0.0024
+    },
+    {
+      "id": "mt_ops-laws-mul",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "数与代数",
+      "name": "乘法运算律",
+      "description": "理解乘法交换律、乘法结合律和乘法分配律，会用字母或图形表示规律，能运用运算律使计算简便，特别是把 a×(b+c) 拆成 a×b+a×c。",
+      "gradeRangeStart": 4,
+      "gradeRangeEnd": 4,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能用 25×7×4 说明乘法交换律和结合律",
+        "能把 25×44 想成 25×(40+4) 用分配律算出 1100"
+      ],
+      "assessmentPrompt": "问{{name}}：「44乘25怎样算最简便？」他能用分配律算出1100吗？",
+      "standards": [
+        "math-2022:S2:NA:NO"
+      ],
+      "textbooks": [
+        "pep-math:4b:u3"
+      ],
+      "textbooks2024": [],
+      "textbooksAlt": [],
+      "clusterId": "cl-math-d1-s2",
+      "centrality": 0.0016
+    },
+    {
+      "id": "mt_triangle-classify",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "三角形的分类",
+      "description": "会根据角的大小把三角形分成锐角、直角、钝角三角形，会根据边的相等情况分成不等边、等腰、等边三角形，理解一个三角形可以兼顾两种分类。",
+      "gradeRangeStart": 4,
+      "gradeRangeEnd": 4,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能按角给三角形分类并说明标准",
+        "能指出等腰三角形有两条边相等、等边三角形三条边都相等"
+      ],
+      "assessmentPrompt": "问{{name}}：「一个三角形有两个角是45°，它是什么三角形？」他能判断是等腰直角三角形吗？",
+      "standards": [
+        "math-2022:S2:GG:GM"
+      ],
+      "textbooks": [
+        "pep-math:4b:u5"
+      ],
+      "textbooks2024": [],
+      "textbooksAlt": [],
+      "clusterId": "cl-math-d2-s2",
+      "centrality": 0.0031
+    },
+    {
+      "id": "mt_triangle-angle",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "三角形的内角和",
+      "description": "通过量、剪、拼等活动得出三角形的内角和是180度，能利用这一性质判断一个图形能否是三角形、求未知角。",
+      "gradeRangeStart": 4,
+      "gradeRangeEnd": 4,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能说出三角形的内角和是180度",
+        "知道把三个角拼在一起会成一条平角（直线）"
+      ],
+      "assessmentPrompt": "问{{name}}：「一个三角形两个角分别是70°和50°，第三个角多少度？」他能算出60°吗？",
+      "standards": [
+        "math-2022:S2:GG:GM"
+      ],
+      "textbooks": [
+        "pep-math:4b:u5"
+      ],
+      "textbooks2024": [],
+      "textbooksAlt": [],
+      "clusterId": "cl-math-d2-s2",
+      "centrality": 0.0008
+    },
+    {
+      "id": "mt_triangle-sides",
+      "type": "CONCEPTUAL",
+      "subject": "数学",
+      "domain": "图形与几何",
+      "name": "三角形的三边关系",
+      "description": "通过用小棒围三角形的活动，理解三角形任意两边之和必须大于第三边，能判断给定三条线段能否围成三角形。",
+      "gradeRangeStart": 4,
+      "gradeRangeEnd": 4,
+      "stage": "第二学段（3~4年级）",
+      "evidence": [
+        "能说出围成三角形的边长条件",
+        "能判断 2cm、3cm、6cm 的小棒围不成三角形"
+      ],
+      "assessmentPrompt": "问{{name}}：「3厘米、5厘米、9厘米的小棒能围成三角形吗？」他能用规律判断吗？",
+      "standards": [
+        "math-2022:S2:GG:GM"
+      ],
+      "textbooks": [
+        "pep-math:4b:u5"
+      ],
+      "textbooks2024": [],
+      "textbooksAlt": [],
+      "clusterId": "cl-math-d2-s2",
+      "centrality": 0.0016
     },
     {
       "id": "mt_symmetry",
@@ -2426,7 +2556,7 @@
       ],
       "textbookNoteAlt": "北师大版：多边形的面积在五上第五单元，与人教版五上第六单元对应。；苏教版：多边形的面积在五上第三单元，与人教版五上第六单元对应。",
       "clusterId": "cl-math-d2-s3",
-      "centrality": 0.0039
+      "centrality": 0.0047
     },
     {
       "id": "mt_cuboid",
@@ -2457,7 +2587,7 @@
       ],
       "textbookNoteAlt": "北师大版把长方体拆成五下「（一）」「（二）」两个单元，人教版合为一个单元。；苏教版修订版未单设「长方体和正方体」单元，立体图形启蒙见一上「图形的初步认识（一）」。",
       "clusterId": "cl-math-d2-s3",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_volume",
@@ -2487,7 +2617,7 @@
       ],
       "textbookNoteAlt": "北师大版：体积与容积单位在五下第四单元「长方体（二）」，人教版并入「长方体和正方体」。；苏教版体积与容积单位后置，五年级阶段最接近的是四上「周长与面积」的面积与测量经验。",
       "clusterId": "cl-math-d2-s3",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_circle",
@@ -2547,7 +2677,7 @@
       ],
       "textbookNoteAlt": "北师大版：圆的周长与面积与圆的认识同在六上第二单元，人教版亦合并在「圆」单元。；苏教版：圆的周长与面积在六上第五单元，与人教版六上第五单元的安排一致。",
       "clusterId": "cl-math-d2-s3",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_sector",
@@ -2577,7 +2707,7 @@
       ],
       "textbookNoteAlt": "北师大版：扇形随六上「圆」单元认识，北师大版未单设单元。；苏教版：扇形随六上「五 圆」认识，扇形统计图另在六下第一单元学习。",
       "clusterId": "cl-math-d2-s3",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_cylinder",
@@ -2607,7 +2737,7 @@
       ],
       "textbookNoteAlt": "北师大版：圆柱与圆锥为六下第一单元，与人教版六下第三单元对应。；苏教版：圆柱与圆锥在六下第二单元，与人教版六下第三单元对应。",
       "clusterId": "cl-math-d2-s3",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_data-collect",
@@ -3159,7 +3289,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-rational-compare",
@@ -3185,7 +3315,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-rational-add",
@@ -3211,7 +3341,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-rational-sub",
@@ -3315,7 +3445,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-sci-notation",
@@ -3523,7 +3653,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-integral-addsub",
@@ -3575,7 +3705,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-mul-formula",
@@ -3601,7 +3731,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-factorization",
@@ -3861,7 +3991,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-elimination",
@@ -3887,7 +4017,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-linear-system-app",
@@ -3991,7 +4121,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-linear-inequality-system",
@@ -4043,7 +4173,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-quad-eq-solve",
@@ -4069,7 +4199,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-quad-discriminant",
@@ -4147,7 +4277,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-linear-prop",
@@ -4225,7 +4355,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-quad-graph",
@@ -4251,7 +4381,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-math-d1-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-quad-app",
@@ -4485,7 +4615,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-math-d2-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-translation",
@@ -4719,7 +4849,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-math-d2-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-parallelogram",
@@ -4875,7 +5005,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-math-d2-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-coord-application",
@@ -5031,7 +5161,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-math-d2-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-data-collect",
@@ -5213,7 +5343,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-math-d4-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_pinyin-initials",
@@ -5244,7 +5374,7 @@
       "textbooksAlt": [],
       "textbookNote2024": "汉语拼音集中编排于第二至第四单元。",
       "clusterId": "cl-chinese-d1-s1",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_pinyin-finals",
@@ -5336,7 +5466,7 @@
       ],
       "textbooksAlt": [],
       "clusterId": "cl-chinese-d1-s1",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_pinyin-reading",
@@ -5550,7 +5680,7 @@
       "textbooksAlt": [],
       "textbookNote2024": "部首查字法调整至二上识字单元。",
       "clusterId": "cl-chinese-d2-s1",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_char-homophone",
@@ -5702,7 +5832,7 @@
       "textbooksAlt": [],
       "textbookNote2024": "句子学习从一上阅读单元开始。",
       "clusterId": "cl-chinese-d4-s1",
-      "centrality": 0.0087
+      "centrality": 0.0086
     },
     {
       "id": "mt_punct-basic",
@@ -5732,7 +5862,7 @@
       ],
       "textbooksAlt": [],
       "clusterId": "cl-chinese-d4-s1",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_sent-ba-bei",
@@ -5824,7 +5954,7 @@
       "textbooksAlt": [],
       "textbookNote2024": "把句子写具体融入三上习作「我们眼中的缤纷世界」。",
       "clusterId": "cl-chinese-d4-s2",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_sent-conjunction",
@@ -5914,7 +6044,7 @@
       "textbooksAlt": [],
       "textbookNote2024": "顿号、分号与书名号在三下「古诗三首」「纸的发明」等单元学习。",
       "clusterId": "cl-chinese-d4-s2",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_sent-fix",
@@ -5944,7 +6074,7 @@
       "textbooksAlt": [],
       "textbookNote2024": "修改病句分散在四上各单元语文园地与阅读练习。",
       "clusterId": "cl-chinese-d4-s2",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_sent-compress",
@@ -6364,7 +6494,7 @@
       "textbooksAlt": [],
       "textbookNote2024": "仿写与写话融入二上阅读单元。",
       "clusterId": "cl-chinese-d6-s1",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_write-diary",
@@ -6394,7 +6524,7 @@
       "textbooksAlt": [],
       "textbookNote2024": "三上第二单元习作「写日记」。",
       "clusterId": "cl-chinese-d6-s2",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_write-observe",
@@ -6424,7 +6554,7 @@
       "textbooksAlt": [],
       "textbookNote2024": "三上第五单元习作「我们眼中的缤纷世界」。",
       "clusterId": "cl-chinese-d6-s2",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_write-imagine",
@@ -6512,7 +6642,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-chinese-d6-s2",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_write-application",
@@ -6600,7 +6730,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-chinese-d6-s3",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_write-summary",
@@ -6691,7 +6821,7 @@
       "textbooksAlt": [],
       "textbookNote2024": "口语交际融入二上各单元（新版二上目录未单列口语交际栏目）。",
       "clusterId": "cl-chinese-d7-s1",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_oral-retell",
@@ -6750,7 +6880,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-chinese-d7-s3",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_poem-recite",
@@ -6783,7 +6913,7 @@
       "textbooksAlt": [],
       "textbookNote2024": "古诗文分布于一下第四单元「静夜思」、第六单元「古诗二首」等。",
       "clusterId": "cl-chinese-d8-s1",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_poem-understand",
@@ -7554,7 +7684,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-chinese-d5-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-cn-drama-reading",
@@ -7607,7 +7737,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-chinese-d5-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-cn-classical-poem",
@@ -8761,7 +8891,7 @@
       "textbookNote2024": "新版未单设语音单元，字母组合发音规则融入各单元。",
       "textbookNoteAlt": "外研社版：外研版未单列字母组合发音单元，四年级上的语音练习随各单元话题推进。",
       "clusterId": "cl-english-d1-l1",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_en-num-color",
@@ -8893,7 +9023,7 @@
       "textbookNote2024": "动物话题拆分：宠物在「Different families」，野生动物在「Amazing animals」。",
       "textbookNoteAlt": "外研社版：外研版动物话题在三下 Unit 1 Animal friends，人教版 PEP 在三上 We love animals，晚一学期。",
       "clusterId": "cl-english-d2-l1",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_en-food",
@@ -8926,7 +9056,7 @@
       "textbookNote2024": "食物话题调整为三上「Plants around us」（植物的产出）与三下「Healthy food」。",
       "textbookNoteAlt": "外研社版：外研版食物话题在三下 Unit 3 Yummy food，人教版 PEP 在三上 Let's eat!，晚一学期。",
       "clusterId": "cl-english-d2-l1",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_en-weather",
@@ -9023,7 +9153,7 @@
       "textbookNote2024": "职业话题调整为四上「Helping in the community」。",
       "textbookNoteAlt": "外研社版：外研版职业话题在四下 Unit 1 People at work，人教版 PEP 在四上 Meet my family。",
       "clusterId": "cl-english-d2-l1",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_en-places",
@@ -9156,7 +9286,7 @@
       ],
       "textbookNoteAlt": "外研社版：外研版指示代词随三上 Unit 2 指认文具的句型出现，教材不单设语法单元。",
       "clusterId": "cl-english-d3-l1",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_en-pronouns",
@@ -9190,7 +9320,7 @@
       "textbookNote2024": "人称代词与物主代词由三下提前至三上第一、二单元。",
       "textbookNoteAlt": "外研社版：外研版人称与物主代词随三上 We're family、三下 Animal friends 的话题句型渗透。",
       "clusterId": "cl-english-d3-l1",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_en-be-verb",
@@ -9224,7 +9354,7 @@
       "textbookNote2024": "be 动词与名词单复数由三下提前至三上家庭与朋友话题单元。",
       "textbookNoteAlt": "外研社版：外研版 be 动词与名词复数在三年级上下册话题句型中反复复现，无独立语法板块。",
       "clusterId": "cl-english-d3-l1",
-      "centrality": 0.0087
+      "centrality": 0.0086
     },
     {
       "id": "mt_en-yes-no-questions",
@@ -9388,7 +9518,7 @@
       "textbookNote2024": "现在进行时在新版中的分布待五年级下册（2027 春）目录收录后确认。",
       "textbookNoteAlt": "外研社版：外研版现在进行时主要在六下 Module 3~5，超出本主题年级上限，暂取五下 Module 10 的现在时语篇。",
       "clusterId": "cl-english-d3-l2",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_en-going-to",
@@ -9418,7 +9548,7 @@
       ],
       "textbookNoteAlt": "外研社版：外研版 be going to 见于五上 Look into the future 与六下 Module 2，人教版 PEP 在六上第三单元。",
       "clusterId": "cl-english-d3-l2",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_en-past-tense",
@@ -9448,7 +9578,7 @@
       ],
       "textbookNoteAlt": "外研社版：外研版一般过去时提前到五下 Module 1、Module 2，人教版 PEP 在六下 Last weekend，晚一学年。",
       "clusterId": "cl-english-d3-l2",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_en-comparatives",
@@ -9545,7 +9675,7 @@
       "textbookNote2024": "听话题贯穿三上各单元。",
       "textbookNoteAlt": "外研社版：外研版不单设听力单元，听指令与抓关键信息贯穿三上预备单元及各单元听说活动。",
       "clusterId": "cl-english-d4-l1",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_en-speaking-routine",
@@ -9746,7 +9876,7 @@
       "textbookNote2024": "写几句话融入四上各单元 Project。",
       "textbookNoteAlt": "外研社版：外研版写几句话依托四上 Unit 1 与四下 Unit 5 的写作任务，人教版 PEP 在四下第二单元。",
       "clusterId": "cl-english-d5-l1",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_en-writing-passage",
@@ -9811,7 +9941,7 @@
       "textbookNote2024": "节日与文化话题见于五年级各单元及 Revision「New Year's party」。",
       "textbookNoteAlt": "外研社版：外研版单设五上 Unit 6 Enjoy the festivals 讲节日与文化，人教版 PEP 分散在五上各单元。",
       "clusterId": "cl-english-d6-l2",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_en-learning-strategies",
@@ -9975,7 +10105,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-english-d2-l3",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-en-vocab-food",
@@ -10319,7 +10449,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-english-d3-l3",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-en-adverbs",
@@ -11052,7 +11182,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-english-d5-l3",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-en-writing-narration",
@@ -11317,7 +11447,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-physics-d1-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-ph-measurement-error",
@@ -11343,7 +11473,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-physics-d1-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-ph-reference-motion",
@@ -12128,7 +12258,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-physics-d7-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-ph-kinetic-potential-energy",
@@ -12292,7 +12422,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-physics-d8-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-ph-specific-heat",
@@ -12656,7 +12786,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-physics-d10-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-che-lab-instrument",
@@ -12736,7 +12866,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-chemistry-d1-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-che-change-property",
@@ -12870,7 +13000,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-chemistry-d2-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-che-particle",
@@ -13235,7 +13365,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-chemistry-d6-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-che-co2-property",
@@ -13446,7 +13576,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-chemistry-d8-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-che-saturated-crystal",
@@ -13603,7 +13733,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-chemistry-d9-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-che-ph",
@@ -13709,7 +13839,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-chemistry-d10-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-che-health",
@@ -13814,7 +13944,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-history-d1-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-his-historical-map",
@@ -14024,7 +14154,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-history-d2-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-his-hundred-schools",
@@ -14468,7 +14598,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-history-d3-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-his-wuxu-reform",
@@ -15094,7 +15224,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-history-d6-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-his-marxism-labour",
@@ -15383,7 +15513,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-geography-d1-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-geo-motion-effect",
@@ -15435,7 +15565,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-geography-d1-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-geo-contour",
@@ -15461,7 +15591,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-geography-d1-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-geo-land-ocean",
@@ -15565,7 +15695,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-geography-d2-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-geo-precipitation",
@@ -15591,7 +15721,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-geography-d2-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-geo-climate-type",
@@ -15617,7 +15747,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-geography-d2-s4",
-      "centrality": 0.0087
+      "centrality": 0.0086
     },
     {
       "id": "mt_junior-geo-climate-factor",
@@ -15643,7 +15773,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-geography-d2-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-geo-asia",
@@ -15981,7 +16111,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-geography-d4-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-geo-cn-population",
@@ -16137,7 +16267,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-geography-d4-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-geo-cn-agriculture",
@@ -16163,7 +16293,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-geography-d5-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-geo-cn-industry",
@@ -16528,7 +16658,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-geography-d7-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-geo-practice",
@@ -17338,7 +17468,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-science-d3-s3",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_sci-universe",
@@ -17837,7 +17967,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-morality-d3-s1",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_mor-p-class",
@@ -18386,7 +18516,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-morality-d5-s1",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_mor-p-motherland",
@@ -18412,7 +18542,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-morality-d5-s1",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_mor-p-local-culture",
@@ -18519,7 +18649,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-morality-d6-s3",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_mor-p-newera",
@@ -18571,7 +18701,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-morality-d6-s3",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_mor-j-life",
@@ -18753,7 +18883,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-morality-d8-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_mor-j-duty",
@@ -19014,7 +19144,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-morality-d11-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_mor-j-interest",
@@ -19040,7 +19170,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-morality-d12-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_mor-j-newera",
@@ -19354,7 +19484,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-biology-d2-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-bio-cell-life",
@@ -19537,7 +19667,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-biology-d4-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-bio-transport-water",
@@ -19720,7 +19850,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-biology-d5-s4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_junior-bio-excretion",
@@ -20715,7 +20845,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-physics-d12-s5",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_phys-s-equilibrium",
@@ -20949,7 +21079,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-physics-d14-s5",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_phys-s-mech-experiment",
@@ -21157,7 +21287,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-physics-d16-s5",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_phys-s-potential",
@@ -21937,7 +22067,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-chemistry-d12-s5",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_chem-s-chlorine",
@@ -21989,7 +22119,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-chemistry-d12-s5",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_chem-s-molar-volume",
@@ -22249,7 +22379,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-chemistry-d14-s5",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_chem-s-electron-dot",
@@ -22613,7 +22743,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-chemistry-d17-s5",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_chem-s-isomerism",
@@ -22665,7 +22795,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-chemistry-d17-s5",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_chem-s-alkene-alkyne",
@@ -22977,7 +23107,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-chemistry-d19-s5",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_chem-s-halohydrocarbon",
@@ -23237,7 +23367,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-biology-d13-s5",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_bio-s-proteins",
@@ -23653,7 +23783,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-biology-d14-s5",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_bio-s-fertilization",
@@ -23757,7 +23887,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-biology-d14-s5",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_bio-s-dna-replication",
@@ -24875,7 +25005,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-history-d2-s5",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_hist-s-ming-qing-economy",
@@ -24901,7 +25031,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-history-d2-s5",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_hist-s-opium-war",
@@ -25291,7 +25421,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-history-d9-s5",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_hist-s-medieval-europe",
@@ -25447,7 +25577,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-history-d10-s5",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_hist-s-marxism",
@@ -25499,7 +25629,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-history-d10-s5",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_hist-s-national-independence",
@@ -25577,7 +25707,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-history-d10-s5",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_hist-s-cold-war",
@@ -26253,7 +26383,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-geography-d8-s5",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_geo-s-atmospheric-heating",
@@ -26279,7 +26409,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-geography-d8-s5",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_geo-s-atmospheric-circulation",
@@ -26981,7 +27111,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-geography-d10-s5",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_geo-s-natural-difference",
@@ -27917,7 +28047,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-politics-d3-s5",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_pol-s-party-system",
@@ -29087,7 +29217,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-tech-d2-s5",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_tech-s-network-basic",
@@ -29295,7 +29425,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-tech-d3-s5",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_tech-s-design-principle",
@@ -29555,7 +29685,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-tech-d4-s5",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_tech-s-control",
@@ -30075,7 +30205,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-chinese-d10-s5",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_chn-s-poetic-image",
@@ -30257,7 +30387,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-chinese-d10-s5",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_chn-s-prose-language",
@@ -30465,7 +30595,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-chinese-d12-s5",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_chn-s-classical-argument",
@@ -31505,7 +31635,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-math-d5-s5",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_mat-s-set-operations",
@@ -31661,7 +31791,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-math-d6-s5",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_mat-s-function-property",
@@ -31687,7 +31817,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-math-d6-s5",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_mat-s-function-model",
@@ -32389,7 +32519,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-math-d7-s5",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_mat-s-hyperbola",
@@ -32779,7 +32909,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-math-d8-s5",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_mat-s-binomial-distribution",
@@ -33351,7 +33481,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-english-d9-l4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_eng-s-space",
@@ -33455,7 +33585,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-english-d7-l4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_eng-s-parks",
@@ -33611,7 +33741,7 @@
       "textbooks2024": [],
       "textbooksAlt": [],
       "clusterId": "cl-english-d11-l4",
-      "centrality": 0.0032
+      "centrality": 0.0031
     },
     {
       "id": "mt_eng-s-scientists",

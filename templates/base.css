@@ -328,7 +328,7 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 
 /* ── 立体图形 ─────────────────────────────────────────── */
 /* 拖得动，才看得出哪个面在后面 */
-.solid-svg, .pyr-svg, .mol-svg, .cal-svg, .dec-svg, .tbl-svg, .cmp-svg { width: 100%; height: auto; touch-action: none; }
+.solid-svg, .pyr-svg, .mol-svg, .cal-svg, .dec-svg, .tbl-svg, .cmp-svg, .law-svg, .tri-svg { width: 100%; height: auto; touch-action: none; }
 .solid-svg, .pyr-svg { cursor: grab; }
 .solid-svg:active, .pyr-svg:active { cursor: grabbing; }
 .viz text { fill: var(--text); font-family: inherit; }

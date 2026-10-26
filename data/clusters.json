@@ -1,5 +1,5 @@
 {
-  "version": "v0.32.0",
+  "version": "v0.33.0",
   "schemaVersion": 1,
   "clusters": [
     {
@@ -90,7 +90,9 @@
         "mt_ops-order",
         "mt_ops-laws",
         "mt_dec-meaning",
-        "mt_dec-addsub2"
+        "mt_dec-addsub2",
+        "mt_ops-laws-add",
+        "mt_ops-laws-mul"
       ]
     },
     {
@@ -112,6 +114,9 @@
         "mt_angle-measure",
         "mt_parallelogram",
         "mt_triangle",
+        "mt_triangle-classify",
+        "mt_triangle-angle",
+        "mt_triangle-sides",
         "mt_symmetry"
       ]
     },

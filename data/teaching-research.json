@@ -1,9 +1,9 @@
 {
   "name": "学阶图谱教学研究层",
-  "version": "v0.32.0",
+  "version": "v0.33.0",
   "schemaVersion": 1,
-  "taxonomyVersion": "v0.32.0",
-  "topicFileSha256": "1746d1139adcc2c9c4c448a5d51c507b61e355ce1d80ce15d8eaff22a7f549ad",
+  "taxonomyVersion": "v0.33.0",
+  "topicFileSha256": "0f76d66993e2519a40acea2b7d68a7f175639731968ca3a84cb426ae2f58b11a",
   "authorship": {
     "authoredBy": "AI 撰写（教学研究层）",
     "review": "经结构化校验（字段完整性、长度约束、来源白名单、主题联结、覆盖清单），并经过 build 阶段的引用完整性校验；未经实证验证。",
@@ -13,7 +13,7 @@
     "subjects": {
       "数学": {
         "covered": 234,
-        "total": 234
+        "total": 239
       },
       "语文": {
         "covered": 177,
@@ -60,7 +60,13 @@
         "total": 48
       }
     },
-    "missingTopicIds": []
+    "missingTopicIds": [
+      "mt_ops-laws-add",
+      "mt_ops-laws-mul",
+      "mt_triangle-classify",
+      "mt_triangle-angle",
+      "mt_triangle-sides"
+    ]
   },
   "records": [
     {

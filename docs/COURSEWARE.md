@@ -135,6 +135,8 @@ schema/course.schema.json
 | `decimal` | 小数条 | 小数意义、一位小数加减 | 十格条涂格、逐条点亮 |
 | `table` | 复式统计表 | 两组数据对比 | 两行数据并排、逐行高亮、自动合计 |
 | `compass` | 方向与路线 | 八方向、描述路线 | 罗盘 + 地图、路线动画 |
+| `law` | 运算律 | 加法/乘法交换律、结合律、乘法分配律 | 上下两式对照、数字滑动换位、括号移动、分配律面积模型分块 |
+| `triangle` | 三角形 | 三角形的分类、内角和、三边关系 | 由角度反推形状、撕角拼平角动画、三边逐条验算并成图 |
 | `clock` | 钟面 | 时、分、秒 | 三针联动、分针拖拽、指针高亮 |
 | `numberline` | 数轴 | 正负数、分数、小数、时间轴 | 区间高亮、可拖手柄 |
 | `coords` | 坐标系 | 一次函数、抛物线、统计 | 网格、曲线描边动画、散点 |
@@ -385,7 +387,7 @@ localStorage.setItem('stx.course.' + TOPIC_ID,
 
 - `templates/engine.js` 接管页面骨架与全部通用逻辑
 - 课件只剩 `content.json`（steps 数组）+ 一个 16 行的薄壳 `index.html`
-- 17 种步骤类型：`intro` / `text` / `vertical` / `geometry` / `solid` / `pyramid` / `division` / `molecule` / `calendar` / `decimal` / `table` / `compass` / `numberline` / `clock` / `quiz` / `choice` / `summary`
+- 19 种步骤类型：`intro` / `text` / `vertical` / `geometry` / `solid` / `pyramid` / `division` / `molecule` / `calendar` / `decimal` / `table` / `compass` / `law` / `triangle` / `numberline` / `clock` / `quiz` / `choice` / `summary`
 - 构建时把 content.json、engine.js、renderers.js、base.css 全部内联，产物仍是单文件
 
 写一节课从「复制 300 行 HTML」变成「写 60 行 JSON」。

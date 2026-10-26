@@ -31,6 +31,8 @@
 | `decimal` | 小数条 | `body{a,b,op}` | `caption` `note` `demoLabel` |
 | `table` | 复式统计表 | `body{categories,series}` | `caption` `note` `demoLabel` |
 | `compass` | 方向与路线 | `body{}` | `caption` `note` `demoLabel` |
+| `law` | 运算律（交换/结合/分配） | `body{mode,op,a,b,c}` | `caption` `note` `demoLabel` |
+| `triangle` | 三角形（分类/内角和/三边） | `body{mode,...}` | `caption` `note` `demoLabel` |
 | `numberline` | 数轴、量感 | `line{min,max,step,...}` | `marks[]` `span` `caption` |
 | `clock` | 钟面 | `absMinutes` | `caption` |
 | `quiz` | 填数字 | `question` `answer`(number) | `unit` `hint` `why` `title` |
@@ -213,6 +215,38 @@ preset：
 ```
 
 左边八方向罗盘，右边社区地图（学校 + 8 个地点）。演示：四个正方向 → 四个斜方向 → 高亮东北方向的公园并画出路线。
+
+## law
+
+```json
+{ "type": "law", "title": "加法交换律", "body": { "mode": "commute", "op": "+", "a": 28, "b": 17 } }
+```
+
+运算律。`mode` 三种：
+
+| mode | 画什么 | body |
+|---|---|---|
+| `commute` | 交换律：上下两式，下式的两个数滑动换位，结果相同 | `{mode,op,a,b}` |
+| `associate` | 结合律：括号从前两个数移到后两个数，结果相同 | `{mode,op,a,b,c}` |
+| `distribute` | 分配律：a×(b+c) 的长方形按自适应比例分成 a×b、a×c 两块 | `{mode,a,b,c}` |
+
+`op` 是 `+` 或 `×`（`distribute` 固定乘法）。演示按步揭示：先算一边 → 换位置/括号 → 两边相等，并报出定律名称。
+
+## triangle
+
+```json
+{ "type": "triangle", "title": "三角形的内角和", "body": { "mode": "angleSum", "A": 70, "B": 50, "C": 60 } }
+```
+
+三角形。`mode` 三种：
+
+| mode | 画什么 | body |
+|---|---|---|
+| `classify` | 分类：按给定角度画一排三角形，逐个高亮并标注「按边·按角」 | `{mode,triangles:[{A,B,C}]}` |
+| `angleSum` | 内角和：三个角依次拼到半圆上，正好是一条直线（平角 180°） | `{mode,A,B,C}` |
+| `sides` | 三边关系：三根小棒逐条验「两边之和 > 第三边」，都过则画出三角形 | `{mode,a,b,c,counter}` |
+
+`classify` 由角度反推边长（等角对等边），所以形状与分类必然自洽；`sides` 的 `counter` 是可选反例（如 2、3、6）。
 
 ## numberline
 

@@ -1,5 +1,5 @@
 {
-  "version": "v0.32.0",
+  "version": "v0.33.0",
   "schemaVersion": 1,
   "dependencies": [
     {
@@ -649,6 +649,60 @@
       "prerequisiteId": "mt_parallelogram",
       "strength": "soft",
       "reason": "三角形的高可由平行四边形的高迁移"
+    },
+    {
+      "topicId": "mt_ops-laws-add",
+      "prerequisiteId": "mt_addsub-10000",
+      "strength": "hard",
+      "reason": "加法运算律在加减计算中反复体验"
+    },
+    {
+      "topicId": "mt_ops-laws-mul",
+      "prerequisiteId": "mt_mult-2digit",
+      "strength": "hard",
+      "reason": "乘法结合律、分配律在两位数乘法中显现"
+    },
+    {
+      "topicId": "mt_ops-laws-mul",
+      "prerequisiteId": "mt_ops-laws-add",
+      "strength": "soft",
+      "reason": "乘法交换律/结合律与加法对应，先学加法律"
+    },
+    {
+      "topicId": "mt_dec-addsub2",
+      "prerequisiteId": "mt_ops-laws-add",
+      "strength": "soft",
+      "reason": "小数简便运算沿用加法运算律"
+    },
+    {
+      "topicId": "mt_triangle-classify",
+      "prerequisiteId": "mt_shape-2d",
+      "strength": "hard",
+      "reason": "三角形是基本平面图形，需先认识"
+    },
+    {
+      "topicId": "mt_triangle-classify",
+      "prerequisiteId": "mt_angle-measure",
+      "strength": "hard",
+      "reason": "按角给三角形分类需要角的度量"
+    },
+    {
+      "topicId": "mt_triangle-angle",
+      "prerequisiteId": "mt_triangle-classify",
+      "strength": "soft",
+      "reason": "内角和是分类之外的另一重要性质"
+    },
+    {
+      "topicId": "mt_triangle-sides",
+      "prerequisiteId": "mt_triangle-classify",
+      "strength": "soft",
+      "reason": "三边关系是构成三角形的条件"
+    },
+    {
+      "topicId": "mt_polygon-area",
+      "prerequisiteId": "mt_triangle-sides",
+      "strength": "hard",
+      "reason": "推导三角形面积公式需先认识三边关系"
     },
     {
       "topicId": "mt_symmetry",

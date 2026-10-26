@@ -1,0 +1,31 @@
+{
+  "topicId": "mt_ops-laws-mul",
+  "title": "乘法运算律：交换、结合与分配",
+  "template": "explain",
+  "renderer": "law",
+  "duration": 13,
+  "interactions": 2,
+  "grade": 4,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S2:NA:NO"
+  ],
+  "prerequisites": [
+    "mt_ops-laws-add",
+    "mt_mult-2digit"
+  ],
+  "next": [
+    "mt_dec-addsub2"
+  ],
+  "objectives": [
+    "理解乘法交换律和结合律，并能用来凑整",
+    "理解乘法分配律 a×(b+c)=a×b+a×c",
+    "会用面积模型把 25×44 拆成 25×40+25×4"
+  ],
+  "cognitiveAction": "变换",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-27"
+}

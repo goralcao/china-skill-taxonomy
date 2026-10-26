@@ -1,0 +1,31 @@
+{
+  "topicId": "mt_ops-laws-add",
+  "title": "加法运算律：交换与结合",
+  "template": "explain",
+  "renderer": "law",
+  "duration": 11,
+  "interactions": 2,
+  "grade": 4,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S2:NA:NO"
+  ],
+  "prerequisites": [
+    "mt_addsub-10000"
+  ],
+  "next": [
+    "mt_ops-laws-mul",
+    "mt_dec-addsub2"
+  ],
+  "objectives": [
+    "理解加法交换律：交换两个加数位置和不变",
+    "理解加法结合律：先加哪两个和不变，并能用来凑整",
+    "会用字母 a+b=b+a、(a+b)+c=a+(b+c) 表示规律"
+  ],
+  "cognitiveAction": "变换",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-27"
+}
