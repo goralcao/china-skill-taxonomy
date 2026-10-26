@@ -99,6 +99,7 @@
     // —— 进位行
     var carryRow = row('vcarry');
     carryRow.appendChild(h('span', ''));
+    var carryCells = [];
     for (var c = n - 1; c >= 0; c--) {
       var cell = h('span', '');
       // carry[c] = 进入第 c 位的进位，显示在第 c 位上方
@@ -106,7 +107,9 @@
         cell.textContent = carry[c] > 1 ? String(carry[c]) : '1';
       }
       if (op === '-' && borrowAt[c]) { cell.textContent = '·'; cell.className = 'borrow'; }
+      cell.dataset.bit = String(c);          // 该单元格对应第 c 位（0 = 个位）
       carryRow.appendChild(cell);
+      carryCells.push(cell);
     }
 
     // —— 数字行
@@ -191,8 +194,60 @@
         return ctrl;
       }
     };
+    /* ── 逐步演算：一次算一位，返回这一步的说明 ───────── */
+    var POS = ['个位', '十位', '百位', '千位', '万位', '十万位'];
+    var demoStage = 0;
+
+    function posName(i) { return POS[i] || ('第 ' + (i + 1) + ' 位'); }
+
+    function descFor(i) {
+      var x = da[i] || 0, y = db[i] || 0, c = carry[i] || 0;
+      if (op === '+' || op === '×' || op === '*') {
+        var expr = op === '+' ? x + ' + ' + y + (c ? ' + ' + c : '')
+                              : x + ' × ' + b + (c ? ' + ' + c : '');
+        var sum = op === '+' ? x + y + c : x * Number(b) + c;
+        var up = carry[i + 1] || 0;
+        return posName(i) + '：' + expr + ' = <b>' + sum + '</b>，写 ' + (sum % 10) +
+          (up ? '，向前一位进 <b>' + up + '</b>' : '，不进位');
+      }
+      // 减法
+      var borrow = borrowAt[i] || 0;
+      var diff = x - borrow - y;
+      if (diff < 0) {
+        return posName(i) + '：' + x + ' 减 ' + y + ' 不够，向前一位借 1，' +
+          '<b>' + (x + 10) + ' − ' + y + ' = ' + (x + 10 - y) + '</b>';
+      }
+      return posName(i) + '：' + x + (borrow ? ' − ' + borrow : '') + ' − ' + y +
+        ' = <b>' + diff + '</b>';
+    }
+
+    ctrl.stages = n;
+    /** 演算下一位；返回 { text, done }，算完返回 null */
+    ctrl.next = function () {
+      if (demoStage >= n) return null;
+      var i = demoStage++;
+      ctrl.reveal(i + 1);
+      ctrl.highlight(i);
+      carryCells.forEach(function (cell) {
+        var bit = Number(cell.dataset.bit);
+        cell.style.opacity = bit <= i + 1 ? '1' : '0';
+      });
+      return { text: descFor(i), done: demoStage >= n, pos: i };
+    };
+    /** 回到未算状态：答案全部遮住、进位全部隐藏 */
+    ctrl.startDemo = function () {
+      demoStage = 0;
+      ctrl.reveal(0);
+      ctrl.highlight(null);
+      carryRow.style.visibility = 'visible';
+      carryCells.forEach(function (cell) { cell.style.opacity = '0'; });
+      return ctrl;
+    };
+
     ctrl.reveal(spec.reveal == null ? 0 : spec.reveal);
     if (spec.carries === false) ctrl.carries(false);
+    // 没显式要求「全部揭示」时，默认进入可演算状态
+    if (spec.reveal !== 'all' && spec.reveal !== 99) ctrl.startDemo();
     return ctrl;
   }
 
@@ -365,21 +420,64 @@
       [[px, py], [px + pw, py], [px + pw, py + ph], [px, py + ph]].forEach(function (pt) {
         s('circle', { cx: pt[0], cy: pt[1], r: 3.4, fill: 'var(--geo)' }, svg);
       });
+      var topLen = parseFloat(spec.top) || 5;
+      var rightLen = parseFloat(spec.right) || 3;
+      var lens = [topLen, rightLen, topLen, rightLen];
+      var unit = spec.unit || ' 米';
+
+      // 图形中央的累计式
+      var sumText = s('text', {
+        x: W / 2, y: H / 2 + 4, class: 'geo-dim-text',
+        'text-anchor': 'middle', 'font-size': '14', 'font-weight': '600',
+      }, svg);
+      sumText.textContent = '';
+
       var ctrlP = {
         el: svg,
         count: 4,
+        lengths: lens,
         highlight: function (n) {
           var k = n == null ? 4 : n;
           shapes.forEach(function (sh, i) {
-            var on = i < k;
-            sh.line.setAttribute('stroke', on ? 'var(--ok)' : 'rgba(167,139,250,.35)');
-            sh.text.setAttribute('fill', on ? 'var(--ok)' : 'var(--dim)');
+            var done = i < k;
+            var cur = i === k - 1;
+            sh.line.setAttribute('stroke', done ? 'var(--ok)' : 'rgba(167,139,250,.35)');
+            sh.line.setAttribute('stroke-width', cur ? 4 : (done ? 2.8 : 2));
+            sh.text.setAttribute('fill', done ? 'var(--ok)' : 'var(--dim)');
           });
+          if (k > 0 && k < 4) {
+            var sum = lens.slice(0, k).reduce(function (a, b) { return a + b; }, 0);
+            sumText.textContent = lens.slice(0, k).join(' + ') + ' = ' + sum + unit;
+          } else if (k >= 4) {
+            var all = lens.reduce(function (a, b) { return a + b; }, 0);
+            sumText.textContent = lens.join(' + ') + ' = ' + all + unit;
+          } else {
+            sumText.textContent = '';
+          }
           return ctrlP;
         },
         play: function () { ctrlP.highlight(0); return ctrlP; },
         reset: function () { ctrlP.highlight(4); return ctrlP; },
       };
+
+      // 逐条边演示
+      var walked = 0;
+      ctrlP.next = function () {
+        if (walked >= 4) return null;
+        walked++;
+        ctrlP.highlight(walked);
+        var sum = lens.slice(0, walked).reduce(function (a, b) { return a + b; }, 0);
+        var isLast = walked === 4;
+        var calc = walked === 1
+          ? '先走 ' + lens[0] + unit
+          : lens.slice(0, walked).join(' + ') + ' = <b>' + sum + unit + '</b>';
+        return {
+          text: '走过第 ' + walked + ' 条边（' + lens[walked - 1] + unit + '）：' + calc +
+            (isLast ? '　一圈走完，四条边加起来就是周长' : ''),
+          done: isLast,
+        };
+      };
+      ctrlP.startDemo = function () { walked = 0; ctrlP.highlight(0); return ctrlP; };
       return ctrlP;
     }
 
@@ -403,6 +501,7 @@
         }, svg);
         slices.push(path);
       }
+      var filledNow = filled;
       var ctrlF = {
         el: svg,
         parts: parts,
@@ -417,6 +516,19 @@
         reset: function () { ctrlF.fill(filled); return ctrlF; },
         reveal: function (k) { return ctrlF.fill(k); },
       };
+
+      // 逐份涂色：讲「又取了几份」时用
+      ctrlF.next = function () {
+        if (filledNow >= parts) return null;
+        filledNow++;
+        ctrlF.fill(filledNow);
+        return {
+          text: '又涂 1 份：现在是 ' + parts + ' 份里的 <b>' + filledNow + ' 份</b>' +
+            '，写作 <b>' + filledNow + '/' + parts + '</b>',
+          done: filledNow >= parts,
+        };
+      };
+      ctrlF.startDemo = function () { filledNow = 0; ctrlF.fill(0); return ctrlF; };
       ctrlF.fill(filled);
       return ctrlF;
     }

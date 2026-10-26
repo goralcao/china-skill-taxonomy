@@ -311,6 +311,28 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 .score { font-size: 38px; font-weight: 700; color: var(--accent); line-height: 1.1; }
 .score small { font-size: 15px; color: var(--dim); font-weight: 400; }
 
+/* ── 演示控件 ─────────────────────────────────────────── */
+.demo {
+  display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+  margin: 4px 0 14px;
+}
+.demo .btn { flex: 0 0 auto; }
+.demo-tip {
+  flex: 1 1 100%;
+  margin: 2px 0 0;
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: 10px;
+  padding: 10px 12px;
+  min-height: 44px;
+}
+.demo-tip b { color: var(--accent); }
+.demo-tip:empty { display: none; }
+
 </style>
 <script>window.__GRAPH = {"id": "mt_frac-intro", "name": "分数的初步认识", "subject": "数学", "domain": "数与代数", "stage": "第二学段（3~4年级）", "grade": 3, "gradeEnd": 3, "standards": ["math-2022:S2:NA:NO"], "textbooks": ["pep-math:3a:u8"], "textbookLabels": ["人教版数学 · 3 年级上 第 8 单元"], "prereqs": [{"id": "mt_num-10-composition", "name": "10以内数的分与合", "grade": 1, "subject": "数学", "course": null, "hard": true, "reason": "几分之一来自平均分，即一组的分成"}, {"id": "mt_shape-2d", "name": "平面图形的认识", "grade": 1, "subject": "数学", "course": null, "hard": false, "reason": "折纸涂色引入分数需要图形操作经验"}], "unlocks": [{"id": "mt_frac-same-addsub", "name": "同分母分数加减法", "grade": 3, "subject": "数学", "course": "reviewed", "hard": true}, {"id": "mt_dec-intro", "name": "小数的初步认识", "grade": 3, "subject": "数学", "course": null, "hard": true}, {"id": "mt_frac-meaning", "name": "分数的意义", "grade": 5, "subject": "数学", "course": null, "hard": true}, {"id": "mt_probability", "name": "可能性", "grade": 5, "subject": "数学", "course": null, "hard": true}, {"id": "mt_dec-meaning", "name": "小数的意义和性质", "grade": 4, "subject": "数学", "course": null, "hard": false}], "siblings": [{"id": "mt_addsub-10000", "name": "万以内的加法和减法", "grade": 3, "subject": "数学", "course": "reviewed", "hard": false}, {"id": "mt_mult-1digit", "name": "多位数乘一位数", "grade": 3, "subject": "数学", "course": "reviewed", "hard": false}, {"id": "mt_multiple", "name": "倍的认识", "grade": 3, "subject": "数学", "course": "reviewed", "hard": false}, {"id": "mt_frac-same-addsub", "name": "同分母分数加减法", "grade": 3, "subject": "数学", "course": "reviewed", "hard": false}]};</script>
 </head>
@@ -418,6 +440,7 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
     // —— 进位行
     var carryRow = row('vcarry');
     carryRow.appendChild(h('span', ''));
+    var carryCells = [];
     for (var c = n - 1; c >= 0; c--) {
       var cell = h('span', '');
       // carry[c] = 进入第 c 位的进位，显示在第 c 位上方
@@ -425,7 +448,9 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
         cell.textContent = carry[c] > 1 ? String(carry[c]) : '1';
       }
       if (op === '-' && borrowAt[c]) { cell.textContent = '·'; cell.className = 'borrow'; }
+      cell.dataset.bit = String(c);          // 该单元格对应第 c 位（0 = 个位）
       carryRow.appendChild(cell);
+      carryCells.push(cell);
     }
 
     // —— 数字行
@@ -510,8 +535,60 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
         return ctrl;
       }
     };
+    /* ── 逐步演算：一次算一位，返回这一步的说明 ───────── */
+    var POS = ['个位', '十位', '百位', '千位', '万位', '十万位'];
+    var demoStage = 0;
+
+    function posName(i) { return POS[i] || ('第 ' + (i + 1) + ' 位'); }
+
+    function descFor(i) {
+      var x = da[i] || 0, y = db[i] || 0, c = carry[i] || 0;
+      if (op === '+' || op === '×' || op === '*') {
+        var expr = op === '+' ? x + ' + ' + y + (c ? ' + ' + c : '')
+                              : x + ' × ' + b + (c ? ' + ' + c : '');
+        var sum = op === '+' ? x + y + c : x * Number(b) + c;
+        var up = carry[i + 1] || 0;
+        return posName(i) + '：' + expr + ' = <b>' + sum + '</b>，写 ' + (sum % 10) +
+          (up ? '，向前一位进 <b>' + up + '</b>' : '，不进位');
+      }
+      // 减法
+      var borrow = borrowAt[i] || 0;
+      var diff = x - borrow - y;
+      if (diff < 0) {
+        return posName(i) + '：' + x + ' 减 ' + y + ' 不够，向前一位借 1，' +
+          '<b>' + (x + 10) + ' − ' + y + ' = ' + (x + 10 - y) + '</b>';
+      }
+      return posName(i) + '：' + x + (borrow ? ' − ' + borrow : '') + ' − ' + y +
+        ' = <b>' + diff + '</b>';
+    }
+
+    ctrl.stages = n;
+    /** 演算下一位；返回 { text, done }，算完返回 null */
+    ctrl.next = function () {
+      if (demoStage >= n) return null;
+      var i = demoStage++;
+      ctrl.reveal(i + 1);
+      ctrl.highlight(i);
+      carryCells.forEach(function (cell) {
+        var bit = Number(cell.dataset.bit);
+        cell.style.opacity = bit <= i + 1 ? '1' : '0';
+      });
+      return { text: descFor(i), done: demoStage >= n, pos: i };
+    };
+    /** 回到未算状态：答案全部遮住、进位全部隐藏 */
+    ctrl.startDemo = function () {
+      demoStage = 0;
+      ctrl.reveal(0);
+      ctrl.highlight(null);
+      carryRow.style.visibility = 'visible';
+      carryCells.forEach(function (cell) { cell.style.opacity = '0'; });
+      return ctrl;
+    };
+
     ctrl.reveal(spec.reveal == null ? 0 : spec.reveal);
     if (spec.carries === false) ctrl.carries(false);
+    // 没显式要求「全部揭示」时，默认进入可演算状态
+    if (spec.reveal !== 'all' && spec.reveal !== 99) ctrl.startDemo();
     return ctrl;
   }
 
@@ -684,21 +761,64 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
       [[px, py], [px + pw, py], [px + pw, py + ph], [px, py + ph]].forEach(function (pt) {
         s('circle', { cx: pt[0], cy: pt[1], r: 3.4, fill: 'var(--geo)' }, svg);
       });
+      var topLen = parseFloat(spec.top) || 5;
+      var rightLen = parseFloat(spec.right) || 3;
+      var lens = [topLen, rightLen, topLen, rightLen];
+      var unit = spec.unit || ' 米';
+
+      // 图形中央的累计式
+      var sumText = s('text', {
+        x: W / 2, y: H / 2 + 4, class: 'geo-dim-text',
+        'text-anchor': 'middle', 'font-size': '14', 'font-weight': '600',
+      }, svg);
+      sumText.textContent = '';
+
       var ctrlP = {
         el: svg,
         count: 4,
+        lengths: lens,
         highlight: function (n) {
           var k = n == null ? 4 : n;
           shapes.forEach(function (sh, i) {
-            var on = i < k;
-            sh.line.setAttribute('stroke', on ? 'var(--ok)' : 'rgba(167,139,250,.35)');
-            sh.text.setAttribute('fill', on ? 'var(--ok)' : 'var(--dim)');
+            var done = i < k;
+            var cur = i === k - 1;
+            sh.line.setAttribute('stroke', done ? 'var(--ok)' : 'rgba(167,139,250,.35)');
+            sh.line.setAttribute('stroke-width', cur ? 4 : (done ? 2.8 : 2));
+            sh.text.setAttribute('fill', done ? 'var(--ok)' : 'var(--dim)');
           });
+          if (k > 0 && k < 4) {
+            var sum = lens.slice(0, k).reduce(function (a, b) { return a + b; }, 0);
+            sumText.textContent = lens.slice(0, k).join(' + ') + ' = ' + sum + unit;
+          } else if (k >= 4) {
+            var all = lens.reduce(function (a, b) { return a + b; }, 0);
+            sumText.textContent = lens.join(' + ') + ' = ' + all + unit;
+          } else {
+            sumText.textContent = '';
+          }
           return ctrlP;
         },
         play: function () { ctrlP.highlight(0); return ctrlP; },
         reset: function () { ctrlP.highlight(4); return ctrlP; },
       };
+
+      // 逐条边演示
+      var walked = 0;
+      ctrlP.next = function () {
+        if (walked >= 4) return null;
+        walked++;
+        ctrlP.highlight(walked);
+        var sum = lens.slice(0, walked).reduce(function (a, b) { return a + b; }, 0);
+        var isLast = walked === 4;
+        var calc = walked === 1
+          ? '先走 ' + lens[0] + unit
+          : lens.slice(0, walked).join(' + ') + ' = <b>' + sum + unit + '</b>';
+        return {
+          text: '走过第 ' + walked + ' 条边（' + lens[walked - 1] + unit + '）：' + calc +
+            (isLast ? '　一圈走完，四条边加起来就是周长' : ''),
+          done: isLast,
+        };
+      };
+      ctrlP.startDemo = function () { walked = 0; ctrlP.highlight(0); return ctrlP; };
       return ctrlP;
     }
 
@@ -722,6 +842,7 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
         }, svg);
         slices.push(path);
       }
+      var filledNow = filled;
       var ctrlF = {
         el: svg,
         parts: parts,
@@ -736,6 +857,19 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
         reset: function () { ctrlF.fill(filled); return ctrlF; },
         reveal: function (k) { return ctrlF.fill(k); },
       };
+
+      // 逐份涂色：讲「又取了几份」时用
+      ctrlF.next = function () {
+        if (filledNow >= parts) return null;
+        filledNow++;
+        ctrlF.fill(filledNow);
+        return {
+          text: '又涂 1 份：现在是 ' + parts + ' 份里的 <b>' + filledNow + ' 份</b>' +
+            '，写作 <b>' + filledNow + '/' + parts + '</b>',
+          done: filledNow >= parts,
+        };
+      };
+      ctrlF.startDemo = function () { filledNow = 0; ctrlF.fill(0); return ctrlF; };
       ctrlF.fill(filled);
       return ctrlF;
     }
@@ -1260,6 +1394,7 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
           reveal: s.reveal === 'all' ? 99 : 0,
         });
         if (s.play) v.carries(false);
+        if (s.reveal !== 'all') attachDemo(f, v, s);
         if (s.note) {
           var card = h('div', 'card' + (s.warn ? ' pitfall' : ' tip'));
           card.innerHTML = '<p style="margin:0">' + s.note + '</p>';
@@ -1281,6 +1416,7 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
           cap.innerHTML = s.caption;
           f.appendChild(cap);
         }
+        if (typeof g.next === 'function') attachDemo(f, g, s);
         if (s.note) {
           var card = h('div', 'card' + (s.warn ? ' pitfall' : ' tip'));
           card.innerHTML = '<p style="margin:0">' + s.note + '</p>';
@@ -1425,6 +1561,40 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
       },
     };
 
+    /** 给可演算的呈现器挂一组按钮：一步一步算 / 重来 */
+    function attachDemo(frag, ctrl, s) {
+      if (!ctrl || typeof ctrl.next !== 'function' || s.demo === false) return;
+      var wrap = h('div', 'demo');
+      var label = s.demoLabel || '▶ 一步一步算';
+      var next = h('button', 'btn small primary', label);
+      var reset = h('button', 'btn small', '重来');
+      var tip = h('p', 'demo-tip', s.demoHint || '点按钮，一位一位算给你看。');
+      var idle = s.demoHint || '点按钮，一位一位算给你看。';
+
+      next.onclick = function () {
+        var r = ctrl.next();
+        if (!r) { next.disabled = true; return; }
+        tip.innerHTML = r.text;
+        if (r.done) {
+          next.disabled = true;
+          next.classList.remove('primary');
+          next.textContent = '算完了';
+        }
+      };
+      reset.onclick = function () {
+        if (ctrl.startDemo) ctrl.startDemo();
+        next.disabled = false;
+        next.classList.add('primary');
+        next.textContent = label;
+        tip.innerHTML = idle;
+      };
+
+      wrap.appendChild(next);
+      wrap.appendChild(reset);
+      wrap.appendChild(tip);
+      frag.appendChild(wrap);
+    }
+
     function stateOf(i) {
       if (!state[i]) state[i] = { solved: false, attempts: 0, first: false };
       return state[i];
@@ -1545,6 +1715,6 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 })(window);
 
 </script>
-<script>window.__CONTENT = {"topicId": "mt_frac-intro", "title": "分数的初步认识", "subject": "数学", "grade": 3, "template": "explain", "renderer": "geometry", "version": "1.0.0", "steps": [{"type": "intro", "title": "先要「平均分」，才谈得上分数", "lead": "一个饼分给 4 个人，每人一样多，每份才是这个饼的四分之一。分得不一样大，就不能用四分之一来说。", "bullets": [{"text": "<b>分母</b>：一共分成几份，写在横线下面。"}, {"text": "<b>分子</b>：取了其中几份，写在横线上面。"}, {"text": "<b>必须平均分</b>：大小不一，分数就不成立。", "warn": true}]}, {"type": "geometry", "title": "平均分成 4 份，取 1 份", "shape": {"preset": "fraction", "parts": 4, "filled": 1}, "caption": "4 份里的 1 份，写作 <b>1/4</b>，读作四分之一"}, {"type": "geometry", "title": "取 3 份呢", "shape": {"preset": "fraction", "parts": 4, "filled": 3}, "caption": "4 份里的 3 份，写作 <b>3/4</b>", "note": "分母一直是 4——因为还是分成 4 份，只是取的多了一点。"}, {"type": "text", "title": "分母管「分几份」，分子管「取几份」", "paras": ["分成 <b>8</b> 份，每份就是 <b>1/8</b>；取 <b>5</b> 份，就是 <b>5/8</b>。", "分母越大，每一份反而越小——因为同样大的东西，分的人越多，每份越少。"], "note": "「分成 8 份」和「取 5 份」是两件事，写的时候别把分子分母写反。"}, {"type": "choice", "title": "哪一个是 1/3", "question": "下面哪种说法对？", "options": ["把一个饼平均分成 3 份，取 1 份", "把一个饼分成 3 份，取最大的一份", "把 3 个饼平均分成 1 份"], "answer": "把一个饼平均分成 3 份，取 1 份", "hint": "1/3 的关键词是「平均分」和「3 份里的 1 份」。", "why": "不平均分就不能用分数表示；「3 个饼分成 1 份」是 3 个，不是三分之一。"}, {"type": "choice", "title": "再来一个", "question": "一个蛋糕平均切成 8 块，吃了 3 块。吃了几分之几？", "options": ["3/8", "8/3", "3/5"], "answer": "3/8", "hint": "总共 8 块写分母，吃了 3 块写分子。", "why": "写成 8/3 是分子分母写反了——8 是「分成几份」，不是「吃了几份」。"}, {"type": "quiz", "title": "分母是几", "question": "把一个正方形平均分成 6 份，每份是它的六分之一。这个分数的分母是多少？", "answer": 6, "unit": "", "hint": "分母 = 一共分成几份。", "why": "分母写 1 是把「取几份」当成了分母。"}, {"type": "summary", "title": "记住这两句", "points": ["分母是分成几份，分子是取了几份", "分母越大，每一份越小"], "advice": "下一步学「同分母分数加减法」——分母不变，只把分子加起来。"}]};CourseEngine.mount(window.__CONTENT);</script>
+<script>window.__CONTENT = {"topicId": "mt_frac-intro", "title": "分数的初步认识", "subject": "数学", "grade": 3, "template": "explain", "renderer": "geometry", "version": "1.0.0", "steps": [{"type": "intro", "title": "先要「平均分」，才谈得上分数", "lead": "一个饼分给 4 个人，每人一样多，每份才是这个饼的四分之一。分得不一样大，就不能用四分之一来说。", "bullets": [{"text": "<b>分母</b>：一共分成几份，写在横线下面。"}, {"text": "<b>分子</b>：取了其中几份，写在横线上面。"}, {"text": "<b>必须平均分</b>：大小不一，分数就不成立。", "warn": true}]}, {"type": "geometry", "title": "平均分成 4 份，取 1 份", "shape": {"preset": "fraction", "parts": 4, "filled": 1}, "caption": "4 份里的 1 份，写作 <b>1/4</b>，读作四分之一", "demo": false}, {"type": "geometry", "title": "取 3 份呢", "shape": {"preset": "fraction", "parts": 4, "filled": 3}, "caption": "4 份里的 3 份，写作 <b>3/4</b>", "note": "分母一直是 4——因为还是分成 4 份，只是取的多了一点。", "demo": false}, {"type": "text", "title": "分母管「分几份」，分子管「取几份」", "paras": ["分成 <b>8</b> 份，每份就是 <b>1/8</b>；取 <b>5</b> 份，就是 <b>5/8</b>。", "分母越大，每一份反而越小——因为同样大的东西，分的人越多，每份越少。"], "note": "「分成 8 份」和「取 5 份」是两件事，写的时候别把分子分母写反。"}, {"type": "choice", "title": "哪一个是 1/3", "question": "下面哪种说法对？", "options": ["把一个饼平均分成 3 份，取 1 份", "把一个饼分成 3 份，取最大的一份", "把 3 个饼平均分成 1 份"], "answer": "把一个饼平均分成 3 份，取 1 份", "hint": "1/3 的关键词是「平均分」和「3 份里的 1 份」。", "why": "不平均分就不能用分数表示；「3 个饼分成 1 份」是 3 个，不是三分之一。"}, {"type": "choice", "title": "再来一个", "question": "一个蛋糕平均切成 8 块，吃了 3 块。吃了几分之几？", "options": ["3/8", "8/3", "3/5"], "answer": "3/8", "hint": "总共 8 块写分母，吃了 3 块写分子。", "why": "写成 8/3 是分子分母写反了——8 是「分成几份」，不是「吃了几份」。"}, {"type": "quiz", "title": "分母是几", "question": "把一个正方形平均分成 6 份，每份是它的六分之一。这个分数的分母是多少？", "answer": 6, "unit": "", "hint": "分母 = 一共分成几份。", "why": "分母写 1 是把「取几份」当成了分母。"}, {"type": "summary", "title": "记住这两句", "points": ["分母是分成几份，分子是取了几份", "分母越大，每一份越小"], "advice": "下一步学「同分母分数加减法」——分母不变，只把分子加起来。"}]};CourseEngine.mount(window.__CONTENT);</script>
 </body>
 </html>

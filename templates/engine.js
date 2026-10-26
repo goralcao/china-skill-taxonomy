@@ -115,6 +115,7 @@
           reveal: s.reveal === 'all' ? 99 : 0,
         });
         if (s.play) v.carries(false);
+        if (s.reveal !== 'all') attachDemo(f, v, s);
         if (s.note) {
           var card = h('div', 'card' + (s.warn ? ' pitfall' : ' tip'));
           card.innerHTML = '<p style="margin:0">' + s.note + '</p>';
@@ -136,6 +137,7 @@
           cap.innerHTML = s.caption;
           f.appendChild(cap);
         }
+        if (typeof g.next === 'function') attachDemo(f, g, s);
         if (s.note) {
           var card = h('div', 'card' + (s.warn ? ' pitfall' : ' tip'));
           card.innerHTML = '<p style="margin:0">' + s.note + '</p>';
@@ -279,6 +281,40 @@
         return f;
       },
     };
+
+    /** 给可演算的呈现器挂一组按钮：一步一步算 / 重来 */
+    function attachDemo(frag, ctrl, s) {
+      if (!ctrl || typeof ctrl.next !== 'function' || s.demo === false) return;
+      var wrap = h('div', 'demo');
+      var label = s.demoLabel || '▶ 一步一步算';
+      var next = h('button', 'btn small primary', label);
+      var reset = h('button', 'btn small', '重来');
+      var tip = h('p', 'demo-tip', s.demoHint || '点按钮，一位一位算给你看。');
+      var idle = s.demoHint || '点按钮，一位一位算给你看。';
+
+      next.onclick = function () {
+        var r = ctrl.next();
+        if (!r) { next.disabled = true; return; }
+        tip.innerHTML = r.text;
+        if (r.done) {
+          next.disabled = true;
+          next.classList.remove('primary');
+          next.textContent = '算完了';
+        }
+      };
+      reset.onclick = function () {
+        if (ctrl.startDemo) ctrl.startDemo();
+        next.disabled = false;
+        next.classList.add('primary');
+        next.textContent = label;
+        tip.innerHTML = idle;
+      };
+
+      wrap.appendChild(next);
+      wrap.appendChild(reset);
+      wrap.appendChild(tip);
+      frag.appendChild(wrap);
+    }
 
     function stateOf(i) {
       if (!state[i]) state[i] = { solved: false, attempts: 0, first: false };
