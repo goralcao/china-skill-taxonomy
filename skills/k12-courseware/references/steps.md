@@ -1,6 +1,6 @@
-# 九种步骤：字段、写法、什么时候用
+# 十种步骤：字段、写法、什么时候用
 
-引擎型课件的 `content.json` 只有一个 `steps` 数组。每一步是一屏，类型共九种。
+引擎型课件的 `content.json` 只有一个 `steps` 数组。每一步是一屏，类型共十种。
 
 ```json
 {
@@ -23,6 +23,7 @@
 | `text` | 归纳、讲道理 | `title` `paras[]` | `note` `muted` |
 | `vertical` | 竖式演算 | `problem{a,b,op}` | `carries` `reveal` `caption` `note` `warn` `demoHint` |
 | `geometry` | 图形（面积/周长/分数/剪拼） | `shape{preset,...}` | `revealTo` `caption` `note` `demo` `demoLabel` |
+| `solid` | 立体图形（长方体/正方体/展开图） | `body{w,h,d,focus}` | `caption` `note` `demoLabel` `demoDone` |
 | `numberline` | 数轴、量感 | `line{min,max,step,...}` | `marks[]` `span` `caption` |
 | `clock` | 钟面 | `absMinutes` | `caption` |
 | `quiz` | 填数字 | `question` `answer`(number) | `unit` `hint` `why` `title` |
@@ -100,6 +101,32 @@ preset：
 | `fraction` | `parts` `filled` | 逐份涂（静态已给目标时用 `demo:false`） |
 
 `revealTo` 只在需要覆盖初始状态时显式给，不给就按 `shape` 初始化。
+
+## solid
+
+```json
+{
+  "type": "solid",
+  "title": "一组一组地数面",
+  "body": { "w": 6, "h": 4, "d": 3, "focus": "faces" },
+  "caption": "同色是一组相对的面。",
+  "demoLabel": "▶ 看一组面",
+  "demoHint": "点一次高亮一组；也可以拖动图形转到背面。",
+  "demoDone": "看完了"
+}
+```
+
+`focus` 决定演示走哪几段：
+
+| focus | 演示内容 |
+|---|---|
+| `faces` | 前后、左右、上下，三组 |
+| `edges` | 长、高、宽各 4 条 |
+| `vertices` | 8 个顶点 |
+| `unfold` | 摊平成展开图 |
+| `all` | 依次走完上面四段 |
+
+`w` 是长（左右），`h` 是高（上下），`d` 是宽（前后）。图形可以拖动旋转，手指和鼠标都行；不拖时慢慢自转，尊重「减少动态效果」设置。
 
 ## numberline
 

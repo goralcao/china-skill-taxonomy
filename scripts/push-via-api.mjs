@@ -50,12 +50,6 @@ async function api(path, method = 'GET', body) {
 
 // 用 API 取远程 main，避免依赖 git fetch 的凭证配置
 const baseSha = (await api('/git/ref/heads/main')).object.sha;
-try {
-  execSync(`git cat-file -e ${baseSha}^{commit}`, { stdio: 'ignore' });
-} catch {
-  console.error(`本地缺少远程提交 ${baseSha.slice(0, 7)}，先手动 git fetch origin`);
-  process.exit(1);
-}
 const headSha = execSync('git rev-parse HEAD', { encoding: 'utf8' }).trim();
 
 if (baseSha === headSha) {
@@ -63,12 +57,46 @@ if (baseSha === headSha) {
   process.exit(0);
 }
 
-const status = execSync(`git diff --name-status ${baseSha}..HEAD`, { encoding: 'utf8' })
-  .trim().split('\n').filter(Boolean)
-  .map(line => {
-    const [st, ...rest] = line.split('\t');
-    return { st: st[0], path: rest.join('\t') };
-  });
+let hasLocalBase = true;
+try {
+  execSync(`git cat-file -e ${baseSha}^{commit}`, { stdio: 'ignore' });
+} catch {
+  hasLocalBase = false;
+}
+
+/**
+ * 本地没有远程提交时（典型场景：上次是 API 推送的，git fetch 又被 TLS 掐断），
+ * 直接拿远程 tree 和本地索引里的 blob sha 对比，按内容算差异，不依赖本地历史。
+ */
+let status;
+let baseTreeSha;
+if (hasLocalBase) {
+  baseTreeSha = (await api(`/git/commits/${baseSha}`)).tree.sha;
+  status = execSync(`git diff --name-status ${baseSha}..HEAD`, { encoding: 'utf8' })
+    .trim().split('\n').filter(Boolean)
+    .map(line => {
+      const [st, ...rest] = line.split('\t');
+      return { st: st[0], path: rest.join('\t') };
+    });
+} else {
+  console.log(`本地没有 ${baseSha.slice(0, 7)} 的提交，改为按内容比对远程 tree`);
+  const remoteTree = await api(`/git/trees/${baseSha}?recursive=1`);
+  if (remoteTree.truncated) throw new Error('远程 tree 太大被截断，先 git fetch');
+  baseTreeSha = remoteTree.sha;
+  const remote = new Map(remoteTree.tree.filter(t => t.type === 'blob').map(t => [t.path, t.sha]));
+  const local = new Map();
+  for (const line of execSync('git ls-files -s', { encoding: 'utf8' }).trim().split('\n')) {
+    const m = line.match(/^\d+ ([0-9a-f]+) \d+\t(.+)$/);
+    if (m) local.set(m[2], m[1]);
+  }
+  status = [];
+  for (const [p, sha] of local) {
+    if (!remote.has(p)) status.push({ st: 'A', path: p });
+    else if (remote.get(p) !== sha) status.push({ st: 'M', path: p });
+    remote.delete(p);
+  }
+  for (const p of remote.keys()) status.push({ st: 'D', path: p });
+}
 
 const adds = status.filter(x => x.st === 'A').length;
 const mods = status.filter(x => x.st === 'M').length;
@@ -94,8 +122,7 @@ for (const { st, path } of status) {
   console.log(`  [${(buf.length / 1024).toFixed(0)}KB] ${path}`);
 }
 
-const base = await api(`/git/commits/${baseSha}`);
-const tree = await api('/git/trees', 'POST', { base_tree: base.tree.sha, tree: entries });
+const tree = await api('/git/trees', 'POST', { base_tree: baseTreeSha, tree: entries });
 const message = execSync('git log -1 --format=%B', { encoding: 'utf8' }).trim();
 const [an, ae, ad] = execSync(`git log -1 --format='%an|%ae|%aI'`, { encoding: 'utf8' }).trim().split('|');
 

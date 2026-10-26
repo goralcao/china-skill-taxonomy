@@ -325,3 +325,8 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 }
 .demo-tip b { color: var(--accent); }
 .demo-tip:empty { display: none; }
+
+/* ── 立体图形 ─────────────────────────────────────────── */
+/* 拖得动，才看得出哪个面在后面 */
+.solid-svg { width: 100%; height: auto; touch-action: none; cursor: grab; }
+.solid-svg:active { cursor: grabbing; }

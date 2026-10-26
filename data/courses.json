@@ -1,19 +1,19 @@
 {
-  "version": "v0.27.0",
+  "version": "v0.28.0",
   "schemaVersion": 1,
   "generatedAt": "2026-10-27",
   "counts": {
-    "total": 10,
+    "total": 11,
     "byTemplate": {
       "drill": 1,
-      "explain": 8,
+      "explain": 9,
       "explore": 1
     },
     "byStatus": {
-      "reviewed": 10
+      "reviewed": 11
     },
     "bySubject": {
-      "数学": 9,
+      "数学": 10,
       "物理": 1
     }
   },
@@ -50,6 +50,40 @@
       "updatedAt": "2026-10-27",
       "path": "courses/mt_addsub-10000/",
       "bytes": 17177
+    },
+    {
+      "topicId": "mt_cuboid",
+      "title": "长方体和正方体：6 个面、12 条棱、8 个顶点",
+      "template": "explain",
+      "renderer": "solid",
+      "duration": 12,
+      "interactions": 2,
+      "grade": 5,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S3:GG:GM"
+      ],
+      "prerequisites": [
+        "mt_shape-3d",
+        "mt_observe-object"
+      ],
+      "next": [
+        "mt_volume",
+        "mt_cylinder"
+      ],
+      "objectives": [
+        "能对着一个长方体指出 6 个面、12 条棱、8 个顶点",
+        "能把 12 条棱分成三组，说出每组为什么一样长",
+        "能看着展开图说出哪个面是原来盒子的哪一面"
+      ],
+      "cognitiveAction": "分解",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "path": "courses/mt_cuboid/",
+      "bytes": 663
     },
     {
       "topicId": "mt_frac-intro",

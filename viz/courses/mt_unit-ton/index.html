@@ -333,6 +333,11 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 .demo-tip b { color: var(--accent); }
 .demo-tip:empty { display: none; }
 
+/* ── 立体图形 ─────────────────────────────────────────── */
+/* 拖得动，才看得出哪个面在后面 */
+.solid-svg { width: 100%; height: auto; touch-action: none; cursor: grab; }
+.solid-svg:active { cursor: grabbing; }
+
 </style>
 <script>window.__GRAPH = {"id": "mt_unit-ton", "name": "吨的认识", "subject": "数学", "domain": "图形与几何", "stage": "第二学段（3~4年级）", "grade": 3, "gradeEnd": 3, "standards": ["math-2022:S1:GG:GM"], "textbooks": ["pep-math:3a:u3"], "textbookLabels": ["人教版数学 · 3 年级上 第 3 单元"], "prereqs": [{"id": "mt_mass-g-kg", "name": "克与千克", "grade": 2, "subject": "数学", "course": null, "hard": true, "reason": "吨与千克同属质量单位的换算体系"}, {"id": "mt_num-10000-recognition", "name": "万以内数的认识", "grade": 2, "subject": "数学", "course": null, "hard": false, "reason": "1吨等于1000千克的换算需要大数基础"}], "unlocks": [], "siblings": [{"id": "mt_time-hms", "name": "时、分、秒", "grade": 3, "subject": "数学", "course": "reviewed", "hard": false}, {"id": "mt_rect-perimeter", "name": "长方形和正方形的周长", "grade": 3, "subject": "数学", "course": "reviewed", "hard": false}, {"id": "mt_rect-area", "name": "长方形和正方形的面积", "grade": 3, "subject": "数学", "course": "reviewed", "hard": false}, {"id": "mt_calendar", "name": "年、月、日与24时计时法", "grade": 3, "subject": "数学", "course": null, "hard": false}]};</script>
 </head>
@@ -1262,12 +1267,248 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
     return container;
   }
 
+  /* ══════════════════════════════════════════════════════
+   * 立体图形
+   * 为什么单独做：长方体最难的从来不是背「6 面 12 棱 8 顶点」，
+   * 而是在平面图上分不清哪个面在后面、哪两条棱是一组。
+   * 这里手写一次投影：能拖着转、能一组一组高亮、能摊平成展开图，
+   * 仍然是一个不联网的 SVG。
+   * ══════════════════════════════════════════════════════ */
+  function solid(el, spec) {
+    spec = spec || {};
+    var w = Math.max(1, spec.w || 6);
+    var hh = Math.max(1, spec.h || 4);
+    var d = Math.max(1, spec.d || 3);
+    var focus = spec.focus || 'all';
+    var W = 380, H = 300;
+
+    var svg = s('svg', {
+      viewBox: '0 0 ' + W + ' ' + H,
+      class: 'solid-svg',
+      role: 'img',
+      'aria-label': '长 ' + w + '、宽 ' + d + '、高 ' + hh + ' 的长方体，可拖动旋转'
+    }, el);
+
+    var g3d = s('g', null, svg);
+    var gFaces = s('g', null, g3d);
+    var gEdges = s('g', null, g3d);
+    var gVerts = s('g', null, g3d);
+    var gNet = s('g', { opacity: 0 }, svg);
+    gNet.style.transition = 'opacity .5s ease';
+    gNet.style.transformBox = 'view-box';
+    gNet.style.transformOrigin = (W / 2) + 'px ' + (H / 2) + 'px';
+    gNet.style.transform = 'scale(.94)';
+    g3d.style.transition = 'opacity .5s ease';
+
+    var hx = w / 2, hy = hh / 2, hz = d / 2;
+    var V = [
+      [-hx, -hy, -hz], [hx, -hy, -hz], [hx, hy, -hz], [-hx, hy, -hz],
+      [-hx, -hy, hz], [hx, -hy, hz], [hx, hy, hz], [-hx, hy, hz]
+    ];
+    var F = [
+      { id: 'front', v: [4, 5, 6, 7], c: '#2563eb' },
+      { id: 'back', v: [1, 0, 3, 2], c: '#3b82f6' },
+      { id: 'right', v: [5, 1, 2, 6], c: '#0d9488' },
+      { id: 'left', v: [0, 4, 7, 3], c: '#14b8a6' },
+      { id: 'top', v: [7, 6, 2, 3], c: '#d97706' },
+      { id: 'bottom', v: [0, 1, 5, 4], c: '#f59e0b' }
+    ];
+    var E = [
+      [0, 1], [1, 2], [2, 3], [3, 0],
+      [4, 5], [5, 6], [6, 7], [7, 4],
+      [0, 4], [1, 5], [2, 6], [3, 7]
+    ];
+    // 长、高、宽各 4 条
+    var GROUPS = { len: [0, 2, 4, 6], height: [1, 3, 5, 7], depth: [8, 9, 10, 11] };
+
+    var S = Math.min((W * 0.74) / (w + d), (H * 0.74) / (hh + d));
+    var yaw = spec.yaw == null ? -0.62 : spec.yaw;
+    var pitch = spec.pitch == null ? 0.36 : spec.pitch;
+    var net = false;
+    var activeF = [], activeE = [], showV = false;
+
+    function proj(p) {
+      var cy = Math.cos(yaw), sy = Math.sin(yaw);
+      var x1 = p[0] * cy + p[2] * sy;
+      var z1 = -p[0] * sy + p[2] * cy;
+      var cp = Math.cos(pitch), sp = Math.sin(pitch);
+      var y1 = p[1] * cp - z1 * sp;
+      var z2 = p[1] * sp + z1 * cp;
+      var k = 1 + z2 * 0.006;
+      return [W / 2 + x1 * S / k, H / 2 - y1 * S / k, z2];
+    }
+
+    var polys = F.map(function (f) {
+      var el = s('polygon', {
+        fill: f.c, 'fill-opacity': 0.16, stroke: f.c,
+        'stroke-width': 1.4, 'stroke-linejoin': 'round'
+      }, gFaces);
+      el.style.transition = 'fill-opacity .35s ease, stroke-width .35s ease';
+      return el;
+    });
+    var lines = E.map(function () {
+      var el = s('line', {
+        stroke: '#94a3b8', 'stroke-width': 1.8, 'stroke-linecap': 'round'
+      }, gEdges);
+      el.style.transition = 'stroke .3s ease, stroke-width .3s ease, opacity .4s ease';
+      return el;
+    });
+    var dots = V.map(function () {
+      var el = s('circle', { r: 3.6, fill: '#0f172a', opacity: 0 }, gVerts);
+      el.style.transition = 'opacity .3s ease';
+      return el;
+    });
+
+    // 展开图：四个侧面排一排，上下两个面贴在中间那个面的上下
+    var NS = Math.min((W * 0.88) / (3 * d + w), (H * 0.82) / (2 * d + hh));
+    function netRect(cx, cy, rw, rh) {
+      var x = W / 2 + (cx - rw / 2) * NS;
+      var y = H / 2 + (cy - rh / 2) * NS;
+      return [x, y, rw * NS, rh * NS];
+    }
+    var NLAYOUT = {
+      left: netRect(-w / 2 - d / 2, 0, d, hh),
+      front: netRect(0, 0, w, hh),
+      right: netRect(w / 2 + d / 2, 0, d, hh),
+      back: netRect(w / 2 + d + d / 2, 0, d, hh),
+      top: netRect(0, -hh / 2 - d / 2, w, d),
+      bottom: netRect(0, hh / 2 + d / 2, w, d)
+    };
+    F.forEach(function (f) {
+      var r = NLAYOUT[f.id];
+      s('rect', {
+        x: r[0], y: r[1], width: r[2], height: r[3],
+        fill: f.c, 'fill-opacity': 0.2, stroke: f.c, 'stroke-width': 1.6
+      }, gNet);
+    });
+
+    function render() {
+      if (net) {
+        g3d.style.opacity = 0;
+        gNet.style.opacity = 1;
+        gNet.style.transform = 'scale(1)';
+        return;
+      }
+      g3d.style.opacity = 1;
+      gNet.style.opacity = 0;
+      gNet.style.transform = 'scale(.94)';
+
+      var P = V.map(proj);
+      F.forEach(function (f, i) {
+        polys[i].setAttribute('points', f.v.map(function (vi) {
+          return P[vi][0].toFixed(1) + ',' + P[vi][1].toFixed(1);
+        }).join(' '));
+        var on = activeF.indexOf(f.id) >= 0;
+        polys[i].setAttribute('fill-opacity', on ? 0.55 : (activeF.length ? 0.07 : 0.16));
+        polys[i].setAttribute('stroke-width', on ? 2.6 : 1.4);
+      });
+      // 背面先画，正面压在上面
+      F.map(function (f, i) {
+        return { i: i, z: f.v.reduce(function (n, vi) { return n + P[vi][2]; }, 0) / 4 };
+      }).sort(function (a, b) { return b.z - a.z; }).forEach(function (o) {
+        gFaces.appendChild(polys[o.i]);
+      });
+
+      E.forEach(function (e, i) {
+        lines[i].setAttribute('x1', P[e[0]][0].toFixed(1));
+        lines[i].setAttribute('y1', P[e[0]][1].toFixed(1));
+        lines[i].setAttribute('x2', P[e[1]][0].toFixed(1));
+        lines[i].setAttribute('y2', P[e[1]][1].toFixed(1));
+        var on = activeE.indexOf(i) >= 0;
+        lines[i].setAttribute('stroke', on ? '#0f172a' : '#94a3b8');
+        lines[i].setAttribute('stroke-width', on ? 4 : 1.8);
+      });
+
+      dots.forEach(function (dEl, i) {
+        dEl.setAttribute('cx', P[i][0].toFixed(1));
+        dEl.setAttribute('cy', P[i][1].toFixed(1));
+        dEl.setAttribute('opacity', showV ? 1 : 0);
+      });
+    }
+
+    function clear() {
+      activeF = []; activeE = []; showV = false; net = false;
+      render();
+    }
+
+    /* ── 拖动旋转 ── */
+    var drag = null;
+    svg.addEventListener('pointerdown', function (e) {
+      if (net) return;
+      drag = { x: e.clientX, y: e.clientY, yaw: yaw, pitch: pitch };
+      spin = false;
+      try { svg.setPointerCapture(e.pointerId); } catch (err) {}
+    });
+    svg.addEventListener('pointermove', function (e) {
+      if (!drag) return;
+      yaw = drag.yaw + (e.clientX - drag.x) * 0.012;
+      pitch = Math.max(-1.1, Math.min(1.2, drag.pitch + (e.clientY - drag.y) * 0.01));
+      render();
+    });
+    function endDrag() { drag = null; }
+    svg.addEventListener('pointerup', endDrag);
+    svg.addEventListener('pointercancel', endDrag);
+
+    var spin = !reduced() && spec.spin !== false;
+    function tick() {
+      if (!spin || net || drag) return;
+      yaw += 0.0045;
+      render();
+      requestAnimationFrame(tick);
+    }
+
+    /* ── 演示步骤 ── */
+    var STEPS = [];
+    if (focus === 'faces' || focus === 'all') {
+      STEPS.push({ f: ['front', 'back'], text: '前面和后面：都是 ' + w + '×' + hh + '，完全一样。' });
+      STEPS.push({ f: ['left', 'right'], text: '左面和右面：都是 ' + d + '×' + hh + '，完全一样。' });
+      STEPS.push({ f: ['top', 'bottom'], text: '上面和下面：都是 ' + w + '×' + d + '，完全一样。三组面，共 6 个。' });
+    }
+    if (focus === 'edges' || focus === 'all') {
+      STEPS.push({ e: GROUPS.len, text: '先数长的方向：4 条棱，每条都是 ' + w + '。' });
+      STEPS.push({ e: GROUPS.height, text: '再数高的方向：4 条棱，每条都是 ' + hh + '。' });
+      STEPS.push({ e: GROUPS.depth, text: '最后数宽的方向：又是 4 条，每条 ' + d + '。4+4+4=12 条棱。' });
+    }
+    if (focus === 'vertices' || focus === 'all') {
+      STEPS.push({ v: true, text: '8 个顶点：每个顶点都连着 3 条棱。' });
+    }
+    if (focus === 'unfold' || focus === 'all') {
+      STEPS.push({ unfold: true, text: '沿棱剪开、摊平——6 个面排成一张展开图，面积一点没变。' });
+    }
+    var idx = 0;
+
+    render();
+    if (spin) requestAnimationFrame(tick);
+
+    return {
+      el: svg,
+      next: function () {
+        if (idx >= STEPS.length) return null;
+        var st = STEPS[idx++];
+        spin = false;
+        if (st.f) { activeF = st.f; activeE = []; showV = false; net = false; }
+        if (st.e) { activeE = st.e; activeF = []; showV = false; net = false; }
+        if (st.v) { showV = true; activeF = []; activeE = []; net = false; }
+        if (st.unfold) { net = true; }
+        render();
+        return { text: st.text, done: idx >= STEPS.length };
+      },
+      startDemo: function () {
+        idx = 0;
+        clear();
+        return this;
+      },
+      reset: function () { idx = 0; clear(); }
+    };
+  }
+
   global.CR = {
     vertical: vertical,
     geometry: geometry,
     numberline: numberline,
     coords: coords,
     clock: clock,
+    solid: solid,
     graphNav: graphNav,
     extend: extend,
     graphHref: graphHref,
@@ -1425,6 +1666,26 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
         return f;
       },
 
+      solid: function (s) {
+        var f = document.createDocumentFragment();
+        if (s.title) f.appendChild(h('h2', null, s.title));
+        var box = h('div', 'viz');
+        f.appendChild(box);
+        var ctrl = CR.solid(box, s.body || s);
+        if (s.caption) {
+          var cap = h('div', 'viz-cap');
+          cap.innerHTML = s.caption;
+          f.appendChild(cap);
+        }
+        attachDemo(f, ctrl, s);
+        if (s.note) {
+          var card = h('div', 'card' + (s.warn ? ' pitfall' : ' tip'));
+          card.innerHTML = '<p style="margin:0">' + s.note + '</p>';
+          f.appendChild(card);
+        }
+        return f;
+      },
+
       numberline: function (s) {
         var f = document.createDocumentFragment();
         if (s.title) f.appendChild(h('h2', null, s.title));
@@ -1571,6 +1832,7 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
       var reset = h('button', 'btn small', '重来');
       var tip = h('p', 'demo-tip', s.demoHint || '点按钮，一位一位算给你看。');
       var idle = s.demoHint || '点按钮，一位一位算给你看。';
+      var doneLabel = s.demoDone || '算完了';
 
       next.onclick = function () {
         var r = ctrl.next();
@@ -1579,7 +1841,7 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
         if (r.done) {
           next.disabled = true;
           next.classList.remove('primary');
-          next.textContent = '算完了';
+          next.textContent = doneLabel;
         }
       };
       reset.onclick = function () {

@@ -83,7 +83,7 @@ PY
 | 变换 | 图形动了，量没变或按规律变 | `geometry(cut)` `/` `coords` | 剪拼、平移旋转 |
 | 逼近 | 越来越接近某个值 | `numberline` `/` `chart` | 估算、极限（高中） |
 | 模拟 | 条件变了，结果怎么变 | `sim` | 动量守恒、电路 |
-| 构造 | 按规则把对象搭出来 | `geometry` `/` `diagram` | 作图、统计图 |
+| 构造 | 按规则把对象搭出来 | `solid` `/` `geometry` | 长方体、展开图、作图 |
 
 选两个就是两节课。硬塞在一节里，学生会记住动画，记不住关系。
 
@@ -162,4 +162,4 @@ node scripts/score-course.mjs mt_xxx
 | 字段与流程说明 | `docs/COURSEWARE.md` |
 | 评分口径 | `scripts/score-course.mjs` |
 
-细节在 `references/`：`pedagogy.md`（八条规则怎么落地）、`steps.md`（九种步骤的字段与写法）、`graph.md`（图谱关联的硬规则）、`rubric.md`（九维评分怎么补分）。
+细节在 `references/`：`pedagogy.md`（八条规则怎么落地）、`steps.md`（十种步骤的字段与写法）、`graph.md`（图谱关联的硬规则）、`rubric.md`（九维评分怎么补分）。
