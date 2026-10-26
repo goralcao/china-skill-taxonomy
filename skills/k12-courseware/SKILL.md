@@ -162,4 +162,4 @@ node scripts/score-course.mjs mt_xxx
 | 字段与流程说明 | `docs/COURSEWARE.md` |
 | 评分口径 | `scripts/score-course.mjs` |
 
-细节在 `references/`：`pedagogy.md`（八条规则怎么落地）、`steps.md`（十三种步骤的字段与写法）、`graph.md`（图谱关联的硬规则）、`rubric.md`（九维评分怎么补分）。
+细节在 `references/`：`pedagogy.md`（八条规则怎么落地）、`steps.md`（十七种步骤的字段与写法）、`graph.md`（图谱关联的硬规则）、`rubric.md`（九维评分怎么补分）。

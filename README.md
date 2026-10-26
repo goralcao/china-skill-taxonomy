@@ -9,7 +9,7 @@
 覆盖 12 个学科、1~12 年级，每个主题配一份教学研究</p>
 
 <p>
-<img src="https://img.shields.io/badge/version-v0.31.0-blue?style=flat-square" alt="version">
+<img src="https://img.shields.io/badge/version-v0.32.0-blue?style=flat-square" alt="version">
 <img src="https://img.shields.io/badge/subjects-12-informational?style=flat-square" alt="subjects">
 <img src="https://img.shields.io/badge/topics-1268-brightgreen?style=flat-square" alt="topics">
 <img src="https://img.shields.io/badge/prerequisite%20edges-1635-blueviolet?style=flat-square" alt="prerequisite edges">
@@ -24,7 +24,7 @@
 
 在线预览：<https://acd118508358062b1.app.workbuddy.host/?sharecode=DHL4TJAQCG>
 
-> v0.31.0 · 主题 1268 · 先修依赖 1635（hard 947 / soft 688）· 课标条目 186 · 域摘要 204 · 教学研究 1268 · 教材版本 26 · 学科 12 · 课件 15
+> v0.32.0 · 主题 1268 · 先修依赖 1635（hard 947 / soft 688）· 课标条目 186 · 域摘要 204 · 教学研究 1268 · 教材版本 26 · 学科 12 · 课件 20
 
 ## 目录
 
@@ -122,6 +122,11 @@
 | 质量守恒定律 | 分子动画 | 断键、原子搬家、成键，底部原子清点始终不变 | 12 分钟 |
 | 空间角（高中） | **棱锥 3D** | 线面角作射影 54.7°，二面角作垂线 63.4°，可拖着转 | 15 分钟 |
 | 年、月、日 | **年历** | 12 个月按天数上色，二月可在平年/闰年之间切换 | 12 分钟 |
+| 小数的初步认识 | **小数条** | 十格条涂格，0.1 一份一份数出来 | 10 分钟 |
+| 一位小数加减法 | 小数条 | 加是合起来数，减是去掉几格 | 11 分钟 |
+| 面积与面积单位 | 方格铺满 | 一格一格铺；边长用厘米，面积用平方厘米 | 11 分钟 |
+| 复式统计表 | 复式表 | 男女两行对着比，合计自动求和 | 11 分钟 |
+| 位置与方向 | **罗盘地图** | 八方向罗盘 + 社区地图走路线 | 10 分钟 |
 
 <p align="center">
   <img src="docs/screenshot-course-vertical.png" width="49%" alt="万以内的加减法：竖式呈现，进位标在前一位上方">
@@ -140,6 +145,12 @@
   <img src="docs/screenshot-course-division.png" width="32%" alt="除法竖式：72÷6，试商、乘、减、落逐步展开">
   <img src="docs/screenshot-course-molecule.png" width="32%" alt="质量守恒：两个氢分子和一个氧分子在反应前">
   <img src="docs/screenshot-course-calendar.png" width="32%" alt="年月日：12 个月按大月小月二月上色，可切换 2023/2024">
+</p>
+
+<p align="center">
+  <img src="docs/screenshot-course-decimal.png" width="32%" alt="一位小数加法：0.3+0.4，两条十格条合起来数">
+  <img src="docs/screenshot-course-stats.png" width="32%" alt="复式统计表：男女两行数据并排，合计自动求和">
+  <img src="docs/screenshot-course-direction.png" width="32%" alt="位置与方向：八方向罗盘和社区地图，路线从学校走到公园">
 </p>
 
 ### 为什么分「教学结构」和「呈现方式」两层
@@ -470,7 +481,7 @@ china-skill-taxonomy/
   title        = {学阶图谱 · China Skill Taxonomy},
   author       = {{China Skill Taxonomy contributors}},
   year         = {2026},
-  version      = {v0.31.0},
+  version      = {v0.32.0},
   url          = {https://github.com/goralcao/china-skill-taxonomy},
   note         = {Database licensed under ODbL 1.0; content under CC BY-SA 4.0}
 }
@@ -486,7 +497,7 @@ china-skill-taxonomy/
 
 ODbL 把「衍生数据库」和「产出作品」分开。拿这份数据做产品、训练模型、放进应用，都不需要开源你的产品；只有当你发布基于它的数据库时才需要同样开放。署名可以照抄这行：
 
-> 学阶图谱 · China Skill Taxonomy (v0.31.0) · https://github.com/goralcao/china-skill-taxonomy · ODbL 1.0 (database) + CC BY-SA 4.0 (content)
+> 学阶图谱 · China Skill Taxonomy (v0.32.0) · https://github.com/goralcao/china-skill-taxonomy · ODbL 1.0 (database) + CC BY-SA 4.0 (content)
 
 ## 路线图
 
@@ -502,7 +513,7 @@ ODbL 把「衍生数据库」和「产出作品」分开。拿这份数据做产
 | v0.13 ~ v0.15 | 初中物理、化学、历史、地理；多版本教材目录与跨版本映射 |
 | v0.16 ~ v0.18 | 科学、道德与法治、生物，十学科 742 主题全量覆盖 |
 | v0.19 ~ v0.22 | 高中九科补齐，1268 主题、十二学科全量覆盖 |
-| v0.22.1 ~ v0.31.0 | 图例可收缩、触摸修复、课件演算、技能与评分、3D 立体图、除法竖式、分子动画、二面角、年历 |
+| v0.22.1 ~ v0.32.0 | 图例可收缩、触摸修复、课件演算、技能与评分、3D 立体图、除法竖式、分子动画、年历、小数条与罗盘地图 |
 
 还没做的：
 

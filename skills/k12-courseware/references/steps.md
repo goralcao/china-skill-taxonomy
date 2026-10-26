@@ -1,6 +1,6 @@
-# 十四种步骤：字段、写法、什么时候用
+# 十七种步骤：字段、写法、什么时候用
 
-引擎型课件的 `content.json` 只有一个 `steps` 数组。每一步是一屏，类型共十四种。
+引擎型课件的 `content.json` 只有一个 `steps` 数组。每一步是一屏，类型共十七种。
 
 ```json
 {
@@ -28,6 +28,9 @@
 | `division` | 除法竖式 | `body{a,b}` | `caption` `note` `demoLabel` |
 | `molecule` | 分子与原子 | `body{atoms,bondsBefore,bondsAfter}` | `caption` `note` `label` |
 | `calendar` | 年历 | `body{year}` | `caption` `note` `demoLabel` |
+| `decimal` | 小数条 | `body{a,b,op}` | `caption` `note` `demoLabel` |
+| `table` | 复式统计表 | `body{categories,series}` | `caption` `note` `demoLabel` |
+| `compass` | 方向与路线 | `body{}` | `caption` `note` `demoLabel` |
 | `numberline` | 数轴、量感 | `line{min,max,step,...}` | `marks[]` `span` `caption` |
 | `clock` | 钟面 | `absMinutes` | `caption` |
 | `quiz` | 填数字 | `question` `answer`(number) | `unit` `hint` `why` `title` |
@@ -181,6 +184,35 @@ preset：
 ```
 
 12 个月排成 4×3，按大月/小月/二月上色。演示三类天数，底部可切 2023/2024 看二月 28↔29，总数随之变化。
+
+## decimal
+
+```json
+{ "type": "decimal", "title": "0.3 + 0.4 = 0.7", "body": { "a": 0.3, "b": 0.4, "op": "+" } }
+```
+
+十格条：`a`、`b` 各一条（只给 `a` 就是认识小数），`op` 是 `+` 或 `-`。演示逐条涂格，结果条自动算，全程按「几个 0.1」说话。
+
+## table
+
+```json
+{ "type": "table", "body": {
+  "categories": ["跳绳", "踢毽"],
+  "series": [
+    { "name": "男", "color": "#38bdf8", "values": [9, 5] },
+    { "name": "女", "color": "#a78bfa", "values": [6, 8] }
+  ] } }
+```
+
+复式统计表。演示逐行高亮、两行对比、最后给出合计（程序求和）。换数据不用改讲解。
+
+## compass
+
+```json
+{ "type": "compass", "title": "先认方向，再走路线", "body": {} }
+```
+
+左边八方向罗盘，右边社区地图（学校 + 8 个地点）。演示：四个正方向 → 四个斜方向 → 高亮东北方向的公园并画出路线。
 
 ## numberline
 

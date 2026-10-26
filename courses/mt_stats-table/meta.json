@@ -1,0 +1,24 @@
+{
+  "topicId": "mt_stats-table",
+  "title": "复式统计表：把两组数据放到一张表里",
+  "template": "explain",
+  "renderer": "barGroup",
+  "duration": 11,
+  "interactions": 2,
+  "grade": 3,
+  "subject": "数学",
+  "standards": ["math-2022:S2:SP"],
+  "prerequisites": ["mt_data-collect", "mt_classify"],
+  "next": ["mt_average-mean", "mt_bar-chart", "mt_line-chart"],
+  "objectives": [
+    "认识复式统计表的结构：表头、横栏、竖栏",
+    "会把男生、女生两组数据合并到一张表",
+    "能对着两行数据做比较和简单判断"
+  ],
+  "cognitiveAction": "比较",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-27"
+}

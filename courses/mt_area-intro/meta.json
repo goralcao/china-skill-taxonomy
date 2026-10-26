@@ -1,0 +1,24 @@
+{
+  "topicId": "mt_area-intro",
+  "title": "面积与面积单位：铺满方格数出来",
+  "template": "explain",
+  "renderer": "geometry",
+  "duration": 11,
+  "interactions": 2,
+  "grade": 3,
+  "subject": "数学",
+  "standards": ["math-2022:S2:GG:GM"],
+  "prerequisites": ["mt_shape-2d", "mt_length-cm-m", "mt_rect-perimeter"],
+  "next": ["mt_rect-area", "mt_volume"],
+  "objectives": [
+    "理解面积是物体表面的大小",
+    "能数方格得出长方形的面积",
+    "区分面积（铺满）与周长（绕一圈）"
+  ],
+  "cognitiveAction": "累积",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-27"
+}

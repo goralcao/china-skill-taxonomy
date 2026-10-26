@@ -1,19 +1,19 @@
 {
-  "version": "v0.31.0",
+  "version": "v0.32.0",
   "schemaVersion": 1,
   "generatedAt": "2026-10-27",
   "counts": {
-    "total": 15,
+    "total": 20,
     "byTemplate": {
       "drill": 1,
-      "explain": 13,
+      "explain": 18,
       "explore": 1
     },
     "byStatus": {
-      "reviewed": 15
+      "reviewed": 20
     },
     "bySubject": {
-      "数学": 13,
+      "数学": 18,
       "化学": 1,
       "物理": 1
     }
@@ -51,6 +51,41 @@
       "updatedAt": "2026-10-27",
       "path": "courses/mt_addsub-10000/",
       "bytes": 17177
+    },
+    {
+      "topicId": "mt_area-intro",
+      "title": "面积与面积单位：铺满方格数出来",
+      "template": "explain",
+      "renderer": "geometry",
+      "duration": 11,
+      "interactions": 2,
+      "grade": 3,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S2:GG:GM"
+      ],
+      "prerequisites": [
+        "mt_shape-2d",
+        "mt_length-cm-m",
+        "mt_rect-perimeter"
+      ],
+      "next": [
+        "mt_rect-area",
+        "mt_volume"
+      ],
+      "objectives": [
+        "理解面积是物体表面的大小",
+        "能数方格得出长方形的面积",
+        "区分面积（铺满）与周长（绕一圈）"
+      ],
+      "cognitiveAction": "累积",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "path": "courses/mt_area-intro/",
+      "bytes": 663
     },
     {
       "topicId": "mt_calendar",
@@ -115,6 +150,106 @@
       "updatedAt": "2026-10-27",
       "path": "courses/mt_cuboid/",
       "bytes": 663
+    },
+    {
+      "topicId": "mt_dec-addsub",
+      "title": "一位小数加减法：小数点对齐再算",
+      "template": "explain",
+      "renderer": "decimalBar",
+      "duration": 11,
+      "interactions": 2,
+      "grade": 3,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S2:NA:NO"
+      ],
+      "prerequisites": [
+        "mt_dec-intro",
+        "mt_num-100-pen"
+      ],
+      "next": [
+        "mt_dec-addsub2"
+      ],
+      "objectives": [
+        "理解相同数位对齐就是小数点对齐",
+        "会用小数条演示 0.3+0.4 与 0.9-0.5",
+        "能在竖式中正确计算一位小数加减法"
+      ],
+      "cognitiveAction": "变换",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "path": "courses/mt_dec-addsub/",
+      "bytes": 663
+    },
+    {
+      "topicId": "mt_dec-intro",
+      "title": "小数的初步认识：零点几就是十分之几",
+      "template": "explain",
+      "renderer": "decimalBar",
+      "duration": 10,
+      "interactions": 2,
+      "grade": 3,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S2:NA:NO"
+      ],
+      "prerequisites": [
+        "mt_frac-intro",
+        "mt_num-100-recognition"
+      ],
+      "next": [
+        "mt_dec-addsub",
+        "mt_dec-meaning"
+      ],
+      "objectives": [
+        "理解一位小数表示十分之几，会读、写零点几",
+        "能说出 0.1、0.3、0.7 各是几个 0.1",
+        "体会小数与十分之几分数之间的联系"
+      ],
+      "cognitiveAction": "分解",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "path": "courses/mt_dec-intro/",
+      "bytes": 663
+    },
+    {
+      "topicId": "mt_direction",
+      "title": "位置与方向：先认八个方向，再走路线",
+      "template": "explain",
+      "renderer": "compass",
+      "duration": 10,
+      "interactions": 2,
+      "grade": 3,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S2:GG:PM"
+      ],
+      "prerequisites": [
+        "mt_position-basic",
+        "mt_shape-2d"
+      ],
+      "next": [
+        "mt_position-pairs"
+      ],
+      "objectives": [
+        "能说出东、南、西、北和四个斜方向",
+        "能在示意图上判断物体的相对方向",
+        "能用「方向 + 距离」描述一条简单路线"
+      ],
+      "cognitiveAction": "变换",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "path": "courses/mt_direction/",
+      "bytes": 657
     },
     {
       "topicId": "mt_div-1digit",
@@ -444,6 +579,41 @@
       "updatedAt": "2026-10-27",
       "path": "courses/mt_rect-perimeter/",
       "bytes": 672
+    },
+    {
+      "topicId": "mt_stats-table",
+      "title": "复式统计表：把两组数据放到一张表里",
+      "template": "explain",
+      "renderer": "barGroup",
+      "duration": 11,
+      "interactions": 2,
+      "grade": 3,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S2:SP"
+      ],
+      "prerequisites": [
+        "mt_data-collect",
+        "mt_classify"
+      ],
+      "next": [
+        "mt_average-mean",
+        "mt_bar-chart",
+        "mt_line-chart"
+      ],
+      "objectives": [
+        "认识复式统计表的结构：表头、横栏、竖栏",
+        "会把男生、女生两组数据合并到一张表",
+        "能对着两行数据做比较和简单判断"
+      ],
+      "cognitiveAction": "比较",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "path": "courses/mt_stats-table/",
+      "bytes": 657
     },
     {
       "topicId": "mt_time-hms",

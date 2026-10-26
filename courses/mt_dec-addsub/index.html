@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>一位小数加减法 · 学阶图谱课件</title>
+<link rel="stylesheet" href="../../templates/base.css">
+</head>
+<body>
+<!-- 页面骨架由 templates/engine.js 生成；内容在 content.json -->
+<script src="../../templates/renderers.js"></script>
+<script src="../../templates/engine.js"></script>
+<script id="content-loader">
+  fetch('content.json').then(function (r) { return r.json(); }).then(function (c) {
+    window.__CONTENT = c;
+    CourseEngine.mount(c);
+  });
+</script>
+</body>
+</html>

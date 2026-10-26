@@ -335,7 +335,7 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 
 /* ── 立体图形 ─────────────────────────────────────────── */
 /* 拖得动，才看得出哪个面在后面 */
-.solid-svg, .pyr-svg, .mol-svg, .cal-svg { width: 100%; height: auto; touch-action: none; }
+.solid-svg, .pyr-svg, .mol-svg, .cal-svg, .dec-svg, .tbl-svg, .cmp-svg { width: 100%; height: auto; touch-action: none; }
 .solid-svg, .pyr-svg { cursor: grab; }
 .solid-svg:active, .pyr-svg:active { cursor: grabbing; }
 .viz text { fill: var(--text); font-family: inherit; }
@@ -345,7 +345,7 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 .viz .dunder { stroke: var(--dim); stroke-width: 1.5; }
 
 </style>
-<script>window.__GRAPH = {"id": "mt_frac-intro", "name": "分数的初步认识", "subject": "数学", "domain": "数与代数", "stage": "第二学段（3~4年级）", "grade": 3, "gradeEnd": 3, "standards": ["math-2022:S2:NA:NO"], "textbooks": ["pep-math:3a:u8"], "textbookLabels": ["人教版数学 · 3 年级上 第 8 单元"], "prereqs": [{"id": "mt_num-10-composition", "name": "10以内数的分与合", "grade": 1, "subject": "数学", "course": null, "hard": true, "reason": "几分之一来自平均分，即一组的分成"}, {"id": "mt_shape-2d", "name": "平面图形的认识", "grade": 1, "subject": "数学", "course": null, "hard": false, "reason": "折纸涂色引入分数需要图形操作经验"}], "unlocks": [{"id": "mt_frac-same-addsub", "name": "同分母分数加减法", "grade": 3, "subject": "数学", "course": "reviewed", "hard": true}, {"id": "mt_dec-intro", "name": "小数的初步认识", "grade": 3, "subject": "数学", "course": null, "hard": true}, {"id": "mt_frac-meaning", "name": "分数的意义", "grade": 5, "subject": "数学", "course": null, "hard": true}, {"id": "mt_probability", "name": "可能性", "grade": 5, "subject": "数学", "course": null, "hard": true}, {"id": "mt_dec-meaning", "name": "小数的意义和性质", "grade": 4, "subject": "数学", "course": null, "hard": false}], "siblings": [{"id": "mt_addsub-10000", "name": "万以内的加法和减法", "grade": 3, "subject": "数学", "course": "reviewed", "hard": false}, {"id": "mt_mult-1digit", "name": "多位数乘一位数", "grade": 3, "subject": "数学", "course": "reviewed", "hard": false}, {"id": "mt_div-1digit", "name": "除数是一位数的除法", "grade": 3, "subject": "数学", "course": "reviewed", "hard": false}, {"id": "mt_multiple", "name": "倍的认识", "grade": 3, "subject": "数学", "course": "reviewed", "hard": false}]};</script>
+<script>window.__GRAPH = {"id": "mt_frac-intro", "name": "分数的初步认识", "subject": "数学", "domain": "数与代数", "stage": "第二学段（3~4年级）", "grade": 3, "gradeEnd": 3, "standards": ["math-2022:S2:NA:NO"], "textbooks": ["pep-math:3a:u8"], "textbookLabels": ["人教版数学 · 3 年级上 第 8 单元"], "prereqs": [{"id": "mt_num-10-composition", "name": "10以内数的分与合", "grade": 1, "subject": "数学", "course": null, "hard": true, "reason": "几分之一来自平均分，即一组的分成"}, {"id": "mt_shape-2d", "name": "平面图形的认识", "grade": 1, "subject": "数学", "course": null, "hard": false, "reason": "折纸涂色引入分数需要图形操作经验"}], "unlocks": [{"id": "mt_frac-same-addsub", "name": "同分母分数加减法", "grade": 3, "subject": "数学", "course": "reviewed", "hard": true}, {"id": "mt_dec-intro", "name": "小数的初步认识", "grade": 3, "subject": "数学", "course": "reviewed", "hard": true}, {"id": "mt_frac-meaning", "name": "分数的意义", "grade": 5, "subject": "数学", "course": null, "hard": true}, {"id": "mt_probability", "name": "可能性", "grade": 5, "subject": "数学", "course": null, "hard": true}, {"id": "mt_dec-meaning", "name": "小数的意义和性质", "grade": 4, "subject": "数学", "course": null, "hard": false}], "siblings": [{"id": "mt_addsub-10000", "name": "万以内的加法和减法", "grade": 3, "subject": "数学", "course": "reviewed", "hard": false}, {"id": "mt_mult-1digit", "name": "多位数乘一位数", "grade": 3, "subject": "数学", "course": "reviewed", "hard": false}, {"id": "mt_div-1digit", "name": "除数是一位数的除法", "grade": 3, "subject": "数学", "course": "reviewed", "hard": false}, {"id": "mt_multiple", "name": "倍的认识", "grade": 3, "subject": "数学", "course": "reviewed", "hard": false}]};</script>
 </head>
 <body>
 <!-- 页面骨架由 templates/engine.js 生成；内容在 content.json -->
@@ -610,6 +610,7 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
    *   cut      —— 平行四边形沿高剪一刀，平移到右边拼成长方形
    * ══════════════════════════════════════════════════════ */
   function geometry(el, spec) {
+    spec = spec || {};
     var preset = spec.preset || 'rectGrid';
     var W = 320, H = 220;
     var svg = s('svg', { viewBox: '0 0 ' + W + ' ' + H, width: '100%', role: 'img' });
@@ -654,6 +655,7 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
       }, svg);
       th.textContent = (spec.unitH || rows) + (spec.unit || ' 格');
 
+      var shownCells = 0;
       var ctrlG = {
         el: svg,
         total: cols * rows,
@@ -673,7 +675,17 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
           })();
           return ctrlG;
         },
-        reset: function () { ctrlG.reveal(0); return ctrlG; }
+        next: function () {
+          if (shownCells >= cells.length) return null;
+          shownCells++;
+          ctrlG.reveal(shownCells);
+          return {
+            text: '铺上第 ' + shownCells + ' 格：现在是 ' + shownCells + (spec.countUnit || spec.unit || ' 格') + '。',
+            done: shownCells >= cells.length
+          };
+        },
+        startDemo: function () { shownCells = 0; ctrlG.reveal(0); return ctrlG; },
+        reset: function () { shownCells = 0; ctrlG.reveal(0); return ctrlG; }
       };
       return ctrlG;
     }
@@ -2135,6 +2147,312 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
     };
   }
 
+
+  /* ══════════════════════════════════════════════════════
+   * 小数条
+   * 0.1 看不见，但「十份里的一份」看得见。
+   * 两条十格条并排，加就是合起来数，减就是去掉几格。
+   * ══════════════════════════════════════════════════════ */
+  function decimalBar(el, spec) {
+    spec = spec || {};
+    var a = Number(spec.a == null ? 0.3 : spec.a);
+    var b = spec.b == null ? null : Number(spec.b);
+    var op = spec.op || '+';
+    var W = 360, H = b == null ? 110 : 230;
+    var barX = 30, barW = 290, barH = 30, gap = 2;
+    var cw = (barW - gap * 9) / 10;
+
+    var svg = s('svg', { viewBox: '0 0 ' + W + ' ' + H, class: 'dec-svg', role: 'img' }, el);
+    svg.style.width = '100%';
+    svg.style.height = 'auto';
+
+    function row(y, color, label) {
+      var t = s('text', { x: barX, y: y - 7, style: 'font-size:13px' }, svg);
+      t.textContent = label;
+      var cells = [];
+      for (var i = 0; i < 10; i++) {
+        var r = s('rect', {
+          x: barX + i * (cw + gap), y: y, width: cw, height: barH, rx: 3,
+          fill: color, 'fill-opacity': 0.12, stroke: color, 'stroke-width': 1
+        }, svg);
+        r.style.transition = 'fill-opacity .25s ease';
+        cells.push(r);
+      }
+      return cells;
+    }
+
+    var rowA = row(30, '#38bdf8', a + '（' + Math.round(a * 10) + ' 个 0.1）');
+    var rowB = b == null ? null : row(100, '#a78bfa', b + '（' + Math.round(b * 10) + ' 个 0.1）');
+    var totalV = b == null ? a : (op === '-' ? a - b : a + b);
+    var rowR = b == null ? null : row(172, '#4ade80', '结果：' + (Math.round(totalV * 10) / 10));
+
+    function fill(cells, n) {
+      cells.forEach(function (c, i) {
+        setTimeout(function () { c.setAttribute('fill-opacity', i < n ? 0.8 : 0.12); }, reduced() ? 0 : i * 28);
+      });
+    }
+
+    var STEPS = [
+      { text: a + ' 就是 10 份里的 ' + Math.round(a * 10) + ' 份。', run: function () { fill(rowA, Math.round(a * 10)); } }
+    ];
+    if (b != null) {
+      STEPS.push({ text: b + ' 就是 10 份里的 ' + Math.round(b * 10) + ' 份。', run: function () { fill(rowB, Math.round(b * 10)); } });
+      STEPS.push({
+        text: op === '-'
+          ? a + ' 里去掉 ' + Math.round(b * 10) + ' 份，还剩 ' + Math.round(totalV * 10) + ' 份，就是 ' + (Math.round(totalV * 10) / 10) + '。'
+          : Math.round(a * 10) + ' 份加 ' + Math.round(b * 10) + ' 份是 ' + Math.round(totalV * 10) + ' 份，就是 ' + (Math.round(totalV * 10) / 10) + '。',
+        run: function () { fill(rowR, Math.round(totalV * 10)); }
+      });
+    }
+
+    var idx = 0;
+    return {
+      el: svg,
+      next: function () {
+        if (idx >= STEPS.length) return null;
+        var st = STEPS[idx++];
+        st.run();
+        return { text: st.text, done: idx >= STEPS.length };
+      },
+      startDemo: function () {
+        idx = 0;
+        [rowA, rowB, rowR].forEach(function (cells) {
+          if (cells) cells.forEach(function (c) { c.setAttribute('fill-opacity', 0.12); });
+        });
+        return this;
+      },
+      reset: function () { return this.startDemo(); }
+    };
+  }
+
+  /* ══════════════════════════════════════════════════════
+   * 复式统计表
+   * 单式统计表只能回答「男生喜欢什么」，复式能回答
+   * 「男生和女生谁更喜欢」。多出来的那一行才是重点。
+   * ══════════════════════════════════════════════════════ */
+  function barGroup(el, spec) {
+    spec = spec || {};
+    var cats = spec.categories || [];
+    var series = spec.series || [];
+    var W = 380, H = 270;
+    var x0 = 22, y0 = 34, labelW = 78, colW = Math.min(88, (W - x0 * 2 - labelW) / Math.max(1, cats.length));
+    var rowH = 42;
+
+    var svg = s('svg', { viewBox: '0 0 ' + W + ' ' + H, class: 'tbl-svg', role: 'img' }, el);
+    svg.style.width = '100%';
+    svg.style.height = 'auto';
+
+    var maxV = 1;
+    series.forEach(function (sr) { sr.values.forEach(function (v) { if (v > maxV) maxV = v; }); });
+
+    var g = s('g', null, svg);
+    var cells = [];
+
+    // 表头
+    var head = s('text', { x: x0 + labelW / 2, y: y0 + 20, 'text-anchor': 'middle', style: 'font-size:13px;fill:var(--dim)' }, svg);
+    head.textContent = '项目';
+    cats.forEach(function (c, i) {
+      var t = s('text', {
+        x: x0 + labelW + i * colW + colW / 2, y: y0 + 20,
+        'text-anchor': 'middle', style: 'font-size:13px;font-weight:600'
+      }, svg);
+      t.textContent = c;
+    });
+    s('line', { x1: x0, y1: y0 + 30, x2: x0 + labelW + cats.length * colW, y2: y0 + 30, stroke: 'var(--line)', 'stroke-width': 1 }, svg);
+
+    series.forEach(function (sr, r) {
+      var y = y0 + 52 + r * rowH;
+      var name = s('text', { x: x0 + labelW / 2, y: y + 6, 'text-anchor': 'middle', style: 'font-size:13.5px;font-weight:600' }, svg);
+      name.textContent = sr.name + '生';
+      var rowCell = [];
+      sr.values.forEach(function (v, i) {
+        var cx = x0 + labelW + i * colW;
+        var bg = s('rect', {
+          x: cx + 4, y: y - 18, width: colW - 8, height: 26, rx: 6,
+          fill: sr.color, 'fill-opacity': 0.16
+        }, svg);
+        var bar = s('rect', {
+          x: cx + 4, y: y - 18, width: (colW - 8) * (v / maxV), height: 26, rx: 6,
+          fill: sr.color, 'fill-opacity': 0.45
+        }, svg);
+        var t = s('text', { x: cx + colW / 2, y: y + 2, 'text-anchor': 'middle', style: 'font-size:13px;font-weight:600' }, svg);
+        t.textContent = v;
+        rowCell.push({ bg: bg, bar: bar, t: t, v: v, name: sr.name });
+      });
+      cells.push(rowCell);
+    });
+
+    // 合计行：两个合计竖着错开，别叠在一起
+    var totY = y0 + 52 + series.length * rowH + 6;
+    var totLabel = s('text', { x: x0 + labelW / 2, y: totY + (series.length - 1) * 10, 'text-anchor': 'middle', style: 'font-size:13px;fill:var(--dim)' }, svg);
+    totLabel.textContent = '合计';
+    var totals = series.map(function (sr, r) {
+      var t = s('text', {
+        x: x0 + labelW + (cats.length * colW) / 2, y: totY + r * 20,
+        'text-anchor': 'middle', style: 'font-size:13.5px;font-weight:600;fill:var(--accent)'
+      }, svg);
+      t.style.opacity = 0;
+      var sum = sr.values.reduce(function (n, v) { return n + v; }, 0);
+      t.textContent = sr.name + '生共 ' + sum + ' 人';
+      return t;
+    });
+
+    function dim(keep) {
+      cells.forEach(function (row) {
+        row.forEach(function (c) {
+          var on = !keep || keep.indexOf(c) >= 0;
+          c.bg.setAttribute('fill-opacity', on ? 0.16 : 0.05);
+          c.bar.setAttribute('fill-opacity', on ? 0.45 : 0.1);
+          c.t.style.opacity = on ? 1 : 0.35;
+        });
+      });
+    }
+
+    var STEPS = [
+      { text: '表头横着是项目，竖着是男生、女生两行。', run: function () { dim(null); } },
+      { text: '男生这一行：' + series[0].values.join('、') + '。', run: function () { dim(cells[0]); } },
+      { text: '女生这一行：' + series[1].values.join('、') + '。', run: function () { dim(cells[1]); } },
+      { text: '两行对着看，才知道谁更喜欢——单式统计表做不到这一点。', run: function () { dim(null); } },
+      { text: '合计：' + series.map(function (sr) {
+        return sr.name + '生 ' + sr.values.reduce(function (n, v) { return n + v; }, 0) + ' 人';
+      }).join('，') + '。', run: function () { totals.forEach(function (t) { t.style.opacity = 1; }); } }
+    ];
+
+    var idx = 0;
+    return {
+      el: svg,
+      next: function () {
+        if (idx >= STEPS.length) return null;
+        var st = STEPS[idx++];
+        st.run();
+        return { text: st.text, done: idx >= STEPS.length };
+      },
+      startDemo: function () {
+        idx = 0;
+        dim(null);
+        totals.forEach(function (t) { t.style.opacity = 0; });
+        return this;
+      },
+      reset: function () { return this.startDemo(); }
+    };
+  }
+
+  /* ══════════════════════════════════════════════════════
+   * 方向与路线
+   * 上北下南不是口诀，是地图上的箭头。
+   * 先认四个正方向，再认四个斜方向，最后走一条路线。
+   * ══════════════════════════════════════════════════════ */
+  function compass(el, spec) {
+    spec = spec || {};
+    var W = 380, H = 330;
+    var svg = s('svg', { viewBox: '0 0 ' + W + ' ' + H, class: 'cmp-svg', role: 'img' }, el);
+    svg.style.width = '100%';
+    svg.style.height = 'auto';
+
+    // 罗盘
+    var cx = 72, cy = 76, R = 42;
+    var rose = s('g', null, svg);
+    s('circle', { cx: cx, cy: cy, r: R, fill: 'none', stroke: '#334155', 'stroke-width': 1.2 }, rose);
+    var DIRS = [
+      { n: '北', dx: 0, dy: -1, ang: -90 },
+      { n: '东', dx: 1, dy: 0, ang: 0 },
+      { n: '南', dx: 0, dy: 1, ang: 90 },
+      { n: '西', dx: -1, dy: 0, ang: 180 }
+    ];
+    var DIAG = [
+      { n: '东北', dx: 1, dy: -1, ang: -45 },
+      { n: '东南', dx: 1, dy: 1, ang: 45 },
+      { n: '西南', dx: -1, dy: 1, ang: 135 },
+      { n: '西北', dx: -1, dy: -1, ang: -135 }
+    ];
+    var card = [], diag = [];
+    DIRS.forEach(function (d) {
+      var ln = s('line', {
+        x1: cx, y1: cy, x2: cx + d.dx * (R - 8), y2: cy + d.dy * (R - 8),
+        stroke: '#38bdf8', 'stroke-width': 2.4, 'stroke-linecap': 'round'
+      }, rose);
+      var t = s('text', {
+        x: cx + d.dx * (R + 12), y: cy + d.dy * (R + 12) + 5,
+        'text-anchor': 'middle', style: 'font-size:13px;font-weight:600;fill:#38bdf8'
+      }, rose);
+      t.textContent = d.n;
+      card.push(ln); card.push(t);
+    });
+    DIAG.forEach(function (d) {
+      var ln = s('line', {
+        x1: cx + d.dx * 12, y1: cy + d.dy * 12, x2: cx + d.dx * (R - 14), y2: cy + d.dy * (R - 14),
+        stroke: '#a78bfa', 'stroke-width': 1.6, 'stroke-dasharray': '3 3'
+      }, rose);
+      var t = s('text', {
+        x: cx + d.dx * (R - 26), y: cy + d.dy * (R - 26) + 4,
+        'text-anchor': 'middle', style: 'font-size:10px;fill:#a78bfa'
+      }, rose);
+      t.textContent = d.n;
+      diag.push(ln); diag.push(t);
+    });
+    card.concat(diag).forEach(function (e) { e.style.opacity = 0; e.style.transition = 'opacity .3s ease'; });
+
+    // 地图：3×3，中间是学校
+    var gx = 236, gy = 170, step = 66;
+    var PLACES = [
+      { n: '图书馆', dx: 0, dy: -1, dir: '北' },
+      { n: '公园', dx: 1, dy: -1, dir: '东北' },
+      { n: '超市', dx: 1, dy: 0, dir: '东' },
+      { n: '医院', dx: 1, dy: 1, dir: '东南' },
+      { n: '邮局', dx: 0, dy: 1, dir: '南' },
+      { n: '车站', dx: -1, dy: 1, dir: '西南' },
+      { n: '书店', dx: -1, dy: 0, dir: '西' },
+      { n: '体育馆', dx: -1, dy: -1, dir: '西北' }
+    ];
+    var nodes = [];
+    var school = s('circle', { cx: gx, cy: gy, r: 9, fill: '#ffd166' }, svg);
+    var st = s('text', { x: gx, y: gy + 26, 'text-anchor': 'middle', style: 'font-size:12px;font-weight:600;fill:#ffd166' }, svg);
+    st.textContent = '学校';
+    PLACES.forEach(function (p) {
+      var x = gx + p.dx * step, y = gy + p.dy * step;
+      var dot = s('circle', { cx: x, cy: y, r: 6, fill: '#94a3b8' }, svg);
+      var t = s('text', { x: x, y: y - 12, 'text-anchor': 'middle', style: 'font-size:11px;fill:var(--dim)' }, svg);
+      t.textContent = p.n;
+      nodes.push({ p: p, dot: dot, t: t, x: x, y: y });
+    });
+
+    var route = s('polyline', {
+      points: gx + ',' + gy + ' ' + (gx + step) + ',' + gy + ' ' + (gx + step) + ',' + (gy - step),
+      fill: 'none', stroke: '#4ade80', 'stroke-width': 2.6, 'stroke-dasharray': '6 5', 'stroke-linecap': 'round'
+    }, svg);
+    route.style.opacity = 0;
+    route.style.transition = 'opacity .3s ease';
+
+    var STEPS = [
+      { text: '先认四个正方向：上北、下南、左西、右东。', run: function () { card.forEach(function (e) { e.style.opacity = 1; }); } },
+      { text: '再认四个斜方向：东北、东南、西南、西北，正好在两个正方向中间。', run: function () { diag.forEach(function (e) { e.style.opacity = 1; }); } },
+      { text: '公园在学校的东北方向：先向东走一格，再向北走一格。', run: function () {
+        route.style.opacity = 1;
+        nodes.forEach(function (o) { if (o.p.n === '公园') { o.dot.setAttribute('fill', '#4ade80'); o.dot.setAttribute('r', 8); } });
+      } },
+      { text: '描述路线要说清两件事：朝哪个方向、走多远。只说「往那边走」别人找不到。', run: function () {} }
+    ];
+
+    var idx = 0;
+    return {
+      el: svg,
+      next: function () {
+        if (idx >= STEPS.length) return null;
+        var s2 = STEPS[idx++];
+        s2.run();
+        return { text: s2.text, done: idx >= STEPS.length };
+      },
+      startDemo: function () {
+        idx = 0;
+        card.concat(diag).forEach(function (e) { e.style.opacity = 0; });
+        route.style.opacity = 0;
+        nodes.forEach(function (o) { o.dot.setAttribute('fill', '#94a3b8'); o.dot.setAttribute('r', 6); });
+        return this;
+      },
+      reset: function () { return this.startDemo(); }
+    };
+  }
+
   global.CR = {
     vertical: vertical,
     geometry: geometry,
@@ -2146,6 +2464,9 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
     molecule: molecule,
     pyramid: pyramid,
     calendar: calendar,
+    decimalBar: decimalBar,
+    barGroup: barGroup,
+    compass: compass,
     graphNav: graphNav,
     extend: extend,
     graphHref: graphHref,
@@ -2389,6 +2710,66 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
         var box = h('div', 'viz');
         f.appendChild(box);
         var ctrl = CR.calendar(box, s.body || s);
+        if (s.caption) {
+          var cap = h('div', 'viz-cap');
+          cap.innerHTML = s.caption;
+          f.appendChild(cap);
+        }
+        attachDemo(f, ctrl, s);
+        if (s.note) {
+          var card = h('div', 'card' + (s.warn ? ' pitfall' : ' tip'));
+          card.innerHTML = '<p style="margin:0">' + s.note + '</p>';
+          f.appendChild(card);
+        }
+        return f;
+      },
+
+      decimal: function (s) {
+        var f = document.createDocumentFragment();
+        if (s.title) f.appendChild(h('h2', null, s.title));
+        var box = h('div', 'viz');
+        f.appendChild(box);
+        var ctrl = CR.decimalBar(box, s.body || s);
+        if (s.caption) {
+          var cap = h('div', 'viz-cap');
+          cap.innerHTML = s.caption;
+          f.appendChild(cap);
+        }
+        attachDemo(f, ctrl, s);
+        if (s.note) {
+          var card = h('div', 'card' + (s.warn ? ' pitfall' : ' tip'));
+          card.innerHTML = '<p style="margin:0">' + s.note + '</p>';
+          f.appendChild(card);
+        }
+        return f;
+      },
+
+      table: function (s) {
+        var f = document.createDocumentFragment();
+        if (s.title) f.appendChild(h('h2', null, s.title));
+        var box = h('div', 'viz');
+        f.appendChild(box);
+        var ctrl = CR.barGroup(box, s.body || s);
+        if (s.caption) {
+          var cap = h('div', 'viz-cap');
+          cap.innerHTML = s.caption;
+          f.appendChild(cap);
+        }
+        attachDemo(f, ctrl, s);
+        if (s.note) {
+          var card = h('div', 'card' + (s.warn ? ' pitfall' : ' tip'));
+          card.innerHTML = '<p style="margin:0">' + s.note + '</p>';
+          f.appendChild(card);
+        }
+        return f;
+      },
+
+      compass: function (s) {
+        var f = document.createDocumentFragment();
+        if (s.title) f.appendChild(h('h2', null, s.title));
+        var box = h('div', 'viz');
+        f.appendChild(box);
+        var ctrl = CR.compass(box, s.body || s);
         if (s.caption) {
           var cap = h('div', 'viz-cap');
           cap.innerHTML = s.caption;

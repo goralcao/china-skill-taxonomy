@@ -132,6 +132,9 @@ schema/course.schema.json
 | `division` | 除法竖式 | 除数是一位数/两位数 | 试商、乘、减、落四步逐步揭示 |
 | `molecule` | 分子与原子 | 质量守恒、化学反应 | 断键、原子位移、成键、原子清点 |
 | `calendar` | 年历 | 年月日、平年闰年 | 12 个月按天数分色、二月可切年份 |
+| `decimal` | 小数条 | 小数意义、一位小数加减 | 十格条涂格、逐条点亮 |
+| `table` | 复式统计表 | 两组数据对比 | 两行数据并排、逐行高亮、自动合计 |
+| `compass` | 方向与路线 | 八方向、描述路线 | 罗盘 + 地图、路线动画 |
 | `clock` | 钟面 | 时、分、秒 | 三针联动、分针拖拽、指针高亮 |
 | `numberline` | 数轴 | 正负数、分数、小数、时间轴 | 区间高亮、可拖手柄 |
 | `coords` | 坐标系 | 一次函数、抛物线、统计 | 网格、曲线描边动画、散点 |
@@ -382,7 +385,7 @@ localStorage.setItem('stx.course.' + TOPIC_ID,
 
 - `templates/engine.js` 接管页面骨架与全部通用逻辑
 - 课件只剩 `content.json`（steps 数组）+ 一个 16 行的薄壳 `index.html`
-- 14 种步骤类型：`intro` / `text` / `vertical` / `geometry` / `solid` / `pyramid` / `division` / `molecule` / `calendar` / `numberline` / `clock` / `quiz` / `choice` / `summary`
+- 17 种步骤类型：`intro` / `text` / `vertical` / `geometry` / `solid` / `pyramid` / `division` / `molecule` / `calendar` / `decimal` / `table` / `compass` / `numberline` / `clock` / `quiz` / `choice` / `summary`
 - 构建时把 content.json、engine.js、renderers.js、base.css 全部内联，产物仍是单文件
 
 写一节课从「复制 300 行 HTML」变成「写 60 行 JSON」。
@@ -406,6 +409,10 @@ localStorage.setItem('stx.course.' + TOPIC_ID,
 | 质量守恒定律 | 分子 | 断键、重组、原子清点 |
 | 空间角 | 棱锥 | 线面角射影、二面角垂线、度数 |
 | 年、月、日 | 年历 | 大月小月、二月切换 |
+| 小数两节 | 小数条 | 十格条涂格、合与去 |
+| 面积与面积单位 | 方格 | 一格一格铺满数面积 |
+| 复式统计表 | 复式表 | 两行对比、自动合计 |
+| 位置与方向 | 罗盘地图 | 八方向、走路线 |
 
 ### 用技能生成课件
 

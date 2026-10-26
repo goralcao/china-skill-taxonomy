@@ -1,0 +1,24 @@
+{
+  "topicId": "mt_dec-intro",
+  "title": "小数的初步认识：零点几就是十分之几",
+  "template": "explain",
+  "renderer": "decimalBar",
+  "duration": 10,
+  "interactions": 2,
+  "grade": 3,
+  "subject": "数学",
+  "standards": ["math-2022:S2:NA:NO"],
+  "prerequisites": ["mt_frac-intro", "mt_num-100-recognition"],
+  "next": ["mt_dec-addsub", "mt_dec-meaning"],
+  "objectives": [
+    "理解一位小数表示十分之几，会读、写零点几",
+    "能说出 0.1、0.3、0.7 各是几个 0.1",
+    "体会小数与十分之几分数之间的联系"
+  ],
+  "cognitiveAction": "分解",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-27"
+}

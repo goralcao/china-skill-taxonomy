@@ -1,0 +1,24 @@
+{
+  "topicId": "mt_direction",
+  "title": "位置与方向：先认八个方向，再走路线",
+  "template": "explain",
+  "renderer": "compass",
+  "duration": 10,
+  "interactions": 2,
+  "grade": 3,
+  "subject": "数学",
+  "standards": ["math-2022:S2:GG:PM"],
+  "prerequisites": ["mt_position-basic", "mt_shape-2d"],
+  "next": ["mt_position-pairs"],
+  "objectives": [
+    "能说出东、南、西、北和四个斜方向",
+    "能在示意图上判断物体的相对方向",
+    "能用「方向 + 距离」描述一条简单路线"
+  ],
+  "cognitiveAction": "变换",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-27"
+}
