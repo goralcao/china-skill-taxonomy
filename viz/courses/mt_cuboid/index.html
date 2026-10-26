@@ -1764,6 +1764,7 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
     spec = spec || {};
     var a = Math.max(0.5, spec.a || 2);
     var hh = Math.max(0.5, spec.h || 2);
+    var focus = spec.focus === 'dihedral' ? 'dihedral' : 'line';
     var W = 380, H = 300;
     var svg = s('svg', {
       viewBox: '0 0 ' + W + ' ' + H, class: 'pyr-svg', role: 'img',
@@ -1844,6 +1845,46 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
       B[2] + rad * 2.3 * (Math.cos(theta / 2 * Math.PI / 180) * u1[2] + Math.sin(theta / 2 * Math.PI / 180) * v1[2])
     ];
 
+    /* ── 二面角：棱 BC，半平面 PBC 与底面 ABCD ── */
+    var M = [(B[0] + C[0]) / 2, (B[1] + C[1]) / 2, (B[2] + C[2]) / 2];
+    var MO2 = sub(O, M), MP2 = sub(P, M);
+    var theta2 = Math.acos(Math.max(-1, Math.min(1, dot(unit(MO2), unit(MP2))))) * 180 / Math.PI;
+    var u2 = unit(MO2);
+    var v2 = unit(sub(MP2, [u2[0] * dot(MP2, u2), u2[1] * dot(MP2, u2), u2[2] * dot(MP2, u2)]));
+    var rad2 = a * 0.24;
+    var ARC2 = [];
+    for (var t2 = 0; t2 <= 24; t2++) {
+      var ang2 = theta2 * Math.PI / 180 * (t2 / 24);
+      ARC2.push([
+        M[0] + rad2 * (Math.cos(ang2) * u2[0] + Math.sin(ang2) * v2[0]),
+        M[1] + rad2 * (Math.cos(ang2) * u2[1] + Math.sin(ang2) * v2[1]),
+        M[2] + rad2 * (Math.cos(ang2) * u2[2] + Math.sin(ang2) * v2[2])
+      ]);
+    }
+    var LAB2 = [
+      M[0] + rad2 * 1.9 * (Math.cos(theta2 / 2 * Math.PI / 180) * u2[0] + Math.sin(theta2 / 2 * Math.PI / 180) * v2[0]),
+      M[1] + rad2 * 1.9 * (Math.cos(theta2 / 2 * Math.PI / 180) * u2[1] + Math.sin(theta2 / 2 * Math.PI / 180) * v2[1]),
+      M[2] + rad2 * 1.9 * (Math.cos(theta2 / 2 * Math.PI / 180) * u2[2] + Math.sin(theta2 / 2 * Math.PI / 180) * v2[2])
+    ];
+
+    var lBC = s('line', { stroke: '#fbbf24', 'stroke-width': 4, 'stroke-linecap': 'round' }, gAn);
+    var lMP = s('line', { stroke: '#fbbf24', 'stroke-width': 2.6, 'stroke-linecap': 'round' }, gAn);
+    var lMO = s('line', { stroke: '#38bdf8', 'stroke-width': 2.2, 'stroke-linecap': 'round' }, gAn);
+    var arc2 = s('polyline', { fill: 'none', stroke: '#fbbf24', 'stroke-width': 2.2, 'stroke-linejoin': 'round' }, gAn);
+    var lab2 = s('text', {
+      'text-anchor': 'middle',
+      style: 'font-size:15px;font-weight:700;fill:#fbbf24;paint-order:stroke;stroke:#0a0f18;stroke-width:4px'
+    }, gAn);
+    [lBC, lMP, lMO, arc2, lab2].forEach(function (e) {
+      e.style.opacity = 0;
+      e.style.transition = 'opacity .4s ease';
+    });
+    if (focus === 'dihedral') {
+      [lPB, lBO, arc, lab].forEach(function (e) { e.style.display = 'none'; });
+    } else {
+      [lBC, lMP, lMO, arc2, lab2].forEach(function (e) { e.style.display = 'none'; });
+    }
+
     function render() {
       var Pp = V.map(proj);
       FACES.forEach(function (f, i) {
@@ -1875,6 +1916,25 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
       lab.setAttribute('x', lp[0].toFixed(1));
       lab.setAttribute('y', lp[1].toFixed(1));
       lab.textContent = (Math.round(theta * 10) / 10) + '°';
+
+      if (focus === 'dihedral') {
+        var bc = [proj(B), proj(C)];
+        lBC.setAttribute('x1', bc[0][0].toFixed(1)); lBC.setAttribute('y1', bc[0][1].toFixed(1));
+        lBC.setAttribute('x2', bc[1][0].toFixed(1)); lBC.setAttribute('y2', bc[1][1].toFixed(1));
+        var mp = [proj(M), proj(P)];
+        lMP.setAttribute('x1', mp[0][0].toFixed(1)); lMP.setAttribute('y1', mp[0][1].toFixed(1));
+        lMP.setAttribute('x2', mp[1][0].toFixed(1)); lMP.setAttribute('y2', mp[1][1].toFixed(1));
+        var mo = [proj(M), proj(O)];
+        lMO.setAttribute('x1', mo[0][0].toFixed(1)); lMO.setAttribute('y1', mo[0][1].toFixed(1));
+        lMO.setAttribute('x2', mo[1][0].toFixed(1)); lMO.setAttribute('y2', mo[1][1].toFixed(1));
+        arc2.setAttribute('points', ARC2.map(function (p4) {
+          var q2 = proj(p4); return q2[0].toFixed(1) + ',' + q2[1].toFixed(1);
+        }).join(' '));
+        var lp2 = proj(LAB2);
+        lab2.setAttribute('x', lp2[0].toFixed(1));
+        lab2.setAttribute('y', lp2[1].toFixed(1));
+        lab2.textContent = (Math.round(theta2 * 10) / 10) + '°';
+      }
     }
 
     var drag = null;
@@ -1904,7 +1964,11 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
     if (spin) requestAnimationFrame(tick);
 
     var idx = 0;
-    var STEPS = [
+    var STEPS = focus === 'dihedral' ? [
+      { els: [lBC], face: true, text: '侧面 PBC 和底面 ABCD 相交于棱 BC——二面角就长在这条棱上。' },
+      { els: [lMP, lMO], text: '在棱上取中点 M，分别在两个面内作 BC 的垂线：MP 和 MO。' },
+      { els: [arc2, lab2], text: 'MP 与 MO 的夹角就是二面角：' + (Math.round(theta2 * 10) / 10) + '°。' }
+    ] : [
       { els: [lPB], text: '侧棱 PB 和底面 ABCD，看起来是斜的——倾斜程度要用角来说。' },
       { els: [lBO], text: '把 P 往底面投下来，落到底面中心 O。BO 就是 PB 在底面上的射影。' },
       { els: [arc, lab], text: 'PB 与射影 BO 的夹角，就是这条侧棱与底面所成的角：' + (Math.round(theta * 10) / 10) + '°。' }
@@ -1915,11 +1979,16 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
         if (idx >= STEPS.length) return null;
         var st = STEPS[idx++];
         st.els.forEach(function (e) { e.style.opacity = 1; });
+        if (st.face) {
+          polys[2].setAttribute('fill-opacity', 0.42);
+          polys[0].setAttribute('fill-opacity', 0.3);
+        }
         return { text: st.text, done: idx >= STEPS.length };
       },
       startDemo: function () {
         idx = 0;
-        [lPB, lBO, arc, lab].forEach(function (e) { e.style.opacity = 0; });
+        [lPB, lBO, arc, lab, lBC, lMP, lMO, arc2, lab2].forEach(function (e) { e.style.opacity = 0; });
+        FACES.forEach(function (f, i) { polys[i].setAttribute('fill-opacity', f.o); });
         return this;
       },
       reset: function () { return this.startDemo(); }

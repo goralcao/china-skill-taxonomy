@@ -140,6 +140,12 @@ preset：
 
 正四棱锥，`a` 底边、`h` 高。演示依次画出侧棱、射影、夹角，角度由坐标算出，不是写死的。可拖动旋转。
 
+`focus: "dihedral"` 切换到二面角：高亮棱与两个面，作两条垂线，标出二面角。
+
+```json
+{ "type": "pyramid", "body": { "a": 2, "h": 2, "focus": "dihedral" } }
+```
+
 ## division
 
 ```json

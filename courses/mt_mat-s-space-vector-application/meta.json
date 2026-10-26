@@ -1,10 +1,10 @@
 {
   "topicId": "mt_mat-s-space-vector-application",
-  "title": "线面角",
+  "title": "空间角",
   "template": "explain",
   "renderer": "pyramid",
-  "duration": 12,
-  "interactions": 2,
+  "duration": 15,
+  "interactions": 3,
   "grade": 11,
   "subject": "数学",
   "standards": ["math-2022:S5:GG"],
@@ -13,7 +13,7 @@
   "objectives": [
     "能说出线面角是斜线与它在平面内射影的夹角",
     "能在正四棱锥中作出侧棱在底面上的射影并算出角度",
-    "能写出用平面法向量求线面角的正弦公式"
+    "能写出用平面法向量求线面角的正弦公式，并说清二面角为什么用余弦"
   ],
   "cognitiveAction": "构造",
   "status": "reviewed",
