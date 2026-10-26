@@ -1,19 +1,19 @@
 {
-  "version": "v0.25.1",
+  "version": "v0.26.0",
   "schemaVersion": 1,
   "generatedAt": "2026-10-27",
   "counts": {
-    "total": 4,
+    "total": 10,
     "byTemplate": {
       "drill": 1,
-      "explore": 1,
-      "explain": 2
+      "explain": 8,
+      "explore": 1
     },
     "byStatus": {
-      "reviewed": 4
+      "reviewed": 10
     },
     "bySubject": {
-      "数学": 3,
+      "数学": 9,
       "物理": 1
     }
   },
@@ -49,6 +49,133 @@
       "updatedAt": "2026-10-27",
       "path": "courses/mt_addsub-10000/",
       "bytes": 17177
+    },
+    {
+      "topicId": "mt_frac-intro",
+      "title": "分数的初步认识：把 1 平均分",
+      "template": "explain",
+      "renderer": "geometry",
+      "duration": 13,
+      "interactions": 3,
+      "grade": 3,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S2:NA:NO"
+      ],
+      "prerequisites": [
+        "mt_div-intro",
+        "mt_shape-recognition"
+      ],
+      "next": [
+        "mt_frac-same-addsub",
+        "mt_frac-compare"
+      ],
+      "objectives": [
+        "理解几分之一与几分之几的含义",
+        "能用分数表示平均分后的一部分"
+      ],
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "path": "courses/mt_frac-intro/",
+      "bytes": 663
+    },
+    {
+      "topicId": "mt_frac-same-addsub",
+      "title": "同分母分数加减法：分母不变，只加分子",
+      "template": "explain",
+      "renderer": "geometry",
+      "duration": 12,
+      "interactions": 3,
+      "grade": 3,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S2:NA:NO"
+      ],
+      "prerequisites": [
+        "mt_frac-intro"
+      ],
+      "next": [
+        "mt_frac-compare"
+      ],
+      "objectives": [
+        "理解同分母分数加减时分母不变",
+        "能正确计算同分母分数的加减"
+      ],
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "path": "courses/mt_frac-same-addsub/",
+      "bytes": 666
+    },
+    {
+      "topicId": "mt_mult-1digit",
+      "title": "多位数乘一位数：0 那一位最容易漏",
+      "template": "explain",
+      "renderer": "vertical",
+      "duration": 12,
+      "interactions": 3,
+      "grade": 3,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S2:NA:NO"
+      ],
+      "prerequisites": [
+        "mt_mult-table",
+        "mt_addsub-10000",
+        "mt_multiple"
+      ],
+      "next": [
+        "mt_mult-2digit",
+        "mt_div-1digit"
+      ],
+      "objectives": [
+        "能在竖式里正确处理积的对位与进位",
+        "能口算整十整百数乘一位数的结果",
+        "能用估算检查积是否合理"
+      ],
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "path": "courses/mt_mult-1digit/",
+      "bytes": 663
+    },
+    {
+      "topicId": "mt_multiple",
+      "title": "倍的认识：几个几",
+      "template": "explain",
+      "renderer": "geometry",
+      "duration": 12,
+      "interactions": 3,
+      "grade": 3,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S2:NA:AR"
+      ],
+      "prerequisites": [
+        "mt_mul-tables-2-6",
+        "mt_num-100-recognition"
+      ],
+      "next": [
+        "mt_mult-1digit"
+      ],
+      "objectives": [
+        "理解「倍」表示几个几",
+        "能求一个数的几倍是多少"
+      ],
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "path": "courses/mt_multiple/",
+      "bytes": 654
     },
     {
       "topicId": "mt_phys-s-momentum-conservation",
@@ -115,6 +242,39 @@
       "bytes": 18345
     },
     {
+      "topicId": "mt_rect-perimeter",
+      "title": "长方形和正方形的周长：一周边线有多长",
+      "template": "explain",
+      "renderer": "geometry",
+      "duration": 13,
+      "interactions": 3,
+      "grade": 3,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S2:GG:GM"
+      ],
+      "prerequisites": [
+        "mt_length-cm-m",
+        "mt_shape-recognition",
+        "mt_addsub-100"
+      ],
+      "next": [
+        "mt_rect-area",
+        "mt_area-intro"
+      ],
+      "objectives": [
+        "能测量并算出课桌面的周长",
+        "能选择合适的方法计算组合图形的周长"
+      ],
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "path": "courses/mt_rect-perimeter/",
+      "bytes": 672
+    },
+    {
       "topicId": "mt_time-hms",
       "title": "时、分、秒：钟面上一圈是多久",
       "template": "explain",
@@ -143,6 +303,37 @@
       "updatedAt": "2026-10-27",
       "path": "courses/mt_time-hms/",
       "bytes": 30205
+    },
+    {
+      "topicId": "mt_unit-ton",
+      "title": "吨的认识：1 吨到底有多重",
+      "template": "explain",
+      "renderer": "numberline",
+      "duration": 12,
+      "interactions": 3,
+      "grade": 3,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S1:GG:GM"
+      ],
+      "prerequisites": [
+        "mt_unit-kg-g",
+        "mt_num-10000-recognition"
+      ],
+      "next": [
+        "mt_unit-convert"
+      ],
+      "objectives": [
+        "知道 1 吨 = 1000 千克",
+        "能估计常见物体的质量是否达到 1 吨"
+      ],
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "path": "courses/mt_unit-ton/",
+      "bytes": 654
     }
   ]
 }

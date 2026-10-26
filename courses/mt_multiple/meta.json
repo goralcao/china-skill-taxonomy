@@ -1,0 +1,29 @@
+{
+  "topicId": "mt_multiple",
+  "title": "倍的认识：几个几",
+  "template": "explain",
+  "renderer": "geometry",
+  "duration": 12,
+  "interactions": 3,
+  "grade": 3,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S2:NA:AR"
+  ],
+  "prerequisites": [
+    "mt_mul-tables-2-6",
+    "mt_num-100-recognition"
+  ],
+  "next": [
+    "mt_mult-1digit"
+  ],
+  "objectives": [
+    "理解「倍」表示几个几",
+    "能求一个数的几倍是多少"
+  ],
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-27"
+}

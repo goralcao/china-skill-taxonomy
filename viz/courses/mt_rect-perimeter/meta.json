@@ -1,0 +1,31 @@
+{
+  "topicId": "mt_rect-perimeter",
+  "title": "长方形和正方形的周长：一周边线有多长",
+  "template": "explain",
+  "renderer": "geometry",
+  "duration": 13,
+  "interactions": 3,
+  "grade": 3,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S2:GG:GM"
+  ],
+  "prerequisites": [
+    "mt_length-cm-m",
+    "mt_shape-recognition",
+    "mt_addsub-100"
+  ],
+  "next": [
+    "mt_rect-area",
+    "mt_area-intro"
+  ],
+  "objectives": [
+    "能测量并算出课桌面的周长",
+    "能选择合适的方法计算组合图形的周长"
+  ],
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-27"
+}

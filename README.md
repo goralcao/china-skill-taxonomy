@@ -9,7 +9,7 @@
 覆盖 12 个学科、1~12 年级，每个主题配一份教学研究</p>
 
 <p>
-<img src="https://img.shields.io/badge/version-v0.25.1-blue?style=flat-square" alt="version">
+<img src="https://img.shields.io/badge/version-v0.26.0-blue?style=flat-square" alt="version">
 <img src="https://img.shields.io/badge/subjects-12-informational?style=flat-square" alt="subjects">
 <img src="https://img.shields.io/badge/topics-1268-brightgreen?style=flat-square" alt="topics">
 <img src="https://img.shields.io/badge/prerequisite%20edges-1635-blueviolet?style=flat-square" alt="prerequisite edges">
@@ -24,7 +24,7 @@
 
 在线预览：<https://acd118508358062b1.app.workbuddy.host/?sharecode=DHL4TJAQCG>
 
-> v0.25.1 · 主题 1268 · 先修依赖 1635（hard 947 / soft 688）· 课标条目 186 · 域摘要 204 · 教学研究 1268 · 教材版本 26 · 学科 12 · 课件 4
+> v0.26.0 · 主题 1268 · 先修依赖 1635（hard 947 / soft 688）· 课标条目 186 · 域摘要 204 · 教学研究 1268 · 教材版本 26 · 学科 12 · 课件 10
 
 ## 目录
 
@@ -103,14 +103,20 @@
 
 每个课件绑定一个 `topicId`，从图谱详情面板直达。走完会把完成状态写到本地，图谱上对应节点右上角出现一个绿点——和手动标记的「金色环」分开，因为「走完课件」不等于「真的掌握」。
 
-现有四个：
+现有 10 个，**三年级数学上册 8 个知识点已全部配齐**：
 
-| 课件 | 教学结构 | 呈现方式 | 交互 | 时长 |
-|---|---|---|---|---|
-| 三年级数学 · 时、分、秒 | explain | 钟面 | 拖动分针、两段动画（分针一圈 / 秒针一圈）、3 道判分题 | 16 分钟 |
-| 三年级数学 · 万以内的加减法 | drill | **竖式** | 6 道竖式题，进位与借位可单独标出，答错给错因 | 10 分钟 |
-| 三年级数学 · 长方形和正方形的面积 | explain | **方格图** | 一格一格铺满、换尺寸验证长×宽、100 格推导面积进率 | 14 分钟 |
-| 高中物理 · 动量守恒 | explore | 参数模拟 | 四个滑杆调质量与速度，看碰前碰后总动量；可开摩擦做反例 | 16 分钟 |
+| 课件 | 呈现方式 | 交互 | 时长 |
+|---|---|---|---|
+| 时、分、秒 | 钟面 | 拖动分针、两段动画、3 道判分题 | 16 分钟 |
+| 万以内的加减法 | **竖式** | 6 道竖式题，进位与借位可单独标出 | 10 分钟 |
+| 吨的认识 | **数轴** | 0~2000 千克数轴、1 吨标记、3 道换算题 | 12 分钟 |
+| 倍的认识 | 方格图 | 2 行 × 3 个的摆法、求几倍与反求 | 12 分钟 |
+| 多位数乘一位数 | **竖式** | 208×4 的进位标记、末尾有 0、估算 | 12 分钟 |
+| 长方形和正方形的周长 | **描边图** | 四条边逐条高亮、靠墙围篱笆 | 13 分钟 |
+| 分数的初步认识 | **分份图** | 4 等分取 1 份 / 3 份、分子分母辨析 | 13 分钟 |
+| 同分母分数加减法 | 分份图 | 2/8+3/8 的涂色叠加、分母不变的道理 | 12 分钟 |
+| 长方形和正方形的面积 | 方格图 | 一格一格铺满、换尺寸验证、100 格推导进率 | 14 分钟 |
+| 高中物理 · 动量守恒 | 参数模拟 | 四个滑杆、碰撞动画、摩擦反例 | 16 分钟 |
 
 <p align="center">
   <img src="docs/screenshot-course-vertical.png" width="49%" alt="万以内的加减法：竖式呈现，进位标在前一位上方">
@@ -137,6 +143,24 @@
 | 物理规律 | explore + `sim` | 开个摩擦开关，守恒变不守恒 |
 
 呈现器集中放在 `templates/renderers.js`，课件源文件用相对路径引用，构建时内联进单文件——同一套竖式代码只维护一份，不用在 1268 个课件里各抄一遍。
+
+### 课件是数据，不是手写页面
+
+导航、判分、结算、图谱延伸这些每课都一样的部分，收在 `templates/engine.js` 里；一份课件只剩 `content.json`：
+
+```json
+{ "topicId": "mt_mult-1digit",
+  "steps": [
+    { "type": "intro",    "title": "208 × 4，错的人大多错在这一位" },
+    { "type": "vertical", "problem": { "a": 208, "b": 4, "op": "×" },
+                          "note": "十位 0×4=0，加进位 3 得 3" },
+    { "type": "quiz",     "question": "208 × 4 = ？", "answer": 832,
+                          "why": "算出 802，是十位忘了加进位的 3" },
+    { "type": "summary",  "points": ["一位一位乘", "满几十进几", "末尾的 0 补回来"] }
+  ] }
+```
+
+`vertical` / `geometry` / `numberline` / `clock` / `quiz` / `choice` 等 9 种步骤类型，覆盖概念、算理、练习三类场景。加一节课不用重写 HTML，只写这一份 JSON。
 
 ### 课件与图谱是双向的
 
@@ -176,7 +200,7 @@ node scripts/validate-courses.mjs
 - 依赖图分成 67 个连通分量，最大的一块只占 7.6%。原因是跨模块、跨学科的边补得少，学习路径常常只能在本模块内走。补软依赖是下一步要做的，但每条都得能说清理由，不想为了连通而连通。
 - 186 条课标里有 11 条还没有主题挂靠，集中在语文低年级的表达类要求、英语一级的两个要素；这部分主题偏少。
 - 首屏要下载 4MB 的 `data.js`（gzip 后约 1MB），线上目前没有开压缩。数据分片是待办。
-- 课件只有 4 个（1268 个主题的 0.3%），教学结构落地了 explain / drill / explore 三种，呈现器落地了竖式、方格、钟面、数轴、坐标系五种；review 结构与 sim / chart / diagram / equation 尚未实现。时分秒与动量守恒用的还是各自内嵌的实现，没收敛到公共呈现器。
+- 课件只有 10 个（1268 个主题的 0.8%），集中在一册（三年级数学上册已齐）。呈现器落地了竖式、方格、描边、分份、钟面、数轴、坐标系七种，sim / chart / diagram / equation 还没做。时分秒与动量守恒仍是各自内嵌的实现，没收敛到公共呈现器。
 - 目前只有中文。术语和课标编号是中文体系的，翻成英文会失真，暂时没做。
 
 ## 覆盖范围
@@ -404,7 +428,7 @@ china-skill-taxonomy/
   title        = {学阶图谱 · China Skill Taxonomy},
   author       = {{China Skill Taxonomy contributors}},
   year         = {2026},
-  version      = {v0.25.1},
+  version      = {v0.26.0},
   url          = {https://github.com/goralcao/china-skill-taxonomy},
   note         = {Database licensed under ODbL 1.0; content under CC BY-SA 4.0}
 }
@@ -420,7 +444,7 @@ china-skill-taxonomy/
 
 ODbL 把「衍生数据库」和「产出作品」分开。拿这份数据做产品、训练模型、放进应用，都不需要开源你的产品；只有当你发布基于它的数据库时才需要同样开放。署名可以照抄这行：
 
-> 学阶图谱 · China Skill Taxonomy (v0.25.1) · https://github.com/goralcao/china-skill-taxonomy · ODbL 1.0 (database) + CC BY-SA 4.0 (content)
+> 学阶图谱 · China Skill Taxonomy (v0.26.0) · https://github.com/goralcao/china-skill-taxonomy · ODbL 1.0 (database) + CC BY-SA 4.0 (content)
 
 ## 路线图
 
@@ -436,7 +460,7 @@ ODbL 把「衍生数据库」和「产出作品」分开。拿这份数据做产
 | v0.13 ~ v0.15 | 初中物理、化学、历史、地理；多版本教材目录与跨版本映射 |
 | v0.16 ~ v0.18 | 科学、道德与法治、生物，十学科 742 主题全量覆盖 |
 | v0.19 ~ v0.22 | 高中九科补齐，1268 主题、十二学科全量覆盖 |
-| v0.22.1 ~ v0.25.1 | 图例可收缩、移动端触摸修复、README 与 CI 整理 |
+| v0.22.1 ~ v0.26.0 | 图例可收缩、移动端触摸修复、README 与 CI 整理 |
 
 还没做的：
 

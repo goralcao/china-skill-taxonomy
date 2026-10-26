@@ -70,7 +70,16 @@
     var da = a.split('').reverse().map(Number);
     var db = b.split('').reverse().map(Number);
 
-    if (op === '+' || op === '-') {
+    if (op === '×' || op === '*') {
+      // 一位数乘法：从个位起逐位乘，满几十进几（进到左边一位）
+      var mult = Number(b);
+      if (String(b).length === 1 && isFinite(mult)) {
+        for (var m = 0; m < n; m++) {
+          var prod = (da[m] || 0) * mult + carry[m];
+          carry[m + 1] = Math.floor(prod / 10);
+        }
+      }
+    } else if (op === '+' || op === '-') {
       if (op === '+') {
         for (var i = 0; i < n; i++) {
           var t = (da[i] || 0) + (db[i] || 0) + carry[i];
@@ -93,7 +102,9 @@
     for (var c = n - 1; c >= 0; c--) {
       var cell = h('span', '');
       // carry[c] = 进入第 c 位的进位，显示在第 c 位上方
-      if (op === '+' && carry[c]) cell.textContent = '1';
+      if ((op === '+' || op === '×' || op === '*') && carry[c]) {
+        cell.textContent = carry[c] > 1 ? String(carry[c]) : '1';
+      }
       if (op === '-' && borrowAt[c]) { cell.textContent = '·'; cell.className = 'borrow'; }
       carryRow.appendChild(cell);
     }
@@ -328,6 +339,86 @@
         }
       };
       return ctrlC;
+    }
+
+    if (preset === 'perimeter') {
+      // 长方形四条边分别标注，可逐边高亮：周长就是四条边加起来
+      var pw = spec.w || 180, ph = spec.h || 100;
+      var px = (W - pw) / 2, py = (H - ph) / 2 - 6;
+      var edges = [
+        { x1: px, y1: py, x2: px + pw, y2: py, label: spec.top || '5 米', lx: px + pw / 2, ly: py - 10 },
+        { x1: px + pw, y1: py, x2: px + pw, y2: py + ph, label: spec.right || '3 米', lx: px + pw + 16, ly: py + ph / 2 + 4 },
+        { x1: px + pw, y1: py + ph, x2: px, y2: py + ph, label: spec.top || '5 米', lx: px + pw / 2, ly: py + ph + 20 },
+        { x1: px, y1: py + ph, x2: px, y2: py, label: spec.right || '3 米', lx: px - 18, ly: py + ph / 2 + 4 },
+      ];
+      var shapes = [];
+      edges.forEach(function (e, i) {
+        var ln = s('line', {
+          x1: e.x1, y1: e.y1, x2: e.x2, y2: e.y2,
+          stroke: 'var(--geo)', 'stroke-width': 2.4, 'stroke-linecap': 'round',
+        }, svg);
+        var tx = s('text', { x: e.lx, y: e.ly, class: 'geo-dim-text', 'text-anchor': 'middle' }, svg);
+        tx.textContent = e.label;
+        shapes.push({ line: ln, text: tx });
+      });
+      // 顶点圆点，方便「从哪开始绕一圈」
+      [[px, py], [px + pw, py], [px + pw, py + ph], [px, py + ph]].forEach(function (pt) {
+        s('circle', { cx: pt[0], cy: pt[1], r: 3.4, fill: 'var(--geo)' }, svg);
+      });
+      var ctrlP = {
+        el: svg,
+        count: 4,
+        highlight: function (n) {
+          var k = n == null ? 4 : n;
+          shapes.forEach(function (sh, i) {
+            var on = i < k;
+            sh.line.setAttribute('stroke', on ? 'var(--ok)' : 'rgba(167,139,250,.35)');
+            sh.text.setAttribute('fill', on ? 'var(--ok)' : 'var(--dim)');
+          });
+          return ctrlP;
+        },
+        play: function () { ctrlP.highlight(0); return ctrlP; },
+        reset: function () { ctrlP.highlight(4); return ctrlP; },
+      };
+      return ctrlP;
+    }
+
+    if (preset === 'fraction') {
+      // 平均分成 parts 份，涂上 filled 份
+      var parts = spec.parts || 4;
+      var filled = spec.filled == null ? 1 : spec.filled;
+      var cx = W / 2, cy = H / 2 - 4, R0 = Math.min(W, H) * 0.30;
+      var start = -Math.PI / 2;
+      var slices = [];
+      for (var pi = 0; pi < parts; pi++) {
+        var a0 = start + pi * 2 * Math.PI / parts;
+        var a1 = a0 + 2 * Math.PI / parts;
+        var x0 = cx + Math.cos(a0) * R0, y0 = cy + Math.sin(a0) * R0;
+        var x1 = cx + Math.cos(a1) * R0, y1 = cy + Math.sin(a1) * R0;
+        var large = (a1 - a0) > Math.PI ? 1 : 0;
+        var d = 'M' + cx + ' ' + cy + ' L' + x0.toFixed(1) + ' ' + y0.toFixed(1) +
+          ' A' + R0 + ' ' + R0 + ' 0 ' + large + ' 1 ' + x1.toFixed(1) + ' ' + y1.toFixed(1) + ' Z';
+        var path = s('path', {
+          d: d, fill: 'transparent', stroke: 'var(--geo)', 'stroke-width': 1.8,
+        }, svg);
+        slices.push(path);
+      }
+      var ctrlF = {
+        el: svg,
+        parts: parts,
+        fill: function (k) {
+          var n = k == null ? filled : k;
+          slices.forEach(function (sl, i) {
+            sl.setAttribute('fill', i < n ? 'rgba(167,139,250,.55)' : 'transparent');
+          });
+          return ctrlF;
+        },
+        play: function () { ctrlF.fill(0); return ctrlF; },
+        reset: function () { ctrlF.fill(filled); return ctrlF; },
+        reveal: function (k) { return ctrlF.fill(k); },
+      };
+      ctrlF.fill(filled);
+      return ctrlF;
     }
 
     // 兜底：画一个空框，避免调用方拿到 undefined

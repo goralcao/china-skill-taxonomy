@@ -112,8 +112,8 @@ for (const name of dirs) {
   // 除此之外的任何 <script src> / <link href> 都不允许。
   const scriptSrcs = [...html.matchAll(/<script[^>]+src=["']([^"']+)["']/gi)].map(m => m[1]);
   scriptSrcs.forEach(src => {
-    if (!/^(\.\.\/)+templates\/renderers\.js$/.test(src)) {
-      fail(rel, `HTML 引用了外部脚本：${src}（只允许 templates/renderers.js）`);
+    if (!/^(\.\.\/)+templates\/(renderers|engine)\.js$/.test(src)) {
+      fail(rel, `HTML 引用了外部脚本：${src}（只允许 templates/renderers.js 或 engine.js）`);
     }
   });
   const linkHrefs = [...html.matchAll(/<link[^>]+href=["']([^"']+)["']/gi)].map(m => m[1]);
@@ -126,7 +126,9 @@ for (const name of dirs) {
   const RENDERERS = ['text', 'vertical', 'geometry', 'numberline', 'coords', 'clock', 'sim', 'chart', 'diagram', 'equation'];
   if (meta.renderer && !RENDERERS.includes(meta.renderer)) {
     fail(rel, `meta.renderer=${meta.renderer} 不在白名单（${RENDERERS.join(' / ')}）`);
-  } else if (meta.renderer && meta.renderer !== 'text' && !html.includes('CR.' + meta.renderer + '(')) {
+  } else if (meta.renderer && meta.renderer !== 'text' && !html.includes('content-loader')
+             && !html.includes('CR.' + meta.renderer + '(')) {
+    // 引擎型课件的 CR 调用在 engine.js 里，源码看不到，跳过这条
     warn(rel, `renderer=${meta.renderer}，但没找到 CR.${meta.renderer}( 调用`);
   }
 
@@ -146,6 +148,58 @@ for (const name of dirs) {
     if (!/window\.__GRAPH\s*=/.test(dist)) fail(rel, '构建产物缺 window.__GRAPH（图谱延伸数据未注入）');
   }
 
+  // 7.8 引擎型课件：内容在 content.json，校验步骤与答案
+  const contentPath = path.join(dir, 'content.json');
+  const isEngine = fs.existsSync(contentPath);
+  let engineSteps = null;
+  if (isEngine) {
+    let content = null;
+    try { content = JSON.parse(fs.readFileSync(contentPath, 'utf8')); }
+    catch (e) { fail(rel, 'content.json 不是合法 JSON：' + e.message); }
+    if (content) {
+      if (content.topicId !== meta.topicId) fail(rel, `content.topicId=${content.topicId} 与 meta 不一致`);
+      if (!Array.isArray(content.steps) || !content.steps.length) {
+        fail(rel, 'content.steps 为空');
+      } else {
+        engineSteps = content.steps;
+        const TYPES = ['intro', 'text', 'vertical', 'geometry', 'numberline', 'clock', 'quiz', 'choice', 'summary'];
+        let quizzes = 0;
+        content.steps.forEach((st, i) => {
+          if (!TYPES.includes(st.type)) fail(rel, `第 ${i + 1} 步 type=${st.type} 不合法`);
+          if (st.type === 'quiz') {
+            quizzes++;
+            if (typeof st.answer !== 'number') fail(rel, `第 ${i + 1} 步 quiz.answer 必须是数字`);
+            if (!st.question) fail(rel, `第 ${i + 1} 步 quiz 缺 question`);
+          }
+          if (st.type === 'choice') {
+            quizzes++;
+            if (!Array.isArray(st.options) || st.options.length < 2) fail(rel, `第 ${i + 1} 步 choice 选项不足`);
+            else if (!st.options.includes(st.answer)) fail(rel, `第 ${i + 1} 步 choice.answer 不在选项里`);
+          }
+          if (st.type === 'vertical') {
+            const pr = st.problem || {};
+            const val = pr.op === '÷' ? Number(pr.a) / Number(pr.b)
+              : pr.op === '×' ? Number(pr.a) * Number(pr.b)
+              : pr.op === '-' ? Number(pr.a) - Number(pr.b) : Number(pr.a) + Number(pr.b);
+            if (!isFinite(val)) fail(rel, `第 ${i + 1} 步 vertical 的算式不成立`);
+          }
+        });
+        if (quizzes !== meta.interactions) {
+          fail(rel, `meta.interactions=${meta.interactions}，content 里 ${quizzes} 道题`);
+        }
+        // 至少要有一处易错点
+        const hasPitfall = content.steps.some(st =>
+          st.warn ||
+          (st.note && /错|漏|误|别/.test(st.note)) ||
+          (Array.isArray(st.bullets) && st.bullets.some(b => b.warn)));
+        if (!hasPitfall) warn(rel, 'content 里没有易错点提示');
+      }
+    }
+    if (!/content-loader|window\.__CONTENT/.test(html)) {
+      fail(rel, '引擎型课件的 index.html 缺 content-loader 或 __CONTENT');
+    }
+  }
+
   // 8. 交互步骤数一致：多步页面看 data-step，单页题库看 __ANSWERS 条数
   const answersMatch = html.match(/window\.__ANSWERS\s*=\s*(\[[\s\S]*?\]);/);
   let answers = null;
@@ -155,7 +209,9 @@ for (const name of dirs) {
   }
   const stepSections = (html.match(/<section[^>]+data-step=/g) || []).length;
   const actCount = (html.match(/\sdata-interaction[\s>]/g) || []).length;
-  if (actCount > 0) {
+  if (isEngine) {
+    // 步骤由引擎运行时生成，源码里没有 data-step，已在上一步按 content.steps 校验
+  } else if (actCount > 0) {
     if (actCount !== meta.interactions) {
       fail(rel, `meta.interactions=${meta.interactions}，HTML 里 ${actCount} 个 data-interaction 控件`);
     }
@@ -170,7 +226,7 @@ for (const name of dirs) {
   }
 
   // 9. 易错点与键盘
-  if (!/class=["'][^"']*pitfall/.test(html)) warn(rel, '没有 .pitfall 易错点提示');
+  if (!isEngine && !/class=["'][^"']*pitfall/.test(html)) warn(rel, '没有 .pitfall 易错点提示');
   if (/\.\.\/\.\.\/index\.html/.test(html)) {
     fail(rel, '源课件里应写 ../../viz/index.html，构建时会改写成部署路径');
   }
@@ -178,7 +234,7 @@ for (const name of dirs) {
 
   // 10. 答案表复算
   if (!answers) {
-    warn(rel, '没有可解析的 window.__ANSWERS，无法复算答案');
+    if (!isEngine) warn(rel, '没有可解析的 window.__ANSWERS，无法复算答案');
   } else {
     {
       for (const a of answers) {

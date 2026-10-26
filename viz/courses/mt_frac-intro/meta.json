@@ -1,0 +1,30 @@
+{
+  "topicId": "mt_frac-intro",
+  "title": "分数的初步认识：把 1 平均分",
+  "template": "explain",
+  "renderer": "geometry",
+  "duration": 13,
+  "interactions": 3,
+  "grade": 3,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S2:NA:NO"
+  ],
+  "prerequisites": [
+    "mt_div-intro",
+    "mt_shape-recognition"
+  ],
+  "next": [
+    "mt_frac-same-addsub",
+    "mt_frac-compare"
+  ],
+  "objectives": [
+    "理解几分之一与几分之几的含义",
+    "能用分数表示平均分后的一部分"
+  ],
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-27"
+}

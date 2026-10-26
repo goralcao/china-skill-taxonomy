@@ -87,7 +87,7 @@ import teaching_research_chinese_senior  # noqa: E402
 import teaching_research_math_senior  # noqa: E402
 import teaching_research_english_senior  # noqa: E402
 
-VERSION = "v0.25.1"
+VERSION = "v0.26.0"
 SCHEMA_VERSION = 1
 
 MODULES = [
@@ -731,6 +731,8 @@ def sync_courses_to_viz(topics, deps):
         raise SystemExit("缺 templates/base.css 或 templates/renderers.js，课件无法内联")
     base_css = base_css_path.read_text(encoding="utf-8")
     renderers = renderers_path.read_text(encoding="utf-8")
+    engine_path = ROOT / "templates" / "engine.js"
+    engine_js = engine_path.read_text(encoding="utf-8") if engine_path.exists() else ""
 
     topic_by_id = {t["id"]: t for t in topics}
     tb_labels = load_textbook_labels()
@@ -757,6 +759,31 @@ def sync_courses_to_viz(topics, deps):
             raise SystemExit(f"课件 {d.name}: topicId {meta.get('topicId')} 不在主题表里")
 
         text = html_path.read_text(encoding="utf-8")
+
+        # 0) 引擎型课件：content.json 内联进页面，引擎一并内联
+        content_path = d / "content.json"
+        if content_path.exists():
+            content = json.loads(content_path.read_text(encoding="utf-8"))
+            if content.get("topicId") != meta.get("topicId"):
+                raise SystemExit(
+                    f"课件 {d.name}: content.json 的 topicId {content.get('topicId')} "
+                    f"与 meta.json 的 {meta.get('topicId')} 不一致"
+                )
+            text = re.sub(
+                r'<script id="content-loader">[\s\S]*?</script>',
+                lambda m: (
+                    "<script>window.__CONTENT = "
+                    + json.dumps(content, ensure_ascii=False)
+                    + ";CourseEngine.mount(window.__CONTENT);</script>"
+                ),
+                text,
+            )
+            if engine_js:
+                text = re.sub(
+                    r'[ \t]*<script[^>]*src="[^"]*templates/engine\.js"[^>]*></script>',
+                    lambda m: "<script>\n" + engine_js + "\n</script>",
+                    text,
+                )
 
         # 1) 内联样式与呈现器
         # 注意：替换内容里有反斜杠（CSS/JS），必须用 lambda 避免被当成转义序列

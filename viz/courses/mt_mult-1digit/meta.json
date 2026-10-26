@@ -1,0 +1,23 @@
+{
+  "topicId": "mt_mult-1digit",
+  "title": "多位数乘一位数：0 那一位最容易漏",
+  "template": "explain",
+  "renderer": "vertical",
+  "duration": 12,
+  "interactions": 3,
+  "grade": 3,
+  "subject": "数学",
+  "standards": ["math-2022:S2:NA:NO"],
+  "prerequisites": ["mt_mult-table", "mt_addsub-10000", "mt_multiple"],
+  "next": ["mt_mult-2digit", "mt_div-1digit"],
+  "objectives": [
+    "能在竖式里正确处理积的对位与进位",
+    "能口算整十整百数乘一位数的结果",
+    "能用估算检查积是否合理"
+  ],
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-27"
+}

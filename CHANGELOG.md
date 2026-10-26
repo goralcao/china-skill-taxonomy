@@ -2,6 +2,38 @@
 
 本项目遵循[语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [v0.26.0] - 2026-10-27
+
+P2 完成：课件引擎化，三年级数学上册 8 个知识点全部配齐，课件 4 → 10。
+
+**引擎化**
+
+- 新增 `templates/engine.js`：接管页面骨架、分步导航、判分、结算、图谱延伸、sharecode 透传
+- 课件只剩 `content.json` + 16 行薄壳，写一节课从 300 行 HTML 变成 60 行 JSON
+- 9 种步骤类型：intro / text / vertical / geometry / numberline / clock / quiz / choice / summary
+- 构建时把 content.json、engine.js、renderers.js、base.css 全部内联，产物仍是单文件零外链
+- 新增 `templates/layout.html` 作为统一外壳
+
+**新课件（6 个）**
+
+- 吨的认识（numberline）：0~2000 千克数轴、1 吨与半吨标记、换算两题、估一估
+- 倍的认识（geometry）：2 行 × 3 个的摆法、求几倍与反求几倍
+- 多位数乘一位数（vertical）：208×4 的两个进位、末尾 0 的补零、估算检查
+- 长方形和正方形的周长（geometry/perimeter）：四条边逐条高亮、(长+宽)×2 的由来、靠墙篱笆最省料
+- 分数的初步认识（geometry/fraction）：4 等分取 1 份与 3 份、分子分母辨析
+- 同分母分数加减法（geometry/fraction）：2/8+3/8 的涂色叠加、分母为什么不变
+
+**呈现器**
+
+- `geometry` 新增 `perimeter`（长方形描边 + 边长标注 + 逐边高亮）与 `fraction`（等分圆 + 涂色）
+- `vertical` 支持一位数乘法的进位标记（此前只支持加减）
+
+**工具链**
+
+- `new-course.mjs` 重写：`--renderer` 选呈现器、从 `templates/layout.html` 读外壳、生成 content.json、`--batch <年级>` 列出一册待建清单
+- `validate-courses.mjs` 支持 content.json 型课件：步骤类型合法、quiz 答案是数字、choice 答案在选项内、vertical 算式成立、题目数与 interactions 一致、至少有易错点
+- 外链白名单放宽到 `templates/engine.js`
+
 ## [v0.25.1] - 2026-10-27
 
 修「有课件」筛选点了没反应。
