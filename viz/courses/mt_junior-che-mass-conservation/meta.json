@@ -1,0 +1,24 @@
+{
+  "topicId": "mt_junior-che-mass-conservation",
+  "title": "质量守恒：原子只是换了个搭档",
+  "template": "explain",
+  "renderer": "molecule",
+  "duration": 12,
+  "interactions": 2,
+  "grade": 9,
+  "subject": "化学",
+  "standards": ["chemistry-2022:S4:CH"],
+  "prerequisites": ["mt_junior-che-particle", "mt_junior-che-change-property"],
+  "next": ["mt_junior-che-equation-write"],
+  "objectives": [
+    "能从原子种类、数目不变解释反应前后质量相等",
+    "能判断一个有气体参加或生成的反应是否遵守质量守恒",
+    "能用原子清点的方式检查一个反应的配平"
+  ],
+  "cognitiveAction": "分解",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-27"
+}

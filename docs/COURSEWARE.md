@@ -128,6 +128,9 @@ schema/course.schema.json
 | `vertical` | 竖式 | 加减乘除、小数竖式、除法竖式 | 数位对齐、进位/借位标记、逐位揭示 |
 | `geometry` | 几何图形 | 面积、周长、图形变换、割补 | 方格铺满计数、剪拼动画、尺寸标注 |
 | `solid` | 立体图形 | 长方体、正方体、棱柱、展开图 | 手写投影、拖动旋转、按组高亮面/棱/顶点、摊平成展开图 |
+| `pyramid` | 棱锥与线面角 | 线面角、二面角（待做） | 3D 投影、作射影、标夹角并给出度数 |
+| `division` | 除法竖式 | 除数是一位数/两位数 | 试商、乘、减、落四步逐步揭示 |
+| `molecule` | 分子与原子 | 质量守恒、化学反应 | 断键、原子位移、成键、原子清点 |
 | `clock` | 钟面 | 时、分、秒 | 三针联动、分针拖拽、指针高亮 |
 | `numberline` | 数轴 | 正负数、分数、小数、时间轴 | 区间高亮、可拖手柄 |
 | `coords` | 坐标系 | 一次函数、抛物线、统计 | 网格、曲线描边动画、散点 |
@@ -378,7 +381,7 @@ localStorage.setItem('stx.course.' + TOPIC_ID,
 
 - `templates/engine.js` 接管页面骨架与全部通用逻辑
 - 课件只剩 `content.json`（steps 数组）+ 一个 16 行的薄壳 `index.html`
-- 10 种步骤类型：`intro` / `text` / `vertical` / `geometry` / `solid` / `numberline` / `clock` / `quiz` / `choice` / `summary`
+- 13 种步骤类型：`intro` / `text` / `vertical` / `geometry` / `solid` / `pyramid` / `division` / `molecule` / `numberline` / `clock` / `quiz` / `choice` / `summary`
 - 构建时把 content.json、engine.js、renderers.js、base.css 全部内联，产物仍是单文件
 
 写一节课从「复制 300 行 HTML」变成「写 60 行 JSON」。
@@ -398,6 +401,9 @@ localStorage.setItem('stx.course.' + TOPIC_ID,
 | 长方形和正方形的面积 | 方格 | 铺满计数、进率推导 |
 | 高中物理 · 动量守恒 | 模拟 | 滑杆 + 摩擦反例 |
 | 长方体和正方体 | 立体 | 拖动旋转、三组面/棱、展开图 |
+| 除数是一位数的除法 | 除法竖式 | 试商、落数、余数判断 |
+| 质量守恒定律 | 分子 | 断键、重组、原子清点 |
+| 线面角 | 棱锥 | 射影、夹角、度数 |
 
 ### 用技能生成课件
 

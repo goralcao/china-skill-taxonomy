@@ -1,19 +1,20 @@
 {
-  "version": "v0.28.0",
+  "version": "v0.29.0",
   "schemaVersion": 1,
   "generatedAt": "2026-10-27",
   "counts": {
-    "total": 11,
+    "total": 14,
     "byTemplate": {
       "drill": 1,
-      "explain": 9,
+      "explain": 12,
       "explore": 1
     },
     "byStatus": {
-      "reviewed": 11
+      "reviewed": 14
     },
     "bySubject": {
-      "数学": 10,
+      "数学": 12,
+      "化学": 1,
       "物理": 1
     }
   },
@@ -86,6 +87,41 @@
       "bytes": 663
     },
     {
+      "topicId": "mt_div-1digit",
+      "title": "除数是一位数的除法：商、乘、减、落",
+      "template": "explain",
+      "renderer": "division",
+      "duration": 12,
+      "interactions": 2,
+      "grade": 3,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S2:NA:NO"
+      ],
+      "prerequisites": [
+        "mt_div-tables-7-9",
+        "mt_mult-1digit",
+        "mt_num-10000-recognition"
+      ],
+      "next": [
+        "mt_div-2digit",
+        "mt_average-mean"
+      ],
+      "objectives": [
+        "能按「商、乘、减、落」四步写出除数是一位数的除法竖式",
+        "能说清商为什么要写在被除数的那一位上面",
+        "能用「商×除数+余数」验算，并判断余数是否合理"
+      ],
+      "cognitiveAction": "分解",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "path": "courses/mt_div-1digit/",
+      "bytes": 669
+    },
+    {
       "topicId": "mt_frac-intro",
       "title": "分数的初步认识：把 1 平均分",
       "template": "explain",
@@ -148,6 +184,69 @@
       "updatedAt": "2026-10-27",
       "path": "courses/mt_frac-same-addsub/",
       "bytes": 666
+    },
+    {
+      "topicId": "mt_junior-che-mass-conservation",
+      "title": "质量守恒：原子只是换了个搭档",
+      "template": "explain",
+      "renderer": "molecule",
+      "duration": 12,
+      "interactions": 2,
+      "grade": 9,
+      "subject": "化学",
+      "standards": [
+        "chemistry-2022:S4:CH"
+      ],
+      "prerequisites": [
+        "mt_junior-che-particle",
+        "mt_junior-che-change-property"
+      ],
+      "next": [
+        "mt_junior-che-equation-write"
+      ],
+      "objectives": [
+        "能从原子种类、数目不变解释反应前后质量相等",
+        "能判断一个有气体参加或生成的反应是否遵守质量守恒",
+        "能用原子清点的方式检查一个反应的配平"
+      ],
+      "cognitiveAction": "分解",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "path": "courses/mt_junior-che-mass-conservation/",
+      "bytes": 660
+    },
+    {
+      "topicId": "mt_mat-s-space-vector-application",
+      "title": "线面角",
+      "template": "explain",
+      "renderer": "pyramid",
+      "duration": 12,
+      "interactions": 2,
+      "grade": 11,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S5:GG"
+      ],
+      "prerequisites": [
+        "mt_mat-s-space-vector"
+      ],
+      "next": [],
+      "objectives": [
+        "能说出线面角是斜线与它在平面内射影的夹角",
+        "能在正四棱锥中作出侧棱在底面上的射影并算出角度",
+        "能写出用平面法向量求线面角的正弦公式"
+      ],
+      "cognitiveAction": "构造",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "path": "courses/mt_mat-s-space-vector-application/",
+      "bytes": 651
     },
     {
       "topicId": "mt_mult-1digit",

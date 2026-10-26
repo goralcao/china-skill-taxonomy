@@ -1,0 +1,24 @@
+{
+  "topicId": "mt_div-1digit",
+  "title": "除数是一位数的除法：商、乘、减、落",
+  "template": "explain",
+  "renderer": "division",
+  "duration": 12,
+  "interactions": 2,
+  "grade": 3,
+  "subject": "数学",
+  "standards": ["math-2022:S2:NA:NO"],
+  "prerequisites": ["mt_div-tables-7-9", "mt_mult-1digit", "mt_num-10000-recognition"],
+  "next": ["mt_div-2digit", "mt_average-mean"],
+  "objectives": [
+    "能按「商、乘、减、落」四步写出除数是一位数的除法竖式",
+    "能说清商为什么要写在被除数的那一位上面",
+    "能用「商×除数+余数」验算，并判断余数是否合理"
+  ],
+  "cognitiveAction": "分解",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-27"
+}

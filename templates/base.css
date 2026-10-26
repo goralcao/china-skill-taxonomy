@@ -328,5 +328,11 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 
 /* ── 立体图形 ─────────────────────────────────────────── */
 /* 拖得动，才看得出哪个面在后面 */
-.solid-svg { width: 100%; height: auto; touch-action: none; cursor: grab; }
-.solid-svg:active { cursor: grabbing; }
+.solid-svg, .pyr-svg, .mol-svg { width: 100%; height: auto; touch-action: none; }
+.solid-svg, .pyr-svg { cursor: grab; }
+.solid-svg:active, .pyr-svg:active { cursor: grabbing; }
+.viz text { fill: var(--text); font-family: inherit; }
+.viz .dnum { font-size: 20px; font-weight: 600; }
+.viz .dsmall { font-size: 13px; fill: var(--dim); }
+.viz .dbar { stroke: var(--text); stroke-width: 2; fill: none; }
+.viz .dunder { stroke: var(--dim); stroke-width: 1.5; }

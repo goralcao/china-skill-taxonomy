@@ -1,0 +1,24 @@
+{
+  "topicId": "mt_mat-s-space-vector-application",
+  "title": "线面角",
+  "template": "explain",
+  "renderer": "pyramid",
+  "duration": 12,
+  "interactions": 2,
+  "grade": 11,
+  "subject": "数学",
+  "standards": ["math-2022:S5:GG"],
+  "prerequisites": ["mt_mat-s-space-vector"],
+  "next": [],
+  "objectives": [
+    "能说出线面角是斜线与它在平面内射影的夹角",
+    "能在正四棱锥中作出侧棱在底面上的射影并算出角度",
+    "能写出用平面法向量求线面角的正弦公式"
+  ],
+  "cognitiveAction": "构造",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-27"
+}

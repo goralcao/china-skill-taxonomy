@@ -1,6 +1,6 @@
-# 十种步骤：字段、写法、什么时候用
+# 十三种步骤：字段、写法、什么时候用
 
-引擎型课件的 `content.json` 只有一个 `steps` 数组。每一步是一屏，类型共十种。
+引擎型课件的 `content.json` 只有一个 `steps` 数组。每一步是一屏，类型共十三种。
 
 ```json
 {
@@ -24,6 +24,9 @@
 | `vertical` | 竖式演算 | `problem{a,b,op}` | `carries` `reveal` `caption` `note` `warn` `demoHint` |
 | `geometry` | 图形（面积/周长/分数/剪拼） | `shape{preset,...}` | `revealTo` `caption` `note` `demo` `demoLabel` |
 | `solid` | 立体图形（长方体/正方体/展开图） | `body{w,h,d,focus}` | `caption` `note` `demoLabel` `demoDone` |
+| `pyramid` | 棱锥与线面角 | `body{a,h}` | `caption` `note` `demoLabel` |
+| `division` | 除法竖式 | `body{a,b}` | `caption` `note` `demoLabel` |
+| `molecule` | 分子与原子 | `body{atoms,bondsBefore,bondsAfter}` | `caption` `note` `label` |
 | `numberline` | 数轴、量感 | `line{min,max,step,...}` | `marks[]` `span` `caption` |
 | `clock` | 钟面 | `absMinutes` | `caption` |
 | `quiz` | 填数字 | `question` `answer`(number) | `unit` `hint` `why` `title` |
@@ -127,6 +130,41 @@ preset：
 | `all` | 依次走完上面四段 |
 
 `w` 是长（左右），`h` 是高（上下），`d` 是宽（前后）。图形可以拖动旋转，手指和鼠标都行；不拖时慢慢自转，尊重「减少动态效果」设置。
+
+## pyramid
+
+```json
+{ "type": "pyramid", "title": "把射影画出来", "body": { "a": 2, "h": 2 },
+  "demoLabel": "▶ 一步一步找角", "caption": "P 在底面的射影是中心 O。" }
+```
+
+正四棱锥，`a` 底边、`h` 高。演示依次画出侧棱、射影、夹角，角度由坐标算出，不是写死的。可拖动旋转。
+
+## division
+
+```json
+{ "type": "division", "title": "72 ÷ 6", "body": { "a": 72, "b": 6 },
+  "demoLabel": "▶ 算一步", "demoHint": "看它写在哪一行、哪一位。" }
+```
+
+试商、乘、减、落四步自动拆开，每一步配一句说明。余数、商的位数都由程序算，换数字不用改讲解。
+
+## molecule
+
+```json
+{ "type": "molecule",
+  "body": {
+    "label": "氢气燃烧",
+    "atoms": [
+      { "el": "H", "from": [-160, -60], "to": [-120, -58] },
+      { "el": "O", "from": [40, 0], "to": [-90, -30] }
+    ],
+    "bondsBefore": [[0, 1]],
+    "bondsAfter": [[0, 1]]
+  } }
+```
+
+`atoms` 里每个原子给起始和终点坐标（画布中心为原点）；`bondsBefore` / `bondsAfter` 是原子下标的连线。演示四步：清点 → 断键 → 搬家 → 成键。原子种类和个数自动统计在底部。
 
 ## numberline
 

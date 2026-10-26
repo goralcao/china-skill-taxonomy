@@ -335,11 +335,17 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 
 /* ── 立体图形 ─────────────────────────────────────────── */
 /* 拖得动，才看得出哪个面在后面 */
-.solid-svg { width: 100%; height: auto; touch-action: none; cursor: grab; }
-.solid-svg:active { cursor: grabbing; }
+.solid-svg, .pyr-svg, .mol-svg { width: 100%; height: auto; touch-action: none; }
+.solid-svg, .pyr-svg { cursor: grab; }
+.solid-svg:active, .pyr-svg:active { cursor: grabbing; }
+.viz text { fill: var(--text); font-family: inherit; }
+.viz .dnum { font-size: 20px; font-weight: 600; }
+.viz .dsmall { font-size: 13px; fill: var(--dim); }
+.viz .dbar { stroke: var(--text); stroke-width: 2; fill: none; }
+.viz .dunder { stroke: var(--dim); stroke-width: 1.5; }
 
 </style>
-<script>window.__GRAPH = {"id": "mt_mult-1digit", "name": "多位数乘一位数", "subject": "数学", "domain": "数与代数", "stage": "第二学段（3~4年级）", "grade": 3, "gradeEnd": 3, "standards": ["math-2022:S2:NA:NO"], "textbooks": ["pep-math:3a:u6"], "textbookLabels": ["人教版数学 · 3 年级上 第 6 单元"], "prereqs": [{"id": "mt_mul-tables-7-9", "name": "7~9的乘法口诀", "grade": 2, "subject": "数学", "course": null, "hard": true, "reason": "多位数乘一位数每一步都用乘法口诀"}, {"id": "mt_num-10000-recognition", "name": "万以内数的认识", "grade": 2, "subject": "数学", "course": null, "hard": true, "reason": "部分积按数位累加需要数位概念"}, {"id": "mt_addsub-10000", "name": "万以内的加法和减法", "grade": 3, "subject": "数学", "course": "reviewed", "hard": false, "reason": "各部分积相加用到万以内加减法"}], "unlocks": [{"id": "mt_div-1digit", "name": "除数是一位数的除法", "grade": 3, "subject": "数学", "course": null, "hard": true}, {"id": "mt_rect-area", "name": "长方形和正方形的面积", "grade": 3, "subject": "数学", "course": "reviewed", "hard": true}, {"id": "mt_mult-2digit", "name": "三位数乘两位数", "grade": 4, "subject": "数学", "course": null, "hard": true}], "siblings": [{"id": "mt_addsub-10000", "name": "万以内的加法和减法", "grade": 3, "subject": "数学", "course": "reviewed", "hard": false}, {"id": "mt_multiple", "name": "倍的认识", "grade": 3, "subject": "数学", "course": "reviewed", "hard": false}, {"id": "mt_frac-intro", "name": "分数的初步认识", "grade": 3, "subject": "数学", "course": "reviewed", "hard": false}, {"id": "mt_frac-same-addsub", "name": "同分母分数加减法", "grade": 3, "subject": "数学", "course": "reviewed", "hard": false}]};</script>
+<script>window.__GRAPH = {"id": "mt_mult-1digit", "name": "多位数乘一位数", "subject": "数学", "domain": "数与代数", "stage": "第二学段（3~4年级）", "grade": 3, "gradeEnd": 3, "standards": ["math-2022:S2:NA:NO"], "textbooks": ["pep-math:3a:u6"], "textbookLabels": ["人教版数学 · 3 年级上 第 6 单元"], "prereqs": [{"id": "mt_mul-tables-7-9", "name": "7~9的乘法口诀", "grade": 2, "subject": "数学", "course": null, "hard": true, "reason": "多位数乘一位数每一步都用乘法口诀"}, {"id": "mt_num-10000-recognition", "name": "万以内数的认识", "grade": 2, "subject": "数学", "course": null, "hard": true, "reason": "部分积按数位累加需要数位概念"}, {"id": "mt_addsub-10000", "name": "万以内的加法和减法", "grade": 3, "subject": "数学", "course": "reviewed", "hard": false, "reason": "各部分积相加用到万以内加减法"}], "unlocks": [{"id": "mt_div-1digit", "name": "除数是一位数的除法", "grade": 3, "subject": "数学", "course": "reviewed", "hard": true}, {"id": "mt_rect-area", "name": "长方形和正方形的面积", "grade": 3, "subject": "数学", "course": "reviewed", "hard": true}, {"id": "mt_mult-2digit", "name": "三位数乘两位数", "grade": 4, "subject": "数学", "course": null, "hard": true}], "siblings": [{"id": "mt_addsub-10000", "name": "万以内的加法和减法", "grade": 3, "subject": "数学", "course": "reviewed", "hard": false}, {"id": "mt_div-1digit", "name": "除数是一位数的除法", "grade": 3, "subject": "数学", "course": "reviewed", "hard": false}, {"id": "mt_multiple", "name": "倍的认识", "grade": 3, "subject": "数学", "course": "reviewed", "hard": false}, {"id": "mt_frac-intro", "name": "分数的初步认识", "grade": 3, "subject": "数学", "course": "reviewed", "hard": false}]};</script>
 </head>
 <body>
 <!-- 页面骨架由 templates/engine.js 生成；内容在 content.json -->
@@ -1335,7 +1341,7 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
       var y1 = p[1] * cp - z1 * sp;
       var z2 = p[1] * sp + z1 * cp;
       var k = 1 + z2 * 0.006;
-      return [W / 2 + x1 * S / k, H / 2 - y1 * S / k, z2];
+      return [W / 2 + x1 * S / k, H / 2 - 10 - y1 * S / k, z2];
     }
 
     var polys = F.map(function (f) {
@@ -1354,7 +1360,7 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
       return el;
     });
     var dots = V.map(function () {
-      var el = s('circle', { r: 3.6, fill: '#0f172a', opacity: 0 }, gVerts);
+      var el = s('circle', { r: 3.6, fill: '#e8edf5', opacity: 0 }, gVerts);
       el.style.transition = 'opacity .3s ease';
       return el;
     });
@@ -1502,6 +1508,424 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
     };
   }
 
+
+  /* ══════════════════════════════════════════════════════
+   * 除法竖式
+   * 加减乘的竖式只做一件事：一位一位算。
+   * 除法多两件：这一位商几（试商），算完把下一位落下来。
+   * 所以单独做，而不是往 vertical 里塞分支。
+   * ══════════════════════════════════════════════════════ */
+  function division(el, spec) {
+    var a = String(spec.a == null ? '' : spec.a).replace(/\D/g, '');
+    var b = Number(spec.b);
+    if (!a || !b) {
+      el.appendChild(h('p', 'muted', '除法竖式需要被除数和除数。'));
+      return { el: el };
+    }
+
+    var digits = a.split('').map(Number);
+    var n = digits.length;
+    var cell = 30, rowH = 34, padL = 46, padT = 16;
+    var steps = [], rem = 0, started = false;
+    for (var i = 0; i < n; i++) {
+      var cur = rem * 10 + digits[i];
+      if (!started && cur < b) { rem = cur; continue; }
+      started = true;
+      var qd = Math.floor(cur / b);
+      var prod = qd * b;
+      rem = cur - prod;
+      steps.push({ col: i, cur: cur, qd: qd, prod: prod, rem: rem });
+    }
+
+    var rows = 2 + steps.length * 2;
+    var W = padL + n * cell + 26;
+    var H = padT + rows * rowH + 10;
+    var PLACE = ['个位', '十位', '百位', '千位', '万位'];
+
+    function x(col) { return padL + col * cell + cell / 2; }
+    function y(row) { return padT + row * rowH + rowH * 0.72; }
+
+    var svg = s('svg', {
+      viewBox: '0 0 ' + W + ' ' + H,
+      class: 'div-svg',
+      role: 'img',
+      'aria-label': a + ' 除以 ' + b + ' 的竖式'
+    }, el);
+    svg.style.width = '100%';
+    svg.style.height = 'auto';
+    svg.style.maxWidth = '360px';
+
+    function num(str, col, row, cls) {
+      var t = s('text', { x: x(col), y: y(row), 'text-anchor': 'middle', class: cls || 'dnum' }, svg);
+      t.textContent = str;
+      return t;
+    }
+
+    // 括号与被除数
+    s('path', {
+      d: 'M' + (padL - 12) + ' ' + (y(1) - 24) + 'V' + (y(rows - 1) + 8) +
+         'M' + (padL - 12) + ' ' + (y(1) - 24) + 'H' + (padL + n * cell + 2),
+      class: 'dbar'
+    }, svg);
+    var dv = s('text', { x: padL - 20, y: y(1), 'text-anchor': 'end', class: 'dnum' }, svg);
+    dv.textContent = String(b);
+    digits.forEach(function (dg, i) { num(String(dg), i, 1); });
+
+    function hidden(el) { el.style.opacity = 0; el.style.transition = 'opacity .35s ease'; return el; }
+
+    var ops = [];
+    var sh = steps;
+    for (var k = 0; k < sh.length; k++) {
+      var st = sh[k];
+      var qEl = hidden(num(String(st.qd), st.col, 0));
+      ops.push({
+        els: [qEl],
+        text: (k === 0 ? st.cur + ' ÷ ' + b + ' 商 ' + st.qd : '把 ' + st.cur + ' 除以 ' + b + '，商 ' + st.qd) +
+              '，写在' + PLACE[n - 1 - st.col] + '上。'
+      });
+
+      var gap = String(st.prod).length;
+      var pEls = [];
+      String(st.prod).split('').forEach(function (dg, j) {
+        pEls.push(hidden(num(dg, st.col - gap + 1 + j, 2 + k * 2)));
+      });
+      pEls.push(hidden(s('line', {
+        x1: x(st.col - gap + 1) - cell / 2 + 3,
+        y1: y(2 + k * 2) + 9,
+        x2: x(st.col) + cell / 2 - 3,
+        y2: y(2 + k * 2) + 9,
+        class: 'dunder'
+      }, svg)));
+      ops.push({
+        els: pEls,
+        text: st.qd + ' × ' + b + ' = ' + st.prod + '，写在 ' + st.cur + ' 的下面。'
+      });
+
+      var dEls = [];
+      var dstr = String(st.rem);
+      var dgap = dstr.length;
+      dstr.split('').forEach(function (dg, j) {
+        dEls.push(hidden(num(dg, st.col - dgap + 1 + j, 3 + k * 2)));
+      });
+      var nextStep = sh[k + 1];
+      if (nextStep) {
+        dEls.push(hidden(num(String(digits[nextStep.col]), nextStep.col, 3 + k * 2)));
+      }
+      ops.push({
+        els: dEls,
+        text: st.cur + ' − ' + st.prod + ' = ' + st.rem +
+          (nextStep ? '，把下一位落下来。'
+            : (st.rem ? '，余 ' + st.rem + '。' : '，正好除尽。'))
+      });
+    }
+
+    // 落下来之后的数，直接按真实值说，避免口算出错
+    for (var k2 = 0; k2 < sh.length - 1; k2++) {
+      var op = ops[k2 * 3 + 2];
+      var nxt = sh[k2 + 1];
+      op.text = sh[k2].cur + ' − ' + sh[k2].prod + ' = ' + sh[k2].rem +
+        '，把 ' + digits[nxt.col] + ' 落下来，变成 ' + nxt.cur + '。';
+    }
+
+    var idx = 0;
+    return {
+      el: svg,
+      next: function () {
+        if (idx >= ops.length) return null;
+        var o = ops[idx++];
+        o.els.forEach(function (e) { e.style.opacity = 1; });
+        return { text: o.text, done: idx >= ops.length };
+      },
+      startDemo: function () {
+        idx = 0;
+        ops.forEach(function (o) { o.els.forEach(function (e) { e.style.opacity = 0; }); });
+        return this;
+      },
+      reset: function () { return this.startDemo(); }
+    };
+  }
+
+  /* ══════════════════════════════════════════════════════
+   * 分子与原子
+   * 化学最讲不清的是「原子去哪了」。这里让原子真的挪位置：
+   * 断键 → 搬家 → 成键，屏幕上原子数一个不少。
+   * ══════════════════════════════════════════════════════ */
+  function molecule(el, spec) {
+    var atoms = (spec.atoms || []).slice();
+    var W = 380, H = 250;
+    var R = 15;
+    var COLORS = {
+      H: '#cbd5e1', O: '#f87171', C: '#94a3b8', N: '#60a5fa',
+      Na: '#c084fc', Cl: '#4ade80', Ca: '#fbbf24', S: '#facc15'
+    };
+
+    var svg = s('svg', {
+      viewBox: '0 0 ' + W + ' ' + H, class: 'mol-svg', role: 'img',
+      'aria-label': (spec.label || '分子变化') + '的原子重排'
+    }, el);
+
+    function mkLine(group, i, j, useTo) {
+      var p = useTo ? atoms[i].to : atoms[i].from;
+      var q = useTo ? atoms[j].to : atoms[j].from;
+      var ln = s('line', {
+        x1: p[0], y1: p[1], x2: q[0], y2: q[1],
+        stroke: '#64748b', 'stroke-width': 3, 'stroke-linecap': 'round'
+      }, group);
+      ln.style.transition = 'opacity .5s ease';
+      return ln;
+    }
+
+    // 原子坐标以画布中心为原点，整体平移一次，省得每个点都加偏移
+    var gRoot = s('g', { transform: 'translate(' + (W / 2) + ',' + (H / 2) + ')' }, svg);
+    var gB0 = s('g', null, gRoot);
+    var gB1 = s('g', null, gRoot);
+    var gAtoms = s('g', null, gRoot);
+
+    var b0 = (spec.bondsBefore || []).map(function (p) { return mkLine(gB0, p[0], p[1], false); });
+    var b1 = (spec.bondsAfter || []).map(function (p) {
+      var ln = mkLine(gB1, p[0], p[1], true);
+      ln.style.opacity = 0;
+      return ln;
+    });
+
+    var nodes = atoms.map(function (at) {
+      var g = s('g', { transform: 'translate(' + at.from[0] + ',' + at.from[1] + ')' }, gAtoms);
+      g.style.transition = 'transform .75s cubic-bezier(.4,0,.2,1)';
+      s('circle', { r: R, fill: COLORS[at.el] || '#cbd5e1', stroke: '#0b1220', 'stroke-width': 1.5 }, g);
+      var t = s('text', {
+        x: 0, y: 5, 'text-anchor': 'middle',
+        style: 'font-size:13px;font-weight:700;fill:#0b1220'
+      }, g);
+      t.textContent = at.el;
+      return g;
+    });
+
+    var count = {};
+    atoms.forEach(function (at) { count[at.el] = (count[at.el] || 0) + 1; });
+    var tally = Object.keys(count).map(function (el2) { return el2 + ' ' + count[el2]; }).join(' · ');
+    var cap = s('text', {
+      x: W / 2, y: H - 12, 'text-anchor': 'middle',
+      style: 'font-size:13px;fill:var(--dim)'
+    }, svg);
+    cap.textContent = '原子清点：' + tally;
+
+    var STEPS = [
+      { text: '先看清反应前有什么：' + tally + '。', run: function () {
+        nodes.forEach(function (g, i) {
+          g.style.transition = 'transform .2s ease';
+          g.setAttribute('transform', 'translate(' + atoms[i].from[0] + ',' + (atoms[i].from[1] - 6) + ')');
+          setTimeout(function () {
+            g.setAttribute('transform', 'translate(' + atoms[i].from[0] + ',' + atoms[i].from[1] + ')');
+            g.style.transition = 'transform .75s cubic-bezier(.4,0,.2,1)';
+          }, 180);
+        });
+      } },
+      { text: '断开旧分子里的键——原子本身没变，只是松开了。', run: function () {
+        b0.forEach(function (l) { l.style.opacity = 0; });
+      } },
+      { text: '原子搬家，按新的方式组合。注意：一个原子都没多、也没少。', run: function () {
+        nodes.forEach(function (g, i) {
+          g.setAttribute('transform', 'translate(' + atoms[i].to[0] + ',' + atoms[i].to[1] + ')');
+        });
+      } },
+      { text: '连成新分子。反应前后都是 ' + tally + '，这就是质量守恒。', run: function () {
+        b1.forEach(function (l) { l.style.opacity = 1; });
+      } }
+    ];
+
+    var idx = 0;
+    return {
+      el: svg,
+      next: function () {
+        if (idx >= STEPS.length) return null;
+        var st = STEPS[idx++];
+        st.run();
+        return { text: st.text, done: idx >= STEPS.length };
+      },
+      startDemo: function () {
+        idx = 0;
+        b0.forEach(function (l) { l.style.opacity = 1; });
+        b1.forEach(function (l) { l.style.opacity = 0; });
+        nodes.forEach(function (g, i) {
+          g.setAttribute('transform', 'translate(' + atoms[i].from[0] + ',' + atoms[i].from[1] + ')');
+        });
+        return this;
+      },
+      reset: function () { return this.startDemo(); }
+    };
+  }
+
+  /* ══════════════════════════════════════════════════════
+   * 棱锥与线面角
+   * 线面角难在「看不见的射影」。把 P 往底面投下来，
+   * 角就出现在 PB 和 BO 之间；转一下，角度不变。
+   * ══════════════════════════════════════════════════════ */
+  function pyramid(el, spec) {
+    spec = spec || {};
+    var a = Math.max(0.5, spec.a || 2);
+    var hh = Math.max(0.5, spec.h || 2);
+    var W = 380, H = 300;
+    var svg = s('svg', {
+      viewBox: '0 0 ' + W + ' ' + H, class: 'pyr-svg', role: 'img',
+      'aria-label': '正四棱锥，底面边长 ' + a + '，高 ' + hh
+    }, el);
+
+    var hx = a / 2, hy = hh / 2;
+    var A = [-hx, -hy, hx], B = [hx, -hy, hx], C = [hx, -hy, -hx], D = [-hx, -hy, -hx];
+    var P = [0, hy, 0], O = [0, -hy, 0];
+    var V = [A, B, C, D, P];
+    var FACES = [
+      { v: [0, 1, 2, 3], c: '#d97706', o: 0.26 },
+      { v: [4, 0, 1], c: '#2563eb', o: 0.14 },
+      { v: [4, 1, 2], c: '#0d9488', o: 0.14 },
+      { v: [4, 2, 3], c: '#0d9488', o: 0.1 },
+      { v: [4, 3, 0], c: '#2563eb', o: 0.1 }
+    ];
+    var EDGES = [[0, 1], [1, 2], [2, 3], [3, 0], [4, 0], [4, 1], [4, 2], [4, 3]];
+
+    var S = Math.min((W * 0.74) / (a * 1.45), (H * 0.86) / (hh + a * 0.75));
+    var yaw = spec.yaw == null ? -0.62 : spec.yaw;
+    var pitch = spec.pitch == null ? 0.4 : spec.pitch;
+
+    function proj(p) {
+      var cy = Math.cos(yaw), sy = Math.sin(yaw);
+      var x1 = p[0] * cy + p[2] * sy;
+      var z1 = -p[0] * sy + p[2] * cy;
+      var cp = Math.cos(pitch), sp = Math.sin(pitch);
+      var y1 = p[1] * cp - z1 * sp;
+      var z2 = p[1] * sp + z1 * cp;
+      var k = 1 + z2 * 0.008;
+      return [W / 2 + x1 * S / k, H / 2 - 10 - y1 * S / k, z2];
+    }
+
+    var gF = s('g', null, svg), gE = s('g', null, svg), gAn = s('g', null, svg);
+    var polys = FACES.map(function (f) {
+      return s('polygon', {
+        fill: f.c, 'fill-opacity': f.o, stroke: f.c, 'stroke-width': 1.2,
+        'stroke-linejoin': 'round'
+      }, gF);
+    });
+    var lines = EDGES.map(function () {
+      return s('line', { stroke: '#94a3b8', 'stroke-width': 1.8, 'stroke-linecap': 'round' }, gE);
+    });
+    FACES.forEach(function (f, i) { polys[i].style.transition = 'fill-opacity .35s ease'; });
+
+    var lPB = s('line', { stroke: '#fbbf24', 'stroke-width': 3.4, 'stroke-linecap': 'round' }, gAn);
+    var lBO = s('line', { stroke: '#38bdf8', 'stroke-width': 2.4, 'stroke-dasharray': '6 5', 'stroke-linecap': 'round' }, gAn);
+    var arc = s('polyline', { fill: 'none', stroke: '#fbbf24', 'stroke-width': 2.2, 'stroke-linejoin': 'round' }, gAn);
+    var lab = s('text', {
+      'text-anchor': 'middle',
+      style: 'font-size:15px;font-weight:700;fill:#fbbf24;paint-order:stroke;stroke:#0a0f18;stroke-width:4px'
+    }, gAn);
+    [lPB, lBO, arc, lab].forEach(function (e) { e.style.opacity = 0; e.style.transition = 'opacity .4s ease'; });
+
+    // 角的两条边：B→P 与 B→O
+    function sub(u, v) { return [u[0] - v[0], u[1] - v[1], u[2] - v[2]]; }
+    function len(u) { return Math.sqrt(u[0] * u[0] + u[1] * u[1] + u[2] * u[2]); }
+    function unit(u) { var l = len(u) || 1; return [u[0] / l, u[1] / l, u[2] / l]; }
+    function dot(u, v) { return u[0] * v[0] + u[1] * v[1] + u[2] * v[2]; }
+    var BP = sub(P, B), BO = sub(O, B);
+    var theta = Math.acos(Math.max(-1, Math.min(1, dot(unit(BP), unit(BO))))) * 180 / Math.PI;
+    var u1 = unit(BO);
+    var v1 = unit(sub(BP, [u1[0] * dot(BP, u1), u1[1] * dot(BP, u1), u1[2] * dot(BP, u1)]));
+    var rad = a * 0.28;
+    var ARC = [];
+    for (var t = 0; t <= 24; t++) {
+      var ang = theta * Math.PI / 180 * (t / 24);
+      ARC.push([
+        B[0] + rad * (Math.cos(ang) * u1[0] + Math.sin(ang) * v1[0]),
+        B[1] + rad * (Math.cos(ang) * u1[1] + Math.sin(ang) * v1[1]),
+        B[2] + rad * (Math.cos(ang) * u1[2] + Math.sin(ang) * v1[2])
+      ]);
+    }
+    var LAB = [
+      B[0] + rad * 2.3 * (Math.cos(theta / 2 * Math.PI / 180) * u1[0] + Math.sin(theta / 2 * Math.PI / 180) * v1[0]),
+      B[1] + rad * 2.3 * (Math.cos(theta / 2 * Math.PI / 180) * u1[1] + Math.sin(theta / 2 * Math.PI / 180) * v1[1]),
+      B[2] + rad * 2.3 * (Math.cos(theta / 2 * Math.PI / 180) * u1[2] + Math.sin(theta / 2 * Math.PI / 180) * v1[2])
+    ];
+
+    function render() {
+      var Pp = V.map(proj);
+      FACES.forEach(function (f, i) {
+        polys[i].setAttribute('points', f.v.map(function (vi) {
+          return Pp[vi][0].toFixed(1) + ',' + Pp[vi][1].toFixed(1);
+        }).join(' '));
+      });
+      FACES.map(function (f, i) {
+        return { i: i, z: f.v.reduce(function (n, vi) { return n + Pp[vi][2]; }, 0) / f.v.length };
+      }).sort(function (x2, y2) { return y2.z - x2.z; }).forEach(function (o) {
+        gF.appendChild(polys[o.i]);
+      });
+      EDGES.forEach(function (e, i) {
+        lines[i].setAttribute('x1', Pp[e[0]][0].toFixed(1));
+        lines[i].setAttribute('y1', Pp[e[0]][1].toFixed(1));
+        lines[i].setAttribute('x2', Pp[e[1]][0].toFixed(1));
+        lines[i].setAttribute('y2', Pp[e[1]][1].toFixed(1));
+      });
+      var pb = [proj(P), proj(B)];
+      lPB.setAttribute('x1', pb[0][0].toFixed(1)); lPB.setAttribute('y1', pb[0][1].toFixed(1));
+      lPB.setAttribute('x2', pb[1][0].toFixed(1)); lPB.setAttribute('y2', pb[1][1].toFixed(1));
+      var bo = [proj(B), proj(O)];
+      lBO.setAttribute('x1', bo[0][0].toFixed(1)); lBO.setAttribute('y1', bo[0][1].toFixed(1));
+      lBO.setAttribute('x2', bo[1][0].toFixed(1)); lBO.setAttribute('y2', bo[1][1].toFixed(1));
+      arc.setAttribute('points', ARC.map(function (p3) {
+        var q = proj(p3); return q[0].toFixed(1) + ',' + q[1].toFixed(1);
+      }).join(' '));
+      var lp = proj(LAB);
+      lab.setAttribute('x', lp[0].toFixed(1));
+      lab.setAttribute('y', lp[1].toFixed(1));
+      lab.textContent = (Math.round(theta * 10) / 10) + '°';
+    }
+
+    var drag = null;
+    svg.addEventListener('pointerdown', function (e) {
+      drag = { x: e.clientX, y: e.clientY, yaw: yaw, pitch: pitch };
+      spin = false;
+      try { svg.setPointerCapture(e.pointerId); } catch (err) {}
+    });
+    svg.addEventListener('pointermove', function (e) {
+      if (!drag) return;
+      yaw = drag.yaw + (e.clientX - drag.x) * 0.012;
+      pitch = Math.max(-1.1, Math.min(1.2, drag.pitch + (e.clientY - drag.y) * 0.01));
+      render();
+    });
+    function endDrag() { drag = null; }
+    svg.addEventListener('pointerup', endDrag);
+    svg.addEventListener('pointercancel', endDrag);
+
+    var spin = !reduced() && spec.spin !== false;
+    function tick() {
+      if (!spin || drag) return;
+      yaw += 0.004;
+      render();
+      requestAnimationFrame(tick);
+    }
+    render();
+    if (spin) requestAnimationFrame(tick);
+
+    var idx = 0;
+    var STEPS = [
+      { els: [lPB], text: '侧棱 PB 和底面 ABCD，看起来是斜的——倾斜程度要用角来说。' },
+      { els: [lBO], text: '把 P 往底面投下来，落到底面中心 O。BO 就是 PB 在底面上的射影。' },
+      { els: [arc, lab], text: 'PB 与射影 BO 的夹角，就是这条侧棱与底面所成的角：' + (Math.round(theta * 10) / 10) + '°。' }
+    ];
+    return {
+      el: svg,
+      next: function () {
+        if (idx >= STEPS.length) return null;
+        var st = STEPS[idx++];
+        st.els.forEach(function (e) { e.style.opacity = 1; });
+        return { text: st.text, done: idx >= STEPS.length };
+      },
+      startDemo: function () {
+        idx = 0;
+        [lPB, lBO, arc, lab].forEach(function (e) { e.style.opacity = 0; });
+        return this;
+      },
+      reset: function () { return this.startDemo(); }
+    };
+  }
+
   global.CR = {
     vertical: vertical,
     geometry: geometry,
@@ -1509,6 +1933,9 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
     coords: coords,
     clock: clock,
     solid: solid,
+    division: division,
+    molecule: molecule,
+    pyramid: pyramid,
     graphNav: graphNav,
     extend: extend,
     graphHref: graphHref,
@@ -1672,6 +2099,66 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
         var box = h('div', 'viz');
         f.appendChild(box);
         var ctrl = CR.solid(box, s.body || s);
+        if (s.caption) {
+          var cap = h('div', 'viz-cap');
+          cap.innerHTML = s.caption;
+          f.appendChild(cap);
+        }
+        attachDemo(f, ctrl, s);
+        if (s.note) {
+          var card = h('div', 'card' + (s.warn ? ' pitfall' : ' tip'));
+          card.innerHTML = '<p style="margin:0">' + s.note + '</p>';
+          f.appendChild(card);
+        }
+        return f;
+      },
+
+      division: function (s) {
+        var f = document.createDocumentFragment();
+        if (s.title) f.appendChild(h('h2', null, s.title));
+        var box = h('div', 'viz');
+        f.appendChild(box);
+        var ctrl = CR.division(box, s.body || s);
+        if (s.caption) {
+          var cap = h('div', 'viz-cap');
+          cap.innerHTML = s.caption;
+          f.appendChild(cap);
+        }
+        attachDemo(f, ctrl, s);
+        if (s.note) {
+          var card = h('div', 'card' + (s.warn ? ' pitfall' : ' tip'));
+          card.innerHTML = '<p style="margin:0">' + s.note + '</p>';
+          f.appendChild(card);
+        }
+        return f;
+      },
+
+      molecule: function (s) {
+        var f = document.createDocumentFragment();
+        if (s.title) f.appendChild(h('h2', null, s.title));
+        var box = h('div', 'viz');
+        f.appendChild(box);
+        var ctrl = CR.molecule(box, s.body || s);
+        if (s.caption) {
+          var cap = h('div', 'viz-cap');
+          cap.innerHTML = s.caption;
+          f.appendChild(cap);
+        }
+        attachDemo(f, ctrl, s);
+        if (s.note) {
+          var card = h('div', 'card' + (s.warn ? ' pitfall' : ' tip'));
+          card.innerHTML = '<p style="margin:0">' + s.note + '</p>';
+          f.appendChild(card);
+        }
+        return f;
+      },
+
+      pyramid: function (s) {
+        var f = document.createDocumentFragment();
+        if (s.title) f.appendChild(h('h2', null, s.title));
+        var box = h('div', 'viz');
+        f.appendChild(box);
+        var ctrl = CR.pyramid(box, s.body || s);
         if (s.caption) {
           var cap = h('div', 'viz-cap');
           cap.innerHTML = s.caption;
