@@ -1,5 +1,5 @@
 {
-  "version": "v0.23.1",
+  "version": "v0.23.2",
   "schemaVersion": 1,
   "generatedAt": "2026-10-27",
   "counts": {
@@ -43,7 +43,7 @@
       "version": "2.0.0",
       "updatedAt": "2026-10-27",
       "path": "courses/mt_time-hms/",
-      "bytes": 29730
+      "bytes": 30205
     }
   ]
 }

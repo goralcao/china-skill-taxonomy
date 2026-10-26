@@ -87,7 +87,7 @@ import teaching_research_chinese_senior  # noqa: E402
 import teaching_research_math_senior  # noqa: E402
 import teaching_research_english_senior  # noqa: E402
 
-VERSION = "v0.23.1"
+VERSION = "v0.23.2"
 SCHEMA_VERSION = 1
 
 MODULES = [

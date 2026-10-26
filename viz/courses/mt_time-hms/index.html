@@ -584,14 +584,25 @@
     var mins = Math.max(1, Math.round((Date.now() - startedAt) / 60000));
     var rightCount = ['q1', 'q2', 'q3'].filter(function (k) { return answered[k]; }).length;
     document.getElementById('scoreText').textContent = '答对 ' + rightCount + ' / 3';
-    document.getElementById('timeText').textContent = '用时约 ' + mins + ' 分钟';
+    document.getElementById('timeText').textContent = '用时约 ' + mins + ' 分钟 · 正在返回图谱';
     try {
       localStorage.setItem('stx.course.' + TOPIC_ID, JSON.stringify({
         done: true, score: rightCount / 3, minutes: mins, at: Date.now(), v: COURSE_VERSION
       }));
     } catch (e) { /* 隐私模式忽略 */ }
-    show(TOTAL);
-    document.getElementById('finish').scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+    // 完成后回图谱，并定位到这个知识点的详情面板（那里能看到课件入口与完成状态）
+    nextBtn.textContent = '返回图谱…';
+    nextBtn.disabled = true;
+    var sc = new URLSearchParams(location.search).get('sharecode');
+    setTimeout(function () {
+      var q = new URLSearchParams();
+      if (sc) q.set('sharecode', sc);
+      q.set('done', '1');
+      q.set('score', rightCount + '/3');
+      q.set('minutes', String(mins));
+      location.href = '../../index.html?' + q.toString() + '#t=' + TOPIC_ID;
+    }, 650);
   }
 
   /* ---------- 键盘 ---------- */
