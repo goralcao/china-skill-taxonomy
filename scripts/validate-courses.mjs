@@ -97,7 +97,11 @@ for (const name of dirs) {
   }
   if (meta.duration && meta.interactions) {
     const per = meta.duration / meta.interactions;
-    if (per < 2 || per > 7) warn(rel, `每个交互平均 ${per.toFixed(1)} 分钟，偏离 2~7 的合理区间`);
+    const lo = meta.template === 'drill' ? 1 : 2;
+    const hi = meta.template === 'drill' ? 4 : 7;
+    if (per < lo || per > hi) {
+      warn(rel, `每个交互平均 ${per.toFixed(1)} 分钟，偏离 ${lo}~${hi} 的合理区间`);
+    }
   }
 
   // 7. HTML 静态检查
@@ -112,11 +116,27 @@ for (const name of dirs) {
   if (!/<meta[^>]+name=["']viewport["']/i.test(html)) fail(rel, '缺 viewport meta');
   if (!/<title>[^<]{4,}<\/title>/i.test(html)) fail(rel, '缺 <title>');
 
-  // 8. 交互步骤数一致
-  const steps = (html.match(/data-step=/g) || []).length;
+  // 8. 交互步骤数一致：多步页面看 data-step，单页题库看 __ANSWERS 条数
+  const answersMatch = html.match(/window\.__ANSWERS\s*=\s*(\[[\s\S]*?\]);/);
+  let answers = null;
+  if (answersMatch) {
+    try { answers = JSON.parse(answersMatch[1]); }
+    catch (e) { fail(rel, '__ANSWERS 不是合法 JSON：' + e.message); }
+  }
   const stepSections = (html.match(/<section[^>]+data-step=/g) || []).length;
-  if (stepSections !== meta.interactions) {
-    fail(rel, `meta.interactions=${meta.interactions}，HTML 里 ${stepSections} 个 data-step 小节`);
+  const actCount = (html.match(/\sdata-interaction[\s>]/g) || []).length;
+  if (actCount > 0) {
+    if (actCount !== meta.interactions) {
+      fail(rel, `meta.interactions=${meta.interactions}，HTML 里 ${actCount} 个 data-interaction 控件`);
+    }
+  } else if (stepSections > 0) {
+    if (stepSections !== meta.interactions) {
+      fail(rel, `meta.interactions=${meta.interactions}，HTML 里 ${stepSections} 个 data-step 小节`);
+    }
+  } else if (!answers || !answers.length) {
+    fail(rel, '既没有 data-step 小节，也没有 __ANSWERS 题库');
+  } else if (answers.length !== meta.interactions) {
+    fail(rel, `meta.interactions=${meta.interactions}，题库 ${answers.length} 题`);
   }
 
   // 9. 易错点与键盘
@@ -124,21 +144,13 @@ for (const name of dirs) {
   if (/\.\.\/\.\.\/index\.html/.test(html)) {
     fail(rel, '源课件里应写 ../../viz/index.html，构建时会改写成部署路径');
   }
-  if (!/ArrowRight|ArrowLeft/.test(html)) warn(rel, '没有方向键切换步骤');
+  if (stepSections > 0 && !/ArrowRight|ArrowLeft/.test(html)) warn(rel, '没有方向键切换步骤');
 
   // 10. 答案表复算
-  const m = html.match(/window\.__ANSWERS\s*=\s*(\[[\s\S]*?\]);/);
-  if (!m) {
-    warn(rel, '没有 window.__ANSWERS，无法复算答案');
+  if (!answers) {
+    warn(rel, '没有可解析的 window.__ANSWERS，无法复算答案');
   } else {
-    let answers;
-    try {
-      answers = JSON.parse(m[1]);
-    } catch (e) {
-      fail(rel, '__ANSWERS 不是合法 JSON：' + e.message);
-      answers = null;
-    }
-    if (answers) {
+    {
       for (const a of answers) {
         if (a.expr === undefined) continue;
         let got;

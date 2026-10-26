@@ -1,0 +1,22 @@
+{
+  "topicId": "mt_phys-s-momentum-conservation",
+  "title": "动量守恒：内力再大也改不了总动量",
+  "template": "explore",
+  "duration": 16,
+  "interactions": 8,
+  "grade": 11,
+  "subject": "物理",
+  "standards": ["physics-2022:S5:CONS"],
+  "prerequisites": ["mt_phys-s-momentum-theorem"],
+  "next": ["mt_phys-s-collision"],
+  "objectives": [
+    "说出动量守恒的条件是系统合外力为零",
+    "区分内力与外力对总动量的影响",
+    "用动量守恒解释碰撞与反冲"
+  ],
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-27"
+}

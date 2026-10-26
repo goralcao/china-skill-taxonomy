@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>动量守恒 · 学阶图谱课件</title>
+<style>
+  :root {
+    --bg: #0a0f18; --panel: #0f1620; --card: #141d29; --line: #24303f;
+    --text: #e8edf5; --dim: #8b98ab; --accent: #ffd166; --ok: #4ade80; --bad: #f87171;
+    --c1: #4f8ef7; --c2: #f59e0b;
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { margin: 0; background: var(--bg); color: var(--text); line-height: 1.7;
+    font-family: system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  body { min-height: 100dvh; padding: 0 16px calc(28px + env(safe-area-inset-bottom, 0px)); }
+  header { position: sticky; top: 0; z-index: 5; display: flex; align-items: center; gap: 12px;
+    padding: 10px 0; background: rgba(10,15,24,.94); border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(8px); }
+  .back { color: var(--dim); text-decoration: none; font-size: 13px; }
+  .back:hover { color: var(--text); }
+  .tag { margin-left: auto; font-size: 12px; color: var(--dim); }
+  main { max-width: 720px; margin: 0 auto; padding-top: 16px; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  h2 { font-size: 16px; margin: 22px 0 8px; }
+  p { margin: 0 0 12px; }
+  .muted { color: var(--dim); font-size: 13.5px; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 14px 16px; margin: 14px 0; }
+  .card.tip { border-left: 3px solid var(--accent); border-radius: 0 10px 10px 0; }
+  .card.ok { border-left: 3px solid var(--ok); border-radius: 0 10px 10px 0;
+    background: rgba(74,222,128,.07); }
+  .card.pitfall { border-left: 3px solid var(--bad); border-radius: 0 10px 10px 0;
+    background: rgba(248,113,113,.06); }
+  canvas { width: 100%; height: auto; display: block; border-radius: 10px;
+    background: #0c131d; border: 1px solid var(--line); }
+  .bars { margin: 12px 0 4px; font-size: 12.5px; }
+  .bar-row { display: grid; grid-template-columns: 54px 1fr 92px; align-items: center;
+    gap: 10px; margin: 6px 0; color: var(--dim); }
+  .track { height: 10px; background: var(--card); border-radius: 5px; position: relative; overflow: hidden; }
+  .track i { position: absolute; top: 0; bottom: 0; border-radius: 5px; transition: width .12s, left .12s; }
+  .num { text-align: right; color: var(--text); font-variant-numeric: tabular-nums; }
+  .ctrls { display: grid; gap: 10px; margin: 12px 0; }
+  .ctrl { display: grid; grid-template-columns: 92px 1fr 62px; align-items: center; gap: 10px;
+    font-size: 13.5px; }
+  .ctrl input[type=range] { width: 100%; accent-color: var(--accent); height: 28px; }
+  .ctrl .val { text-align: right; font-variant-numeric: tabular-nums; color: var(--text); }
+  .row-btns { display: flex; gap: 10px; flex-wrap: wrap; margin: 12px 0; }
+  .btn { padding: 10px 16px; border-radius: 10px; border: 1px solid var(--line);
+    background: var(--card); color: var(--text); font-size: 14px; cursor: pointer; min-height: 42px; }
+  .btn.primary { background: var(--accent); color: #1a1300; border-color: var(--accent); font-weight: 600; }
+  .switch { display: flex; align-items: center; gap: 10px; margin: 10px 0; font-size: 13.5px; color: var(--dim); }
+  .switch input { width: 20px; height: 20px; accent-color: var(--bad); }
+  details { border: 1px solid var(--line); border-radius: 10px; margin: 8px 0; background: var(--card); }
+  summary { padding: 12px 14px; cursor: pointer; font-size: 14px; list-style: none; }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: '▸ '; color: var(--accent); }
+  details[open] summary::before { content: '▾ '; }
+  details .body { padding: 0 14px 12px; font-size: 13.5px; color: var(--dim); }
+  .next-card { display: block; text-decoration: none; color: var(--text);
+    border: 1px solid var(--line); border-radius: 12px; padding: 14px; margin-top: 16px;
+    background: var(--card); }
+  .next-card b { color: var(--accent); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+</style>
+</head>
+<body>
+<header>
+  <a class="back" href="../../viz/index.html#t=mt_phys-s-momentum-conservation">← 回到图谱</a>
+  <span class="tag">高中物理 · 选择性必修一</span>
+</header>
+
+<main>
+  <h1>动量守恒：内力再大也改不了总动量</h1>
+  <p class="muted">拖动参数，看两个小球碰前碰后的总动量。</p>
+
+  <canvas id="cv" width="720" height="300" role="img"
+    aria-label="两个小球在水平面上运动并碰撞的示意"></canvas>
+
+  <div class="bars">
+    <div class="bar-row"><span>小球 1</span><div class="track"><i id="b1"></i></div><span class="num" id="n1">0</span></div>
+    <div class="bar-row"><span>小球 2</span><div class="track"><i id="b2"></i></div><span class="num" id="n2">0</span></div>
+    <div class="bar-row"><span>总动量</span><div class="track"><i id="bt"></i></div><span class="num" id="nt">0</span></div>
+  </div>
+
+  <div class="row-btns">
+    <button class="btn primary" id="play">播放碰撞</button>
+    <button class="btn" id="reset">重置</button>
+  </div>
+
+  <div class="ctrls">
+    <label class="ctrl">小球 1 质量
+      <input type="range" id="m1" min="1" max="5" step="0.5" value="2" data-interaction>
+      <span class="val" id="m1v">2.0 kg</span>
+    </label>
+    <label class="ctrl">小球 1 速度
+      <input type="range" id="v1" min="-4" max="4" step="0.5" value="3" data-interaction>
+      <span class="val" id="v1v">3.0 m/s</span>
+    </label>
+    <label class="ctrl">小球 2 质量
+      <input type="range" id="m2" min="1" max="5" step="0.5" value="3" data-interaction>
+      <span class="val" id="m2v">3.0 kg</span>
+    </label>
+    <label class="ctrl">小球 2 速度
+      <input type="range" id="v2" min="-4" max="4" step="0.5" value="-1" data-interaction>
+      <span class="val" id="v2v">-1.0 m/s</span>
+    </label>
+  </div>
+
+  <div class="switch">
+    <input type="checkbox" id="friction" data-interaction>
+    <label for="friction">加上地面摩擦（引入外力）</label>
+  </div>
+
+  <div class="card" id="verdict">
+    碰前总动量 <b id="pBefore">0</b>，碰后总动量 <b id="pAfter">0</b>。
+  </div>
+
+  <h2>三个可以自己验证的结论</h2>
+
+  <details data-interaction>
+    <summary>1. 两个球质量相同、速度相反，碰后会怎样？</summary>
+    <div class="body">把两个速度调成 +2 和 −2，质量都设 3 kg。总动量是 0，碰后两个球粘在一起，速度也是 0——动量没有凭空消失，只是相互抵消了。</div>
+  </details>
+
+  <details data-interaction>
+    <summary>2. 一个球静止，另一个撞上去，动量去哪了？</summary>
+    <div class="body">把小球 2 的速度调成 0，小球 1 用 3 m/s 撞它。碰后两球一起动，速度等于「碰前总动量 ÷ 总质量」。动量从球 1 传给了两球组成的整体。</div>
+  </details>
+
+  <details data-interaction>
+    <summary>3. 为什么摩擦一开，动量就不守恒了？</summary>
+    <div class="body">打开上面的摩擦开关。地面给系统一个外力，冲量进入系统，总动量随时间变小。注意：不是「碰撞把动量弄丢了」，而是外力的冲量改变了系统的总动量。判断守恒先看合外力是否为零。</div>
+  </details>
+
+  <div class="card tip">
+    一句话：<b>系统合外力为零，总动量守恒</b>。小球之间的作用力再大，也只是内力，改变不了总动量。
+  </div>
+
+  <div class="card pitfall">
+    <b>常见错法：</b>看到「有力」就说不守恒。碰撞时两球之间的力是内力，不破坏守恒；只有外部（地面摩擦、空气阻力、绳子拉力）的合力才影响总动量。
+  </div>
+
+  <a class="next-card" href="../../viz/index.html#t=mt_phys-s-collision">
+    接着学：<b>碰撞与反冲</b><br>
+    <span class="muted">弹性碰撞里，动量和动能同时守恒。</span>
+  </a>
+</main>
+
+<script>
+(function () {
+  'use strict';
+  var TOPIC_ID = 'mt_phys-s-momentum-conservation';
+  var COURSE_VERSION = '1.0.0';
+  var startedAt = Date.now();
+
+  // 固定参数下的答案，供 validate-courses.mjs 复算
+  window.__ANSWERS = [
+    {"id":"sim1","kind":"number","value":0.6,"expr":"(2*3+3*(-1))/(2+3)"},
+    {"id":"sim2","kind":"number","value":3,"expr":"2*3+3*(-1)"}
+  ];
+
+  var cv = document.getElementById('cv');
+  var ctx = cv.getContext('2d');
+  var W = 720, H = 300;
+  var DPR = Math.min(window.devicePixelRatio || 1, 2);
+  cv.width = W * DPR; cv.height = H * DPR;
+  ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+
+  var el = function (id) { return document.getElementById(id); };
+  var state = { m1: 2, v1: 3, m2: 3, v2: -1, friction: false, playing: false };
+
+  function readControls() {
+    state.m1 = Number(el('m1').value);
+    state.v1 = Number(el('v1').value);
+    state.m2 = Number(el('m2').value);
+    state.v2 = Number(el('v2').value);
+    state.friction = el('friction').checked;
+    el('m1v').textContent = state.m1.toFixed(1) + ' kg';
+    el('v1v').textContent = state.v1.toFixed(1) + ' m/s';
+    el('m2v').textContent = state.m2.toFixed(1) + ' kg';
+    el('v2v').textContent = state.v2.toFixed(1) + ' m/s';
+  }
+
+  // 完全非弹性碰撞：碰后共同速度
+  function afterVelocity() {
+    return (state.m1 * state.v1 + state.m2 * state.v2) / (state.m1 + state.m2);
+  }
+
+  var balls = null;
+  var raf = null;
+
+  function radiusOf(m) { return 16 + Math.sqrt(m) * 6; }
+
+  function resetBalls() {
+    var r1 = radiusOf(state.m1), r2 = radiusOf(state.m2);
+    balls = {
+      x1: 120, x2: 600, r1: r1, r2: r2,
+      v1: state.v1, v2: state.v2,
+      merged: false, mergedV: 0, t: 0, frictionAcc: 0
+    };
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    // 地面
+    ctx.strokeStyle = '#24303f'; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(0, 240); ctx.lineTo(W, 240); ctx.stroke();
+    if (state.friction) {
+      ctx.strokeStyle = 'rgba(248,113,113,.5)'; ctx.lineWidth = 1;
+      for (var i = 0; i < W; i += 14) {
+        ctx.beginPath(); ctx.moveTo(i, 242); ctx.lineTo(i + 7, 252); ctx.stroke();
+      }
+    }
+    if (!balls) return;
+    var cy = 240 - (balls.r1 > balls.r2 ? balls.r1 : balls.r2);
+
+    function ball(x, y, r, color, label, v) {
+      ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2);
+      ctx.fillStyle = color; ctx.globalAlpha = .9; ctx.fill(); ctx.globalAlpha = 1;
+      ctx.strokeStyle = 'rgba(255,255,255,.35)'; ctx.lineWidth = 2; ctx.stroke();
+      ctx.fillStyle = '#0a0f18'; ctx.font = '600 14px system-ui, sans-serif';
+      ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+      ctx.fillText(label, x, y);
+      ctx.textBaseline = 'alphabetic';
+      // 速度箭头
+      if (Math.abs(v) > 0.01) {
+        var len = Math.min(80, Math.abs(v) * 18) * (v > 0 ? 1 : -1);
+        ctx.strokeStyle = color; ctx.lineWidth = 3;
+        ctx.beginPath(); ctx.moveTo(x, y - r - 14); ctx.lineTo(x + len, y - r - 14); ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(x + len, y - r - 14);
+        ctx.lineTo(x + len - (v > 0 ? 7 : -7), y - r - 18);
+        ctx.lineTo(x + len - (v > 0 ? 7 : -7), y - r - 10);
+        ctx.closePath(); ctx.fillStyle = color; ctx.fill();
+      }
+    }
+
+    if (balls.merged) {
+      ball(balls.x1, cy, balls.r1, '#8b5cf6', '合', balls.mergedV);
+    } else {
+      ball(balls.x1, cy, balls.r1, '#4f8ef7', '1', balls.v1);
+      ball(balls.x2, cy, balls.r2, '#f59e0b', '2', balls.v2);
+    }
+  }
+
+  function step() {
+    if (!balls) { resetBalls(); }
+    balls.t += 1 / 60;
+    if (!balls.merged) {
+      balls.x1 += balls.v1 * 0.6;
+      balls.x2 += balls.v2 * 0.6;
+      if (balls.x2 - balls.x1 <= balls.r1 + balls.r2) {
+        balls.mergedV = (state.m1 * balls.v1 + state.m2 * balls.v2) / (state.m1 + state.m2);
+        balls.merged = true;
+        balls.x1 = (balls.x1 * state.m1 + balls.x2 * state.m2) / (state.m1 + state.m2);
+      }
+    } else {
+      balls.x1 += balls.mergedV * 0.6;
+      if (balls.x1 < balls.r1 + 4) { balls.x1 = balls.r1 + 4; balls.mergedV = -balls.mergedV * 0.8; }
+      if (balls.x1 > W - balls.r1 - 4) { balls.x1 = W - balls.r1 - 4; balls.mergedV = -balls.mergedV * 0.8; }
+    }
+    if (state.friction && balls.merged) {
+      // 摩擦让系统动量不断减小
+      balls.mergedV *= 0.985;
+      balls.frictionAcc += 1 / 60;
+    }
+    draw();
+    if (balls.t < 8) { raf = requestAnimationFrame(step); }
+    else { state.playing = false; el('play').textContent = '播放碰撞'; }
+  }
+
+  function updateNumbers() {
+    readControls();
+    var p1 = state.m1 * state.v1;
+    var p2 = state.m2 * state.v2;
+    var pt = p1 + p2;
+    var scale = Math.max(1, Math.abs(p1), Math.abs(p2), Math.abs(pt));
+    function place(barEl, val) {
+      var w = Math.abs(val) / scale * 50;
+      barEl.style.width = Math.max(1, w) + '%';
+      barEl.style.left = '50%';
+      if (val >= 0) { barEl.style.left = '50%'; barEl.style.background = 'var(--ok)'; }
+      else { barEl.style.left = (50 - Math.max(1, w)) + '%'; barEl.style.background = 'var(--bad)'; }
+    }
+    place(el('b1'), p1); place(el('b2'), p2); place(el('bt'), pt);
+    el('n1').textContent = p1.toFixed(1);
+    el('n2').textContent = p2.toFixed(1);
+    el('nt').textContent = pt.toFixed(1);
+    var vAfter = afterVelocity();
+    var after = (state.m1 + state.m2) * vAfter;
+    el('verdict').className = state.friction ? 'card pitfall' : 'card ok';
+    el('verdict').innerHTML = state.friction
+      ? '有地面摩擦，系统受到外力，<b>总动量不再守恒</b>。碰前 ' + pt.toFixed(1) + ' kg·m/s，之后会不断变小。'
+      : '碰前总动量 <b>' + pt.toFixed(1) + '</b>，碰后总动量 <b>' + after.toFixed(1) + ' kg·m/s</b>，两者相等。';
+    draw();
+  }
+
+  function play() {
+    readControls();
+    resetBalls();
+    balls.t = 0;
+    if (raf) cancelAnimationFrame(raf);
+    state.playing = true;
+    el('play').textContent = '播放中…';
+    raf = requestAnimationFrame(step);
+  }
+
+  ['m1', 'v1', 'm2', 'v2'].forEach(function (id) {
+    el(id).addEventListener('input', function () {
+      updateNumbers();
+      if (!state.playing) { resetBalls(); draw(); }
+    });
+  });
+  el('friction').addEventListener('change', function () {
+    updateNumbers();
+    if (!state.playing) { resetBalls(); draw(); }
+  });
+  el('play').onclick = play;
+  el('reset').onclick = function () {
+    if (raf) cancelAnimationFrame(raf);
+    state.playing = false;
+    el('play').textContent = '播放碰撞';
+    balls = null;
+    resetBalls();
+    updateNumbers();
+  };
+
+  /* 首次交互记录完成（滑杆、开关、折叠卡任一） */
+  var touched = false;
+  document.addEventListener('input', function (e) {
+    if (e.target.closest('[data-interaction]')) touched = true;
+  }, true);
+  document.addEventListener('toggle', function (e) {
+    if (e.target.tagName === 'DETAILS') touched = true;
+  }, true);
+
+  // 完成状态：用户与至少一个控件交互后，离开页面即记为完成
+  (function () {
+    var save = function () {
+      if (!touched) return;
+      try {
+        localStorage.setItem('stx.course.' + TOPIC_ID, JSON.stringify({
+          done: true, score: 1, minutes: Math.max(1, Math.round((Date.now() - startedAt) / 60000)),
+          at: Date.now(), v: COURSE_VERSION
+        }));
+      } catch (e) {}
+    };
+    window.addEventListener('pagehide', save);
+    document.addEventListener('visibilitychange', function () {
+      if (document.visibilityState === 'hidden') save();
+    });
+    var back = document.querySelector('.back');
+    if (back) back.addEventListener('click', save);
+  })();
+
+  // 线上分享链接鉴权参数
+  (function () {
+    var sc = new URLSearchParams(location.search).get('sharecode');
+    if (!sc) return;
+    [].slice.call(document.querySelectorAll('a[href*="index.html"]')).forEach(function (a) {
+      var href = a.getAttribute('href');
+      if (href.indexOf('sharecode=') >= 0) return;
+      var i = href.indexOf('#');
+      var base = i >= 0 ? href.slice(0, i) : href;
+      var tail = i >= 0 ? href.slice(i) : '';
+      a.setAttribute('href', base + '?sharecode=' + encodeURIComponent(sc) + tail);
+    });
+  })();
+
+  readControls();
+  resetBalls();
+  updateNumbers();
+})();
+</script>
+</body>
+</html>
