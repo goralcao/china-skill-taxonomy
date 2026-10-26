@@ -142,6 +142,10 @@ schema/course.schema.json
 | `quad` | 平行四边形与梯形 | 四边形按平行组数分类 | 成对箭头标平行、逐个高亮、梯形的高 |
 | `decGrid` | 百格图 | 小数的意义与性质 | 1 格 0.01、一列 0.1；双图对比证明 0.3=0.30 |
 | `mult2` | 多位数乘法竖式 | 三位数乘两位数 | 两段部分积逐步揭示，十位一行向左错一位并标注实际值 |
+| `chart` | 条形/折线统计图 | 统计单元 | 纵轴「一格表示几」、条形从基线生长、折线描点连线看趋势 |
+| `mean` | 平均数（移多补少） | 统计单元 | 多余部分移走、缺口补上，条形拉平到平均线 |
+| `polyArea` | 多边形面积割补 | 面积公式推导 | 沿高剪开平移、两个三角形/梯形旋转 180° 拼合 |
+| `factorGrid` | 摆方格找因数 | 因数与倍数 | 摆出所有长方形，因数成对列出 |
 | `clock` | 钟面 | 时、分、秒 | 三针联动、分针拖拽、指针高亮 |
 | `numberline` | 数轴 | 正负数、分数、小数、时间轴 | 区间高亮、可拖手柄 |
 | `coords` | 坐标系 | 一次函数、抛物线、统计 | 网格、曲线描边动画、散点 |
@@ -392,7 +396,7 @@ localStorage.setItem('stx.course.' + TOPIC_ID,
 
 - `templates/engine.js` 接管页面骨架与全部通用逻辑
 - 课件只剩 `content.json`（steps 数组）+ 一个 16 行的薄壳 `index.html`
-- 24 种步骤类型：`intro` / `text` / `vertical` / `geometry` / `solid` / `pyramid` / `division` / `mult2` / `molecule` / `calendar` / `decimal` / `table` / `compass` / `law` / `triangle` / `counter` / `angle` / `quad` / `decGrid` / `numberline` / `clock` / `quiz` / `choice` / `summary`
+- 28 种步骤类型：`intro` / `text` / `vertical` / `geometry` / `solid` / `pyramid` / `division` / `mult2` / `molecule` / `calendar` / `decimal` / `table` / `compass` / `law` / `triangle` / `counter` / `angle` / `quad` / `decGrid` / `chart` / `mean` / `polyArea` / `factorGrid` / `numberline` / `clock` / `quiz` / `choice` / `summary`
 - 构建时把 content.json、engine.js、renderers.js、base.css 全部内联，产物仍是单文件
 
 写一节课从「复制 300 行 HTML」变成「写 60 行 JSON」。

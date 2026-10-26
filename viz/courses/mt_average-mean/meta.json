@@ -1,0 +1,32 @@
+{
+  "topicId": "mt_average-mean",
+  "title": "平均数：把多的补给少的",
+  "template": "explain",
+  "renderer": "mean",
+  "duration": 11,
+  "interactions": 2,
+  "grade": 4,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S2:SP"
+  ],
+  "prerequisites": [
+    "mt_bar-chart",
+    "mt_div-1digit",
+    "mt_stats-table"
+  ],
+  "next": [
+    "mt_stats-center"
+  ],
+  "objectives": [
+    "理解平均数的含义：移多补少后同样多的那个数",
+    "会用「总数 ÷ 个数」求平均数",
+    "知道平均数在最大数与最小数之间"
+  ],
+  "cognitiveAction": "逼近",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-27"
+}

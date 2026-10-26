@@ -1,0 +1,30 @@
+{
+  "topicId": "mt_line-chart",
+  "title": "折线统计图：看的是变化的趋势",
+  "template": "explain",
+  "renderer": "chart",
+  "duration": 11,
+  "interactions": 2,
+  "grade": 5,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S3:SP"
+  ],
+  "prerequisites": [
+    "mt_bar-chart"
+  ],
+  "next": [
+    "mt_stats-center"
+  ],
+  "objectives": [
+    "认识折线统计图：先描点再连线",
+    "会根据折线的升降判断数量的增减",
+    "知道折线图适合表示变化趋势"
+  ],
+  "cognitiveAction": "比较",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-27"
+}

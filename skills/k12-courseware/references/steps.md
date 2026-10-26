@@ -35,6 +35,10 @@
 | `triangle` | 三角形（分类/内角和/三边） | `body{mode,...}` | `caption` `note` `demoLabel` |
 | `counter` | 数位顺序表（大数） | `body{}` | `caption` `note` `demoLabel` |
 | `mult2` | 多位数乘法竖式 | `body{a,b}` | `caption` `note` `demoLabel` |
+| `chart` | 条形/折线统计图 | `body{mode,categories,series}` | `caption` `note` `demoLabel` |
+| `mean` | 平均数（移多补少） | `body{values,labels}` | `caption` `note` `demoLabel` |
+| `polyArea` | 多边形面积割补 | `body{mode}` | `caption` `note` `demoLabel` |
+| `factorGrid` | 摆方格找因数 | `body{n}` | `caption` `note` `demoLabel` |
 | `angle` | 量角器 | `body{deg}` | `caption` `note` `demoLabel` |
 | `quad` | 平行四边形与梯形 | `body{shapes}` | `caption` `note` `demoLabel` |
 | `decGrid` | 百格图（小数意义/性质） | `body{mode,value,compare}` | `caption` `note` `demoLabel` |
@@ -268,6 +272,39 @@ preset：
 ```
 
 多位数乘多位数竖式（三位数乘两位数起步）。演示按标准笔算顺序：先个位去乘（末位对齐个位），再十位去乘（得数**向左错一位**，旁注它实际表示多少），最后两段部分积相加。部分积用两种颜色区分。
+
+## chart
+
+```json
+{ "type": "chart", "title": "最喜欢的图书种类", "body": { "mode": "bar",
+  "categories": ["故事书", "科普书"], "series": [{ "name": "人数", "color": "#38bdf8", "values": [12, 9] }] } }
+```
+
+统计图。`mode=bar` 条形图（`series` 一条是单式、两条是复式，条形从基线逐条长出来，纵轴自动取「一格 = N」并标注）；`mode=line` 折线图（先描点再连线，讲升降趋势）。数据换一组，讲解不用改。
+
+## mean
+
+```json
+{ "type": "mean", "title": "移多补少", "body": { "values": [8, 5, 11, 4], "labels": ["小明", "小红", "小刚", "小丽"] } }
+```
+
+平均数。平均数 = 总数 ÷ 个数 先画虚线；红色标出比平均数多的部分、绿色标出缺的部分；最后所有条形以基线为原点缩放拉平到平均高度——「移多补少」看得见。
+
+## polyArea
+
+```json
+{ "type": "polyArea", "title": "平行四边形 → 长方形", "body": { "mode": "para" } }
+```
+
+面积公式推导。`mode=para` 沿高剪开、三角形平移补成长方形；`mode=tri` 两个完全一样的三角形旋转 180° 拼成平行四边形；`mode=trap` 两个完全一样的梯形拼合（底 = 上底+下底）。收尾给出公式。
+
+## factorGrid
+
+```json
+{ "type": "factorGrid", "title": "12 的因数", "body": { "n": 12 } }
+```
+
+因数与倍数。把 n 个小正方形摆成所有长方形（1×12、2×6、3×4…），逐个揭示，收尾列出全部因数，并点明最小因数是 1、最大是它本身。
 
 ## angle
 

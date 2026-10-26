@@ -1,22 +1,22 @@
 {
   "name": "学阶图谱 · China Skill Taxonomy",
-  "version": "v0.35.0",
+  "version": "v0.36.0",
   "schemaVersion": 1,
   "generatedAt": "2026-10-27",
   "counts": {
     "topics": 1273,
-    "dependencies": 1646,
+    "dependencies": 1647,
     "curriculumStandards": 186,
     "clusters": 204,
     "teachingResearchRecords": 1268,
-    "courses": 31,
+    "courses": 36,
     "hardEdges": 952,
-    "softEdges": 694
+    "softEdges": 695
   },
   "bySubject": {
     "数学": {
       "topics": 239,
-      "edges": 401
+      "edges": 402
     },
     "语文": {
       "topics": 177,
@@ -65,31 +65,31 @@
   },
   "files": {
     "topics.json": {
-      "sha256": "b790271656e4fae5e72c78fca05a249af2759d6900f87512fff0ffd1503414cf",
+      "sha256": "f06345ef588418b51ba0f02edfa8fb46dea18eeeae9d4e9c2faeed5cfb0c56ba",
       "bytes": 1269573
     },
     "dependencies.json": {
-      "sha256": "4014c90dc2b347ea18115fdcb245580c8799dc3ca27999640bc8cd857153ed65",
-      "bytes": 309787
+      "sha256": "56d1b7157847b1e8e484197b997660d3524a25cf9c17652e38c22281dddb89f6",
+      "bytes": 309972
     },
     "curriculum-standards.json": {
-      "sha256": "0e55b532146b76f205583e94ef7e6b816e1d5eb737983f127d3b535e414fcbf4",
+      "sha256": "97f9168e99a54a9f5446d9acfc4fae3587c97bdb64168fd6d258f0df13300bfe",
       "bytes": 91293
     },
     "textbooks.json": {
-      "sha256": "ebda2cb455adb242405f81cd71b6922050e47f3bab0d255071ec7542c962d6bb",
+      "sha256": "463cfd634e75600d00ebcb4ec81b74629f71363ee5104e3343aeb2123860fb5d",
       "bytes": 213068
     },
     "clusters.json": {
-      "sha256": "33996433ccb722f7b71321091653f0605e7905c01da4df9055e4efe0602dc004",
+      "sha256": "85342c15cdd1aadb2b444a759fae16b258ced1d21c4d628cf14524fd9421466c",
       "bytes": 134162
     },
     "courses.json": {
-      "sha256": "99ec6728e17dbe661f29bdcc1aa1aa531bfb99faef905892099f34289d09a6a0",
-      "bytes": 28968
+      "sha256": "3ccb30a8fd0d920ccd8432d73c082bda81e13e7b92ea555a2218e410cd7b3203",
+      "bytes": 33575
     },
     "teaching-research.json": {
-      "sha256": "d0424eb6a326b62101f5965115fd230b02e82b44b78bde1426d16b1a671a26f4",
+      "sha256": "abbf2baacec2d749a48eca16c4386c4046872e73aead7311ef4689d8716545b8",
       "bytes": 3122781
     }
   }

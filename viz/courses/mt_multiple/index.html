@@ -336,7 +336,7 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 /* ── 立体图形 ─────────────────────────────────────────── */
 /* 拖得动，才看得出哪个面在后面 */
 .solid-svg, .pyr-svg, .mol-svg, .cal-svg, .dec-svg, .tbl-svg, .cmp-svg, .law-svg, .tri-svg,
-.cnt-svg, .ang-svg, .qd-svg, .dgr-svg, .m2-svg { width: 100%; height: auto; touch-action: none; }
+.cnt-svg, .ang-svg, .qd-svg, .dgr-svg, .m2-svg, .cht-svg, .men-svg, .ply-svg, .fac-svg { width: 100%; height: auto; touch-action: none; }
 .solid-svg, .pyr-svg { cursor: grab; }
 .solid-svg:active, .pyr-svg:active { cursor: grabbing; }
 .viz text { fill: var(--text); font-family: inherit; }
@@ -3345,10 +3345,480 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
     };
   }
 
+  /* ══════════════════════════════════════════════════════
+   * 统计图：条形与折线
+   * 条形图比的是「谁多谁少」，一格表示几要先看清；
+   * 折线图看的是「往哪变」，上升是增加、下降是减少。
+   * ══════════════════════════════════════════════════════ */
+  function chart(el, spec) {
+    spec = spec || {};
+    var mode = spec.mode || 'bar';
+    var cats = spec.categories || [];
+    var series = spec.series || [];
+    var W = 360, H = 250;
+    var svg = s('svg', { viewBox: '0 0 ' + W + ' ' + H, class: 'cht-svg', role: 'img' }, el);
+    svg.style.width = '100%'; svg.style.height = 'auto';
+
+    var x0 = 48, xR = 344, yTop = 34, yBase = 194;
+    var maxV = 1;
+    series.forEach(function (sr) { sr.values.forEach(function (v) { if (v > maxV) maxV = v; }); });
+    // 纵轴刻度取整：让 5 格正好覆盖
+    var step = Math.max(1, Math.ceil(maxV / 5));
+    if (maxV / step > 5) step += 1;
+    var axisMax = step * 5;
+    function yOf(v) { return yBase - v / axisMax * (yBase - yTop); }
+
+    // 纵轴与格线
+    s('line', { x1: x0, y1: yTop - 6, x2: x0, y2: yBase, class: 'cx-axis' }, svg);
+    for (var g = 0; g <= axisMax; g += step) {
+      var gy = yOf(g);
+      s('line', { x1: x0, y1: gy, x2: xR, y2: gy, stroke: 'var(--line)', 'stroke-width': 0.8 }, svg);
+      var tl = s('text', { x: x0 - 6, y: gy + 4, 'text-anchor': 'end', style: 'font-size:10.5px;fill:var(--dim)' }, svg);
+      tl.textContent = String(g);
+    }
+    var unitT = s('text', { x: x0 - 6, y: yTop - 14, 'text-anchor': 'end', style: 'font-size:11px;fill:var(--accent)' }, svg);
+    unitT.textContent = '一格 = ' + step;
+    s('line', { x1: x0, y1: yBase, x2: xR, y2: yBase, class: 'cx-axis' }, svg);
+
+    var catW = (xR - x0) / Math.max(1, cats.length);
+    var STEPS = [], idx = 0, bars = [], lines = [], dots = [];
+
+    cats.forEach(function (c, i) {
+      var cx = x0 + catW * (i + 0.5);
+      var t = s('text', { x: cx, y: yBase + 18, 'text-anchor': 'middle', style: 'font-size:11.5px' }, svg);
+      t.textContent = c;
+    });
+
+    if (mode === 'bar') {
+      var barW = catW * (series.length > 1 ? 0.34 : 0.5);
+      series.forEach(function (sr, si) {
+        sr.values.forEach(function (v, i) {
+          var cx = x0 + catW * (i + 0.5) + (series.length > 1 ? (si - 0.5) * barW * 1.15 : 0);
+          var h = (yBase - yOf(v));
+          var gg = s('g', { transform: 'translate(' + cx.toFixed(1) + ',' + yBase + ') scale(1,0)' }, svg);
+          gg.style.transition = 'transform .45s ease';
+          var r = s('rect', { x: -barW / 2, y: -h, width: barW, height: h, rx: 3,
+            fill: sr.color, 'fill-opacity': 0.7, stroke: sr.color, 'stroke-width': 1.2 }, gg);
+          var vt = s('text', { x: 0, y: -h - 6, 'text-anchor': 'middle', style: 'font-size:11px;fill:' + sr.color }, gg);
+          vt.textContent = String(v);
+          bars.push({ g: gg, v: v, si: si, ci: i, name: sr.name, cat: cats[i] });
+        });
+      });
+      STEPS.push({
+        text: '先看纵轴：<b>一格表示 ' + step + '</b>，看不清这一格，读出来的数就全错。',
+        run: function () {}
+      });
+      cats.forEach(function (c, i) {
+        STEPS.push({
+          text: series.length > 1
+            ? c + '：' + series.map(function (sr) { return sr.name + ' ' + sr.values[i]; }).join('，') + '。'
+            : c + '：' + series[0].values[i] + '。',
+          run: function () {
+            bars.forEach(function (b) { if (b.ci === i) b.g.setAttribute('transform',
+              b.g.getAttribute('transform').replace('scale(1,0)', 'scale(1,1)')); });
+          }
+        });
+      });
+      STEPS.push({
+        text: '条形越高数量越多——比多少，看条形的<b>高度</b>。',
+        run: function () {
+          bars.forEach(function (b) { b.g.setAttribute('transform',
+            b.g.getAttribute('transform').replace('scale(1,0)', 'scale(1,1)')); });
+        }
+      });
+    } else {
+      // 折线：先描点，再连线
+      var paths = [], allDots = [];
+      series.forEach(function (sr, si) {
+        var pts = sr.values.map(function (v, i) {
+          return { x: x0 + catW * (i + 0.5), y: yOf(v) };
+        });
+        var d = pts.map(function (p, i) { return (i ? 'L' : 'M') + p.x.toFixed(1) + ' ' + p.y.toFixed(1); }).join(' ');
+        var p = s('path', { d: d, fill: 'none', stroke: sr.color, 'stroke-width': 2.4,
+          'stroke-linejoin': 'round', 'stroke-linecap': 'round' }, svg);
+        var len = 0;
+        try { len = p.getTotalLength(); } catch (e) { len = 900; }
+        p.style.strokeDasharray = len; p.style.strokeDashoffset = len;
+        p.style.transition = 'stroke-dashoffset .8s ease';
+        paths.push(p);
+        pts.forEach(function (pt, i) {
+          var c = s('circle', { cx: pt.x, cy: pt.y, r: 4.2, fill: sr.color }, svg);
+          c.style.opacity = 0; c.style.transition = 'opacity .25s ease ' + (i * 60) + 'ms';
+          allDots.push(c);
+          var vt = s('text', { x: pt.x, y: pt.y - 9, 'text-anchor': 'middle', style: 'font-size:10.5px;fill:' + sr.color }, svg);
+          vt.textContent = String(sr.values[i]);
+          vt.style.opacity = 0; allDots.push(vt);
+        });
+      });
+      STEPS = [
+        { text: '先<b>描点</b>：每个项目对应一个点，点的高度就是它的数量。',
+          run: function () { allDots.forEach(function (d) { d.style.opacity = 1; }); } },
+        { text: '再<b>连线</b>：把相邻的点用线段连起来，就成了折线统计图。',
+          run: function () { paths.forEach(function (p) { p.style.strokeDashoffset = 0; }); } },
+        { text: '折线统计图看的是<b>变化趋势</b>：线段往上升表示增加，往下降表示减少。',
+          run: function () {} }
+      ];
+    }
+
+    return {
+      el: svg,
+      next: function () {
+        if (idx >= STEPS.length) return null;
+        var st = STEPS[idx++]; st.run();
+        return { text: st.text, done: idx >= STEPS.length };
+      },
+      startDemo: function () {
+        idx = 0;
+        bars.forEach(function (b) {
+          b.g.setAttribute('transform', b.g.getAttribute('transform').replace('scale(1,1)', 'scale(1,0)'));
+        });
+        return this;
+      },
+      reset: function () { return this.startDemo(); }
+    };
+  }
+
+  /* ══════════════════════════════════════════════════════
+   * 平均数：移多补少
+   * 平均数不是「每个人都这么多」，而是把多的补给少的之后，
+   * 大家一样多时的那个数。所以它一定在最大和最小之间。
+   * ══════════════════════════════════════════════════════ */
+  function mean(el, spec) {
+    spec = spec || {};
+    var vals = spec.values || [];
+    var labels = spec.labels || [];
+    var W = 360, H = 240;
+    var svg = s('svg', { viewBox: '0 0 ' + W + ' ' + H, class: 'men-svg', role: 'img' }, el);
+    svg.style.width = '100%'; svg.style.height = 'auto';
+
+    var n = vals.length;
+    var sum = vals.reduce(function (a, b) { return a + b; }, 0);
+    var avg = n ? sum / n : 0;
+    var maxV = Math.max.apply(null, vals.concat([1]));
+    var yBase = 176, maxH = 118;
+    function hOf(v) { return v / maxV * maxH; }
+    function yOf(v) { return yBase - hOf(v); }
+
+    var barW = Math.min(38, (W - 60) / n * 0.62);
+    var gap = (W - 60) / n;
+    var bars = [];
+    vals.forEach(function (v, i) {
+      var cx = 30 + gap * (i + 0.5);
+      var h = hOf(v);
+      // 以基线为原点做 scaleY：拉伸时底边始终贴着基线
+      var gg = s('g', { transform: 'translate(' + cx.toFixed(1) + ',' + yBase + ') scale(1,1)' }, svg);
+      gg.style.transition = 'transform .5s ease';
+      var r = s('rect', { x: -barW / 2, y: -h, width: barW, height: h, rx: 3,
+        fill: 'var(--num)', 'fill-opacity': 0.55, stroke: 'var(--num)', 'stroke-width': 1.4 }, gg);
+      // 数值文字不参与缩放，单独放一层
+      var vt = s('text', { x: cx, y: yOf(v) - 7, 'text-anchor': 'middle', style: 'font-size:12px;font-weight:600' }, svg);
+      vt.textContent = String(v);
+      var lb = s('text', { x: cx, y: yBase + 18, 'text-anchor': 'middle', style: 'font-size:11.5px;fill:var(--dim)' }, svg);
+      lb.textContent = labels[i] || String(i + 1);
+      bars.push({ g: gg, rect: r, val: v, cx: cx, h: h, txt: vt });
+    });
+    s('line', { x1: 20, y1: yBase, x2: W - 20, y2: yBase, class: 'cx-axis' }, svg);
+
+    // 平均线
+    var ay = yOf(avg);
+    var mline = s('line', { x1: 20, y1: ay, x2: W - 20, y2: ay,
+      stroke: 'var(--accent)', 'stroke-width': 2, 'stroke-dasharray': '6 4' }, svg);
+    mline.style.opacity = 0; mline.style.transition = 'opacity .35s ease';
+    var mt = s('text', { x: W - 20, y: ay - 8, 'text-anchor': 'end',
+      style: 'font-size:12px;font-weight:600;fill:var(--accent)' }, svg);
+    mt.textContent = '平均数 ' + avg;
+    mt.style.opacity = 0; mt.style.transition = 'opacity .35s ease';
+
+    // 多出来的部分 / 缺的部分
+    var marks = [];
+    bars.forEach(function (b) {
+      var m = s('g', null, svg); m.style.opacity = 0; m.style.transition = 'opacity .35s ease';
+      if (b.val > avg) {
+        var top = yOf(b.val), bot = ay;
+        s('rect', { x: b.cx - barW / 2, y: top, width: barW, height: bot - top,
+          fill: 'var(--bad)', 'fill-opacity': 0.45 }, m);
+      } else if (b.val < avg) {
+        var t2 = ay, b2 = yOf(b.val);
+        s('rect', { x: b.cx - barW / 2, y: t2, width: barW, height: b2 - t2,
+          fill: 'var(--ok)', 'fill-opacity': 0.4, stroke: 'var(--ok)', 'stroke-dasharray': '3 2' }, m);
+      }
+      marks.push(m);
+    });
+
+    var formula = s('text', { x: W / 2, y: H - 12, 'text-anchor': 'middle',
+      style: 'font-size:13px;font-weight:600' }, svg);
+    formula.textContent = '';
+    var avgH = hOf(avg);
+
+    var STEPS = [
+      { text: '先看清每个人有多少：' + vals.join('、') + '，一共 <b>' + sum + '</b>。', run: function () {} },
+      { text: '平均数 = 总数 ÷ 个数 = ' + sum + ' ÷ ' + n + ' = <b>' + avg + '</b>。先画一条线看看。',
+        run: function () { mline.style.opacity = 1; mt.style.opacity = 1; } },
+      { text: '比平均数<b>多</b>的部分（红色）可以移走，比平均数<b>少</b>的部分（绿色）需要补上。',
+        run: function () { marks.forEach(function (m) { m.style.opacity = 1; }); } },
+      { text: '把多的补给少的——这就是<b>移多补少</b>：大家最后都一样多，都是 <b>' + avg + '</b>。',
+        run: function () {
+          marks.forEach(function (m) { m.style.opacity = 0; });
+          bars.forEach(function (b) {
+            var k = avgH / (b.h || 1);
+            b.g.style.transition = 'transform .5s ease';
+            b.g.setAttribute('transform', 'translate(' + b.cx.toFixed(1) + ',' + yBase + ') scale(1,' + k.toFixed(3) + ')');
+            b.txt.setAttribute('y', (yBase - avgH - 7).toFixed(1));
+            b.txt.textContent = String(avg);
+            b.txt.setAttribute('style', 'font-size:12px;font-weight:600;fill:var(--accent)');
+          });
+          formula.textContent = vals.join(' + ') + ' = ' + sum + '　　' + sum + ' ÷ ' + n + ' = ' + avg;
+        } }
+    ];
+    var idx = 0;
+    return {
+      el: svg,
+      next: function () {
+        if (idx >= STEPS.length) return null;
+        var st = STEPS[idx++]; st.run();
+        return { text: st.text, done: idx >= STEPS.length };
+      },
+      startDemo: function () {
+        idx = 0;
+        mline.style.opacity = 0; mt.style.opacity = 0;
+        marks.forEach(function (m) { m.style.opacity = 0; });
+        bars.forEach(function (b) {
+          b.g.setAttribute('transform', 'translate(' + b.cx.toFixed(1) + ',' + yBase + ') scale(1,1)');
+          b.txt.setAttribute('y', (yOf(b.val) - 7).toFixed(1));
+          b.txt.textContent = String(b.val);
+          b.txt.setAttribute('style', 'font-size:12px;font-weight:600');
+        });
+        formula.textContent = '';
+        return this;
+      },
+      reset: function () { return this.startDemo(); }
+    };
+  }
+
+  /* ══════════════════════════════════════════════════════
+   * 多边形的面积：割补与拼摆
+   * 面积公式不是背的——把图形剪开、平移、拼成已经会算的图形，
+   * 公式就自己出来了。
+   * ══════════════════════════════════════════════════════ */
+  function polyArea(el, spec) {
+    spec = spec || {};
+    var mode = spec.mode || 'para';
+    var W = 360, H = 250;
+    var svg = s('svg', { viewBox: '0 0 ' + W + ' ' + H, class: 'ply-svg', role: 'img' }, el);
+    svg.style.width = '100%'; svg.style.height = 'auto';
+    var GEO = '#a78bfa', NUM = '#38bdf8', ORG = '#fbbf24', OK = '#4ade80';
+
+    var STEPS = [], idx = 0, resetFn = function () {};
+
+    function poly(pts, color, fillOp, dash) {
+      var p = s('polygon', { points: pts.map(function (q) { return q[0] + ',' + q[1]; }).join(' '),
+        fill: color, 'fill-opacity': fillOp == null ? 0.12 : fillOp, stroke: color, 'stroke-width': 2.2,
+        'stroke-linejoin': 'round' }, svg);
+      if (dash) p.setAttribute('stroke-dasharray', dash);
+      return p;
+    }
+    function label(x, y, txt, color, size) {
+      var t = s('text', { x: x, y: y, 'text-anchor': 'middle',
+        style: 'font-size:' + (size || 13) + 'px;font-weight:600;fill:' + (color || 'var(--text)') }, svg);
+      t.textContent = txt;
+      return t;
+    }
+
+    if (mode === 'para') {
+      var b = 150, h = 90, d = 46, ox = (W - (b + d)) / 2 + 6, oy = 168;
+      // 平行四边形：底 (ox..ox+b)，上底右移 d
+      var P = [[ox, oy], [ox + b, oy], [ox + b + d, oy - h], [ox + d, oy - h]];
+      poly(P, GEO, 0.12);
+      // 高（虚线，从左上角垂直下来）
+      var cut = s('line', { x1: ox + d, y1: oy - h, x2: ox + d, y2: oy,
+        stroke: 'var(--dim)', 'stroke-width': 1.8, 'stroke-dasharray': '5 4' }, svg);
+      cut.style.opacity = 0; cut.style.transition = 'opacity .3s ease';
+      // 沿高剪下的三角形，可平移
+      var tri = s('g', null, svg);
+      tri.style.transition = 'transform .55s ease';
+      s('polygon', { points: (ox) + ',' + oy + ' ' + (ox + d) + ',' + oy + ' ' + (ox + d) + ',' + (oy - h),
+        fill: NUM, 'fill-opacity': 0.4, stroke: NUM, 'stroke-width': 2 }, tri);
+      // 拼好后的长方形轮廓
+      var rectOutline = s('rect', { x: ox + d, y: oy - h, width: b, height: h, fill: OK,
+        'fill-opacity': 0.14, stroke: OK, 'stroke-width': 2.2 }, svg);
+      rectOutline.style.opacity = 0; rectOutline.style.transition = 'opacity .35s ease';
+      var lb = label(W / 2, 30, '', OK, 14);
+      var lb2 = label(W / 2, H - 14, '', 'var(--dim)', 12.5);
+      resetFn = function () {
+        cut.style.opacity = 0; rectOutline.style.opacity = 0;
+        tri.setAttribute('transform', ''); lb.textContent = ''; lb2.textContent = '';
+      };
+      STEPS = [
+        { text: '这是一个平行四边形，底 ' + b + '、高 ' + h + '。', run: function () {} },
+        { text: '沿着<b>高</b>把它剪开，分成一个三角形和一个梯形。', run: function () { cut.style.opacity = 1; } },
+        { text: '把左边的三角形<b>平移</b>到右边——正好补成一个长方形。',
+          run: function () { tri.setAttribute('transform', 'translate(' + b + ',0)'); rectOutline.style.opacity = 1; } },
+        { text: '长方形的长是原来平行四边形的<b>底</b>，宽是它的<b>高</b>，所以 面积 = <b>底 × 高</b>（S = ah）。',
+          run: function () { lb.textContent = '平行四边形面积 = 底 × 高'; lb2.textContent = 'S = a h'; } }
+      ];
+    } else if (mode === 'tri') {
+      // 两个完全一样的三角形：把第二个绕公共边中点旋转 180°，拼成平行四边形
+      var b2 = 140, h2 = 92, ox2 = 110, oy2 = 168;
+      var A = [ox2, oy2], B = [ox2 + b2, oy2], C = [ox2 + Math.round(b2 * 0.7), oy2 - h2];
+      var Bp = [A[0] + C[0] - B[0], A[1] + C[1] - B[1]]; // B 关于 AC 中点的对称点
+      poly([A, B, C], GEO, 0.12);
+      var g2 = s('g', null, svg);
+      g2.style.transition = 'transform .55s ease, opacity .3s ease';
+      g2.style.opacity = 0;
+      s('polygon', { points: [A, C, Bp].map(function (q) { return q[0] + ',' + q[1]; }).join(' '),
+        fill: NUM, 'fill-opacity': 0.35, stroke: NUM, 'stroke-width': 2 }, g2);
+      var outline = poly([A, B, C, Bp], OK, 0.14);
+      outline.style.opacity = 0; outline.style.transition = 'opacity .35s ease';
+      var cent2 = ((A[0] + C[0] + Bp[0]) / 3).toFixed(1) + ' ' + ((A[1] + C[1] + Bp[1]) / 3).toFixed(1);
+      var lb3 = label(W / 2, 26, '', OK, 14);
+      var lb4 = label(W / 2, H - 14, '', 'var(--dim)', 12.5);
+      resetFn = function () { outline.style.opacity = 0; g2.style.opacity = 0; g2.setAttribute('transform', 'rotate(0 ' + cent2 + ') translate(0,0)'); lb3.textContent = ''; lb4.textContent = ''; };
+      STEPS = [
+        { text: '拿两个<b>完全一样</b>的三角形。', run: function () { g2.style.opacity = 1; g2.setAttribute('transform', 'rotate(180 ' + cent2 + ') translate(130,0)'); } },
+        { text: '把其中一个<b>旋转 180°</b>，和另一个拼在一起。',
+          run: function () { g2.setAttribute('transform', 'rotate(0 ' + cent2 + ') translate(0,0)'); } },
+        { text: '拼成了一个<b>平行四边形</b>，它的底和高正好是三角形的底和高。',
+          run: function () { outline.style.opacity = 1; } },
+        { text: '一个三角形是平行四边形的一半，所以 面积 = <b>底 × 高 ÷ 2</b>（S = ah ÷ 2）。',
+          run: function () { lb3.textContent = '三角形面积 = 底 × 高 ÷ 2'; lb4.textContent = 'S = a h ÷ 2'; } }
+      ];
+    } else {
+      // 两个完全一样的梯形：第二个绕右腰中点旋转 180°，拼成底为（上底+下底）的平行四边形
+      var aT = 66, bT = 130, hT = 84, mT = (bT - aT) / 2, ox3 = 82, oy3 = 168;
+      var T1 = [[ox3, oy3], [ox3 + bT, oy3], [ox3 + mT + aT, oy3 - hT], [ox3 + mT, oy3 - hT]];
+      poly(T1, GEO, 0.12);
+      var g3 = s('g', null, svg);
+      g3.style.transition = 'transform .55s ease, opacity .3s ease';
+      g3.style.opacity = 0;
+      var Mx = ox3 + (bT + mT + aT) / 2, My = oy3 - hT / 2;
+      var F = T1.map(function (p) { return [2 * Mx - p[0], 2 * My - p[1]]; });
+      s('polygon', { points: F.map(function (q) { return q[0].toFixed(1) + ',' + q[1].toFixed(1); }).join(' '),
+        fill: NUM, 'fill-opacity': 0.35, stroke: NUM, 'stroke-width': 2 }, g3);
+      var outline3 = poly([[ox3, oy3], [ox3 + aT + bT, oy3], [ox3 + bT + mT + aT, oy3 - hT], [ox3 + mT, oy3 - hT]], OK, 0.14);
+      outline3.style.opacity = 0; outline3.style.transition = 'opacity .35s ease';
+      var cent3 = (F.reduce(function (s2, p) { return s2 + p[0]; }, 0) / 4).toFixed(1) + ' ' +
+        (F.reduce(function (s2, p) { return s2 + p[1]; }, 0) / 4).toFixed(1);
+      var lb5 = label(W / 2, 26, '', OK, 14);
+      var lb6 = label(W / 2, H - 14, '', 'var(--dim)', 12.5);
+      resetFn = function () { outline3.style.opacity = 0; g3.style.opacity = 0; g3.setAttribute('transform', 'rotate(0 ' + cent3 + ') translate(0,0)'); lb5.textContent = ''; lb6.textContent = ''; };
+      STEPS = [
+        { text: '拿两个<b>完全一样</b>的梯形，上底 ' + aT + '、下底 ' + bT + '、高 ' + hT + '。',
+          run: function () { g3.style.opacity = 1; g3.setAttribute('transform', 'rotate(180 ' + cent3 + ') translate(60,0)'); } },
+        { text: '把其中一个<b>旋转 180°</b>，和另一个拼在一起。',
+          run: function () { g3.setAttribute('transform', 'rotate(0 ' + cent3 + ') translate(0,0)'); } },
+        { text: '拼成了一个<b>平行四边形</b>：底是（上底 + 下底）= ' + (aT + bT) + '，高还是 ' + hT + '。',
+          run: function () { outline3.style.opacity = 1; } },
+        { text: '一个梯形是它的一半，所以 面积 = <b>（上底 + 下底）× 高 ÷ 2</b>。',
+          run: function () { lb5.textContent = '梯形面积 =（上底 + 下底）× 高 ÷ 2'; lb6.textContent = 'S = (a + b) h ÷ 2'; } }
+      ];
+    }
+
+    return {
+      el: svg,
+      next: function () {
+        if (idx >= STEPS.length) return null;
+        var st = STEPS[idx++]; st.run();
+        return { text: st.text, done: idx >= STEPS.length };
+      },
+      startDemo: function () { idx = 0; resetFn(); return this; },
+      reset: function () { return this.startDemo(); }
+    };
+  }
+
+  /* ══════════════════════════════════════════════════════
+   * 因数与倍数：用小正方形摆长方形
+   * 能摆成几种长方形，这个数就有几对因数。摆不出来的，就不是因数。
+   * ══════════════════════════════════════════════════════ */
+  function factorGrid(el, spec) {
+    spec = spec || {};
+    var n = spec.n == null ? 12 : Number(spec.n);
+    var W = 360, H = 240;
+    var svg = s('svg', { viewBox: '0 0 ' + W + ' ' + H, class: 'fac-svg', role: 'img' }, el);
+    svg.style.width = '100%'; svg.style.height = 'auto';
+    var NUM = '#38bdf8', ORG = '#fbbf24';
+
+    // 找出所有因数对
+    var pairs = [];
+    for (var i = 1; i * i <= n; i++) {
+      if (n % i === 0) pairs.push([i, n / i]);
+    }
+    var unit = Math.min(16, Math.floor(150 / Math.max(1, n / pairs[0][0])));
+    var groups = [];
+    var yCur = 34;
+
+    pairs.forEach(function (pr, pi) {
+      var rows = pr[0], cols = pr[1];
+      var gw = cols * unit, gh = rows * unit;
+      var gx = (W - gw) / 2;
+      var g = s('g', null, svg);
+      g.style.opacity = 0; g.style.transition = 'opacity .35s ease';
+      for (var r = 0; r < rows; r++) {
+        for (var c = 0; c < cols; c++) {
+          s('rect', { x: gx + c * unit, y: yCur + r * unit, width: unit - 1.4, height: unit - 1.4, rx: 2,
+            fill: pi % 2 ? ORG : NUM, 'fill-opacity': 0.5, stroke: pi % 2 ? ORG : NUM, 'stroke-width': 0.9 }, g);
+        }
+      }
+      var t = s('text', { x: gx + gw + 12, y: yCur + gh / 2 + 4,
+        style: 'font-size:13px;font-weight:600;fill:' + (pi % 2 ? ORG : NUM) }, g);
+      t.textContent = rows + ' × ' + cols;
+      groups.push({ g: g, pr: pr, y: yCur, gh: gh });
+      yCur += gh + 16;
+    });
+
+    var factors = [];
+    pairs.forEach(function (pr) { factors.push(pr[0]); if (pr[1] !== pr[0]) factors.push(pr[1]); });
+    factors.sort(function (a, b) { return a - b; });
+
+    var outT = s('text', { x: W / 2, y: H - 10, 'text-anchor': 'middle',
+      style: 'font-size:13.5px;font-weight:600' }, svg);
+    outT.textContent = '';
+    var outT2 = s('text', { x: W / 2, y: H - 30, 'text-anchor': 'middle',
+      style: 'font-size:12px;fill:var(--dim)' }, svg);
+    outT2.textContent = '';
+
+    var STEPS = groups.map(function (gp, i) {
+      return {
+        text: '可以摆成 <b>' + gp.pr[0] + ' 行 × ' + gp.pr[1] + ' 列</b>的长方形（' +
+          gp.pr[0] + ' × ' + gp.pr[1] + ' = ' + n + '）。',
+        run: function () {
+          groups.forEach(function (x, j) { x.g.style.opacity = j === i ? 1 : 0.22; });
+        }
+      };
+    });
+    STEPS.push({
+      text: '一共能摆出 ' + pairs.length + ' 种，所以 ' + n + ' 的因数有：<b>' + factors.join('、') + '</b>。',
+      run: function () {
+        groups.forEach(function (x) { x.g.style.opacity = 1; });
+        outT.textContent = n + ' 的因数：' + factors.join('、');
+        outT2.textContent = '最小的因数是 1，最大的因数是它本身 ' + n;
+      }
+    });
+    var idx = 0;
+    return {
+      el: svg,
+      next: function () {
+        if (idx >= STEPS.length) return null;
+        var st = STEPS[idx++]; st.run();
+        return { text: st.text, done: idx >= STEPS.length };
+      },
+      startDemo: function () {
+        idx = 0;
+        groups.forEach(function (x) { x.g.style.opacity = 0; });
+        outT.textContent = ''; outT2.textContent = '';
+        return this;
+      },
+      reset: function () { return this.startDemo(); }
+    };
+  }
+
   global.CR = {
     vertical: vertical,
     geometry: geometry,
     mult2: mult2,
+    chart: chart,
+    mean: mean,
+    polyArea: polyArea,
+    factorGrid: factorGrid,
     law: law,
     triangle: triangle,
     counter: counter,
@@ -3729,6 +4199,86 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
         var box = h('div', 'viz');
         f.appendChild(box);
         var ctrl = CR.mult2(box, s.body || s);
+        if (s.caption) {
+          var cap = h('div', 'viz-cap');
+          cap.innerHTML = s.caption;
+          f.appendChild(cap);
+        }
+        attachDemo(f, ctrl, s);
+        if (s.note) {
+          var card = h('div', 'card' + (s.warn ? ' pitfall' : ' tip'));
+          card.innerHTML = '<p style="margin:0">' + s.note + '</p>';
+          f.appendChild(card);
+        }
+        return f;
+      },
+
+      chart: function (s) {
+        var f = document.createDocumentFragment();
+        if (s.title) f.appendChild(h('h2', null, s.title));
+        var box = h('div', 'viz');
+        f.appendChild(box);
+        var ctrl = CR.chart(box, s.body || s);
+        if (s.caption) {
+          var cap = h('div', 'viz-cap');
+          cap.innerHTML = s.caption;
+          f.appendChild(cap);
+        }
+        attachDemo(f, ctrl, s);
+        if (s.note) {
+          var card = h('div', 'card' + (s.warn ? ' pitfall' : ' tip'));
+          card.innerHTML = '<p style="margin:0">' + s.note + '</p>';
+          f.appendChild(card);
+        }
+        return f;
+      },
+
+      mean: function (s) {
+        var f = document.createDocumentFragment();
+        if (s.title) f.appendChild(h('h2', null, s.title));
+        var box = h('div', 'viz');
+        f.appendChild(box);
+        var ctrl = CR.mean(box, s.body || s);
+        if (s.caption) {
+          var cap = h('div', 'viz-cap');
+          cap.innerHTML = s.caption;
+          f.appendChild(cap);
+        }
+        attachDemo(f, ctrl, s);
+        if (s.note) {
+          var card = h('div', 'card' + (s.warn ? ' pitfall' : ' tip'));
+          card.innerHTML = '<p style="margin:0">' + s.note + '</p>';
+          f.appendChild(card);
+        }
+        return f;
+      },
+
+      polyArea: function (s) {
+        var f = document.createDocumentFragment();
+        if (s.title) f.appendChild(h('h2', null, s.title));
+        var box = h('div', 'viz');
+        f.appendChild(box);
+        var ctrl = CR.polyArea(box, s.body || s);
+        if (s.caption) {
+          var cap = h('div', 'viz-cap');
+          cap.innerHTML = s.caption;
+          f.appendChild(cap);
+        }
+        attachDemo(f, ctrl, s);
+        if (s.note) {
+          var card = h('div', 'card' + (s.warn ? ' pitfall' : ' tip'));
+          card.innerHTML = '<p style="margin:0">' + s.note + '</p>';
+          f.appendChild(card);
+        }
+        return f;
+      },
+
+      factorGrid: function (s) {
+        var f = document.createDocumentFragment();
+        if (s.title) f.appendChild(h('h2', null, s.title));
+        var box = h('div', 'viz');
+        f.appendChild(box);
+        var ctrl = CR.factorGrid(box, s.body || s);
         if (s.caption) {
           var cap = h('div', 'viz-cap');
           cap.innerHTML = s.caption;

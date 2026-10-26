@@ -1,5 +1,5 @@
 {
-  "version": "v0.35.0",
+  "version": "v0.36.0",
   "schemaVersion": 1,
   "dependencies": [
     {
@@ -709,6 +709,12 @@
       "prerequisiteId": "mt_angle-measure",
       "strength": "soft",
       "reason": "刻画平行四边形的角需要用量角器度量"
+    },
+    {
+      "topicId": "mt_average-mean",
+      "prerequisiteId": "mt_bar-chart",
+      "strength": "soft",
+      "reason": "求平均数前先用条形图看清数据的分布"
     },
     {
       "topicId": "mt_mult-2digit",

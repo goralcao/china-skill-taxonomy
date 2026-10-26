@@ -1,0 +1,32 @@
+{
+  "topicId": "mt_bar-chart",
+  "title": "条形统计图：一格到底表示几",
+  "template": "explain",
+  "renderer": "chart",
+  "duration": 11,
+  "interactions": 2,
+  "grade": 4,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S2:SP"
+  ],
+  "prerequisites": [
+    "mt_data-collect",
+    "mt_stats-table"
+  ],
+  "next": [
+    "mt_average-mean",
+    "mt_line-chart"
+  ],
+  "objectives": [
+    "认识条形统计图的结构：横轴项目、纵轴数量",
+    "会看纵轴「一格表示几」并读出数据",
+    "能比较条形高度判断谁多谁少"
+  ],
+  "cognitiveAction": "比较",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-27"
+}

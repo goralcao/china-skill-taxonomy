@@ -1,19 +1,19 @@
 {
-  "version": "v0.35.0",
+  "version": "v0.36.0",
   "schemaVersion": 1,
   "generatedAt": "2026-10-27",
   "counts": {
-    "total": 31,
+    "total": 36,
     "byTemplate": {
       "drill": 1,
-      "explain": 29,
+      "explain": 34,
       "explore": 1
     },
     "byStatus": {
-      "reviewed": 31
+      "reviewed": 36
     },
     "bySubject": {
-      "数学": 29,
+      "数学": 34,
       "化学": 1,
       "物理": 1
     }
@@ -120,6 +120,74 @@
       "updatedAt": "2026-10-27",
       "path": "courses/mt_area-intro/",
       "bytes": 663
+    },
+    {
+      "topicId": "mt_average-mean",
+      "title": "平均数：把多的补给少的",
+      "template": "explain",
+      "renderer": "mean",
+      "duration": 11,
+      "interactions": 2,
+      "grade": 4,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S2:SP"
+      ],
+      "prerequisites": [
+        "mt_bar-chart",
+        "mt_div-1digit",
+        "mt_stats-table"
+      ],
+      "next": [
+        "mt_stats-center"
+      ],
+      "objectives": [
+        "理解平均数的含义：移多补少后同样多的那个数",
+        "会用「总数 ÷ 个数」求平均数",
+        "知道平均数在最大数与最小数之间"
+      ],
+      "cognitiveAction": "逼近",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "path": "courses/mt_average-mean/",
+      "bytes": 675
+    },
+    {
+      "topicId": "mt_bar-chart",
+      "title": "条形统计图：一格到底表示几",
+      "template": "explain",
+      "renderer": "chart",
+      "duration": 11,
+      "interactions": 2,
+      "grade": 4,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S2:SP"
+      ],
+      "prerequisites": [
+        "mt_data-collect",
+        "mt_stats-table"
+      ],
+      "next": [
+        "mt_average-mean",
+        "mt_line-chart"
+      ],
+      "objectives": [
+        "认识条形统计图的结构：横轴项目、纵轴数量",
+        "会看纵轴「一格表示几」并读出数据",
+        "能比较条形高度判断谁多谁少"
+      ],
+      "cognitiveAction": "比较",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "path": "courses/mt_bar-chart/",
+      "bytes": 681
     },
     {
       "topicId": "mt_big-num",
@@ -419,6 +487,39 @@
       "bytes": 705
     },
     {
+      "topicId": "mt_factors",
+      "title": "因数与倍数：用方格摆长方形",
+      "template": "explain",
+      "renderer": "factorGrid",
+      "duration": 11,
+      "interactions": 2,
+      "grade": 5,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S3:NA:NO"
+      ],
+      "prerequisites": [
+        "mt_div-2digit",
+        "mt_mul-tables-7-9"
+      ],
+      "next": [
+        "mt_frac-reduce"
+      ],
+      "objectives": [
+        "理解因数与倍数的意义及相互依存关系",
+        "会用摆长方形的方法找出一个数的全部因数",
+        "知道一个数最小的因数是 1、最大的是它本身"
+      ],
+      "cognitiveAction": "分解",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "path": "courses/mt_factors/",
+      "bytes": 681
+    },
+    {
       "topicId": "mt_frac-intro",
       "title": "分数的初步认识：把 1 平均分",
       "template": "explain",
@@ -514,6 +615,38 @@
       "updatedAt": "2026-10-27",
       "path": "courses/mt_junior-che-mass-conservation/",
       "bytes": 660
+    },
+    {
+      "topicId": "mt_line-chart",
+      "title": "折线统计图：看的是变化的趋势",
+      "template": "explain",
+      "renderer": "chart",
+      "duration": 11,
+      "interactions": 2,
+      "grade": 5,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S3:SP"
+      ],
+      "prerequisites": [
+        "mt_bar-chart"
+      ],
+      "next": [
+        "mt_stats-center"
+      ],
+      "objectives": [
+        "认识折线统计图：先描点再连线",
+        "会根据折线的升降判断数量的增减",
+        "知道折线图适合表示变化趋势"
+      ],
+      "cognitiveAction": "比较",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "path": "courses/mt_line-chart/",
+      "bytes": 684
     },
     {
       "topicId": "mt_mat-s-space-vector-application",
@@ -775,6 +908,40 @@
       "updatedAt": "2026-10-27",
       "path": "courses/mt_phys-s-momentum-conservation/",
       "bytes": 16293
+    },
+    {
+      "topicId": "mt_polygon-area",
+      "title": "多边形的面积：剪开、平移、拼起来",
+      "template": "explain",
+      "renderer": "polyArea",
+      "duration": 13,
+      "interactions": 2,
+      "grade": 5,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S3:GG:GM"
+      ],
+      "prerequisites": [
+        "mt_rect-area",
+        "mt_triangle-sides",
+        "mt_lines"
+      ],
+      "next": [
+        "mt_circle-measure"
+      ],
+      "objectives": [
+        "会用割补法把平行四边形转化成长方形推导面积公式",
+        "会用两个完全一样的三角形（梯形）拼成平行四边形推导公式",
+        "掌握 S=ah、S=ah÷2、S=(a+b)h÷2"
+      ],
+      "cognitiveAction": "变换",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "path": "courses/mt_polygon-area/",
+      "bytes": 690
     },
     {
       "topicId": "mt_rect-area",

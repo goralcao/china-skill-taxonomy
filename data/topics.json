@@ -1,5 +1,5 @@
 {
-  "version": "v0.35.0",
+  "version": "v0.36.0",
   "schemaVersion": 1,
   "topics": [
     {
@@ -1774,7 +1774,7 @@
       ],
       "textbookNoteAlt": "北师大版：平均数并入「数据的表示和分析」，人教版在四下「平均数与条形统计图」中单设。；苏教版：平均数随三下「统计表和条形统计图（一）」学习，早于人教版四下。",
       "clusterId": "cl-math-d3-s2",
-      "centrality": 0.0024
+      "centrality": 0.0031
     },
     {
       "id": "mt_shape-3d",
@@ -2839,7 +2839,7 @@
       "textbookNote2024": "单式与复式条形统计图合并为「条形统计图」单元。",
       "textbookNoteAlt": "北师大版：条形统计图并入四上、四下「数据的表示和分析」单元，人教版在四上第七单元单设。；苏教版：条形统计图在三下「统计表和条形统计图（一）」，比人教版四上早一学年。",
       "clusterId": "cl-math-d3-s2",
-      "centrality": 0.0024
+      "centrality": 0.0031
     },
     {
       "id": "mt_probability",
