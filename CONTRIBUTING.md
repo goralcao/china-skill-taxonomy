@@ -57,6 +57,29 @@ python3 scripts/build.py && node scripts/validate.mjs
 - `sources` 至少 1 条，`source` 必须命中 `scripts/build.py` 中的来源白名单（课标 / 教材 / 教师教学用书）；
 - `confidence` 取 `high` / `medium` / `low`；`verified` 由构建自动填 `false`，不要手写。
 
+## 贡献课件
+
+课件是最好上手的入口：一个知识点、一个模板、一份脚手架。
+
+```bash
+node scripts/new-course.mjs <topicId> --template=explain
+```
+
+生成后会得到 `courses/<topicId>/` 下的两个文件。要做的三件事：
+
+1. 把教学研究里的书面语改成对学生说的话（第二人称、短句）
+2. 给每个活动补一个可操作的动作（点、拖、输、选）
+3. 核对数字与事实：数学复算、文科核人名年代、英语核拼写
+
+硬性要求（`node scripts/validate-courses.mjs` 会检查）：
+
+- 单文件，无外链脚本、样式、图片，体积小于 300KB
+- 至少一处 `.pitfall` 易错点，答案写进 `window.__ANSWERS` 且能被复算
+- `meta.interactions` 与 HTML 中 `data-step` 小节数一致
+- 课标编号必须属于该主题已有的 `standards`
+
+把 `meta.status` 从 `draft` 改成 `reviewed` 之后，图谱上才会出现课件入口。
+
 ## 提交前自查
 
 - [ ] `node scripts/validate.mjs` 与 `node --test scripts/teaching-research.test.mjs` 均通过；

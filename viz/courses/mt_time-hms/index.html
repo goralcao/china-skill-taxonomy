@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>时、分、秒 · 学阶图谱课件</title>
+<style>
+  :root {
+    --bg: #0a0f18; --panel: #0f1620; --card: #141d29; --line: #24303f;
+    --text: #e8edf5; --dim: #8b98ab; --accent: #ffd166; --ok: #4ade80; --bad: #f87171;
+    --math: #4f8ef7;
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { margin: 0; background: var(--bg); color: var(--text);
+    font-family: system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    line-height: 1.7; }
+  body { min-height: 100dvh; display: flex; flex-direction: column;
+    padding-bottom: calc(76px + env(safe-area-inset-bottom, 0px)); }
+  header { position: sticky; top: 0; z-index: 5; display: flex; align-items: center; gap: 12px;
+    padding: 10px 14px; background: rgba(10,15,24,.92); border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(8px); }
+  .back { color: var(--dim); text-decoration: none; font-size: 13px; white-space: nowrap; }
+  .back:hover { color: var(--text); }
+  .progress { flex: 1; display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--dim); }
+  .bar { flex: 1; height: 4px; background: var(--card); border-radius: 2px; overflow: hidden; }
+  .bar i { display: block; height: 100%; width: 20%; background: var(--accent); transition: width .25s; }
+  main { width: 100%; max-width: 720px; margin: 0 auto; padding: 18px 16px 8px; flex: 1; }
+  .step { display: none; }
+  .step.active { display: block; animation: fade .25s ease; }
+  @keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+  h1 { font-size: 20px; margin: 0 0 4px; letter-spacing: .01em; }
+  h2 { font-size: 17px; margin: 0 0 10px; }
+  .kicker { font-size: 12px; color: var(--accent); letter-spacing: .06em; margin-bottom: 6px; }
+  p { margin: 0 0 12px; }
+  .muted { color: var(--dim); font-size: 13.5px; }
+  .clock-wrap { display: flex; justify-content: center; margin: 8px 0 14px; }
+  svg.clock { width: min(76vw, 280px); height: auto; touch-action: none; cursor: grab; }
+  svg.clock:active { cursor: grabbing; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 14px 16px; margin: 14px 0; }
+  .card.tip { border-left: 3px solid var(--accent); border-radius: 0 10px 10px 0; }
+  .card.pitfall { border-left: 3px solid var(--bad); border-radius: 0 10px 10px 0;
+    background: rgba(248,113,113,.06); }
+  .card.ok { border-left: 3px solid var(--ok); border-radius: 0 10px 10px 0;
+    background: rgba(74,222,128,.07); }
+  .options { display: grid; gap: 10px; margin: 14px 0; }
+  .opt { text-align: left; padding: 13px 15px; border-radius: 10px; border: 1px solid var(--line);
+    background: var(--card); color: var(--text); font-size: 15px; cursor: pointer; }
+  .opt:hover { border-color: var(--dim); }
+  .opt.right { border-color: var(--ok); background: rgba(74,222,128,.12); }
+  .opt.wrong { border-color: var(--bad); background: rgba(248,113,113,.12); }
+  .answer-row { display: flex; gap: 10px; align-items: center; margin: 14px 0; flex-wrap: wrap; }
+  input[type=number] { width: 120px; padding: 11px 12px; font-size: 16px; border-radius: 10px;
+    border: 1px solid var(--line); background: var(--card); color: var(--text); }
+  input[type=number]:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .btn { padding: 11px 18px; border-radius: 10px; border: 1px solid var(--line);
+    background: var(--card); color: var(--text); font-size: 15px; cursor: pointer; min-height: 44px; }
+  .btn.primary { background: var(--accent); color: #1a1300; border-color: var(--accent); font-weight: 600; }
+  .btn:disabled { opacity: .45; cursor: default; }
+  footer { position: fixed; left: 0; right: 0; bottom: 0; z-index: 6;
+    display: flex; gap: 12px; justify-content: space-between; align-items: center;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px));
+    background: rgba(10,15,24,.96); border-top: 1px solid var(--line); backdrop-filter: blur(8px); }
+  .steps-dots { display: flex; gap: 6px; }
+  .steps-dots i { width: 7px; height: 7px; border-radius: 50%; background: var(--line); }
+  .steps-dots i.on { background: var(--accent); }
+  .result { text-align: center; padding: 10px 0 4px; }
+  .result .big { font-size: 28px; font-weight: 700; color: var(--accent); }
+  .next-card { display: block; text-decoration: none; color: var(--text);
+    border: 1px solid var(--line); border-radius: 12px; padding: 14px; margin-top: 14px;
+    background: var(--card); }
+  .next-card b { color: var(--accent); }
+  kbd { background: var(--card); border: 1px solid var(--line); border-radius: 5px;
+    padding: 1px 6px; font-size: 12px; font-family: inherit; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  /* 步骤标题由脚本聚焦，避免出现一圈「像按钮」的轮廓 */
+  .step h1:focus, .step h2:focus { outline: none; }
+</style>
+</head>
+<body>
+<header>
+  <a class="back" href="../../index.html#t=mt_time-hms">← 回到图谱</a>
+  <div class="progress">
+    <span id="pnum">1 / 5</span>
+    <div class="bar"><i id="pbar"></i></div>
+  </div>
+</header>
+
+<main>
+  <!-- 1 情境 -->
+  <section class="step active" data-step="1" aria-labelledby="s1t">
+    <div class="kicker">三年级 · 数学</div>
+    <h1 id="s1t">时、分、秒：钟面上一圈是多久</h1>
+    <p class="muted">12 分钟 · 5 个小环节 · 可以随时拖动钟面</p>
+    <div class="card">
+      <p style="margin:0">小明 8 时 5 分从家出门，8 时 45 分走进教室。</p>
+      <p style="margin:8px 0 0" class="muted">他在路上用了多长时间？先别急，学完这节课你就能一口答出来。</p>
+    </div>
+    <h2>这节课要做三件事</h2>
+    <ol class="muted" style="margin:0 0 6px 18px; padding:0">
+      <li>看清钟面上的时针和分针</li>
+      <li>读出「几时几分」</li>
+      <li>算出两个时刻之间过了多久，包括跨过整点的情况</li>
+    </ol>
+  </section>
+
+  <!-- 2 钟面结构 -->
+  <section class="step" data-step="2" aria-labelledby="s2t">
+    <h2 id="s2t">先认识钟面</h2>
+    <p>钟面上有 12 个大格，每个大格里有 5 个小格。分针走一小格是 1 分钟，走一大格是 5 分钟，走一整圈是 60 分钟。</p>
+    <p class="muted">用手指把分针拖一整圈，注意看时针走到哪里了。</p>
+    <div class="clock-wrap">
+      <svg class="clock" id="clock" viewBox="0 0 220 220" role="img" aria-label="可拖动的钟面"></svg>
+    </div>
+    <div class="card tip" id="dragHint">按住蓝色的分针拖动，试着转满一圈。</div>
+  </section>
+
+  <!-- 3 读时刻 -->
+  <section class="step" data-step="3" aria-labelledby="s3t">
+    <h2 id="s3t">这是几时几分？</h2>
+    <div class="clock-wrap">
+      <svg class="clock" id="clock2" viewBox="0 0 220 220" role="img" aria-label="钟面显示 8 时 15 分"></svg>
+    </div>
+    <div class="options" role="group" aria-label="选择时刻">
+      <button class="opt" data-q="q1" data-val="8:03">8 时 3 分</button>
+      <button class="opt" data-q="q1" data-val="8:15">8 时 15 分</button>
+      <button class="opt" data-q="q1" data-val="9:15">9 时 15 分</button>
+    </div>
+    <div id="fb1" aria-live="polite"></div>
+  </section>
+
+  <!-- 4 经过时间 -->
+  <section class="step" data-step="4" aria-labelledby="s4t">
+    <h2 id="s4t">路上用了多久？</h2>
+    <p>从 8 时 5 分到 8 时 45 分。可以直接数分针走了几大格：从 1 走到 9，每大格 5 分钟。</p>
+    <div class="clock-wrap">
+      <svg class="clock" id="clock3" viewBox="0 0 220 220" role="img" aria-label="钟面显示 8 时 5 分"></svg>
+    </div>
+    <div class="answer-row">
+      <label for="a2">经过 <input id="a2" type="number" inputmode="numeric" min="0" max="120" aria-label="经过多少分钟"> 分钟</label>
+      <button class="btn primary" id="submit2">检查</button>
+    </div>
+    <div id="fb2" aria-live="polite"></div>
+    <div class="card pitfall">
+      <b>常见错法：</b>直接用 45 减 5 得 40 没问题，但换成 8 时 50 分到 9 时 10 分，还这么减就会算错。下一关就是这种情况。
+    </div>
+  </section>
+
+  <!-- 5 跨整点 + 小结 -->
+  <section class="step" data-step="5" aria-labelledby="s5t">
+    <h2 id="s5t">跨过整点怎么办</h2>
+    <p>从 8 时 50 分到 9 时 10 分，中间跨过了 9 时。把这段路分成两段：</p>
+    <div class="card">
+      <p style="margin:0">8 时 50 分 → 9 时：<b>10 分钟</b></p>
+      <p style="margin:6px 0 0">9 时 → 9 时 10 分：<b>10 分钟</b></p>
+      <p style="margin:6px 0 0" class="muted">合起来 20 分钟。</p>
+    </div>
+    <div class="answer-row">
+      <label for="a3">那从 8 时 50 分到 9 时 10 分共 <input id="a3" type="number" inputmode="numeric" min="0" max="120" aria-label="一共多少分钟"> 分钟</label>
+      <button class="btn primary" id="submit3">检查</button>
+    </div>
+    <div id="fb3" aria-live="polite"></div>
+    <div id="finish" hidden>
+      <div class="result">
+        <div class="big" id="scoreText">完成</div>
+        <div class="muted" id="timeText"></div>
+      </div>
+      <div class="card ok">
+        记住两件事：分针走一圈是 60 分钟，时针正好走一大格；算经过时间碰到整点，就分成两段加。
+      </div>
+      <a class="next-card" href="../../index.html#t=mt_calendar">
+        接着学：<b>年、月、日与 24 时计时法</b><br>
+        <span class="muted">时间单位变大了，算法还是「分段数」。</span>
+      </a>
+      <p class="muted" style="margin-top:14px">
+        进度已记录，回到图谱会在这个知识点上显示完成标记。
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <button class="btn" id="prev" disabled>上一步</button>
+  <div class="steps-dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+  <button class="btn primary" id="next">下一步</button>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+  var TOPIC_ID = 'mt_time-hms';
+  var COURSE_VERSION = '1.0.0';
+  var TOTAL = 5;
+  var cur = 1;
+  var startedAt = Date.now();
+  var answered = {};
+
+  // 供 validate-courses.mjs 复算的答案表
+  window.__ANSWERS = [
+    {"id":"q1","kind":"choice","value":"8:15"},
+    {"id":"q2","kind":"number","value":40,"expr":"(8*60+45)-(8*60+5)"},
+    {"id":"q3","kind":"number","value":20,"expr":"(9*60+10)-(8*60+50)"}
+  ];
+
+  // ---------- 钟面 ----------
+  function buildClock(svg, hour, minute, draggable) {
+    var NS = 'http://www.w3.org/2000/svg';
+    var cx = 110, cy = 110, R = 96;
+    var el = function (tag, attrs) {
+      var n = document.createElementNS(NS, tag);
+      for (var k in attrs) n.setAttribute(k, attrs[k]);
+      svg.appendChild(n);
+      return n;
+    };
+    el('circle', { cx: cx, cy: cy, r: R + 8, fill: '#0f1620', stroke: '#24303f', 'stroke-width': 2 });
+    for (var m = 0; m < 60; m++) {
+      var ang = (m / 60) * Math.PI * 2 - Math.PI / 2;
+      var big = m % 5 === 0;
+      var r1 = R - (big ? 12 : 5), r2 = R;
+      el('line', {
+        x1: cx + Math.cos(ang) * r1, y1: cy + Math.sin(ang) * r1,
+        x2: cx + Math.cos(ang) * r2, y2: cy + Math.sin(ang) * r2,
+        stroke: big ? '#8b98ab' : '#3a4759', 'stroke-width': big ? 2.4 : 1,
+        'stroke-linecap': 'round'
+      });
+    }
+    for (var h = 1; h <= 12; h++) {
+      var a2 = (h / 12) * Math.PI * 2 - Math.PI / 2;
+      var t = el('text', {
+        x: cx + Math.cos(a2) * (R - 26), y: cy + Math.sin(a2) * (R - 26) + 6,
+        'text-anchor': 'middle', fill: '#e8edf5', 'font-size': 17, 'font-weight': 600
+      });
+      t.textContent = String(h);
+    }
+    var hourHand = el('line', { x1: cx, y1: cy, x2: cx, y2: cy - 44, stroke: '#e8edf5',
+      'stroke-width': 7, 'stroke-linecap': 'round' });
+    var minHand = el('line', { x1: cx, y1: cy, x2: cx, y2: cy - 68, stroke: '#4f8ef7',
+      'stroke-width': 4.5, 'stroke-linecap': 'round' });
+    el('circle', { cx: cx, cy: cy, r: 5, fill: '#e8edf5' });
+
+    function paint(hh, mm) {
+      minHand.setAttribute('transform', 'rotate(' + (mm * 6) + ' ' + cx + ' ' + cy + ')');
+      hourHand.setAttribute('transform', 'rotate(' + ((hh % 12) * 30 + mm * 0.5) + ' ' + cx + ' ' + cy + ')');
+      svg.setAttribute('aria-label', '钟面显示 ' + hh + ' 时 ' + mm + ' 分');
+    }
+    paint(hour, minute);
+
+    if (draggable) {
+      var dragging = false;
+      function setFromEvent(ev) {
+        var rect = svg.getBoundingClientRect();
+        var x = (ev.clientX - rect.left) / rect.width * 220;
+        var y = (ev.clientY - rect.top) / rect.height * 220;
+        var deg = Math.atan2(y - cy, x - cx) * 180 / Math.PI + 90;
+        var mm = Math.round(((deg % 360) + 360) % 360 / 6) % 60;
+        var hh = 8 + (mm === 0 ? 0 : 0);
+        paint(8, mm);
+        onDrag(mm);
+      }
+      svg.addEventListener('pointerdown', function (ev) {
+        dragging = true;
+        try { svg.setPointerCapture(ev.pointerId); } catch (e) {}
+        setFromEvent(ev);
+      });
+      svg.addEventListener('pointermove', function (ev) { if (dragging) setFromEvent(ev); });
+      svg.addEventListener('pointerup', function () { dragging = false; });
+      svg.addEventListener('pointercancel', function () { dragging = false; });
+    }
+    return paint;
+  }
+
+  var dragAccum = 0, lastMin = null;
+  function onDrag(mm) {
+    if (lastMin !== null) {
+      var d = mm - lastMin;
+      if (d > 30) d -= 60;
+      if (d < -30) d += 60;
+      dragAccum += Math.abs(d);
+    }
+    lastMin = mm;
+    var hint = document.getElementById('dragHint');
+    if (dragAccum >= 60) {
+      hint.className = 'card ok';
+      hint.innerHTML = '你已经把分针转过大半圈了。注意时针：它几乎没动，但确实往前挪了一点点。' +
+        '分针转满一整圈（60 分钟），时针才走一大格（1 小时）。';
+    } else {
+      hint.className = 'card tip';
+      hint.textContent = '分针现在指向 ' + mm + ' 分的位置。继续拖，试着转满一圈。';
+    }
+  }
+
+  buildClock(document.getElementById('clock'), 8, 0, true);
+  buildClock(document.getElementById('clock2'), 8, 15, false);
+  buildClock(document.getElementById('clock3'), 8, 5, false);
+
+  // ---------- 步骤 ----------
+  var steps = [].slice.call(document.querySelectorAll('.step'));
+  var pbar = document.getElementById('pbar');
+  var pnum = document.getElementById('pnum');
+  var prevBtn = document.getElementById('prev');
+  var nextBtn = document.getElementById('next');
+  var dots = [].slice.call(document.querySelectorAll('.steps-dots i'));
+
+  function show(n) {
+    cur = Math.max(1, Math.min(TOTAL, n));
+    steps.forEach(function (s) { s.classList.toggle('active', Number(s.dataset.step) === cur); });
+    dots.forEach(function (d, i) { d.classList.toggle('on', i < cur); });
+    pbar.style.width = (cur / TOTAL * 100) + '%';
+    pnum.textContent = cur + ' / ' + TOTAL;
+    prevBtn.disabled = cur === 1;
+    nextBtn.textContent = cur === TOTAL ? '完成' : '下一步';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    var h = steps[cur - 1].querySelector('h1,h2');
+    if (h) { h.setAttribute('tabindex', '-1'); h.focus({ preventScroll: true }); }
+  }
+  prevBtn.onclick = function () { show(cur - 1); };
+  nextBtn.onclick = function () {
+    if (cur === TOTAL) { finish(); return; }
+    show(cur + 1);
+  };
+
+  // ---------- 判分 ----------
+  function markChoice(qid) {
+    var opts = [].slice.call(document.querySelectorAll('.opt[data-q="' + qid + '"]'));
+    return opts.every(function (o) { return o.classList.contains('right') || o.disabled; });
+  }
+
+  document.querySelectorAll('.opt').forEach(function (btn) {
+    btn.onclick = function () {
+      var q = btn.dataset.q, val = btn.dataset.val;
+      var right = val === '8:15';
+      btn.classList.add(right ? 'right' : 'wrong');
+      btn.disabled = true;
+      var fb = document.getElementById('fb1');
+      if (right) {
+        fb.innerHTML = '<div class="card ok">对。时针在 8 和 9 之间，说明还没到 9 时；分针指向 3，' +
+          '3 × 5 = 15，所以是 8 时 15 分。</div>';
+      } else {
+        fb.innerHTML = '<div class="card pitfall">再看一眼：时针过了 8 但没到 9，所以是 8 时；' +
+          '分针指向 3，每个大格 5 分钟，3 × 5 = 15 分。把时针和分针看反，是最常见的错。</div>';
+        [].slice.call(document.querySelectorAll('.opt[data-q="q1"]')).forEach(function (o) {
+          if (o.dataset.val === '8:15') o.classList.add('right');
+        });
+      }
+      answered.q1 = right;
+    };
+  });
+
+  function checkNumber(inputId, fbId, ans, rightText, wrongText) {
+    var el = document.getElementById(inputId);
+    var fb = document.getElementById(fbId);
+    var v = Number(el.value);
+    if (el.value === '' || isNaN(v)) { fb.innerHTML = '<div class="card tip">先填一个数字。</div>'; return false; }
+    if (v === ans) {
+      fb.innerHTML = '<div class="card ok">' + rightText + '</div>';
+      el.disabled = true;
+      document.getElementById(inputId === 'a2' ? 'submit2' : 'submit3').disabled = true;
+      return true;
+    }
+    fb.innerHTML = '<div class="card pitfall">' + wrongText + '</div>';
+    return false;
+  }
+
+  document.getElementById('submit2').onclick = function () {
+    answered.q2 = checkNumber('a2', 'fb2', 40,
+      '对，40 分钟。分针从 1 走到 9，走了 8 个大格，8 × 5 = 40。',
+      '再数一次：分针从指向 1 走到指向 9，中间经过几个大格？每个大格 5 分钟。');
+  };
+  document.getElementById('submit3').onclick = function () {
+    var ok = checkNumber('a3', 'fb3', 20,
+      '对，20 分钟。8:50 到 9:00 是 10 分钟，9:00 到 9:10 又是 10 分钟。',
+      '试试分成两段：先算到 9 时整是几分钟，再加 9 时之后的那一段。');
+    if (ok) {
+      answered.q3 = true;
+      document.getElementById('finish').hidden = false;
+      nextBtn.disabled = false;
+      nextBtn.textContent = '完成';
+    } else {
+      answered.q3 = false;
+    }
+  };
+  document.getElementById('a2').addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') document.getElementById('submit2').click();
+  });
+  document.getElementById('a3').addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') document.getElementById('submit3').click();
+  });
+
+  // ---------- 完成 ----------
+  function finish() {
+    var mins = Math.max(1, Math.round((Date.now() - startedAt) / 60000));
+    var rightCount = ['q1', 'q2', 'q3'].filter(function (k) { return answered[k]; }).length;
+    document.getElementById('scoreText').textContent = '答对 ' + rightCount + ' / 3';
+    document.getElementById('timeText').textContent = '用时约 ' + mins + ' 分钟';
+    try {
+      localStorage.setItem('stx.course.' + TOPIC_ID, JSON.stringify({
+        done: true, score: rightCount / 3, minutes: mins, at: Date.now(), v: COURSE_VERSION
+      }));
+    } catch (e) { /* 隐私模式忽略 */ }
+    show(TOTAL);
+    document.getElementById('finish').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  // ---------- 键盘 ----------
+  document.addEventListener('keydown', function (e) {
+    var tag = (e.target.tagName || '').toLowerCase();
+    if (tag === 'input' || tag === 'textarea') return;
+    if (e.key === 'ArrowRight') { if (cur < TOTAL) show(cur + 1); }
+    if (e.key === 'ArrowLeft') { if (cur > 1) show(cur - 1); }
+  });
+
+  show(1);
+})();
+</script>
+</body>
+</html>

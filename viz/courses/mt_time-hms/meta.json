@@ -1,0 +1,22 @@
+{
+  "topicId": "mt_time-hms",
+  "title": "时、分、秒：钟面上一圈是多久",
+  "template": "explain",
+  "duration": 12,
+  "interactions": 5,
+  "grade": 3,
+  "subject": "数学",
+  "standards": ["math-2022:S1:GG:GM"],
+  "prerequisites": ["mt_num-100-recognition"],
+  "next": ["mt_calendar"],
+  "objectives": [
+    "在钟面上读出几时几分",
+    "算出从某一时刻到另一时刻经过多久",
+    "跨过整点时把时间分成两段来算"
+  ],
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-27"
+}

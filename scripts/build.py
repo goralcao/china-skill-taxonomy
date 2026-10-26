@@ -17,6 +17,7 @@
 import hashlib
 import json
 import re
+import shutil
 import sys
 from datetime import date
 from pathlib import Path
@@ -86,7 +87,7 @@ import teaching_research_chinese_senior  # noqa: E402
 import teaching_research_math_senior  # noqa: E402
 import teaching_research_english_senior  # noqa: E402
 
-VERSION = "v0.22.5"
+VERSION = "v0.23.0"
 SCHEMA_VERSION = 1
 
 MODULES = [
@@ -579,6 +580,82 @@ def build_clusters(topics):
     return {"version": VERSION, "schemaVersion": SCHEMA_VERSION, "clusters": clusters}
 
 
+def build_courses(topics):
+    """课件层索引：扫描 courses/*/meta.json，校验 topicId 与模板，供可视化读取。"""
+    topic_by_id = {t["id"]: t for t in topics}
+    allowed_tpl = {"explain", "drill", "explore", "review"}
+    items = []
+    root = ROOT / "courses"
+    if root.exists():
+        for d in sorted(p for p in root.iterdir() if p.is_dir()):
+            meta_path = d / "meta.json"
+            html_path = d / "index.html"
+            if not meta_path.exists():
+                continue
+            meta = json.loads(meta_path.read_text(encoding="utf-8"))
+            tid = meta.get("topicId")
+            if tid not in topic_by_id:
+                raise SystemExit(f"课件 {d.name}: topicId {tid} 不在主题表里")
+            if meta.get("template") not in allowed_tpl:
+                raise SystemExit(f"课件 {d.name}: template 非法 {meta.get('template')}")
+            if not html_path.exists():
+                raise SystemExit(f"课件 {d.name}: 缺 index.html")
+            topic = topic_by_id[tid]
+            own = set(topic["standards"])
+            for code in meta.get("standards", []):
+                if code not in own:
+                    raise SystemExit(f"课件 {d.name}: 课标 {code} 不在主题 {tid} 的 standards 里")
+            item = dict(meta)
+            item["path"] = f"courses/{d.name}/"
+            item["bytes"] = html_path.stat().st_size
+            items.append(item)
+
+    by_tpl, by_status, by_subject = {}, {}, {}
+    for it in items:
+        by_tpl[it["template"]] = by_tpl.get(it["template"], 0) + 1
+        by_status[it["status"]] = by_status.get(it["status"], 0) + 1
+        subj = it.get("subject", "")
+        by_subject[subj] = by_subject.get(subj, 0) + 1
+    return {
+        "version": VERSION,
+        "schemaVersion": 1,
+        "generatedAt": date.today().isoformat(),
+        "counts": {
+            "total": len(items),
+            "byTemplate": by_tpl,
+            "byStatus": by_status,
+            "bySubject": by_subject,
+        },
+        "courses": items,
+    }
+
+
+def sync_courses_to_viz():
+    """把 courses/ 复制进 viz/courses/，并把回跳链接改写成部署后的相对路径。
+
+    源文件里课件在 courses/<id>/，回跳到 ../../viz/index.html；
+    发布目录只上传 viz/，所以副本里改成 ../../index.html。
+    """
+    src = ROOT / "courses"
+    dst = VIZ / "courses"
+    if not src.exists():
+        return 0
+    shutil.rmtree(dst, ignore_errors=True)
+    n = 0
+    for d in sorted(p for p in src.iterdir() if p.is_dir()):
+        meta = d / "meta.json"
+        html = d / "index.html"
+        if not (meta.exists() and html.exists()):
+            continue
+        target = dst / d.name
+        target.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(meta, target / "meta.json")
+        text = html.read_text(encoding="utf-8").replace("../../viz/index.html", "../../index.html")
+        (target / "index.html").write_text(text, encoding="utf-8")
+        n += 1
+    return n
+
+
 def build_teaching_research(topics, topics_sha256):
     """教学研究层：按 topicId 联结到 topics.json，并绑定 topics.json 的字节校验和。"""
     topic_by_id = {t["id"]: t for t in topics}
@@ -647,6 +724,7 @@ def main():
         "curriculum-standards.json": build_standards(),
         "textbooks.json": build_textbooks(),
         "clusters.json": build_clusters(topics_obj["topics"]),
+        "courses.json": build_courses(topics_obj["topics"]),
     }
 
     checksums = {}
@@ -688,6 +766,7 @@ def main():
             "curriculumStandards": len(standards),
             "clusters": len(clusters),
             "teachingResearchRecords": len(research["records"]),
+            "courses": artifacts["courses.json"]["counts"]["total"],
             "hardEdges": sum(1 for d in deps if d["strength"] == "hard"),
             "softEdges": sum(1 for d in deps if d["strength"] == "soft"),
         },
@@ -711,7 +790,9 @@ def main():
         "textbooks": artifacts["textbooks.json"],
         "clusters": clusters,
         "research": research,
+        "courses": artifacts["courses.json"],
     }
+    n_courses = sync_courses_to_viz()
     js = "window.TAXONOMY_DATA = " + json.dumps(viz_payload, ensure_ascii=False) + ";\n"
     (VIZ / "data.js").write_text(js, encoding="utf-8")
 
@@ -719,9 +800,12 @@ def main():
     for name in list(artifacts) + ["teaching-research.json", "manifest.json"]:
         print(f"  data/{name}  {checksums[name]['bytes']:>8} bytes")
     print(f"  viz/data.js  {(VIZ / 'data.js').stat().st_size:>8} bytes")
+    if n_courses:
+        print(f"  viz/courses  {n_courses} 个课件已同步")
     n2024 = sum(1 for t in topics if t["textbooks2024"])
     print(f"  主题 {len(topics)} · 依赖边 {len(deps)} · 课标条目 {len(standards)} · "
-          f"域摘要 {len(clusters)} · 教学研究记录 {len(research['records'])}")
+          f"域摘要 {len(clusters)} · 教学研究记录 {len(research['records'])} · "
+          f"课件 {artifacts['courses.json']['counts']['total']}")
     # 2024 版条数以 slug 后缀识别，不能用「总数 - 基础版本数」硬减（新增学科会算错）
     v2024 = sum(1 for v in artifacts['textbooks.json']['versions'] if v["slug"].endswith("-2024"))
     print(f"  教材版本 {len(artifacts['textbooks.json']['versions'])}（含 2024 版 {v2024}）· "

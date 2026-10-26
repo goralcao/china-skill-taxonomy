@@ -9,12 +9,12 @@ abstract: >-
   2022 年版与普通高中课程标准 2017 年版 2020 年修订），204 条域摘要，1268 条教学研究
   记录（与主题 1:1 全量覆盖），26 套教材版本（含 2024 年版课标修订教材单元映射与
   跨版本教材映射）。可视化层提供星图 / 长卷 / 热力三种布局、先修追溯、学习路径生成、
-  掌握标记与移动端手势。
+  掌握标记与移动端手势；v0.23 起增加课件层（单文件交互课件，完成状态可回写图谱）。
 type: software
 authors:
   - name: "China Skill Taxonomy contributors"
     website: "https://github.com/goralcao/china-skill-taxonomy"
-version: 0.22.5
+version: 0.23.0
 date-released: 2026-10-22
 license:
   - ODbL-1.0

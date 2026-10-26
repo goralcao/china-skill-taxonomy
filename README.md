@@ -9,7 +9,7 @@
 覆盖 12 个学科、1~12 年级，每个主题配一份教学研究</p>
 
 <p>
-<img src="https://img.shields.io/badge/version-v0.22.5-blue?style=flat-square" alt="version">
+<img src="https://img.shields.io/badge/version-v0.23.0-blue?style=flat-square" alt="version">
 <img src="https://img.shields.io/badge/subjects-12-informational?style=flat-square" alt="subjects">
 <img src="https://img.shields.io/badge/topics-1268-brightgreen?style=flat-square" alt="topics">
 <img src="https://img.shields.io/badge/prerequisite%20edges-1635-blueviolet?style=flat-square" alt="prerequisite edges">
@@ -24,12 +24,13 @@
 
 在线预览：<https://acd118508358062b1.app.workbuddy.host/?sharecode=DHL4TJAQCG>
 
-> v0.22.5 · 主题 1268 · 先修依赖 1635（hard 947 / soft 688）· 课标条目 186 · 域摘要 204 · 教学研究 1268 · 教材版本 26 · 学科 12
+> v0.23.0 · 主题 1268 · 先修依赖 1635（hard 947 / soft 688）· 课标条目 186 · 域摘要 204 · 教学研究 1268 · 教材版本 26 · 学科 12 · 课件 1（试点）
 
 ## 目录
 
 - [这是什么](#这是什么)
 - [项目特点](#项目特点)
+- [课件层（试点）](#课件层试点)
 - [已知的不足](#已知的不足)
 - [覆盖范围](#覆盖范围)
 - [快速开始](#快速开始)
@@ -96,6 +97,31 @@
 <img src="docs/screenshot-mobile.png" width="24%" alt="移动端：单指平移、双指缩放、底部抽屉详情">
 </div>
 
+## 课件层（试点）
+
+教学研究是写给大人的，课件是给孩子自己走的。
+
+每个课件绑定一个 `topicId`，从图谱详情面板直达。走完会把完成状态写到本地，图谱上对应节点右上角出现一个绿点——和手动标记的「金色环」分开，因为「走完课件」不等于「真的掌握」。
+
+现在只有一个样板：三年级数学「时、分、秒」，5 个步骤，能拖动钟面，3 道判分题，约 12 分钟。它的作用不是覆盖内容，是验证三件事：内容能不能从教学研究自动带入、单文件课件能不能离线跑通、完成状态能不能回写图谱。
+
+| 文件 | 作用 |
+|---|---|
+| `courses/<topicId>/meta.json` | 元数据：模板、时长、课标、状态、版本 |
+| `courses/<topicId>/index.html` | 自包含课件，无外链、无追踪 |
+| `data/courses.json` | 构建时生成的索引，随图谱一起加载 |
+
+加一个新课件：
+
+```bash
+node scripts/new-course.mjs mt_time-hms --template=explain
+node scripts/validate-courses.mjs
+```
+
+脚手架会自动带入主题描述、掌握证据、教学研究里的活动和常见错误，生成结构完整但需要改写的草稿。
+
+完整方案——四层架构、四种模板、质量门槛、生产流水线与路线图——见 [docs/COURSEWARE.md](docs/COURSEWARE.md)。
+
 ## 已知的不足
 
 写在这里，省得用的人自己踩。
@@ -106,6 +132,7 @@
 - 依赖图分成 67 个连通分量，最大的一块只占 7.6%。原因是跨模块、跨学科的边补得少，学习路径常常只能在本模块内走。补软依赖是下一步要做的，但每条都得能说清理由，不想为了连通而连通。
 - 186 条课标里有 11 条还没有主题挂靠，集中在语文低年级的表达类要求、英语一级的两个要素；这部分主题偏少。
 - 首屏要下载 4MB 的 `data.js`（gzip 后约 1MB），线上目前没有开压缩。数据分片是待办。
+- 课件只有 1 个（三年级数学·时、分、秒），四种模板只落地了 explain 一种。管线通了，内容还没铺开。
 - 目前只有中文。术语和课标编号是中文体系的，翻成英文会失真，暂时没做。
 
 ## 覆盖范围
@@ -200,8 +227,9 @@ china-skill-taxonomy/
 ├── data/          # 构建产物：topics / dependencies / clusters / standards / textbooks / teaching-research / manifest
 ├── schema/        # JSON Schema（主题、依赖、课标、教材、教学研究）
 ├── src/           # 数据源：按学科拆分的 Python 模块（主题、课标、教材目录、教学研究）
-├── scripts/       # build.py（生成 + 校验和）、validate.mjs、教学研究测试
+├── scripts/       # build.py（生成 + 校验和）、validate.mjs、validate-courses.mjs、new-course.mjs
 ├── viz/           # 单文件可视化（index.html + data.js）
+├── courses/       # 课件源文件（每个主题一个目录：meta.json + index.html）
 ├── docs/          # README 截图
 ├── PROVENANCE.md  # 数据来源与权利边界
 ├── CITATION.cff   # 引用信息
@@ -221,6 +249,7 @@ china-skill-taxonomy/
 | `textbooks.json` | 教材版本、册次、单元目录；2024 版映射 `unitMap2024`、替代版本映射 `unitMapAlt` |
 | `clusters.json` | 学科 → 领域簇 → 知识点的层级归组，以及写给家长的域摘要 |
 | `teaching-research.json` | 教学研究记录 1268 条，附 authorship 披露与 coverage 清单 |
+| `courses.json` | 课件索引：topicId、模板、时长、课标、状态、路径 |
 | `manifest.json` | 版本、计数、分学科统计、逐文件校验和 |
 
 ### 一个主题（节选）
@@ -331,7 +360,7 @@ china-skill-taxonomy/
   title        = {学阶图谱 · China Skill Taxonomy},
   author       = {{China Skill Taxonomy contributors}},
   year         = {2026},
-  version      = {v0.22.5},
+  version      = {v0.23.0},
   url          = {https://github.com/goralcao/china-skill-taxonomy},
   note         = {Database licensed under ODbL 1.0; content under CC BY-SA 4.0}
 }
@@ -347,7 +376,7 @@ china-skill-taxonomy/
 
 ODbL 把「衍生数据库」和「产出作品」分开。拿这份数据做产品、训练模型、放进应用，都不需要开源你的产品；只有当你发布基于它的数据库时才需要同样开放。署名可以照抄这行：
 
-> 学阶图谱 · China Skill Taxonomy (v0.22.5) · https://github.com/goralcao/china-skill-taxonomy · ODbL 1.0 (database) + CC BY-SA 4.0 (content)
+> 学阶图谱 · China Skill Taxonomy (v0.23.0) · https://github.com/goralcao/china-skill-taxonomy · ODbL 1.0 (database) + CC BY-SA 4.0 (content)
 
 ## 路线图
 
@@ -363,7 +392,7 @@ ODbL 把「衍生数据库」和「产出作品」分开。拿这份数据做产
 | v0.13 ~ v0.15 | 初中物理、化学、历史、地理；多版本教材目录与跨版本映射 |
 | v0.16 ~ v0.18 | 科学、道德与法治、生物，十学科 742 主题全量覆盖 |
 | v0.19 ~ v0.22 | 高中九科补齐，1268 主题、十二学科全量覆盖 |
-| v0.22.1 ~ v0.22.5 | 图例可收缩、移动端触摸修复、README 与 CI 整理 |
+| v0.22.1 ~ v0.23.0 | 图例可收缩、移动端触摸修复、README 与 CI 整理 |
 
 还没做的：
 

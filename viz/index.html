@@ -436,6 +436,7 @@
       <h2 id="pName"></h2>
       <div class="meta" id="pMeta"></div>
       <div class="actions">
+        <button class="act-btn" id="btnCourse" style="display:none">▶ 打开课件</button>
         <button class="act-btn" id="btnMaster">✅ 标记已掌握</button>
         <button class="act-btn" id="btnPath">🗺️ 生成学习路径</button>
       </div>
@@ -512,6 +513,23 @@
   // 绘制顺序：容器在下、知识点在上；拾取时反向遍历（优先命中知识点）
   const renderNodes = [...subjectNodes, ...clusterNodes, ...nodes];
   const renderById = new Map(renderNodes.map(n => [n.id, n]));
+
+  // 课件层：只有 reviewed 的课件在图谱上露出入口；完成状态读同源 localStorage
+  const courseList = (D.courses && D.courses.courses) || [];
+  const courseByTopic = new Map(
+    courseList.filter(c => c.status === 'reviewed').map(c => [c.topicId, c]));
+  const courseDone = new Set();
+  function refreshCourseDone() {
+    courseDone.clear();
+    for (const c of courseList) {
+      try {
+        const rec = JSON.parse(localStorage.getItem('stx.course.' + c.topicId) || 'null');
+        if (rec && rec.done) courseDone.add(c.topicId);
+      } catch (e) { /* 隐私模式忽略 */ }
+    }
+  }
+  refreshCourseDone();
+  window.addEventListener('pageshow', () => { refreshCourseDone(); wake(); });
 
   // 归属边（层级关系，与依赖边分开渲染）
   const memberEdges = [];
@@ -1256,6 +1274,12 @@
         ctx.fillStyle = n.searchHit ? '#ffd166' : color;
       }
       ctx.fill(); ctx.shadowBlur = 0;
+      // 完成过课件：右上角小绿点（与手动掌握的「金色环」区分）
+      if (courseDone.has(n.id)) {
+        ctx.beginPath();
+        ctx.arc(n.x + n.r * 0.72, n.y - n.r * 0.72, Math.max(2.2 / k, 1.8), 0, Math.PI * 2);
+        ctx.fillStyle = '#4ade80'; ctx.fill();
+      }
       // 已掌握：金色圆环
       if (mastered.has(n.id)) {
         ctx.beginPath(); ctx.arc(n.x, n.y, n.r + 3 / k, 0, Math.PI * 2);
@@ -1675,15 +1699,27 @@
     document.getElementById('pTopicOnly').style.display = isContainer ? 'none' : '';
     document.getElementById('btnPath').style.display = isContainer ? 'none' : '';
     if (isContainer) {
+      document.getElementById('btnCourse').style.display = 'none';
       renderContainerPanel(n);
       panel.classList.add('open');
       panel.scrollTop = 0;
       return;
     }
+    const course = courseByTopic.get(n.id);
+    const courseBtn = document.getElementById('btnCourse');
+    if (course) {
+      courseBtn.style.display = '';
+      courseBtn.textContent = (courseDone.has(n.id) ? '▶ 再看一遍课件' : '▶ 打开课件')
+        + '（' + course.duration + ' 分钟）';
+      courseBtn.onclick = () => { location.href = course.path + 'index.html'; };
+    } else {
+      courseBtn.style.display = 'none';
+    }
     document.getElementById('pName').textContent = n.name;
     document.getElementById('pMeta').innerHTML =
       `<span class="badge" style="color:${subjectColor[n.subject]};border-color:${subjectColor[n.subject]}">${n.subject}</span>
-       <span>${esc(n.domain)}</span><span>${n.gradeRangeStart}~${n.gradeRangeEnd} 年级</span><span>${esc(n.stage)}</span>`;
+       <span>${esc(n.domain)}</span><span>${n.gradeRangeStart}~${n.gradeRangeEnd} 年级</span><span>${esc(n.stage)}</span>`
+      + (course ? `<span style="color:var(--accent)">课件 ${course.duration} 分钟${courseDone.has(n.id) ? ' · 已完成' : ''}</span>` : '');
     document.getElementById('pDesc').textContent = n.description;
     document.getElementById('pEvidence').innerHTML = n.evidence.map(e => `<li>${esc(e)}</li>`).join('');
     document.getElementById('pAssess').textContent = n.assessmentPrompt.replace(/\{\{name\}\}/g, '孩子');

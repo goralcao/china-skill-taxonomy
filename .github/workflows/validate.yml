@@ -25,6 +25,9 @@ jobs:
       - name: Teaching research tests
         run: node --test scripts/teaching-research.test.mjs
 
+      - name: Validate courses
+        run: node scripts/validate-courses.mjs
+
       - name: Build from sources
         run: python3 scripts/build.py
 
