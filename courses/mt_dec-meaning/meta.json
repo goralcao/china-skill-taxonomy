@@ -1,0 +1,30 @@
+{
+  "topicId": "mt_dec-meaning",
+  "title": "小数的意义和性质：把 0.35 画出来",
+  "template": "explain",
+  "renderer": "decGrid",
+  "duration": 12,
+  "interactions": 2,
+  "grade": 4,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S2:NA:NO"
+  ],
+  "prerequisites": [
+    "mt_dec-intro"
+  ],
+  "next": [
+    "mt_dec-addsub2"
+  ],
+  "objectives": [
+    "理解小数的意义：1 平均分成 100 份，1 份是 0.01",
+    "知道 0.1 与 0.01 的关系，会把一位小数拆成几个 0.1 和几个 0.01",
+    "掌握小数的性质：末尾添 0 或去 0，小数大小不变"
+  ],
+  "cognitiveAction": "分解",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-27"
+}

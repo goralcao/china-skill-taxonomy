@@ -1,0 +1,31 @@
+{
+  "topicId": "mt_parallelogram",
+  "title": "平行四边形和梯形：数有几组对边平行",
+  "template": "explain",
+  "renderer": "quad",
+  "duration": 11,
+  "interactions": 2,
+  "grade": 4,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S2:GG:GM"
+  ],
+  "prerequisites": [
+    "mt_shape-2d",
+    "mt_lines"
+  ],
+  "next": [
+    "mt_triangle"
+  ],
+  "objectives": [
+    "理解平行四边形两组对边分别平行且相等",
+    "理解梯形只有一组对边平行，认识上底、下底、腰和高",
+    "知道长方形、正方形是特殊的平行四边形"
+  ],
+  "cognitiveAction": "比较",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-27"
+}

@@ -1,5 +1,5 @@
 {
-  "version": "v0.33.0",
+  "version": "v0.34.0",
   "schemaVersion": 1,
   "topics": [
     {
@@ -1069,7 +1069,7 @@
       "textbookNote2024": "「大数的认识」更名「万以上数的认识」并精简。",
       "textbookNoteAlt": "北师大版称「认识更大的数」，与人教版四上「大数的认识」对应。；苏教版：大数分两段：四上「五 多位数的认识」与四下「二 认识多位数」。",
       "clusterId": "cl-math-d1-s2",
-      "centrality": 0.0016
+      "centrality": 0.0024
     },
     {
       "id": "mt_area-hectare",
@@ -1135,7 +1135,7 @@
       "textbookNote2024": "「三位数乘两位数」与两位数乘两位数整合为「多位数乘两位数」。",
       "textbookNoteAlt": "北师大版称「整数乘法（二）」，与人教版「三位数乘两位数」对应。；苏教版：两位数乘两位数在三下第三单元，三位数乘两位数在四下第三单元分段学习。",
       "clusterId": "cl-math-d1-s2",
-      "centrality": 0.0055
+      "centrality": 0.0063
     },
     {
       "id": "mt_div-2digit",
@@ -2272,7 +2272,7 @@
       "textbookNote2024": "「角的度量」调整为四上第二单元（原第三单元）。",
       "textbookNoteAlt": "北师大版：角的度量与分类同属四上第二单元「线与角」，人教版在四上第三单元。；苏教版：角的度量与分类在三下第一单元「角」，早于人教版四上。",
       "clusterId": "cl-math-d2-s2",
-      "centrality": 0.0039
+      "centrality": 0.0047
     },
     {
       "id": "mt_parallelogram",
@@ -2304,7 +2304,7 @@
       ],
       "textbookNoteAlt": "北师大版：平行四边形和梯形并入四下第二单元「认识三角形和四边形」，人教版在四上第五单元单设。；苏教版：平行四边形与梯形同三角形合为四下第七单元，与人教版分设两单元不同。",
       "clusterId": "cl-math-d2-s2",
-      "centrality": 0.0024
+      "centrality": 0.0031
     },
     {
       "id": "mt_triangle",

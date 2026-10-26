@@ -1,0 +1,31 @@
+{
+  "topicId": "mt_big-num",
+  "title": "大数的认识：从万数到亿",
+  "template": "explain",
+  "renderer": "counter",
+  "duration": 11,
+  "interactions": 2,
+  "grade": 4,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S2:NA:NO"
+  ],
+  "prerequisites": [
+    "mt_num-10000-recognition"
+  ],
+  "next": [
+    "mt_area-hectare",
+    "mt_mult-2digit"
+  ],
+  "objectives": [
+    "认识数位顺序表：个、十、百、千、万、十万、百万、千万、亿",
+    "理解每相邻两个计数单位之间的进率都是十",
+    "会把数分级（个级、万级、亿级）并正确读数"
+  ],
+  "cognitiveAction": "累积",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-27"
+}

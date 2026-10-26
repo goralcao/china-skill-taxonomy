@@ -1744,6 +1744,8 @@ EDGES = [
     ("triangle-angle", "triangle-classify", "soft", "内角和是分类之外的另一重要性质"),
     ("triangle-sides", "triangle-classify", "soft", "三边关系是构成三角形的条件"),
     ("polygon-area", "triangle-sides", "hard", "推导三角形面积公式需先认识三边关系"),
+    ("parallelogram", "angle-measure", "soft", "刻画平行四边形的角需要用量角器度量"),
+    ("mult-2digit", "big-num", "soft", "理解部分积的数位需要万以上的计数单位"),
     ("symmetry", "shape-move", "hard", "轴对称是图形运动的基本形式之一"),
     ("symmetry", "shape-2d", "hard", "轴对称操作以平面图形为对象"),
     ("optimize", "num-100-addsub", "hard", "比较不同方案的总时长需要加减计算"),

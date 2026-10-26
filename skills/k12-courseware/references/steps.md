@@ -33,6 +33,10 @@
 | `compass` | 方向与路线 | `body{}` | `caption` `note` `demoLabel` |
 | `law` | 运算律（交换/结合/分配） | `body{mode,op,a,b,c}` | `caption` `note` `demoLabel` |
 | `triangle` | 三角形（分类/内角和/三边） | `body{mode,...}` | `caption` `note` `demoLabel` |
+| `counter` | 数位顺序表（大数） | `body{}` | `caption` `note` `demoLabel` |
+| `angle` | 量角器 | `body{deg}` | `caption` `note` `demoLabel` |
+| `quad` | 平行四边形与梯形 | `body{shapes}` | `caption` `note` `demoLabel` |
+| `decGrid` | 百格图（小数意义/性质） | `body{mode,value,compare}` | `caption` `note` `demoLabel` |
 | `numberline` | 数轴、量感 | `line{min,max,step,...}` | `marks[]` `span` `caption` |
 | `clock` | 钟面 | `absMinutes` | `caption` |
 | `quiz` | 填数字 | `question` `answer`(number) | `unit` `hint` `why` `title` |
@@ -247,6 +251,38 @@ preset：
 | `sides` | 三边关系：三根小棒逐条验「两边之和 > 第三边」，都过则画出三角形 | `{mode,a,b,c,counter}` |
 
 `classify` 由角度反推边长（等角对等边），所以形状与分类必然自洽；`sides` 的 `counter` 是可选反例（如 2、3、6）。
+
+## counter
+
+```json
+{ "type": "counter", "title": "满十进一，一路数到亿", "body": {} }
+```
+
+数位顺序表：九列数位按个级/万级/亿级分开。演示从「10 个一千是一万」一路满十进一到「10 个一千万是一亿」，收尾点明相邻计数单位进率都是十。
+
+## angle
+
+```json
+{ "type": "angle", "title": "量角的三个动作", "body": { "deg": 60 } }
+```
+
+量角器：半圆刻度 + 中心 + 零刻度线。演示中心对顶点 → 零线对一边 → 读另一边；读数与「锐角/直角/钝角」分类实时显示。那条边**可以直接拖**，拖到哪度数跟到哪。
+
+## quad
+
+```json
+{ "type": "quad", "title": "数箭头，数出几组平行", "body": { "shapes": ["parallelogram", "trapezoid", "rectangle"] } }
+```
+
+四边形一行排开，互相平行的两条边用同色成对箭头标出。`shapes` 可选 `parallelogram` / `trapezoid` / `rectangle`。演示逐个高亮并标「几组对边平行」，最后展示梯形的高。
+
+## decGrid
+
+```json
+{ "type": "decGrid", "title": "小数的性质", "body": { "mode": "property", "value": 0.3, "compare": 0.30, "label": "0.3", "compareLabel": "0.30" } }
+```
+
+百格图：1 格是 0.01，一列是 0.1。`mode=meaning` 单图讲一个数（如 0.35 = 3 个 0.1 + 5 个 0.01）；`mode=property` 双图对比两个数涂格是否一样多，证明末尾添 0 大小不变。`label`/`compareLabel` 用于显示带末尾 0 的写法（Number 会把 0.30 存成 0.3）。
 
 ## numberline
 

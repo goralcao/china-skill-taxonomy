@@ -1,19 +1,19 @@
 {
-  "version": "v0.33.0",
+  "version": "v0.34.0",
   "schemaVersion": 1,
   "generatedAt": "2026-10-27",
   "counts": {
-    "total": 25,
+    "total": 29,
     "byTemplate": {
       "drill": 1,
-      "explain": 23,
+      "explain": 27,
       "explore": 1
     },
     "byStatus": {
-      "reviewed": 25
+      "reviewed": 29
     },
     "bySubject": {
-      "数学": 23,
+      "数学": 27,
       "化学": 1,
       "物理": 1
     }
@@ -53,6 +53,40 @@
       "bytes": 17177
     },
     {
+      "topicId": "mt_angle-measure",
+      "title": "角的度量：用量角器量出多少度",
+      "template": "explain",
+      "renderer": "angle",
+      "duration": 11,
+      "interactions": 2,
+      "grade": 4,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S2:GG:GM"
+      ],
+      "prerequisites": [
+        "mt_angle-intro",
+        "mt_lines"
+      ],
+      "next": [
+        "mt_triangle-classify",
+        "mt_parallelogram"
+      ],
+      "objectives": [
+        "认识量角器，知道角的度量单位是度",
+        "掌握量角的步骤：中心对顶点、零刻度线对一边、读另一边",
+        "会按度数把角分成锐角、直角、钝角、平角、周角"
+      ],
+      "cognitiveAction": "逼近",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "path": "courses/mt_angle-measure/",
+      "bytes": 684
+    },
+    {
       "topicId": "mt_area-intro",
       "title": "面积与面积单位：铺满方格数出来",
       "template": "explain",
@@ -86,6 +120,39 @@
       "updatedAt": "2026-10-27",
       "path": "courses/mt_area-intro/",
       "bytes": 663
+    },
+    {
+      "topicId": "mt_big-num",
+      "title": "大数的认识：从万数到亿",
+      "template": "explain",
+      "renderer": "counter",
+      "duration": 11,
+      "interactions": 2,
+      "grade": 4,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S2:NA:NO"
+      ],
+      "prerequisites": [
+        "mt_num-10000-recognition"
+      ],
+      "next": [
+        "mt_area-hectare",
+        "mt_mult-2digit"
+      ],
+      "objectives": [
+        "认识数位顺序表：个、十、百、千、万、十万、百万、千万、亿",
+        "理解每相邻两个计数单位之间的进率都是十",
+        "会把数分级（个级、万级、亿级）并正确读数"
+      ],
+      "cognitiveAction": "累积",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "path": "courses/mt_big-num/",
+      "bytes": 675
     },
     {
       "topicId": "mt_calendar",
@@ -217,6 +284,38 @@
       "updatedAt": "2026-10-27",
       "path": "courses/mt_dec-intro/",
       "bytes": 663
+    },
+    {
+      "topicId": "mt_dec-meaning",
+      "title": "小数的意义和性质：把 0.35 画出来",
+      "template": "explain",
+      "renderer": "decGrid",
+      "duration": 12,
+      "interactions": 2,
+      "grade": 4,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S2:NA:NO"
+      ],
+      "prerequisites": [
+        "mt_dec-intro"
+      ],
+      "next": [
+        "mt_dec-addsub2"
+      ],
+      "objectives": [
+        "理解小数的意义：1 平均分成 100 份，1 份是 0.01",
+        "知道 0.1 与 0.01 的关系，会把一位小数拆成几个 0.1 和几个 0.01",
+        "掌握小数的性质：末尾添 0 或去 0，小数大小不变"
+      ],
+      "cognitiveAction": "分解",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "path": "courses/mt_dec-meaning/",
+      "bytes": 687
     },
     {
       "topicId": "mt_direction",
@@ -545,6 +644,39 @@
       "updatedAt": "2026-10-27",
       "path": "courses/mt_ops-laws-mul/",
       "bytes": 684
+    },
+    {
+      "topicId": "mt_parallelogram",
+      "title": "平行四边形和梯形：数有几组对边平行",
+      "template": "explain",
+      "renderer": "quad",
+      "duration": 11,
+      "interactions": 2,
+      "grade": 4,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S2:GG:GM"
+      ],
+      "prerequisites": [
+        "mt_shape-2d",
+        "mt_lines"
+      ],
+      "next": [
+        "mt_triangle"
+      ],
+      "objectives": [
+        "理解平行四边形两组对边分别平行且相等",
+        "理解梯形只有一组对边平行，认识上底、下底、腰和高",
+        "知道长方形、正方形是特殊的平行四边形"
+      ],
+      "cognitiveAction": "比较",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "path": "courses/mt_parallelogram/",
+      "bytes": 693
     },
     {
       "topicId": "mt_phys-s-momentum-conservation",

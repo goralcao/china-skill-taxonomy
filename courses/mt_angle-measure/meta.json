@@ -1,0 +1,32 @@
+{
+  "topicId": "mt_angle-measure",
+  "title": "角的度量：用量角器量出多少度",
+  "template": "explain",
+  "renderer": "angle",
+  "duration": 11,
+  "interactions": 2,
+  "grade": 4,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S2:GG:GM"
+  ],
+  "prerequisites": [
+    "mt_angle-intro",
+    "mt_lines"
+  ],
+  "next": [
+    "mt_triangle-classify",
+    "mt_parallelogram"
+  ],
+  "objectives": [
+    "认识量角器，知道角的度量单位是度",
+    "掌握量角的步骤：中心对顶点、零刻度线对一边、读另一边",
+    "会按度数把角分成锐角、直角、钝角、平角、周角"
+  ],
+  "cognitiveAction": "逼近",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-27"
+}

@@ -1,5 +1,5 @@
 {
-  "version": "v0.33.0",
+  "version": "v0.34.0",
   "schemaVersion": 1,
   "dependencies": [
     {
@@ -703,6 +703,18 @@
       "prerequisiteId": "mt_triangle-sides",
       "strength": "hard",
       "reason": "推导三角形面积公式需先认识三边关系"
+    },
+    {
+      "topicId": "mt_parallelogram",
+      "prerequisiteId": "mt_angle-measure",
+      "strength": "soft",
+      "reason": "刻画平行四边形的角需要用量角器度量"
+    },
+    {
+      "topicId": "mt_mult-2digit",
+      "prerequisiteId": "mt_big-num",
+      "strength": "soft",
+      "reason": "理解部分积的数位需要万以上的计数单位"
     },
     {
       "topicId": "mt_symmetry",
