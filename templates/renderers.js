@@ -39,13 +39,13 @@
     t.textContent = v; return t;
   }
 
-  var reduced = function () {
+  function reduced() {
     try {
       return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     } catch (e) {
       return false;
     }
-  };
+  }
 
   /* ══════════════════════════════════════════════════════
    * 竖式
@@ -4921,8 +4921,564 @@
     };
   }
 
+  /* ══════════════════════════════════════════════════════
+   * 圆的认识
+   * 为什么单独做：「圆是到定点距离相等的点的集合」这句话背得出来，
+   * 但看不见。让半径真的转一圈画出圆，圆心与半径各管什么才分得清。
+   * ══════════════════════════════════════════════════════ */
+  function circle(el, spec) {
+    spec = spec || {};
+    var W = 360, H = 250;
+    var svg = s('svg', { viewBox: '0 0 ' + W + ' ' + H, class: 'cir-svg', role: 'img' }, el);
+    var RED = '#f87171', BLUE = '#38bdf8', GRN = '#4ade80', ORG = '#fbbf24';
+    var cx = 152, cy = 116, r = 74;
+    var C = 2 * Math.PI * r;
+
+    T(svg, 180, 20, '圆是怎么来的', 'font-size:14px;font-weight:700;fill:var(--text);text-anchor:middle');
+
+    var ring = s('circle', { cx: cx, cy: cy, r: r, fill: 'none', stroke: 'var(--text)', 'stroke-width': 2.2,
+      'stroke-dasharray': C, 'stroke-dashoffset': C }, svg);
+    ring.style.transition = 'stroke-dashoffset 1.1s linear';
+    var dotO = s('circle', { cx: cx, cy: cy, r: 4, fill: RED }, svg);
+    var lblO = T(svg, cx - 12, cy + 18, 'O', 'font-size:12px;font-weight:700;fill:RED');
+    var radius = s('line', { x1: cx, y1: cy, x2: cx + r, y2: cy, stroke: BLUE, 'stroke-width': 2.6 }, svg);
+    var rlbl = T(svg, cx + r / 2, cy - 8, 'r', 'font-size:12.5px;font-weight:700;fill:' + BLUE);
+    [dotO, lblO, radius, rlbl].forEach(function (n) { n.style.opacity = 0; n.style.transition = 'opacity .35s ease'; });
+
+    // 多条半径
+    var radiiG = s('g', {}, svg);
+    radiiG.style.opacity = 0; radiiG.style.transition = 'opacity .4s ease';
+    [30, 115, 200, 305].forEach(function (deg) {
+      var a = deg * Math.PI / 180;
+      s('line', { x1: cx, y1: cy, x2: cx + r * Math.cos(a), y2: cy + r * Math.sin(a), stroke: BLUE, 'stroke-width': 2, 'stroke-opacity': 0.75 }, radiiG);
+    });
+
+    // 直径
+    var diaG = s('g', {}, svg);
+    diaG.style.opacity = 0; diaG.style.transition = 'opacity .4s ease';
+    s('line', { x1: cx - r, y1: cy, x2: cx + r, y2: cy, stroke: GRN, 'stroke-width': 2.6 }, diaG);
+    var dlbl = T(diaG, cx - r / 2 - 4, cy - 10, 'd', 'font-size:12.5px;font-weight:700;fill:' + GRN + ';text-anchor:middle');
+
+    // 另一个圆（半径不同 / 圆心不同）
+    var other = s('g', {}, svg);
+    other.style.opacity = 0; other.style.transition = 'opacity .4s ease';
+    s('circle', { cx: 268, cy: 178, r: 40, fill: 'none', stroke: ORG, 'stroke-width': 2, 'stroke-dasharray': '5 4' }, other);
+    s('circle', { cx: 268, cy: 178, r: 3, fill: ORG }, other);
+    T(other, 268, 232, '圆心定位置', 'font-size:11px;fill:' + ORG + ';text-anchor:middle');
+
+    // 对称轴
+    var axes = s('g', {}, svg);
+    axes.style.opacity = 0; axes.style.transition = 'opacity .4s ease';
+    [0, 60, 120].forEach(function (deg) {
+      var a = deg * Math.PI / 180;
+      s('line', { x1: cx - r * Math.cos(a), y1: cy - r * Math.sin(a), x2: cx + r * Math.cos(a), y2: cy + r * Math.sin(a),
+        stroke: 'var(--dim)', 'stroke-width': 1.4, 'stroke-dasharray': '6 4' }, axes);
+    });
+
+    var note = T(svg, 180, 240, '', 'font-size:12.5px;font-weight:600;fill:var(--dim);text-anchor:middle');
+
+    function sweep(after) {
+      if (reduced()) {
+        ring.setAttribute('stroke-dashoffset', '0');
+        if (after) after();
+        return;
+      }
+      var t0 = null;
+      function frame(ts) {
+        if (t0 === null) t0 = ts;
+        var p = Math.min(1, (ts - t0) / 1100);
+        ring.setAttribute('stroke-dashoffset', String(C * (1 - p)));
+        radius.setAttribute('transform', 'rotate(' + (p * 360) + ' ' + cx + ' ' + cy + ')');
+        if (p < 1) requestAnimationFrame(frame);
+        else if (after) after();
+      }
+      requestAnimationFrame(frame);
+    }
+
+    var STEPS = [
+      { text: '钉住<b>圆心 O</b>，把一段长 r 的绳子拉直、绕 O 转一整圈——笔尖走过的痕迹就是一个圆。',
+        run: function () {
+          [dotO, lblO, radius, rlbl].forEach(function (n) { n.style.opacity = 1; });
+          sweep();
+          note.textContent = '圆是到定点距离等于定长的点的集合';
+        } },
+      { text: '连接圆心和圆上任意一点的线段叫<b>半径 r</b>。同一个圆里半径有无数条，长度<b>都相等</b>。',
+        run: function () { radiiG.style.opacity = 1; ring.setAttribute('stroke-dashoffset', '0'); note.textContent = '同圆内 r 处处相等'; } },
+      { text: '通过圆心、两端都在圆上的线段叫<b>直径 d</b>。直径正好是两条半径接起来：<b>d = 2r</b>。',
+        run: function () { diaG.style.opacity = 1; dlbl.textContent = 'd = 2r'; note.textContent = 'd = 2r，r = d ÷ 2'; } },
+      { text: '<b>圆心</b>决定圆画在哪儿，<b>半径</b>决定圆有多大。半径相同的两个圆能完全重合，叫等圆。',
+        run: function () { other.style.opacity = 1; note.textContent = '圆心定位置，半径定大小'; } },
+      { text: '圆还是轴对称图形：每一条直径所在的直线都是它的对称轴，所以圆有<b>无数条</b>对称轴。',
+        run: function () { axes.style.opacity = 1; note.textContent = '对称轴：无数条'; } }
+    ];
+    var idx = 0;
+    return {
+      el: svg,
+      next: function () {
+        if (idx >= STEPS.length) return null;
+        var st = STEPS[idx++]; st.run();
+        return { text: st.text, done: idx >= STEPS.length };
+      },
+      startDemo: function () {
+        idx = 0;
+        ring.setAttribute('stroke-dashoffset', String(C));
+        [dotO, lblO, radius, rlbl].forEach(function (n) { n.style.opacity = 0; });
+        radius.removeAttribute('transform');
+        [radiiG, diaG, other, axes].forEach(function (g) { g.style.opacity = 0; });
+        dlbl.textContent = 'd';
+        note.textContent = '';
+        return this;
+      },
+      reset: function () { return this.startDemo(); }
+    };
+  }
+
+  /* ══════════════════════════════════════════════════════
+   * 圆的周长与面积
+   * 周长：让圆真的滚一圈，滚过的长度正好是直径的三倍多一点——π 是量出来的。
+   * 面积：16 等份交错拼成长方形，长 = 半周长 πr、宽 = r，公式是拼出来的。
+   * ══════════════════════════════════════════════════════ */
+  function circleMeasure(el, spec) {
+    spec = spec || {};
+    var mode = spec.mode || 'perimeter';
+    var W = 360, H = 250;
+    var svg = s('svg', { viewBox: '0 0 ' + W + ' ' + H, class: 'cim-svg', role: 'img' }, el);
+    var RED = '#f87171', BLUE = '#38bdf8', GRN = '#4ade80', ORG = '#fbbf24';
+
+    if (mode === 'area') return areaPart(svg, W, H, RED, GRN);
+    return perimPart(svg, W, H, BLUE, ORG);
+
+    function perimPart(svg, W, H, BLUE, ORG) {
+      var r = 26, d = 2 * r, C = 2 * Math.PI * r;
+      var x0 = 56, yLine = 196;
+      T(svg, 180, 20, '圆滚一圈，滚过的长度就是周长', 'font-size:13.5px;font-weight:700;fill:var(--text);text-anchor:middle');
+      s('line', { x1: 30, y1: yLine, x2: 348, y2: yLine, stroke: 'var(--text)', 'stroke-width': 1.6 }, svg);
+      for (var x = 30; x <= 348; x += d / 2) {
+        s('line', { x1: x, y1: yLine, x2: x, y2: yLine + (Math.abs((x - x0) % d) < 0.5 ? 7 : 4), stroke: 'var(--dim)', 'stroke-width': 1 }, svg);
+      }
+      var markA = s('line', { x1: x0, y1: yLine - 10, x2: x0, y2: yLine + 16, stroke: BLUE, 'stroke-width': 2 }, svg);
+      var markB = s('line', { x1: x0, y1: yLine - 10, x2: x0, y2: yLine + 16, stroke: ORG, 'stroke-width': 2 }, svg);
+      markB.style.opacity = 0; markB.style.transition = 'opacity .3s ease';
+
+      var g = s('g', {}, svg);
+      s('circle', { cx: 0, cy: yLine - r, r: r, fill: 'var(--card)', stroke: BLUE, 'stroke-width': 2 }, g);
+      s('line', { x1: 0, y1: yLine - r, x2: r, y2: yLine - r, stroke: ORG, 'stroke-width': 2 }, g);
+      s('circle', { cx: 0, cy: yLine - r, r: 2.5, fill: ORG }, g);
+      var bg = s('g', {}, svg);
+      bg.style.opacity = 0; bg.style.transition = 'opacity .4s ease';
+      s('circle', { cx: 300, cy: 150, r: 44, fill: 'none', stroke: ORG, 'stroke-width': 2, 'stroke-dasharray': '5 4' }, bg);
+
+      var units = s('g', {}, svg);
+      units.style.opacity = 0; units.style.transition = 'opacity .4s ease';
+      for (var k = 1; k <= 3; k++) {
+        var xa = x0 + (k - 1) * d, xb = xa + d;
+        s('line', { x1: xa, y1: yLine + 16, x2: xb, y2: yLine + 16, stroke: GRN, 'stroke-width': 3 }, units);
+        var tt = T(units, (xa + xb) / 2, yLine + 29, String(k) + 'd', 'font-size:10.5px;fill:' + GRN + ';text-anchor:middle');
+      }
+      var rest = s('line', { x1: x0 + 3 * d, y1: yLine + 16, x2: x0 + C, y2: yLine + 16, stroke: RED, 'stroke-width': 3 }, units);
+
+      var note = T(svg, 180, 244, '', 'font-size:12.5px;font-weight:600;fill:var(--dim);text-anchor:middle');
+      var res = T(svg, 180, 96, '', 'font-size:16px;font-weight:700;fill:var(--text);text-anchor:middle');
+      res.style.opacity = 0; res.style.transition = 'opacity .35s ease';
+
+      function roll(after) {
+        if (reduced()) {
+          g.setAttribute('transform', 'translate(' + (x0 + C) + ' 0)');
+          if (after) after();
+          return;
+        }
+        var t0 = null;
+        function frame(ts) {
+          if (t0 === null) t0 = ts;
+          var p = Math.min(1, (ts - t0) / 1400);
+          var e = p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
+          g.setAttribute('transform', 'translate(' + (x0 + e * C) + ' 0) rotate(' + (e * 360) + ' ' + x0 + ' ' + (yLine - r) + ')');
+          if (p < 1) requestAnimationFrame(frame);
+          else if (after) after();
+        }
+        requestAnimationFrame(frame);
+      }
+
+      var STEPS = [
+        { text: '把圆放在直尺上，让它<b>滚一整圈</b>——从起点到终点滚过的长度，就是这个圆的周长。',
+          run: function () { g.setAttribute('transform', 'translate(' + x0 + ' 0)'); roll(); } },
+        { text: '终点落在 <b>' + (C / d).toFixed(2) + ' 个直径</b>多一点的地方。换个大圆再滚，倍数<b>还是这么大</b>。',
+          run: function () { markB.setAttribute('x1', String(x0 + C)); markB.setAttribute('x2', String(x0 + C)); markB.style.opacity = 1; bg.style.opacity = 1; } },
+        { text: '不管圆多大，<b>周长 ÷ 直径</b> 都是同一个数 ≈ 3.14，这就是<b>圆周率 π</b>。',
+          run: function () { units.style.opacity = 1; note.textContent = '周长 ÷ 直径 = π，固定不变'; } },
+        { text: '于是 <b>C = πd = 2πr</b>。知道直径或半径，就能算出周长。',
+          run: function () { res.textContent = 'C = πd = 2πr'; res.style.opacity = 1; note.textContent = 'π 是量出来的常数，不是符号游戏'; } }
+      ];
+      var idx = 0;
+      return {
+        el: svg,
+        next: function () {
+          if (idx >= STEPS.length) return null;
+          var st = STEPS[idx++]; st.run();
+          return { text: st.text, done: idx >= STEPS.length };
+        },
+        startDemo: function () {
+          idx = 0;
+          g.setAttribute('transform', 'translate(' + x0 + ' 0)');
+          markB.setAttribute('x1', String(x0 + C)); markB.setAttribute('x2', String(x0 + C)); markB.style.opacity = 0;
+          bg.style.opacity = 0; units.style.opacity = 0; res.style.opacity = 0; note.textContent = '';
+          return this;
+        },
+        reset: function () { return this.startDemo(); }
+      };
+    }
+
+    function areaPart(svg, W, H, RED, GRN) {
+      var r = 68, n = 16, alpha = 2 * Math.PI / n;
+      var cx = 108, cy = 116;
+      T(svg, 180, 20, '把圆切开，拼成一个长方形', 'font-size:13.5px;font-weight:700;fill:var(--text);text-anchor:middle');
+      var w = 2 * Math.PI * r / n;   // 每份的弧长
+      var x0 = 62, yBot = 200, yTop = yBot - r;
+
+      var paths = [];
+      for (var i = 0; i < n; i++) {
+        var a0 = -alpha / 2, a1 = alpha / 2;
+        var pth = s('path', {
+          d: 'M0 0 L' + (r * Math.cos(a0)).toFixed(1) + ' ' + (r * Math.sin(a0)).toFixed(1) +
+             ' A' + r + ' ' + r + ' 0 0 1 ' + (r * Math.cos(a1)).toFixed(1) + ' ' + (r * Math.sin(a1)).toFixed(1) + ' Z',
+          fill: i % 2 === 0 ? BLUE : GRN, 'fill-opacity': 0.75, stroke: 'var(--dim)', 'stroke-width': 0.6
+        }, svg);
+        pth.setAttribute('transform', 'translate(' + cx + ' ' + cy + ') rotate(' + (i * 360 / n + 360 / n / 2) + ')');
+        pth.style.transition = 'none';
+        paths.push(pth);
+      }
+      var box = s('rect', { x: x0, y: yTop, width: n / 2 * w, height: r, fill: 'none', stroke: RED, 'stroke-width': 1.6, 'stroke-dasharray': '6 4' }, svg);
+      box.style.opacity = 0; box.style.transition = 'opacity .5s ease';
+      var lw = T(svg, x0 + n / 2 * w / 2, yBot + 22, '', 'font-size:12px;font-weight:700;fill:' + RED + ';text-anchor:middle');
+      var lh = T(svg, 180, (yTop + yBot) / 2, '', 'font-size:12px;font-weight:700;fill:' + RED + ';text-anchor:middle');
+      var note = T(svg, 180, 238, '', 'font-size:12.5px;font-weight:600;fill:var(--dim);text-anchor:middle');
+
+      function shape() {
+        paths.forEach(function (pth, i) {
+          var k = Math.floor(i / 2);
+          var up = i % 2 === 0;
+          var tx = up ? x0 + w / 2 + k * w : x0 + w + k * w;
+          var ty = up ? yBot : yTop;
+          var deg = up ? -90 : 90;
+          pth.setAttribute('transform', 'translate(' + tx.toFixed(1) + ' ' + ty + ') rotate(' + deg + ')');
+        });
+      }
+      function animate() {
+        if (reduced()) { shape(); return; }
+        var from = paths.map(function (pth, i) {
+          return { x: cx, y: cy, deg: i * 360 / n + 360 / n / 2 };
+        });
+        var to = [];
+        paths.forEach(function (pth, i) {
+          var k = Math.floor(i / 2);
+          to.push({ x: i % 2 === 0 ? x0 + w / 2 + k * w : x0 + w + k * w, y: i % 2 === 0 ? yBot : yTop, deg: i % 2 === 0 ? -90 : 90 });
+        });
+        var t0 = null;
+        function frame(ts) {
+          if (t0 === null) t0 = ts;
+          var p = Math.min(1, (ts - t0) / 1000);
+          var e = p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
+          paths.forEach(function (pth, i) {
+            var x = from[i].x + (to[i].x - from[i].x) * e;
+            var y = from[i].y + (to[i].y - from[i].y) * e;
+            var dg = from[i].deg + (to[i].deg - from[i].deg) * e;
+            pth.setAttribute('transform', 'translate(' + x.toFixed(1) + ' ' + y.toFixed(1) + ') rotate(' + dg.toFixed(1) + ')');
+          });
+          if (p < 1) requestAnimationFrame(frame);
+        }
+        requestAnimationFrame(frame);
+      }
+
+      var STEPS = [
+        { text: '先把圆<b>平均分成 16 份</b>——每一份都是一个小扇形，弧长是周长的 1/16。',
+          run: function () { note.textContent = '16 等份'; } },
+        { text: '把它们<b>交错</b>拼起来，尖齿互相咬合，就得到一个近似的长方形。',
+          run: function () { animate(); note.textContent = '分的份数越多，越接近长方形'; } },
+        { text: '这个长方形的<b>长</b>是周长的一半 <b>πr</b>（8 份弧长），<b>宽</b>就是半径 <b>r</b>。',
+          run: function () {
+            box.style.opacity = 1;
+            lw.textContent = '长 = πr ≈ ' + (Math.PI * r / 10).toFixed(1) + '（单位）';
+            lh.textContent = '宽 = r';
+            note.textContent = '长 = 周长 ÷ 2，宽 = 半径';
+          } },
+        { text: '面积 = 长 × 宽 = πr × r = <b>πr²</b>。这就是圆面积公式的来历。',
+          run: function () { note.textContent = 'S = πr²'; } }
+      ];
+      var idx = 0;
+      return {
+        el: svg,
+        next: function () {
+          if (idx >= STEPS.length) return null;
+          var st = STEPS[idx++]; st.run();
+          return { text: st.text, done: idx >= STEPS.length };
+        },
+        startDemo: function () {
+          idx = 0;
+          paths.forEach(function (pth, i) {
+            pth.setAttribute('transform', 'translate(' + cx + ' ' + cy + ') rotate(' + (i * 360 / n + 360 / n / 2) + ')');
+          });
+          box.style.opacity = 0; lw.textContent = ''; lh.textContent = ''; note.textContent = '';
+          return this;
+        },
+        reset: function () { return this.startDemo(); }
+      };
+    }
+  }
+
+  /* ══════════════════════════════════════════════════════
+   * 扇形
+   * 为什么单独做：扇形是六年级第一次用「角」去刻画图形大小的地方。
+   * 圆心角一拖，扇形占圆的几分之几跟着变——弧、半径、圆心角三者才连起来。
+   * ══════════════════════════════════════════════════════ */
+  function sector(el, spec) {
+    spec = spec || {};
+    var deg = spec.deg || 90;
+    var W = 360, H = 250;
+    // .viz 是 flex 行布局，控件行/SVG/提示要包进一个块级内层才不会横排挤压
+    var inner = h('div');
+    inner.style.width = '100%';
+    el.appendChild(inner);
+    var svg = s('svg', { viewBox: '0 0 ' + W + ' ' + H, class: 'sec-svg', role: 'img' }, inner);
+    var BLUE = '#38bdf8', ORG = '#fbbf24', GRN = '#4ade80';
+    var cx = 160, cy = 126, r = 74;
+
+    var wrap = h('div', 'fm-ctl');
+    inner.insertBefore(wrap, svg);
+    wrap.appendChild(h('span', null, '圆心角'));
+    var rg = document.createElement('input');
+    rg.type = 'range'; rg.min = '30'; rg.max = '330'; rg.step = '15'; rg.value = String(deg);
+    rg.setAttribute('aria-label', '圆心角');
+    wrap.appendChild(rg);
+    var vG = h('b', null, deg + '°'); wrap.appendChild(vG);
+    var tip = h('div', 'muted', '');
+    inner.appendChild(tip);
+
+    var arc = s('path', { fill: 'none', stroke: ORG, 'stroke-width': 3 }, svg);
+    var fill = s('path', { fill: BLUE, 'fill-opacity': 0.35, stroke: 'none' }, svg);
+    var r1 = s('line', { x1: cx, y1: cy, x2: cx + r, y2: cy, stroke: 'var(--text)', 'stroke-width': 2 }, svg);
+    var r2 = s('line', { stroke: 'var(--text)', 'stroke-width': 2 }, svg);
+    var dotO = s('circle', { cx: cx, cy: cy, r: 3.5, fill: 'var(--text)' }, svg);
+    var lblO = T(svg, cx - 12, cy + 18, 'O', 'font-size:12px;font-weight:700;fill:var(--text)');
+    var arcTxt = T(svg, 0, 0, '弧', 'font-size:11.5px;font-weight:700;fill:' + ORG + ';text-anchor:middle');
+    var angTxt = T(svg, 0, 0, '', 'font-size:12px;font-weight:700;fill:' + GRN + ';text-anchor:middle');
+    var angArc = s('path', { fill: 'none', stroke: GRN, 'stroke-width': 2 }, svg);
+    var note = T(svg, 180, 236, '', 'font-size:12.5px;font-weight:600;fill:var(--dim);text-anchor:middle');
+    var fracTxt = T(svg, 180, 34, '', 'font-size:14px;font-weight:700;fill:var(--text);text-anchor:middle');
+
+    function draw() {
+      var a = -deg * Math.PI / 180;                       // 逆时针量角，终点在上半
+      var x1 = cx + r * Math.cos(0), y1 = cy + r * Math.sin(0);
+      var x2 = cx + r * Math.cos(a), y2 = cy + r * Math.sin(a);
+      fill.setAttribute('d', 'M' + cx + ' ' + cy + ' L' + x1 + ' ' + y1 +
+        ' A' + r + ' ' + r + ' 0 0 0 ' + x2.toFixed(1) + ' ' + y2.toFixed(1) + ' Z');
+      arc.setAttribute('d', 'M' + x1 + ' ' + y1 + ' A' + r + ' ' + r + ' 0 0 0 ' + x2.toFixed(1) + ' ' + y2.toFixed(1));
+      r2.setAttribute('x1', cx); r2.setAttribute('y1', cy); r2.setAttribute('x2', x2.toFixed(1)); r2.setAttribute('y2', y2.toFixed(1));
+      var mid = -a / 2;
+      arcTxt.setAttribute('x', (cx + (r + 16) * Math.cos(mid)).toFixed(1));
+      arcTxt.setAttribute('y', (cy + (r + 16) * Math.sin(mid)).toFixed(1));
+      var ar = 26;
+      angArc.setAttribute('d', 'M' + (cx + ar) + ' ' + cy + ' A' + ar + ' ' + ar + ' 0 0 0 ' +
+        (cx + ar * Math.cos(a)).toFixed(1) + ' ' + (cy + ar * Math.sin(a)).toFixed(1));
+      angTxt.setAttribute('x', (cx + (ar + 20) * Math.cos(mid)).toFixed(1));
+      angTxt.setAttribute('y', (cy + (ar + 20) * Math.sin(mid) + 4).toFixed(1));
+      angTxt.textContent = deg + '°';
+      var g = gcd(deg, 360);
+      fracTxt.textContent = '这个扇形占整个圆的 ' + deg + '/360 = ' + (deg / g) + '/' + (360 / g);
+      note.textContent = '圆心角 ' + deg + '° —— 扇形大小由圆心角和半径共同决定';
+      tip.textContent = '圆心角 ' + deg + '° → 扇形是这个圆的 ' + (deg / 360 * 100).toFixed(0) + '%';
+    }
+    function gcd(a, b) { while (b) { var t = b; b = a % b; a = t; } return a; }
+    draw();
+    rg.oninput = function () { deg = +this.value; vG.textContent = deg + '°'; draw(); };
+
+    var STEPS = [
+      { text: '圆上两点之间的部分叫<b>弧</b>（橙色那段）。弧是曲线，不是线段。',
+        run: function () { fill.style.opacity = 0; angArc.style.opacity = 0; angTxt.style.opacity = 0; draw(); } },
+      { text: '一条弧和经过它两端的<b>两条半径</b>围成的图形，就是<b>扇形</b>。',
+        run: function () { fill.style.opacity = 1; draw(); } },
+      { text: '这两条半径的夹角叫<b>圆心角</b>——顶点在圆心上。扇形的大小就用它来刻画。',
+        run: function () { angArc.style.opacity = 1; angTxt.style.opacity = 1; draw(); note.textContent = '圆心角的顶点必须在圆心'; } },
+      { text: '圆心角是 90° 的扇形，正好是这个圆的 <b>1/4</b>；180° 是 <b>1/2</b>。拖滑块试试别的大小。',
+        run: function () { draw(); note.textContent = '同圆里圆心角越大，扇形越大'; } },
+      { text: '还要看半径：圆心角相同，<b>半径越大扇形也越大</b>。所以扇形的大小由圆心角和半径<b>共同</b>决定。',
+        run: function () { draw(); note.textContent = '圆心角 + 半径，两个都不能少'; } }
+    ];
+    var idx = 0;
+    return {
+      el: svg,
+      next: function () {
+        if (idx >= STEPS.length) return null;
+        var st = STEPS[idx++]; st.run();
+        return { text: st.text, done: idx >= STEPS.length };
+      },
+      startDemo: function () {
+        idx = 0;
+        deg = spec.deg || 90;
+        rg.value = String(deg); vG.textContent = deg + '°';
+        fill.style.opacity = 1; angArc.style.opacity = 1; angTxt.style.opacity = 1;
+        draw(); tip.textContent = '';
+        return this;
+      },
+      reset: function () { return this.startDemo(); }
+    };
+  }
+
+  /* ══════════════════════════════════════════════════════
+   * 圆柱与圆锥
+   * 为什么单独做：侧面「展开是长方形」这句话，不亲眼看见曲面被剪开摊平，
+   * 就只能死记。体积公式同理——底面积乘高是从长方体搬过来的老道理。
+   * ══════════════════════════════════════════════════════ */
+  function cylinder(el, spec) {
+    spec = spec || {};
+    var shape = spec.shape || 'cylinder';
+    var W = 360, H = 250;
+    var svg = s('svg', { viewBox: '0 0 ' + W + ' ' + H, class: 'cyl-svg', role: 'img' }, el);
+    var BLUE = '#38bdf8', ORG = '#fbbf24', GRN = '#4ade80', RED = '#f87171';
+    var r = 28, hh = 96, rx = 30, ry = 11;
+
+    if (shape === 'cone') return conePart();
+    return cylPart();
+
+    function cylPart() {
+      var cx0 = 96, yTop = 62, yBot = yTop + hh;
+      T(svg, 180, 22, '圆柱：两个底面 + 一个侧面', 'font-size:13.5px;font-weight:700;fill:var(--text);text-anchor:middle');
+
+      var g = s('g', {}, svg);
+      s('ellipse', { cx: cx0, cy: yBot, rx: rx, ry: ry, fill: 'var(--card)', stroke: 'var(--text)', 'stroke-width': 1.6 }, g);
+      s('path', { d: 'M' + (cx0 - rx) + ' ' + yTop + ' L' + (cx0 - rx) + ' ' + yBot +
+        ' A' + rx + ' ' + ry + ' 0 0 0 ' + (cx0 + rx) + ' ' + yBot + ' L' + (cx0 + rx) + ' ' + yTop + ' Z',
+        fill: BLUE, 'fill-opacity': 0.28, stroke: 'var(--text)', 'stroke-width': 1.6 }, g);
+      var top = s('ellipse', { cx: cx0, cy: yTop, rx: rx, ry: ry, fill: 'var(--card)', stroke: 'var(--text)', 'stroke-width': 1.8 }, g);
+      var rLine = s('line', { x1: cx0, y1: yTop, x2: cx0 + rx, y2: yTop, stroke: ORG, 'stroke-width': 2.2 }, g);
+      var rTxt = T(g, cx0 + rx / 2 + 4, yTop - 6, 'r', 'font-size:12px;font-weight:700;fill:' + ORG);
+      var hLine = s('line', { x1: cx0 + rx, y1: yTop, x2: cx0 + rx, y2: yBot, stroke: GRN, 'stroke-width': 2, 'stroke-dasharray': '5 3' }, g);
+      var hTxt = T(g, cx0 + rx + 12, (yTop + yBot) / 2, 'h', 'font-size:12px;font-weight:700;fill:' + GRN);
+      var botTxt = T(g, cx0, yBot + 26, '底面（圆）', 'font-size:11px;fill:var(--dim);text-anchor:middle');
+      [top, rLine, rTxt, hLine, hTxt, botTxt].forEach(function (n) { n.style.opacity = 0; n.style.transition = 'opacity .4s ease'; });
+
+      // 侧面展开：一个逐渐变宽的长方形
+      var unroll = s('g', {}, svg);
+      unroll.style.opacity = 0; unroll.style.transition = 'opacity .4s ease';
+      var rect = s('rect', { x: 186, y: yTop, width: 2, height: hh, fill: BLUE, 'fill-opacity': 0.3, stroke: 'var(--text)', 'stroke-width': 1.6 }, unroll);
+      rect.style.transition = 'width .9s ease';
+      var cutLine = s('line', { x1: cx0 + rx, y1: yTop, x2: 186, y2: yTop, stroke: RED, 'stroke-width': 1.4, 'stroke-dasharray': '4 3' }, unroll);
+      var lenTxt = T(unroll, 0, yTop - 10, '', 'font-size:11.5px;font-weight:700;fill:' + RED + ';text-anchor:middle');
+      var widTxt = T(unroll, 0, yBot + 22, '', 'font-size:11.5px;font-weight:700;fill:' + GRN + ';text-anchor:middle');
+
+      var note = T(svg, 180, 240, '', 'font-size:12.5px;font-weight:600;fill:var(--dim);text-anchor:middle');
+      var res = T(svg, 180, 212, '', 'font-size:16px;font-weight:700;fill:var(--text);text-anchor:middle');
+      res.style.opacity = 0; res.style.transition = 'opacity .35s ease';
+      var W2 = 2 * Math.PI * r;
+
+      var STEPS = [
+        { text: '圆柱上下两个<b>底面</b>是完全一样的圆，中间围着的<b>侧面</b>是曲面；两底之间的距离叫<b>高 h</b>。',
+          run: function () { [top, rLine, rTxt, hLine, hTxt, botTxt].forEach(function (n) { n.style.opacity = 1; }); } },
+        { text: '沿<b>高</b>把侧面剪开、摊平：侧面展开后是一个<b>长方形</b>。',
+          run: function () {
+            unroll.style.opacity = 1;
+            rect.setAttribute('width', String(W2));
+            cutLine.setAttribute('x2', String(186 + W2));
+            note.textContent = '曲面被剪开，摊成了平面';
+          } },
+        { text: '这个长方形的<b>长 = 底面周长 2πr</b>，<b>宽 = 高 h</b>。所以侧面积 = <b>2πrh</b>。',
+          run: function () {
+            lenTxt.setAttribute('x', String(186 + W2 / 2)); lenTxt.textContent = '长 = 2πr（底面周长）';
+            widTxt.setAttribute('x', String(186 + W2 / 2)); widTxt.textContent = '宽 = h';
+            note.textContent = '侧面积 = 底面周长 × 高';
+          } },
+        { text: '表面积 = 侧面积 + 2 个底面积 = <b>2πrh + 2πr²</b>。',
+          run: function () { res.textContent = 'S表 = 2πrh + 2πr²'; res.style.opacity = 1; } },
+        { text: '体积还是「底面积 × 高」这个老道理：<b>V = πr²h</b>——和长方体一样的算法。',
+          run: function () { res.textContent = 'V = πr²h = 底面积 × 高'; note.textContent = '与长方体同法：底面积 × 高'; } }
+      ];
+      var idx = 0;
+      return {
+        el: svg,
+        next: function () {
+          if (idx >= STEPS.length) return null;
+          var st = STEPS[idx++]; st.run();
+          return { text: st.text, done: idx >= STEPS.length };
+        },
+        startDemo: function () {
+          idx = 0;
+          unroll.style.opacity = 0;
+          rect.setAttribute('width', '2');
+          cutLine.setAttribute('x2', '186');
+          lenTxt.textContent = ''; widTxt.textContent = '';
+          res.style.opacity = 0; note.textContent = '';
+          [top, rLine, rTxt, hLine, hTxt, botTxt].forEach(function (n) { n.style.opacity = 0; });
+          return this;
+        },
+        reset: function () { return this.startDemo(); }
+      };
+    }
+
+    function conePart() {
+      var cx0 = 140, yBase = 164, apexY = 64;
+      T(svg, 180, 22, '圆锥：一个底面 + 一个顶点', 'font-size:13.5px;font-weight:700;fill:var(--text);text-anchor:middle');
+      var g = s('g', {}, svg);
+      s('ellipse', { cx: cx0, cy: yBase, rx: rx, ry: ry, fill: 'var(--card)', stroke: 'var(--text)', 'stroke-width': 1.6 }, g);
+      s('path', { d: 'M' + (cx0 - rx) + ' ' + yBase + ' L' + cx0 + ' ' + apexY + ' L' + (cx0 + rx) + ' ' + yBase +
+        ' A' + rx + ' ' + ry + ' 0 0 1 ' + (cx0 - rx) + ' ' + yBase + ' Z',
+        fill: ORG, 'fill-opacity': 0.3, stroke: 'var(--text)', 'stroke-width': 1.6 }, g);
+      var apex = s('circle', { cx: cx0, cy: apexY, r: 3.5, fill: RED }, g);
+      var apexTxt = T(g, cx0 + 8, apexY - 4, '顶点', 'font-size:11px;font-weight:700;fill:' + RED);
+      var hLine = s('line', { x1: cx0, y1: apexY, x2: cx0, y2: yBase, stroke: GRN, 'stroke-width': 2, 'stroke-dasharray': '5 3' }, g);
+      var hTxt = T(g, cx0 + 10, (apexY + yBase) / 2, 'h', 'font-size:12px;font-weight:700;fill:' + GRN);
+      var baseTxt = T(g, cx0, yBase + 26, '底面（圆）', 'font-size:11px;fill:var(--dim);text-anchor:middle');
+      [apex, apexTxt, hLine, hTxt, baseTxt].forEach(function (n) { n.style.opacity = 0; n.style.transition = 'opacity .4s ease'; });
+
+      // 等底等高圆柱（虚线）作对比
+      var cyl = s('g', {}, svg);
+      cyl.style.opacity = 0; cyl.style.transition = 'opacity .4s ease';
+      var cx1 = 266;
+      s('ellipse', { cx: cx1, cy: yBase, rx: rx, ry: ry, fill: 'none', stroke: 'var(--dim)', 'stroke-width': 1.4, 'stroke-dasharray': '5 4' }, cyl);
+      s('path', { d: 'M' + (cx1 - rx) + ' ' + apexY + ' L' + (cx1 - rx) + ' ' + yBase +
+        ' A' + rx + ' ' + ry + ' 0 0 0 ' + (cx1 + rx) + ' ' + yBase + ' L' + (cx1 + rx) + ' ' + apexY + ' Z',
+        fill: 'none', stroke: 'var(--dim)', 'stroke-width': 1.4, 'stroke-dasharray': '5 4' }, cyl);
+      s('ellipse', { cx: cx1, cy: apexY, rx: rx, ry: ry, fill: 'none', stroke: 'var(--dim)', 'stroke-width': 1.4, 'stroke-dasharray': '5 4' }, cyl);
+      T(cyl, cx1, yBase + 26, '等底等高圆柱', 'font-size:11px;fill:var(--dim);text-anchor:middle');
+      var x3 = T(cyl, (cx0 + cx1) / 2, 40, '', 'font-size:14px;font-weight:700;fill:' + RED + ';text-anchor:middle');
+
+      var note = T(svg, 180, 240, '', 'font-size:12.5px;font-weight:600;fill:var(--dim);text-anchor:middle');
+      var res = T(svg, 180, 212, '', 'font-size:16px;font-weight:700;fill:var(--text);text-anchor:middle');
+      res.style.opacity = 0; res.style.transition = 'opacity .35s ease';
+
+      var STEPS = [
+        { text: '圆锥有一个圆形的<b>底面</b>和一个<b>顶点</b>；从顶点到底面圆心的距离是它的<b>高 h</b>。',
+          run: function () { [apex, apexTxt, hLine, hTxt, baseTxt].forEach(function (n) { n.style.opacity = 1; }); } },
+        { text: '拿一个和它<b>等底等高</b>的圆柱来比：把圆锥装满水倒进去，得倒 <b>3 次</b>才能倒满。',
+          run: function () { cyl.style.opacity = 1; x3.textContent = '1 锥 × 3 = 1 柱'; note.textContent = '实验：倒 3 次正好倒满'; } },
+        { text: '所以圆锥体积是等底等高圆柱的 <b>1/3</b>：<b>V锥 = 1/3 πr²h</b>。',
+          run: function () { res.textContent = 'V锥 = 1/3 πr²h'; res.style.opacity = 1; note.textContent = 'V柱 = πr²h'; } },
+        { text: '反过来，等底等高的圆柱体积是圆锥的 3 倍。做题先找「等底等高」这个前提。',
+          run: function () { note.textContent = '前提：等底等高，缺一不可'; } }
+      ];
+      var idx = 0;
+      return {
+        el: svg,
+        next: function () {
+          if (idx >= STEPS.length) return null;
+          var st = STEPS[idx++]; st.run();
+          return { text: st.text, done: idx >= STEPS.length };
+        },
+        startDemo: function () {
+          idx = 0;
+          [apex, apexTxt, hLine, hTxt, baseTxt].forEach(function (n) { n.style.opacity = 0; });
+          cyl.style.opacity = 0; x3.textContent = ''; res.style.opacity = 0; note.textContent = '';
+          return this;
+        },
+        reset: function () { return this.startDemo(); }
+      };
+    }
+  }
+
   global.CR = {
     vertical: vertical,
+    circle: circle,
+    circleMeasure: circleMeasure,
+    sector: sector,
+    cylinder: cylinder,
     geometry: geometry,
     mult2: mult2,
     fracMeaning: fracMeaning,

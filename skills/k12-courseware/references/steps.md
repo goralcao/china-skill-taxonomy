@@ -49,6 +49,10 @@
 | `spinner` | 随机转盘 | `body{}` | `caption` `note` `demoLabel` |
 | `decMult` | 小数乘法定位 | `body{a,b}` | `caption` `note` `demoLabel` |
 | `decDiv` | 商不变转化 | `body{a,b}` | `caption` `note` `demoLabel` |
+| `circle` | 圆规画圆 | `body{}` | `caption` `note` `demoLabel` |
+| `circleMeasure` | 滚圆测周长/切拼面积 | `body{mode}` | `caption` `note` `demoLabel` |
+| `sector` | 扇形角控 | `body{deg}` | `caption` `note` `demoLabel` |
+| `cylinder` | 圆柱展开/圆锥对比 | `body{mode}` | `caption` `note` `demoLabel` |
 | `fracDiv` | 切饼分份（分数与除法） | `body{pies,people}` | `caption` `note` `demoLabel` |
 | `balance` | 天平找次品 | `body{total}` | `caption` `note` `demoLabel` |
 | `callTree` | 通话树（打电话） | `body{minutes}` | `caption` `note` `demoLabel` |

@@ -1,0 +1,32 @@
+{
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-27",
+  "subject": "数学",
+  "template": "explain",
+  "topicId": "mt_circle",
+  "title": "圆的认识：一根绳子转一圈",
+  "renderer": "circle",
+  "duration": 11,
+  "interactions": 3,
+  "grade": 6,
+  "standards": [
+    "math-2022:S3:GG:GM"
+  ],
+  "prerequisites": [
+    "mt_lines",
+    "mt_shape-2d"
+  ],
+  "next": [
+    "mt_circle-measure",
+    "mt_sector"
+  ],
+  "objectives": [
+    "认识圆心、半径、直径并理解 d=2r",
+    "理解圆心决定圆的位置、半径决定圆的大小",
+    "知道圆是轴对称图形且有无数条对称轴"
+  ],
+  "cognitiveAction": "构造"
+}

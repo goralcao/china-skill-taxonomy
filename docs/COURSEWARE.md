@@ -156,6 +156,10 @@ schema/course.schema.json
 | `spinner` | 随机转盘 | 可能性 | 真随机旋转记账，频率靠近区域占比 |
 | `decMult` | 小数点定位 | 小数乘法 | 先按整数算，数小数位点小数点 |
 | `decDiv` | 商不变转化 | 小数除法 | 除数变整数，×10 箭头演示同步移位 |
+| `circle` | 圆规画圆 | 圆的认识 | 针尖钉住、笔尖转一圈，半径一转即成圆 |
+| `circleMeasure` | 滚圆测周长 | 圆的周长与面积 | 圆片沿直线滚动一周量出 C，C/d=π；面积切拼成矩形推 S=πr² |
+| `sector` | 扇形角控 | 扇形 | 滑块调圆心角，弧长与面积随之变化，90° 即四分之一圆 |
+| `cylinder` | 圆柱展开 | 圆柱与圆锥 | 侧面沿高剪开展平成矩形，推 S侧=2πrh；等底等高圆锥装水倒 3 次 |
 | `fracDiv` | 切饼分份 | 分数与除法 | 每块饼真切开、真分掉，3÷4=3/4 有了来历；假分数化带分数 |
 | `balance` | 天平找次品 | 找次品 | 分三份→称量→嫌疑缩到 1/3，天平真的会倾斜 |
 | `callTree` | 通话树 | 打电话 | 每分钟长一层，1→2→4→8→16 翻倍看得见 |
@@ -409,7 +413,7 @@ localStorage.setItem('stx.course.' + TOPIC_ID,
 
 - `templates/engine.js` 接管页面骨架与全部通用逻辑
 - 课件只剩 `content.json`（steps 数组）+ 一个 16 行的薄壳 `index.html`
-- 41 种步骤类型：`intro` / `text` / `vertical` / `geometry` / `solid` / `pyramid` / `division` / `mult2` / `molecule` / `calendar` / `decimal` / `table` / `compass` / `law` / `triangle` / `counter` / `angle` / `quad` / `decGrid` / `chart` / `mean` / `polyArea` / `factorGrid` / `fracMeaning` / `fracOps` / `fracReduce` / `spinner` / `decMult` / `decDiv` / `volume` / `pairs` / `treePlant` / `symmetry` / `numberline` / `clock` / `fracDiv` / `balance` / `callTree` / `quiz` / `choice` / `summary`
+- 45 种步骤类型：`intro` / `text` / `vertical` / `geometry` / `solid` / `pyramid` / `division` / `mult2` / `molecule` / `calendar` / `decimal` / `table` / `compass` / `law` / `triangle` / `counter` / `angle` / `quad` / `decGrid` / `chart` / `mean` / `polyArea` / `factorGrid` / `fracMeaning` / `fracOps` / `fracReduce` / `spinner` / `decMult` / `decDiv` / `volume` / `pairs` / `treePlant` / `symmetry` / `numberline` / `clock` / `fracDiv` / `balance` / `callTree` / `circle` / `circleMeasure` / `sector` / `cylinder` / `quiz` / `choice` / `summary`
 - 构建时把 content.json、engine.js、renderers.js、base.css 全部内联，产物仍是单文件
 
 写一节课从「复制 300 行 HTML」变成「写 60 行 JSON」。

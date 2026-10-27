@@ -1,0 +1,32 @@
+{
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-27",
+  "subject": "数学",
+  "template": "explain",
+  "topicId": "mt_sector",
+  "title": "扇形：圆心角说了算",
+  "renderer": "sector",
+  "duration": 10,
+  "interactions": 3,
+  "grade": 6,
+  "standards": [
+    "math-2022:S3:GG:GM"
+  ],
+  "prerequisites": [
+    "mt_circle",
+    "mt_angle-measure",
+    "mt_circle-measure"
+  ],
+  "next": [
+    "mt_pie-chart"
+  ],
+  "objectives": [
+    "认识弧、圆心角与扇形各部分的名称",
+    "理解扇形大小由圆心角和半径共同决定",
+    "会算扇形占整个圆的几分之几"
+  ],
+  "cognitiveAction": "比较"
+}

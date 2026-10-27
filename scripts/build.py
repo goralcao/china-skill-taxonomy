@@ -88,7 +88,7 @@ import teaching_research_chinese_senior  # noqa: E402
 import teaching_research_math_senior  # noqa: E402
 import teaching_research_english_senior  # noqa: E402
 
-VERSION = "v0.40.0"
+VERSION = "v0.41.0"
 SCHEMA_VERSION = 1
 
 MODULES = [
@@ -752,6 +752,69 @@ def minify_light(text: str, kind: str = "js") -> str:
     return "\n".join(out)
 
 
+# ── 渲染器按课程裁剪 ─────────────────────────────────────
+# 全量 renderers.js 压缩后已超 200KB（评分器「单文件偏大」阈值）。
+# 每节课只用得到两三个渲染器，按需裁剪：解析顶层 function 块，
+# 取 prelude + 用到的渲染器 + 引擎公共件（graphNav/extend/graphHref），
+# 再整体交给 esbuild 压缩。渲染器之间互不调用，裁剪是安全的。
+
+_FUNC_RE = re.compile(r"(?m)^  function ([A-Za-z_$][\w$]*)\(([^)]*)\) \{")
+
+
+def _split_renderers(src: str):
+    """把 renderers.js 切成 prelude、函数块表、tail（global.CR 导出之后）。"""
+    matches = list(_FUNC_RE.finditer(src))
+    if not matches:
+        raise SystemExit("renderers.js 里解析不到顶层 function 块")
+    prelude = src[: matches[0].start()]
+    blocks = {}
+    for i, m in enumerate(matches):
+        end = matches[i + 1].start() if i + 1 < len(matches) else src.index("global.CR = {")
+        blocks[m.group(1)] = src[m.start():end].rstrip() + "\n"
+    tail_at = src.index("global.CR = {")
+    return prelude, blocks, src[tail_at:]
+
+
+def _assemble_renderers(prelude, blocks, names, tail=None):
+    """按名字集合拼装一份可执行的 renderers 源码（含引擎公共件）。
+
+    names 为 None 表示全量：直接用原始导出块，不做任何裁剪。
+    """
+    if names is None:
+        return prelude + "".join(blocks[n] for n in blocks) + tail
+    parts = [prelude]
+    for n in names:
+        if n not in blocks:
+            raise SystemExit(f"renderers.js 里找不到函数块：{n}")
+        parts.append(blocks[n])
+    parts.append("global.CR = {" + ",".join(f"{n}:{n}" for n in sorted(names)) + "};\n})(window);\n")
+    return "\n".join(parts)
+
+
+def _renderers_for_course(content, course_dir) -> set:
+    """从课件步骤里取用到的渲染器名，加上引擎公共依赖；无 content 则全量。
+
+    注意：新增顶层辅助函数（如 s/h/T/a）必须同步加进 HELPER，
+    否则按课裁剪后引用它的渲染器会拿到 undefined。
+    """
+    helper = {"s", "h", "T", "a", "reduced", "graphHref", "graphNav", "extend"}
+    if not content:
+        # 手写课件（无 content.json）：扫描 index.html 里 CR.xxx( 的调用来裁剪；
+        # 一个都扫不到时回退全量。
+        html = (course_dir / "index.html").read_text(encoding="utf-8")
+        called = set(re.findall(r"CR\.([A-Za-z_$][\w$]*)\s*\(", html))
+        return called | helper if called else None
+    plain = {"intro", "text", "quiz", "choice", "summary"}
+    alias = {"decimal": "decimalBar", "table": "barGroup"}  # 引擎别名：类型名 → 渲染器名
+    used = set()
+    for st in content.get("steps", []):
+        t = st.get("type", "")
+        if t and t not in plain:
+            used.add(alias.get(t, t))
+    return used | helper
+
+
+
 def sync_courses_to_viz(topics, deps):
     """把 courses/ 打包进 viz/courses/。
 
@@ -770,7 +833,8 @@ def sync_courses_to_viz(topics, deps):
     if not base_css_path.exists() or not renderers_path.exists():
         raise SystemExit("缺 templates/base.css 或 templates/renderers.js，课件无法内联")
     base_css = minify_light(base_css_path.read_text(encoding="utf-8"), "css")
-    renderers = minify_js(renderers_path.read_text(encoding="utf-8"))
+    renderer_src = renderers_path.read_text(encoding="utf-8")
+    r_prelude, r_blocks, r_tail = _split_renderers(renderer_src)
     engine_path = ROOT / "templates" / "engine.js"
     engine_js = minify_js(engine_path.read_text(encoding="utf-8")) if engine_path.exists() else ""
 
@@ -801,6 +865,7 @@ def sync_courses_to_viz(topics, deps):
         text = html_path.read_text(encoding="utf-8")
 
         # 0) 引擎型课件：content.json 内联进页面，引擎一并内联
+        content = None
         content_path = d / "content.json"
         if content_path.exists():
             content = json.loads(content_path.read_text(encoding="utf-8"))
@@ -834,7 +899,9 @@ def sync_courses_to_viz(topics, deps):
         )
         text = re.sub(
             r'[ \t]*<script[^>]*src="[^"]*templates/renderers\.js"[^>]*></script>',
-            lambda m: "<script>\n" + renderers + "\n</script>",
+            lambda m: "<script>\n"
+            + minify_js(_assemble_renderers(r_prelude, r_blocks, _renderers_for_course(content, d), r_tail))
+            + "\n</script>",
             text,
         )
 
