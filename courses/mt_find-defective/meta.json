@@ -1,0 +1,29 @@
+{
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-27",
+  "subject": "数学",
+  "template": "explain",
+  "topicId": "mt_find-defective",
+  "title": "找次品：把嫌疑压到三分之一",
+  "renderer": "balance",
+  "duration": 11,
+  "interactions": 2,
+  "grade": 5,
+  "standards": [
+    "math-2022:S3:PP"
+  ],
+  "prerequisites": [
+    "mt_div-avg",
+    "mt_data-collect"
+  ],
+  "next": [],
+  "objectives": [
+    "会用天平找次品，掌握把物品尽量平均分成三份的方法",
+    "理解称的次数与物品数量的关系",
+    "体会优化策略：每称一次排除三分之二"
+  ],
+  "cognitiveAction": "构造"
+}

@@ -246,6 +246,66 @@
         return f;
       },
 
+      fracDiv: function (s) {
+        var f = document.createDocumentFragment();
+        if (s.title) f.appendChild(h('h2', null, s.title));
+        var box = h('div', 'viz');
+        f.appendChild(box);
+        var ctrl = CR.fracDiv(box, s.body || s);
+        if (s.caption) {
+          var cap = h('div', 'viz-cap');
+          cap.innerHTML = s.caption;
+          f.appendChild(cap);
+        }
+        attachDemo(f, ctrl, s);
+        if (s.note) {
+          var card = h('div', 'card' + (s.warn ? ' pitfall' : ' tip'));
+          card.innerHTML = '<p style="margin:0">' + s.note + '</p>';
+          f.appendChild(card);
+        }
+        return f;
+      },
+
+      balance: function (s) {
+        var f = document.createDocumentFragment();
+        if (s.title) f.appendChild(h('h2', null, s.title));
+        var box = h('div', 'viz');
+        f.appendChild(box);
+        var ctrl = CR.balance(box, s.body || s);
+        if (s.caption) {
+          var cap = h('div', 'viz-cap');
+          cap.innerHTML = s.caption;
+          f.appendChild(cap);
+        }
+        attachDemo(f, ctrl, s);
+        if (s.note) {
+          var card = h('div', 'card' + (s.warn ? ' pitfall' : ' tip'));
+          card.innerHTML = '<p style="margin:0">' + s.note + '</p>';
+          f.appendChild(card);
+        }
+        return f;
+      },
+
+      callTree: function (s) {
+        var f = document.createDocumentFragment();
+        if (s.title) f.appendChild(h('h2', null, s.title));
+        var box = h('div', 'viz');
+        f.appendChild(box);
+        var ctrl = CR.callTree(box, s.body || s);
+        if (s.caption) {
+          var cap = h('div', 'viz-cap');
+          cap.innerHTML = s.caption;
+          f.appendChild(cap);
+        }
+        attachDemo(f, ctrl, s);
+        if (s.note) {
+          var card = h('div', 'card' + (s.warn ? ' pitfall' : ' tip'));
+          card.innerHTML = '<p style="margin:0">' + s.note + '</p>';
+          f.appendChild(card);
+        }
+        return f;
+      },
+
       decimal: function (s) {
         var f = document.createDocumentFragment();
         if (s.title) f.appendChild(h('h2', null, s.title));

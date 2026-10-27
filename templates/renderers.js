@@ -4513,6 +4513,414 @@
     };
   }
 
+  /* ══════════════════════════════════════════════════════
+   * 分数与除法
+   * 为什么单独做：a÷b=a/b 是一次「抽象跳」，孩子背得出对应关系却讲不出道理。
+   * 让 3 块饼真的被切开、12 小份真的被分掉，分子分母就各有了来历。
+   * ══════════════════════════════════════════════════════ */
+  function fracDiv(el, spec) {
+    spec = spec || {};
+    var pies = spec.pies || 3;
+    var people = spec.people || 4;
+    var W = 360, H = 250;
+    var svg = s('svg', { viewBox: '0 0 ' + W + ' ' + H, class: 'fdv-svg', role: 'img' }, el);
+    var RED = '#f87171', BLUE = '#38bdf8', GRN = '#4ade80', ORG = '#fbbf24';
+    var PCOL = [RED, BLUE, GRN, ORG];
+    var CAKE = '#fcd34d', EDGE = 'var(--dim)';
+    var R = 24;
+    var total = pies * people;
+
+    // 顶部标题算式
+    T(svg, 180, 22, pies + ' 块饼 ÷ ' + people + ' 人 = ?', 'font-size:15px;font-weight:700;fill:var(--text);text-anchor:middle');
+
+    // 饼：上排
+    var pieXs = [];
+    var gap = W / (pies + 1);
+    for (var p = 0; p < pies; p++) pieXs.push(gap * (p + 1));
+    var pieY = 56;
+    var pieGroups = [];
+    for (p = 0; p < pies; p++) {
+      var g = s('g', {}, svg);
+      var cx = pieXs[p];
+      s('circle', { cx: cx, cy: pieY, r: R, fill: CAKE, stroke: EDGE, 'stroke-width': 1.2 }, g);
+      var sectors = [];
+      for (var i = 0; i < people; i++) {
+        var a0 = -Math.PI / 2 + (i * 2 * Math.PI) / people;
+        var a1 = -Math.PI / 2 + ((i + 1) * 2 * Math.PI) / people;
+        var x0 = cx + R * Math.cos(a0), y0 = pieY + R * Math.sin(a0);
+        var x1 = cx + R * Math.cos(a1), y1 = pieY + R * Math.sin(a1);
+        var path = s('path', {
+          d: 'M' + cx + ' ' + pieY + ' L' + x0.toFixed(1) + ' ' + y0.toFixed(1) +
+             ' A' + R + ' ' + R + ' 0 0 1 ' + x1.toFixed(1) + ' ' + y1.toFixed(1) + ' Z',
+          fill: 'transparent', stroke: EDGE, 'stroke-width': 0.8
+        }, g);
+        path.style.opacity = 0;
+        sectors.push(path);
+      }
+      pieGroups.push({ g: g, sectors: sectors });
+    }
+
+    // 盘子：下排
+    var plateY = 178, plateW = Math.min(56, (W - 40) / people - 8);
+    var plateXs = [];
+    var pgap = W / (people + 1);
+    for (i = 0; i < people; i++) plateXs.push(pgap * (i + 1));
+    var plateGroups = [];
+    for (i = 0; i < people; i++) {
+      var pg = s('g', {}, svg);
+      pg.style.opacity = 0; pg.style.transition = 'opacity .4s ease';
+      s('rect', { x: plateXs[i] - plateW / 2, y: plateY - 14, width: plateW, height: 30, rx: 6,
+        fill: 'var(--card)', stroke: PCOL[i], 'stroke-width': 1.5 }, pg);
+      plateGroups.push(pg);
+    }
+    var plateLbl = T(svg, 180, 214, '', 'font-size:12px;fill:var(--dim);text-anchor:middle');
+
+    // 底部结论
+    var eq = T(svg, 180, 240, '', 'font-size:17px;font-weight:700;fill:var(--text);text-anchor:middle');
+    eq.style.opacity = 0; eq.style.transition = 'opacity .35s ease';
+
+    // 给第 i 个人的饼片上色（每块饼的第 i 份）
+    function colorFor(i) {
+      for (var j = 0; j < pies; j++) {
+        var sec = pieGroups[j].sectors[i];
+        sec.setAttribute('fill', PCOL[i]);
+        sec.setAttribute('fill-opacity', 0.85);
+      }
+    }
+    function fillPlate(idx, parts) {
+      var pg = plateGroups[idx];
+      pg.style.opacity = 1;
+      var n = parts.length; // 每小片角度
+      var pr = 11, cx = plateXs[idx], cy = plateY + 1;
+      for (var k = 0; k < n; k++) {
+        var a0 = -Math.PI / 2 + (k * 2 * Math.PI) / n;
+        var a1 = -Math.PI / 2 + ((k + 1) * 2 * Math.PI) / n;
+        s('path', {
+          d: 'M' + cx + ' ' + cy + ' L' + (cx + pr * Math.cos(a0)).toFixed(1) + ' ' + (cy + pr * Math.sin(a0)).toFixed(1) +
+             ' A' + pr + ' ' + pr + ' 0 0 1 ' + (cx + pr * Math.cos(a1)).toFixed(1) + ' ' + (cy + pr * Math.sin(a1)).toFixed(1) + ' Z',
+          fill: PCOL[idx], 'fill-opacity': 0.85, stroke: EDGE, 'stroke-width': 0.5
+        }, pg);
+      }
+    }
+    function wholePlate(idx) {
+      // 1 整块 + 1 小份（带分数用）
+      var pg = plateGroups[idx];
+      pg.style.opacity = 1;
+      var cx = plateXs[idx] - 10, cy = plateY + 1;
+      s('circle', { cx: cx, cy: cy, r: 11, fill: PCOL[idx], 'fill-opacity': 0.85, stroke: EDGE, 'stroke-width': 0.6 }, pg);
+      var cx2 = plateXs[idx] + 12, pr = 11;
+      s('path', {
+        d: 'M' + cx2 + ' ' + cy + ' L' + cx2 + ' ' + (cy - pr) +
+           ' A' + pr + ' ' + pr + ' 0 0 1 ' + (cx2 + pr) + ' ' + cy + ' Z',
+        fill: PCOL[idx], 'fill-opacity': 0.85, stroke: EDGE, 'stroke-width': 0.5
+      }, pg);
+    }
+
+    var frac = function (a, b) { return a + '/' + b; };
+    var improper = pies > people;
+    var STEPS;
+    if (!improper) {
+      STEPS = [
+        { text: '<b>' + pies + ' 块饼平均分给 ' + people + ' 个人</b>，每人分到几块？每人不到 1 块，得用分数说话。', run: function () {} },
+        { text: '把每块饼平均切成 ' + people + ' 份：' + pies + '×' + people + '=' + total + ' 小份，每份是 <b>1/' + people + '</b> 块。',
+          run: function () { pieGroups.forEach(function (pg) { pg.sectors.forEach(function (sc) { sc.style.opacity = 1; }); }); } },
+        { text: total + ' 小份平均分给 ' + people + ' 人：每人拿 <b>' + pies + '</b> 小份，也就是 ' + pies + ' 个 1/' + people + ' 块。',
+          run: function () {
+            for (var i2 = 0; i2 < people; i2++) { colorFor(i2); fillPlate(i2, new Array(pies)); }
+            plateLbl.textContent = '每人 ' + pies + ' 小份，颜色相同';
+          } },
+        { text: pies + ' 个 1/' + people + ' 块是 <b>' + frac(pies, people) + '</b> 块：<b>' + pies + ' ÷ ' + people + ' = ' + frac(pies, people) + '</b>。被除数是分子，除数是分母，除号变分数线。',
+          run: function () { eq.textContent = pies + ' ÷ ' + people + ' = ' + frac(pies, people) + '（块）'; eq.style.opacity = 1; } }
+      ];
+    } else {
+      STEPS = [
+        { text: '<b>' + pies + ' 块饼平均分给 ' + people + ' 个人</b>，每人分到几块？这次每人不止 1 块了。', run: function () {} },
+        { text: '还是每块切 ' + people + ' 份：' + pies + '×' + people + '=' + total + ' 小份，每人 <b>' + pies + '</b> 小份，即 ' + pies + ' 个 1/' + people + ' 块。',
+          run: function () { pieGroups.forEach(function (pg) { pg.sectors.forEach(function (sc) { sc.style.opacity = 1; }); }); } },
+        { text: pies + ' 个 1/' + people + ' 块是 <b>' + frac(pies, people) + '</b> 块：<b>' + pies + ' ÷ ' + people + ' = ' + frac(pies, people) + '</b>。分子比分母大——这样的分数叫<b>假分数</b>。',
+          run: function () {
+            for (var i2 = 0; i2 < people; i2++) { colorFor(i2); fillPlate(i2, new Array(pies)); }
+            plateLbl.textContent = '每人 ' + pies + ' 小份';
+            eq.textContent = pies + ' ÷ ' + people + ' = ' + frac(pies, people) + '（块）'; eq.style.opacity = 1;
+          } },
+        { text: frac(pies, people) + ' 块 = ' + people + '/' + people + ' 块 + ' + (pies - people) + '/' + people + ' 块 = <b>1 又 ' + frac(pies - people, people) + '</b> 块。假分数都能化成<b>带分数</b>或整数。',
+          run: function () {
+            plateGroups.forEach(function (pg) { pg.style.opacity = 0; });
+            plateLbl.textContent = '';
+            wholePlate(0);
+            plateLbl.textContent = '1 整块 + 1/' + people + ' 块';
+            eq.textContent = frac(pies, people) + ' = 1 + ' + frac(pies - people, people) + ' = 1又' + frac(pies - people, people) + '（块）';
+          } }
+      ];
+    }
+
+    var idx = 0;
+    function resetFn() {
+      idx = 0;
+      pieGroups.forEach(function (pg) { pg.sectors.forEach(function (sc) { sc.setAttribute('fill', 'transparent'); sc.setAttribute('fill-opacity', 1); sc.style.opacity = 0; }); });
+      plateGroups.forEach(function (pg) { while (pg.firstChild) pg.removeChild(pg.firstChild); pg.style.opacity = 0; });
+      plateLbl.textContent = '';
+      eq.style.opacity = 0;
+    }
+    return {
+      el: svg,
+      next: function () {
+        if (idx >= STEPS.length) return null;
+        var st = STEPS[idx++]; st.run();
+        return { text: st.text, done: idx >= STEPS.length };
+      },
+      startDemo: function () { resetFn(); return this; },
+      reset: function () { return this.startDemo(); }
+    };
+  }
+
+  /* ══════════════════════════════════════════════════════
+   * 找次品
+   * 为什么单独做：光背「分三份」没有用，要让孩子看见
+   * 每称一次天平就把嫌疑范围压到三分之一——优化策略是看得见的。
+   * ══════════════════════════════════════════════════════ */
+  function balance(el, spec) {
+    spec = spec || {};
+    var total = spec.total || 9;
+    var W = 360, H = 250;
+    var svg = s('svg', { viewBox: '0 0 ' + W + ' ' + H, class: 'bal-svg', role: 'img' }, el);
+    var RED = '#f87171', BLUE = '#38bdf8', GRAY = 'var(--dim)', ORG = '#fbbf24';
+    var per = Math.ceil(total / 3); // 3、3、3
+    var BY = 34;                    // 待分球行 y
+    var ballR = 9;
+
+    var title = T(svg, 180, 20, total + ' 个球里有 1 个偏轻的次品', 'font-size:14px;font-weight:700;fill:var(--text);text-anchor:middle');
+
+    // 天平：横梁 + 吊绳 + 两个盘
+    var pivot = { x: 180, y: 108 };
+    var beam = s('g', {}, svg);
+    var beamBar = s('rect', { x: pivot.x - 118, y: pivot.y - 3, width: 236, height: 5, rx: 2, fill: 'var(--text)' }, beam);
+    s('path', { d: 'M' + pivot.x + ' ' + (pivot.y + 2) + ' L' + (pivot.x - 10) + ' ' + (pivot.y + 26) + ' L' + (pivot.x + 10) + ' ' + (pivot.y + 26) + ' Z', fill: 'var(--text)' }, beam);
+    function pan(x, color) {
+      var g = s('g', {}, beam);
+      s('line', { x1: x, y1: pivot.y, x2: x, y2: pivot.y + 34, stroke: 'var(--dim)', 'stroke-width': 1 }, g);
+      s('path', { d: 'M' + (x - 30) + ' ' + (pivot.y + 44) + ' Q' + x + ' ' + (pivot.y + 58) + ' ' + (x + 30) + ' ' + (pivot.y + 44) + ' Z',
+        fill: 'var(--card)', stroke: color, 'stroke-width': 1.5 }, g);
+      return g;
+    }
+    var panL = pan(pivot.x - 104, BLUE);
+    var panR = pan(pivot.x + 104, RED);
+
+    // 待分球（顶部一行）
+    var balls = [];
+    var bx0 = 180 - ((total - 1) * 22) / 2;
+    for (var i = 0; i < total; i++) {
+      var c = s('circle', { cx: bx0 + i * 22, cy: BY, r: ballR, fill: 'var(--card)', stroke: GRAY, 'stroke-width': 1.2 }, svg);
+      c.style.transition = 'all .4s ease';
+      balls.push(c);
+    }
+
+    var note = T(svg, 180, 236, '', 'font-size:12.5px;font-weight:600;fill:var(--dim);text-anchor:middle');
+
+    function moveBalls(list, x, y, color, star) {
+      list.forEach(function (bi, k) {
+        var c = balls[bi];
+        c.setAttribute('cx', x + (k - (list.length - 1) / 2) * 22);
+        c.setAttribute('cy', y);
+        c.setAttribute('stroke', color);
+        if (color !== GRAY) c.setAttribute('fill', color); else c.setAttribute('fill', 'var(--card)');
+        c.setAttribute('fill-opacity', color === GRAY ? 0.35 : 0.9);
+        if (star) { c.setAttribute('stroke', ORG); c.setAttribute('stroke-width', 2.5); }
+      });
+    }
+    function tilt(deg) {
+      beam.style.transformOrigin = pivot.x + 'px ' + pivot.y + 'px';
+      beam.style.transition = 'transform .6s ease';
+      beam.style.transform = 'rotate(' + deg + 'deg)';
+    }
+
+    var suspects = null;
+    var STEPS = [
+      { text: '<b>' + total + ' 个球里有 1 个次品（偏轻）</b>。天平没有砝码，至少称几次<b>一定</b>能把它找出来？', run: function () {} },
+      { text: '诀窍是尽量平均分成 <b>3 份</b>：' + per + '、' + per + '、' + (total - 2 * per) + '。为什么不分成两份？往下看。',
+        run: function () {
+          for (var g = 0; g < 3; g++) {
+            var col = g === 0 ? BLUE : g === 1 ? RED : GRAY;
+            var from = g * per, to = Math.min(from + per, total);
+            var list = []; for (var b = from; b < to; b++) list.push(b);
+            moveBalls(list, 60 + g * 120, 58, col);
+          }
+        } },
+      { text: '天平两端各放 ' + per + ' 个。若<b>平衡</b>→次品在盘外；若<b>不平衡</b>→次品在翘起（轻）的那端。',
+        run: function () {
+          var L = [], R2 = [];
+          for (var b = 0; b < per; b++) L.push(b);
+          for (b = per; b < 2 * per; b++) R2.push(b);
+          moveBalls(L, pivot.x - 104, pivot.y + 30, BLUE);
+          moveBalls(R2, pivot.x + 104, pivot.y + 30, RED);
+          tilt(0);
+        } },
+      { text: '假设这次<b>平衡</b>——次品就在盘外的第三份里；就算不平衡，嫌疑也只剩轻的那 ' + per + ' 个。称一次，嫌疑从 ' + total + ' 个压到 <b>' + per + '</b> 个。',
+        run: function () {
+          tilt(0);
+          moveBalls([], 0, 0, GRAY);
+          var out = []; for (var b = 2 * per; b < total; b++) out.push(b);
+          // 平衡情境：第三份成为嫌疑
+          moveBalls(out.slice(0, per), 180, 58, ORG);
+          suspects = out.slice(0, per);
+          note.textContent = '嫌疑：' + per + ' 个';
+        } },
+      { text: '剩下 ' + per + ' 个再分成 1、1、1：天平各放 1 个。不平衡→轻的是次品；平衡→盘外那个是次品。',
+        run: function () {
+          moveBalls([suspects[0]], pivot.x - 104, pivot.y + 30, ORG);
+          moveBalls([suspects[1]], pivot.x + 104, pivot.y + 30, ORG);
+          moveBalls([suspects[2]], 180, 58, GRAY);
+          tilt(-6);
+          note.textContent = '左端翘起 → 左边这个是次品';
+        } },
+      { text: '只称 <b>2 次</b>就锁定了它。每称一次，嫌疑范围缩小到约 1/3：分三份是最优策略。',
+        run: function () {
+          balls[suspects[0]].setAttribute('stroke', ORG);
+          balls[suspects[0]].setAttribute('stroke-width', 2.5);
+          note.textContent = '√ 找到次品，共称 2 次';
+        } }
+    ];
+
+    var idx = 0;
+    return {
+      el: svg,
+      next: function () {
+        if (idx >= STEPS.length) return null;
+        var st = STEPS[idx++]; st.run();
+        return { text: st.text, done: idx >= STEPS.length };
+      },
+      startDemo: function () {
+        idx = 0;
+        tilt(0);
+        note.textContent = '';
+        suspects = null;
+        balls.forEach(function (c, i2) {
+          c.setAttribute('cx', bx0 + i2 * 22); c.setAttribute('cy', BY);
+          c.setAttribute('fill', 'var(--card)'); c.setAttribute('fill-opacity', 1);
+          c.setAttribute('stroke', GRAY); c.setAttribute('stroke-width', 1.2);
+        });
+        return this;
+      },
+      reset: function () { return this.startDemo(); }
+    };
+  }
+
+  /* ══════════════════════════════════════════════════════
+   * 打电话
+   * 为什么单独做：翻倍规律靠背容易背成「加倍」。
+   * 通话树每分钟长一层，2、4、8、16 摆在眼前，倍增才有了画面。
+   * ══════════════════════════════════════════════════════ */
+  function callTree(el, spec) {
+    spec = spec || {};
+    var minutes = Math.min(spec.minutes || 4, 4);
+    var W = 360, H = 268;
+    var svg = s('svg', { viewBox: '0 0 ' + W + ' ' + H, class: 'ctt-svg', role: 'img' }, el);
+    var RED = '#f87171', BLUE = '#38bdf8', GRN = '#4ade80', ORG = '#fbbf24';
+    var LVL = [ORG, BLUE, GRN, RED, BLUE];
+    var TOP = 34, DYY = 50;
+
+    // 生成节点：level 0 = 老师；level d 有 2^(d-1) 个新节点
+    var nodes = [{ lv: 0, x: 180, parent: -1 }];
+    for (var d = 1; d <= minutes; d++) {
+      var cnt = Math.pow(2, d - 1), sp = W / (cnt + 1);
+      for (var i = 0; i < cnt; i++) {
+        nodes.push({ lv: d, x: sp * (i + 1), parent: 0 });
+      }
+    }
+    var levelStart = [0, 1];
+    for (d = 2; d <= minutes; d++) {
+      levelStart[d] = levelStart[d - 1] + Math.pow(2, d - 2);
+    }
+    for (d = 1; d <= minutes; d++) {
+      var cnt2 = Math.pow(2, d - 1);
+      var st2 = levelStart[d];
+      for (i = 0; i < cnt2; i++) {
+        nodes[st2 + i].parent = levelStart[d - 1] + Math.floor(i / 2);
+        nodes[st2 + i].y = TOP + d * DYY;
+      }
+    }
+    nodes[0].y = TOP;
+
+    // 边
+    var edges = [];
+    for (i = 1; i < nodes.length; i++) {
+      var pn = nodes[nodes[i].parent];
+      var ln = s('line', { x1: pn.x, y1: pn.y + 12, x2: nodes[i].x, y2: nodes[i].y - 12,
+        stroke: 'var(--dim)', 'stroke-width': 1.2 }, svg);
+      ln.style.opacity = 0; ln.style.transition = 'opacity .4s ease';
+      edges.push(ln);
+    }
+    // 节点
+    for (i = 0; i < nodes.length; i++) {
+      var n = nodes[i];
+      var c = s('circle', { cx: n.x, cy: n.y, r: 10,
+        fill: n.lv === 0 ? LVL[0] : 'var(--card)', stroke: n.lv === 0 ? LVL[0] : LVL[n.lv], 'stroke-width': 2 }, svg);
+      c.style.opacity = 0; c.style.transition = 'opacity .4s ease';
+      n.el = c;
+      if (n.lv > 0) {
+        n.tx = T(svg, n.x, n.y + 3.5, String(i), 'font-size:9px;font-weight:700;fill:var(--text);text-anchor:middle');
+        n.tx.style.opacity = 0; n.tx.style.transition = 'opacity .4s ease';
+      }
+    }
+
+    var stat = T(svg, 180, 16, '', 'font-size:12.5px;font-weight:700;fill:var(--text);text-anchor:middle');
+    var note = T(svg, 180, 260, '', 'font-size:12px;fill:var(--dim);text-anchor:middle');
+
+    function reveal(min) {
+      // 已知节点数 = 2^min，其中新增 2^(min-1)
+      for (var k = 0; k < nodes.length; k++) {
+        var n2 = nodes[k];
+        var shown = k === 0 ? min >= 0 : (levelStart[n2.lv] != null && n2.lv <= min);
+        if (n2.lv <= min) {
+          n2.el.style.opacity = 1;
+          if (n2.tx) n2.tx.style.opacity = 1;
+          if (n2.lv > 0) edges[k - 1].style.opacity = n2.lv === min ? 1 : 0.45;
+        }
+      }
+    }
+
+    var STEPS = [];
+    STEPS.push({ text: '第 0 分钟：只有<b>老师</b>知道消息。要尽快通知全班，怎样打电话最快？', run: function () { reveal(0); stat.textContent = '知道消息：1 人，通话 0 次'; } });
+    for (var m = 1; m <= minutes; m++) {
+      (function (mm) {
+        var fresh = Math.pow(2, mm - 1), known = Math.pow(2, mm);
+        STEPS.push({
+          text: '第 ' + mm + ' 分钟：' + fresh + ' 个知道的人<b>同时</b>打 ' + fresh + ' 个电话，一人打一个。新通知 ' + fresh + ' 人，共 <b>' + known + '</b> 人知道。',
+          run: function () {
+            reveal(mm);
+            stat.textContent = '知道消息：' + known + ' 人，通话 ' + (known - 1) + ' 次';
+          }
+        });
+      })(m);
+    }
+    STEPS.push({
+      text: '规律：每过 1 分钟，知道消息的人数<b>翻倍</b>。n 分钟最多通知到 2<sup>n</sup> 人（含老师）。省时间的关键：每一个知道消息的人都不空闲。',
+      run: function () {
+        note.textContent = '1 → 2 → 4 → 8 → 16 … 每分钟 ×2';
+      }
+    });
+
+    var idx = 0;
+    return {
+      el: svg,
+      next: function () {
+        if (idx >= STEPS.length) return null;
+        var st = STEPS[idx++]; st.run();
+        return { text: st.text, done: idx >= STEPS.length };
+      },
+      startDemo: function () {
+        idx = 0;
+        stat.textContent = '知道消息：1 人，通话 0 次';
+        note.textContent = '';
+        nodes.forEach(function (n2) { n2.el.style.opacity = 0; if (n2.tx) n2.tx.style.opacity = 0; });
+        edges.forEach(function (e2) { e2.style.opacity = 0; });
+        nodes[0].el.style.opacity = 1;
+        return this;
+      },
+      reset: function () { return this.startDemo(); }
+    };
+  }
+
   global.CR = {
     vertical: vertical,
     geometry: geometry,
@@ -4548,6 +4956,9 @@
     decimalBar: decimalBar,
     barGroup: barGroup,
     compass: compass,
+    fracDiv: fracDiv,
+    balance: balance,
+    callTree: callTree,
     graphNav: graphNav,
     extend: extend,
     graphHref: graphHref,

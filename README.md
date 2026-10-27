@@ -9,7 +9,7 @@
 覆盖 12 个学科、1~12 年级，每个主题配一份教学研究</p>
 
 <p>
-<img src="https://img.shields.io/badge/version-v0.39.0-blue?style=flat-square" alt="version">
+<img src="https://img.shields.io/badge/version-v0.40.0-blue?style=flat-square" alt="version">
 <img src="https://img.shields.io/badge/subjects-12-informational?style=flat-square" alt="subjects">
 <img src="https://img.shields.io/badge/topics-1268-brightgreen?style=flat-square" alt="topics">
 <img src="https://img.shields.io/badge/prerequisite%20edges-1635-blueviolet?style=flat-square" alt="prerequisite edges">
@@ -24,7 +24,7 @@
 
 在线预览：<https://acd118508358062b1.app.workbuddy.host/?sharecode=DHL4TJAQCG>
 
-> v0.39.0 · 主题 1273 · 先修依赖 1647（hard 952 / soft 695）· 课标条目 186 · 域摘要 204 · 教学研究 1268 · 教材版本 26 · 学科 12 · 课件 46
+> v0.40.0 · 主题 1273 · 先修依赖 1647（hard 952 / soft 695）· 课标条目 186 · 域摘要 204 · 教学研究 1268 · 教材版本 26 · 学科 12 · 课件 49
 
 ## 目录
 
@@ -268,7 +268,7 @@ node scripts/validate-courses.mjs
 - 依赖图分成 67 个连通分量，最大的一块只占 7.6%。原因是跨模块、跨学科的边补得少，学习路径常常只能在本模块内走。补软依赖是下一步要做的，但每条都得能说清理由，不想为了连通而连通。
 - 186 条课标里有 11 条还没有主题挂靠，集中在语文低年级的表达类要求、英语一级的两个要素；这部分主题偏少。
 - 首屏要下载 4MB 的 `data.js`（gzip 后约 1MB），线上目前没有开压缩。数据分片是待办。
-- 课件只有 46 个（1273 个主题的 3.6%），集中在数学一科，但三、四年级核心知识点已配齐，五年级已开四块。呈现器落地了竖式、方格、描边、分份、钟面、数轴、坐标系、年历、小数条、复式表、罗盘地图、运算律、三角形、数位表、量角器、四边形、百格图、多位数乘法竖式、统计图、移多补少、割补拼摆、摆方格、分数意义图、分数加减条、等距堆方块、数对网格、植树间隔、对称补全、约分重分条、随机转盘、小数点定位、商不变转化三十三种，sim / diagram / equation 还没做。时分秒与动量守恒仍是各自内嵌的实现，没收敛到公共呈现器。
+- 课件只有 49 个（1273 个主题的 3.8%），集中在数学一科，但三、四年级核心知识点已配齐，五年级主要知识点已配齐。呈现器落地了竖式、方格、描边、分份、钟面、数轴、坐标系、年历、小数条、复式表、罗盘地图、运算律、三角形、数位表、量角器、四边形、百格图、多位数乘法竖式、统计图、移多补少、割补拼摆、摆方格、分数意义图、分数加减条、等距堆方块、数对网格、植树间隔、对称补全、约分重分条、随机转盘、小数点定位、商不变转化、切饼分份、天平找次品、通话树三十六种，sim / diagram / equation 还没做。时分秒与动量守恒仍是各自内嵌的实现，没收敛到公共呈现器。
 - 目前只有中文。术语和课标编号是中文体系的，翻成英文会失真，暂时没做。
 
 ## 覆盖范围
@@ -507,7 +507,7 @@ china-skill-taxonomy/
   title        = {学阶图谱 · China Skill Taxonomy},
   author       = {{China Skill Taxonomy contributors}},
   year         = {2026},
-  version      = {v0.39.0},
+  version      = {v0.40.0},
   url          = {https://github.com/goralcao/china-skill-taxonomy},
   note         = {Database licensed under ODbL 1.0; content under CC BY-SA 4.0}
 }
@@ -539,7 +539,7 @@ ODbL 把「衍生数据库」和「产出作品」分开。拿这份数据做产
 | v0.13 ~ v0.15 | 初中物理、化学、历史、地理；多版本教材目录与跨版本映射 |
 | v0.16 ~ v0.18 | 科学、道德与法治、生物，十学科 742 主题全量覆盖 |
 | v0.19 ~ v0.22 | 高中九科补齐，1268 主题、十二学科全量覆盖 |
-| v0.22.1 ~ v0.39.0 | 图例可收缩、触摸修复、课件演算、技能与评分、3D 立体图、除法竖式、分子动画、年历、小数条与罗盘地图 |
+| v0.22.1 ~ v0.40.0 | 图例可收缩、触摸修复、课件演算、技能与评分、3D 立体图、除法竖式、分子动画、年历、小数条与罗盘地图 |
 
 还没做的：
 

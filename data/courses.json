@@ -1,19 +1,19 @@
 {
-  "version": "v0.38.0",
+  "version": "v0.40.0",
   "schemaVersion": 1,
   "generatedAt": "2026-10-27",
   "counts": {
-    "total": 46,
+    "total": 49,
     "byTemplate": {
       "drill": 1,
-      "explain": 44,
+      "explain": 47,
       "explore": 1
     },
     "byStatus": {
-      "reviewed": 46
+      "reviewed": 49
     },
     "bySubject": {
-      "数学": 44,
+      "数学": 47,
       "化学": 1,
       "物理": 1
     }
@@ -594,6 +594,37 @@
       "updatedAt": "2026-10-27",
       "subject": "数学",
       "template": "explain",
+      "topicId": "mt_find-defective",
+      "title": "找次品：把嫌疑压到三分之一",
+      "renderer": "balance",
+      "duration": 11,
+      "interactions": 2,
+      "grade": 5,
+      "standards": [
+        "math-2022:S3:PP"
+      ],
+      "prerequisites": [
+        "mt_div-avg",
+        "mt_data-collect"
+      ],
+      "next": [],
+      "objectives": [
+        "会用天平找次品，掌握把物品尽量平均分成三份的方法",
+        "理解称的次数与物品数量的关系",
+        "体会优化策略：每称一次排除三分之二"
+      ],
+      "cognitiveAction": "构造",
+      "path": "courses/mt_find-defective/",
+      "bytes": 681
+    },
+    {
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "subject": "数学",
+      "template": "explain",
       "topicId": "mt_frac-addsub",
       "title": "分数的加减法：先通分，再加减",
       "renderer": "fracOps",
@@ -618,6 +649,40 @@
       "cognitiveAction": "变换",
       "path": "courses/mt_frac-addsub/",
       "bytes": 684
+    },
+    {
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "subject": "数学",
+      "template": "explain",
+      "topicId": "mt_frac-div",
+      "title": "分数与除法：切饼分人",
+      "renderer": "fracDiv",
+      "duration": 11,
+      "interactions": 2,
+      "grade": 5,
+      "standards": [
+        "math-2022:S3:NA:NO"
+      ],
+      "prerequisites": [
+        "mt_frac-meaning",
+        "mt_div-avg"
+      ],
+      "next": [
+        "mt_frac-div2",
+        "mt_ratio"
+      ],
+      "objectives": [
+        "理解 a÷b=a/b：被除数是分子，除数是分母",
+        "认识真分数、假分数和带分数",
+        "会把假分数化成带分数或整数"
+      ],
+      "cognitiveAction": "比较",
+      "path": "courses/mt_frac-div/",
+      "bytes": 672
     },
     {
       "topicId": "mt_frac-intro",
@@ -1045,6 +1110,37 @@
       "updatedAt": "2026-10-27",
       "path": "courses/mt_parallelogram/",
       "bytes": 693
+    },
+    {
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "subject": "数学",
+      "template": "explain",
+      "topicId": "mt_phone-call",
+      "title": "打电话：每分钟翻一倍",
+      "renderer": "callTree",
+      "duration": 10,
+      "interactions": 2,
+      "grade": 5,
+      "standards": [
+        "math-2022:S3:PP"
+      ],
+      "prerequisites": [
+        "mt_pattern",
+        "mt_data-collect"
+      ],
+      "next": [],
+      "objectives": [
+        "理解打电话问题中人人不空闲的策略最优",
+        "发现每过一分钟知道消息的人数翻倍的规律",
+        "会用图示和数据表示通知的过程"
+      ],
+      "cognitiveAction": "构造",
+      "path": "courses/mt_phone-call/",
+      "bytes": 672
     },
     {
       "topicId": "mt_phys-s-momentum-conservation",

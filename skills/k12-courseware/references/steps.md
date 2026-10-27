@@ -49,6 +49,9 @@
 | `spinner` | 随机转盘 | `body{}` | `caption` `note` `demoLabel` |
 | `decMult` | 小数乘法定位 | `body{a,b}` | `caption` `note` `demoLabel` |
 | `decDiv` | 商不变转化 | `body{a,b}` | `caption` `note` `demoLabel` |
+| `fracDiv` | 切饼分份（分数与除法） | `body{pies,people}` | `caption` `note` `demoLabel` |
+| `balance` | 天平找次品 | `body{total}` | `caption` `note` `demoLabel` |
+| `callTree` | 通话树（打电话） | `body{minutes}` | `caption` `note` `demoLabel` |
 | `angle` | 量角器 | `body{deg}` | `caption` `note` `demoLabel` |
 | `quad` | 平行四边形与梯形 | `body{shapes}` | `caption` `note` `demoLabel` |
 | `decGrid` | 百格图（小数意义/性质） | `body{mode,value,compare}` | `caption` `note` `demoLabel` |
