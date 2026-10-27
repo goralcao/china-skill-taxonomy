@@ -1,0 +1,29 @@
+{
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-27",
+  "subject": "数学",
+  "template": "explain",
+  "topicId": "mt_tree-plant",
+  "title": "植树问题：棵数与间隔数差 1 吗？",
+  "renderer": "treePlant",
+  "duration": 11,
+  "interactions": 2,
+  "grade": 5,
+  "standards": [
+    "math-2022:S3:PP"
+  ],
+  "prerequisites": [
+    "mt_length-cm-m",
+    "mt_pattern"
+  ],
+  "next": [],
+  "objectives": [
+    "理解间隔数与棵数的关系",
+    "区分两端都栽、只栽一端、两端都不栽三种情况",
+    "会把植树问题的思路用到锯木头、上楼梯等问题"
+  ],
+  "cognitiveAction": "比较"
+}

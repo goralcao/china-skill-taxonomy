@@ -147,6 +147,11 @@ schema/course.schema.json
 | `polyArea` | 多边形面积割补 | 面积公式推导 | 沿高剪开平移、两个三角形/梯形旋转 180° 拼合 |
 | `factorGrid` | 摆方格找因数 | 因数与倍数 | 摆出所有长方形，因数成对列出 |
 | `fracMeaning` | 分数的意义 | 平均分、分数单位、单位「1」、分数与除法 | 可拖滑块改份数、按住拖动涂色、一盒苹果换整体、3÷4 分饼动画 |
+| `fracOps` | 分数加减条 | 同分母/异分母分数加减 | 三条分数条对照，异分母「重分」演示通分 |
+| `volume` | 等距堆方块 | 体积与容积单位 | 手写等距投影，小正方体逐层铺满长方体 |
+| `pairs` | 数对网格 | 位置（数对） | 列行虚线定位，点格子直接报数对 |
+| `treePlant` | 植树间隔 | 植树问题 | 间隔数可拖、三种栽法切换，棵数差 ±1 |
+| `symmetry` | 对称补全 | 轴对称 | 对称点可拖、距离实时标注、逐点补全另一半 |
 | `clock` | 钟面 | 时、分、秒 | 三针联动、分针拖拽、指针高亮 |
 | `numberline` | 数轴 | 正负数、分数、小数、时间轴 | 区间高亮、可拖手柄 |
 | `coords` | 坐标系 | 一次函数、抛物线、统计 | 网格、曲线描边动画、散点 |
@@ -397,7 +402,7 @@ localStorage.setItem('stx.course.' + TOPIC_ID,
 
 - `templates/engine.js` 接管页面骨架与全部通用逻辑
 - 课件只剩 `content.json`（steps 数组）+ 一个 16 行的薄壳 `index.html`
-- 29 种步骤类型：`intro` / `text` / `vertical` / `geometry` / `solid` / `pyramid` / `division` / `mult2` / `molecule` / `calendar` / `decimal` / `table` / `compass` / `law` / `triangle` / `counter` / `angle` / `quad` / `decGrid` / `chart` / `mean` / `polyArea` / `factorGrid` / `fracMeaning` / `numberline` / `clock` / `quiz` / `choice` / `summary`
+- 34 种步骤类型：`intro` / `text` / `vertical` / `geometry` / `solid` / `pyramid` / `division` / `mult2` / `molecule` / `calendar` / `decimal` / `table` / `compass` / `law` / `triangle` / `counter` / `angle` / `quad` / `decGrid` / `chart` / `mean` / `polyArea` / `factorGrid` / `fracMeaning` / `fracOps` / `volume` / `pairs` / `treePlant` / `symmetry` / `numberline` / `clock` / `quiz` / `choice` / `summary`
 - 构建时把 content.json、engine.js、renderers.js、base.css 全部内联，产物仍是单文件
 
 写一节课从「复制 300 行 HTML」变成「写 60 行 JSON」。

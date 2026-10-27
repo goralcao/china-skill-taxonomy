@@ -40,6 +40,11 @@
 | `polyArea` | 多边形面积割补 | `body{mode}` | `caption` `note` `demoLabel` |
 | `factorGrid` | 摆方格找因数 | `body{n}` | `caption` `note` `demoLabel` |
 | `fracMeaning` | 分数的意义 | `body{mode,n,m,total}` | `caption` `note` `demoLabel` |
+| `fracOps` | 分数加减条 | `body{a:[m,n],b:[m,n],op}` | `caption` `note` `demoLabel` |
+| `volume` | 等距堆方块 | `body{w,d,h,unit}` | `caption` `note` `demoLabel` |
+| `pairs` | 数对网格 | `body{cols,rows,mark,items}` | `caption` `note` `demoLabel` |
+| `treePlant` | 植树间隔 | `body{gaps,mode}` | `caption` `note` `demoLabel` |
+| `symmetry` | 对称补全 | `body{}` | `caption` `note` `demoLabel` |
 | `angle` | 量角器 | `body{deg}` | `caption` `note` `demoLabel` |
 | `quad` | 平行四边形与梯形 | `body{shapes}` | `caption` `note` `demoLabel` |
 | `decGrid` | 百格图（小数意义/性质） | `body{mode,value,compare}` | `caption` `note` `demoLabel` |
@@ -314,6 +319,47 @@ preset：
 ```
 
 分数的意义。`mode` 四种：`compare` 平均分对比（平均分 vs 随便切，点出分数的前提）；`parts` **可拖分份图**——滑块改份数（2~12），图上按住拖动涂色，实时显示 m/n、读法与分数单位；`group` 一盒苹果（滑块 4~20，同是 3/4 数量不同，讲单位「1」）；`divide` 3 个饼分给 4 人（3÷4=3/4 动画）。`parts` 之外的模式均可交互，也都有分步演示。
+
+## fracOps
+
+```json
+{ "type": "fracOps", "title": "异分母：1/4 + 1/8", "body": { "a": [1, 4], "b": [1, 8], "op": "+" } }
+```
+
+分数加减。三条分数条对照：`a`、`b` 各一条（按分母分格），下面一条是结果。同分母直接加分子；异分母第 3 步把 `a` 条「重分」成公倍数份并同步改标签——通分看得见。`op` 支持 `+` / `−`。
+
+## volume
+
+```json
+{ "type": "volume", "title": "一层一层铺满", "body": { "w": 4, "d": 2, "h": 2, "unit": "立方厘米" } }
+```
+
+体积。手写等距投影画小正方体，按「后往前、下往上」的顺序逐层铺满长方体，收尾给出「每层 w×d 个 × h 层 = 体积」。
+
+## pairs
+
+```json
+{ "type": "pairs", "title": "用数对报位置", "body": { "cols": 6, "rows": 5, "mark": [2, 3],
+  "items": [{ "c": 2, "r": 3, "name": "标" }] } }
+```
+
+数对。网格带列/行标号，演示先列后行；点任意一格直接报出它的数对。
+
+## treePlant
+
+```json
+{ "type": "treePlant", "title": "三种情况数一数", "body": { "gaps": 4, "mode": "both" } }
+```
+
+植树问题。间隔数滑块（2~10）+ 三种栽法按钮（两端都栽/只栽一端/两端都不栽），不栽的位置画虚线圆圈；演示依次切换三种情况，棵数差 ±1。
+
+## symmetry
+
+```json
+{ "type": "symmetry", "title": "补全另一半", "body": {} }
+```
+
+轴对称。方格纸 + 对称轴；橙色点可拖，右边对称点实时跟随并标注两边距离相等；再逐点补全右半边。
 
 ## angle
 

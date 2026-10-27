@@ -1,0 +1,32 @@
+{
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-27",
+  "subject": "数学",
+  "template": "explain",
+  "topicId": "mt_volume",
+  "title": "体积与容积单位：一个小正方体就是 1",
+  "renderer": "volume",
+  "duration": 12,
+  "interactions": 2,
+  "grade": 5,
+  "standards": [
+    "math-2022:S3:GG:GM"
+  ],
+  "prerequisites": [
+    "mt_cuboid",
+    "mt_rect-area",
+    "mt_area-intro"
+  ],
+  "next": [
+    "mt_cylinder"
+  ],
+  "objectives": [
+    "理解体积的含义：物体所占空间的大小",
+    "认识体积单位：棱长 1cm/1dm/1m 的正方体是 1cm³/1dm³/1m³",
+    "会用「每层个数 × 层数」求长方体体积"
+  ],
+  "cognitiveAction": "构造"
+}

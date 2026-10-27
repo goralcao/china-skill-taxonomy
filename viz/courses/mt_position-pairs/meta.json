@@ -1,0 +1,29 @@
+{
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-27",
+  "subject": "数学",
+  "template": "explain",
+  "topicId": "mt_position-pairs",
+  "title": "位置（数对）：先列后行",
+  "renderer": "pairs",
+  "duration": 10,
+  "interactions": 2,
+  "grade": 5,
+  "standards": [
+    "math-2022:S2:GG:PM"
+  ],
+  "prerequisites": [
+    "mt_position-basic",
+    "mt_direction"
+  ],
+  "next": [],
+  "objectives": [
+    "知道竖排为列、横排为行",
+    "会用数对（列,行）表示位置",
+    "理解位置与数对的一一对应"
+  ],
+  "cognitiveAction": "构造"
+}

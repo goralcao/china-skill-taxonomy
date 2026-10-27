@@ -292,7 +292,7 @@ min-height: 44px;
 .demo-tip b { color: var(--accent); }
 .demo-tip:empty { display: none; }
 .solid-svg, .pyr-svg, .mol-svg, .cal-svg, .dec-svg, .tbl-svg, .cmp-svg, .law-svg, .tri-svg,
-.cnt-svg, .ang-svg, .qd-svg, .dgr-svg, .m2-svg, .fm-svg, .cht-svg, .men-svg, .ply-svg, .fac-svg { width: 100%; height: auto; touch-action: none; }
+.cnt-svg, .ang-svg, .qd-svg, .dgr-svg, .m2-svg, .fm-svg, .fop-svg, .vol-svg, .prs-svg, .tre-svg, .sym-svg, .cht-svg, .men-svg, .ply-svg, .fac-svg { width: 100%; height: auto; touch-action: none; }
 .solid-svg, .pyr-svg { cursor: grab; }
 .solid-svg:active, .pyr-svg:active { cursor: grabbing; }
 .viz text { fill: var(--text); font-family: inherit; }
@@ -308,7 +308,7 @@ margin: 2px 0 8px; font-size: 13.5px; color: var(--dim);
 .fm-ctl input[type="range"] { width: 140px; accent-color: var(--accent); }
 .fm-ctl b { color: var(--accent); font-size: 14px; }
 </style>
-<script>window.__GRAPH = {"id": "mt_polygon-area", "name": "多边形的面积", "subject": "数学", "domain": "图形与几何", "stage": "第三学段（5~6年级）", "grade": 5, "gradeEnd": 5, "standards": ["math-2022:S3:GG:GM"], "textbooks": ["pep-math:5a:u6"], "textbookLabels": ["人教版数学 · 5 年级上 第 6 单元"], "prereqs": [{"id": "mt_rect-area", "name": "长方形和正方形的面积", "grade": 3, "subject": "数学", "course": "reviewed", "hard": true, "reason": "多边形面积用割补法转化成长方形"}, {"id": "mt_triangle-sides", "name": "三角形的三边关系", "grade": 4, "subject": "数学", "course": "reviewed", "hard": true, "reason": "推导三角形面积公式需先认识三边关系"}, {"id": "mt_triangle", "name": "三角形的特性与分类", "grade": 4, "subject": "数学", "course": null, "hard": true, "reason": "推导三角形面积公式需先认识底和高"}, {"id": "mt_lines", "name": "线段、射线、直线与相交平行", "grade": 4, "subject": "数学", "course": null, "hard": true, "reason": "图形的高涉及底边与垂线的认识"}], "unlocks": [{"id": "mt_circle-measure", "name": "圆的周长与面积", "grade": 6, "subject": "数学", "course": null, "hard": true}, {"id": "mt_number-shape", "name": "数与形", "grade": 6, "subject": "数学", "course": null, "hard": false}], "siblings": [{"id": "mt_cuboid", "name": "长方体和正方体", "grade": 5, "subject": "数学", "course": "reviewed", "hard": false}, {"id": "mt_position-pairs", "name": "位置（数对）", "grade": 5, "subject": "数学", "course": null, "hard": false}, {"id": "mt_volume", "name": "体积与容积单位", "grade": 5, "subject": "数学", "course": null, "hard": false}, {"id": "mt_circle", "name": "圆的认识", "grade": 6, "subject": "数学", "course": null, "hard": false}]};</script>
+<script>window.__GRAPH = {"id": "mt_polygon-area", "name": "多边形的面积", "subject": "数学", "domain": "图形与几何", "stage": "第三学段（5~6年级）", "grade": 5, "gradeEnd": 5, "standards": ["math-2022:S3:GG:GM"], "textbooks": ["pep-math:5a:u6"], "textbookLabels": ["人教版数学 · 5 年级上 第 6 单元"], "prereqs": [{"id": "mt_rect-area", "name": "长方形和正方形的面积", "grade": 3, "subject": "数学", "course": "reviewed", "hard": true, "reason": "多边形面积用割补法转化成长方形"}, {"id": "mt_triangle-sides", "name": "三角形的三边关系", "grade": 4, "subject": "数学", "course": "reviewed", "hard": true, "reason": "推导三角形面积公式需先认识三边关系"}, {"id": "mt_triangle", "name": "三角形的特性与分类", "grade": 4, "subject": "数学", "course": null, "hard": true, "reason": "推导三角形面积公式需先认识底和高"}, {"id": "mt_lines", "name": "线段、射线、直线与相交平行", "grade": 4, "subject": "数学", "course": null, "hard": true, "reason": "图形的高涉及底边与垂线的认识"}], "unlocks": [{"id": "mt_circle-measure", "name": "圆的周长与面积", "grade": 6, "subject": "数学", "course": null, "hard": true}, {"id": "mt_number-shape", "name": "数与形", "grade": 6, "subject": "数学", "course": null, "hard": false}], "siblings": [{"id": "mt_position-pairs", "name": "位置（数对）", "grade": 5, "subject": "数学", "course": "reviewed", "hard": false}, {"id": "mt_cuboid", "name": "长方体和正方体", "grade": 5, "subject": "数学", "course": "reviewed", "hard": false}, {"id": "mt_volume", "name": "体积与容积单位", "grade": 5, "subject": "数学", "course": "reviewed", "hard": false}, {"id": "mt_circle", "name": "圆的认识", "grade": 6, "subject": "数学", "course": null, "hard": false}]};</script>
 </head>
 <body>
 <!-- 页面骨架由 templates/engine.js 生成；内容在 content.json -->
@@ -3654,11 +3654,461 @@ startDemo: function () { idx = 0; resetFn(); return this; },
 reset: function () { return this.startDemo(); }
 };
 }
+function fracOps(el, spec) {
+spec = spec || {};
+var a = spec.a || [1, 8], b = spec.b || [3, 8], op = spec.op || '+';
+var ORG = '#fbbf24', BLUE = '#38bdf8', GRN = '#4ade80';
+var like = a[1] === b[1];
+var g = function (m, n) { return (function gcd(x, y) { return y ? gcd(y, x % y) : x; })(m, n); };
+var la = a[1] * b[1] / g(a[1], b[1]);
+var na = a[0] * la / a[1], nb = b[0] * la / b[1];
+var res = op === '+' ? na + nb : na - nb;
+var W = 360, H = like ? 196 : 214;
+var svg = s('svg', { viewBox: '0 0 ' + W + ' ' + H, class: 'fop-svg', role: 'img' }, el);
+svg.style.width = '100%'; svg.style.height = 'auto';
+function bar(y, den, fill, color, label) {
+var x0 = 58, bw = 270, ch = 26;
+T(svg, x0 - 8, y + 18, label, 'font-size:14px;font-weight:700;fill:' + color + ';text-anchor:end');
+var cells = [];
+for (var i = 0; i < den; i++) {
+var c = s('rect', { x: x0 + i * (bw / den), y: y, width: bw / den - 2, height: ch, rx: 4,
+fill: color, 'fill-opacity': i < fill ? 0.75 : 0.1,
+stroke: color, 'stroke-width': 1.4 }, svg);
+c.style.transition = 'fill-opacity .3s ease';
+cells.push(c);
+}
+return { cells: cells, den: den, fill: fill, color: color, y: y, x0: x0, bw: bw, ch: ch };
+}
+function fillBar(b, k) {
+b.cells.forEach(function (c, i) { c.setAttribute('fill-opacity', i < k ? 0.75 : 0.1); });
+}
+function T(parent, x, y, v, st) {
+var t = s('text', { x: x, y: y, style: st || 'font-size:13px' }, parent);
+t.textContent = v; return t;
+}
+function fracTxt(x, y, m, n, color) {
+var t = T(svg, x, y, m + '/' + n, 'font-size:15px;font-weight:700;fill:' + color + ';text-anchor:middle');
+return t;
+}
+var bA = bar(28, a[1], a[0], ORG, '');
+var labA = fracTxt(28, 46, a[0], a[1], ORG);
+var bB = bar(84, b[1], b[0], BLUE, '');
+fracTxt(28, 102, b[0], b[1], BLUE);
+var bR = bar(150, la, 0, GRN, '');
+var resTxt = fracTxt(28, 168, '?', la, GRN);
+var opT = T(svg, 180, 78, op === '+' ? '＋' : '−', 'font-size:20px;font-weight:700;fill:var(--text);text-anchor:middle');
+opT.setAttribute('y', 78);
+// 通分层（异分母时第 3 步重分第一幅图）
+var bA2 = like ? null : bar(28, la, na, ORG, '');
+var resetFn = function () {
+fillBar(bA, like ? 0 : a[0]); fillBar(bB, 0); fillBar(bR, 0);
+labA.textContent = a[0] + '/' + a[1];
+resTxt.textContent = '?/' + la;
+if (bA2) { bA2.cells.forEach(function (c) { c.setAttribute('fill-opacity', 0); }); }
+};
+if (!like) { bA2.cells.forEach(function (c) { c.setAttribute('fill-opacity', 0); }); }
+var STEPS = [];
+if (like) {
+STEPS = [
+{ text: a[0] + '/' + a[1] + '：把整体平均分成 ' + a[1] + ' 份，取 ' + a[0] + ' 份。',
+run: function () { fillBar(bA, a[0]); } },
+{ text: b[0] + '/' + b[1] + '：分数单位相同，也是 1/' + a[1] + '。',
+run: function () { fillBar(bB, b[0]); } },
+{ text: '分数单位都是 1/' + a[1] + '，直接把分子' + (op === '+' ? '相加' : '相减') + '：' +
+a[0] + (op === '+' ? ' + ' : ' − ') + b[0] + ' = ' + res + '，得 <b>' + res + '/' + la + '</b>。',
+run: function () { fillBar(bR, res); resTxt.textContent = res + '/' + la; } }
+];
+if (res && res !== la && g(res, la) === 1) {
+STEPS.push({ text: res + '/' + la + ' 已是最简。', run: function () {} });
+} else if (res && la % res === 0 && res !== la) {
+STEPS.push({ text: '结果可以约分：' + res + '/' + la + ' = <b>1/' + (la / res) + '</b>。',
+run: function () { resTxt.textContent = '1/' + (la / res); } });
+}
+} else {
+STEPS = [
+{ text: a[0] + '/' + a[1] + '：' + a[1] + ' 份取 ' + a[0] + ' 份。', run: function () { fillBar(bA, a[0]); } },
+{ text: b[0] + '/' + b[1] + '：分数单位不同（1/' + a[1] + ' 和 1/' + b[1] + '），<b>不能直接相加</b>。',
+run: function () { fillBar(bB, b[0]); } },
+{ text: '先<b>通分</b>：用 ' + a[1] + ' 和 ' + b[1] + ' 的公倍数 ' + la + ' 作相同分母，' +
+a[0] + '/' + a[1] + ' = <b>' + na + '/' + la + '</b>。',
+run: function () {
+bA.cells.forEach(function (c) { c.setAttribute('fill-opacity', 0); });
+bA2.cells.forEach(function (c, i) { c.setAttribute('fill-opacity', i < na ? 0.75 : 0.1); });
+labA.textContent = na + '/' + la;
+} },
+{ text: '通分后再' + (op === '+' ? '相加' : '相减') + '：' + na + '/' + la + (op === '+' ? ' + ' : ' − ') +
+nb + '/' + la + ' = <b>' + res + '/' + la + '</b>。',
+run: function () { fillBar(bR, res); resTxt.textContent = res + '/' + la; } }
+];
+}
+var idx = 0;
+return {
+el: svg,
+next: function () {
+if (idx >= STEPS.length) return null;
+var st = STEPS[idx++]; st.run();
+return { text: st.text, done: idx >= STEPS.length };
+},
+startDemo: function () { idx = 0; resetFn(); return this; },
+reset: function () { return this.startDemo(); }
+};
+}
+function volume(el, spec) {
+spec = spec || {};
+var w = spec.w || 4, d = spec.d || 2, h = spec.h || 2;
+var unit = spec.unit || '立方厘米';
+var W = 360, H = 240;
+var svg = s('svg', { viewBox: '0 0 ' + W + ' ' + H, class: 'vol-svg', role: 'img' }, el);
+svg.style.width = '100%'; svg.style.height = 'auto';
+var ORG = '#fbbf24', ORGD = '#b45309', BLUE = '#38bdf8';
+function T(parent, x, y, v, st) {
+var t = s('text', { x: x, y: y, style: st || 'font-size:13px' }, parent);
+t.textContent = v; return t;
+}
+var ex = { x: 19, y: 10 }, ey = { x: -19, y: 10 }, ez = { x: 0, y: -15 };
+function P(i, j, k) {
+return { x: i * ex.x + j * ey.x, y: i * ex.y + j * ey.y + k * ez.y };
+}
+function cube(g, i, j, k, visible) {
+var o = P(i, j, k);
+function poly(pts, fill, fo, stroke) {
+var p = s('polygon', { points: pts.map(function (q) { return q.x.toFixed(1) + ',' + q.y.toFixed(1); }).join(' '),
+fill: fill, 'fill-opacity': visible ? fo : 0, stroke: stroke || 'none', 'stroke-width': 1 }, g);
+p.style.transition = 'fill-opacity .3s ease';
+return p;
+}
+return {
+top: poly([P(i, j, k + 1), P(i + 1, j, k + 1), P(i + 1, j + 1, k + 1), P(i, j + 1, k + 1)], ORG, 0.75, ORGD),
+left: poly([P(i, j + 1, k), P(i + 1, j + 1, k), P(i + 1, j + 1, k + 1), P(i, j + 1, k + 1)], ORG, 0.45, ORGD),
+right: poly([P(i, j, k), P(i, j + 1, k), P(i, j + 1, k + 1), P(i, j, k + 1)], ORG, 0.28, ORGD)
+};
+}
+// 先算包围盒，再居中
+var all = [];
+for (var i = 0; i <= w; i++) for (var j = 0; j <= d; j++) for (var k = 0; k <= h; k++) all.push(P(i, j, k));
+var xs = all.map(function (p) { return p.x; }), ys = all.map(function (p) { return p.y; });
+var minx = Math.min.apply(null, xs), maxx = Math.max.apply(null, xs);
+var maxy = Math.max.apply(null, ys);
+var root = s('g', { transform: 'translate(' + ((W - (maxx - minx)) / 2 - minx).toFixed(1) + ',' +
+(206 - maxy).toFixed(1) + ')' }, svg);
+var cubes = [];
+for (var k2 = 0; k2 < h; k2++) {
+for (var s2 = 0; s2 <= w + d - 2; s2++) {
+for (var i3 = 0; i3 < w; i3++) {
+var j3 = s2 - i3;
+if (j3 < 0 || j3 >= d) continue;
+cubes.push(cube(root, i3, j3, k2, false));
+}
+}
+}
+var layerG = [];
+for (var L = 0; L < h; L++) layerG.push([]);
+cubes.forEach(function (c, idx) { layerG[Math.floor(idx / (w * d))].push(c); });
+function layerOn(k, on) {
+layerG[k].forEach(function (c) {
+c.top.setAttribute('fill-opacity', on ? 0.75 : 0);
+c.left.setAttribute('fill-opacity', on ? 0.45 : 0);
+c.right.setAttribute('fill-opacity', on ? 0.28 : 0);
+});
+}
+var counter = T(svg, 180, 228, '', 'font-size:13.5px;font-weight:600;text-anchor:middle');
+var STEPS = [];
+for (var L2 = 0; L2 < h; L2++) {
+STEPS.push({
+text: '铺第 <b>' + (L2 + 1) + '</b> 层：每层 <b>' + w + ' × ' + d + ' = ' + (w * d) + '</b> 个 1 ' + unit +
+' 的小正方体。',
+run: (function (kk) { return function () { layerOn(kk, true); }; })(L2)
+});
+}
+STEPS.push({
+text: '一共 ' + h + ' 层，体积 = 每层 ' + (w * d) + ' × ' + h + ' 层 = <b>' + (w * d * h) + ' ' + unit +
+'</b>。体积单位就是「一个这样的小正方体」。',
+run: function () { counter.textContent = w + ' × ' + d + ' × ' + h + ' = ' + (w * d * h) + ' ' + unit; }
+});
+var idx = 0;
+return {
+el: svg,
+next: function () {
+if (idx >= STEPS.length) return null;
+var st = STEPS[idx++]; st.run();
+return { text: st.text, done: idx >= STEPS.length };
+},
+startDemo: function () {
+idx = 0;
+layerG.forEach(function (_, k) { layerOn(k, false); });
+counter.textContent = '';
+return this;
+},
+reset: function () { return this.startDemo(); }
+};
+}
+function pairs(el, spec) {
+spec = spec || {};
+var cols = spec.cols || 6, rows = spec.rows || 5;
+var items = spec.items || [];
+var W = 360, H = 240, x0 = 46, y0 = 40, cw = (W - x0 - 16) / cols, ch = (H - y0 - 34) / rows;
+var BLUE = '#38bdf8', ORG = '#fbbf24';
+var svg = s('svg', { viewBox: '0 0 ' + W + ' ' + H, class: 'prs-svg', role: 'img' }, el);
+svg.style.width = '100%'; svg.style.height = 'auto';
+for (var c = 0; c < cols; c++) {
+var t = s('text', { x: x0 + c * cw + cw / 2, y: y0 - 8, 'text-anchor': 'middle',
+style: 'font-size:11.5px;fill:var(--dim)' }, svg);
+t.textContent = '第' + (c + 1) + '列';
+}
+for (var r = 0; r < rows; r++) {
+var t2 = s('text', { x: x0 - 8, y: y0 + r * ch + ch / 2 + 4, 'text-anchor': 'end',
+style: 'font-size:11.5px;fill:var(--dim)' }, svg);
+t2.textContent = '第' + (r + 1) + '行';
+}
+for (var cc = 0; cc < cols; cc++) {
+for (var rr = 0; rr < rows; rr++) {
+s('rect', { x: x0 + cc * cw, y: y0 + rr * ch, width: cw - 2, height: ch - 2, rx: 4,
+fill: 'rgba(56,189,248,.05)', stroke: 'var(--line)', 'stroke-width': 1 }, svg);
+}
+}
+function cellXY(c, r) { return { x: x0 + (c - 1) * cw + cw / 2, y: y0 + (r - 1) * ch + ch / 2 }; }
+var markers = [];
+items.forEach(function (it) {
+var p = cellXY(it.c, it.r);
+s('circle', { cx: p.x, cy: p.y, r: 12, fill: ORG, 'fill-opacity': 0.85, stroke: '#b45309', 'stroke-width': 1.5 }, svg);
+var t = s('text', { x: p.x, y: p.y + 4, 'text-anchor': 'middle', style: 'font-size:10px;font-weight:700;fill:#5d3f00' }, svg);
+t.textContent = it.name;
+});
+var mk = s('circle', { r: 8, fill: 'none', stroke: BLUE, 'stroke-width': 3 }, svg);
+mk.style.opacity = 0; mk.style.transition = 'opacity .3s ease';
+var readout = s('text', { x: W / 2, y: H - 8, 'text-anchor': 'middle',
+style: 'font-size:13.5px;font-weight:600' }, svg);
+readout.textContent = '';
+var colLine = s('line', { stroke: BLUE, 'stroke-width': 2, 'stroke-dasharray': '4 3' }, svg);
+var rowLine = s('line', { stroke: '#4ade80', 'stroke-width': 2, 'stroke-dasharray': '4 3' }, svg);
+colLine.style.opacity = 0; rowLine.style.opacity = 0;
+function mark(c, r, label) {
+var p = cellXY(c, r);
+mk.setAttribute('cx', p.x); mk.setAttribute('cy', p.y); mk.style.opacity = 1;
+colLine.setAttribute('x1', p.x); colLine.setAttribute('y1', y0 - 2);
+colLine.setAttribute('x2', p.x); colLine.setAttribute('y2', y0 + rows * ch);
+rowLine.setAttribute('x1', x0 - 2); rowLine.setAttribute('y1', p.y);
+rowLine.setAttribute('x2', x0 + cols * cw); rowLine.setAttribute('y2', p.y);
+readout.textContent = label || ('数对 (' + c + ',' + r + ')：第 ' + c + ' 列，第 ' + r + ' 行');
+}
+svg.addEventListener('pointerdown', function (ev) {
+var r = svg.getBoundingClientRect();
+var sx = (ev.clientX - r.left) / r.width * W, sy = (ev.clientY - r.top) / r.height * H;
+var c = Math.floor((sx - x0) / cw) + 1, rr = Math.floor((sy - y0) / ch) + 1;
+if (c < 1 || c > cols || rr < 1 || rr > rows) return;
+colLine.style.opacity = 1; rowLine.style.opacity = 1; mk.style.opacity = 1;
+mark(c, rr);
+});
+var m = spec.mark || [2, 3];
+var STEPS = [
+{ text: '竖排叫<b>列</b>，从左往右数：第 1 列、第 2 列……',
+run: function () { colLine.style.opacity = 1; mark(m[0], m[1], ''); readout.textContent = '第 ' + m[0] + ' 列'; } },
+{ text: '横排叫<b>行</b>，从前往后数：第 1 行、第 2 行……',
+run: function () { rowLine.style.opacity = 1; readout.textContent = '第 ' + m[0] + ' 列，第 ' + m[1] + ' 行'; } },
+{ text: '先列后行，用数对表示就是 <b>(' + m[0] + ',' + m[1] + ')</b>。',
+run: function () { mark(m[0], m[1]); } },
+{ text: '点图上任意一格，都能报出它的数对——位置和数对一一对应。', run: function () {} }
+];
+var idx = 0;
+return {
+el: svg,
+next: function () {
+if (idx >= STEPS.length) return null;
+var st = STEPS[idx++]; st.run();
+return { text: st.text, done: idx >= STEPS.length };
+},
+startDemo: function () {
+idx = 0;
+mk.style.opacity = 0; colLine.style.opacity = 0; rowLine.style.opacity = 0;
+readout.textContent = '';
+return this;
+},
+reset: function () { return this.startDemo(); }
+};
+}
+function treePlant(el, spec) {
+spec = spec || {};
+var gaps = spec.gaps || 6, mode = spec.mode || 'both';
+var W = 360, H = 170;
+var svg = s('svg', { viewBox: '0 0 ' + W + ' ' + H, class: 'tre-svg', role: 'img' }, el);
+svg.style.width = '100%'; svg.style.height = 'auto';
+var GRN = '#4ade80';
+var wrap2 = h('div', 'fm-ctl');
+el.insertBefore(wrap2, svg);
+wrap2.appendChild(h('span', null, '间隔数'));
+var rg = document.createElement('input');
+rg.type = 'range'; rg.min = '2'; rg.max = '10'; rg.step = '1'; rg.value = String(gaps);
+rg.setAttribute('aria-label', '间隔数');
+wrap2.appendChild(rg);
+var vG = h('b', null, gaps + ' 个间隔'); wrap2.appendChild(vG);
+['both', 'one', 'none'].forEach(function (md, i) {
+var b = h('button', 'sel' + (md === mode ? ' on' : ''), ['两端都栽', '只栽一端', '两端都不栽'][i]);
+b.type = 'button';
+b.onclick = function () {
+[].forEach.call(wrap2.querySelectorAll('button'), function (x) { x.classList.remove('on'); });
+b.classList.add('on'); mode = md; draw();
+var r = ctrl.next();
+if (r) tip.innerHTML = r.text;
+};
+wrap2.appendChild(b);
+});
+var tip = h('div', 'muted', '');
+el.appendChild(tip);
+var roadY = 96;
+function draw() {
+[].slice.call(svg.childNodes).forEach(function (c) { svg.removeChild(c); });
+var x0 = 34, x1 = W - 34;
+s('line', { x1: x0, y1: roadY, x2: x1, y2: roadY, stroke: 'var(--dim)', 'stroke-width': 3 }, svg);
+var step = (x1 - x0) / gaps;
+var n = mode === 'both' ? gaps + 1 : mode === 'one' ? gaps : gaps - 1;
+for (var i = 0; i <= gaps; i++) {
+var x = x0 + i * step;
+var isTree = mode === 'both' ? true : mode === 'one' ? i < gaps : (i > 0 && i < gaps);
+if (isTree) {
+s('circle', { cx: x, cy: roadY - 14, r: 10, fill: GRN, 'fill-opacity': 0.85, stroke: '#15803d', 'stroke-width': 1.6 }, svg);
+s('rect', { x: x - 1.5, y: roadY - 6, width: 3, height: 8, fill: '#92400e' }, svg);
+} else {
+s('circle', { cx: x, cy: roadY - 14, r: 5, fill: 'transparent', stroke: 'var(--dim)', 'stroke-width': 1.5, 'stroke-dasharray': '3 2' }, svg);
+}
+if (i < gaps) {
+var t = s('text', { x: x + step / 2, y: roadY + 20, 'text-anchor': 'middle', style: 'font-size:10.5px;fill:var(--dim)' }, svg);
+t.textContent = (i + 1);
+}
+}
+var label = mode === 'both' ? '两端都栽：棵数 = 间隔数 + 1'
+: mode === 'one' ? '只栽一端：棵数 = 间隔数'
+: '两端都不栽：棵数 = 间隔数 − 1';
+var n2 = mode === 'both' ? gaps + 1 : mode === 'one' ? gaps : gaps - 1;
+var t3 = s('text', { x: W / 2, y: 34, 'text-anchor': 'middle',
+style: 'font-size:14px;font-weight:700;fill:var(--text)' }, svg);
+t3.textContent = label + ' = ' + n2 + ' 棵';
+return n2;
+}
+draw();
+rg.oninput = function () {
+gaps = +this.value; vG.textContent = gaps + ' 个间隔';
+draw();
+tip.textContent = '现在是 ' + gaps + ' 个间隔：' +
+(mode === 'both' ? '两端都栽 ' + (gaps + 1) + ' 棵' : mode === 'one' ? '只栽一端 ' + gaps + ' 棵' : '两端都不栽 ' + (gaps - 1) + ' 棵') + '。';
+};
+var STEPS = [
+{ text: '<b>两端都栽</b>：4 个间隔，头尾都有一棵，棵数 = 间隔数 + 1 = 5。',
+run: function () { mode = 'both'; draw(); } },
+{ text: '<b>只栽一端</b>：一端不栽，正好一树对一隔，棵数 = 间隔数 = 4。',
+run: function () { mode = 'one'; draw(); } },
+{ text: '<b>两端都不栽</b>：两头各少一棵，棵数 = 间隔数 − 1 = 3。',
+run: function () { mode = 'none'; draw(); } },
+{ text: '记住三种情况的差就是 ±1——拖动间隔数验证，规律不变。', run: function () {} }
+];
+var idx = 0;
+var ctrl = {
+el: svg,
+next: function () {
+if (idx >= STEPS.length) return null;
+var st = STEPS[idx++]; st.run();
+return { text: st.text, done: idx >= STEPS.length };
+},
+startDemo: function () { idx = 0; mode = 'both'; gaps = spec.gaps || 6; rg.value = String(gaps); vG.textContent = gaps + ' 个间隔'; draw(); return this; },
+reset: function () { return this.startDemo(); }
+};
+return ctrl;
+}
+function symmetry(el, spec) {
+spec = spec || {};
+var W = 360, H = 240, ax = W / 2;
+var svg = s('svg', { viewBox: '0 0 ' + W + ' ' + H, class: 'sym-svg', role: 'img' }, el);
+svg.style.width = '100%'; svg.style.height = 'auto';
+var BLUE = '#38bdf8', GRN = '#4ade80', ORG = '#fbbf24';
+for (var gx = 0; gx <= W; gx += 20) s('line', { x1: gx, y1: 0, x2: gx, y2: H, stroke: 'var(--line)', 'stroke-width': 0.7 }, svg);
+for (var gy = 0; gy <= H; gy += 20) s('line', { x1: 0, y1: gy, x2: W, y2: gy, stroke: 'var(--line)', 'stroke-width': 0.7 }, svg);
+s('line', { x1: ax, y1: 0, x2: ax, y2: H, stroke: 'var(--accent)', 'stroke-width': 2.4, 'stroke-dasharray': '6 4' }, svg);
+var axT = s('text', { x: ax + 6, y: 14, style: 'font-size:11.5px;fill:var(--accent)' }, svg);
+axT.textContent = '对称轴';
+// 左半边：小房子
+var pts = [[ax - 78, 196], [ax - 78, 128], [ax - 40, 92], [ax - 8, 128], [ax - 8, 196]];
+function pl(points, color, dash) {
+return s('polyline', { points: points.map(function (p) { return p[0] + ',' + p[1]; }).join(' '),
+fill: 'none', stroke: color, 'stroke-width': 2.6, 'stroke-linejoin': 'round',
+'stroke-linecap': 'round', 'stroke-dasharray': dash || '' }, svg);
+}
+pl(pts, BLUE);
+var right = pts.slice().reverse().map(function (p) { return [2 * ax - p[0], p[1]]; });
+var rightSegs = [];
+for (var i = 0; i < right.length - 1; i++) {
+var seg = pl([right[i], right[i + 1]], GRN);
+seg.style.opacity = 0; seg.style.transition = 'opacity .35s ease';
+rightSegs.push(seg);
+}
+// 对称点演示：可拖的点
+var P = { x: ax - 58, y: 150 };
+var dotL = s('circle', { cx: P.x, cy: P.y, r: 6, fill: ORG, stroke: '#b45309', 'stroke-width': 1.5, style: 'cursor:pointer' }, svg);
+var dotR = s('circle', { r: 6, fill: 'none', stroke: ORG, 'stroke-width': 2, 'stroke-dasharray': '3 2' }, svg);
+dotR.style.opacity = 0;
+var link = s('line', { stroke: ORG, 'stroke-width': 1.6, 'stroke-dasharray': '4 3' }, svg);
+link.style.opacity = 0;
+var dL = s('text', { style: 'font-size:11px;fill:' + ORG }, svg);
+var dR = s('text', { style: 'font-size:11px;fill:' + ORG }, svg);
+function upd() {
+dotL.setAttribute('cx', P.x); dotL.setAttribute('cy', P.y);
+dotR.setAttribute('cx', 2 * ax - P.x); dotR.setAttribute('cy', P.y);
+link.setAttribute('x1', P.x); link.setAttribute('y1', P.y);
+link.setAttribute('x2', 2 * ax - P.x); link.setAttribute('y2', P.y);
+dL.setAttribute('x', (P.x + ax) / 2); dL.setAttribute('y', P.y - 8);
+dL.textContent = Math.round(ax - P.x) + '格';
+dR.setAttribute('x', (2 * ax - P.x + ax) / 2); dR.setAttribute('y', P.y - 8);
+dR.textContent = Math.round(ax - P.x) + '格';
+}
+upd();
+var dragging = false;
+svg.addEventListener('pointerdown', function (ev) {
+var r = svg.getBoundingClientRect();
+var sx = (ev.clientX - r.left) / r.width * W, sy = (ev.clientY - r.top) / r.height * H;
+if (Math.hypot(sx - P.x, sy - P.y) < 22) { dragging = true; svg.setPointerCapture && svg.setPointerCapture(ev.pointerId); }
+});
+svg.addEventListener('pointermove', function (ev) {
+if (!dragging) return; ev.preventDefault();
+var r = svg.getBoundingClientRect();
+P.x = Math.max(16, Math.min(ax - 10, (ev.clientX - r.left) / r.width * W));
+P.y = Math.max(30, Math.min(H - 12, (ev.clientY - r.top) / r.height * H));
+upd();
+});
+window.addEventListener('pointerup', function () { dragging = false; });
+var STEPS = [
+{ text: '左边有半个图形，右边还空着。先看关键一句：对称点到对称轴的距离<b>相等</b>。',
+run: function () { dotR.style.opacity = 1; link.style.opacity = 1; dL.style.opacity = 1; dR.style.opacity = 1; } },
+{ text: '橙色的点可以<b>拖</b>：拖到哪，右边的对称点就到哪，两边距离始终相等。',
+run: function () {} },
+{ text: '用这个办法把右半边逐点补出来……',
+run: function () { rightSegs.forEach(function (s3, i) { setTimeout(function () { s3.style.opacity = 1; }, i * 180); }); } },
+{ text: '补全了！左右沿对称轴对折正好重合——这就是<b>轴对称图形</b>。', run: function () {} }
+];
+var idx = 0;
+return {
+el: svg,
+next: function () {
+if (idx >= STEPS.length) return null;
+var st = STEPS[idx++]; st.run();
+return { text: st.text, done: idx >= STEPS.length };
+},
+startDemo: function () {
+idx = 0;
+rightSegs.forEach(function (s3) { s3.style.opacity = 0; });
+dotR.style.opacity = 0; link.style.opacity = 0; dL.style.opacity = 0; dR.style.opacity = 0;
+return this;
+},
+reset: function () { return this.startDemo(); }
+};
+}
 global.CR = {
 vertical: vertical,
 geometry: geometry,
 mult2: mult2,
 fracMeaning: fracMeaning,
+fracOps: fracOps,
+volume: volume,
+pairs: pairs,
+treePlant: treePlant,
+symmetry: symmetry,
 chart: chart,
 mean: mean,
 polyArea: polyArea,
@@ -3988,6 +4438,101 @@ if (s.title) f.appendChild(h('h2', null, s.title));
 var box = h('div', 'viz');
 f.appendChild(box);
 var ctrl = CR.triangle(box, s.body || s);
+if (s.caption) {
+var cap = h('div', 'viz-cap');
+cap.innerHTML = s.caption;
+f.appendChild(cap);
+}
+attachDemo(f, ctrl, s);
+if (s.note) {
+var card = h('div', 'card' + (s.warn ? ' pitfall' : ' tip'));
+card.innerHTML = '<p style="margin:0">' + s.note + '</p>';
+f.appendChild(card);
+}
+return f;
+},
+fracOps: function (s) {
+var f = document.createDocumentFragment();
+if (s.title) f.appendChild(h('h2', null, s.title));
+var box = h('div', 'viz');
+f.appendChild(box);
+var ctrl = CR.fracOps(box, s.body || s);
+if (s.caption) {
+var cap = h('div', 'viz-cap');
+cap.innerHTML = s.caption;
+f.appendChild(cap);
+}
+attachDemo(f, ctrl, s);
+if (s.note) {
+var card = h('div', 'card' + (s.warn ? ' pitfall' : ' tip'));
+card.innerHTML = '<p style="margin:0">' + s.note + '</p>';
+f.appendChild(card);
+}
+return f;
+},
+volume: function (s) {
+var f = document.createDocumentFragment();
+if (s.title) f.appendChild(h('h2', null, s.title));
+var box = h('div', 'viz');
+f.appendChild(box);
+var ctrl = CR.volume(box, s.body || s);
+if (s.caption) {
+var cap = h('div', 'viz-cap');
+cap.innerHTML = s.caption;
+f.appendChild(cap);
+}
+attachDemo(f, ctrl, s);
+if (s.note) {
+var card = h('div', 'card' + (s.warn ? ' pitfall' : ' tip'));
+card.innerHTML = '<p style="margin:0">' + s.note + '</p>';
+f.appendChild(card);
+}
+return f;
+},
+pairs: function (s) {
+var f = document.createDocumentFragment();
+if (s.title) f.appendChild(h('h2', null, s.title));
+var box = h('div', 'viz');
+f.appendChild(box);
+var ctrl = CR.pairs(box, s.body || s);
+if (s.caption) {
+var cap = h('div', 'viz-cap');
+cap.innerHTML = s.caption;
+f.appendChild(cap);
+}
+attachDemo(f, ctrl, s);
+if (s.note) {
+var card = h('div', 'card' + (s.warn ? ' pitfall' : ' tip'));
+card.innerHTML = '<p style="margin:0">' + s.note + '</p>';
+f.appendChild(card);
+}
+return f;
+},
+treePlant: function (s) {
+var f = document.createDocumentFragment();
+if (s.title) f.appendChild(h('h2', null, s.title));
+var box = h('div', 'viz');
+f.appendChild(box);
+var ctrl = CR.treePlant(box, s.body || s);
+if (s.caption) {
+var cap = h('div', 'viz-cap');
+cap.innerHTML = s.caption;
+f.appendChild(cap);
+}
+attachDemo(f, ctrl, s);
+if (s.note) {
+var card = h('div', 'card' + (s.warn ? ' pitfall' : ' tip'));
+card.innerHTML = '<p style="margin:0">' + s.note + '</p>';
+f.appendChild(card);
+}
+return f;
+},
+symmetry: function (s) {
+var f = document.createDocumentFragment();
+if (s.title) f.appendChild(h('h2', null, s.title));
+var box = h('div', 'viz');
+f.appendChild(box);
+var ctrl = CR.symmetry(box, s.body || s);
 if (s.caption) {
 var cap = h('div', 'viz-cap');
 cap.innerHTML = s.caption;

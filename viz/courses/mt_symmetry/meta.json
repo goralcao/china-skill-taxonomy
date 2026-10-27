@@ -1,0 +1,29 @@
+{
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-27",
+  "subject": "数学",
+  "template": "explain",
+  "topicId": "mt_symmetry",
+  "title": "轴对称：对折能重合",
+  "renderer": "symmetry",
+  "duration": 10,
+  "interactions": 2,
+  "grade": 4,
+  "standards": [
+    "math-2022:S2:GG:PM"
+  ],
+  "prerequisites": [
+    "mt_shape-move",
+    "mt_shape-2d"
+  ],
+  "next": [],
+  "objectives": [
+    "理解轴对称图形的含义：沿对称轴对折完全重合",
+    "掌握对称点到对称轴的距离相等",
+    "能在方格纸上补全轴对称图形的另一半"
+  ],
+  "cognitiveAction": "变换"
+}

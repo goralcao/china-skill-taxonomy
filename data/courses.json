@@ -1,19 +1,19 @@
 {
-  "version": "v0.37.0",
+  "version": "v0.38.0",
   "schemaVersion": 1,
   "generatedAt": "2026-10-27",
   "counts": {
-    "total": 37,
+    "total": 42,
     "byTemplate": {
       "drill": 1,
-      "explain": 35,
+      "explain": 40,
       "explore": 1
     },
     "byStatus": {
-      "reviewed": 37
+      "reviewed": 42
     },
     "bySubject": {
-      "数学": 35,
+      "数学": 40,
       "化学": 1,
       "物理": 1
     }
@@ -520,6 +520,39 @@
       "bytes": 681
     },
     {
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "subject": "数学",
+      "template": "explain",
+      "topicId": "mt_frac-addsub",
+      "title": "分数的加减法：先通分，再加减",
+      "renderer": "fracOps",
+      "duration": 12,
+      "interactions": 2,
+      "grade": 5,
+      "standards": [
+        "math-2022:S3:NA:NO"
+      ],
+      "prerequisites": [
+        "mt_frac-same-addsub",
+        "mt_frac-reduce"
+      ],
+      "next": [
+        "mt_frac-mul"
+      ],
+      "objectives": [
+        "理解同分母分数加减：分数单位相同，直接加减分子",
+        "理解异分母分数加减要先通分",
+        "会计算并能约分"
+      ],
+      "cognitiveAction": "变换",
+      "path": "courses/mt_frac-addsub/",
+      "bytes": 684
+    },
+    {
       "topicId": "mt_frac-intro",
       "title": "分数的初步认识：把 1 平均分",
       "template": "explain",
@@ -979,6 +1012,37 @@
       "bytes": 690
     },
     {
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "subject": "数学",
+      "template": "explain",
+      "topicId": "mt_position-pairs",
+      "title": "位置（数对）：先列后行",
+      "renderer": "pairs",
+      "duration": 10,
+      "interactions": 2,
+      "grade": 5,
+      "standards": [
+        "math-2022:S2:GG:PM"
+      ],
+      "prerequisites": [
+        "mt_position-basic",
+        "mt_direction"
+      ],
+      "next": [],
+      "objectives": [
+        "知道竖排为列、横排为行",
+        "会用数对（列,行）表示位置",
+        "理解位置与数对的一一对应"
+      ],
+      "cognitiveAction": "构造",
+      "path": "courses/mt_position-pairs/",
+      "bytes": 675
+    },
+    {
       "topicId": "mt_rect-area",
       "title": "长方形的面积：一行摆几个，摆几行",
       "template": "explain",
@@ -1083,6 +1147,37 @@
       "bytes": 657
     },
     {
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "subject": "数学",
+      "template": "explain",
+      "topicId": "mt_symmetry",
+      "title": "轴对称：对折能重合",
+      "renderer": "symmetry",
+      "duration": 10,
+      "interactions": 2,
+      "grade": 4,
+      "standards": [
+        "math-2022:S2:GG:PM"
+      ],
+      "prerequisites": [
+        "mt_shape-move",
+        "mt_shape-2d"
+      ],
+      "next": [],
+      "objectives": [
+        "理解轴对称图形的含义：沿对称轴对折完全重合",
+        "掌握对称点到对称轴的距离相等",
+        "能在方格纸上补全轴对称图形的另一半"
+      ],
+      "cognitiveAction": "变换",
+      "path": "courses/mt_symmetry/",
+      "bytes": 669
+    },
+    {
       "topicId": "mt_time-hms",
       "title": "时、分、秒：钟面上一圈是多久",
       "template": "explain",
@@ -1112,6 +1207,37 @@
       "updatedAt": "2026-10-27",
       "path": "courses/mt_time-hms/",
       "bytes": 30205
+    },
+    {
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "subject": "数学",
+      "template": "explain",
+      "topicId": "mt_tree-plant",
+      "title": "植树问题：棵数与间隔数差 1 吗？",
+      "renderer": "treePlant",
+      "duration": 11,
+      "interactions": 2,
+      "grade": 5,
+      "standards": [
+        "math-2022:S3:PP"
+      ],
+      "prerequisites": [
+        "mt_length-cm-m",
+        "mt_pattern"
+      ],
+      "next": [],
+      "objectives": [
+        "理解间隔数与棵数的关系",
+        "区分两端都栽、只栽一端、两端都不栽三种情况",
+        "会把植树问题的思路用到锯木头、上楼梯等问题"
+      ],
+      "cognitiveAction": "比较",
+      "path": "courses/mt_tree-plant/",
+      "bytes": 687
     },
     {
       "topicId": "mt_triangle-angle",
@@ -1242,6 +1368,40 @@
       "updatedAt": "2026-10-27",
       "path": "courses/mt_unit-ton/",
       "bytes": 654
+    },
+    {
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "subject": "数学",
+      "template": "explain",
+      "topicId": "mt_volume",
+      "title": "体积与容积单位：一个小正方体就是 1",
+      "renderer": "volume",
+      "duration": 12,
+      "interactions": 2,
+      "grade": 5,
+      "standards": [
+        "math-2022:S3:GG:GM"
+      ],
+      "prerequisites": [
+        "mt_cuboid",
+        "mt_rect-area",
+        "mt_area-intro"
+      ],
+      "next": [
+        "mt_cylinder"
+      ],
+      "objectives": [
+        "理解体积的含义：物体所占空间的大小",
+        "认识体积单位：棱长 1cm/1dm/1m 的正方体是 1cm³/1dm³/1m³",
+        "会用「每层个数 × 层数」求长方体体积"
+      ],
+      "cognitiveAction": "构造",
+      "path": "courses/mt_volume/",
+      "bytes": 692
     }
   ]
 }
