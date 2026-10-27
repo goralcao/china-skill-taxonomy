@@ -482,6 +482,9 @@
     W = canvas.clientWidth; H = canvas.clientHeight;
     canvas.width = W * DPR; canvas.height = H * DPR;
     ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    // 转屏或改窗口后，列数与节点半径都要跟着画布重算，否则竖屏DIY好的网格
+    // 一横过来就又挤回去了（「只看课件」的布局是自适应的）
+    if (courseOnly) arrangeCourseOnly(true);
     reheat(0.6);
   }
   window.addEventListener('resize', resize);
@@ -1347,7 +1350,7 @@
       : (hoverSet && hoverSet.has(n.id)) ? 2
       : n.kind === 'subject' ? 2 : n.kind === 'cluster' ? 1 : 0;
     const tier = showAllLabels ? 2 : k >= 2.5 ? 2 : k >= 1.2 ? 1 : 0;
-    const CAP = [18, 45, 130][tier];
+    const CAP = courseOnly ? 130 : [18, 45, 130][tier];
     const placed = [];
     let count = 0;
     const cand = renderNodes.filter(n => n.visible)
@@ -1356,7 +1359,10 @@
     for (const n of cand) {
       if (courseOnly && n.kind !== 'topic') continue;   // 筛选态只标知识点
       const p = prio(n);
-      const mandatory = p === 3 || courseOnly;
+      const mandatory = p === 3 || courseOnly;   // 跳过分层门槛：这类点「想」显示
+      const nocull = p === 3;                    // 跳过碰撞去重：只有选中/溯源必须看得见。
+      // 「只看课件」早先连碰撞去重一起跳过，53 个名字就全糊在一起了——现在它
+      // 照样参与去重，能互不遮挡地放下几个就显示几个，点开节点看详情即可。
       // 分层门槛（专家方案：L0 只留枢纽，L1 中频，L2 全量）
       if (!mandatory && !showAllLabels) {
         if (tier === 0) {
@@ -1375,11 +1381,11 @@
       const text = n.kind === 'topic' ? n.name : n.name + (fold ? ' ▸' : '');
       const w = text.length * fsz + 10, h = fsz + 4;
       const sy = n._labelBelow
-        ? (n.y + n.r + 6 / k) * k + view.y
-        : (n.y - n.r - 6 / k) * k + view.y - h;
+        ? (n.y + (n.drawR || n.r) + 6 / k) * k + view.y
+        : (n.y - (n.drawR || n.r) - 6 / k) * k + view.y - h;
       if (sy < -40 || sy > H + 40) continue;
       const rect = { x: sx - w / 2, y: sy, w, h };
-      if (!mandatory) {
+      if (!nocull) {
         if (count >= CAP) continue;
         let hit = false;
         for (const r of placed) {
@@ -1945,51 +1951,99 @@
     }
     for (const id of keep) collapsed.delete(id);
   }
-  /** 只看课件时把这几个点按「年级从下往上、同学年横向排开」重新摆位，
-   *  否则同簇的几点会叠成一团。退出筛选时还原原坐标与固定状态。 */
+  /** 只看课件时的重新摆位：按年级分组、组内流式排成自适应网格。
+   *
+   * 关键是列数与节点半径都由「当前画布尺寸」反推，而不是写死像素：
+   * 窄屏自动走「少列多行」的竖版，宽屏走「多列少行」的横版，两种情况都留得出
+   * 足够间距。早先的版本用固定公式 min(180, (W-200)/行数) 排一行，
+   * 390px 宽的手机上分子只剩 190，除以十几个节点后间距不到 15px，
+   * 而节点直径就有 94px——于是全部糊成一团。
+   * 退出筛选时还原原坐标、固定状态与绘制半径。
+   */
   function arrangeCourseOnly(on) {
-    if (on) {
-      const vis = nodes.filter(n => n.visible);
-      if (!vis.length) return;
-      const rows = new Map();
-      vis.forEach(n => {
-        if (!n._saved) n._saved = { x: n.x, y: n.y, pinned: n.pinned };
-        const g = n.gradeRangeStart;
-        if (!rows.has(g)) rows.set(g, []);
-        rows.get(g).push(n);
-      });
-      const grades = [...rows.keys()].sort((a, b) => a - b);
-      const cx = W / 2;
-      const top = H * 0.34, bottom = H * 0.68;
-      grades.forEach((g, gi) => {
-        const row = rows.get(g);
-        const y = grades.length === 1 ? H * 0.5 : top + (bottom - top) * gi / (grades.length - 1);
-        row.forEach((n, i) => {
-          n.x = cx + (i - (row.length - 1) / 2) * Math.min(180, (W - 200) / Math.max(row.length, 1));
-          n.y = y;
-          n._labelBelow = i % 2 === 1;   // 同排标签上下交替，窄屏才不会糊成一团
-          n.vx = n.vy = 0;
-          n.pinned = true;         // 临时钉住，别被力导向又拉回簇心
-          n._autoPin = true;
-        });
-      });
-      view.x = 0; view.y = 0; view.k = 1;
-    } else {
+    if (!on) {
       nodes.forEach(n => {
         if (n._saved) {
           n.x = n._saved.x; n.y = n._saved.y;
           if (n._autoPin) n.pinned = n._saved.pinned;
           n._saved = null; n._autoPin = false; n._labelBelow = false;
         }
+        n.drawR = 0;
       });
       reheat(0.8);
+      return;
+    }
+    const vis = nodes.filter(n => n.visible);
+    if (!vis.length) return;
+    vis.forEach(n => { if (!n._saved) n._saved = { x: n.x, y: n.y, pinned: n.pinned }; });
+
+    // 1) 按年级分组；组内按名称排序，保证每次打开顺序都稳定
+    const byGrade = new Map();
+    vis.forEach(n => {
+      const g = n.gradeRangeStart;
+      if (!byGrade.has(g)) byGrade.set(g, []);
+      byGrade.get(g).push(n);
+    });
+    const groups = [...byGrade.entries()].sort((a, b) => a[0] - b[0]);
+    groups.forEach(([, list]) => list.sort((a, b) => a.name.localeCompare(b.name, 'zh')));
+
+    // 2) 反推列数与半径：让整张图的高宽比贴近画布，fit 之后四周留白最少、点最大
+    const total = vis.length;
+    const cellRatio = 1.2;                                 // 单元格高比宽略大，留给节点标签
+    const cols = Math.max(2, Math.min(7,
+      Math.round(Math.sqrt(total * (W / Math.max(H, 1)) / cellRatio))));
+    const cellW = (W - 72) / cols;                         // 左右各留 36
+    const R = Math.max(11, Math.min(26, cellW * 0.32));    // 半径跟着列宽走，天然不会重叠
+
+    // 3) 流式排布：一个年级排不完就续下一行，年级之间另起一段并留出更宽的间隔
+    const rowsOut = [];
+    groups.forEach(([grade, list]) => {
+      for (let i = 0; i < list.length; i += cols) {
+        rowsOut.push({ items: list.slice(i, i + cols), head: i === 0 });
+      }
+    });
+    // 行距要同时装下圆和它下方的标签——标签是屏幕固定字号（11px），换算到
+    // 世界坐标得除以当前缩放，所以先用经验行距排一遍估计缩放，再定稿排一遍。
+    const place = (rh) => {
+      let y = 54;
+      rowsOut.forEach((row) => {
+        if (!row.head) y += rh * 0.45;                     // 换年级：插入一段空行做分隔
+        const items = row.items;
+        items.forEach((n, i) => {
+          n.x = W / 2 + (i - (items.length - 1) / 2) * cellW;
+          n.y = y;
+          n.drawR = R;                                     // 绘制与点选半径都跟着实际排版走
+          n._labelBelow = i % 2 === 1;                     // 同排标签上下交替，避免横向撞字
+          n.vx = n.vy = 0;
+          n.pinned = true; n._autoPin = true;              // 临时钉住，别被力导向拉回簇心
+        });
+        y += rh;
+      });
+    };
+    let rowH = R * 2 + 30;
+    place(rowH);
+    fitVisible(46);
+    place(rowH = Math.max(rowH, R * 2 + 26 / Math.max(view.k, 0.08)));
+    view.x = 0; view.y = 0; view.k = 1;
+    // 4) 先收进视野看全貌；但 53 个点挤进一块小屏，全览会把节点缩到米粒大。
+    //    这时改为「可读性优先」：放大到看得清、点得中为止，超出屏幕的部分
+    //    靠拖动浏览——内容按年级自上而下排，所以放大后从顶部对齐最顺手。
+    const bb = fitVisible(46);
+    if (bb) {
+      const MIN_SCREEN_R = 11;
+      if (R * view.k < MIN_SCREEN_R) {
+        view.k = Math.min(1, MIN_SCREEN_R / R);
+        view.x = W / 2 - ((bb.minX + bb.maxX) / 2) * view.k;
+        view.y = 54 - bb.minY * view.k;
+        wake();
+      }
     }
   }
 
   /** 把视图缩放平移到「当前可见节点」的包围盒，避免筛完只剩几个点还停在鸟瞰 */
-  function fitVisible(pad = 90) {
+  function fitVisible(pad = 90, minK = 0) {
     const vis = nodes.filter(n => n.visible);
-    if (!vis.length) return;
+    if (!vis.length) return null;
     let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
     for (const n of vis) {
       minX = Math.min(minX, n.x); maxX = Math.max(maxX, n.x);
@@ -1997,11 +2051,15 @@
     }
     const bw = Math.max(80, maxX - minX + pad * 2);
     const bh = Math.max(80, maxY - minY + pad * 2);
-    const k = Math.min(W / bw, H / bh, 2.4);
+    let k = Math.min(W / bw, H / bh, 2.4);
+    // minK 是「别缩太狠」的下限，但只在内容仍装得进屏幕时才生效：
+    // 窄而扁的横屏上强行下限会把一半节点顶到屏幕外，那就宁可缩得小一点。
+    if (minK > k && bw * minK <= W && bh * minK <= H) k = minK;
     view.k = k;
     view.x = W / 2 - ((minX + maxX) / 2) * k;
     view.y = H / 2 - ((minY + maxY) / 2) * k;
     wake();
+    return { minX, maxX, minY, maxY };
   }
 
   function applyFilter() {
@@ -2017,8 +2075,6 @@
         && !subjHidden && !clHidden && okGrade && okDomain
         && !(hideMastered && mastered.has(n.id))
         && (!courseOnly || courseByTopic.has(n.id));
-      // 只看课件时把知识点放大，四个点要能被一眼找到、一眼点中
-      n.drawR = courseOnly ? n.r * 2.6 : 0;
     }
     // 容器上的数字要跟着筛选变，否则「234」会让人以为还有 234 个
     const subjSeen = new Map();

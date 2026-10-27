@@ -14,7 +14,7 @@ type: software
 authors:
   - name: "China Skill Taxonomy contributors"
     website: "https://github.com/goralcao/china-skill-taxonomy"
-version: 0.41.0
+version: 0.41.1
 date-released: 2026-10-22
 license:
   - ODbL-1.0
