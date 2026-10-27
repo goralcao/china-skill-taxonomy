@@ -467,6 +467,81 @@
 (function () {
   const D = window.TAXONOMY_DATA;
   const topics = D.topics, deps = D.dependencies, clusters = D.clusters;
+
+  // ---------- 按需加载：详情长文本 / 教学研究记录 ----------
+  // 首屏的 data.js 只带画图必需的字段（约 0.6MB）；这两块是用户点开节点才要看的，
+  // 留到那时再取，否则 4MB 的明文数据会把首屏拖到几秒开外。
+  // 用动态 <script src> 而不是 fetch：file:// 打开时 fetch 会被跨域挡住，script 不会。
+  function loadScriptOnce(src) {
+    return new Promise((resolve, reject) => {
+      const s = document.createElement('script');
+      s.src = src;
+      s.onload = () => resolve();
+      s.onerror = () => reject(new Error('load failed: ' + src));
+      document.head.appendChild(s);
+    });
+  }
+  let _detailsTask = null, _researchTask = null;
+  function applyDetails() {
+    const DET = window.TAXONOMY_DETAILS;
+    if (!DET || D.__details) return;
+    const tById = new Map((DET.topics || []).map(t => [t.id, t]));
+    // 渲染用的是 nodes / edges（原始数据拍平出来的副本），面板读的也是这些副本，
+    // 所以详情要同时灌进原始数据和副本两份——只灌一份，面板上照样是空的。
+    for (const t of D.topics) { const d = tById.get(t.id); if (d) Object.assign(t, d); }
+    for (const n of nodes) { const d = tById.get(n.id); if (d) Object.assign(n, d); }
+    const rKey = new Map((DET.edges || [])
+      .map(e => [e.topicId + '\u0000' + e.prerequisiteId, e.reason]));
+    for (const e of D.dependencies) {
+      const r = rKey.get(e.topicId + '\u0000' + e.prerequisiteId);
+      if (r) e.reason = r;
+    }
+    for (const e of edges) {
+      const r = rKey.get(e.topicId + '\u0000' + e.prerequisiteId);
+      if (r) e.reason = r;
+    }
+    const cById = new Map((DET.clusters || []).map(c => [c.id, c.summary]));
+    for (const c of D.clusters) { const s2 = cById.get(c.id); if (s2) c.summary = s2; }
+    if (DET.standards) { D.standards = DET.standards; rebuildStdIndex(); }
+    if (DET.textbooks) { D.textbooks = DET.textbooks; rebuildTextbookIndex(); }
+    D.__details = true;
+  }
+  function ensureDetails() {
+    if (D.__details) return Promise.resolve(true);
+    if (!_detailsTask) {
+      _detailsTask = loadScriptOnce('details.js')
+        .then(() => { applyDetails(); return true; })
+        .catch(() => false);
+    }
+    return _detailsTask;
+  }
+  function ensureResearch() {
+    if (D.__research) return Promise.resolve(true);
+    if (!_researchTask) {
+      _researchTask = loadScriptOnce('research.js').then(() => {
+        const R = window.TAXONOMY_RESEARCH;
+        if (R) {
+          D.research = D.research || {};
+          D.research.records = R.records || [];
+          for (const r of (R.records || [])) researchByTopic.set(r.topicId, r);
+        }
+        D.__research = true;
+        return true;
+      }).catch(() => false);
+    }
+    return _researchTask;
+  }
+  // 首屏画稳之后就把详情数据预取上，用户点开节点时通常已经到位了
+  function prefetchDetails() {
+    // 弱网下不预取：1.1MB 的空闲下载会一直占着带宽，反而拖慢用户接下来的操作，
+    // 那种情况下等用户真的点开节点再按需加载更划算。
+    const conn = navigator.connection;
+    if (conn && (conn.saveData || /^(slow-)?2g$/.test(conn.effectiveType || ''))) return;
+    const go = () => ensureDetails();
+    if (window.requestIdleCallback) requestIdleCallback(go, { timeout: 2500 });
+    else setTimeout(go, 1200);
+  }
+
   const byId = new Map(topics.map(t => [t.id, t]));
 
   // ---------- 邻接表 ----------
@@ -1666,22 +1741,35 @@
 
   // ---------- 详情面板 ----------
   const stdByCode = new Map();
-  const standardsDoc = D.standards || [];
-  standardsDoc.forEach(s => stdByCode.set(s.code, s));
+  const standardsDoc = [];          // 课标条目随 details.js 按需加载，首屏为空
+  function rebuildStdIndex() {
+    stdByCode.clear();
+    standardsDoc.length = 0;
+    for (const s of (D.standards || [])) { standardsDoc.push(s); stdByCode.set(s.code, s); }
+  }
   const bookNames = {};
-  const textbooksDoc = D.textbooks || {};
   // 有 2024 版修订目录的学科（数学/语文/英语）；其余学科措辞不同，避免误导
-  const SUBJECTS_2024 = new Set((textbooksDoc.versions || [])
-    .filter(v => /-2024$/.test(v.slug) && v.subject).map(v => v.subject));
-  (textbooksDoc.versions || []).forEach(v => {
-    bookNames[v.slug] = { name: v.name, books: {} };
-    v.books.forEach(b => bookNames[v.slug].books[b.slug] = b);
-  });
-  // 教材引用正则按数据动态生成（新增版本无需改这里）；长的 slug 排前面，避免被前缀先匹配
-  const VERSION_RE = new RegExp('^(' +
-    (textbooksDoc.versions || []).map(v => v.slug).sort((a, b) => b.length - a.length)
-      .map(s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|') +
-    '):(\\d{1,2}[ab])(?::(u[1-9][0-9]?))?(?:#(.+))?$');
+  const SUBJECTS_2024 = new Set();
+  // 教材版本字典随 details.js 按需加载，首屏是空的——index 必须支持重建，
+  // 否则详情面板打开时教材链接会因为查不到书名而渲染不出来。
+  function rebuildTextbookIndex() {
+    for (const k of Object.keys(bookNames)) delete bookNames[k];
+    SUBJECTS_2024.clear();
+    const versions = (D.textbooks || {}).versions || [];
+    versions.filter(v => /-2024$/.test(v.slug) && v.subject).forEach(v => SUBJECTS_2024.add(v.subject));
+    versions.forEach(v => {
+      bookNames[v.slug] = { name: v.name, books: {} };
+      v.books.forEach(b => bookNames[v.slug].books[b.slug] = b);
+    });
+    // 教材引用正则按数据动态生成（新增版本无需改这里）；长的 slug 排前面，避免被前缀先匹配。
+    // 首屏字典为空时它会退化成匹配不到的残废正则，所以必须跟着一起重建。
+    VERSION_RE = new RegExp('^(' +
+      versions.map(v => v.slug).sort((a, b) => b.length - a.length)
+        .map(s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|') +
+      '):(\\d{1,2}[ab])(?::(u[1-9][0-9]?))?(?:#(.+))?$');
+  }
+  let VERSION_RE = /^(?!)/;        // 加载前刻意用「永不匹配」，免得残废正则误吞空串
+  rebuildTextbookIndex();
 
   function refText(ref) {
     const m = ref.match(VERSION_RE);
@@ -1754,6 +1842,8 @@
       renderContainerPanel(n);
       panel.classList.add('open');
       panel.scrollTop = 0;
+      // 领域簇摘要在 details.js 里，到了再补上
+      ensureDetails().then(() => { if (selected === n) renderContainerPanel(n); });
       return;
     }
     const course = courseByTopic.get(n.id);
@@ -1774,17 +1864,35 @@
       `<span class="badge" style="color:${subjectColor[n.subject]};border-color:${subjectColor[n.subject]}">${n.subject}</span>
        <span>${esc(n.domain)}</span><span>${n.gradeRangeStart}~${n.gradeRangeEnd} 年级</span><span>${esc(n.stage)}</span>`
       + (course ? `<span style="color:var(--accent)">课件 ${course.duration} 分钟${courseDone.has(n.id) ? ' · 已完成' : ''}</span>` : '');
-    document.getElementById('pDesc').textContent = n.description;
-    document.getElementById('pEvidence').innerHTML = n.evidence.map(e => `<li>${esc(e)}</li>`).join('');
-    document.getElementById('pAssess').textContent = n.assessmentPrompt.replace(/\{\{name\}\}/g, '孩子');
-    document.getElementById('pStandards').innerHTML = n.standards.map(c => {
-      const s = stdByCode.get(c);
-      return s ? `<div class="std-item"><code>${esc(c)}</code>${esc(s.domain)}${s.theme ? ' · ' + esc(s.theme) : ''}：${esc(s.summary)}</div>` : '';
-    }).join('');
+    // 描述/依据/课标/教材这几块依赖按需加载的数据，先留个占位，
+    // 等 details.js 到了再填；名字、徽标、先修解锁只用首屏数据，立刻就能看。
+    document.getElementById('pDesc').textContent = n.description || '加载中…';
+    document.getElementById('pEvidence').innerHTML =
+      n.evidence ? n.evidence.map(e => `<li>${esc(e)}</li>`).join('') : '';
+    document.getElementById('pAssess').textContent =
+      n.assessmentPrompt ? n.assessmentPrompt.replace(/\{\{name\}\}/g, '孩子') : '';
     document.getElementById('pTextbooks').innerHTML = renderTextbooksHtml(n);
+    document.getElementById('pStandards').innerHTML = '';
     const cmpBtn = document.getElementById('btnTbCompare');
     if (cmpBtn) cmpBtn.onclick = () => textbookCompare(n);
-    renderResearch(n);
+    const fillDetails = () => {
+      document.getElementById('pDesc').textContent = n.description || '';
+      document.getElementById('pEvidence').innerHTML =
+        (n.evidence || []).map(e => `<li>${esc(e)}</li>`).join('');
+      document.getElementById('pAssess').textContent =
+        (n.assessmentPrompt || '').replace(/\{\{name\}\}/g, '孩子');
+      document.getElementById('pStandards').innerHTML = (n.standards || []).map(c => {
+        const s = stdByCode.get(c);
+        return s ? `<div class="std-item"><code>${esc(c)}</code>${esc(s.domain)}${s.theme ? ' · ' + esc(s.theme) : ''}：${esc(s.summary)}</div>` : '';
+      }).join('');
+      document.getElementById('pTextbooks').innerHTML = renderTextbooksHtml(n);
+    };
+    ensureDetails().then(ok => {
+      if (selected !== n) return;
+      if (ok) fillDetails();
+      else document.getElementById('pDesc').textContent = '（详情数据未加载）';
+    });
+    ensureResearch().then(() => { if (selected === n) renderResearch(n); });
     document.getElementById('pPrereqs').innerHTML = prereqs.get(n.id).map(d => linkItem(d.prerequisiteId, d)).join('') || '<li style="color:var(--text-dim)">（起点主题，无先修）</li>';
     document.getElementById('pUnlocks').innerHTML = unlocks.get(n.id).map(d => linkItem(d.topicId, d)).join('') || '<li style="color:var(--text-dim)">（暂未解锁其他主题）</li>';
     renderDiag(n);
@@ -2457,8 +2565,8 @@
   topics.forEach(t => subjCount[t.subject] = (subjCount[t.subject] || 0) + 1);
   document.getElementById('stats').innerHTML =
     `主题 <b>${topics.length}</b>（${Object.entries(subjCount).map(([k, v]) => k + ' ' + v).join(' · ')}） · ` +
-    `先修依赖 <b>${deps.length}</b> · 课标条目 <b>${standardsDoc.length}</b> · 域摘要 <b>${clusters.length}</b> · ` +
-    `教学研究 <b>${(D.research?.records ?? []).length}</b>`;
+    `先修依赖 <b>${deps.length}</b> · 课标条目 <b>${D.standardsCount ?? standardsDoc.length}</b> · 域摘要 <b>${clusters.length}</b> · ` +
+    `教学研究 <b>${D.research?.recordCount ?? 0}</b>`;
   document.getElementById('gradeAxis').textContent = '纵轴：1 年级（上）→ ' + MAX_GRADE + ' 年级（下）';
   // 热力矩阵列数随年级上限动态变化
   document.documentElement.style.setProperty('--hm-cols', MAX_GRADE);
@@ -2493,6 +2601,7 @@
   applyFilter();
   renderProgress();
   wake();
+  prefetchDetails();   // 首屏画完了，趁空闲把详情数据取上
 
   // 从课件完成返回：显示成绩并清掉参数，避免刷新时重复提示
   (function courseReturn() {

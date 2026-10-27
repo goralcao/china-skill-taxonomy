@@ -12,7 +12,9 @@
     data/textbooks.json            教材目录（含 2024 年版课标修订教材与 unitMap2024 映射层）
     data/clusters.json             家长友好的域摘要
     data/manifest.json             计数与 SHA-256 校验和
-    viz/data.js                    可视化用的内嵌数据（离线可用）
+    viz/data.js                    可视化首屏数据（只含画图必需字段）
+    viz/details.js                 按需：主题长文本、课标/教材字典、领域簇摘要
+    viz/research.js                按需：教学研究记录（1268 条，最占体积）
 """
 import hashlib
 import json
@@ -88,7 +90,7 @@ import teaching_research_chinese_senior  # noqa: E402
 import teaching_research_math_senior  # noqa: E402
 import teaching_research_english_senior  # noqa: E402
 
-VERSION = "v0.41.1"
+VERSION = "v0.42.0"
 SCHEMA_VERSION = 1
 
 MODULES = [
@@ -1052,26 +1054,77 @@ def main():
         "bytes": len(manifest_payload),
     }
 
-    # 可视化用的内嵌数据（与 data/*.json 内容一致，避免 file:// 下的跨域限制）
-    viz_payload = {
-        "version": VERSION,
-        "topics": topics,
-        "dependencies": deps,
-        "standards": standards,
-        "textbooks": artifacts["textbooks.json"],
-        "clusters": clusters,
-        "research": research,
-        "courses": artifacts["courses.json"],
-    }
+    # 可视化用的内嵌数据（与 data/*.json 内容一致，避免 file:// 下的跨域限制）。
+    #
+    # 分三个文件：首屏只加载「画图必需的字段」，长文本与研究记录按需加载，
+    # 否则 4MB 的 data.js 会把首屏拖垮（实测线上明文传输、未开 gzip）。
+    # 按需文件用动态 <script src> 载入而非 fetch，file:// 下也能照常工作。
     n_courses = sync_courses_to_viz(artifacts["topics.json"]["topics"],
                                     artifacts["dependencies.json"]["dependencies"])
-    js = "window.TAXONOMY_DATA = " + json.dumps(viz_payload, ensure_ascii=False) + ";\n"
-    (VIZ / "data.js").write_text(js, encoding="utf-8")
+
+    # 首屏必需：图谱要画节点、连线、容器、课件入口，就得先认得这些字段
+    TOPIC_CORE = ("id", "name", "subject", "domain", "type", "stage",
+                  "gradeRangeStart", "gradeRangeEnd", "clusterId", "centrality",
+                  "textbooks")     # textbooks 供「长卷」布局定位册次
+    # 按需：只在详情面板/教材对照里出现，用户不点就用不上
+    TOPIC_DETAIL = ("id", "description", "evidence", "assessmentPrompt", "standards",
+                    "textbooks2024", "textbookNote2024", "textbooksAlt", "textbookNoteAlt")
+
+    core_topics = [{k: t[k] for k in TOPIC_CORE if k in t} for t in topics]
+    detail_topics = []
+    for t in topics:
+        d = {k: t[k] for k in TOPIC_DETAIL if k in t and t[k] not in (None, [], "")}
+        if len(d) > 1:      # 只有 id、没有实质内容的主题不必占位
+            detail_topics.append(d)
+    # 依赖边的「为什么」是长句，只有详情面板才展示
+    core_deps = [{k: e[k] for k in ("topicId", "prerequisiteId", "strength") if k in e}
+                 for e in deps]
+    detail_deps = [{"topicId": e["topicId"], "prerequisiteId": e["prerequisiteId"],
+                    "reason": e["reason"]}
+                   for e in deps if e.get("reason")]
+    # 领域簇的摘要也是长文本
+    core_clusters = []
+    detail_clusters = []
+    for c in clusters:
+        core_clusters.append({k: c[k] for k in c if k != "summary"})
+        if c.get("summary"):
+            detail_clusters.append({"id": c["id"], "summary": c["summary"]})
+
+    viz_payload = {
+        "version": VERSION,
+        "topics": core_topics,
+        "dependencies": core_deps,
+        "clusters": core_clusters,
+        "courses": artifacts["courses.json"],
+        # 研究记录 1268 条独占 2.5MB，只留元数据供首屏显示条数；
+        # 课标条目同理，正文随 details.js 走，首屏只要个数字
+        "standardsCount": len(standards),
+        "research": {k: v for k, v in research.items() if k != "records"} | {
+            "recordCount": len(research.get("records", []))},
+    }
+    details_payload = {
+        "version": VERSION,
+        "topics": detail_topics,
+        "edges": detail_deps,
+        "clusters": detail_clusters,
+        "standards": standards,
+        "textbooks": artifacts["textbooks.json"],
+    }
+    research_payload = {"version": VERSION, "records": research.get("records", [])}
+
+    def _write_js(name, varname, payload):
+        body = json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
+        (VIZ / name).write_text(f"window.{varname} = {body};\n", encoding="utf-8")
+
+    _write_js("data.js", "TAXONOMY_DATA", viz_payload)
+    _write_js("details.js", "TAXONOMY_DETAILS", details_payload)
+    _write_js("research.js", "TAXONOMY_RESEARCH", research_payload)
 
     print("构建完成：")
     for name in list(artifacts) + ["teaching-research.json", "manifest.json"]:
         print(f"  data/{name}  {checksums[name]['bytes']:>8} bytes")
-    print(f"  viz/data.js  {(VIZ / 'data.js').stat().st_size:>8} bytes")
+    for nm in ("data.js", "details.js", "research.js"):
+        print(f"  viz/{nm:<11} {(VIZ / nm).stat().st_size:>8} bytes")
     if n_courses:
         print(f"  viz/courses  {n_courses} 个课件已同步")
     n2024 = sum(1 for t in topics if t["textbooks2024"])
