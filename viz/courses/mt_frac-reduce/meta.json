@@ -1,0 +1,31 @@
+{
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-27",
+  "subject": "数学",
+  "template": "explain",
+  "topicId": "mt_frac-reduce",
+  "title": "约分与通分：分数条上的「重分」",
+  "renderer": "fracReduce",
+  "duration": 11,
+  "interactions": 2,
+  "grade": 5,
+  "standards": [
+    "math-2022:S3:NA:NO"
+  ],
+  "prerequisites": [
+    "mt_frac-meaning",
+    "mt_factors"
+  ],
+  "next": [
+    "mt_frac-addsub"
+  ],
+  "objectives": [
+    "理解分数的基本性质：分子分母同乘或同除以同一个数（0 除外）大小不变",
+    "会把分数约分成最简分数",
+    "知道约分与通分都以基本性质为依据"
+  ],
+  "cognitiveAction": "变换"
+}

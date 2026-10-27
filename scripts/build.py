@@ -18,6 +18,7 @@ import hashlib
 import json
 import re
 import shutil
+import subprocess
 import sys
 from datetime import date
 from pathlib import Path
@@ -87,7 +88,7 @@ import teaching_research_chinese_senior  # noqa: E402
 import teaching_research_math_senior  # noqa: E402
 import teaching_research_english_senior  # noqa: E402
 
-VERSION = "v0.38.0"
+VERSION = "v0.39.0"
 SCHEMA_VERSION = 1
 
 MODULES = [
@@ -712,6 +713,20 @@ def build_graph_context(topic, topic_by_id, deps, course_state, tb_labels):
     }
 
 
+def minify_js(text: str) -> str:
+    """发布用 JS 压缩：优先 esbuild（完整压缩），环境里没有时退回 minify_light。"""
+    es = shutil.which("esbuild")
+    if es:
+        try:
+            r = subprocess.run([es, "--minify"], input=text,
+                               capture_output=True, text=True, timeout=30)
+            if r.returncode == 0 and r.stdout.strip():
+                return r.stdout
+        except Exception:
+            pass
+    return minify_light(text, "js")
+
+
 def minify_light(text: str, kind: str = "js") -> str:
     """发布产物的轻量压缩：去整行块注释、行首缩进与空行。
 
@@ -755,9 +770,9 @@ def sync_courses_to_viz(topics, deps):
     if not base_css_path.exists() or not renderers_path.exists():
         raise SystemExit("缺 templates/base.css 或 templates/renderers.js，课件无法内联")
     base_css = minify_light(base_css_path.read_text(encoding="utf-8"), "css")
-    renderers = minify_light(renderers_path.read_text(encoding="utf-8"), "js")
+    renderers = minify_js(renderers_path.read_text(encoding="utf-8"))
     engine_path = ROOT / "templates" / "engine.js"
-    engine_js = minify_light(engine_path.read_text(encoding="utf-8"), "js") if engine_path.exists() else ""
+    engine_js = minify_js(engine_path.read_text(encoding="utf-8")) if engine_path.exists() else ""
 
     topic_by_id = {t["id"]: t for t in topics}
     tb_labels = load_textbook_labels()

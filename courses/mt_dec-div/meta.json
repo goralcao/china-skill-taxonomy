@@ -1,0 +1,32 @@
+{
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-27",
+  "subject": "数学",
+  "template": "explain",
+  "topicId": "mt_dec-div",
+  "title": "小数除法：把除数变成整数",
+  "renderer": "decDiv",
+  "duration": 11,
+  "interactions": 2,
+  "grade": 5,
+  "standards": [
+    "math-2022:S3:NA:NO"
+  ],
+  "prerequisites": [
+    "mt_dec-mul",
+    "mt_div-2digit"
+  ],
+  "next": [
+    "mt_percent-2",
+    "mt_circle-measure"
+  ],
+  "objectives": [
+    "会用商不变性质把除数是小数的除法转化为整数除法",
+    "掌握小数点移位的位数：除数移几位被除数也移几位",
+    "会计算并验算"
+  ],
+  "cognitiveAction": "变换"
+}

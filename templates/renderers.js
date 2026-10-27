@@ -33,6 +33,12 @@
     return el;
   }
 
+  // SVG 文本快捷方式（各渲染器共用）
+  function T(parent, x, y, v, st) {
+    var t = s('text', { x: x, y: y, style: st || 'font-size:13px' }, parent);
+    t.textContent = v; return t;
+  }
+
   var reduced = function () {
     try {
       return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -4242,11 +4248,280 @@
     };
   }
 
+  /* ══════════════════════════════════════════════════════
+   * 约分与通分（分数基本性质）
+   * 把分数条「重分」：同除一个数变小份 = 约分，
+   * 同乘一个数变大份 = 通分；涂色部分始终一样大。
+   * ══════════════════════════════════════════════════════ */
+  function fracReduce(el, spec) {
+    spec = spec || {};
+    var mode = spec.mode || 'reduce';
+    var ORG = '#fbbf24', BLUE = '#38bdf8';
+    var W = 360, H = 150;
+    var svg = s('svg', { viewBox: '0 0 ' + W + ' ' + H, class: 'frd-svg', role: 'img' }, el);
+    svg.style.width = '100%'; svg.style.height = 'auto';
+    var barG = s('g', null, svg);
+    var lab = T(svg, 180, 28, '', 'font-size:17px;font-weight:700;fill:var(--text);text-anchor:middle');
+    var note = T(svg, 180, 140, '', 'font-size:12.5px;fill:var(--dim);text-anchor:middle');
+    function drawBar(den, fill, color) {
+      [].slice.call(barG.childNodes).forEach(function (c) { barG.removeChild(c); });
+      var x0 = 30, bw = 300, ch = 46, y = 46;
+      for (var i = 0; i < den; i++) {
+        s('rect', { x: x0 + i * (bw / den), y: y, width: bw / den - 2, height: ch, rx: 4,
+          fill: color, 'fill-opacity': i < fill ? 0.75 : 0.1, stroke: color, 'stroke-width': 1.4 }, barG);
+      }
+      lab.textContent = fill + '/' + den;
+    }
+    var STEPS = [], resetFn;
+    if (mode === 'prop') {
+      resetFn = function () { drawBar(2, 1, BLUE); note.textContent = ''; };
+      STEPS = [
+        { text: '1/2：把整体平均分成 2 份，取 1 份。',
+          run: function () { drawBar(2, 1, BLUE); } },
+        { text: '分子分母<b>同乘 2</b> → 2/4：重分成 4 份，涂 2 份，涂色部分<b>大小不变</b>。',
+          run: function () { drawBar(4, 2, BLUE); note.textContent = '1/2 = 2/4'; } },
+        { text: '再同乘 2 → 4/8：还是那么大。',
+          run: function () { drawBar(8, 4, BLUE); note.textContent = '1/2 = 2/4 = 4/8'; } },
+        { text: '这就是<b>分数的基本性质</b>：分子分母同乘或同除以同一个数（0 除外），大小不变——它是约分和通分的依据。',
+          run: function () {} }
+      ];
+    } else {
+      resetFn = function () { drawBar(18, 12, ORG); note.textContent = ''; };
+      STEPS = [
+        { text: '12/18：分子 12、分母 18 有公因数，<b>能约分</b>。先同除以 2。',
+          run: function () { drawBar(18, 12, ORG); note.textContent = ''; } },
+        { text: '分子分母<b>同除以 2</b> → 6/9：重分成 9 份涂 6 份，涂色部分大小不变。',
+          run: function () { drawBar(9, 6, ORG); note.textContent = '12÷2=6，18÷2=9'; } },
+        { text: '6 和 9 还有公因数 3，再<b>同除以 3</b> → 2/3。',
+          run: function () { drawBar(3, 2, ORG); note.textContent = '6÷3=2，9÷3=3'; } },
+        { text: '<b>2/3</b> 的分子分母只有公因数 1，已经<b>最简</b>——约分就是一直除到最简为止。',
+          run: function () {} }
+      ];
+    }
+    if (mode === 'prop') drawBar(2, 1, BLUE); else drawBar(18, 12, ORG);
+    var idx = 0;
+    return {
+      el: svg,
+      next: function () {
+        if (idx >= STEPS.length) return null;
+        var st = STEPS[idx++]; st.run();
+        return { text: st.text, done: idx >= STEPS.length };
+      },
+      startDemo: function () { idx = 0; resetFn(); return this; },
+      reset: function () { return this.startDemo(); }
+    };
+  }
+
+  /* ══════════════════════════════════════════════════════
+   * 可能性：转盘
+   * 真随机。每点一次演示就转一次并记账；转的次数多了，
+   * 各色出现的频率会靠近它占的区域大小。
+   * ══════════════════════════════════════════════════════ */
+  function spinner(el, spec) {
+    spec = spec || {};
+    var W = 360, H = 240, cx = 180, cy = 104, R = 84;
+    var svg = s('svg', { viewBox: '0 0 ' + W + ' ' + H, class: 'spn-svg', role: 'img' }, el);
+    svg.style.width = '100%'; svg.style.height = 'auto';
+    var defs = [
+      { name: '黄', color: '#fbbf24', n: 2 },
+      { name: '蓝', color: '#38bdf8', n: 1 },
+      { name: '红', color: '#f87171', n: 1 }
+    ];
+    var slices = [], ang = 0;
+    defs.forEach(function (d) {
+      for (var i = 0; i < d.n; i++) {
+        slices.push({ name: d.name, color: d.color, a0: ang, a1: ang + 360 / 4 });
+        ang += 360 / 4;
+      }
+    });
+    var wheel = s('g', null, svg);
+    slices.forEach(function (sl) {
+      var pts = [cx + ',' + cy], N = 26;
+      for (var i = 0; i <= N; i++) {
+        var t = (sl.a0 + (sl.a1 - sl.a0) * i / N) * Math.PI / 180;
+        pts.push((cx + R * Math.cos(t)).toFixed(1) + ',' + (cy - R * Math.sin(t)).toFixed(1));
+      }
+      s('path', { d: 'M' + pts.join(' L') + ' Z', fill: sl.color, 'fill-opacity': 0.75,
+        stroke: 'var(--bg)', 'stroke-width': 2 }, wheel);
+      var mid = (sl.a0 + sl.a1) / 2 * Math.PI / 180;
+      var t = T(wheel, cx + R * 0.62 * Math.cos(mid), cy - R * 0.62 * Math.sin(mid) + 5, sl.name,
+        'font-size:15px;font-weight:700;fill:#5d3f00;text-anchor:middle');
+    });
+    s('circle', { cx: cx, cy: cy, r: 7, fill: 'var(--text)' }, wheel);
+    s('polygon', { points: cx + ',' + (cy - R - 14) + ' ' + (cx - 9) + ',' + (cy - R - 34) + ' ' + (cx + 9) + ',' + (cy - R - 34),
+      fill: 'var(--text)' }, svg);
+    var tally = { '黄': 0, '蓝': 0, '红': 0 }, spins = 0, MAX = 12;
+    var keys = ['黄', '蓝', '红'];
+    var chips = keys.map(function (k, i) {
+      var g = T(svg, 70 + i * 110, 226, '', 'font-size:13px;font-weight:600;text-anchor:middle');
+      g.setAttribute('fill', defs[i].color);
+      return g;
+    });
+    function drawTally() {
+      chips.forEach(function (c, i) { c.textContent = keys[i] + ' ' + tally[keys[i]] + ' 次'; });
+    }
+    drawTally();
+    function spin() {
+      var psi = Math.random() * 360;
+      var sl = slices.filter(function (x) { return psi >= x.a0 && psi < x.a1; })[0] || slices[0];
+      var theta = psi - 90 + 1080;
+      wheel.style.transition = 'transform .7s ease';
+      wheel.setAttribute('transform', 'rotate(' + theta.toFixed(1) + ' ' + cx + ' ' + cy + ')');
+      tally[sl.name]++; spins++;
+      drawTally();
+      return sl.name;
+    }
+    var idx = 0;
+    return {
+      el: svg,
+      next: function () {
+        if (idx >= MAX) return null;
+        var res = spin();
+        idx++;
+        var txt = '第 <b>' + spins + '</b> 次转到 <b>' + res + '</b>。目前：黄 ' + tally['黄'] +
+          '、蓝 ' + tally['蓝'] + '、红 ' + tally['红'] + '。';
+        if (idx >= MAX) {
+          txt += ' 转多了就看得出来：黄占的区域有一半，转到的次数也差不多是一半——<b>区域越大，可能性越大</b>。';
+        }
+        return { text: txt, done: idx >= MAX };
+      },
+      startDemo: function () {
+        idx = 0; spins = 0;
+        tally = { '黄': 0, '蓝': 0, '红': 0 };
+        drawTally();
+        wheel.style.transition = 'transform .3s ease';
+        wheel.setAttribute('transform', 'rotate(0 ' + cx + ' ' + cy + ')');
+        return this;
+      },
+      reset: function () { return this.startDemo(); }
+    };
+  }
+
+  /* ══════════════════════════════════════════════════════
+   * 小数乘法：先按整数算，再点小数点
+   * 两个因数一共有几位小数，积就从右起数出几位。
+   * ══════════════════════════════════════════════════════ */
+  function decMult(el, spec) {
+    spec = spec || {};
+    var a = spec.a || '1.2', b = spec.b || '0.8';
+    var W = 360, H = 200;
+    var svg = s('svg', { viewBox: '0 0 ' + W + ' ' + H, class: 'dcm-svg', role: 'img' }, el);
+    svg.style.width = '100%'; svg.style.height = 'auto';
+    var ORG = '#fbbf24', GRN = '#4ade80', BLUE = '#38bdf8';
+    function decOf(x) { return (String(x).split('.')[1] || '').length; }
+    var da = decOf(a), dbv = decOf(b), total = da + dbv;
+    var ia = Number(String(a).replace('.', '')), ib = Number(String(b).replace('.', ''));
+    var ip = ia * ib;
+    var fin = (ip / Math.pow(10, total)).toFixed(total);
+
+    var xr = 262;
+    var t1 = T(svg, xr, 46, a, 'font-size:24px;font-weight:700;fill:var(--text);text-anchor:end');
+    var t2 = T(svg, 120, 78, '×', 'font-size:24px;font-weight:700;fill:var(--text);text-anchor:end');
+    var t3 = T(svg, xr, 78, b, 'font-size:24px;font-weight:700;fill:var(--text);text-anchor:end');
+    s('line', { x1: 140, y1: 92, x2: xr + 12, y2: 92, class: 'dbar' }, svg);
+    var tInt = T(svg, xr, 124, String(ip), 'font-size:24px;font-weight:700;fill:var(--dim);text-anchor:end');
+    tInt.style.opacity = 0; tInt.style.transition = 'opacity .3s ease';
+    var tFin = T(svg, xr, 124, fin, 'font-size:24px;font-weight:700;fill:' + GRN + ';text-anchor:end');
+    tFin.style.opacity = 0; tFin.style.transition = 'opacity .35s ease';
+    var cnt = T(svg, 180, 162, '', 'font-size:13.5px;font-weight:600;fill:' + BLUE + ';text-anchor:middle');
+    var res = T(svg, 180, 188, '', 'font-size:14px;font-weight:700;fill:var(--text);text-anchor:middle');
+    var STEPS = [
+      { text: '先把小数<b>当成整数</b>算：' + String(a).replace('.', '') + ' × ' + String(b).replace('.', '') +
+          ' = <b>' + ip + '</b>。',
+        run: function () { tInt.style.opacity = 1; } },
+      { text: '再看小数位：' + a + ' 有 <b>' + da + '</b> 位，' + b + ' 有 <b>' + dbv + '</b> 位，一共 <b>' + total +
+          '</b> 位。',
+        run: function () { cnt.textContent = '因数里共有 ' + total + ' 位小数（' + da + '+' + dbv + '）'; } },
+      { text: '从 ' + ip + ' 的右边起数出 ' + total + ' 位，点上小数点 → <b>' + fin + '</b>。',
+        run: function () { tInt.style.opacity = 0; tFin.style.opacity = 1; } },
+      { text: '所以 ' + a + ' × ' + b + ' = <b>' + fin + '</b>。先按整数乘，再点小数点。',
+        run: function () { res.textContent = a + ' × ' + b + ' = ' + fin; } }
+    ];
+    var idx = 0;
+    return {
+      el: svg,
+      next: function () {
+        if (idx >= STEPS.length) return null;
+        var st = STEPS[idx++]; st.run();
+        return { text: st.text, done: idx >= STEPS.length };
+      },
+      startDemo: function () {
+        idx = 0;
+        tInt.style.opacity = 0; tFin.style.opacity = 0;
+        cnt.textContent = ''; res.textContent = '';
+        return this;
+      },
+      reset: function () { return this.startDemo(); }
+    };
+  }
+
+  /* ══════════════════════════════════════════════════════
+   * 小数除法：商不变
+   * 除数是小数，把它变成整数，被除数同步扩大——
+   * 商不变，剩下的就是熟悉的整数除法。
+   * ══════════════════════════════════════════════════════ */
+  function decDiv(el, spec) {
+    spec = spec || {};
+    var a = spec.a || '5.6', b = spec.b || '0.8';
+    var W = 360, H = 210;
+    var svg = s('svg', { viewBox: '0 0 ' + W + ' ' + H, class: 'dcd-svg', role: 'img' }, el);
+    svg.style.width = '100%'; svg.style.height = 'auto';
+    var GRN = '#4ade80', BLUE = '#38bdf8';
+    function decOf(x) { return (String(x).split('.')[1] || '').length; }
+    var f = Math.pow(10, decOf(b));
+    var A = Math.round(parseFloat(a) * f * 1e6) / 1e6;
+    var B = Math.round(parseFloat(b) * f);
+    var q = Math.round((parseFloat(a) / parseFloat(b)) * 1e6) / 1e6;
+
+    var tB = T(svg, 180, 56, a + ' ÷ ' + b, 'font-size:24px;font-weight:700;fill:var(--text);text-anchor:middle');
+    var arrA = T(svg, 96, 92, '', 'font-size:13px;font-weight:600;fill:' + BLUE + ';text-anchor:middle');
+    var arrB = T(svg, 264, 92, '', 'font-size:13px;font-weight:600;fill:' + BLUE + ';text-anchor:middle');
+    var tA = T(svg, 180, 126, '', 'font-size:24px;font-weight:700;fill:var(--text);text-anchor:middle');
+    tA.style.opacity = 0; tA.style.transition = 'opacity .35s ease';
+    var tR = T(svg, 180, 172, '', 'font-size:20px;font-weight:700;fill:' + GRN + ';text-anchor:middle');
+    tR.style.opacity = 0; tR.style.transition = 'opacity .35s ease';
+    var note = T(svg, 180, 200, '', 'font-size:12.5px;fill:var(--dim);text-anchor:middle');
+    var STEPS = [
+      { text: '除数 <b>' + b + '</b> 是小数，不能直接除——用<b>商不变</b>的性质把它变整数。',
+        run: function () {} },
+      { text: '除数 ' + b + ' 扩大到 10 倍变 <b>' + B + '</b>；被除数也要同时扩大 10 倍变 <b>' + A + '</b>。',
+        run: function () {
+          arrA.textContent = '×' + f + ' ↓'; arrB.textContent = '×' + f + ' ↓';
+          tA.textContent = A + ' ÷ ' + B; tA.style.opacity = 1;
+        } },
+      { text: '变成 <b>' + A + ' ÷ ' + B + '</b>——这就是熟悉的整数除法。',
+        run: function () {} },
+      { text: A + ' ÷ ' + B + ' = <b>' + q + '</b>，所以 ' + a + ' ÷ ' + b + ' = <b>' + q + '</b>。',
+        run: function () { tR.textContent = a + ' ÷ ' + b + ' = ' + q; tR.style.opacity = 1;
+          note.textContent = '被除数、除数同时扩大，商不变'; } }
+    ];
+    var idx = 0;
+    return {
+      el: svg,
+      next: function () {
+        if (idx >= STEPS.length) return null;
+        var st = STEPS[idx++]; st.run();
+        return { text: st.text, done: idx >= STEPS.length };
+      },
+      startDemo: function () {
+        idx = 0;
+        arrA.textContent = ''; arrB.textContent = '';
+        tA.style.opacity = 0; tR.style.opacity = 0; note.textContent = '';
+        return this;
+      },
+      reset: function () { return this.startDemo(); }
+    };
+  }
+
   global.CR = {
     vertical: vertical,
     geometry: geometry,
     mult2: mult2,
     fracMeaning: fracMeaning,
+    fracReduce: fracReduce,
+    spinner: spinner,
+    decMult: decMult,
+    decDiv: decDiv,
     fracOps: fracOps,
     volume: volume,
     pairs: pairs,

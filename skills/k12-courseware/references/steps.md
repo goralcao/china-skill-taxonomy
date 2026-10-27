@@ -45,6 +45,10 @@
 | `pairs` | 数对网格 | `body{cols,rows,mark,items}` | `caption` `note` `demoLabel` |
 | `treePlant` | 植树间隔 | `body{gaps,mode}` | `caption` `note` `demoLabel` |
 | `symmetry` | 对称补全 | `body{}` | `caption` `note` `demoLabel` |
+| `fracReduce` | 约分/通分重分条 | `body{mode,num,den}` | `caption` `note` `demoLabel` |
+| `spinner` | 随机转盘 | `body{}` | `caption` `note` `demoLabel` |
+| `decMult` | 小数乘法定位 | `body{a,b}` | `caption` `note` `demoLabel` |
+| `decDiv` | 商不变转化 | `body{a,b}` | `caption` `note` `demoLabel` |
 | `angle` | 量角器 | `body{deg}` | `caption` `note` `demoLabel` |
 | `quad` | 平行四边形与梯形 | `body{shapes}` | `caption` `note` `demoLabel` |
 | `decGrid` | 百格图（小数意义/性质） | `body{mode,value,compare}` | `caption` `note` `demoLabel` |

@@ -1,0 +1,29 @@
+{
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-27",
+  "subject": "数学",
+  "template": "explain",
+  "topicId": "mt_probability",
+  "title": "可能性：区域越大，机会越大",
+  "renderer": "spinner",
+  "duration": 11,
+  "interactions": 2,
+  "grade": 5,
+  "standards": [
+    "math-2022:S3:SP"
+  ],
+  "prerequisites": [
+    "mt_frac-intro",
+    "mt_data-collect"
+  ],
+  "next": [],
+  "objectives": [
+    "体验随机现象：结果事先无法确定",
+    "知道可能性的大小与区域（数量）占比有关",
+    "通过多次实验发现频率稳定在可能性附近"
+  ],
+  "cognitiveAction": "逼近"
+}

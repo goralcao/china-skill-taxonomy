@@ -3,17 +3,17 @@
   "schemaVersion": 1,
   "generatedAt": "2026-10-27",
   "counts": {
-    "total": 42,
+    "total": 46,
     "byTemplate": {
       "drill": 1,
-      "explain": 40,
+      "explain": 44,
       "explore": 1
     },
     "byStatus": {
-      "reviewed": 42
+      "reviewed": 46
     },
     "bySubject": {
-      "数学": 40,
+      "数学": 44,
       "化学": 1,
       "物理": 1
     }
@@ -320,6 +320,40 @@
       "bytes": 663
     },
     {
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "subject": "数学",
+      "template": "explain",
+      "topicId": "mt_dec-div",
+      "title": "小数除法：把除数变成整数",
+      "renderer": "decDiv",
+      "duration": 11,
+      "interactions": 2,
+      "grade": 5,
+      "standards": [
+        "math-2022:S3:NA:NO"
+      ],
+      "prerequisites": [
+        "mt_dec-mul",
+        "mt_div-2digit"
+      ],
+      "next": [
+        "mt_percent-2",
+        "mt_circle-measure"
+      ],
+      "objectives": [
+        "会用商不变性质把除数是小数的除法转化为整数除法",
+        "掌握小数点移位的位数：除数移几位被除数也移几位",
+        "会计算并验算"
+      ],
+      "cognitiveAction": "变换",
+      "path": "courses/mt_dec-div/",
+      "bytes": 678
+    },
+    {
       "topicId": "mt_dec-intro",
       "title": "小数的初步认识：零点几就是十分之几",
       "template": "explain",
@@ -384,6 +418,39 @@
       "updatedAt": "2026-10-27",
       "path": "courses/mt_dec-meaning/",
       "bytes": 687
+    },
+    {
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "subject": "数学",
+      "template": "explain",
+      "topicId": "mt_dec-mul",
+      "title": "小数乘法：先按整数算，再点小数点",
+      "renderer": "decMult",
+      "duration": 11,
+      "interactions": 2,
+      "grade": 5,
+      "standards": [
+        "math-2022:S3:NA:NO"
+      ],
+      "prerequisites": [
+        "mt_dec-meaning",
+        "mt_mult-2digit"
+      ],
+      "next": [
+        "mt_dec-div"
+      ],
+      "objectives": [
+        "掌握小数乘法的计算方法：先按整数乘法算",
+        "理解积的小数位数 = 因数小数位数之和",
+        "会用小数性质化简积末尾的 0"
+      ],
+      "cognitiveAction": "变换",
+      "path": "courses/mt_dec-mul/",
+      "bytes": 690
     },
     {
       "topicId": "mt_direction",
@@ -619,6 +686,39 @@
       "updatedAt": "2026-10-27",
       "path": "courses/mt_frac-meaning/",
       "bytes": 657
+    },
+    {
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "subject": "数学",
+      "template": "explain",
+      "topicId": "mt_frac-reduce",
+      "title": "约分与通分：分数条上的「重分」",
+      "renderer": "fracReduce",
+      "duration": 11,
+      "interactions": 2,
+      "grade": 5,
+      "standards": [
+        "math-2022:S3:NA:NO"
+      ],
+      "prerequisites": [
+        "mt_frac-meaning",
+        "mt_factors"
+      ],
+      "next": [
+        "mt_frac-addsub"
+      ],
+      "objectives": [
+        "理解分数的基本性质：分子分母同乘或同除以同一个数（0 除外）大小不变",
+        "会把分数约分成最简分数",
+        "知道约分与通分都以基本性质为依据"
+      ],
+      "cognitiveAction": "变换",
+      "path": "courses/mt_frac-reduce/",
+      "bytes": 687
     },
     {
       "topicId": "mt_frac-same-addsub",
@@ -1041,6 +1141,37 @@
       "cognitiveAction": "构造",
       "path": "courses/mt_position-pairs/",
       "bytes": 675
+    },
+    {
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "subject": "数学",
+      "template": "explain",
+      "topicId": "mt_probability",
+      "title": "可能性：区域越大，机会越大",
+      "renderer": "spinner",
+      "duration": 11,
+      "interactions": 2,
+      "grade": 5,
+      "standards": [
+        "math-2022:S3:SP"
+      ],
+      "prerequisites": [
+        "mt_frac-intro",
+        "mt_data-collect"
+      ],
+      "next": [],
+      "objectives": [
+        "体验随机现象：结果事先无法确定",
+        "知道可能性的大小与区域（数量）占比有关",
+        "通过多次实验发现频率稳定在可能性附近"
+      ],
+      "cognitiveAction": "逼近",
+      "path": "courses/mt_probability/",
+      "bytes": 681
     },
     {
       "topicId": "mt_rect-area",

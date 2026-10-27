@@ -131,7 +131,7 @@ for (const name of dirs) {
     }
   });
   // renderer 白名单 + 是否真的调用了对应呈现器
-  const RENDERERS = ['text', 'vertical', 'geometry', 'solid', 'division', 'molecule', 'pyramid', 'calendar', 'decimalBar', 'barGroup', 'compass', 'numberline', 'coords', 'clock', 'sim', 'diagram', 'equation', 'law', 'triangle', 'counter', 'angle', 'quad', 'decGrid', 'mult2', 'fracMeaning', 'fracOps', 'volume', 'pairs', 'treePlant', 'symmetry', 'chart', 'mean', 'polyArea', 'factorGrid'];
+  const RENDERERS = ['text', 'vertical', 'geometry', 'solid', 'division', 'molecule', 'pyramid', 'calendar', 'decimalBar', 'barGroup', 'compass', 'numberline', 'coords', 'clock', 'sim', 'diagram', 'equation', 'law', 'triangle', 'counter', 'angle', 'quad', 'decGrid', 'mult2', 'fracMeaning', 'fracOps', 'fracReduce', 'spinner', 'decMult', 'decDiv', 'volume', 'pairs', 'treePlant', 'symmetry', 'chart', 'mean', 'polyArea', 'factorGrid'];
   if (meta.renderer && !RENDERERS.includes(meta.renderer)) {
     fail(rel, `meta.renderer=${meta.renderer} 不在白名单（${RENDERERS.join(' / ')}）`);
   } else if (meta.renderer && meta.renderer !== 'text' && !html.includes('content-loader')
@@ -170,7 +170,7 @@ for (const name of dirs) {
         fail(rel, 'content.steps 为空');
       } else {
         engineSteps = content.steps;
-        const TYPES = ['intro', 'text', 'vertical', 'geometry', 'solid', 'division', 'molecule', 'pyramid', 'calendar', 'decimal', 'table', 'compass', 'numberline', 'clock', 'law', 'triangle', 'counter', 'angle', 'quad', 'decGrid', 'mult2', 'fracMeaning', 'fracOps', 'volume', 'pairs', 'treePlant', 'symmetry', 'chart', 'mean', 'polyArea', 'factorGrid', 'quiz', 'choice', 'summary'];
+        const TYPES = ['intro', 'text', 'vertical', 'geometry', 'solid', 'division', 'molecule', 'pyramid', 'calendar', 'decimal', 'table', 'compass', 'numberline', 'clock', 'law', 'triangle', 'counter', 'angle', 'quad', 'decGrid', 'mult2', 'fracMeaning', 'fracOps', 'fracReduce', 'spinner', 'decMult', 'decDiv', 'volume', 'pairs', 'treePlant', 'symmetry', 'chart', 'mean', 'polyArea', 'factorGrid', 'quiz', 'choice', 'summary'];
         let quizzes = 0;
         content.steps.forEach((st, i) => {
           if (!TYPES.includes(st.type)) fail(rel, `第 ${i + 1} 步 type=${st.type} 不合法`);

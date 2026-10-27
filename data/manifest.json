@@ -9,7 +9,7 @@
     "curriculumStandards": 186,
     "clusters": 204,
     "teachingResearchRecords": 1268,
-    "courses": 42,
+    "courses": 46,
     "hardEdges": 952,
     "softEdges": 695
   },
@@ -85,8 +85,8 @@
       "bytes": 134162
     },
     "courses.json": {
-      "sha256": "020a11aad36275aef8271d0c1a9d3e19dd8aa5afd77c95e266ee5680f331b7b6",
-      "bytes": 39045
+      "sha256": "586da7ef2aec4fc8741eb580104117b7955093f5dca60a7fb6621cb8f88636c1",
+      "bytes": 42700
     },
     "teaching-research.json": {
       "sha256": "303f60f0dfec938a32a279b6be5a23073849b4b96937a5dbc41a45ccf735f7a7",
