@@ -146,6 +146,7 @@ schema/course.schema.json
 | `mean` | 平均数（移多补少） | 统计单元 | 多余部分移走、缺口补上，条形拉平到平均线 |
 | `polyArea` | 多边形面积割补 | 面积公式推导 | 沿高剪开平移、两个三角形/梯形旋转 180° 拼合 |
 | `factorGrid` | 摆方格找因数 | 因数与倍数 | 摆出所有长方形，因数成对列出 |
+| `fracMeaning` | 分数的意义 | 平均分、分数单位、单位「1」、分数与除法 | 可拖滑块改份数、按住拖动涂色、一盒苹果换整体、3÷4 分饼动画 |
 | `clock` | 钟面 | 时、分、秒 | 三针联动、分针拖拽、指针高亮 |
 | `numberline` | 数轴 | 正负数、分数、小数、时间轴 | 区间高亮、可拖手柄 |
 | `coords` | 坐标系 | 一次函数、抛物线、统计 | 网格、曲线描边动画、散点 |
@@ -396,7 +397,7 @@ localStorage.setItem('stx.course.' + TOPIC_ID,
 
 - `templates/engine.js` 接管页面骨架与全部通用逻辑
 - 课件只剩 `content.json`（steps 数组）+ 一个 16 行的薄壳 `index.html`
-- 28 种步骤类型：`intro` / `text` / `vertical` / `geometry` / `solid` / `pyramid` / `division` / `mult2` / `molecule` / `calendar` / `decimal` / `table` / `compass` / `law` / `triangle` / `counter` / `angle` / `quad` / `decGrid` / `chart` / `mean` / `polyArea` / `factorGrid` / `numberline` / `clock` / `quiz` / `choice` / `summary`
+- 29 种步骤类型：`intro` / `text` / `vertical` / `geometry` / `solid` / `pyramid` / `division` / `mult2` / `molecule` / `calendar` / `decimal` / `table` / `compass` / `law` / `triangle` / `counter` / `angle` / `quad` / `decGrid` / `chart` / `mean` / `polyArea` / `factorGrid` / `fracMeaning` / `numberline` / `clock` / `quiz` / `choice` / `summary`
 - 构建时把 content.json、engine.js、renderers.js、base.css 全部内联，产物仍是单文件
 
 写一节课从「复制 300 行 HTML」变成「写 60 行 JSON」。

@@ -39,6 +39,7 @@
 | `mean` | 平均数（移多补少） | `body{values,labels}` | `caption` `note` `demoLabel` |
 | `polyArea` | 多边形面积割补 | `body{mode}` | `caption` `note` `demoLabel` |
 | `factorGrid` | 摆方格找因数 | `body{n}` | `caption` `note` `demoLabel` |
+| `fracMeaning` | 分数的意义 | `body{mode,n,m,total}` | `caption` `note` `demoLabel` |
 | `angle` | 量角器 | `body{deg}` | `caption` `note` `demoLabel` |
 | `quad` | 平行四边形与梯形 | `body{shapes}` | `caption` `note` `demoLabel` |
 | `decGrid` | 百格图（小数意义/性质） | `body{mode,value,compare}` | `caption` `note` `demoLabel` |
@@ -305,6 +306,14 @@ preset：
 ```
 
 因数与倍数。把 n 个小正方形摆成所有长方形（1×12、2×6、3×4…），逐个揭示，收尾列出全部因数，并点明最小因数是 1、最大是它本身。
+
+## fracMeaning
+
+```json
+{ "type": "fracMeaning", "title": "动手分一分", "body": { "mode": "parts", "n": 4, "m": 3 } }
+```
+
+分数的意义。`mode` 四种：`compare` 平均分对比（平均分 vs 随便切，点出分数的前提）；`parts` **可拖分份图**——滑块改份数（2~12），图上按住拖动涂色，实时显示 m/n、读法与分数单位；`group` 一盒苹果（滑块 4~20，同是 3/4 数量不同，讲单位「1」）；`divide` 3 个饼分给 4 人（3÷4=3/4 动画）。`parts` 之外的模式均可交互，也都有分步演示。
 
 ## angle
 

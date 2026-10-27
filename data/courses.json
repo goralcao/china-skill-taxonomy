@@ -1,19 +1,19 @@
 {
-  "version": "v0.36.0",
+  "version": "v0.37.0",
   "schemaVersion": 1,
   "generatedAt": "2026-10-27",
   "counts": {
-    "total": 36,
+    "total": 37,
     "byTemplate": {
       "drill": 1,
-      "explain": 34,
+      "explain": 35,
       "explore": 1
     },
     "byStatus": {
-      "reviewed": 36
+      "reviewed": 37
     },
     "bySubject": {
-      "数学": 34,
+      "数学": 35,
       "化学": 1,
       "物理": 1
     }
@@ -551,6 +551,41 @@
       "updatedAt": "2026-10-27",
       "path": "courses/mt_frac-intro/",
       "bytes": 663
+    },
+    {
+      "topicId": "mt_frac-meaning",
+      "title": "分数的意义：把整体平均分，才谈得上几分之几",
+      "template": "explain",
+      "renderer": "fracMeaning",
+      "duration": 12,
+      "interactions": 2,
+      "grade": 5,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S3:NA:NO"
+      ],
+      "prerequisites": [
+        "mt_frac-intro",
+        "mt_div-avg"
+      ],
+      "next": [
+        "mt_frac-div",
+        "mt_frac-reduce"
+      ],
+      "objectives": [
+        "理解分数必须建立在「平均分」之上",
+        "认识分数单位，知道 m/n 是 m 个 1/n",
+        "理解单位「1」可以是一个物体，也可以是一些物体的整体",
+        "掌握分数与除法的关系：a ÷ b = a/b（b≠0）"
+      ],
+      "cognitiveAction": "分解",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-27",
+      "path": "courses/mt_frac-meaning/",
+      "bytes": 657
     },
     {
       "topicId": "mt_frac-same-addsub",

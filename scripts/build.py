@@ -87,7 +87,7 @@ import teaching_research_chinese_senior  # noqa: E402
 import teaching_research_math_senior  # noqa: E402
 import teaching_research_english_senior  # noqa: E402
 
-VERSION = "v0.36.0"
+VERSION = "v0.37.0"
 SCHEMA_VERSION = 1
 
 MODULES = [
@@ -712,6 +712,31 @@ def build_graph_context(topic, topic_by_id, deps, course_state, tb_labels):
     }
 
 
+def minify_light(text: str, kind: str = "js") -> str:
+    """发布产物的轻量压缩：去整行块注释、行首缩进与空行。
+
+    源码保持可读，产物不随渲染器增长而膨胀。逐行扫描而非正则整体替换，
+    避免误伤字符串里的 "//"（如 SVG 命名空间）。模板里都是 ES5 代码
+    （无模板字符串、无续行字符串），剥缩进是安全的。
+    """
+    out, in_comment = [], False
+    for line in text.split("\n"):
+        st = line.strip()
+        if in_comment:
+            if "*/" in line:
+                in_comment = False
+            continue
+        if st.startswith("/*"):
+            if "*/" in line[2:]:
+                continue
+            in_comment = True
+            continue
+        if not st:
+            continue
+        out.append(st)
+    return "\n".join(out)
+
+
 def sync_courses_to_viz(topics, deps):
     """把 courses/ 打包进 viz/courses/。
 
@@ -729,10 +754,10 @@ def sync_courses_to_viz(topics, deps):
     renderers_path = ROOT / "templates" / "renderers.js"
     if not base_css_path.exists() or not renderers_path.exists():
         raise SystemExit("缺 templates/base.css 或 templates/renderers.js，课件无法内联")
-    base_css = base_css_path.read_text(encoding="utf-8")
-    renderers = renderers_path.read_text(encoding="utf-8")
+    base_css = minify_light(base_css_path.read_text(encoding="utf-8"), "css")
+    renderers = minify_light(renderers_path.read_text(encoding="utf-8"), "js")
     engine_path = ROOT / "templates" / "engine.js"
-    engine_js = engine_path.read_text(encoding="utf-8") if engine_path.exists() else ""
+    engine_js = minify_light(engine_path.read_text(encoding="utf-8"), "js") if engine_path.exists() else ""
 
     topic_by_id = {t["id"]: t for t in topics}
     tb_labels = load_textbook_labels()

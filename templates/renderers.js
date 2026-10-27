@@ -3458,10 +3458,302 @@
     };
   }
 
+  /* ══════════════════════════════════════════════════════
+   * 分数的意义
+   * 四件事：必须平均分、分数单位、单位「1」可以是一盒苹果、
+   * 以及被除数÷除数 = 分数。都靠动手改，不靠背。
+   * ══════════════════════════════════════════════════════ */
+  function fracMeaning(el, spec) {
+    spec = spec || {};
+    var mode = spec.mode || 'parts';
+    var ORG = '#fbbf24', BLUE = '#38bdf8', GRN = '#4ade80', RED = '#f87171';
+    var wrap = h('div', 'fm');
+    el.appendChild(wrap);
+
+    function ctlRow() { var r = h('div', 'fm-ctl'); wrap.appendChild(r); return r; }
+    function svgEl(W, H) {
+      var sv = s('svg', { viewBox: '0 0 ' + W + ' ' + H, class: 'fm-svg', role: 'img' }, wrap);
+      sv.style.width = '100%'; sv.style.height = 'auto';
+      return sv;
+    }
+    function T(parent, x, y, v, st) {
+      var t = s('text', { x: x, y: y, style: st || 'font-size:13px' }, parent);
+      t.textContent = v; return t;
+    }
+    // 分数写法（分子 — 分母），便于随时更新
+    function glyph(parent, x, y, m, n, size, color) {
+      var g = s('g', null, parent);
+      var t1 = s('text', { x: x, y: y - 6, 'text-anchor': 'middle',
+        style: 'font-size:' + size + 'px;font-weight:700;fill:' + (color || ORG) }, g);
+      t1.textContent = m;
+      s('line', { x1: x - size * 0.5, y1: y, x2: x + size * 0.5, y2: y,
+        stroke: 'var(--text)', 'stroke-width': 2 }, g);
+      var t2 = s('text', { x: x, y: y + size + 4, 'text-anchor': 'middle',
+        style: 'font-size:' + size + 'px;font-weight:700;fill:var(--text)' }, g);
+      t2.textContent = n;
+      return { num: t1, den: t2 };
+    }
+    function sect(cx, cy, R, a0, a1) {
+      var pts = [], N = 22, i;
+      for (i = 0; i <= N; i++) {
+        var t = (a0 + (a1 - a0) * i / N) * Math.PI / 180;
+        pts.push((cx + R * Math.cos(t)).toFixed(1) + ',' + (cy - R * Math.sin(t)).toFixed(1));
+      }
+      return 'M' + cx + ' ' + cy + ' L' + pts.join(' L') + ' Z';
+    }
+    function polar(cx, cy, R, d) {
+      var t = d * Math.PI / 180;
+      return { x: cx + R * Math.cos(t), y: cy - R * Math.sin(t) };
+    }
+    var CN = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二'];
+
+    var STEPS = [], idx = 0, resetFn = function () {};
+
+    /* —— ① 平均分对比 —— */
+    if (mode === 'compare') {
+      var W = 360, H = 150, svg = svgEl(W, H);
+      var sides = [
+        { cx: 90, label: '平均分成 4 份', cuts: [0, 90, 180, 270], ok: true },
+        { cx: 270, label: '随便切成 4 块', cuts: [0, 70, 150, 250], ok: false }
+      ];
+      var hi = [];
+      sides.forEach(function (sd) {
+        s('circle', { cx: sd.cx, cy: 74, r: 56, fill: 'rgba(251,191,36,.08)', stroke: 'var(--line)', 'stroke-width': 2 }, svg);
+        sd.cuts.forEach(function (c) {
+          var p = polar(sd.cx, 74, 56, c);
+          s('line', { x1: sd.cx, y1: 74, x2: p.x.toFixed(1), y2: p.y.toFixed(1),
+            stroke: 'var(--dim)', 'stroke-width': 2 }, svg);
+        });
+        var h = s('path', { d: sect(sd.cx, 74, 56, sd.cuts[0], sd.cuts[1]),
+          fill: sd.ok ? ORG : RED, 'fill-opacity': 0 }, svg);
+        h.style.transition = 'fill-opacity .35s ease';
+        hi.push(h);
+        T(svg, sd.cx, H - 8, sd.label, 'font-size:12.5px;fill:var(--dim);text-anchor:middle');
+      });
+      T(svg, 180, 22, '两块一样大的饼', 'font-size:12.5px;fill:var(--dim);text-anchor:middle');
+      resetFn = function () { hi.forEach(function (x) { x.setAttribute('fill-opacity', 0); }); };
+      STEPS = [
+        { text: '两块<b>一样大</b>的饼，都被切成了 4 块。', run: function () {} },
+        { text: '左边<b>平均分</b>成 4 份，每一份才是它的 <b>1/4</b>。',
+          run: function () { hi[0].setAttribute('fill-opacity', 0.7); } },
+        { text: '右边 4 块大小不一样，其中的 1 块<b>不能</b>叫 1/4。',
+          run: function () { hi[1].setAttribute('fill-opacity', 0.55); } },
+        { text: '所以分数必须建立在<b>平均分</b>之上——这是分数意义的第一条。', run: function () {} }
+      ];
+    }
+
+    /* —— ② 动手分一分：份数 + 拖动涂色 —— */
+    if (mode === 'parts') {
+      var n = spec.n || 4, m = spec.m == null ? 3 : spec.m;
+      var filled = new Array(12).fill(false);
+      var ctl = ctlRow();
+      var lb = h('span', null, '平均分成'); ctl.appendChild(lb);
+      var rg = document.createElement('input');
+      rg.type = 'range'; rg.min = '2'; rg.max = '12'; rg.step = '1'; rg.value = String(n);
+      rg.setAttribute('aria-label', '平均分成几份');
+      ctl.appendChild(rg);
+      var vn = h('b', null, n + ' 份'); ctl.appendChild(vn);
+
+      var sv2 = svgEl(360, 132);
+      var cells = [];
+      var readout = T(sv2, 180, 116, '', 'font-size:12.5px;fill:var(--dim);text-anchor:middle');
+      var gf = glyph(sv2, 180, 96, 0, n, 18);
+
+      function drawCells() {
+        cells.forEach(function (c) { sv2.removeChild(c.g); });
+        cells.length = 0;
+        var cw = (360 - 40) / n;
+        for (var i = 0; i < n; i++) {
+          var g = s('g', { style: 'cursor:pointer' }, sv2);
+          var r = s('rect', { x: 20 + i * cw, y: 18, width: cw - 4, height: 52, rx: 7,
+            fill: ORG, 'fill-opacity': filled[i] ? 0.85 : 0.1,
+            stroke: ORG, 'stroke-width': 1.8 }, g);
+          g.__i = i; g.__r = r;
+          cells.push(g);
+        }
+        // 把分数/读数移到最上层
+        sv2.appendChild(gf.num.parentNode);
+        sv2.appendChild(readout);
+        upd();
+      }
+      function upd() {
+        var k = 0;
+        for (var i = 0; i < n; i++) if (filled[i]) k++;
+        gf.num.textContent = k; gf.den.textContent = n;
+        readout.textContent = '读作：' + (n < CN.length ? CN[n] : n) + '分之' + (k < CN.length ? CN[k] : k);
+      }
+      function paint(g, on) {
+        var i = g.__i;
+        if (i >= n || filled[i] === on) return;
+        filled[i] = on;
+        g.__r.setAttribute('fill-opacity', on ? 0.85 : 0.1);
+      }
+      var dragging = false, dragOn = true;
+      sv2.addEventListener('pointerdown', function (ev) {
+        var g = ev.target.closest ? ev.target.closest('g') : null;
+        if (!g || g.__i == null) return;
+        dragging = true; dragOn = !filled[g.__i];
+        paint(g, dragOn); upd();
+      });
+      sv2.addEventListener('pointermove', function (ev) {
+        if (!dragging) return;
+        var g = ev.target.closest ? ev.target.closest('g') : null;
+        if (!g || g.__i == null) return;
+        paint(g, dragOn); upd();
+      });
+      window.addEventListener('pointerup', function () { dragging = false; });
+      rg.oninput = function () {
+        n = +this.value; vn.textContent = n + ' 份';
+        filled = new Array(12).fill(false);
+        drawCells();
+      };
+      drawCells();
+
+      var demoN = n, demoM = m;
+      resetFn = function () {
+        n = demoN; rg.value = String(n); vn.textContent = n + ' 份';
+        filled = new Array(12).fill(false); drawCells();
+      };
+      STEPS = [
+        { text: '把一个整体<b>平均分</b>成 ' + demoN + ' 份。', run: function () {} },
+        { text: '其中的<b>一份</b>就是它的 1/' + demoN + '，1/' + demoN + ' 叫做它的<b>分数单位</b>。',
+          run: function () { filled[0] = true; cells[0].__r.setAttribute('fill-opacity', 0.85); upd(); } },
+        { text: '取 <b>' + demoM + ' 份</b>，就是 ' + demoM + ' 个 1/' + demoN +
+          '，也就是 <b>' + demoM + '/' + demoN + '</b>。',
+          run: function () {
+            for (var i = 0; i < demoM; i++) {
+              filled[i] = true; cells[i].__r.setAttribute('fill-opacity', 0.85);
+            }
+            upd();
+          } }
+      ];
+    }
+
+    /* —— ③ 单位「1」可以是一盒苹果 —— */
+    if (mode === 'group') {
+      var total = spec.total || 4;
+      var ctl3 = ctlRow();
+      ctl3.appendChild(h('span', null, '一盒有'));
+      var rg3 = document.createElement('input');
+      rg3.type = 'range'; rg3.min = '4'; rg3.max = '20'; rg3.step = '4'; rg3.value = String(total);
+      rg3.setAttribute('aria-label', '一盒有几个');
+      ctl3.appendChild(rg3);
+      var v3 = h('b', null, total + ' 个'); ctl3.appendChild(v3);
+      var sv3 = svgEl(360, 164);
+      var info = T(sv3, 180, 158, '', 'font-size:12.5px;fill:var(--dim);text-anchor:middle');
+
+      function drawBox() {
+        // 清掉旧内容（保留 info）
+        [].slice.call(sv3.childNodes).forEach(function (c) { if (c !== info) sv3.removeChild(c); });
+        var per = total / 4, got = per * 3;
+        var unit = Math.min(30, (360 - 40) / total), y = 62;
+        var x0 = (360 - unit * total) / 2;
+        for (var i = 0; i < total; i++) {
+          var on = i < got;
+          s('circle', { cx: x0 + i * unit + unit / 2, cy: y, r: unit * 0.34,
+            fill: on ? ORG : 'transparent', 'fill-opacity': on ? 0.85 : 0,
+            stroke: on ? ORG : 'var(--dim)', 'stroke-width': 2 }, sv3);
+        }
+        for (var k = 0; k < 4; k++) {
+          var gx = x0 + k * (unit * total / 4);
+          s('rect', { x: gx + 1, y: y - unit * 0.5, width: (unit * total / 4) - 2, height: unit,
+            rx: 7, fill: 'none', stroke: k < 3 ? BLUE : 'var(--line)',
+            'stroke-width': k < 3 ? 2.4 : 1.4, 'stroke-dasharray': k < 3 ? '' : '4 3' }, sv3);
+        }
+        var g3 = glyph(sv3, 150, 118, 3, 4, 16);
+        T(sv3, 186, 118, '=  ' + got + ' 个', 'font-size:15px;font-weight:600;fill:var(--text);text-anchor:start');
+        T(sv3, 180, 22, '平均分成 4 份，取其中 3 份', 'font-size:12.5px;fill:var(--dim);text-anchor:middle');
+        return got;
+      }
+      rg3.oninput = function () {
+        total = +this.value; v3.textContent = total + ' 个';
+        var got = drawBox();
+        info.textContent = '同样是 3/4，一盒 ' + total + ' 个时是 ' + got + ' 个';
+      };
+      var got0 = drawBox();
+      info.textContent = '同样是 3/4，一盒 ' + total + ' 个时是 ' + got0 + ' 个';
+
+      var cases = [4, 8, 12];
+      resetFn = function () {
+        total = spec.total || 4; rg3.value = String(total); v3.textContent = total + ' 个';
+        drawBox(); info.textContent = '拖动滑块，换一盒苹果看看';
+      };
+      STEPS = cases.map(function (c) {
+        return {
+          text: '一盒 <b>' + c + '</b> 个，平均分成 4 份，每份 ' + (c / 4) +
+            ' 个，取 3 份 = <b>' + (c / 4 * 3) + ' 个</b>。',
+          run: function () {
+            total = c; rg3.value = String(c); v3.textContent = c + ' 个';
+            var got = drawBox();
+            info.textContent = '同样是 3/4，一盒 ' + c + ' 个时是 ' + got + ' 个';
+          }
+        };
+      });
+      STEPS.push({
+        text: '都是 3/4，数量却不同——分数表示的是<b>部分与整体的关系</b>，不是固定的个数。',
+        run: function () {}
+      });
+    }
+
+    /* —— ④ 分数与除法 —— */
+    if (mode === 'divide') {
+      var sv4 = svgEl(360, 180);
+      var cakes = [], plates = [];
+      var cx = [62, 140, 218], cy = 58, R = 38;
+      for (var i = 0; i < 3; i++) {
+        s('circle', { cx: cx[i], cy: cy, r: R, fill: 'rgba(251,191,36,.10)',
+          stroke: ORG, 'stroke-width': 2.2 }, sv4);
+      }
+      var cutG = s('g', null, sv4); cutG.style.opacity = 0; cutG.style.transition = 'opacity .35s ease';
+      for (var i2 = 0; i2 < 3; i2++) {
+        for (var k = 0; k < 4; k++) {
+          var p = polar(cx[i2], cy, R, k * 90);
+          s('line', { x1: cx[i2], y1: cy, x2: p.x.toFixed(1), y2: p.y.toFixed(1),
+            stroke: ORG, 'stroke-width': 1.8 }, cutG);
+        }
+      }
+      var plateG = s('g', null, sv4); plateG.style.opacity = 0; plateG.style.transition = 'opacity .35s ease';
+      for (var m4 = 0; m4 < 4; m4++) {
+        var px = 62 + m4 * 78, py = 144;
+        s('ellipse', { cx: px, cy: py, rx: 30, ry: 11, fill: 'rgba(56,189,248,.12)',
+          stroke: BLUE, 'stroke-width': 1.8 }, plateG);
+        for (var q = 0; q < 3; q++) {
+          s('path', { d: sect(px - 14 + q * 14, py - 2, 10, 0, 90),
+            fill: ORG, 'fill-opacity': 0.85, stroke: ORG, 'stroke-width': 1.2 }, plateG);
+        }
+        T(plateG, px, py + 26, '第' + (m4 + 1) + '人', 'font-size:11.5px;fill:' + BLUE + ';text-anchor:middle');
+      }
+      T(sv4, 180, 22, '把 3 个饼平均分给 4 个人', 'font-size:12.5px;fill:var(--dim);text-anchor:middle');
+      resetFn = function () {
+        cutG.style.opacity = 0; plateG.style.opacity = 0;
+      };
+      STEPS = [
+        { text: '3 个饼，要<b>平均分</b>给 4 个人，每人分到多少？', run: function () {} },
+        { text: '先把每个饼都平均分成 4 份，一共 <b>12 个 1/4</b>。',
+          run: function () { cutG.style.opacity = 1; } },
+        { text: '12 个 1/4 平均分给 4 人，每人 <b>3 个 1/4</b>。',
+          run: function () { plateG.style.opacity = 1; } },
+        { text: '也就是每人 <b>3/4</b> 个饼，所以 <b>3 ÷ 4 = 3/4</b>。', run: function () {} }
+      ];
+    }
+
+    return {
+      el: wrap,
+      next: function () {
+        if (idx >= STEPS.length) return null;
+        var st = STEPS[idx++]; st.run();
+        return { text: st.text, done: idx >= STEPS.length };
+      },
+      startDemo: function () { idx = 0; resetFn(); return this; },
+      reset: function () { return this.startDemo(); }
+    };
+  }
+
   global.CR = {
     vertical: vertical,
     geometry: geometry,
     mult2: mult2,
+    fracMeaning: fracMeaning,
     chart: chart,
     mean: mean,
     polyArea: polyArea,
