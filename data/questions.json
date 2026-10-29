@@ -1,16 +1,16 @@
 {
- "version": "v0.48.0",
+ "version": "v0.49.0",
  "generatedAt": "2026-10-30",
  "source": "courses/*/content.json（课件内可判分环节）",
  "audited": false,
  "note": "题目与解析出自课件原文，未经教师独立复核；题干已剔除依赖配图与上下文的题。",
  "counts": {
-  "total": 115,
+  "total": 133,
   "byType": {
-   "choice": 62,
+   "choice": 80,
    "numeric": 53
   },
-  "topicsCovered": 50,
+  "topicsCovered": 59,
   "topicsTotal": 1273
  },
  "questions": [
@@ -1283,6 +1283,44 @@
   },
   {
    "type": "choice",
+   "prompt": "「我爱吃苹果、梨子和香蕉」——这里用顿号，是因为「苹果、梨子、香蕉」是什么？",
+   "answer": "并列的词语",
+   "choices": [
+    "并列的词语",
+    "并列的句子",
+    "一句话中间的停顿"
+   ],
+   "explanation": "先看并列的是词语还是分句：这里是三个并列的词语，用顿号。要是一串并列的句子，就该用分号。",
+   "refute": {
+    "并列的句子": "那是分句，该用分号。判断的办法很简单：看这一串里有没有各自的主语和谓语。",
+    "一句话中间的停顿": "句子中间的停顿用逗号。并列词语之间的停顿比逗号还要短，才轮到顿号。"
+   },
+   "id": "mt_punct-advanced_q1",
+   "topicId": "mt_punct-advanced",
+   "difficulty": "standard",
+   "origin": "courses/mt_punct-advanced/content.json#step3"
+  },
+  {
+   "type": "choice",
+   "prompt": "写作文时要提到一本书《西游记》，书名号怎么用？",
+   "answer": "成对使用：《西游记》",
+   "choices": [
+    "成对使用：《西游记》",
+    "只在开头标一个",
+    "想标几个就标几个"
+   ],
+   "explanation": "书名号必须成对使用——有前半个就有后半个。书名、报纸名、文章的名字都是这样。",
+   "refute": {
+    "只在开头标一个": "书名号像括号一样一对一对出现。只标前半个，读者不知道书名到哪里结束。",
+    "想标几个就标几个": "标点不是装饰。书名之外那些话不该套进书名号里，套进去就把意思写错了。"
+   },
+   "id": "mt_punct-advanced_q2",
+   "topicId": "mt_punct-advanced",
+   "difficulty": "standard",
+   "origin": "courses/mt_punct-advanced/content.json#step7"
+  },
+  {
+   "type": "choice",
    "prompt": "读这句话：谁的尾巴长？其中「巴」在「尾巴」里读哪个音？",
    "answer": "ba",
    "choices": [
@@ -1339,6 +1377,120 @@
    "topicId": "mt_read-aloud",
    "difficulty": "standard",
    "origin": "courses/mt_read-aloud/content.json#step8"
+  },
+  {
+   "type": "choice",
+   "prompt": "给古诗里的字加注释，是给什么样的字加的？",
+   "answer": "看着认识、可是讲不清意思的字",
+   "choices": [
+    "看着认识、可是讲不清意思的字",
+    "从来没见过的生字",
+    "每一句的最后一个字"
+   ],
+   "explanation": "注释是给「看着认识、其实不懂」的字准备的。生字有拼音管着，反倒是那些你以为认识、一问就说不清的字，才需要注释。",
+   "refute": {
+    "从来没见过的生字": "生字靠拼音和字典就够了。注释管的恰恰是那些你以为自己认识的字——看着眼熟，一讲就错。",
+    "每一句的最后一个字": "注释跟位置没关系，跟「读不懂」有关系：哪儿卡住了，注释就加在哪儿。"
+   },
+   "id": "mt_read-ancient_q1",
+   "topicId": "mt_read-ancient",
+   "difficulty": "standard",
+   "origin": "courses/mt_read-ancient/content.json#step3"
+  },
+  {
+   "type": "choice",
+   "prompt": "「停车坐爱枫林晚」这句诗里，「坐」是什么意思？",
+   "answer": "因为",
+   "choices": [
+    "因为",
+    "坐下来",
+    "座位"
+   ],
+   "explanation": "这里的「坐」是「因为」——停下车来，是因为喜爱这傍晚的枫林。这是古今异义：古汉语里「坐」常当「因为」讲。",
+   "refute": {
+    "坐下来": "按今天的意思讲，句子就成了「停下车，坐下来欣赏」，表面通顺，可是和全诗的因果对不上。",
+    "座位": "「座位」是名词，放在这儿讲不通。这句要的是一个表示原因的词。"
+   },
+   "id": "mt_read-ancient_q2",
+   "topicId": "mt_read-ancient",
+   "difficulty": "standard",
+   "origin": "courses/mt_read-ancient/content.json#step7"
+  },
+  {
+   "type": "choice",
+   "prompt": "读到一处怎么也想不明白，应该用哪个记号标出来？",
+   "answer": "「？」——标在没读懂的地方",
+   "choices": [
+    "「？」——标在没读懂的地方",
+    "直线——标在关键词上",
+    "波浪线——标在写得好的句子下面"
+   ],
+   "explanation": "没读懂的地方标「？」。圈画不是见什么划什么——四个记号各有分工，先想清楚这一处属于哪一类再落笔。",
+   "refute": {
+    "直线——标在关键词上": "那是给关键词的。想不明白的地方要标成「？」，回头才知道该回来问自己哪一句。",
+    "波浪线——标在写得好的句子下面": "那是留给好句的。硬把没读懂的句子当好句划下来，回头复习时反而会跳过它。"
+   },
+   "id": "mt_read-mark_q1",
+   "topicId": "mt_read-mark",
+   "difficulty": "standard",
+   "origin": "courses/mt_read-mark/content.json#step3"
+  },
+  {
+   "type": "choice",
+   "prompt": "写一条旁批，开头的第一个动作应该是什么？",
+   "answer": "先说清楚你标的是哪一个词，再说你的看法",
+   "choices": [
+    "先说清楚你标的是哪一个词，再说你的看法",
+    "先把这一段的段意概括一遍",
+    "先把这个词的解释抄一遍"
+   ],
+   "explanation": "旁批的规矩是「先说标的是哪个词，再说它带给你的看法」。只有这样，过些天回头翻的时候才知道这一笔当时在想什么。",
+   "refute": {
+    "先把这一段的段意概括一遍": "概括段意是另一件事。旁批要的是对着具体那个词说话，落到实处才有价值。",
+    "先把这个词的解释抄一遍": "抄解释是词典干的事。旁批要记的是你的反应——这个词让你想到了什么。"
+   },
+   "id": "mt_read-mark_q2",
+   "topicId": "mt_read-mark",
+   "difficulty": "standard",
+   "origin": "courses/mt_read-mark/content.json#step7"
+  },
+  {
+   "type": "choice",
+   "prompt": "读故事的时候往前猜一步，这个猜测应该从哪里来？",
+   "answer": "从已经读到的句子里找根据",
+   "choices": [
+    "从已经读到的句子里找根据",
+    "凭自己的感觉，怎么想就怎么猜",
+    "先翻到后面看一眼，再回来猜"
+   ],
+   "explanation": "预测不是瞎猜：停下来，用已经读到的句子做依据往前推一步。猜完还要说得出「我是从哪一句看出来的」。",
+   "refute": {
+    "凭自己的感觉，怎么想就怎么猜": "光凭感觉，猜完说不出依据。「我是从哪句看出来的」这句话说不出来，这一猜就落了空。",
+    "先翻到后面看一眼，再回来猜": "那不是预测，是剧透。预测的用处正在于先猜一步，再回头验证。"
+   },
+   "id": "mt_read-predict_q1",
+   "topicId": "mt_read-predict",
+   "difficulty": "standard",
+   "origin": "courses/mt_read-predict/content.json#step3"
+  },
+  {
+   "type": "choice",
+   "prompt": "猜完之后发现自己猜错了，这说明什么？",
+   "answer": "这一次的依据还不够，但它留下了一条线索",
+   "choices": [
+    "这一次的依据还不够，但它留下了一条线索",
+    "自己不适合读这本书",
+    "应该假装没猜过，接着往下读"
+   ],
+   "explanation": "猜错是常事，而且错了也留下一条线索——它说明那处的依据还不够，作者也未必照你想的写。收成是「知道下次该往哪儿看」。",
+   "refute": {
+    "自己不适合读这本书": "猜错跟读不读得懂这本书没关系。会读的人也常常猜错，区别在于错了的这次留下了线索。",
+    "应该假装没猜过，接着往下读": "假装没猜过，那这一处就白停了。预测回头对了错了都要看一眼，才有收成。"
+   },
+   "id": "mt_read-predict_q2",
+   "topicId": "mt_read-predict",
+   "difficulty": "standard",
+   "origin": "courses/mt_read-predict/content.json#step7"
   },
   {
    "type": "numeric",
@@ -1426,6 +1578,120 @@
    "topicId": "mt_sector",
    "difficulty": "basic",
    "origin": "courses/mt_sector/content.json#step6"
+  },
+  {
+   "type": "choice",
+   "prompt": "「小明个子不高，他跑得非常快」——这两个分句之间是什么关系？",
+   "answer": "转折——后一句拐了个弯",
+   "choices": [
+    "转折——后一句拐了个弯",
+    "因果——因为个子不高，所以跑得快",
+    "递进——后一句比前一句更进一步"
+   ],
+   "explanation": "先认关系再上词：个子不高，照常理该跑不快，可他偏偏跑得快——后一句拐了个弯，是转折，用「虽然……但是……」。",
+   "refute": {
+    "因果——因为个子不高，所以跑得快": "因果要讲得通：个子不高并不是跑得快的原因，硬套「因为所以」就把话讲拧了。",
+    "递进——后一句比前一句更进一步": "递进是顺着往前再进一层，比如「不但跑得快，还是全校第一」。这里两句是对着说的，不是往前推的。"
+   },
+   "id": "mt_sent-conjunction_q1",
+   "topicId": "mt_sent-conjunction",
+   "difficulty": "standard",
+   "origin": "courses/mt_sent-conjunction/content.json#step3"
+  },
+  {
+   "type": "choice",
+   "prompt": "「因为今天下雨，所以运动会改到下周」——这句话里的「因为」管的是哪一半？",
+   "answer": "管「今天下雨」，另一半由「所以」管",
+   "choices": [
+    "管「今天下雨」，另一半由「所以」管",
+    "管「运动会改到下周」",
+    "前后两句它都管"
+   ],
+   "explanation": "成对的关联词各管一半：「因为」管「今天下雨」，「所以」管「运动会改到下周」。认清谁管哪一半，词就不会放错位置。",
+   "refute": {
+    "管「运动会改到下周」": "那是结果，由「所以」管着。把「因为」放到结果那一半上，因果关系就反了。",
+    "前后两句它都管": "成对出现的关联词是分工的：一个管因，一个管果。说它两句都管，等于没认清它的用处。"
+   },
+   "id": "mt_sent-conjunction_q2",
+   "topicId": "mt_sent-conjunction",
+   "difficulty": "standard",
+   "origin": "courses/mt_sent-conjunction/content.json#step7"
+  },
+  {
+   "type": "choice",
+   "prompt": "「一只可爱的小鸟，在树枝上快活地飞」——这句话里的「快活地」，写的是小鸟的什么？",
+   "answer": "心情／飞的时候是什么样子",
+   "choices": [
+    "心情／飞的时候是什么样子",
+    "样子／长什么样",
+    "地方／在哪里飞"
+   ],
+   "explanation": "添修饰语有三样可添：样子、地方、心情。「快活地」写的是飞的时候那股高兴劲儿，属于心情这一格。",
+   "refute": {
+    "样子／长什么样": "写样子会说「圆滚滚的」「花羽毛」这一类。快活不快活是心情，看不出来。",
+    "地方／在哪里飞": "写地方会说「在树枝上」。这一句里管地方的是「在树枝上」，不是「快活地」。"
+   },
+   "id": "mt_sent-extend_q1",
+   "topicId": "mt_sent-extend",
+   "difficulty": "standard",
+   "origin": "courses/mt_sent-extend/content.json#step3"
+  },
+  {
+   "type": "choice",
+   "prompt": "把「小猫叫」扩写成一句能看见画面的话，下面哪一句合格？",
+   "answer": "一只浑身雪白的小猫，趴在窗台上，冲着院子里喵喵地叫。",
+   "choices": [
+    "一只浑身雪白的小猫，趴在窗台上，冲着院子里喵喵地叫。",
+    "小猫叫。小猫叫得很大声。",
+    "那只非常非常可爱的小猫叫了起来。"
+   ],
+   "explanation": "这一句把样子（浑身雪白）、地方（窗台上、冲着院子）都添上了，读完眼前就有画面——这才是合格的扩句。",
+   "refute": {
+    "小猫叫。小猫叫得很大声。": "「很大声」只是重复了「叫」这一件事。添了，可没添出新东西，画面还是空的。",
+    "那只非常非常可爱的小猫叫了起来。": "形容词堆得再多，写的还是一只看不出模样的猫。要补的是具体的样子和地方，不是更多形容词。"
+   },
+   "id": "mt_sent-extend_q2",
+   "topicId": "mt_sent-extend",
+   "difficulty": "standard",
+   "origin": "courses/mt_sent-extend/content.json#step7"
+  },
+  {
+   "type": "choice",
+   "prompt": "妈妈说：「我明天带你去公园。」把这句话改成转述句，原话里的「我」应该换成什么？",
+   "answer": "换成「她」，因为指的是妈妈",
+   "choices": [
+    "换成「她」，因为指的是妈妈",
+    "还用「我」",
+    "换成「你」"
+   ],
+   "explanation": "转述是替别人传话：站到说话的人外面来讲，「我」就不再是讲这句话的人自称，而要换成「她」（指妈妈）。",
+   "refute": {
+    "还用「我」": "留着「我」，听的人会以为要去公园的是讲这句话的人。原话里的「我」说的是妈妈本人，转述时要说出来是谁。",
+    "换成「你」": "「你」在原话里指的是听的那个人（孩子）。转述给第三个人听的时候，这个「你」也得跟着换。"
+   },
+   "id": "mt_sent-quote_q1",
+   "topicId": "mt_sent-quote",
+   "difficulty": "standard",
+   "origin": "courses/mt_sent-quote/content.json#step3"
+  },
+  {
+   "type": "choice",
+   "prompt": "把「老师说：『明天记得带尺子。』」改成转述句，标点应该怎么变？",
+   "answer": "冒号改成逗号，引号成对去掉",
+   "choices": [
+    "冒号改成逗号，引号成对去掉",
+    "去掉冒号，引号留着",
+    "什么标点都不用改"
+   ],
+   "explanation": "转述不必照搬原话，所以引号要成对去掉，冒号改成逗号。三件事一起做对：去引号、冒号改逗号、人称换过来。",
+   "refute": {
+    "去掉冒号，引号留着": "留着引号，那还是照着原话念。转述既然是用自己的话讲，引号就该成对去掉。",
+    "什么标点都不用改": "只换个说法、标点一动不动，那还是直述。三件事要一起动：去引号、冒号改逗号、换人称。"
+   },
+   "id": "mt_sent-quote_q2",
+   "topicId": "mt_sent-quote",
+   "difficulty": "standard",
+   "origin": "courses/mt_sent-quote/content.json#step7"
   },
   {
    "type": "choice",
@@ -1723,6 +1989,82 @@
    "topicId": "mt_word-idiom",
    "difficulty": "standard",
    "origin": "courses/mt_word-idiom/content.json#step7"
+  },
+  {
+   "type": "choice",
+   "prompt": "「剥到一半，汁水溅到手背上，凉了一下」——这句写的是哪个感官感受到的？",
+   "answer": "触觉——手背碰到汁水的凉",
+   "choices": [
+    "触觉——手背碰到汁水的凉",
+    "视觉——看见汁水溅出来",
+    "听觉——听见剥开的声音"
+   ],
+   "explanation": "落点在「手背上、凉了一下」，那是碰到之后皮肤上的感觉，是触觉。写观察不只用眼睛——看、听、摸、闻，哪一格有料用哪一格。",
+   "refute": {
+    "视觉——看见汁水溅出来": "汁水溅出来是看见的，可是这句的落点不在「看见」，而在「手上凉了一下」。",
+    "听觉——听见剥开的声音": "这句里没有写到声音。真要写听觉，句子里会有一个响动，比如「咔的一声」。"
+   },
+   "id": "mt_write-observe_q1",
+   "topicId": "mt_write-observe",
+   "difficulty": "standard",
+   "origin": "courses/mt_write-observe/content.json#step3"
+  },
+  {
+   "type": "choice",
+   "prompt": "写一样吃的东西，除了写「看起来什么样」，还能从哪些地方写？",
+   "answer": "闻起来什么味、摸上去什么手感、咬下去什么声音",
+   "choices": [
+    "闻起来什么味、摸上去什么手感、咬下去什么声音",
+    "把颜色和形状再写细一点就够了",
+    "多堆几个形容词"
+   ],
+   "explanation": "看、听、摸、闻各有各的用处：样子靠眼睛，声音靠耳朵，手感靠皮肤，气味靠鼻子。开得越多，读者越像是真站在跟前。",
+   "refute": {
+    "把颜色和形状再写细一点就够了": "那还是只用到了眼睛。读者读到的是一段说明，不是一样东西。",
+    "多堆几个形容词": "形容词堆得再多，也还是眼睛里的那一格。要补的是感官，不是词藻。"
+   },
+   "id": "mt_write-observe_q2",
+   "topicId": "mt_write-observe",
+   "difficulty": "standard",
+   "origin": "courses/mt_write-observe/content.json#step7"
+  },
+  {
+   "type": "choice",
+   "prompt": "三年级修改自己的习作，改的主要是什么？",
+   "answer": "增、删、调、换——把句子调理服帖",
+   "choices": [
+    "增、删、调、换——把句子调理服帖",
+    "把错别字挑出来改正",
+    "把卷面重新抄一遍"
+   ],
+   "explanation": "错别字当然要改，但三年级真正要练的是增、删、调、换：把话删短、把句子挪对地方、把不合适的词换掉。",
+   "refute": {
+    "把错别字挑出来改正": "那是修改里最小的一件事。改完错别字，句子还是拖沓、还是东一句西一句，等于没改。",
+    "把卷面重新抄一遍": "重抄只让本子干净。修改的功夫要落在句子上，不是落在纸上。"
+   },
+   "id": "mt_write-revise_q1",
+   "topicId": "mt_write-revise",
+   "difficulty": "standard",
+   "origin": "courses/mt_write-revise/content.json#step3"
+  },
+  {
+   "type": "choice",
+   "prompt": "习作里有一句「今天我很开心」，留着还是删掉？怎么判断？",
+   "answer": "看它有没有替正文做事：没做事就删掉，把地方让给真正重要的事",
+   "choices": [
+    "看它有没有替正文做事：没做事就删掉，把地方让给真正重要的事",
+    "一定要留着，开头得有个总起句",
+    "改成「今天我非常开心」就更好了"
+   ],
+   "explanation": "「敢删」是修改的第一步。可有可无的话删掉，省下的地方留给那些真让人忘不掉的事。",
+   "refute": {
+    "一定要留着，开头得有个总起句": "开头不一定要先喊一句口号。读者想知道的是「到底发生了什么」，不是「你很开心」。",
+    "改成「今天我非常开心」就更好了": "换两个词，不改变它没替正文做事的事实。该动的是这一句，不是这个说法。"
+   },
+   "id": "mt_write-revise_q2",
+   "topicId": "mt_write-revise",
+   "difficulty": "standard",
+   "origin": "courses/mt_write-revise/content.json#step6"
   }
  ]
 }

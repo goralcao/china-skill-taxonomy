@@ -187,7 +187,7 @@ def main():
         by_type[q["type"]] = by_type.get(q["type"], 0) + 1
 
     payload = {
-        "version": "v0.48.0",
+        "version": "v0.49.0",
         "generatedAt": "2026-10-30",
         "source": "courses/*/content.json（课件内可判分环节）",
         "audited": False,

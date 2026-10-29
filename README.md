@@ -16,7 +16,7 @@
 <img src="https://img.shields.io/badge/prerequisite%20edges-1647-blueviolet?style=flat-square" alt="prerequisite edges">
 <img src="https://img.shields.io/badge/data-ODbL%201.0-orange?style=flat-square" alt="data license">
 <img src="https://img.shields.io/badge/content-CC%20BY--SA%204.0-yellow?style=flat-square" alt="content license">
-<img src="https://img.shields.io/badge/questions-115%20%C2%B7%2050%20topics-informational?style=flat-square" alt="diagnostic questions">
+<img src="https://img.shields.io/badge/questions-133%20%C2%B7%2059%20topics-informational?style=flat-square" alt="diagnostic questions">
 <img src="https://img.shields.io/badge/format-JSON%20%2B%20single--file%20HTML-success?style=flat-square" alt="format">
 </p>
 
@@ -26,7 +26,7 @@
 
 在线预览：<https://acd118508358062b1.app.workbuddy.host/?sharecode=DHL4TJAQCG>
 
-> v0.48.0 · 主题 1273 · 先修依赖 1647（hard 952 / soft 695）· 课标条目 186 · 域摘要 204 · 教学研究 1268 · 教材版本 26 · 学科 12 · 课件 65 · 诊断题 115（覆盖 50 个主题）
+> v0.49.0 · 主题 1273 · 先修依赖 1647（hard 952 / soft 695）· 课标条目 186 · 域摘要 204 · 教学研究 1268 · 教材版本 26 · 学科 12 · 课件 65 · 诊断题 133（覆盖 59 个主题：数学 46、语文 12、化学 1）
 
 ## 目录
 
@@ -282,7 +282,11 @@ node scripts/validate-courses.mjs
 - 依赖图分成 67 个连通分量，最大的一块只占 7.6%。原因是跨模块、跨学科的边补得少，学习路径常常只能在本模块内走。补软依赖是下一步要做的，但每条都得能说清理由，不想为了连通而连通。
 - 186 条课标里有 11 条还没有主题挂靠，集中在语文低年级的表达类要求、英语一级的两个要素；这部分主题偏少。
 - 首屏要下载 4MB 的 `data.js`（gzip 后约 1MB），线上目前没有开压缩。数据分片是待办。
-- 诊断题库只有 115 题，覆盖 50 / 1273 个知识点（3.9%）。题目和解析都出自课件原文，未经教师独立复核，也没有独立的答案复算——数学的数值题本可以像课标对齐那样做表达式核验，暂未做。这 50 个点每个至少 2 道题（35 个点 2 题、15 个点 3 题），答一组也是对两道才算掌握。4 个手写课件没有 `content.json`，题目抽不出来，不在题库里。
+- 诊断题库只有 133 题，覆盖 59 / 1273 个知识点（4.6%，其中数学 46、语文 12、化学 1）。
+  题目和解析都出自课件原文，未经教师独立复核，也没有独立的答案复算——数学的数值题本可以像
+  课标对齐那样做表达式核验，暂未做。这 59 个点每个至少 2 道题（44 个点 2 题、15 个点 3 题），
+  答一组也是对两道才算掌握。覆盖面受制于课件：先得有课件，才谈得上抽题。
+  4 个手写课件没有 `content.json`，题库里没有它们的题。
 - 课件 65 个（1273 个主题的 5.1%）：数学 53 个，覆盖三至五年级核心知识点与六年级圆板块（圆的认识、圆的周长与面积、扇形、圆柱与圆锥）；语文 12 个，覆盖三年级「句子与标点」4 个、「阅读」3 个（圈画批注、预测推想、古诗注释）、「习作」2 个（观察写清楚、修改习作），以及低段的朗读、田字格写字、成语故事各 1 个。呈现器落地了竖式、方格、描边、分份、钟面、数轴、坐标系、年历、小数条、复式表、罗盘地图、运算律、三角形、数位表、量角器、四边形、百格图、多位数乘法竖式、统计图、移多补少、割补拼摆、摆方格、分数意义图、分数加减条、等距堆方块、数对网格、植树间隔、对称补全、约分重分条、随机转盘、小数点定位、商不变转化、切饼分份、天平找次品、通话树、圆规画圆、滚圆测周长、扇形角控、圆柱展开、扩句积木、关联词配对、直述转述、点句读共四十五种；语文另在引擎里内置十一种过程式步骤（圈画、写话、量规、预测、古诗注释、感官观察、修改体检、拼音、典故、朗读、写字），sim / diagram / equation 还没做。构建改为按课程裁剪渲染器（扫描课件实际调用），单课体积从约 200KB 降到 40KB 上下。时分秒与动量守恒仍是各自内嵌的实现，没收敛到公共呈现器。
 - 目前只有中文。术语和课标编号是中文体系的，翻成英文会失真，暂时没做。
 
