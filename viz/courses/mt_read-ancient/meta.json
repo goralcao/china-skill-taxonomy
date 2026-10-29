@@ -1,0 +1,28 @@
+{
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-29",
+  "subject": "语文",
+  "template": "explain",
+  "topicId": "mt_read-ancient",
+  "title": "借助注释读古诗：把拐杖用好，再放下",
+  "renderer": "poemNote",
+  "duration": 13,
+  "interactions": 5,
+  "grade": 3,
+  "standards": [],
+  "prerequisites": [
+    "mt_poem-recite"
+  ],
+  "next": [
+    "mt_poem-understand"
+  ],
+  "objectives": [
+    "知道注释是给「看着认识、其实不懂」的字准备的，不是给生字准备的",
+    "把每条注释送回它解释的那一句，说出这个词在句中的意思",
+    "撤掉注释，用自己的话讲清一句诗"
+  ],
+  "cognitiveAction": "辨析"
+}

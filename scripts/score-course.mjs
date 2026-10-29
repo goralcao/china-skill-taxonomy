@@ -159,7 +159,7 @@ function scoreCourse(dir) {
     put('assess', null, '手写页面：题目数未知');
   } else {
     // 语文的「留下痕迹」环节（圈画/动笔/自评）与检测题同权
-    const HOME = ['quiz', 'choice', 'annotate', 'draft', 'rubric'];
+    const HOME = ['quiz', 'choice', 'annotate', 'draft', 'rubric', 'predict', 'poemNote', 'senses', 'checkup'];
     const qTotal = steps.filter(s => HOME.includes(s.type)).length;
     if (qTotal >= 2) put('assess', 10, `${qTotal} 个可验证环节`);
     else if (qTotal === 1) put('assess', 5, '只有 1 个可验证环节，看不出是否真会');

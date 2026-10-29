@@ -90,7 +90,7 @@ import teaching_research_chinese_senior  # noqa: E402
 import teaching_research_math_senior  # noqa: E402
 import teaching_research_english_senior  # noqa: E402
 
-VERSION = "v0.42.0"
+VERSION = "v0.45.0"
 SCHEMA_VERSION = 1
 
 MODULES = [
@@ -807,7 +807,8 @@ def _renderers_for_course(content, course_dir) -> set:
         called = set(re.findall(r"CR\.([A-Za-z_$][\w$]*)\s*\(", html))
         return called | helper if called else None
     # 纯引擎步骤（不需要 CR 呈现器）：语文的 annotate/draft/rubric 也在这一类
-    plain = {"intro", "text", "quiz", "choice", "summary", "annotate", "draft", "rubric"}
+    plain = {"intro", "text", "quiz", "choice", "summary", "annotate", "draft", "rubric",
+             "predict", "poemNote", "senses", "checkup"}
     alias = {"decimal": "decimalBar", "table": "barGroup"}  # 引擎别名：类型名 → 渲染器名
     used = set()
     for st in content.get("steps", []):

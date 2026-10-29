@@ -1,0 +1,30 @@
+{
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-29",
+  "subject": "语文",
+  "template": "explain",
+  "topicId": "mt_read-mark",
+  "title": "圈画与批注：让笔在纸上停一下",
+  "renderer": "annotate",
+  "duration": 13,
+  "interactions": 5,
+  "grade": 3,
+  "standards": [],
+  "prerequisites": [
+    "mt_read-silent",
+    "mt_word-understand"
+  ],
+  "next": [
+    "mt_read-predict",
+    "mt_read-question"
+  ],
+  "objectives": [
+    "用四个符号区分「关键词、人物、好句、不懂」，而不是见什么都划",
+    "在原文里标出写动作、写数量的词，并说出它让你知道了什么",
+    "写一行旁批：先说标的是哪个词，再说这个词带来的看法"
+  ],
+  "cognitiveAction": "辨析"
+}

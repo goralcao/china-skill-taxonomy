@@ -71,6 +71,10 @@
 | `annotate` | 圈画（语文）：在原文里点出语言现象，只计数不判错 | `body.text` `body.marks[{t,why}]` `body.min` | `body.after` `body.revealLabel` `title` `ask` |
 | `draft` | 写下来（语文）：多行输入 + 支架词 + 写完再看的参考稿 | `body.rows` `body.chips[]` `body.minChars` | `body.rowHints[]` `body.sample` `body.sampleNote` `body.done` |
 | `rubric` | 自评量规（语文）：三维三级，给建议不给分 | `body.dimensions[{name,levels[{k,d}]}]` | `body.advice` `body.note` `lead` |
+| `predict` | 预测推想（语文）：分段揭示，每猜一次必须先选依据 | `body.open` `body.rounds[{ask,options,answer,because[],reveal,why}]` | `body.done` `rounds[].label` `rounds[].goLabel` |
+| `poemNote` | 古诗注释（语文）：注释卡送回诗句，再脱注复述 | `body.lines[]` `body.notes[{text,on,tag,after}]` | `body.recall{hint,answer[],words[]}` `body.allOk` |
+| `senses` | 感官观察（语文）：四格感官 + 观察顺序 | `body.senses[{k,name,hint,ph}]` `body.min` | `body.orders[]` `body.orderAsk` `body.sample` |
+| `checkup` | 修改体检（语文）：清单 + 文稿，点中一句才打勾 | `body.lines[{t}]` `body.checks[{name,how,hits[],fix}]` `body.min` | `body.idle` |
 
 除 `summary` 外，每步给 `title`。标题是这一屏的结论，不是栏目名。
 

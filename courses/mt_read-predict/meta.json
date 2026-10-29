@@ -1,0 +1,29 @@
+{
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-29",
+  "subject": "语文",
+  "template": "explain",
+  "topicId": "mt_read-predict",
+  "title": "预测与推想：先猜一步，再回头看",
+  "renderer": "predict",
+  "duration": 13,
+  "interactions": 5,
+  "grade": 3,
+  "standards": [],
+  "prerequisites": [
+    "mt_read-silent",
+    "mt_read-mark"
+  ],
+  "next": [
+    "mt_read-question"
+  ],
+  "objectives": [
+    "在关键处停下来，用已经读到的句子做依据往前猜一步",
+    "说出「我是从哪句看出来的」，而不是只说「我觉得」",
+    "接受猜错：猜错也留下了一条线索，说明依据还不够"
+  ],
+  "cognitiveAction": "辨析"
+}

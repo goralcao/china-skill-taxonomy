@@ -1,0 +1,30 @@
+{
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-29",
+  "subject": "语文",
+  "template": "explain",
+  "topicId": "mt_write-observe",
+  "title": "观察与写清楚：不只用一个感官",
+  "renderer": "senses",
+  "duration": 13,
+  "interactions": 5,
+  "grade": 3,
+  "standards": [],
+  "prerequisites": [
+    "mt_sent-extend",
+    "mt_word-accumulate"
+  ],
+  "next": [
+    "mt_write-narrative",
+    "mt_write-person"
+  ],
+  "objectives": [
+    "说出描写一样东西时，看、听、摸、闻各能提供什么",
+    "给一篇观察稿补上缺掉的感官，说清缺了哪一格",
+    "先定观察顺序再动笔，不东一句西一句"
+  ],
+  "cognitiveAction": "构思"
+}

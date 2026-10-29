@@ -22,10 +22,24 @@
 新增两个合法值：`辨析`（判断关系/对错/该用哪个）、`构思`（习作支架类，B/C 批用）。
 一节课只承载一个认知动作，规则与数学相同。
 
-## 三、学程骨架：六段，不是五步
+## 三、学程骨架：先分清是哪一种语文课
 
 **不要套数学的「情境 → 探究 → 例题 → 练习 → 小结」。** 数学每一步都在收敛到一个答案，
-语文的每一段都在扩张学生的表达。完整设计见 `chinese-design.md`（专家团共识稿），骨架是：
+语文的每一段都在扩张学生的表达。
+
+语文内部还要再分一层——**三种课型，三种形状**：
+
+| 课型 | 产出物 | 骨架 | 文档 |
+|---|---|---|---|
+| 语言知识（句子、标点） | 改对的一处 | 六段（见下） | 本节 + `chinese-design.md` |
+| **阅读** | 一条依据链 | 五段：起疑 → 取证 → 对齐 → 说清 → 换文 | `chinese-reading-writing.md` |
+| **写作** | 一页能读的东西 | 五段：起意 → 搭骨架 → 起草 → 改 → 出刊 | `chinese-reading-writing.md` |
+
+把阅读课写成「读进去 → 看出来 → 写下来 → 改一处 → 评一评」，学生会读完了还是说不出
+「我是从哪句知道的」；把写作课写成同样的六段，构思那一步就被一个空输入框敷衍过去了。
+**先判断课型，再选骨架。**
+
+### 语言知识课的六段
 
 | # | 环节 | 步骤类型 | 凭什么算"过去了" |
 |---|---|---|---|
@@ -50,10 +64,22 @@
 | `pairMatch` | 关联词语配对：左列配右列，配对成功显示关联词 | `pairs[{left,right,word,why,hint}]` |
 | `transform` | 直述↔转述：在原句上逐处替换 | `direct` 原句 · `changes[{label,from,to,pick,options,why,hint}]`（`to` 为空串时用 `pick` 指定选项文字，如"去掉"） |
 | `punctPick` | 点句读：在句子空槽里选标点 | `items[{before,after,options,answer,why,hint}]` |
+| `annotate`（符号版） | 批注符号：○ 关键词 / □ 人物 / ～ 好句 / ？不懂，先选符号再点词 | `body.symbols[{k,name,hint}]` · `marks[].sym` · `body.note`（旁批开关） |
+| `predict` | 预测推想：分段揭示，每猜一次必须先从前文选一句依据 | `body.rounds[{ask,options,answer,because[],reveal,why}]` |
+| `poemNote` | 古诗注释：注释卡送回诗句，归位后撤注复述 | `body.notes[{text,on,tag}]` · `body.recall{answer[],words[]}` |
+| `senses` | 感官观察：四格感官 + 观察顺序，不排完不许写 | `body.senses[{k,name,hint}]` · `body.orders[]` |
+| `checkup` | 修改体检：清单 + 文稿，点中一句才允许打勾 | `body.checks[{name,how,hits[],fix}]` |
 
-四个渲染器（`sentBuild` / `pairMatch` / `transform` / `punctPick`）会在做完最后一个动作时
-回调 `spec.onDone`，引擎据此记"这一步留下了痕迹"——新写渲染器时要接上这条线，否则结算少算一项。
-学生自己判断的环节（如配对）写 `demo:false`，不要出现"看老师改这一句"。
+两类实现方式要分清：
+
+- **走 `renderers.js` 的四个**（`sentBuild` / `pairMatch` / `transform` / `punctPick`）——必须
+  同步加进 `global.CR` 导出，否则 esbuild 树摇会把它剔掉；做完最后一个动作要回调 `spec.onDone`，
+  引擎据此记"这一步留下了痕迹"，漏了结算就少算一项。
+- **引擎内置的七个**（`annotate` / `draft` / `rubric` / `predict` / `poemNote` / `senses` / `checkup`）
+  ——直接写在 `engine.js` 里，能访问 `stateOf(i)`，不进 `CR`，也不用管导出；但要在
+  `finishLang()` 的 `TASK` 数组里登记，否则不算"可验证环节"。
+
+学生自己判断的环节（如配对、预测）写 `demo:false`，不要出现"看老师改这一句"。
 
 ## 五、引擎里语文走另一条路
 

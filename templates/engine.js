@@ -523,28 +523,103 @@
         });
         if (rest) segs.push({ t: rest });
 
+        // 批注符号（方法课用）：先选符号，再点文章里的词
+        var syms = b.symbols || null;
+        var curSym = null;
+        var symBtns = [];
+        if (syms) {
+          var sbar = h('div', 'an-syms');
+          sbar.appendChild(h('span', 'an-syms-lab', b.symLabel || '先选一个符号：'));
+          syms.forEach(function (sy) {
+            var sb = h('button', 'an-sym');
+            sb.type = 'button';
+            var ic = h('i', null, sy.k);
+            sb.appendChild(ic);
+            sb.appendChild(document.createTextNode(sy.name));
+            sb.title = sy.hint || '';
+            sb.onclick = function () {
+              curSym = sy.k;
+              symBtns.forEach(function (x) { x.classList.remove('on'); });
+              sb.classList.add('on');
+              why.innerHTML = '<b>' + sy.k + ' ' + sy.name + '</b>　' + (sy.hint || '');
+            };
+            symBtns.push(sb);
+            sbar.appendChild(sb);
+          });
+          f.insertBefore(sbar, box);
+        }
+
         var stat = h('div', 'an-stat');
         var why = h('div', 'an-why', b.idle || '点你找到的词，点错也没关系。');
+        var pen = null;
+        var penRow = null;
+        if (b.note && syms) {
+          penRow = h('div', 'an-pen');
+          pen = document.createElement('input');
+          pen.type = 'text';
+          pen.maxLength = 16;
+          pen.placeholder = b.noteHint || '给这一处写句旁批（一行就够）';
+          var penOk = h('button', 'btn small', '记下');
+          penOk.type = 'button';
+          penRow.appendChild(pen);
+          penRow.appendChild(penOk);
+          // 位置见下方：stat / why 之后
+          penOk.onclick = function () {
+            var v = pen.value.trim();
+            if (v.length < 2) { why.innerHTML = '旁批写一两个字也行，写清楚你为哪句话停下来的。'; return; }
+            var st = stateOf(i);
+            st.pen = st.pen || [];
+            st.pen.push(v);
+            pen.value = '';
+            why.innerHTML = '<b>旁批记下了。</b>' + v;
+          };
+        }
         var found = {};
         var n = 0;
 
         function paint() {
-          stat.innerHTML = '已圈出 <b>' + n + '</b> 处' + (n >= need ? ' · 够了，可以往下' : '，再找找');
+          var verb = syms ? '已标出' : '已圈出';
+          stat.innerHTML = verb + ' <b>' + n + '</b> 处' + (n >= need ? ' · 够了，可以往下' : '，再找找');
           stat.className = 'an-stat' + (n >= need ? ' ok' : '');
         }
 
         segs.forEach(function (g) {
           if (g.k === undefined) { box.appendChild(document.createTextNode(g.t)); return; }
-          var tok = h('button', 'an-tok', g.t);
-          tok.type = 'button';
+          var tok = h('span', 'an-tok', g.t);
+          tok.setAttribute('role', 'button');
+          tok.tabIndex = 0;
+          tok.onkeydown = function (ev) {
+            if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); tok.click(); }
+          };
           tok.onclick = function () {
+            var mk = marks[g.k];
+            // 有符号系统时：必须先选符号，且符号要对
+            if (syms) {
+              if (!curSym) {
+                why.innerHTML = '先在下面选一个符号——你要标的是<strong>关键词</strong>、<strong>人物</strong>，还是<strong>好句子</strong>？';
+                return;
+              }
+              if (mk.sym && curSym !== mk.sym) {
+                tok.classList.add('wrong');
+                setTimeout(function () { tok.classList.remove('wrong'); }, 700);
+                why.innerHTML = '这个符号是用来标<strong>' +
+                  ((syms.filter(function (x) { return x.k === curSym; })[0] || {}).name || '别的') +
+                  '</strong>的。这一处你再想想该用哪个。';
+                return;
+              }
+            }
             if (found[g.k]) {
-              why.innerHTML = '<b>' + g.t + '</b>' + (marks[g.k].why || '');
+              why.innerHTML = '<b>' + g.t + '</b>' + (mk.why || '');
               return;
             }
             found[g.k] = true; n++;
             tok.classList.add('hit');
-            why.innerHTML = '<b>你圈出了「' + g.t + '」</b>　' + (marks[g.k].why || '');
+            if (syms) {
+              tok.classList.add('symmed');
+              var badge = h('span', 'an-mark', mk.sym || curSym);
+              tok.insertBefore(badge, tok.firstChild);
+            }
+            why.innerHTML = '<b>你标出了「' + g.t + '」</b>　' + (mk.why || '');
             paint();
             if (n >= need) {
               stateOf(i).solved = true;
@@ -557,6 +632,7 @@
 
         f.appendChild(stat);
         f.appendChild(why);
+        if (penRow) f.appendChild(penRow);
 
         if (b.after) {
           var reveal = h('button', 'btn small', b.revealLabel || '看看还有哪几处没被注意到');
@@ -753,6 +829,577 @@
           card.innerHTML = '<p style="margin:0">' + b.note + '</p>';
           f.appendChild(card);
         }
+        return f;
+      },
+
+      /* ── 语文专用：预测与推想 ───────────────────────────
+       * 策略课。痕迹是一条「我猜 / 因为 / 后来」的时间轴。
+       * 依据必须落在揭示段之前——学生只能从已经读到的文字里找线索。
+       */
+      predict: function (s, i) {
+        var f = document.createDocumentFragment();
+        if (s.title) f.appendChild(h('h2', null, s.title));
+        if (s.ask) {
+          var q = h('p', 'quiz-q');
+          q.innerHTML = s.ask;
+          f.appendChild(q);
+        }
+        var b = s.body || s;
+        var rounds = b.rounds || [];
+        var wrap = h('div', 'pd-wrap');
+        f.appendChild(wrap);
+
+        var textBox = h('div', 'pd-text');
+        if (b.open) {
+          var p0 = document.createElement('p');
+          p0.innerHTML = b.open;
+          textBox.appendChild(p0);
+        }
+        wrap.appendChild(textBox);
+
+        var track = h('div', 'pd-track');
+        wrap.appendChild(track);
+        var stage = h('div');
+        wrap.appendChild(stage);
+
+        var cur = 0;
+        var logs = [];
+
+        function drawTrack() {
+          track.innerHTML = '';
+          rounds.forEach(function (r, k) {
+            var d = h('span', 'pd-step' + (k < cur ? ' done' : (k === cur ? ' on' : '')),
+              (k + 1) + '. ' + (r.label || '猜一次'));
+            track.appendChild(d);
+          });
+        }
+
+        function render() {
+          drawTrack();
+          stage.innerHTML = '';
+          if (cur >= rounds.length) {
+            var st = stateOf(i);
+            st.solved = true;
+            st.predicts = logs;
+            syncNav();
+            var done = h('div', 'card ok');
+            done.innerHTML = '<p style="margin:0">' + (b.done ||
+              '三处推想都记下了。推想不是猜中，是「拿已经读到的线索往前试」——猜错了也留下了一条线索。') + '</p>';
+            stage.appendChild(done);
+            return;
+          }
+          var r = rounds[cur];
+          var pick = null;
+          var bec = {};
+
+          var ask = h('div', 'pd-ask');
+          ask.innerHTML = '<b>' + (r.ask || '你猜接下来会怎样？') + '</b>';
+          stage.appendChild(ask);
+
+          var opts = h('div', 'pd-opts');
+          (r.options || []).forEach(function (o, k) {
+            var btn = h('button', 'pd-opt', o);
+            btn.type = 'button';
+            btn.onclick = function () {
+              pick = k;
+              [].slice.call(opts.children).forEach(function (x) { x.classList.remove('on'); });
+              btn.classList.add('on');
+            };
+            opts.appendChild(btn);
+          });
+          stage.appendChild(opts);
+
+          var becBox = null;
+          if (r.because && r.because.length) {
+            becBox = h('div', 'pd-because');
+            becBox.appendChild(h('div', 'pd-because-lab', r.becauseLabel || '你是从哪句看出来的？（可多选，选不出来说明还得往回读）'));
+            var bs = h('div', 'pd-bs');
+            r.because.forEach(function (t, k) {
+              var bb = h('button', 'pd-b', '「' + t + '」');
+              bb.type = 'button';
+              bb.onclick = function () {
+                bec[k] = !bec[k];
+                bb.classList.toggle('on', bec[k]);
+              };
+              bs.appendChild(bb);
+            });
+            becBox.appendChild(bs);
+            stage.appendChild(becBox);
+          }
+
+          var bar = h('div', 'pd-bar');
+          var go = h('button', 'btn small primary', r.goLabel || '看看后面');
+          go.type = 'button';
+          bar.appendChild(go);
+          stage.appendChild(bar);
+
+          var fb = h('div', 'pd-msg');
+          stage.appendChild(fb);
+
+          go.onclick = function () {
+            if (pick === null) {
+              fb.className = 'pd-msg bad';
+              fb.textContent = '先选一个你的猜想，再往下看。';
+              return;
+            }
+            var becPick = (r.because || []).filter(function (t, k) { return bec[k]; });
+            if (r.because && r.because.length && !becPick.length) {
+              fb.className = 'pd-msg bad';
+              fb.textContent = '还差一句依据。往回读一读，点出你是从哪句看出来的。';
+              return;
+            }
+            go.disabled = true;
+            [].slice.call(opts.children).forEach(function (x) { x.disabled = true; });
+            if (becBox) [].slice.call(becBox.querySelectorAll('button')).forEach(function (x) { x.disabled = true; });
+
+            var right = pick === r.answer;
+            var rev = h('div', 'pd-reveal');
+            rev.innerHTML = '<div class="pd-h">后来</div>' + (r.reveal || '');
+            stage.appendChild(rev);
+
+            var cmp = h('div', 'pd-cmp');
+            cmp.innerHTML = '你猜：<b>' + (r.options || [])[pick] + '</b>　' +
+              (right ? '<span class="same">和文中一致</span>'
+                     : '<span class="diff">和文中不一样</span>——推想本来就是这样，拿线索往前试，试错了才知道线索还差什么。') +
+              (becPick.length ? '<br>你的依据：' + becPick.map(function (t) { return '「' + t + '」'; }).join('、')
+                              : '') +
+              (r.why ? '<br>' + r.why : '');
+            stage.appendChild(cmp);
+
+            var bar2 = h('div', 'pd-bar');
+            var keep = h('button', 'btn small primary pd-keep', '记住这一条');
+            keep.type = 'button';
+            bar2.appendChild(keep);
+            stage.appendChild(bar2);
+            fb.textContent = '';
+
+            keep.onclick = function () {
+              logs.push({ guess: (r.options || [])[pick], right: right, because: becPick });
+              var np = document.createElement('p');
+              np.className = 'pd-new';
+              np.innerHTML = r.reveal || '';
+              textBox.appendChild(np);
+              cur++;
+              render();
+              var top = wrap.getBoundingClientRect().top;
+              if (top < 0) wrap.scrollIntoView({ block: 'start' });
+            };
+          };
+        }
+
+        render();
+        return f;
+      },
+
+      /* ── 语文专用：古诗三方对齐 ─────────────────────────
+       * 工具课。注释卡要给诗句找到它的位置；归位之后撤掉注释，用词块复述。
+       */
+      poemNote: function (s, i) {
+        var f = document.createDocumentFragment();
+        if (s.title) f.appendChild(h('h2', null, s.title));
+        if (s.ask) {
+          var q = h('p', 'quiz-q');
+          q.innerHTML = s.ask;
+          f.appendChild(q);
+        }
+        var b = s.body || s;
+        var lines = b.lines || [];
+        var notes = b.notes || [];
+        var wrap = h('div', 'pn-wrap');
+        f.appendChild(wrap);
+
+        if (b.poemTitle) {
+          wrap.appendChild(h('div', 'pn-title', b.poemTitle));
+          if (b.by) wrap.appendChild(h('div', 'pn-by', b.by));
+        }
+
+        var linesBox = h('div', 'pn-lines');
+        wrap.appendChild(linesBox);
+        var lineEls = [];
+        lines.forEach(function (t, k) {
+          var el = h('div', 'pn-line');
+          el.appendChild(h('span', 'pn-t', t));
+          el.onclick = function () { put(k); };
+          lineEls.push(el);
+          linesBox.appendChild(el);
+        });
+
+        var msg = h('div', 'pn-msg', b.idle || '先点一张注释卡，再点它解释的那一句诗。');
+        wrap.appendChild(msg);
+
+        wrap.appendChild(h('div', 'pn-note', b.cardLabel || '注释卡（顺序打乱了）'));
+        var cardsBox = h('div', 'pn-cards');
+        wrap.appendChild(cardsBox);
+
+        var order = notes.map(function (n, k) { return k; });
+        // 固定打乱，避免每次渲染位置不同
+        for (var j = order.length - 1; j > 0; j--) {
+          var r2 = (j * 7 + 3) % (j + 1);
+          var tmp = order[j]; order[j] = order[r2]; order[r2] = tmp;
+        }
+
+        var cardEls = [];
+        var armed = null;
+        var placed = {};
+        var placedN = 0;
+
+        function refresh() {
+          cardEls.forEach(function (c) {
+            c.classList.toggle('on', armed === c.dataset.k * 1);
+            c.classList.toggle('used', !!placed[c.dataset.k]);
+            c.disabled = !!placed[c.dataset.k];
+          });
+          lineEls.forEach(function (el) { el.classList.remove('armed'); });
+          if (armed !== null && notes[armed]) {
+            var tgt = lineEls[notes[armed].on];
+            if (tgt) tgt.classList.add('armed');
+          }
+        }
+
+        order.forEach(function (k) {
+          var n = notes[k];
+          var c = h('button', 'pn-card', n.text);
+          c.type = 'button';
+          c.dataset.k = k;
+          c.onclick = function () {
+            if (placed[k]) return;
+            armed = (armed === k ? null : k);
+            msg.className = 'pn-msg';
+            msg.textContent = armed === null ? (b.idle || '先点一张注释卡，再点它解释的那一句诗。')
+              : '这张卡是解释哪一句的？点上面那一句。';
+            refresh();
+          };
+          cardEls.push(c);
+          cardsBox.appendChild(c);
+        });
+
+        function put(k) {
+          if (armed === null) {
+            msg.className = 'pn-msg';
+            msg.textContent = '先点下面的一张注释卡，再点诗句。';
+            return;
+          }
+          var n = notes[armed];
+          if (n.on !== k) {
+            lineEls[k].classList.add('armed');
+            setTimeout(function () { refresh(); }, 600);
+            msg.className = 'pn-msg bad';
+            msg.textContent = '这一句不是它解释的。想想这句里哪个词你看不懂。';
+            return;
+          }
+          placed[armed] = true;
+          placedN++;
+          var tag = h('span', 'pn-tag', n.tag || '已注');
+          lineEls[k].appendChild(tag);
+          lineEls[k].classList.add('full');
+          msg.className = 'pn-msg ok';
+          msg.textContent = (b.okOne || '对上了。') + (n.after || '');
+          armed = null;
+          refresh();
+          if (placedN === notes.length) finishNotes();
+        }
+
+        var recallBox = null;
+        function finishNotes() {
+          msg.className = 'pn-msg ok';
+          msg.textContent = b.allOk || '注释都对上了。现在把注释撤掉——你还能说清这句吗？';
+          var st0 = stateOf(i);
+          st0.solved = true;
+          st0.notes = notes.length;
+          syncNav();
+          if (!b.recall || recallBox) return;
+          var rc = b.recall;
+          recallBox = h('div', 'pn-recall');
+          recallBox.appendChild(h('div', 'pn-recall-h', rc.hint || '不看注释，点词块把这句说成自己的话'));
+          var slotsBox = h('div', 'pn-slots');
+          recallBox.appendChild(slotsBox);
+          var wordsBox = h('div', 'pn-words');
+          recallBox.appendChild(wordsBox);
+          var rmsg = h('div', 'pn-msg');
+          recallBox.appendChild(rmsg);
+
+          var ans = rc.answer || [];
+          var filled = [];
+          var slotEls = [];
+          for (var q2 = 0; q2 < ans.length; q2++) {
+            (function (idx) {
+              var sl = h('div', 'pn-slot', '');
+              sl.onclick = function () {
+                if (!filled[idx]) return;
+                var w = filled[idx];
+                filled[idx] = null;
+                sl.textContent = '';
+                sl.classList.remove('ok');
+                // 归还词块
+                [].slice.call(wordsBox.children).forEach(function (w2) {
+                  if (w2.textContent === w) { w2.classList.remove('used'); w2.disabled = false; }
+                });
+                check(false);
+              };
+              slotEls.push(sl);
+              slotsBox.appendChild(sl);
+            })(q2);
+          }
+
+          (rc.words || ans).forEach(function (w) {
+            var wb = h('button', 'pn-word', w);
+            wb.type = 'button';
+            wb.onclick = function () {
+              var slot = -1;
+              for (var z = 0; z < ans.length; z++) { if (!filled[z]) { slot = z; break; } }
+              if (slot < 0) { rmsg.className = 'pn-msg'; rmsg.textContent = '先点一下已经填好的词，可以把它撤回来。'; return; }
+              filled[slot] = w;
+              slotEls[slot].textContent = w;
+              wb.classList.add('used');
+              wb.disabled = true;
+              check(true);
+            };
+            wordsBox.appendChild(wb);
+          });
+
+          function check(auto) {
+            var full = filled.filter(Boolean).length === ans.length;
+            if (!full) {
+              if (auto) { rmsg.className = 'pn-msg'; rmsg.textContent = '还差 ' + (ans.length - filled.filter(Boolean).length) + ' 个词。'; }
+              return;
+            }
+            var bad = [];
+            ans.forEach(function (a, k2) {
+              // 允许同义位置互换：只要这个词属于答案集合就算对
+              if (filled[k2] !== a) bad.push(k2);
+            });
+            if (!bad.length) {
+              slotEls.forEach(function (x) { x.classList.add('ok'); });
+              rmsg.className = 'pn-msg ok';
+              rmsg.textContent = rc.done || '说清了。注释是拐杖——用完要放下的。';
+              var st = stateOf(i);
+              st.solved = true;
+              st.recalled = true;
+              syncNav();
+              return;
+            }
+            rmsg.className = 'pn-msg';
+            rmsg.textContent = '意思差不多出来了，但「' + filled[bad[0]] + '」放的位置不太对。点它可以撤回来重放。';
+          }
+
+          wrap.appendChild(recallBox);
+          recallBox.scrollIntoView({ block: 'nearest' });
+        }
+
+        refresh();
+        return f;
+      },
+
+      /* ── 语文专用：感官观察 ─────────────────────────────
+       * 写作课前半段。写不具体，常常是「只用了眼睛」。
+       * 这里先把四种感官各问一遍，再定一个观察顺序——不排完不许写。
+       */
+      senses: function (s, i) {
+        var f = document.createDocumentFragment();
+        if (s.title) f.appendChild(h('h2', null, s.title));
+        if (s.ask) {
+          var q = h('p', 'quiz-q');
+          q.innerHTML = s.ask;
+          f.appendChild(q);
+        }
+        var b = s.body || s;
+        var cells = b.senses || [];
+        var min = b.min || Math.min(3, cells.length);
+        var wrap = h('div', 'sn-wrap');
+        f.appendChild(wrap);
+
+        var grid = h('div', 'sn-grid');
+        wrap.appendChild(grid);
+        var inputs = [];
+        var meta = h('div', 'sn-stat');
+        var ordBox = null;
+        var picked = null;
+
+        cells.forEach(function (c, k) {
+          var cell = h('div', 'sn-cell');
+          var name = h('div', 'sn-name');
+          name.appendChild(h('i', null, c.k || '·'));
+          name.appendChild(document.createTextNode(c.name || ''));
+          cell.appendChild(name);
+          if (c.hint) cell.appendChild(h('div', 'sn-hint', c.hint));
+          var inp = document.createElement('input');
+          inp.type = 'text';
+          inp.maxLength = 24;
+          inp.placeholder = c.ph || '写一个词就够';
+          inp.oninput = paint;
+          cell.appendChild(inp);
+          inputs.push({ el: inp, cell: cell });
+          grid.appendChild(cell);
+        });
+
+        if (b.orders && b.orders.length) {
+          ordBox = h('div', 'sn-order');
+          var oLab = h('div', 'sn-order-lab');
+          oLab.innerHTML = b.orderAsk || '你打算按什么顺序写？<b>选一个</b>';
+          ordBox.appendChild(oLab);
+          var bar = h('div', 'sn-orders');
+          b.orders.forEach(function (o) {
+            var btn = h('button', 'sn-ord', o);
+            btn.type = 'button';
+            btn.onclick = function () {
+              picked = o;
+              [].slice.call(bar.children).forEach(function (x) { x.classList.remove('on'); });
+              btn.classList.add('on');
+              paint();
+            };
+            bar.appendChild(btn);
+          });
+          ordBox.appendChild(bar);
+          wrap.appendChild(ordBox);
+        }
+        wrap.appendChild(meta);
+
+        if (b.sample) {
+          var sb = h('button', 'btn small', b.sampleLabel || '看一段别人怎么写的');
+          sb.type = 'button';
+          wrap.appendChild(sb);
+          var sbox = h('div', 'sn-sample');
+          sbox.style.display = 'none';
+          sbox.innerHTML = b.sample + (b.sampleNote ? '<p class="muted" style="margin:6px 0 0">' + b.sampleNote + '</p>' : '');
+          wrap.appendChild(sbox);
+          sb.onclick = function () { sbox.style.display = ''; sb.style.display = 'none'; };
+        }
+
+        function paint() {
+          var filled = 0;
+          inputs.forEach(function (x) {
+            var v = x.el.value.trim();
+            var ok = v.length >= 2;
+            x.cell.classList.toggle('ok', ok);
+            if (ok) filled++;
+          });
+          var needOrd = !!(b.orders && b.orders.length);
+          var ready = filled >= min && (!needOrd || picked);
+          meta.className = 'sn-stat' + (ready ? ' ok' : '');
+          meta.innerHTML = '四格里填了 <b>' + filled + '</b> 格' +
+            (needOrd ? '，顺序' + (picked ? '已选：<b>' + picked + '</b>' : '还没选') : '') +
+            (ready ? ' · 可以往下写了' : '');
+          if (ready) {
+            var st = stateOf(i);
+            st.solved = true;
+            st.senses = inputs.map(function (x) { return x.el.value.trim(); }).filter(Boolean);
+            st.order = picked;
+            syncNav();
+          }
+        }
+
+        paint();
+        return f;
+      },
+
+      /* ── 语文专用：修改体检 ─────────────────────────────
+       * 三年级要改的是增删调换，不是错别字。
+       * 每条清单必须先点中一句话才允许打勾——否则就会「全部打勾、一字不改」。
+       */
+      checkup: function (s, i) {
+        var f = document.createDocumentFragment();
+        if (s.title) f.appendChild(h('h2', null, s.title));
+        if (s.ask) {
+          var q = h('p', 'quiz-q');
+          q.innerHTML = s.ask;
+          f.appendChild(q);
+        }
+        var b = s.body || s;
+        var lines = b.lines || [];
+        var checks = b.checks || [];
+        var min = b.min || Math.min(3, checks.length);
+
+        var wrap = h('div', 'ck-wrap');
+        f.appendChild(wrap);
+
+        var checksBox = h('div', 'ck-checks');
+        wrap.appendChild(checksBox);
+        var doc = h('div', 'ck-doc');
+        wrap.appendChild(doc);
+
+        var lineEls = [];
+        lines.forEach(function (ln, k) {
+          var el = h('button', 'ck-line');
+          el.type = 'button';
+          el.innerHTML = ln.t;
+          el.dataset.k = k;
+          el.onclick = function () { onLine(k); };
+          lineEls.push(el);
+          doc.appendChild(el);
+        });
+
+        var tip = h('div', 'ck-tip', b.idle || '先选一条清单，该看的地方会在文稿里亮起来——点中那一句才算改。');
+        doc.appendChild(tip);
+        var count = h('div', 'ck-count');
+        f.appendChild(count);
+
+        var active = -1;
+        var doneChecks = {};
+        var doneN = 0;
+
+        function clearHits() {
+          lineEls.forEach(function (el) { el.classList.remove('hit'); });
+        }
+
+        function paintCount() {
+          count.className = 'ck-count' + (doneN >= min ? ' ok' : '');
+          count.innerHTML = '已改 <b>' + doneN + '</b> 处' + (doneN >= min ? ' · 够了' : '，至少 ' + min + ' 处');
+          if (doneN >= min && doneN === Object.keys(doneChecks).length) {
+            var st = stateOf(i);
+            st.solved = true;
+            st.mends = doneN;
+            syncNav();
+          }
+        }
+
+        checks.forEach(function (c, k) {
+          var btn = h('button', 'ck-check');
+          btn.type = 'button';
+          var num = h('span', 'ck-n', String(k + 1));
+          btn.appendChild(num);
+          btn.appendChild(document.createTextNode(c.name));
+          btn.onclick = function () {
+            if (doneChecks[k]) {
+              tip.innerHTML = '<b>这一条已经改过了。</b>' + (c.after || '');
+              return;
+            }
+            active = (active === k ? -1 : k);
+            [].slice.call(checksBox.children).forEach(function (x) { x.classList.remove('on'); });
+            clearHits();
+            if (active < 0) { tip.innerHTML = b.idle || '先选一条清单，该看的地方会在文稿里亮起来——点中那一句才算改。'; return; }
+            btn.classList.add('on');
+            (c.hits || []).forEach(function (h2) {
+              if (lineEls[h2]) lineEls[h2].classList.add('hit');
+            });
+            tip.innerHTML = '<b>' + c.name + '</b>　' + (c.how || '在这些句子里点出最该改的那一句。');
+          };
+          checksBox.appendChild(btn);
+        });
+
+        function onLine(k) {
+          if (active < 0) {
+            tip.innerHTML = '先选一条要检查的清单，再来点句子。';
+            return;
+          }
+          var c = checks[active];
+          if ((c.hits || []).indexOf(k) < 0) {
+            tip.innerHTML = '这一句和刚才那条清单对不上。换一句试试——' + (c.how || '');
+            return;
+          }
+          doneChecks[active] = true;
+          doneN++;
+          var btn = checksBox.children[active];
+          btn.classList.add('done');
+          btn.children[0].textContent = '✓';
+          btn.classList.remove('on');
+          lineEls[k].classList.add('fixed');
+          clearHits();
+          tip.innerHTML = '<b>改了这一处。</b>' + (c.fix || '') + (c.after ? '<br>' + c.after : '');
+          active = -1;
+          paintCount();
+        }
+
+        paintCount();
         return f;
       },
 
@@ -1522,7 +2169,8 @@
      */
     function finishLang() {
       var TASK = ['choice', 'quiz', 'annotate', 'draft', 'rubric',
-        'sentBuild', 'pairMatch', 'transform', 'punctPick'];
+        'sentBuild', 'pairMatch', 'transform', 'punctPick',
+        'predict', 'poemNote', 'senses', 'checkup'];
       var tasks = 0, marks = 0;
       C.steps.forEach(function (s, k) {
         if (TASK.indexOf(s.type) < 0) return;

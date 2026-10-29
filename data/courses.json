@@ -1,22 +1,22 @@
 {
-  "version": "v0.42.0",
+  "version": "v0.45.0",
   "schemaVersion": 1,
   "generatedAt": "2026-10-29",
   "counts": {
-    "total": 57,
+    "total": 62,
     "byTemplate": {
       "drill": 1,
-      "explain": 55,
+      "explain": 60,
       "explore": 1
     },
     "byStatus": {
-      "reviewed": 57
+      "reviewed": 62
     },
     "bySubject": {
       "数学": 51,
       "化学": 1,
       "物理": 1,
-      "语文": 4
+      "语文": 9
     }
   },
   "courses": [
@@ -1404,6 +1404,99 @@
       "bytes": 681
     },
     {
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-29",
+      "subject": "语文",
+      "template": "explain",
+      "topicId": "mt_read-ancient",
+      "title": "借助注释读古诗：把拐杖用好，再放下",
+      "renderer": "poemNote",
+      "duration": 13,
+      "interactions": 5,
+      "grade": 3,
+      "standards": [],
+      "prerequisites": [
+        "mt_poem-recite"
+      ],
+      "next": [
+        "mt_poem-understand"
+      ],
+      "objectives": [
+        "知道注释是给「看着认识、其实不懂」的字准备的，不是给生字准备的",
+        "把每条注释送回它解释的那一句，说出这个词在句中的意思",
+        "撤掉注释，用自己的话讲清一句诗"
+      ],
+      "cognitiveAction": "辨析",
+      "path": "courses/mt_read-ancient/",
+      "bytes": 693
+    },
+    {
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-29",
+      "subject": "语文",
+      "template": "explain",
+      "topicId": "mt_read-mark",
+      "title": "圈画与批注：让笔在纸上停一下",
+      "renderer": "annotate",
+      "duration": 13,
+      "interactions": 5,
+      "grade": 3,
+      "standards": [],
+      "prerequisites": [
+        "mt_read-silent",
+        "mt_word-understand"
+      ],
+      "next": [
+        "mt_read-predict",
+        "mt_read-question"
+      ],
+      "objectives": [
+        "用四个符号区分「关键词、人物、好句、不懂」，而不是见什么都划",
+        "在原文里标出写动作、写数量的词，并说出它让你知道了什么",
+        "写一行旁批：先说标的是哪个词，再说这个词带来的看法"
+      ],
+      "cognitiveAction": "辨析",
+      "path": "courses/mt_read-mark/",
+      "bytes": 684
+    },
+    {
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-29",
+      "subject": "语文",
+      "template": "explain",
+      "topicId": "mt_read-predict",
+      "title": "预测与推想：先猜一步，再回头看",
+      "renderer": "predict",
+      "duration": 13,
+      "interactions": 5,
+      "grade": 3,
+      "standards": [],
+      "prerequisites": [
+        "mt_read-silent",
+        "mt_read-mark"
+      ],
+      "next": [
+        "mt_read-question"
+      ],
+      "objectives": [
+        "在关键处停下来，用已经读到的句子做依据往前猜一步",
+        "说出「我是从哪句看出来的」，而不是只说「我觉得」",
+        "接受猜错：猜错也留下了一条线索，说明依据还不够"
+      ],
+      "cognitiveAction": "辨析",
+      "path": "courses/mt_read-predict/",
+      "bytes": 687
+    },
+    {
       "topicId": "mt_rect-area",
       "title": "长方形的面积：一行摆几个，摆几行",
       "template": "explain",
@@ -1892,6 +1985,69 @@
       "cognitiveAction": "构造",
       "path": "courses/mt_volume/",
       "bytes": 692
+    },
+    {
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-29",
+      "subject": "语文",
+      "template": "explain",
+      "topicId": "mt_write-observe",
+      "title": "观察与写清楚：不只用一个感官",
+      "renderer": "senses",
+      "duration": 13,
+      "interactions": 5,
+      "grade": 3,
+      "standards": [],
+      "prerequisites": [
+        "mt_sent-extend",
+        "mt_word-accumulate"
+      ],
+      "next": [
+        "mt_write-narrative",
+        "mt_write-person"
+      ],
+      "objectives": [
+        "说出描写一样东西时，看、听、摸、闻各能提供什么",
+        "给一篇观察稿补上缺掉的感官，说清缺了哪一格",
+        "先定观察顺序再动笔，不东一句西一句"
+      ],
+      "cognitiveAction": "构思",
+      "path": "courses/mt_write-observe/",
+      "bytes": 684
+    },
+    {
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-29",
+      "subject": "语文",
+      "template": "explain",
+      "topicId": "mt_write-revise",
+      "title": "修改习作：先敢删，再谈改",
+      "renderer": "checkup",
+      "duration": 13,
+      "interactions": 4,
+      "grade": 3,
+      "standards": [],
+      "prerequisites": [
+        "mt_write-picture",
+        "mt_write-imitate"
+      ],
+      "next": [
+        "mt_write-summary"
+      ],
+      "objectives": [
+        "知道三年级要改的是增、删、调、换，不是只找错别字",
+        "用五条体检清单找出该改的句子，每条都必须落到具体一句上",
+        "删掉一句可有可无的话，把地方让给真正重要的事"
+      ],
+      "cognitiveAction": "辨析",
+      "path": "courses/mt_write-revise/",
+      "bytes": 678
     }
   ]
 }

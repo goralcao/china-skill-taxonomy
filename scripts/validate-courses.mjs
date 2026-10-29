@@ -131,7 +131,7 @@ for (const name of dirs) {
     }
   });
   // renderer 白名单 + 是否真的调用了对应呈现器
-  const RENDERERS = ['text', 'vertical', 'geometry', 'solid', 'division', 'molecule', 'pyramid', 'calendar', 'decimalBar', 'barGroup', 'compass', 'numberline', 'coords', 'clock', 'sim', 'diagram', 'equation', 'law', 'triangle', 'counter', 'angle', 'quad', 'decGrid', 'mult2', 'fracMeaning', 'fracOps', 'fracReduce', 'spinner', 'decMult', 'decDiv', 'volume', 'pairs', 'treePlant', 'symmetry', 'chart', 'mean', 'polyArea', 'factorGrid', 'fracDiv', 'balance', 'callTree', 'circle', 'circleMeasure', 'sector', 'cylinder', 'sentBuild', 'pairMatch', 'transform', 'punctPick'];
+  const RENDERERS = ['text', 'vertical', 'geometry', 'solid', 'division', 'molecule', 'pyramid', 'calendar', 'decimalBar', 'barGroup', 'compass', 'numberline', 'coords', 'clock', 'sim', 'diagram', 'equation', 'law', 'triangle', 'counter', 'angle', 'quad', 'decGrid', 'mult2', 'fracMeaning', 'fracOps', 'fracReduce', 'spinner', 'decMult', 'decDiv', 'volume', 'pairs', 'treePlant', 'symmetry', 'chart', 'mean', 'polyArea', 'factorGrid', 'fracDiv', 'balance', 'callTree', 'circle', 'circleMeasure', 'sector', 'cylinder', 'sentBuild', 'pairMatch', 'transform', 'punctPick', 'predict', 'poemNote', 'senses', 'checkup', 'annotate', 'draft', 'rubric'];
   if (meta.renderer && !RENDERERS.includes(meta.renderer)) {
     fail(rel, `meta.renderer=${meta.renderer} 不在白名单（${RENDERERS.join(' / ')}）`);
   } else if (meta.renderer && meta.renderer !== 'text' && !html.includes('content-loader')
@@ -170,7 +170,7 @@ for (const name of dirs) {
         fail(rel, 'content.steps 为空');
       } else {
         engineSteps = content.steps;
-        const TYPES = ['intro', 'text', 'vertical', 'geometry', 'solid', 'division', 'molecule', 'pyramid', 'calendar', 'decimal', 'table', 'compass', 'numberline', 'clock', 'law', 'triangle', 'counter', 'angle', 'quad', 'decGrid', 'mult2', 'fracMeaning', 'fracOps', 'fracReduce', 'spinner', 'decMult', 'decDiv', 'volume', 'pairs', 'treePlant', 'symmetry', 'chart', 'mean', 'polyArea', 'factorGrid', 'fracDiv', 'balance', 'callTree', 'circle', 'circleMeasure', 'sector', 'cylinder', 'quiz', 'choice', 'summary', 'sentBuild', 'pairMatch', 'transform', 'punctPick', 'annotate', 'draft', 'rubric'];
+        const TYPES = ['intro', 'text', 'vertical', 'geometry', 'solid', 'division', 'molecule', 'pyramid', 'calendar', 'decimal', 'table', 'compass', 'numberline', 'clock', 'law', 'triangle', 'counter', 'angle', 'quad', 'decGrid', 'mult2', 'fracMeaning', 'fracOps', 'fracReduce', 'spinner', 'decMult', 'decDiv', 'volume', 'pairs', 'treePlant', 'symmetry', 'chart', 'mean', 'polyArea', 'factorGrid', 'fracDiv', 'balance', 'callTree', 'circle', 'circleMeasure', 'sector', 'cylinder', 'quiz', 'choice', 'summary', 'sentBuild', 'pairMatch', 'transform', 'punctPick', 'annotate', 'draft', 'rubric', 'predict', 'poemNote', 'senses', 'checkup'];
         let quizzes = 0;
         content.steps.forEach((st, i) => {
           if (!TYPES.includes(st.type)) fail(rel, `第 ${i + 1} 步 type=${st.type} 不合法`);
@@ -210,7 +210,7 @@ for (const name of dirs) {
         });
         // 语文的一次"交互"是一次动手环节（圈画 / 动笔 / 自评 / 改一处），不是一道题
         const LANG_SET = ['quiz', 'choice', 'annotate', 'draft', 'rubric',
-          'sentBuild', 'pairMatch', 'transform', 'punctPick'];
+          'sentBuild', 'pairMatch', 'transform', 'punctPick', 'predict', 'poemNote', 'senses', 'checkup'];
         const isLangContent = content.subject === '语文';
         const actCount = isLangContent
           ? content.steps.filter(st => LANG_SET.includes(st.type)).length

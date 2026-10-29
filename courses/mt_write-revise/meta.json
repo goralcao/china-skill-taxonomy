@@ -1,0 +1,29 @@
+{
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-29",
+  "subject": "语文",
+  "template": "explain",
+  "topicId": "mt_write-revise",
+  "title": "修改习作：先敢删，再谈改",
+  "renderer": "checkup",
+  "duration": 13,
+  "interactions": 4,
+  "grade": 3,
+  "standards": [],
+  "prerequisites": [
+    "mt_write-picture",
+    "mt_write-imitate"
+  ],
+  "next": [
+    "mt_write-summary"
+  ],
+  "objectives": [
+    "知道三年级要改的是增、删、调、换，不是只找错别字",
+    "用五条体检清单找出该改的句子，每条都必须落到具体一句上",
+    "删掉一句可有可无的话，把地方让给真正重要的事"
+  ],
+  "cognitiveAction": "辨析"
+}
