@@ -134,6 +134,46 @@ python3 scripts/plan-courses.py --bottleneck
 **一年级的拼音，卡着语文半壁江山。** 这八个点做出来，能解锁的下游比其他任何
 八个点都多——排期器的"被依赖度"打分就是在自动追这个。
 
+### 补洞优先模式（`--gap-first`）
+
+既然 43 节已有课件悬空，先按常规队列从头刷就有点本末倒置。**补洞优先**模式把
+"能修好几节已发布课件"作为最高权重：
+
+```bash
+python3 scripts/plan-courses.py --fix-gaps                # 看完整修补计划
+python3 scripts/plan-courses.py --count 5 --gap-first     # 今晚的补洞清单
+```
+
+第一晚它会挑出这五个：
+
+```
+1. 平面图形的认识      补上可修好 5 节课
+2. 厘米和米           补上可修好 3 节课
+3. 默读               补上可修好 2 节课
+4. 立体图形的认识      补上可修好 2 节课
+5. 克与千克           补上可修好 1 节课
+```
+
+不需要手动切回常规模式——补洞项排在前面，随着洞被填上，这项计数自然衰减到 0，
+队列自动回落成常规排期。
+
+**收益曲线是典型的长尾**，按每晚 6000 字预算：
+
+| 第几晚 | 还剩几节有漏洞 |
+|---|---|
+| 1 | 35（一晚修好 8 节） |
+| 3 | 22 |
+| 8 | 9 |
+| 10 | 5 |
+| 15 | 2 |
+| 113 | 0 |
+
+也就是说：**十晚左右就能把 43 节里的 38 节修好，收益的绝大部分在头两周。**
+
+剩下拖到最后的只有 1~2 节，都是零起步学科或高中内容——最顽固的是物理的
+「动量守恒定律」，缺的先修是「动量定理」，而物理 98 个知识点目前只有 1 节课件，
+得把整条物理链垫起来才轮得到它。这类不必单独盯，跟着本学科的常规推进自然会过关。
+
 `plan-courses.py` 每次都会重新扫描 `courses/` 目录，做完的点自动出列、下游自动解锁，
 所以**每晚不需要人记住上次做到哪儿**。
 
@@ -266,7 +306,11 @@ git push origin main                              # 9. 推送
 
 ```bash
 python3 scripts/plan-courses.py --count 5                  # 今晚做哪 5 节
+python3 scripts/plan-courses.py --count 5 --gap-first      # 今晚做哪 5 节（先补已发布课件的洞）
 python3 scripts/plan-courses.py --count 5 --max-grade 6    # 只考虑小学
+python3 scripts/plan-courses.py --audit-prereq             # 已发布课件自身的前置漏洞
+python3 scripts/plan-courses.py --bottleneck               # 卡人最多的瓶颈点
+python3 scripts/plan-courses.py --fix-gaps                 # 漏洞修补计划
 python3 scripts/plan-courses.py --simulate --budget 6000   # 全量工期模拟
 python3 scripts/plan-courses.py --simulate --budget 6000 --scope all
 ```

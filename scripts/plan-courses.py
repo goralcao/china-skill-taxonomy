@@ -142,12 +142,42 @@ def default_words(sub):
     return SUBJECT_WORDS.get(sub) or 1200
 
 
-def score(g, tid, have, subject_done, weights, last_domain=None):
+def hard_prereqs(g, tid):
+    """g.hard 是 defaultdict，源头点没条目，get 会返回 None"""
+    return g.hard.get(tid) or set()
+
+
+def compute_repair(g, have):
+    """每个缺口点能修好几节已发布课件。
+
+    已发布课件 X 的 hard 先修里，凡是还没有课件的那个点 t，
+    做掉 t 就等于给 X 补上一块地基。返回 {t: 修好几节}。
+    """
+    rep = collections.Counter()
+    for tid in have:
+        for p in hard_prereqs(g, tid) - have:
+            rep[p] += 1
+    return rep
+
+
+def is_ready(g, tid, have):
+    """hard 先修是否全部已有课件"""
+    ps = hard_prereqs(g, tid)
+    return (not ps) or ps <= have
+
+
+def score(g, tid, have, subject_done, weights, repair=None, last_domain=None):
     x = g.info.get(tid)
     if not x:
         return -1, []
     reasons = []
     s = 0.0
+
+    # 补洞优先：能一次修好几节已发布的课，比开新坑划算得多
+    if repair and repair.get(tid):
+        n = repair[tid]
+        s += 18 + n * 7
+        reasons.append(f'补上可修好 {n} 节已有课件')
 
     gr = str(x.get('gradeRangeStart', 0))
     w = weights.get(gr, 0)
@@ -196,14 +226,14 @@ def score(g, tid, have, subject_done, weights, last_domain=None):
 
 # ---------------------------------------------------------------- 挑一批
 
-def pick_batch(g, have, missing, count, subject_done, weights):
+def pick_batch(g, have, missing, count, subject_done, weights, repair=None):
     ready = [t for t in missing if g.is_ready(t, have)]
     if not ready:
         return []
 
     ranked = []
     for t in ready:
-        s, why = score(g, t, have, subject_done, weights)
+        s, why = score(g, t, have, subject_done, weights, repair=repair)
         ranked.append((s, t, why))
     ranked.sort(key=lambda r: (-r[0], r[1]))
 
@@ -223,12 +253,14 @@ def pick_batch(g, have, missing, count, subject_done, weights):
 # ---------------------------------------------------------------- 模拟
 
 def simulate(g, have0, missing0, batch_size, weights, subject_done,
-             max_nights=3000, budget=None):
+             max_nights=3000, budget=None, gap_first=False):
     """推进模拟。
 
     budget 为 None 时按「每晚固定 batch_size 节」；
     given budget 时按「每晚固定汉字预算」装填，节数随学科浮动——
     数学一节约 500 字、语文一节约 2400 字，按字数算才贴近真实工时。
+    gap_first 时优先补「已发布课件缺的先修」，补完自动回归常规排序——
+    不需要区别在两个模式间切换，因为 repair 计数随补洞自然衰减到 0。
     """
     have = set(have0)
     missing = set(missing0)
@@ -238,6 +270,8 @@ def simulate(g, have0, missing0, batch_size, weights, subject_done,
     stalled = 0
 
     while missing and nights < max_nights:
+        # 每轮重算：洞补上后 repair 会自己变小直至归零
+        repair = compute_repair(g, have) if gap_first else None
         ready = [t for t in missing if g.is_ready(t, have)]
         if not ready:
             stalled += 1
@@ -251,7 +285,7 @@ def simulate(g, have0, missing0, batch_size, weights, subject_done,
 
         ranked = []
         for t in ready:
-            s, why = score(g, t, have, done_subject, weights)
+            s, why = score(g, t, have, done_subject, weights, repair=repair)
             ranked.append((s, t, why))
         ranked.sort(key=lambda r: (-r[0], r[1]))
 
@@ -282,11 +316,20 @@ def simulate(g, have0, missing0, batch_size, weights, subject_done,
             missing.discard(t)
             sub = g.info[t].get('subject')
             done_subject[sub] = done_subject.get(sub, 0) + 1
+
+        affected_now = len([x for x in have0 if hard_prereqs(g, x) - have])
         plan.append({
             'night': nights,
             'topics': [t for t, _ in batch],
-            'unlocked_after': len([t for t in missing if g.is_ready(t, have)]),
+            'unlocked_after': len([t for t in missing
+                                   if g.is_ready(t, have)]),
             'words': used,
+            'gaps_left': len(repair) if gap_first else 0,
+            'affected': affected_now,
+            'residual': ([x for x in have0 if hard_prereqs(g, x) - have]
+                         if (gap_first and affected_now <= 6) else []),
+            'courses_fixed': len([t for t, _ in batch
+                                  if repair and repair.get(t)]),
         })
 
     return plan, have, missing
@@ -317,6 +360,10 @@ def main():
                     help='审计：已发布的课件里，哪些自己的 hard 先修还没做')
     ap.add_argument('--bottleneck', action='store_true',
                     help='列出卡人最多的瓶颈点（做掉它解锁最多下游）')
+    ap.add_argument('--gap-first', action='store_true',
+                    help='补洞优先：先补已发布课件缺失的先修，补完自动回归常规队列')
+    ap.add_argument('--fix-gaps', action='store_true',
+                    help='出示一份漏洞修补计划：多少洞、优先队列、补完要几晚')
     args = ap.parse_args()
 
     topics, edges = load()
@@ -338,9 +385,10 @@ def main():
     weights = SCOPE_WEIGHTS[args.scope]
 
     if args.simulate:
-        plan, hv, miss = simulate(g, have, set(missing), args.batch,
-                                  weights, dict(subject_done),
-                                  budget=args.budget)
+        sim_budget = args.budget or 6000
+        plan, hv, miss = simulate(g, have, set(missing), args.batch, weights,
+                                  dict(subject_done),
+                                  budget=sim_budget, gap_first=args.gap_first)
         if args.json:
             print(json.dumps({
                 'batch': args.batch, 'scope': args.scope, 'budget': args.budget,
@@ -427,8 +475,83 @@ def main():
                   f'{str(x.get("gradeRangeStart","")):>2}年级 {x.get("name","")}')
         return
 
+    # ---- 漏洞修补计划 ----
+    if args.fix_gaps:
+        repair = compute_repair(g, have)
+        affected = len([x for x in have if hard_prereqs(g, x) - have])
+        if not repair:
+            print('没有漏洞：所有已发布课件的 hard 先修都已配齐。')
+            return
+        if args.json:
+            print(json.dumps({
+                'affected_courses': affected,
+                'gap_points': len(repair),
+                'order': [t for t, _ in repair.most_common()],
+            }, ensure_ascii=False))
+            return
+        print(f'=== 漏洞修补计划 ===')
+        print(f'受影响课件 {affected} 节，背后只有 {len(repair)} 个不同的缺口点')
+        gr = [g.info[t]['gradeRangeStart'] for t in repair if t in g.info]
+        print(f'缺口点平均 {sum(gr)/len(gr):.1f} 年级——是低年级基础没搭起来')
+        print()
+        # 模拟补完要几晚
+        budget = args.budget or 6000
+        plan, hv, miss = simulate(g, have, set(missing), args.batch, weights,
+                                  dict(subject_done), budget=budget,
+                                  gap_first=True)
+        stop = None
+        for row in plan:
+            if row['gaps_left'] == 0:
+                stop = row['night']
+                break
+        print(f'按每晚 {budget} 字预算补，剩余有漏洞的课件数：')
+        print()
+        base = affected
+        for row in plan:
+            if row['night'] > 30 and row['affected'] == base:
+                continue
+            if row['night'] in (1, 2, 3, 5, 8, 10, 15, 20, 25, 30) or row['affected'] == 0:
+                bar = '#' * int((base - row['affected']) / base * 40)
+                print(f'  第{row["night"]:3}晚  还剩 {row["affected"]:2} 节有漏洞  {bar}')
+            if row['affected'] == 0:
+                print(f'\n  第 {row["night"]} 晚：43 节课的地基全部补齐'
+                      if row['night'] <= 200 else '')
+                break
+        else:
+            last = plan[-1]['affected'] if plan else base
+            print(f'  （模拟跑完 {len(plan)} 晚仍有 {last} 节未修复）')
+        # 顽固的课件：拖到后面还有洞的，大多要先把新学科整条链垫起来
+        tail = [r for r in plan if 0 < r.get('affected', 0) <= 6]
+        if tail:
+            resid = tail[-1].get('residual') or []
+            if resid:
+                print()
+                print('  这几节注定拖到后面（它们的缺口在零起步学科或高中，'
+                      '要先把整条链垫起来）：')
+                for tid in sorted(resid):
+                    xx = g.info.get(tid, {})
+                    gapn = '、'.join(g.info.get(p, {}).get('name', p)
+                                     for p in sorted(hard_prereqs(g, tid) - set(hv)))
+                    print(f'    {xx.get("subject",""):4} {tid:34} {xx.get("name","")}')
+                    print(f'      缺口：{gapn[:60]}')
+        print()
+        print('优先队列（补完前面几个，后面大部分自动跟着好）：')
+        seen = 0
+        for _, tid in sorted(((-n, t) for t, n in repair.items()))[:14]:
+            x = g.info[tid]
+            r = repair[tid]
+            st = '可开工' if is_ready(g, tid, have) else '需先垫上游'
+            print(f'  修 {r} 节  {tid:32} {x.get("subject",""):4} '
+                  f'{str(x.get("gradeRangeStart","")):>2}年级 {x.get("name","")}  [{st}]')
+            seen += 1
+        print()
+        print('提示：加 --gap-first 可让每晚任务按此优先级出清单')
+        return
+
     # 默认：输出今晚该做的
-    batch = pick_batch(g, have, missing, args.count, dict(subject_done), weights)
+    repair = compute_repair(g, have) if args.gap_first else None
+    batch = pick_batch(g, have, missing, args.count, dict(subject_done),
+                       weights, repair=repair)
     if args.json:
         print(json.dumps([t for t, _ in batch], ensure_ascii=False))
         return
