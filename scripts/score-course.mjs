@@ -38,7 +38,7 @@ const DIMS = [
   { key: 'copy', name: '文案', short: '文案', max: 5 },
 ];
 
-const ACTIONS = ['比较', '分解', '变换', '逼近', '累积', '模拟', '构造'];
+const ACTIONS = ['比较', '分解', '变换', '逼近', '累积', '模拟', '构造', '辨析', '构思'];
 const VISUAL = ['vertical', 'geometry', 'numberline', 'clock', 'sim', 'coords'];
 const BANNED = ['本节课', '我们一起来', '让我们一起', '众所周知', '同学们'];
 

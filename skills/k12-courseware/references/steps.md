@@ -62,6 +62,10 @@
 | `numberline` | 数轴、量感 | `line{min,max,step,...}` | `marks[]` `span` `caption` |
 | `clock` | 钟面 | `absMinutes` | `caption` |
 | `quiz` | 填数字 | `question` `answer`(number) | `unit` `hint` `why` `title` |
+| `sentBuild` | 扩句积木（语文） | `core` `slots[{ask,at,options,answer}]` | `tip` `done` `caption` `note` `warn` |
+| `pairMatch` | 关联词语配对（语文） | `pairs[{left,right,word,why}]` | `tip` `done` `caption` `note` `warn` |
+| `transform` | 直述↔转述（语文） | `direct` `changes[{label,from,to,options,why}]` | `tip` `done` `caption` `note` `warn` |
+| `punctPick` | 点句读选标点（语文） | `items[{before,after,options,answer,why}]` | `tip` `done` `caption` `note` `warn` |
 | `choice` | 选择题（带迷思反馈） | `question` `options[]` `answer` | `misconception{}` `hint` `why` `title` |
 | `summary` | 小结 + 去向 | `title` `points[]` | `advice` |
 

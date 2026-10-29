@@ -12,7 +12,7 @@ const ROOT = process.cwd();
 const COURSE_DIR = path.join(ROOT, 'courses');
 const TEMPLATES = ['explain', 'drill', 'explore', 'review'];
 const STATUSES = ['draft', 'reviewed', 'deprecated'];
-const ACTIONS = ['比较', '分解', '变换', '逼近', '累积', '模拟', '构造'];
+const ACTIONS = ['比较', '分解', '变换', '逼近', '累积', '模拟', '构造', '辨析', '构思'];
 const MAX_BYTES = 300 * 1024;
 
 const fails = [];
@@ -131,7 +131,7 @@ for (const name of dirs) {
     }
   });
   // renderer 白名单 + 是否真的调用了对应呈现器
-  const RENDERERS = ['text', 'vertical', 'geometry', 'solid', 'division', 'molecule', 'pyramid', 'calendar', 'decimalBar', 'barGroup', 'compass', 'numberline', 'coords', 'clock', 'sim', 'diagram', 'equation', 'law', 'triangle', 'counter', 'angle', 'quad', 'decGrid', 'mult2', 'fracMeaning', 'fracOps', 'fracReduce', 'spinner', 'decMult', 'decDiv', 'volume', 'pairs', 'treePlant', 'symmetry', 'chart', 'mean', 'polyArea', 'factorGrid', 'fracDiv', 'balance', 'callTree', 'circle', 'circleMeasure', 'sector', 'cylinder'];
+  const RENDERERS = ['text', 'vertical', 'geometry', 'solid', 'division', 'molecule', 'pyramid', 'calendar', 'decimalBar', 'barGroup', 'compass', 'numberline', 'coords', 'clock', 'sim', 'diagram', 'equation', 'law', 'triangle', 'counter', 'angle', 'quad', 'decGrid', 'mult2', 'fracMeaning', 'fracOps', 'fracReduce', 'spinner', 'decMult', 'decDiv', 'volume', 'pairs', 'treePlant', 'symmetry', 'chart', 'mean', 'polyArea', 'factorGrid', 'fracDiv', 'balance', 'callTree', 'circle', 'circleMeasure', 'sector', 'cylinder', 'sentBuild', 'pairMatch', 'transform', 'punctPick'];
   if (meta.renderer && !RENDERERS.includes(meta.renderer)) {
     fail(rel, `meta.renderer=${meta.renderer} 不在白名单（${RENDERERS.join(' / ')}）`);
   } else if (meta.renderer && meta.renderer !== 'text' && !html.includes('content-loader')
@@ -170,7 +170,7 @@ for (const name of dirs) {
         fail(rel, 'content.steps 为空');
       } else {
         engineSteps = content.steps;
-        const TYPES = ['intro', 'text', 'vertical', 'geometry', 'solid', 'division', 'molecule', 'pyramid', 'calendar', 'decimal', 'table', 'compass', 'numberline', 'clock', 'law', 'triangle', 'counter', 'angle', 'quad', 'decGrid', 'mult2', 'fracMeaning', 'fracOps', 'fracReduce', 'spinner', 'decMult', 'decDiv', 'volume', 'pairs', 'treePlant', 'symmetry', 'chart', 'mean', 'polyArea', 'factorGrid', 'fracDiv', 'balance', 'callTree', 'circle', 'circleMeasure', 'sector', 'cylinder', 'quiz', 'choice', 'summary'];
+        const TYPES = ['intro', 'text', 'vertical', 'geometry', 'solid', 'division', 'molecule', 'pyramid', 'calendar', 'decimal', 'table', 'compass', 'numberline', 'clock', 'law', 'triangle', 'counter', 'angle', 'quad', 'decGrid', 'mult2', 'fracMeaning', 'fracOps', 'fracReduce', 'spinner', 'decMult', 'decDiv', 'volume', 'pairs', 'treePlant', 'symmetry', 'chart', 'mean', 'polyArea', 'factorGrid', 'fracDiv', 'balance', 'callTree', 'circle', 'circleMeasure', 'sector', 'cylinder', 'quiz', 'choice', 'summary', 'sentBuild', 'pairMatch', 'transform', 'punctPick'];
         let quizzes = 0;
         content.steps.forEach((st, i) => {
           if (!TYPES.includes(st.type)) fail(rel, `第 ${i + 1} 步 type=${st.type} 不合法`);

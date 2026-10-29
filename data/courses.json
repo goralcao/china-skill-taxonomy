@@ -1,21 +1,22 @@
 {
   "version": "v0.42.0",
   "schemaVersion": 1,
-  "generatedAt": "2026-10-28",
+  "generatedAt": "2026-10-29",
   "counts": {
-    "total": 53,
+    "total": 57,
     "byTemplate": {
       "drill": 1,
-      "explain": 51,
+      "explain": 55,
       "explore": 1
     },
     "byStatus": {
-      "reviewed": 53
+      "reviewed": 57
     },
     "bySubject": {
       "数学": 51,
       "化学": 1,
-      "物理": 1
+      "物理": 1,
+      "语文": 4
     }
   },
   "courses": [
@@ -1371,6 +1372,38 @@
       "bytes": 681
     },
     {
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-29",
+      "subject": "语文",
+      "template": "explain",
+      "topicId": "mt_punct-advanced",
+      "title": "点句读：顿号、分号与书名号",
+      "renderer": "punctPick",
+      "duration": 11,
+      "interactions": 3,
+      "grade": 3,
+      "standards": [],
+      "prerequisites": [
+        "mt_punct-basic",
+        "mt_sent-conjunction",
+        "mt_sent-quote"
+      ],
+      "next": [
+        "mt_sent-fix"
+      ],
+      "objectives": [
+        "判断句子里的停顿是词语并列、分句并列还是普通停顿",
+        "给并列词语用顿号、并列分句用分号、书名用书名号",
+        "说清顿号和逗号的判断依据"
+      ],
+      "cognitiveAction": "辨析",
+      "path": "courses/mt_punct-advanced/",
+      "bytes": 681
+    },
+    {
       "topicId": "mt_rect-area",
       "title": "长方形的面积：一行摆几个，摆几行",
       "template": "explain",
@@ -1472,6 +1505,101 @@
       "cognitiveAction": "比较",
       "path": "courses/mt_sector/",
       "bytes": 669
+    },
+    {
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-29",
+      "subject": "语文",
+      "template": "explain",
+      "topicId": "mt_sent-conjunction",
+      "title": "关联词语：先看清关系，再上词",
+      "renderer": "pairMatch",
+      "duration": 11,
+      "interactions": 3,
+      "grade": 3,
+      "standards": [],
+      "prerequisites": [
+        "mt_sent-complete"
+      ],
+      "next": [
+        "mt_punct-advanced"
+      ],
+      "objectives": [
+        "判断前后两个分句之间是因果、转折、递进还是假设关系",
+        "给四类关系各配上正确的关联词语",
+        "发现关联词用错时能说出错在哪"
+      ],
+      "cognitiveAction": "辨析",
+      "path": "courses/mt_sent-conjunction/",
+      "bytes": 684
+    },
+    {
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-29",
+      "subject": "语文",
+      "template": "explain",
+      "topicId": "mt_sent-extend",
+      "title": "扩句：把「小鸟飞」写成一句话",
+      "renderer": "sentBuild",
+      "duration": 11,
+      "interactions": 3,
+      "grade": 3,
+      "standards": [],
+      "prerequisites": [
+        "mt_sent-complete",
+        "mt_word-accumulate"
+      ],
+      "next": [
+        "mt_sent-compress",
+        "mt_write-observe"
+      ],
+      "objectives": [
+        "给一个简单句加上「什么样的」「在哪里」「怎样地」三类修饰语",
+        "说出加修饰语之后句子字数变长、信息变多",
+        "从几个词里挑出让句子更具体的那一个"
+      ],
+      "cognitiveAction": "构造",
+      "path": "courses/mt_sent-extend/",
+      "bytes": 684
+    },
+    {
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-29",
+      "subject": "语文",
+      "template": "explain",
+      "topicId": "mt_sent-quote",
+      "title": "直述转述：替别人传一句话",
+      "renderer": "transform",
+      "duration": 12,
+      "interactions": 3,
+      "grade": 3,
+      "standards": [],
+      "prerequisites": [
+        "mt_punct-basic",
+        "mt_sent-complete"
+      ],
+      "next": [
+        "mt_punct-advanced",
+        "mt_write-narrative",
+        "mt_write-person"
+      ],
+      "objectives": [
+        "说出直述句改转述句要动的三处：标点、人称、语气词",
+        "把一句直述句逐处改成转述句",
+        "解释「我」「你」在转述时为什么变了"
+      ],
+      "cognitiveAction": "变换",
+      "path": "courses/mt_sent-quote/",
+      "bytes": 678
     },
     {
       "topicId": "mt_stats-table",

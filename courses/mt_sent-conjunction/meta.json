@@ -1,0 +1,28 @@
+{
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-29",
+  "subject": "语文",
+  "template": "explain",
+  "topicId": "mt_sent-conjunction",
+  "title": "关联词语：先看清关系，再上词",
+  "renderer": "pairMatch",
+  "duration": 11,
+  "interactions": 3,
+  "grade": 3,
+  "standards": [],
+  "prerequisites": [
+    "mt_sent-complete"
+  ],
+  "next": [
+    "mt_punct-advanced"
+  ],
+  "objectives": [
+    "判断前后两个分句之间是因果、转折、递进还是假设关系",
+    "给四类关系各配上正确的关联词语",
+    "发现关联词用错时能说出错在哪"
+  ],
+  "cognitiveAction": "辨析"
+}

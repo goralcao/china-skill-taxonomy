@@ -799,7 +799,7 @@ def _renderers_for_course(content, course_dir) -> set:
     注意：新增顶层辅助函数（如 s/h/T/a）必须同步加进 HELPER，
     否则按课裁剪后引用它的渲染器会拿到 undefined。
     """
-    helper = {"s", "h", "T", "a", "reduced", "graphHref", "graphNav", "extend"}
+    helper = {"s", "h", "T", "a", "reduced", "graphHref", "graphNav", "extend", "escH", "shuffleArr"}
     if not content:
         # 手写课件（无 content.json）：扫描 index.html 里 CR.xxx( 的调用来裁剪；
         # 一个都扫不到时回退全量。

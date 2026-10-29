@@ -5473,6 +5473,421 @@
     }
   }
 
+  function escH(t) {
+    return String(t).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  }
+  function shuffleArr(a) {
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+
+  /* ══════════════════════════════════════════════════════
+   * 扩句积木（语文 · 三年级：扩句与把句子写具体）
+   * 为什么单独做：扩句不是「加形容词」的口诀。要让孩子看见——
+   * 每加一个修饰语，句子就多一层信息、字数也跟着变长；
+   * 「写具体」是有代价的，所以要挑值得写的地方加。
+   */
+  function sentBuild(el, spec) {
+    spec = spec || {};
+    var core = spec.core || '小鸟飞';
+    var slots = spec.slots || [];
+    var wrap = h('div', 'sb-wrap'); el.appendChild(wrap);
+    var sent = h('div', 'sb-sent'); wrap.appendChild(sent);
+    var ask = h('div', 'sb-ask'); wrap.appendChild(ask);
+    var opts = h('div', 'sb-opts'); wrap.appendChild(opts);
+    var stat = h('div', 'sb-stat'); wrap.appendChild(stat);
+    var msg = h('div', 'sb-msg'); wrap.appendChild(msg);
+
+    var filled = [];
+    for (var q = 0; q < slots.length; q++) filled.push('');
+
+    function parts() {
+      var arr = core.split('').map(function (c) { return { t: c, add: false }; });
+      var ins = [];
+      for (var i = 0; i < slots.length; i++) {
+        if (filled[i]) ins.push({ at: slots[i].at || 0, t: filled[i] });
+      }
+      // 按位置升序插入并累加偏移：同一位置上的多个修饰语保持填写顺序
+      ins.sort(function (a, b) { return a.at - b.at; });
+      var off = 0;
+      ins.forEach(function (x) {
+        arr.splice(x.at + off, 0, { t: x.t, add: true });
+        off += 1;
+      });
+      return arr;
+    }
+    function len() {
+      return parts().reduce(function (a, p) { return a + p.t.length; }, 0);
+    }
+    function drawSent() {
+      sent.innerHTML = parts().map(function (p) {
+        return p.add ? '<span class="sb-add">' + escH(p.t) + '</span>'
+                     : '<span>' + escH(p.t) + '</span>';
+      }).join('');
+      stat.innerHTML = '句子长度 <b>' + len() + '</b> 字' +
+        (core.length ? '（原来 ' + core.length + ' 字）' : '');
+    }
+    function cur() {
+      for (var i = 0; i < slots.length; i++) if (!filled[i]) return i;
+      return -1;
+    }
+    function drawOpts() {
+      opts.innerHTML = '';
+      var i = cur();
+      if (i < 0) {
+        ask.textContent = '扩写完成';
+        msg.className = 'sb-msg ok';
+        msg.textContent = spec.done || '句子从 ' + core.length + ' 字变成 ' + len() + ' 字，画面清楚多了。';
+        return;
+      }
+      ask.innerHTML = '第 ' + (i + 1) + ' 步：补上「<b>' + escH(slots[i].ask) + '</b>」';
+      (slots[i].options || []).forEach(function (o) {
+        var b = h('button', 'sb-opt', o);
+        b.type = 'button';
+        b.onclick = function () {
+          if (o === slots[i].answer) {
+            filled[i] = o; drawSent(); drawOpts();
+            msg.className = 'sb-msg ok';
+            msg.textContent = '对了 · ' + (slots[i].why || '这一层加上了');
+          } else {
+            b.classList.add('shake');
+            setTimeout(function () { b.classList.remove('shake'); }, 420);
+            msg.className = 'sb-msg bad';
+            msg.textContent = '再想想 · ' + (slots[i].hint || '这个词放进去，句子更具体了吗？');
+          }
+        };
+        opts.appendChild(b);
+      });
+    }
+    drawSent(); drawOpts();
+    msg.className = 'sb-msg';
+    msg.textContent = spec.tip || '点一个词，把它加进句子里';
+
+    var STEPS = slots.map(function (sl, i) {
+      return {
+        text: '加「' + sl.ask + '」：<b>' + escH(sl.answer) + '</b>' + (sl.why ? '——' + sl.why : ''),
+        run: function () { filled[i] = sl.answer; drawSent(); drawOpts(); }
+      };
+    });
+    var idx = 0;
+    function resetFn() {
+      for (var i = 0; i < filled.length; i++) filled[i] = '';
+      idx = 0; drawSent(); drawOpts();
+      msg.className = 'sb-msg'; msg.textContent = spec.tip || '';
+    }
+    return {
+      el: wrap,
+      next: function () {
+        if (idx >= STEPS.length) return null;
+        var st = STEPS[idx++]; st.run();
+        return { text: st.text, done: idx >= STEPS.length };
+      },
+      startDemo: function () { resetFn(); return this; },
+      reset: function () { return this.startDemo(); }
+    };
+  }
+
+  /* ══════════════════════════════════════════════════════
+   * 关联词语配对（语文 · 三年级：关联词语）
+   * 为什么单独做：关联词语考的不是背搭配，是判断两句话之间
+   * 究竟是什么关系。先把关系配对上，关联词才不是空壳。
+   */
+  function pairMatch(el, spec) {
+    spec = spec || {};
+    var pairs = spec.pairs || [];
+    var wrap = h('div', 'pm-wrap'); el.appendChild(wrap);
+    var head = h('div', 'pm-head'); wrap.appendChild(head);
+    head.innerHTML = '<span>左边：说什么</span><span>关系</span><span>右边：接着说什么</span>';
+    var body = h('div', 'pm-body'); wrap.appendChild(body);
+    var L = h('div', 'pm-col'); body.appendChild(L);
+    var M = h('div', 'pm-mid'); body.appendChild(M);
+    var R = h('div', 'pm-col'); body.appendChild(R);
+    var msg = h('div', 'pm-msg'); wrap.appendChild(msg);
+
+    var order = shuffleArr(pairs.map(function (p, i) { return i; }));
+    var lBtns = [], rBtns = [], mBtns = [];
+    pairs.forEach(function (p, i) {
+      var lb = h('button', 'pm-card', p.left);
+      lb.type = 'button';
+      lb.onclick = function () {
+        if (lb.classList.contains('done')) return;
+        lBtns.forEach(function (b) { b.classList.remove('sel'); });
+        lb.classList.add('sel');
+        msg.className = 'pm-msg';
+        msg.textContent = '已选左边第 ' + (i + 1) + ' 句，再点右边和它配的一句';
+      };
+      L.appendChild(lb); lBtns.push(lb);
+      var mb = h('div', 'pm-word', ''); M.appendChild(mb); mBtns.push(mb);
+    });
+    order.forEach(function (pi) {
+      var p = pairs[pi];
+      var rb = h('button', 'pm-card', p.right);
+      rb.type = 'button';
+      rb.onclick = function () {
+        if (rb.classList.contains('done')) return;
+        var sel = -1;
+        lBtns.forEach(function (b, k) { if (b.classList.contains('sel')) sel = k; });
+        if (sel < 0) {
+          msg.className = 'pm-msg bad';
+          msg.textContent = '先点左边的句子，再点右边和它配的一句';
+          return;
+        }
+        if (sel === pi) {
+          lBtns[sel].classList.remove('sel');
+          lBtns[sel].classList.add('done');
+          rb.classList.add('done');
+          mBtns[sel].classList.add('on');
+          mBtns[sel].textContent = p.word;
+          msg.className = 'pm-msg ok';
+          msg.textContent = '对了 · ' + (p.why || ('这两句是' + p.word.replace(/…/g, '').replace(/、/g, '') + '关系'));
+        } else {
+          rb.classList.add('shake');
+          setTimeout(function () { rb.classList.remove('shake'); }, 420);
+          msg.className = 'pm-msg bad';
+          msg.textContent = '再想想 · ' + (pairs[sel].hint || '左边那句和这一句说得通吗？');
+        }
+      };
+      R.appendChild(rb); rBtns.push(rb);
+    });
+    msg.className = 'pm-msg';
+    msg.textContent = spec.tip || '点左边一句，再点右边和它配得上的一句';
+
+    var STEPS = pairs.map(function (p, i) {
+      return {
+        text: '<b>' + escH(p.left) + '</b> 和 <b>' + escH(p.right) + '</b>：是' +
+              (p.word.indexOf('虽然') === 0 ? '转折' : p.word.indexOf('因为') === 0 ? '因果'
+               : p.word.indexOf('不但') === 0 ? '递进' : p.word.indexOf('如果') === 0 ? '假设' : '并列') +
+              '关系，用「' + escH(p.word) + '」' + (p.why ? '——' + p.why : ''),
+        run: function () {
+          lBtns[i].classList.add('done');
+          for (var k = 0; k < rBtns.length; k++) {
+            if (rBtns[k].textContent === p.right) rBtns[k].classList.add('done');
+          }
+          mBtns[i].classList.add('on');
+          mBtns[i].textContent = p.word;
+        }
+      };
+    });
+    var idx = 0;
+    function resetFn() {
+      idx = 0;
+      lBtns.concat(rBtns).forEach(function (b) { b.classList.remove('done', 'sel', 'shake'); });
+      mBtns.forEach(function (b) { b.classList.remove('on'); b.textContent = ''; });
+      msg.className = 'pm-msg'; msg.textContent = spec.tip || '';
+    }
+    return {
+      el: wrap,
+      next: function () {
+        if (idx >= STEPS.length) return null;
+        var st = STEPS[idx++]; st.run();
+        return { text: st.text, done: idx >= STEPS.length };
+      },
+      startDemo: function () { resetFn(); return this; },
+      reset: function () { return this.startDemo(); }
+    };
+  }
+
+  /* ══════════════════════════════════════════════════════
+   * 直述 ↔ 转述（语文 · 三年级：冒号、引号与直述转述）
+   * 为什么单独做：转述改的不是「把引号删掉」。人称、标点、
+   * 时间地点词三处同时变，学生漏一处就错。逐处改、逐处看，
+   * 才知道「谁说的」和「谁在转」是两个位置。
+   */
+  function transform(el, spec) {
+    spec = spec || {};
+    var src = spec.direct || '';
+    var changes = spec.changes || [];
+    var wrap = h('div', 'tf-wrap'); el.appendChild(wrap);
+    var lab1 = h('div', 'tf-lab', '直述句（原话）'); wrap.appendChild(lab1);
+    var top = h('div', 'tf-src'); wrap.appendChild(top);
+    var lab2 = h('div', 'tf-lab', '转述句（改成别人说）'); wrap.appendChild(lab2);
+    var out = h('div', 'tf-out'); wrap.appendChild(out);
+    var opts = h('div', 'tf-opts'); wrap.appendChild(opts);
+    var msg = h('div', 'tf-msg'); wrap.appendChild(msg);
+
+    var cur = src;            // 当前转述句文本
+    var step = 0;             // 处理到第几个变化
+    var lastTo = '';
+
+    function drawTop() {
+      var c = changes[step];
+      if (!c) { top.innerHTML = escH(src); return; }
+      var i = src.indexOf(c.from);
+      if (i < 0) { top.innerHTML = escH(src); return; }
+      top.innerHTML = escH(src.slice(0, i)) + '<span class="tf-hot">' + escH(c.from) + '</span>' +
+                      escH(src.slice(i + c.from.length));
+    }
+    function drawOut() {
+      if (!lastTo) { out.innerHTML = '<span class="tf-dim">' + escH(cur) + '</span>'; return; }
+      var i = cur.indexOf(lastTo);
+      if (i < 0) { out.innerHTML = escH(cur); return; }
+      out.innerHTML = escH(cur.slice(0, i)) + '<span class="tf-new">' + escH(lastTo) + '</span>' +
+                      escH(cur.slice(i + lastTo.length));
+    }
+    function drawOpts() {
+      opts.innerHTML = '';
+      var c = changes[step];
+      if (!c) {
+        msg.className = 'tf-msg ok';
+        msg.textContent = spec.done || '改完了：人称、标点都跟着换了位置。';
+        return;
+      }
+      var title = h('div', 'tf-ask', '第 ' + (step + 1) + ' 步 · ' + c.label + '：「' + c.from + '」该怎么改？');
+      opts.appendChild(title);
+      var row = h('div', 'tf-row'); opts.appendChild(row);
+      (c.options || []).forEach(function (o) {
+        var b = h('button', 'tf-opt', o);
+        b.type = 'button';
+        b.onclick = function () {
+          if (o === c.to) {
+            var i = cur.indexOf(c.from);
+            if (i >= 0) cur = cur.slice(0, i) + c.to + cur.slice(i + c.from.length);
+            lastTo = c.to; step++;
+            drawTop(); drawOut(); drawOpts();
+            msg.className = 'tf-msg ok';
+            msg.textContent = '对了 · ' + (c.why || '');
+          } else {
+            b.classList.add('shake');
+            setTimeout(function () { b.classList.remove('shake'); }, 420);
+            msg.className = 'tf-msg bad';
+            msg.textContent = '再想想 · ' + (c.hint || '转述时，说话的人换成了谁？');
+          }
+        };
+        row.appendChild(b);
+      });
+    }
+    drawTop(); drawOut(); drawOpts();
+    msg.className = 'tf-msg';
+    msg.textContent = spec.tip || '看红色的部分，选它改成什么';
+
+    var STEPS = changes.map(function (c, i) {
+      return {
+        text: '<b>' + escH(c.label) + '</b>：' + escH(c.from) + ' → <b>' + escH(c.to) + '</b>' +
+              (c.why ? '——' + c.why : ''),
+        run: function () {
+          var k = cur.indexOf(c.from);
+          if (k >= 0) cur = cur.slice(0, k) + c.to + cur.slice(k + c.from.length);
+          lastTo = c.to; step = i + 1;
+          drawTop(); drawOut(); drawOpts();
+        }
+      };
+    });
+    var idx = 0;
+    function resetFn() {
+      cur = src; step = 0; lastTo = ''; idx = 0;
+      drawTop(); drawOut(); drawOpts();
+      msg.className = 'tf-msg'; msg.textContent = spec.tip || '';
+    }
+    return {
+      el: wrap,
+      next: function () {
+        if (idx >= STEPS.length) return null;
+        var st = STEPS[idx++]; st.run();
+        return { text: st.text, done: idx >= STEPS.length };
+      },
+      startDemo: function () { resetFn(); return this; },
+      reset: function () { return this.startDemo(); }
+    };
+  }
+
+  /* ══════════════════════════════════════════════════════
+   * 点句读（语文 · 三年级：顿号、分号与书名号）
+   * 为什么单独做：三个标点都是「看起来差不多」的那一类。
+   * 判断依据不是记规则，是看并列的是什么——词语、分句还是作品名。
+   */
+  function punctPick(el, spec) {
+    spec = spec || {};
+    var items = spec.items || [];
+    var wrap = h('div', 'pp-wrap'); el.appendChild(wrap);
+    var line = h('div', 'pp-line'); wrap.appendChild(line);
+    var opts = h('div', 'pp-opts'); wrap.appendChild(opts);
+    var msg = h('div', 'pp-msg'); wrap.appendChild(msg);
+    var bar = h('div', 'pp-bar'); wrap.appendChild(bar);
+
+    var i = 0;
+    var picked = [];
+    function drawBar() {
+      bar.innerHTML = items.map(function (_, k) {
+        var st = picked[k] === undefined ? '' : (picked[k] ? 'ok' : 'no');
+        return '<i class="pp-dot ' + st + '"></i>';
+      }).join('');
+    }
+    function draw() {
+      var it = items[i];
+      if (!it) {
+        line.innerHTML = '<b>三句都点对了</b>';
+        opts.innerHTML = '';
+        return;
+      }
+      var val = picked[i];
+      line.innerHTML = escH(it.before) +
+        '<span class="pp-slot' + (val === undefined ? '' : (val ? ' ok' : ' bad')) + '">' +
+        (val === undefined ? '？' : escH(it.answer)) + '</span>' + escH(it.after);
+      opts.innerHTML = '';
+      (it.options || []).forEach(function (o) {
+        var b = h('button', 'pp-opt', o);
+        b.type = 'button';
+        b.onclick = function () {
+          if (o === it.answer) {
+            picked[i] = true; draw(); drawBar();
+            msg.className = 'pp-msg ok';
+            msg.textContent = '对了 · ' + (it.why || '');
+            setTimeout(next, 900);
+          } else {
+            picked[i] = false; draw(); drawBar();
+            b.classList.add('shake');
+            setTimeout(function () { b.classList.remove('shake'); }, 420);
+            msg.className = 'pp-msg bad';
+            msg.textContent = '再看看 · ' + (it.hint || '并列的到底是词语、分句还是作品名？');
+          }
+        };
+        opts.appendChild(b);
+      });
+    }
+    function next() {
+      if (i < items.length - 1) {
+        i++; picked[i] = undefined; draw(); drawBar();
+        msg.className = 'pp-msg'; msg.textContent = '第 ' + (i + 1) + ' 句，选一个标点填进去';
+      } else {
+        i++; draw(); drawBar();
+        msg.className = 'pp-msg ok';
+        msg.textContent = spec.done || '三句都点完了：看并列的是什么，就知道该用哪个标点。';
+      }
+    }
+    draw(); drawBar();
+    msg.className = 'pp-msg';
+    msg.textContent = spec.tip || '第 1 句，选一个标点填进去';
+
+    var STEPS = items.map(function (it) {
+      return {
+        text: '<b>' + escH(it.before + it.answer + it.after) + '</b>——' + (it.why || ''),
+        run: function () { picked[i] = true; draw(); drawBar(); }
+      };
+    });
+    var idx = 0;
+    function resetFn() {
+      i = 0; idx = 0; picked = [];
+      draw(); drawBar();
+      msg.className = 'pp-msg'; msg.textContent = spec.tip || '';
+    }
+    return {
+      el: wrap,
+      next: function () {
+        if (idx >= STEPS.length) return null;
+        var st = STEPS[idx++]; st.run();
+        if (idx < STEPS.length) { i = idx; picked[i] = undefined; draw(); drawBar(); }
+        return { text: st.text, done: idx >= STEPS.length };
+      },
+      startDemo: function () { resetFn(); return this; },
+      reset: function () { return this.startDemo(); }
+    };
+  }
+
   global.CR = {
     vertical: vertical,
     circle: circle,
@@ -5515,6 +5930,10 @@
     fracDiv: fracDiv,
     balance: balance,
     callTree: callTree,
+    sentBuild: sentBuild,
+    pairMatch: pairMatch,
+    transform: transform,
+    punctPick: punctPick,
     graphNav: graphNav,
     extend: extend,
     graphHref: graphHref,

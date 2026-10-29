@@ -2,14 +2,14 @@
   "name": "学阶图谱 · China Skill Taxonomy",
   "version": "v0.42.0",
   "schemaVersion": 1,
-  "generatedAt": "2026-10-28",
+  "generatedAt": "2026-10-29",
   "counts": {
     "topics": 1273,
     "dependencies": 1647,
     "curriculumStandards": 186,
     "clusters": 204,
     "teachingResearchRecords": 1268,
-    "courses": 53,
+    "courses": 57,
     "hardEdges": 952,
     "softEdges": 695
   },
@@ -85,8 +85,8 @@
       "bytes": 134162
     },
     "courses.json": {
-      "sha256": "c947adc7f46606349a689821349b1d61e29477f7ce9c6e461b152005a0b75aaa",
-      "bytes": 49046
+      "sha256": "a7ae93689a103b9a8f92fb5429258c7cd942c6910f5a5ecb17da8400ca0517d0",
+      "bytes": 52786
     },
     "teaching-research.json": {
       "sha256": "a5ab0eca04acb09747d71d0984e0f3003784f3e723b5f2d7b8e3ee7e554627d8",

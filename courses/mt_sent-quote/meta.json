@@ -1,0 +1,31 @@
+{
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-29",
+  "subject": "语文",
+  "template": "explain",
+  "topicId": "mt_sent-quote",
+  "title": "直述转述：替别人传一句话",
+  "renderer": "transform",
+  "duration": 12,
+  "interactions": 3,
+  "grade": 3,
+  "standards": [],
+  "prerequisites": [
+    "mt_punct-basic",
+    "mt_sent-complete"
+  ],
+  "next": [
+    "mt_punct-advanced",
+    "mt_write-narrative",
+    "mt_write-person"
+  ],
+  "objectives": [
+    "说出直述句改转述句要动的三处：标点、人称、语气词",
+    "把一句直述句逐处改成转述句",
+    "解释「我」「你」在转述时为什么变了"
+  ],
+  "cognitiveAction": "变换"
+}
