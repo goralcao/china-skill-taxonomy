@@ -313,6 +313,10 @@ def main():
                     help='每晚汉字预算（按工作量排，比固定节数贴近真实工时）')
     ap.add_argument('--max-grade', type=int, default=None,
                     help='只做起始年级 ≤ N 的知识点（如 6 = 只做小学）')
+    ap.add_argument('--audit-prereq', action='store_true',
+                    help='审计：已发布的课件里，哪些自己的 hard 先修还没做')
+    ap.add_argument('--bottleneck', action='store_true',
+                    help='列出卡人最多的瓶颈点（做掉它解锁最多下游）')
     args = ap.parse_args()
 
     topics, edges = load()
@@ -373,6 +377,54 @@ def main():
                 print(f"  {marks[mi]*100:5.0f}%  ({cum:4} 节)  第 {row['night']:4} 晚  "
                       f"≈ {row['night']/30.4:4.1f} 个月")
                 mi += 1
+        return
+
+    # ---- 审计：已发布课件自身的前置漏洞 ----
+    if args.audit_prereq:
+        bad = []
+        for tid in sorted(have):
+            gap = g.hard.get(tid, set()) - have
+            if gap:
+                bad.append((tid, sorted(gap)))
+        if args.json:
+            print(json.dumps([{'topic': t, 'missing': m} for t, m in bad],
+                             ensure_ascii=False))
+            return
+        print(f'=== 已发布课件的自身前置漏洞：{len(bad)} / {len(have)} 节 ===')
+        print('（孩子打开这节课时，它默认你已经会的东西，其实没有课件可学）')
+        print()
+        for tid, gap in bad:
+            names = '、'.join(g.info.get(p, {}).get('name', p) for p in gap)
+            x = g.info.get(tid, {})
+            print(f'  {tid:34} {x.get("name","")}')
+            print(f'    缺先修：{names}')
+        return
+
+    # ---- 瓶颈点：做掉它解锁最多下游 ----
+    if args.bottleneck:
+        def anc(tid, acc):
+            for p in g.hard.get(tid, ()):
+                if p not in acc:
+                    acc.add(p)
+                    anc(p, acc)
+            return acc
+        bn = collections.Counter()
+        for m in missing:
+            for a in anc(m, set()):
+                if a not in have:
+                    bn[a] += 1
+        if args.json:
+            print(json.dumps([{'topic': t, 'blocks': n}
+                              for t, n in bn.most_common(30)], ensure_ascii=False))
+            return
+        print(f'=== 瓶颈集合：{len(bn)} 个点卡着全部 {len(missing)} 个缺口 ===')
+        print('（只要补上这 %d 个，其余全部就地解锁）' % len(bn))
+        print()
+        print('卡人最多的 20 个：')
+        for tid, n in bn.most_common(20):
+            x = g.info[tid]
+            print(f'  卡 {n:3} 个下游  {tid:32} {x.get("subject",""):4} '
+                  f'{str(x.get("gradeRangeStart","")):>2}年级 {x.get("name","")}')
         return
 
     # 默认：输出今晚该做的
