@@ -3,3 +3,6 @@ node_modules/
 __pycache__/
 *.pyc
 .DS_Store
+
+# 临时产物（截图、base64、一次性校验脚本）
+.tmp/

@@ -2,29 +2,31 @@
 
 <h1>学阶图谱 · China Skill Taxonomy</h1>
 
-<p><strong>1268 个微主题，按先修关系连成一张图。</strong><br>
-每个主题写清楚三件事：学什么，会到什么程度算会，卡住了该往回补哪一步。</p>
+<p><strong>1273 个微主题，按先修关系连成一张图。</strong><br>
+每个主题写清楚三件事：学什么，会到什么程度算会，卡住了该往回补哪一步。<br>
+选一个目标就能出题测——答错会沿先修边往回追，追到「从哪一步开始没学会」。</p>
 
 <p>对齐义务教育（2022 年版）与普通高中（2017 年版 2020 年修订）课程标准<br>
 覆盖 12 个学科、1~12 年级，每个主题配一份教学研究</p>
 
 <p>
-<img src="https://img.shields.io/badge/version-v0.42.0-blue?style=flat-square" alt="version">
+<img src="https://img.shields.io/badge/version-v0.47.0-blue?style=flat-square" alt="version">
 <img src="https://img.shields.io/badge/subjects-12-informational?style=flat-square" alt="subjects">
-<img src="https://img.shields.io/badge/topics-1268-brightgreen?style=flat-square" alt="topics">
-<img src="https://img.shields.io/badge/prerequisite%20edges-1635-blueviolet?style=flat-square" alt="prerequisite edges">
+<img src="https://img.shields.io/badge/topics-1273-brightgreen?style=flat-square" alt="topics">
+<img src="https://img.shields.io/badge/prerequisite%20edges-1647-blueviolet?style=flat-square" alt="prerequisite edges">
 <img src="https://img.shields.io/badge/data-ODbL%201.0-orange?style=flat-square" alt="data license">
 <img src="https://img.shields.io/badge/content-CC%20BY--SA%204.0-yellow?style=flat-square" alt="content license">
+<img src="https://img.shields.io/badge/questions-109%20%C2%B7%2050%20topics-informational?style=flat-square" alt="diagnostic questions">
 <img src="https://img.shields.io/badge/format-JSON%20%2B%20single--file%20HTML-success?style=flat-square" alt="format">
 </p>
 
-<img src="docs/screenshot-star.png" width="100%" alt="学阶图谱：12 个学科、1268 个微主题的先修依赖星图">
+<img src="docs/screenshot-star.png" width="100%" alt="学阶图谱：12 个学科、1273 个微主题的先修依赖星图">
 
 </div>
 
 在线预览：<https://acd118508358062b1.app.workbuddy.host/?sharecode=DHL4TJAQCG>
 
-> v0.46.0 · 主题 1273 · 先修依赖 1647（hard 952 / soft 695）· 课标条目 186 · 域摘要 204 · 教学研究 1268 · 教材版本 26 · 学科 12 · 课件 65
+> v0.47.0 · 主题 1273 · 先修依赖 1647（hard 952 / soft 695）· 课标条目 186 · 域摘要 204 · 教学研究 1268 · 教材版本 26 · 学科 12 · 课件 65 · 诊断题 109（覆盖 50 个主题）
 
 ## 目录
 
@@ -86,6 +88,18 @@
 ### 可视化只有一个 HTML 文件
 
 `viz/index.html` 加一个 `data.js`，没有构建步骤，没有外部依赖，也不用起服务器。三种布局（星图、长卷、热力），能搜索、按年级和领域筛选、追先修闭包、生成学习路径、标记已掌握。视图状态写进网址，复制链接就能定位到某个知识点。手机上单指平移、双指缩放。
+
+### 测出来，不只标出来
+
+图谱能说「这一步依赖什么」，说不了「他到底卡在哪」。`🧪 测一测` 补这一块。
+
+选一个目标知识点，系统出几道题。答错**不立刻判不会**——先就这个点再出一道更基础的确认题：确认题对了记「不稳」（会，但不牢，不往回追），确认题也错才判「薄弱」，这时才沿先修边往回追。追到「它的先修里没有别的薄弱点」，那一步就是根因。
+
+这条规则是为了把「粗心」和「真不会」分开。一次对一次错更像手滑，两次都错才足以说明这个点没建立；要是错一道就把孩子拖回去重学，他会厌。
+
+规则在 [`templates/diagnose.js`](templates/diagnose.js)（纯函数、可 JSON 序列化、18 项测试），题库从课件里抽（[`scripts/build-questions.py`](scripts/build-questions.py)），细节见 [`docs/DIAGNOSE.md`](docs/DIAGNOSE.md)。
+
+题库只覆盖 50 个知识点（都做过课件），占全图 3.9%。点开其余的点会明说「还没有诊断题」，并列出相邻的可测点——不假装能测。
 
 ### 数据可以自己重建
 
@@ -268,6 +282,7 @@ node scripts/validate-courses.mjs
 - 依赖图分成 67 个连通分量，最大的一块只占 7.6%。原因是跨模块、跨学科的边补得少，学习路径常常只能在本模块内走。补软依赖是下一步要做的，但每条都得能说清理由，不想为了连通而连通。
 - 186 条课标里有 11 条还没有主题挂靠，集中在语文低年级的表达类要求、英语一级的两个要素；这部分主题偏少。
 - 首屏要下载 4MB 的 `data.js`（gzip 后约 1MB），线上目前没有开压缩。数据分片是待办。
+- 诊断题库只有 109 题，覆盖 50 / 1273 个知识点（3.9%）。题目和解析都出自课件原文，未经教师独立复核，也没有独立的答案复算——数学的数值题本可以像课标对齐那样做表达式核验，暂未做。其中 3 个点只有 1 道题，答对一次就判掌握，偏松。4 个手写课件没有 `content.json`，题目抽不出来，不在题库里。
 - 课件 65 个（1273 个主题的 5.1%）：数学 53 个，覆盖三至五年级核心知识点与六年级圆板块（圆的认识、圆的周长与面积、扇形、圆柱与圆锥）；语文 12 个，覆盖三年级「句子与标点」4 个、「阅读」3 个（圈画批注、预测推想、古诗注释）、「习作」2 个（观察写清楚、修改习作），以及低段的朗读、田字格写字、成语故事各 1 个。呈现器落地了竖式、方格、描边、分份、钟面、数轴、坐标系、年历、小数条、复式表、罗盘地图、运算律、三角形、数位表、量角器、四边形、百格图、多位数乘法竖式、统计图、移多补少、割补拼摆、摆方格、分数意义图、分数加减条、等距堆方块、数对网格、植树间隔、对称补全、约分重分条、随机转盘、小数点定位、商不变转化、切饼分份、天平找次品、通话树、圆规画圆、滚圆测周长、扇形角控、圆柱展开、扩句积木、关联词配对、直述转述、点句读共四十五种；语文另在引擎里内置十一种过程式步骤（圈画、写话、量规、预测、古诗注释、感官观察、修改体检、拼音、典故、朗读、写字），sim / diagram / equation 还没做。构建改为按课程裁剪渲染器（扫描课件实际调用），单课体积从约 200KB 降到 40KB 上下。时分秒与动量守恒仍是各自内嵌的实现，没收敛到公共呈现器。
 - 目前只有中文。术语和课标编号是中文体系的，翻成英文会失真，暂时没做。
 
@@ -360,13 +375,15 @@ python3 scripts/build.py                         # 从 src/ 重新生成 data/ �
 
 ```
 china-skill-taxonomy/
-├── data/          # 构建产物：topics / dependencies / clusters / standards / textbooks / teaching-research / manifest
+├── data/          # 构建产物：topics / dependencies / clusters / standards / textbooks / teaching-research / questions / manifest
 ├── schema/        # JSON Schema（主题、依赖、课标、教材、教学研究）
 ├── src/           # 数据源：按学科拆分的 Python 模块（主题、课标、教材目录、教学研究）
-├── scripts/       # build.py（生成 + 校验和）、validate.mjs、validate-courses.mjs、new-course.mjs
-├── viz/           # 单文件可视化（index.html + data.js）
-├── courses/       # 课件源文件（每个主题一个目录：meta.json + index.html）
-├── docs/          # README 截图
+├── scripts/       # build.py（生成 + 校验和）、build-questions.py、validate*.mjs、new-course.mjs
+├── viz/           # 单文件可视化（index.html + data.js；diagnose.js 与 questions.js 按需加载）
+├── courses/       # 课件源文件（每个主题一个目录：meta.json + content.json + index.html）
+├── templates/     # 课件引擎（engine.js / renderers.js / base.css）与诊断引擎（diagnose.js）
+├── tests/         # 诊断规则的单元测试
+├── docs/          # 截图与专题说明（COURSEWARE / DIAGNOSE / EDU-SKILLS-SURVEY）
 ├── PROVENANCE.md  # 数据来源与权利边界
 ├── CITATION.cff   # 引用信息
 ├── LICENSE        # ODbL 1.0（数据库）
@@ -383,6 +400,7 @@ china-skill-taxonomy/
 | `dependencies.json` | 先修依赖（边）：`topicId` 依赖 `prerequisiteId`，标 hard / soft 和理由 |
 | `curriculum-standards.json` | 课标条目：编号、出处、领域、主题、一句话概要 |
 | `textbooks.json` | 教材版本、册次、单元目录；2024 版映射 `unitMap2024`、替代版本映射 `unitMapAlt` |
+| `questions.json` | 诊断题库：题干、答案、选项、错项解释、出处；从课件里抽，**不是独立编写的** |
 | `clusters.json` | 学科 → 领域簇 → 知识点的层级归组，以及写给家长的域摘要 |
 | `teaching-research.json` | 教学研究记录 1268 条，附 authorship 披露与 coverage 清单 |
 | `courses.json` | 课件索引：topicId、模板、时长、课标、状态、路径 |
@@ -468,12 +486,15 @@ china-skill-taxonomy/
 
 这里的数据和文本都是自己写的，没有使用对方的任何内容、标识或字段值。如果你要做英文体系或别的国家的版本，那个仓库是个不错的起点。
 
+前置诊断的判断逻辑参考了 cn-math-taxonomy（同一批 K12 图谱项目里做得最细的一个）：每个点连续答对才算掌握、两题都错才回溯、答对推断祖先掌握。**只借规则，没有搬数据和代码**——对方的许可是 CC BY-NC 4.0（禁止商用），本项目的 ODbL 1.0 + CC BY-SA 4.0 允许商用，混进来会把授权链弄脏。
+
 | 项目 | 用在哪里 | 许可 / 性质 |
 |---|---|---|
 | [Marble Skill Taxonomy](https://github.com/withmarbleapp/os-taxonomy) | 方法学参考：数据组织、许可分层、先修追溯的交互 | ODbL 1.0 + CC BY-SA 4.0，© Generative Spark, Inc. |
 | [TapXWorld/ChinaTextbook](https://github.com/TapXWorld/ChinaTextbook) | 教材册次结构；主题详情里的「原书 PDF」链接指向它 | 第三方开源仓库，只做外链，不镜像 |
 | [电子课本网](http://www.dzkbw.com/) | 2024 年版修订教材的单元目录 | 第三方网站，只记录册次和单元名 |
 | [国家中小学智慧教育平台](https://basic.smartedu.cn/) | 课标原文和电子教材的官方入口 | 官方平台，原文权利归发布方 |
+| [cn-math-taxonomy](https://github.com/xiaoyang111222/cn-math-taxonomy) | 诊断的判定规则：两题确认、hard 优先回溯、答对推断祖先 | CC BY-NC 4.0，**未使用其数据或代码** |
 
 ### 同类的技能项目
 

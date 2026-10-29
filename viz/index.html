@@ -116,6 +116,9 @@
     font-size: 12.5px; cursor: pointer; transition: border-color .15s, background .15s; }
   .act-btn:hover { border-color: var(--text-dim); }
   .act-btn.on { background: var(--accent); color: #1a1400; border-color: var(--accent); font-weight: 600; }
+  .act-btn:disabled { opacity: .4; cursor: not-allowed; }
+  .act-btn:disabled:hover { border-color: var(--line); }
+  .act-btn.dim { opacity: .62; color: var(--text-dim); }
   .act-btn.ghost { background: transparent; color: var(--text-dim); }
   .act-btn.ghost:hover { color: var(--text); }
 
@@ -176,6 +179,97 @@
   .tb-unit.hit { background: rgba(255,200,60,.13); color: var(--text); font-weight: 600; }
   .tb-unit .tag { font-size: 10px; color: var(--accent); margin-left: 5px; font-weight: 400; }
   .tb-lesson { font-size: 11px; color: var(--text-dim); padding: 1px 6px 1px 22px; line-height: 1.5; }
+
+  /* 前置诊断：一层浮在图上，不出站、不跳页 */
+  #dgModal { position: fixed; inset: 0; display: none; z-index: 62;
+    background: rgba(4,8,14,.82); padding: 18px; overflow-y: auto; }
+  #dgModal.open { display: flex; align-items: flex-start; justify-content: center; }
+  .dg-card { width: min(580px, 100%); margin: auto; background: var(--bg-panel);
+    border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px;
+    box-shadow: 0 24px 70px rgba(0,0,0,.55); }
+  .dg-top { display: flex; align-items: flex-start; gap: 10px; }
+  .dg-top .h { flex: 1 1 auto; min-width: 0; }
+  .dg-top h2 { font-size: 16px; font-weight: 700; line-height: 1.4; }
+  .dg-top .sub { font-size: 12px; color: var(--text-dim); line-height: 1.65; margin-top: 5px; }
+  .dg-x { flex: 0 0 auto; background: none; border: 1px solid var(--line); color: var(--text-dim);
+    border-radius: 7px; width: 30px; height: 30px; font-size: 17px; line-height: 1; cursor: pointer; }
+  .dg-x:hover { color: var(--text); border-color: var(--text-dim); }
+  .dg-prog { height: 4px; background: var(--line); border-radius: 2px; margin: 15px 0 14px;
+    overflow: hidden; }
+  .dg-prog i { display: block; height: 100%; background: var(--accent); transition: width .25s; }
+  .dg-why { font-size: 11.5px; color: var(--text-dim); line-height: 1.6; margin-bottom: 9px; }
+  .dg-why b { color: var(--accent); font-weight: 600; }
+  .dg-q { font-size: 16px; line-height: 1.75; margin-bottom: 14px; }
+  .dg-opts { display: flex; flex-direction: column; gap: 8px; }
+  .dg-opt { display: flex; gap: 9px; align-items: flex-start; text-align: left; width: 100%;
+    background: var(--bg-card); border: 1px solid var(--line); color: var(--text);
+    border-radius: 9px; padding: 11px 13px; font-size: 14px; line-height: 1.55;
+    cursor: pointer; min-height: 46px; font-family: inherit; }
+  .dg-opt:hover { border-color: var(--text-dim); }
+  .dg-opt .k { flex: 0 0 auto; font-size: 11.5px; color: var(--text-dim); padding-top: 3px;
+    width: 13px; }
+  .dg-opt .t { flex: 1 1 auto; min-width: 0; }
+  .dg-opt.on { border-color: var(--accent); background: rgba(255,209,102,.10); }
+  .dg-opt.ok { border-color: #4ade80; background: rgba(74,222,128,.12); }
+  .dg-opt.no { border-color: #f76e6e; background: rgba(247,110,110,.12); }
+  .dg-opt:disabled { cursor: default; }
+  .dg-opt:disabled:hover { border-color: inherit; }
+  .dg-input { width: 100%; background: var(--bg-card); border: 1px solid var(--line);
+    border-radius: 9px; color: var(--text); padding: 12px 13px; font-size: 16px;
+    outline: none; font-family: inherit; }
+  .dg-input:focus { border-color: var(--accent); }
+  .dg-bar { display: flex; gap: 8px; margin-top: 16px; }
+  .dg-btn { flex: 1 1 auto; background: var(--bg-card); border: 1px solid var(--line);
+    color: var(--text); border-radius: 9px; padding: 11px; font-size: 14px; cursor: pointer;
+    min-height: 46px; font-family: inherit; }
+  .dg-btn:hover { border-color: var(--text-dim); }
+  .dg-btn.primary { background: var(--accent); border-color: var(--accent); color: #1a1400;
+    font-weight: 700; }
+  .dg-btn.primary:hover { filter: brightness(1.06); }
+  .dg-btn:disabled { opacity: .45; cursor: not-allowed; }
+  .dg-fb { margin-top: 14px; border-radius: 9px; padding: 12px 13px; font-size: 13px;
+    line-height: 1.7; border-left: 3px solid var(--line); background: var(--bg-card); }
+  .dg-fb.ok { border-left-color: #4ade80; background: rgba(74,222,128,.08); }
+  .dg-fb.no { border-left-color: #f76e6e; background: rgba(247,110,110,.08); }
+  .dg-fb b.h { display: block; margin-bottom: 4px; font-size: 13px; }
+  .dg-fb .ref { color: var(--accent); }
+  .dg-res h3 { font-size: 12.5px; color: var(--text-dim); font-weight: 600; margin: 20px 0 8px; }
+  .dg-root { border: 1px solid rgba(247,110,110,.38); background: rgba(247,110,110,.07);
+    border-radius: 11px; padding: 14px 15px; }
+  .dg-root .big { font-size: 17px; font-weight: 700; line-height: 1.55; }
+  .dg-root .why { font-size: 12.5px; color: var(--text-dim); line-height: 1.7; margin-top: 6px; }
+  .dg-root.allpass { border-color: rgba(74,222,128,.4); background: rgba(74,222,128,.07); }
+  .dg-row { display: flex; align-items: center; gap: 9px; padding: 9px 0;
+    border-bottom: 1px solid var(--line); font-size: 13px; }
+  .dg-row:last-child { border-bottom: 0; }
+  .dg-row .nm { flex: 1 1 auto; min-width: 0; line-height: 1.5; }
+  .dg-row .nm small { color: var(--text-dim); font-size: 11px; margin-left: 5px; }
+  .dg-row .st { flex: 0 0 auto; font-size: 11px; padding: 2px 8px; border-radius: 999px;
+    border: 1px solid var(--line); color: var(--text-dim); }
+  .dg-row .st.weak { color: #f76e6e; border-color: rgba(247,110,110,.45); }
+  .dg-row .st.shaky { color: var(--accent); border-color: rgba(255,209,102,.45); }
+  .dg-row .st.mast { color: #4ade80; border-color: rgba(74,222,128,.4); }
+  .dg-go { flex: 0 0 auto; background: transparent; border: 1px solid var(--line);
+    color: var(--accent); border-radius: 7px; padding: 5px 10px; font-size: 11.5px;
+    cursor: pointer; min-height: 32px; font-family: inherit; }
+  .dg-go:hover { border-color: var(--accent); }
+  .dg-note { font-size: 11.5px; color: var(--text-dim); line-height: 1.7; margin-top: 10px;
+    padding: 9px 11px; border-left: 2px solid var(--line); background: rgba(255,255,255,.02); }
+  .dg-empty { font-size: 13px; color: var(--text-dim); line-height: 1.8; }
+  @media (max-width: 560px) {
+    #dgModal { padding: 10px; }
+    .dg-card { padding: 16px 15px; border-radius: 12px; }
+    .dg-q { font-size: 15.5px; }
+    .dg-opt { font-size: 13.5px; padding: 10px 11px; }
+    .dg-root .big { font-size: 15.5px; }
+  }
+  /* 触屏上 tap 之后 hover 态会一直挂着，看着像选中了另一个选项 */
+  @media (hover: none) {
+    .dg-opt:hover { border-color: var(--line); }
+    .dg-opt.on:hover, .dg-opt.ok:hover, .dg-opt.no:hover { border-color: inherit; }
+    .dg-btn:hover { border-color: var(--line); }
+    .dg-go:hover { border-color: var(--line); }
+  }
 
   /* 轻提示 */
   #toast { position: absolute; left: 50%; bottom: 26px; transform: translateX(-50%);
@@ -378,6 +472,7 @@
   <div class="toolbar">
     <span id="subjectChips"></span>
     <span class="chip" id="chipCourse" title="只显示已有动手课件的知识点" role="switch" aria-checked="false">▶ 有课件</span>
+    <span class="chip" id="chipQuiz" title="只显示有诊断题的知识点——这些点能出题测出卡在哪一步" role="switch" aria-checked="false">◎ 可测</span>
     <span class="search-wrap">
       <input id="search" type="text" placeholder="搜索主题…（/ 键聚焦）" autocomplete="off">
       <div class="search-list" id="searchList"></div>
@@ -438,6 +533,7 @@
       <div class="meta" id="pMeta"></div>
       <div class="actions">
         <button class="act-btn" id="btnCourse" style="display:none">▶ 打开课件</button>
+        <button class="act-btn" id="btnDiag">🧪 测一测</button>
         <button class="act-btn" id="btnMaster">✅ 标记已掌握</button>
         <button class="act-btn" id="btnPath">🗺️ 生成学习路径</button>
       </div>
@@ -462,6 +558,9 @@
   <div class="tb-sub" id="tbSub"></div>
   <div class="tb-cmp" id="tbBody"></div>
 </div></div>
+<div id="dgModal" role="dialog" aria-modal="true" aria-labelledby="dgTitle">
+  <div class="dg-card" id="dgCard"></div>
+</div>
 <script src="data.js"></script>
 <script>
 (function () {
@@ -559,7 +658,7 @@
     ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
     // 转屏或改窗口后，列数与节点半径都要跟着画布重算，否则竖屏DIY好的网格
     // 一横过来就又挤回去了（「只看课件」的布局是自适应的）
-    if (courseOnly) arrangeCourseOnly(true);
+    if (isOnly()) arrangeCourseOnly(true);
     reheat(0.6);
   }
   window.addEventListener('resize', resize);
@@ -604,6 +703,8 @@
   const courseList = (D.courses && D.courses.courses) || [];
   const courseByTopic = new Map(
     courseList.filter(c => c.status === 'reviewed').map(c => [c.topicId, c]));
+  // 有诊断题的知识点：题库在那 50 个点上，首屏只带 id 列表（约 1.5KB）
+  const quizSet = new Set(Array.isArray(D.quizTopics) ? D.quizTopics : []);
   const courseDone = new Set();
   function refreshCourseDone() {
     courseDone.clear();
@@ -693,7 +794,7 @@
       const a = acc.get(n.clusterId);
       if (a) { a.x += n.x; a.y += n.y; a.n++; }
     }
-    const filterActive = gradeFilter > 0 || domainFilter !== '' || courseOnly;
+    const filterActive = gradeFilter > 0 || domainFilter !== '' || isOnly();
     for (const c of clusterNodes) {
       let vis = activeSubjects.has(c.subject) && !collapsed.has('subj-' + c.subject);
       // 有筛选时，知识点被全部筛掉的领域簇不再显示。
@@ -704,7 +805,7 @@
           const t = nodeById.get(id);
           return t && t.visible;
         });
-        if (courseOnly) vis = hasVisibleTopic;
+        if (isOnly()) vis = hasVisibleTopic;
         else if (!collapsed.has(c.id)) vis = hasVisibleTopic;
       }
       c.visible = vis;
@@ -820,6 +921,10 @@
   // 默认全部学科可见（按 SUBJECT_LIST 初始化，新增学科自动纳入）
   const activeSubjects = new Set(SUBJECT_LIST);
   let courseOnly = false;              // 只看有课件的知识点
+  let quizOnly = false;                // 只看有诊断题的知识点
+  // 两种「只看」共用同一套布局与绘制分支：都要把筛出来的点单独排开、
+  // 都要忽略折叠态（否则窄屏下筛出来的点全被折叠挡住，看起来像没筛）
+  function isOnly() { return courseOnly || quizOnly; }
   let traceMode = null; // 'ancestors' | 'descendants'
   const traceSet = new Set();
 
@@ -857,12 +962,39 @@
       if (!n) chipCourse.style.display = 'none';
       chipCourse.onclick = () => {
         courseOnly = !courseOnly;
+        if (courseOnly && quizOnly) {
+          quizOnly = false;
+          const qc = document.getElementById('chipQuiz');
+          if (qc) { qc.classList.remove('on'); qc.setAttribute('aria-checked', 'false'); }
+        }
         chipCourse.classList.toggle('on', courseOnly);
         chipCourse.setAttribute('aria-checked', String(courseOnly));
         applyFilter();
         const shown = nodes.filter(x => x.visible).length;
         toast(courseOnly
           ? `只看有课件的 ${shown} 个知识点 · 点节点可打开课件`
+          : '已恢复全部知识点');
+      };
+    }
+    // 「可测」与「有课件」互斥：两个都开时交集只剩 50 个点，看着像没筛干净
+    const chipQuiz = document.getElementById('chipQuiz');
+    if (chipQuiz) {
+      const n = quizSet.size;
+      chipQuiz.textContent = '◎ 可测 ' + n;
+      if (!n) chipQuiz.style.display = 'none';
+      chipQuiz.onclick = () => {
+        quizOnly = !quizOnly;
+        if (quizOnly && courseOnly) {
+          courseOnly = false;
+          chipCourse.classList.remove('on');
+          chipCourse.setAttribute('aria-checked', 'false');
+        }
+        chipQuiz.classList.toggle('on', quizOnly);
+        chipQuiz.setAttribute('aria-checked', String(quizOnly));
+        applyFilter();
+        const shown = nodes.filter(x => x.visible).length;
+        toast(quizOnly
+          ? `只看能测的 ${shown} 个知识点 · 点节点再点「测一测」`
           : '已恢复全部知识点');
       };
     }
@@ -969,14 +1101,25 @@
       ? d.frontier.slice(0, 6).map(id => `<span class="li" data-id="${id}">${esc(byId.get(id).name)}</span>`).join('　')
       : '<span style="color:var(--text-dim)">（先完成下列路径中的前序主题）</span>';
     box.innerHTML = `
-      <h3>掌握诊断</h3>
+      <h3>掌握进度</h3>
       <div class="diag">
         <div>通往「${esc(n.name)}」共 <b>${total}</b> 步：已会 <b>${d.done.length}</b> · 待补 <b>${d.todo.length}</b>（${pct}%）</div>
         <div class="diag-bar"><i class="done" style="width:${pct}%"></i><i class="todo" style="width:${100 - pct}%"></i></div>
         <div class="next"><b>下一步最该学：</b>${nextHtml}</div>
-      </div>`;
+      </div>
+      <div class="path-hint">这一格的「已会」是你自己标的。想知道他到底会不会，点上面的「🧪 测一测」——那一套会出题，答错会往回追。</div>`;
     document.getElementById('btnMaster').textContent = mastered.has(n.id) ? '↩️ 取消已掌握' : '✅ 标记已掌握';
     document.getElementById('btnMaster').classList.toggle('on', mastered.has(n.id));
+    const dbtn = document.getElementById('btnDiag');
+    const can = hasQuiz(n.id);
+    // 无题也让点：点进去会说清为什么测不了，并给出可以测的相邻知识点。
+    // 直接禁用等于把话憋回去，用户只会以为功能坏了。
+    dbtn.disabled = false;
+    dbtn.textContent = can ? '🧪 测一测' : '🧪 测一测（无题）';
+    dbtn.classList.toggle('dim', !can);
+    dbtn.title = can
+      ? '出几道题，答错会沿先修往回追，找出卡在哪一步'
+      : '这个点还没有诊断题。题库目前覆盖 50 个做过课件的知识点';
   }
 
   function renderPath(n) {
@@ -1018,6 +1161,423 @@
     };
     document.getElementById('btnExport').onclick = () => exportMarkdown(n);
     document.getElementById('btnPrint').onclick = () => window.print();
+  }
+
+  /* -------------------------------------------------------------- 前置诊断
+   *
+   * 这套东西只回答一个问题：他想学「X」，卡在哪一步。
+   * 规则全在 templates/diagnose.js（纯函数，另有单元测试）；这里只管呈现。
+   *
+   * 一个诚实的限制：题库只覆盖 50 个知识点（都做过课件），占全图 4%。
+   * 没题的点，按钮直接变灰并说明，不假装能测。
+   */
+
+  const DG_KEY = 'stx.diag.v1';
+  let dgGraph = null;
+  let dgAssets = null;
+  let dg = null;          // { topicId, session, item, picked, phase }
+  let dgLast = null;      // 上一次完整诊断的 topicId，用于「再来一次」
+
+  function loadScriptOnce(src) {
+    return new Promise((resolve, reject) => {
+      const s = document.createElement('script');
+      s.src = src;
+      s.onload = () => resolve();
+      s.onerror = () => reject(new Error('加载失败：' + src));
+      document.head.appendChild(s);
+    });
+  }
+
+  function ensureDiagAssets() {
+    if (dgAssets) return dgAssets;
+    dgAssets = Promise.all([
+      window.DiagEngine ? null : loadScriptOnce('diagnose.js'),
+      window.QUESTION_BANK ? null : loadScriptOnce('questions.js')
+    ]).then(() => {
+      const qs = (window.QUESTION_BANK && window.QUESTION_BANK.questions) || [];
+      dgGraph = window.DiagEngine.buildGraph(topics, deps, qs);
+      return dgGraph;
+    }).catch((err) => {
+      dgAssets = null;
+      throw err;
+    });
+    return dgAssets;
+  }
+
+  /** 这个点有没有题。首屏没加载题库时用 D.quizTopics 判断。 */
+  function hasQuiz(id) {
+    if (dgGraph) return (dgGraph.bank[id] || []).length > 0;
+    if (Array.isArray(D.quizTopics)) return D.quizTopics.indexOf(id) >= 0;
+    return true;   // 题库还没到，先别把按钮锁死
+  }
+
+  function openDgModal() {
+    document.getElementById('dgModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeDgModal() {
+    document.getElementById('dgModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function saveDg() {
+    if (!dg || !dg.session || dg.session.done) return;
+    try {
+      localStorage.setItem(DG_KEY, JSON.stringify({ topicId: dg.topicId, session: dg.session }));
+    } catch (e) { /* 隐私模式忽略 */ }
+  }
+
+  function clearDgSave() {
+    try { localStorage.removeItem(DG_KEY); } catch (e) { /* 忽略 */ }
+  }
+
+  function readDgSave(topicId) {
+    try {
+      const raw = JSON.parse(localStorage.getItem(DG_KEY) || 'null');
+      if (raw && raw.topicId === topicId && raw.session && !raw.session.done) return raw.session;
+    } catch (e) { /* 忽略 */ }
+    return null;
+  }
+
+  function dgWhyText(it) {
+    const w = it.why || { kind: 'target' };
+    if (it.attempt > 1) {
+      const t = (dg.session && dg.session.tries && dg.session.tries[it.topicId]) || { right: 0, wrong: 0 };
+      return t.wrong > 0
+        ? '第 ' + it.attempt + ' 次问同一个点——刚才那道没过，换一道确认一下。'
+        : '第 ' + it.attempt + ' 次问同一个点——答对一道不算数，再来一道确认不是蒙的。';
+    }
+    if (w.kind === 'backtrack') {
+      return '「' + esc(w.fromName) + '」没过，往回查它依赖的这一步（' +
+        (w.strength === 'soft' ? '辅助' : '必要') + '先修）。';
+    }
+    return '这是你选的目标本身。';
+  }
+
+  function dgTopHtml(title, sub) {
+    return `<div class="dg-top"><div class="h"><h2 id="dgTitle">${title}</h2>
+      <div class="sub">${sub}</div></div>
+      <button class="dg-x" id="dgClose" aria-label="关闭">×</button></div>`;
+  }
+
+  function dgBindClose() {
+    const b = document.getElementById('dgClose');
+    if (b) b.onclick = () => { saveDg(); closeDgModal(); };
+  }
+
+  /* ---- 出题 ---- */
+
+  function dgRenderQuestion() {
+    const it = dg.item;
+    dmCard().innerHTML = dgCardHtml(it);
+    dgBindClose();
+    const opts = dmCard().querySelectorAll('.dg-opt');
+    opts.forEach((el) => {
+      el.onclick = () => {
+        if (dg.phase !== 'q') return;
+        dg.picked = el.getAttribute('data-v');
+        opts.forEach(o => o.classList.toggle('on', o === el));
+        const submit = document.getElementById('dgSubmit');
+        if (submit) submit.disabled = false;
+      };
+    });
+    const input = document.getElementById('dgInput');
+    if (input) {
+      input.oninput = () => {
+        const submit = document.getElementById('dgSubmit');
+        if (submit) submit.disabled = !input.value.trim();
+      };
+      input.onkeydown = (e) => { if (e.key === 'Enter') dgSubmit(); };
+      setTimeout(() => input.focus(), 60);
+    }
+    const submit = document.getElementById('dgSubmit');
+    if (submit) submit.onclick = dgSubmit;
+    const skip = document.getElementById('dgSkip');
+    if (skip) skip.onclick = () => dgAnswer('skip');
+  }
+
+  function dgCardHtml(it) {
+    const q = it.question;
+    const total = it.limit;
+    const pct = Math.min(100, Math.round((it.index - 1) / total * 100));
+    let body = '';
+    if (q.type === 'choice') {
+      body = `<div class="dg-opts">${q.choices.map((c, i) =>
+        `<button class="dg-opt" data-v="${esc(c)}">
+           <span class="k">${'ABCD'[i] || (i + 1)}</span>
+           <span class="t">${esc(c)}</span>
+         </button>`).join('')}</div>`;
+    } else {
+      body = `<input class="dg-input" id="dgInput" type="text" inputmode="decimal"
+        autocomplete="off" placeholder="在这里填答案">`;
+    }
+    // 两种题都不能空提交：选择题要先点一个，数字题要先填
+    const canSubmit = false;
+    return dgTopHtml(esc(it.topic.name),
+        '第 ' + it.index + ' / ' + total + ' 题 · 这个点要答对 ' + it.need + ' 道才算掌握') +
+      `<div class="dg-prog"><i style="width:${pct}%"></i></div>
+       <div class="dg-why">为什么问这个：${dgWhyText(it)}</div>
+       <div class="dg-q">${esc(q.prompt)}</div>
+       ${body}
+       <div class="dg-bar">
+         <button class="dg-btn primary" id="dgSubmit"${canSubmit ? '' : ' disabled'}>提交</button>
+         <button class="dg-btn" id="dgSkip">不会，跳过</button>
+       </div>`;
+  }
+
+  /* ---- 判定 ---- */
+
+  function dgSubmit() {
+    const q = dg.item.question;
+    if (q.type === 'choice') {
+      if (!dg.picked) return;
+      dgAnswer(dg.picked === q.answer ? 'right' : 'wrong');
+    } else {
+      const v = (document.getElementById('dgInput').value || '').trim();
+      if (!v) return;
+      dgAnswer(dgNorm(v) === dgNorm(q.answer) ? 'right' : 'wrong');
+    }
+  }
+
+  /** 数字答案容差比较：0.5 和 .5、１２ 和 12、45 和 45.0 都算对。 */
+  function dgNorm(s) {
+    const t = String(s).replace(/[\s，,。．]/g, '').replace(/[０-９]/g,
+      c => String.fromCharCode(c.charCodeAt(0) - 65248));
+    const n = Number(t);
+    return Number.isFinite(n) && t !== '' ? String(Math.round(n * 1e6) / 1e6) : t.toLowerCase();
+  }
+
+  function dgAnswer(verdict) {
+    if (dg.phase !== 'q') return;
+    dg.phase = 'fb';
+    dg.verdict = verdict;
+    dgRenderFeedback();
+  }
+
+  function dgRenderFeedback() {
+    const it = dg.item;
+    const q = it.question;
+    const ok = dg.verdict === 'right';
+    const given = q.type === 'choice' ? dg.picked : (document.getElementById('dgInput') || {}).value;
+    const opts = dmCard().querySelectorAll('.dg-opt');
+    opts.forEach((el) => {
+      el.disabled = true;
+      const v = el.getAttribute('data-v');
+      if (v === q.answer) el.classList.add('ok');
+      else if (v === given && !ok) el.classList.add('no');
+      el.classList.remove('on');
+    });
+    const input = document.getElementById('dgInput');
+    if (input) input.disabled = true;
+
+    let fb;
+    if (ok) {
+      fb = `<div class="dg-fb ok"><b class="h">对了</b>${esc(q.explanation || '')}</div>`;
+    } else {
+      const why = (!ok && q.refute && q.refute[given]) ? q.refute[given] : '';
+      fb = `<div class="dg-fb no"><b class="h">${dg.verdict === 'skip' ? '先看答案' : '这道没过'}</b>
+        参考答案：<span class="ref">${esc(q.answer)}</span>
+        ${why ? '<br>' + esc(why) : ''}
+        ${q.explanation ? '<br>' + esc(q.explanation) : ''}</div>`;
+    }
+
+    const bar = dmCard().querySelector('.dg-bar');
+    if (bar) bar.remove();
+    const wrap = document.createElement('div');
+    wrap.innerHTML = fb + `<div class="dg-bar"><button class="dg-btn primary" id="dgNext">下一题</button></div>`;
+    const top = dmCard().querySelector('.dg-why');
+    top.parentNode.insertBefore(wrap, top.nextSibling);
+    // 反馈插在题干上方会读着别扭，挪到页面下部
+    dmCard().appendChild(wrap);
+    document.getElementById('dgNext').onclick = dgNext;
+    document.getElementById('dgNext').focus();
+  }
+
+  function dgNext() {
+    dg.session = window.DiagEngine.applyAnswer(dgGraph, dg.session, dg.verdict);
+    saveDg();
+    dgAdvance();
+  }
+
+  function dgAdvance() {
+    const it = window.DiagEngine.nextItem(dgGraph, dg.session);
+    if (!it) { dgRenderResult(); return; }
+    dg.item = it;
+    dg.phase = 'q';
+    dg.picked = '';
+    dg.verdict = '';
+    dgRenderQuestion();
+  }
+
+  function dmCard() { return document.getElementById('dgCard'); }
+
+  /* ---- 结果 ---- */
+
+  const STATE_LABEL = { weak: '薄弱', shaky: '不稳', mastered: '已掌握', untested: '没有题' };
+
+  function dgRenderResult() {
+    const S = window.DiagEngine.summarize(dgGraph, dg.session);
+    const byIdLocal = dgGraph.byId;
+    dg.phase = 'end';
+    dg.lastSummary = S;
+    dgLast = dg.topicId;
+    clearDgSave();
+
+    const nameOf = id => esc(byIdLocal[id].name);
+    const gradeOf = id => byIdLocal[id].gradeRangeStart;
+
+    let rootHtml = '';
+    if (S.roots.length) {
+      // 真根因（往回追到的那一步）与「目标本身就没过」要分开说：
+      // 前者的意思是"问题在下面"，后者的意思是"问题就在这儿"
+      const deep = S.roots.filter(id => id !== dg.topicId);
+      if (deep.length) {
+        rootHtml = `<div class="dg-root">
+          <div class="big">从「${deep.map(nameOf).join('」「')}」这${deep.length > 1 ? '几' : '一'}步开始卡住</div>
+          <div class="why">上面那一步没过，往回追到这里也没过。补的时候从这一步补起，不用整册重刷。</div>
+        </div>`;
+      } else {
+        rootHtml = `<div class="dg-root">
+          <div class="big">「${nameOf(dg.topicId)}」这一步还没过</div>
+          <div class="why">两道题都没过，问题就在这个点本身。先把它补上，再往后走。</div>
+        </div>`;
+      }
+    } else if (S.weak.length) {
+      rootHtml = `<div class="dg-root">
+        <div class="big">${S.weak.map(nameOf).join('、')} 还没过</div>
+        <div class="why">这几步是薄弱点。它们的先修没有测出问题，补完这几个就能接上。</div>
+      </div>`;
+    } else {
+      const passed = S.masteredDirect.length;
+      rootHtml = `<div class="dg-root allpass">
+        <div class="big">${passed ? '这一串知识点都过了' : '这一轮没测出问题'}</div>
+        <div class="why">${passed
+          ? '直接测的 ' + passed + ' 个点全部答对，往前推的先修也没有卡住的地方。'
+          : '题目太少，判断不了。可以换一个点再测。'}</div>
+      </div>`;
+    }
+
+    // 学习路径：薄弱的在前，其次不稳，按年级从低到高
+    const rows = S.path.map(id => {
+      const course = courseByTopic.get(id);
+      const st = window.DiagEngine.stateOf(dg.session, id);
+      return `<div class="dg-row">
+        <span class="nm">${nameOf(id)}<small>${gradeOf(id)} 年级</small></span>
+        <span class="st ${st === 'weak' ? 'weak' : 'shaky'}">${STATE_LABEL[st] || ''}</span>
+        ${course ? `<button class="dg-go" data-go="${esc(id)}">上这一课</button>` : ''}
+      </div>`;
+    }).join('');
+
+    const doneRows = S.masteredDirect.map(id => `<div class="dg-row">
+        <span class="nm">${nameOf(id)}<small>${gradeOf(id)} 年级</small></span>
+        <span class="st mast">答对</span></div>`).join('');
+
+    const inferred = S.mastered.length - S.masteredDirect.length;
+
+    const untestedRows = S.untested.length
+      ? `<h3>没测到的（没有诊断题）</h3>${S.untested.slice(0, 6).map(id =>
+          `<div class="dg-row"><span class="nm">${nameOf(id)}<small>${gradeOf(id)} 年级</small></span>
+           <span class="st">无题</span></div>`).join('')}
+         ${S.untested.length > 6
+           ? `<div class="dg-note">另外还有 ${S.untested.length - 6} 个先修也没有题，没列出来。</div>` : ''}`
+      : '';
+
+    dmCard().innerHTML = dgTopHtml('测完了：' + esc(byIdLocal[dg.topicId].name),
+        `共 ${S.askedCount} 题 · ` + (S.stopReason === 'limit'
+          ? '到本轮上限了，还能接着测'
+          : '能出的题都出完了')) +
+      `<div class="dg-res">${rootHtml}
+        <h3>该补的顺序（按年级从低到高）</h3>
+        ${rows || '<div class="dg-empty">没有要补的点。</div>'}
+        ${doneRows ? `<h3>这几步答对了</h3>${doneRows}` : ''}
+        ${inferred > 0 ? `<div class="dg-note">另有 ${inferred} 个先修是由「答对了上层」推断出来的，没有单独出题。</div>` : ''}
+        ${untestedRows}
+        <div class="dg-note">${S.openEnds.length
+          ? '注意：有薄弱点的先修还没有题，这条线索没查完。'
+          : '判定规则：同一知识点连续答对两道才算掌握；一错一对记「不稳」，不往回追；两道都错才判「薄弱」并回溯先修。'}
+          ${S.untouched.length ? ` 目标的先修里还有 ${S.untouched.length} 个这轮没轮到。` : ''}
+          ${S.startNote ? ' ' + esc(S.startNote) : ''}</div>
+        <div class="dg-bar">
+          <button class="dg-btn" id="dgAgain">重新测</button>
+          <button class="dg-btn primary" id="dgDone">知道了</button>
+        </div>
+      </div>`;
+    dgBindClose();
+    dmCard().querySelectorAll('.dg-go').forEach(b => {
+      b.onclick = () => {
+        const c = courseByTopic.get(b.getAttribute('data-go'));
+        if (c) location.href = c.path + 'index.html';
+      };
+    });
+    document.getElementById('dgAgain').onclick = () => startDiag(dg.topicId, true);
+    document.getElementById('dgDone').onclick = () => closeDgModal();
+  }
+
+  /* ---- 入口 ---- */
+
+  async function startDiag(topicId, forceNew) {
+    const node = byId.get(topicId);
+    if (!node) return;
+    openDgModal();
+    dmCard().innerHTML = dgTopHtml(esc(node.name), '正在装载题库…') +
+      '<div class="dg-empty" style="margin-top:14px">题库按需加载，第一次打开会慢半拍。</div>';
+    dgBindClose();
+
+    let graph;
+    try {
+      graph = await ensureDiagAssets();
+    } catch (e) {
+      dmCard().innerHTML = dgTopHtml(esc(node.name), '题库没能加载') +
+        `<div class="dg-empty" style="margin-top:14px">诊断需要的两个文件没有取到。
+         如果是直接双击打开的本地文件，浏览器可能拦了脚本加载；换成本地服务器或线上地址再试。</div>
+         <div class="dg-bar"><button class="dg-btn" id="dgClose2">关闭</button></div>`;
+      document.getElementById('dgClose2').onclick = () => closeDgModal();
+      dgBindClose();
+      return;
+    }
+
+    const n = (graph.bank[topicId] || []).length;
+    if (!n) {
+      // 没题：说清楚，并把最近的有题点列出来
+      const near = nearestQuizTopics(topicId, graph);
+      dmCard().innerHTML = dgTopHtml(esc(node.name), '这个点还没有诊断题') +
+        `<div class="dg-empty">诊断题目前来自已完成的课件，覆盖 50 个知识点。这个点还没做课件，所以没法测。
+         ${near.length ? '先从这几个有题的点试试：' : ''}</div>
+         ${near.map(id => `<div class="dg-row">
+            <span class="nm">${esc(graph.byId[id].name)}<small>${graph.byId[id].gradeRangeStart} 年级</small></span>
+            <button class="dg-go" data-try="${esc(id)}">测这个</button></div>`).join('')}
+         <div class="dg-bar"><button class="dg-btn" id="dgClose2">知道了</button></div>`;
+      dmCard().querySelectorAll('[data-try]').forEach(b => {
+        b.onclick = () => startDiag(b.getAttribute('data-try'), true);
+      });
+      document.getElementById('dgClose2').onclick = () => closeDgModal();
+      dgBindClose();
+      return;
+    }
+
+    let session = forceNew ? null : readDgSave(topicId);
+    if (!session) {
+      session = window.DiagEngine.createSession(graph, topicId, { limit: 12 });
+      clearDgSave();
+    }
+    dg = { topicId, session, item: null, picked: '', verdict: '', phase: 'q' };
+    dgAdvance();
+  }
+
+  /** 就近找有题的点：先看自己的先修，再看自己的下游，最后全图按年级最接近的。 */
+  function nearestQuizTopics(id, graph) {
+    const out = [];
+    const push = (x) => { if (out.indexOf(x) < 0 && x !== id && (graph.bank[x] || []).length) out.push(x); };
+    (graph.prereqs[id] || []).forEach(p => push(p.id));
+    (graph.dependents[id] || []).forEach(p => push(p.id));
+    if (out.length >= 3) return out.slice(0, 3);
+    const g = graph.byId[id].gradeRangeStart || 1;
+    const rest = Object.keys(graph.bank)
+      .filter(x => (graph.bank[x] || []).length && out.indexOf(x) < 0 && x !== id)
+      .sort((a, b) => Math.abs(graph.byId[a].gradeRangeStart - g) - Math.abs(graph.byId[b].gradeRangeStart - g));
+    rest.forEach(push);
+    return out.slice(0, 3);
   }
 
   function exportMarkdown(n) {
@@ -1307,7 +1867,7 @@
     ctx.setLineDash([]);
     ctx.globalAlpha = hoverSet ? 0.28 : 1;
     for (const e of memberEdges) {
-      if (courseOnly) break;            // 只看课件时没有容器，归属边一并不画
+      if (isOnly()) break;            // 只看课件时没有容器，归属边一并不画
       if (!e.from.visible || !e.to.visible) continue;
       ctx.beginPath();
       ctx.moveTo(e.from.x, e.from.y); ctx.lineTo(e.to.x, e.to.y);
@@ -1360,9 +1920,9 @@
       if (n.kind === 'subject' || n.kind === 'cluster') {
         const isSubj = n.kind === 'subject';
         // 只看课件时不画容器环：学科环会压在知识点上，反而看不清
-        if (courseOnly) continue;
+        if (isOnly()) continue;
         const fold = isSubj ? collapsed.has('subj-' + n.subject) : collapsed.has(n.id);
-        ctx.globalAlpha = baseAlpha * (courseOnly ? 0.55 : 1);
+        ctx.globalAlpha = baseAlpha * (isOnly() ? 0.55 : 1);
         ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
         ctx.fillStyle = 'rgba(10,15,24,.88)'; ctx.fill();
         // 发光用「半透明粗描边」模拟，避免 shadowBlur（每个容器都做高斯模糊，帧率杀手）
@@ -1378,7 +1938,7 @@
         ctx.font = `${(isSubj ? 12 : 10) / k}px system-ui, "PingFang SC", sans-serif`;
         ctx.fillStyle = color; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
         const total = isSubj ? (n.count || 0) : (n.topicIds || []).length;
-        const shown = (courseOnly || gradeFilter || domainFilter) ? (n.visibleCount || 0) : total;
+        const shown = (isOnly() || gradeFilter || domainFilter) ? (n.visibleCount || 0) : total;
         ctx.fillText(String(shown), n.x, n.y);
         ctx.textBaseline = 'alphabetic';
         ctx.globalAlpha = 1;
@@ -1425,16 +1985,16 @@
       : (hoverSet && hoverSet.has(n.id)) ? 2
       : n.kind === 'subject' ? 2 : n.kind === 'cluster' ? 1 : 0;
     const tier = showAllLabels ? 2 : k >= 2.5 ? 2 : k >= 1.2 ? 1 : 0;
-    const CAP = courseOnly ? 130 : [18, 45, 130][tier];
+    const CAP = isOnly() ? 130 : [18, 45, 130][tier];
     const placed = [];
     let count = 0;
     const cand = renderNodes.filter(n => n.visible)
       .sort((a, b) => prio(b) - prio(a) || b.r - a.r || degOf(b) - degOf(a));
     ctx.textAlign = 'center';
     for (const n of cand) {
-      if (courseOnly && n.kind !== 'topic') continue;   // 筛选态只标知识点
+      if (isOnly() && n.kind !== 'topic') continue;   // 筛选态只标知识点
       const p = prio(n);
-      const mandatory = p === 3 || courseOnly;   // 跳过分层门槛：这类点「想」显示
+      const mandatory = p === 3 || isOnly();   // 跳过分层门槛：这类点「想」显示
       const nocull = p === 3;                    // 跳过碰撞去重：只有选中/溯源必须看得见。
       // 「只看课件」早先连碰撞去重一起跳过，53 个名字就全糊在一起了——现在它
       // 照样参与去重，能互不遮挡地放下几个就显示几个，点开节点看详情即可。
@@ -1442,7 +2002,7 @@
       if (!mandatory && !showAllLabels) {
         if (tier === 0) {
           if (n.kind === 'topic' && degOf(n) < 8) continue;
-          if (n.kind === 'cluster' && (courseOnly || n.topicIds.length < 8)) continue;
+          if (n.kind === 'cluster' && (isOnly() || n.topicIds.length < 8)) continue;
         } else if (tier === 1) {
           if (n.kind === 'topic' && n.r < 9 && degOf(n) < 4) continue;
         }
@@ -1837,6 +2397,7 @@
     const isContainer = n.kind === 'subject' || n.kind === 'cluster';
     document.getElementById('pTopicOnly').style.display = isContainer ? 'none' : '';
     document.getElementById('btnPath').style.display = isContainer ? 'none' : '';
+    document.getElementById('btnDiag').style.display = isContainer ? 'none' : '';
     if (isContainer) {
       document.getElementById('btnCourse').style.display = 'none';
       renderContainerPanel(n);
@@ -1947,6 +2508,19 @@
     renderDiag(selected); renderPath(selected);
     toast(wasMastered ? '已标记为已掌握' : '已取消掌握标记');
   };
+  document.getElementById('btnDiag').onclick = function () {
+    if (!selected) { toast('请先点击一个主题'); return; }
+    if (selected.kind === 'subject' || selected.kind === 'cluster') {
+      toast('诊断要针对一个具体知识点，先点开一个主题');
+      return;
+    }
+    startDiag(selected.id);
+  };
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && document.getElementById('dgModal').classList.contains('open')) {
+      saveDg(); closeDgModal();
+    }
+  });
   document.getElementById('btnPath').onclick = function () {
     if (!selected) { toast('请先点击一个主题'); return; }
     pathShown = !pathShown;
@@ -2007,7 +2581,7 @@
     // 聚焦该学科，切到长卷按册次定位，并选中该年级首个主题
     for (const x of [...activeSubjects]) if (x !== s) activeSubjects.delete(x);
     activeSubjects.add(s);
-    document.querySelectorAll('.chip').forEach(c => {
+    document.querySelectorAll('.chip[data-subject]').forEach(c => {
       const on = activeSubjects.has(c.dataset.subject);
       c.classList.toggle('on', on); c.classList.toggle('off', !on);
     });
@@ -2031,7 +2605,9 @@
   }
 
   // ---------- 工具栏 ----------
-  document.querySelectorAll('.chip:not(#chipCourse)').forEach(chip => {
+  // 只认带 data-subject 的学科 chip。用 :not(#chipCourse) 排除法会漏掉后来加的
+  // #chipQuiz，把它的点击处理器覆盖成学科切换，症状是点了没反应、class 却变了。
+  document.querySelectorAll('.chip[data-subject]').forEach(chip => {
     chip.onclick = () => {
       const s = chip.dataset.subject;
       if (activeSubjects.has(s)) { activeSubjects.delete(s); chip.classList.remove('on'); chip.classList.add('off'); }
@@ -2040,7 +2616,7 @@
     };
   });
   function syncChips() {
-    document.querySelectorAll('.chip:not(#chipCourse)').forEach(c => {
+    document.querySelectorAll('.chip[data-subject]').forEach(c => {
       const on = activeSubjects.has(c.dataset.subject);
       c.classList.toggle('on', on); c.classList.toggle('off', !on);
     });
@@ -2175,14 +2751,15 @@
       // 折叠学科 = 隐藏其下全部知识点；折叠领域簇 = 隐藏该簇知识点。
       // 「只看课件」是强筛选：窄屏默认把学科全折叠了，此时不能再按折叠隐藏，
       // 否则筛出来的 4 个点全被折叠挡掉，看起来就是「没过滤」。
-      const subjHidden = !courseOnly && collapsed.has('subj-' + n.subject);
-      const clHidden = !courseOnly && collapsed.has(n.clusterId);
+      const subjHidden = !isOnly() && collapsed.has('subj-' + n.subject);
+      const clHidden = !isOnly() && collapsed.has(n.clusterId);
       const okGrade = !gradeFilter || (n.gradeRangeStart <= gradeFilter && n.gradeRangeEnd >= gradeFilter);
       const okDomain = !domainFilter || n.domain === domainFilter;
       n.visible = activeSubjects.has(n.subject)
         && !subjHidden && !clHidden && okGrade && okDomain
         && !(hideMastered && mastered.has(n.id))
-        && (!courseOnly || courseByTopic.has(n.id));
+        && (!courseOnly || courseByTopic.has(n.id))
+        && (!quizOnly || quizSet.has(n.id));
     }
     // 容器上的数字要跟着筛选变，否则「234」会让人以为还有 234 个
     const subjSeen = new Map();
@@ -2196,10 +2773,10 @@
     }
     for (const s of subjectNodes) s.visibleCount = subjSeen.get(s.subject) || 0;
 
-    arrangeCourseOnly(courseOnly);
+    arrangeCourseOnly(isOnly());
     // 容器的可见性在 layout() 里算，藏在 tick 内；必须 reheat 一小下才会重算，
     // 否则只剩 wake() 重绘，学科环还停在上一帧的「全部可见」。
-    reheat(courseOnly ? 0.35 : 0.6);
+    reheat(isOnly() ? 0.35 : 0.6);
     writeHash();
   }
   // ---------- 搜索：下拉结果列表（可点选直达 + 键盘操作）----------
@@ -2424,7 +3001,7 @@
     writeHash._t = setTimeout(() => {
       const s = SUBJECT_LIST.filter(x => activeSubjects.has(x));
       const isDefault = !selected && s.length === SUBJECT_LIST.length
-        && !gradeFilter && !domainFilter && !courseOnly && layoutMode === 'star';
+        && !gradeFilter && !domainFilter && !isOnly() && layoutMode === 'star';
       if (isDefault && !location.hash) return;      // 全默认且原本无 hash：不污染地址栏
       const p = new URLSearchParams();
       if (selected && selected.kind === 'topic') p.set('t', selected.id);
@@ -2432,6 +3009,7 @@
       if (gradeFilter) p.set('g', String(gradeFilter));
       if (domainFilter) p.set('d', domainFilter);
       if (courseOnly) p.set('c', '1');
+      if (quizOnly) p.set('q', '1');
       p.set('l', layoutMode);
       const next = '#' + p.toString();
       if (location.hash === next) return;
@@ -2461,6 +3039,11 @@
       courseOnly = true;
       const cc = document.getElementById('chipCourse');
       if (cc) { cc.classList.add('on'); cc.setAttribute('aria-checked', 'true'); }
+    }
+    if (p.get('q') === '1') {
+      quizOnly = true;
+      const qc = document.getElementById('chipQuiz');
+      if (qc) { qc.classList.add('on'); qc.setAttribute('aria-checked', 'true'); }
     }
     autoExpandForFilter();
     const l = p.get('l');

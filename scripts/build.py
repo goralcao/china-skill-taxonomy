@@ -90,7 +90,7 @@ import teaching_research_chinese_senior  # noqa: E402
 import teaching_research_math_senior  # noqa: E402
 import teaching_research_english_senior  # noqa: E402
 
-VERSION = "v0.46.0"
+VERSION = "v0.47.0"
 SCHEMA_VERSION = 1
 
 MODULES = [
@@ -820,6 +820,34 @@ def _renderers_for_course(content, course_dir) -> set:
 
 
 
+def build_questions():
+    """诊断题库：每次构建都从课件重抽一遍。
+
+    题库的唯一来源是 courses/*/content.json 里可判分的环节——不从别处另写一套，
+    否则课件改了题、题库没改，学生测出来的和课上讲的对不上。
+    """
+    script = ROOT / "scripts" / "build-questions.py"
+    out = ROOT / "data" / "questions.json"
+    r = subprocess.run([sys.executable, str(script)], capture_output=True, text=True)
+    if r.returncode != 0:
+        raise SystemExit("题库生成失败：\n" + (r.stdout or "") + (r.stderr or ""))
+    for line in (r.stdout or "").strip().splitlines():
+        print("  " + line)
+    return json.loads(out.read_text(encoding="utf-8"))
+
+
+def sync_diag_to_viz():
+    """诊断引擎单独发布到 viz/diagnose.js。
+
+    放单独文件是为了让首屏不背它：不点「测一测」就永远不下载。
+    """
+    src = ROOT / "templates" / "diagnose.js"
+    if not src.exists():
+        return 0
+    (VIZ / "diagnose.js").write_text(src.read_text(encoding="utf-8"), encoding="utf-8")
+    return (VIZ / "diagnose.js").stat().st_size
+
+
 def sync_courses_to_viz(topics, deps):
     """把 courses/ 打包进 viz/courses/。
 
@@ -1064,6 +1092,9 @@ def main():
     # 按需文件用动态 <script src> 载入而非 fetch，file:// 下也能照常工作。
     n_courses = sync_courses_to_viz(artifacts["topics.json"]["topics"],
                                     artifacts["dependencies.json"]["dependencies"])
+    questions_payload = build_questions()
+    diag_bytes = sync_diag_to_viz()
+    quiz_topics = sorted({q["topicId"] for q in questions_payload["questions"]})
 
     # 首屏必需：图谱要画节点、连线、容器、课件入口，就得先认得这些字段
     TOPIC_CORE = ("id", "name", "subject", "domain", "type", "stage",
@@ -1099,6 +1130,9 @@ def main():
         "dependencies": core_deps,
         "clusters": core_clusters,
         "courses": artifacts["courses.json"],
+        # 哪 50 个点有诊断题。只发 id 列表（约 1.5KB），题库本体在 questions.js 里按需加载，
+        # 首屏拿到这个就能把「测一测」按钮标成可用/无题，不用等题库。
+        "quizTopics": quiz_topics,
         # 研究记录 1268 条独占 2.5MB，只留元数据供首屏显示条数；
         # 课标条目同理，正文随 details.js 走，首屏只要个数字
         "standardsCount": len(standards),
@@ -1122,12 +1156,17 @@ def main():
     _write_js("data.js", "TAXONOMY_DATA", viz_payload)
     _write_js("details.js", "TAXONOMY_DETAILS", details_payload)
     _write_js("research.js", "TAXONOMY_RESEARCH", research_payload)
+    _write_js("questions.js", "QUESTION_BANK", questions_payload)
 
     print("构建完成：")
     for name in list(artifacts) + ["teaching-research.json", "manifest.json"]:
         print(f"  data/{name}  {checksums[name]['bytes']:>8} bytes")
     for nm in ("data.js", "details.js", "research.js"):
         print(f"  viz/{nm:<11} {(VIZ / nm).stat().st_size:>8} bytes")
+    print(f"  viz/questions.js {len(questions_payload['questions'])} 题，"
+          f"覆盖 {len(quiz_topics)} 个主题 ({(VIZ / 'questions.js').stat().st_size / 1024:.0f} KB)")
+    if diag_bytes:
+        print(f"  viz/diagnose.js  {diag_bytes:>8} bytes")
     if n_courses:
         print(f"  viz/courses  {n_courses} 个课件已同步")
     n2024 = sum(1 for t in topics if t["textbooks2024"])
