@@ -3,14 +3,14 @@
   "author": "goral.cao",
   "license": "CC-BY-SA-4.0",
   "version": "1.0.0",
-  "updatedAt": "2026-10-29",
+  "updatedAt": "2026-10-30",
   "subject": "语文",
   "template": "explain",
   "topicId": "mt_word-idiom",
   "title": "四个字，怎么就能讲一件事？",
   "renderer": "story",
-  "duration": 13,
-  "interactions": 5,
+  "duration": 15,
+  "interactions": 7,
   "grade": 2,
   "standards": [
     "chinese-2022:S1:BQ"

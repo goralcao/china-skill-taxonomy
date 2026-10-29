@@ -1,5 +1,5 @@
 {
-  "version": "v0.47.0",
+  "version": "v0.48.0",
   "schemaVersion": 1,
   "generatedAt": "2026-10-30",
   "counts": {
@@ -258,14 +258,14 @@
       "author": "goral.cao",
       "license": "CC-BY-SA-4.0",
       "version": "1.0.0",
-      "updatedAt": "2026-10-29",
+      "updatedAt": "2026-10-30",
       "subject": "语文",
       "template": "explain",
       "topicId": "mt_char-writing",
       "title": "字写歪了，是手不稳吗？",
       "renderer": "writeChar",
-      "duration": 13,
-      "interactions": 6,
+      "duration": 17,
+      "interactions": 8,
       "grade": 1,
       "standards": [
         "chinese-2022:S1:BQ"
@@ -1441,14 +1441,14 @@
       "author": "goral.cao",
       "license": "CC-BY-SA-4.0",
       "version": "1.0.0",
-      "updatedAt": "2026-10-29",
+      "updatedAt": "2026-10-30",
       "subject": "语文",
       "template": "explain",
       "topicId": "mt_read-aloud",
       "title": "朗读：问句往上挑，句号收得住",
       "renderer": "readAloud",
-      "duration": 13,
-      "interactions": 6,
+      "duration": 17,
+      "interactions": 8,
       "grade": 1,
       "standards": [
         "chinese-2022:S1:LR"
@@ -2057,14 +2057,14 @@
       "author": "goral.cao",
       "license": "CC-BY-SA-4.0",
       "version": "1.0.0",
-      "updatedAt": "2026-10-29",
+      "updatedAt": "2026-10-30",
       "subject": "语文",
       "template": "explain",
       "topicId": "mt_word-idiom",
       "title": "四个字，怎么就能讲一件事？",
       "renderer": "story",
-      "duration": 13,
-      "interactions": 5,
+      "duration": 15,
+      "interactions": 7,
       "grade": 2,
       "standards": [
         "chinese-2022:S1:BQ"

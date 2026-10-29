@@ -3,14 +3,14 @@
   "author": "goral.cao",
   "license": "CC-BY-SA-4.0",
   "version": "1.0.0",
-  "updatedAt": "2026-10-29",
+  "updatedAt": "2026-10-30",
   "subject": "语文",
   "template": "explain",
   "topicId": "mt_read-aloud",
   "title": "朗读：问句往上挑，句号收得住",
   "renderer": "readAloud",
-  "duration": 13,
-  "interactions": 6,
+  "duration": 17,
+  "interactions": 8,
   "grade": 1,
   "standards": [
     "chinese-2022:S1:LR"

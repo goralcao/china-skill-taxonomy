@@ -1,14 +1,14 @@
 {
- "version": "v0.47.0",
+ "version": "v0.48.0",
  "generatedAt": "2026-10-30",
  "source": "courses/*/content.json（课件内可判分环节）",
  "audited": false,
  "note": "题目与解析出自课件原文，未经教师独立复核；题干已剔除依赖配图与上下文的题。",
  "counts": {
-  "total": 109,
+  "total": 115,
   "byType": {
-   "choice": 57,
-   "numeric": 52
+   "choice": 62,
+   "numeric": 53
   },
   "topicsCovered": 50,
   "topicsTotal": 1273
@@ -171,6 +171,25 @@
   },
   {
    "type": "choice",
+   "prompt": "「我」字一共 7 画。它的第一笔是哪一笔？",
+   "answer": "撇",
+   "choices": [
+    "撇",
+    "横",
+    "点"
+   ],
+   "explanation": "第一笔是撇，从右上往左下，先短后长。斜钩最长，一直伸到右下角——它是这个字的腿。",
+   "refute": {
+    "横": "写成横，是把「我」当成「找」的左半边了。「我」从右上起笔，第一笔是往左下的一撇。",
+    "点": "点一般在字的末笔或上部中间，做不了「我」的第一笔——它在这个字里是最后一笔。"
+   },
+   "id": "mt_char-writing_q1",
+   "topicId": "mt_char-writing",
+   "difficulty": "standard",
+   "origin": "courses/mt_char-writing/content.json#step4"
+  },
+  {
+   "type": "choice",
    "prompt": "「我们」里的「我」读哪个音？",
    "answer": "wǒ",
    "choices": [
@@ -185,10 +204,20 @@
     "wò": "第四声是「卧」的音，一路往下压，压到底就停了。",
     "wo": "「我」在「我们」里读得短一些，可它还是第三声，不会变成轻声。"
    },
-   "id": "mt_char-writing_q1",
+   "id": "mt_char-writing_q2",
    "topicId": "mt_char-writing",
    "difficulty": "standard",
-   "origin": "courses/mt_char-writing/content.json#step4"
+   "origin": "courses/mt_char-writing/content.json#step5"
+  },
+  {
+   "type": "numeric",
+   "prompt": "「们」字一共有几画？",
+   "answer": "5",
+   "explanation": "单人旁 2 画（撇、竖），右边的「门」3 画（点、竖、横折钩），加起来是 5 画。",
+   "id": "mt_char-writing_q3",
+   "topicId": "mt_char-writing",
+   "difficulty": "basic",
+   "origin": "courses/mt_char-writing/content.json#step7"
   },
   {
    "type": "choice",
@@ -1274,6 +1303,44 @@
    "origin": "courses/mt_read-aloud/content.json#step3"
   },
   {
+   "type": "choice",
+   "prompt": "读句子的时候碰到逗号，应该怎么读？",
+   "answer": "停一小下，换口气再往下读",
+   "choices": [
+    "停一小下，换口气再往下读",
+    "一口气读到句号才停",
+    "把声音提高，让听的人注意"
+   ],
+   "explanation": "逗号是「换气口」：声音可以不断，气要在这儿续上。停得太久，句子就被读断了。",
+   "refute": {
+    "一口气读到句号才停": "一口气读到句号，后半句就没气了，字也跟着越来越含糊。逗号就是留给你换气的。",
+    "把声音提高，让听的人注意": "提高嗓门那是强调，不是逗号的读法。逗号管的是停不停，不管嗓门高低。"
+   },
+   "id": "mt_read-aloud_q2",
+   "topicId": "mt_read-aloud",
+   "difficulty": "standard",
+   "origin": "courses/mt_read-aloud/content.json#step6"
+  },
+  {
+   "type": "choice",
+   "prompt": "读「猴子的尾巴长。」这句话，末尾的句号处声音该怎么处理？",
+   "answer": "往下落一点，收住，不再往上挑",
+   "choices": [
+    "往下落一点，收住，不再往上挑",
+    "往上挑起来，挂在半空",
+    "立刻掐断，一点余音都不留"
+   ],
+   "explanation": "答句要把声音放下。往上挑是问句的走法——答句还往上挑，听的人会以为你话没说完，等着接下文。",
+   "refute": {
+    "往上挑起来，挂在半空": "往上挑是问句的尾巴。答句跟着挑起来，听的人会以为你还在问他。",
+    "立刻掐断，一点余音都不留": "掐得太死听着像在生气。答句是「放下」而不是「砸下」，声音落到底再松。"
+   },
+   "id": "mt_read-aloud_q3",
+   "topicId": "mt_read-aloud",
+   "difficulty": "standard",
+   "origin": "courses/mt_read-aloud/content.json#step8"
+  },
+  {
    "type": "numeric",
    "prompt": "长方形长 6 米、宽 4 米，周长是多少米？",
    "answer": "20",
@@ -1600,6 +1667,25 @@
   },
   {
    "type": "choice",
+   "prompt": "「守株待兔」说的是下面哪一种人？",
+   "answer": "碰巧捡到一次便宜，从此不肯干活，天天等第二次",
+   "choices": [
+    "碰巧捡到一次便宜，从此不肯干活，天天等第二次",
+    "干完活坐在树下歇一会儿",
+    "运气特别好，好事总找上门"
+   ],
+   "explanation": "它笑的不是「等」，是把一次碰巧当成了一辈子的规律——兔子不会再撞第二回，田却先荒了。",
+   "refute": {
+    "干完活坐在树下歇一会儿": "这是把四个字当画面看了。歇一会儿不算错事，成语是笑人的，不是写实的。",
+    "运气特别好，好事总找上门": "说反了。守株待兔的人运气只有一次，后面全是空等。"
+   },
+   "id": "mt_word-idiom_q1",
+   "topicId": "mt_word-idiom",
+   "difficulty": "standard",
+   "origin": "courses/mt_word-idiom/content.json#step4"
+  },
+  {
+   "type": "choice",
    "prompt": "「守株待兔」里的「待」读哪个音？",
    "answer": "dài",
    "choices": [
@@ -1614,10 +1700,29 @@
     "dǎi": "没有这个音。别被「逮」带偏——「逮」才读 dǎi。",
     "dèi": "「得」在「得亏」里读 děi，跟「待」不是同一个字。"
    },
-   "id": "mt_word-idiom_q1",
+   "id": "mt_word-idiom_q2",
    "topicId": "mt_word-idiom",
    "difficulty": "standard",
-   "origin": "courses/mt_word-idiom/content.json#step4"
+   "origin": "courses/mt_word-idiom/content.json#step5"
+  },
+  {
+   "type": "choice",
+   "prompt": "下面哪种情况，用「亡羊补牢」最合适？",
+   "answer": "羊已经丢了一只，赶紧把圈补上",
+   "choices": [
+    "羊已经丢了一只，赶紧把圈补上",
+    "羊还没丢，先把圈修结实防着",
+    "羊丢了找不回来，干脆不养了"
+   ],
+   "explanation": "关键是「已经出了岔子，马上补，还来得及」。丢的那只羊是教训，动手补圈才是重点。",
+   "refute": {
+    "羊还没丢，先把圈修结实防着": "那是「未雨绸缪」，事前就防着。亡羊补牢说的是出事以后——羊已经丢了才补。",
+    "羊丢了找不回来，干脆不养了": "说反了。这个成语恰恰劝人别撒手：出了岔子赶紧补，比接着叹气有用。"
+   },
+   "id": "mt_word-idiom_q3",
+   "topicId": "mt_word-idiom",
+   "difficulty": "standard",
+   "origin": "courses/mt_word-idiom/content.json#step7"
   }
  ]
 }
