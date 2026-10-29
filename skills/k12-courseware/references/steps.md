@@ -68,6 +68,9 @@
 | `punctPick` | 点句读选标点（语文） | `items[{before,after,options,answer,why}]` | `tip` `done` `caption` `note` `warn` |
 | `choice` | 选择题（带迷思反馈） | `question` `options[]` `answer` | `misconception{}` `hint` `why` `title` |
 | `summary` | 小结 + 去向 | `title` `points[]` | `advice` |
+| `annotate` | 圈画（语文）：在原文里点出语言现象，只计数不判错 | `body.text` `body.marks[{t,why}]` `body.min` | `body.after` `body.revealLabel` `title` `ask` |
+| `draft` | 写下来（语文）：多行输入 + 支架词 + 写完再看的参考稿 | `body.rows` `body.chips[]` `body.minChars` | `body.rowHints[]` `body.sample` `body.sampleNote` `body.done` |
+| `rubric` | 自评量规（语文）：三维三级，给建议不给分 | `body.dimensions[{name,levels[{k,d}]}]` | `body.advice` `body.note` `lead` |
 
 除 `summary` 外，每步给 `title`。标题是这一屏的结论，不是栏目名。
 

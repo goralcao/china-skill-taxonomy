@@ -87,10 +87,17 @@ function scoreCourse(dir) {
     }
 
     // 3. 概念反馈：错项有没有说清「错在哪」
+    // 语文表达类没有对错题，这一维改看「有没有解释性文案」——易错点、参照稿、旁批
+    const isLang = meta.subject === '语文' || (content && content.subject === '语文');
     const choices = steps.filter(s => s.type === 'choice');
     const quizzes = steps.filter(s => s.type === 'quiz');
     const qTotal = choices.length + quizzes.length;
-    if (!qTotal) {
+    if (!qTotal && isLang) {
+      const explained = steps.filter(s => s.note || (s.body && (s.body.after || s.body.sampleNote))).length;
+      put('feedback', explained ? 12 : 0, explained
+        ? `${explained} 个环节带解释文案（无对错题，反馈不走判分）`
+        : '既没有对错题，也没有任何解释文案，学生错了也不知道错在哪');
+    } else if (!qTotal) {
       put('feedback', 0, '没有检测题，也就没有反馈');
     } else {
       let got = 0;
@@ -151,10 +158,12 @@ function scoreCourse(dir) {
   if (!engine) {
     put('assess', null, '手写页面：题目数未知');
   } else {
-    const qTotal = steps.filter(s => s.type === 'quiz' || s.type === 'choice').length;
-    if (qTotal >= 2) put('assess', 10, `${qTotal} 道检测题`);
-    else if (qTotal === 1) put('assess', 5, '只有 1 道检测题，看不出是否真会');
-    else put('assess', 0, '没有检测题');
+    // 语文的「留下痕迹」环节（圈画/动笔/自评）与检测题同权
+    const HOME = ['quiz', 'choice', 'annotate', 'draft', 'rubric'];
+    const qTotal = steps.filter(s => HOME.includes(s.type)).length;
+    if (qTotal >= 2) put('assess', 10, `${qTotal} 个可验证环节`);
+    else if (qTotal === 1) put('assess', 5, '只有 1 个可验证环节，看不出是否真会');
+    else put('assess', 0, '没有可验证环节');
   }
 
   // 7. 节奏：一次交互 2~7 分钟（drill 1~4），整节 8~20 分钟

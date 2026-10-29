@@ -170,7 +170,7 @@ for (const name of dirs) {
         fail(rel, 'content.steps 为空');
       } else {
         engineSteps = content.steps;
-        const TYPES = ['intro', 'text', 'vertical', 'geometry', 'solid', 'division', 'molecule', 'pyramid', 'calendar', 'decimal', 'table', 'compass', 'numberline', 'clock', 'law', 'triangle', 'counter', 'angle', 'quad', 'decGrid', 'mult2', 'fracMeaning', 'fracOps', 'fracReduce', 'spinner', 'decMult', 'decDiv', 'volume', 'pairs', 'treePlant', 'symmetry', 'chart', 'mean', 'polyArea', 'factorGrid', 'fracDiv', 'balance', 'callTree', 'circle', 'circleMeasure', 'sector', 'cylinder', 'quiz', 'choice', 'summary', 'sentBuild', 'pairMatch', 'transform', 'punctPick'];
+        const TYPES = ['intro', 'text', 'vertical', 'geometry', 'solid', 'division', 'molecule', 'pyramid', 'calendar', 'decimal', 'table', 'compass', 'numberline', 'clock', 'law', 'triangle', 'counter', 'angle', 'quad', 'decGrid', 'mult2', 'fracMeaning', 'fracOps', 'fracReduce', 'spinner', 'decMult', 'decDiv', 'volume', 'pairs', 'treePlant', 'symmetry', 'chart', 'mean', 'polyArea', 'factorGrid', 'fracDiv', 'balance', 'callTree', 'circle', 'circleMeasure', 'sector', 'cylinder', 'quiz', 'choice', 'summary', 'sentBuild', 'pairMatch', 'transform', 'punctPick', 'annotate', 'draft', 'rubric'];
         let quizzes = 0;
         content.steps.forEach((st, i) => {
           if (!TYPES.includes(st.type)) fail(rel, `第 ${i + 1} 步 type=${st.type} 不合法`);
@@ -190,12 +190,13 @@ for (const name of dirs) {
               } else {
                 for (const [opt, why] of Object.entries(mc)) {
                   if (!st.options.includes(opt)) fail(rel, `第 ${i + 1} 步 misconception 的「${opt}」不在选项里`);
-                  if (opt === st.answer) fail(rel, `第 ${i + 1} 步 misconception 不能给正确答案写错因`);
+                  // 语文的 soft 选择题不判对错，每个选项都要有解释，包括"预设答案"那一项
+                  if (opt === st.answer && !st.soft) fail(rel, `第 ${i + 1} 步 misconception 不能给正确答案写错因`);
                   if (typeof why !== 'string' || !why.trim()) fail(rel, `第 ${i + 1} 步 misconception「${opt}」缺错因`);
                   else if (why.length > 80) fail(rel, `第 ${i + 1} 步 misconception「${opt}」超过 80 字`);
                 }
-                const missing = (st.options || []).filter(o => o !== st.answer && !mc[o]);
-                if (missing.length) warn(rel, `第 ${i + 1} 步 choice 有 ${missing.length} 个错项没写 misconception`);
+                const missing = (st.options || []).filter(o => (o === st.answer && !st.soft) ? false : !mc[o]);
+                if (missing.length) warn(rel, `第 ${i + 1} 步 choice 有 ${missing.length} 个选项没写解释`);
               }
             }
           }
@@ -207,8 +208,15 @@ for (const name of dirs) {
             if (!isFinite(val)) fail(rel, `第 ${i + 1} 步 vertical 的算式不成立`);
           }
         });
-        if (quizzes !== meta.interactions) {
-          fail(rel, `meta.interactions=${meta.interactions}，content 里 ${quizzes} 道题`);
+        // 语文的一次"交互"是一次动手环节（圈画 / 动笔 / 自评 / 改一处），不是一道题
+        const LANG_SET = ['quiz', 'choice', 'annotate', 'draft', 'rubric',
+          'sentBuild', 'pairMatch', 'transform', 'punctPick'];
+        const isLangContent = content.subject === '语文';
+        const actCount = isLangContent
+          ? content.steps.filter(st => LANG_SET.includes(st.type)).length
+          : quizzes;
+        if (actCount !== meta.interactions) {
+          fail(rel, `meta.interactions=${meta.interactions}，content 里 ${actCount} 个${isLangContent ? '动手环节' : '题'}`);
         }
         // 至少要有一处易错点
         const hasPitfall = content.steps.some(st =>

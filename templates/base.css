@@ -442,3 +442,108 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
   .pm-card { font-size: 12.5px; padding: 8px 10px; }
   .sb-sent, .pp-line { font-size: 17px; }
 }
+
+/* ══════════════════════════════════════════════════════
+ * 语文三件套：圈画 / 写下来 / 自评量规
+ */
+/* 圈画 */
+.an-text {
+  font-size: 18px; line-height: 2.4; padding: 16px 14px; border-radius: 10px;
+  background: var(--card); border: 1px solid var(--line); letter-spacing: .3px;
+}
+.an-tok {
+  display: inline; background: none; border: 0; border-bottom: 2px dashed var(--dim);
+  color: inherit; font: inherit; line-height: inherit; cursor: pointer;
+  padding: 0 1px; margin: 0 1px;
+}
+.an-tok:focus { outline: none; }
+.an-tok:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.an-tok:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.an-tok.hit {
+  color: var(--accent); font-weight: 600; background: rgba(255, 209, 102, .14);
+  border-bottom: 2px solid var(--accent); border-radius: 4px;
+}
+.an-stat { font-size: 13px; color: var(--dim); margin-top: 10px; }
+.an-stat b { color: var(--text); font-size: 15px; }
+.an-stat.ok b { color: var(--ok); }
+.an-why { font-size: 13.5px; color: var(--dim); margin-top: 6px; min-height: 20px; line-height: 1.8; }
+.an-why b { color: var(--text); }
+.an-after {
+  margin-top: 10px; padding: 12px 14px; border-radius: 9px;
+  background: rgba(255, 209, 102, .07); border: 1px dashed rgba(255, 209, 102, .35);
+  font-size: 13.5px; line-height: 1.9; color: var(--dim);
+}
+.an-after b { color: var(--accent); }
+
+/* 写下来 */
+.dr-wrap { width: 100%; max-width: 560px; }
+.dr-input {
+  width: 100%; box-sizing: border-box; display: block; margin-bottom: 8px;
+  background: var(--card); border: 1px solid var(--line); border-radius: 9px;
+  color: var(--text); font: inherit; font-size: 16px; line-height: 2; padding: 10px 12px;
+  resize: vertical; min-height: 62px;
+}
+.dr-input:focus { outline: none; border-color: var(--accent); }
+.dr-input::placeholder { color: var(--dim); opacity: .7; }
+.dr-tip { font-size: 12px; color: var(--dim); margin: 4px 0 6px; }
+.dr-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+.dr-chip {
+  background: rgba(255, 209, 102, .08); border: 1px dashed rgba(255, 209, 102, .4);
+  color: var(--accent); border-radius: 999px; padding: 4px 11px; font-size: 12.5px;
+  font-family: inherit; cursor: pointer;
+}
+.dr-chip:hover { background: rgba(255, 209, 102, .16); }
+.dr-meta { font-size: 12px; color: var(--dim); margin: 2px 0 10px; }
+.dr-meta b { color: var(--text); }
+.dr-meta.ok b { color: var(--ok); }
+.dr-bar { display: flex; flex-wrap: wrap; gap: 8px; }
+.dr-sample {
+  margin-top: 12px; padding: 12px 14px; border-radius: 9px;
+  background: rgba(255, 255, 255, .03); border: 1px solid var(--line);
+  font-size: 14.5px; line-height: 2;
+}
+.dr-sample-head { font-size: 11.5px; color: var(--dim); letter-spacing: .5px; margin-bottom: 4px; }
+.dr-sample p { margin: 0; }
+
+/* 自评量规 */
+.rb-wrap { width: 100%; max-width: 620px; }
+.rb-row {
+  padding: 12px 0; border-bottom: 1px solid var(--line);
+  display: grid; grid-template-columns: 96px 1fr; gap: 4px 12px; align-items: center;
+}
+.rb-row:last-child { border-bottom: 0; }
+.rb-name { font-size: 14px; font-weight: 600; color: var(--text); }
+.rb-opts { display: flex; gap: 6px; }
+.rb-opt {
+  background: var(--card); border: 1px solid var(--line); color: var(--dim);
+  border-radius: 7px; padding: 5px 12px; font-size: 13px; font-family: inherit; cursor: pointer;
+}
+.rb-opt:hover { border-color: var(--accent); color: var(--accent); }
+.rb-opt.on { border-color: var(--accent); background: rgba(255, 209, 102, .12); color: var(--accent); font-weight: 600; }
+.rb-desc { grid-column: 2; font-size: 12.5px; color: var(--dim); min-height: 18px; line-height: 1.8; }
+.rb-desc.on { color: var(--text); }
+.rb-result { margin-top: 12px; font-size: 13px; color: var(--dim); min-height: 22px; }
+.rb-result.on { padding: 12px 14px; border-radius: 9px; background: rgba(74, 222, 128, .08); color: var(--text); }
+
+/* 语文结算回执 */
+.self-recap { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.self-recap span {
+  font-size: 12px; color: var(--accent); border: 1px solid rgba(255, 209, 102, .35);
+  border-radius: 999px; padding: 3px 10px;
+}
+.draft-recap {
+  margin-top: 12px; padding: 12px 14px; border-radius: 9px;
+  background: var(--card); border: 1px solid var(--line);
+}
+.draft-recap b { font-size: 11.5px; color: var(--dim); font-weight: 400; letter-spacing: .5px; }
+.draft-recap p { margin: 4px 0 0; font-size: 15px; line-height: 1.9; }
+
+/* 软选择：点哪个都能看解释，不标红 */
+.opt.picked { border-color: var(--accent); color: var(--accent); background: rgba(255, 209, 102, .1); }
+
+@media (max-width: 480px) {
+  .an-text { font-size: 16.5px; line-height: 2.3; padding: 12px 12px; }
+  .rb-row { grid-template-columns: 72px 1fr; }
+  .rb-opt { padding: 5px 9px; font-size: 12.5px; }
+  .dr-input { font-size: 16px; }
+}

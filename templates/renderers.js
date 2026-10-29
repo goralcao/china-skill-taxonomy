@@ -5541,6 +5541,7 @@
       var i = cur();
       if (i < 0) {
         ask.textContent = '扩写完成';
+        if (spec.onDone) spec.onDone();
         msg.className = 'sb-msg ok';
         msg.textContent = spec.done || '句子从 ' + core.length + ' 字变成 ' + len() + ' 字，画面清楚多了。';
         return;
@@ -5645,6 +5646,9 @@
           mBtns[sel].textContent = p.word;
           msg.className = 'pm-msg ok';
           msg.textContent = '对了 · ' + (p.why || ('这两句是' + p.word.replace(/…/g, '').replace(/、/g, '') + '关系'));
+          var doneN = 0;
+          lBtns.forEach(function (x) { if (x.classList.contains('done')) doneN++; });
+          if (doneN === pairs.length && spec.onDone) spec.onDone();
         } else {
           rb.classList.add('shake');
           setTimeout(function () { rb.classList.remove('shake'); }, 420);
@@ -5734,6 +5738,7 @@
       var c = changes[step];
       if (!c) {
         msg.className = 'tf-msg ok';
+        if (spec.onDone) spec.onDone();
         msg.textContent = spec.done || '改完了：人称、标点都跟着换了位置。';
         return;
       }
@@ -5744,7 +5749,8 @@
         var b = h('button', 'tf-opt', o);
         b.type = 'button';
         b.onclick = function () {
-          if (o === c.to) {
+          // 「改成空」这类变化，选项文字是「去掉」，与 to 的空串对不上——用 pick 指定
+          if (o === (c.pick || c.to)) {
             var i = cur.indexOf(c.from);
             if (i >= 0) cur = cur.slice(0, i) + c.to + cur.slice(i + c.from.length);
             lastTo = c.to; step++;
@@ -5856,6 +5862,7 @@
       } else {
         i++; draw(); drawBar();
         msg.className = 'pp-msg ok';
+        if (spec.onDone) spec.onDone();
         msg.textContent = spec.done || '三句都点完了：看并列的是什么，就知道该用哪个标点。';
       }
     }

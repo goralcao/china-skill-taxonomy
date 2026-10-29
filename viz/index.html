@@ -2609,8 +2609,13 @@
     if (p.get('done') !== '1') return;
     const score = p.get('score') || '';
     const mins = p.get('minutes') || '';
-    setTimeout(() => toast(`课件已完成 · 答对 ${score} · 用时 ${mins} 分钟`), 700);
+    const kind = p.get('kind') || '';
+    const marks = p.get('marks') || '';
+    setTimeout(() => toast(kind === 'chinese'
+      ? `课件完成 · ${marks} 项留下了痕迹 · 用时 ${mins} 分钟`
+      : `课件已完成 · 答对 ${score} · 用时 ${mins} 分钟`), 700);
     p.delete('done'); p.delete('score'); p.delete('minutes');
+    p.delete('kind'); p.delete('marks');
     const qs = p.toString();
     try {
       history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '') + location.hash);

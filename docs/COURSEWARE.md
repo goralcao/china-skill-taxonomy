@@ -413,7 +413,7 @@ localStorage.setItem('stx.course.' + TOPIC_ID,
 
 - `templates/engine.js` 接管页面骨架与全部通用逻辑
 - 课件只剩 `content.json`（steps 数组）+ 一个 16 行的薄壳 `index.html`
-- 45 种步骤类型：`intro` / `text` / `vertical` / `geometry` / `solid` / `pyramid` / `division` / `mult2` / `molecule` / `calendar` / `decimal` / `table` / `compass` / `law` / `triangle` / `counter` / `angle` / `quad` / `decGrid` / `chart` / `mean` / `polyArea` / `factorGrid` / `fracMeaning` / `fracOps` / `fracReduce` / `spinner` / `decMult` / `decDiv` / `volume` / `pairs` / `treePlant` / `symmetry` / `numberline` / `clock` / `fracDiv` / `balance` / `callTree` / `circle` / `circleMeasure` / `sector` / `cylinder` / `quiz` / `choice` / `summary`
+- 48 种步骤类型：`intro` / `text` / `vertical` / `geometry` / `solid` / `pyramid` / `division` / `mult2` / `molecule` / `calendar` / `decimal` / `table` / `compass` / `law` / `triangle` / `counter` / `angle` / `quad` / `decGrid` / `chart` / `mean` / `polyArea` / `factorGrid` / `fracMeaning` / `fracOps` / `fracReduce` / `spinner` / `decMult` / `decDiv` / `volume` / `pairs` / `treePlant` / `symmetry` / `numberline` / `clock` / `fracDiv` / `balance` / `callTree` / `circle` / `circleMeasure` / `sector` / `cylinder` / `quiz` / `choice` / `summary` / `annotate` / `draft` / `rubric` / `sentBuild` / `pairMatch` / `transform` / `punctPick`
 - 构建时把 content.json、engine.js、renderers.js、base.css 全部内联，产物仍是单文件
 
 写一节课从「复制 300 行 HTML」变成「写 60 行 JSON」。

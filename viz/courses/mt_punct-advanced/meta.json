@@ -2,15 +2,15 @@
   "status": "reviewed",
   "author": "goral.cao",
   "license": "CC-BY-SA-4.0",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "updatedAt": "2026-10-29",
   "subject": "语文",
   "template": "explain",
   "topicId": "mt_punct-advanced",
   "title": "点句读：顿号、分号与书名号",
   "renderer": "punctPick",
-  "duration": 11,
-  "interactions": 3,
+  "duration": 13,
+  "interactions": 5,
   "grade": 3,
   "standards": [],
   "prerequisites": [
@@ -22,9 +22,9 @@
     "mt_sent-fix"
   ],
   "objectives": [
-    "判断句子里的停顿是词语并列、分句并列还是普通停顿",
-    "给并列词语用顿号、并列分句用分号、书名用书名号",
-    "说清顿号和逗号的判断依据"
+    "先判断并列的是词语还是分句，再选顿号、逗号或分号",
+    "给一句没有标点的话加标点，并说出理由",
+    "知道书名号必须成对使用"
   ],
   "cognitiveAction": "辨析"
 }

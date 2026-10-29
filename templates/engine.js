@@ -27,6 +27,8 @@
     var cur = 0;
     var startedAt = Date.now();
     var total = C.steps.length;
+    // 语文课件走另一套学程：过关看「有没有留下痕迹」，不看「有没有选对」
+    var LANG = C.subject === '语文';
 
     /* ── 外壳 ─────────────────────────────────────────── */
     var header = h('header');
@@ -386,12 +388,18 @@
         return f;
       },
 
-      sentBuild: function (s) {
+      sentBuild: function (s, i) {
         var f = document.createDocumentFragment();
         if (s.title) f.appendChild(h('h2', null, s.title));
         var box = h('div', 'viz');
         f.appendChild(box);
-        var ctrl = CR.sentBuild(box, s.body || s);
+        var spec = s.body || s;
+        // 渲染器做完最后一个动作时回报引擎：这一步"留下了痕迹"
+        spec.onDone = function () {
+          var st = stateOf(i);
+          if (!st.solved) { st.solved = true; syncNav(); }
+        };
+        var ctrl = CR.sentBuild(box, spec);
         if (s.caption) {
           var cap = h('div', 'viz-cap');
           cap.innerHTML = s.caption;
@@ -406,12 +414,18 @@
         return f;
       },
 
-      pairMatch: function (s) {
+      pairMatch: function (s, i) {
         var f = document.createDocumentFragment();
         if (s.title) f.appendChild(h('h2', null, s.title));
         var box = h('div', 'viz');
         f.appendChild(box);
-        var ctrl = CR.pairMatch(box, s.body || s);
+        var spec = s.body || s;
+        // 渲染器做完最后一个动作时回报引擎：这一步"留下了痕迹"
+        spec.onDone = function () {
+          var st = stateOf(i);
+          if (!st.solved) { st.solved = true; syncNav(); }
+        };
+        var ctrl = CR.pairMatch(box, spec);
         if (s.caption) {
           var cap = h('div', 'viz-cap');
           cap.innerHTML = s.caption;
@@ -426,12 +440,18 @@
         return f;
       },
 
-      transform: function (s) {
+      transform: function (s, i) {
         var f = document.createDocumentFragment();
         if (s.title) f.appendChild(h('h2', null, s.title));
         var box = h('div', 'viz');
         f.appendChild(box);
-        var ctrl = CR.transform(box, s.body || s);
+        var spec = s.body || s;
+        // 渲染器做完最后一个动作时回报引擎：这一步"留下了痕迹"
+        spec.onDone = function () {
+          var st = stateOf(i);
+          if (!st.solved) { st.solved = true; syncNav(); }
+        };
+        var ctrl = CR.transform(box, spec);
         if (s.caption) {
           var cap = h('div', 'viz-cap');
           cap.innerHTML = s.caption;
@@ -446,12 +466,18 @@
         return f;
       },
 
-      punctPick: function (s) {
+      punctPick: function (s, i) {
         var f = document.createDocumentFragment();
         if (s.title) f.appendChild(h('h2', null, s.title));
         var box = h('div', 'viz');
         f.appendChild(box);
-        var ctrl = CR.punctPick(box, s.body || s);
+        var spec = s.body || s;
+        // 渲染器做完最后一个动作时回报引擎：这一步"留下了痕迹"
+        spec.onDone = function () {
+          var st = stateOf(i);
+          if (!st.solved) { st.solved = true; syncNav(); }
+        };
+        var ctrl = CR.punctPick(box, spec);
         if (s.caption) {
           var cap = h('div', 'viz-cap');
           cap.innerHTML = s.caption;
@@ -461,6 +487,270 @@
         if (s.note) {
           var card = h('div', 'card' + (s.warn ? ' pitfall' : ' tip'));
           card.innerHTML = '<p style="margin:0">' + s.note + '</p>';
+          f.appendChild(card);
+        }
+        return f;
+      },
+
+      /* ── 语文专用：圈画 ─────────────────────────────────
+       * 不讲对错，只记「你圈到了哪几处、还剩几处没被注意到」。
+       * 过关条件是圈够 min 处，不是选中某个预设选项。
+       */
+      annotate: function (s, i) {
+        var f = document.createDocumentFragment();
+        if (s.title) f.appendChild(h('h2', null, s.title));
+        if (s.ask) {
+          var q = h('p', 'quiz-q');
+          q.innerHTML = s.ask;
+          f.appendChild(q);
+        }
+        var b = s.body || s;
+        var text = b.text || '';
+        var marks = b.marks || [];
+        var need = b.min || Math.min(2, marks.length || 1);
+
+        var box = h('div', 'an-text');
+        f.appendChild(box);
+
+        // 按 marks 的出现顺序把原文切成「普通文字 / 可点的词」两段
+        var segs = [], rest = text;
+        marks.forEach(function (m, k) {
+          var idx = rest.indexOf(m.t);
+          if (idx < 0) return;
+          if (idx > 0) segs.push({ t: rest.slice(0, idx) });
+          segs.push({ t: m.t, k: k });
+          rest = rest.slice(idx + m.t.length);
+        });
+        if (rest) segs.push({ t: rest });
+
+        var stat = h('div', 'an-stat');
+        var why = h('div', 'an-why', b.idle || '点你找到的词，点错也没关系。');
+        var found = {};
+        var n = 0;
+
+        function paint() {
+          stat.innerHTML = '已圈出 <b>' + n + '</b> 处' + (n >= need ? ' · 够了，可以往下' : '，再找找');
+          stat.className = 'an-stat' + (n >= need ? ' ok' : '');
+        }
+
+        segs.forEach(function (g) {
+          if (g.k === undefined) { box.appendChild(document.createTextNode(g.t)); return; }
+          var tok = h('button', 'an-tok', g.t);
+          tok.type = 'button';
+          tok.onclick = function () {
+            if (found[g.k]) {
+              why.innerHTML = '<b>' + g.t + '</b>' + (marks[g.k].why || '');
+              return;
+            }
+            found[g.k] = true; n++;
+            tok.classList.add('hit');
+            why.innerHTML = '<b>你圈出了「' + g.t + '」</b>　' + (marks[g.k].why || '');
+            paint();
+            if (n >= need) {
+              stateOf(i).solved = true;
+              stateOf(i).found = n;
+              syncNav();
+            }
+          };
+          box.appendChild(tok);
+        });
+
+        f.appendChild(stat);
+        f.appendChild(why);
+
+        if (b.after) {
+          var reveal = h('button', 'btn small', b.revealLabel || '看看还有哪几处没被注意到');
+          reveal.type = 'button';
+          var after = h('div', 'an-after');
+          after.innerHTML = b.after;
+          after.style.display = 'none';
+          reveal.onclick = function () { after.style.display = ''; reveal.style.display = 'none'; };
+          f.appendChild(reveal);
+          f.appendChild(after);
+        }
+        paint();
+        return f;
+      },
+
+      /* ── 语文专用：写下来 ───────────────────────────────
+       * 开放表达：给支架、给最小篇幅、给「写完再看」的参考稿，但不判对错。
+       * 提交只回答一个问题：你动笔了吗。
+       */
+      draft: function (s, i) {
+        var f = document.createDocumentFragment();
+        if (s.title) f.appendChild(h('h2', null, s.title));
+        if (s.ask) {
+          var q = h('p', 'quiz-q');
+          q.innerHTML = s.ask;
+          f.appendChild(q);
+        }
+        var b = s.body || s;
+        var rows = b.rows || 1;
+        var chips = b.chips || [];
+        var min = b.minChars || 0;
+        var minPer = b.minPerRow || 2;
+
+        var wrap = h('div', 'dr-wrap');
+        f.appendChild(wrap);
+        var boxes = [];
+        for (var r = 0; r < rows; r++) {
+          var ta = document.createElement('textarea');
+          ta.className = 'dr-input';
+          ta.rows = 2;
+          ta.placeholder = (b.rowHints && b.rowHints[r]) || b.placeholder || '在这里写…';
+          ta.setAttribute('aria-label', (b.rowHints && b.rowHints[r]) || '写一句');
+          ta.oninput = count;
+          boxes.push(ta);
+          wrap.appendChild(ta);
+        }
+
+        if (chips.length) {
+          wrap.appendChild(h('div', 'dr-tip', b.chipTip || '卡住了就点一个提示词，用不用随你：'));
+          var chipRow = h('div', 'dr-chips');
+          wrap.appendChild(chipRow);
+          chips.forEach(function (c) {
+            var cb = h('button', 'dr-chip', c);
+            cb.type = 'button';
+            cb.onclick = function () {
+              var live = null;
+              boxes.forEach(function (x) { if (document.activeElement === x) live = x; });
+              var ta2 = live || boxes[boxes.length - 1];
+              ta2.value += c;
+              ta2.focus();
+              count();
+            };
+            chipRow.appendChild(cb);
+          });
+        }
+
+        var meta = h('div', 'dr-meta');
+        wrap.appendChild(meta);
+        var bar = h('div', 'dr-bar');
+        f.appendChild(bar);
+        var ok = h('button', 'btn small primary', b.okLabel || '我写好了');
+        ok.type = 'button';
+        bar.appendChild(ok);
+
+        var sampleBtn = null, sampleBox = null;
+        if (b.sample) {
+          sampleBtn = h('button', 'btn small', b.sampleLabel || '写完再看别人怎么写');
+          sampleBtn.type = 'button';
+          bar.appendChild(sampleBtn);
+          sampleBox = h('div', 'dr-sample');
+          sampleBox.innerHTML = '<div class="dr-sample-head">参考稿 · 不是标准答案，只看它多了什么</div>' +
+            '<p>' + b.sample + '</p>' + (b.sampleNote ? '<p class="muted">' + b.sampleNote + '</p>' : '');
+          sampleBox.style.display = 'none';
+          f.appendChild(sampleBox);
+          sampleBtn.onclick = function () {
+            sampleBox.style.display = '';
+            sampleBtn.style.display = 'none';
+          };
+        }
+
+        var fb = h('div');
+        f.appendChild(fb);
+
+        function count() {
+          var totalChars = 0, filled = 0;
+          boxes.forEach(function (x) {
+            var v = x.value.replace(/\s/g, '');
+            totalChars += v.length;
+            if (v.length >= minPer) filled++;
+          });
+          meta.innerHTML = '已写 <b>' + totalChars + '</b> 字' +
+            (min ? '，目标 ' + min + ' 字' : '') +
+            (rows > 1 ? ' · 写满 ' + filled + ' / ' + rows + ' 行' : '');
+          meta.className = 'dr-meta' + (totalChars >= min && filled === rows ? ' ok' : '');
+        }
+
+        ok.onclick = function () {
+          var totalChars = 0, filled = 0;
+          boxes.forEach(function (x) {
+            var v = x.value.replace(/\s/g, '');
+            totalChars += v.length;
+            if (v.length >= minPer) filled++;
+          });
+          if (rows > 1 && filled < rows) {
+            fb.className = 'card tip';
+            fb.innerHTML = '<p style="margin:0">还有 ' + (rows - filled) + ' 行空着。想到多少写多少，写不满也能往下走。</p>';
+            return;
+          }
+          if (totalChars < min) {
+            fb.className = 'card tip';
+            fb.innerHTML = '<p style="margin:0">还差 ' + (min - totalChars) + ' 个字。试着补一个「什么样的」或「怎样地」，补不上也可以往下走。</p>';
+            return;
+          }
+          var st = stateOf(i);
+          st.solved = true;
+          st.draft = boxes.map(function (x) { return x.value.trim(); }).filter(Boolean).join('\n');
+          fb.className = 'card ok';
+          fb.innerHTML = '<p style="margin:0">' + (b.done || '记下了。往下走，回头再改一遍。') + '</p>';
+          ok.disabled = true;
+          syncNav();
+        };
+
+        count();
+        return f;
+      },
+
+      /* ── 语文专用：自评量规 ─────────────────────────────
+       * 没有分数。学生自己对照三级描述打钩，输出的是「下一步改哪里」。
+       */
+      rubric: function (s, i) {
+        var f = document.createDocumentFragment();
+        if (s.title) f.appendChild(h('h2', null, s.title));
+        if (s.lead) {
+          var lead = h('p', 'muted');
+          lead.innerHTML = s.lead;
+          f.appendChild(lead);
+        }
+        var b = s.body || s;
+        var dims = b.dimensions || [];
+        var wrap = h('div', 'rb-wrap');
+        f.appendChild(wrap);
+        var chosen = {};
+        var doneCount = 0;
+        var result = h('div', 'rb-result');
+
+        dims.forEach(function (d, k) {
+          var row = h('div', 'rb-row');
+          row.appendChild(h('div', 'rb-name', d.name));
+          var opts = h('div', 'rb-opts');
+          row.appendChild(opts);
+          var desc = h('div', 'rb-desc', b.descIdle || '选一级，看它要求什么');
+          row.appendChild(desc);
+          (d.levels || []).forEach(function (lv) {
+            var btn = h('button', 'rb-opt', lv.k);
+            btn.type = 'button';
+            btn.onclick = function () {
+              [].slice.call(opts.children).forEach(function (x) { x.classList.remove('on'); });
+              btn.classList.add('on');
+              desc.innerHTML = lv.d;
+              desc.className = 'rb-desc on';
+              if (!chosen[k]) doneCount++;
+              chosen[k] = lv.k;
+              var st = stateOf(i);
+              st.self = st.self || {};
+              st.self[d.name] = lv.k;
+              if (doneCount === dims.length) {
+                st.solved = true;
+                result.className = 'rb-result on';
+                result.innerHTML = '<b>记下了。</b>' + (b.advice || '哪一维还没到「优秀」，就回头只改那一处，不用重写整句。');
+                syncNav();
+              } else {
+                result.className = 'rb-result';
+                result.textContent = '还有 ' + (dims.length - doneCount) + ' 维没评。';
+              }
+            };
+            opts.appendChild(btn);
+          });
+          wrap.appendChild(row);
+        });
+
+        f.appendChild(result);
+        if (b.note) {
+          var card = h('div', 'card tip');
+          card.innerHTML = '<p style="margin:0">' + b.note + '</p>';
           f.appendChild(card);
         }
         return f;
@@ -1034,8 +1324,18 @@
           b.type = 'button';
           b.onclick = function () {
             var st = stateOf(i);
-            if (st.solved) return;
+            if (st.solved && !s.soft) return;
             st.attempts++;
+            // 语文的「软选择」：点哪个都能看解释，不标红、不计对错、不拦路
+            if (s.soft) {
+              [].slice.call(wrap.children).forEach(function (x) { x.classList.remove('picked'); });
+              b.classList.add('picked');
+              st.solved = true; st.choice = o;
+              fbSlot.className = 'card tip';
+              fbSlot.innerHTML = (s.misconception && s.misconception[o]) || s.hint || '';
+              syncNav();
+              return;
+            }
             if (o === s.answer) {
               b.classList.add('right');
               st.solved = true; st.first = st.attempts === 1;
@@ -1083,16 +1383,18 @@
       },
     };
 
-    /** 给可演算的呈现器挂一组按钮：一步一步算 / 重来 */
+    /** 给可演算的呈现器挂一组按钮：一步步演示 / 重来
+     *  语文里这套东西不叫「算」，叫「看老师改这一句」——同一机制，两种说法。
+     */
     function attachDemo(frag, ctrl, s) {
       if (!ctrl || typeof ctrl.next !== 'function' || s.demo === false) return;
       var wrap = h('div', 'demo');
-      var label = s.demoLabel || '▶ 一步一步算';
+      var label = s.demoLabel || (LANG ? '▶ 看老师改这一句' : '▶ 一步一步算');
       var next = h('button', 'btn small primary', label);
       var reset = h('button', 'btn small', '重来');
-      var tip = h('p', 'demo-tip', s.demoHint || '点按钮，一位一位算给你看。');
-      var idle = s.demoHint || '点按钮，一位一位算给你看。';
-      var doneLabel = s.demoDone || '算完了';
+      var idle = s.demoHint || (LANG ? '先自己试一次，再看不迟。' : '点按钮，一位一位算给你看。');
+      var tip = h('p', 'demo-tip', idle);
+      var doneLabel = s.demoDone || (LANG ? '这一步改完了' : '算完了');
 
       next.onclick = function () {
         var r = ctrl.next();
@@ -1137,8 +1439,12 @@
     });
 
     function isQuiz(i) {
-      var t = C.steps[i] && C.steps[i].type;
-      return t === 'quiz' || t === 'choice';
+      var s = C.steps[i];
+      if (!s) return false;
+      if (s.type !== 'quiz' && s.type !== 'choice') return false;
+      // 语文默认不设门禁：只有真有一条对错线的语言知识，才显式写 hard:true
+      if (LANG && s.hard !== true) return false;
+      return true;
     }
 
     function syncNav() {
@@ -1172,6 +1478,7 @@
 
     /* ── 结算 ─────────────────────────────────────────── */
     function finish() {
+      if (LANG) { finishLang(); return; }
       var quizIdx = [];
       C.steps.forEach(function (s, i) { if (isQuiz(i)) quizIdx.push(i); });
       var first = quizIdx.filter(function (i) { return stateOf(i).first; }).length;
@@ -1206,6 +1513,74 @@
         q.set('done', '1');
         q.set('score', first + '/' + quizIdx.length);
         q.set('minutes', String(mins));
+        location.href = '../../viz/index.html?' + q.toString() + '#t=' + C.topicId;
+      }, 900);
+    }
+
+    /* 语文结算：不谈「答对率」，只报「留下了什么痕迹」。
+     * 五项痕迹：圈了几处、写了没有、改了没有、自评了几维、走了几步。
+     */
+    function finishLang() {
+      var TASK = ['choice', 'quiz', 'annotate', 'draft', 'rubric',
+        'sentBuild', 'pairMatch', 'transform', 'punctPick'];
+      var tasks = 0, marks = 0;
+      C.steps.forEach(function (s, k) {
+        if (TASK.indexOf(s.type) < 0) return;
+        tasks++;
+        if (stateOf(k).solved) marks++;
+      });
+      var mins = Math.max(1, Math.round((Date.now() - startedAt) / 60000));
+
+      var selfLines = [], draftText = '';
+      C.steps.forEach(function (s, k) {
+        var st = stateOf(k);
+        if (s.type === 'rubric' && st.self) {
+          Object.keys(st.self).forEach(function (d) { selfLines.push(d + '：' + st.self[d]); });
+        }
+        if (st.draft) draftText = st.draft;
+      });
+
+      var card = $('scoreCard');
+      if (card) {
+        card.innerHTML =
+          '<div class="score">' + marks + ' / ' + tasks + ' <small>项留下了痕迹</small></div>' +
+          '<p class="muted" style="margin:6px 0 0">用时约 ' + mins + ' 分钟</p>' +
+          (selfLines.length
+            ? '<div class="self-recap">' + selfLines.map(function (x) { return '<span>' + x + '</span>'; }).join('') + '</div>'
+            : '') +
+          (draftText ? '<div class="draft-recap"><b>你写的这一句</b><p>' +
+            draftText.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/\n/g, '<br>') + '</p></div>' : '') +
+          '<p style="margin:10px 0 0">' + (C.advice || '把今天写的那一句存进句子本，明天再读一遍。') + '</p>';
+      }
+
+      try {
+        localStorage.setItem('stx.course.' + C.topicId, JSON.stringify({
+          done: true, kind: 'chinese', marks: marks, tasks: tasks,
+          self: selfLines, draft: draftText,
+          minutes: mins, at: Date.now(), v: C.version || '1.0.0',
+        }));
+        if (draftText) {
+          var book = [];
+          try { book = JSON.parse(localStorage.getItem('stx.sentences') || '[]') || []; } catch (e2) { book = []; }
+          book.unshift({ t: draftText, topic: C.topicId, title: C.title, at: Date.now() });
+          localStorage.setItem('stx.sentences', JSON.stringify(book.slice(0, 20)));
+        }
+      } catch (e) { /* 隐私模式忽略 */ }
+
+      if (G && CR.extend) CR.extend($('extend'), G, { score: marks + '/' + tasks });
+
+      if (new URLSearchParams(location.search).get('stay') === '1') return;
+
+      btnNext.textContent = '返回图谱…';
+      btnNext.disabled = true;
+      var sc = new URLSearchParams(location.search).get('sharecode');
+      setTimeout(function () {
+        var q = new URLSearchParams();
+        if (sc) q.set('sharecode', sc);
+        q.set('done', '1');
+        q.set('kind', 'chinese');
+        q.set('minutes', String(mins));
+        q.set('marks', marks + '/' + tasks);
         location.href = '../../viz/index.html?' + q.toString() + '#t=' + C.topicId;
       }, 900);
     }

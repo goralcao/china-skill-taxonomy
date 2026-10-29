@@ -806,7 +806,8 @@ def _renderers_for_course(content, course_dir) -> set:
         html = (course_dir / "index.html").read_text(encoding="utf-8")
         called = set(re.findall(r"CR\.([A-Za-z_$][\w$]*)\s*\(", html))
         return called | helper if called else None
-    plain = {"intro", "text", "quiz", "choice", "summary"}
+    # 纯引擎步骤（不需要 CR 呈现器）：语文的 annotate/draft/rubric 也在这一类
+    plain = {"intro", "text", "quiz", "choice", "summary", "annotate", "draft", "rubric"}
     alias = {"decimal": "decimalBar", "table": "barGroup"}  # 引擎别名：类型名 → 渲染器名
     used = set()
     for st in content.get("steps", []):

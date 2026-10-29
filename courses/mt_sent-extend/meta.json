@@ -2,15 +2,15 @@
   "status": "reviewed",
   "author": "goral.cao",
   "license": "CC-BY-SA-4.0",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "updatedAt": "2026-10-29",
   "subject": "语文",
   "template": "explain",
   "topicId": "mt_sent-extend",
   "title": "扩句：把「小鸟飞」写成一句话",
   "renderer": "sentBuild",
-  "duration": 11,
-  "interactions": 3,
+  "duration": 13,
+  "interactions": 5,
   "grade": 3,
   "standards": [],
   "prerequisites": [
@@ -22,9 +22,9 @@
     "mt_write-observe"
   ],
   "objectives": [
-    "给一个简单句加上「什么样的」「在哪里」「怎样地」三类修饰语",
-    "说出加修饰语之后句子字数变长、信息变多",
-    "从几个词里挑出让句子更具体的那一个"
+    "在句子里认出写出「样子、地方、心情」的修饰语",
+    "自己把「小猫叫」写成一句能看见画面的话（连写三行，一行比一行具体）",
+    "用「添了没 / 添得对吗 / 看得见吗」三条标准评价自己写的句子"
   ],
   "cognitiveAction": "构造"
 }
