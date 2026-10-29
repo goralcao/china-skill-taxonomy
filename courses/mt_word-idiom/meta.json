@@ -1,0 +1,31 @@
+{
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-29",
+  "subject": "语文",
+  "template": "explain",
+  "topicId": "mt_word-idiom",
+  "title": "四个字，怎么就能讲一件事？",
+  "renderer": "story",
+  "duration": 13,
+  "interactions": 5,
+  "grade": 2,
+  "standards": [
+    "chinese-2022:S1:BQ"
+  ],
+  "prerequisites": [
+    "mt_word-accumulate",
+    "mt_word-understand"
+  ],
+  "next": [
+    "mt_write-narrative"
+  ],
+  "objectives": [
+    "知道成语多有来历，意思要到故事里去找",
+    "能讲清守株待兔、亡羊补牢各讲了什么事、笑什么夸什么",
+    "能把成语的意思写进一句话里，不硬塞四个字"
+  ],
+  "cognitiveAction": "辨析"
+}

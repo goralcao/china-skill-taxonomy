@@ -131,7 +131,7 @@ for (const name of dirs) {
     }
   });
   // renderer 白名单 + 是否真的调用了对应呈现器
-  const RENDERERS = ['text', 'vertical', 'geometry', 'solid', 'division', 'molecule', 'pyramid', 'calendar', 'decimalBar', 'barGroup', 'compass', 'numberline', 'coords', 'clock', 'sim', 'diagram', 'equation', 'law', 'triangle', 'counter', 'angle', 'quad', 'decGrid', 'mult2', 'fracMeaning', 'fracOps', 'fracReduce', 'spinner', 'decMult', 'decDiv', 'volume', 'pairs', 'treePlant', 'symmetry', 'chart', 'mean', 'polyArea', 'factorGrid', 'fracDiv', 'balance', 'callTree', 'circle', 'circleMeasure', 'sector', 'cylinder', 'sentBuild', 'pairMatch', 'transform', 'punctPick', 'predict', 'poemNote', 'senses', 'checkup', 'annotate', 'draft', 'rubric'];
+  const RENDERERS = ['text', 'vertical', 'geometry', 'solid', 'division', 'molecule', 'pyramid', 'calendar', 'decimalBar', 'barGroup', 'compass', 'numberline', 'coords', 'clock', 'sim', 'diagram', 'equation', 'law', 'triangle', 'counter', 'angle', 'quad', 'decGrid', 'mult2', 'fracMeaning', 'fracOps', 'fracReduce', 'spinner', 'decMult', 'decDiv', 'volume', 'pairs', 'treePlant', 'symmetry', 'chart', 'mean', 'polyArea', 'factorGrid', 'fracDiv', 'balance', 'callTree', 'circle', 'circleMeasure', 'sector', 'cylinder', 'sentBuild', 'pairMatch', 'transform', 'punctPick', 'predict', 'poemNote', 'senses', 'checkup', 'annotate', 'draft', 'rubric', 'pinyin', 'story', 'readAloud', 'writeChar'];
   if (meta.renderer && !RENDERERS.includes(meta.renderer)) {
     fail(rel, `meta.renderer=${meta.renderer} 不在白名单（${RENDERERS.join(' / ')}）`);
   } else if (meta.renderer && meta.renderer !== 'text' && !html.includes('content-loader')
@@ -170,7 +170,7 @@ for (const name of dirs) {
         fail(rel, 'content.steps 为空');
       } else {
         engineSteps = content.steps;
-        const TYPES = ['intro', 'text', 'vertical', 'geometry', 'solid', 'division', 'molecule', 'pyramid', 'calendar', 'decimal', 'table', 'compass', 'numberline', 'clock', 'law', 'triangle', 'counter', 'angle', 'quad', 'decGrid', 'mult2', 'fracMeaning', 'fracOps', 'fracReduce', 'spinner', 'decMult', 'decDiv', 'volume', 'pairs', 'treePlant', 'symmetry', 'chart', 'mean', 'polyArea', 'factorGrid', 'fracDiv', 'balance', 'callTree', 'circle', 'circleMeasure', 'sector', 'cylinder', 'quiz', 'choice', 'summary', 'sentBuild', 'pairMatch', 'transform', 'punctPick', 'annotate', 'draft', 'rubric', 'predict', 'poemNote', 'senses', 'checkup'];
+        const TYPES = ['intro', 'text', 'vertical', 'geometry', 'solid', 'division', 'molecule', 'pyramid', 'calendar', 'decimal', 'table', 'compass', 'numberline', 'clock', 'law', 'triangle', 'counter', 'angle', 'quad', 'decGrid', 'mult2', 'fracMeaning', 'fracOps', 'fracReduce', 'spinner', 'decMult', 'decDiv', 'volume', 'pairs', 'treePlant', 'symmetry', 'chart', 'mean', 'polyArea', 'factorGrid', 'fracDiv', 'balance', 'callTree', 'circle', 'circleMeasure', 'sector', 'cylinder', 'quiz', 'choice', 'summary', 'sentBuild', 'pairMatch', 'transform', 'punctPick', 'annotate', 'draft', 'rubric', 'predict', 'poemNote', 'senses', 'checkup', 'pinyin', 'story', 'readAloud', 'writeChar'];
         let quizzes = 0;
         content.steps.forEach((st, i) => {
           if (!TYPES.includes(st.type)) fail(rel, `第 ${i + 1} 步 type=${st.type} 不合法`);
@@ -200,6 +200,37 @@ for (const name of dirs) {
               }
             }
           }
+          if (st.type === 'pinyin') {
+            const b = st.body || st;
+            quizzes++;
+            if (!b.word && !b.sent) fail(rel, `第 ${i + 1} 步 pinyin 缺 word 或 sent`);
+            if (!Array.isArray(b.options) || b.options.length < 2) fail(rel, `第 ${i + 1} 步 pinyin 选项不足`);
+            else if (!b.options.includes(b.answer)) fail(rel, `第 ${i + 1} 步 pinyin.answer 不在选项里`);
+            if (b.misconception) {
+              for (const [opt, why] of Object.entries(b.misconception)) {
+                if (!b.options.includes(opt)) fail(rel, `第 ${i + 1} 步 pinyin.misconception 的「${opt}」不在选项里`);
+                if (opt === b.answer && !b.soft) fail(rel, `第 ${i + 1} 步 pinyin 不能给正确答案写错因`);
+                if (typeof why !== 'string' || !why.trim()) fail(rel, `第 ${i + 1} 步 pinyin.misconception「${opt}」缺解释`);
+              }
+            }
+          }
+          if (st.type === 'story') {
+            const b = st.body || st;
+            if (!Array.isArray(b.paras) || !b.paras.length) fail(rel, `第 ${i + 1} 步 story 缺 paras`);
+            if (b.options && !b.options.includes(b.answer)) fail(rel, `第 ${i + 1} 步 story.answer 不在选项里`);
+          }
+          if (st.type === 'readAloud') {
+            const b = st.body || st;
+            if (!b.text) fail(rel, `第 ${i + 1} 步 readAloud 缺 text`);
+            if (!Array.isArray(b.rubric) || !b.rubric.length) fail(rel, `第 ${i + 1} 步 readAloud 缺 rubric`);
+          }
+          if (st.type === 'writeChar') {
+            const b = st.body || st;
+            if (!Array.isArray(b.chars) || !b.chars.length) fail(rel, `第 ${i + 1} 步 writeChar 缺 chars`);
+            else b.chars.forEach((c, j) => {
+              if (!c.ch || [...c.ch].length !== 1) fail(rel, `第 ${i + 1} 步 writeChar 第 ${j + 1} 个字不是单字`);
+            });
+          }
           if (st.type === 'vertical') {
             const pr = st.problem || {};
             const val = pr.op === '÷' ? Number(pr.a) / Number(pr.b)
@@ -210,7 +241,7 @@ for (const name of dirs) {
         });
         // 语文的一次"交互"是一次动手环节（圈画 / 动笔 / 自评 / 改一处），不是一道题
         const LANG_SET = ['quiz', 'choice', 'annotate', 'draft', 'rubric',
-          'sentBuild', 'pairMatch', 'transform', 'punctPick', 'predict', 'poemNote', 'senses', 'checkup'];
+          'sentBuild', 'pairMatch', 'transform', 'punctPick', 'predict', 'poemNote', 'senses', 'checkup', 'pinyin', 'story', 'readAloud', 'writeChar'];
         const isLangContent = content.subject === '语文';
         const actCount = isLangContent
           ? content.steps.filter(st => LANG_SET.includes(st.type)).length

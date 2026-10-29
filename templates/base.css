@@ -456,7 +456,7 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
   background: var(--card); border: 1px solid var(--line); letter-spacing: .3px;
 }
 .an-tok {
-  display: inline; background: none; border: 0; border-bottom: 1.5px dashed var(--dim);
+  display: inline; position: relative; background: none; border: 0; border-bottom: 1.5px dashed var(--dim);
   color: inherit; font: inherit; line-height: inherit; cursor: pointer;
   padding: 0 1px; margin: 0; vertical-align: baseline;
   transition: color .15s, border-color .15s, background .15s;
@@ -571,8 +571,8 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 .an-sym:hover { border-color: var(--accent); }
 .an-sym.on { border-color: var(--accent); background: rgba(255, 209, 102, .12); color: var(--accent); }
 .an-tok .an-mark {
-  font-size: 10.5px; color: var(--accent); vertical-align: 4px; margin-right: 1px;
-  font-weight: 700; letter-spacing: 0;
+  position: absolute; top: -9px; right: -1px; font-size: 10px; line-height: 1;
+  color: var(--accent); font-weight: 700; letter-spacing: 0; pointer-events: none;
 }
 .an-tok.symmed { color: var(--accent); border-bottom-color: var(--accent); }
 .an-tok.wrong { border-bottom-color: var(--bad); }
@@ -743,9 +743,171 @@ input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 .ck-count b { color: var(--text); }
 .ck-count.ok b { color: var(--ok); }
 
+/* 拼音题：字下面那一点，是课本的老规矩 */
+.py-sent {
+  font-size: 14.5px; line-height: 2; color: var(--dim);
+  border-left: 2px solid var(--line); padding-left: 12px; margin: 0 0 14px; max-width: 620px;
+}
+.py-sent b { color: var(--text); font-weight: 600; }
+.py-card {
+  background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+  padding: 18px 18px 12px; text-align: center; max-width: 420px;
+}
+.py-word { font-size: 44px; line-height: 1.35; letter-spacing: .1em; font-weight: 600; }
+.py-ch { position: relative; display: inline-block; padding: 0 2px; }
+.py-ch.key { color: var(--accent); }
+.py-ch.key::after {
+  content: ''; position: absolute; left: 50%; bottom: -1px; width: 5px; height: 5px;
+  margin-left: -2.5px; border-radius: 50%; background: var(--accent);
+}
+.py-read { min-height: 24px; font-size: 15px; color: var(--ok); letter-spacing: .08em; margin-top: 6px; }
+.py-opts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin: 16px 0 0; max-width: 420px; }
+.py-opt {
+  font-family: inherit; font-size: 19px; letter-spacing: .04em; cursor: pointer;
+  background: var(--card); border: 1px solid var(--line); color: var(--text);
+  border-radius: 9px; padding: 11px 8px;
+}
+.py-opt:hover { border-color: var(--accent); }
+.py-opt.on { border-color: var(--accent); background: rgba(255, 209, 102, .12); }
+.py-opt.right { border-color: var(--ok); color: var(--ok); background: rgba(74, 222, 128, .1); }
+.py-opt.wrong { border-color: var(--bad); color: var(--bad); opacity: .7; text-decoration: line-through; }
+
+/* 典故卡：成语和古诗都是压缩包，故事是解压密码 */
+.st-card {
+  background: linear-gradient(180deg, rgba(255, 209, 102, .05), transparent 62%), var(--card);
+  border: 1px solid var(--line); border-left: 3px solid var(--accent);
+  border-radius: 4px 12px 12px 4px; padding: 16px 18px 18px; max-width: 620px;
+}
+.st-head { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+.st-kind {
+  font-size: 11px; padding: 1px 7px; border-radius: 4px;
+  background: rgba(255, 209, 102, .14); color: var(--accent); letter-spacing: .1em;
+}
+.st-name { font-size: 19px; font-weight: 700; letter-spacing: .06em; }
+.st-origin { font-size: 12px; color: var(--dim); }
+.st-p { font-size: 14.5px; line-height: 2; margin: 0 0 10px; }
+.st-p.st-lead::first-letter {
+  font-size: 2.1em; float: left; line-height: .92; padding: 5px 7px 0 0; color: var(--accent);
+}
+.st-quote {
+  font-family: "Songti SC", "Noto Serif SC", "SimSun", serif;
+  font-size: 15px; line-height: 2; color: var(--accent);
+  border-left: 2px solid rgba(255, 209, 102, .35); padding: 2px 0 2px 12px; margin: 12px 0 8px;
+}
+.st-gloss-btn {
+  font-family: inherit; font-size: 12px; color: var(--dim); background: none;
+  border: 1px dashed var(--line); border-radius: 6px; padding: 3px 9px; cursor: pointer;
+}
+.st-gloss-btn:hover { color: var(--text); border-color: var(--accent); }
+.st-gloss { font-size: 13px; color: var(--dim); line-height: 1.9; padding: 8px 0 0 12px; }
+.st-opts { display: flex; flex-direction: column; gap: 7px; margin-top: 8px; max-width: 620px; }
+.st-opt {
+  text-align: left; font-family: inherit; font-size: 14px; line-height: 1.7; cursor: pointer;
+  background: var(--card); border: 1px solid var(--line); color: var(--text);
+  border-radius: 9px; padding: 9px 12px;
+}
+.st-opt:hover { border-color: var(--accent); }
+.st-opt.right { border-color: var(--ok); }
+.st-opt.wrong { border-color: var(--bad); opacity: .7; }
+.st-now {
+  margin-top: 12px; padding: 11px 14px; border-radius: 10px; max-width: 620px;
+  background: rgba(255, 209, 102, .08); border: 1px solid rgba(255, 209, 102, .28);
+}
+.st-now b { font-size: 12px; color: var(--accent); letter-spacing: .06em; }
+.st-now p { margin: 4px 0 0; font-size: 14px; line-height: 1.85; }
+.st-link {
+  display: inline-block; margin-top: 14px; font-size: 12.5px; color: var(--dim);
+  text-decoration: none; border-bottom: 1px dashed var(--line);
+}
+.st-link:hover { color: var(--accent); border-color: var(--accent); }
+
+/* 朗读：不假装能听懂，只负责录下来、放给自己听 */
+.ra-text {
+  font-size: 21px; line-height: 2.1; letter-spacing: .04em; max-width: 620px;
+  background: var(--card); border: 1px solid var(--line); border-left: 3px solid var(--accent);
+  border-radius: 4px 10px 10px 4px; padding: 16px 18px;
+}
+.ra-tip { font-size: 12.5px; color: var(--dim); margin: 8px 0 0; }
+.ra-bar { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 14px 0 4px; }
+.ra-timer { font-size: 12px; color: var(--dim); font-variant-numeric: tabular-nums; }
+.ra-wave {
+  display: block; width: 100%; max-width: 560px; height: auto; margin: 2px 0 6px;
+  background: rgba(255, 255, 255, .035); border-radius: 8px;
+}
+.ra-play { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; min-height: 6px; }
+.ra-audio { height: 34px; max-width: 100%; }
+.ra-note { font-size: 11.5px; color: var(--dim); margin: 8px 0 0; opacity: .85; }
+.ra-note b { color: var(--text); }
+.ra-warn { color: var(--accent); opacity: .9; }
+.ra-checks { display: flex; flex-direction: column; gap: 6px; margin: 14px 0 0; max-width: 560px; }
+.ra-check {
+  display: flex; align-items: flex-start; gap: 9px; text-align: left; width: 100%;
+  font-family: inherit; font-size: 13px; line-height: 1.7; cursor: pointer;
+  background: var(--card); border: 1px solid var(--line); color: var(--text);
+  border-radius: 8px; padding: 8px 11px;
+}
+.ra-check:hover { border-color: var(--accent); }
+.ra-check.on { border-color: var(--ok); background: rgba(74, 222, 128, .07); }
+.ra-check.on .ra-lab { color: var(--dim); }
+.ra-box {
+  flex: 0 0 auto; width: 15px; height: 15px; margin-top: 3px; border-radius: 4px;
+  border: 1px solid var(--line); position: relative;
+}
+.ra-check.on .ra-box { border-color: var(--ok); background: var(--ok); }
+.ra-check.on .ra-box::after {
+  content: '✓'; position: absolute; left: 0; top: 0; width: 15px; height: 15px;
+  font-size: 11px; line-height: 15px; text-align: center; color: #0a0f18; font-weight: 700;
+}
+.ra-count { font-size: 12px; color: var(--dim); margin-top: 10px; }
+.ra-count b { color: var(--text); }
+.ra-count.ok { color: var(--ok); }
+.ra-count.ok b { color: var(--ok); }
+
+/* 田字格手写：几笔、撑没撑开、出没出格——三年级最缺的就是这三条 */
+.wc-wrap { display: flex; flex-direction: column; gap: 18px; max-width: 620px; }
+.wc-row { display: grid; grid-template-columns: 1fr 300px; gap: 18px; align-items: start; }
+.wc-info { padding-top: 4px; }
+.wc-ch { font-size: 42px; line-height: 1.2; font-weight: 600; }
+.wc-py { font-size: 15px; color: var(--accent); letter-spacing: .05em; }
+.wc-strokes { font-size: 12px; color: var(--dim); margin-top: 2px; }
+.wc-tip { font-size: 12.5px; color: var(--dim); line-height: 1.85; margin-top: 8px; }
+.wc-stage { display: flex; flex-direction: column; align-items: center; }
+.wc-canvas {
+  display: block; background: #0b1219; border-radius: 10px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .04); cursor: crosshair; touch-action: none;
+}
+.wc-tools { display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; justify-content: center; }
+.wc-btn {
+  font-family: inherit; font-size: 12px; cursor: pointer; padding: 5px 10px;
+  background: var(--card); border: 1px solid var(--line); color: var(--dim); border-radius: 7px;
+}
+.wc-btn:hover { color: var(--text); border-color: var(--accent); }
+.wc-btn.on { color: var(--accent); border-color: rgba(255, 209, 102, .5); }
+.wc-btn.primary:hover { border-color: var(--ok); color: var(--ok); }
+.wc-fb {
+  font-size: 12px; color: var(--dim); line-height: 1.7; margin-top: 8px;
+  text-align: center; min-height: 18px; max-width: 300px;
+}
+.wc-fb.ok { color: var(--ok); }
+.wc-fb.warn { color: var(--accent); }
+.wc-count { font-size: 12px; color: var(--dim); margin-top: 6px; }
+.wc-count b { color: var(--text); }
+.wc-count.ok, .wc-count.ok b { color: var(--ok); }
+.wc-row.ok .wc-ch { color: var(--ok); }
+.wc-row.ok .wc-canvas { box-shadow: inset 0 0 0 1px rgba(74, 222, 128, .45); }
+.written-recap img { display: block; width: 120px; height: 120px; border-radius: 8px; border: 1px solid var(--line); }
+
 @media (max-width: 560px) {
   .ck-wrap { grid-template-columns: 1fr; }
   .sn-grid { gap: 7px; }
   .pd-text, .pn-line { font-size: 15.5px; }
   .an-sym { padding: 4px 9px; font-size: 12.5px; }
+  .py-word { font-size: 36px; }
+  .py-opts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ra-text { font-size: 18px; padding: 14px 15px; }
+  .st-p { font-size: 14px; }
+  .wc-row { grid-template-columns: 1fr; gap: 10px; }
+  .wc-info { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+  .wc-ch { font-size: 30px; }
+  .wc-tip { flex: 1 1 100%; margin-top: 2px; }
 }

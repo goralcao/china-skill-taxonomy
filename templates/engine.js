@@ -1403,6 +1403,671 @@
         return f;
       },
 
+      /* ── 语文专用：拼音 ─────────────────────────────────
+       * 字认得，音未必。三年级错的多数在调号，不在声母韵母，
+       * 所以选项一律带调，判的也是调。字下面那一点，是课本的老规矩。
+       */
+      pinyin: function (s, i) {
+        var f = document.createDocumentFragment();
+        if (s.title) f.appendChild(h('h2', null, s.title));
+        var b = s.body || s;
+
+        if (b.sent) {
+          var sent = h('div', 'py-sent');
+          sent.innerHTML = b.sent;
+          f.appendChild(sent);
+        }
+
+        var card = h('div', 'py-card');
+        var word = h('div', 'py-word');
+        var pos = b.pos || 0;
+        (b.word || '').split('').forEach(function (c, k) {
+          word.appendChild(h('span', 'py-ch' + (k === pos ? ' key' : ''), c));
+        });
+        card.appendChild(word);
+        var read = h('div', 'py-read', '');
+        card.appendChild(read);
+        f.appendChild(card);
+
+        var fb = h('div');
+        var opts = h('div', 'py-opts');
+        (b.options || []).forEach(function (o) {
+          var val = typeof o === 'string' ? o : o.p;
+          var btn = h('button', 'py-opt', val);
+          btn.type = 'button';
+          if (o && o.hint) btn.title = o.hint;
+          btn.onclick = function () {
+            var st = stateOf(i);
+            if (st.solved) return;
+            st.attempts++;
+            if (b.soft) {
+              [].slice.call(opts.children).forEach(function (x) { x.classList.remove('on'); });
+              btn.classList.add('on');
+              st.solved = true; st.pick = val;
+              read.innerHTML = b.read || val;
+              return syncNav();
+            }
+            if (val === b.answer) {
+              btn.classList.add('right');
+              st.solved = true; st.pick = val; st.first = st.attempts === 1;
+              read.innerHTML = b.read || val;
+              if (b.why) { fb.className = 'card ok'; fb.innerHTML = b.why; }
+              syncNav();
+            } else {
+              btn.classList.add('wrong');
+              var msg = (b.misconception && b.misconception[val]) || b.hint || '';
+              if (msg) { fb.className = 'card pitfall'; fb.innerHTML = msg; }
+            }
+          };
+          opts.appendChild(btn);
+        });
+        f.appendChild(opts);
+        f.appendChild(fb);
+        return f;
+      },
+
+      /* ── 语文专用：典故 ─────────────────────────────────
+       * 成语和古诗都是压缩包，故事是解压密码。
+       * 读完不问「记住了没有」，问「错在哪一步」——考的是因果，不是记性。
+       */
+      story: function (s, i) {
+        var f = document.createDocumentFragment();
+        if (s.title) f.appendChild(h('h2', null, s.title));
+        var b = s.body || s;
+
+        var card = h('div', 'st-card');
+        var head = h('div', 'st-head');
+        head.appendChild(h('span', 'st-kind', b.kind || '故事'));
+        head.appendChild(h('span', 'st-name', b.name || ''));
+        if (b.origin) head.appendChild(h('span', 'st-origin', b.origin));
+        card.appendChild(head);
+
+        (b.paras || []).forEach(function (p, k) {
+          var el = h('p', 'st-p' + (k === 0 ? ' st-lead' : ''));
+          el.innerHTML = p;
+          card.appendChild(el);
+        });
+
+        if (b.quote) {
+          var q = h('div', 'st-quote');
+          q.innerHTML = b.quote;
+          card.appendChild(q);
+          var gd = h('div', 'st-gloss', b.gloss || '');
+          gd.hidden = true;
+          var gbtn = h('button', 'st-gloss-btn', '看白话');
+          gbtn.type = 'button';
+          gbtn.onclick = function () {
+            gd.hidden = !gd.hidden;
+            gbtn.textContent = gd.hidden ? '看白话' : '收起白话';
+          };
+          card.appendChild(gbtn);
+          card.appendChild(gd);
+        }
+        f.appendChild(card);
+
+        var nowSlot = h('div', 'st-now');
+        nowSlot.hidden = true;
+        f.appendChild(nowSlot);
+
+        function showNow() {
+          if (!b.now) return;
+          nowSlot.innerHTML = '<b>今天这么说</b><p>' + b.now + '</p>';
+          nowSlot.hidden = false;
+        }
+
+        if (b.ask && b.options && b.options.length) {
+          var q2 = h('p', 'quiz-q');
+          q2.innerHTML = b.ask;
+          f.appendChild(q2);
+          var fb = h('div');
+          var opts = h('div', 'st-opts');
+          b.options.forEach(function (o) {
+            var btn = h('button', 'st-opt');
+            btn.type = 'button';
+            btn.innerHTML = o;
+            btn.onclick = function () {
+              var st = stateOf(i);
+              if (st.solved) return;
+              st.attempts++;
+              if (o === b.answer) {
+                btn.classList.add('right');
+                st.solved = true; st.first = st.attempts === 1;
+                if (b.why) { fb.className = 'card ok'; fb.innerHTML = b.why; }
+                showNow();
+                syncNav();
+              } else {
+                btn.classList.add('wrong');
+                var msg = (b.misconception && b.misconception[o]) || '';
+                if (msg) { fb.className = 'card pitfall'; fb.innerHTML = msg; }
+              }
+            };
+            opts.appendChild(btn);
+          });
+          f.appendChild(opts);
+          f.appendChild(fb);
+        } else {
+          stateOf(i).solved = true;
+        }
+
+        if (b.link && b.link.topic) {
+          var a = h('a', 'st-link', '→ 顺着这个故事，看' + (b.link.label || '相关一课'));
+          a.href = '../../viz/index.html#t=' + b.link.topic;
+          f.appendChild(a);
+        }
+        return f;
+      },
+
+      /* ── 语文专用：朗读 ─────────────────────────────────
+       * 不假装能听懂。能做的三件事：示范一遍、录下来、回放给自己听。
+       * 机器评测要联网，教室里十有八九连不上——不如把耳朵交给学生。
+       */
+      readAloud: function (s, i) {
+        var f = document.createDocumentFragment();
+        if (s.title) f.appendChild(h('h2', null, s.title));
+        var b = s.body || s;
+
+        var paper = h('div', 'ra-text');
+        paper.innerHTML = b.text;
+        f.appendChild(paper);
+        if (b.tip) {
+          var tipEl = h('div', 'ra-tip');
+          tipEl.innerHTML = b.tip;
+          f.appendChild(tipEl);
+        }
+
+        var bar = h('div', 'ra-bar');
+        var btnListen = h('button', 'btn small', '▶ 听一遍');
+        btnListen.type = 'button';
+        bar.appendChild(btnListen);
+        var btnRec = h('button', 'btn small primary', '● 我来读');
+        btnRec.type = 'button';
+        bar.appendChild(btnRec);
+        var timer = h('span', 'ra-timer', '');
+        bar.appendChild(timer);
+        var btnAloud = h('button', 'btn small', '我读给同桌听了');
+        btnAloud.type = 'button';
+        btnAloud.style.display = 'none';
+        bar.appendChild(btnAloud);
+        f.appendChild(bar);
+
+        var wave = document.createElement('canvas');
+        wave.className = 'ra-wave';
+        wave.width = 560;
+        wave.height = 44;
+        wave.style.display = 'none';
+        f.appendChild(wave);
+
+        var playSlot = h('div', 'ra-play');
+        f.appendChild(playSlot);
+
+        var micNote = h('p', 'ra-note', '录音只留在这一页里，不上传，刷新就没了。');
+        f.appendChild(micNote);
+
+        /* 示范朗读：设备装了中文语音才点得动 */
+        var ttsNote = h('p', 'ra-note ra-warn', '');
+        ttsNote.hidden = true;
+        f.appendChild(ttsNote);
+
+        var ttsVoice = null;
+        function refreshVoice() {
+          var vs = [];
+          try { vs = window.speechSynthesis ? speechSynthesis.getVoices() : []; } catch (e) { vs = []; }
+          for (var k = 0; k < vs.length; k++) {
+            if (/^zh/i.test(vs[k].lang)) { ttsVoice = vs[k]; break; }
+          }
+          btnListen.disabled = !ttsVoice;
+          btnListen.title = ttsVoice ? '' : '这台设备没有中文语音，请老师范读';
+          if (!ttsVoice) {
+            ttsNote.innerHTML = '这台设备没装中文语音，示范朗读点不动——请老师读一遍，或同桌互读。';
+            ttsNote.hidden = false;
+          } else {
+            ttsNote.hidden = true;
+          }
+        }
+        refreshVoice();
+        if (window.speechSynthesis) {
+          speechSynthesis.onvoiceschanged = refreshVoice;
+          setTimeout(refreshVoice, 500);
+        }
+        btnListen.onclick = function () {
+          if (!ttsVoice) return;
+          try { speechSynthesis.cancel(); } catch (e) { /* 忽略 */ }
+          var u = new SpeechSynthesisUtterance(paper.textContent);
+          u.voice = ttsVoice;
+          u.lang = ttsVoice.lang || 'zh-CN';
+          u.rate = b.rate || 0.86;
+          speechSynthesis.speak(u);
+        };
+
+        /* 录音 */
+        var rec = { on: false, mr: null, chunks: [], stream: null, url: '', sec: 0, tick: 0, ac: null, raf: 0 };
+        var canRec = !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia && window.MediaRecorder);
+        var heard = false;
+        if (!canRec) {
+          btnRec.style.display = 'none';
+          btnAloud.style.display = '';
+          micNote.innerHTML = '这一页是用 <b>file://</b> 或旧浏览器打开的，录音用不了。' +
+            '点上面的「我读给同桌听了」，一样算数。';
+        }
+
+        function stopMeter() {
+          if (rec.raf) cancelAnimationFrame(rec.raf);
+          if (rec.ac) { try { rec.ac.close(); } catch (e) { /* 忽略 */ } }
+          rec.raf = 0; rec.ac = null;
+        }
+
+        function startMeter(stream) {
+          try {
+            var AC = window.AudioContext || window.webkitAudioContext;
+            if (!AC) return;
+            rec.ac = new AC();
+            var src = rec.ac.createMediaStreamSource(stream);
+            var an = rec.ac.createAnalyser();
+            an.fftSize = 512;
+            src.connect(an);
+            var buf = new Uint8Array(an.fftSize);
+            var ctx = wave.getContext('2d');
+            var W = wave.width, H = wave.height;
+            (function draw() {
+              if (!rec.on || !ctx) return;
+              an.getByteTimeDomainData(buf);
+              ctx.clearRect(0, 0, W, H);
+              ctx.fillStyle = '#ffd166';
+              var n = 46, step = W / n;
+              for (var k = 0; k < n; k++) {
+                var v = Math.abs(buf[Math.floor(k * buf.length / n)] - 128) / 128;
+                var hh = Math.max(2, v * H * 1.7);
+                ctx.fillRect(k * step + 2, (H - hh) / 2, step - 4, hh);
+              }
+              rec.raf = requestAnimationFrame(draw);
+            })();
+          } catch (e) { /* 没波形也能录 */ }
+        }
+
+        function stopRec() {
+          if (!rec.on) return;
+          rec.on = false;
+          clearInterval(rec.tick);
+          try { rec.mr.stop(); } catch (e) { /* 忽略 */ }
+          btnRec.textContent = '● 再读一遍';
+        }
+
+        function startRec() {
+          if (rec.on) return;
+          btnRec.disabled = true;
+          navigator.mediaDevices.getUserMedia({ audio: true }).then(function (stream) {
+            rec.stream = stream;
+            var mr = new MediaRecorder(stream);
+            rec.mr = mr;
+            rec.chunks = [];
+            mr.ondataavailable = function (e) {
+              if (e.data && e.data.size) rec.chunks.push(e.data);
+            };
+            mr.onstop = function () {
+              stopMeter();
+              stream.getTracks().forEach(function (t) { t.stop(); });
+              var blob = new Blob(rec.chunks, { type: mr.mimeType || 'audio/webm' });
+              if (rec.url) URL.revokeObjectURL(rec.url);
+              rec.url = URL.createObjectURL(blob);
+              playSlot.innerHTML = '';
+              var au = document.createElement('audio');
+              au.controls = true;
+              au.src = rec.url;
+              au.className = 'ra-audio';
+              playSlot.appendChild(au);
+              var again = h('button', 'btn small', '↻ 重录');
+              again.type = 'button';
+              again.onclick = function () {
+                playSlot.innerHTML = '';
+                timer.textContent = '';
+                btnRec.textContent = '● 我来读';
+                rec.sec = 0;
+                paint();
+              };
+              playSlot.appendChild(again);
+              heard = true;
+              btnRec.disabled = false;
+              paint();
+            };
+            mr.start();
+            rec.on = true;
+            wave.style.display = '';
+            btnRec.textContent = '■ 读完了';
+            btnRec.disabled = false;
+            rec.sec = 0;
+            timer.textContent = '0″';
+            clearInterval(rec.tick);
+            rec.tick = setInterval(function () {
+              rec.sec++;
+              timer.textContent = rec.sec + '″';
+              if (b.limit && rec.sec >= b.limit) stopRec();
+            }, 1000);
+            startMeter(stream);
+            paint();
+          }).catch(function (err) {
+            btnRec.disabled = false;
+            btnAloud.style.display = '';
+            micNote.innerHTML = (err && err.name === 'NotAllowedError')
+              ? '没有拿到麦克风权限，录音用不了。点上面的「我读给同桌听了」，读完自己打勾。'
+              : '这台设备没有可用的麦克风。点上面的「我读给同桌听了」，一样算数。';
+          });
+        }
+
+        btnRec.onclick = function () {
+          if (!canRec) return;
+          if (rec.on) { stopRec(); return; }
+          startRec();
+        };
+
+        /* 三条自评，勾满 min 条才算读完 */
+        var items = b.rubric || [];
+        var minSelf = b.min || Math.min(2, items.length);
+        var done = {};
+        var checks = h('div', 'ra-checks');
+        items.forEach(function (t, k) {
+          var btn = h('button', 'ra-check');
+          btn.type = 'button';
+          btn.appendChild(h('span', 'ra-box', ''));
+          btn.appendChild(h('span', 'ra-lab', t));
+          btn.onclick = function () {
+            done[k] = !done[k];
+            btn.classList.toggle('on', !!done[k]);
+            paint();
+          };
+          checks.appendChild(btn);
+        });
+        if (items.length) f.appendChild(checks);
+
+        var count = h('div', 'ra-count', '');
+        f.appendChild(count);
+
+        btnAloud.onclick = function () {
+          heard = true;
+          btnAloud.classList.add('on');
+          btnAloud.textContent = '✓ 读给同桌听过了';
+          paint();
+        };
+
+        function paint() {
+          var n = 0;
+          Object.keys(done).forEach(function (k) { if (done[k]) n++; });
+          var st = stateOf(i);
+          var ok = heard && n >= minSelf;
+          if (ok && !st.solved) {
+            st.solved = true;
+            st.read = { heard: heard, sec: rec.sec, self: n };
+            syncNav();
+          }
+          count.className = 'ra-count' + (ok ? ' ok' : '');
+          count.innerHTML = (heard ? '已留下声音' : '还没读') +
+            ' · 自评 <b>' + n + '</b> / ' + items.length +
+            (ok ? ' · 这一遍可以了' : ' · 读一遍，再回来勾');
+        }
+        paint();
+        return f;
+      },
+
+      /* ── 语文专用：写字 ─────────────────────────────────
+       * 真正的字形识别要几十兆模型，塞不进单文件。
+       * 能如实给的是三件事：几笔、撑没撑开、出没出格。这三条三年级正好最缺。
+       */
+      writeChar: function (s, i) {
+        var f = document.createDocumentFragment();
+        if (s.title) f.appendChild(h('h2', null, s.title));
+        var b = s.body || s;
+        var chars = b.chars || [];
+        var need = b.min || chars.length;
+
+        var wrap = h('div', 'wc-wrap');
+        f.appendChild(wrap);
+        var rows = [];
+
+        chars.forEach(function (c) {
+          var row = h('div', 'wc-row');
+          var info = h('div', 'wc-info');
+          info.appendChild(h('div', 'wc-ch', c.ch));
+          if (c.pinyin) info.appendChild(h('div', 'wc-py', c.pinyin));
+          if (c.strokes) info.appendChild(h('div', 'wc-strokes', c.strokes + ' 画'));
+          if (c.tip) {
+            var t = h('div', 'wc-tip');
+            t.innerHTML = c.tip;
+            info.appendChild(t);
+          }
+          row.appendChild(info);
+
+          var stage = h('div', 'wc-stage');
+          var cv = document.createElement('canvas');
+          cv.className = 'wc-canvas';
+          stage.appendChild(cv);
+          var tools = h('div', 'wc-tools');
+          var bShow = h('button', 'wc-btn on', '范字：开');
+          bShow.type = 'button';
+          var bClear = h('button', 'wc-btn', '清空');
+          bClear.type = 'button';
+          var bOk = h('button', 'wc-btn primary', '写好了');
+          bOk.type = 'button';
+          tools.appendChild(bShow);
+          tools.appendChild(bClear);
+          tools.appendChild(bOk);
+          stage.appendChild(tools);
+          var tipBox = h('div', 'wc-fb', '先描着范字写一遍，再关掉范字写一遍。');
+          stage.appendChild(tipBox);
+          row.appendChild(stage);
+          wrap.appendChild(row);
+
+          var item = { c: c, cv: cv, strokes: [], show: true, w: 0, dpr: 1, ok: false, fb: tipBox, snap: '' };
+          rows.push(item);
+
+          bShow.onclick = function () {
+            item.show = !item.show;
+            bShow.textContent = '范字：' + (item.show ? '开' : '关');
+            bShow.classList.toggle('on', item.show);
+            draw(item);
+          };
+          bClear.onclick = function () {
+            item.strokes = [];
+            item.ok = false;
+            row.classList.remove('ok');
+            tipBox.innerHTML = '清空了。看着范字的间架，再写一遍。';
+            draw(item);
+            paintAll();
+          };
+          bOk.onclick = function () {
+            var r = check(item);
+            item.fb.innerHTML = r.msg;
+            item.fb.className = 'wc-fb ' + (r.ok ? 'ok' : 'warn');
+            if (r.ok && !item.ok) {
+              item.ok = true;
+              item.snap = snap(item);
+              row.classList.add('ok');
+            } else if (!r.ok) {
+              item.ok = false;
+              row.classList.remove('ok');
+            }
+            paintAll();
+          };
+
+          bindPad(item);
+        });
+
+        var count = h('div', 'wc-count', '');
+        f.appendChild(count);
+
+        function draw(item) {
+          var cv = item.cv;
+          var W = cv.width, H = cv.height;
+          if (!W) return;
+          var d = item.dpr;
+          var ctx = cv.getContext('2d');
+          ctx.setTransform(1, 0, 0, 1, 0, 0);
+          ctx.clearRect(0, 0, W, H);
+
+          var pad = W * 0.06;
+          var side = W - pad * 2;
+          ctx.strokeStyle = 'rgba(255,255,255,.20)';
+          ctx.lineWidth = Math.max(1, d);
+          ctx.strokeRect(pad, pad, side, side);
+          ctx.setLineDash([4 * d, 5 * d]);
+          ctx.strokeStyle = 'rgba(255,255,255,.12)';
+          ctx.beginPath();
+          ctx.moveTo(W / 2, pad); ctx.lineTo(W / 2, pad + side);
+          ctx.moveTo(pad, H / 2); ctx.lineTo(pad + side, H / 2);
+          ctx.moveTo(pad, pad); ctx.lineTo(pad + side, pad + side);
+          ctx.moveTo(pad + side, pad); ctx.lineTo(pad, pad + side);
+          ctx.stroke();
+          ctx.setLineDash([]);
+
+          if (item.show) {
+            ctx.fillStyle = 'rgba(232,237,245,.13)';
+            ctx.font = 'bold ' + (side * 0.68) + 'px "KaiTi","STKaiti","Noto Serif SC",serif';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'alphabetic';
+            var mt = ctx.measureText(item.c.ch);
+            var asc = mt.actualBoundingBoxAscent || side * 0.5;
+            var desc = mt.actualBoundingBoxDescent || 0;
+            ctx.fillText(item.c.ch, W / 2, H / 2 + (asc - desc) / 2);
+          }
+
+          ctx.strokeStyle = '#e8edf5';
+          ctx.lineWidth = Math.max(3, W * 0.021);
+          ctx.lineCap = 'round';
+          ctx.lineJoin = 'round';
+          item.strokes.forEach(function (st) {
+            if (!st.length) return;
+            ctx.beginPath();
+            st.forEach(function (pt, k) {
+              var x = pt.x * W, y = pt.y * H;
+              if (k === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+            });
+            if (st.length === 1) ctx.lineTo(st[0].x * W + 0.1, st[0].y * H + 0.1);
+            ctx.stroke();
+          });
+        }
+
+        function fit(item) {
+          var stage = item.cv.parentNode;
+          var w = stage.clientWidth;
+          if (!w) return;
+          var side = Math.min(w, 300);
+          var dpr = Math.min(2, window.devicePixelRatio || 1);
+          item.w = side;
+          item.dpr = dpr;
+          item.cv.style.width = side + 'px';
+          item.cv.style.height = side + 'px';
+          item.cv.width = Math.round(side * dpr);
+          item.cv.height = Math.round(side * dpr);
+          draw(item);
+        }
+
+        function bindPad(item) {
+          var cv = item.cv;
+          var drawing = false;
+          cv.style.touchAction = 'none';
+
+          function pos(e) {
+            var r = cv.getBoundingClientRect();
+            return { x: (e.clientX - r.left) / r.width, y: (e.clientY - r.top) / r.height };
+          }
+          cv.addEventListener('pointerdown', function (e) {
+            e.preventDefault();
+            drawing = true;
+            try { cv.setPointerCapture(e.pointerId); } catch (err) { /* 忽略 */ }
+            item.strokes.push([pos(e)]);
+            draw(item);
+          });
+          cv.addEventListener('pointermove', function (e) {
+            if (!drawing) return;
+            e.preventDefault();
+            var st = item.strokes[item.strokes.length - 1];
+            st.push(pos(e));
+            draw(item);
+          });
+          function up() {
+            if (!drawing) return;
+            drawing = false;
+          }
+          cv.addEventListener('pointerup', up);
+          cv.addEventListener('pointercancel', up);
+          cv.addEventListener('pointerleave', up);
+        }
+
+        function check(item) {
+          var st = item.strokes.filter(function (x) { return x.length > 1; });
+          var n = st.length;
+          var std = item.c.strokes || 0;
+          var pts = [];
+          st.forEach(function (s2) { s2.forEach(function (p) { pts.push(p); }); });
+          if (!pts.length) return { ok: false, msg: '还没落笔。用鼠标或手指在格子里写。' };
+
+          var xs = pts.map(function (p) { return p.x; });
+          var ys = pts.map(function (p) { return p.y; });
+          var x0 = Math.min.apply(null, xs), x1 = Math.max.apply(null, xs);
+          var y0 = Math.min.apply(null, ys), y1 = Math.max.apply(null, ys);
+          var w = x1 - x0, hh = y1 - y0;
+
+          if (std && n < std - 2) {
+            return { ok: false, msg: '数到 ' + n + ' 笔，这个字有 ' + std + ' 画。是连笔了，还是漏了一部分？' };
+          }
+          if (std && n > std + 2) {
+            return { ok: false, msg: '数到 ' + n + ' 笔，比 ' + std + ' 画多了。一笔写到一半抬手，也会多算。' };
+          }
+          if (w < 0.42 || hh < 0.42) {
+            return { ok: false, msg: '字太小了，撑到格子的七成才站得住。' };
+          }
+          if (x0 < 0.03 || y0 < 0.03 || x1 > 0.97 || y1 > 0.97) {
+            return { ok: false, msg: '有一笔写出格子了，收回来。' };
+          }
+          return { ok: true, msg: n + ' 笔，对上了。再看看横画之间匀不匀。' };
+        }
+
+        function snap(item) {
+          try {
+            var c2 = document.createElement('canvas');
+            c2.width = 140;
+            c2.height = 140;
+            var x = c2.getContext('2d');
+            x.fillStyle = '#0f1620';
+            x.fillRect(0, 0, 140, 140);
+            x.drawImage(item.cv, 0, 0, 140, 140);
+            return c2.toDataURL('image/jpeg', 0.62);
+          } catch (e) { return ''; }
+        }
+
+        function paintAll() {
+          var okN = rows.filter(function (r) { return r.ok; }).length;
+          count.className = 'wc-count' + (okN >= need ? ' ok' : '');
+          count.innerHTML = '写好 <b>' + okN + '</b> / ' + need + ' 个' +
+            (okN >= need ? ' · 够了' : ' · 写完点「写好了」');
+          if (okN >= need) {
+            var st = stateOf(i);
+            if (!st.solved) {
+              st.solved = true;
+              var first = rows.filter(function (r) { return r.snap; })[0];
+              st.written = first ? first.snap : '';
+              syncNav();
+            }
+          }
+        }
+
+        /* 未激活的步骤宽度是 0，靠 ResizeObserver 等它显示出来再量 */
+        rows.forEach(fit);
+        if (window.ResizeObserver) {
+          var ro = new ResizeObserver(function () {
+            rows.forEach(function (it) {
+              var w = it.cv.parentNode.clientWidth;
+              if (w && Math.abs(Math.min(w, 300) - it.w) > 1) fit(it);
+            });
+          });
+          rows.forEach(function (it) { ro.observe(it.cv.parentNode); });
+        }
+        window.addEventListener('resize', function () {
+          rows.forEach(function (it) { fit(it); });
+        });
+
+        paintAll();
+        return f;
+      },
+
       decimal: function (s) {
         var f = document.createDocumentFragment();
         if (s.title) f.appendChild(h('h2', null, s.title));
@@ -2170,7 +2835,8 @@
     function finishLang() {
       var TASK = ['choice', 'quiz', 'annotate', 'draft', 'rubric',
         'sentBuild', 'pairMatch', 'transform', 'punctPick',
-        'predict', 'poemNote', 'senses', 'checkup'];
+        'predict', 'poemNote', 'senses', 'checkup',
+        'pinyin', 'story', 'readAloud', 'writeChar'];
       var tasks = 0, marks = 0;
       C.steps.forEach(function (s, k) {
         if (TASK.indexOf(s.type) < 0) return;
@@ -2179,13 +2845,15 @@
       });
       var mins = Math.max(1, Math.round((Date.now() - startedAt) / 60000));
 
-      var selfLines = [], draftText = '';
+      var selfLines = [], draftText = '', readLine = '', writtenImg = '';
       C.steps.forEach(function (s, k) {
         var st = stateOf(k);
         if (s.type === 'rubric' && st.self) {
           Object.keys(st.self).forEach(function (d) { selfLines.push(d + '：' + st.self[d]); });
         }
         if (st.draft) draftText = st.draft;
+        if (st.read) readLine = '朗读' + (st.read.sec ? ' ' + st.read.sec + ' 秒' : '') + ' · 自评 ' + st.read.self + ' 条';
+        if (st.written) writtenImg = st.written;
       });
 
       var card = $('scoreCard');
@@ -2195,6 +2863,10 @@
           '<p class="muted" style="margin:6px 0 0">用时约 ' + mins + ' 分钟</p>' +
           (selfLines.length
             ? '<div class="self-recap">' + selfLines.map(function (x) { return '<span>' + x + '</span>'; }).join('') + '</div>'
+            : '') +
+          (readLine ? '<div class="self-recap"><span>' + readLine + '</span></div>' : '') +
+          (writtenImg
+            ? '<div class="draft-recap written-recap"><b>你写的这个字</b><p><img src="' + writtenImg + '" alt="手写的字"></p></div>'
             : '') +
           (draftText ? '<div class="draft-recap"><b>你写的这一句</b><p>' +
             draftText.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/\n/g, '<br>') + '</p></div>' : '') +

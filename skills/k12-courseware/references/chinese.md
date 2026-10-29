@@ -69,13 +69,18 @@
 | `poemNote` | 古诗注释：注释卡送回诗句，归位后撤注复述 | `body.notes[{text,on,tag}]` · `body.recall{answer[],words[]}` |
 | `senses` | 感官观察：四格感官 + 观察顺序，不排完不许写 | `body.senses[{k,name,hint}]` · `body.orders[]` |
 | `checkup` | 修改体检：清单 + 文稿，点中一句才允许打勾 | `body.checks[{name,how,hits[],fix}]` |
+| `pinyin` | 拼音选择题：字下加点，四声选项，答对后浮出注音 | `body.word` · `body.pos`（目标字位置）· `body.options[]`（带调号的字符串）· `body.answer` · `body.read` · `body.misconception{}` |
+| `story` | 典故卡：出处 + 分段正文 + 原文/白话 + 想一想 + 今义 | `body.kind` · `body.name` · `body.origin` · `body.paras[]` · `body.quote` · `body.gloss` · `body.ask` / `options` / `answer` · `body.now` · `body.link{topic,label}` |
+| `readAloud` | 朗读：范读（无中文语音则禁用）+ 录音回放 + 三条自评 | `body.text` · `body.tip` · `body.rubric[]` · `body.min` · `body.limit`（秒） |
+| `writeChar` | 田字格手写：统计抬笔次数、查出格与过小 | `body.chars[{ch,pinyin,strokes,tip}]` · `body.min`（笔画数是硬校验，±2 笔容差） |
 
 两类实现方式要分清：
 
 - **走 `renderers.js` 的四个**（`sentBuild` / `pairMatch` / `transform` / `punctPick`）——必须
   同步加进 `global.CR` 导出，否则 esbuild 树摇会把它剔掉；做完最后一个动作要回调 `spec.onDone`，
   引擎据此记"这一步留下了痕迹"，漏了结算就少算一项。
-- **引擎内置的七个**（`annotate` / `draft` / `rubric` / `predict` / `poemNote` / `senses` / `checkup`）
+- **引擎内置的十一个**（`annotate` / `draft` / `rubric` / `predict` / `poemNote` / `senses` /
+  `checkup` / `pinyin` / `story` / `readAloud` / `writeChar`）
   ——直接写在 `engine.js` 里，能访问 `stateOf(i)`，不进 `CR`，也不用管导出；但要在
   `finishLang()` 的 `TASK` 数组里登记，否则不算"可验证环节"。
 
@@ -89,7 +94,7 @@
 |---|---|---|
 | 演示按钮 | 「▶ 一步一步算」 | 「▶ 看老师改这一句」，提示"先自己试一次，再看不迟" |
 | 选择题 | 选错标红、不放行 | `soft:true` 时点哪个都能看解释；真知识题显式写 `hard:true` 才设门禁 |
-| 结算 | 「X / Y 一次答对」 | 「X / Y 项留下了痕迹」+ 自评摘录 + 你写的那一句 |
+| 结算 | 「X / Y 一次答对」 | 「X / Y 项留下了痕迹」+ 自评摘录 + 你写的那一句 + 朗读秒数 + 你写的那个字 |
 | 写入 | `{done, score}` | `{done, kind:'chinese', marks, tasks, self, draft}`，并把这一句存进 `stx.sentences` |
 | 回图谱提示 | 「已完成 · 答对 3/4」 | 「完成 · 5/6 项留下了痕迹」 |
 
@@ -98,14 +103,23 @@
 
 ## 六、语文课件的特殊约束
 
-- **标准：**语文主题当前未绑定课标编号（`standards` 留空数组），图谱挂接分暂少 5 分。
+- **标准：**朗读、写字、成语三课已挂 `chinese-2022:S1:LR` / `:S1:BQ`；早先九课仍是
+  `standards: []`，各少 5 分，补编号是待办。
 - **版权：**古诗原文可用（公有领域）；注释、练习、例句一律自编，不抄教材原题。
 - **判分边界：**只有"唯一答案"的语言知识（的/地、顿号分号、关联词搭配）可以判对错；
   扩句、造句、加标点说理由一律不判分，只给量规与参考稿。
 - **不做同伴互评**：单机离线没有真实同伴，伪互评比不互评更糟；替代品是"读出声、自己回听"。
-- **笔顺：**识字写字类不在本分册范围；需要时用 hanzi-writer（MIT），不要手写 SVG 笔画。
+- **朗读不判分：**`readAloud` 只做三件事——范读、录音、回放。Chrome 的语音识别走 Google
+  服务，中国大陆教室连不上；云端评测要联网加密钥，离线就废。**不要**在没有识别的地方
+  写"系统会给你打分"。设备无麦克风或无中文语音时，必须留一条"读给同桌听"的替代路径。
+- **手写不做识别：**`writeChar` 只数笔画、查出格、查过小。真正的字形识别要几十兆模型，
+  和单文件离线直接冲突。**不要**承诺"写对写错机器知道"。笔顺动画也不做，需要时接
+  hanzi-writer（MIT），不要手写 SVG 笔画。
 
 ## 七、题量与节奏
 
 `duration / interactions` 仍保持 2~7。语文一课 13 分钟、5 个动手环节是基准配置：
 读（1）+ 发现（1）+ 改一处（1）+ 写（1）+ 评（1）。
+
+低段朗读、写字课可以放 6 个环节（13 / 6 ≈ 2.2 分钟），因为每个环节本身很短——
+读一遍、写一个字都不到一分钟，真正的负担在"再读一遍"和"再写一个"的重复上。

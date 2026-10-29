@@ -89,7 +89,15 @@ function scoreCourse(dir) {
     // 3. 概念反馈：错项有没有说清「错在哪」
     // 语文表达类没有对错题，这一维改看「有没有解释性文案」——易错点、参照稿、旁批
     const isLang = meta.subject === '语文' || (content && content.subject === '语文');
-    const choices = steps.filter(s => s.type === 'choice');
+    // 拼音题和典故的「想一想」也是选择题，只是选项藏在 body 里
+    const choices = steps.filter(s => {
+      if (s.type === 'choice') return true;
+      if (s.type === 'pinyin' || s.type === 'story') {
+        const b = s.body || s;
+        return Array.isArray(b.options) && b.options.length > 1;
+      }
+      return false;
+    });
     const quizzes = steps.filter(s => s.type === 'quiz');
     const qTotal = choices.length + quizzes.length;
     if (!qTotal && isLang) {
@@ -103,8 +111,12 @@ function scoreCourse(dir) {
       let got = 0;
       let bare = 0;
       for (const s of choices) {
-        const wrong = (s.options || []).filter(o => o !== s.answer);
-        const covered = wrong.filter(o => s.misconception && s.misconception[o]).length;
+        const b = s.body || s;
+        const opts = b.options || [];
+        const ans = b.answer !== undefined ? b.answer : s.answer;
+        const mc = b.misconception || s.misconception || {};
+        const wrong = opts.filter(o => o !== ans);
+        const covered = wrong.filter(o => mc[o]).length;
         got += wrong.length ? covered / wrong.length : 0;
         if (covered < wrong.length) bare++;
       }
@@ -159,7 +171,8 @@ function scoreCourse(dir) {
     put('assess', null, '手写页面：题目数未知');
   } else {
     // 语文的「留下痕迹」环节（圈画/动笔/自评）与检测题同权
-    const HOME = ['quiz', 'choice', 'annotate', 'draft', 'rubric', 'predict', 'poemNote', 'senses', 'checkup'];
+    const HOME = ['quiz', 'choice', 'annotate', 'draft', 'rubric', 'predict', 'poemNote', 'senses', 'checkup',
+      'pinyin', 'story', 'readAloud', 'writeChar'];
     const qTotal = steps.filter(s => HOME.includes(s.type)).length;
     if (qTotal >= 2) put('assess', 10, `${qTotal} 个可验证环节`);
     else if (qTotal === 1) put('assess', 5, '只有 1 个可验证环节，看不出是否真会');

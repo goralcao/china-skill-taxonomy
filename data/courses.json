@@ -1,22 +1,22 @@
 {
-  "version": "v0.45.0",
+  "version": "v0.46.0",
   "schemaVersion": 1,
-  "generatedAt": "2026-10-29",
+  "generatedAt": "2026-10-30",
   "counts": {
-    "total": 62,
+    "total": 65,
     "byTemplate": {
       "drill": 1,
-      "explain": 60,
+      "explain": 63,
       "explore": 1
     },
     "byStatus": {
-      "reviewed": 62
+      "reviewed": 65
     },
     "bySubject": {
       "数学": 51,
+      "语文": 12,
       "化学": 1,
-      "物理": 1,
-      "语文": 9
+      "物理": 1
     }
   },
   "courses": [
@@ -252,6 +252,39 @@
       "updatedAt": "2026-10-27",
       "path": "courses/mt_calendar/",
       "bytes": 657
+    },
+    {
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-29",
+      "subject": "语文",
+      "template": "explain",
+      "topicId": "mt_char-writing",
+      "title": "字写歪了，是手不稳吗？",
+      "renderer": "writeChar",
+      "duration": 13,
+      "interactions": 6,
+      "grade": 1,
+      "standards": [
+        "chinese-2022:S1:BQ"
+      ],
+      "prerequisites": [
+        "mt_char-stroke",
+        "mt_char-radical"
+      ],
+      "next": [
+        "mt_write-picture"
+      ],
+      "objectives": [
+        "落笔前先看范字在田字格里占哪儿",
+        "写完能自己数笔画，发现连笔和漏笔",
+        "知道字占七成、四周留空才站得住"
+      ],
+      "cognitiveAction": "辨析",
+      "path": "courses/mt_char-writing/",
+      "bytes": 675
     },
     {
       "status": "reviewed",
@@ -1411,6 +1444,39 @@
       "updatedAt": "2026-10-29",
       "subject": "语文",
       "template": "explain",
+      "topicId": "mt_read-aloud",
+      "title": "朗读：问句往上挑，句号收得住",
+      "renderer": "readAloud",
+      "duration": 13,
+      "interactions": 6,
+      "grade": 1,
+      "standards": [
+        "chinese-2022:S1:LR"
+      ],
+      "prerequisites": [
+        "mt_pinyin-reading"
+      ],
+      "next": [
+        "mt_read-silent",
+        "mt_read-feel"
+      ],
+      "objectives": [
+        "知道问句靠最后一个字往上挑，陈述句靠句号处收住",
+        "把「谁的」「猴子的」这类词连紧，不一字一顿",
+        "读完录下来回放，听出自己哪一句没读对"
+      ],
+      "cognitiveAction": "辨析",
+      "path": "courses/mt_read-aloud/",
+      "bytes": 684
+    },
+    {
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-29",
+      "subject": "语文",
+      "template": "explain",
       "topicId": "mt_read-ancient",
       "title": "借助注释读古诗：把拐杖用好，再放下",
       "renderer": "poemNote",
@@ -1985,6 +2051,39 @@
       "cognitiveAction": "构造",
       "path": "courses/mt_volume/",
       "bytes": 692
+    },
+    {
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-10-29",
+      "subject": "语文",
+      "template": "explain",
+      "topicId": "mt_word-idiom",
+      "title": "四个字，怎么就能讲一件事？",
+      "renderer": "story",
+      "duration": 13,
+      "interactions": 5,
+      "grade": 2,
+      "standards": [
+        "chinese-2022:S1:BQ"
+      ],
+      "prerequisites": [
+        "mt_word-accumulate",
+        "mt_word-understand"
+      ],
+      "next": [
+        "mt_write-narrative"
+      ],
+      "objectives": [
+        "知道成语多有来历，意思要到故事里去找",
+        "能讲清守株待兔、亡羊补牢各讲了什么事、笑什么夸什么",
+        "能把成语的意思写进一句话里，不硬塞四个字"
+      ],
+      "cognitiveAction": "辨析",
+      "path": "courses/mt_word-idiom/",
+      "bytes": 681
     },
     {
       "status": "reviewed",

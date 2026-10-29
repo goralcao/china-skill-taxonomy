@@ -1,0 +1,31 @@
+{
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-29",
+  "subject": "语文",
+  "template": "explain",
+  "topicId": "mt_read-aloud",
+  "title": "朗读：问句往上挑，句号收得住",
+  "renderer": "readAloud",
+  "duration": 13,
+  "interactions": 6,
+  "grade": 1,
+  "standards": [
+    "chinese-2022:S1:LR"
+  ],
+  "prerequisites": [
+    "mt_pinyin-reading"
+  ],
+  "next": [
+    "mt_read-silent",
+    "mt_read-feel"
+  ],
+  "objectives": [
+    "知道问句靠最后一个字往上挑，陈述句靠句号处收住",
+    "把「谁的」「猴子的」这类词连紧，不一字一顿",
+    "读完录下来回放，听出自己哪一句没读对"
+  ],
+  "cognitiveAction": "辨析"
+}

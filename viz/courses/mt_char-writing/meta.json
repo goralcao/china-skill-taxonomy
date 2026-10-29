@@ -1,0 +1,31 @@
+{
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-10-29",
+  "subject": "语文",
+  "template": "explain",
+  "topicId": "mt_char-writing",
+  "title": "字写歪了，是手不稳吗？",
+  "renderer": "writeChar",
+  "duration": 13,
+  "interactions": 6,
+  "grade": 1,
+  "standards": [
+    "chinese-2022:S1:BQ"
+  ],
+  "prerequisites": [
+    "mt_char-stroke",
+    "mt_char-radical"
+  ],
+  "next": [
+    "mt_write-picture"
+  ],
+  "objectives": [
+    "落笔前先看范字在田字格里占哪儿",
+    "写完能自己数笔画，发现连笔和漏笔",
+    "知道字占七成、四周留空才站得住"
+  ],
+  "cognitiveAction": "辨析"
+}
