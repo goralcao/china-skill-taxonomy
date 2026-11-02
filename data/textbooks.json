@@ -1,5 +1,5 @@
 {
-  "version": "v0.49.0",
+  "version": "v0.49.1",
   "schemaVersion": 1,
   "sources": {
     "smartedu": {
@@ -22,6 +22,678 @@
       "crossCheck": "电子教材网（sjds.net）、教习网（51jiaoxi.com）等公开目录交叉核对",
       "fetchedAt": "2026-10-21",
       "licenseNote": "仅收录目录结构，不收录教材正文；教材版权归人民教育出版社所有。"
+    }
+  },
+  "smarteduIds": {
+    "bnu-math:1a": {
+      "contentId": "e9a3cef0-a95c-4ad6-93c2-eb0aaadc8891",
+      "title": "（根据2022年版课程标准修订）义务教育教科书•数学一年级上册",
+      "updated": "2026-08-18"
+    },
+    "bnu-math:1b": {
+      "contentId": "83939ed0-3a79-417b-b3b5-17e12c280263",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·数学一年级下册",
+      "updated": "2026-03-02"
+    },
+    "bnu-math:2a": {
+      "contentId": "958f88db-49ad-45d3-aa3f-e7245e8e6650",
+      "title": "（根据2022年版课程标准修订）义务教育教科书•数学二年级上册",
+      "updated": "2026-08-18"
+    },
+    "bnu-math:2b": {
+      "contentId": "874c5b49-2843-4a5f-9a43-9b870c73fb61",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·数学二年级下册",
+      "updated": "2026-03-03"
+    },
+    "bnu-math:3a": {
+      "contentId": "66e175c4-e1a7-4d09-b9d3-36865b91ff39",
+      "title": "（根据2022年版课程标准修订）义务教育教科书•数学三年级上册",
+      "updated": "2026-08-18"
+    },
+    "bnu-math:3b": {
+      "contentId": "83ac3d84-ba3a-4672-ac43-09dbc81c4769",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·数学三年级下册",
+      "updated": "2026-03-03"
+    },
+    "bnu-math:4a": {
+      "contentId": "ed7a0403-f6d3-47f1-8680-7a5faefe70a8",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·数学四年级上册",
+      "updated": "2026-09-29"
+    },
+    "bnu-math:4b": {
+      "contentId": "9fbeead2-f321-48ee-a184-d2d5ea15c5d1",
+      "title": "义务教育教科书·数学四年级下册",
+      "updated": "2026-09-04"
+    },
+    "bnu-math:5a": {
+      "contentId": "760cbab5-6fe6-4037-8826-d78727f7f39f",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·数学五年级上册",
+      "updated": "2026-09-29"
+    },
+    "bnu-math:5b": {
+      "contentId": "0cfca9aa-6235-4213-aa84-906d7ea67b0a",
+      "title": "义务教育教科书·数学五年级下册",
+      "updated": "2026-03-02"
+    },
+    "bnu-math:6a": {
+      "contentId": "45fe27cf-8cb3-4670-8397-a482731412fc",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·数学六年级上册",
+      "updated": "2026-09-29"
+    },
+    "bnu-math:6b": {
+      "contentId": "d346ef5a-9c46-40c0-ad12-069479115825",
+      "title": "义务教育教科书·数学六年级下册",
+      "updated": "2026-03-02"
+    },
+    "jkb-science:1a": {
+      "contentId": "5082db8c-82e3-4253-be5a-36a4cc7473a6",
+      "title": "（根据2022年版课程标准修订）义务教育教科书•科学一年级上册",
+      "updated": "2026-01-22"
+    },
+    "jkb-science:1b": {
+      "contentId": "6747ab99-ffe6-4414-a4ba-e8de1e9a6b5f",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·科学一年级下册",
+      "updated": "2026-03-02"
+    },
+    "jkb-science:2a": {
+      "contentId": "a27e1141-eb30-4030-a1df-0051cc737afc",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·科学二年级上册",
+      "updated": "2026-08-18"
+    },
+    "jkb-science:2b": {
+      "contentId": "d1e7490c-c9e3-42cc-8235-858af14b4a20",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·科学二年级下册",
+      "updated": "2026-10-01"
+    },
+    "jkb-science:3a": {
+      "contentId": "c8959f5d-8cb6-4624-aebc-df78b612b332",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·科学三年级上册",
+      "updated": "2026-08-18"
+    },
+    "jkb-science:3b": {
+      "contentId": "67a740b6-4ebe-4965-82cf-6d0e1772d14b",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·科学三年级下册",
+      "updated": "2026-10-01"
+    },
+    "jkb-science:4a": {
+      "contentId": "de850b37-08a3-40d5-8aa7-7791f08179e0",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·科学四年级上册",
+      "updated": "2026-08-21"
+    },
+    "jkb-science:4b": {
+      "contentId": "99186490-5b29-4767-aca5-b6386ec98960",
+      "title": "义务教育教科书·科学四年级下册",
+      "updated": "2026-09-04"
+    },
+    "jkb-science:5a": {
+      "contentId": "4f4b95e8-022c-4685-a126-cc3bded02620",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·科学五年级上册",
+      "updated": "2026-08-21"
+    },
+    "jkb-science:5b": {
+      "contentId": "9a2bcf38-3f8e-4835-9466-341207f7d02c",
+      "title": "义务教育教科书·科学五年级下册",
+      "updated": "2026-09-04"
+    },
+    "jkb-science:6a": {
+      "contentId": "89bce7a4-35e0-48a0-a29a-f9b97f14354d",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·科学六年级上册",
+      "updated": "2026-08-21"
+    },
+    "jkb-science:6b": {
+      "contentId": "2c4fe2cc-076f-47bf-9962-39816e866429",
+      "title": "义务教育教科书·科学六年级下册",
+      "updated": "2026-03-02"
+    },
+    "pep-biology:7a": {
+      "contentId": "405270eb-9f00-4bba-b0f6-da863340625f",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·生物学七年级上册",
+      "updated": "2026-08-18"
+    },
+    "pep-biology:7b": {
+      "contentId": "75de4cf4-9cd3-4e70-8844-cb40ad7c318e",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·生物学七年级下册",
+      "updated": "2026-03-02"
+    },
+    "pep-biology:8a": {
+      "contentId": "5a29010d-b2f0-4bf0-9e05-e311168cd929",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·生物学八年级上册",
+      "updated": "2026-08-18"
+    },
+    "pep-biology:8b": {
+      "contentId": "f4e7eb1c-2a75-4bc5-8fb9-404a108e1b84",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·生物学八年级下册",
+      "updated": "2026-03-02"
+    },
+    "pep-chemistry:9a": {
+      "contentId": "8c419b19-b3a9-4dbf-a8b4-546b7d337528",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·化学九年级上册",
+      "updated": "2026-08-18"
+    },
+    "pep-chemistry:9b": {
+      "contentId": "1998204c-f017-4f49-9000-0ba0b93d2a4d",
+      "title": "(根据2022年版课程标准修订)义务教育教科书·化学九年级下册",
+      "updated": "2026-03-02"
+    },
+    "pep-english-2024:3a": {
+      "contentId": "dd6173ba-579a-356e-900c-cb53e152229c",
+      "title": "（根据2022年版课程标准修订）义务教育教科书•英语 三年级上册",
+      "updated": "2026-08-19"
+    },
+    "pep-english-2024:3b": {
+      "contentId": "9eb54ff2-1c7b-4441-abff-c44b714a2302",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·英语 三年级 下册",
+      "updated": "2026-03-02"
+    },
+    "pep-english-2024:4a": {
+      "contentId": "be6e00c8-0068-8453-927f-646f6f753a5a",
+      "title": "（根据2022年版课程标准修订）义务教育教科书•英语 四年级上册",
+      "updated": "2026-08-19"
+    },
+    "pep-english-2024:5a": {
+      "contentId": "9f1cda77-2dc7-442b-82f1-97243f7ec39d",
+      "title": "（根据2022年版课程标准修订）义务教育教科书•英语 五年级上册",
+      "updated": "2026-10-04"
+    },
+    "pep-english:3a": {
+      "contentId": "dd6173ba-579a-356e-900c-cb53e152229c",
+      "title": "（根据2022年版课程标准修订）义务教育教科书•英语 三年级上册",
+      "updated": "2026-08-19"
+    },
+    "pep-english:3b": {
+      "contentId": "9eb54ff2-1c7b-4441-abff-c44b714a2302",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·英语 三年级 下册",
+      "updated": "2026-03-02"
+    },
+    "pep-english:4a": {
+      "contentId": "be6e00c8-0068-8453-927f-646f6f753a5a",
+      "title": "（根据2022年版课程标准修订）义务教育教科书•英语 四年级上册",
+      "updated": "2026-08-19"
+    },
+    "pep-english:4b": {
+      "contentId": "18b54350-f833-4b5c-a1b9-ebbf02cf4545",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·英语 四年级下册",
+      "updated": "2026-06-12"
+    },
+    "pep-english:5a": {
+      "contentId": "9f1cda77-2dc7-442b-82f1-97243f7ec39d",
+      "title": "（根据2022年版课程标准修订）义务教育教科书•英语 五年级上册",
+      "updated": "2026-10-04"
+    },
+    "pep-english:5b": {
+      "contentId": "c5180299-d288-46e2-a0df-9f04c94fd922",
+      "title": "义务教育教科书·英语（三年级起点）五年级下册",
+      "updated": "2026-03-02"
+    },
+    "pep-english:6a": {
+      "contentId": "9e2878bf-964d-47fb-85ba-937cf61159a5",
+      "title": "（根据2022年版课程标准修订）义务教育教科书•英语 六年级上册",
+      "updated": "2026-10-04"
+    },
+    "pep-english:6b": {
+      "contentId": "1417c7bc-52d9-4c4d-92fd-796a92a6d275",
+      "title": "义务教育教科书·英语（三年级起点）六年级下册",
+      "updated": "2026-03-02"
+    },
+    "pep-geography:7a": {
+      "contentId": "4d045a6b-46f3-42de-9c91-89bc443cbeff",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·地理七年级上册",
+      "updated": "2026-08-18"
+    },
+    "pep-geography:7b": {
+      "contentId": "8bc3c0a8-5f4b-4d80-8427-e5d35a8669ac",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·地理七年级下册",
+      "updated": "2026-03-02"
+    },
+    "pep-geography:8a": {
+      "contentId": "4e916d49-8495-4606-9a97-672ba6489eb8",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·地理八年级上册",
+      "updated": "2026-08-18"
+    },
+    "pep-geography:8b": {
+      "contentId": "f02521c3-69db-4125-ab18-16e2232863ea",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·地理八年级下册",
+      "updated": "2026-03-04"
+    },
+    "pep-math-2024:1a": {
+      "contentId": "c3e06fe4-c6b3-49cb-8727-4f8ff69bbfbc",
+      "title": "（根据2022年版课程标准修订）义务教育教科书 · 数学一年级上册",
+      "updated": "2026-08-18"
+    },
+    "pep-math-2024:1b": {
+      "contentId": "6bf8ae7e-d987-40b4-8fb3-bbb98fcb50b5",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·数学一年级下册",
+      "updated": "2026-03-02"
+    },
+    "pep-math-2024:2a": {
+      "contentId": "8cfc5a2a-425c-4b9a-a97c-e78d4a4c1e3a",
+      "title": "（根据2022年版课程标准修订）义务教育教科书 · 数学二年级上册",
+      "updated": "2026-08-18"
+    },
+    "pep-math-2024:2b": {
+      "contentId": "c1897b18-b302-4e8d-9fd4-40915c4b05c2",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·数学二年级下册",
+      "updated": "2026-06-25"
+    },
+    "pep-math-2024:3a": {
+      "contentId": "33c8d495-9862-4e19-aab9-61d2af08608a",
+      "title": "（根据2022年版课程标准修订）义务教育教科书 · 数学三年级上册",
+      "updated": "2026-08-18"
+    },
+    "pep-math-2024:3b": {
+      "contentId": "8666a8bd-a0e7-49aa-ba07-bf419ceead24",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·数学三年级下册",
+      "updated": "2026-09-17"
+    },
+    "pep-math-2024:4a": {
+      "contentId": "654e3d1e-c995-4340-81c5-abd7881d835b",
+      "title": "（根据2022年版课程标准修订）义务教育教科书 · 数学四年级上册",
+      "updated": "2026-09-17"
+    },
+    "pep-math:1a": {
+      "contentId": "c3e06fe4-c6b3-49cb-8727-4f8ff69bbfbc",
+      "title": "（根据2022年版课程标准修订）义务教育教科书 · 数学一年级上册",
+      "updated": "2026-08-18"
+    },
+    "pep-math:1b": {
+      "contentId": "6bf8ae7e-d987-40b4-8fb3-bbb98fcb50b5",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·数学一年级下册",
+      "updated": "2026-03-02"
+    },
+    "pep-math:2a": {
+      "contentId": "8cfc5a2a-425c-4b9a-a97c-e78d4a4c1e3a",
+      "title": "（根据2022年版课程标准修订）义务教育教科书 · 数学二年级上册",
+      "updated": "2026-08-18"
+    },
+    "pep-math:2b": {
+      "contentId": "c1897b18-b302-4e8d-9fd4-40915c4b05c2",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·数学二年级下册",
+      "updated": "2026-06-25"
+    },
+    "pep-math:3a": {
+      "contentId": "33c8d495-9862-4e19-aab9-61d2af08608a",
+      "title": "（根据2022年版课程标准修订）义务教育教科书 · 数学三年级上册",
+      "updated": "2026-08-18"
+    },
+    "pep-math:3b": {
+      "contentId": "8666a8bd-a0e7-49aa-ba07-bf419ceead24",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·数学三年级下册",
+      "updated": "2026-09-17"
+    },
+    "pep-math:4a": {
+      "contentId": "654e3d1e-c995-4340-81c5-abd7881d835b",
+      "title": "（根据2022年版课程标准修订）义务教育教科书 · 数学四年级上册",
+      "updated": "2026-09-17"
+    },
+    "pep-math:4b": {
+      "contentId": "aa00ab9d-b343-4542-b16d-9c3900b3444b",
+      "title": "义务教育教科书·数学四年级下册",
+      "updated": "2026-03-02"
+    },
+    "pep-math:5a": {
+      "contentId": "d0d6252f-2233-4f66-9ac9-440638d56fec",
+      "title": "（根据2022年版课程标准修订）义务教育教科书 · 数学五年级上册",
+      "updated": "2026-09-01"
+    },
+    "pep-math:5b": {
+      "contentId": "83339b94-2b33-4a9b-ba0e-026b4fdd4f0e",
+      "title": "义务教育教科书·数学五年级下册",
+      "updated": "2026-09-17"
+    },
+    "pep-math:6a": {
+      "contentId": "845136d4-e27b-4e7e-b9a9-00cadf4f9e20",
+      "title": "（根据2022年版课程标准修订）义务教育教科书 · 数学六年级上册",
+      "updated": "2026-09-17"
+    },
+    "pep-math:6b": {
+      "contentId": "8e650f4c-e616-4699-ac0a-4911b22e2f2e",
+      "title": "义务教育教科书·数学六年级下册",
+      "updated": "2026-03-02"
+    },
+    "pep-math:7a": {
+      "contentId": "540ac93d-67fc-4353-9e49-1ef20d02b5a4",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·数学七年级上册",
+      "updated": "2026-08-18"
+    },
+    "pep-math:7b": {
+      "contentId": "81d65033-4cb1-4cf0-ae27-8c367c537c30",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·数学七年级下册",
+      "updated": "2026-03-02"
+    },
+    "pep-math:8a": {
+      "contentId": "81264e9e-22bc-4289-8389-13b40433b5ba",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·数学八年级上册",
+      "updated": "2026-08-18"
+    },
+    "pep-math:8b": {
+      "contentId": "e91a6f80-2a9a-4452-a47e-b9ec164156ff",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·数学八年级下册",
+      "updated": "2026-03-11"
+    },
+    "pep-math:9a": {
+      "contentId": "937a48c1-de81-4cc6-91b2-617cd859de4b",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·数学九年级上册",
+      "updated": "2026-10-01"
+    },
+    "pep-math:9b": {
+      "contentId": "ab188631-292c-455e-8082-e09a0ab4001c",
+      "title": "义务教育教科书·数学九年级下册",
+      "updated": "2026-03-02"
+    },
+    "pep-physics:8a": {
+      "contentId": "e5618f17-c06e-4c4c-944e-0ee8ced25391",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·物理八年级上册",
+      "updated": "2026-08-18"
+    },
+    "pep-physics:8b": {
+      "contentId": "aec6de38-33d2-417a-bbdb-e39154a046a9",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·物理八年级下册",
+      "updated": "2026-03-02"
+    },
+    "sj-math:1a": {
+      "contentId": "932af069-bc0a-41b7-aa94-1eaff1c99323",
+      "title": "（根据2022年版课程标准修订）义务教育教科书•数学一年级上册",
+      "updated": "2026-08-18"
+    },
+    "sj-math:1b": {
+      "contentId": "e62ac75c-971b-4487-bbb3-ba6b5014172b",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·数学一年级下册",
+      "updated": "2026-03-02"
+    },
+    "sj-math:2a": {
+      "contentId": "d9874022-3a12-40d0-88be-db1692079535",
+      "title": "（根据2022年版课程标准修订）义务教育教科书•数学二年级上册",
+      "updated": "2026-08-18"
+    },
+    "sj-math:2b": {
+      "contentId": "da861684-c034-4000-973d-d3f26120bdfd",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·数学二年级下册",
+      "updated": "2026-03-11"
+    },
+    "sj-math:3a": {
+      "contentId": "c0cc18a9-e27d-40ab-96dd-b9236e19080c",
+      "title": "（根据2022年版课程标准修订）义务教育教科书•数学三年级上册",
+      "updated": "2026-08-24"
+    },
+    "sj-math:3b": {
+      "contentId": "5f8e164a-5510-466f-b58b-4728edd09eb2",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·数学三年级下册",
+      "updated": "2026-03-11"
+    },
+    "sj-math:4a": {
+      "contentId": "07c75bda-7fff-4c4b-a271-9be638af37de",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·数学四年级上册",
+      "updated": "2026-08-21"
+    },
+    "sj-math:4b": {
+      "contentId": "27458ba8-dbf1-4860-a6cc-a0571756292d",
+      "title": "义务教育教科书·数学四年级下册",
+      "updated": "2026-03-02"
+    },
+    "sj-math:5a": {
+      "contentId": "92406f69-3b1b-404a-82c8-95adecae875f",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·数学五年级上册",
+      "updated": "2026-09-21"
+    },
+    "sj-math:5b": {
+      "contentId": "14d4c93e-0a6a-4e2f-8b7a-24f0be4c64fc",
+      "title": "义务教育教科书·数学五年级下册",
+      "updated": "2026-03-02"
+    },
+    "sj-math:6a": {
+      "contentId": "b75ce244-1cf7-4ae7-b256-c6036e4d83e5",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·数学六年级上册",
+      "updated": "2026-08-21"
+    },
+    "sj-math:6b": {
+      "contentId": "5ed4f298-793d-4502-a4e3-f53bbf493deb",
+      "title": "义务教育教科书·数学六年级下册",
+      "updated": "2026-03-02"
+    },
+    "tb-morality:1a": {
+      "contentId": "bdc00134-465d-454b-a541-dcd0cec4d86e",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·道德与法治一年级上册",
+      "updated": "2026-08-18"
+    },
+    "tb-morality:1b": {
+      "contentId": "1e04e52e-41df-4689-b12a-f3b7315a4243",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·道德与法治一年级下册",
+      "updated": "2026-03-02"
+    },
+    "tb-morality:2a": {
+      "contentId": "cfdc0cbb-d23a-4b1d-ab28-a4d59b991dc6",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·道德与法治二年级上册",
+      "updated": "2026-08-18"
+    },
+    "tb-morality:2b": {
+      "contentId": "9d7e48c5-1d0c-4bad-99b6-d30f6f6d5d07",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·道德与法治二年级下册",
+      "updated": "2026-03-05"
+    },
+    "tb-morality:3a": {
+      "contentId": "87b8e557-b0b8-4456-ab8d-9d48bbdf302c",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·道德与法治三年级上册",
+      "updated": "2026-08-18"
+    },
+    "tb-morality:3b": {
+      "contentId": "298c4008-cc8e-4ab4-ba45-a52c346e7a26",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·道德与法治三年级下册",
+      "updated": "2026-03-05"
+    },
+    "tb-morality:4a": {
+      "contentId": "d0b4fc66-7de6-4e81-b965-7cc6f34a48be",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·道德与法治四年级上册",
+      "updated": "2026-09-08"
+    },
+    "tb-morality:4b": {
+      "contentId": "2e9e59bd-c983-46e2-ad5d-4840ea0a0f5a",
+      "title": "义务教育教科书·道德与法治四年级下册",
+      "updated": "2026-03-02"
+    },
+    "tb-morality:5a": {
+      "contentId": "5f380546-7207-4ac7-b3e0-1f66dc9fd575",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·道德与法治五年级上册",
+      "updated": "2026-08-18"
+    },
+    "tb-morality:5b": {
+      "contentId": "b0d10d30-4837-452d-9221-599f230d237e",
+      "title": "义务教育教科书·道德与法治五年级下册",
+      "updated": "2026-03-02"
+    },
+    "tb-morality:6a": {
+      "contentId": "c6ce4c92-b125-48cb-9b5b-4d336f28f242",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·道德与法治六年级上册",
+      "updated": "2026-08-18"
+    },
+    "tb-morality:6b": {
+      "contentId": "4c7f4f5d-ff5a-47db-98be-92d38009172a",
+      "title": "义务教育教科书·道德与法治六年级下册",
+      "updated": "2026-03-02"
+    },
+    "tb-morality:7a": {
+      "contentId": "11446212-4b7b-4094-afe3-bd5b4f2b3f0c",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·道德与法治七年级上册",
+      "updated": "2026-08-18"
+    },
+    "tb-morality:7b": {
+      "contentId": "4e1a2a9e-1e62-451f-a52e-ef99cb4e8bf2",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·道德与法治七年级下册",
+      "updated": "2026-03-02"
+    },
+    "tb-morality:8a": {
+      "contentId": "5a29b928-d6da-4131-a69e-4c54941f7651",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·道德与法治八年级上册",
+      "updated": "2026-08-18"
+    },
+    "tb-morality:8b": {
+      "contentId": "f1db2a19-2513-4626-8e6c-275cf549bdf2",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·道德与法治八年级下册",
+      "updated": "2026-03-05"
+    },
+    "tb-morality:9a": {
+      "contentId": "03d41525-a373-4286-92c3-3f2d7cbe3b79",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·道德与法治九年级上册",
+      "updated": "2026-08-18"
+    },
+    "tb-morality:9b": {
+      "contentId": "845ceea7-36c6-4db8-b032-998193173585",
+      "title": "义务教育教科书·道德与法治九年级下册",
+      "updated": "2026-03-02"
+    },
+    "tongbian-chinese-2024:1a": {
+      "contentId": "1c73b348-e8b6-47d6-84b0-6dbacbe28268",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·语文一年级上册",
+      "updated": "2026-08-18"
+    },
+    "tongbian-chinese-2024:1b": {
+      "contentId": "b87e153f-a64c-451a-aa6c-6ed9ac7d6821",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·语文一年级下册",
+      "updated": "2026-03-02"
+    },
+    "tongbian-chinese-2024:2a": {
+      "contentId": "2ce8f153-7bff-4c97-b6db-9aac414fea19",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·语文二年级上册",
+      "updated": "2026-08-18"
+    },
+    "tongbian-chinese-2024:2b": {
+      "contentId": "0f93b83e-b3c2-4a5d-8acd-ea460ab962d4",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·语文二年级下册",
+      "updated": "2026-03-03"
+    },
+    "tongbian-chinese-2024:3a": {
+      "contentId": "837f368e-fd4e-404a-ae3f-342d75bc0227",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·语文三年级上册",
+      "updated": "2026-08-18"
+    },
+    "tongbian-chinese-2024:3b": {
+      "contentId": "8e107655-5128-451f-84e5-d158725c537b",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·语文三年级下册",
+      "updated": "2026-03-03"
+    },
+    "tongbian-chinese-2024:4a": {
+      "contentId": "5cd7e623-5c38-4602-871a-3fba8a551db2",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·语文四年级上册",
+      "updated": "2026-09-08"
+    },
+    "tongbian-chinese:1a": {
+      "contentId": "1c73b348-e8b6-47d6-84b0-6dbacbe28268",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·语文一年级上册",
+      "updated": "2026-08-18"
+    },
+    "tongbian-chinese:1b": {
+      "contentId": "b87e153f-a64c-451a-aa6c-6ed9ac7d6821",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·语文一年级下册",
+      "updated": "2026-03-02"
+    },
+    "tongbian-chinese:2a": {
+      "contentId": "2ce8f153-7bff-4c97-b6db-9aac414fea19",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·语文二年级上册",
+      "updated": "2026-08-18"
+    },
+    "tongbian-chinese:2b": {
+      "contentId": "0f93b83e-b3c2-4a5d-8acd-ea460ab962d4",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·语文二年级下册",
+      "updated": "2026-03-03"
+    },
+    "tongbian-chinese:3a": {
+      "contentId": "837f368e-fd4e-404a-ae3f-342d75bc0227",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·语文三年级上册",
+      "updated": "2026-08-18"
+    },
+    "tongbian-chinese:3b": {
+      "contentId": "8e107655-5128-451f-84e5-d158725c537b",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·语文三年级下册",
+      "updated": "2026-03-03"
+    },
+    "tongbian-chinese:4a": {
+      "contentId": "5cd7e623-5c38-4602-871a-3fba8a551db2",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·语文四年级上册",
+      "updated": "2026-09-08"
+    },
+    "tongbian-chinese:4b": {
+      "contentId": "53d6315e-5f90-42c4-904f-2d4e95fe99ed",
+      "title": "义务教育教科书·语文四年级下册",
+      "updated": "2026-03-02"
+    },
+    "tongbian-chinese:5a": {
+      "contentId": "aabf2e4a-3ceb-4e86-8804-22c10223cc57",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·语文五年级上册",
+      "updated": "2026-08-18"
+    },
+    "tongbian-chinese:5b": {
+      "contentId": "98172dc9-8fba-4da6-9fae-6a3d1166f038",
+      "title": "义务教育教科书·语文五年级下册",
+      "updated": "2026-03-02"
+    },
+    "tongbian-chinese:6a": {
+      "contentId": "2e3dc199-9c42-486b-bbee-7731bd0ee227",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·语文六年级上册",
+      "updated": "2026-08-18"
+    },
+    "tongbian-chinese:6b": {
+      "contentId": "06422d77-21f1-45c3-b409-fa2947eee424",
+      "title": "义务教育教科书·语文六年级下册",
+      "updated": "2026-03-02"
+    },
+    "tongbian-chinese:7a": {
+      "contentId": "8b9c7052-add4-4744-ab04-69d6c180d5d9",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·语文七年级上册",
+      "updated": "2026-08-18"
+    },
+    "tongbian-chinese:7b": {
+      "contentId": "6b3ec445-9f7b-430c-a246-fc1903ca38b2",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·语文七年级下册",
+      "updated": "2026-03-02"
+    },
+    "tongbian-chinese:8a": {
+      "contentId": "4f64356a-8df7-4579-9400-e32c9a7f6718",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·语文八年级上册",
+      "updated": "2026-08-18"
+    },
+    "tongbian-chinese:8b": {
+      "contentId": "8f907d12-14b5-44ba-b042-0ffbc46e085b",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·语文八年级下册",
+      "updated": "2026-03-03"
+    },
+    "tongbian-chinese:9a": {
+      "contentId": "a8b13ab7-7eef-4dc7-a3c7-8009ba65ce11",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·语文九年级上册",
+      "updated": "2026-08-18"
+    },
+    "tongbian-chinese:9b": {
+      "contentId": "a45516ee-78ed-46f0-b88b-671174f2a2fe",
+      "title": "义务教育教科书·语文九年级下册",
+      "updated": "2026-03-02"
+    },
+    "tongbian-history:7a": {
+      "contentId": "8fc851b4-28df-4eaa-8e55-08d63dc1fe38",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·中国历史七年级上册",
+      "updated": "2026-08-18"
+    },
+    "tongbian-history:7b": {
+      "contentId": "d5b610a4-f7ff-4212-9749-6bebac05ee0f",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·中国历史七年级下册",
+      "updated": "2026-03-02"
+    },
+    "tongbian-history:8a": {
+      "contentId": "c1becbb7-300c-4ded-9310-f4444788b998",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·中国历史八年级上册",
+      "updated": "2026-08-18"
+    },
+    "tongbian-history:8b": {
+      "contentId": "c91cf483-b7ca-4ab5-a9c8-7e64a90158ac",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·中国历史八年级下册",
+      "updated": "2026-03-04"
+    },
+    "tongbian-history:9a": {
+      "contentId": "61a4f9ac-8bc0-437b-bbc2-f2f86d0ae65c",
+      "title": "（根据2022年版课程标准修订）义务教育教科书·世界历史九年级上册",
+      "updated": "2026-08-18"
+    },
+    "tongbian-history:9b": {
+      "contentId": "b21d337a-5bd5-4753-a515-013eb789656c",
+      "title": "义务教育教科书·世界历史九年级下册",
+      "updated": "2026-03-02"
     }
   },
   "versions": [

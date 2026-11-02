@@ -178,3 +178,28 @@ PYTHONPATH=/opt/paddle_ocr python3 scripts/audit-2024-new.py \
 2. **detail 与索引的 preview 可能不是同一份文件**。核新教材必须走索引条目。
 3. **`uN` 不是数组下标**，要过滤 `activity`/`intro`/`enrichment`。
 4. **改数据前先用「已知正确的点」反推索引方式**——本次若没做这步反推，会第三次改错。
+
+## 8. 教材链接（contentId 映射）
+
+图谱里「智慧教育平台」链接原先固定指向首页。现在按册映射到平台 `contentId`，点击直达该册教材页：
+
+```
+https://basic.smartedu.cn/tchMaterial/detail
+    ?contentType=assets_document&catalogType=tchMaterial
+    &subCatalog=tchMaterial&contentId=<uuid>
+```
+
+| 文件 | 用途 |
+|---|---|
+| `scripts/map-smartedu-ids.py` | 按 `tag_list` 的「学科+年级+册次+版本+学段」匹配 contentId，输出 `data/smartedu-map.json` |
+| `data/smartedu-map.json` | 册次 → `{contentId, title, updated}`；`build.py` 把它注入 `textbooks.json` 的 `smarteduIds`，随 `details.js` 下发 |
+
+```bash
+PYTHONPATH=/opt/paddle_ocr python3 scripts/map-smartedu-ids.py --report
+```
+
+两条边界，改脚本时别踩：
+
+1. **平台不支持单元级深链**，只有书级 contentId。单元只能在链接文字里提示，进书后手动定位。
+2. **同名版本有多套并行教材**（人教版英语分「吴欣=PEP」「苗兴伟=精通」，外研社分孙有中/刘兆义/张祖春），
+   脚本对无法唯一确定的一律留空、前端退到教材库——把用户带去错的书比不带更糟。

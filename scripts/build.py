@@ -90,7 +90,7 @@ import teaching_research_chinese_senior  # noqa: E402
 import teaching_research_math_senior  # noqa: E402
 import teaching_research_english_senior  # noqa: E402
 
-VERSION = "v0.49.0"
+VERSION = "v0.49.1"
 SCHEMA_VERSION = 1
 
 MODULES = [
@@ -546,6 +546,12 @@ def build_textbooks():
             entry["unitCounts"] = v["unitCounts"]
         versions.append(entry)
     versions.extend(build_textbooks_2024())
+    # 册次 -> 国家中小学智慧教育平台 contentId（scripts/map-smartedu-ids.py 生成）。
+    # 前端用它把「智慧教育平台」从首页改成直达该册教材页；缺映射的册次前端退到教材库。
+    smartedu_ids = {}
+    sm_path = DATA / "smartedu-map.json"
+    if sm_path.exists():
+        smartedu_ids = json.loads(sm_path.read_text(encoding="utf-8"))
     return {
         "version": VERSION,
         "schemaVersion": SCHEMA_VERSION,
@@ -554,6 +560,8 @@ def build_textbooks():
             "chinaTextbook": {**tb.CHINATEXTBOOK, "repo": textbook_paths.CHINA_TEXTBOOK_REPO},
             "dzkbw": tb24.SOURCE,
         },
+        # 册次（如 pep-math-2024:4a）-> {contentId, title, updated}
+        "smarteduIds": smartedu_ids,
         "versions": versions,
         # 知识点 → 2024 版单元映射层（与 topic.textbooks2024 同源；供独立消费与双向校验）
         "unitMap2024": tmap24.MAP_2024,

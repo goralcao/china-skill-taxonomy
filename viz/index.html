@@ -1701,10 +1701,58 @@
   }
 
   // ---------- 教材直达链接 ----------
+  // 平台教材页只认 contentId（书级），不支持用 URL 定位到具体单元，
+  // 所以能定位到书就直达那本书，定位不到就退到教材库列表——不回落到首页。
+  const CN_GRADE = ['', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二'];
+  /** 年级数字转中文（教材名里统一写「四年级」而不是「4年级」） */
+  const gradeCn = g => CN_GRADE[Number(g)] || g;
+
+  const SMARTEDU_LIBRARY = 'https://basic.smartedu.cn/tchMaterial';
+  const SMARTEDU_DETAIL = 'https://basic.smartedu.cn/tchMaterial/detail'
+    + '?contentType=assets_document&catalogType=tchMaterial&subCatalog=tchMaterial&contentId=';
+
+  /** 册 -> 平台 contentId（由 scripts/map-smartedu-ids.py 生成，缺失则为 null） */
+  function smarteduContentId(vslug, bslug) {
+    const map = D.textbooks?.smarteduIds;
+    if (!map) return null;
+    const hit = map[vslug + ':' + bslug];
+    return hit && hit.contentId ? hit.contentId : null;
+  }
+
+  /** 平台链接；有 contentId 时直达该册，并把单元写进链接文字便于书内定位 */
+  function smarteduLinkHtml(vslug, bslug, unitNo) {
+    const cid = smarteduContentId(vslug, bslug);
+    if (!cid) {
+      return `<a href="${SMARTEDU_LIBRARY}" target="_blank" rel="noopener">智慧教育平台</a>`;
+    }
+    const ver = (D.textbooks?.versions || []).find(x => x.slug === vslug);
+    const b = bookNames[vslug] && bookNames[vslug].books[bslug];
+    const CN_NUM = ['', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二'];
+    const g = b ? (CN_NUM[Number(b.grade)] || b.grade) : '';
+    const term = b ? (b.semester === '上' ? '上' : (b.semester === '下' ? '下' : '')) : '';
+    const bookLabel = b ? `${g}年级${term}册` : '本书';
+    // 平台上同一学科往往只剩 2024 修订版：旧版引用写的单元号在修订版里会错位，
+    // 此时不展示单元，免得把用户引到错的章节。
+    const revisedOnPlatform = !/-2024$/.test(vslug) && ver && SUBJECTS_2024.has(ver.subject);
+    let hint = bookLabel;
+    if (unitNo && !revisedOnPlatform) {
+      const list = ((b && b.units) || [])
+        .filter(u => (typeof u === 'object' ? u.type === 'unit' : true));
+      const u = list[unitNo - 1];
+      const nm = u && (typeof u === 'object' ? u.name : u);
+      hint = !nm ? `${bookLabel} · 第${unitNo}单元`
+        : (/第.+单元/.test(nm) ? `${bookLabel} · ${nm}` : `${bookLabel} · 第${unitNo}单元「${nm}」`);
+    }
+    const title = `直达《${ver ? ver.name.split('（')[0] : ''}${bookLabel}》，打开后在左侧目录定位`;
+    return `<a href="${SMARTEDU_DETAIL}${encodeURIComponent(cid)}" title="${esc(title)}"`
+      + ` target="_blank" rel="noopener">智慧教育平台 · ${esc(hint)}</a>`;
+  }
+
   function textbookLinkHtml(ref) {
     const label = refText(ref);
     const p = parseRef(ref);
-    let links = `<a href="https://basic.smartedu.cn/" target="_blank" rel="noopener">智慧教育平台</a>`;
+    let links = p ? smarteduLinkHtml(p.vslug, p.bslug, p.unit)
+                  : `<a href="${SMARTEDU_LIBRARY}" target="_blank" rel="noopener">智慧教育平台</a>`;
     if (p) {
       const v = (D.textbooks?.versions || []).find(x => x.slug === p.vslug);
       const b = v && v.books.find(x => x.slug === p.bslug);
@@ -1742,8 +1790,9 @@
       const b = v.books[bslug]; if (!b) continue;
       const hitUnits = new Set(hits.filter(x => x.unit).map(x => x.unit));
       const hitActs = new Set(hits.filter(x => x.act).map(x => x.act));
-      h += `<div class="tb-book"><div class="tb-bookname">${esc(v.name.split('（')[0])} · ${b.grade}年级${b.semester === '上' ? '上' : '下'}册</div>`;
+      h += `<div class="tb-book"><div class="tb-bookname">${esc(v.name.split('（')[0])} · ${gradeCn(b.grade)}年级${b.semester === '上' ? '上' : '下'}册</div>`;
       const src = [];
+      src.push(smarteduLinkHtml(vslug, bslug, null));
       if (b.source) src.push(`<a href="${esc(b.source)}" target="_blank" rel="noopener">在线目录</a>`);
       if (b.chinaTextbookPath) {
         const repo = D.textbooks?.sources?.chinaTextbook?.repo || 'https://github.com/TapXWorld/ChinaTextbook';
@@ -2340,8 +2389,8 @@
     const term = b.semester === '全一册' ? '全一册' : (b.semester === '上' ? '上' : '下');
     const base = v.name.split('（')[0];
     const bookLabel = term === '全一册'
-      ? `${base} ${b.grade}年级全一册`
-      : `${base} ${b.grade}年级${term}册`;
+      ? `${base} ${gradeCn(b.grade)}年级全一册`
+      : `${base} ${gradeCn(b.grade)}年级${term}册`;
     if (actPart) return `${bookLabel} · ${actPart}`;
     if (unitPart) {
       const n = Number(unitPart.slice(1));
@@ -2447,6 +2496,9 @@
         return s ? `<div class="std-item"><code>${esc(c)}</code>${esc(s.domain)}${s.theme ? ' · ' + esc(s.theme) : ''}：${esc(s.summary)}</div>` : '';
       }).join('');
       document.getElementById('pTextbooks').innerHTML = renderTextbooksHtml(n);
+      // 上面整块 innerHTML 重渲染会把按钮一起换掉，onclick 必须重新挂
+      const btn2 = document.getElementById('btnTbCompare');
+      if (btn2) btn2.onclick = () => textbookCompare(n);
     };
     ensureDetails().then(ok => {
       if (selected !== n) return;
