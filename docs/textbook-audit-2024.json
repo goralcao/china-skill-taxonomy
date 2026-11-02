@@ -624,8 +624,174 @@
    ]
   },
   "math:3b": {
-   "ok": false,
-   "reason": "未找到目录页"
+   "ok": true,
+   "content_id": "8666a8bd-a0e7-49aa-ba07-bf419ceead24",
+   "preview_date": "2026-03-02",
+   "toc_page": 5,
+   "toc_lines": [
+    "人民為育出版社",
+    "目",
+    "生活中的运动现象",
+    "除数是一位数的除法 10",
+    "长方形和正方形 39",
+    "四",
+    "图形的面积 52",
+    "五",
+    "数据的收集与整理 65",
+    "8",
+    "年、月、日的秘密 77",
+    "六",
+    "小数的初步认识 86",
+    "七",
+    "复习与关联 95",
+    "仅供个人学习使用，未经授权不得另做他用"
+   ],
+   "units_all": [
+    {
+     "no": 1,
+     "name": "生活中的运动现象",
+     "type": "unit"
+    },
+    {
+     "no": 2,
+     "name": "除数是一位数的除法",
+     "type": "unit"
+    },
+    {
+     "no": 3,
+     "name": "长方形和正方形",
+     "type": "unit"
+    },
+    {
+     "no": 4,
+     "name": "图形的面积",
+     "type": "unit"
+    },
+    {
+     "no": 5,
+     "name": "数据的收集与整理",
+     "type": "unit"
+    },
+    {
+     "no": 6,
+     "name": "年、月、日的秘密",
+     "type": "activity"
+    },
+    {
+     "no": 7,
+     "name": "小数的初步认识",
+     "type": "unit"
+    },
+    {
+     "no": 8,
+     "name": "复习与关联",
+     "type": "unit"
+    }
+   ],
+   "units": [
+    {
+     "no": 1,
+     "name": "生活中的运动现象",
+     "type": "unit"
+    },
+    {
+     "no": 2,
+     "name": "除数是一位数的除法",
+     "type": "unit"
+    },
+    {
+     "no": 3,
+     "name": "长方形和正方形",
+     "type": "unit"
+    },
+    {
+     "no": 4,
+     "name": "图形的面积",
+     "type": "unit"
+    },
+    {
+     "no": 5,
+     "name": "数据的收集与整理",
+     "type": "unit"
+    },
+    {
+     "no": 6,
+     "name": "小数的初步认识",
+     "type": "unit"
+    },
+    {
+     "no": 7,
+     "name": "复习与关联",
+     "type": "unit"
+    }
+   ],
+   "order_consistent": true,
+   "hit": 8,
+   "topics": [
+    {
+     "id": "mt_div-1digit",
+     "name": "除数是一位数的除法",
+     "u": 2,
+     "unit_name": "除数是一位数的除法",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_dec-intro",
+     "name": "小数的初步认识",
+     "u": 6,
+     "unit_name": "小数的初步认识",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_dec-addsub",
+     "name": "一位小数加减法",
+     "u": 6,
+     "unit_name": "小数的初步认识",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_shape-move",
+     "name": "图形的运动",
+     "u": 1,
+     "unit_name": "生活中的运动现象",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_rect-perimeter",
+     "name": "长方形和正方形的周长",
+     "u": 3,
+     "unit_name": "长方形和正方形",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_area-intro",
+     "name": "面积与面积单位",
+     "u": 4,
+     "unit_name": "图形的面积",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_rect-area",
+     "name": "长方形和正方形的面积",
+     "u": 4,
+     "unit_name": "图形的面积",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_data-collect",
+     "name": "数据收集整理",
+     "u": 5,
+     "unit_name": "数据的收集与整理",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_stats-table",
+     "name": "复式统计表",
+     "u": 5,
+     "unit_name": "数据的收集与整理",
+     "unit_type": "unit"
+    }
+   ]
   },
   "math:4a": {
    "ok": true,

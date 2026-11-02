@@ -170,7 +170,12 @@ def has_toc(lines):
     # 目(U+76EE) 易误认成 日/百/且/自；录(U+5F55) 易误认成 有/寻
     markers = ("目录", "日录", "百录", "且录", "自录",
                "目有", "日有", "目寻", "有录", "contents")
-    return any(m in flat for m in markers)
+    if any(m in flat for m in markers):
+        return True
+    # OCR 有时把「目录」整行吃成单个「目」（如数学 3b：首行社名 + 「目」）。
+    # 目录页标题必在前几行，故只看前 3 个非空行内是否有独立「目」字。
+    head = [_norm_ws(l) for l in (lines or []) if _norm_ws(l)][:3]
+    return any(h in ("目", "目录", "日录", "目有") for h in head)
 
 
 if __name__ == "__main__":
