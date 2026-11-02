@@ -1,0 +1,2322 @@
+{
+ "books": {
+  "math:1a": {
+   "ok": true,
+   "content_id": "c3e06fe4-c6b3-49cb-8727-4f8ff69bbfbc",
+   "preview_date": "2026-08-18",
+   "toc_page": 5,
+   "toc_lines": [
+    "人民為育出版社",
+    "目录",
+    "8",
+    "数学游戏",
+    "5以内数的认识和加、减法 12",
+    "6～10的认识和加、减法 34",
+    "认识立体图形 67",
+    "四",
+    "11～20的认识 73",
+    "五",
+    "20以内的进位加法 88",
+    "复习与关联 103",
+    "仅供个人学习使用，未经授权不得另做他用"
+   ],
+   "units": [
+    {
+     "no": 1,
+     "name": "数学游戏",
+     "type": "activity"
+    },
+    {
+     "no": 2,
+     "name": "5以内数的认识和加、减法",
+     "type": "unit"
+    },
+    {
+     "no": 3,
+     "name": "6～10的认识和加、减法",
+     "type": "unit"
+    },
+    {
+     "no": 4,
+     "name": "认识立体图形",
+     "type": "unit"
+    },
+    {
+     "no": 5,
+     "name": "11～20的认识",
+     "type": "unit"
+    },
+    {
+     "no": 6,
+     "name": "20以内的进位加法",
+     "type": "unit"
+    },
+    {
+     "no": 7,
+     "name": "复习与关联",
+     "type": "unit"
+    }
+   ],
+   "order_consistent": true,
+   "hit": 7,
+   "topics": [
+    {
+     "id": "mt_num-10-recognition",
+     "name": "10以内数的认识",
+     "u": 1,
+     "unit_name": "数学游戏",
+     "unit_type": "activity"
+    },
+    {
+     "id": "mt_num-10-recognition",
+     "name": "10以内数的认识",
+     "u": 2,
+     "unit_name": "5以内数的认识和加、减法",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_num-10-composition",
+     "name": "10以内数的分与合",
+     "u": 1,
+     "unit_name": "数学游戏",
+     "unit_type": "activity"
+    },
+    {
+     "id": "mt_num-10-composition",
+     "name": "10以内数的分与合",
+     "u": 2,
+     "unit_name": "5以内数的认识和加、减法",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_num-10-addsub",
+     "name": "10以内加减法",
+     "u": 1,
+     "unit_name": "数学游戏",
+     "unit_type": "activity"
+    },
+    {
+     "id": "mt_num-10-addsub",
+     "name": "10以内加减法",
+     "u": 2,
+     "unit_name": "5以内数的认识和加、减法",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_num-10-mixed",
+     "name": "连加连减与加减混合",
+     "u": 2,
+     "unit_name": "5以内数的认识和加、减法",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_num-20-recognition",
+     "name": "20以内数的认识与数位",
+     "u": 4,
+     "unit_name": "认识立体图形",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_num-20-carry",
+     "name": "20以内进位加法",
+     "u": 5,
+     "unit_name": "11～20的认识",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_shape-3d",
+     "name": "立体图形的认识",
+     "u": 3,
+     "unit_name": "6～10的认识和加、减法",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_position-basic",
+     "name": "位置（上下前后左右）",
+     "u": 1,
+     "unit_name": "数学游戏",
+     "unit_type": "activity"
+    }
+   ]
+  },
+  "math:1b": {
+   "ok": true,
+   "content_id": "6bf8ae7e-d987-40b4-8fb3-bbb98fcb50b5",
+   "preview_date": "2026-03-02",
+   "toc_page": 5,
+   "toc_lines": [
+    "人民為育出版社",
+    "目录",
+    "认识平面图形",
+    "20以内的退位减法 8",
+    "100以内数的认识 23",
+    "四",
+    "100以内的口算加、减法 43",
+    "五",
+    "100以内的笔算加、减法 56",
+    "数量间的加减关系 69",
+    "8",
+    "欢乐购物街 77",
+    "七",
+    "复习与关联 83",
+    "仅供个人学习使用，未经授权不得另做他用"
+   ],
+   "units": [
+    {
+     "no": 1,
+     "name": "认识平面图形",
+     "type": "unit"
+    },
+    {
+     "no": 2,
+     "name": "20以内的退位减法",
+     "type": "unit"
+    },
+    {
+     "no": 3,
+     "name": "100以内数的认识",
+     "type": "unit"
+    },
+    {
+     "no": 4,
+     "name": "100以内的口算加、减法",
+     "type": "unit"
+    },
+    {
+     "no": 5,
+     "name": "100以内的笔算加、减法",
+     "type": "unit"
+    },
+    {
+     "no": 6,
+     "name": "数量间的加减关系",
+     "type": "unit"
+    },
+    {
+     "no": 7,
+     "name": "欢乐购物街",
+     "type": "activity"
+    },
+    {
+     "no": 8,
+     "name": "复习与关联",
+     "type": "unit"
+    }
+   ],
+   "order_consistent": true,
+   "hit": 8,
+   "topics": [
+    {
+     "id": "mt_num-20-borrow",
+     "name": "20以内退位减法",
+     "u": 2,
+     "unit_name": "20以内的退位减法",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_num-100-recognition",
+     "name": "100以内数的认识",
+     "u": 3,
+     "unit_name": "100以内数的认识",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_num-100-addsub",
+     "name": "100以内加减法（口算）",
+     "u": 3,
+     "unit_name": "100以内数的认识",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_num-100-addsub",
+     "name": "100以内加减法（口算）",
+     "u": 4,
+     "unit_name": "100以内的口算加、减法",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_num-100-pen",
+     "name": "100以内笔算加减法",
+     "u": 5,
+     "unit_name": "100以内的笔算加、减法",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_shape-2d",
+     "name": "平面图形的认识",
+     "u": 1,
+     "unit_name": "认识平面图形",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_pattern",
+     "name": "找规律",
+     "u": 3,
+     "unit_name": "100以内数的认识",
+     "unit_type": "unit"
+    }
+   ]
+  },
+  "math:2a": {
+   "ok": true,
+   "content_id": "8cfc5a2a-425c-4b9a-a97c-e78d4a4c1e3a",
+   "preview_date": "2026-08-18",
+   "toc_page": 5,
+   "toc_lines": [
+    "人民為育出版社",
+    "目录",
+    "分类与整理",
+    "1～6的表内乘法 10",
+    "1～6的表内除法 30",
+    "8",
+    "校园小导游 49",
+    "四",
+    "厘米和米 55",
+    "8",
+    "身体上的尺子 68",
+    "五",
+    "7～9的表内乘、除法 73",
+    "复习与关联 91",
+    "仅供个人学习使用，未经授权不得另做他用"
+   ],
+   "units": [
+    {
+     "no": 1,
+     "name": "分类与整理",
+     "type": "unit"
+    },
+    {
+     "no": 2,
+     "name": "1~6的表内乘法",
+     "type": "unit"
+    },
+    {
+     "no": 3,
+     "name": "1～6的表内除法",
+     "type": "unit"
+    },
+    {
+     "no": 4,
+     "name": "校园小导游",
+     "type": "activity"
+    },
+    {
+     "no": 5,
+     "name": "厘米和米",
+     "type": "unit"
+    },
+    {
+     "no": 6,
+     "name": "身体上的尺子",
+     "type": "activity"
+    },
+    {
+     "no": 7,
+     "name": "7～9的表内乘、除法",
+     "type": "unit"
+    },
+    {
+     "no": 8,
+     "name": "复习与关联",
+     "type": "unit"
+    }
+   ],
+   "order_consistent": true,
+   "hit": 7,
+   "topics": [
+    {
+     "id": "mt_mul-meaning",
+     "name": "乘法的意义",
+     "u": 2,
+     "unit_name": "1~6的表内乘法",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_mul-tables-2-6",
+     "name": "2~6的乘法口诀",
+     "u": 2,
+     "unit_name": "1~6的表内乘法",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_mul-tables-7-9",
+     "name": "7~9的乘法口诀",
+     "u": 5,
+     "unit_name": "厘米和米",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_div-avg",
+     "name": "平均分与除法的意义",
+     "u": 3,
+     "unit_name": "1～6的表内除法",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_div-tables-2-6",
+     "name": "用2~6的乘法口诀求商",
+     "u": 3,
+     "unit_name": "1～6的表内除法",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_div-tables-7-9",
+     "name": "用7~9的乘法口诀求商",
+     "u": 5,
+     "unit_name": "厘米和米",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_classify",
+     "name": "分类与整理",
+     "u": 1,
+     "unit_name": "分类与整理",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_pattern",
+     "name": "找规律",
+     "u": 2,
+     "unit_name": "1~6的表内乘法",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_length-cm-m",
+     "name": "厘米和米",
+     "u": 4,
+     "unit_name": "校园小导游",
+     "unit_type": "activity"
+    },
+    {
+     "id": "mt_measure-compare",
+     "name": "量一量、比一比",
+     "u": 4,
+     "unit_name": "校园小导游",
+     "unit_type": "activity"
+    }
+   ]
+  },
+  "math:2b": {
+   "ok": true,
+   "content_id": "c1897b18-b302-4e8d-9fd4-40915c4b05c2",
+   "preview_date": "2026-03-02",
+   "toc_page": 5,
+   "toc_lines": [
+    "人民為育出版社",
+    "目录",
+    "时间在哪里",
+    "有余数的除法 10",
+    "数量间的乘除关系 24",
+    "万以内数的认识 40",
+    "四",
+    "万以内的加法和减法 63",
+    "8",
+    "数学连环画 83",
+    "五",
+    "复习与关联 87",
+    "仅供个人学习使用，未经授权不得另做他用"
+   ],
+   "units": [
+    {
+     "no": 1,
+     "name": "时间在哪里",
+     "type": "activity"
+    },
+    {
+     "no": 2,
+     "name": "有余数的除法",
+     "type": "unit"
+    },
+    {
+     "no": 3,
+     "name": "数量间的乘除关系",
+     "type": "unit"
+    },
+    {
+     "no": 4,
+     "name": "万以内数的认识",
+     "type": "unit"
+    },
+    {
+     "no": 5,
+     "name": "万以内的加法和减法",
+     "type": "unit"
+    },
+    {
+     "no": 6,
+     "name": "数学连环画",
+     "type": "activity"
+    },
+    {
+     "no": 7,
+     "name": "复习与关联",
+     "type": "unit"
+    }
+   ],
+   "order_consistent": true,
+   "hit": 7,
+   "topics": [
+    {
+     "id": "mt_div-remainder",
+     "name": "有余数的除法",
+     "u": 1,
+     "unit_name": "时间在哪里",
+     "unit_type": "activity"
+    },
+    {
+     "id": "mt_num-10000-recognition",
+     "name": "万以内数的认识",
+     "u": 3,
+     "unit_name": "数量间的乘除关系",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_addsub-10000",
+     "name": "万以内的加法和减法",
+     "u": 4,
+     "unit_name": "万以内数的认识",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_multiple",
+     "name": "倍的认识",
+     "u": 2,
+     "unit_name": "有余数的除法",
+     "unit_type": "unit"
+    }
+   ]
+  },
+  "math:3a": {
+   "ok": true,
+   "content_id": "33c8d495-9862-4e19-aab9-61d2af08608a",
+   "preview_date": "2026-08-18",
+   "toc_page": 5,
+   "toc_lines": [
+    "人民為育出版社",
+    "目录",
+    "观察物体",
+    "混合运算 6",
+    "毫米、分米和千米 20",
+    "8",
+    "曹冲称象的故事 31",
+    "四",
+    "多位数乘一位数 39",
+    "8",
+    "数字编码 57",
+    "五",
+    "线和角 61",
+    "分数的初步认识 73",
+    "七",
+    "复习与关联 92",
+    "仅供个人学习使用，未经授权不得另做他用"
+   ],
+   "units": [
+    {
+     "no": 1,
+     "name": "观察物体",
+     "type": "unit"
+    },
+    {
+     "no": 2,
+     "name": "混合运算",
+     "type": "unit"
+    },
+    {
+     "no": 3,
+     "name": "毫米、分米和千米",
+     "type": "unit"
+    },
+    {
+     "no": 4,
+     "name": "曹冲称象的故事",
+     "type": "activity"
+    },
+    {
+     "no": 5,
+     "name": "多位数乘一位数",
+     "type": "unit"
+    },
+    {
+     "no": 6,
+     "name": "数字编码",
+     "type": "activity"
+    },
+    {
+     "no": 7,
+     "name": "线和角",
+     "type": "unit"
+    },
+    {
+     "no": 8,
+     "name": "分数的初步认识",
+     "type": "unit"
+    },
+    {
+     "no": 9,
+     "name": "复习与关联",
+     "type": "unit"
+    },
+    {
+     "no": 10,
+     "name": "数学广角：搭配问题",
+     "type": "enrichment"
+    }
+   ],
+   "order_consistent": true,
+   "hit": 9,
+   "topics": [
+    {
+     "id": "mt_mixed-two-steps",
+     "name": "两步混合运算",
+     "u": 2,
+     "unit_name": "混合运算",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_mult-1digit",
+     "name": "多位数乘一位数",
+     "u": 4,
+     "unit_name": "曹冲称象的故事",
+     "unit_type": "activity"
+    },
+    {
+     "id": "mt_multiple",
+     "name": "倍的认识",
+     "u": 4,
+     "unit_name": "曹冲称象的故事",
+     "unit_type": "activity"
+    },
+    {
+     "id": "mt_frac-intro",
+     "name": "分数的初步认识",
+     "u": 6,
+     "unit_name": "数字编码",
+     "unit_type": "activity"
+    },
+    {
+     "id": "mt_frac-same-addsub",
+     "name": "同分母分数加减法",
+     "u": 6,
+     "unit_name": "数字编码",
+     "unit_type": "activity"
+    },
+    {
+     "id": "mt_angle-intro",
+     "name": "角的初步认识",
+     "u": 5,
+     "unit_name": "多位数乘一位数",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_observe-object",
+     "name": "观察物体",
+     "u": 1,
+     "unit_name": "观察物体",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_lines",
+     "name": "线段、射线、直线与相交平行",
+     "u": 5,
+     "unit_name": "多位数乘一位数",
+     "unit_type": "unit"
+    }
+   ]
+  },
+  "math:3b": {
+   "ok": false,
+   "reason": "未找到目录页"
+  },
+  "math:4a": {
+   "ok": true,
+   "content_id": "654e3d1e-c995-4340-81c5-abd7881d835b",
+   "preview_date": "2026-08-18",
+   "toc_page": 5,
+   "toc_lines": [
+    "人民為育出版社",
+    "目录",
+    "万以上数的认识",
+    "8",
+    "1亿有多大 24",
+    "角的度量 28",
+    "多位数乘两位数 39",
+    "四",
+    "加法模型和乘法模型 58",
+    "五",
+    "平行四边形和梯形 70",
+    "六",
+    "条形统计图 88",
+    "8",
+    "寻找宝藏 102",
+    "七",
+    "复习与关联 108",
+    "仅供个人学习使用，未经授权不得另做他用"
+   ],
+   "units": [
+    {
+     "no": 1,
+     "name": "万以上数的认识",
+     "type": "unit"
+    },
+    {
+     "no": 2,
+     "name": "1亿有多大",
+     "type": "activity"
+    },
+    {
+     "no": 3,
+     "name": "角的度量",
+     "type": "unit"
+    },
+    {
+     "no": 4,
+     "name": "多位数乘两位数",
+     "type": "unit"
+    },
+    {
+     "no": 5,
+     "name": "加法模型和乘法模型",
+     "type": "unit"
+    },
+    {
+     "no": 6,
+     "name": "平行四边形和梯形",
+     "type": "unit"
+    },
+    {
+     "no": 7,
+     "name": "条形统计图",
+     "type": "unit"
+    },
+    {
+     "no": 8,
+     "name": "寻找宝藏",
+     "type": "activity"
+    },
+    {
+     "no": 9,
+     "name": "复习与关联",
+     "type": "unit"
+    }
+   ],
+   "order_consistent": true,
+   "hit": 9,
+   "topics": [
+    {
+     "id": "mt_big-num",
+     "name": "大数的认识",
+     "u": 1,
+     "unit_name": "万以上数的认识",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_mult-2digit",
+     "name": "三位数乘两位数",
+     "u": 3,
+     "unit_name": "角的度量",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_angle-measure",
+     "name": "角的度量与分类",
+     "u": 2,
+     "unit_name": "1亿有多大",
+     "unit_type": "activity"
+    },
+    {
+     "id": "mt_parallelogram",
+     "name": "平行四边形和梯形",
+     "u": 5,
+     "unit_name": "加法模型和乘法模型",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_bar-chart",
+     "name": "条形统计图",
+     "u": 6,
+     "unit_name": "平行四边形和梯形",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_chicken-rabbit",
+     "name": "鸡兔同笼",
+     "u": 7,
+     "unit_name": "条形统计图",
+     "unit_type": "unit"
+    }
+   ]
+  },
+  "english:3a": {
+   "ok": true,
+   "content_id": "dd6173ba-579a-356e-900c-cb53e152229c",
+   "preview_date": "2026-08-19",
+   "toc_page": 5,
+   "toc_lines": [
+    "人民教育出版社",
+    "Contents",
+    "Unit 1 Making friends",
+    "Unit 2Differentfamilies 14",
+    "Unit3Our animalfriends 26",
+    "Unit 4 Plants around us 38",
+    "Unit5 Thecolourfulworld 50",
+    "Unit 6 Usefulnumbers 62",
+    "Revision Being a good dguest 74",
+    "Appendix1 Songs 78",
+    "Appendix 2 Chants in \"Letters and sounds\" 80",
+    "Appendix 3 Words in each unit 83",
+    "Appendix 4 Vocabulary 86",
+    "Appendix 5 Useful expressions 89",
+    "Appendix 6 5The alphabet 16",
+    "仅供个人学习使用，未经授权不得另做他用"
+   ],
+   "units": [
+    {
+     "no": 1,
+     "name": "Making friends",
+     "type": "unit"
+    },
+    {
+     "no": 2,
+     "name": "Different families",
+     "type": "unit"
+    },
+    {
+     "no": 3,
+     "name": "Amazing animals",
+     "type": "unit"
+    },
+    {
+     "no": 4,
+     "name": "Plants around us",
+     "type": "unit"
+    },
+    {
+     "no": 5,
+     "name": "The colourful world",
+     "type": "unit"
+    },
+    {
+     "no": 6,
+     "name": "Useful numbers",
+     "type": "unit"
+    },
+    {
+     "no": 7,
+     "name": "Being a good guest",
+     "type": "revision"
+    }
+   ],
+   "order_consistent": true,
+   "hit": 5,
+   "topics": [
+    {
+     "id": "mt_en-letter-name",
+     "name": "字母的名称与认读",
+     "u": 1,
+     "unit_name": "Making friends",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_en-letter-write",
+     "name": "字母的书写规范",
+     "u": 1,
+     "unit_name": "Making friends",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_en-phonics",
+     "name": "字母音与自然拼读启蒙",
+     "u": 1,
+     "unit_name": "Making friends",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_en-num-color",
+     "name": "数字与颜色词汇",
+     "u": 5,
+     "unit_name": "The colourful world",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_en-num-color",
+     "name": "数字与颜色词汇",
+     "u": 6,
+     "unit_name": "Useful numbers",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_en-body-stationery",
+     "name": "身体部位与文具词汇",
+     "u": 3,
+     "unit_name": "Amazing animals",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_en-family",
+     "name": "家庭成员词汇",
+     "u": 2,
+     "unit_name": "Different families",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_en-animals",
+     "name": "动物词汇",
+     "u": 2,
+     "unit_name": "Different families",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_en-animals",
+     "name": "动物词汇",
+     "u": 3,
+     "unit_name": "Amazing animals",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_en-food",
+     "name": "食物与饮料词汇",
+     "u": 4,
+     "unit_name": "Plants around us",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_en-demonstratives",
+     "name": "指示代词",
+     "u": 1,
+     "unit_name": "Making friends",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_en-demonstratives",
+     "name": "指示代词",
+     "u": 3,
+     "unit_name": "Amazing animals",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_en-pronouns",
+     "name": "人称代词与物主代词",
+     "u": 1,
+     "unit_name": "Making friends",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_en-pronouns",
+     "name": "人称代词与物主代词",
+     "u": 2,
+     "unit_name": "Different families",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_en-be-verb",
+     "name": "be动词与名词单复数",
+     "u": 1,
+     "unit_name": "Making friends",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_en-be-verb",
+     "name": "be动词与名词单复数",
+     "u": 2,
+     "unit_name": "Different families",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_en-yes-no-questions",
+     "name": "一般疑问句与肯否定回答",
+     "u": 1,
+     "unit_name": "Making friends",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_en-yes-no-questions",
+     "name": "一般疑问句与肯否定回答",
+     "u": 2,
+     "unit_name": "Different families",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_en-wh-questions",
+     "name": "特殊疑问句",
+     "u": 1,
+     "unit_name": "Making friends",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_en-wh-questions",
+     "name": "特殊疑问句",
+     "u": 2,
+     "unit_name": "Different families",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_en-prepositions",
+     "name": "方位介词",
+     "u": 4,
+     "unit_name": "Plants around us",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_en-prepositions",
+     "name": "方位介词",
+     "u": 2,
+     "unit_name": "Different families",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_en-greetings",
+     "name": "问候与自我介绍",
+     "u": 1,
+     "unit_name": "Making friends",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_en-listening",
+     "name": "听指令与获取关键信息",
+     "u": 1,
+     "unit_name": "Making friends",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_en-listening",
+     "name": "听指令与获取关键信息",
+     "u": 3,
+     "unit_name": "Amazing animals",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_en-copying",
+     "name": "抄写与仿写句子",
+     "u": 1,
+     "unit_name": "Making friends",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_en-copying",
+     "name": "抄写与仿写句子",
+     "u": 5,
+     "unit_name": "The colourful world",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_en-reading-pictures",
+     "name": "图文匹配与阅读理解",
+     "u": 2,
+     "unit_name": "Different families",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_en-reading-pictures",
+     "name": "图文匹配与阅读理解",
+     "u": 3,
+     "unit_name": "Amazing animals",
+     "unit_type": "unit"
+    }
+   ]
+  },
+  "english:3b": {
+   "ok": true,
+   "content_id": "10b11234-3b0a-4b3e-b4b4-db3013774529",
+   "preview_date": "2025-04-14",
+   "toc_page": 5,
+   "toc_lines": [
+    "人民為育出版社",
+    "Contents",
+    "Unit 1 Meeting new people",
+    "Unit 2 Expressing yourself! 14",
+    "Unit3L Learning better 26",
+    "Unit 4 Healthy food 38",
+    "Unit 55Old toys 50",
+    "Unit 6 Numbers in life 62",
+    "Revision Going to a school fair 74",
+    "Appendix1 S Songs 78",
+    "Appendix 2 2Wordsineachunit 80",
+    "Appendix3 Vocabulary 83",
+    "Appendix 4 Useful expressions 87",
+    "Appendix 5 Pronunciation 89",
+    "人民嘉育出版社"
+   ],
+   "units": [
+    {
+     "no": 1,
+     "name": "Meeting new people",
+     "type": "unit"
+    },
+    {
+     "no": 2,
+     "name": "Expressing yourself",
+     "type": "unit"
+    },
+    {
+     "no": 3,
+     "name": "Learning better",
+     "type": "unit"
+    },
+    {
+     "no": 4,
+     "name": "Healthy food",
+     "type": "unit"
+    },
+    {
+     "no": 5,
+     "name": "Old toys",
+     "type": "unit"
+    },
+    {
+     "no": 6,
+     "name": "Numbers in life",
+     "type": "unit"
+    },
+    {
+     "no": 7,
+     "name": "Going to a school fair",
+     "type": "revision"
+    }
+   ],
+   "order_consistent": true,
+   "hit": 7,
+   "topics": [
+    {
+     "id": "mt_en-food",
+     "name": "食物与饮料词汇",
+     "u": 4,
+     "unit_name": "Healthy food",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_en-greetings",
+     "name": "问候与自我介绍",
+     "u": 1,
+     "unit_name": "Meeting new people",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_en-learning-strategies",
+     "name": "借助工具与资源学习英语",
+     "u": 3,
+     "unit_name": "Learning better",
+     "unit_type": "unit"
+    }
+   ]
+  },
+  "english:4a": {
+   "ok": true,
+   "content_id": "be6e00c8-0068-8453-927f-646f6f753a5a",
+   "preview_date": "2026-08-19",
+   "toc_page": 5,
+   "toc_lines": [
+    "人民教育出版社",
+    "Contents",
+    "Unit 1 Helping at home 2",
+    "Unit2 My friends 14",
+    "Unit3 Places we live in 26",
+    "Unit 4 Helping in the community 38",
+    "Unit5 Theweather andus 50",
+    "Unit 6 Changing for the seasons 62",
+    "Revision Let's help! 74",
+    "Appendix1 : Songs 78",
+    "Appendix 2 2Wordsineachunit 80",
+    "Appendix 3 Vocabulary 83",
+    "Appendix 4 Useful expressions 86",
+    "仅供个人学习使用，未经授权不得另做他用"
+   ],
+   "units": [
+    {
+     "no": 1,
+     "name": "Helping at home",
+     "type": "unit"
+    },
+    {
+     "no": 2,
+     "name": "My friends",
+     "type": "unit"
+    },
+    {
+     "no": 3,
+     "name": "Places we live in",
+     "type": "unit"
+    },
+    {
+     "no": 4,
+     "name": "Helping in the community",
+     "type": "unit"
+    },
+    {
+     "no": 5,
+     "name": "The weather and us",
+     "type": "unit"
+    },
+    {
+     "no": 6,
+     "name": "Changing for the seasons",
+     "type": "unit"
+    },
+    {
+     "no": 7,
+     "name": "Let's help!",
+     "type": "revision"
+    }
+   ],
+   "order_consistent": true,
+   "hit": 7,
+   "topics": [
+    {
+     "id": "mt_en-weather",
+     "name": "天气词汇",
+     "u": 5,
+     "unit_name": "The weather and us",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_en-clothes",
+     "name": "服装词汇",
+     "u": 6,
+     "unit_name": "Changing for the seasons",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_en-jobs",
+     "name": "职业词汇",
+     "u": 4,
+     "unit_name": "Helping in the community",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_en-places",
+     "name": "学校与场所词汇",
+     "u": 3,
+     "unit_name": "Places we live in",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_en-places",
+     "name": "学校与场所词汇",
+     "u": 4,
+     "unit_name": "Helping in the community",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_en-activities",
+     "name": "日常活动与爱好短语",
+     "u": 1,
+     "unit_name": "Helping at home",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_en-activities",
+     "name": "日常活动与爱好短语",
+     "u": 5,
+     "unit_name": "The weather and us",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_en-speaking-routine",
+     "name": "日常话题的口头表达",
+     "u": 1,
+     "unit_name": "Helping at home",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_en-speaking-routine",
+     "name": "日常话题的口头表达",
+     "u": 4,
+     "unit_name": "Helping in the community",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_en-guessing-words",
+     "name": "借助上下文与图片猜词义",
+     "u": 2,
+     "unit_name": "My friends",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_en-guessing-words",
+     "name": "借助上下文与图片猜词义",
+     "u": 3,
+     "unit_name": "Places we live in",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_en-writing-short",
+     "name": "写几句话介绍日常生活",
+     "u": 1,
+     "unit_name": "Helping at home",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_en-writing-short",
+     "name": "写几句话介绍日常生活",
+     "u": 4,
+     "unit_name": "Helping in the community",
+     "unit_type": "unit"
+    }
+   ]
+  },
+  "chinese:1a": {
+   "ok": true,
+   "content_id": "7775818d-f3ac-4f53-b43d-af3918a8634a",
+   "preview_date": "2026-08-18",
+   "toc_page": 4,
+   "toc_lines": [
+    "人民為育出版社",
+    "目录",
+    "我上学了",
+    "我是中国人 2",
+    "我爱我们的祖国",
+    "我是小学生",
+    "我爱学语文",
+    "第一单元·识字",
+    "天地人",
+    "金木水火土",
+    "口耳目手足",
+    "日月山川 13",
+    "语文园地一 15",
+    "快乐读书吧 读书真快乐 19",
+    "qoe",
+    "第二单元·汉语拼音",
+    "ao 20",
+    "2 iu 22",
+    "3 24",
+    "4 dtn 26",
+    "语文园地二 28",
+    "仅供个人学习使用，未经授权不得另做他用"
+   ],
+   "units": [
+    {
+     "no": 1,
+     "name": "我上学了",
+     "type": "intro"
+    },
+    {
+     "no": 2,
+     "name": "识字",
+     "type": "unit"
+    },
+    {
+     "no": 3,
+     "name": "汉语拼音",
+     "type": "unit"
+    },
+    {
+     "no": 4,
+     "name": "汉语拼音",
+     "type": "unit"
+    },
+    {
+     "no": 5,
+     "name": "汉语拼音",
+     "type": "unit"
+    },
+    {
+     "no": 6,
+     "name": "阅读",
+     "type": "unit"
+    },
+    {
+     "no": 7,
+     "name": "识字",
+     "type": "unit"
+    },
+    {
+     "no": 8,
+     "name": "阅读",
+     "type": "unit"
+    },
+    {
+     "no": 9,
+     "name": "阅读",
+     "type": "unit"
+    }
+   ],
+   "order_consistent": false,
+   "hit": 6,
+   "topics": [
+    {
+     "id": "mt_pinyin-initials",
+     "name": "声母的认读",
+     "u": 2,
+     "unit_name": "识字",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_pinyin-initials",
+     "name": "声母的认读",
+     "u": 3,
+     "unit_name": "汉语拼音",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_pinyin-finals",
+     "name": "韵母与四声",
+     "u": 2,
+     "unit_name": "识字",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_pinyin-finals",
+     "name": "韵母与四声",
+     "u": 4,
+     "unit_name": "汉语拼音",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_pinyin-whole",
+     "name": "整体认读音节",
+     "u": 3,
+     "unit_name": "汉语拼音",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_pinyin-whole",
+     "name": "整体认读音节",
+     "u": 4,
+     "unit_name": "汉语拼音",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_pinyin-blending",
+     "name": "音节的拼读",
+     "u": 2,
+     "unit_name": "识字",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_pinyin-blending",
+     "name": "音节的拼读",
+     "u": 3,
+     "unit_name": "汉语拼音",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_pinyin-reading",
+     "name": "借助拼音识字和阅读",
+     "u": 4,
+     "unit_name": "汉语拼音",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_pinyin-reading",
+     "name": "借助拼音识字和阅读",
+     "u": 5,
+     "unit_name": "汉语拼音",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_char-pictographic",
+     "name": "象形字与识字方法",
+     "u": 1,
+     "unit_name": "我上学了",
+     "unit_type": "intro"
+    },
+    {
+     "id": "mt_char-radical",
+     "name": "偏旁部首与字形结构",
+     "u": 1,
+     "unit_name": "我上学了",
+     "unit_type": "intro"
+    },
+    {
+     "id": "mt_char-stroke",
+     "name": "基本笔画与笔顺规则",
+     "u": 1,
+     "unit_name": "我上学了",
+     "unit_type": "intro"
+    },
+    {
+     "id": "mt_char-stroke",
+     "name": "基本笔画与笔顺规则",
+     "u": 2,
+     "unit_name": "识字",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_char-writing",
+     "name": "铅笔字的书写规范",
+     "u": 1,
+     "unit_name": "我上学了",
+     "unit_type": "intro"
+    },
+    {
+     "id": "mt_char-phonetic-order",
+     "name": "音序查字法",
+     "u": 2,
+     "unit_name": "识字",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_char-phonetic-order",
+     "name": "音序查字法",
+     "u": 3,
+     "unit_name": "汉语拼音",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_sent-complete",
+     "name": "完整句与句子成分",
+     "u": 5,
+     "unit_name": "汉语拼音",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_sent-complete",
+     "name": "完整句与句子成分",
+     "u": 7,
+     "unit_name": "识字",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_punct-basic",
+     "name": "逗号、句号、问号与感叹号",
+     "u": 5,
+     "unit_name": "汉语拼音",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_punct-basic",
+     "name": "逗号、句号、问号与感叹号",
+     "u": 7,
+     "unit_name": "识字",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_read-aloud",
+     "name": "朗读",
+     "u": 5,
+     "unit_name": "汉语拼音",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_oral-listen",
+     "name": "听故事、讲故事",
+     "u": 1,
+     "unit_name": "我上学了",
+     "unit_type": "intro"
+    },
+    {
+     "id": "mt_poem-recite",
+     "name": "古诗文的背诵与积累",
+     "u": 5,
+     "unit_name": "汉语拼音",
+     "unit_type": "unit"
+    }
+   ]
+  },
+  "chinese:1b": {
+   "ok": true,
+   "content_id": "b87e153f-a64c-451a-aa6c-6ed9ac7d6821",
+   "preview_date": "2026-03-02",
+   "toc_page": 4,
+   "toc_lines": [
+    "人民教育出版社",
+    "目录",
+    "第一单元·识字",
+    "春夏秋冬",
+    "2 姓氏歌",
+    "3 小青蛙",
+    "猜字谜",
+    "语文园地 10",
+    "快乐读书吧 读读童谣和儿歌·.…15",
+    "第二单元·阅读",
+    "热爱中国共产党 16",
+    "吃水不忘挖井人 18",
+    "我多想去看看 20",
+    "语文园地二 22",
+    "第三单元·阅读",
+    "小公鸡和小鸭子 26",
+    "树和喜鹊 29",
+    "怎么都快乐 31",
+    "语文园地三",
+    "仅供个人学习使用，未经授权不得另做他用"
+   ],
+   "units": [
+    {
+     "no": 1,
+     "name": "识字",
+     "type": "unit"
+    },
+    {
+     "no": 2,
+     "name": "阅读",
+     "type": "unit"
+    },
+    {
+     "no": 3,
+     "name": "阅读",
+     "type": "unit"
+    },
+    {
+     "no": 4,
+     "name": "阅读",
+     "type": "unit"
+    },
+    {
+     "no": 5,
+     "name": "识字",
+     "type": "unit"
+    },
+    {
+     "no": 6,
+     "name": "阅读",
+     "type": "unit"
+    },
+    {
+     "no": 7,
+     "name": "阅读",
+     "type": "unit"
+    },
+    {
+     "no": 8,
+     "name": "阅读",
+     "type": "unit"
+    }
+   ],
+   "order_consistent": false,
+   "hit": 8,
+   "topics": [
+    {
+     "id": "mt_char-pictographic",
+     "name": "象形字与识字方法",
+     "u": 1,
+     "unit_name": "识字",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_char-radical",
+     "name": "偏旁部首与字形结构",
+     "u": 1,
+     "unit_name": "识字",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_char-writing",
+     "name": "铅笔字的书写规范",
+     "u": 1,
+     "unit_name": "识字",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_read-aloud",
+     "name": "朗读",
+     "u": 2,
+     "unit_name": "阅读",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_write-picture",
+     "name": "看图写话",
+     "u": 2,
+     "unit_name": "阅读",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_write-picture",
+     "name": "看图写话",
+     "u": 3,
+     "unit_name": "阅读",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_oral-listen",
+     "name": "听故事、讲故事",
+     "u": 1,
+     "unit_name": "识字",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_poem-recite",
+     "name": "古诗文的背诵与积累",
+     "u": 4,
+     "unit_name": "阅读",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_poem-recite",
+     "name": "古诗文的背诵与积累",
+     "u": 6,
+     "unit_name": "阅读",
+     "unit_type": "unit"
+    }
+   ]
+  },
+  "chinese:2a": {
+   "ok": true,
+   "content_id": "cd28f45f-7f29-4dfb-bd35-ba310b57bc8c",
+   "preview_date": "2026-08-18",
+   "toc_page": 4,
+   "toc_lines": [
+    "人民為育出版社",
+    "目录",
+    "第一单元·阅读 第三单元·阅读",
+    "小蝌蚪找妈妈 彩虹 28",
+    "2 我是什么 5 去外婆家",
+    "植物妈妈有办法 8 数星星的孩子",
+    "语文园地 语文园地三",
+    "快乐读书吧",
+    "读读童话故事 ..........15第四单元·阅读",
+    "古诗二首",
+    "第二单元·识字 登鹳雀楼",
+    "场景歌 望庐山瀑布 40",
+    "树之歌 18 8 黄山奇石",
+    "拍手歌 20 9 日月潭",
+    "田家四季歌 23 10 葡萄沟",
+    "语文园地二 ·25 语文园地四 ·50",
+    "仅供个人学习使用，未经授权不得另做他用"
+   ],
+   "units": [
+    {
+     "no": 1,
+     "name": "阅读",
+     "type": "unit"
+    },
+    {
+     "no": 2,
+     "name": "识字",
+     "type": "unit"
+    },
+    {
+     "no": 3,
+     "name": "阅读",
+     "type": "unit"
+    },
+    {
+     "no": 4,
+     "name": "阅读",
+     "type": "unit"
+    },
+    {
+     "no": 5,
+     "name": "阅读",
+     "type": "unit"
+    },
+    {
+     "no": 6,
+     "name": "阅读",
+     "type": "unit"
+    },
+    {
+     "no": 7,
+     "name": "阅读",
+     "type": "unit"
+    },
+    {
+     "no": 8,
+     "name": "阅读",
+     "type": "unit"
+    }
+   ],
+   "order_consistent": false,
+   "hit": 8,
+   "topics": [
+    {
+     "id": "mt_char-radical-lookup",
+     "name": "部首查字法",
+     "u": 2,
+     "unit_name": "识字",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_char-homophone",
+     "name": "形近字与同音字辨析",
+     "u": 2,
+     "unit_name": "识字",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_char-homophone",
+     "name": "形近字与同音字辨析",
+     "u": 3,
+     "unit_name": "阅读",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_word-understand",
+     "name": "理解词语的方法",
+     "u": 3,
+     "unit_name": "阅读",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_word-understand",
+     "name": "理解词语的方法",
+     "u": 4,
+     "unit_name": "阅读",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_word-accumulate",
+     "name": "词语的归类与积累",
+     "u": 1,
+     "unit_name": "阅读",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_word-accumulate",
+     "name": "词语的归类与积累",
+     "u": 2,
+     "unit_name": "识字",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_sent-ba-bei",
+     "name": "把字句与被字句",
+     "u": 3,
+     "unit_name": "阅读",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_sent-ba-bei",
+     "name": "把字句与被字句",
+     "u": 4,
+     "unit_name": "阅读",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_read-silent",
+     "name": "默读",
+     "u": 3,
+     "unit_name": "阅读",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_read-silent",
+     "name": "默读",
+     "u": 4,
+     "unit_name": "阅读",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_write-imitate",
+     "name": "仿写与写话",
+     "u": 1,
+     "unit_name": "阅读",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_write-imitate",
+     "name": "仿写与写话",
+     "u": 3,
+     "unit_name": "阅读",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_oral-discuss",
+     "name": "讨论与发表意见",
+     "u": 1,
+     "unit_name": "阅读",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_oral-discuss",
+     "name": "讨论与发表意见",
+     "u": 4,
+     "unit_name": "阅读",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_book-reading",
+     "name": "整本书阅读",
+     "u": 1,
+     "unit_name": "阅读",
+     "unit_type": "unit"
+    }
+   ]
+  },
+  "chinese:2b": {
+   "ok": true,
+   "content_id": "6f1d8652-05df-432b-8ee4-6a5652ec677e",
+   "preview_date": "2026-03-02",
+   "toc_page": 4,
+   "toc_lines": [
+    "人民為育出版社",
+    "目录",
+    "第一单元·阅读 快乐读书吧",
+    "古诗二首 读读儿童故事 ...8",
+    "咏柳",
+    "村居： 第三单元·识字",
+    "找春天 神州谣",
+    "开满鲜花的小路 传统节日",
+    "邓小平爷爷植树 3 “贝”的故事 33",
+    "语文园地一 中国美食 .·35",
+    "语文园地三",
+    "第二单元·阅读",
+    "5 雷锋叔叔，你在哪里·……·15 第四单元·阅读",
+    "6 千人糕··· ...·18 8 彩色的梦",
+    "我不是最弱小的……21 一匹出色的马 45",
+    "语文园地二 10 枫树上的喜鹊 48",
+    "语文园地四 ..51",
+    "仅供个人学习使用，未经授权不得另做他用"
+   ],
+   "units": [
+    {
+     "no": 1,
+     "name": "",
+     "type": "unit"
+    },
+    {
+     "no": 2,
+     "name": "",
+     "type": "unit"
+    },
+    {
+     "no": 3,
+     "name": "",
+     "type": "unit"
+    },
+    {
+     "no": 4,
+     "name": "",
+     "type": "unit"
+    },
+    {
+     "no": 5,
+     "name": "",
+     "type": "unit"
+    },
+    {
+     "no": 6,
+     "name": "",
+     "type": "unit"
+    },
+    {
+     "no": 7,
+     "name": "",
+     "type": "unit"
+    },
+    {
+     "no": 8,
+     "name": "",
+     "type": "unit"
+    }
+   ],
+   "order_consistent": true,
+   "hit": 0,
+   "topics": [
+    {
+     "id": "mt_word-idiom",
+     "name": "成语与四字词语",
+     "u": 3,
+     "unit_name": "",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_word-idiom",
+     "name": "成语与四字词语",
+     "u": 5,
+     "unit_name": "",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_sent-rhetoric",
+     "name": "比喻句与拟人句",
+     "u": 1,
+     "unit_name": "",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_sent-rhetoric",
+     "name": "比喻句与拟人句",
+     "u": 4,
+     "unit_name": "",
+     "unit_type": "unit"
+    }
+   ]
+  },
+  "chinese:3a": {
+   "ok": true,
+   "content_id": "9185e4a3-efb4-4ec0-bfd9-1cb194c260d3",
+   "preview_date": "2026-08-18",
+   "toc_page": 4,
+   "toc_lines": [
+    "人民為育出版社",
+    "目录",
+    "第一单元 第三单元",
+    "阅读 阅读",
+    "1 大青树下的小学 8 总也倒不了的老屋",
+    "2 花的学校 9*强龟 32",
+    "3* 不懂就要问 10*小狗学叫 ..36",
+    "口语交际 我的暑假生活 口语交际 名字里的故事 41",
+    "习作 猜猜他是谁 10 习作纟 续写故事 42",
+    "语文园地 语文园地",
+    "第二单元 13 第四单元",
+    "阅读 阅读",
+    "4古诗三首 11宝葫芦的秘密（节选）..…46",
+    "望洞庭 12在牛肚子里旅行 49",
+    "山行· 14 13*一块奶酪 ...52",
+    "夜书所见 15 习作 我来编童话 54",
+    "5 铺满金色巴掌的水泥道···16 语文园地 ..55",
+    "6 秋天的雨 ··19 快乐读书吧",
+    "7* 听听，秋的声音 22 在那奇妙的王国里.57",
+    "习作 写日记 24",
+    "语文园地 25",
+    "仅供个人学习使用，未经授权不得另做他用"
+   ],
+   "units": [
+    {
+     "no": 1,
+     "name": "",
+     "type": "unit"
+    },
+    {
+     "no": 2,
+     "name": "",
+     "type": "unit"
+    },
+    {
+     "no": 3,
+     "name": "",
+     "type": "unit"
+    },
+    {
+     "no": 4,
+     "name": "",
+     "type": "unit"
+    },
+    {
+     "no": 5,
+     "name": "",
+     "type": "unit"
+    },
+    {
+     "no": 6,
+     "name": "",
+     "type": "unit"
+    },
+    {
+     "no": 7,
+     "name": "",
+     "type": "unit"
+    },
+    {
+     "no": 8,
+     "name": "",
+     "type": "unit"
+    }
+   ],
+   "order_consistent": true,
+   "hit": 0,
+   "topics": [
+    {
+     "id": "mt_sent-extend",
+     "name": "扩句与把句子写具体",
+     "u": 5,
+     "unit_name": "",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_sent-quote",
+     "name": "冒号、引号与直述转述",
+     "u": 4,
+     "unit_name": "",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_read-mark",
+     "name": "圈画关键词与批注",
+     "u": 3,
+     "unit_name": "",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_read-mark",
+     "name": "圈画关键词与批注",
+     "u": 6,
+     "unit_name": "",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_read-predict",
+     "name": "预测与推想",
+     "u": 3,
+     "unit_name": "",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_read-ancient",
+     "name": "借助注释与插图理解古诗文",
+     "u": 2,
+     "unit_name": "",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_write-diary",
+     "name": "学写日记",
+     "u": 2,
+     "unit_name": "",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_write-observe",
+     "name": "观察与把事物写清楚",
+     "u": 5,
+     "unit_name": "",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_write-imagine",
+     "name": "想象作文",
+     "u": 3,
+     "unit_name": "",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_write-imagine",
+     "name": "想象作文",
+     "u": 4,
+     "unit_name": "",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_write-revise",
+     "name": "修改习作与互评",
+     "u": 4,
+     "unit_name": "",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_write-revise",
+     "name": "修改习作与互评",
+     "u": 6,
+     "unit_name": "",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_oral-retell",
+     "name": "转述与复述",
+     "u": 1,
+     "unit_name": "",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_oral-retell",
+     "name": "转述与复述",
+     "u": 3,
+     "unit_name": "",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_poem-understand",
+     "name": "借助注释理解古诗大意",
+     "u": 2,
+     "unit_name": "",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_book-reading",
+     "name": "整本书阅读",
+     "u": 4,
+     "unit_name": "",
+     "unit_type": "unit"
+    }
+   ]
+  },
+  "chinese:3b": {
+   "ok": true,
+   "content_id": "bd1e1af7-f570-436d-afa4-f326691676f4",
+   "preview_date": "2026-03-02",
+   "toc_page": 4,
+   "toc_lines": [
+    "人民教育出版社",
+    "目录",
+    "第一单元 习作看图画，写一写….28",
+    "阅读 语文园地 ..29",
+    "1古诗三首 快乐读书吧",
+    "绝句·. 小故事大道理",
+    "惠崇春江晚景",
+    "三衢道中 第三单元 33",
+    "2 燕子 阅读",
+    "3 荷花 9海底世界",
+    "4*昆虫备忘录 10石蜂 36",
+    "口语交际 春游去哪里 11*小虾 38",
+    "习作 我的植物朋友 ..12 习作 我做了一项小实验",
+    "语文园地 -13 语文园地 41",
+    "第二单元 15 第四单元",
+    "阅读 阅读",
+    "5 守株待兔 .·16 12 古诗三首",
+    "6 会摇尾巴的狼 ..18 元日·.",
+    "7 鹿角和鹿腿 -21 清明..",
+    "8* 池子与河流 23 九月九日忆山东兄弟..45",
+    "口语交际 劝告 27 13 纸的发明",
+    "仅供个人学习使用，未经授权不得另做他用"
+   ],
+   "units": [
+    {
+     "no": 1,
+     "name": "",
+     "type": "unit"
+    },
+    {
+     "no": 2,
+     "name": "",
+     "type": "unit"
+    },
+    {
+     "no": 3,
+     "name": "",
+     "type": "unit"
+    },
+    {
+     "no": 4,
+     "name": "",
+     "type": "unit"
+    },
+    {
+     "no": 5,
+     "name": "",
+     "type": "unit"
+    },
+    {
+     "no": 6,
+     "name": "",
+     "type": "unit"
+    },
+    {
+     "no": 7,
+     "name": "",
+     "type": "unit"
+    },
+    {
+     "no": 8,
+     "name": "",
+     "type": "unit"
+    }
+   ],
+   "order_consistent": true,
+   "hit": 0,
+   "topics": [
+    {
+     "id": "mt_punct-advanced",
+     "name": "顿号、分号与书名号",
+     "u": 4,
+     "unit_name": "",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_read-ancient",
+     "name": "借助注释与插图理解古诗文",
+     "u": 2,
+     "unit_name": "",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_poem-understand",
+     "name": "借助注释理解古诗大意",
+     "u": 1,
+     "unit_name": "",
+     "unit_type": "unit"
+    }
+   ]
+  },
+  "chinese:4a": {
+   "ok": true,
+   "content_id": "d3b5a21b-f8d1-4633-8231-407100c8204d",
+   "preview_date": "2026-08-18",
+   "toc_page": 4,
+   "toc_lines": [
+    "人民為育出版社",
+    "目录",
+    "第一单元 第三单元 33",
+    "阅读 阅读",
+    "1 观潮 8古诗三首",
+    "2 繁星 暮江吟",
+    "3* 现代诗二首 题西林壁",
+    "秋晚的江上 雪梅·· ·35",
+    "花牛歌· 8 9 爬山虎的脚 :36",
+    "口语交际 我们与环境 10蟋蟀的住宅 ...·39",
+    "习作 推荐一个好地方 .·10 口语交际",
+    "语文园地 爱护眼睛，保护视力.….43",
+    "习作 写观察日记",
+    "第二单元 语文园地",
+    "阅读",
+    "4 一个豆荚里的五粒豆··..…14 第四单元",
+    "5 夜间飞行的秘密 ·19 阅读",
+    "6 方帽子店 23 11盘古开天地 48",
+    "7* 田忌赛马 ··28 12 精卫填海",
+    "习作 我的家人 30 13 普罗米修斯 :51",
+    "语文园地 31 14*女娲补天 54",
+    "仅供个人学习使用，未经授权不得另做他用"
+   ],
+   "units": [
+    {
+     "no": 1,
+     "name": "",
+     "type": "unit"
+    },
+    {
+     "no": 2,
+     "name": "",
+     "type": "unit"
+    },
+    {
+     "no": 3,
+     "name": "",
+     "type": "unit"
+    },
+    {
+     "no": 4,
+     "name": "",
+     "type": "unit"
+    },
+    {
+     "no": 5,
+     "name": "",
+     "type": "unit"
+    },
+    {
+     "no": 6,
+     "name": "",
+     "type": "unit"
+    },
+    {
+     "no": 7,
+     "name": "",
+     "type": "unit"
+    },
+    {
+     "no": 8,
+     "name": "",
+     "type": "unit"
+    }
+   ],
+   "order_consistent": true,
+   "hit": 0,
+   "topics": [
+    {
+     "id": "mt_read-question",
+     "name": "提问策略",
+     "u": 2,
+     "unit_name": "",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_read-main",
+     "name": "把握文章的主要内容",
+     "u": 4,
+     "unit_name": "",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_read-main",
+     "name": "把握文章的主要内容",
+     "u": 6,
+     "unit_name": "",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_write-narrative",
+     "name": "记叙文的六要素",
+     "u": 5,
+     "unit_name": "",
+     "unit_type": "unit"
+    },
+    {
+     "id": "mt_write-application",
+     "name": "书信与应用文",
+     "u": 8,
+     "unit_name": "",
+     "unit_type": "unit"
+    }
+   ]
+  }
+ }
+}

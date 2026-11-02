@@ -166,7 +166,7 @@ def has_toc(lines):
     OCR 常把标题「目录」误认成「日录 / 百录 / 且录 / 目有」，且中间可能夹
     空格（「目 录」）。先彻底去空白，再对形近字做兼容。
     """
-    flat = _norm_ws("".join(lines or []))
+    flat = _norm_ws("".join(lines or [])).lower()
     # 目(U+76EE) 易误认成 日/百/且/自；录(U+5F55) 易误认成 有/寻
     markers = ("目录", "日录", "百录", "且录", "自录",
                "目有", "日有", "目寻", "有录", "contents")
