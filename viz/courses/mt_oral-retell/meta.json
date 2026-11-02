@@ -1,0 +1,31 @@
+{
+  "topicId": "mt_oral-retell",
+  "title": "转述与复述：把别人的话，换成你的话说",
+  "template": "explain",
+  "renderer": "transform",
+  "duration": 13,
+  "interactions": 6,
+  "grade": 3,
+  "subject": "语文",
+  "standards": [
+    "chinese-2022:S2:PR"
+  ],
+  "prerequisites": [
+    "mt_oral-discuss",
+    "mt_book-reading"
+  ],
+  "next": [
+    "mt_oral-debate"
+  ],
+  "objectives": [
+    "转述时能按「谁说的、对谁说」换对两个人称",
+    "能去掉原话腔，只留时间、事情、要求三个要点",
+    "能发现并改正「来/去」「明天/昨天」这类跟随词"
+  ],
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-11-03",
+  "cognitiveAction": "辨析"
+}

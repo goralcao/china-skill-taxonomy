@@ -1,0 +1,32 @@
+{
+  "topicId": "mt_write-diary",
+  "title": "学写日记：一天里只挑一件事",
+  "template": "explain",
+  "renderer": "draft",
+  "duration": 14,
+  "interactions": 6,
+  "grade": 3,
+  "subject": "语文",
+  "standards": [
+    "chinese-2022:S2:PR"
+  ],
+  "prerequisites": [
+    "mt_write-imitate",
+    "mt_punct-basic"
+  ],
+  "next": [
+    "mt_write-narrative",
+    "mt_write-application"
+  ],
+  "objectives": [
+    "能写出日期、星期、天气齐全的日记格式头",
+    "能只挑一件事写完整，不写成从早到晚的流水账",
+    "能写出当时具体的动作或想法，不用「很开心」收尾"
+  ],
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-11-03",
+  "cognitiveAction": "构思"
+}

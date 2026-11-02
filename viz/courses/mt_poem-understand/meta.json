@@ -1,0 +1,31 @@
+{
+  "topicId": "mt_poem-understand",
+  "title": "借助注释读懂一首诗：从四句到一段话",
+  "template": "explain",
+  "renderer": "poemNote",
+  "duration": 14,
+  "interactions": 7,
+  "grade": 3,
+  "subject": "语文",
+  "standards": [
+    "chinese-2022:S2:LR"
+  ],
+  "prerequisites": [
+    "mt_poem-recite",
+    "mt_read-ancient"
+  ],
+  "next": [
+    "mt_book-classic"
+  ],
+  "objectives": [
+    "能把注释送回它解释的诗句，说出每一句的意思",
+    "能指出诗中让画面动起来的动词",
+    "能用自己的话讲出整首诗的大意和读后的感觉"
+  ],
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-11-03",
+  "cognitiveAction": "辨析"
+}

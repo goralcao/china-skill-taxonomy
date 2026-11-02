@@ -1,0 +1,31 @@
+{
+  "topicId": "mt_write-imagine",
+  "title": "想象作文：越想得野，越要站得住",
+  "template": "explain",
+  "renderer": "checkup",
+  "duration": 15,
+  "interactions": 6,
+  "grade": 3,
+  "subject": "语文",
+  "standards": [
+    "chinese-2022:S2:LR"
+  ],
+  "prerequisites": [
+    "mt_write-picture",
+    "mt_sent-rhetoric"
+  ],
+  "next": [
+    "mt_write-center"
+  ],
+  "objectives": [
+    "能说出想象故事为什么必须给理由、不能前后打架",
+    "能在一篇故事里找出凭空多出的设定和矛盾处",
+    "能只改一处地编出有起因、麻烦、解决的小故事"
+  ],
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "1.0.0",
+  "updatedAt": "2026-11-03",
+  "cognitiveAction": "构思"
+}

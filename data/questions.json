@@ -5,12 +5,12 @@
  "audited": false,
  "note": "题目与解析出自课件原文，未经教师独立复核；题干已剔除依赖配图与上下文的题。",
  "counts": {
-  "total": 133,
+  "total": 141,
   "byType": {
-   "choice": 80,
+   "choice": 88,
    "numeric": 53
   },
-  "topicsCovered": 59,
+  "topicsCovered": 63,
   "topicsTotal": 1273
  },
  "questions": [
@@ -1138,6 +1138,44 @@
   },
   {
    "type": "choice",
+   "prompt": "老师让你把《丑小鸭》复述给一年级的小朋友听。下面哪一样丢了，这个故事就散了？",
+   "answer": "事情先怎样、后怎样的顺序",
+   "choices": [
+    "事情先怎样、后怎样的顺序",
+    "作者叫什么名字",
+    "书里每一句原话"
+   ],
+   "explanation": "复述保的是「事情的骨架」：先发生什么、再发生什么、最后怎么样。名字和原话都可以不要。",
+   "refute": {
+    "作者叫什么名字": "作者名字是书的信息，不是故事的内容。小朋友要听的是丑小鸭怎么了。",
+    "书里每一句原话": "那是背诵，不是复述。复述要换成自己的话，句子可以变，顺序不能乱。"
+   },
+   "id": "mt_oral-retell_q1",
+   "topicId": "mt_oral-retell",
+   "difficulty": "standard",
+   "origin": "courses/mt_oral-retell/content.json#step4"
+  },
+  {
+   "type": "choice",
+   "prompt": "第二天，你把这件事讲给同学听：「小明说，明天我到他家去玩。」这句哪里不对？",
+   "answer": "「明天」要改成「昨天」，因为事情已经过去了",
+   "choices": [
+    "「明天」要改成「昨天」，因为事情已经过去了",
+    "「我」要改成「他」，因为说话的人变了",
+    "哪儿都对，照说就行"
+   ],
+   "explanation": "人称已经换对了。这次出问题的是时间词——隔了一天，「明天」就成了「昨天」。",
+   "refute": {
+    "「我」要改成「他」，因为说话的人变了": "这里的「我」就是你自己，讲给同学听，还是「我」。人称没错，错在时间。",
+    "哪儿都对，照说就行": "同学会以为明天才去。时间词不跟着改，听的人就会算错日子。"
+   },
+   "id": "mt_oral-retell_q2",
+   "topicId": "mt_oral-retell",
+   "difficulty": "standard",
+   "origin": "courses/mt_oral-retell/content.json#step6"
+  },
+  {
+   "type": "choice",
    "prompt": "一个四边形只有一组对边平行，它是？",
    "answer": "梯形",
    "choices": [
@@ -1193,6 +1231,44 @@
    "topicId": "mt_phone-call",
    "difficulty": "basic",
    "origin": "courses/mt_phone-call/content.json#step5"
+  },
+  {
+   "type": "choice",
+   "prompt": "你在注释里看到「回：回旋、打转」。接下来该做什么？",
+   "answer": "把它放回「碧水东流至此回」里，读一遍整句",
+   "choices": [
+    "把它放回「碧水东流至此回」里，读一遍整句",
+    "把这条注释抄到本子上，背下来",
+    "先往下读，等全诗读完再说"
+   ],
+   "explanation": "注释放回句子才算用上。读一遍整句，你会听见水在那儿打转——那才是读懂。",
+   "refute": {
+    "把这条注释抄到本子上，背下来": "抄下来的是字，不是意思。下次见到「回」，你还是得想一遍。",
+    "先往下读，等全诗读完再说": "一个关键字没落地，后面三句都建在沙上。读到卡住的地方，就地解决。"
+   },
+   "id": "mt_poem-understand_q1",
+   "topicId": "mt_poem-understand",
+   "difficulty": "standard",
+   "origin": "courses/mt_poem-understand/content.json#step5"
+  },
+  {
+   "type": "choice",
+   "prompt": "「孤帆一片日边来」——读到这一句，你心里应该起什么感觉？",
+   "answer": "江面很开阔，船从远处来，气势很大",
+   "choices": [
+    "江面很开阔，船从远处来，气势很大",
+    "那只船很孤单，诗人想家了",
+    "太阳要落山了，天快黑了"
+   ],
+   "explanation": "「孤」在这里不是可怜，是「只有一片」——偌大的江面只有一点白帆，反衬出江的宽。",
+   "refute": {
+    "那只船很孤单，诗人想家了": "「孤」是数量少，不是心情。整首诗写的是山和水的气魄，没有一句写想家。",
+    "太阳要落山了，天快黑了": "「日边」是太阳那一带，不一定是落山。这一句要的是远处的光，不是天黑。"
+   },
+   "id": "mt_poem-understand_q2",
+   "topicId": "mt_poem-understand",
+   "difficulty": "standard",
+   "origin": "courses/mt_poem-understand/content.json#step7"
   },
   {
    "type": "choice",
@@ -1989,6 +2065,82 @@
    "topicId": "mt_word-idiom",
    "difficulty": "standard",
    "origin": "courses/mt_word-idiom/content.json#step7"
+  },
+  {
+   "type": "choice",
+   "prompt": "今天既丢了卡，又被老师表扬了，两件都想写。怎么办？",
+   "answer": "挑一件写透，另一件明天再写",
+   "choices": [
+    "挑一件写透，另一件明天再写",
+    "两件都写，每件写两句",
+    "两件事合在一起，写成「今天真是又倒霉又幸运」"
+   ],
+   "explanation": "日记可以天天写。今天写丢卡，明天写表扬——每件都写透，比一天写两件半强。",
+   "refute": {
+    "两件都写，每件写两句": "两句写不完一件事的经过。两件都写，结果就是两笔流水账。",
+    "两件事合在一起，写成「今天真是又倒霉又幸运」": "这是给自己下结论，不是记事。读者看不到卡怎么丢的，也看不到表扬是怎么来的。"
+   },
+   "id": "mt_write-diary_q1",
+   "topicId": "mt_write-diary",
+   "difficulty": "standard",
+   "origin": "courses/mt_write-diary/content.json#step5"
+  },
+  {
+   "type": "choice",
+   "prompt": "写完发现只写了「10月14日 星期三」，忘了写天气。要紧吗？",
+   "answer": "要紧，四样都要有，补在日期后面",
+   "choices": [
+    "要紧，四样都要有，补在日期后面",
+    "不要紧，正文写得好就行",
+    "可以写在最后一行"
+   ],
+   "explanation": "日记是写给以后的自己看的。过一年翻回来，「那天什么天」常常是最先想起的那一笔。",
+   "refute": {
+    "不要紧，正文写得好就行": "格式是日记和作文的区别。缺了天气，日记就变成了没有日期的一篇小作文。",
+    "可以写在最后一行": "格式头是一个整体，写在末尾就散了。日期、星期、天气挤在同一行最省事。"
+   },
+   "id": "mt_write-diary_q2",
+   "topicId": "mt_write-diary",
+   "difficulty": "standard",
+   "origin": "courses/mt_write-diary/content.json#step6"
+  },
+  {
+   "type": "choice",
+   "prompt": "铅笔说了三句话就停了。下面哪种收尾最不让人出戏？",
+   "answer": "第二天，它只在被削的时候轻轻哼一声——它还是那支铅笔。",
+   "choices": [
+    "第二天，它只在被削的时候轻轻哼一声——它还是那支铅笔。",
+    "忽然，它变成一只鸟，从窗户飞走了。",
+    "醒来一看，原来这一切都是做梦。"
+   ],
+   "explanation": "它只改了一处（会哼），其余全按真的写。这样的结尾，读者会笑一下，但不会出戏。",
+   "refute": {
+    "忽然，它变成一只鸟，从窗户飞走了。": "这是临时换了一个故事。前面所有的铺垫都作废了。",
+    "醒来一看，原来这一切都是做梦。": "做梦是最省事的收尾，也是最没劲的——它把所有麻烦一笔勾销，读者会觉得白读一场。"
+   },
+   "id": "mt_write-imagine_q1",
+   "topicId": "mt_write-imagine",
+   "difficulty": "standard",
+   "origin": "courses/mt_write-imagine/content.json#step6"
+  },
+  {
+   "type": "choice",
+   "prompt": "你想让「最怕被削的铅笔」最后盼着被削。第一件事该写什么？",
+   "answer": "先写一件让它改主意的事，再写它不怕了",
+   "choices": [
+    "先写一件让它改主意的事，再写它不怕了",
+    "直接写它不怕了，读者自己能懂",
+    "让另一个角色告诉读者「它变了」"
+   ],
+   "explanation": "变化要有由头。一件事、一句话都行，只要读者看见它为什么变。",
+   "refute": {
+    "直接写它不怕了，读者自己能懂": "读者不懂。前面刚说「最怕」，后面就「盼着」，中间空着，读起来像写漏了一段。",
+    "让另一个角色告诉读者「它变了」": "借别人的嘴说「它变了」，不如让读者自己看见它变。说出来的是结论，写出来的是故事。"
+   },
+   "id": "mt_write-imagine_q2",
+   "topicId": "mt_write-imagine",
+   "difficulty": "standard",
+   "origin": "courses/mt_write-imagine/content.json#step7"
   },
   {
    "type": "choice",

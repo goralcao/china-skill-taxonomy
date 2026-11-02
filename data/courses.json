@@ -1,20 +1,20 @@
 {
-  "version": "v0.49.1",
+  "version": "v0.49.2",
   "schemaVersion": 1,
   "generatedAt": "2026-11-03",
   "counts": {
-    "total": 65,
+    "total": 69,
     "byTemplate": {
       "drill": 1,
-      "explain": 63,
+      "explain": 67,
       "explore": 1
     },
     "byStatus": {
-      "reviewed": 65
+      "reviewed": 69
     },
     "bySubject": {
       "数学": 51,
-      "语文": 12,
+      "语文": 16,
       "化学": 1,
       "物理": 1
     }
@@ -1214,6 +1214,39 @@
       "bytes": 684
     },
     {
+      "topicId": "mt_oral-retell",
+      "title": "转述与复述：把别人的话，换成你的话说",
+      "template": "explain",
+      "renderer": "transform",
+      "duration": 13,
+      "interactions": 6,
+      "grade": 3,
+      "subject": "语文",
+      "standards": [
+        "chinese-2022:S2:PR"
+      ],
+      "prerequisites": [
+        "mt_oral-discuss",
+        "mt_book-reading"
+      ],
+      "next": [
+        "mt_oral-debate"
+      ],
+      "objectives": [
+        "转述时能按「谁说的、对谁说」换对两个人称",
+        "能去掉原话腔，只留时间、事情、要求三个要点",
+        "能发现并改正「来/去」「明天/昨天」这类跟随词"
+      ],
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-11-03",
+      "cognitiveAction": "辨析",
+      "path": "courses/mt_oral-retell/",
+      "bytes": 657
+    },
+    {
       "topicId": "mt_parallelogram",
       "title": "平行四边形和梯形：数有几组对边平行",
       "template": "explain",
@@ -1307,6 +1340,39 @@
       "updatedAt": "2026-10-27",
       "path": "courses/mt_phys-s-momentum-conservation/",
       "bytes": 16293
+    },
+    {
+      "topicId": "mt_poem-understand",
+      "title": "借助注释读懂一首诗：从四句到一段话",
+      "template": "explain",
+      "renderer": "poemNote",
+      "duration": 14,
+      "interactions": 7,
+      "grade": 3,
+      "subject": "语文",
+      "standards": [
+        "chinese-2022:S2:LR"
+      ],
+      "prerequisites": [
+        "mt_poem-recite",
+        "mt_read-ancient"
+      ],
+      "next": [
+        "mt_book-classic"
+      ],
+      "objectives": [
+        "能把注释送回它解释的诗句，说出每一句的意思",
+        "能指出诗中让画面动起来的动词",
+        "能用自己的话讲出整首诗的大意和读后的感觉"
+      ],
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-11-03",
+      "cognitiveAction": "辨析",
+      "path": "courses/mt_poem-understand/",
+      "bytes": 672
     },
     {
       "topicId": "mt_polygon-area",
@@ -2084,6 +2150,73 @@
       "cognitiveAction": "辨析",
       "path": "courses/mt_word-idiom/",
       "bytes": 681
+    },
+    {
+      "topicId": "mt_write-diary",
+      "title": "学写日记：一天里只挑一件事",
+      "template": "explain",
+      "renderer": "draft",
+      "duration": 14,
+      "interactions": 6,
+      "grade": 3,
+      "subject": "语文",
+      "standards": [
+        "chinese-2022:S2:PR"
+      ],
+      "prerequisites": [
+        "mt_write-imitate",
+        "mt_punct-basic"
+      ],
+      "next": [
+        "mt_write-narrative",
+        "mt_write-application"
+      ],
+      "objectives": [
+        "能写出日期、星期、天气齐全的日记格式头",
+        "能只挑一件事写完整，不写成从早到晚的流水账",
+        "能写出当时具体的动作或想法，不用「很开心」收尾"
+      ],
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-11-03",
+      "cognitiveAction": "构思",
+      "path": "courses/mt_write-diary/",
+      "bytes": 654
+    },
+    {
+      "topicId": "mt_write-imagine",
+      "title": "想象作文：越想得野，越要站得住",
+      "template": "explain",
+      "renderer": "checkup",
+      "duration": 15,
+      "interactions": 6,
+      "grade": 3,
+      "subject": "语文",
+      "standards": [
+        "chinese-2022:S2:LR"
+      ],
+      "prerequisites": [
+        "mt_write-picture",
+        "mt_sent-rhetoric"
+      ],
+      "next": [
+        "mt_write-center"
+      ],
+      "objectives": [
+        "能说出想象故事为什么必须给理由、不能前后打架",
+        "能在一篇故事里找出凭空多出的设定和矛盾处",
+        "能只改一处地编出有起因、麻烦、解决的小故事"
+      ],
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "1.0.0",
+      "updatedAt": "2026-11-03",
+      "cognitiveAction": "构思",
+      "path": "courses/mt_write-imagine/",
+      "bytes": 654
     },
     {
       "status": "reviewed",
