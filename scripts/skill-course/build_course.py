@@ -85,6 +85,22 @@ def build(topic):
     out = os.path.join(out_dir, 'index.html')
     with open(out, 'w', encoding='utf-8') as f:
         f.write(html)
+    # 写回 meta：src 的字段（title/nav/duration…）覆盖 courses 现有 meta，
+    # 但保留 courses 版里 src 没有的旧字段（如原版 duration/version），避免重建丢字段
+    import json as _json
+    meta_dst = os.path.join(out_dir, 'meta.json')
+    src_meta = _json.loads(read(os.path.join(d, 'meta.json')))
+    if os.path.exists(meta_dst):
+        try:
+            existing = _json.loads(read(meta_dst))
+        except Exception:
+            existing = {}
+        existing.update(src_meta)
+        merged = existing
+    else:
+        merged = src_meta
+    with open(meta_dst, 'w', encoding='utf-8') as f:
+        f.write(_json.dumps(merged, ensure_ascii=False, indent=2) + '\n')
     print('%s → %s（%d 字节，%d 页）' % (topic, os.path.relpath(out, ROOT),
                                        len(html.encode()),
                                        len(re.findall(r'<section class="page[^"]*"\s+id=', html))))

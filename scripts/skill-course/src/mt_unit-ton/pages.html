@@ -1,0 +1,529 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>30 个你，加起来才 1 吨？</h1>
+  <p class="sub">三年级数学 · 吨的认识</p>
+  <div class="tags">
+    <span class="tag">1 吨 = 1000 千克</span>
+    <span class="tag">称很重的东西</span>
+    <span class="tag">进率是 1000</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 520 200" width="460" height="177" role="img" aria-label="约 30 个三年级学生约 900 千克，再凑一点就到 1 吨">
+      <defs>
+        <marker id="arwTon" markerWidth="10" markerHeight="10" refX="6" refY="4" orient="auto">
+          <path d="M0 0 L8 4 L0 8 z" fill="#F9A825"/>
+        </marker>
+      </defs>
+      <rect x="20" y="64" width="180" height="84" rx="14" fill="#E8F1E4" stroke="#1B5E20" stroke-width="3"/>
+      <text x="110" y="100" text-anchor="middle" font-size="28" font-weight="700" fill="#1B5E20">≈ 900 kg</text>
+      <text x="110" y="128" text-anchor="middle" font-size="14" fill="#5B7A55">30 个三年级学生</text>
+      <path d="M218 106 L300 106" stroke="#F9A825" stroke-width="4" marker-end="url(#arwTon)"/>
+      <rect x="318" y="52" width="180" height="108" rx="16" fill="#1B5E20"/>
+      <text x="408" y="98" text-anchor="middle" font-size="32" font-weight="800" fill="#FFE082">1 吨</text>
+      <text x="408" y="132" text-anchor="middle" font-size="19" fill="#FFFFFF">= 1000 kg</text>
+    </svg>
+  </div>
+  <p style="font-size:20px;color:rgba(255,255,255,.9);max-width:560px;line-height:1.8;">
+    克和千克你都会用了。可一头牛、一辆汽车、一船粮食，<br>
+    得换个更大的单位——这就是「吨」。
+  </p>
+  <p class="hint">点击右下角箭头开始 或 点击顶部导航跳转</p>
+  <a href="../../viz/index.html#t=mt_unit-ton" style="margin-top:16px;color:rgba(255,255,255,.78);font-size:16px;text-decoration:underline">← 回到知识图谱</a>
+</div>
+</section>
+
+<!-- ===== p1: 前测 ===== -->
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先猜三道，凭感觉答</h2>
+  <p class="quiz-hint">三道生活题，不用算，凭直觉。答完看解析。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 一个三年级学生的体重大约是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>30 千克</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>30 克</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>30 吨</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 3 吨 = ？千克</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>300</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3000</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>30000</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 下面哪个最重？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1 吨</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>100 千克</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>1000 克</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 引入 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">一辆小汽车 1500 千克，为什么要用「吨」？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 300 180" width="260" height="156" role="img" aria-label="一辆小汽车停在地磅上，显示约 1500 千克，也就是 1.5 吨">
+      <rect x="30" y="122" width="240" height="34" rx="8" fill="#E8F1E4" stroke="#1B5E20" stroke-width="3"/>
+      <text x="150" y="145" text-anchor="middle" font-size="17" fill="#1B5E20">1500 kg ≈ 1.5 吨</text>
+      <rect x="92" y="72" width="116" height="32" rx="10" fill="#43A047"/>
+      <rect x="112" y="54" width="68" height="24" rx="8" fill="#66BB6A"/>
+      <circle cx="116" cy="106" r="12" fill="#1B5E20"/>
+      <circle cx="192" cy="106" r="12" fill="#1B5E20"/>
+      <text x="150" y="44" text-anchor="middle" font-size="14" fill="#5B7A55">一辆汽车</text>
+    </svg>
+  </div>
+  <p class="teach-text" id="p2s1">
+    你知道自己的体重，知道一袋米 <strong>25 千克</strong>。可一辆汽车、一头牛、一船粮食，用千克说起来数字又长又别扭。
+  </p>
+  <p class="teach-text" id="p2s2">
+    搬家工人说「这车能装 <strong>4 吨</strong>」，运费 180 元一吨。<strong>吨</strong>，是个比千克大得多的单位。
+  </p>
+</div>
+
+<div class="ans-cards" id="p2cards">
+  <div class="ans-card">
+    <div class="ans-num">2 吨</div>
+    <div class="ans-who">小明说：我的书包重 2 吨</div>
+    <button class="ans-btn" onclick="toggleAns(this)">他错在哪</button>
+    <div class="ans-why">2 吨 = 2000 千克，等于一辆小汽车。书包最多 3~5 千克，差了几百倍。</div>
+  </div>
+  <div class="ans-card">
+    <div class="ans-num">≈1 吨</div>
+    <div class="ans-who">全班 40 人加起来</div>
+    <button class="ans-btn" onclick="toggleAns(this)">为什么对</button>
+    <div class="ans-why">40 人 × 30 千克 ≈ 1200 千克，接近 1 吨。成堆成群的人，正好用吨来称。</div>
+  </div>
+</div>
+
+<div class="key-box" id="p2s3">
+  <strong>吨不是「大一点的千克」</strong>，它是给成堆、成车、成船的重东西用的单位。
+</div>
+</section>
+
+<!-- ===== p3: 概念1 换算 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">吨和千克之间，隔了 1000</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 300 230" width="240" height="184" role="img" aria-label="克到千克乘 1000，千克到吨再乘 1000">
+      <defs>
+        <marker id="arwT" markerWidth="10" markerHeight="10" refX="6" refY="4" orient="auto">
+          <path d="M0 0 L8 4 L0 8 z" fill="#F9A825"/>
+        </marker>
+      </defs>
+      <rect x="105" y="18" width="90" height="54" rx="10" fill="#1B5E20"/>
+      <text x="150" y="52" text-anchor="middle" font-size="22" font-weight="700" fill="#FFE082">吨</text>
+      <text x="150" y="80" text-anchor="middle" font-size="13" fill="#5B7A55">= 1000 千克</text>
+      <path d="M150 92 L150 114" stroke="#F9A825" stroke-width="3" marker-end="url(#arwT)"/>
+      <text x="205" y="108" font-size="13" fill="#F9A825">×1000</text>
+      <rect x="105" y="118" width="90" height="50" rx="10" fill="#C8E6C9" stroke="#1B5E20" stroke-width="2"/>
+      <text x="150" y="148" text-anchor="middle" font-size="20" fill="#1B5E20">千克</text>
+      <path d="M150 176 L150 194" stroke="#F9A825" stroke-width="3" marker-end="url(#arwT)"/>
+      <text x="205" y="188" font-size="13" fill="#F9A825">×1000</text>
+      <rect x="105" y="198" width="90" height="20" rx="6" fill="#E8F1E4" stroke="#1B5E20" stroke-width="2"/>
+      <text x="150" y="213" text-anchor="middle" font-size="14" fill="#1B5E20">克</text>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    克到千克是 ×1000，千克到吨<strong>又是 ×1000</strong>。所以吨和千克中间，隔了整整 1000 倍。
+  </p>
+  <p class="teach-text" id="p3s2">
+    记住三句话，换算就不会乱。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>① 1 吨 = 1000 千克</strong>：这是根，先记死这个数。</li>
+  <li><strong>② 吨换千克：×1000</strong>。3 吨 = 3000 千克，5 吨 = 5000 千克。</li>
+  <li><strong>③ 千克换吨：÷1000</strong>。5000 千克 = 5 吨，2000 千克 = 2 吨。</li>
+</ul>
+
+<table class="teach-table" id="p3table">
+  <tr><th>换算</th><th>怎么算</th><th>例子</th></tr>
+  <tr><td>吨 → 千克</td><td>数字 × 1000</td><td>3 吨 = 3000 千克</td></tr>
+  <tr><td>千克 → 吨</td><td>数字 ÷ 1000</td><td>5000 千克 = 5 吨</td></tr>
+</table>
+
+<div class="key-box" id="p3key">
+  进率是 <strong>1000</strong>，不是 100。写错这一位，答案会差 <strong>十倍</strong>。
+</div>
+</section>
+
+<!-- ===== p3b: 连线巩固 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：谁该用哪个单位</h2>
+<p class="teach-text" id="p3bs1">先点左边的物体，再点右边的单位，连对了变绿。</p>
+<div id="matchP3"></div>
+</section>
+
+<!-- ===== p4: 中测1 ===== -->
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 换算</h2>
+  <p class="quiz-hint">只看一件事：进率是 1000。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 8 吨 = ？千克</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>80</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>800</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>8000</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 2000 千克 = ？吨</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>200</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>2</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>20</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 下面用「吨」作单位合适的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>货轮的载重量</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>一块橡皮</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>一支铅笔</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 概念2 1吨有多重 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">1 吨，到底是多少个</h2>
+<p class="teach-text" id="p5s1">光说「1000 千克」没感觉。把它拆成你熟悉的东西，就清楚了：</p>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>🐂 2 头成年牛</h4>
+    <div class="eq">500 kg × 2 = 1000 kg = 1 吨</div>
+    <p>一头牛约 500 千克，两头就凑满 1 吨。</p>
+  </div>
+  <div class="card">
+    <h4>🍚 40 袋大米</h4>
+    <div class="eq">25 kg × 40 = 1000 kg = 1 吨</div>
+    <p>超市一袋米 25 千克，40 袋才到 1 吨。</p>
+  </div>
+  <div class="card">
+    <h4>🧒 约 33 个学生</h4>
+    <div class="eq">30 kg × 33 ≈ 1000 kg = 1 吨</div>
+    <p>一个你约 30 千克，全班一大半才够 1 吨。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  所以吨不是「重一点点」，是<strong>一大堆</strong>。能用吨的，都是成车、成堆、成船的。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">地磅：把东西堆上去，看它到 1 吨</h2>
+  <p class="sim-desc">点下面的按钮，把不同重量的东西放上地磅，看读数怎么涨；到 1000 千克，就亮起「1 吨」。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">0 kg</span>
+    <span class="sim-tip" id="simTip">地磅是空的</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simAdd('cow',1)">+1 头牛 (500kg)</button>
+    <button class="btn-primary" onclick="simAdd('rice',1)">+1 袋米 (25kg)</button>
+    <button class="btn-primary" onclick="simAdd('kid',1)">+1 个学生 (30kg)</button>
+    <button class="btn-retry" onclick="simSub('cow',1)">−1 头牛</button>
+    <button class="btn-retry" onclick="simSub('rice',1)">−1 袋米</button>
+    <button class="btn-retry" onclick="simSub('kid',1)">−1 个学生</button>
+  </div>
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simDemo()">演示：2 头牛 + 40 袋米</button>
+    <button class="btn-retry" onclick="simReset()">清空重来</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="860" height="332"></canvas>
+      <p class="cap">每个方块 = 100 千克　—　堆到 10 个方块（1000 千克）就亮起 1 吨</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>加 2 头牛，读数跳到多少？离 1 吨还差几个「100 千克」？</li>
+    <li>再点点「+1 袋米」，要连点多少袋，才正好到 1 吨？</li>
+    <li>演示里 40 袋米 = 多少千克？为什么 40 袋正好 1 吨？</li>
+    <li>点「−1 头牛」，读数从 1000 掉回多少？吨的标志会熄灭吗？</li>
+  </ul>
+</div>
+</section>
+
+<!-- ===== p7: 中测2 ===== -->
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 1 吨有多重</h2>
+  <p class="quiz-hint">把「1 吨 = 1000 千克」当尺子量一量。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 1 吨大米，每袋装 25 千克，能装几袋？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>4 袋</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>40 袋</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>400 袋</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 比大小：2 吨 ◯ 1500 千克</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>大于</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>小于</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>等于</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 一头大象约 5 吨 = ？千克</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>50</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>500</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>5000</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 易错辨析 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四种错法，都错在「没看清 1000」</h2>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 进率当成 100</h4>
+    <div class="wrong-num">✗ 3 吨 = 300 千克</div>
+    <p>把 3 吨当 3 千克后加两个 0，其实是 ×100。正解 <strong>3000 千克</strong>。</p>
+  </div>
+
+  <div class="card">
+    <h4>② 大单位小单位混用</h4>
+    <div class="wrong-num">✗ 我的体重 50 吨</div>
+    <p>体重用千克。50 吨 = 50000 千克，是一栋楼。正解 <strong>约 50 千克</strong>。</p>
+  </div>
+
+  <div class="card">
+    <h4>③ 比大小不统一单位</h4>
+    <div class="wrong-num">✗ 2 吨 &lt; 1500 千克</div>
+    <p>2 吨要先化成 2000 千克再比。2000 &gt; 1500，所以 <strong>2 吨更大</strong>。</p>
+  </div>
+
+  <div class="card">
+    <h4>④ 估错数量级</h4>
+    <div class="wrong-num">✗ 一头牛 50 千克</div>
+    <p>一头牛约 500 千克，不是 50。差了 10 倍，自然到不了 1 吨。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  四种错法，根子只有一个：<strong>没记住吨和千克差 1000 倍</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到搬家：货车能装 4 吨 = 4000 千克，每袋米 25 千克，能装 4000÷25 = <strong>160 袋</strong>。
+</p>
+</section>
+
+<!-- ===== p9: 后测 ===== -->
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，盯着 1000 倍</h2>
+  <p class="quiz-hint">慢一点，先想清楚进率是 1000 还是 100。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 6 吨 = ？千克</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>600</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>6000</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>60000</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 9000 千克 = ？吨</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>9</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>90</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>900</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 下面哪个用「吨」不合适？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>一艘货轮</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>一堆建筑沙</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>一颗糖果</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 按从重到轻排：1 吨、500 千克、3 吨、200 千克</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1 吨 &gt; 3 吨 &gt; 500 千克 &gt; 200 千克</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3 吨 &gt; 1 吨 &gt; 500 千克 &gt; 200 千克</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>500 千克 &gt; 1 吨 &gt; 3 吨 &gt; 200 千克</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 卡车载重 4 吨，已装 2500 千克，还能装多少千克？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1500</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>15000</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>6500</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">换算</div>
+        <div class="summary-v4-summary">×1000 还是 ÷1000</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-inner">
+          <div class="summary-v4-flip-front">怎么换<span class="fh">点击翻面</span></div>
+          <div class="summary-v4-flip-back">1 吨 = 1000 千克（记死）<br>吨 → 千克：×1000（3 吨=3000）<br>千克 → 吨：÷1000（5000kg=5吨）<br>进率是 1000，不是 100</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">1 吨有多重</div>
+        <div class="summary-v4-summary">拆成熟悉的东西</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-inner">
+          <div class="summary-v4-flip-front">数一数<span class="fh">点击翻面</span></div>
+          <div class="summary-v4-flip-back">2 头成年牛（500×2）<br>40 袋大米（25×40）<br>约 33 个三年级学生（30×33）<br>吨是「一大堆」，不是「重一点」</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">什么时候用吨</div>
+        <div class="summary-v4-summary">成车成堆成船</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-inner">
+          <div class="summary-v4-flip-front">看数量级<span class="fh">点击翻面</span></div>
+          <div class="summary-v4-flip-back">货物、车辆、大批粮食 → 用吨<br>一个人、一袋米、一支笔 → 用千克 / 克<br>书包写「吨」、橡皮写「吨」都离谱</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">常见坑</div>
+        <div class="summary-v4-summary">两个 1000 倍陷阱</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-inner">
+          <div class="summary-v4-flip-front">别踩<span class="fh">点击翻面</span></div>
+          <div class="summary-v4-flip-back">① 进率当 100：3 吨≠300 千克<br>② 比大小不统一单位：2 吨＞1500 千克<br>③ 估错量级：牛约 500 千克，不是 50<br>④ 单位看数量级：人用千克，货用吨</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<p class="teach-text" style="margin-top:18px;color:#5B7A55;font-size:19px">
+  下次看到「吨」，先问自己一句：它和千克，差的是 100 还是 1000？
+</p>
+</section>

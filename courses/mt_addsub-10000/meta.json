@@ -1,6 +1,6 @@
 {
   "topicId": "mt_addsub-10000",
-  "title": "万以内的加法和减法：进位的那 1，你记在哪儿了",
+  "title": "476 + 358，为什么有人算出 734？",
   "template": "explain",
   "duration": 25,
   "interactions": 17,
@@ -27,5 +27,67 @@
   "author": "goral.cao",
   "license": "CC-BY-SA-4.0",
   "version": "3.0.0",
-  "updatedAt": "2026-11-04"
+  "updatedAt": "2026-11-04",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "义卖",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "进位",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "退位",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
 }
