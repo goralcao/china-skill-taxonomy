@@ -1,0 +1,38 @@
+{
+  "topicId": "mt_frac-intro",
+  "title": "分数的初步认识：平均分才有分数",
+  "template": "explain",
+  "renderer": "fracMeaning",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 3,
+  "subject": "数学",
+  "standards": ["math-2022:S2:NA:NO"],
+  "prerequisites": ["mt_num-10-composition", "mt_shape-2d"],
+  "next": ["mt_frac-same-addsub", "mt_dec-intro"],
+  "objectives": [
+    "知道分数必须建立在平均分上，能判断哪种分法能写成几分之一",
+    "认识分母、分子、分数线，会读写几分之一和几分之几",
+    "会比较同分子分数的大小，说出「份数越多每份越小」"
+  ],
+  "cognitiveAction": "分解",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-04",
+  "nav": [
+    {"label": "封面", "page": 0, "cls": "active"},
+    {"label": "前测", "page": 1, "cls": "pre"},
+    {"label": "分纸条", "page": 2, "cls": ""},
+    {"label": "平均分", "page": 3, "cls": ""},
+    {"label": "连一连", "page": 4, "cls": ""},
+    {"label": "中测1", "page": 5, "cls": "mid"},
+    {"label": "几分之几", "page": 6, "cls": ""},
+    {"label": "仿真", "page": 7, "cls": "sim"},
+    {"label": "中测2", "page": 8, "cls": "mid"},
+    {"label": "辨析", "page": 9, "cls": ""},
+    {"label": "后测", "page": 10, "cls": "post"},
+    {"label": "总结", "page": 11, "cls": "end"}
+  ]
+}

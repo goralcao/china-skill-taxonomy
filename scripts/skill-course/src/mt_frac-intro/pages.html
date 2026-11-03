@@ -1,0 +1,502 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>一半怎么表示？1/2 到底是什么意思</h1>
+  <p class="sub">三年级数学 · 分数的初步认识</p>
+  <div class="tags">
+    <span class="tag">平均分</span>
+    <span class="tag">分母和分子</span>
+    <span class="tag">几分之几</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 460 220" width="440" height="210" role="img" aria-label="一个圆饼平均分成两份，其中一份涂色，表示二分之一">
+      <circle cx="150" cy="110" r="82" fill="#F8E3EA" stroke="#AD1457" stroke-width="4"/>
+      <path d="M150,28 A82,82 0 0 1 150,192 Z" fill="#FFB300" stroke="#AD1457" stroke-width="4"/>
+      <line x1="150" y1="28" x2="150" y2="192" stroke="#AD1457" stroke-width="4"/>
+      <text x="245" y="100" font-size="26" fill="#FFFFFF" font-family="monospace">平均分成 2 份</text>
+      <text x="245" y="140" font-size="26" fill="#FFE082" font-family="monospace">每份 = 1/2</text>
+    </svg>
+  </div>
+  <p style="font-size:20px;color:rgba(255,255,255,.92);max-width:560px;line-height:1.8;">
+    分披萨、折纸条、切蛋糕——只要<strong>平均分</strong>，<br>
+    就能用分数说清楚「占了整块的几分之几」。
+  </p>
+  <p class="hint">点击右下角箭头开始 或 点击顶部导航跳转</p>
+  <a href="../../viz/index.html#t=mt_frac-intro" style="margin-top:16px;color:rgba(255,255,255,.78);font-size:16px;text-decoration:underline">← 回到知识图谱</a>
+</div>
+</section>
+
+<!-- ===== p1: 前测 ===== -->
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先猜三道，凭感觉答</h2>
+  <p class="quiz-hint">三道生活题，看你会不会把「随便切」当成「平均分」。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 把一个蛋糕平均分给 2 个人，每人分到多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>一半</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>一大一小</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>两份</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 下面哪种分法是「平均分」？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>随便切两块</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>每块一样大</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>一大一小</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 一张纸对折再对折，打开后平均分成了几份？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>2 份</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>4 份</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>8 份</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 引入 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">6 厘米的纸条，平均分成 3 份，每份是几分之几？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 340 180" width="280" height="148" role="img" aria-label="6 厘米的纸条平均分成 3 段，每段是全长的三分之一">
+      <rect x="30" y="40" width="280" height="52" fill="#F8E3EA" stroke="#AD1457" stroke-width="3"/>
+      <line x1="123" y1="40" x2="123" y2="92" stroke="#AD1457" stroke-width="3"/>
+      <line x1="217" y1="40" x2="217" y2="92" stroke="#AD1457" stroke-width="3"/>
+      <rect x="30" y="40" width="93" height="52" fill="#FFB300" opacity=".85"/>
+      <text x="62" y="74" font-size="20" fill="#5A2A00" font-family="monospace">1/3</text>
+      <text x="155" y="74" font-size="18" fill="#AD1457" font-family="monospace">1/3</text>
+      <text x="248" y="74" font-size="18" fill="#AD1457" font-family="monospace">1/3</text>
+      <text x="30" y="30" font-size="15" fill="#7A3550" font-family="sans-serif">全长 6 厘米</text>
+      <text x="30" y="130" font-size="17" fill="#00695C" font-family="monospace">每份 = 2 厘米 = 全长的 1/3</text>
+    </svg>
+  </div>
+  <p class="teach-text" id="p2s1">
+    把纸条<strong>平均分成 3 份</strong>，每份都一样长，谁也少不了。
+  </p>
+  <p class="teach-text" id="p2s2">
+    每份是这根纸条的 <strong>1/3</strong>：下面的 3 表示平均分成 3 份（分母），上面的 1 表示取了 1 份（分子）。
+  </p>
+  <p class="teach-text" id="p2s3">
+    纸条长 6 厘米，每份就是 2 厘米。但「2 厘米」说多长，「1/3」说占了整根的几份——两件事。
+  </p>
+</div>
+
+<div class="key-box" id="p2s4">
+  分数的前提是<strong>平均分</strong>。分得不平均，就没有几分之一。
+</div>
+</section>
+
+<!-- ===== p3: 概念1 平均分与几分之一 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">分数从「平均分」开始</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 340 200" width="270" height="159" role="img" aria-label="上面一条平均分成 4 份取 1 份是四分之一；下面一条分得不平均，不能用分数表示">
+      <text x="10" y="22" font-size="15" fill="#2E7D32" font-family="sans-serif">✓ 平均分 4 份</text>
+      <rect x="20" y="30" width="300" height="40" fill="#F8E3EA" stroke="#AD1457" stroke-width="2"/>
+      <line x1="95" y1="30" x2="95" y2="70" stroke="#AD1457" stroke-width="2"/>
+      <line x1="170" y1="30" x2="170" y2="70" stroke="#AD1457" stroke-width="2"/>
+      <line x1="245" y1="30" x2="245" y2="70" stroke="#AD1457" stroke-width="2"/>
+      <rect x="20" y="30" width="75" height="40" fill="#FFB300" opacity=".85"/>
+      <text x="45" y="57" font-size="17" fill="#5A2A00" font-family="monospace">1/4</text>
+
+      <text x="10" y="112" font-size="15" fill="#C62828" font-family="sans-serif">✗ 分得不平均</text>
+      <rect x="20" y="120" width="300" height="40" fill="#F8E3EA" stroke="#C62828" stroke-width="2" stroke-dasharray="6 4"/>
+      <line x1="110" y1="120" x2="110" y2="160" stroke="#C62828" stroke-width="2"/>
+      <rect x="20" y="120" width="90" height="40" fill="#E0B0B0" opacity=".7"/>
+      <text x="130" y="176" font-size="14" fill="#C62828" font-family="sans-serif">不能叫 1/2，因为两块不一样大</text>
+    </svg>
+  </div>
+  <p class="teach-text" id="p3s1">
+    只有<strong>每份一样大</strong>，才能说「每份是几分之一」。这是分数的门槛。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>① 平均分</strong>：把整体分成每份一样大的若干份，才能用分数。</li>
+  <li><strong>② 几分之一</strong>：平均分成 n 份，取其中 1 份，就是 1/n。</li>
+  <li><strong>③ 读写顺序</strong>：先画分数线，再写分母（总份数），最后写分子（取的份数）。</li>
+</ul>
+
+<table class="teach-table" id="p3table">
+  <tr><th>名称</th><th>位置</th><th>表示什么</th></tr>
+  <tr><td>分母</td><td>分数线下面</td><td>平均分成几份</td></tr>
+  <tr><td>分子</td><td>分数线上面</td><td>取了其中几份</td></tr>
+  <tr><td>分数线</td><td>中间</td><td>平均分</td></tr>
+</table>
+
+<div class="key-box" id="p3key">
+  分母在<strong>下面</strong>，是「分成几份」；分子在<strong>上面</strong>，是「取了几份」。别写反。
+</div>
+</section>
+
+<!-- ===== p3b: 连线巩固 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：说法和分数配对</h2>
+<p class="teach-text" id="p3bs1">先点左边的说法，再点右边的分数或含义，连对了变绿。</p>
+<div id="matchP3"></div>
+</section>
+
+<!-- ===== p4: 中测1 ===== -->
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 平均分与几分之一</h2>
+  <p class="quiz-hint">只盯一件事：是不是平均分，分子分母各表示什么。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 把一个圆平均分成 5 份，涂 1 份，涂色部分是圆的几分之几？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1/5</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>5/1</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>1/4</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 3/4 里的「4」表示什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>取了 4 份</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>平均分成 4 份</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>一共有 4 个</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 下面哪幅图能用 1/3 表示？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>分成 3 份但大小不一</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>平均分成 3 份，涂 1 份</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>平均分成 2 份，涂 1 份</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 概念2 几分之几与比大小 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">几分之几：取几份，分子就是几</h2>
+<p class="teach-text" id="p5s1">平均分好以后，取 1 份是 1/n，取 k 份就是 k/n——几个 1/n 拼起来。</p>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>① 几分之几 = 几个 1/n</h4>
+    <div class="eq">平均分成 4 份，取 3 份<br>= 3/4<br>= 3 个 1/4</div>
+    <p>分子是几，就表示取了几个这样的 1/n。</p>
+  </div>
+  <div class="card">
+    <h4>② 份数越多，每份越小</h4>
+    <div class="eq">同一张饼<br>切 2 份：每份 1/2<br>切 4 份：每份 1/4<br>1/2 &gt; 1/4</div>
+    <p>分母越大，平均分的份数越多，每一份反而越小。</p>
+  </div>
+  <div class="card">
+    <h4>③ 分子分母别写反</h4>
+    <div class="eq">分成 3 份，取 2 份<br>写作 2/3<br>不是 3/2</div>
+    <p>分母记「分成几份」，分子记「取了几份」，位置不能换。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  同样大的整体，<strong>分母越大，每一份越小</strong>；分子表示取了几份。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">分披萨：份数和涂色份数，自己调</h2>
+  <p class="sim-desc">调「份数」看每份怎么变，调「涂色」看分子怎么变。左边的圆平均分，右边实时显示对应的分数。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">平均分成 4 份，涂 1 份 = 1/4</span>
+    <span class="sim-tip" id="simTip">分母是总份数，分子是涂色份数</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-retry" onclick="simMoreParts()">份数 +1</button>
+    <button class="btn-retry" onclick="simFewerParts()">份数 −1</button>
+    <button class="btn-primary" onclick="simAddSlice()">涂色 +1</button>
+    <button class="btn-retry" onclick="simSubSlice()">涂色 −1</button>
+    <button class="btn-primary" onclick="simDemo()">演示</button>
+    <button class="btn-retry" onclick="simReset()">重置</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="860" height="332"></canvas>
+      <p class="cap">份数越多，每一份越小；涂了几份，分子就是几</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>把份数从 4 调到 8，每一份变大还是变小？为什么？</li>
+    <li>份数不变，涂色 +1，分子怎么变？</li>
+    <li>为什么分母不能是 0？</li>
+    <li>1/4 和 1/8 哪个大？用这个圆说一说。</li>
+  </ul>
+</div>
+</section>
+
+<!-- ===== p7: 中测2 ===== -->
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 几分之几与比大小</h2>
+  <p class="quiz-hint">先找分母（总份数），再找分子（取几份）。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 把一条线段平均分成 8 份，取 5 份，是几分之几？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5/8</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>8/5</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>5/3</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 同样大的两张饼，1/2 和 1/6 哪个大？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1/2</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>1/6</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>一样大</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 5/9 表示把整体平均分成几份？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5 份</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>9 份</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>14 份</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 易错辨析 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四种错法，都错在「平均分和分子分母」</h2>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 不平均分也用分数</h4>
+    <div class="wrong-num">✗ 随便切两块就叫 1/2</div>
+    <p>两块不一样大，就不是 1/2。分数必须<strong>平均分</strong>。</p>
+  </div>
+
+  <div class="card">
+    <h4>② 分子分母写反</h4>
+    <div class="wrong-num">✗ 分成 2 份取 3 份写 2/3</div>
+    <p>分母是总份数、分子是取的份数：分成 3 份取 2 份是 <strong>2/3</strong>。</p>
+  </div>
+
+  <div class="card">
+    <h4>③ 以为分母大分数就大</h4>
+    <div class="wrong-num">✗ 1/6 &gt; 1/2</div>
+    <p>份数越多每份越小：<strong>1/2 &gt; 1/6</strong>，分母大反而小。</p>
+  </div>
+
+  <div class="card">
+    <h4>④ 把分数当长度</h4>
+    <div class="wrong-num">✗ 1/3 厘米</div>
+    <p>1/3 说的是「占整根的几份」，不是多长。要多长，得看整根是多少。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  四种错法，根子是同一个：<strong>没把「平均分」和「分子分母各管什么」弄清楚</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到纸条：一张纸平均分成 8 份，涂 3 份就是 <strong>3/8</strong>，涂 5 份就是 <strong>5/8</strong>。
+</p>
+</section>
+
+<!-- ===== p9: 后测 ===== -->
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，盯死平均分与分子分母</h2>
+  <p class="quiz-hint">先问「平均分了吗」，再问「分成几份、取了几份」。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 一个蛋糕平均分成 6 份，吃了 1 份，吃了这个蛋糕的几分之几？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1/6</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>6/1</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>1/5</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 3/5 表示下面哪种意思？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>分成 3 份，取 5 份</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>分成 5 份，取 3 份</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3 个整体</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 同一张纸，1/4 和 1/8 哪个大？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1/4</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>1/8</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>一样大</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 把 12 颗糖平均分成 4 份，每份是总数的几分之几？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1/4</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3/4</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>4/12</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 下面说法正确的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>随便分成几份就能用分数表示</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>分数必须建立在平均分上</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>分子一定比分母小</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">前提</div>
+        <div class="summary-v4-summary">必须平均分</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-inner">
+          <div class="summary-v4-flip-front">什么才算<span class="fh">点击翻面</span></div>
+          <div class="summary-v4-flip-back">每份一样大，才叫平均分<br>不平均就不能用分数<br>随便切两块 ≠ 1/2</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">几分之一</div>
+        <div class="summary-v4-summary">1 / n</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-inner">
+          <div class="summary-v4-flip-front">怎么读<span class="fh">点击翻面</span></div>
+          <div class="summary-v4-flip-back">平均分成 n 份，取 1 份<br>就是 1/n<br>分母在下（总份数），分子在上（取的份数）</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">几分之几</div>
+        <div class="summary-v4-summary">k / n</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-inner">
+          <div class="summary-v4-flip-front">取几份<span class="fh">点击翻面</span></div>
+          <div class="summary-v4-flip-back">平均分成 n 份，取 k 份<br>就是 k/n，也就是 k 个 1/n<br>3/4 = 3 个 1/4</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">比大小</div>
+        <div class="summary-v4-summary">分母越大每份越小</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-inner">
+          <div class="summary-v4-flip-front">怎么比<span class="fh">点击翻面</span></div>
+          <div class="summary-v4-flip-back">同样大的整体<br>分的份数越多，每份越小<br>1/2 &gt; 1/4 &gt; 1/8</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<p class="teach-text" style="margin-top:18px;color:#6A0F37;font-size:19px">
+  下次看到分数，先问：平均分了吗？再看：分母是分成几份，分子是取了几份。
+</p>
+</section>
