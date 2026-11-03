@@ -1,0 +1,493 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>两块手帕，哪块大？比的是边还是面？</h1>
+  <p class="sub">三年级数学 · 面积与面积单位</p>
+  <div class="tags">
+    <span class="tag">表面大小</span>
+    <span class="tag">平方厘米</span>
+    <span class="tag">面积≠周长</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 460 220" width="440" height="210" role="img" aria-label="长方形被 4 乘 3 共 12 个边长为 1 厘米的小方格铺满，面积 12 平方厘米">
+      <g fill="rgba(255,255,255,.14)" stroke="#FFE0B2" stroke-width="1.5">
+        <rect x="90" y="44" width="60" height="60"/><rect x="150" y="44" width="60" height="60"/>
+        <rect x="210" y="44" width="60" height="60"/><rect x="270" y="44" width="60" height="60"/>
+        <rect x="90" y="104" width="60" height="60"/><rect x="150" y="104" width="60" height="60"/>
+        <rect x="210" y="104" width="60" height="60"/><rect x="270" y="104" width="60" height="60"/>
+        <rect x="90" y="164" width="60" height="60"/><rect x="150" y="164" width="60" height="60"/>
+        <rect x="210" y="164" width="60" height="60"/><rect x="270" y="164" width="60" height="60"/>
+      </g>
+      <text x="90" y="32" font-size="18" fill="#B2DFDB" font-family="monospace">每格边长 1 厘米</text>
+      <text x="90" y="252" font-size="22" fill="#FFFFFF" font-family="monospace">12 格 = 12 平方厘米</text>
+    </svg>
+  </div>
+  <p style="font-size:20px;color:rgba(255,255,255,.92);max-width:560px;line-height:1.8;">
+    比两块手帕谁大，比的是<strong>铺满的面</strong>，<br>
+    不是绕一圈的边。今天把「面积」认清楚。
+  </p>
+  <p class="hint">点击右下角箭头开始 或 点击顶部导航跳转</p>
+  <a href="../../viz/index.html#t=mt_area-intro" style="margin-top:16px;color:rgba(255,255,255,.78);font-size:16px;text-decoration:underline">← 回到知识图谱</a>
+</div>
+</section>
+
+<!-- ===== p1: 前测 ===== -->
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先猜三道，凭感觉答</h2>
+  <p class="quiz-hint">三道题，看你会不会把「面」当成「边」。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 数学书封面的大小，指的是它的什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>周长</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>面积</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>边长</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 边长 1 厘米的正方形，面积是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1 厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>1 平方厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>4 厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 比较两块手帕谁大，比的是什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>一圈的边</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>边的条数</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>表面的大小</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 引入 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">边长 1 厘米的小方格，铺满这个面要几个？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 300 220" width="240" height="176" role="img" aria-label="长方形被 12 个边长为 1 厘米的小方格铺满，面积 12 平方厘米">
+      <g fill="#B2DFDB" stroke="#5D4037" stroke-width="1.5">
+        <rect x="40" y="40" width="55" height="55"/><rect x="95" y="40" width="55" height="55"/>
+        <rect x="150" y="40" width="55" height="55"/><rect x="205" y="40" width="55" height="55"/>
+        <rect x="40" y="95" width="55" height="55"/><rect x="95" y="95" width="55" height="55"/>
+        <rect x="150" y="95" width="55" height="55"/><rect x="205" y="95" width="55" height="55"/>
+        <rect x="40" y="150" width="55" height="55"/><rect x="95" y="150" width="55" height="55"/>
+        <rect x="150" y="150" width="55" height="55"/><rect x="205" y="150" width="55" height="55"/>
+      </g>
+      <text x="40" y="30" font-size="14" fill="#5D4037" font-family="sans-serif">每格边长 1 厘米</text>
+    </svg>
+  </div>
+  <p class="teach-text" id="p2s1">
+    用边长 <strong>1 厘米</strong>的小方格去铺，横着 4 个、竖着 3 个，铺满要 <strong>12 个</strong>。
+  </p>
+  <p class="teach-text" id="p2s2">
+    每个小方格的面积是 <strong>1 平方厘米</strong>，12 个就是 <strong>12 平方厘米</strong>。面积单位要带「平方」。
+  </p>
+  <p class="teach-text" id="p2s3">
+    绕一圈的边长 14 厘米，那是<strong>周长</strong>；铺满这 12 格才是<strong>面积</strong>——一个量边，一个量面。
+  </p>
+</div>
+
+<div class="key-box" id="p2s4">
+  面积是<strong>面的大小</strong>，用面积单位「铺满」来量；周长是<strong>一圈的边</strong>。
+</div>
+</section>
+
+<!-- ===== p3: 概念1 面积含义与三个单位 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">面积：物体表面或封闭图形的大小</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 320 230" width="250" height="180" role="img" aria-label="三个大小不同的正方形，分别表示 1 平方厘米、1 平方分米、1 平方米">
+      <rect x="30" y="30" width="34" height="34" fill="#B2DFDB" stroke="#5D4037" stroke-width="2"/>
+      <text x="72" y="52" font-size="14" fill="#5D4037" font-family="sans-serif">1 平方厘米</text>
+      <rect x="30" y="88" width="66" height="66" fill="#B2DFDB" stroke="#5D4037" stroke-width="2"/>
+      <text x="104" y="126" font-size="14" fill="#5D4037" font-family="sans-serif">1 平方分米</text>
+      <rect x="30" y="168" width="100" height="52" fill="#B2DFDB" stroke="#5D4037" stroke-width="2"/>
+      <text x="140" y="198" font-size="14" fill="#5D4037" font-family="sans-serif">1 平方米（示意）</text>
+    </svg>
+  </div>
+  <p class="teach-text" id="p3s1">
+    物体表面或封闭图形的大小，就是它的<strong>面积</strong>。量面积，要用统一的「面积单位」。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>① 平方厘米</strong>：边长 1 厘米的正方形，面积 1 平方厘米。</li>
+  <li><strong>② 平方分米</strong>：边长 1 分米的正方形，面积 1 平方分米。</li>
+  <li><strong>③ 平方米</strong>：边长 1 米的正方形，面积 1 平方米。</li>
+</ul>
+
+<table class="teach-table" id="p3table">
+  <tr><th>单位</th><th>边长</th><th>大概多大</th></tr>
+  <tr><td>平方厘米</td><td>1 厘米</td><td>指甲盖</td></tr>
+  <tr><td>平方分米</td><td>1 分米</td><td>手掌</td></tr>
+  <tr><td>平方米</td><td>1 米</td><td>一块大地砖</td></tr>
+</table>
+
+<div class="key-box" id="p3key">
+  面积单位都带<strong>「平方」</strong>：平方厘米、平方分米、平方米。
+</div>
+</section>
+
+<!-- ===== p3b: 连线巩固 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：正方形和面积单位配对</h2>
+<p class="teach-text" id="p3bs1">先点左边的说法，再点右边的单位或含义，连对了变绿。</p>
+<div id="matchP3"></div>
+</section>
+
+<!-- ===== p4: 中测1 ===== -->
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 面积单位</h2>
+  <p class="quiz-hint">只盯一件事：面积单位带不带「平方」。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 黑板表面的大小，是黑板的什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>周长</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>面积</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>高</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 边长 1 分米的正方形，面积是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1 平方分米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>1 分米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>4 分米</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 下面哪个是面积单位？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>平方厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 概念2 面积与周长 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">面积和周长：一个量面，一个量边</h2>
+<p class="teach-text" id="p5s1">面积和周长是两回事，单位也不同——混在一起，答案再对也判错。</p>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>① 周长：量一圈的边</h4>
+    <div class="eq">(长+宽)×2<br>4×3 的长方形<br>周长 (4+3)×2 = 14 厘米</div>
+    <p>单位是厘米、米——长度单位。</p>
+  </div>
+  <div class="card">
+    <h4>② 面积：量铺满的面</h4>
+    <div class="eq">长×宽（数格子）<br>4×3 的长方形<br>面积 4×3 = 12 平方厘米</div>
+    <p>单位带平方——面积单位。</p>
+  </div>
+  <div class="card">
+    <h4>③ 周长相等，面积不一定相等</h4>
+    <div class="eq">4×4：周长 16，面积 16<br>3×5：周长 16，面积 15<br>周长一样，面积不同</div>
+    <p>所以不能用周长去比面积大小。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  <strong>单位不同，意义不同</strong>：厘米 是边长，平方厘米 是面积。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">小方格铺满：面积和周长，分开看</h2>
+  <p class="sim-desc">调宽和高，改变长方形的大小。点「看面积」数铺满的格子，点「看周长」描一圈的边——两者的数和单位都不一样。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">4 × 3 = 12 平方厘米（面积）</span>
+    <span class="sim-tip" id="simTip">面积数格子，周长量一圈的边</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-retry" onclick="simWminus()">宽 −1</button>
+    <button class="btn-retry" onclick="simWplus()">宽 +1</button>
+    <button class="btn-retry" onclick="simHminus()">高 −1</button>
+    <button class="btn-retry" onclick="simHplus()">高 +1</button>
+    <button class="btn-primary" onclick="simArea()">看面积</button>
+    <button class="btn-primary" onclick="simPerimeter()">看周长</button>
+    <button class="btn-retry" onclick="simReset()">重置</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="860" height="332"></canvas>
+      <p class="cap">每个小格是 1 平方厘米；铺满的格数就是面积，一圈的边才是周长</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>宽和高各加 1，面积和周长各变多少？</li>
+    <li>为什么面积的单位是「平方厘米」，周长却是「厘米」？</li>
+    <li>周长一样大的两个长方形，面积一定一样吗？</li>
+    <li>用手指比一比：1 平方厘米大概多大？</li>
+  </ul>
+</div>
+</section>
+
+<!-- ===== p7: 中测2 ===== -->
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 面积计算与辨析</h2>
+  <p class="quiz-hint">先分清是量面还是量边，再选单位。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 一个图形一周的长度，是它的什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>面积</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>周长</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>体积</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 边长 2 厘米的正方形，面积是多少平方厘米？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>4</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>8</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>2</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 长 3 厘米、宽 4 厘米的长方形，面积是多少平方厘米？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>7</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>12</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>14</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 易错辨析 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四种错法，都错在「面和边」</h2>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 面积周长混</h4>
+    <div class="wrong-num">✗ 面积 14 厘米</div>
+    <p>14 厘米是周长。面积要说 12 平方厘米，两个数都不是一回事。</p>
+  </div>
+
+  <div class="card">
+    <h4>② 面积单位漏「平方」</h4>
+    <div class="wrong-num">✗ 面积 12 厘米</div>
+    <p>面积单位要带平方：<strong>12 平方厘米</strong>。写成厘米就成了一条边。</p>
+  </div>
+
+  <div class="card">
+    <h4>③ 用周长比面积</h4>
+    <div class="wrong-num">✗ 一圈长，面积就大</div>
+    <p>不一定：4×4 和 3×5 周长都是 16，面积却是 16 和 15。</p>
+  </div>
+
+  <div class="card">
+    <h4>④ 单位用错</h4>
+    <div class="wrong-num">✗ 课桌面 24 平方米</div>
+    <p>课桌面大约 24 <strong>平方分米</strong>。24 平方米比教室还大。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  四种错法，根子是同一个：<strong>没分清「量面」和「量边」，也没盯住单位</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到手帕：边长 2 分米，面积 2×2 = <strong>4 平方分米</strong>，周长 2×4 = <strong>8 分米</strong>。
+</p>
+</section>
+
+<!-- ===== p9: 后测 ===== -->
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，盯死面和单位</h2>
+  <p class="quiz-hint">先问「量面还是量边」，再看单位带不带平方。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 物体表面的大小叫它的什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>周长</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>面积</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>长度</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 边长 1 厘米的正方形，面积是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1 厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>4 厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>1 平方厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 长 3 厘米、宽 5 厘米的长方形，面积是多少平方厘米？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>8</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>15</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>16</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 边长 4 厘米的正方形，面积是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>16 平方厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>8 平方厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>16 厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 下面说法正确的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>周长越长，面积越大</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>面积用平方厘米作单位</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>面积和周长是一回事</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">面积</div>
+        <div class="summary-v4-summary">表面的大小</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">是什么<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">物体表面或封闭图形的大小<br>和「一圈的边」不同<br>面积量面，周长量边</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">单位</div>
+        <div class="summary-v4-summary">平方厘米/分米/米</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么记<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">边长 1 厘米 → 1 平方厘米<br>边长 1 分米 → 1 平方分米<br>边长 1 米 → 1 平方米</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">测量</div>
+        <div class="summary-v4-summary">铺满数格子</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么量<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">用单位小方格铺满<br>铺了几个就是几个平方单位<br>4×3 铺 12 格 = 12 平方厘米</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">辨析</div>
+        <div class="summary-v4-summary">面积 ≠ 周长</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">差在哪<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">周长单位：厘米、米<br>面积单位：平方厘米、平方米<br>周长相等，面积不一定相等</div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<p class="teach-text" style="margin-top:18px;color:#4A2E24;font-size:19px">
+  下次看到「大小」，先问：是量面还是量边？再看单位带不带「平方」。
+</p>
+</section>

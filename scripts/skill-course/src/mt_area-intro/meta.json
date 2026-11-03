@@ -1,0 +1,38 @@
+{
+  "topicId": "mt_area-intro",
+  "title": "面积与面积单位：周长量边，面积量面",
+  "template": "explain",
+  "renderer": "geometry",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 3,
+  "subject": "数学",
+  "standards": ["math-2022:S2:GG:GM"],
+  "prerequisites": ["mt_shape-2d", "mt_length-cm-m", "mt_rect-perimeter"],
+  "next": ["mt_rect-area", "mt_volume"],
+  "objectives": [
+    "理解面积是物体表面或封闭图形的大小，能比较面积的大小",
+    "认识平方厘米、平方分米、平方米，知道边长 1 单位的正方形面积是 1 平方单位",
+    "能区分面积与周长，正确使用「厘米」与「平方厘米」两类单位"
+  ],
+  "cognitiveAction": "比较",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-04",
+  "nav": [
+    {"label": "封面", "page": 0, "cls": "active"},
+    {"label": "前测", "page": 1, "cls": "pre"},
+    {"label": "铺方格", "page": 2, "cls": ""},
+    {"label": "面积单位", "page": 3, "cls": ""},
+    {"label": "连一连", "page": 4, "cls": ""},
+    {"label": "中测1", "page": 5, "cls": "mid"},
+    {"label": "面积周长", "page": 6, "cls": ""},
+    {"label": "仿真", "page": 7, "cls": "sim"},
+    {"label": "中测2", "page": 8, "cls": "mid"},
+    {"label": "辨析", "page": 9, "cls": ""},
+    {"label": "后测", "page": 10, "cls": "post"},
+    {"label": "总结", "page": 11, "cls": "end"}
+  ]
+}
