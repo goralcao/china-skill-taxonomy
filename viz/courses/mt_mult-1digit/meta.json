@@ -2,23 +2,94 @@
   "topicId": "mt_mult-1digit",
   "title": "多位数乘一位数：0 那一位最容易漏",
   "template": "explain",
-  "renderer": "vertical",
-  "duration": 12,
-  "interactions": 3,
+  "renderer": "geometry",
+  "duration": 24,
+  "interactions": 16,
   "grade": 3,
   "subject": "数学",
-  "standards": ["math-2022:S2:NA:NO"],
-  "prerequisites": ["mt_mul-tables-7-9", "mt_num-10000-recognition", "mt_addsub-10000"],
-  "next": ["mt_mult-2digit", "mt_div-1digit"],
+  "standards": [
+    "math-2022:S2:NA:NO"
+  ],
+  "prerequisites": [
+    "mt_mul-tables-7-9",
+    "mt_num-10000-recognition",
+    "mt_addsub-10000"
+  ],
+  "next": [
+    "mt_mult-2digit",
+    "mt_div-1digit"
+  ],
   "objectives": [
-    "能在竖式里正确处理积的对位与进位",
-    "能口算整十整百数乘一位数的结果",
-    "能用估算检查积是否合理"
+    "竖式从个位起，一位一位乘，乘到哪一位积就写哪一位下面",
+    "满几十进几，进位要加进左边一位（中间的 0 不能空着）",
+    "末尾的 0 先不算，算完按原样补回去；用估算检查积是否合理"
   ],
   "cognitiveAction": "分解",
   "status": "reviewed",
   "author": "goral.cao",
   "license": "CC-BY-SA-4.0",
-  "version": "1.0.0",
-  "updatedAt": "2026-10-27"
+  "version": "3.0.0",
+  "updatedAt": "2026-11-04",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "买水",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "竖式顺序",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "进位0",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
 }

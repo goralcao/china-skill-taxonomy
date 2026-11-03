@@ -1,0 +1,494 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>208 × 4，为什么有人算出 802？</h1>
+  <p class="sub">三年级数学 · 多位数乘一位数</p>
+  <div class="tags">
+    <span class="tag">一位一位乘</span>
+    <span class="tag">满几十进几</span>
+    <span class="tag">末尾 0 别漏</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 460 200" width="440" height="191" role="img" aria-label="竖式 208 乘 4，十位那个 0 忘了加进位就会算成 802">
+      <text x="60" y="60" font-size="34" fill="#006064" font-family="monospace">2 0 8</text>
+      <text x="250" y="60" font-size="34" fill="#FF6F00" font-family="monospace">× 4</text>
+      <line x1="40" y1="78" x2="290" y2="78" stroke="#37474F" stroke-width="3"/>
+      <text x="60" y="120" font-size="34" fill="#006064" font-family="monospace">8 0 2</text>
+      <text x="200" y="150" font-size="20" fill="#C62828">十位：0×4 别忘了加进位 3！</text>
+    </svg>
+  </div>
+  <p style="font-size:20px;color:rgba(255,255,255,.9);max-width:560px;line-height:1.8;">
+    乘法你会算，可一碰到中间有 0、末尾有 0，<br>
+    那一位就最容易漏掉。今天把它钉死。
+  </p>
+  <p class="hint">点击右下角箭头开始 或 点击顶部导航跳转</p>
+  <a href="../../viz/index.html#t=mt_mult-1digit" style="margin-top:16px;color:rgba(255,255,255,.78);font-size:16px;text-decoration:underline">← 回到知识图谱</a>
+</div>
+</section>
+
+<!-- ===== p1: 前测 ===== -->
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先猜三道，凭感觉答</h2>
+  <p class="quiz-hint">三道生活题，看你会不会把「几箱」当「多几个」。答完看解析。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 一箱矿泉水 12 瓶，4 箱一共多少瓶？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>18 瓶</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>16 瓶</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>48 瓶</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 一排 5 张椅子，6 排一共多少张？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>11 张</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>30 张</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>6 张</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 一袋糖 10 颗，5 袋一共多少颗？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>15 颗</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>50 颗</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>5 颗</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 引入 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">208 × 4，错的人大多错在中间这一位</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 300 200" width="250" height="167" role="img" aria-label="竖式 208 乘 4，三种答案 802、832、232">
+      <text x="40" y="50" font-size="30" fill="#006064" font-family="monospace">2 0 8</text>
+      <text x="210" y="50" font-size="30" fill="#FF6F00" font-family="monospace">× 4</text>
+      <line x1="30" y1="66" x2="250" y2="66" stroke="#37474F" stroke-width="3"/>
+      <text x="40" y="104" font-size="26" fill="#2E7D32" font-family="monospace">8 3 2 ✓</text>
+      <text x="40" y="138" font-size="22" fill="#C62828" font-family="monospace">8 0 2 ✗</text>
+      <text x="40" y="170" font-size="22" fill="#C62828" font-family="monospace">2 3 2 ✗</text>
+    </svg>
+  </div>
+  <p class="teach-text" id="p2s1">
+    算 208 × 4，竖式只有三行。可中间的那个 <strong>0</strong>，最容易出事。
+  </p>
+  <p class="teach-text" id="p2s2">
+    有人算出 <strong>802</strong>（十位忘了加进位），有人算出 <strong>232</strong>（把 0 那一步整个跳过了）。正解是 <strong>832</strong>。
+  </p>
+  <p class="teach-text" id="p2s3">
+    就像一箱水 <strong>24 元</strong>，买 3 箱该付多少？有人写 <strong>27 元</strong>（24+3）——把「3 箱」当成了「多 3 元」。乘和加，第一步就得分清。
+  </p>
+</div>
+
+<div class="key-box" id="p2s4">
+  这一课练的，就是<strong>一位一位乘、进位接住、0 不漏</strong>。先看清顺序，再谈速度。
+</div>
+</section>
+
+<!-- ===== p3: 概念1 竖式顺序 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">竖式：从个位起，一位一位乘</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 300 220" width="240" height="176" role="img" aria-label="竖式 23 乘 4，从个位 3 乘 4 开始，进位 1 写十位上方">
+      <text x="60" y="40" font-size="28" fill="#006064" font-family="monospace">2 3</text>
+      <text x="200" y="40" font-size="28" fill="#FF6F00" font-family="monospace">× 4</text>
+      <text x="120" y="32" font-size="20" fill="#C62828">1</text>
+      <line x1="40" y1="56" x2="240" y2="56" stroke="#37474F" stroke-width="3"/>
+      <text x="60" y="96" font-size="28" fill="#006064" font-family="monospace">9 2</text>
+      <text x="44" y="140" font-size="15" fill="#5E35B1">① 个位 3×4=12 写2进1</text>
+      <text x="44" y="166" font-size="15" fill="#5E35B1">② 十位 2×4=8 加进位1 = 9</text>
+      <text x="44" y="192" font-size="15" fill="#5E35B1">③ 从个位往左，一位一位来</text>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    竖式不是摆设，它是你的草稿纸。规则只有三条。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>① 从个位算起</strong>：右边先算，因为进位是往左边送的。</li>
+  <li><strong>② 一位一位乘</strong>：用乘数依次去乘每一位，乘到哪一位，积就写哪一位下面。</li>
+  <li><strong>③ 满几十进几</strong>：某一位乘出来满 10，就向它左边一位进几（写个小数字记着）。</li>
+</ul>
+
+<table class="teach-table" id="p3table">
+  <tr><th>步骤</th><th>算什么</th><th>怎么写</th></tr>
+  <tr><td>个位</td><td>3 × 4 = 12</td><td>写 2，向十位进 1</td></tr>
+  <tr><td>十位</td><td>2 × 4 = 8，加进位 1</td><td>写 9</td></tr>
+  <tr><td>结果</td><td>—</td><td>92</td></tr>
+</table>
+
+<div class="key-box" id="p3key">
+  顺序错了，进位就接不上。<strong>永远从个位起</strong>，这是竖式的铁律。
+</div>
+</section>
+
+<!-- ===== p3b: 连线巩固 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：每一步在干什么</h2>
+<p class="teach-text" id="p3bs1">先点左边的步骤，再点右边的说明，连对了变绿。</p>
+<div id="matchP3"></div>
+</section>
+
+<!-- ===== p4: 中测1 ===== -->
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 竖式顺序</h2>
+  <p class="quiz-hint">只看一件事：从哪一位开始算。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 竖式算 23 × 4，第一步先乘哪一位？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>十位（2）</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>个位（3）</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>随便哪一位</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 23 × 4 的个位：3 × 4 = 12，怎么办？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>把 12 全写个位</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>写 2，向十位进 1</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>直接写 2</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 23 × 4 = ？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>92</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>812</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>72</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 概念2 进位与末尾0 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">两种最容易错的 0：中间 0 和末尾 0</h2>
+<p class="teach-text" id="p5s1">顺序对了，还可能在「0」上栽跟头。两种 0，两种解法。</p>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>① 中间有 0：也要乘，再加进位</h4>
+    <div class="eq">208 × 4<br>个位 8×4=32 写2进3<br>十位 0×4+3=3<br>百位 2×4=8 → 832</div>
+    <p>0 那一位不能跳过，乘完还要把进位的 3 加上去。</p>
+  </div>
+  <div class="card">
+    <h4>② 末尾有 0：先不算，再补回</h4>
+    <div class="eq">2000 × 3<br>先算 2 × 3 = 6<br>末尾 3 个 0 原样补回<br>→ 6000</div>
+    <p>末尾的 0 不参与乘法，但要一个不落地补回去。</p>
+  </div>
+  <div class="card">
+    <h4>③ 竖式 = 被压缩的口算</h4>
+    <div class="eq">208 = 200 + 8<br>200×4=800，8×4=32<br>800+32 = 832</div>
+    <p>想不清某一步，就把数拆开口算一遍，和竖式对一对。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  中间 0 要乘要加，末尾 0 先放着最后补——<strong>两个 0 完全是两码事</strong>。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">竖式步进器：一位一位点，看进位怎么接</h2>
+  <p class="sim-desc">点「下一步」，从个位开始逐位乘，进位的小数字会写在对应数位上方。算完整个积是几，一目了然。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">准备：208 × 4</span>
+    <span class="sim-tip" id="simTip">点「下一步」逐位算，注意进位</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simStep()">下一步</button>
+    <button class="btn-retry" onclick="simPrev()">上一步</button>
+    <button class="btn-primary" onclick="simDemo(208,4)">演示：208 × 4</button>
+    <button class="btn-primary" onclick="simDemo(2000,3)">演示：2000 × 3</button>
+    <button class="btn-retry" onclick="simReset()">重置</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="860" height="332"></canvas>
+      <p class="cap">红色小字是进位；乘到哪一位，积的对应数位就亮出来。中间的 0 也要乘、也要加进位</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>第一步点下去，算的是哪一位？进位的小字写在了谁的上面？</li>
+    <li>演示 208×4，十位 0×4 之后，为什么写的是 3 而不是 0？</li>
+    <li>演示 2000×3，末尾那三个 0 是乘出来的，还是最后补的？</li>
+    <li>把 208 拆成 200+8 口算一遍，和竖式结果对得上吗？</li>
+  </ul>
+</div>
+</section>
+
+<!-- ===== p7: 中测2 ===== -->
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 进位与末尾 0</h2>
+  <p class="quiz-hint">盯住两种 0：中间的别漏加，末尾的别数错。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 208 × 4 的十位，该怎么算？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>0×4=0，直接写 0</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>0×4=0，还要加上进位的 3</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>十位跳过不写</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 2000 × 3 = ？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>600</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>60</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>6000</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 500 × 6 = ？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>30</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3000</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>300</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 易错辨析 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四种错法，都错在「0 和进位」</h2>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 中间 0 漏加进位</h4>
+    <div class="wrong-num">✗ 208 × 4 = 802</div>
+    <p>十位只写了 0×4=0，忘了加个位进上来的 3。正解 <strong>832</strong>。</p>
+  </div>
+
+  <div class="card">
+    <h4>② 末尾 0 数错个数</h4>
+    <div class="wrong-num">✗ 2000 × 3 = 60</div>
+    <p>只补了 1 个 0。末尾有 3 个 0，都得补回：<strong>6000</strong>。</p>
+  </div>
+
+  <div class="card">
+    <h4>③ 顺序反了，从百位起</h4>
+    <div class="wrong-num">✗ 先算 2×4，进位无处放</div>
+    <p>不按个位起，进位送不出去。永远<strong>从个位往左</strong>一位一位算。</p>
+  </div>
+
+  <div class="card">
+    <h4>④ 不算就估，方向反了</h4>
+    <div class="wrong-num">✗ 208×4 ≈ 1600</div>
+    <p>把 208 看大成了 400。正确估算 200×4=80，积应在 <strong>800 左右</strong>。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  四种错法，根子是同一个：<strong>没把「逐位乘 + 进位 + 0」当成一条流水线</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到运动会：每箱水 24 瓶，买 3 箱 → 24×3：4×3=12 写2进1，2×3+1=7 → <strong>72 瓶</strong>。
+</p>
+</section>
+
+<!-- ===== p9: 后测 ===== -->
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，盯死进位和 0</h2>
+  <p class="quiz-hint">慢一点，先想从哪一位起，再想 0 怎么处理。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 竖式算 124 × 3，从哪一位算起？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>百位</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>个位</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>十位</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 124 × 3 = ？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>362</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3242</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>372</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 300 × 4 = ？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>120</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>1200</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>12000</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 运动会，每箱矿泉水 24 瓶，买 3 箱一共几瓶？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>27 瓶</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>63 瓶</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>72 瓶</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 不算竖式，208 × 4 大约是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>400 左右</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>1600 左右</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>800 左右</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">顺序</div>
+        <div class="summary-v4-summary">永远从个位起</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-inner">
+          <div class="summary-v4-flip-front">怎么起<span class="fh">点击翻面</span></div>
+          <div class="summary-v4-flip-back">用乘数依次去乘每一位<br>从个位往左，一位一位来<br>进位往左边送，顺序反了就接不上</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">进位</div>
+        <div class="summary-v4-summary">满几十进几</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-inner">
+          <div class="summary-v4-flip-front">怎么进<span class="fh">点击翻面</span></div>
+          <div class="summary-v4-flip-back">某一位乘满 10，向它左边进几<br>进位要加进左边那一位<br>23×4：3×4=12 进 1，2×4+1=9 → 92</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">两种 0</div>
+        <div class="summary-v4-summary">中间加，末尾补</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-inner">
+          <div class="summary-v4-flip-front">怎么处理<span class="fh">点击翻面</span></div>
+          <div class="summary-v4-flip-back">中间 0：也要乘，还要加进位（0×4+3=3）<br>末尾 0：先不算，算完照原数补回<br>2000×3=6 补 3 个 0 = 6000</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">检查</div>
+        <div class="summary-v4-summary">拆开 / 估算</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-inner">
+          <div class="summary-v4-flip-front">怎么查<span class="fh">点击翻面</span></div>
+          <div class="summary-v4-flip-back">拆：208=200+8，分别乘再相加<br>估：208×4 ≈ 200×4 = 800<br>结果离 800 太远，一定某步错了</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<p class="teach-text" style="margin-top:18px;color:#004D40;font-size:19px">
+  下次看到竖式，先问自己：从个位起了吗？进位接住了吗？那个 0，我漏了吗？
+</p>
+</section>
