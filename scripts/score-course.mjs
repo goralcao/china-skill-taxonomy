@@ -51,7 +51,11 @@ const hasEdge = (from, to) => edges.some(e => e.prerequisiteId === from && e.top
 function scoreCourse(dir) {
   const meta = readJSON(path.join(ROOT, 'courses', dir, 'meta.json'));
   const contentPath = path.join(ROOT, 'courses', dir, 'content.json');
-  const engine = fs.existsSync(contentPath);
+  const htmlPath = path.join(ROOT, 'courses', dir, 'index.html');
+  const srcHtml = fs.existsSync(htmlPath) ? fs.readFileSync(htmlPath, 'utf8') : '';
+  // 技能型课件（interactive-courseware-builder）：单文件 HTML，内容在页面里不在步骤里
+  const isSkill = /data-cw="skill"/.test(srcHtml);
+  const engine = fs.existsSync(contentPath) && !isSkill;
   const content = engine ? readJSON(contentPath) : null;
   const steps = (content && content.steps) || [];
   const topic = topicById.get(meta.topicId);
@@ -66,7 +70,26 @@ function scoreCourse(dir) {
   else if (!act) put('action', 0, '没声明 cognitiveAction，说不清这节课让学生做什么');
   else put('action', 0, `cognitiveAction「${act}」不在白名单`);
 
-  if (!engine) {
+  if (isSkill) {
+    const quizPages = (srcHtml.match(/class="quiz-page"/g) || []).length;
+    const qCount = (srcHtml.match(/class="quiz-q"/g) || []).length;
+    const explains = (srcHtml.match(/explain:\s*['"]/g) || []).length;
+    const reveals = (srcHtml.match(/setupReveal\(/g) || []).length;
+    const pages = (srcHtml.match(/<section class="page[^"]*"\s+id=/g) || []).length;
+
+    put('reveal', reveals >= 3 ? 15 : reveals ? 8 : 0,
+      reveals >= 3 ? `${reveals} 个讲授页做了逐段揭示` : '讲授页没有分步揭示，一屏全给');
+
+    if (!qCount) put('feedback', 0, '没有检测题，也就没有反馈');
+    else if (explains >= qCount) put('feedback', 15, `${qCount} 道题都写了错因解析`);
+    else put('feedback', (explains / qCount) * 15, `${qCount - explains} 道题没有解析`);
+
+    const pit = /易错|最容易|别把|翻车|不是 1 分/.test(srcHtml);
+    put('pitfall', pit ? 10 : 0, pit ? '专门有易错辨析' : '整节课没指出一个易错点');
+
+    put('assess', qCount >= 10 ? 10 : qCount >= 5 ? 6 : qCount ? 3 : 0,
+      `${pages} 页里有 ${quizPages} 个测验页、${qCount} 道题`);
+  } else if (!engine) {
     for (const k of ['reveal', 'feedback', 'pitfall', 'assess']) {
       put(k, null, '手写页面没有 content.json，这一维打不了分（可迁移到引擎）');
     }
@@ -167,7 +190,9 @@ function scoreCourse(dir) {
   put('graph', graph, gNotes.length ? gNotes.join('；') : '前置/后续/课标都对得上');
 
   // 6. 形成性评价：至少两道，才看得出会不会
-  if (!engine) {
+  if (isSkill) {
+    // 已在上面按测验页与题数给分
+  } else if (!engine) {
     put('assess', null, '手写页面：题目数未知');
   } else {
     // 语文的「留下痕迹」环节（圈画/动笔/自评）与检测题同权
@@ -179,12 +204,21 @@ function scoreCourse(dir) {
   }
 
   // 7. 节奏：一次交互 2~7 分钟（drill 1~4），整节 8~20 分钟
-  const per = meta.duration && meta.interactions ? meta.duration / meta.interactions : 0;
-  const lo = meta.template === 'drill' ? 1 : 2;
-  const hi = meta.template === 'drill' ? 4 : 7;
-  const paceOk = per >= lo && per <= hi && meta.duration >= 8 && meta.duration <= 20;
-  put('pace', paceOk ? 5 : 0,
-    `${meta.duration} 分钟 / ${meta.interactions} 次交互${paceOk ? '' : '，节奏失衡'}`);
+  //    技能课件按「每页几分钟」算——它的交互是页面级，不是题目级
+  if (isSkill) {
+    const pages = (srcHtml.match(/<section class="page[^"]*"\s+id=/g) || []).length;
+    const perPage = pages ? (meta.duration || 0) / pages : 0;
+    const ok = perPage >= 2 && perPage <= 5;
+    put('pace', ok ? 5 : 0,
+      `${meta.duration} 分钟 / ${pages} 页（每页 ${perPage.toFixed(1)} 分钟）${ok ? '' : '，节奏失衡'}`);
+  } else {
+    const per = meta.duration && meta.interactions ? meta.duration / meta.interactions : 0;
+    const lo = meta.template === 'drill' ? 1 : 2;
+    const hi = meta.template === 'drill' ? 4 : 7;
+    const paceOk = per >= lo && per <= hi && meta.duration >= 8 && meta.duration <= 20;
+    put('pace', paceOk ? 5 : 0,
+      `${meta.duration} 分钟 / ${meta.interactions} 次交互${paceOk ? '' : '，节奏失衡'}`);
+  }
 
   // 8. 单文件：产物不外链、不超 300KB
   const distPath = path.join(ROOT, 'viz/courses', dir, 'index.html');
@@ -200,7 +234,17 @@ function scoreCourse(dir) {
   }
 
   // 9. 开场衔接：第一屏是不是具体问题，有没有顺手检查前置
-  if (!engine) {
+  if (isSkill) {
+    const secs = srcHtml.match(/<section class="page[^"]*"[\s\S]*?<\/section>/g) || [];
+    const intro = secs.find(x => /class="teach-title"/.test(x)) || '';
+    const head = (intro.match(/<h2 class="teach-title">([^<]*)</) || [, ''])[1];
+    const body = intro.replace(/<[^>]+>/g, ' ');
+    const concrete = /\d|[？?]/.test(head);
+    const phenom = /\d+\s*(分钟|秒|小时|元|厘米)|\d{1,2}[:：]\d{2}/.test(body);
+    if (concrete && phenom) put('hook', 5, '开场是可感知的现象 + 具体数字');
+    else if (concrete) put('hook', 3, '开场有具体问题，但缺可感知的场景');
+    else put('hook', 0, '开场是套话，学生不知道今天要解决什么');
+  } else if (!engine) {
     put('hook', null, '手写页面：开场结构未知');
   } else {
     const first = steps[0] || {};
@@ -227,7 +271,7 @@ function scoreCourse(dir) {
   if (badTitle.length) cNotes.push(`${badTitle.length} 个标题超过 26 字`);
   put('copy', copy, cNotes.length ? cNotes.join('；') : '标题具体，没有套话');
 
-  if (!engine) {
+  if (!engine && !isSkill) {
     return { dir, topicId: meta.topicId, title: meta.title, status: meta.status, engine, dims, total: null };
   }
   const scored = DIMS.filter(d => dims[d.key].score !== null);
@@ -279,7 +323,7 @@ if (jsonOut) {
   }
   const scoredList = results.filter(r => r.total !== null);
   const avg = scoredList.reduce((n, r) => n + r.total, 0) / Math.max(1, scoredList.length);
-  console.log(`\n平均 ${avg.toFixed(1)} 分（${scoredList.length} 节引擎课件）`);
+  console.log(`\n平均 ${avg.toFixed(1)} 分（${scoredList.length} 节可计分课件）`);
   const manual = results.filter(r => r.total === null).map(r => r.topicId);
   if (manual.length) console.log(`手写页面未计分：${manual.join('、')}`);
 }

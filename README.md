@@ -10,7 +10,7 @@
 覆盖 12 个学科、1~12 年级，每个主题配一份教学研究</p>
 
 <p>
-<img src="https://img.shields.io/badge/version-v0.49.3-blue?style=flat-square" alt="version">
+<img src="https://img.shields.io/badge/version-v0.49.4-blue?style=flat-square" alt="version">
 <img src="https://img.shields.io/badge/subjects-12-informational?style=flat-square" alt="subjects">
 <img src="https://img.shields.io/badge/topics-1273-brightgreen?style=flat-square" alt="topics">
 <img src="https://img.shields.io/badge/prerequisite%20edges-1647-blueviolet?style=flat-square" alt="prerequisite edges">
@@ -26,7 +26,7 @@
 
 在线预览：<https://acd118508358062b1.app.workbuddy.host/?sharecode=DHL4TJAQCG>
 
-> v0.49.3 · 主题 1273 · 先修依赖 1647（hard 952 / soft 695）· 课标条目 186 · 域摘要 204 · 教学研究 1268 · 教材版本 26 · 学科 12 · 课件 69 · 诊断题 141（覆盖 63 个主题：数学 46、语文 16、化学 1）
+> v0.49.4 · 主题 1273 · 先修依赖 1647（hard 952 / soft 695）· 课标条目 186 · 域摘要 204 · 教学研究 1268 · 教材版本 26 · 学科 12 · 课件 69 · 诊断题 141（覆盖 63 个主题：数学 46、语文 16、化学 1）
 
 ## 目录
 
@@ -213,6 +213,12 @@
 | 物理规律 | explore + `sim` | 开个摩擦开关，守恒变不守恒 |
 
 呈现器集中放在 `templates/renderers.js`，课件源文件用相对路径引用，构建时内联进单文件——同一套竖式代码只维护一份，不用在 1273 个主题里各抄一遍。
+
+### 两种形态：数据驱动，与页面驱动
+
+上面那套「一份 JSON + 通用引擎」覆盖了大部分课。但有些课的教学结构本身比步骤复杂——要先摸底、要有一段能拖的仿真、要有前中后三段测验再收进一个总结框架。这类课用 `interactive-courseware-builder` 的技能骨架做成单文件页面更合适。
+
+`mt_time-hms`（时、分、秒）是第一门这样做的：12 页、14 道题、一个能拖动三根针的钟面。它的 `index.html` 带 `data-cw="skill"` 标记，`validate-courses` 会自动改按页面构成检查（页数 10–16、测验页 ≥3 且不相邻、有仿真、有总结），`score-course` 也换成按页数与题数计分，不再要求 `content.json`。
 
 ### 课件是数据，不是手写页面
 

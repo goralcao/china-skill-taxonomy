@@ -103,7 +103,13 @@ for (const name of dirs) {
   if (typeof meta.interactions !== 'number' || meta.interactions < 2) {
     fail(rel, `interactions 至少 2，当前 ${meta.interactions}`);
   }
-  if (meta.duration && meta.interactions) {
+
+  // 7. HTML 静态检查
+  const html = fs.readFileSync(htmlPath, 'utf8');
+  const bytes = Buffer.byteLength(html, 'utf8');
+  // 技能型课件（interactive-courseware-builder）：页面级内容，节奏按页算、内容在页面里
+  const isSkill = /data-cw="skill"/.test(html);
+  if (!isSkill && meta.duration && meta.interactions) {
     const per = meta.duration / meta.interactions;
     const lo = meta.template === 'drill' ? 1 : 2;
     const hi = meta.template === 'drill' ? 4 : 7;
@@ -111,10 +117,6 @@ for (const name of dirs) {
       warn(rel, `每个交互平均 ${per.toFixed(1)} 分钟，偏离 ${lo}~${hi} 的合理区间`);
     }
   }
-
-  // 7. HTML 静态检查
-  const html = fs.readFileSync(htmlPath, 'utf8');
-  const bytes = Buffer.byteLength(html, 'utf8');
 
   // 源文件允许引用 templates/ 下的共享样式与呈现器（构建时内联）；
   // 除此之外的任何 <script src> / <link href> 都不允许。
@@ -155,9 +157,33 @@ for (const name of dirs) {
     if (!/window\.__GRAPH\s*=/.test(dist)) fail(rel, '构建产物缺 window.__GRAPH（图谱延伸数据未注入）');
   }
 
+  // 7.75 技能型课件（interactive-courseware-builder 产出）：单文件 HTML，
+  // 内容是页面而不是 content.steps，按页面构成与测验分布另立一章检查。
+  if (isSkill) {
+    const secs = [...html.matchAll(/<section class="page[^"]*"\s+id="([^"]+)"([\s\S]*?)<\/section>/g)]
+      .map(m => ({ id: m[1], isQuiz: /class="quiz-page"/.test(m[2]) }));
+    const quizPages = secs.filter(x => x.isQuiz).length;
+    if (secs.length < 10 || secs.length > 16) {
+      fail(rel, `技能课件 ${secs.length} 页，应在 10–16 页之间`);
+    }
+    if (quizPages < 3) {
+      fail(rel, `技能课件只有 ${quizPages} 个测验页，至少要前测 + 中测 + 后测`);
+    }
+    if (!/<canvas[^>]+id="/.test(html)) fail(rel, '技能课件没有仿真页（<canvas id=>）');
+    if (!/summary-v[1-4]/.test(html)) fail(rel, '技能课件没有总结页（V1–V4 框架）');
+    for (let i = 1; i < secs.length; i++) {
+      if (secs[i].isQuiz && secs[i - 1].isQuiz) {
+        fail(rel, `技能课件第 ${i} 与第 ${i + 1} 页都是测验，中间必须隔一页讲授或仿真`);
+      }
+    }
+    if (!/IMG_PREFIX|img\//.test(html) && /<img\s/.test(html)) {
+      warn(rel, '技能课件里有 <img> 但没走 img/ 前缀');
+    }
+  }
+
   // 7.8 引擎型课件：内容在 content.json，校验步骤与答案
   const contentPath = path.join(dir, 'content.json');
-  const isEngine = fs.existsSync(contentPath);
+  const isEngine = fs.existsSync(contentPath) && !isSkill;
   let engineSteps = null;
   if (isEngine) {
     let content = null;
@@ -258,7 +284,8 @@ for (const name of dirs) {
     }
   }
 
-  // 8. 交互步骤数一致：多步页面看 data-step，单页题库看 __ANSWERS 条数
+  // 8. 交互步骤数一致：多步页面看 data-step，单页题库看 __ANSWERS 条数（技能课件不适用）
+  if (!isSkill) {
   const answersMatch = html.match(/window\.__ANSWERS\s*=\s*(\[[\s\S]*?\]);/);
   let answers = null;
   if (answersMatch) {
@@ -303,6 +330,8 @@ for (const name of dirs) {
         if (got !== a.value) fail(rel, `答案 ${a.id} 复算不符：expr 得 ${got}，标注 ${a.value}`);
       }
     }
+  }
+
   }
 
   // 11. 主题年段与课件年级一致
