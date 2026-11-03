@@ -1,0 +1,489 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>84 ÷ 4，为什么商要写在十位上？</h1>
+  <p class="sub">三年级数学 · 除数是一位数的除法</p>
+  <div class="tags">
+    <span class="tag">从高位除起</span>
+    <span class="tag">商要对位</span>
+    <span class="tag">余数小于除数</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 460 200" width="440" height="191" role="img" aria-label="84 除以 4 的竖式，商是 21">
+      <text x="120" y="52" font-size="30" fill="#FFFFFF" font-family="monospace">2 1</text>
+      <line x1="100" y1="66" x2="230" y2="66" stroke="#FFFFFF" stroke-width="3"/>
+      <line x1="100" y1="66" x2="100" y2="150" stroke="#FFFFFF" stroke-width="3"/>
+      <text x="62" y="128" font-size="30" fill="#FFE0B2" font-family="monospace">4</text>
+      <text x="120" y="128" font-size="30" fill="#FFFFFF" font-family="monospace">8 4</text>
+      <text x="280" y="100" font-size="22" fill="#FFE0B2" font-family="monospace">8 个十 ÷ 4</text>
+      <text x="280" y="134" font-size="22" fill="#FFE0B2" font-family="monospace">= 2 个十</text>
+    </svg>
+  </div>
+  <p style="font-size:20px;color:rgba(255,255,255,.92);max-width:560px;line-height:1.8;">
+    商写在哪一位，不是随便挑的——<br>
+    看的是「这一位在哪个数位」。
+  </p>
+  <p class="hint">点击右下角箭头开始 或 点击顶部导航跳转</p>
+  <a href="../../viz/index.html#t=mt_div-1digit" style="margin-top:16px;color:rgba(255,255,255,.78);font-size:16px;text-decoration:underline">← 回到知识图谱</a>
+</div>
+</section>
+
+<!-- ===== p1: 前测 ===== -->
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先猜三道，凭感觉答</h2>
+  <p class="quiz-hint">三道题，看你会不会把「商写错位」。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 60 ÷ 3 = ？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>2</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>20</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>200</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 84 ÷ 4 = ？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>21</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>12</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>41</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 把 48 平均分成 4 份，每份是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>12</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>44</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>192</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 引入 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">84 元买 4 个同样的笔记本，每个多少元？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 300 210" width="240" height="168" role="img" aria-label="84 除以 4 的竖式，商 21 写在十位和个位上方">
+      <text x="112" y="46" font-size="28" fill="#00796B" font-family="monospace">2 1</text>
+      <line x1="92" y1="58" x2="210" y2="58" stroke="#00796B" stroke-width="3"/>
+      <line x1="92" y1="58" x2="92" y2="132" stroke="#00796B" stroke-width="3"/>
+      <text x="56" y="112" font-size="28" fill="#EF6C00" font-family="monospace">4</text>
+      <text x="112" y="112" font-size="28" fill="#00796B" font-family="monospace">8 4</text>
+      <text x="112" y="170" font-size="15" fill="#00695C" font-family="sans-serif">8÷4=2 写十位，4÷4=1 写个位</text>
+    </svg>
+  </div>
+  <p class="teach-text" id="p2s1">
+    84 元平均分成 4 份，每份多少元？用除法：<strong>84 ÷ 4</strong>。
+  </p>
+  <p class="teach-text" id="p2s2">
+    从高位除起：8 在十位，表示 8 个十，8 个十÷4 = 2 个十，所以商 <strong>2 写在十位</strong>；再 4÷4=1，写在个位。
+  </p>
+  <p class="teach-text" id="p2s3">
+    结果是 <strong>21 元</strong>。如果把 2 写到个位，就变成 12 元，位子错了，答案就错。
+  </p>
+</div>
+
+<div class="key-box" id="p2s4">
+  <strong>除到哪一位，商就写在哪一位上面</strong>。这是竖式除法最容易错的地方。
+</div>
+</section>
+
+<!-- ===== p3: 概念1 竖式三规则 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">一位一位除：从高位起，商对位</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 300 230" width="240" height="184" role="img" aria-label="84 除以 4 竖式，标出从高位除起、商对位、余数小于除数三条规则">
+      <text x="112" y="46" font-size="28" fill="#00796B" font-family="monospace">2 1</text>
+      <line x1="92" y1="58" x2="210" y2="58" stroke="#00796B" stroke-width="3"/>
+      <line x1="92" y1="58" x2="92" y2="132" stroke="#00796B" stroke-width="3"/>
+      <text x="56" y="112" font-size="28" fill="#EF6C00" font-family="monospace">4</text>
+      <text x="112" y="112" font-size="28" fill="#00796B" font-family="monospace">8 4</text>
+      <text x="20" y="168" font-size="14" fill="#5E35B1" font-family="sans-serif">① 从最高位 8 除起</text>
+      <text x="20" y="192" font-size="14" fill="#5E35B1" font-family="sans-serif">② 商 2 写在十位、1 写在个位</text>
+      <text x="20" y="216" font-size="14" fill="#5E35B1" font-family="sans-serif">③ 余数 0，比除数 4 小</text>
+    </svg>
+  </div>
+  <p class="teach-text" id="p3s1">
+    竖式不是摆设，它帮你把「哪一位除到哪」记得清清楚楚。规则就三条。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>① 从高位除起</strong>：先除最高位，除不动就连下一位一起除。</li>
+  <li><strong>② 商对位</strong>：除到哪一位，商就写在哪一位的正上方。</li>
+  <li><strong>③ 余数小于除数</strong>：每一步的余数都必须比除数小，否则说明商试小了。</li>
+</ul>
+
+<table class="teach-table" id="p3table">
+  <tr><th>步骤</th><th>算</th><th>写</th></tr>
+  <tr><td>十位</td><td>8 ÷ 4 = 2</td><td>商 2 写在十位</td></tr>
+  <tr><td>个位</td><td>4 ÷ 4 = 1</td><td>商 1 写在个位</td></tr>
+  <tr><td>结果</td><td>—</td><td>21</td></tr>
+</table>
+
+<div class="key-box" id="p3key">
+  <strong>高位起、商对位、余数比除数小</strong>——三条守住，竖式就不会错。
+</div>
+</section>
+
+<!-- ===== p3b: 连线巩固 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：算式和结果/规则配对</h2>
+<p class="teach-text" id="p3bs1">先点左边的算式或说法，再点右边的结果或规则，连对了变绿。</p>
+<div id="matchP3"></div>
+</section>
+
+<!-- ===== p4: 中测1 ===== -->
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 竖式与对位</h2>
+  <p class="quiz-hint">只盯一件事：商写在哪一位。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 84 ÷ 4 的商，2 应该写在哪一位？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>个位</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>十位</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>百位</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 96 ÷ 3 = ？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>32</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>23</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>33</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 竖式除法里，余数必须满足什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>比除数大</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>比除数小</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>等于除数</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 概念2 商中间/末尾有0 + 验算 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">商中间有 0：那一位不够商 1 就写 0</h2>
+<p class="teach-text" id="p5s1">有时候某一位除下来是 0，这个 0 不能省——它占着位子。</p>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>① 中间不够商 1，写 0</h4>
+    <div class="eq">208 ÷ 2<br>2÷2=1，0÷2=0，8÷2=4<br>= 104</div>
+    <p>十位的 0÷2=0，商要写 0 占位，不能跳过，否则变成 14。</p>
+  </div>
+  <div class="card">
+    <h4>② 末尾有 0</h4>
+    <div class="eq">840 ÷ 4<br>先算 84÷4=21<br>末尾补 1 个 0<br>= 210</div>
+    <p>末尾的 0 先不看，算完再原样补回。</p>
+  </div>
+  <div class="card">
+    <h4>③ 用乘法验算</h4>
+    <div class="eq">商 × 除数 + 余数<br>= 被除数<br>21×4 = 84 ✓</div>
+    <p>有余数时别忘了加余数，这是检查对不对的万能办法。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  哪一位不够商 1，就<strong>写 0 占位</strong>；验算用 <strong>商×除数+余数</strong>。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">竖式步进器：一位一位除</h2>
+  <p class="sim-desc">点「下一步」，从最高位开始逐位除，商写在对应数位上方，下面显示每一步的余数。算完看商是几。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">准备：84 ÷ 4</span>
+    <span class="sim-tip" id="simTip">从最高位除起，商写在对齐的那一位</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simStep()">下一步</button>
+    <button class="btn-retry" onclick="simPrev()">上一步</button>
+    <button class="btn-primary" onclick="simDemo(84,4)">演示：84 ÷ 4</button>
+    <button class="btn-primary" onclick="simDemo(208,2)">演示：208 ÷ 2</button>
+    <button class="btn-retry" onclick="simReset()">重置</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="860" height="332"></canvas>
+      <p class="cap">商写在哪一位，看这一位在哪个数位；余数必须比除数小</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>第一步为什么先除 8，而不是先除 4？</li>
+    <li>演示 208÷2，十位的 0 是怎么变成商里的 0 的？</li>
+    <li>每一步的余数，为什么都不会超过除数？</li>
+    <li>算完用商×除数验算，能回到原来的被除数吗？</li>
+  </ul>
+</div>
+</section>
+
+<!-- ===== p7: 中测2 ===== -->
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 商中 0 与验算</h2>
+  <p class="quiz-hint">盯住两件事：中间的 0 别漏，验算要用乘法。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 208 ÷ 2 = ？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>14</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>104</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>1004</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 840 ÷ 4 = ？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>21</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>210</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>201</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 验算 96 ÷ 3 = 32，应该用哪个式子？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>32 × 3</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>96 × 3</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>32 + 3</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 易错辨析 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四种错法，都错在「位子和 0」</h2>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 商写错位</h4>
+    <div class="wrong-num">✗ 84÷4 的 2 写到个位</div>
+    <p>8 在十位，商 2 要写十位。写错位就变成 12，答案是 <strong>21</strong>。</p>
+  </div>
+
+  <div class="card">
+    <h4>② 余数比除数大</h4>
+    <div class="wrong-num">✗ 余数 5，除数 4</div>
+    <p>余数还能再除一次，说明商试小了。余数必须<strong>比除数小</strong>。</p>
+  </div>
+
+  <div class="card">
+    <h4>③ 中间 0 漏写</h4>
+    <div class="wrong-num">✗ 208÷2 = 14</div>
+    <p>十位 0÷2=0，商要写 0 占位：<strong>104</strong>，不是 14。</p>
+  </div>
+
+  <div class="card">
+    <h4>④ 验算忘加余数</h4>
+    <div class="wrong-num">✗ 只用 商×除数</div>
+    <p>有余数时要<strong>商×除数+余数</strong>，才等于被除数。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  四种错法，根子是同一个：<strong>没把「位子」和「余数/0」当成硬规矩</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到买本子：95 元，每本 4 元，95÷4 = <strong>23 本余 3 元</strong>；验算 23×4+3 = 95。
+</p>
+</section>
+
+<!-- ===== p9: 后测 ===== -->
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，盯死位子、余数和 0</h2>
+  <p class="quiz-hint">先想商写哪一位，再想余数和 0。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 72 ÷ 6 = ？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>12</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>13</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>11</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 84 ÷ 4 = ？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>12</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>21</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>41</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 505 ÷ 5 = ？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>11</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>101</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>110</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 一个数除以 6，余数最大是几？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>6</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>7</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 验算 84 ÷ 4 = 21，应该用哪个式子？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>84 × 4</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>21 × 4</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>21 + 4</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">顺序</div>
+        <div class="summary-v4-summary">从高位除起</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-inner">
+          <div class="summary-v4-flip-front">怎么除<span class="fh">点击翻面</span></div>
+          <div class="summary-v4-flip-back">先除最高位<br>除不动就连下一位一起除<br>一位一位往下走</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">对位</div>
+        <div class="summary-v4-summary">商写哪一位</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么对<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">除到哪一位<br>商就写在哪一位的正上方<br>84÷4：2 在十位、1 在个位</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">余数</div>
+        <div class="summary-v4-summary">必须比除数小</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么查<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">每一步余数都比除数小<br>余数大了说明商试小了<br>不够商 1 就写 0 占位</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">验算</div>
+        <div class="summary-v4-summary">商×除数+余数</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么验<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">商 × 除数 + 余数 = 被除数<br>21×4 = 84 ✓<br>有余数别忘了加余数</div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<p class="teach-text" style="margin-top:18px;color:#00453D;font-size:19px">
+  下次做除法竖式，先问：从哪位除起？商写在哪？余数比除数小吗？
+</p>
+</section>
