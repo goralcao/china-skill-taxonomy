@@ -1,0 +1,540 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>0.1 元是 1 角，那 0.1 米是多少？</h1>
+  <p class="sub">三年级数学 · 小数的初步认识</p>
+  <div class="tags">
+    <span class="tag">十分之几</span>
+    <span class="tag">一位小数</span>
+    <span class="tag">0.1 元 = 1 角</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 460 230" width="440" height="220" role="img" aria-label="一条十格条，前三格涂色，表示零点三">
+      <g stroke="rgba(255,255,255,.55)" stroke-width="1.6" fill="rgba(255,255,255,.10)">
+        <rect x="34" y="66" width="38" height="64"/><rect x="72" y="66" width="38" height="64"/>
+        <rect x="110" y="66" width="38" height="64"/><rect x="148" y="66" width="38" height="64"/>
+        <rect x="186" y="66" width="38" height="64"/><rect x="224" y="66" width="38" height="64"/>
+        <rect x="262" y="66" width="38" height="64"/><rect x="300" y="66" width="38" height="64"/>
+        <rect x="338" y="66" width="38" height="64"/><rect x="376" y="66" width="38" height="64"/>
+      </g>
+      <g fill="#00ACC1" stroke="#E0F7FA" stroke-width="1.6">
+        <rect x="34" y="66" width="38" height="64"/><rect x="72" y="66" width="38" height="64"/>
+        <rect x="110" y="66" width="38" height="64"/>
+      </g>
+      <rect x="34" y="66" width="380" height="64" fill="none" stroke="#FFFFFF" stroke-width="2.4"/>
+      <g font-family="monospace" text-anchor="middle" font-size="14" fill="rgba(255,255,255,.72)">
+        <text x="53" y="150">1</text><text x="91" y="150">2</text><text x="129" y="150">3</text>
+        <text x="167" y="150">4</text><text x="205" y="150">5</text><text x="243" y="150">6</text>
+        <text x="281" y="150">7</text><text x="319" y="150">8</text><text x="357" y="150">9</text>
+        <text x="395" y="150">10</text>
+      </g>
+      <text x="34" y="52" font-size="15" fill="#B2EBF2" font-family="sans-serif">把 1 平均分成 10 份</text>
+      <text x="34" y="196" font-size="26" fill="#FFFFFF" font-family="monospace">0.3 = 十分之三</text>
+      <text x="34" y="220" font-size="15" fill="#B2EBF2" font-family="sans-serif">涂 3 格，读作「零点三」</text>
+    </svg>
+  </div>
+  <p style="font-size:20px;color:rgba(255,255,255,.92);max-width:560px;line-height:1.8;">
+    小数点后面那一位，记的是「十份里的几份」——<br>
+    不是随便写的零头。
+  </p>
+  <p class="hint">点击右下角箭头开始 或 点击顶部导航跳转</p>
+  <a href="../../viz/index.html#t=mt_dec-intro" style="margin-top:16px;color:rgba(255,255,255,.78);font-size:16px;text-decoration:underline">← 回到知识图谱</a>
+</div>
+</section>
+
+<!-- ===== p1: 前测 ===== -->
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先猜三道，凭感觉答</h2>
+  <p class="quiz-hint">三道题，看你对「元角分」和「十分之一」有多少底子。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 1 元等于多少角？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5 角</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>10 角</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>100 角</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 一支笔 3 元 5 角，用「元」作单位怎么写？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>3.5 元</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>35 元</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3.05 元</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 把 1 张纸平均分成 10 份，其中 1 份是这张纸的几分之几？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>二分之一</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>十一分之一</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>十分之一</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 引入 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">0.1 米是 10 厘米，不是 1 厘米</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 350 175" width="320" height="160" role="img" aria-label="一把 1 米长的尺子平均分成 10 段，每段 10 厘米，其中一段标为 0.1 米">
+      <g stroke="#6A1B9A" stroke-width="1.4" fill="none">
+        <rect x="26" y="56" width="300" height="44"/>
+        <line x1="56" y1="56" x2="56" y2="100"/><line x1="86" y1="56" x2="86" y2="100"/>
+        <line x1="116" y1="56" x2="116" y2="100"/><line x1="146" y1="56" x2="146" y2="100"/>
+        <line x1="176" y1="56" x2="176" y2="100"/><line x1="206" y1="56" x2="206" y2="100"/>
+        <line x1="236" y1="56" x2="236" y2="100"/><line x1="266" y1="56" x2="266" y2="100"/>
+        <line x1="296" y1="56" x2="296" y2="100"/>
+      </g>
+      <rect x="26" y="56" width="30" height="44" fill="#00ACC1" stroke="#00695C" stroke-width="1.6"/>
+      <text x="41" y="46" font-size="13" fill="#00838F" text-anchor="middle" font-family="sans-serif">0.1 米</text>
+      <text x="41" y="122" font-size="13" fill="#00838F" text-anchor="middle" font-family="sans-serif">10 厘米</text>
+      <text x="26" y="146" font-size="12.5" fill="#4A2C63" font-family="sans-serif">1 米 = 100 厘米，分 10 段，每段 10 厘米</text>
+      <text x="26" y="168" font-size="12.5" fill="#6A1B9A" font-family="sans-serif">1 厘米 = 0.01 米（把 1 米分成 100 份）</text>
+    </svg>
+  </div>
+  <p class="teach-text" id="p2s1">
+    1 米平均分成 10 段，每段是 <strong>10 厘米</strong>，写成小数就是 <strong>0.1 米</strong>。
+  </p>
+  <p class="teach-text" id="p2s2">
+    所以 0.1 米不是 1 厘米。1 厘米 = 0.01 米，0.01 里要放两个 0，那是把 1 米分成 100 份才得到的。
+  </p>
+  <p class="teach-text" id="p2s3">
+    同样一条十格条：涂 1 格是 0.1，涂 3 格是 0.3。小数点后一位，记的就是十份里的几份。
+  </p>
+</div>
+
+<div class="key-box" id="p2s4">
+  一位小数 = <strong>十分之几</strong>：0.1 是十分之一，0.3 是十分之三，0.7 是十分之七。
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>0.1 的三张脸</h4>
+    <div class="eq">1 角<br>10 厘米<br>十格条里的 1 格</div>
+    <p>都是同一个量：把 1 分成 10 份，取 1 份。</p>
+  </div>
+  <div class="card">
+    <h4>几个 0.1 就是零点几</h4>
+    <div class="eq">3 个 0.1 = 0.3<br>7 个 0.1 = 0.7<br>10 个 0.1 = 1</div>
+    <p>数格子就是在数 0.1，数满 10 格就变回 1。</p>
+  </div>
+  <div class="card">
+    <h4>读作「零点几」</h4>
+    <div class="eq">0.1 读 零点一<br>0.5 读 零点五<br>0.9 读 零点九</div>
+    <p>小数点读「点」，后面按数字一个一个读。</p>
+  </div>
+</div>
+</section>
+
+<!-- ===== p3: 概念1 十分之几 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">十格条上，分数和小数是同一个位置</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 350 195" width="320" height="178" role="img" aria-label="十格条涂三格，下面写出十分之三和零点三，并标出整数部分 0 与十分位 3">
+      <g stroke="#6A1B9A" stroke-width="1.4" fill="none">
+        <rect x="26" y="24" width="300" height="40"/>
+        <line x1="56" y1="24" x2="56" y2="64"/><line x1="86" y1="24" x2="86" y2="64"/>
+        <line x1="116" y1="24" x2="116" y2="64"/><line x1="146" y1="24" x2="146" y2="64"/>
+        <line x1="176" y1="24" x2="176" y2="64"/><line x1="206" y1="24" x2="206" y2="64"/>
+        <line x1="236" y1="24" x2="236" y2="64"/><line x1="266" y1="24" x2="266" y2="64"/>
+        <line x1="296" y1="24" x2="296" y2="64"/>
+      </g>
+      <g fill="#00ACC1" stroke="#00695C" stroke-width="1.2">
+        <rect x="26" y="24" width="30" height="40"/><rect x="56" y="24" width="30" height="40"/>
+        <rect x="86" y="24" width="30" height="40"/>
+      </g>
+      <text x="26" y="16" font-size="13" fill="#6A1B9A" font-family="sans-serif">涂 3 格</text>
+      <text x="176" y="88" font-size="15" fill="#4A2C63" text-anchor="middle" font-family="sans-serif">同样多的 3 格，两种写法</text>
+      <g font-family="monospace" text-anchor="middle">
+        <text x="86" y="124" font-size="22" fill="#6A1B9A">3</text>
+        <line x1="72" y1="130" x2="100" y2="130" stroke="#6A1B9A" stroke-width="2"/>
+        <text x="86" y="152" font-size="22" fill="#6A1B9A">10</text>
+        <text x="86" y="174" font-size="13" fill="#6A1B9A" font-family="sans-serif">十分之三</text>
+        <text x="176" y="140" font-size="22" fill="#4A2C63" font-family="sans-serif">=</text>
+        <text x="250" y="140" font-size="30" fill="#00838F">0.3</text>
+        <text x="250" y="174" font-size="13" fill="#00838F" font-family="sans-serif">零点三</text>
+      </g>
+    </svg>
+  </div>
+  <p class="teach-text" id="p3s1">
+    同一段涂色，可以写成<strong>十分之三</strong>，也可以写成 <strong>0.3</strong>。它们说的是同一件事。
+  </p>
+  <p class="teach-text" id="p3s2">
+    一位小数的分母永远是 10：十分之一 = 0.1，十分之七 = 0.7。分母 10 藏在「小数点的右边第一位」里。
+  </p>
+</div>
+
+<table class="teach-table" id="p3table">
+  <tr><th>分数</th><th>小数</th><th>读作</th><th>几个 0.1</th></tr>
+  <tr><td>十分之一</td><td>0.1</td><td>零点一</td><td>1 个</td></tr>
+  <tr><td>十分之三</td><td>0.3</td><td>零点三</td><td>3 个</td></tr>
+  <tr><td>十分之七</td><td>0.7</td><td>零点七</td><td>7 个</td></tr>
+  <tr><td>十分之十</td><td>1.0</td><td>就是一</td><td>10 个</td></tr>
+</table>
+
+<div class="key-box" id="p3key">
+  数位怎么摆：小数点左边是<strong>整数部分</strong>，右边第一位是<strong>十分位</strong>——0.3 里的 3 就站在十分位上。
+</div>
+</section>
+
+<!-- ===== p3b: 连线巩固 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：分数和小数配对</h2>
+<p class="teach-text" id="p3bs1">先点左边的分数，再点右边的小数，连对了变绿。</p>
+<div id="matchP3"></div>
+</section>
+
+<!-- ===== p4: 中测1 ===== -->
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 零点几是几个 0.1</h2>
+  <p class="quiz-hint">只盯一件事：小数点后那位数，就是 0.1 的个数。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 0.3 里面有几个 0.1？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1 个</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3 个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>30 个</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 7 个 0.1 合起来是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>0.7</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>7</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>0.07</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 0.1 和 1，哪个大？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>0.1 大</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>一样大</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>1 大</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 概念2 元角分与长度 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">生活里的 0.1：1 角、10 厘米、0.1 千克</h2>
+<p class="teach-text" id="p5s1">凡是「把 1 分成 10 份」的地方，都会长出 0.1。</p>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>① 钱：1 元 = 10 角</h4>
+    <div class="eq">1 角 = 0.1 元<br>5 角 = 0.5 元<br>8 角 = 0.8 元</div>
+    <p>价签上小数点后那位，记的就是角。</p>
+  </div>
+  <div class="card">
+    <h4>② 长度：1 米 = 10 分米</h4>
+    <div class="eq">1 分米 = 0.1 米<br>1 米 = 100 厘米<br>1 厘米 = 0.01 米</div>
+    <p>分米是 0.1 米，厘米就细到 0.01 米了。</p>
+  </div>
+  <div class="card">
+    <h4>③ 质量：1 千克 = 10 个 100 克</h4>
+    <div class="eq">100 克 = 0.1 千克<br>300 克 = 0.3 千克<br>1 千克 = 1.0 千克</div>
+    <p>秤上显示 0.3，就是 3 个 100 克。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  一条规律：<strong>0.1 就是「十分之一」，找一个能分成 10 份的单位，它就有了具体的量</strong>。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">十格条：涂几格，就是零点几</h2>
+  <p class="sim-desc">一条纸分成 10 格，点「加一格」慢慢涂。看分数、小数、数位表三处同时变；涂满 10 格会变成整 1。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">0.3 = 十分之三，3 个 0.1</span>
+    <span class="sim-tip" id="simTip">再涂 7 格就满 1 了</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-retry" onclick="simMinus()">减一格</button>
+    <button class="btn-retry" onclick="simPlus()">加一格</button>
+    <button class="btn-primary" onclick="simFill5()">涂满 5 格</button>
+    <button class="btn-primary" onclick="simFill10()">涂满 10 格</button>
+    <button class="btn-retry" onclick="simClear()">清零</button>
+    <button class="btn-retry" onclick="simReset()">重置</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="860" height="332"></canvas>
+      <p class="cap">每格就是 0.1；涂满 10 格正好是 1</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>涂到第 10 格时，小数为什么变成了 1？</li>
+    <li>0.3 和 0.7 合起来是几？涂一涂验证一下。</li>
+    <li>0.5 元是几角？在十格条上是涂了几格？</li>
+    <li>一位小数后面那位为什么只能是 0 到 9？</li>
+  </ul>
+</div>
+</section>
+
+<!-- ===== p7: 中测2 ===== -->
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 元角分和长度</h2>
+  <p class="quiz-hint">先把单位换成 10 份，再写小数。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 5 角写成小数是多少元？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>0.5 元</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>5 元</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>0.05 元</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 0.8 元等于多少角？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>80 角</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>8 分</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>8 角</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 1 米平均分成 10 份，每份是多少米？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>0.01 米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>0.1 米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>1 米</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 易错辨析 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四种错法，都错在「把 0.1 当 1」</h2>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 0.1 比 1 小一点点</h4>
+    <div class="wrong-num">✗ 0.1 和 1 差不多大</div>
+    <p>0.1 是 1 的十分之一，要 <strong>10 个 0.1</strong> 才够 1。</p>
+  </div>
+
+  <div class="card">
+    <h4>② 0.3 写成 0.03</h4>
+    <div class="wrong-num">✗ 十分之三 = 0.03</div>
+    <p>小数点后一位是十分位：十分之三 = <strong>0.3</strong>；0.03 是百分之三。</p>
+  </div>
+
+  <div class="card">
+    <h4>③ 5 角写成 0.5 分</h4>
+    <div class="wrong-num">✗ 5 角 = 0.5 分</div>
+    <p>单位看错了：5 角 = <strong>0.5 元</strong>，不是 0.5 分。</p>
+  </div>
+
+  <div class="card">
+    <h4>④ 0.5 元当成 5 分</h4>
+    <div class="wrong-num">✗ 0.5 元 = 5 分</div>
+    <p>0.5 元 = 5 角 = <strong>50 分</strong>。差一层就差了 10 倍。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  四种错法根子相同：<strong>没弄清「小数点后一位 = 十份里的几份」</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到价签：3.5 元读作「三点五元」，就是 3 元 5 角；要是写成 3.05 元，那只有 3 元 5 分。
+</p>
+</section>
+
+<!-- ===== p9: 后测 ===== -->
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，盯死十分位</h2>
+  <p class="quiz-hint">先想「十份里的几份」，再看单位。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 0.6 读作？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>六</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>六点零</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>零点六</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 十分之七写成小数是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>0.07</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>0.7</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>7.0</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 0.4 里有几个 0.1？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>4 个</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>0.4 个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>40 个</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 2 元 3 角写成小数是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>23 元</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>2.3 元</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>2.03 元</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 超市两种牛奶：A 牌 12.5 元，B 牌 12.05 元，哪个更贵？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>B 牌贵</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>一样贵</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>A 牌贵</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">含义</div>
+        <div class="summary-v4-summary">十分之几</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">是什么<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">把 1 平均分成 10 份<br>取 1 份 = 0.1<br>取 3 份 = 0.3</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">数位</div>
+        <div class="summary-v4-summary">整数部分 · 十分位</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么摆<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">0.3：左边 0 是整数部分<br>右边 3 在十分位<br>十分位 = 几个 0.1</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">元角分</div>
+        <div class="summary-v4-summary">1 角 = 0.1 元</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么换<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">3 元 5 角 = 3.5 元<br>0.5 元 = 5 角 = 50 分<br>0.05 元 只有 5 分</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">长度</div>
+        <div class="summary-v4-summary">0.1 米 = 10 厘米</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么换<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">1 米 分 10 份 → 0.1 米<br>0.1 米 = 1 分米 = 10 厘米<br>1 厘米 = 0.01 米</div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<p class="teach-text" style="margin-top:18px;color:#2B1238;font-size:19px">
+  下次看到 0.3，先问一句：这是「十份里的三份」吗？是，它就是 3 个 0.1。
+</p>
+</section>
