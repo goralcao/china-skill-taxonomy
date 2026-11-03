@@ -1,0 +1,567 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>一年 365 天，为什么二月只有 28 天？</h1>
+  <p class="sub">三年级数学 · 年、月、日</p>
+  <div class="tags">
+    <span class="tag">大月 31 天</span>
+    <span class="tag">小月 30 天</span>
+    <span class="tag">四年一闰</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 480 240" width="460" height="230" role="img" aria-label="十二个月排成一排，七个 31 天，四个 30 天，二月 28 天">
+      <g font-family="monospace" text-anchor="middle">
+        <g fill="rgba(255,255,255,.20)" stroke="#D1C4E9" stroke-width="1.4">
+          <rect x="8" y="70" width="34" height="58" rx="3"/>
+          <rect x="84" y="70" width="34" height="58" rx="3"/><rect x="122" y="70" width="34" height="58" rx="3"/>
+          <rect x="160" y="70" width="34" height="58" rx="3"/><rect x="198" y="70" width="34" height="58" rx="3"/>
+          <rect x="236" y="70" width="34" height="58" rx="3"/><rect x="274" y="70" width="34" height="58" rx="3"/>
+          <rect x="312" y="70" width="34" height="58" rx="3"/><rect x="350" y="70" width="34" height="58" rx="3"/>
+          <rect x="388" y="70" width="34" height="58" rx="3"/><rect x="426" y="70" width="34" height="58" rx="3"/>
+        </g>
+        <rect x="46" y="70" width="34" height="58" rx="3" fill="#EF6C00" stroke="#FFCC80" stroke-width="2"/>
+        <g font-size="15" fill="#D1C4E9">
+          <text x="25" y="60">1</text><text x="101" y="60">3</text>
+          <text x="139" y="60">4</text><text x="177" y="60">5</text><text x="215" y="60">6</text>
+          <text x="253" y="60">7</text><text x="291" y="60">8</text><text x="329" y="60">9</text>
+          <text x="367" y="60">10</text><text x="405" y="60">11</text><text x="443" y="60">12</text>
+        </g>
+        <text x="63" y="60" font-size="15" fill="#FFFFFF" text-anchor="middle">2</text>
+        <g font-size="17" fill="#FFFFFF">
+          <text x="25" y="105">31</text><text x="101" y="105">31</text><text x="139" y="105">30</text>
+          <text x="177" y="105">31</text><text x="215" y="105">30</text><text x="253" y="105">31</text>
+          <text x="291" y="105">31</text><text x="329" y="105">30</text><text x="367" y="105">31</text>
+          <text x="405" y="105">30</text><text x="443" y="105">31</text>
+        </g>
+        <text x="63" y="105" font-size="17" fill="#FFF3E0">28</text>
+      </g>
+      <text x="8" y="176" font-size="17" fill="#FFFFFF" font-family="monospace">7 个 31 天 + 4 个 30 天 + 二月 28 天 = 365 天</text>
+      <text x="8" y="204" font-size="16" fill="#FFE0B2" font-family="monospace">只有二月会变：闰年 29 天，全年 366 天</text>
+    </svg>
+  </div>
+  <p style="font-size:20px;color:rgba(255,255,255,.92);max-width:560px;line-height:1.8;">
+    12 个月不是一样长——<br>
+    先把一年拆成 12 段，一段一段数。
+  </p>
+  <p class="hint">点击右下角箭头开始 或 点击顶部导航跳转</p>
+  <a href="../../viz/index.html#t=mt_calendar" style="margin-top:16px;color:rgba(255,255,255,.78);font-size:16px;text-decoration:underline">← 回到知识图谱</a>
+</div>
+</section>
+
+<!-- ===== p1: 前测 ===== -->
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先猜三道，凭感觉答</h2>
+  <p class="quiz-hint">三道题，看你对「月」和「天」有多少数感。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 从 1 月 1 日到 12 月 31 日，一年一共经过多少个月？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>10 个月</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>12 个月</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>24 个月</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 7 月 1 日放暑假，8 月 31 日开学，一共放了多少天？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>62 天</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>61 天</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>60 天</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 一天有多少个小时？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>12 小时</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>60 小时</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>24 小时</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 引入 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">31 天是 744 小时，二月为什么只给 672 小时？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 350 190" width="332" height="180" role="img" aria-label="十二个月天数的柱状图，二月明显矮一截">
+      <line x1="14" y1="120" x2="336" y2="120" stroke="#4527A0" stroke-width="2"/>
+      <line x1="14" y1="27" x2="336" y2="27" stroke="#EF6C00" stroke-width="1.4" stroke-dasharray="6 5"/>
+      <text x="188" y="19" font-size="13" fill="#EF6C00" font-family="sans-serif">31 天</text>
+      <g fill="#5E35B1">
+        <rect x="22" y="27" width="18" height="93"/><rect x="74" y="30" width="18" height="90"/>
+        <rect x="100" y="27" width="18" height="93"/><rect x="126" y="30" width="18" height="90"/>
+        <rect x="152" y="27" width="18" height="93"/><rect x="178" y="30" width="18" height="90"/>
+        <rect x="204" y="27" width="18" height="93"/><rect x="230" y="27" width="18" height="93"/>
+        <rect x="256" y="30" width="18" height="90"/><rect x="282" y="27" width="18" height="93"/>
+        <rect x="308" y="30" width="18" height="90"/>
+      </g>
+      <rect x="48" y="36" width="18" height="84" fill="#EF6C00"/>
+      <g font-size="12" fill="#4A3C6B" text-anchor="middle" font-family="sans-serif">
+        <text x="31" y="138">1</text><text x="57" y="138">2</text><text x="83" y="138">3</text>
+        <text x="109" y="138">4</text><text x="135" y="138">5</text><text x="161" y="138">6</text>
+        <text x="187" y="138">7</text><text x="213" y="138">8</text><text x="239" y="138">9</text>
+        <text x="265" y="138">10</text><text x="291" y="138">11</text><text x="317" y="138">12</text>
+      </g>
+      <text x="57" y="158" font-size="13" fill="#EF6C00" text-anchor="middle" font-family="sans-serif">28</text>
+      <text x="14" y="180" font-size="13" fill="#4A3C6B" font-family="sans-serif">横轴：月份　柱高：这个月的天数</text>
+    </svg>
+  </div>
+  <p class="teach-text" id="p2s1">
+    31 天是这个月的长度：31 × 24 = <strong>744 小时</strong>。30 天的月是 720 小时。
+  </p>
+  <p class="teach-text" id="p2s2">
+    可二月只有 28 天，28 × 24 = <strong>672 小时</strong>——比大月整整少 72 小时，相当于少过 3 天。
+  </p>
+  <p class="teach-text" id="p2s3">
+    同一个「月」，长度却有三档：744 小时、720 小时、672 小时。闰年时二月还跳到 29 天。这不是印错了日历，是排法就这么定的。
+  </p>
+</div>
+
+<div class="key-box" id="p2s4">
+  一年拆成 12 段：<strong>7 段 31 天、4 段 30 天、1 段 28 或 29 天</strong>。要算全年天数，就先分类再相加。
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>大月 31 天</h4>
+    <div class="eq">31 × 24 = 744 小时</div>
+    <p>1、3、5、7、8、10、12 月，一年里最长的那七段。</p>
+  </div>
+  <div class="card">
+    <h4>小月 30 天</h4>
+    <div class="eq">30 × 24 = 720 小时</div>
+    <p>4、6、9、11 月，比大月少 24 小时，正好少一整天。</p>
+  </div>
+  <div class="card">
+    <h4>二月 28 天</h4>
+    <div class="eq">28 × 24 = 672 小时</div>
+    <p>最短的一段，比大月少 72 小时，闰年才加到 29 天。</p>
+  </div>
+</div>
+</section>
+
+<!-- ===== p3: 概念1 大月小月 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">12 个月分三档：31 天、30 天、28 天</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 340 145" width="322" height="137" role="img" aria-label="拳头关节示意：凸起处是 31 天，凹下处是 30 天，七月和八月连着两个凸起">
+      <polyline points="28,52 54,92 80,52 106,92 132,52 158,92 184,52 210,52 236,92 262,52 288,92 314,52"
+                fill="none" stroke="#4527A0" stroke-width="2.6" stroke-linejoin="round"/>
+      <g fill="#EF6C00">
+        <circle cx="28" cy="52" r="6"/><circle cx="80" cy="52" r="6"/><circle cx="132" cy="52" r="6"/>
+        <circle cx="184" cy="52" r="6"/><circle cx="210" cy="52" r="6"/><circle cx="262" cy="52" r="6"/>
+        <circle cx="314" cy="52" r="6"/>
+      </g>
+      <g fill="#5E35B1">
+        <circle cx="54" cy="92" r="6"/><circle cx="106" cy="92" r="6"/><circle cx="158" cy="92" r="6"/>
+        <circle cx="236" cy="92" r="6"/><circle cx="288" cy="92" r="6"/>
+      </g>
+      <g font-size="13" fill="#EF6C00" text-anchor="middle" font-family="sans-serif">
+        <text x="28" y="36">31</text><text x="80" y="36">31</text><text x="132" y="36">31</text>
+        <text x="184" y="36">31</text><text x="210" y="36">31</text><text x="262" y="36">31</text>
+        <text x="314" y="36">31</text>
+      </g>
+      <g font-size="13" fill="#5E35B1" text-anchor="middle" font-family="sans-serif">
+        <text x="54" y="114">28</text><text x="106" y="114">30</text><text x="158" y="114">30</text>
+        <text x="236" y="114">30</text><text x="288" y="114">30</text>
+      </g>
+      <g font-size="14" fill="#4A3C6B" text-anchor="middle" font-family="sans-serif">
+        <text x="28" y="138">1</text><text x="54" y="138">2</text><text x="80" y="138">3</text>
+        <text x="106" y="138">4</text><text x="132" y="138">5</text><text x="158" y="138">6</text>
+        <text x="184" y="138">7</text><text x="210" y="138">8</text><text x="236" y="138">9</text>
+        <text x="262" y="138">10</text><text x="288" y="138">11</text><text x="314" y="138">12</text>
+      </g>
+    </svg>
+    <p class="cap">凸起 = 31 天，凹下 = 30 天；7 月、8 月连着两个凸起</p>
+  </div>
+  <p class="teach-text" id="p3s1">
+    <strong>大月</strong>有 7 个：1、3、5、7、8、10、12 月，都是 31 天。
+  </p>
+  <p class="teach-text" id="p3s2">
+    <strong>小月</strong>有 4 个：4、6、9、11 月，都是 30 天。二月两边都不算，它自己一档。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>① 握拳数关节</strong>：从食指第一个凸起开始数 1 月，凸起 31 天、凹下 30 天，数到 7 月。</li>
+  <li><strong>② 折回来接着数</strong>：7 月是凸起，8 月还是凸起——这是唯一连着两个大月的地方。</li>
+  <li><strong>③ 口诀兜底</strong>：一三五七八十腊，三十一天永不差。「腊」就是十二月。</li>
+</ul>
+
+<table class="teach-table" id="p3table">
+  <tr><th>类别</th><th>哪几个月</th><th>天数</th></tr>
+  <tr><td>大月</td><td>1、3、5、7、8、10、12 月</td><td>31 天</td></tr>
+  <tr><td>小月</td><td>4、6、9、11 月</td><td>30 天</td></tr>
+  <tr><td>二月</td><td>2 月</td><td>平年 28 天，闰年 29 天</td></tr>
+</table>
+
+<div class="key-box" id="p3key">
+  最容易漏的是<strong>八月</strong>：它紧挨着七月，两个都是 31 天。
+</div>
+</section>
+
+<!-- ===== p3b: 连线巩固 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：月份和它的天数配对</h2>
+<p class="teach-text" id="p3bs1">先点左边，再点右边，连对了变绿。</p>
+<div id="matchP3"></div>
+</section>
+
+<!-- ===== p4: 中测1 ===== -->
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 大月和小月</h2>
+  <p class="quiz-hint">只盯一件事：哪几个月是 31 天。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 下面哪个月有 31 天？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>6 月</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>8 月</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>9 月</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 一年里有几个月是 30 天？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>4 个</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>5 个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>6 个</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 平年的二月有多少天？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>30 天</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>29 天</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>28 天</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 概念2 平年闰年 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">平年 365 天、闰年 366 天，多出来的一天加在二月</h2>
+<p class="teach-text" id="p5s1">全年天数不用背，分类加起来就行：7 个大月、4 个小月，再加二月。</p>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>① 平年：365 天</h4>
+    <div class="eq">31 × 7 = 217<br>30 × 4 = 120<br>217 + 120 + 28 = 365</div>
+    <p>二月 28 天的那一年，就是平年。</p>
+  </div>
+  <div class="card">
+    <h4>② 闰年：366 天</h4>
+    <div class="eq">217 + 120 + 29 = 366<br>只比平年多 1 天<br>多的那天在二月</div>
+    <p>月份还是 12 个，没有第 13 个月。</p>
+  </div>
+  <div class="card">
+    <h4>③ 怎么认闰年</h4>
+    <div class="eq">年份 ÷ 4 能整除 → 闰年<br>2024 ÷ 4 = 506 ✓<br>整百年要 ÷ 400</div>
+    <p>1900 ÷ 400 除不尽，不是闰年；2000 是。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  一句记住：<strong>四年一闰，二月加 1 天；整百年要能被 400 整除才算闰年</strong>。
+</div>
+
+<p class="teach-text" id="p5apply">
+  顺带接上时间：一天 24 小时，下午的时刻加 12 就是 24 时计时。火车票印的 <strong>15:30</strong>，减去 12，就是下午 3 点半。
+</p>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">年历拆解器：把一年摊成 12 块</h2>
+  <p class="sim-desc">12 个月各占一格，格子上写着天数。点「标大月」只亮 31 天的，点「标小月」只亮 30 天的，点「找二月」把唯一会变的那格挑出来；换年份，看二月怎么跳。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">2024 年（闰年）全年 366 天</span>
+    <span class="sim-tip" id="simTip">先标一遍大月，看能亮几格</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-retry" onclick="simPrevYear()">上一年</button>
+    <button class="btn-retry" onclick="simNextYear()">下一年</button>
+    <button class="btn-primary" onclick="simBig()">标大月</button>
+    <button class="btn-primary" onclick="simSmall()">标小月</button>
+    <button class="btn-retry" onclick="simFeb()">找二月</button>
+    <button class="btn-retry" onclick="simAll()">看全部</button>
+    <button class="btn-retry" onclick="simReset()">重置</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="860" height="332"></canvas>
+      <p class="cap">橙 = 31 天，靛 = 30 天，青绿 = 二月；换年份时只有二月会变</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>标一遍大月，为什么亮的是 7 格，不是 6 格？</li>
+    <li>从 1900 换到 2000，二月变了吗？哪一年才是闰年？</li>
+    <li>闰年多出来的那一天，加在哪个月？别的月有变吗？</li>
+    <li>同一年里，31 天的月比 30 天的月多几个？</li>
+  </ul>
+</div>
+</section>
+
+<!-- ===== p7: 中测2 ===== -->
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 闰年和全年天数</h2>
+  <p class="quiz-hint">先看年份，再定二月，最后加总数。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 2024 年 2 月有多少天？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>30 天</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>28 天</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>29 天</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 平年一年有多少天？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>365 天</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>366 天</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>364 天</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 下面哪个年份是闰年？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>2100 年</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>2000 年</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>1900 年</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 易错辨析 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四种错法，都错在「把月当成一样长」</h2>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 二月都是 28 天</h4>
+    <div class="wrong-num">✗ 二月固定 28 天</div>
+    <p>平年 28、闰年 29。2024 年的二月就是 <strong>29 天</strong>。</p>
+  </div>
+
+  <div class="card">
+    <h4>② 1900 年是闰年</h4>
+    <div class="wrong-num">✗ 1900 ÷ 4 = 475，所以闰年</div>
+    <p>整百年要 ÷400。1900÷400 除不尽，<strong>不是闰年</strong>；2000 才是。</p>
+  </div>
+
+  <div class="card">
+    <h4>③ 闰年多了一个月</h4>
+    <div class="wrong-num">✗ 闰年有 13 个月</div>
+    <p>月份永远是 12 个，多的那 1 天加在<strong>二月</strong>。</p>
+  </div>
+
+  <div class="card">
+    <h4>④ 口诀背到「十」就停</h4>
+    <div class="wrong-num">✗ 八月是 30 天</div>
+    <p>七月、八月连着两个大月，<strong>八月是 31 天</strong>，最容易漏。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  四种错法根子相同：<strong>把 12 个月当成一样长，没分类</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到生日：你是 9 月出生的，9 月 30 天，比 8 月少 1 天；要是生在二月，还得先看那年是不是闰年。
+</p>
+</section>
+
+<!-- ===== p9: 后测 ===== -->
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，盯死月份和二月</h2>
+  <p class="quiz-hint">先分类，再相加减。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 9 月有多少天？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>31 天</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>30 天</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>28 天</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 一年里有几个月是 31 天？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>6 个</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>8 个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>7 个</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 2023 年全年有多少天？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>365 天</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>366 天</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>364 天</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 闰年的二月比平年的二月多几天？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>2 天</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>1 天</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>0 天</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 火车票上印着「15:30 开」，这是下午几点？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>下午 5 点半</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>下午 15 点半</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>下午 3 点半</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">分类</div>
+        <div class="summary-v4-summary">7 大、4 小、1 个二月</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么分<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">31 天：1、3、5、7、8、10、12<br>30 天：4、6、9、11<br>二月：28 或 29</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">记忆</div>
+        <div class="summary-v4-summary">拳头数，7、8 连着</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么记<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">凸起 31、凹下 30<br>数到 7 月折回来<br>八月还是凸起，别漏</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">闰年</div>
+        <div class="summary-v4-summary">四年一闰，整百除 400</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么判<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">年份 ÷ 4 整除 → 闰年<br>整百年 ÷ 400 整除才算<br>2024 闰年，1900 不是</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">全年天数</div>
+        <div class="summary-v4-summary">217 + 120 + 二月</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么算<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">31×7 + 30×4 + 28 = 365<br>二月换成 29 就是 366<br>多的一天只加在二月</div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<p class="teach-text" style="margin-top:18px;color:#2B2050;font-size:19px">
+  下次看日历，先分类：这个月是 31、30，还是二月？再问一句：今年闰不闰？
+</p>
+</section>
