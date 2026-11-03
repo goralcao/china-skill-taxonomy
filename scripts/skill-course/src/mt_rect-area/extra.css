@@ -1,0 +1,31 @@
+/* ===== 本课追加：封面标签、三列卡片、易错数字、仿真配色 ===== */
+
+/* 封面 tag：砖红底配橄榄绿主色，形成暖调对比 */
+.cover-page .tag{background:rgba(216,67,21,.92);border:1px solid rgba(255,255,255,.38);color:#FFFFFF}
+
+/* p5：三种算法——三列卡片；算式高亮 */
+#p5cards.card-grid{grid-template-columns:repeat(3,1fr)}
+.card .eq{font-size:18px;font-weight:800;color:var(--primary);margin:8px 0;line-height:1.55;white-space:pre-line}
+
+/* p3：推导表格——单元格里的算式不换行 */
+.teach-table td .eq{display:inline;margin:0;white-space:nowrap}
+
+/* p8：易错卡里的错版说法 */
+.wrong-num{font-size:20px;font-weight:800;color:var(--red);margin:4px 0 8px;line-height:1.4}
+
+/* 仿真：读数条与日志高亮 */
+.sim-readout{font-size:19px;font-weight:800;color:var(--primary)}
+.sim-log .hl{color:var(--accent);font-weight:700}
+.btn-primary{background:var(--primary);color:#fff;border:none}
+.btn-primary:hover{background:var(--primary-light)}
+.btn-retry{background:var(--paper);color:var(--primary);border:1.5px solid var(--accent)}
+
+/* ===== 窄屏适配 ===== */
+@media (max-width:640px){
+  #p5cards.card-grid{grid-template-columns:1fr}
+  .card .eq{font-size:16px}
+  .wrong-num{font-size:17px}
+  .cover-fig svg{width:100%;height:auto}
+  .teach-table{font-size:14px}
+  .teach-table td .eq{white-space:normal}
+}

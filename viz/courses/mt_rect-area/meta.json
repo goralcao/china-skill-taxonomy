@@ -1,24 +1,95 @@
 {
   "topicId": "mt_rect-area",
-  "title": "长方形的面积：一行摆几个，摆几行",
+  "title": "长方形和正方形的面积：每行几个 × 几行",
   "template": "explain",
   "renderer": "geometry",
-  "duration": 14,
-  "interactions": 7,
+  "duration": 24,
+  "interactions": 16,
   "grade": 3,
   "subject": "数学",
-  "standards": ["math-2022:S2:GG:GM"],
-  "prerequisites": ["mt_area-intro", "mt_rect-perimeter", "mt_mult-1digit"],
-  "next": ["mt_area-hectare", "mt_polygon-area"],
+  "standards": [
+    "math-2022:S2:GG:GM"
+  ],
+  "prerequisites": [
+    "mt_area-intro",
+    "mt_rect-perimeter",
+    "mt_mult-1digit"
+  ],
+  "next": [
+    "mt_area-hectare",
+    "mt_polygon-area"
+  ],
   "objectives": [
-    "能借助方格纸推出长方形面积公式",
-    "能算出教室地面大约是多少平方米",
-    "能用面积除以每块砖的面积算块数"
+    "经历面积公式的推导，理解「每行几个 × 几行」就是面积",
+    "掌握长方形面积 = 长×宽、正方形面积 = 边长×边长，并能正确计算",
+    "知道相邻面积单位进率是 100，会做平方分米与平方厘米的换算"
   ],
   "cognitiveAction": "累积",
   "status": "reviewed",
   "author": "goral.cao",
   "license": "CC-BY-SA-4.0",
-  "version": "1.0.0",
-  "updatedAt": "2026-10-27"
+  "version": "3.0.0",
+  "updatedAt": "2026-11-04",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "铺格子",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "推导",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "换算",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
 }
