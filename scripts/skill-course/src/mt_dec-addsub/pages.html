@@ -1,0 +1,593 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>0.3 + 0.4 = 0.7，那 0.3 + 0.25 呢？</h1>
+  <p class="sub">三年级数学 · 一位小数加减法</p>
+  <div class="tags">
+    <span class="tag">小数点对齐</span>
+    <span class="tag">满十进一</span>
+    <span class="tag">退一当十</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 460 230" width="440" height="220" role="img" aria-label="两条十格条分别是三格和四格，合起来是七格，表示零点三加零点四等于零点七">
+      <g font-family="monospace">
+        <text x="24" y="40" font-size="17" fill="#FFECB3">0.3 → 3 格</text>
+        <g stroke="rgba(255,255,255,.5)" stroke-width="1.4" fill="rgba(255,255,255,.10)">
+          <rect x="150" y="22" width="28" height="30"/><rect x="178" y="22" width="28" height="30"/>
+          <rect x="206" y="22" width="28" height="30"/><rect x="234" y="22" width="28" height="30"/>
+          <rect x="262" y="22" width="28" height="30"/><rect x="290" y="22" width="28" height="30"/>
+          <rect x="318" y="22" width="28" height="30"/><rect x="346" y="22" width="28" height="30"/>
+          <rect x="374" y="22" width="28" height="30"/><rect x="402" y="22" width="28" height="30"/>
+        </g>
+        <g fill="#FFA000" stroke="#FFE082" stroke-width="1.2">
+          <rect x="150" y="22" width="28" height="30"/><rect x="178" y="22" width="28" height="30"/>
+          <rect x="206" y="22" width="28" height="30"/>
+        </g>
+
+        <text x="24" y="98" font-size="17" fill="#FFECB3">0.4 → 4 格</text>
+        <g stroke="rgba(255,255,255,.5)" stroke-width="1.4" fill="rgba(255,255,255,.10)">
+          <rect x="150" y="80" width="28" height="30"/><rect x="178" y="80" width="28" height="30"/>
+          <rect x="206" y="80" width="28" height="30"/><rect x="234" y="80" width="28" height="30"/>
+          <rect x="262" y="80" width="28" height="30"/><rect x="290" y="80" width="28" height="30"/>
+          <rect x="318" y="80" width="28" height="30"/><rect x="346" y="80" width="28" height="30"/>
+          <rect x="374" y="80" width="28" height="30"/><rect x="402" y="80" width="28" height="30"/>
+        </g>
+        <g fill="#4DD0E1" stroke="#B2EBF2" stroke-width="1.2">
+          <rect x="150" y="80" width="28" height="30"/><rect x="178" y="80" width="28" height="30"/>
+          <rect x="206" y="80" width="28" height="30"/><rect x="234" y="80" width="28" height="30"/>
+        </g>
+
+        <text x="24" y="168" font-size="17" fill="#FFECB3">合起来 7 格 → 0.7</text>
+        <g stroke="rgba(255,255,255,.5)" stroke-width="1.4" fill="rgba(255,255,255,.10)">
+          <rect x="150" y="150" width="28" height="30"/><rect x="178" y="150" width="28" height="30"/>
+          <rect x="206" y="150" width="28" height="30"/><rect x="234" y="150" width="28" height="30"/>
+          <rect x="262" y="150" width="28" height="30"/><rect x="290" y="150" width="28" height="30"/>
+          <rect x="318" y="150" width="28" height="30"/><rect x="346" y="150" width="28" height="30"/>
+          <rect x="374" y="150" width="28" height="30"/><rect x="402" y="150" width="28" height="30"/>
+        </g>
+        <g fill="#FFFFFF" opacity=".92" stroke="#FFFFFF" stroke-width="1.2">
+          <rect x="150" y="150" width="28" height="30"/><rect x="178" y="150" width="28" height="30"/>
+          <rect x="206" y="150" width="28" height="30"/><rect x="234" y="150" width="28" height="30"/>
+          <rect x="262" y="150" width="28" height="30"/><rect x="290" y="150" width="28" height="30"/>
+          <rect x="318" y="150" width="28" height="30"/>
+        </g>
+        <text x="24" y="212" font-size="16" fill="#FFECB3">3 个 0.1 + 4 个 0.1 = 7 个 0.1</text>
+      </g>
+    </svg>
+  </div>
+  <p style="font-size:20px;color:rgba(255,255,255,.92);max-width:560px;line-height:1.8;">
+    小数加减不是新算法——<br>
+    先把每个数换成「几个 0.1」，再像整数一样加。
+  </p>
+  <p class="hint">点击右下角箭头开始 或 点击顶部导航跳转</p>
+  <a href="../../viz/index.html#t=mt_dec-addsub" style="margin-top:16px;color:rgba(255,255,255,.78);font-size:16px;text-decoration:underline">← 回到知识图谱</a>
+</div>
+</section>
+
+<!-- ===== p1: 前测 ===== -->
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先猜三道，凭感觉答</h2>
+  <p class="quiz-hint">三道题，看你对 0.1 和价签有多熟。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 0.3 里面有几个 0.1？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1 个</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3 个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>30 个</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 0.5 + 0.5 等于多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>0.10</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>0.55</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 一支笔 3.5 元，一块橡皮 2 元，一共多少元？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5.05 元</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3.7 元</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>5.5 元</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 引入 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">面包 3.5 元、牛奶 2.8 元，一共要付多少元？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 340 178" width="316" height="165" role="img" aria-label="面包三点五元与牛奶二点八元的小票，下面用小数点对齐的竖式相加得六点三元">
+      <rect x="14" y="14" width="118" height="52" rx="6" fill="#FFF8E1" stroke="#FFA000" stroke-width="1.6"/>
+      <text x="26" y="36" font-size="13" fill="#6D4C00" font-family="sans-serif">面包</text>
+      <text x="26" y="58" font-size="18" fill="#1A237E" font-family="monospace">3.5 元</text>
+      <text x="140" y="46" font-size="19" fill="#FF6F00" font-family="sans-serif">+</text>
+      <rect x="160" y="14" width="118" height="52" rx="6" fill="#FFF8E1" stroke="#FFA000" stroke-width="1.6"/>
+      <text x="172" y="36" font-size="13" fill="#6D4C00" font-family="sans-serif">牛奶</text>
+      <text x="172" y="58" font-size="18" fill="#1A237E" font-family="monospace">2.8 元</text>
+
+      <g font-size="12" fill="#5C5F80" font-family="sans-serif">
+        <text x="14" y="98">小数点排成一条竖线</text>
+        <text x="14" y="122">5 角 + 8 角 = 13 角</text>
+        <text x="14" y="146">13 角 = 1 元 3 角</text>
+        <text x="14" y="170">3 + 2 + 1 = 6 元</text>
+      </g>
+
+      <g font-family="monospace" font-size="20" fill="#1A237E">
+        <text x="258" y="94">3.5</text>
+        <text x="244" y="122">+2.8</text>
+        <text x="258" y="158">6.3</text>
+      </g>
+      <line x1="238" y1="130" x2="306" y2="130" stroke="#1A237E" stroke-width="2"/>
+      <line x1="276" y1="72" x2="276" y2="166" stroke="#FFA000" stroke-width="1.6" stroke-dasharray="5 4"/>
+    </svg>
+  </div>
+  <p class="teach-text" id="p2s1">
+    两个价签都是 3 元多、2 元多。先把角那一位加起来：5 角 + 8 角 = <strong>13 角</strong>。
+  </p>
+  <p class="teach-text" id="p2s2">
+    13 角超过 10 角，就换成 1 元 3 角。整数部分 3 + 2 再加进上来的 1，得 <strong>6 元</strong>。
+  </p>
+  <p class="teach-text" id="p2s3">
+    合起来 6 元 3 角，就是 <strong>6.3 元</strong>。整个过程没用到新算法，只是把角当单位数了一遍。
+  </p>
+</div>
+
+<div class="key-box" id="p2s4">
+  一位小数加减的核心：<strong>角跟角加、元跟元加</strong>——换成分数条说，就是 0.1 跟 0.1 加。
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>0.3 + 0.4</h4>
+    <div class="eq">3 个 0.1 + 4 个 0.1<br>= 7 个 0.1<br>= 0.7</div>
+    <p>不满十，直接数完写下来。</p>
+  </div>
+  <div class="card">
+    <h4>0.7 + 0.6</h4>
+    <div class="eq">7 个 0.1 + 6 个 0.1<br>= 13 个 0.1<br>= 1.3</div>
+    <p>满十进一：13 个 0.1 就是 1 元 3 角。</p>
+  </div>
+  <div class="card">
+    <h4>1.2 − 0.5</h4>
+    <div class="eq">12 个 0.1 − 5 个 0.1<br>= 7 个 0.1<br>= 0.7</div>
+    <p>不够减就先拆：1.2 就是 12 个 0.1。</p>
+  </div>
+</div>
+</section>
+
+<!-- ===== p3: 概念1 换成几个 0.1 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">把每个数换成「几个 0.1」，加减就变成整数题</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 340 158" width="322" height="150" role="img" aria-label="两条十格条分别涂三格和四格，合起来七格，并写出小数点对齐的竖式">
+      <g font-family="monospace">
+        <text x="14" y="26" font-size="13" fill="#5C5F80" font-family="sans-serif">0.3（3 个 0.1）</text>
+        <g fill="none" stroke="#1A237E" stroke-width="1.2">
+          <rect x="14" y="34" width="22" height="26"/><rect x="36" y="34" width="22" height="26"/>
+          <rect x="58" y="34" width="22" height="26"/><rect x="80" y="34" width="22" height="26"/>
+          <rect x="102" y="34" width="22" height="26"/><rect x="124" y="34" width="22" height="26"/>
+          <rect x="146" y="34" width="22" height="26"/><rect x="168" y="34" width="22" height="26"/>
+          <rect x="190" y="34" width="22" height="26"/><rect x="212" y="34" width="22" height="26"/>
+        </g>
+        <g fill="#FFA000" stroke="#FF8F00" stroke-width="1.2">
+          <rect x="14" y="34" width="22" height="26"/><rect x="36" y="34" width="22" height="26"/>
+          <rect x="58" y="34" width="22" height="26"/>
+        </g>
+
+        <text x="14" y="92" font-size="13" fill="#5C5F80" font-family="sans-serif">0.4（4 个 0.1）</text>
+        <g fill="none" stroke="#1A237E" stroke-width="1.2">
+          <rect x="14" y="100" width="22" height="26"/><rect x="36" y="100" width="22" height="26"/>
+          <rect x="58" y="100" width="22" height="26"/><rect x="80" y="100" width="22" height="26"/>
+          <rect x="102" y="100" width="22" height="26"/><rect x="124" y="100" width="22" height="26"/>
+          <rect x="146" y="100" width="22" height="26"/><rect x="168" y="100" width="22" height="26"/>
+          <rect x="190" y="100" width="22" height="26"/><rect x="212" y="100" width="22" height="26"/>
+        </g>
+        <g fill="#4DD0E1" stroke="#00ACC1" stroke-width="1.2">
+          <rect x="14" y="100" width="22" height="26"/><rect x="36" y="100" width="22" height="26"/>
+          <rect x="58" y="100" width="22" height="26"/><rect x="80" y="100" width="22" height="26"/>
+        </g>
+
+        <text x="14" y="158" font-size="13" fill="#5C5F80" font-family="sans-serif">合起来 7 个 0.1 = 0.7</text>
+
+        <g font-size="17" fill="#1A237E" text-anchor="middle" font-family="monospace">
+          <text x="288" y="46">0</text><text x="302" y="46">.</text><text x="314" y="46">3</text>
+          <text x="264" y="74" fill="#FF6F00">+</text>
+          <text x="288" y="74">0</text><text x="302" y="74">.</text><text x="314" y="74">4</text>
+          <text x="288" y="120" fill="#3949AB">0</text><text x="302" y="120" fill="#3949AB">.</text><text x="314" y="120" fill="#3949AB">7</text>
+        </g>
+        <line x1="250" y1="84" x2="328" y2="84" stroke="#1A237E" stroke-width="2"/>
+        <line x1="302" y1="30" x2="302" y2="132" stroke="#FFA000" stroke-width="1.6" stroke-dasharray="5 4"/>
+        <text x="302" y="150" font-size="11" fill="#FF8F00" text-anchor="middle" font-family="sans-serif">小数点对齐</text>
+    </svg>
+  </div>
+  <p class="teach-text" id="p3s1">
+    <strong>0.3 是 3 个 0.1，0.4 是 4 个 0.1</strong>。加起来 7 个 0.1，写回小数就是 0.7。
+  </p>
+  <p class="teach-text" id="p3s2">
+    换成「几个 0.1」以后，加的就是 3 + 4 = 7，跟整数加法一模一样。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>① 换</strong>：0.3 → 3 个 0.1；1.2 → 12 个 0.1（整数部分每个算 10 个）。</li>
+  <li><strong>② 算</strong>：像整数一样加或减，得到「几个 0.1」。</li>
+  <li><strong>③ 换回</strong>：满十进一，13 个 0.1 = 1.3；不满十就写 0.几。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  竖式里为什么要<strong>小数点对齐</strong>？因为对齐了，0.1 才跟 0.1 站在同一列。
+</div>
+
+<p class="teach-text" id="p3hook">
+  回到封面那道题：0.3 是 3 个 0.1，0.25 是 2 个 0.1 加 5 个 0.01。0.01 比 0.1 小一位，不能和 0.1 直接相加——得先把 0.3 写成 0.30，让两个数的位对齐。
+</p>
+
+<div class="key-box" id="p3hookbox">
+  一句话：<strong>加的是同一种单位</strong>。0.1 只能跟 0.1 加，0.01 只能跟 0.01 加。
+</div>
+</section>
+
+<!-- ===== p3b: 连线巩固 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：算式和它的结果配对</h2>
+<p class="teach-text" id="p3bs1">先点左边的算式，再点右边的结果，连对了变绿。</p>
+<div id="matchP3"></div>
+</section>
+
+<!-- ===== p4: 中测1 ===== -->
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 不进位的加减</h2>
+  <p class="quiz-hint">只盯一件事：数的是几个 0.1。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 0.2 + 0.5 = ？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>0.07</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>0.7</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>7</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 0.8 − 0.3 = ？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>0.5</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>0.05</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>5</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 0.6 + 0.3 = ？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>0.09</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>9</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>0.9</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 概念2 进位退位 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">满十进一、退一当十——小数也守这两条规矩</h2>
+<p class="teach-text" id="p5s1">十格条只有 10 格，第 11 个 0.1 就装不下了，得换成整 1。</p>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>① 满十进一</h4>
+    <div class="eq">0.7 + 0.6<br>= 7 + 6 = 13 个 0.1<br>= 1.3</div>
+    <p>13 个 0.1 就是 1 个整再加 3 个 0.1。</p>
+  </div>
+  <div class="card">
+    <h4>② 退一当十</h4>
+    <div class="eq">1.2 = 12 个 0.1<br>12 − 5 = 7 个 0.1<br>= 0.7</div>
+    <p>2 减 5 不够，就把整 1 拆成 10 个 0.1 一起减。</p>
+  </div>
+  <div class="card">
+    <h4>③ 小数点不能丢</h4>
+    <div class="eq">0.6 + 0.3 = 0.9<br>不是 9<br>也不是 0.09</div>
+    <p>算的是「几个 0.1」，答案还得写回小数。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  两条规矩合成一句：<strong>换成几个 0.1 再算，算完别忘了换回小数</strong>。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">两条小数条 + 竖式：加减到底在加什么</h2>
+  <p class="sim-desc">左边两条十格条是 0.3 和 0.4，右边是小数点排成一条竖线的竖式。点四个预设，看进位和退位怎么发生；也能自己调第二个数。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">0.3 + 0.4 = 0.7</span>
+    <span class="sim-tip" id="simTip">3 个 0.1 加 4 个 0.1，是 7 个 0.1</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simPreset('add')">0.3 + 0.4</button>
+    <button class="btn-primary" onclick="simPreset('carry')">0.7 + 0.6</button>
+    <button class="btn-retry" onclick="simPreset('sub')">0.9 − 0.4</button>
+    <button class="btn-retry" onclick="simPreset('borrow')">1.2 − 0.5</button>
+    <button class="btn-retry" onclick="simBMinus()">B −0.1</button>
+    <button class="btn-retry" onclick="simBPlus()">B +0.1</button>
+    <button class="btn-retry" onclick="simReset()">重置</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="860" height="332"></canvas>
+      <p class="cap">橙 = 第一个数，青 = 第二个数；竖式里小数点排成一条竖线</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>0.7 + 0.6 为什么变成 1.3，而不是 13？</li>
+    <li>1.2 − 0.5，那个「12」是从哪来的？</li>
+    <li>把 B 一直加，看看哪一步开始进位。</li>
+    <li>竖式里小数点对齐，到底对的是什么？</li>
+  </ul>
+</div>
+</section>
+
+<!-- ===== p7: 中测2 ===== -->
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 进位与退位</h2>
+  <p class="quiz-hint">先换成几个 0.1，再换回来。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 0.7 + 0.6 = ？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1.3</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>0.13</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>13</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 1.2 − 0.5 = ？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>0.3</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>1.7</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>0.7</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 0.9 + 0.4 = ？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>0.13</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>1.3</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>13</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 易错辨析 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四种错法，都错在「对齐」和「换回」</h2>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 末位对齐</h4>
+    <div class="wrong-num">✗ 0.3 的 3 对着 0.25 的 5</div>
+    <p>要对齐的是<strong>小数点</strong>：十分位对十分位，缺的位补 0。</p>
+  </div>
+
+  <div class="card">
+    <h4>② 算完丢了小数点</h4>
+    <div class="wrong-num">✗ 0.7 + 0.6 = 13</div>
+    <p>13 个 0.1 是 <strong>1.3</strong>，答案必须写回小数。</p>
+  </div>
+
+  <div class="card">
+    <h4>③ 反着减</h4>
+    <div class="wrong-num">✗ 1.2 − 0.5 = 0.3</div>
+    <p>2 减 5 不够，退一当十：<strong>12 − 5 = 7</strong>，得 0.7。</p>
+  </div>
+
+  <div class="card">
+    <h4>④ 结果乱添 0</h4>
+    <div class="wrong-num">✗ 0.3 + 0.4 = 0.70</div>
+    <p>一位小数加一位小数，结果还是<strong>一位</strong>：0.7。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  四种错法根子相同：<strong>没把「几个 0.1」和「小数写法」来回换清楚</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到小票：3.5 + 2.8 = 6.3 元。5 角加 8 角是 13 角，进 1 元剩 3 角——进位就发生在这一位。
+</p>
+</section>
+
+<!-- ===== p9: 后测 ===== -->
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，盯死小数点和进位</h2>
+  <p class="quiz-hint">先换、再算、最后换回来。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 0.4 + 0.5 = ？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>0.09</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>0.9</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>9</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 0.8 + 0.6 = ？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1.4</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>0.14</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>14</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 0.9 − 0.3 = ？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>0.9</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>0.3</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>0.6</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 1.3 − 0.7 = ？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>0.4</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>0.6</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>0.7</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 面包 3.5 元、牛奶 2.8 元，付 10 元，找回多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>6.3 元</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>4.7 元</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3.7 元</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">变换</div>
+        <div class="summary-v4-summary">换成几个 0.1</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么换<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">0.3 = 3 个 0.1<br>1.2 = 12 个 0.1<br>整 1 就是 10 个 0.1</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">对齐</div>
+        <div class="summary-v4-summary">小数点对小数点</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么摆<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">竖式里小数点排一条线<br>十分位对十分位<br>缺的位补 0</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">进位</div>
+        <div class="summary-v4-summary">满十进一</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">什么时候进<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">0.7 + 0.6 = 13 个 0.1<br>10 个 0.1 换 1 个整<br>13 个 = 1.3</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">退位</div>
+        <div class="summary-v4-summary">退一当十</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">什么时候退<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">1.2 − 0.5：2 减 5 不够<br>把整 1 拆成 10 个 0.1<br>12 − 5 = 7 → 0.7</div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<p class="teach-text" style="margin-top:18px;color:#141A45;font-size:19px">
+  下次算小数加减：先换、再算、最后换回来——对齐和进位都在这三步里。
+</p>
+</section>

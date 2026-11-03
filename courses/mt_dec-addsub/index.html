@@ -1,20 +1,2089 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>一位小数加减法 · 学阶图谱课件</title>
-<link rel="stylesheet" href="../../templates/base.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>一位小数加减法：小数点对齐再算</title>
+<style>
+/* ===== 配色方案：从 references/color-schemes.md 选一个 :root 块 ===== */
+:root {
+  --primary: #1A237E; --primary-light: #283593;
+  --accent: #FFA000; --accent-soft: #FFECB3;
+  --ink: #171B33; --paper: #F9F9FD; --paper-2: #ECEDF7;
+  --line: #D2D4E8; --green: #2E7D32; --red: #C62828;
+  --shadow: 0 4px 16px rgba(26,35,126,.12);
+}
+
+/* ===== 课件配置块（所有常量集中声明） ===== */
+/* IMG_PREFIX: 图片路径前缀，统一为 'img/'（图片放 deploy/img/ 子目录，部署后 URL 为 img/xxx.jpg） */
+/* 不在 CSS 中声明，在 JS 中用 var IMG_PREFIX = 'img/'; */
+
+/* ===== 基础样式 ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{overflow:hidden;height:100%}
+body{
+  font-family:"Noto Serif SC","Songti SC","Microsoft YaHei",serif;
+  background:var(--paper);color:var(--ink);
+  height:100dvh;overflow:hidden;position:relative;
+  font-size:21px;line-height:1.65;
+  display:flex;flex-direction:column;
+}
+
+/* ===== 导航条 ===== */
+nav#topNav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  background:linear-gradient(135deg,var(--primary),var(--primary-light));
+  padding:6px 12px;display:flex;align-items:center;gap:10px;
+  flex-wrap:nowrap;overflow-x:auto;
+  box-shadow:0 2px 12px rgba(0,0,0,.15);
+  -webkit-overflow-scrolling:touch;
+}
+nav#topNav::-webkit-scrollbar{height:3px}
+nav#topNav::-webkit-scrollbar-thumb{background:rgba(255,255,255,.3);border-radius:2px}
+nav#topNav .chip{
+  flex-shrink:0;padding:5px 14px;border-radius:20px;
+  background:rgba(255,255,255,.15);color:rgba(255,255,255,.8);
+  font-size:16px;cursor:pointer;transition:all .25s;
+  white-space:nowrap;border:1px solid transparent;font-weight:500;
+}
+nav#topNav .chip:hover{background:rgba(255,255,255,.25)}
+nav#topNav .chip.active{
+  background:var(--accent);color:#fff;font-weight:700;
+  border-color:var(--accent);box-shadow:0 2px 8px rgba(255,143,0,.4);
+}
+/* 导航芯片类型样式 */
+nav#topNav .chip.pre{background:rgba(255,143,0,.25);color:#fff}
+nav#topNav .chip.mid{background:rgba(0,137,123,.25);color:#fff}
+nav#topNav .chip.post{background:rgba(211,47,47,.25);color:#fff}
+nav#topNav .chip.sim{background:rgba(21,101,192,.25);color:#fff}
+nav#topNav .chip-end{background:rgba(255,255,255,.25);color:#fff}
+
+/* ===== 进度条 ===== */
+#progressWrap{
+  position:fixed;top:44px;left:0;right:0;height:4px;z-index:201;
+  background:rgba(0,0,0,.08);
+}
+#progressBar{
+  height:100%;background:var(--accent);
+  width:0%;transition:width .4s ease;border-radius:0 2px 2px 0;
+}
+
+/* ===== 翻页容器 ===== */
+#pageContainer{flex:1;position:relative;overflow:hidden;margin-top:48px}
+
+/* ===== 页面通用 ===== */
+.page{
+  position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;
+  display:none;padding:32px 36px 40px;
+  animation:fadeSlide .4s ease;
+}
+.page.active{display:block}
+@keyframes fadeSlide{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.page::-webkit-scrollbar{width:5px}
+.page::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
+
+/* ===== 全屏按钮：v2026-09-28e 定案「默认不放」 =====
+   资料库外壳 sandbox 无 allow-fullscreen，网页代码达不到 F11 式真全屏；
+   故骨架不放全屏按钮（HTML/CSS/JS 三件套一律不配）。
+   课堂需要全屏时：引导用户直接按键盘 F11，或下载 HTML 直开。
+   确需按钮的特殊场景 → 从 teaching-control.js 取三级降级实现（见 SKILL.md §3.6③）。 */
+
+/* ===== 翻页按钮 ===== */
+/* ⚠ !important 加固（v2026-09-29）：页码与翻页键必须恒在底部居中——
+   实测部分课件会被其它 fixed/absolute 样式挤到左侧，全部属性加 !important 防挤占。 */
+/* ⚠ z-index 500 顶层（v2026-10-13；v1.7.0 改两段式）：页码指示器是教师端入口第一击（1.5s 双击武装 + 点封面徽章），
+   必须恒在页面内容/通信状态/揭示遮罩之上可点击。预留层级表见 workflow-dev.md §3.6④——
+   页面内容元素 z-index 一律 ≤99，禁止与导航层（500）争层级。 */
+#navBtns{
+  position:fixed !important;bottom:20px !important;left:50% !important;
+  right:auto !important;top:auto !important;transform:translateX(-50%) !important;
+  display:flex !important;align-items:center;justify-content:center;gap:16px;z-index:500;
+}
+#navBtns button{
+  width:48px;height:48px;border-radius:50%;border:2px solid var(--primary);
+  background:var(--paper);color:var(--primary);font-size:22px;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:all .2s;box-shadow:var(--shadow);
+}
+#navBtns button:hover{background:var(--primary);color:#fff}
+#navBtns button:disabled{opacity:.35;cursor:default}
+#navBtns button:disabled:hover{background:var(--paper);color:var(--primary)}
+#pageIndicator{font-size:20px;font-weight:700;color:var(--primary);min-width:80px;text-align:center}
+
+/* ===== 封面页 =====
+   注意：display:flex 必须写为 .page.active .cover-page（级联选择器，特异性 0,3,0），
+   绝不能写 .cover-page.active、也绝不能裸写 .cover-page{display:flex}！
+   原因：翻页系统 showPage() 只给 <section class="page"> 加/减 active 类，
+   嵌套的 .cover-page div 永远没有 active 类 → .cover-page.active 永不匹配；
+   裸写 .cover-page{display:flex} 则同特异性(0,1,0)下源码靠后覆盖 .page{display:none}，
+   导致封面翻走后仍渲染（《价格理论》翻走后不消失、《氓》浅黄底+白字均源于此坑）。
+   另：本规则必须自带深色 background 衬托白字 —— 否则白字落在浅色 --paper 上＝整页白底白字
+   （《基尔霍夫定律》封面即此坑：技能内 page-templates.html 用内联渐变、而本骨架曾缺失，
+   两份模板不一致；现已统一由本 CSS 提供默认深色底，任何配色下白字都有对比度）。 */
+.page.active .cover-page{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+  width:100%;height:100%;color:#fff;
+  background:linear-gradient(135deg,rgba(0,0,0,.15),rgba(0,0,0,.35)),linear-gradient(135deg,var(--primary),var(--primary-light));
+}
+#p0{padding:0;overflow:hidden}
+.cover-page h1{font-size:48px;font-weight:900;color:#fff;margin-bottom:12px;text-shadow:0 3px 12px rgba(0,0,0,.5)}
+.cover-page .sub{font-size:24px;color:rgba(255,255,255,.9);margin-bottom:32px}
+.cover-page .tags{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:36px}
+.cover-page .tag{padding:8px 20px;border-radius:24px;background:rgba(255,143,0,.7);color:#fff;font-size:18px;font-weight:600}
+.cover-page .hint{margin-top:40px;font-size:18px;color:rgba(255,255,255,.7)}
+
+/* ===== 讲授页 ===== */
+.teach-title{font-size:34px;font-weight:900;color:var(--primary);margin-bottom:24px;border-bottom:3px solid var(--accent);padding-bottom:10px}
+.teach-text{font-size:21px;line-height:1.8;margin-bottom:20px}
+.teach-text strong{color:var(--accent)}
+.key-box{
+  background:var(--paper-2);border-left:5px solid var(--accent);
+  padding:16px 20px;border-radius:0 10px 10px 0;margin:16px 0;font-size:20px;
+}
+.key-box strong{color:var(--primary)}
+.feature-list{list-style:none;padding:0}
+.feature-list li{padding:10px 0 10px 32px;position:relative;font-size:20px;border-bottom:1px dashed var(--line)}
+.feature-list li::before{content:'';position:absolute;left:4px;top:16px;width:12px;height:12px;border-radius:50%;background:var(--accent)}
+.card-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0}
+.card{background:var(--paper-2);border-radius:12px;padding:20px;border:1px solid var(--line);transition:all .25s}
+.card:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
+.card h4{color:var(--primary);font-size:22px;margin-bottom:10px}
+.card p{font-size:19px;line-height:1.7}
+.highlight-num{
+  display:inline-block;background:var(--accent);color:#fff;
+  width:32px;height:32px;border-radius:50%;text-align:center;
+  line-height:32px;font-size:18px;font-weight:700;margin-right:8px;
+}
+
+/* ===== 仿真页 ===== */
+.sim-page{padding:24px 20px 40px}
+.sim-title{font-size:30px;font-weight:900;color:var(--primary);margin-bottom:12px;text-align:center}
+.sim-desc{text-align:center;font-size:19px;color:var(--primary-light);margin-bottom:20px}
+.sim-controls{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:8px}
+.sim-controls label{font-size:19px;font-weight:600;color:var(--primary)}
+.sim-controls input[type="range"]{width:200px;accent-color:var(--accent)}
+.sim-controls input[type="range"]:focus{outline:none}
+.sim-controls .val-display{font-size:20px;font-weight:700;color:var(--accent);min-width:80px;text-align:center}
+.sim-canvas-wrap{display:flex;justify-content:center;align-items:flex-start;gap:20px;flex-wrap:wrap;margin-top:8px}
+.canvas-box{text-align:center}
+.canvas-box canvas{border:2px solid var(--line);border-radius:12px;background:#fff;max-width:100%;height:auto}
+.canvas-box .cap{font-size:18px;color:var(--primary);margin-top:6px;font-weight:600}
+
+/* ===== 测验页 ===== */
+.quiz-page{padding:28px 36px 48px}
+.quiz-title{font-size:30px;font-weight:900;color:var(--primary);margin-bottom:20px;text-align:center}
+.quiz-hint{font-size:18px;color:var(--primary-light);text-align:center;margin-bottom:24px}
+.quiz-q{
+  background:var(--paper-2);border-radius:14px;padding:20px 24px;
+  margin-bottom:16px;border:2px solid var(--line);transition:border-color .3s;
+}
+.quiz-q.answered{border-color:var(--primary-light)}
+.quiz-q .q-stem{font-size:21px;font-weight:700;color:var(--ink);margin-bottom:14px}
+.quiz-q .opts{display:flex;flex-direction:column;gap:10px}
+.quiz-q .opt{
+  display:flex;align-items:center;gap:12px;padding:12px 16px;
+  border-radius:10px;border:2px solid var(--line);cursor:pointer;
+  transition:all .2s;font-size:20px;
+}
+.quiz-q .opt:hover{border-color:var(--accent);background:var(--accent-soft)}
+.quiz-q .opt.selected{border-color:var(--accent);background:var(--accent-soft)}
+.quiz-q .opt .badge{
+  width:36px;height:36px;border-radius:50%;background:var(--primary-light);
+  color:#fff;display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:18px;flex-shrink:0;
+}
+.quiz-q .opt.correct{border-color:var(--green);background:#e0f2f1}
+.quiz-q .opt.correct .badge{background:var(--green)}
+.quiz-q .opt.wrong{border-color:var(--red);background:#fbe9e7}
+.quiz-q .opt.wrong .badge{background:var(--red)}
+/* ⚠ v2026-09-29 定案「提交前可随时修改」：选项锁定挂 .submitted 前缀（submitQuiz 时加），
+   .answered 只表示已作答、不锁——学生提交前可随时改选/重确认。禁止改回 .answered 前缀锁定。 */
+.quiz-q.submitted .opt{pointer-events:none;opacity:.85}
+.quiz-q.submitted .opt.correct{opacity:1}
+.feedback{margin-top:12px;padding:12px 16px;border-radius:8px;font-size:19px;display:none;line-height:1.7}
+.feedback.show{display:block;animation:fadeSlide .25s}
+.feedback.correct-fb{background:#e0f2f1;border:1px solid var(--green);color:#004d40}
+.feedback.wrong-fb{background:#fbe9e7;border:1px solid var(--red);color:#4e1a06}
+.feedback .fb-icon{margin-right:8px;font-weight:700}
+.quiz-actions{display:flex;justify-content:center;gap:12px;margin-top:28px;flex-wrap:wrap}
+.quiz-actions button{padding:12px 32px;border-radius:30px;font-size:21px;font-weight:700;cursor:pointer;border:2px solid var(--accent);transition:all .2s}
+.btn-submit{background:var(--accent);color:#fff;border-color:var(--accent)!important}
+.btn-submit:hover{background:#e67e00;box-shadow:0 4px 12px rgba(255,143,0,.3)}
+.btn-submit:disabled{background:#ccc;color:#999;border-color:#ccc!important;cursor:not-allowed;box-shadow:none}
+.btn-retry{background:var(--paper);color:var(--primary)}
+.btn-retry:hover{background:var(--paper-2)}
+.quiz-score{text-align:center;font-size:24px;font-weight:700;color:var(--green);margin-top:20px;display:none}
+
+/* ===== 总结页 ===== */
+.summary-page{padding:28px 36px 48px}
+.summary-title{font-size:34px;font-weight:900;color:var(--primary);margin-bottom:24px;text-align:center}
+.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.summary-item{background:var(--paper-2);border-radius:14px;padding:20px;border-left:5px solid var(--accent)}
+.summary-item h4{font-size:22px;color:var(--primary);margin-bottom:8px}
+.summary-item p{font-size:19px;line-height:1.7}
+.mantra{text-align:center;font-size:28px;font-weight:900;color:var(--accent);margin:24px 0;padding:20px;background:var(--paper-2);border-radius:14px}
+.score-compare{display:flex;justify-content:center;align-items:center;gap:32px;margin:24px 0;flex-wrap:wrap}
+.score-compare .sc{text-align:center;padding:20px 28px;background:var(--paper-2);border-radius:14px;min-width:140px}
+.score-compare .sc .label{font-size:20px;color:var(--primary-light);margin-bottom:4px}
+.score-compare .sc .val{font-size:36px;font-weight:900;color:var(--primary)}
+.score-compare .sc .val.green{color:var(--green)}
+.score-compare .arrow{font-size:40px;color:var(--accent);font-weight:900}
+
+/* ===== 知识结构图（HTML可折叠树） ===== */
+.mindmap .node{cursor:pointer;padding:10px 16px;border-radius:8px;border-left:4px solid var(--primary);margin:4px 0;background:var(--paper-2)}
+.mindmap .branch{margin-left:24px}
+.mindmap .branch.collapsed{display:none}
+.mindmap .icon{margin-right:8px}
+.mindmap .brief{display:block;font-size:14px;color:var(--primary-light);margin-top:4px}
+
+/* ===== 响应式 ===== */
+@media(max-width:768px){
+  .page{padding:20px 16px 56px}
+  .cover-page h1{font-size:32px}
+  .cover-page .sub{font-size:20px}
+  .teach-title{font-size:28px}
+  .teach-text{font-size:20px}
+  .card-grid{grid-template-columns:1fr}
+  .sim-canvas-wrap{flex-direction:column;align-items:center}
+  .sim-controls input[type="range"]{width:140px}
+  nav#topNav{padding:4px 8px;gap:6px}
+  nav#topNav .chip{padding:4px 10px;font-size:14px}
+  #navBtns button{width:40px;height:40px;font-size:18px}
+  /* v2026-10-13：收窄页码防 320px 窄屏与右下二维码徽章相碰；揭示提示条上移，
+     为通信状态条（step4 注入，移动端 bottom:84px）让位 */
+  #pageIndicator{min-width:56px;font-size:18px}
+  #revealHint{bottom:124px}
+  .quiz-q{padding:16px}
+  .quiz-q .q-stem{font-size:20px}
+  .quiz-q .opt{font-size:19px;padding:10px 12px}
+  .summary-grid{grid-template-columns:1fr}
+  .score-compare{gap:16px}
+  .score-compare .sc{padding:14px 20px}
+  .score-compare .sc .val{font-size:28px}
+}
+
+/* ===== 图文混排（有图有文页面必用，禁止把图堆到页面底部） ===== */
+/* ⚠ v1.5.5 图文层叠铁律：图片恒在文字之上（含「图片先揭示、文字后揭示」）
+   —— 浮动图用 float 时是脱离文档流的，后续文字块一旦因 transform（reveal 动画）
+   或 position:relative 形成层叠上下文，就会整块画在图上，把图压住（文字背景条尤其明显）。
+   因此 .fig / .reveal-img-group / .page-img 一律 position:relative + z-index:2，
+   而页面内文字块（含背景条）层级不得 ≥2。 */
+.clearfix::after{content:'';display:block;clear:both}
+.fig{text-align:center;margin:8px 0;position:relative;z-index:2}
+.fig img{width:100%;border-radius:12px;box-shadow:var(--shadow);border:1px solid var(--line)}
+.fig .caption{font-size:16px;color:var(--primary-light);margin-top:4px;font-weight:600;line-height:1.5}
+.fig.float-r{float:right;width:44%;margin-left:24px;margin-bottom:12px}
+.fig.float-l{float:left;width:42%;margin-right:24px;margin-bottom:12px}
+@media(max-width:768px){
+  .fig.float-r,.fig.float-l{float:none;width:100%;margin:12px 0}
+}
+/* 图文组（img + caption 作为一步揭示）：整组同样压住文字块 */
+.reveal-img-group{position:relative;z-index:2;isolation:isolate}
+.reveal-img-group img{width:100%;border-radius:12px;box-shadow:var(--shadow);border:1px solid var(--line)}
+.page-img{display:block;margin:20px auto;max-width:92%;height:auto;border-radius:12px;box-shadow:var(--shadow);border:1px solid var(--line);position:relative;z-index:2}
+.img-caption{text-align:center;font-size:18px;color:var(--primary-light);margin-top:6px;font-weight:600}
+
+/* ===== 全局滚动条 ===== */
+::-webkit-scrollbar{width:5px;height:5px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
+
+/* ===== 渐进呈现动画系统（24种） ===== */
+/* 基础隐藏状态 */
+.reveal-hidden{opacity:0;visibility:hidden;pointer-events:none}
+.reveal-hidden.reveal-done{animation-fill-mode:forwards;visibility:visible;opacity:1;pointer-events:auto}
+/* 揭示进度指示器 */
+#revealHint{
+  position:fixed;bottom:80px;left:50%;transform:translateX(-50%);z-index:140;
+  display:none;align-items:center;gap:8px;
+  background:rgba(200,16,46,.12);color:var(--primary);padding:6px 16px;
+  border-radius:20px;font-size:16px;font-weight:600;
+  pointer-events:none;transition:opacity .3s;
+}
+#revealHint .r-dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+#revealHint .r-progress{color:var(--accent);font-weight:700}
+
+/* A1: 淡入上浮 */
+.reveal-fade-up{animation:fadeUp .5s cubic-bezier(.25,.46,.45,.94) both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+/* A2: 打字机 — JS实现，此处仅光标样式 */
+.reveal-typewriter .tw-cursor{border-right:2px solid var(--accent);animation:blink .8s infinite}
+@keyframes blink{50%{border-color:transparent}}
+/* A3: 段落逐现 — 配合 animation-delay */
+.reveal-fade-up-seq{animation:fadeUp .5s cubic-bezier(.25,.46,.45,.94) both}
+/* A4: 模糊聚焦 */
+.reveal-blur-focus{animation:blurFocus .6s ease both}
+@keyframes blurFocus{from{opacity:0;filter:blur(8px)}to{opacity:1;filter:blur(0)}}
+/* A5: 高亮脉冲 */
+.reveal-pulse{animation:highlightPulse .8s ease both}
+@keyframes highlightPulse{0%{box-shadow:0 0 0 0 var(--accent-soft)}50%{box-shadow:0 0 16px 8px var(--accent-soft)}100%{box-shadow:0 0 0 0 var(--accent-soft)}}
+/* A6: 字幕展开 */
+.reveal-slide-x{animation:slideX .5s cubic-bezier(.25,.46,.45,.94) both}
+@keyframes slideX{from{opacity:0;transform:scaleX(0);transform-origin:left}to{opacity:1;transform:scaleX(1)}}
+
+/* B1: 列表逐条滑入 */
+.reveal-li-slide{animation:liSlide .45s cubic-bezier(.25,.46,.45,.94) both}
+@keyframes liSlide{from{opacity:0;transform:translateX(-30px)}to{opacity:1;transform:translateX(0)}}
+/* B2: 编号步骤 — 圆圈弹入 */
+.reveal-step-num .highlight-num{animation:popIn .45s cubic-bezier(.34,1.56,.64,1) both}
+@keyframes popIn{from{transform:scale(0)}60%{transform:scale(1.2)}to{transform:scale(1)}}
+.reveal-step-num.reveal-hidden .highlight-num{transform:scale(0)}
+/* F1: 勾选清单（编号与 SKILL.md 动画目录一致） */
+.reveal-check{animation:checkReveal .5s ease both}
+@keyframes checkReveal{from{opacity:0;transform:translateX(-12px)}to{opacity:1;transform:translateX(0)}}
+/* F2: 层级缩进展开（编号与 SKILL.md 动画目录一致） */
+.reveal-indent{animation:indentExpand .45s ease both;overflow:hidden}
+@keyframes indentExpand{from{opacity:0;max-height:0;padding-top:0;padding-bottom:0}to{opacity:1;max-height:200px}}
+
+/* C1: 帷幕揭图 */
+.reveal-curtain{position:relative;overflow:hidden}
+.reveal-curtain img{display:block}
+.reveal-curtain::before,.reveal-curtain::after{content:'';position:absolute;top:0;width:50%;height:100%;z-index:2;transition:transform .7s cubic-bezier(.7,0,.3,1)}
+.reveal-curtain::before{left:0;background:var(--primary)}
+.reveal-curtain::after{right:0;background:var(--primary)}
+.reveal-curtain.reveal-hidden::before{transform:translateX(0)}
+.reveal-curtain.reveal-hidden::after{transform:translateX(0)}
+.reveal-curtain.reveal-done::before{transform:translateX(-100%)}
+.reveal-curtain.reveal-done::after{transform:translateX(100%)}
+/* C2: 底片显影 */
+.reveal-sepia{animation:sepiaDevelop 1s ease both}
+@keyframes sepiaDevelop{from{filter:sepia(1) brightness(.3)}to{filter:sepia(0) brightness(1)}}
+/* C3: 框入聚焦 */
+.reveal-focus-in{animation:focusIn .55s cubic-bezier(.34,1.56,.64,1) both}
+@keyframes focusIn{from{opacity:0;transform:scale(.85)}60%{transform:scale(1.03)}to{opacity:1;transform:scale(1)}}
+/* C4: 浮动入位 — 右浮图片专用 */
+.reveal-float-in-r{animation:floatInR .5s cubic-bezier(.25,.46,.45,.94) both}
+@keyframes floatInR{from{opacity:0;transform:translateX(60px)}to{opacity:1;transform:translateX(0)}}
+.reveal-float-in-l{animation:floatInL .5s cubic-bezier(.25,.46,.45,.94) both}
+@keyframes floatInL{from{opacity:0;transform:translateX(-60px)}to{opacity:1;transform:translateX(0)}}
+/* C5: Ken Burns 慢移（持续） */
+.reveal-kenburns img{animation:kenBurns 8s ease alternate infinite}
+@keyframes kenBurns{from{transform:scale(1)}to{transform:scale(1.08) translate(-2%,-1%)}}
+
+/* F3: 卡片翻转（编号与 SKILL.md 动画目录一致） */
+.reveal-flip-card{perspective:800px}
+.reveal-flip-card .flip-inner{transition:transform .6s;transform-style:preserve-3d}
+.reveal-flip-card.reveal-done .flip-inner{transform:rotateY(180deg)}
+.reveal-flip-card .flip-front,.reveal-flip-card .flip-back{backface-visibility:hidden;position:absolute;inset:0}
+.reveal-flip-card .flip-back{transform:rotateY(180deg)}
+/* D2: 卡片弹入 */
+.reveal-card-pop{animation:cardPop .55s cubic-bezier(.34,1.56,.64,1) both}
+@keyframes cardPop{from{opacity:0;transform:scale(.7)}60%{transform:scale(1.06)}to{opacity:1;transform:scale(1)}}
+/* D3: 网格填充 — 配合 animation-delay */
+.reveal-card-grid .card{animation:cardPop .55s cubic-bezier(.34,1.56,.64,1) both}
+.reveal-card-grid.reveal-hidden .card{opacity:0;animation:none}
+/* D4: 折叠展开 */
+.reveal-fold{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.25,.46,.45,.94)}
+.reveal-fold.reveal-done{max-height:600px}
+
+/* E1: 关键框滑入 */
+.reveal-slide-left{animation:slideLeft .5s cubic-bezier(.25,.46,.45,.94) both}
+@keyframes slideLeft{from{opacity:0;transform:translateX(-60px)}to{opacity:1;transform:translateX(0)}}
+.reveal-slide-right{animation:slideRight .5s cubic-bezier(.25,.46,.45,.94) both}
+@keyframes slideRight{from{opacity:0;transform:translateX(60px)}to{opacity:1;transform:translateX(0)}}
+/* E2: 引用金句 */
+.reveal-quote{animation:quoteReveal .6s ease both}
+@keyframes quoteReveal{from{opacity:0;transform:scale(.9)}40%{opacity:1;transform:scale(1.03)}to{opacity:1;transform:scale(1)}}
+/* E3: 表格逐行 */
+.reveal-tr-fade{animation:fadeUp .4s cubic-bezier(.25,.46,.45,.94) both}
+/* E4: 数字跳动 — JS实现 */
+.reveal-count-up{}
+/* E5: 聚光灯 */
+.reveal-spotlight{position:relative}
+.reveal-spotlight::before{content:'';position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:300;transition:opacity .4s}
+.reveal-spotlight.reveal-done::before{opacity:0;pointer-events:none}
+.reveal-spotlight > *{position:relative;z-index:301}
+
+/* ===== 图片全屏灯箱 ===== */
+#imgLightbox{
+  display:none;position:fixed;inset:0;z-index:9999;
+  background:rgba(0,0,0,.92);justify-content:center;align-items:center;
+  cursor:zoom-out;
+}
+#imgLightbox.show{display:flex}
+#imgLightbox img{
+  max-width:95vw;max-height:95vh;object-fit:contain;
+  border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,.5);
+  animation:lightboxIn .3s ease;
+}
+@keyframes lightboxIn{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
+#imgLightbox .lb-close{
+  position:absolute;top:20px;right:24px;width:44px;height:44px;
+  border-radius:50%;background:rgba(255,255,255,.15);color:#fff;
+  font-size:24px;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  border:none;transition:background .2s;
+}
+#imgLightbox .lb-close:hover{background:rgba(255,255,255,.3)}
+/* 图片可点击放大提示 */
+.teach-text img, .fig img, .page-img, .card img{cursor:zoom-in;transition:opacity .2s}
+.teach-text img:hover, .fig img:hover, .page-img:hover, .card img:hover{opacity:.85}
+
+/* ===== 伪全屏兜底 CSS（第四代标准件 §3）=====
+   默认不放「全屏按钮」，但下面三条规则必须保留——
+   删了 pagesync-test-mqtt.js 的 S7 直接 FAIL；伪全屏时顶部导航须压课件层之上。 */
+body.fs-pseudo #pageContainer{position:fixed;inset:0;z-index:9999}
+body.fs-pseudo #topNav{z-index:10001 !important}
+body.fs-pseudo #navBtns, body.fs-pseudo #mqttStatus{z-index:10000 !important}
+
+/* ===== 底部导航胶囊（深色封面上也看得见页码） ===== */
+#navBtns{background:rgba(245,248,251,.95);border-radius:34px;padding:5px 10px;box-shadow:0 6px 22px rgba(0,0,0,.18)}
+#revealHint{bottom:98px}
+#matchP3{max-width:780px;margin:0 auto}
+.page{padding-bottom:104px}
+
+/* ===== 表格（讲授页对比表） ===== */
+.teach-table{width:100%;border-collapse:collapse;margin:18px 0;font-size:19px;background:#fff;border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
+.teach-table th{background:var(--primary);color:#fff;padding:12px 14px;text-align:left;font-weight:700;font-size:17px}
+.teach-table td{padding:12px 14px;border-bottom:1px solid var(--line)}
+.teach-table tr:last-child td{border-bottom:none}
+.teach-table td:first-child{font-weight:700;color:var(--primary)}
+
+/* ===== 按钮 ===== */
+.btn-retry,.btn-primary{padding:9px 24px;border-radius:22px;font-size:17px;font-weight:600;cursor:pointer;border:2px solid var(--primary);background:var(--paper);color:var(--primary);transition:all .2s;margin:6px 4px}
+.btn-retry:hover,.btn-primary:hover{background:var(--primary);color:#fff}
+.btn-primary:disabled{opacity:.5;cursor:default}
+
+/* ===== 仿真读数 ===== */
+.sim-readout{text-align:center;font-size:34px;font-weight:800;letter-spacing:2px;color:var(--primary);margin:12px 0 4px;font-variant-numeric:tabular-nums}
+.sim-tip{text-align:center;font-size:18px;color:var(--primary-light);margin-bottom:10px;min-height:26px}
+
+@media(max-width:768px){.page{padding-bottom:104px}}
+
+/* ===== V4 模块卡片总结页 ===== */
+.summary-v4-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr));gap:20px;margin-bottom:20px}
+.summary-v4-card{background:#fff;border:2px solid var(--line);border-radius:16px;overflow:hidden;transition:all .35s;cursor:pointer}
+.summary-v4-card:hover{border-color:var(--primary);box-shadow:0 4px 16px rgba(0,0,0,.08)}
+.summary-v4-card.expanded{border-color:var(--primary);box-shadow:0 6px 24px rgba(0,0,0,.12);grid-column:span 2}
+@media(max-width:700px){.summary-v4-card.expanded{grid-column:auto}}
+.summary-v4-header{padding:22px 24px;display:flex;align-items:center;gap:16px;background:var(--paper-2);transition:background .3s}
+.summary-v4-card.expanded .summary-v4-header{background:var(--paper)}
+.summary-v4-num{width:44px;height:44px;border-radius:50%;background:var(--line);color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:500;flex-shrink:0;transition:all .3s}
+.summary-v4-card.expanded .summary-v4-num{background:var(--primary);color:#fff}
+.summary-v4-title{font-size:24px;font-weight:700;color:var(--primary);flex:1}
+.summary-v4-summary{font-size:18px;color:var(--primary-light);line-height:1.5}
+.summary-v4-indicator{font-size:18px;color:var(--line);transition:transform .35s;flex-shrink:0}
+.summary-v4-card.expanded .summary-v4-indicator{transform:rotate(180deg);color:var(--primary)}
+.summary-v4-body{max-height:0;overflow:hidden;transition:max-height .5s ease}
+.summary-v4-card.expanded .summary-v4-body{max-height:900px}
+.summary-v4-inner{padding:0 20px 20px;display:flex;flex-direction:column;gap:14px}
+.summary-v4-flip{perspective:600px;height:150px;cursor:pointer}
+.summary-v4-flip-inner{position:relative;width:100%;height:100%;transition:transform .45s;transform-style:preserve-3d}
+.summary-v4-flip.flipped .summary-v4-flip-inner{transform:rotateY(180deg)}
+.summary-v4-flip-front,.summary-v4-flip-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:12px;display:flex;align-items:center;justify-content:center;padding:16px 18px;font-size:20px;line-height:1.6}
+.summary-v4-flip-front{background:var(--accent-soft);border:2px solid var(--accent);color:var(--primary);font-weight:700;text-align:center;flex-direction:column}
+.summary-v4-flip-front .fh{font-size:14px;color:var(--primary-light);font-weight:400;margin-top:6px}
+.summary-v4-flip-back{background:#fff;border:2px solid var(--primary);color:var(--ink);text-align:left;transform:rotateY(180deg);overflow-y:auto;padding:16px 18px;font-size:17px}
+@keyframes popIn{0%{transform:scale(.95);opacity:0}100%{transform:scale(1);opacity:1}}
+.summary-v4-card.expanded{animation:popIn .3s ease}
+.summary-v4-toolbar{display:flex;gap:12px;margin-bottom:16px}
+.summary-v4-toolbar button{padding:8px 20px;border-radius:18px;font-size:16px;font-weight:600;cursor:pointer;border:2px solid var(--primary);background:var(--paper);color:var(--primary);transition:all .2s}
+.summary-v4-toolbar button:hover{background:var(--primary);color:#fff}
+
+/* ===== 本课追加：封面标签、三列卡片、易错数字、仿真配色 ===== */
+
+/* 封面 tag：琥珀底配藏蓝主色 */
+.cover-page .tag{background:rgba(255,160,0,.92);border:1px solid rgba(255,255,255,.4);color:#3E2A00}
+
+/* p2 / p5：三列卡片；算式按行排 */
+#p2cards.card-grid,#p5cards.card-grid{grid-template-columns:repeat(3,1fr)}
+.card .eq{font-size:17px;font-weight:800;color:var(--primary);margin:8px 0;line-height:1.6;white-space:pre-line}
+
+/* p8：易错卡里的错版说法 */
+.wrong-num{font-size:16.5px;font-weight:800;color:var(--red);margin:4px 0 8px;line-height:1.4}
+
+/* 仿真：读数条与日志高亮 */
+.sim-readout{font-size:19px;font-weight:800;color:var(--primary)}
+.sim-log .hl{color:var(--accent);font-weight:700}
+.btn-primary{background:var(--primary);color:#fff;border:none}
+.btn-primary:hover{background:var(--primary-light)}
+.btn-retry{background:var(--paper);color:var(--primary);border:1.5px solid var(--accent)}
+
+/* ===== 窄屏适配 ===== */
+@media (max-width:640px){
+  #p2cards.card-grid,#p5cards.card-grid{grid-template-columns:1fr}
+  .card .eq{font-size:15px}
+  .wrong-num{font-size:14.5px}
+  .cover-fig svg{width:100%;height:auto}
+  .sim-controls button{font-size:14px;padding:7px 10px}
+}
+</style>
 </head>
 <body>
-<!-- 页面骨架由 templates/engine.js 生成；内容在 content.json -->
-<script src="../../templates/renderers.js"></script>
-<script src="../../templates/engine.js"></script>
-<script id="content-loader">
-  fetch('content.json').then(function (r) { return r.json(); }).then(function (c) {
-    window.__CONTENT = c;
-    CourseEngine.mount(c);
+
+<!-- ===== 顶部导航 ===== -->
+<!-- 每个chip: class="chip" + 类型样式(pre/mid/post/sim) + data-page序号 -->
+<nav id="topNav">
+  <span class="chip active" data-page="0">封面</span>
+  <span class="chip pre" data-page="1">前测</span>
+  <span class="chip" data-page="2">几个 0.1</span>
+  <span class="chip" data-page="3">换成 0.1</span>
+  <span class="chip" data-page="4">连一连</span>
+  <span class="chip mid" data-page="5">中测1</span>
+  <span class="chip" data-page="6">进位退位</span>
+  <span class="chip sim" data-page="7">仿真</span>
+  <span class="chip mid" data-page="8">中测2</span>
+  <span class="chip" data-page="9">辨析</span>
+  <span class="chip post" data-page="10">后测</span>
+  <span class="chip chip-end" data-page="11">总结</span>
+</nav>
+
+<!-- ===== 进度条 ===== -->
+<!-- ===== 进度条 ===== -->
+<div id="progressWrap"><div id="progressBar"></div></div>
+
+<!-- ===== 页面容器 ===== -->
+<div id="pageContainer">
+
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>0.3 + 0.4 = 0.7，那 0.3 + 0.25 呢？</h1>
+  <p class="sub">三年级数学 · 一位小数加减法</p>
+  <div class="tags">
+    <span class="tag">小数点对齐</span>
+    <span class="tag">满十进一</span>
+    <span class="tag">退一当十</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 460 230" width="440" height="220" role="img" aria-label="两条十格条分别是三格和四格，合起来是七格，表示零点三加零点四等于零点七">
+      <g font-family="monospace">
+        <text x="24" y="40" font-size="17" fill="#FFECB3">0.3 → 3 格</text>
+        <g stroke="rgba(255,255,255,.5)" stroke-width="1.4" fill="rgba(255,255,255,.10)">
+          <rect x="150" y="22" width="28" height="30"/><rect x="178" y="22" width="28" height="30"/>
+          <rect x="206" y="22" width="28" height="30"/><rect x="234" y="22" width="28" height="30"/>
+          <rect x="262" y="22" width="28" height="30"/><rect x="290" y="22" width="28" height="30"/>
+          <rect x="318" y="22" width="28" height="30"/><rect x="346" y="22" width="28" height="30"/>
+          <rect x="374" y="22" width="28" height="30"/><rect x="402" y="22" width="28" height="30"/>
+        </g>
+        <g fill="#FFA000" stroke="#FFE082" stroke-width="1.2">
+          <rect x="150" y="22" width="28" height="30"/><rect x="178" y="22" width="28" height="30"/>
+          <rect x="206" y="22" width="28" height="30"/>
+        </g>
+
+        <text x="24" y="98" font-size="17" fill="#FFECB3">0.4 → 4 格</text>
+        <g stroke="rgba(255,255,255,.5)" stroke-width="1.4" fill="rgba(255,255,255,.10)">
+          <rect x="150" y="80" width="28" height="30"/><rect x="178" y="80" width="28" height="30"/>
+          <rect x="206" y="80" width="28" height="30"/><rect x="234" y="80" width="28" height="30"/>
+          <rect x="262" y="80" width="28" height="30"/><rect x="290" y="80" width="28" height="30"/>
+          <rect x="318" y="80" width="28" height="30"/><rect x="346" y="80" width="28" height="30"/>
+          <rect x="374" y="80" width="28" height="30"/><rect x="402" y="80" width="28" height="30"/>
+        </g>
+        <g fill="#4DD0E1" stroke="#B2EBF2" stroke-width="1.2">
+          <rect x="150" y="80" width="28" height="30"/><rect x="178" y="80" width="28" height="30"/>
+          <rect x="206" y="80" width="28" height="30"/><rect x="234" y="80" width="28" height="30"/>
+        </g>
+
+        <text x="24" y="168" font-size="17" fill="#FFECB3">合起来 7 格 → 0.7</text>
+        <g stroke="rgba(255,255,255,.5)" stroke-width="1.4" fill="rgba(255,255,255,.10)">
+          <rect x="150" y="150" width="28" height="30"/><rect x="178" y="150" width="28" height="30"/>
+          <rect x="206" y="150" width="28" height="30"/><rect x="234" y="150" width="28" height="30"/>
+          <rect x="262" y="150" width="28" height="30"/><rect x="290" y="150" width="28" height="30"/>
+          <rect x="318" y="150" width="28" height="30"/><rect x="346" y="150" width="28" height="30"/>
+          <rect x="374" y="150" width="28" height="30"/><rect x="402" y="150" width="28" height="30"/>
+        </g>
+        <g fill="#FFFFFF" opacity=".92" stroke="#FFFFFF" stroke-width="1.2">
+          <rect x="150" y="150" width="28" height="30"/><rect x="178" y="150" width="28" height="30"/>
+          <rect x="206" y="150" width="28" height="30"/><rect x="234" y="150" width="28" height="30"/>
+          <rect x="262" y="150" width="28" height="30"/><rect x="290" y="150" width="28" height="30"/>
+          <rect x="318" y="150" width="28" height="30"/>
+        </g>
+        <text x="24" y="212" font-size="16" fill="#FFECB3">3 个 0.1 + 4 个 0.1 = 7 个 0.1</text>
+      </g>
+    </svg>
+  </div>
+  <p style="font-size:20px;color:rgba(255,255,255,.92);max-width:560px;line-height:1.8;">
+    小数加减不是新算法——<br>
+    先把每个数换成「几个 0.1」，再像整数一样加。
+  </p>
+  <p class="hint">点击右下角箭头开始 或 点击顶部导航跳转</p>
+  <a href="../../viz/index.html#t=mt_dec-addsub" style="margin-top:16px;color:rgba(255,255,255,.78);font-size:16px;text-decoration:underline">← 回到知识图谱</a>
+</div>
+</section>
+
+<!-- ===== p1: 前测 ===== -->
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先猜三道，凭感觉答</h2>
+  <p class="quiz-hint">三道题，看你对 0.1 和价签有多熟。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 0.3 里面有几个 0.1？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1 个</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3 个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>30 个</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 0.5 + 0.5 等于多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>0.10</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>0.55</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 一支笔 3.5 元，一块橡皮 2 元，一共多少元？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5.05 元</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3.7 元</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>5.5 元</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 引入 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">面包 3.5 元、牛奶 2.8 元，一共要付多少元？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 340 178" width="316" height="165" role="img" aria-label="面包三点五元与牛奶二点八元的小票，下面用小数点对齐的竖式相加得六点三元">
+      <rect x="14" y="14" width="118" height="52" rx="6" fill="#FFF8E1" stroke="#FFA000" stroke-width="1.6"/>
+      <text x="26" y="36" font-size="13" fill="#6D4C00" font-family="sans-serif">面包</text>
+      <text x="26" y="58" font-size="18" fill="#1A237E" font-family="monospace">3.5 元</text>
+      <text x="140" y="46" font-size="19" fill="#FF6F00" font-family="sans-serif">+</text>
+      <rect x="160" y="14" width="118" height="52" rx="6" fill="#FFF8E1" stroke="#FFA000" stroke-width="1.6"/>
+      <text x="172" y="36" font-size="13" fill="#6D4C00" font-family="sans-serif">牛奶</text>
+      <text x="172" y="58" font-size="18" fill="#1A237E" font-family="monospace">2.8 元</text>
+
+      <g font-size="12" fill="#5C5F80" font-family="sans-serif">
+        <text x="14" y="98">小数点排成一条竖线</text>
+        <text x="14" y="122">5 角 + 8 角 = 13 角</text>
+        <text x="14" y="146">13 角 = 1 元 3 角</text>
+        <text x="14" y="170">3 + 2 + 1 = 6 元</text>
+      </g>
+
+      <g font-family="monospace" font-size="20" fill="#1A237E">
+        <text x="258" y="94">3.5</text>
+        <text x="244" y="122">+2.8</text>
+        <text x="258" y="158">6.3</text>
+      </g>
+      <line x1="238" y1="130" x2="306" y2="130" stroke="#1A237E" stroke-width="2"/>
+      <line x1="276" y1="72" x2="276" y2="166" stroke="#FFA000" stroke-width="1.6" stroke-dasharray="5 4"/>
+    </svg>
+  </div>
+  <p class="teach-text" id="p2s1">
+    两个价签都是 3 元多、2 元多。先把角那一位加起来：5 角 + 8 角 = <strong>13 角</strong>。
+  </p>
+  <p class="teach-text" id="p2s2">
+    13 角超过 10 角，就换成 1 元 3 角。整数部分 3 + 2 再加进上来的 1，得 <strong>6 元</strong>。
+  </p>
+  <p class="teach-text" id="p2s3">
+    合起来 6 元 3 角，就是 <strong>6.3 元</strong>。整个过程没用到新算法，只是把角当单位数了一遍。
+  </p>
+</div>
+
+<div class="key-box" id="p2s4">
+  一位小数加减的核心：<strong>角跟角加、元跟元加</strong>——换成分数条说，就是 0.1 跟 0.1 加。
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>0.3 + 0.4</h4>
+    <div class="eq">3 个 0.1 + 4 个 0.1<br>= 7 个 0.1<br>= 0.7</div>
+    <p>不满十，直接数完写下来。</p>
+  </div>
+  <div class="card">
+    <h4>0.7 + 0.6</h4>
+    <div class="eq">7 个 0.1 + 6 个 0.1<br>= 13 个 0.1<br>= 1.3</div>
+    <p>满十进一：13 个 0.1 就是 1 元 3 角。</p>
+  </div>
+  <div class="card">
+    <h4>1.2 − 0.5</h4>
+    <div class="eq">12 个 0.1 − 5 个 0.1<br>= 7 个 0.1<br>= 0.7</div>
+    <p>不够减就先拆：1.2 就是 12 个 0.1。</p>
+  </div>
+</div>
+</section>
+
+<!-- ===== p3: 概念1 换成几个 0.1 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">把每个数换成「几个 0.1」，加减就变成整数题</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 340 158" width="322" height="150" role="img" aria-label="两条十格条分别涂三格和四格，合起来七格，并写出小数点对齐的竖式">
+      <g font-family="monospace">
+        <text x="14" y="26" font-size="13" fill="#5C5F80" font-family="sans-serif">0.3（3 个 0.1）</text>
+        <g fill="none" stroke="#1A237E" stroke-width="1.2">
+          <rect x="14" y="34" width="22" height="26"/><rect x="36" y="34" width="22" height="26"/>
+          <rect x="58" y="34" width="22" height="26"/><rect x="80" y="34" width="22" height="26"/>
+          <rect x="102" y="34" width="22" height="26"/><rect x="124" y="34" width="22" height="26"/>
+          <rect x="146" y="34" width="22" height="26"/><rect x="168" y="34" width="22" height="26"/>
+          <rect x="190" y="34" width="22" height="26"/><rect x="212" y="34" width="22" height="26"/>
+        </g>
+        <g fill="#FFA000" stroke="#FF8F00" stroke-width="1.2">
+          <rect x="14" y="34" width="22" height="26"/><rect x="36" y="34" width="22" height="26"/>
+          <rect x="58" y="34" width="22" height="26"/>
+        </g>
+
+        <text x="14" y="92" font-size="13" fill="#5C5F80" font-family="sans-serif">0.4（4 个 0.1）</text>
+        <g fill="none" stroke="#1A237E" stroke-width="1.2">
+          <rect x="14" y="100" width="22" height="26"/><rect x="36" y="100" width="22" height="26"/>
+          <rect x="58" y="100" width="22" height="26"/><rect x="80" y="100" width="22" height="26"/>
+          <rect x="102" y="100" width="22" height="26"/><rect x="124" y="100" width="22" height="26"/>
+          <rect x="146" y="100" width="22" height="26"/><rect x="168" y="100" width="22" height="26"/>
+          <rect x="190" y="100" width="22" height="26"/><rect x="212" y="100" width="22" height="26"/>
+        </g>
+        <g fill="#4DD0E1" stroke="#00ACC1" stroke-width="1.2">
+          <rect x="14" y="100" width="22" height="26"/><rect x="36" y="100" width="22" height="26"/>
+          <rect x="58" y="100" width="22" height="26"/><rect x="80" y="100" width="22" height="26"/>
+        </g>
+
+        <text x="14" y="158" font-size="13" fill="#5C5F80" font-family="sans-serif">合起来 7 个 0.1 = 0.7</text>
+
+        <g font-size="17" fill="#1A237E" text-anchor="middle" font-family="monospace">
+          <text x="288" y="46">0</text><text x="302" y="46">.</text><text x="314" y="46">3</text>
+          <text x="264" y="74" fill="#FF6F00">+</text>
+          <text x="288" y="74">0</text><text x="302" y="74">.</text><text x="314" y="74">4</text>
+          <text x="288" y="120" fill="#3949AB">0</text><text x="302" y="120" fill="#3949AB">.</text><text x="314" y="120" fill="#3949AB">7</text>
+        </g>
+        <line x1="250" y1="84" x2="328" y2="84" stroke="#1A237E" stroke-width="2"/>
+        <line x1="302" y1="30" x2="302" y2="132" stroke="#FFA000" stroke-width="1.6" stroke-dasharray="5 4"/>
+        <text x="302" y="150" font-size="11" fill="#FF8F00" text-anchor="middle" font-family="sans-serif">小数点对齐</text>
+    </svg>
+  </div>
+  <p class="teach-text" id="p3s1">
+    <strong>0.3 是 3 个 0.1，0.4 是 4 个 0.1</strong>。加起来 7 个 0.1，写回小数就是 0.7。
+  </p>
+  <p class="teach-text" id="p3s2">
+    换成「几个 0.1」以后，加的就是 3 + 4 = 7，跟整数加法一模一样。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>① 换</strong>：0.3 → 3 个 0.1；1.2 → 12 个 0.1（整数部分每个算 10 个）。</li>
+  <li><strong>② 算</strong>：像整数一样加或减，得到「几个 0.1」。</li>
+  <li><strong>③ 换回</strong>：满十进一，13 个 0.1 = 1.3；不满十就写 0.几。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  竖式里为什么要<strong>小数点对齐</strong>？因为对齐了，0.1 才跟 0.1 站在同一列。
+</div>
+
+<p class="teach-text" id="p3hook">
+  回到封面那道题：0.3 是 3 个 0.1，0.25 是 2 个 0.1 加 5 个 0.01。0.01 比 0.1 小一位，不能和 0.1 直接相加——得先把 0.3 写成 0.30，让两个数的位对齐。
+</p>
+
+<div class="key-box" id="p3hookbox">
+  一句话：<strong>加的是同一种单位</strong>。0.1 只能跟 0.1 加，0.01 只能跟 0.01 加。
+</div>
+</section>
+
+<!-- ===== p3b: 连线巩固 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：算式和它的结果配对</h2>
+<p class="teach-text" id="p3bs1">先点左边的算式，再点右边的结果，连对了变绿。</p>
+<div id="matchP3"></div>
+</section>
+
+<!-- ===== p4: 中测1 ===== -->
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 不进位的加减</h2>
+  <p class="quiz-hint">只盯一件事：数的是几个 0.1。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 0.2 + 0.5 = ？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>0.07</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>0.7</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>7</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 0.8 − 0.3 = ？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>0.5</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>0.05</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>5</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 0.6 + 0.3 = ？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>0.09</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>9</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>0.9</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 概念2 进位退位 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">满十进一、退一当十——小数也守这两条规矩</h2>
+<p class="teach-text" id="p5s1">十格条只有 10 格，第 11 个 0.1 就装不下了，得换成整 1。</p>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>① 满十进一</h4>
+    <div class="eq">0.7 + 0.6<br>= 7 + 6 = 13 个 0.1<br>= 1.3</div>
+    <p>13 个 0.1 就是 1 个整再加 3 个 0.1。</p>
+  </div>
+  <div class="card">
+    <h4>② 退一当十</h4>
+    <div class="eq">1.2 = 12 个 0.1<br>12 − 5 = 7 个 0.1<br>= 0.7</div>
+    <p>2 减 5 不够，就把整 1 拆成 10 个 0.1 一起减。</p>
+  </div>
+  <div class="card">
+    <h4>③ 小数点不能丢</h4>
+    <div class="eq">0.6 + 0.3 = 0.9<br>不是 9<br>也不是 0.09</div>
+    <p>算的是「几个 0.1」，答案还得写回小数。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  两条规矩合成一句：<strong>换成几个 0.1 再算，算完别忘了换回小数</strong>。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">两条小数条 + 竖式：加减到底在加什么</h2>
+  <p class="sim-desc">左边两条十格条是 0.3 和 0.4，右边是小数点排成一条竖线的竖式。点四个预设，看进位和退位怎么发生；也能自己调第二个数。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">0.3 + 0.4 = 0.7</span>
+    <span class="sim-tip" id="simTip">3 个 0.1 加 4 个 0.1，是 7 个 0.1</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simPreset('add')">0.3 + 0.4</button>
+    <button class="btn-primary" onclick="simPreset('carry')">0.7 + 0.6</button>
+    <button class="btn-retry" onclick="simPreset('sub')">0.9 − 0.4</button>
+    <button class="btn-retry" onclick="simPreset('borrow')">1.2 − 0.5</button>
+    <button class="btn-retry" onclick="simBMinus()">B −0.1</button>
+    <button class="btn-retry" onclick="simBPlus()">B +0.1</button>
+    <button class="btn-retry" onclick="simReset()">重置</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="860" height="332"></canvas>
+      <p class="cap">橙 = 第一个数，青 = 第二个数；竖式里小数点排成一条竖线</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>0.7 + 0.6 为什么变成 1.3，而不是 13？</li>
+    <li>1.2 − 0.5，那个「12」是从哪来的？</li>
+    <li>把 B 一直加，看看哪一步开始进位。</li>
+    <li>竖式里小数点对齐，到底对的是什么？</li>
+  </ul>
+</div>
+</section>
+
+<!-- ===== p7: 中测2 ===== -->
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 进位与退位</h2>
+  <p class="quiz-hint">先换成几个 0.1，再换回来。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 0.7 + 0.6 = ？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1.3</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>0.13</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>13</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 1.2 − 0.5 = ？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>0.3</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>1.7</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>0.7</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 0.9 + 0.4 = ？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>0.13</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>1.3</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>13</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 易错辨析 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四种错法，都错在「对齐」和「换回」</h2>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 末位对齐</h4>
+    <div class="wrong-num">✗ 0.3 的 3 对着 0.25 的 5</div>
+    <p>要对齐的是<strong>小数点</strong>：十分位对十分位，缺的位补 0。</p>
+  </div>
+
+  <div class="card">
+    <h4>② 算完丢了小数点</h4>
+    <div class="wrong-num">✗ 0.7 + 0.6 = 13</div>
+    <p>13 个 0.1 是 <strong>1.3</strong>，答案必须写回小数。</p>
+  </div>
+
+  <div class="card">
+    <h4>③ 反着减</h4>
+    <div class="wrong-num">✗ 1.2 − 0.5 = 0.3</div>
+    <p>2 减 5 不够，退一当十：<strong>12 − 5 = 7</strong>，得 0.7。</p>
+  </div>
+
+  <div class="card">
+    <h4>④ 结果乱添 0</h4>
+    <div class="wrong-num">✗ 0.3 + 0.4 = 0.70</div>
+    <p>一位小数加一位小数，结果还是<strong>一位</strong>：0.7。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  四种错法根子相同：<strong>没把「几个 0.1」和「小数写法」来回换清楚</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到小票：3.5 + 2.8 = 6.3 元。5 角加 8 角是 13 角，进 1 元剩 3 角——进位就发生在这一位。
+</p>
+</section>
+
+<!-- ===== p9: 后测 ===== -->
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，盯死小数点和进位</h2>
+  <p class="quiz-hint">先换、再算、最后换回来。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 0.4 + 0.5 = ？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>0.09</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>0.9</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>9</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 0.8 + 0.6 = ？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1.4</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>0.14</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>14</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 0.9 − 0.3 = ？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>0.9</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>0.3</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>0.6</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 1.3 − 0.7 = ？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>0.4</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>0.6</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>0.7</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 面包 3.5 元、牛奶 2.8 元，付 10 元，找回多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>6.3 元</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>4.7 元</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3.7 元</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">变换</div>
+        <div class="summary-v4-summary">换成几个 0.1</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么换<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">0.3 = 3 个 0.1<br>1.2 = 12 个 0.1<br>整 1 就是 10 个 0.1</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">对齐</div>
+        <div class="summary-v4-summary">小数点对小数点</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么摆<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">竖式里小数点排一条线<br>十分位对十分位<br>缺的位补 0</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">进位</div>
+        <div class="summary-v4-summary">满十进一</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">什么时候进<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">0.7 + 0.6 = 13 个 0.1<br>10 个 0.1 换 1 个整<br>13 个 = 1.3</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">退位</div>
+        <div class="summary-v4-summary">退一当十</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">什么时候退<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">1.2 − 0.5：2 减 5 不够<br>把整 1 拆成 10 个 0.1<br>12 − 5 = 7 → 0.7</div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<p class="teach-text" style="margin-top:18px;color:#141A45;font-size:19px">
+  下次算小数加减：先换、再算、最后换回来——对齐和进位都在这三步里。
+</p>
+</section>
+</div><!-- /pageContainer -->
+
+<!-- ===== 渐进揭示提示条 ===== -->
+<div id="revealHint"><span class="r-dot"></span>点击页面继续揭示 <span class="r-progress" id="revealProgress"></span></div>
+
+<!-- ===== 图片全屏灯箱 ===== -->
+<div id="imgLightbox" onclick="closeLightbox()">
+  <button class="lb-close" onclick="closeLightbox()">✕</button>
+  <img id="lbImg" src="" alt="全屏查看">
+</div>
+
+<!-- ===== 底部翻页按钮 ===== -->
+<div id="navBtns">
+  <button id="btnPrev" onclick="prevPage()" disabled>◀</button>
+  <span id="pageIndicator">1/N</span>
+  <button id="btnNext" onclick="nextPage()">▶</button>
+</div>
+
+<script>
+// ⚠ 加载顺序：page-flip-system.js 必须最先（其中定义了 getPageParam，供 mqtt-framework/teaching-control 复用）
+// 引用: references/templates/page-flip-system.js
+// 引用: references/templates/quiz-engine.js
+// 引用: references/templates/matching-quiz.js
+// 引用: references/templates/canvas-engine-patterns.js
+// 引用: references/templates/infographic-generator.js
+// 各仿真和绘制函数按需添加...
+
+// ===== 全屏：v2026-09-28e 定案「默认不放按钮」 =====
+// 外壳 sandbox 无 allow-fullscreen，网页代码达不到 F11 式真全屏，故不放全屏按钮及其 JS。
+// 需要全屏 → 用户按 F11 或直开 HTML；确需按钮 → 从 teaching-control.js 取三级降级实现。
+
+
+// ===== 渐进呈现动画引擎 =====
+// 使用方式：在 onPageEnter 中调用 setupReveal(pageId, [...]), 定义每步揭示的元素
+// 每个 item: { sel: 'CSS选择器', anim: '动画class名', delay: 可选延迟ms }
+// 学生在讲授页点击空白区域依次揭示
+
+var pageRevealQueues = {};   // { p2: [{sel, anim, delay}, ...], ... }
+var pageRevealIndex = {};    // { p2: 2, ... }
+var pageRevealActive = {};   // { p2: true, ... }
+var _revealPlaying = {};     // 上一步动画现场 { p2: {els, anim, t0, dur} }，用于连点快进
+
+/* ---------- 视觉顺序（v1.5.5 新增）----------
+   揭示顺序一律按「版面位置」判定：先上后下、同行先左后右，禁止依赖 DOM 书写顺序。
+   原因：grid/flex 的 order、column-count 多列、绝对定位、模板套用都会让 DOM 顺序 ≠ 视觉顺序，
+   于是出现「下面的比上面的先出现」「右面的比左边的先出现」。 */
+function _revealSortEls(els) {
+  var arr = Array.prototype.slice.call(els).map(function(el, i) { return { el: el, i: i }; });
+  var TOL = 12; // 同一行的容差（px）：卡片行内 top 完全一致，容差只为吸收亚像素/阴影差
+  arr.sort(function(a, b) {
+    var ra = a.el.getBoundingClientRect(), rb = b.el.getBoundingClientRect();
+    if (Math.abs(ra.top - rb.top) > TOL) return ra.top - rb.top;
+    if (Math.abs(ra.left - rb.left) > TOL) return ra.left - rb.left;
+    return a.i - b.i; // 位置相同 → 保持原序（稳定）
   });
+  return arr.map(function(o) { return o.el; });
+}
+
+/* 一步揭示实际命中的元素（支持 item.children：容器内子元素逐个揭示） */
+function _revealMatch(pageId, item) {
+  var base = document.querySelectorAll('#' + pageId + ' ' + item.sel);
+  if (item.children) {
+    var out = [];
+    Array.prototype.forEach.call(base, function(c) {
+      out = out.concat(Array.prototype.slice.call(c.querySelectorAll(item.children)));
+    });
+    return out;
+  }
+  return Array.prototype.slice.call(base);
+}
+
+function setupReveal(pageId, items) {
+  pageRevealQueues[pageId] = items;
+  pageRevealIndex[pageId] = 0;
+  pageRevealActive[pageId] = items.length > 0;
+  _revealPlaying[pageId] = null;
+  // 初始隐藏所有待揭示元素
+  items.forEach(function(item) {
+    var els = _revealMatch(pageId, item);
+    if (!els.length) {
+      console.warn('[reveal] 选择器未命中，该步会被跳过并导致后续顺序前移：#' + pageId + ' ' + item.sel);
+    }
+    els.forEach(function(el) { el.classList.add('reveal-hidden'); });
+  });
+  updateRevealHint(pageId);
+}
+
+/* 零配置揭示：页面内元素标 data-reveal 即可，队列按视觉顺序自动生成（推荐，永不乱序）
+   用法：
+     <p data-reveal>段落</p>                        → 淡入上浮（默认）
+     <figure class="fig float-r" data-reveal="reveal-float-in-r">…</figure>
+     <div data-reveal data-reveal-children=".card" data-reveal-seq="150">…卡片组…</div>
+   属性：data-reveal=动画class / data-reveal-children=组内逐个元素 / data-reveal-seq / data-reveal-delay */
+function setupRevealAuto(pageId) {
+  var root = document.getElementById(pageId);
+  if (!root) { console.warn('[reveal] 页面不存在：' + pageId); return; }
+  var nodes = Array.prototype.slice.call(root.querySelectorAll('[data-reveal]'));
+  // 嵌套去重：祖先已带 data-reveal 的节点不再单独入队
+  nodes = nodes.filter(function(el) {
+    var p = el.parentElement;
+    while (p && p !== root) {
+      if (p.hasAttribute && p.hasAttribute('data-reveal')) return false;
+      p = p.parentElement;
+    }
+    return true;
+  });
+  nodes.forEach(function(el, i) {
+    if (!el.hasAttribute('data-reveal-id')) el.setAttribute('data-reveal-id', pageId + 'RV' + i);
+  });
+
+  function build() {
+    var ordered = _revealSortEls(nodes);   // 每次重建都按当前真实位置排序
+    var items = ordered.map(function(el) {
+      return {
+        sel: '[data-reveal-id="' + el.getAttribute('data-reveal-id') + '"]',
+        anim: el.getAttribute('data-reveal') || 'reveal-fade-up',
+        children: el.getAttribute('data-reveal-children') || '',
+        seqDelay: parseInt(el.getAttribute('data-reveal-seq'), 10) || 0,
+        delay: parseInt(el.getAttribute('data-reveal-delay'), 10) || 0
+      };
+    });
+    setupReveal(pageId, items);
+  }
+  build();
+
+  // 若调用时页面还没完成布局（元素 rect 全为 0，例如 display:none 中提前建队列），
+  // 下一帧按真实位置重排一次队列——否则退化成 DOM 顺序，正是「下面先出/右面先出」的根源。
+  var unmeasurable = nodes.some(function(el) {
+    var r = el.getBoundingClientRect();
+    return r.width === 0 && r.height === 0;
+  });
+  if (unmeasurable) {
+    requestAnimationFrame(function() {
+      if (pageRevealIndex[pageId] === 0) build();
+    });
+  }
+}
+
+function nextReveal(pageId) {
+  if (!pageRevealActive[pageId]) return;
+  var queue = pageRevealQueues[pageId];
+  var idx = pageRevealIndex[pageId];
+  if (!queue || idx >= queue.length) return;
+
+  // ① 连点快进（v1.5.5）：上一步动画尚未播完就点了下一步 → 直接把上一步定格到终态。
+  //    否则两次动画时间轴交叠，会出现「后一步还停在透明度 0 已开始计时、前一步刚过半」的倒序错觉。
+  var prev = _revealPlaying[pageId];
+  if (prev) {
+    var elapsed = Date.now() - prev.t0;
+    if (prev.dur > 0 && elapsed < prev.dur) {
+      prev.els.forEach(function(el) { el.classList.remove(prev.anim); });
+    }
+    _revealPlaying[pageId] = null;
+  }
+
+  var item = queue[idx];
+  var els = _revealMatch(pageId, item);
+  if (!els.length) {
+    console.warn('[reveal] 选择器未命中，该步被跳过：#' + pageId + ' ' + item.sel);
+  }
+  // ② 组内揭示顺序 = 视觉顺序（上→下、左→右），与 querySelectorAll 的 DOM 顺序无关
+  els = _revealSortEls(els);
+
+  var delay = item.delay || 0;
+  var seq = item.seqDelay || 0;
+  els.forEach(function(el, i) {
+    var d = delay + seq * i;
+    el.style.animationDelay = d + 'ms';
+    el.classList.add(item.anim);
+    el.classList.add('reveal-done');
+  });
+
+  // ③ 记录本步动画时长（含组内错峰），供下一步连点快进判断
+  var dur = 0;
+  if (els.length) {
+    var ad = '';
+    try { ad = getComputedStyle(els[0]).animationDuration || '0s'; } catch (e) {}
+    dur = parseFloat(ad) * 1000;
+    if (!isFinite(dur) || dur <= 0 || dur > 5000) dur = 0; // 持续型（kenburns 8s 等）不快进
+    else dur += delay + seq * Math.max(0, els.length - 1);
+  }
+  _revealPlaying[pageId] = { els: els, anim: item.anim, t0: Date.now(), dur: dur };
+
+  pageRevealIndex[pageId]++;
+  updateRevealHint(pageId);
+  // 全部揭示完 → 隐藏提示条
+  if (pageRevealIndex[pageId] >= queue.length) {
+    pageRevealActive[pageId] = false;
+  }
+}
+
+// 逆向回退：撤销上一步揭示（配合键盘箭头回退，见 SKILL.md「Progressive Reveal Animation System」章节）
+function prevReveal(pageId) {
+  var queue = pageRevealQueues[pageId];
+  var idx = pageRevealIndex[pageId];
+  if (!queue || idx <= 0) return;
+  idx--;
+  var item = queue[idx];
+  var els = _revealMatch(pageId, item);
+  els.forEach(function(el) {
+    el.classList.remove(item.anim, 'reveal-done');
+    el.classList.add('reveal-hidden');
+    el.style.animationDelay = '';
+    // 项目扩展：此处重置该元素内的 count-num / typewriter 等特殊效果
+    // 完整版（含 _twTimer 中断）见 SKILL.md「Progressive Reveal Animation System」章节 prevReveal 完整代码
+  });
+  _revealPlaying[pageId] = null;
+  pageRevealIndex[pageId] = idx;
+  pageRevealActive[pageId] = true;
+  updateRevealHint(pageId);
+}
+
+function updateRevealHint(pageId) {
+  var hint = document.getElementById('revealHint');
+  var progress = document.getElementById('revealProgress');
+  var active = pageRevealActive[pageId];
+  var queue = pageRevealQueues[pageId];
+  if (!active || !queue) { hint.style.display = 'none'; return; }
+  var idx = pageRevealIndex[pageId];
+  var remain = queue.length - idx;
+  if (remain <= 0) { hint.style.display = 'none'; return; }
+  hint.style.display = 'flex';
+  progress.textContent = (idx + 1) + '/' + queue.length + ' ←→';
+}
+
+// 讲授页全局点击 → 触发 nextReveal（排除链接、按钮、quiz-q 等交互元素）
+document.addEventListener('click', function(e) {
+  var pageEl = document.querySelector('.page.active');
+  if (!pageEl) return;
+  var pid = pageEl.id;
+  if (!pageRevealActive[pid]) return;
+  // 排除交互元素（含图片——图片点击触发灯箱而非揭示）
+  var tag = e.target.tagName;
+  if (tag === 'A' || tag === 'BUTTON' || tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || tag === 'IMG') return;
+  if (e.target.closest('.quiz-q') || e.target.closest('.opt') ||
+      e.target.closest('nav') || e.target.closest('#navBtns') || e.target.closest('.timeline-card') ||
+      e.target.closest('.mindmap') || e.target.closest('#imgLightbox')) return;
+  nextReveal(pid);
+});
+
+// 翻页时重置提示条状态
+var _origShowPage = showPage;
+showPage = function(i) {
+  _origShowPage(i);
+  var pid = PAGE_IDS[i];
+  setTimeout(function() { updateRevealHint(pid); }, 100);
+};
+
+// ===== 图片全屏灯箱 =====
+function openLightbox(src) {
+  document.getElementById('lbImg').src = src;
+  document.getElementById('imgLightbox').classList.add('show');
+}
+function closeLightbox() {
+  document.getElementById('imgLightbox').classList.remove('show');
+}
+// 页面图片点击 → 全屏放大
+document.addEventListener('click', function(e) {
+  if (e.target.tagName === 'IMG' && !e.target.closest('#imgLightbox') && !e.target.closest('.qr-img-wrap')) {
+    e.stopPropagation();
+    openLightbox(e.target.src);
+  }
+});
+// ESC 关闭灯箱
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    var lb = document.getElementById('imgLightbox');
+    if (lb.classList.contains('show')) { closeLightbox(); e.preventDefault(); }
+  }
+});
+
+// ===== 配置块 =====
+var PAGE_IDS = ['p0','p1','p2','p3','p3b','p4','p5','p6','p7','p8','p9','p10'];
+var PAGE_LABELS = ['封面','前测','几个 0.1','换成 0.1','连一连','中测1','进位退位','仿真','中测2','辨析','后测','总结'];
+var IMG_PREFIX = 'img/';
+var curPage = 0;
+
+// ===== 测验数据 =====
+var QUIZZES = {
+  quizPre: {
+    questions: [
+      { answer: 1, explain: '0.3 里有 3 个 0.1。选 1 个是没数格子；选 30 个把 0.3 当成 3 又加了十倍。' },
+      { answer: 0, explain: '0.5 + 0.5 = 1。5 个 0.1 加 5 个 0.1 正好 10 个 0.1，10 个 0.1 就是 1。选 0.10 是忘了「满十进一」；选 0.55 把小数点后面的数当成了两个整数。' },
+      { answer: 2, explain: '3.5 + 2 = 5.5 元。选 3.7 是把 2 当成了 0.2；选 5.05 是人民币 2 元写成了 0.2 元。' }
+    ]
+  },
+  quizMid1: {
+    questions: [
+      { answer: 1, explain: '0.2 + 0.5 = 0.7，2 个 0.1 加 5 个 0.1 是 7 个 0.1。选 0.07 多加了一个 0；选 7 把 0.1 当成了 1。' },
+      { answer: 0, explain: '0.8 − 0.3 = 0.5，8 个 0.1 去掉 3 个还剩 5 个。选 0.05 多加了一个 0；选 5 把 0.1 当成了 1。' },
+      { answer: 2, explain: '0.6 + 0.3 = 0.9。选 9 忘了点小数点；选 0.09 把结果写小了一百倍。' }
+    ]
+  },
+  quizMid2: {
+    questions: [
+      { answer: 0, explain: '0.7 + 0.6：7 个 0.1 加 6 个 0.1 是 13 个 0.1，满十进一，13 个 0.1 = 1.3。选 13 是没把 13 个 0.1 换回小数；选 0.13 是进位方向错了。' },
+      { answer: 2, explain: '1.2 − 0.5：1.2 是 12 个 0.1，12 − 5 = 7 个 0.1 = 0.7。选 0.3 是把 5 − 2 = 3 反着减了；选 1.7 做成了加法。' },
+      { answer: 1, explain: '0.9 + 0.4：9 + 4 = 13 个 0.1 = 1.3。选 13 漏了小数点；选 0.13 把进位的 1 当成了十分位。' }
+    ]
+  },
+  quizPost: {
+    questions: [
+      { answer: 1, explain: '0.4 + 0.5 = 0.9，4 个加 5 个是 9 个 0.1。选 9 漏了小数点；选 0.09 多了一个 0。' },
+      { answer: 0, explain: '0.8 + 0.6：8 + 6 = 14 个 0.1 = 1.4。选 0.14 把进位当成了十分位；选 14 忘了换回小数。' },
+      { answer: 2, explain: '0.9 − 0.3 = 0.6，9 个去掉 3 个还剩 6 个 0.1。选 0.9 是没减；选 0.3 是拿减数当了答案。' },
+      { answer: 1, explain: '1.3 − 0.7：1.3 是 13 个 0.1，13 − 7 = 6 个 0.1 = 0.6。选 0.4 是把 7 − 3 = 4 反着减了；选 0.7 是减错了对象。' },
+      { answer: 2, explain: '先算一共花多少：3.5 + 2.8 = 6.3 元；再算找回：10 − 6.3 = 3.7 元。选 6.3 只算到花掉的钱；选 4.7 把 10 − 6.3 算成了 10 − 5.3。' }
+    ]
+  }
+};
+// ===== 翻页系统 =====
+function getPageParam(k) {
+  try {
+    var h = location.hash || '';
+    if (h.indexOf(k + '=') >= 0) {
+      var m1 = new RegExp('[#&]' + k + '=([^&#]*)').exec(h);
+      if (m1) return decodeURIComponent(m1[1]);
+    }
+    var q = location.search || '';
+    if (q.indexOf(k + '=') >= 0) {
+      var m2 = new RegExp('[?&]' + k + '=([^&#]*)').exec(q);
+      if (m2) return decodeURIComponent(m2[1]);
+    }
+    if (window.parent && window.parent !== window) {
+      try {
+        var psrc = (window.parent.location.hash || '') + '&' + (window.parent.location.search || '');
+        if (psrc.indexOf(k + '=') >= 0) {
+          var m3 = new RegExp('[#&?]' + k + '=([^&#]*)').exec(psrc);
+          if (m3) return decodeURIComponent(m3[1]);
+        }
+      } catch (e) {}
+    }
+  } catch (e) {}
+  return null;
+}
+
+function showPage(i) {
+  if (i < 0 || i >= PAGE_IDS.length) return;
+  var oldEl = document.querySelector('.page.active');
+  if (oldEl) oldEl.classList.remove('active');
+  var newEl = document.getElementById(PAGE_IDS[i]);
+  if (newEl) { newEl.classList.add('active'); newEl.scrollTop = 0; }
+  curPage = i;
+  document.querySelectorAll('#topNav .chip').forEach(function(c, idx) {
+    c.classList.toggle('active', idx === i);
+  });
+  document.getElementById('progressBar').style.width = ((i + 1) / PAGE_IDS.length * 100) + '%';
+  document.getElementById('pageIndicator').textContent = (i + 1) + '/' + PAGE_IDS.length;
+  document.getElementById('btnPrev').disabled = (i === 0);
+  document.getElementById('btnNext').disabled = (i === PAGE_IDS.length - 1);
+  onPageEnter(i);
+  var activeChip = document.querySelector('#topNav .chip.active');
+  if (activeChip && typeof activeChip.scrollIntoView === 'function') activeChip.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+}
+
+function nextPage() { if (curPage < PAGE_IDS.length - 1) showPage(curPage + 1); }
+function prevPage() { if (curPage > 0) showPage(curPage - 1); }
+
+document.querySelectorAll('#topNav .chip').forEach(function(chip) {
+  chip.addEventListener('click', function() {
+    showPage(parseInt(this.getAttribute('data-page')));
+  });
+});
+
+document.addEventListener('keydown', function(e) {
+  var pid = PAGE_IDS[curPage];
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') {
+    e.preventDefault();
+    if (typeof pageRevealActive !== 'undefined' && pageRevealActive[pid] &&
+        pageRevealQueues[pid] && pageRevealIndex[pid] < pageRevealQueues[pid].length) {
+      nextReveal(pid);
+    } else { nextPage(); }
+  } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+    e.preventDefault();
+    if (typeof pageRevealQueues !== 'undefined' && pageRevealQueues[pid] && pageRevealIndex[pid] > 0) {
+      prevReveal(pid);
+    } else { prevPage(); }
+  }
+});
+
+var touchStartX = 0, touchStartY = 0;
+document.addEventListener('touchstart', function(e) {
+  touchStartX = e.touches[0].clientX; touchStartY = e.touches[0].clientY;
+}, { passive: true });
+document.addEventListener('touchend', function(e) {
+  var dx = e.changedTouches[0].clientX - touchStartX;
+  var dy = e.changedTouches[0].clientY - touchStartY;
+  if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 60) {
+    if (dx < 0) nextPage(); else prevPage();
+  }
+});
+
+var pageEntered = {};
+function onPageEnter(i) {
+  var id = PAGE_IDS[i];
+  if (pageEntered[id]) return;
+  pageEntered[id] = true;
+  if (id === 'p2') {
+    setupReveal('p2', [
+      { sel: '#p2s1', anim: 'reveal-fade-up' },
+      { sel: '#p2fig', anim: 'reveal-float-in-r' },
+      { sel: '#p2s2', anim: 'reveal-fade-up' },
+      { sel: '#p2s3', anim: 'reveal-fade-up' },
+      { sel: '#p2s4', anim: 'reveal-fade-up' },
+      { sel: '#p2cards', anim: 'reveal-card-grid', children: '.card', seqDelay: 110 }
+    ]);
+  }
+  if (id === 'p3') {
+    setupReveal('p3', [
+      { sel: '#p3s1', anim: 'reveal-fade-up' },
+      { sel: '#p3fig', anim: 'reveal-float-in-r' },
+      { sel: '#p3s2', anim: 'reveal-fade-up' },
+      { sel: '#p3rules', anim: 'reveal-fade-up' },
+      { sel: '#p3key', anim: 'reveal-fade-up' },
+      { sel: '#p3hook', anim: 'reveal-fade-up' },
+      { sel: '#p3hookbox', anim: 'reveal-fade-up' }
+    ]);
+  }
+  if (id === 'p3b') {
+    setupReveal('p3b', [{ sel: '#p3bs1', anim: 'reveal-fade-up' }]);
+    initMatching('matchP3', [
+      ['0.3 + 0.4', '0.7'],
+      ['0.7 + 0.6', '1.3'],
+      ['0.9 − 0.4', '0.5'],
+      ['1.2 − 0.5', '0.7']
+    ], { leftTitle: '算式', rightTitle: '结果' });
+  }
+  if (id === 'p5') {
+    setupReveal('p5', [
+      { sel: '#p5s1', anim: 'reveal-fade-up' },
+      { sel: '#p5cards', anim: 'reveal-card-grid', children: '.card', seqDelay: 120 },
+      { sel: '#p5key', anim: 'reveal-fade-up' }
+    ]);
+  }
+  if (id === 'p6') { simDraw(); }
+  if (id === 'p8') {
+    setupReveal('p8', [
+      { sel: '#p8cards', anim: 'reveal-card-grid', children: '.card', seqDelay: 120 },
+      { sel: '#p8key', anim: 'reveal-fade-up' },
+      { sel: '#p8apply', anim: 'reveal-fade-up' }
+    ]);
+  }
+}
+
+// ===== 测验引擎 =====
+(function(){
+  if (document.getElementById('quiz-engine-css')) return;
+  var st = document.createElement('style');
+  st.id = 'quiz-engine-css';
+  st.textContent = [
+    '.q-type{display:inline-block;font-size:14px;font-weight:700;padding:1px 10px;border-radius:12px;margin-right:8px;vertical-align:2px;background:var(--primary-light);color:#fff;letter-spacing:1px}',
+    '.q-type.multi{background:var(--accent)}',
+    '.opt-confirm{margin-top:10px;padding:7px 22px;border-radius:18px;font-size:16px;font-weight:600;cursor:pointer;border:2px solid var(--accent);background:var(--paper);color:var(--accent);transition:all .2s}',
+    '.opt-confirm:hover{background:var(--accent);color:#fff}',
+    '.quiz-q.submitted .opt-confirm{display:none}'
+  ].join('\n');
+  document.head.appendChild(st);
+})();
+
+function isMultiQ(q){ return !!(q && q.multi && Array.isArray(q.answer)); }
+function sameIdxArr(a, b){
+  if (!Array.isArray(a) || !Array.isArray(b) || a.length !== b.length) return false;
+  for (var i = 0; i < a.length; i++) if (a[i] !== b[i]) return false;
+  return true;
+}
+function ascArr(a){ return a.slice().sort(function(x, y){ return x - y; }); }
+function isCorrectChoice(q, chosen){
+  if (isMultiQ(q)) return sameIdxArr(chosen, ascArr(q.answer));
+  return chosen === q.answer;
+}
+function idxInAnswer(q, j){
+  return Array.isArray(q.answer) ? q.answer.indexOf(j) >= 0 : j === q.answer;
+}
+function idxInChosen(c, j){
+  return Array.isArray(c) ? c.indexOf(j) >= 0 : c === j;
+}
+function quizScoreId(containerId){
+  var s = String(containerId).replace(/^quiz/, '');
+  return s.charAt(0).toLowerCase() + s.slice(1) + 'Score';
+}
+
+function initQuiz(quizId) {
+  var container = document.getElementById(quizId);
+  if (!container || !QUIZZES[quizId]) return;
+  if (container._initialized) return;
+  container._initialized = true;
+  container._questions = QUIZZES[quizId].questions;
+  container._chosen = container._questions.map(function(q){ return isMultiQ(q) ? null : -1; });
+  container._picked = container._questions.map(function(q){ return isMultiQ(q) ? [] : null; });
+  var isSubmitMode = false;
+
+  container.querySelectorAll('.quiz-q').forEach(function(qq, qi) {
+    var q = container._questions[qi];
+    if (!q) return;
+    var opts = qq.querySelectorAll('.opt');
+    if (isMultiQ(q)) {
+      opts.forEach(function(opt) {
+        opt.addEventListener('click', function() {
+          if (container._submitted) return;
+          var idx = parseInt(this.getAttribute('data-idx'));
+          var pos = container._picked[qi].indexOf(idx);
+          if (pos >= 0) { container._picked[qi].splice(pos, 1); this.classList.remove('selected'); }
+          else { container._picked[qi].push(idx); this.classList.add('selected'); }
+        });
+      });
+      var btn = qq.querySelector('.opt-confirm');
+      if (btn) btn.addEventListener('click', function() {
+        if (container._submitted) return;
+        if (container._picked[qi].length === 0) return;
+        container._chosen[qi] = ascArr(container._picked[qi]);
+        qq.classList.add('answered');
+        if (!isSubmitMode) { showFeedback(quizId, qi); updateQuizScore(quizId); }
+      });
+    } else {
+      opts.forEach(function(opt) {
+        opt.addEventListener('click', function() {
+          if (container._submitted) return;
+          var idx = parseInt(this.getAttribute('data-idx'));
+          container._chosen[qi] = idx;
+          opts.forEach(function(o) { o.classList.remove('selected'); });
+          this.classList.add('selected');
+          qq.classList.add('answered');
+          if (!isSubmitMode) { showFeedback(quizId, qi); updateQuizScore(quizId); }
+        });
+      });
+    }
+  });
+}
+
+function showFeedback(quizId, qi) {
+  var container = document.getElementById(quizId);
+  var q = container._questions[qi];
+  var c = container._chosen[qi];
+  var qq = document.getElementById('qq_' + quizId + '_' + qi);
+  var fb = document.getElementById('fb_' + quizId + '_' + qi);
+  if (!qq || !fb) return;
+  var isCorrect = isCorrectChoice(q, c);
+  fb.innerHTML = '<span class="fb-icon">' + (isCorrect ? '✓' : '✗') + '</span>' +
+    (isCorrect ? '答对了。' : '再看一遍。') + q.explain;
+  fb.className = 'feedback show ' + (isCorrect ? 'correct-fb' : 'wrong-fb');
+  qq.querySelectorAll('.opt').forEach(function(o, j) {
+    if (idxInAnswer(q, j)) o.classList.add('correct');
+    if (!isCorrect && idxInChosen(c, j) && !idxInAnswer(q, j)) o.classList.add('wrong');
+    o.style.pointerEvents = 'none';
+  });
+}
+
+function updateQuizScore(quizId) {
+  var container = document.getElementById(quizId);
+  var total = container._questions.length;
+  var done = 0, score = 0;
+  container._questions.forEach(function(q, i) {
+    var c = container._chosen[i];
+    var answered = isMultiQ(q) ? (Array.isArray(c) && c.length > 0) : c >= 0;
+    if (answered) { done++; if (isCorrectChoice(q, c)) score++; }
+  });
+  var scoreEl = document.getElementById(quizScoreId(quizId));
+  if (scoreEl) {
+    scoreEl.style.display = 'block';
+    if (done === total) {
+      scoreEl.innerHTML = '得分：' + score + '/' + total + ' &nbsp;&nbsp;' +
+        (score === total ? '🌟 全部正确！' : score >= total * 0.6 ? '👍 不错，继续加油！' : '💪 回到前面再看一遍');
+    } else {
+      scoreEl.textContent = '已答：' + done + '/' + total + ' 正确：' + score;
+    }
+  }
+  try { localStorage.setItem('xmn_' + quizId, JSON.stringify({ score: score, total: total, done: done })); } catch (e) {}
+}
+
+function retryQuiz(quizId) {
+  var container = document.getElementById(quizId);
+  if (!container) return;
+  container._chosen = container._questions.map(function(q){ return isMultiQ(q) ? null : -1; });
+  container._picked = container._questions.map(function(q){ return isMultiQ(q) ? [] : null; });
+  container.querySelectorAll('.quiz-q').forEach(function(qq) {
+    qq.classList.remove('answered');
+    qq.querySelectorAll('.opt').forEach(function(o) {
+      o.classList.remove('selected', 'correct', 'wrong');
+      o.style.pointerEvents = 'auto';
+    });
+  });
+  container.querySelectorAll('.feedback').forEach(function(fb) { fb.className = 'feedback'; fb.innerHTML = ''; });
+  var el = document.getElementById(quizScoreId(quizId));
+  if (el) el.style.display = 'none';
+}
+
+Object.keys(QUIZZES).forEach(function(k) { initQuiz(k); });
+
+// ===== 连线题引擎 =====
+(function(){
+  var CSS = [
+    '.match-wrap{position:relative;margin:14px 0}',
+    '.match-cols{display:grid;grid-template-columns:1fr 1fr;gap:40px}',
+    '.match-col h4{font-size:18px;color:var(--primary);margin-bottom:10px;text-align:center}',
+    '.match-item{padding:14px 18px;margin-bottom:12px;border:2px solid var(--line);border-radius:12px;background:#fff;font-size:19px;cursor:pointer;transition:all .2s;text-align:center}',
+    '.match-item:hover{border-color:var(--primary-light)}',
+    '.match-item.sel{border-color:var(--accent);background:var(--accent-soft)}',
+    '.match-item.ok{border-color:var(--green);background:#E8F5F3}',
+    '.match-item.bad{border-color:var(--red);animation:shakeX .35s}',
+    '@keyframes shakeX{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}',
+    '.match-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}',
+    '.mq-actions{text-align:center;margin-top:10px}',
+    '.mq-actions button{padding:7px 22px;border-radius:18px;font-size:16px;font-weight:600;cursor:pointer;border:2px solid var(--primary);background:var(--paper);color:var(--primary)}',
+    '.mq-done{text-align:center;font-size:18px;font-weight:700;color:var(--green);margin-top:8px;min-height:24px}'
+  ].join('\n');
+  var st = document.createElement('style');
+  st.textContent = CSS;
+  document.head.appendChild(st);
+})();
+
+function initMatching(containerId, pairs, options){
+  options = options || {};
+  var c = document.getElementById(containerId);
+  if (!c || c._initialized) return;
+  c._initialized = true;
+  var list = pairs.map(function(p){ return Array.isArray(p) ? {left:p[0], right:p[1]} : p; });
+  var order = list.map(function(_, i){ return i; });
+  for (var i = order.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var t = order[i]; order[i] = order[j]; order[j] = t;
+  }
+  c.innerHTML =
+    '<div class="match-wrap"><div class="match-cols">' +
+      '<div class="match-col"><h4>' + (options.leftTitle || '左侧') + '</h4>' +
+        list.map(function(p, k){ return '<div class="match-item" data-side="L" data-i="' + k + '">' + p.left + '</div>'; }).join('') +
+      '</div>' +
+      '<div class="match-col"><h4>' + (options.rightTitle || '右侧') + '</h4>' +
+        order.map(function(k){ return '<div class="match-item" data-side="R" data-i="' + k + '">' + list[k].right + '</div>'; }).join('') +
+      '</div>' +
+    '</div><svg class="match-svg"></svg></div>' +
+    '<div class="mq-actions"><button type="button" data-act="retry">重试</button></div>' +
+    '<div class="mq-done"></div>';
+
+  var wrap = c.querySelector('.match-wrap');
+  var svg = c.querySelector('.match-svg');
+  var state = { sel: null, links: {}, ok: {} };
+
+  function itemAt(side, idx){ return c.querySelector('.match-item[data-side="' + side + '"][data-i="' + idx + '"]'); }
+
+  function drawLinks(){
+    var box = wrap.getBoundingClientRect();
+    svg.setAttribute('viewBox', '0 0 ' + box.width + ' ' + box.height);
+    svg.innerHTML = '';
+    Object.keys(state.links).forEach(function(l){
+      var a = itemAt('L', Number(l)), b = itemAt('R', state.links[l]);
+      if (!a || !b) return;
+      var ra = a.getBoundingClientRect(), rb = b.getBoundingClientRect();
+      var line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      line.setAttribute('x1', ra.right - box.left);
+      line.setAttribute('y1', ra.top + ra.height / 2 - box.top);
+      line.setAttribute('x2', rb.left - box.left);
+      line.setAttribute('y2', rb.top + rb.height / 2 - box.top);
+      line.setAttribute('stroke', state.ok[l] ? '#00897B' : '#D84315');
+      line.setAttribute('stroke-width', '3');
+      line.setAttribute('stroke-linecap', 'round');
+      svg.appendChild(line);
+    });
+  }
+
+  function checkDone(){
+    var total = list.length;
+    var done = Object.keys(state.ok).filter(function(k){ return state.ok[k]; }).length;
+    if (done === total) {
+      c.querySelector('.mq-done').textContent = '✓ 全部连对，三根针的速度都记住了';
+      if (options.onDone) options.onDone(done, total);
+    }
+  }
+
+  c.addEventListener('click', function(e){
+    var el = e.target.closest('.match-item');
+    if (!el) return;
+    var side = el.getAttribute('data-side');
+    var idx = parseInt(el.getAttribute('data-i'), 10);
+    if (el.classList.contains('ok')) return;
+
+    if (!state.sel || state.sel.side === side) {
+      c.querySelectorAll('.match-item.sel').forEach(function(x){ x.classList.remove('sel'); });
+      state.sel = { side: side, idx: idx };
+      el.classList.add('sel');
+      return;
+    }
+    var l = side === 'L' ? idx : state.sel.idx;
+    var r = side === 'R' ? idx : state.sel.idx;
+    if (state.links[l] !== undefined) delete state.links[l];
+    state.links[l] = r;
+    state.ok[l] = (l === r);
+    var leftEl = itemAt('L', l), rightEl = itemAt('R', r);
+    c.querySelectorAll('.match-item.sel').forEach(function(x){ x.classList.remove('sel'); });
+    if (state.ok[l]) {
+      leftEl.classList.add('ok'); rightEl.classList.add('ok');
+    } else {
+      leftEl.classList.add('bad'); rightEl.classList.add('bad');
+      setTimeout(function(){ leftEl.classList.remove('bad'); rightEl.classList.remove('bad'); }, 400);
+    }
+    state.sel = null;
+    drawLinks();
+    checkDone();
+  });
+
+  c.querySelector('[data-act="retry"]').addEventListener('click', function(){
+    state = { sel: null, links: {}, ok: {} };
+    c.querySelectorAll('.match-item').forEach(function(x){ x.className = 'match-item'; });
+    c.querySelector('.mq-done').textContent = '';
+    drawLinks();
+  });
+  window.addEventListener('resize', drawLinks);
+}
+
+// ===== 引入页：答案卡「他错在哪」（防御性，本课文未直接调用）=====
+function toggleAns(btn) {
+  var card = btn && btn.closest ? btn.closest('.ans-card') : null;
+  if (!card) return;
+  card.classList.toggle('open');
+  btn.textContent = card.classList.contains('open') ? '收起' : '他错在哪';
+}
+
+// ===== 仿真：两条小数条 + 小数点对齐的竖式 =====
+var SIM_W = 860, SIM_H = 332;
+var SIM = { ia: 0, da: 3, ib: 0, db: 4, op: '+', busy: false, log: [] };
+var C_A = '#FFA000', C_B = '#26C6DA', C_R = '#5C6BC0';
+
+function simNum(ip, d) { return String(ip) + '.' + d; }
+function simOpSign(op) { return op === '+' ? '+' : '−'; }
+function simCount(ip, d) { return ip * 10 + d; }
+
+function simCalc() {
+  var na = simCount(SIM.ia, SIM.da), nb = simCount(SIM.ib, SIM.db);
+  var ok = true, nr;
+  if (SIM.op === '+') nr = na + nb;
+  else { if (na < nb) { ok = false; nr = 0; } else nr = na - nb; }
+  return {
+    na: na, nb: nb, nr: nr, ok: ok,
+    ir: Math.floor(nr / 10), dr: nr % 10,
+    carry: SIM.op === '+' && nr >= 10,
+    borrow: SIM.op === '-' && ok && SIM.da < SIM.db
+  };
+}
+
+function simCell(ctx, x, y, w, h, on, color) {
+  ctx.fillStyle = on ? color : '#F1F2FA';
+  ctx.fillRect(x, y, w, h);
+  ctx.strokeStyle = '#1A237E';
+  ctx.lineWidth = 1.2;
+  ctx.strokeRect(x, y, w, h);
+}
+
+function simChip(ctx, x, y, label) {
+  ctx.fillStyle = '#FFECB3';
+  ctx.fillRect(x, y, 34, 34);
+  ctx.strokeStyle = '#FFA000';
+  ctx.lineWidth = 1.8;
+  ctx.strokeRect(x, y, 34, 34);
+  ctx.textAlign = 'center';
+  ctx.font = 'bold 18px "Microsoft YaHei","Noto Sans SC",sans-serif';
+  ctx.fillStyle = '#8D6E00';
+  ctx.fillText(label, x + 17, y + 24);
+}
+
+function simDraw() {
+  var cv = document.getElementById('simCanvas');
+  if (!cv) return;
+  var ctx = cv.getContext('2d');
+  ctx.clearRect(0, 0, SIM_W, SIM_H);
+  ctx.fillStyle = '#FFFFFF';
+  ctx.fillRect(0, 0, SIM_W, SIM_H);
+
+  var r = simCalc();
+  var cell = 30, barX = 168, gw = cell * 10;
+
+  // 三行：A、B、结果
+  var rows = [
+    { ip: SIM.ia, d: SIM.da, color: C_A, y: 46, label: '第一个数' },
+    { ip: SIM.ib, d: SIM.db, color: C_B, y: 122, label: '第二个数' },
+    { ip: r.ir, d: r.dr, color: C_R, y: 214, label: '结果' }
+  ];
+
+  rows.forEach(function (row, idx) {
+    ctx.textAlign = 'left';
+    ctx.font = '12.5px "Microsoft YaHei","Noto Sans SC",sans-serif';
+    ctx.fillStyle = '#7679A0';
+    ctx.fillText(row.label, 34, row.y - 8);
+
+    ctx.font = 'bold 24px "Microsoft YaHei","Noto Sans SC",sans-serif';
+    ctx.fillStyle = idx === 2 ? '#3949AB' : '#1A237E';
+    ctx.fillText(simNum(row.ip, row.d), 34, row.y + 26);
+
+    if (row.ip > 0) simChip(ctx, 122, row.y - 4, String(row.ip));
+
+    for (var i = 0; i < 10; i++) {
+      simCell(ctx, barX + i * cell, row.y - 4, cell, 34, i < row.d, row.color);
+    }
+
+    ctx.textAlign = 'right';
+    ctx.font = '12.5px "Microsoft YaHei","Noto Sans SC",sans-serif';
+    ctx.fillStyle = idx === 2 ? '#3949AB' : '#7679A0';
+    var c = simCount(row.ip, row.d);
+    ctx.fillText(c + ' 个 0.1', barX + gw + 78, row.y + 18);
+  });
+
+  // 运算符（A、B 之间）
+  ctx.textAlign = 'center';
+  ctx.font = 'bold 26px "Microsoft YaHei","Noto Sans SC",sans-serif';
+  ctx.fillStyle = '#1A237E';
+  ctx.fillText(SIM.op, 132, 108);
+
+  // 结果分隔线
+  ctx.strokeStyle = '#C9CBE4';
+  ctx.lineWidth = 1.6;
+  ctx.beginPath();
+  ctx.moveTo(34, 190);
+  ctx.lineTo(barX + gw + 80, 190);
+  ctx.stroke();
+
+  // ===== 右侧竖式：三个列位固定 =====
+  var colInt = 640, colDot = 672, colTen = 702;
+  ctx.strokeStyle = '#FFA000';
+  ctx.lineWidth = 1.6;
+  ctx.setLineDash([6, 5]);
+  ctx.beginPath();
+  ctx.moveTo(colDot + 8, 52);
+  ctx.lineTo(colDot + 8, 214);
+  ctx.stroke();
+  ctx.setLineDash([]);
+
+  ctx.font = 'bold 26px "Microsoft YaHei","Noto Sans SC",sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillStyle = '#1A237E';
+  // 第一行
+  ctx.fillText(String(SIM.ia), colInt, 92);
+  ctx.fillText('.', colDot + 8, 92);
+  ctx.fillText(String(SIM.da), colTen, 92);
+  // 第二行
+  ctx.fillStyle = '#FF6F00';
+  ctx.fillText(SIM.op, colInt - 32, 146);
+  ctx.fillStyle = '#1A237E';
+  ctx.fillText(String(SIM.ib), colInt, 146);
+  ctx.fillText('.', colDot + 8, 146);
+  ctx.fillText(String(SIM.db), colTen, 146);
+  // 横线
+  ctx.strokeStyle = '#1A237E';
+  ctx.lineWidth = 2.2;
+  ctx.beginPath();
+  ctx.moveTo(colInt - 46, 160);
+  ctx.lineTo(colTen + 26, 160);
+  ctx.stroke();
+  // 结果
+  ctx.fillStyle = r.ok ? '#3949AB' : '#C62828';
+  ctx.fillText(r.ok ? String(r.ir) : '?', colInt, 206);
+  if (r.ok) {
+    ctx.fillText('.', colDot + 8, 206);
+    ctx.fillText(String(r.dr), colTen, 206);
+  } else {
+    ctx.font = '15px "Microsoft YaHei","Noto Sans SC",sans-serif';
+    ctx.fillStyle = '#C62828';
+    ctx.fillText('不够减', colTen - 6, 206);
+  }
+
+  ctx.font = '12.5px "Microsoft YaHei","Noto Sans SC",sans-serif';
+  ctx.fillStyle = '#FF8F00';
+  ctx.fillText('小数点对齐', colDot + 8, 232);
+
+  // 底部：进位 / 退位提示
+  ctx.textAlign = 'center';
+  ctx.font = 'bold 17px "Microsoft YaHei","Noto Sans SC",sans-serif';
+  if (r.carry) {
+    ctx.fillStyle = '#C62828';
+    ctx.fillText('满十进一：' + r.nr + ' 个 0.1 = 1 个整 + ' + r.dr + ' 个 0.1', SIM_W / 2, 306);
+  } else if (r.borrow) {
+    ctx.fillStyle = '#C62828';
+    ctx.fillText('退一当十：' + r.na + ' 个 0.1 − ' + r.nb + ' 个 0.1 = ' + r.nr + ' 个 0.1', SIM_W / 2, 306);
+  } else if (!r.ok) {
+    ctx.fillStyle = '#C62828';
+    ctx.fillText('小数减大数，三年级还不算', SIM_W / 2, 306);
+  } else {
+    ctx.fillStyle = '#3949AB';
+    ctx.fillText(simNum(SIM.ia, SIM.da) + ' ' + simOpSign(SIM.op) + ' ' + simNum(SIM.ib, SIM.db) + ' 就是 ' + r.na + ' 个 0.1 ' + simOpSign(SIM.op) + ' ' + r.nb + ' 个 0.1', SIM_W / 2, 306);
+  }
+
+  simReadout(r);
+}
+
+function simReadout(r) {
+  r = r || simCalc();
+  var a = simNum(SIM.ia, SIM.da), b = simNum(SIM.ib, SIM.db);
+  var el = document.getElementById('simReadout');
+  if (el) {
+    if (!r.ok) el.textContent = a + ' − ' + b + '：不够减，先别算';
+    else el.textContent = a + ' ' + simOpSign(SIM.op) + ' ' + b + ' = ' + simNum(r.ir, r.dr);
+  }
+  var tip = document.getElementById('simTip');
+  if (!tip) return;
+  if (!r.ok) tip.textContent = '小数减大数，三年级还不算';
+  else if (r.carry) tip.textContent = r.na + ' + ' + r.nb + ' = ' + r.nr + ' 个 0.1，满十进一 → ' + simNum(r.ir, r.dr);
+  else if (r.borrow) tip.textContent = a + ' 是 ' + r.na + ' 个 0.1，' + r.na + ' − ' + r.nb + ' = ' + r.nr + ' 个 0.1';
+  else tip.textContent = r.na + ' 个 0.1' + (SIM.op === '+' ? ' 加 ' : ' 减 ') + r.nb + ' 个 0.1，是 ' + r.nr + ' 个 0.1';
+}
+
+function simLog(msg, hl) {
+  SIM.log.push({ t: msg, hl: !!hl });
+  if (SIM.log.length > 5) SIM.log.shift();
+  var box = document.getElementById('simLog');
+  if (!box) return;
+  box.innerHTML = SIM.log.map(function (x) {
+    return '<div' + (x.hl ? ' class="hl"' : '') + '>· ' + x.t + '</div>';
+  }).join('');
+}
+
+function simPreset(kind) {
+  if (SIM.busy) return;
+  if (kind === 'add') { SIM.ia = 0; SIM.da = 3; SIM.ib = 0; SIM.db = 4; SIM.op = '+'; }
+  else if (kind === 'carry') { SIM.ia = 0; SIM.da = 7; SIM.ib = 0; SIM.db = 6; SIM.op = '+'; }
+  else if (kind === 'sub') { SIM.ia = 0; SIM.da = 9; SIM.ib = 0; SIM.db = 4; SIM.op = '-'; }
+  else { SIM.ia = 1; SIM.da = 2; SIM.ib = 0; SIM.db = 5; SIM.op = '-'; }
+  var r = simCalc();
+  if (r.carry) simLog('0.7 + 0.6：13 个 0.1，满十进一 → 1.3', true);
+  else if (r.borrow) simLog('1.2 − 0.5：12 个 0.1 − 5 个 0.1 = 7 个 0.1 → 0.7', true);
+  else if (!r.ok) simLog('小数减大数，先换个题', false);
+  else simLog(simNum(SIM.ia, SIM.da) + ' ' + simOpSign(SIM.op) + ' ' + simNum(SIM.ib, SIM.db) + ' = ' + simNum(r.ir, r.dr), false);
+  simDraw();
+}
+
+function simBPlus() {
+  if (SIM.busy) return;
+  if (SIM.db < 9) SIM.db++;
+  else { SIM.db = 0; if (SIM.ib < 1) SIM.ib++; }
+  var r = simCalc();
+  simLog('第二个数变成 ' + simNum(SIM.ib, SIM.db) + '：' + (r.ok ? '结果 ' + simNum(r.ir, r.dr) : '不够减了'), !r.ok);
+  simDraw();
+}
+
+function simBMinus() {
+  if (SIM.busy) return;
+  if (SIM.db > 0) SIM.db--;
+  else if (SIM.ib > 0) { SIM.ib--; SIM.db = 9; }
+  var r = simCalc();
+  simLog('第二个数变成 ' + simNum(SIM.ib, SIM.db) + '：' + (r.ok ? '结果 ' + simNum(r.ir, r.dr) : '不够减了'), !r.ok);
+  simDraw();
+}
+
+function simReset() {
+  if (SIM.busy) return;
+  SIM.ia = 0; SIM.da = 3; SIM.ib = 0; SIM.db = 4; SIM.op = '+'; SIM.log = [];
+  var box = document.getElementById('simLog');
+  if (box) box.innerHTML = '';
+  simLog('已重置：0.3 + 0.4');
+  simDraw();
+}
+// ===== V4 总结页 =====
+function toggleCardV4(card){ card.classList.toggle('expanded'); }
+function expandAllV4(){ document.querySelectorAll('.summary-v4-card').forEach(function(c){ c.classList.add('expanded'); }); }
+function collapseAllV4(){ document.querySelectorAll('.summary-v4-card').forEach(function(c){ c.classList.remove('expanded'); }); }
+
+// ===== 初始显示 =====
+var _urlPage = getPageParam('page');
+var _initIdx = (_urlPage && PAGE_IDS.indexOf(_urlPage) >= 0) ? PAGE_IDS.indexOf(_urlPage) : 0;
+showPage(_initIdx);
+
 </script>
 </body>
 </html>

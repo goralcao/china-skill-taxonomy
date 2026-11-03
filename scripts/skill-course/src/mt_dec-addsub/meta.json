@@ -1,0 +1,38 @@
+{
+  "topicId": "mt_dec-addsub",
+  "title": "一位小数加减法：小数点对齐再算",
+  "template": "explain",
+  "renderer": "decimalBar",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 3,
+  "subject": "数学",
+  "standards": ["math-2022:S2:NA:NO"],
+  "prerequisites": ["mt_dec-intro", "mt_num-100-pen"],
+  "next": ["mt_dec-addsub2"],
+  "objectives": [
+    "理解相同数位对齐就是小数点对齐",
+    "会把一位小数换成几个 0.1 再加减",
+    "能在竖式中正确处理满十进一与退一当十"
+  ],
+  "cognitiveAction": "变换",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-04",
+  "nav": [
+    {"label": "封面", "page": 0, "cls": "active"},
+    {"label": "前测", "page": 1, "cls": "pre"},
+    {"label": "几个 0.1", "page": 2, "cls": ""},
+    {"label": "换成 0.1", "page": 3, "cls": ""},
+    {"label": "连一连", "page": 4, "cls": ""},
+    {"label": "中测1", "page": 5, "cls": "mid"},
+    {"label": "进位退位", "page": 6, "cls": ""},
+    {"label": "仿真", "page": 7, "cls": "sim"},
+    {"label": "中测2", "page": 8, "cls": "mid"},
+    {"label": "辨析", "page": 9, "cls": ""},
+    {"label": "后测", "page": 10, "cls": "post"},
+    {"label": "总结", "page": 11, "cls": "end"}
+  ]
+}
