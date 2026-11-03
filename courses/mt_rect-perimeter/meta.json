@@ -1,10 +1,10 @@
 {
   "topicId": "mt_rect-perimeter",
-  "title": "长方形和正方形的周长：一周边线有多长",
+  "title": "长方形和正方形的周长：沿边一圈才是周长",
   "template": "explain",
   "renderer": "geometry",
-  "duration": 13,
-  "interactions": 3,
+  "duration": 24,
+  "interactions": 16,
   "grade": 3,
   "subject": "数学",
   "standards": [
@@ -16,17 +16,80 @@
     "mt_num-100-addsub"
   ],
   "next": [
-    "mt_rect-area",
-    "mt_area-intro"
+    "mt_area-intro",
+    "mt_rect-area"
   ],
   "objectives": [
-    "能测量并算出课桌面的周长",
-    "能选择合适的方法计算组合图形的周长"
+    "理解周长是沿图形边缘一圈的长度，能指认并描出一圈",
+    "掌握长方形周长的三种算法，会用 (长+宽)×2 求周长",
+    "知道正方形周长 = 边长×4，能分清周长与面积（单位不同）"
   ],
   "cognitiveAction": "累积",
   "status": "reviewed",
   "author": "goral.cao",
   "license": "CC-BY-SA-4.0",
-  "version": "1.0.0",
-  "updatedAt": "2026-10-27"
+  "version": "3.0.0",
+  "updatedAt": "2026-11-04",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "围栅栏",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "长方形",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "正方形",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
 }

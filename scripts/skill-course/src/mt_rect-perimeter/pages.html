@@ -1,0 +1,499 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>沿边跑一圈，这一圈有多长？</h1>
+  <p class="sub">三年级数学 · 长方形和正方形的周长</p>
+  <div class="tags">
+    <span class="tag">沿边一圈</span>
+    <span class="tag">对边相等</span>
+    <span class="tag">别和面积混</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 460 220" width="440" height="210" role="img" aria-label="长方形长 6 厘米、宽 4 厘米，沿边虚线一圈，周长 6+4+6+4 等于 20 厘米">
+      <rect x="80" y="42" width="240" height="160" fill="rgba(255,255,255,.12)" stroke="#FFE8C7" stroke-width="3" stroke-dasharray="9 6"/>
+      <text x="190" y="30" font-size="20" fill="#FFFFFF" font-family="sans-serif">6 厘米</text>
+      <text x="330" y="130" font-size="20" fill="#FFFFFF" font-family="sans-serif">4 厘米</text>
+      <text x="110" y="130" font-size="24" fill="#FFE8C7" font-family="monospace">里面 24 格</text>
+      <text x="80" y="230" font-size="19" fill="#FFFFFF" font-family="monospace">周长 = 6+4+6+4 = 20 厘米</text>
+    </svg>
+  </div>
+  <p style="font-size:20px;color:rgba(255,255,255,.92);max-width:560px;line-height:1.8;">
+    给花坛围栅栏、给相框钉木条、绕操场跑一圈——<br>
+    量的都是「沿边一圈」的长度。今天把它量清楚。
+  </p>
+  <p class="hint">点击右下角箭头开始 或 点击顶部导航跳转</p>
+  <a href="../../viz/index.html#t=mt_rect-perimeter" style="margin-top:16px;color:rgba(255,255,255,.78);font-size:16px;text-decoration:underline">← 回到知识图谱</a>
+</div>
+</section>
+
+<!-- ===== p1: 前测 ===== -->
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先猜三道，凭感觉答</h2>
+  <p class="quiz-hint">三道生活题，看你会不会把「围一圈」算成「铺满一片」。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 一根绳子绕长方形手帕一圈正好用完，绳长就是手帕的什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>周长</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>面积</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>边长</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 长方形长 6 厘米、宽 4 厘米，四条边一共多长？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>10 厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>20 厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>24 厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 正方形边长 5 厘米，沿边一圈多长？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>10 厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>20 厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>25 厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 引入 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">长 6 厘米、宽 4 厘米，绕一圈到底多长？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 320 240" width="260" height="195" role="img" aria-label="长方形长 6 厘米宽 4 厘米，里面 24 格是面积，沿边一圈是周长 20 厘米">
+      <rect x="40" y="46" width="240" height="160" fill="#E4F0DF" stroke="#2E7D32" stroke-width="4"/>
+      <g stroke="#C2DEC0" stroke-width="1">
+        <line x1="80" y1="46" x2="80" y2="206"/><line x1="120" y1="46" x2="120" y2="206"/>
+        <line x1="160" y1="46" x2="160" y2="206"/><line x1="200" y1="46" x2="200" y2="206"/>
+        <line x1="240" y1="46" x2="240" y2="206"/>
+        <line x1="40" y1="86" x2="280" y2="86"/><line x1="40" y1="126" x2="280" y2="126"/>
+        <line x1="40" y1="166" x2="280" y2="166"/>
+      </g>
+      <text x="120" y="132" font-size="22" fill="#2E7D32" font-family="monospace">里面 24 格</text>
+      <text x="120" y="34" font-size="18" fill="#FB8C00" font-family="sans-serif">6 厘米</text>
+      <text x="286" y="132" font-size="18" fill="#FB8C00" font-family="sans-serif">4 厘米</text>
+      <text x="40" y="238" font-size="18" fill="#00695C" font-family="monospace">沿边一圈 = 20 厘米</text>
+    </svg>
+  </div>
+  <p class="teach-text" id="p2s1">
+    给花坛围栅栏，要买多长的栅栏？量的是<strong>沿边一圈</strong>，不是里面铺满多少格。
+  </p>
+  <p class="teach-text" id="p2s2">
+    有人直接 <strong>6×4=24</strong>（厘米），可 24 是里面<strong>铺满格子</strong>的数量，那是面积；绕边一圈是 <strong>6+4+6+4=20 厘米</strong>。
+  </p>
+  <p class="teach-text" id="p2s3">
+    6 厘米、4 厘米只是两条边的长。长方形对边一样长，所以四条边是 6、4、6、4，一段都不能少。
+  </p>
+</div>
+
+<div class="key-box" id="p2s4">
+  周长量的是<strong>边</strong>，面积量的是<strong>面</strong>。单位先分清：厘米 对 平方厘米。
+</div>
+</section>
+
+<!-- ===== p3: 概念1 长方形三种算法 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">长方形周长：三种算法，答案一样</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 320 230" width="250" height="180" role="img" aria-label="长方形长 6 厘米宽 4 厘米，四条边分别标出长度">
+      <rect x="45" y="55" width="230" height="150" fill="none" stroke="#2E7D32" stroke-width="4"/>
+      <text x="110" y="44" font-size="18" fill="#FB8C00" font-family="sans-serif">长 6</text>
+      <text x="110" y="228" font-size="18" fill="#FB8C00" font-family="sans-serif">长 6</text>
+      <text x="20" y="135" font-size="18" fill="#2E7D32" font-family="sans-serif">宽 4</text>
+      <text x="285" y="135" font-size="18" fill="#2E7D32" font-family="sans-serif">宽 4</text>
+      <circle cx="45" cy="55" r="5" fill="#C62828"/><circle cx="275" cy="55" r="5" fill="#C62828"/>
+      <circle cx="275" cy="205" r="5" fill="#C62828"/><circle cx="45" cy="205" r="5" fill="#C62828"/>
+    </svg>
+  </div>
+  <p class="teach-text" id="p3s1">
+    四条边围成一周，把它们的长度加起来，就是周长。加法最稳，先把这一步走扎实。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>① 一条一条加</strong>：6 + 4 + 6 + 4 = 20 厘米。</li>
+  <li><strong>② 两组对边</strong>：两条长 6×2=12，两条宽 4×2=8，12+8=20 厘米。</li>
+  <li><strong>③ 长加宽再乘 2</strong>：(6+4)×2 = 10×2 = 20 厘米。</li>
+</ul>
+
+<table class="teach-table" id="p3table">
+  <tr><th>算法</th><th>算式</th><th>结果</th></tr>
+  <tr><td>一条一条加</td><td>6+4+6+4</td><td>20 厘米</td></tr>
+  <tr><td>两组对边</td><td>6×2 + 4×2</td><td>20 厘米</td></tr>
+  <tr><td>长加宽再乘 2</td><td>(6+4)×2</td><td>20 厘米</td></tr>
+</table>
+
+<div class="key-box" id="p3key">
+  三种算法殊途同归。最省事的是 <strong>（长+宽）×2</strong>——它把「两组长+宽」一次算完。
+</div>
+</section>
+
+<!-- ===== p3b: 连线巩固 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：每种说法对应哪道算式</h2>
+<p class="teach-text" id="p3bs1">先点左边的说法，再点右边的算式，连对了变绿。</p>
+<div id="matchP3"></div>
+</section>
+
+<!-- ===== p4: 中测1 ===== -->
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 长方形周长</h2>
+  <p class="quiz-hint">盯住一件事：周长算「边」，不是算「面」。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 长方形长 8 厘米、宽 3 厘米，周长是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>22 厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>11 厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>24 厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 下面哪种算法求长方形周长最省事？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>长 × 宽</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>（长 + 宽）× 2</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>长 + 宽</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 长方形长 5 米、宽 2 米，周长是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>7 米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>10 米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>14 米</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 概念2 正方形与辨析 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">正方形周长：边长 × 4</h2>
+<p class="teach-text" id="p5s1">正方形四条边一样长，不用一条一条加——知道一条边，周长就定了。</p>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>① 正方形 = 边长 × 4</h4>
+    <div class="eq">边长 5 厘米<br>5 × 4 = 20 厘米<br>四条边一样长，乘 4</div>
+    <p>正方形是特殊的长方形，长和宽相等，算法还能更短。</p>
+  </div>
+  <div class="card">
+    <h4>② 对边相等是捷径</h4>
+    <div class="eq">长方形对边相等<br>长出现 2 次，宽出现 2 次<br>(长+宽)×2 才成立</div>
+    <p>正因为对边一样长，才能把两条长、两条宽各合成一组。</p>
+  </div>
+  <div class="card">
+    <h4>③ 周长 ≠ 面积</h4>
+    <div class="eq">6×4 = 24（平方厘米）<br>6+4+6+4 = 20（厘米）<br>一个量面，一个量边</div>
+    <p>24 是里面铺满格子的数；20 是沿边一圈的长度。单位都不同。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  周长单位是「厘米/米」，面积单位带「平方」。<strong>单位不同，就不是一回事</strong>。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">沿边走一圈：长和宽变一变，周长跟着变</h2>
+  <p class="sim-desc">点「沿边走一步」，四条边依次亮起、长度一段段累加；也能把长或宽加 1，或变成正方形，看周长怎么变。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">准备：长 6 厘米，宽 4 厘米</span>
+    <span class="sim-tip" id="simTip">点「沿边走一步」，看四条边依次加进来</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simNext()">沿边走一步</button>
+    <button class="btn-primary" onclick="simDemo()">走一圈</button>
+    <button class="btn-retry" onclick="simLonger()">长 +1</button>
+    <button class="btn-retry" onclick="simWider()">宽 +1</button>
+    <button class="btn-retry" onclick="simSquare()">变正方形</button>
+    <button class="btn-retry" onclick="simReset()">重置</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="860" height="332"></canvas>
+      <p class="cap">点亮到哪条边，就把它的长度加进总数；走满四条边，就是周长</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>沿边走一圈，为什么正好是四步？长和宽各出现了几次？</li>
+    <li>把长加 1，周长会变多少？为什么不是变 1？</li>
+    <li>变成正方形以后，为什么可以写成「边长×4」？</li>
+    <li>周长 20 厘米和面积 24 平方厘米，差在哪一个词上？</li>
+  </ul>
+</div>
+</section>
+
+<!-- ===== p7: 中测2 ===== -->
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 正方形与逆推</h2>
+  <p class="quiz-hint">正方形四条边一样长，正着算、倒着算都要会。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 正方形边长 7 厘米，周长是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>14 厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>28 厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>49 厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 长方形长 10 米、宽 6 米，周长是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>16 米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>32 米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>60 米</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 一个正方形的周长是 20 厘米，它的边长是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5 厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>80 厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>10 厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 易错辨析 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四种错法，都错在「边和面」</h2>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 把面积当周长</h4>
+    <div class="wrong-num">✗ 6×4=24 厘米</div>
+    <p>24 是面积（平方厘米）。周长要沿边一圈：6+4+6+4=<strong>20 厘米</strong>。</p>
+  </div>
+
+  <div class="card">
+    <h4>② 只加两条边</h4>
+    <div class="wrong-num">✗ 6+4=10 厘米</div>
+    <p>漏了两条对边。长方形四条边都要算：<strong>6+4+6+4=20</strong>。</p>
+  </div>
+
+  <div class="card">
+    <h4>③ 正方形用 边长×2</h4>
+    <div class="wrong-num">✗ 5×2=10 厘米</div>
+    <p>正方形有四条边，不是两条：5×4=<strong>20 厘米</strong>。</p>
+  </div>
+
+  <div class="card">
+    <h4>④ 单位写成「平方」</h4>
+    <div class="wrong-num">✗ 周长 20 平方厘米</div>
+    <p>周长是长度，用<strong>厘米</strong>；面积才用平方厘米。单位错，整题就错。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  四种错法，根子是同一个：<strong>没分清「围一圈的边」和「铺满的面」</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到相框：长 30 厘米、宽 20 厘米，钉一圈木条要多长？(30+20)×2 = <strong>100 厘米</strong>。
+</p>
+</section>
+
+<!-- ===== p9: 后测 ===== -->
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，盯死边和单位</h2>
+  <p class="quiz-hint">先想「量的是边还是面」，再动手算。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 长方形长 9 厘米、宽 4 厘米，周长是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>26 厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>13 厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>36 厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 正方形边长 6 米，周长是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>12 米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>36 米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>24 米</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 一块长方形菜地长 12 米、宽 8 米，四周围篱笆，篱笆要多长？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>20 米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>40 米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>96 米</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 一个正方形的周长是 24 厘米，它的边长是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>6 厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>12 厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>96 厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 下面说法正确的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>周长 20 厘米就是面积 20 平方厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>长方形周长 = 长 × 宽</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>周长是沿边一圈的长度</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">定义</div>
+        <div class="summary-v4-summary">沿边一圈</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-inner">
+          <div class="summary-v4-flip-front">量什么<span class="fh">点击翻面</span></div>
+          <div class="summary-v4-flip-back">周长是围图形一圈的长度<br>从一边出发，沿边走回起点<br>不是里面铺满多少格</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">长方形</div>
+        <div class="summary-v4-summary">(长+宽)×2</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-inner">
+          <div class="summary-v4-flip-front">怎么算<span class="fh">点击翻面</span></div>
+          <div class="summary-v4-flip-back">一条条加：6+4+6+4<br>两组对边：6×2+4×2<br>最省事：(长+宽)×2</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">正方形</div>
+        <div class="summary-v4-summary">边长 × 4</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-inner">
+          <div class="summary-v4-flip-front">怎么算<span class="fh">点击翻面</span></div>
+          <div class="summary-v4-flip-back">四条边一样长<br>周长 = 边长 × 4<br>反过来：边长 = 周长 ÷ 4</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">辨析</div>
+        <div class="summary-v4-summary">周长 ≠ 面积</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-inner">
+          <div class="summary-v4-flip-front">差在哪<span class="fh">点击翻面</span></div>
+          <div class="summary-v4-flip-back">周长量边，单位是厘米、米<br>面积量面，单位带平方<br>6×4=24 平方厘米 是面积，不是周长</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<p class="teach-text" style="margin-top:18px;color:#1B4D1F;font-size:19px">
+  下次看到「围一圈」「镶边框」「跑一圈」，先问：这是周长；再问：量的是哪几条边？
+</p>
+</section>
