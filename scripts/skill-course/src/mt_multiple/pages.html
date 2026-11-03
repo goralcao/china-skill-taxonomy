@@ -1,0 +1,533 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>3 个一组，摆 2 组，一共几个？<br>很多人会答 5</h1>
+  <p class="sub">三年级数学 · 倍的认识</p>
+  <div class="tags">
+    <span class="tag">倍 = 几个几</span>
+    <span class="tag">用乘法算</span>
+    <span class="tag">倍是成组出现</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 520 200" width="460" height="177" role="img" aria-label="第一行 3 个圆点（标准），第二行再 3 个，共 2 组">
+      <defs>
+        <marker id="arwMul" markerWidth="10" markerHeight="10" refX="6" refY="4" orient="auto">
+          <path d="M0 0 L8 4 L0 8 z" fill="#FF8F00"/>
+        </marker>
+      </defs>
+      <g transform="translate(40,60)">
+        <circle cx="20" cy="20" r="16" fill="#4527A0"/>
+        <circle cx="60" cy="20" r="16" fill="#4527A0"/>
+        <circle cx="100" cy="20" r="16" fill="#4527A0"/>
+        <text x="60" y="-6" text-anchor="middle" font-size="15" fill="#7E57C2">标准 · 1 倍</text>
+      </g>
+      <text x="190" y="88" text-anchor="middle" font-size="30" fill="#FF8F00">×2 组</text>
+      <g transform="translate(300,60)">
+        <circle cx="20" cy="20" r="16" fill="#FF8F00"/>
+        <circle cx="60" cy="20" r="16" fill="#FF8F00"/>
+        <circle cx="100" cy="20" r="16" fill="#FF8F00"/>
+        <text x="60" y="-6" text-anchor="middle" font-size="15" fill="#FF8F00">再来 1 组</text>
+      </g>
+    </svg>
+  </div>
+  <p style="font-size:20px;color:rgba(255,255,255,.9);max-width:560px;line-height:1.8;">
+    乘法你会了，可「倍」到底是什么意思？<br>
+    它和「多 2 个」长得像，却要换个算法。
+  </p>
+  <p class="hint">点击右下角箭头开始 或 点击顶部导航跳转</p>
+  <a href="../../viz/index.html#t=mt_multiple" style="margin-top:16px;color:rgba(255,255,255,.78);font-size:16px;text-decoration:underline">← 回到知识图谱</a>
+</div>
+</section>
+
+<!-- ===== p1: 前测 ===== -->
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先猜三道，凭感觉答</h2>
+  <p class="quiz-hint">三道生活题，不用算，凭直觉。答完看解析。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 第一排 3 把椅子，第二排比第一排多 2 把。第二排几把？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5 把</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>6 把</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>1 把</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 一盘草莓 4 个，这样的 2 盘一共几个？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>6 个</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>8 个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>2 个</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 小华攒了 5 颗星，小丽比小华多 5 颗。小丽有几颗？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>10 颗</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>6 颗</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>5 颗</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 引入 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">再贴 2 行、每行 3 颗星，一共几颗？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 300 200" width="260" height="173" role="img" aria-label="黑板报第一行 3 颗星，下面写再贴 2 行每行 3 颗">
+      <rect x="20" y="14" width="260" height="172" rx="12" fill="#ECE4F7" stroke="#4527A0" stroke-width="3"/>
+      <text x="150" y="40" text-anchor="middle" font-size="15" fill="#4527A0">黑板报 · 第一行</text>
+      <text x="44" y="74" font-size="26" fill="#FF8F00">★</text>
+      <text x="84" y="74" font-size="26" fill="#FF8F00">★</text>
+      <text x="124" y="74" font-size="26" fill="#FF8F00">★</text>
+      <text x="150" y="128" text-anchor="middle" font-size="14" fill="#5E35B1">再贴 2 行，每行 3 颗</text>
+      <text x="150" y="158" text-anchor="middle" font-size="13" fill="#7E57C2">小明 5 · 小红 6 · 小刚 9</text>
+    </svg>
+  </div>
+  <p class="teach-text" id="p2s1">
+    黑板报第一行贴了 <strong>3 颗星</strong>。老师说：再贴 2 行，每行 3 颗。
+  </p>
+  <p class="teach-text" id="p2s2">
+    一共几颗？小明说 <strong>5</strong>，小红说 <strong>6</strong>，小刚说 <strong>9</strong>。三个人都听清了，答案却差一倍。
+  </p>
+  <p class="teach-text" id="p2s2b">
+    这和你攒了 <strong>3 元</strong> 零花钱、同桌说「他有你的 2 倍」时，有人算成 <strong>5 元</strong>（3+2），是同一个坑。
+  </p>
+</div>
+
+<div class="ans-cards" id="p2cards">
+  <div class="ans-card">
+    <div class="ans-num">5 颗</div>
+    <div class="ans-who">小明：3 + 2 = 5</div>
+    <button class="ans-btn" onclick="toggleAns(this)">他错在哪</button>
+    <div class="ans-why">小明把「2 行」当成了「多 2」，用了加法 3+2。可老师说的是「每行 3 颗、共 2 行」，是 2 个 3。</div>
+  </div>
+  <div class="ans-card">
+    <div class="ans-num">9 颗</div>
+    <div class="ans-who">小刚：数了所有星星</div>
+    <button class="ans-btn" onclick="toggleAns(this)">他错在哪</button>
+    <div class="ans-why">小刚想数满 3 行（3×3=9），可老师只说再贴 2 行。第一行 + 再 2 行 = 3 行没错，但他把「再 2 行」数成了「再多 2 行每行更多」，算乱了。</div>
+  </div>
+</div>
+
+<div class="key-box" id="p2s3">
+  小红的 <strong>6 = 3×2</strong>，才是「2 行每行 3 颗」的意思。这个「几行每行几个」的说法，就是今天的主角——<strong>倍</strong>。
+</div>
+</section>
+
+<!-- ===== p3: 概念1 倍 = 几个几 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">倍，就是「有几组」</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 300 200" width="240" height="160" role="img" aria-label="第一行 3 个圆（标准），第二行 3 个圆，共 2 组">
+      <circle cx="60" cy="50" r="15" fill="#4527A0"/>
+      <circle cx="100" cy="50" r="15" fill="#4527A0"/>
+      <circle cx="140" cy="50" r="15" fill="#4527A0"/>
+      <text x="100" y="24" text-anchor="middle" font-size="14" fill="#4527A0">标准 · 1 倍</text>
+      <circle cx="60" cy="110" r="15" fill="#FF8F00"/>
+      <circle cx="100" cy="110" r="15" fill="#FF8F00"/>
+      <circle cx="140" cy="110" r="15" fill="#FF8F00"/>
+      <text x="100" y="150" text-anchor="middle" font-size="14" fill="#FF8F00">再来 1 组</text>
+      <text x="200" y="85" text-anchor="middle" font-size="18" fill="#5E35B1">= 3 的 2 倍</text>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    第一行 3 个，第二行又来 3 个。这就叫 <strong>2 组 3 个</strong>，也就是 3 的 2 倍。
+  </p>
+  <p class="teach-text" id="p3s2">
+    记住三句话，倍就不会和「多几个」搞混。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>① 几倍 = 几个几</strong>：3 的 2 倍，就是 2 个 3，等于 6。</li>
+  <li><strong>② 不是「多 2 个」</strong>：3 的 2 倍是 6，不是 5（5 是比 3 多 2）。</li>
+  <li><strong>③ 「的」字后面是倍数</strong>：3 的 2 倍 → 拿 3 去乘 2。</li>
+</ul>
+
+<table class="teach-table" id="p3table">
+  <tr><th>说法</th><th>算法</th><th>结果</th></tr>
+  <tr><td>3 的 2 倍</td><td>3 × 2</td><td>6</td></tr>
+  <tr><td>4 的 3 倍</td><td>4 × 3</td><td>12</td></tr>
+  <tr><td>比 3 多 2</td><td>3 + 2</td><td>5</td></tr>
+</table>
+
+<div class="key-box" id="p3key">
+  「倍」是<strong>乘法</strong>的语言，「多几」是<strong>加法</strong>的语言。看见「倍」就想到成组、想到乘。
+</div>
+</section>
+
+<!-- ===== p3b: 连线巩固 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：谁是乘，谁是加</h2>
+<p class="teach-text" id="p3bs1">先点左边的说法，再点右边的算式结果，连对了变绿。注意「倍」走乘法、「多」走加法。</p>
+<div id="matchP3"></div>
+</section>
+
+<!-- ===== p4: 中测1 ===== -->
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 倍的意义</h2>
+  <p class="quiz-hint">只看一件事：几倍就是几个几。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 第一行 3 个○，第二行摆 2 个 3，第二行是第一行的几倍？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>2 倍</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3 倍</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>5 倍</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 下面哪句话的意思是「3 的 2 倍」？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>比 3 多 2</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>2 个 3</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3 个 2</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 6 是 3 的几倍？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>2 倍</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3 倍</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>9 倍</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 概念2 两问法 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">两种问法，两种算法</h2>
+<p class="teach-text" id="p5s1">「倍」会出两种题，一种是「求几倍量」，一种是「求几倍」，算法不一样。</p>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>① 求几倍量（用乘）</h4>
+    <div class="eq">小红的钱是小明的 3 倍<br>小明 4 元 → 4 × 3 = 12 元</div>
+    <p>「的」字后面跟几倍，就拿前面的数去乘几。</p>
+  </div>
+  <div class="card">
+    <h4>② 求几倍（用除）</h4>
+    <div class="eq">12 是 3 的几倍？<br>12 ÷ 3 = 4（倍）</div>
+    <p>问「是几倍」，就看大数里有几个小数，用除法。</p>
+  </div>
+  <div class="card">
+    <h4>③ 一句口诀</h4>
+    <div class="eq">「的」后跟几倍 → 乘<br>问「是几倍」→ 除</div>
+    <p>同一个 12 和 3，方向不同，乘除不同。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  倍的两问，<strong>一个乘一个除</strong>：求「有多少」用乘，求「是几倍」用除。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">摆一摆：第一行是标准，每加一行就多 1 倍</h2>
+  <p class="sim-desc">第一行是「标准」（1 倍）。点「加一行」复制一整行，看看变成几倍；点「减一行」去掉一行。读数会告诉你这是 N 的几倍。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">3 的 1 倍 = 3 个</span>
+    <span class="sim-tip" id="simTip">现在只有标准行（1 倍）</span>
+  </div>
+
+  <div class="sim-controls">
+    <span style="align-self:center;font-size:15px;color:#5E35B1">基数：</span>
+    <button class="btn-primary" onclick="simSetBase(3)">3</button>
+    <button class="btn-primary" onclick="simSetBase(4)">4</button>
+    <button class="btn-primary" onclick="simSetBase(5)">5</button>
+    <button class="btn-primary" onclick="simAddRow()">+ 一行</button>
+    <button class="btn-retry" onclick="simSubRow()">− 一行</button>
+  </div>
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simDemo(3,2)">演示：3 的 2 倍</button>
+    <button class="btn-primary" onclick="simDemo(4,3)">演示：4 的 3 倍</button>
+    <button class="btn-retry" onclick="simReset()">清空重来</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="860" height="332"></canvas>
+      <p class="cap">第 1 行是标准（紫色描边）；其余每行是「再来一组」（琥珀金）——行数就是倍数</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>加一行后，读数从「3 的 1 倍」变成什么？倍数为什么 +1？</li>
+    <li>点「演示：3 的 2 倍」，画面是几行？每行几个？</li>
+    <li>减到只剩 1 行，读数说什么？为什么 1 行就是「自己、1 倍」？</li>
+    <li>把基数换成 5 再演示 5 的 3 倍，一共多少个？5×3 等于几？</li>
+  </ul>
+</div>
+</section>
+
+<!-- ===== p7: 中测2 ===== -->
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 求几倍 / 求几倍量</h2>
+  <p class="quiz-hint">看清是「乘」还是「除」，再下笔。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 小明有 4 元，小红的钱是小明的 3 倍。小红有几元？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>7 元</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>12 元</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>1 元</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 8 是 2 的几倍？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>4 倍</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>6 倍</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>10 倍</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 一盒 5 支笔，买 3 盒一共几支？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>8 支</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>2 支</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>15 支</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 易错辨析 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四种错法，都错在「把倍当加法」</h2>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 倍当「多几」</h4>
+    <div class="wrong-num">✗ 3 的 2 倍 = 5</div>
+    <p>把 2 倍当成「多 2 个」，3+2=5。正解 <strong>2 个 3 = 6</strong>。</p>
+  </div>
+
+  <div class="card">
+    <h4>② 求几倍用加</h4>
+    <div class="wrong-num">✗ 12 是 3 的几倍 = 15</div>
+    <p>算成 12+3。求几倍要用除法：12÷3 = <strong>4 倍</strong>。</p>
+  </div>
+
+  <div class="card">
+    <h4>③ 「的」前后搞反</h4>
+    <div class="wrong-num">✗ 3 个 2 = 3 的 2 倍</div>
+    <p>3 个 2 是 2 的 3 倍（主语是 2）。3 的 2 倍 = <strong>2 个 3 = 6</strong>。</p>
+  </div>
+
+  <div class="card">
+    <h4>④ 求几倍量漏乘</h4>
+    <div class="wrong-num">✗ 小明 4 元，3 倍 = 7 元</div>
+    <p>又加了：4+3=7。3 倍是 3 个 4：4×3 = <strong>12 元</strong>。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  四种错法，根子只有一个：<strong>看见「倍」却用了加法</strong>。倍是乘，多是加。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到跳绳比赛：小红跳 20 下，小明是小红的 3 倍 → 20 × 3 = <strong>60 下</strong>。
+</p>
+</section>
+
+<!-- ===== p9: 后测 ===== -->
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，分清算乘还是除</h2>
+  <p class="quiz-hint">慢一点，先判断这一题是「求几倍量」还是「求几倍」。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 第一行 5 个△，第二行是第一行的 2 倍，第二行几个？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>7 个</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>10 个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3 个</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 12 是 4 的几倍？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>3 倍</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>8 倍</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>16 倍</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 一个书包 30 元，妈妈买了 4 个这样的书包，一共多少元？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>34 元</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>26 元</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>120 元</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 跳绳比赛，小红跳了 20 下，小明跳的下数是小红的 3 倍。小明跳了几下？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>23 下</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>60 下</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>17 下</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 小刚有 6 颗糖，小强的糖是小刚的 2 倍。小强比小刚多几颗？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>6 颗</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>12 颗</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>18 颗</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">倍的意义</div>
+        <div class="summary-v4-summary">几倍 = 几个几</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-inner">
+          <div class="summary-v4-flip-front">怎么想<span class="fh">点击翻面</span></div>
+          <div class="summary-v4-flip-back">3 的 2 倍 = 2 个 3 = 6<br>不是比 3 多 2（那是 5）<br>「的」字后面是倍数，拿前面的数去乘</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">两种问法</div>
+        <div class="summary-v4-summary">一个乘，一个除</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-inner">
+          <div class="summary-v4-flip-front">怎么选<span class="fh">点击翻面</span></div>
+          <div class="summary-v4-flip-back">求几倍量（的×倍）→ 乘：4 的 3 倍 = 4×3=12<br>求几倍（是÷标准）→ 除：12÷3=4 倍<br>问「有多少」用乘，问「是几倍」用除</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">倍 vs 多几</div>
+        <div class="summary-v4-summary">乘还是加</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-inner">
+          <div class="summary-v4-flip-front">别混<span class="fh">点击翻面</span></div>
+          <div class="summary-v4-flip-back">倍是乘法语言（成组、×）：3 的 2 倍 = 6<br>多是加法语言（加几、+）：比 3 多 2 = 5<br>看见「倍」就想到乘，别顺手加</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">常见坑</div>
+        <div class="summary-v4-summary">四个别踩</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-inner">
+          <div class="summary-v4-flip-front">别踩<span class="fh">点击翻面</span></div>
+          <div class="summary-v4-flip-back">① 倍≠多几：2 倍不是 +2<br>② 求几倍用除别加：12÷3=4<br>③ 「的」前后别反：3 个 2 是 2 的 3 倍<br>④ 求几倍量用乘：4×3=12 不是 4+3</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<p class="teach-text" style="margin-top:18px;color:#5E35B1;font-size:19px">
+  下次看到「倍」，先问自己：它是要我乘，还是要我除？
+</p>
+</section>

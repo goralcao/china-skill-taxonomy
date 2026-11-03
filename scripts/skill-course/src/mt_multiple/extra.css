@@ -1,0 +1,31 @@
+/* ===== 本课追加：封面标签、答案卡、易错数字、倍算式 ===== */
+
+/* 封面 tag：深紫底配琥珀金，和封面主色统一 */
+.cover-page .tag{background:rgba(255,143,0,.85);border:1px solid rgba(255,255,255,.35);color:#3A1E00}
+
+/* 引入页两张答案卡（他说的话 + 点开看错因） */
+.ans-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:18px 0 8px}
+.ans-card{background:#fff;border:2px solid var(--line);border-radius:14px;padding:16px 12px;text-align:center;transition:all .25s}
+.ans-card .ans-num{font-size:34px;font-weight:900;color:var(--primary);line-height:1.1;font-variant-numeric:tabular-nums}
+.ans-card .ans-who{font-size:15px;color:var(--primary-light);margin-top:2px}
+.ans-card .ans-btn{margin-top:10px;padding:6px 14px;border-radius:16px;border:1.5px solid var(--accent);background:var(--paper);color:#7A4A00;font-size:15px;font-weight:700;cursor:pointer}
+.ans-card .ans-btn:hover{background:var(--accent-soft)}
+.ans-card .ans-why{display:none;margin-top:10px;font-size:16px;line-height:1.6;color:var(--red);text-align:left;border-top:1px dashed var(--line);padding-top:8px}
+.ans-card.open{border-color:var(--red);background:#FFF7F4}
+.ans-card.open .ans-why{display:block}
+
+/* p5：两种问法——三列卡片 */
+#p5cards.card-grid{grid-template-columns:repeat(3,1fr)}
+.card .eq{font-size:19px;font-weight:800;color:var(--primary);margin:8px 0;font-variant-numeric:tabular-nums;line-height:1.5}
+
+/* p8：易错卡里的错版数字 */
+.wrong-num{font-size:25px;font-weight:800;color:var(--red);margin:4px 0 8px;font-variant-numeric:tabular-nums}
+
+/* ===== 窄屏适配 ===== */
+@media (max-width:640px){
+  .ans-cards{grid-template-columns:1fr}
+  #p5cards.card-grid{grid-template-columns:1fr}
+  .card .eq{font-size:16px}
+  .wrong-num{font-size:20px}
+  .cover-fig svg{width:100%;height:auto}
+}

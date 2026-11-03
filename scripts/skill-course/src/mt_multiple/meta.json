@@ -1,0 +1,38 @@
+{
+  "topicId": "mt_multiple",
+  "title": "倍的认识：几个几",
+  "template": "explain",
+  "renderer": "geometry",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 3,
+  "subject": "数学",
+  "standards": ["math-2022:S2:NA:AR"],
+  "prerequisites": ["mt_mul-meaning", "mt_num-100-addsub"],
+  "next": ["mt_ratio"],
+  "objectives": [
+    "理解「倍」表示几个几，不是「多几个」",
+    "能求一个数的几倍是多少（用乘法）",
+    "能求一个数是另一个数的几倍（用除法）"
+  ],
+  "cognitiveAction": "比较",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-04",
+  "nav": [
+    {"label": "封面", "page": 0, "cls": "active"},
+    {"label": "前测", "page": 1, "cls": "pre"},
+    {"label": "贴星", "page": 2, "cls": ""},
+    {"label": "几个几", "page": 3, "cls": ""},
+    {"label": "连一连", "page": 4, "cls": ""},
+    {"label": "中测1", "page": 5, "cls": "mid"},
+    {"label": "两问法", "page": 6, "cls": ""},
+    {"label": "仿真", "page": 7, "cls": "sim"},
+    {"label": "中测2", "page": 8, "cls": "mid"},
+    {"label": "辨析", "page": 9, "cls": ""},
+    {"label": "后测", "page": 10, "cls": "post"},
+    {"label": "总结", "page": 11, "cls": "end"}
+  ]
+}
