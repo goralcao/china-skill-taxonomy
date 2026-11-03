@@ -133,9 +133,11 @@ for (const name of dirs) {
     }
   });
   // renderer 白名单 + 是否真的调用了对应呈现器
+  // 技能型课件（data-cw="skill"）是页面驱动，meta.renderer 只作为知识图谱上的学科标注，
+  // 不存在 CR.xxx 调用，故跳过「是否真的调用」这条（第 7.75 段另有页面构成校验）。
   if (meta.renderer && !RENDERERS.includes(meta.renderer)) {
     fail(rel, `meta.renderer=${meta.renderer} 不在白名单（${RENDERERS.join(' / ')}）`);
-  } else if (meta.renderer && meta.renderer !== 'text' && !html.includes('content-loader')
+  } else if (!isSkill && meta.renderer && meta.renderer !== 'text' && !html.includes('content-loader')
              && !html.includes('CR.' + meta.renderer + '(')) {
     // 引擎型课件的 CR 调用在 engine.js 里，源码看不到，跳过这条
     warn(rel, `renderer=${meta.renderer}，但没找到 CR.${meta.renderer}( 调用`);

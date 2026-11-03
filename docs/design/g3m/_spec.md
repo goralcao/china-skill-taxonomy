@@ -71,6 +71,8 @@ Expected:    学生应该发现什么
 
 ## 6. 逐课设计文件
 
-已完成：`mt_time-hms.md`（时分秒，样板课，含全部 14 题与仿真 spec）
+已完成：`mt_time-hms.md`（时分秒，样板课）、`mt_addsub-10000.md`（万以内加减）
+
+分片源码在 `scripts/skill-course/src/<topicId>/`，改完跑 `python3 scripts/skill-course/build_course.py <topicId>` 装配。
 
 其余 15 课在开发到该课时先产出逐页设计再写码——避免一次写 16 份后大面积返工。

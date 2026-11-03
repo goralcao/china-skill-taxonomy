@@ -1,0 +1,507 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>钟面上三根针，谁跑得最快？</h1>
+  <p class="sub">三年级数学 · 时、分、秒</p>
+  <div class="tags">
+    <span class="tag">钟面结构</span>
+    <span class="tag">60 进制换算</span>
+    <span class="tag">经过时间</span>
+  </div>
+  <p style="font-size:20px;color:rgba(255,255,255,.9);max-width:520px;line-height:1.8;">
+    一集动画片 20 分钟，跑 50 米 10 秒。<br>
+    时间看不见，钟表把它变成了会走的针。
+  </p>
+  <p class="hint">点击右下角箭头开始 或 点击顶部导航跳转</p>
+  <a href="../../viz/index.html#t=mt_time-hms" style="margin-top:16px;color:rgba(255,255,255,.78);font-size:16px;text-decoration:underline">← 回到知识图谱</a>
+</div>
+</section>
+
+<!-- ===== p1: 前测 ===== -->
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先看看你现在的感觉</h2>
+  <p class="quiz-hint">三道生活题，凭感觉答，不计分。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 你 7:00 起床，7:40 到学校，路上用了多久？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>40 分钟</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>40 秒</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>40 小时</div>
+      <div class="opt" data-idx="3"><span class="badge">D</span>7 分钟</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 一集动画片大约多长？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>20 秒</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>20 分钟</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>20 小时</div>
+      <div class="opt" data-idx="3"><span class="badge">D</span>2 分钟</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 跑 50 米，大约要多久？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>10 小时</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>10 分钟</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>10 秒</div>
+      <div class="opt" data-idx="3"><span class="badge">D</span>1 秒</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 引入 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">按掉闹钟的 5 分钟，怎么变成了 20 分钟</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 240 300" width="240" height="300" role="img" aria-label="手机闹钟界面：7:00，下面有一个「再睡 5 分钟」按钮">
+      <rect x="20" y="10" width="200" height="280" rx="24" fill="#1A3A5C"/>
+      <rect x="32" y="30" width="176" height="240" rx="12" fill="#F4F7FA"/>
+      <text x="120" y="60" text-anchor="middle" font-size="13" fill="#6B7C8F">闹钟</text>
+      <text x="120" y="140" text-anchor="middle" font-size="52" font-weight="700" fill="#1A3A5C">7:00</text>
+      <rect x="52" y="180" width="136" height="42" rx="21" fill="#1A3A5C"/>
+      <text x="120" y="207" text-anchor="middle" font-size="16" fill="#FFFFFF">再睡 5 分钟</text>
+      <rect x="52" y="232" width="136" height="30" rx="15" fill="#DCE6F0"/>
+      <text x="120" y="252" text-anchor="middle" font-size="14" fill="#4A6076">关闭</text>
+    </svg>
+    <p class="caption">按下「再睡 5 分钟」，表上的针可不会陪你等</p>
+  </div>
+  <p class="teach-text" id="p2s1">
+    早上 7:00，闹钟响了。你眼睛都没睁，按了一下「再睡 5 分钟」。
+  </p>
+  <p class="teach-text" id="p2s2">
+    再睁眼，手机上是 <strong>7:20</strong>。
+  </p>
+</div>
+
+<div class="key-box" id="p2s3">
+  你只想多睡 5 分钟，表上却走了 20 分钟。<br>
+  钟面上那三根针一直在动——<strong>它们谁动得最快？动一圈，到底是多久？</strong>
+</div>
+
+<p class="teach-text" id="p2s4">
+  秒针跑一圈只要 60 秒，分针跑一圈却要 60 分钟。同样是「一圈」，为什么差 60 倍？
+  今天就把这条跑道拆开看。
+</p>
+
+<p class="teach-text muted" id="p2s5" style="font-size:18px;color:#5B7A99">
+  顺带说一句：电话手表上的秒表能记到 0.01 秒，靠的就是里面那根跑得最快的针。
+</p>
+</section>
+
+<!-- ===== p3: 概念1 钟面格数 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">一圈被分成了 12 大格、60 小格</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 300 300" width="272" height="272" role="img" aria-label="钟面：12 个大格，每大格 5 小格，12 到 1 之间的一格被高亮">
+      <circle cx="150" cy="150" r="132" fill="#FBFDFF" stroke="#1A3A5C" stroke-width="4"/>
+      <g id="ticks"></g>
+      <!-- 高亮 12 到 1 的大格 -->
+      <path d="M150 150 L150 22 A128 128 0 0 1 214 44 Z" fill="#FFB74D" opacity="0.28"/>
+      <g id="nums" font-size="20" font-weight="700" fill="#1A3A5C" text-anchor="middle" font-family="sans-serif" dominant-baseline="central"></g>
+      <text x="150" y="120" text-anchor="middle" font-size="14" fill="#C2701A">1 大格 = 5 小格</text>
+      <circle cx="150" cy="150" r="7" fill="#1A3A5C"/>
+    </svg>
+    <p class="caption">12 个大格，每格 5 小格，一圈 60 小格</p>
+  </div>
+  <p class="teach-text" id="p3s1">
+    钟面一圈有 <strong>12 个大格</strong>，每个大格又被分成 5 个小格，一共 <strong>60 个小格</strong>。
+  </p>
+  <p class="teach-text" id="p3s2">
+    三根针都在这条跑道上跑，只是速度不同。跑一小格用多久，就决定了它是哪根针。
+  </p>
+</div>
+
+<table class="teach-table" id="p3table">
+  <tr><th>针</th><th>走 1 小格</th><th>走 1 大格</th><th>走 1 圈</th></tr>
+  <tr><td>秒针</td><td>1 秒</td><td>5 秒</td><td>60 秒 = 1 分</td></tr>
+  <tr><td>分针</td><td>1 分</td><td>5 分</td><td>60 分 = 1 时</td></tr>
+  <tr><td>时针</td><td>12 分</td><td>1 时</td><td>12 时</td></tr>
+</table>
+
+<div class="key-box" id="p3key">
+  最容易错的一句：分针走一大格是 <strong>5 分</strong>，不是 1 分——因为一大格里还藏着 5 个小格。
+</div>
+
+</section>
+
+<!-- ===== p3b: 连线巩固 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：三根针，各走多久</h2>
+<p class="teach-text" id="p3bs1">先点左边的针，再点右边的时间，连对了会变绿。</p>
+<div id="matchP3"></div>
+</section>
+
+<!-- ===== p4: 中测1 ===== -->
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 钟面上认时间</h2>
+  <p class="quiz-hint">三道题，答完即时看解析。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 分针从 12 走到 3，走了多少分？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>3 分</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>15 分</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>20 分</div>
+      <div class="opt" data-idx="3"><span class="badge">D</span>5 分</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 时针走 1 大格，是多长时间？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1 分</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>5 分</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>1 小时</div>
+      <div class="opt" data-idx="3"><span class="badge">D</span>12 小时</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 下面哪个说法是对的？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>时针走一圈是 12 小时</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>秒针走得最慢</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>分针走一小格是 5 分</div>
+      <div class="opt" data-idx="3"><span class="badge">D</span>三根针一样快</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 概念2 1分=60秒 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">1 分钟，能跳 100 下绳</h2>
+
+<p class="teach-text" id="p5s1">
+  秒针走一圈，分针正好走一小格——这就是 <strong>1 分钟</strong>。
+</p>
+<p class="teach-text" id="p5s2">
+  1 分 = 60 秒，1 时 = 60 分。两个「60」，不是 100。
+</p>
+
+<div id="p5fig" style="margin:18px 0">
+  <svg viewBox="0 0 1130 254" width="100%" role="img" aria-label="上下两条时间条：秒针走 60 小格等于 60 秒，分针只走 1 小格等于 1 分">
+    <text x="0" y="30" font-size="26" font-weight="700" fill="#1A3A5C">秒针：60 小格 = 60 秒</text>
+    <rect x="0" y="44" width="1110" height="40" rx="9" fill="#E8EEF5" stroke="#1A3A5C" stroke-width="2"/>
+    <g stroke="#8FA6BC" stroke-width="1.6">
+      <line x1="222" y1="44" x2="222" y2="84"/><line x1="444" y1="44" x2="444" y2="84"/>
+      <line x1="666" y1="44" x2="666" y2="84"/><line x1="888" y1="44" x2="888" y2="84"/>
+    </g>
+    <text x="2" y="112" font-size="22" fill="#5B7A99">0</text>
+    <text x="1074" y="112" font-size="22" fill="#5B7A99">60</text>
+
+    <text x="0" y="166" font-size="26" font-weight="700" fill="#1A3A5C">分针：只走了 1 小格 = 1 分</text>
+    <rect x="0" y="180" width="1110" height="40" rx="9" fill="#FFF3E0" stroke="#C2701A" stroke-width="2"/>
+    <rect x="0" y="180" width="17" height="40" rx="7" fill="#C2701A"/>
+    <text x="36" y="210" font-size="23" fill="#C2701A" font-weight="700">1 小格</text>
+  </svg>
+</div>
+
+<div class="key-box" id="p5key">
+  秒针跑完一整圈（60 秒）的时候，分针才挪了<strong>一小格</strong>（1 分）。
+  所以「60 秒」和「1 分钟」说的是同一段时间。
+</div>
+
+<p class="teach-text" id="p5cards" style="font-size:19px;color:#3E6484;margin-bottom:8px">
+  <strong>1 分钟</strong>：跳绳约 100 下 · 读 200 字 · 走 80 米　　<strong>1 秒钟</strong>：眨一次眼 · 心跳一下 · 秒针挪一小格
+</p>
+
+<div id="p5s3" style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:6px 0 4px">
+  <span class="teach-text" style="margin:0">试试看：点一下，感受 60 秒有多长——</span>
+  <button class="btn-primary" id="p5timerBtn" onclick="startMinuteRing()">开始 1 分钟</button>
+  <span id="p5ring" style="font-size:22px;font-weight:700;color:#1A3A5C">60 秒 = 1 分</span>
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">自己转一转：三根针谁最忙</h2>
+  <p class="sim-desc">按住任意一根针把它拖走，另外两根会跟着动。看看秒针转一圈，别的针动多少。</p>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="clockStep('sec',1)">秒针转 1 圈</button>
+    <button class="btn-primary" onclick="clockStep('min',1)">走 1 分钟</button>
+    <button class="btn-primary" onclick="clockStep('hour',1)">走 1 小时</button>
+    <button class="btn-retry" onclick="clockReset()">回到 7:00</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="clockCanvas" width="640" height="440"></canvas>
+      <p class="cap">红色秒针 · 蓝色分针 · 黑色时针　—　按住针拖动</p>
+    </div>
+  </div>
+
+  <div class="sim-readout" id="clockReadout">07:00:00</div>
+  <div class="sim-tip" id="clockTip">从 7:00 开始，秒针已经转了 0 圈</div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>秒针转 1 圈，分针动了几小格？</li>
+    <li>分针转 1 圈，时针动了几大格？</li>
+    <li>三根针里，谁转一圈用的时间最长？</li>
+  </ul>
+</div>
+</section>
+
+<!-- ===== p7: 中测2 ===== -->
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 换算</h2>
+  <p class="quiz-hint">记住那条：满 60 进 1。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 1 分 30 秒 = 多少秒？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>130 秒</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>90 秒</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>60 秒</div>
+      <div class="opt" data-idx="3"><span class="badge">D</span>30 秒</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 2 时 = 多少分？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>120 分</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>60 分</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>200 分</div>
+      <div class="opt" data-idx="3"><span class="badge">D</span>20 分</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 90 秒 = 几分几秒？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>9 分</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>1 分 90 秒</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>1 分 30 秒</div>
+      <div class="opt" data-idx="3"><span class="badge">D</span>90 分</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 易错辨析 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">三个最容易翻车的地方</h2>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 大格 ≠ 1 分</h4>
+    <p>分针指在 3 上，是 <strong>15 分</strong>，不是 3 分。一格 5 分，三格就是 15 分。<br>
+    判据：先数大格，再乘 5。</p>
+  </div>
+  <div class="card">
+    <h4>② 时针一圈 ≠ 1 小时</h4>
+    <p>时针走 <strong>一圈是 12 小时</strong>，从早上 7 点走到晚上 7 点。走一大格才是 1 小时。</p>
+  </div>
+</div>
+
+<div class="card" id="p8card3" style="margin-bottom:18px">
+  <h4>③ 跨整点算时间，要分两段</h4>
+  <p>8:40 到 9:10，先算 8:40 → 9:00 是 <strong>20 分</strong>，再算 9:00 → 9:10 是 <strong>10 分</strong>，一共 30 分。<br>
+  别直接把 40 和 10 相加——那样会算成 50 分。</p>
+</div>
+
+<div class="key-box" id="p8key">
+  试一试：小明 7:50 出门，走了 25 分钟到校。他几点到？<br>
+  7:50 加 10 分是 8:00，还剩 15 分——<strong>8:15</strong>。
+</div>
+</section>
+
+<!-- ===== p9: 后测 ===== -->
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题</h2>
+  <p class="quiz-hint">最后一题是生活里的真事，别急着算，先想清楚从几点到几点。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 小明 7:50 出门，走了 25 分钟到校，几点到？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>8:15</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>7:75</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>8:25</div>
+      <div class="opt" data-idx="3"><span class="badge">D</span>8:05</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 一节课 40 分钟，课间 10 分钟。8:00 开始上第一节，第二节什么时候下课？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>9:20</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>9:30</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>9:40</div>
+      <div class="opt" data-idx="3"><span class="badge">D</span>8:50</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 下面哪件事大约用 1 分钟？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>跑完 1000 米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>眨一次眼</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>跳绳 100 下</div>
+      <div class="opt" data-idx="3"><span class="badge">D</span>睡一觉</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 秒针从 12 走到 6，经过多少秒？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>6 秒</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>30 秒</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>12 秒</div>
+      <div class="opt" data-idx="3"><span class="badge">D</span>5 秒</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 妈妈煮鸡蛋要 6 分钟。她从 7:55 开始煮，什么时候能捞出来？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>8:01</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>7:61</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>8:05</div>
+      <div class="opt" data-idx="3"><span class="badge">D</span>7:01</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">概念</div>
+        <div class="summary-v4-summary">一圈 12 大格 60 小格</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-inner">
+          <div class="summary-v4-flip-front">三根针各走多久<span class="fh">点击翻面</span></div>
+          <div class="summary-v4-flip-back">秒针一圈 60 秒<br>分针一圈 60 分<br>时针一圈 12 时<br>小格 1 秒 / 分针 1 分；大格 ×5</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">方法</div>
+        <div class="summary-v4-summary">看时间、算经过时间</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-inner">
+          <div class="summary-v4-flip-front">两步走<span class="fh">点击翻面</span></div>
+          <div class="summary-v4-flip-back">读时间：短针定「时」，长针定「分」<br>算经过时间：先凑到整点，再算零头<br>跨整点：8:40→9:10 = 20 分 + 10 分</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">易错</div>
+        <div class="summary-v4-summary">三处一错就全错</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-inner">
+          <div class="summary-v4-flip-front">哪里最容易错<span class="fh">点击翻面</span></div>
+          <div class="summary-v4-flip-back">一大格 = 5 分（不是 1 分）<br>时针一圈 = 12 小时（不是 1 小时）<br>满 60 进 1（不是满 100）</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">应用</div>
+        <div class="summary-v4-summary">1 分钟到底有多长</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-inner">
+          <div class="summary-v4-flip-front">用它算身边的事<span class="fh">点击翻面</span></div>
+          <div class="summary-v4-flip-back">1 分钟跳绳约 100 下<br>煮鸡蛋 6 分钟 = 360 秒<br>7:50 出门走 25 分 → 8:15 到校<br>闹钟按掉 5 分钟，真的只有 5 分钟</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<p class="teach-text" style="margin-top:18px;color:#5B7A99;font-size:19px">
+  下次闹钟响，先看一眼秒针——它转一圈，你就少睡 1 分钟。
+</p>
+</section>
+

@@ -1,0 +1,93 @@
+/* ===== 本课追加：竖式、答案卡、仿真日志 ===== */
+
+/* 封面 tag 跟橙色默认值不搭，改成 accent 青 */
+.cover-page .tag{background:rgba(0,172,193,.78);border:1px solid rgba(255,255,255,.35)}
+
+/* 封面上的竖式：深底白字，答案位打问号
+   ⚠ 必须写成 .vs.vs-cover（0,2,1）才压得住下面的 .vs td（0,1,1）——同特异性靠源码顺序会输 */
+.cover-fig{margin:4px 0 16px}
+.vs.vs-cover td{color:#fff;width:42px;height:40px;font-size:30px}
+.vs.vs-cover tr.c td{color:#7FE3F0}
+.vs.vs-cover tr.r td{border-bottom:3px solid rgba(255,255,255,.85)}
+.vs.vs-cover td.op{color:#7FE3F0}
+.vs.vs-cover td.qm{color:#FFD166;font-size:34px}
+#p0 .cover-page{padding-bottom:34px}
+
+/* 竖式：等宽数字 + 竖线，进位/退位记号用绝对定位挂在数字上 */
+.vs-wrap{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 26px;box-shadow:var(--shadow);margin:10px 0}
+.vs{border-collapse:collapse;font-family:"Consolas","Menlo","Courier New",monospace}
+.vs td{
+  width:46px;height:46px;padding:0;text-align:center;vertical-align:middle;
+  font-size:34px;font-weight:700;color:var(--primary);position:relative;
+  font-variant-numeric:tabular-nums;
+}
+.vs tr.c td{height:26px;font-size:19px;line-height:26px;color:var(--red)}
+.vs tr.c td.big{font-size:16px}
+.vs tr.r td{border-bottom:3px solid var(--primary);height:10px;padding:0}
+.vs td.op{color:var(--accent);font-size:30px}
+.vs .dot{position:absolute;top:4px;right:8px;width:8px;height:8px;border-radius:50%;background:var(--red)}
+.vs .carry-mark{color:var(--red)}
+.vs.sm td{width:34px;height:34px;font-size:24px}
+.vs.sm tr.c td{height:20px;font-size:14px;line-height:20px}
+.vs-cap{text-align:center;font-size:16px;color:var(--primary-light);margin-top:8px;font-weight:600}
+.vs-center{text-align:center}
+
+/* 引入页三张答案卡 */
+.ans-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0 8px}
+.ans-card{
+  background:#fff;border:2px solid var(--line);border-radius:14px;padding:16px 12px;
+  text-align:center;transition:all .25s;
+}
+.ans-card .ans-num{font-size:40px;font-weight:900;color:var(--primary);line-height:1.1;font-variant-numeric:tabular-nums}
+.ans-card .ans-who{font-size:16px;color:var(--primary-light);margin-top:2px}
+.ans-card .ans-btn{
+  margin-top:10px;padding:6px 14px;border-radius:16px;border:1.5px solid var(--accent);
+  background:var(--paper);color:#00707E;font-size:15px;font-weight:700;cursor:pointer;
+}
+.ans-card .ans-btn:hover{background:var(--accent-soft)}
+.ans-card .ans-why{display:none;margin-top:10px;font-size:16px;line-height:1.6;color:var(--red);text-align:left;border-top:1px dashed var(--line);padding-top:8px}
+.ans-card.open{border-color:var(--red);background:#FFF7F4}
+.ans-card.open .ans-why{display:block}
+@media (max-width:640px){.ans-cards{grid-template-columns:1fr}}
+
+/* 四步读法 */
+.steps{counter-reset:s;list-style:none;padding:0;margin:12px 0}
+.steps li{
+  counter-increment:s;position:relative;padding:10px 0 10px 46px;font-size:20px;line-height:1.7;
+  border-bottom:1px dashed var(--line);
+}
+.steps li:last-child{border-bottom:none}
+.steps li::before{
+  content:counter(s);position:absolute;left:0;top:10px;width:32px;height:32px;border-radius:50%;
+  background:var(--accent);color:#fff;font-size:17px;font-weight:800;display:flex;align-items:center;justify-content:center;
+}
+
+/* 仿真日志 */
+.sim-log{
+  max-width:760px;margin:6px auto 0;background:#0E3B63;color:#D7ECFF;border-radius:12px;
+  padding:12px 16px;font-size:16px;line-height:1.7;min-height:76px;font-family:"Consolas",monospace;
+}
+.sim-log div{opacity:0;animation:fadeSlide .3s forwards}
+.sim-log .hl{color:#FFD166;font-weight:700}
+
+/* ===== 窄屏适配：竖式不缩字会顶出边界 ===== */
+@media (max-width:640px){
+  .card-grid{grid-template-columns:1fr}
+  .teach-table{font-size:17px}
+  .teach-table th,.teach-table td{padding:9px 10px}
+  .vs td{width:40px;height:40px;font-size:28px}
+  .vs tr.c td{font-size:16px}
+  .vs-wrap{padding:12px 16px}
+  .steps li{font-size:18px;padding-left:40px}
+  .ans-card .ans-num{font-size:32px}
+  .sim-log{font-size:14px}
+}
+
+/* 仿真页状态条：读数 + 提示并排，放在按钮上方才不会被底部翻页条压住 */
+.sim-status{display:flex;align-items:baseline;justify-content:center;gap:14px;flex-wrap:wrap;margin:2px 0 10px}
+.sim-status .sim-readout{margin:0;font-size:30px}
+.sim-status .sim-tip{margin:0;min-height:0}
+
+/* 三条规矩自带 ①②③，去掉 feature-list 默认圆点免得「• ①」重号 */
+#p3rules li{padding-left:0}
+#p3rules li::before{display:none}

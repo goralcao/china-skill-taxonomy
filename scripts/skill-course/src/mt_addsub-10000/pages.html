@@ -1,0 +1,628 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>476 + 358，为什么有人算出 734？</h1>
+  <p class="sub">三年级数学 · 万以内的加法和减法</p>
+  <div class="tags">
+    <span class="tag">满十进一</span>
+    <span class="tag">借一当十</span>
+    <span class="tag">验算</span>
+  </div>
+  <div class="cover-fig">
+    <table class="vs vs-cover">
+      <tr class="c"><td></td><td>1</td><td>1</td><td></td></tr>
+      <tr><td></td><td>4</td><td>7</td><td>6</td></tr>
+      <tr><td class="op">+</td><td>3</td><td>5</td><td>8</td></tr>
+      <tr class="r"><td colspan="4"></td></tr>
+      <tr><td></td><td>8</td><td>3</td><td class="qm">?</td></tr>
+    </table>
+  </div>
+  <p style="font-size:20px;color:rgba(255,255,255,.9);max-width:560px;line-height:1.8;">
+    义卖一整天，三个同学三个答案：734、824、834。<br>
+    差的不是水平，是那两个小记号。
+  </p>
+  <p class="hint">点击右下角箭头开始 或 点击顶部导航跳转</p>
+  <a href="../../viz/index.html#t=mt_addsub-10000" style="margin-top:16px;color:rgba(255,255,255,.78);font-size:16px;text-decoration:underline">← 回到知识图谱</a>
+</div>
+</section>
+
+<!-- ===== p1: 前测 ===== -->
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先算三道你二年级就会的</h2>
+  <p class="quiz-hint">三道生活题，凭感觉答，不计分。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 你买 23 元的本子，付了 50 元，应该找回多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>27 元</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>37 元</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>23 元</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 46 + 38 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>74</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>84</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>94</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 62 − 35 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>27</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>33</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>37</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 引入 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">一天卖了 834 元，账单上却有 3 个答案</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 300 176" width="240" height="141" role="img" aria-label="两块收钱牌：上午 476 元，下午 358 元，加上一个大问号">
+      <rect x="12" y="16" width="176" height="62" rx="12" fill="#FFFFFF" stroke="#1565C0" stroke-width="3"/>
+      <text x="30" y="42" font-size="15" fill="#5B7A99">上午</text>
+      <text x="100" y="52" font-size="26" font-weight="700" fill="#1565C0">476 元</text>
+      <rect x="12" y="94" width="176" height="62" rx="12" fill="#FFFFFF" stroke="#00ACC1" stroke-width="3"/>
+      <text x="30" y="120" font-size="15" fill="#5B7A99">下午</text>
+      <text x="100" y="130" font-size="26" font-weight="700" fill="#00707E">358 元</text>
+      <text x="196" y="64" font-size="26" font-weight="700" fill="#5B7A99">+</text>
+      <circle cx="252" cy="88" r="31" fill="#1565C0"/>
+      <text x="252" y="100" text-anchor="middle" font-size="36" font-weight="700" fill="#FFD166">?</text>
+    </svg>
+  </div>
+  <p class="teach-text" id="p2s1">
+    班级义卖收摊。上午卖了 <strong>476 元</strong>，下午卖了 <strong>358 元</strong>。
+  </p>
+  <p class="teach-text" id="p2s2">
+    一共多少？三个人举手，三个答案。<br>
+    点一下「他错在哪」，看看他们是怎么算的。
+  </p>
+</div>
+
+<div class="ans-cards" id="p2cards">
+  <div class="ans-card">
+    <div class="ans-num">734</div>
+    <div class="ans-who">小宇</div>
+    <button class="ans-btn" onclick="toggleAns(this)">他错在哪</button>
+    <div class="ans-why">个位 6+8=14，他写了 4，那个进上来的 1 没写也没加。</div>
+  </div>
+  <div class="ans-card">
+    <div class="ans-num">824</div>
+    <div class="ans-who">乐乐</div>
+    <button class="ans-btn" onclick="toggleAns(this)">他错在哪</button>
+    <div class="ans-why">十位 7+5=12，他算了这一位，却忘了加上个位送上来的 1。</div>
+  </div>
+  <div class="ans-card">
+    <div class="ans-num">834</div>
+    <div class="ans-who">小满</div>
+    <button class="ans-btn" onclick="toggleAns(this)">他错在哪</button>
+    <div class="ans-why">个位进 1，十位 7+5+1=13 再进 1，百位 4+3+1=8。两个 1 都记下来了。</div>
+  </div>
+</div>
+
+<div class="key-box" id="p2s3">
+  三个人都会两位数加减，都背得出「满十进一」。<br>
+  可答案差了一百——<strong>差在哪儿？</strong>
+</div>
+
+<p class="teach-text" id="p2s4">
+  差在两个小记号上：一个写在横线上面的「1」，一个点在被借走的那一位上的「·」。
+  这两个记号，才是今天真正要练的东西。
+</p>
+
+</section>
+
+<!-- ===== p3: 概念1 进位 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">竖式不是摆设，它是你的草稿纸</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 330 210" width="300" height="191" role="img" aria-label="10 根小棒捆成 1 捆，也就是 10 个一变成 1 个十">
+      <defs>
+        <marker id="arw" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto">
+          <path d="M0 0 L8 4 L0 8 z" fill="#00ACC1"/>
+        </marker>
+      </defs>
+      <g stroke="#1565C0" stroke-width="5" stroke-linecap="round">
+        <line x1="30" y1="46" x2="30" y2="146"/><line x1="40" y1="46" x2="40" y2="146"/>
+        <line x1="50" y1="46" x2="50" y2="146"/><line x1="60" y1="46" x2="60" y2="146"/>
+        <line x1="70" y1="46" x2="70" y2="146"/><line x1="80" y1="46" x2="80" y2="146"/>
+        <line x1="90" y1="46" x2="90" y2="146"/><line x1="100" y1="46" x2="100" y2="146"/>
+        <line x1="110" y1="46" x2="110" y2="146"/><line x1="120" y1="46" x2="120" y2="146"/>
+      </g>
+      <text x="75" y="172" text-anchor="middle" font-size="14" fill="#3A6EA5">10 根 = 10 个一</text>
+      <path d="M146 96 L196 96" stroke="#00ACC1" stroke-width="4" marker-end="url(#arw)"/>
+      <text x="171" y="86" text-anchor="middle" font-size="13" fill="#00707E">满十</text>
+      <rect x="212" y="46" width="56" height="100" rx="10" fill="#E7F1FA" stroke="#1565C0" stroke-width="4"/>
+      <rect x="212" y="82" width="56" height="18" fill="#00ACC1"/>
+      <text x="240" y="172" text-anchor="middle" font-size="14" fill="#3A6EA5">1 捆 = 1 个十</text>
+      <text x="240" y="196" text-anchor="middle" font-size="13" fill="#D84315">捆起来，左边进一位</text>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    一根小棒是 1 个「一」。数满 10 根，就拿皮筋捆成一捆——这一捆是 1 个「十」。
+  </p>
+  <p class="teach-text" id="p3s2">
+    竖式干的就是这件事：哪一位数满 10，就往左边送一捆。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>① 相同数位对齐</strong>：476 的 6，只能加 358 的 8。个位对个位，百位对百位。</li>
+  <li><strong>② 从个位算起</strong>：右边先算，因为进位是往左边送的。</li>
+  <li><strong>③ 满十进一</strong>：这一位写「和减 10」，前一位的右上角写一个小 1，当场写。</li>
+</ul>
+
+<div class="vs-center" id="p3vs">
+  <div class="vs-wrap">
+    <table class="vs">
+      <tr class="c"><td></td><td><span class="carry-mark">1</span></td><td><span class="carry-mark">1</span></td><td></td></tr>
+      <tr><td></td><td>4</td><td>7</td><td>6</td></tr>
+      <tr><td class="op">+</td><td>3</td><td>5</td><td>8</td></tr>
+      <tr class="r"><td colspan="4"></td></tr>
+      <tr><td></td><td>8</td><td>3</td><td>4</td></tr>
+    </table>
+    <div class="vs-cap">个位 6+8=14 → 写 4 进 1；十位 7+5+1=13 → 写 3 进 1；百位 4+3+1=8</div>
+  </div>
+</div>
+
+<table class="teach-table" id="p3table">
+  <tr><th>算式</th><th>哪一位满了十</th><th>和</th></tr>
+  <tr><td>236+152</td><td>都不满十，没有进位</td><td>388</td></tr>
+  <tr><td>236+187</td><td>个位 6+7=13 进 1，十位又进 1</td><td>423</td></tr>
+  <tr><td>407+385</td><td>只有个位 7+5=12 进 1</td><td>792</td></tr>
+</table>
+
+<div class="key-box" id="p3key">
+  最容易丢的那一分：进位的 1 必须写在<strong>前一位的右上角</strong>，写在纸上就忘不了，记在脑子里一定忘。
+</div>
+</section>
+
+<!-- ===== p3b: 连线巩固 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：每一位上发生了什么</h2>
+<p class="teach-text" id="p3bs1">先点左边的算式，再点右边的动作，连对了会变绿。</p>
+<div id="matchP3"></div>
+</section>
+
+<!-- ===== p4: 中测1 ===== -->
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 进位</h2>
+  <p class="quiz-hint">只看一件事：那一位满十了没有。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 236+187，十位 3+8+1=12，怎么办？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>十位写 12</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>十位写 2，不用进</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>十位写 2，向百位进 1</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 下面哪道题，个位要进位？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>407+385</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>432+156</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>520+341</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 658+274，百位上写几？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>8</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>9</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>7</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 概念2 退位 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">0 减 8，为什么不能直接写 8</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+    <svg viewBox="0 0 330 200" width="300" height="182" role="img" aria-label="借位路线：百位借给十位，十位再借给个位">
+      <defs>
+        <marker id="arw2" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto">
+          <path d="M0 0 L8 4 L0 8 z" fill="#D84315"/>
+        </marker>
+      </defs>
+      <g font-family="sans-serif">
+        <rect x="12" y="34" width="72" height="72" rx="10" fill="#1565C0"/>
+        <text x="48" y="66" text-anchor="middle" font-size="14" fill="#CFE6FF">百位</text>
+        <text x="48" y="92" text-anchor="middle" font-size="26" font-weight="700" fill="#FFFFFF">5</text>
+        <rect x="128" y="34" width="72" height="72" rx="10" fill="#42A5F5"/>
+        <text x="164" y="66" text-anchor="middle" font-size="14" fill="#EAF4FF">十位</text>
+        <text x="164" y="92" text-anchor="middle" font-size="26" font-weight="700" fill="#FFFFFF">0</text>
+        <rect x="244" y="34" width="72" height="72" rx="10" fill="#80DEEA"/>
+        <text x="280" y="66" text-anchor="middle" font-size="14" fill="#00505A">个位</text>
+        <text x="280" y="92" text-anchor="middle" font-size="26" font-weight="700" fill="#00505A">0</text>
+        <path d="M86 70 C100 44 114 44 126 62" stroke="#D84315" stroke-width="3" fill="none" marker-end="url(#arw2)"/>
+        <path d="M202 70 C216 44 230 44 242 62" stroke="#D84315" stroke-width="3" fill="none" marker-end="url(#arw2)"/>
+        <text x="106" y="20" text-anchor="middle" font-size="12" fill="#D84315">借1当10</text>
+        <text x="222" y="20" text-anchor="middle" font-size="12" fill="#D84315">借1当10</text>
+        <text x="164" y="132" text-anchor="middle" font-size="14" fill="#3A6EA5">百位借出后剩 4，十位得 10</text>
+        <text x="164" y="154" text-anchor="middle" font-size="14" fill="#3A6EA5">十位再借出 1，剩 9；个位得 10</text>
+        <text x="164" y="180" text-anchor="middle" font-size="14" font-weight="700" fill="#D84315">借到的是「十」，不是「个」</text>
+      </g>
+    </svg>
+    <p class="caption">500−238 的借位路线</p>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    算 500−238。个位 0 减 8 不够，得向十位借。可十位也是 0——借不出来。
+  </p>
+  <p class="teach-text" id="p5s2">
+    这时候要<strong>连借两次</strong>，方向不能乱。
+  </p>
+</div>
+
+<ol class="steps" id="p5steps">
+  <li>个位 0−8 不够，向十位借。十位是 0，没得借。</li>
+  <li>先向<strong>百位</strong>借：百位 5 剩 4，十位拿到 <strong>10 个十</strong>。</li>
+  <li>十位再借给个位：十位 10 剩 <strong>9</strong>，个位拿到 <strong>10</strong>。</li>
+  <li>个位 10−8=2，十位 9−3=6，百位 4−2=2 → <strong>262</strong>。</li>
+</ol>
+
+<div class="vs-center" id="p5vs">
+  <div class="vs-wrap">
+    <table class="vs">
+      <tr class="c"><td></td><td class="big">4</td><td class="big">9</td><td class="big">10</td></tr>
+      <tr><td></td><td>5</td><td>0<span class="dot"></span></td><td>0<span class="dot"></span></td></tr>
+      <tr><td class="op">−</td><td>2</td><td>3</td><td>8</td></tr>
+      <tr class="r"><td colspan="4"></td></tr>
+      <tr><td></td><td>2</td><td>6</td><td>2</td></tr>
+    </table>
+    <div class="vs-cap">小字是被借走之后剩下的数；红点是「这一位已经少了 1」</div>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  退位要在被借走的那一位上<strong>点一个点</strong>。这个点不是给别人看的，是给三步之后的自己看的。
+</div>
+
+<p class="teach-text" id="p5s3">
+  算完怎么知道对不对？<strong>验算</strong>：差 + 减数 = 被减数，262+238=500。<br>
+  加法的验算反过来减一减：834−358=476。
+</p>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">数位桶：满十打包，借一拆包</h2>
+  <p class="sim-desc">往桶里放方块，看它什么时候被捆成一捆送走；取到空时，看它怎么从左边拆一捆回来。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">0</span>
+    <span class="sim-tip" id="simTip">现在三个桶都是空的</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simAdd(0,1)">个位 +1</button>
+    <button class="btn-primary" onclick="simAdd(1,1)">十位 +1</button>
+    <button class="btn-primary" onclick="simAdd(2,1)">百位 +1</button>
+    <button class="btn-retry" onclick="simSub(0,1)">个位 −1</button>
+    <button class="btn-retry" onclick="simSub(1,1)">十位 −1</button>
+    <button class="btn-retry" onclick="simSub(2,1)">百位 −1</button>
+  </div>
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simDemo()">演示 476 + 358</button>
+    <button class="btn-retry" onclick="simReset()">清空重来</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="860" height="332"></canvas>
+      <p class="cap">方块 = 一个计数单位　—　满 10 个自动打包往左飞</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>个位堆到第 10 个时，发生了什么？那 10 个方块变成了什么？</li>
+    <li>十位是空的时候点「个位 −1」，方块是从哪儿来的？来了几个？</li>
+    <li>演示 476+358，进位一共发生了几次？</li>
+    <li>为什么借位只能从左边一位借，不能从右边借？</li>
+  </ul>
+</div>
+</section>
+
+<!-- ===== p7: 中测2 ===== -->
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 退位与验算</h2>
+  <p class="quiz-hint">记住那条：借来的是「十」，借完要点个点。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 700−356，个位 0 减 6 不够，十位又是 0，该怎么办？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>个位直接写 4</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>向百位借 1 直接给个位</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>向百位借 1 当 10 个十，再借 1 个十给个位</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 403 − 158 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>255</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>245</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>355</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 算完 624−275=349，用哪个式子验算？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>624+349，看是否得 275</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>275−349，看是否得 624</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>349+275，看是否得 624</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 易错辨析 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四种错法，四种记号没记</h2>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 十位漏加个位的进位</h4>
+    <div class="vs-wrap" style="padding:8px 14px">
+      <table class="vs sm">
+        <tr><td></td><td>4</td><td>7</td><td>6</td></tr>
+        <tr><td class="op">+</td><td>3</td><td>5</td><td>8</td></tr>
+        <tr class="r"><td colspan="4"></td></tr>
+        <tr><td></td><td>8</td><td>2</td><td>4</td></tr>
+      </table>
+    </div>
+    <p>7+5=12 写了 2，可个位送上来的那个 1 没加。正解 <strong>834</strong>。</p>
+  </div>
+
+  <div class="card">
+    <h4>② 借出去的那 1 忘了减</h4>
+    <div class="vs-wrap" style="padding:8px 14px">
+      <table class="vs sm">
+        <tr><td></td><td>7</td><td>0<span class="dot"></span></td><td>3</td></tr>
+        <tr><td class="op">−</td><td>1</td><td>5</td><td>8</td></tr>
+        <tr class="r"><td colspan="4"></td></tr>
+        <tr><td></td><td>6</td><td>5</td><td>5</td></tr>
+      </table>
+    </div>
+    <p>十位用了借来的 10 减 5，却忘了自己还借给个位 1。正解 <strong>545</strong>。</p>
+  </div>
+
+  <div class="card">
+    <h4>③ 把 0 直接当成 10</h4>
+    <div class="vs-wrap" style="padding:8px 14px">
+      <table class="vs sm">
+        <tr><td></td><td>7</td><td>0</td><td>0</td></tr>
+        <tr><td class="op">−</td><td>3</td><td>5</td><td>6</td></tr>
+        <tr class="r"><td colspan="4"></td></tr>
+        <tr><td></td><td>4</td><td>5</td><td>4</td></tr>
+      </table>
+    </div>
+    <p>700 的十位是 0，得先向百位借，不能自己变 10。正解 <strong>344</strong>。</p>
+  </div>
+
+  <div class="card">
+    <h4>④ 百位漏加十位的进位</h4>
+    <div class="vs-wrap" style="padding:8px 14px">
+      <table class="vs sm">
+        <tr><td></td><td>6</td><td>5</td><td>8</td></tr>
+        <tr><td class="op">+</td><td>2</td><td>7</td><td>4</td></tr>
+        <tr class="r"><td colspan="4"></td></tr>
+        <tr><td></td><td>8</td><td>3</td><td>2</td></tr>
+      </table>
+    </div>
+    <p>连着进两次位，百位只算了 6+2。正解 <strong>932</strong>。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  看完这四张，你会发现：没有一张是「不会加」，全是<strong>记号没写下来</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到义卖：收入 834 元，进货花了 358 元，赚了多少？834−358=476。
+  验算一下，476+358=834——账对上了。
+</p>
+</section>
+
+<!-- ===== p9: 后测 ===== -->
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，两个记号</h2>
+  <p class="quiz-hint">慢一点，把两个记号都写出来再选。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 476 + 358 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>734</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>824</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>834</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 900 − 467 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>443</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>533</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>433</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 305+198 算成了 403，错在哪？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>个位 5+8 写成了 3</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>百位 3+1 忘了加个位进上来的 1</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>十位 0+9 忘了写 9</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 不算出结果，哪个一定大于 600？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>298+287</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>315+296</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>401+196</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 一个数减去 268 得 457，这个数是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>725</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>189</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>715</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">规矩</div>
+        <div class="summary-v4-summary">三条，一条都不能少</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-inner">
+          <div class="summary-v4-flip-front">竖式怎么写<span class="fh">点击翻面</span></div>
+          <div class="summary-v4-flip-back">① 相同数位对齐<br>② 从个位算起<br>③ 满十进一，满十退一<br>竖式不是作业格式，是你的草稿纸</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">记号</div>
+        <div class="summary-v4-summary">进位的 1、退位的点</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-inner">
+          <div class="summary-v4-flip-front">两个小记号<span class="fh">点击翻面</span></div>
+          <div class="summary-v4-flip-back">进位的 1：写在前一位的右上角<br>退位的点：点在被借走的那一位上<br>当场写，别记在脑子里<br>写下来的是记号，省下来的是分</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">死穴</div>
+        <div class="summary-v4-summary">0 上退位</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-inner">
+          <div class="summary-v4-flip-front">隔位退位两步走<span class="fh">点击翻面</span></div>
+          <div class="summary-v4-flip-back">① 先向百位借 1 → 十位得 10 个十<br>② 十位再借 1 给个位 → 个位得 10<br>借到的是「十」，不是「个」<br>700−356=344，不是 454</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">验算</div>
+        <div class="summary-v4-summary">账要能倒着算回来</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-inner">
+          <div class="summary-v4-flip-front">用它算身边的账<span class="fh">点击翻面</span></div>
+          <div class="summary-v4-flip-back">减法验算：差 + 减数 = 被减数<br>262+238=500 ✓<br>加法验算：和 − 一个加数 = 另一个加数<br>834−358=476 ✓<br>义卖赚的 476 元，就是这么对上的</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<p class="teach-text" style="margin-top:18px;color:#5B7A99;font-size:19px">
+  下次算三位数加减，先问自己一句：那个 1，我写下来了吗？
+</p>
+</section>
