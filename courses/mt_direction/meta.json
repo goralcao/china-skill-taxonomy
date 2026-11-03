@@ -1,24 +1,93 @@
 {
   "topicId": "mt_direction",
-  "title": "位置与方向：先认八个方向，再走路线",
+  "title": "位置与方向：上北下南，左西右东",
   "template": "explain",
-  "renderer": "compass",
-  "duration": 10,
-  "interactions": 2,
+  "renderer": "geometry",
+  "duration": 24,
+  "interactions": 16,
   "grade": 3,
   "subject": "数学",
-  "standards": ["math-2022:S2:GG:PM"],
-  "prerequisites": ["mt_position-basic", "mt_shape-2d"],
-  "next": ["mt_position-pairs"],
-  "objectives": [
-    "能说出东、南、西、北和四个斜方向",
-    "能在示意图上判断物体的相对方向",
-    "能用「方向 + 距离」描述一条简单路线"
+  "standards": [
+    "math-2022:S2:GG:PM"
   ],
-  "cognitiveAction": "变换",
+  "prerequisites": [
+    "mt_position-basic",
+    "mt_shape-2d"
+  ],
+  "next": [
+    "mt_position-pairs"
+  ],
+  "objectives": [
+    "认识东、南、西、北四个方向，会用太阳和指南针定方向",
+    "记住地图「上北下南、左西右东」，会在示意图上确定相对方向",
+    "能用方向词按顺序描述简单路线，理解相对方向相反"
+  ],
+  "cognitiveAction": "辨析",
   "status": "reviewed",
   "author": "goral.cao",
   "license": "CC-BY-SA-4.0",
-  "version": "1.0.0",
-  "updatedAt": "2026-10-27"
+  "version": "3.0.0",
+  "updatedAt": "2026-11-04",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "看太阳",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "四方向",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "说位置",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
 }

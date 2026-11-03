@@ -1,0 +1,503 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>太阳从哪边升起？地图为什么上北下南？</h1>
+  <p class="sub">三年级数学 · 位置与方向</p>
+  <div class="tags">
+    <span class="tag">东南西北</span>
+    <span class="tag">上北下南</span>
+    <span class="tag">相对方向</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 460 220" width="440" height="210" role="img" aria-label="指南针十字，北在上、东在右、南在下、西在左">
+      <circle cx="150" cy="110" r="76" fill="rgba(255,255,255,.12)" stroke="#FFFFFF" stroke-width="3"/>
+      <line x1="150" y1="34" x2="150" y2="186" stroke="#FFFFFF" stroke-width="2.5"/>
+      <line x1="74" y1="110" x2="226" y2="110" stroke="#FFFFFF" stroke-width="2.5"/>
+      <polygon points="150,44 140,86 160,86" fill="#F9A825"/>
+      <text x="150" y="28" font-size="22" fill="#FFFFFF" text-anchor="middle" font-family="sans-serif">北</text>
+      <text x="150" y="212" font-size="22" fill="#FFFFFF" text-anchor="middle" font-family="sans-serif">南</text>
+      <text x="242" y="118" font-size="22" fill="#FFFFFF" text-anchor="middle" font-family="sans-serif">东</text>
+      <text x="58" y="118" font-size="22" fill="#FFFFFF" text-anchor="middle" font-family="sans-serif">西</text>
+      <text x="300" y="100" font-size="20" fill="#FFF4C2" font-family="monospace">上北 · 下南</text>
+      <text x="300" y="134" font-size="20" fill="#FFF4C2" font-family="monospace">左西 · 右东</text>
+    </svg>
+  </div>
+  <p style="font-size:20px;color:rgba(255,255,255,.92);max-width:560px;line-height:1.8;">
+    方向本身不会变，变的是「你的左右」。<br>
+    先认准东，东南西北就都定下来了。
+  </p>
+  <p class="hint">点击右下角箭头开始 或 点击顶部导航跳转</p>
+  <a href="../../viz/index.html#t=mt_direction" style="margin-top:16px;color:rgba(255,255,255,.78);font-size:16px;text-decoration:underline">← 回到知识图谱</a>
+</div>
+</section>
+
+<!-- ===== p1: 前测 ===== -->
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先猜三道，凭感觉答</h2>
+  <p class="quiz-hint">三道生活题，看你会不会把「左右」当成「方向」。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 早晨太阳从哪个方向升起？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>东</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>西</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>北</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 地图上通常「上面」表示哪个方向？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>南</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>北</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>东</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 面向北站立，你的右手边是哪个方向？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>东</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>西</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>南</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 引入 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">早晨 7:00，太阳从哪边升起？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 320 210" width="250" height="164" role="img" aria-label="小人面向东，太阳从东边升起，右手是南、左手是北">
+      <circle cx="160" cy="105" r="80" fill="none" stroke="#1565C0" stroke-width="2" stroke-dasharray="6 5"/>
+      <circle cx="160" cy="30" r="18" fill="#F9A825"/>
+      <text x="160" y="128" font-size="20" text-anchor="middle" fill="#1565C0" font-family="sans-serif">我</text>
+      <text x="248" y="112" font-size="17" fill="#F9A825" font-family="sans-serif">东·日出</text>
+      <text x="52" y="112" font-size="17" fill="#1565C0" font-family="sans-serif">西</text>
+      <text x="160" y="192" font-size="17" text-anchor="middle" fill="#1565C0" font-family="sans-serif">南</text>
+      <text x="160" y="22" font-size="17" text-anchor="middle" fill="#1565C0" font-family="sans-serif">北</text>
+      <text x="160" y="150" font-size="14" text-anchor="middle" fill="#7A6A20" font-family="sans-serif">面向东：右手南、左手北</text>
+    </svg>
+  </div>
+  <p class="teach-text" id="p2s1">
+    早晨 7:00 出门，太阳从<strong>东边</strong>升起——这是最可靠的方向锚点，先把它记住。
+  </p>
+  <p class="teach-text" id="p2s2">
+    面向东站立，右手边是南、左手边是北。你一转，左右就变，但东南西北本身不会变。
+  </p>
+  <p class="teach-text" id="p2s3">
+    从家到学校要走 8 分钟，先向东再向北。把方向和路线对上，才不会走反。
+  </p>
+</div>
+
+<div class="key-box" id="p2s4">
+  先认准<strong>东</strong>，再按「东南西北」顺时针推，四个方向就都定下来了。
+</div>
+</section>
+
+<!-- ===== p3: 概念1 四个方向与地图约定 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">东南西北：先认东，再顺时针推</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 320 230" width="240" height="172" role="img" aria-label="指南针标明北东南西，旁边地图标上北下南左西右东">
+      <circle cx="100" cy="110" r="66" fill="#E3EEFA" stroke="#1565C0" stroke-width="3"/>
+      <line x1="100" y1="48" x2="100" y2="172" stroke="#1565C0" stroke-width="2"/>
+      <line x1="38" y1="110" x2="162" y2="110" stroke="#1565C0" stroke-width="2"/>
+      <text x="100" y="42" font-size="16" text-anchor="middle" fill="#1565C0">北</text>
+      <text x="100" y="190" font-size="16" text-anchor="middle" fill="#1565C0">南</text>
+      <text x="176" y="115" font-size="16" text-anchor="middle" fill="#1565C0">东</text>
+      <text x="24" y="115" font-size="16" text-anchor="middle" fill="#1565C0">西</text>
+      <rect x="205" y="55" width="95" height="110" fill="#FFF4C2" stroke="#F9A825" stroke-width="2"/>
+      <text x="252" y="50" font-size="13" text-anchor="middle" fill="#8A6A00">上北</text>
+      <text x="252" y="182" font-size="13" text-anchor="middle" fill="#8A6A00">下南</text>
+      <text x="196" y="115" font-size="13" text-anchor="end" fill="#8A6A00">左西</text>
+      <text x="308" y="115" font-size="13" text-anchor="start" fill="#8A6A00">右东</text>
+    </svg>
+  </div>
+  <p class="teach-text" id="p3s1">
+    指南针指北；太阳升起的方向是东。有一个方向，其余三个都能推出来。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>① 认东</strong>：太阳升起的方向是东，落下是西。</li>
+  <li><strong>② 顺时针</strong>：东南西北按顺时针依次排（东→南→西→北）。</li>
+  <li><strong>③ 地图约定</strong>：上北、下南、左西、右东，所有地图都这样画。</li>
+</ul>
+
+<table class="teach-table" id="p3table">
+  <tr><th>方向</th><th>地图上的位置</th><th>记忆</th></tr>
+  <tr><td>北</td><td>上方</td><td>上北</td></tr>
+  <tr><td>南</td><td>下方</td><td>下南</td></tr>
+  <tr><td>西</td><td>左侧</td><td>左西</td></tr>
+  <tr><td>东</td><td>右侧</td><td>右东</td></tr>
+</table>
+
+<div class="key-box" id="p3key">
+  地图上永远<strong>上北、下南、左西、右东</strong>。先找北，其余照推。
+</div>
+</section>
+
+<!-- ===== p3b: 连线巩固 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：说法和方向配对</h2>
+<p class="teach-text" id="p3bs1">先点左边的说法，再点右边的方向，连对了变绿。</p>
+<div id="matchP3"></div>
+</section>
+
+<!-- ===== p4: 中测1 ===== -->
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 认方向</h2>
+  <p class="quiz-hint">先找东（或北），再按东南西北推。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 地图上，下方表示哪个方向？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>北</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>南</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>西</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 面向东站立，你的左手边是哪个方向？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>北</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>南</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>西</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 太阳落下的方向是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>东</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>西</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>南</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 概念2 用方向描述位置与路线 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">用方向说清位置：先看参照，再说方向</h2>
+<p class="teach-text" id="p5s1">说方向前，先定「站在哪、看哪里」；没有参照，方向就是空的。</p>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>① 说位置要有参照</h4>
+    <div class="eq">以学校为中心<br>医院在学校的东边<br>而不是「医院在右边」</div>
+    <p>「右边」会随人转身变，「东边」不会。用方向词才说得准。</p>
+  </div>
+  <div class="card">
+    <h4>② 路线按顺序说</h4>
+    <div class="eq">先向东走 200 米<br>再向北走 100 米<br>就到了公园</div>
+    <p>一段一段说清楚方向和距离，别人才走得对。</p>
+  </div>
+  <div class="card">
+    <h4>③ 相对方向相反</h4>
+    <div class="eq">A 在 B 的东边<br>那么 B 就在 A 的西边<br>东 ↔ 西，南 ↔ 北</div>
+    <p>看的方向反过来，方向词也跟着反过来。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  说方向：先定<strong>参照物</strong>，再说<strong>方向</strong>；相对方向正好相反。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">方格地图：按方向走一走</h2>
+  <p class="sim-desc">小人从地图中心出发。点「向东/南/西/北」，一格一格走，看看位置怎么变、走过的路线留下什么痕迹。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">从起点出发，还没走</span>
+    <span class="sim-tip" id="simTip">地图上：上北、下南、左西、右东</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simNorth()">向北</button>
+    <button class="btn-primary" onclick="simEast()">向东</button>
+    <button class="btn-primary" onclick="simSouth()">向南</button>
+    <button class="btn-primary" onclick="simWest()">向西</button>
+    <button class="btn-retry" onclick="simDemo()">演示路线</button>
+    <button class="btn-retry" onclick="simReset()">重置</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="860" height="332"></canvas>
+      <p class="cap">地图：上方是北、下方是南、左边是西、右边是东</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>向东走一格，坐标怎么变？向北呢？</li>
+    <li>先向北再向东，最后在起点的哪个方向？</li>
+    <li>如果从终点走回起点，每一步方向要反过来说什么？</li>
+    <li>地图上「左上角」是哪个方向？用上北下南推一推。</li>
+  </ul>
+</div>
+</section>
+
+<!-- ===== p7: 中测2 ===== -->
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 相对方向与路线</h2>
+  <p class="quiz-hint">方向反过来时，词也要反过来。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 小明家在学校东边，学校在小明家的哪边？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>东</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>西</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>南</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 从 A 点向北走 3 格，再向东走 2 格，最后在 A 点的哪个方向？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>东北</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>西北</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>东南</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 地图「左西右东、上北下南」，那么左上角是哪个方向？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>西北</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>东北</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>西南</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 易错辨析 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四种错法，都错在「左右和东南西北」</h2>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 把左右当方向</h4>
+    <div class="wrong-num">✗ 我左手边就是西</div>
+    <p>左右会随你转身变。面向北时左手是西，面向南时左手就是东。</p>
+  </div>
+
+  <div class="card">
+    <h4>② 地图上下搞反</h4>
+    <div class="wrong-num">✗ 地图上方是南</div>
+    <p>地图约定<strong>上北下南</strong>，上方是北。搞反了整张图都走错。</p>
+  </div>
+
+  <div class="card">
+    <h4>③ 东和西弄反</h4>
+    <div class="wrong-num">✗ 太阳从西边升起</div>
+    <p>太阳<strong>东升西落</strong>。把东当成西，一天的方向全乱。</p>
+  </div>
+
+  <div class="card">
+    <h4>④ 相对方向说反</h4>
+    <div class="wrong-num">✗ A 在 B 东边，B 也在 A 东边</div>
+    <p>相对方向相反：A 在 B 东边，B 就在 A 的<strong>西边</strong>。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  四种错法，根子是同一个：<strong>把「你的左右」和「东南西北」混为一谈</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到书店：从学校向东 300 米到书店，书店在学校的东边；反过来，学校就在书店的<strong>西边</strong>。
+</p>
+</section>
+
+<!-- ===== p9: 后测 ===== -->
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，盯死方向和相对</h2>
+  <p class="quiz-hint">先找参照、再定方向，最后看是不是问「反过来」。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 太阳从哪个方向升起？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>东</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>西</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>南</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 地图上，右方表示哪个方向？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>西</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>东</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>北</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 面向南站立，你的左手边是哪个方向？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>东</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>西</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>北</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. A 在 B 的北边，B 在 A 的哪边？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>北</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>南</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>东</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 从家向东走 2 格再向北走 1 格到学校，家在学校哪个方向？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>西南</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>东北</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>东南</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">认东</div>
+        <div class="summary-v4-summary">太阳升起的方向</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-inner">
+          <div class="summary-v4-flip-front">怎么找<span class="fh">点击翻面</span></div>
+          <div class="summary-v4-flip-back">太阳东升西落<br>指南针指北<br>有一个方向，其余都能推</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">顺时针</div>
+        <div class="summary-v4-summary">东南西北</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么记<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">东南西北按顺时针排<br>东→南→西→北<br>转一圈回到东</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">地图</div>
+        <div class="summary-v4-summary">上北下南左西右东</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么读<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">上方北、下方南<br>左方西、右方东<br>左上角就是西北</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">说位置</div>
+        <div class="summary-v4-summary">先参照再方向</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么说<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">先定参照物，再说方向<br>相对方向正好相反<br>A 在 B 东边，B 就在 A 西边</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<p class="teach-text" style="margin-top:18px;color:#0D3B73;font-size:19px">
+  下次说方向，先问：站在哪？看哪里？再问：是东是西，是不是要反过来？
+</p>
+</section>
