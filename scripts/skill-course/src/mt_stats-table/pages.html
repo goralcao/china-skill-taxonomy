@@ -1,0 +1,531 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>两张表合成一张，表头怎么写？</h1>
+  <p class="sub">三年级数学 · 复式统计表</p>
+  <div class="tags">
+    <span class="tag">两组数据</span>
+    <span class="tag">一个表头</span>
+    <span class="tag">横竖对照</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 460 220" width="440" height="210" role="img" aria-label="一张复式统计表，左上角是斜线表头，横看班级、竖看性别">
+      <rect x="70" y="60" width="320" height="120" fill="rgba(255,255,255,.1)" stroke="#FFFFFF" stroke-width="2"/>
+      <line x1="70" y1="100" x2="390" y2="100" stroke="#FFFFFF" stroke-width="2"/>
+      <line x1="70" y1="140" x2="390" y2="140" stroke="#FFFFFF" stroke-width="2"/>
+      <line x1="150" y1="60" x2="150" y2="180" stroke="#FFFFFF" stroke-width="2"/>
+      <line x1="230" y1="60" x2="230" y2="180" stroke="#FFFFFF" stroke-width="2"/>
+      <line x1="310" y1="60" x2="310" y2="180" stroke="#FFFFFF" stroke-width="2"/>
+      <line x1="70" y1="60" x2="150" y2="100" stroke="#FFE0B2" stroke-width="2"/>
+      <text x="78" y="92" font-size="14" fill="#FFE0B2" font-family="sans-serif">性别</text>
+      <text x="120" y="78" font-size="14" fill="#FFE0B2" font-family="sans-serif">班级</text>
+      <text x="190" y="86" font-size="15" fill="#FFFFFF" text-anchor="middle" font-family="sans-serif">三（1）</text>
+      <text x="270" y="86" font-size="15" fill="#FFFFFF" text-anchor="middle" font-family="sans-serif">三（2）</text>
+      <text x="350" y="86" font-size="15" fill="#FFFFFF" text-anchor="middle" font-family="sans-serif">合计</text>
+      <text x="110" y="126" font-size="15" fill="#FFFFFF" text-anchor="middle" font-family="sans-serif">男生</text>
+      <text x="110" y="166" font-size="15" fill="#FFFFFF" text-anchor="middle" font-family="sans-serif">女生</text>
+      <text x="190" y="126" font-size="15" fill="#FFE0B2" text-anchor="middle" font-family="monospace">120</text>
+      <text x="270" y="126" font-size="15" fill="#FFE0B2" text-anchor="middle" font-family="monospace">110</text>
+      <text x="190" y="166" font-size="15" fill="#FFE0B2" text-anchor="middle" font-family="monospace">100</text>
+      <text x="270" y="166" font-size="15" fill="#FFE0B2" text-anchor="middle" font-family="monospace">130</text>
+    </svg>
+  </div>
+  <p style="font-size:20px;color:rgba(255,255,255,.92);max-width:560px;line-height:1.8;">
+    横向看班级，纵向看性别，一眼对照——<br>
+    这就是复式统计表的本事。
+  </p>
+  <p class="hint">点击右下角箭头开始 或 点击顶部导航跳转</p>
+  <a href="../../viz/index.html#t=mt_stats-table" style="margin-top:16px;color:rgba(255,255,255,.78);font-size:16px;text-decoration:underline">← 回到知识图谱</a>
+</div>
+</section>
+
+<!-- ===== p1: 前测 ===== -->
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先猜三道，凭感觉答</h2>
+  <p class="quiz-hint">三道题，看你会不会把「两张表」合成「一张表」。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 要比较两个班各兴趣小组的人数，用哪种表更方便？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>两张单式表</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>一张复式表</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>不用表</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 复式统计表左上角通常写什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>标题</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>说明横竖各表示什么</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>日期</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 三（1）班男生 20 人、女生 18 人，全班共几人？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>38 人</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>2 人</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>20 人</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 引入 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">三（1）班 120 元、三（2）班 110 元，怎么放进一张表？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 390 210" width="320" height="172" role="img" aria-label="复式统计表，横看班级竖看性别，含合计">
+      <rect x="15" y="30" width="360" height="160" fill="#F5F6FC" stroke="#3949AB" stroke-width="2"/>
+      <line x1="15" y1="70" x2="375" y2="70" stroke="#3949AB" stroke-width="2"/>
+      <line x1="15" y1="110" x2="375" y2="110" stroke="#3949AB" stroke-width="2"/>
+      <line x1="15" y1="150" x2="375" y2="150" stroke="#3949AB" stroke-width="2"/>
+      <line x1="105" y1="30" x2="105" y2="190" stroke="#3949AB" stroke-width="2"/>
+      <line x1="195" y1="30" x2="195" y2="190" stroke="#3949AB" stroke-width="2"/>
+      <line x1="285" y1="30" x2="285" y2="190" stroke="#3949AB" stroke-width="2"/>
+      <text x="60" y="58" font-size="13" fill="#3949AB" text-anchor="middle" font-family="sans-serif">项目</text>
+      <text x="150" y="58" font-size="13" fill="#3949AB" text-anchor="middle" font-family="sans-serif">三（1）班</text>
+      <text x="240" y="58" font-size="13" fill="#3949AB" text-anchor="middle" font-family="sans-serif">三（2）班</text>
+      <text x="330" y="58" font-size="13" fill="#00796B" text-anchor="middle" font-family="sans-serif">合计</text>
+      <text x="60" y="98" font-size="14" fill="#1B2138" text-anchor="middle" font-family="sans-serif">男生</text>
+      <text x="150" y="98" font-size="14" fill="#1B2138" text-anchor="middle" font-family="monospace">120</text>
+      <text x="240" y="98" font-size="14" fill="#1B2138" text-anchor="middle" font-family="monospace">110</text>
+      <text x="330" y="98" font-size="14" fill="#00796B" text-anchor="middle" font-family="monospace">230</text>
+      <text x="60" y="138" font-size="14" fill="#1B2138" text-anchor="middle" font-family="sans-serif">女生</text>
+      <text x="150" y="138" font-size="14" fill="#1B2138" text-anchor="middle" font-family="monospace">100</text>
+      <text x="240" y="138" font-size="14" fill="#1B2138" text-anchor="middle" font-family="monospace">130</text>
+      <text x="330" y="138" font-size="14" fill="#00796B" text-anchor="middle" font-family="monospace">230</text>
+      <text x="60" y="178" font-size="14" fill="#00796B" text-anchor="middle" font-family="sans-serif">合计</text>
+      <text x="150" y="178" font-size="14" fill="#00796B" text-anchor="middle" font-family="monospace">220</text>
+      <text x="240" y="178" font-size="14" fill="#00796B" text-anchor="middle" font-family="monospace">240</text>
+      <text x="330" y="178" font-size="14" fill="#00796B" text-anchor="middle" font-family="monospace">460</text>
+    </svg>
+  </div>
+  <p class="teach-text" id="p2s1">
+    男生零花钱：三（1）班 120 元、三（2）班 110 元；女生：三（1）班 100 元、三（2）班 130 元。
+  </p>
+  <p class="teach-text" id="p2s2">
+    四组数据分在两张单式表里，要来回翻。把它们放进<strong>同一张表</strong>，横看班级、竖看性别，一眼就能比。
+  </p>
+  <p class="teach-text" id="p2s3">
+    最后一行、最后一列是<strong>合计</strong>：三（1）班 220 元、三（2）班 240 元，全年级 460 元。
+  </p>
+</div>
+
+<div class="key-box" id="p2s4">
+  复式统计表 = <strong>两组数据放进同一张表，共用一个表头</strong>。
+</div>
+</section>
+
+<!-- ===== p3: 概念1 结构与表头 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">复式统计表的表头：一横一纵说清「是什么」</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 390 220" width="320" height="180" role="img" aria-label="复式统计表左上角斜线表头，说明横向是班级、纵向是性别">
+      <rect x="15" y="30" width="360" height="150" fill="#F5F6FC" stroke="#3949AB" stroke-width="2"/>
+      <line x1="15" y1="80" x2="375" y2="80" stroke="#3949AB" stroke-width="2"/>
+      <line x1="15" y1="130" x2="375" y2="130" stroke="#3949AB" stroke-width="2"/>
+      <line x1="115" y1="30" x2="115" y2="180" stroke="#3949AB" stroke-width="2"/>
+      <line x1="200" y1="30" x2="200" y2="180" stroke="#3949AB" stroke-width="2"/>
+      <line x1="290" y1="30" x2="290" y2="180" stroke="#3949AB" stroke-width="2"/>
+      <line x1="15" y1="30" x2="115" y2="80" stroke="#C62828" stroke-width="2"/>
+      <text x="24" y="74" font-size="13" fill="#C62828" font-family="sans-serif">性别</text>
+      <text x="74" y="50" font-size="13" fill="#C62828" font-family="sans-serif">班级</text>
+      <text x="157" y="62" font-size="13" fill="#3949AB" text-anchor="middle" font-family="sans-serif">三（1）</text>
+      <text x="245" y="62" font-size="13" fill="#3949AB" text-anchor="middle" font-family="sans-serif">三（2）</text>
+      <text x="332" y="62" font-size="13" fill="#00796B" text-anchor="middle" font-family="sans-serif">合计</text>
+      <text x="65" y="110" font-size="14" fill="#1B2138" text-anchor="middle" font-family="sans-serif">男生</text>
+      <text x="65" y="160" font-size="14" fill="#1B2138" text-anchor="middle" font-family="sans-serif">女生</text>
+      <text x="157" y="110" font-size="14" fill="#1B2138" text-anchor="middle" font-family="monospace">120</text>
+      <text x="245" y="110" font-size="14" fill="#1B2138" text-anchor="middle" font-family="monospace">110</text>
+      <text x="157" y="160" font-size="14" fill="#1B2138" text-anchor="middle" font-family="monospace">100</text>
+      <text x="245" y="160" font-size="14" fill="#1B2138" text-anchor="middle" font-family="monospace">130</text>
+    </svg>
+  </div>
+  <p class="teach-text" id="p3s1">
+    左上角用一条斜线分开：一边写「横着是什么」，一边写「竖着是什么」。这个格子叫<strong>表头</strong>。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>① 表头</strong>：说明横、竖各表示什么，比如「性别 / 班级」。</li>
+  <li><strong>② 横向</strong>：一排一个类别，这里是各个班级。</li>
+  <li><strong>③ 纵向</strong>：一列一个组别，这里是男生、女生。</li>
+  <li><strong>④ 合计</strong>：最后一行、最后一列，把数据加起来。</li>
+</ul>
+
+<table class="teach-table" id="p3table">
+  <tr><th>性别 \ 班级</th><th>三（1）班</th><th>三（2）班</th><th>合计</th></tr>
+  <tr><td>男生</td><td>120</td><td>110</td><td>230</td></tr>
+  <tr><td>女生</td><td>100</td><td>130</td><td>230</td></tr>
+  <tr><td>合计</td><td>220</td><td>240</td><td>460</td></tr>
+</table>
+
+<div class="key-box" id="p3key">
+  表头一句话说清「<strong>横是什么、竖是什么</strong>」，别人才看得懂这张表。
+</div>
+</section>
+
+<!-- ===== p3b: 连线巩固 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：说法和含义配对</h2>
+<p class="teach-text" id="p3bs1">先点左边的说法，再点右边的含义，连对了变绿。</p>
+<div id="matchP3"></div>
+</section>
+
+<!-- ===== p4: 中测1 ===== -->
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 结构与表头</h2>
+  <p class="quiz-hint">只盯一件事：横竖各表示什么。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 复式统计表和单式统计表最大的不同是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>数字更多</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>把两组数据放在一张表</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>不用表头</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 表头「性别 / 班级」中，「班级」通常表示？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>横向的类别</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>纵向的类别</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>合计</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 三（1）班男 120 元、女 100 元，合计多少元？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>220 元</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>20 元</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>120 元</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 概念2 看表分析 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">会看表：横着比、竖着比、算合计</h2>
+<p class="teach-text" id="p5s1">复式表不是用来看的，是用来「比」的。同一列比班级，同一行比性别。</p>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>① 竖着比：同班男女</h4>
+    <div class="eq">三（1）班<br>男 120 元 比 女 100 元<br>男生多 20 元</div>
+    <p>同一列上下看，比较同一个班的两个组别。</p>
+  </div>
+  <div class="card">
+    <h4>② 横着比：同性别两班</h4>
+    <div class="eq">男生<br>三（1）120 元 比 三（2）110 元<br>三（1）多 10 元</div>
+    <p>同一行左右看，比较两个班的同一组别。</p>
+  </div>
+  <div class="card">
+    <h4>③ 算合计与总计</h4>
+    <div class="eq">三（1）合计 220<br>三（2）合计 240<br>全年级 460</div>
+    <p>合计行/列能快速看出总量，也方便检查有没有算漏。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  复式表的价值在<strong>「对照」</strong>：同列看班级、同行看性别、合计看总量。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">复式统计表：点一点，看清横竖和合计</h2>
+  <p class="sim-desc">点「看男生行 / 看三（1）班列」等按钮，表格会高亮对应的行或列，并读出数据与合计——横看、竖看、总计一眼分明。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">复式统计表：横看班级，竖看性别</span>
+    <span class="sim-tip" id="simTip">点按钮高亮某一行或某一列</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simRow('m')">看男生行</button>
+    <button class="btn-primary" onclick="simRow('w')">看女生行</button>
+    <button class="btn-primary" onclick="simCol(1)">看三（1）列</button>
+    <button class="btn-primary" onclick="simCol(2)">看三（2）列</button>
+    <button class="btn-retry" onclick="simTotal()">看总计</button>
+    <button class="btn-retry" onclick="simReset()">重置</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="860" height="332"></canvas>
+      <p class="cap">横向是班级、纵向是性别；最后一行、最后一列是合计</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>横着看一行，比的是什么？竖着看一列呢？</li>
+    <li>男生合计 230 是怎么算出来的？</li>
+    <li>全年级总计 460，和两个班的合计有什么关系？</li>
+    <li>如果表头不写，别人还看得懂这张表吗？</li>
+  </ul>
+</div>
+</section>
+
+<!-- ===== p7: 中测2 ===== -->
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 读表与合计</h2>
+  <p class="quiz-hint">看清是「哪一行、哪一列」，再算。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 三（2）班男生 110 元、女生 130 元，合计多少元？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>230 元</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>240 元</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>130 元</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 两个班男生零花钱合计多少元？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>240 元</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>230 元</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>110 元</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 全年级零花钱总计多少元？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>440 元</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>240 元</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>460 元</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 易错辨析 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四种错法，都错在「表头和合计」</h2>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 以为数字多就是复式</h4>
+    <div class="wrong-num">✗ 数字多 = 复式表</div>
+    <p>复式表的关键是<strong>两组数据放一张表、共用一个表头</strong>，不是数字多少。</p>
+  </div>
+
+  <div class="card">
+    <h4>② 表头不写</h4>
+    <div class="wrong-num">✗ 左上角空着</div>
+    <p>不写表头，就不知道横竖各是什么，别人看不懂。</p>
+  </div>
+
+  <div class="card">
+    <h4>③ 横竖搞反</h4>
+    <div class="wrong-num">✗ 把班级写到竖排</div>
+    <p>表头写了什么就按什么排。横竖一乱，整张表都对不上。</p>
+  </div>
+
+  <div class="card">
+    <h4>④ 合计算错</h4>
+    <div class="wrong-num">✗ 三（1）合计写成 20</div>
+    <p>合计是相加不是相减：120+100=<strong>220</strong>。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  四种错法，根子是同一个：<strong>没把「表头说明什么」和「合计怎么来」弄清楚</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到两个班：把男女生人数合成一张表，横排班级、竖排性别，最后加合计——一张表就能看出全年级的情况。
+</p>
+</section>
+
+<!-- ===== p9: 后测 ===== -->
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，盯死表头和合计</h2>
+  <p class="quiz-hint">先看表头定横竖，再算合计。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 复式统计表最大的用处是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>数字更多</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>把两组数据放一张表对照</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>不用表头</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 表头「性别 / 班级」里，「性别」表示？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>纵向的组别</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>横向的类别</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>合计</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 三（1）班男 120 元、女 100 元，合计多少元？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>220 元</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>20 元</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>120 元</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 三（2）班男 110 元、女 130 元，合计多少元？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>230 元</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>240 元</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>130 元</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 全年级零花钱总计多少元？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>440 元</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>240 元</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>460 元</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">结构</div>
+        <div class="summary-v4-summary">共用一个表头</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">是什么<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">两张单式表合成一张<br>左上角斜线表头<br>说明横竖各表示什么</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">横向</div>
+        <div class="summary-v4-summary">一类一个</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">看什么<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">横向排列的类别<br>这里是各个班级<br>行内左右比，比的是同一组别</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">纵向</div>
+        <div class="summary-v4-summary">一组一行</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">看什么<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">纵向排列的组别<br>这里是男生、女生<br>列内上下比，比的是同一个班</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">合计</div>
+        <div class="summary-v4-summary">对照与总计</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么用<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">最后一行、最后一列是合计<br>三1 220、三2 240、总计 460<br>合计能快速看总量、查漏</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<p class="teach-text" style="margin-top:18px;color:#232A56;font-size:19px">
+  下次画统计表，先写左上角表头：横是什么、竖是什么；再补合计，最后对照着看。
+</p>
+</section>

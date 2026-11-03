@@ -1,24 +1,94 @@
 {
   "topicId": "mt_stats-table",
-  "title": "复式统计表：把两组数据放到一张表里",
+  "title": "复式统计表：两组数据放进一张表",
   "template": "explain",
-  "renderer": "barGroup",
-  "duration": 11,
-  "interactions": 2,
+  "renderer": "chart",
+  "duration": 24,
+  "interactions": 15,
   "grade": 3,
   "subject": "数学",
-  "standards": ["math-2022:S2:SP"],
-  "prerequisites": ["mt_data-collect", "mt_classify"],
-  "next": ["mt_average-mean", "mt_bar-chart", "mt_line-chart"],
-  "objectives": [
-    "认识复式统计表的结构：表头、横栏、竖栏",
-    "会把男生、女生两组数据合并到一张表",
-    "能对着两行数据做比较和简单判断"
+  "standards": [
+    "math-2022:S2:SP"
   ],
-  "cognitiveAction": "比较",
+  "prerequisites": [
+    "mt_data-collect",
+    "mt_classify"
+  ],
+  "next": [
+    "mt_average-mean",
+    "mt_bar-chart"
+  ],
+  "objectives": [
+    "认识复式统计表的结构，知道左上角表头说明横竖各表示什么",
+    "会把两组单式数据合并成一张复式统计表，并正确填写合计",
+    "会横看、竖看对照数据，根据合计做简单比较与判断"
+  ],
+  "cognitiveAction": "构造",
   "status": "reviewed",
   "author": "goral.cao",
   "license": "CC-BY-SA-4.0",
-  "version": "1.0.0",
-  "updatedAt": "2026-10-27"
+  "version": "3.0.0",
+  "updatedAt": "2026-11-04",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "合表",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "表头",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "看表",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
 }
