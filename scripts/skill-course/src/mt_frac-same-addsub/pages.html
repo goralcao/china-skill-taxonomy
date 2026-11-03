@@ -1,0 +1,503 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>2/5 + 1/5，为什么不是 3/10？</h1>
+  <p class="sub">三年级数学 · 同分母分数加减法</p>
+  <div class="tags">
+    <span class="tag">分母不变</span>
+    <span class="tag">分子加减</span>
+    <span class="tag">几个 1/n</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 460 220" width="440" height="210" role="img" aria-label="一条分 5 份的纸条，2 份红加 1 份青等于 3 份，结果是五分之三，不是十分之三">
+      <rect x="50" y="70" width="300" height="72" fill="#FDE8D8" stroke="#E65100" stroke-width="3"/>
+      <rect x="50" y="70" width="120" height="72" fill="#E65100"/>
+      <rect x="170" y="70" width="60" height="72" fill="#00838F"/>
+      <g stroke="#E65100" stroke-width="2">
+        <line x1="110" y1="70" x2="110" y2="142"/><line x1="170" y1="70" x2="170" y2="142"/>
+        <line x1="230" y1="70" x2="230" y2="142"/><line x1="290" y1="70" x2="290" y2="142"/>
+      </g>
+      <text x="50" y="178" font-size="24" fill="#FFFFFF" font-family="monospace">2/5 + 1/5 = 3/5 ✓</text>
+      <text x="50" y="206" font-size="20" fill="#FFCDD2" font-family="monospace">✗ 3/10（分母跟着加了）</text>
+    </svg>
+  </div>
+  <p style="font-size:20px;color:rgba(255,255,255,.92);max-width:560px;line-height:1.8;">
+    同分母，就是每一份一样大。<br>
+    只数「有几份」——分母，从头到尾不变。
+  </p>
+  <p class="hint">点击右下角箭头开始 或 点击顶部导航跳转</p>
+  <a href="../../viz/index.html#t=mt_frac-same-addsub" style="margin-top:16px;color:rgba(255,255,255,.78);font-size:16px;text-decoration:underline">← 回到知识图谱</a>
+</div>
+</section>
+
+<!-- ===== p1: 前测 ===== -->
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先猜三道，凭感觉答</h2>
+  <p class="quiz-hint">三道题都在问一件事：分母到底变不变。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 1/4 + 1/4 = ？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>2/8</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>2/4</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>1/8</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 3/5 − 1/5 = ？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>2/5</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>2/0</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3/5</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 5/8 里有几个 1/8？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5 个</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>8 个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>13 个</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 引入 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">一根 10 厘米的纸条，2/5 加 1/5 是多少？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 340 190" width="280" height="156" role="img" aria-label="10 厘米纸条平均分 5 份，2 份红加 1 份青等于 3 份，即五分之三">
+      <text x="30" y="24" font-size="15" fill="#8A4B20" font-family="sans-serif">全长 10 厘米，每份 2 厘米</text>
+      <rect x="20" y="34" width="300" height="56" fill="#FDE8D8" stroke="#E65100" stroke-width="2"/>
+      <rect x="20" y="34" width="120" height="56" fill="#E65100"/>
+      <rect x="140" y="34" width="60" height="56" fill="#00838F"/>
+      <g stroke="#E65100" stroke-width="2">
+        <line x1="80" y1="34" x2="80" y2="90"/><line x1="140" y1="34" x2="140" y2="90"/>
+        <line x1="200" y1="34" x2="200" y2="90"/><line x1="260" y1="34" x2="260" y2="90"/>
+      </g>
+      <text x="45" y="68" font-size="16" fill="#FFFFFF" font-family="monospace">2/5</text>
+      <text x="152" y="68" font-size="16" fill="#FFFFFF" font-family="monospace">1/5</text>
+      <text x="20" y="120" font-size="17" fill="#00695C" font-family="monospace">2 份 + 1 份 = 3 份，分母还是 5</text>
+      <text x="20" y="148" font-size="19" fill="#E65100" font-family="monospace">2/5 + 1/5 = 3/5</text>
+    </svg>
+  </div>
+  <p class="teach-text" id="p2s1">
+    同分母，就是每一份一样大：这里的每一份都是 <strong>1/5</strong>。
+  </p>
+  <p class="teach-text" id="p2s2">
+    2/5 是 2 个 1/5，1/5 是 1 个 1/5，合起来是 <strong>3 个 1/5 = 3/5</strong>。分成 5 份这件事没变，所以分母还是 5。
+  </p>
+  <p class="teach-text" id="p2s3">
+    纸条长 10 厘米、每份 2 厘米：2 份 4 厘米 + 1 份 2 厘米 = 6 厘米，仍是 5 份里的 3 份 = 3/5。写成 3/10，就把「分成几份」也改了。
+  </p>
+</div>
+
+<div class="key-box" id="p2s4">
+  同分母相加减：<strong>分母不变，只把分子相加减</strong>。分子是「几份」，分母是「每份多大」。
+</div>
+</section>
+
+<!-- ===== p3: 概念1 同分母加法 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">同分母加法：分母不变，分子相加</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 320 200" width="250" height="156" role="img" aria-label="五分之一加五分之二等于五分之三，分母都是五">
+      <rect x="30" y="60" width="260" height="56" fill="#FDE8D8" stroke="#E65100" stroke-width="2"/>
+      <rect x="30" y="60" width="52" height="56" fill="#00838F"/>
+      <rect x="82" y="60" width="104" height="56" fill="#E65100"/>
+      <g stroke="#E65100" stroke-width="2">
+        <line x1="82" y1="60" x2="82" y2="116"/><line x1="134" y1="60" x2="134" y2="116"/>
+        <line x1="186" y1="60" x2="186" y2="116"/><line x1="238" y1="60" x2="238" y2="116"/>
+      </g>
+      <text x="30" y="150" font-size="26" fill="#E65100" font-family="monospace">1/5 + 2/5 = 3/5</text>
+      <text x="30" y="184" font-size="16" fill="#00695C" font-family="sans-serif">1 份 + 2 份 = 3 份，分母都是 5</text>
+    </svg>
+  </div>
+  <p class="teach-text" id="p3s1">
+    先看分母是不是一样：一样，就能直接算。不一样，要先想办法。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>① 看分母</strong>：分母相同，说明每一份一样大，才能把「份数」直接相加。</li>
+  <li><strong>② 分母不变</strong>：分成几份没变，分母照写，不参与运算。</li>
+  <li><strong>③ 分子相加</strong>：2 个 1/5 加 1 个 1/5 是 3 个 1/5，分子 2+1=3。</li>
+</ul>
+
+<table class="teach-table" id="p3table">
+  <tr><th>算式</th><th>几个 1/5</th><th>结果</th></tr>
+  <tr><td>1/5 + 1/5</td><td>2 个</td><td>2/5</td></tr>
+  <tr><td>2/5 + 1/5</td><td>3 个</td><td>3/5</td></tr>
+  <tr><td>2/5 + 3/5</td><td>5 个</td><td>5/5</td></tr>
+</table>
+
+<div class="key-box" id="p3key">
+  分母管「每份多大」，分子管「几份」。<strong>份数相加，份的大小不动</strong>。
+</div>
+</section>
+
+<!-- ===== p3b: 连线巩固 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：算式和结果配对</h2>
+<p class="teach-text" id="p3bs1">先点左边的算式，再点右边的结果或法则，连对了变绿。</p>
+<div id="matchP3"></div>
+</section>
+
+<!-- ===== p4: 中测1 ===== -->
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 同分母加法</h2>
+  <p class="quiz-hint">只盯一件事：分母有没有乱动。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 2/7 + 3/7 = ？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5/14</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>5/7</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>6/7</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 同分母分数相加，下面什么不变？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>分子</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>分母</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>分子分母都不变</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 1/6 + 4/6 = ？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5/6</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>5/12</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>4/6</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 概念2 同分母减法与 1 的改写 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">同分母减法：分母不变，分子相减</h2>
+<p class="teach-text" id="p5s1">加法是「份数变多」，减法是「份数变少」；分母始终是那份大小，不动。</p>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>① 减法同理</h4>
+    <div class="eq">5/8 − 2/8<br>5 份减 2 份 = 3 份<br>= 3/8</div>
+    <p>分子相减，分母照写 8，不能把 8 也减掉。</p>
+  </div>
+  <div class="card">
+    <h4>② 1 可以改写</h4>
+    <div class="eq">1 − 3/5<br>= 5/5 − 3/5<br>= 2/5</div>
+    <p>把 1 看成「分母个 1/分母」，即 5/5，就能减了。</p>
+  </div>
+  <div class="card">
+    <h4>③ 分母照写</h4>
+    <div class="eq">4/9 − 1/9<br>分子 4−1=3<br>分母仍写 9 → 3/9</div>
+    <p>结果的分母永远是那个没变的分母，别跟着分子一起变。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  减去几份就分子减几；遇到 1，先写成 <strong>分母/分母</strong> 再减。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">分数条相加：分母不动，分子在长</h2>
+  <p class="sim-desc">这条分数条平均分成 6 份。红、青两种颜色各代表一个分数，看它们合起来是几份——分母 6 从头到尾不变。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">2/6 + 1/6 = 3/6</span>
+    <span class="sim-tip" id="simTip">分母 6 不变，分子 2 + 1 在相加</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simAplus()">红 +1</button>
+    <button class="btn-retry" onclick="simAminus()">红 −1</button>
+    <button class="btn-primary" onclick="simBplus()">青 +1</button>
+    <button class="btn-retry" onclick="simBminus()">青 −1</button>
+    <button class="btn-primary" onclick="simDemo()">演示</button>
+    <button class="btn-retry" onclick="simReset()">重置</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="860" height="332"></canvas>
+      <p class="cap">红色几份、青色几份，加起来是几份；分母始终是 6</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>红加青，谁变了、谁没变？</li>
+    <li>两份合起来最多能到几份？为什么不能超过 6 份？</li>
+    <li>如果红 2 份、青 1 份，写成算式是什么？分母写几？</li>
+    <li>把它们换成减法：3/6 − 1/6 剩几份？分母还是几？</li>
+  </ul>
+</div>
+</section>
+
+<!-- ===== p7: 中测2 ===== -->
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 同分母减法与 1</h2>
+  <p class="quiz-hint">先看清是加还是减，再想 1 要不要改写。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 5/9 − 2/9 = ？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>3/9</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3/0</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>7/9</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 1 − 2/7 = ？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1/7</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>5/7</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>2/7</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 3/8 + 4/8 = ？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>7/16</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>7/8</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>1/8</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 易错辨析 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四种错法，都错在「分母乱动」</h2>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 分母也相加</h4>
+    <div class="wrong-num">✗ 2/5 + 1/5 = 3/10</div>
+    <p>分母是「分成几份」，不参与相加。正解 <strong>3/5</strong>。</p>
+  </div>
+
+  <div class="card">
+    <h4>② 分母写成 0</h4>
+    <div class="wrong-num">✗ 3/5 − 1/5 = 2/0</div>
+    <p>分母照写 5：<strong>2/5</strong>。分母不能是 0。</p>
+  </div>
+
+  <div class="card">
+    <h4>③ 忘记写分母</h4>
+    <div class="wrong-num">✗ 2/7 + 3/7 = 5</div>
+    <p>结果是分数，分母要写：<strong>5/7</strong>，不是整数 5。</p>
+  </div>
+
+  <div class="card">
+    <h4>④ 结果分母也减了</h4>
+    <div class="wrong-num">✗ 4/9 − 1/9 = 3/8</div>
+    <p>只有分子相减，分母不变：<strong>3/9</strong>。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  四种错法，根子是同一个：<strong>把「份的大小（分母）」也拿去加减了</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到果汁：一杯果汁先喝 2/8，又喝 3/8，一共喝了 <strong>5/8</strong>，还剩 8/8−5/8 = <strong>3/8</strong>。
+</p>
+</section>
+
+<!-- ===== p9: 后测 ===== -->
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，盯死分母</h2>
+  <p class="quiz-hint">先问分母一样吗，再问是加还是减。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 3/7 + 2/7 = ？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5/14</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>5/7</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>6/7</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 6/11 − 4/11 = ？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>2/11</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>2/0</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>10/11</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 1 − 4/9 = ？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5/9</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>4/9</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>1/9</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 一根绳子第一次用 3/10，第二次用 2/10，两次共用几分之几？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5/10</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>5/20</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>1/10</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 同分母分数相加减，下面说法正确的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>分母也相加减</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>分母不变，分子相加减</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>分子不变，分母相加减</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">前提</div>
+        <div class="summary-v4-summary">分母相同</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-inner">
+          <div class="summary-v4-flip-front">为什么<span class="fh">点击翻面</span></div>
+          <div class="summary-v4-flip-back">同分母，每份一样大（都是 1/n）<br>才能直接数份数<br>分母不同，每份大小不同，不能直接加</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">加法</div>
+        <div class="summary-v4-summary">分母不变，分子相加</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-inner">
+          <div class="summary-v4-flip-front">怎么算<span class="fh">点击翻面</span></div>
+          <div class="summary-v4-flip-back">2/5 + 1/5 = 3/5<br>2 个 1/5 + 1 个 1/5 = 3 个 1/5<br>分母 5 照写，只加分子</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">减法</div>
+        <div class="summary-v4-summary">分母不变，分子相减</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么算<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">5/8 − 2/8 = 3/8<br>5 份减 2 份 = 3 份<br>分母永远照写，不跟着减</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">技巧</div>
+        <div class="summary-v4-summary">1 = 分母/分母</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">遇到 1<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">1 − 3/5 先把 1 写成 5/5<br>5/5 − 3/5 = 2/5<br>分母是几，就把 1 写成几/几</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<p class="teach-text" style="margin-top:18px;color:#7A2E00;font-size:19px">
+  下次算分数加减，先看分母：一样，就只动分子；不一样，先别急着算。
+</p>
+</section>

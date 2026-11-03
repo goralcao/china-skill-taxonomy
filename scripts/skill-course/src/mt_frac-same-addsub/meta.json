@@ -1,0 +1,38 @@
+{
+  "topicId": "mt_frac-same-addsub",
+  "title": "同分母分数加减：分母不变，只数份数",
+  "template": "explain",
+  "renderer": "fracMeaning",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 3,
+  "subject": "数学",
+  "standards": ["math-2022:S2:NA:NO"],
+  "prerequisites": ["mt_frac-intro", "mt_num-10-addsub"],
+  "next": ["mt_frac-addsub"],
+  "objectives": [
+    "理解同分母分数加减就是若干个相同的 1/n 相加减，分母始终不变",
+    "会正确计算同分母分数加减，得数分母照写、分子相加减",
+    "会把 1 改写成「分母/分母」，解决 1 减去几分之几的问题"
+  ],
+  "cognitiveAction": "累积",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-04",
+  "nav": [
+    {"label": "封面", "page": 0, "cls": "active"},
+    {"label": "前测", "page": 1, "cls": "pre"},
+    {"label": "分纸条", "page": 2, "cls": ""},
+    {"label": "加法", "page": 3, "cls": ""},
+    {"label": "连一连", "page": 4, "cls": ""},
+    {"label": "中测1", "page": 5, "cls": "mid"},
+    {"label": "减法", "page": 6, "cls": ""},
+    {"label": "仿真", "page": 7, "cls": "sim"},
+    {"label": "中测2", "page": 8, "cls": "mid"},
+    {"label": "辨析", "page": 9, "cls": ""},
+    {"label": "后测", "page": 10, "cls": "post"},
+    {"label": "总结", "page": 11, "cls": "end"}
+  ]
+}
