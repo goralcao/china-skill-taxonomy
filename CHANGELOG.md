@@ -2,6 +2,34 @@
 
 本项目遵循[语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [v0.49.3] - 2026-11-03
+
+### 渲染器白名单收成一份——脚手架不再挡自己的路
+
+上次补语文课踩到个坑：`new-course.mjs` 的 `--renderer` 白名单停在数学那 49 个，
+语文的 `poemNote` / `draft` / `checkup` 不在里面，只能先生成 `text` 再手改 `meta.renderer`。
+根子不是漏加一个词，是同一份清单在 `new-course` / `validate-courses` / `score-course`
+三个脚本里各抄了一遍，改一处忘两处。
+
+改成从引擎源码反推：
+
+- 新增 `scripts/course-schema.mjs`，解析 `templates/renderers.js` 的 `global.CR` 键
+  （能画什么）与 `templates/engine.js` 的 `RENDER` 表键（能走什么步骤），
+  导出 `RENDERERS` / `STEP_TYPES` / `LANG_ACTIONS` / `SUGGESTED`。三个脚本统一从这里取。
+- 白名单从 60 个收到 59 个：清掉 `sim` / `diagram` / `equation` 三个幽灵项——
+  它们从来没在 `CR` 里实现过，验证脚本却一直放行；补上 `decimal` / `table`，
+  这两个引擎里画得出来、原来反而不让写。
+- `score-course.mjs` 的「可验证环节」改用同一份语文清单，原先漏了
+  `transform` / `pairMatch` / `sentBuild` / `punctPick` 四个动手步骤。
+  实测分数无变化（这几课在别的维度已经满分），是口径对齐，不是提分。
+- `new-course.mjs` 新增 `--list-renderers`；`--batch` 支持 `--subject=语文`；
+  生成后按学科给推荐步骤，不再只提数学那四个。
+
+护栏：新增 `scripts/course-schema.test.mjs`（8 项），断言常量与源码一致、
+白名单里没有幽灵项、69 个课件实际用到的 `type` 与 `renderer` 都被引擎支持，
+并反向检查三个脚本里不再出现手抄的清单。CI 由单文件测试改为 `node --test scripts/*.test.mjs`。
+故意塞回一份内联列表验证过，测试会红。
+
 ## [v0.49.2] - 2026-11-03
 
 ### 三年级语文缺的 4 个点补齐了——之前是断的

@@ -17,6 +17,7 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
+import { ACTIONS, LANG_ACTIONS } from './course-schema.mjs';
 
 const ROOT = process.cwd();
 const args = process.argv.slice(2);
@@ -38,8 +39,7 @@ const DIMS = [
   { key: 'copy', name: '文案', short: '文案', max: 5 },
 ];
 
-const ACTIONS = ['比较', '分解', '变换', '逼近', '累积', '模拟', '构造', '辨析', '构思'];
-const VISUAL = ['vertical', 'geometry', 'numberline', 'clock', 'sim', 'coords'];
+const VISUAL = ['vertical', 'geometry', 'numberline', 'clock', 'coords'];
 const BANNED = ['本节课', '我们一起来', '让我们一起', '众所周知', '同学们'];
 
 const readJSON = p => JSON.parse(fs.readFileSync(p, 'utf8'));
@@ -171,9 +171,8 @@ function scoreCourse(dir) {
     put('assess', null, '手写页面：题目数未知');
   } else {
     // 语文的「留下痕迹」环节（圈画/动笔/自评）与检测题同权
-    const HOME = ['quiz', 'choice', 'annotate', 'draft', 'rubric', 'predict', 'poemNote', 'senses', 'checkup',
-      'pinyin', 'story', 'readAloud', 'writeChar'];
-    const qTotal = steps.filter(s => HOME.includes(s.type)).length;
+    const std = LANG_ACTIONS;
+    const qTotal = steps.filter(s => std.includes(s.type)).length;
     if (qTotal >= 2) put('assess', 10, `${qTotal} 个可验证环节`);
     else if (qTotal === 1) put('assess', 5, '只有 1 个可验证环节，看不出是否真会');
     else put('assess', 0, '没有可验证环节');

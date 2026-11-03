@@ -4,7 +4,8 @@
  *
  * 用法：
  *   node scripts/new-course.mjs <topicId> [--template=explain] [--renderer=vertical] [--force]
- *   node scripts/new-course.mjs --batch 3 [--template=explain] [--force]   # 按年级批量
+ *   node scripts/new-course.mjs --batch 3 [--subject=语文] [--force]   # 按年级批量
+ *   node scripts/new-course.mjs --list-renderers                       # 看 renderer 能填什么
  *
  * 生成：
  *   courses/<topicId>/meta.json      元数据
@@ -15,6 +16,7 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
+import { TEMPLATES, RENDERERS, CR_RENDERERS, SUGGESTED } from './course-schema.mjs';
 
 const ROOT = process.cwd();
 const args = process.argv.slice(2);
@@ -23,9 +25,6 @@ const flag = k => {
   return hit ? hit.split('=')[1] : null;
 };
 const has = k => args.includes(`--${k}`);
-
-const TEMPLATES = ['explain', 'drill', 'explore', 'review'];
-const RENDERERS = ['text', 'vertical', 'geometry', 'solid', 'division', 'molecule', 'pyramid', 'calendar', 'decimalBar', 'barGroup', 'compass', 'numberline', 'coords', 'clock', 'sim', 'diagram', 'equation', 'law', 'triangle', 'counter', 'angle', 'quad', 'decGrid', 'mult2', 'fracMeaning', 'fracOps', 'fracReduce', 'spinner', 'decMult', 'decDiv', 'volume', 'pairs', 'treePlant', 'symmetry', 'chart', 'mean', 'polyArea', 'factorGrid', 'fracDiv', 'balance', 'callTree', 'circle', 'circleMeasure', 'sector', 'cylinder', 'sentBuild', 'pairMatch', 'transform', 'punctPick'];
 
 const read = p => JSON.parse(fs.readFileSync(path.join(ROOT, p), 'utf8'));
 let topicsDoc, researchDoc, depsDoc, coursesDoc;
@@ -39,6 +38,22 @@ try {
   process.exit(1);
 }
 
+/* ── 列出可选渲染器 ───────────────────────────────────── */
+if (has('list-renderers')) {
+  const langOnly = RENDERERS.filter(v => v !== 'text' && !CR_RENDERERS.includes(v));
+  console.log(`meta.renderer 可选值（共 ${RENDERERS.length} 个，取自 templates/renderers.js 与 engine.js）：\n`);
+  let line = '  ';
+  RENDERERS.forEach(v => {
+    if (line.length + v.length > 76) { console.log(line); line = '  '; }
+    line += v.padEnd(Math.max(14, v.length + 2));
+  });
+  console.log(line);
+  console.log('\n数学课件常用：' + SUGGESTED.数学.join(' / '));
+  console.log('语文课件常用：' + SUGGESTED.语文.join(' / '));
+  if (langOnly.length) console.log(`\n另有 ${langOnly.length} 个语文步骤也能当 renderer 写：${langOnly.join(' / ')}`);
+  process.exit(0);
+}
+
 const template = flag('template') || 'explain';
 const renderer = flag('renderer') || 'text';
 if (!TEMPLATES.includes(template)) {
@@ -46,7 +61,8 @@ if (!TEMPLATES.includes(template)) {
   process.exit(1);
 }
 if (!RENDERERS.includes(renderer)) {
-  console.error(`--renderer 只能是 ${RENDERERS.join(' / ')}`);
+  console.error(`--renderer=${renderer} 不认识。跑 node scripts/new-course.mjs --list-renderers 看全部 ${RENDERERS.length} 个。`);
+  console.error(`常用：${[...SUGGESTED.数学, ...SUGGESTED.语文].slice(0, 12).join(' / ')} …`);
   process.exit(1);
 }
 
@@ -156,7 +172,7 @@ function scaffold(topicId, opts = {}) {
     layout.replace(/\{\{TITLE\}\}/g, esc(topic.name)),
     'utf8',
   );
-  return { topicId, steps: steps.length };
+  return { topicId, subject: topic.subject, steps: steps.length };
 }
 
 /* ── 批量：按年级列出可生成的主题 ─────────────────────── */
@@ -164,19 +180,21 @@ if (has('batch')) {
   const gradeArg = args[args.indexOf('--batch') + 1];
   const grade = Number(gradeArg);
   if (!grade) {
-    console.error('用法：node scripts/new-course.mjs --batch 3');
+    console.error('用法：node scripts/new-course.mjs --batch 3 [--subject=语文]');
     process.exit(1);
   }
+  const subject = flag('subject') || '数学';
   const list = topicsDoc.topics
-    .filter(t => t.subject === '数学' && t.gradeRangeStart === grade)
+    .filter(t => t.subject === subject && t.gradeRangeStart === grade)
     .sort((a, b) => (a.textbooks[0] || '').localeCompare(b.textbooks[0] || ''));
 
-  console.log(`三年级数学共 ${list.length} 个主题：\n`);
+  console.log(`${grade} 年级${subject}共 ${list.length} 个主题：\n`);
   list.forEach(t => {
     const done = existing.has(t.id) ? '✓ 已有' : '  待建';
     console.log(`  ${done}  ${(t.textbooks[0] || '-').padEnd(16)} ${t.name}`);
   });
-  console.log(`\n生成单个：node scripts/new-course.mjs <topicId> --renderer=vertical`);
+  const pick = (SUGGESTED[subject] || SUGGESTED.数学)[0];
+  console.log(`\n生成单个：node scripts/new-course.mjs <topicId> --renderer=${pick}`);
   process.exit(0);
 }
 
@@ -188,10 +206,11 @@ if (!topicId) {
 }
 try {
   const r = scaffold(topicId, { force: has('force') });
+  const sug = (SUGGESTED[r.subject] || SUGGESTED.数学);
   console.log(`已生成 courses/${r.topicId}/（${r.steps} 个步骤，状态 draft）`);
   console.log('\n待办：');
   console.log('  1. 改 content.json 里的 TODO，把书面语换成对学生说的话');
-  console.log('  2. 按主题换成合适的 step 类型（vertical / geometry / numberline / clock）');
+  console.log(`  2. 按主题换成合适的 step 类型（${r.subject}常用：${sug.slice(0, 5).join(' / ')}）`);
   console.log('  3. 核对答案，把 meta.status 改成 reviewed');
   console.log('\n本地预览：python3 -m http.server 8000 --directory courses/' + r.topicId);
   console.log('校验：node scripts/validate-courses.mjs');

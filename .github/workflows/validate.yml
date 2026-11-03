@@ -22,8 +22,8 @@ jobs:
       - name: Validate dataset
         run: node scripts/validate.mjs
 
-      - name: Teaching research tests
-        run: node --test scripts/teaching-research.test.mjs
+      - name: Script tests
+        run: node --test scripts/*.test.mjs
 
       - name: Validate courses
         run: node scripts/validate-courses.mjs

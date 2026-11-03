@@ -10,7 +10,7 @@
 覆盖 12 个学科、1~12 年级，每个主题配一份教学研究</p>
 
 <p>
-<img src="https://img.shields.io/badge/version-v0.47.0-blue?style=flat-square" alt="version">
+<img src="https://img.shields.io/badge/version-v0.49.3-blue?style=flat-square" alt="version">
 <img src="https://img.shields.io/badge/subjects-12-informational?style=flat-square" alt="subjects">
 <img src="https://img.shields.io/badge/topics-1273-brightgreen?style=flat-square" alt="topics">
 <img src="https://img.shields.io/badge/prerequisite%20edges-1647-blueviolet?style=flat-square" alt="prerequisite edges">
@@ -26,7 +26,7 @@
 
 在线预览：<https://acd118508358062b1.app.workbuddy.host/?sharecode=DHL4TJAQCG>
 
-> v0.49.2 · 主题 1273 · 先修依赖 1647（hard 952 / soft 695）· 课标条目 186 · 域摘要 204 · 教学研究 1268 · 教材版本 26 · 学科 12 · 课件 69 · 诊断题 141（覆盖 63 个主题：数学 46、语文 16、化学 1）
+> v0.49.3 · 主题 1273 · 先修依赖 1647（hard 952 / soft 695）· 课标条目 186 · 域摘要 204 · 教学研究 1268 · 教材版本 26 · 学科 12 · 课件 69 · 诊断题 141（覆盖 63 个主题：数学 46、语文 16、化学 1）
 
 ## 目录
 
