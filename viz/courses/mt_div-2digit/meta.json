@@ -1,31 +1,95 @@
 {
   "topicId": "mt_div-2digit",
-  "title": "除数是两位数的除法：把除数看成整十数来试商",
+  "title": "192 人分车，为什么先猜 9 辆再改 8 辆",
   "template": "explain",
   "renderer": "division",
-  "duration": 12,
-  "interactions": 2,
+  "duration": 26,
+  "interactions": 16,
   "grade": 4,
   "subject": "数学",
   "standards": [
     "math-2022:S2:NA:NO"
   ],
   "prerequisites": [
-    "mt_div-1digit",
-    "mt_mult-2digit"
+    "mt_mult-2digit",
+    "mt_div-1digit"
   ],
   "next": [
-    "mt_ops-order"
+    "mt_ops-order",
+    "mt_dec-div",
+    "mt_factors"
   ],
   "objectives": [
-    "会用四舍五入把除数看成整十数来试商",
-    "掌握除数是两位数的笔算步骤：试商、乘、减、落",
-    "会调商：商大了往下调，商小了往上调"
+    "会把除数看作接近的整十数来试商，说清估算的那一步",
+    "遇到商大了或商小了会调商，知道余数必须比除数小",
+    "掌握商是两位数时每一位商写在哪一位上面"
   ],
   "cognitiveAction": "逼近",
   "status": "reviewed",
   "author": "goral.cao",
   "license": "CC-BY-SA-4.0",
-  "version": "1.0.0",
-  "updatedAt": "2026-10-27"
+  "version": "3.0.0",
+  "updatedAt": "2026-11-04",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "为什么难",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "试商",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "商的位置",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
 }
