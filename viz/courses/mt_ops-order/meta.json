@@ -1,0 +1,94 @@
+{
+  "topicId": "mt_ops-order",
+  "title": "3 盒牛奶加 1 袋饼干，为什么不能从左往右算",
+  "template": "explain",
+  "renderer": "callTree",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 4,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S2:NA:NO"
+  ],
+  "prerequisites": [
+    "mt_mixed-two-steps",
+    "mt_div-2digit",
+    "mt_mult-2digit"
+  ],
+  "next": [
+    "mt_frac-addsub"
+  ],
+  "objectives": [
+    "掌握先乘除后加减、同级从左往右的运算顺序",
+    "会用小括号和中括号改变运算顺序",
+    "能把分步算式合成含括号的综合算式"
+  ],
+  "cognitiveAction": "分解",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-04",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "超市结账",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "运算顺序",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "括号",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

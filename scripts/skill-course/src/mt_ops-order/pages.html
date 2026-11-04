@@ -1,0 +1,563 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>3 盒牛奶加 1 袋饼干，为什么不能从左往右算</h1>
+  <p class="sub">四年级数学 · 四则运算</p>
+  <div class="tags">
+    <span class="tag">先乘除后加减</span>
+    <span class="tag">小括号</span>
+    <span class="tag">中括号</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 460 190" width="450" height="186" role="img" aria-label="表达式树：减法在顶上，乘法与除法在中间，加法在最下面">
+      <g font-family="monospace" font-size="17" text-anchor="middle">
+        <line x1="230" y1="52" x2="150" y2="92" stroke="rgba(255,255,255,.5)" stroke-width="1.6"/>
+        <line x1="230" y1="52" x2="310" y2="92" stroke="rgba(255,255,255,.5)" stroke-width="1.6"/>
+        <line x1="150" y1="112" x2="110" y2="146" stroke="rgba(255,255,255,.5)" stroke-width="1.6"/>
+        <line x1="150" y1="112" x2="190" y2="146" stroke="rgba(255,255,255,.5)" stroke-width="1.6"/>
+
+        <rect x="204" y="30" width="52" height="34" rx="8" fill="#FFA726"/>
+        <text x="230" y="53" fill="#3E2723">−</text>
+        <rect x="124" y="90" width="52" height="34" rx="8" fill="none" stroke="#FFFFFF" stroke-width="1.8"/>
+        <text x="150" y="113" fill="#FFFFFF">×</text>
+        <rect x="284" y="90" width="52" height="34" rx="8" fill="none" stroke="#FFFFFF" stroke-width="1.8"/>
+        <text x="310" y="113" fill="#FFFFFF">÷</text>
+
+        <rect x="84" y="144" width="52" height="34" rx="8" fill="#FFE0B2"/>
+        <text x="110" y="167" fill="#3E2723">+</text>
+        <text x="190" y="167" fill="rgba(255,255,255,.9)">3</text>
+        <text x="310" y="167" fill="rgba(255,255,255,.9)">120</text>
+        <text x="392" y="167" fill="rgba(255,255,255,.9)">4</text>
+
+        <text x="58" y="192" fill="rgba(255,255,255,.85)">145</text>
+        <text x="110" y="192" fill="rgba(255,255,255,.85)">55</text>
+        <text x="230" y="192" fill="rgba(255,255,255,.85)" font-size="13">越靠下越先算</text>
+      </g>
+    </svg>
+  </div>
+  <p style="font-size:20px;color:rgba(255,255,255,.92);max-width:600px;line-height:1.8;">
+    算式不是从左边一口气读到底。<br>
+    <strong>谁「厉害」谁先算，括号最厉害。</strong>
+  </p>
+  <p class="hint">点击右下角箭头开始 或 点击顶部导航跳转</p>
+  <a href="../../viz/index.html#t=mt_ops-order" style="margin-top:16px;color:rgba(255,255,255,.78);font-size:16px;text-decoration:underline">← 回到知识图谱</a>
+</div>
+</section>
+
+<!-- ===== p1: 前测 ===== -->
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先答三道，凭感觉</h2>
+  <p class="quiz-hint">都是买东西会遇到的算法。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 3 × 4 + 5 等于多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>17</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>27</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>12</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 20 − 4 × 3 等于多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>48</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>8</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>12</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 买 3 个 5 元的本子，付 20 元，应找回多少元？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5 元</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>15 元</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>35 元</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 引入 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">8 元饼干加 3 盒牛奶，该收多少钱？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 340 250" width="370" height="272" role="img" aria-label="超市小票：饼干 8 元、牛奶 3 盒每盒 12 元、满 40 减 5，实付 39 元">
+      <g font-family="sans-serif">
+        <path d="M14 12 L326 12 L326 236 L14 236 Z" fill="#FFFFFF" stroke="#B0BEC5" stroke-width="1.5"/>
+        <g stroke="#CFD8DC" stroke-width="1" stroke-dasharray="3 4">
+          <line x1="26" y1="60" x2="314" y2="60"/>
+          <line x1="26" y1="150" x2="314" y2="150"/>
+          <line x1="26" y1="196" x2="314" y2="196"/>
+        </g>
+        <text x="170" y="42" font-size="14" font-weight="700" fill="#37474F" text-anchor="middle">超市小票</text>
+        <g font-size="12.5" fill="#455A64">
+          <text x="26" y="84">饼干 1 袋</text><text x="314" y="84" text-anchor="end">8 元</text>
+          <text x="26" y="112">牛奶 3 盒</text><text x="314" y="112" text-anchor="end">12 元 / 盒</text>
+          <text x="26" y="138" font-size="11.5" fill="#90A4AE">（3 盒就是 3 × 12）</text>
+          <text x="26" y="176">合计</text><text x="314" y="176" text-anchor="end" font-weight="700">44 元</text>
+          <text x="26" y="216" fill="#E65100">满 40 减 5</text><text x="314" y="216" text-anchor="end" fill="#E65100">− 5 元</text>
+        </g>
+        <text x="170" y="248" font-size="13" font-weight="700" fill="#37474F" text-anchor="middle">实付 39 元</text>
+      </g>
+    </svg>
+  </div>
+  <p class="teach-text" id="p2s1">
+    买 1 袋 8 元的饼干、3 盒 12 元的牛奶，店里满 40 减 5。收银员扫完码，屏幕上跳出一行算式：8 + 3 × 12 − 5。
+  </p>
+  <p class="teach-text" id="p2s2">
+    如果从左边开始，8 + 3 = 11，11 × 12 = 132——一下变成 132 元，比实际多了快三倍。
+  </p>
+  <p class="teach-text" id="p2s3">
+    算式里藏着先后：<strong>先算乘除，再算加减</strong>。乘号把「3 盒」和「12 元」绑成一体，不能先拆开。
+  </p>
+</div>
+
+<div class="key-box" id="p2s4">
+  8 + 3 × 12 − 5 应该这样走：3 × 12 = 36 → 8 + 36 = 44 → 44 − 5 = <strong>39</strong>。
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>① 从左往右</h4>
+    <div class="eq">8 + 3 = 11<br>11 × 12 = 132</div>
+    <p>把「3 盒」和「12 元一盒」拆散了，算出来的不是钱。</p>
+  </div>
+  <div class="card">
+    <h4>② 先乘后加</h4>
+    <div class="eq">3 × 12 = 36<br>8 + 36 = 44</div>
+    <p>先算出 3 盒一共多少钱，再加上饼干。</p>
+  </div>
+  <div class="card">
+    <h4>③ 最后满减</h4>
+    <div class="eq">44 − 5 = 39 元</div>
+    <p>满减是最后一步，钱算完了才减。</p>
+  </div>
+</div>
+</section>
+
+<!-- ===== p3: 运算顺序 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">算式的顺序，不是从左读到右</h2>
+
+<p class="teach-text" id="p3s1">
+  加减乘除不是平起平坐。乘除管的是「几个几」，加减管的是「合起来、去掉」。先把「几个几」算清楚，再合再减。
+</p>
+
+<div class="fig" id="p3fig" style="margin:6px 0 2px">
+  <svg viewBox="0 0 640 268" width="700" height="293" role="img" aria-label="同一个算式两种算法对比：从左往右得 127 元，按规则得 39 元">
+    <g font-family="sans-serif">
+      <text x="20" y="30" font-size="13.5" font-weight="700" fill="#C62828">✗ 从左往右读</text>
+      <text x="340" y="30" font-size="13.5" font-weight="700" fill="#2E7D32">✓ 先乘除后加减</text>
+
+      <rect x="16" y="44" width="296" height="176" rx="10" fill="#FFEBEE" stroke="#EF9A9A" stroke-width="1.4"/>
+      <rect x="336" y="44" width="288" height="176" rx="10" fill="#E8F5E9" stroke="#A5D6A7" stroke-width="1.4"/>
+
+      <g font-family="monospace" font-size="15">
+        <text x="36" y="82" fill="#B71C1C">8 + 3 = 11</text>
+        <text x="36" y="116" fill="#B71C1C">11 × 12 = 132</text>
+        <text x="36" y="150" fill="#B71C1C">132 − 5 = 127</text>
+        <text x="356" y="82" fill="#1B5E20">3 × 12 = 36</text>
+        <text x="356" y="116" fill="#1B5E20">8 + 36 = 44</text>
+        <text x="356" y="150" fill="#1B5E20">44 − 5 = 39</text>
+      </g>
+
+      <g font-size="12.5">
+        <text x="36" y="188" fill="#B71C1C">把「3 盒 × 12 元」拆了，单位乱了</text>
+        <text x="356" y="188" fill="#1B5E20">每盒 12 元这条线一直留着</text>
+      </g>
+
+      <text x="20" y="252" font-size="14" font-weight="700" fill="#B71C1C">多收 88 元</text>
+      <text x="340" y="252" font-size="14" font-weight="700" fill="#2E7D32">正好 39 元</text>
+
+    </g>
+  </svg>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>① 先乘除</strong>：乘除比加减「厉害」一级，看见就先把它们算掉。</li>
+  <li><strong>② 后加减</strong>：剩下的加减按从左往右走。</li>
+  <li><strong>③ 同级看左右</strong>：只有乘除、或只有加减时，谁在前面谁先算。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  记成一句话：<strong>先乘除，后加减，同级从左往右</strong>。三步走完，顺序不会乱。
+</div>
+</section>
+
+<!-- ===== p3b: 连线巩固 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：遇到这种算式怎么走</h2>
+<p class="teach-text" id="p3bs1">先点左边的情况，再点右边的规矩，连对了变绿。</p>
+<div id="matchP3"></div>
+</section>
+
+<!-- ===== p4: 中测1 ===== -->
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 先算哪一步</h2>
+  <p class="quiz-hint">三题都不用算完，只要说出先算谁。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 计算 24 + 6 × 4 时，先算哪一步？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>24 + 6</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>6 × 4</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>24 × 4</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 100 − 36 ÷ 6 等于多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>4</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>94</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>64</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 64 ÷ 8 × 2 等于多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>4</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>16</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>1</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 括号 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">括号是「插队券」，能让后面的先算</h2>
+
+<p class="teach-text" id="p5s1">
+  有时候你偏要先算加减，那就加括号。小括号最优先，小括号外面再套一层中括号，就从里往外剥。
+</p>
+
+<div class="fig" id="p5fig" style="margin:6px 0 2px">
+  <svg viewBox="0 0 420 300" width="445" height="318" role="img" aria-label="96 除以中括号小括号 12 加 4 反括号乘 2 中括号，分三步算">
+    <g font-family="sans-serif">
+      <g font-size="12.5" fill="#90A4AE" text-anchor="end">
+        <text x="70" y="46">原式</text>
+        <text x="70" y="124" fill="#E65100">①</text>
+        <text x="70" y="202" fill="#E65100">②</text>
+        <text x="70" y="280" fill="#2E7D32">③</text>
+      </g>
+      <g font-family="monospace" font-size="19" fill="#37474F">
+        <text x="88" y="46">96 ÷ [(12 + 4) × 2]</text>
+        <text x="88" y="124">96 ÷ [16 × 2]</text>
+        <text x="88" y="202">96 ÷ 32</text>
+        <text x="88" y="280" fill="#2E7D32" font-weight="700">= 3</text>
+      </g>
+
+      <g stroke="#E0E5E8" stroke-width="1.2">
+        <line x1="88" y1="62" x2="88" y2="96"/>
+        <line x1="88" y1="140" x2="88" y2="174"/>
+        <line x1="88" y1="218" x2="88" y2="248"/>
+      </g>
+
+      <g font-size="12" fill="#E65100">
+        <text x="104" y="84">先算小括号：12 + 4 = 16</text>
+        <text x="104" y="162">再算中括号：16 × 2 = 32</text>
+      </g>
+      <text x="104" y="240" font-size="12" fill="#2E7D32">小括号和中括号都没了，最后除</text>
+
+      <text x="88" y="296" font-size="11.5" fill="#90A4AE">每剥掉一层，式子就短一截，直到只剩一个数</text>
+    </g>
+  </svg>
+</div>
+
+<ul class="feature-list" id="p5rules">
+  <li><strong>① 小括号 ( )</strong>：最先算，里面的式子整个当一个数。</li>
+  <li><strong>② 中括号 [ ]</strong>：等小括号算完，它里面就只剩普通的式子，再整个算掉。</li>
+  <li><strong>③ 三层以上</strong>：由里往外，一层算完剥一层，像剥洋葱。</li>
+</ul>
+
+<div class="key-box" id="p5key">
+  括号只改顺序，不改数字。写综合算式时，<strong>哪一步要先算，就给它套上括号</strong>。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">表达式树：谁先算，谁就先「变成一个数」</h2>
+  <p class="sim-desc">点「下一步」，程序按规则挑出该先算的那一支，算完它就缩成一个结果。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">(145 + 55) × 3 − 120 ÷ 4</span>
+    <span class="sim-tip" id="simTip">树上越靠下的枝，越先算</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simNext()">下一步 →</button>
+    <button class="btn-retry" onclick="simPrev()">← 上一步</button>
+    <button class="btn-retry" onclick="simReset()">重来</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="380"></canvas>
+      <p class="cap">橙色框是这一步要算的节点；算完变绿，显示结果；右侧列出已经走过的步骤</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>为什么括号里的加法排在最前面？</li>
+    <li>乘法和除法谁先算？凭什么？</li>
+    <li>最后一步为什么一定是减法？</li>
+    <li>如果把括号去掉，这棵树会变成什么样？</li>
+  </ul>
+</div>
+</section>
+
+<!-- ===== p7: 中测2 ===== -->
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 括号怎么用</h2>
+  <p class="quiz-hint">三题都在看括号把顺序改成了什么。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. (12 + 8) × 5 等于多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>20</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>100</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>52</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 96 ÷ [(12 + 4) × 2] 等于多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>12</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>6</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 下面哪个算式是先算减法？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>30 − 5 × 2</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>(30 − 5) × 2</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>30 × 2 − 5</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 易错辨析 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四个坑，第二个最常见</h2>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 从左往右一路算</h4>
+    <div class="wrong-num">✗ 8 + 3 × 12 = 132</div>
+    <p>乘号两边是一体的：3 盒 × 12 元。先加就把它拆成「11 个 12 元」了。</p>
+  </div>
+
+  <div class="card">
+    <h4>② 同级也乱跳</h4>
+    <div class="wrong-num">✗ 64 ÷ 8 × 2 = 64 ÷ 16 = 4</div>
+    <p>只有乘除时，谁在前面谁先算：64 ÷ 8 = 8，再 8 × 2 = 16。</p>
+  </div>
+
+  <div class="card">
+    <h4>③ 括号只算一半</h4>
+    <div class="wrong-num">✗ 96 ÷ [12 + 4 × 2] = 96 ÷ 20</div>
+    <p>小括号是 (12 + 4) 一整块，先算成 16，外面的 × 2 才轮到。</p>
+  </div>
+
+  <div class="card">
+    <h4>④ 综合算式不加括号</h4>
+    <div class="wrong-num">✗ 36 ÷ 6 + 14 × 3 表示 (36÷6+14)×3</div>
+    <p>不加括号，乘除就先算了。要表达「先加再乘」，必须套上括号。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  算之前先扫一眼：<strong>有没有括号？有没有乘除？</strong>这两问定了，剩下的就是从前往后走。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到小票：8 + 3 × 12 − 5。先算 3 × 12 = 36，再 8 + 36 = 44，最后满减 44 − 5 = 39。收银机也是这么算的。
+</p>
+</section>
+
+<!-- ===== p9: 后测 ===== -->
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，先看顺序再动笔</h2>
+  <p class="quiz-hint">前四道算结果，最后一道算钱。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 8 + 3 × 12 − 5 等于多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>39</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>127</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>44</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 150 − (25 + 35) ÷ 6 等于多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>140</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>130</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>145</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. [(85 − 25) ÷ 12] × 7 等于多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>35</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>420</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>60</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 把「36 ÷ 6 = 6，6 + 14 = 20，20 × 3 = 60」合成一个综合算式，应该是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>36 ÷ 6 + 14 × 3</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>(36 ÷ 6 + 14) × 3</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>36 ÷ (6 + 14) × 3</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 买 4 袋 15 元的米，店里满 50 减 8，实际要付多少元？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>52 元</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>68 元</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>60 元</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">三级顺序</div>
+        <div class="summary-v4-summary">括号 → 乘除 → 加减</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">谁最厉害<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">括号最厉害，里面先算<br>乘除次之<br>加减最后，同级从左往右</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">两级括号</div>
+        <div class="summary-v4-summary">由里往外剥</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么剥<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">小括号 ( ) 最里层<br>中括号 [ ] 包在外面<br>小括号算完，中括号才升格</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">树往下长</div>
+        <div class="summary-v4-summary">越深越先算</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么看<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">算式能画成一棵树<br>越靠下的枝越先算<br>算完缩成一个数，接到上一层</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">避错</div>
+        <div class="summary-v4-summary">两问开局</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么查<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">有括号吗？<br>有乘除吗？<br>都没有，就从左往右</div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<p class="teach-text" style="margin-top:18px;color:#1A2226;font-size:19px">
+  下次看到一长串算式，别急着从左算：先找括号，再找乘除，剩下的才排队。
+</p>
+</section>
