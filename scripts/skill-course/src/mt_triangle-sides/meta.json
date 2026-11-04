@@ -1,0 +1,92 @@
+{
+  "topicId": "mt_triangle-sides",
+  "title": "3 厘米、4 厘米、8 厘米，为什么围不成",
+  "template": "explain",
+  "renderer": "triangle",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 4,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S2:GG:GM"
+  ],
+  "prerequisites": [
+    "mt_triangle-classify"
+  ],
+  "next": [
+    "mt_polygon-area"
+  ],
+  "objectives": [
+    "知道三角形任意两边之和大于第三边，理解为什么等于或小于时都围不成",
+    "会用「两条较短边之和大于最长边」这一捷径一次判定三根线段能否围成三角形",
+    "能在实际情境（背带、衣架、自行车车架）中判断并求出第三边的取值范围"
+  ],
+  "cognitiveAction": "逼近",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-04",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "三根小棒",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "判据",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "三种结果",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

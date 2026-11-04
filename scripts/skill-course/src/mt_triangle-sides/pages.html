@@ -1,0 +1,568 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>3 厘米、4 厘米、8 厘米，为什么围不成</h1>
+  <p class="sub">四年级数学 · 三角形的三边关系</p>
+  <div class="tags">
+    <span class="tag">两边之和</span>
+    <span class="tag">最长边</span>
+    <span class="tag">能否围成</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 460 176" width="540" height="206" role="img" aria-label="3 厘米和 4 厘米两根短棒接起来只有 7 厘米，比 8 厘米的长棒短 1 厘米，围不成三角形">
+      <g font-family="sans-serif">
+        <text x="24" y="20" font-size="13" fill="rgba(255,255,255,.75)">两根短的接起来，跟最长的一根比</text>
+
+        <rect x="24" y="34" width="60" height="30" rx="5" fill="#26A69A"/>
+        <rect x="84" y="34" width="80" height="30" rx="5" fill="#FF7043"/>
+        <text x="54" y="55" text-anchor="middle" font-size="15" font-weight="700" fill="#FFFFFF">3</text>
+        <text x="124" y="55" text-anchor="middle" font-size="15" font-weight="700" fill="#FFFFFF">4</text>
+        <text x="186" y="55" font-size="14" fill="rgba(255,255,255,.92)">= 7 厘米</text>
+
+        <rect x="24" y="100" width="160" height="30" rx="5" fill="rgba(255,255,255,.20)" stroke="rgba(255,255,255,.6)" stroke-width="1.4"/>
+        <text x="104" y="121" text-anchor="middle" font-size="15" font-weight="700" fill="#FFFFFF">8 厘米</text>
+
+        <line x1="164" y1="28" x2="164" y2="146" stroke="#FFCA28" stroke-width="1.8" stroke-dasharray="5 4"/>
+        <line x1="164" y1="142" x2="184" y2="142" stroke="#FF5252" stroke-width="2.6"/>
+        <text x="194" y="147" font-size="12.5" fill="#FF8A65">还差 1 厘米</text>
+
+        <text x="280" y="60" font-size="22" font-weight="700" fill="#FFCA28">7 &lt; 8</text>
+        <text x="280" y="88" font-size="13" fill="rgba(255,255,255,.82)">两头够不着</text>
+        <text x="280" y="118" font-size="13" fill="rgba(255,255,255,.82)">怎么摆都合不拢</text>
+      </g>
+    </svg>
+  </div>
+  <p style="font-size:20px;color:rgba(255,255,255,.92);max-width:620px;line-height:1.8;">
+    三根小棒不是随便一凑就能围成三角形。<br>
+    <strong>只要两根短的加起来还没最长那根长，两头就永远够不着。</strong>
+  </p>
+  <p class="hint">点击右下角箭头开始 或 点击顶部导航跳转</p>
+  <a href="../../viz/index.html#t=mt_triangle-sides" style="margin-top:16px;color:rgba(255,255,255,.78);font-size:16px;text-decoration:underline">← 回到知识图谱</a>
+</div>
+</section>
+
+<!-- ===== p1: 前测 ===== -->
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先答三道，凭感觉</h2>
+  <p class="quiz-hint">都是量小棒、看衣架、搭三角架时会遇到的判断。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 3 厘米、4 厘米、8 厘米三根小棒，能围成三角形吗？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>不能，两根短的加起来才 7 厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>能，三根小棒总能围起来</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>把 8 厘米那根弯一弯就行</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 换成 3 厘米、4 厘米、5 厘米呢？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>不能</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>能</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>得先量一量角度才知道</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 判断三根小棒能不能围成三角形，最省事的办法是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>三组两边之和全都算一遍</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>只看两条短边加起来够不够最长边</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>看里面有没有直角</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 引入 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">3 厘米、4 厘米、8 厘米，为什么围不成三角形？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 380 240" width="390" height="246" role="img" aria-label="三根小棒试图围三角形：把 3 厘米和 4 厘米两根压平贴着 8 厘米那根，中间还差 1 厘米">
+      <g font-family="sans-serif">
+        <text x="18" y="24" font-size="13" fill="#00838F" font-weight="700">把两根短的「压平」，尽量往中间够</text>
+
+        <line x1="40" y1="176" x2="280" y2="176" stroke="#546E7A" stroke-width="7" stroke-linecap="round"/>
+        <text x="160" y="204" text-anchor="middle" font-size="14" fill="#37474F" font-weight="700">8 厘米</text>
+
+        <line x1="40" y1="150" x2="130" y2="150" stroke="#26A69A" stroke-width="7" stroke-linecap="round"/>
+        <line x1="280" y1="150" x2="160" y2="150" stroke="#FF7043" stroke-width="7" stroke-linecap="round"/>
+        <text x="85" y="140" text-anchor="middle" font-size="13" fill="#00838F">3 厘米</text>
+        <text x="220" y="140" text-anchor="middle" font-size="13" fill="#BF360C">4 厘米</text>
+
+        <line x1="130" y1="120" x2="130" y2="192" stroke="#FFCA28" stroke-width="1.4" stroke-dasharray="4 4"/>
+        <line x1="160" y1="120" x2="160" y2="192" stroke="#FFCA28" stroke-width="1.4" stroke-dasharray="4 4"/>
+
+        <line x1="130" y1="98" x2="160" y2="98" stroke="#C62828" stroke-width="2.4"/>
+        <path d="M130 98 l9 -5 l0 10 z" fill="#C62828"/>
+        <path d="M160 98 l-9 -5 l0 10 z" fill="#C62828"/>
+        <text x="145" y="86" text-anchor="middle" font-size="12.5" fill="#C62828" font-weight="700">差 1 厘米</text>
+
+        <rect x="18" y="216" width="344" height="20" rx="5" fill="#E0F2F1"/>
+        <text x="190" y="230" text-anchor="middle" font-size="12.5" fill="#00695C">3 + 4 = 7 厘米，比 8 厘米还短</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    书包背带断成三截，量出来是 3 厘米、4 厘米和 8 厘米。想把这三截接成一个三角挂饰，怎么摆两头都碰不上。
+  </p>
+  <p class="teach-text" id="p2s2">
+    把 3 厘米和 4 厘米接起来，一共才 7 厘米，比 8 厘米那根还短 1 厘米。
+  </p>
+  <p class="teach-text" id="p2s3">
+    两根短棒就算完全伸直、一头挨着一头，也够不到最长那根的两个端点。<strong>抬起一点只会离得更远。</strong>
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>先接两根短的</h4>
+    <div class="eq">3 + 4 = 7 厘米</div>
+    <p>这是两根短棒能伸到的最远距离。</p>
+  </div>
+  <div class="card">
+    <h4>再比最长的一根</h4>
+    <div class="eq">7 &lt; 8</div>
+    <p>最长边比这个距离还长，两端就碰不上。</p>
+  </div>
+  <div class="card">
+    <h4>缺口是多少</h4>
+    <div class="eq">8 − 7 = 1 厘米</div>
+    <p>差 1 厘米，怎么摆都合不拢。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  不是「有三条边」就行，得看<strong>两条短边加起来有没有超过最长边</strong>。这一步就能定生死。
+</div>
+</section>
+
+<!-- ===== p3: 判据 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">为什么一定要「两边之和大于第三边」</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 380 252" width="390" height="258" role="img" aria-label="三角形 ABC，AB 长 3 厘米、AC 长 4 厘米、BC 长 5 厘米，说明两点之间线段最短">
+      <g font-family="sans-serif">
+        <path d="M58 196 L190 44 L322 196 z" fill="#E0F2F1" stroke="#00838F" stroke-width="2.4"/>
+        <circle cx="190" cy="44" r="4" fill="#00838F"/>
+        <circle cx="58" cy="196" r="4" fill="#00838F"/>
+        <circle cx="322" cy="196" r="4" fill="#00838F"/>
+
+        <text x="186" y="34" text-anchor="middle" font-size="14" font-weight="700" fill="#00695C">A</text>
+        <text x="46" y="214" text-anchor="middle" font-size="14" font-weight="700" fill="#00695C">B</text>
+        <text x="334" y="214" text-anchor="middle" font-size="14" font-weight="700" fill="#00695C">C</text>
+
+        <text x="106" y="112" font-size="14" font-weight="700" fill="#00838F" transform="rotate(-49 106 112)">3 厘米</text>
+        <text x="270" y="112" font-size="14" font-weight="700" fill="#BF360C" transform="rotate(49 270 112)">4 厘米</text>
+        <text x="190" y="216" text-anchor="middle" font-size="14" font-weight="700" fill="#37474F">5 厘米</text>
+
+        <line x1="58" y1="230" x2="322" y2="230" stroke="#FF7043" stroke-width="1.8"/>
+        <path d="M58 230 l9 -5 l0 10 z" fill="#FF7043"/>
+        <path d="M322 230 l-9 -5 l0 10 z" fill="#FF7043"/>
+        <text x="190" y="248" text-anchor="middle" font-size="12.5" fill="#BF360C">从 B 直接到 C：最短的那条路</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    从 B 走到 C，直着走是 5 厘米；绕道 A，得走 3 + 4 = 7 厘米。两点之间线段最短，绕道一定更长。
+  </p>
+  <p class="teach-text" id="p3s2">
+    换哪个角绕道都一样，所以<strong>三角形任意两边之和都大于第三边</strong>。这句话不是规定，是走出来的。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>① 完整判据</strong>：任意两边之和大于第三边，三组都要成立。</li>
+  <li><strong>② 判断捷径</strong>：只要查「两条较短边之和 &gt; 最长边」。因为最长边已经比谁都长，另外两组必然成立。</li>
+  <li><strong>③ 找最长边</strong>：先把三根排个序，别拿最长边去和短边相加，那样永远大于，白算。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  判断只要一步：<strong>较短两边之和 &gt; 最长边</strong>。大于就围得成，等于或小于都围不成。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：这三条边，成还是不成</h2>
+<p class="teach-text" id="p3bs1">
+  左边每组三根小棒，右边是唯一对应的结论。点左边一项，再点右边一项。
+</p>
+
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<!-- ===== p4: 中测1 ===== -->
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 两边之和大于第三边</h2>
+  <p class="quiz-hint">三题都在考：该拿哪两条边去加。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 3、4、5 厘米三根，哪一组比较能一次判定？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>3 + 4 &gt; 5</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3 + 5 &gt; 4</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>4 + 5 &gt; 3</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 2、3、6 厘米三根，能围成三角形吗？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>能，2 + 6 &gt; 3</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>不能，2 + 3 = 5 &lt; 6</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>不能，因为 6 是偶数</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 三角形三条边是 5、7、x 厘米，x 是最长边。x 取整厘米，最大能是几？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>11 厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>12 厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>13 厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 三种结果 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">三种结果：够得着、正好压平、够不着</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+    <svg viewBox="0 0 366 254" width="376" height="260" role="img" aria-label="三种情况对比：两条短边之和大于、等于、小于最长边时的结果">
+      <g font-family="sans-serif">
+        <text x="14" y="20" font-size="12.5" fill="#546E7A" font-weight="700">① 3 + 4 = 7 &gt; 5　能围成</text>
+        <rect x="14" y="28" width="54" height="20" rx="3" fill="#26A69A"/>
+        <rect x="68" y="28" width="72" height="20" rx="3" fill="#FF7043"/>
+        <rect x="14" y="54" width="90" height="20" rx="3" fill="#B0BEC5"/>
+        <line x1="140" y1="22" x2="140" y2="80" stroke="#2E7D32" stroke-width="1.6" stroke-dasharray="4 3"/>
+        <text x="152" y="56" font-size="12" fill="#2E7D32">多出 2 厘米</text>
+
+        <text x="14" y="104" font-size="12.5" fill="#546E7A" font-weight="700">② 3 + 5 = 8 = 8　压成直线</text>
+        <rect x="14" y="112" width="54" height="20" rx="3" fill="#26A69A"/>
+        <rect x="68" y="112" width="90" height="20" rx="3" fill="#FF7043"/>
+        <rect x="14" y="138" width="144" height="20" rx="3" fill="#B0BEC5"/>
+        <line x1="158" y1="106" x2="158" y2="164" stroke="#E65100" stroke-width="1.6" stroke-dasharray="4 3"/>
+        <text x="170" y="140" font-size="12" fill="#E65100">刚好碰上，没高度</text>
+
+        <text x="14" y="188" font-size="12.5" fill="#546E7A" font-weight="700">③ 3 + 4 = 7 &lt; 8　够不着</text>
+        <rect x="14" y="196" width="54" height="20" rx="3" fill="#26A69A"/>
+        <rect x="68" y="196" width="72" height="20" rx="3" fill="#FF7043"/>
+        <rect x="14" y="222" width="144" height="20" rx="3" fill="#B0BEC5"/>
+        <line x1="140" y1="190" x2="140" y2="248" stroke="#C62828" stroke-width="1.6" stroke-dasharray="4 3"/>
+        <text x="170" y="224" font-size="12" fill="#C62828">还差 1 厘米</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    把两根短边接起来贴着最长边放，只会得到三种结果：多出一截、刚好齐平、还差一截。
+  </p>
+  <p class="teach-text" id="p5s2">
+    <strong>等于也不行。</strong>三根首尾相接却全压在一条直线上，抬不起顶点，围不出一块有面积的三角形。
+  </p>
+</div>
+
+<ul class="feature-list" id="p5rules">
+  <li><strong>① 大于</strong>：两短边伸过头了，顶点能被抬起来，围得成。</li>
+  <li><strong>② 等于</strong>：三根刚好重合成一条线段，只有长度没有高度，不算三角形。</li>
+  <li><strong>③ 小于</strong>：中间留一个缺口，两根短棒再怎么转也碰不上。</li>
+</ul>
+
+<div class="key-box" id="p5key">
+  记牢这个「&gt;」：<strong>必须严格大于，等于和小于都围不成。</strong>差 1 厘米和多 0 厘米，是两回事。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">三根小棒调长度，看能不能闭合</h2>
+  <p class="sim-desc">每次都把最长的一根放平，另外两根从两端往中间够。点右侧的 ＋ / − 改长度，或点画布上的小棒，看两弧能不能交上。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">3 + 4 = 7 &gt; 5，能围成</span>
+    <span class="sim-tip" id="simTip">最长边 5 厘米</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simNext()">下一个案例 →</button>
+    <button class="btn-retry" onclick="simPrev()">← 上一个</button>
+    <button class="btn-retry" onclick="simReset()">重来</button>
+    <button class="btn-retry" onclick="simDemo()">自动演示</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">左边比长度，左下看能不能闭合；右侧可以随时改三根的长度</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>把最长边从 5 厘米调到 8 厘米，哪一刻开始围不成？</li>
+    <li>调到 7 厘米时两弧刚好相切，这时算不算三角形？</li>
+    <li>为什么只查「两条短边之和」就够了，另外两组不用算？</li>
+    <li>三根一样长时，顶点在哪里？</li>
+  </ul>
+</div>
+</section>
+
+<!-- ===== p7: 中测2 ===== -->
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 判断能不能围成</h2>
+  <p class="quiz-hint">遇到「等于」的时候，别手软。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 下面哪组三根能围成三角形？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1、2、3 厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>4、5、6 厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>2、2、5 厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 3、3、6 厘米三根，结果是什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>能围成一个很扁的三角形</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3 + 3 = 6，正好压成一条直线</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>还差 3 厘米，够不着</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 5、6、7 厘米里把最长的 7 厘米换成 12 厘米，会怎样？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>还能围成，只是更扁一些</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>围不成，5 + 6 = 11 比 12 短 1 厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>围不成，得重新量一量角度</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 易错辨析 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四个坑，第二个最容易踩</h2>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 挑好算的那组加</h4>
+    <div class="wrong-num">✗ 2 + 6 &gt; 3，所以能围成</div>
+    <p>2、3、6 里最长是 6，该算 2 + 3。有一组不成立就围不成。</p>
+  </div>
+
+  <div class="card">
+    <h4>② 把「等于」当成能围成</h4>
+    <div class="wrong-num">✗ 3 + 3 = 6，正好围成</div>
+    <p>相等时三根压成一条直线，没有顶点也没有面积。必须严格大于。</p>
+  </div>
+
+  <div class="card">
+    <h4>③ 以为三组都得算</h4>
+    <div class="wrong-num">✗ 5、6、7 要验算三次</div>
+    <p>最长边已经比谁都长，「短 + 长 &gt; 短」自动成立，只要查一次 5 + 6 &gt; 7。</p>
+  </div>
+
+  <div class="card">
+    <h4>④ 让小棒拐个弯</h4>
+    <div class="wrong-num">✗ 把 8 厘米那根弯一弯就接上了</div>
+    <p>三角形的边必须是直的线段。弯了就不是三条边，是三条弧。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  下判断前先做两件事：<strong>排序找最长边，再把另外两根加起来</strong>。顺序对了，后面就不会错。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到自行车车架：三根管分别 45、50、60 厘米，最长是 60 厘米，45 + 50 = 95 &gt; 60，焊得成；要是把上管加到 100 厘米，45 + 50 = 95 &lt; 100，焊到最后两头就差 5 厘米对不上。
+</p>
+</section>
+
+<!-- ===== p9: 后测 ===== -->
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，换个场景还会判吗</h2>
+  <p class="quiz-hint">车架、衣架、三角架，都藏在里面。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 自行车车架三根管 45、50、60 厘米，能焊成三角形吗？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>能，45 + 50 = 95 &gt; 60</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>不能，60 太长了</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>得先量车架的角度</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 3、4、8 厘米三根，还差多少厘米才刚好够得着？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1 厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>4 厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>5 厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 三角形两边是 6 厘米和 9 厘米，第三边取整厘米，最长能是几？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>14 厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>15 厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>16 厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 下面哪组三根一定围不成？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>4、4、7 厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>2、2、4 厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>5、5、5 厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 衣架三边 12、12、20 厘米，判断依据是哪一句？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>12 + 12 = 24 &gt; 20，能围成</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>12 + 20 &gt; 12，能围成</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>有两根一样长，一定能围成</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">判据</div>
+        <div class="summary-v4-summary">任意两边之和 &gt; 第三边</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">为什么成立<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">两点之间线段最短<br>绕道走一定更长<br>三条边三组都要满足</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">捷径</div>
+        <div class="summary-v4-summary">短 + 短 &gt; 最长</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">只查一次<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">先排序找最长边<br>另外两根相加去比<br>另外两组必然成立，不用算</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">三种结果</div>
+        <div class="summary-v4-summary">&gt; 成 / = 压平 / &lt; 缺口</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">等于行不行<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">大于：顶点抬得起来<br>等于：三根压成一条直线<br>小于：中间留缺口，够不着</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">迁移</div>
+        <div class="summary-v4-summary">车架 · 衣架 · 三角架</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">第三边的范围<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">两边 5、7 → 第三边 &lt; 12<br>取整厘米最大 11<br>差多少：8 − (3+4) = 1 厘米</div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<p class="teach-text" style="margin-top:18px;color:#0E3035;font-size:19px">
+  再拿到三根小棒，先排个序：最长的是哪根？另外两根加起来够不够？一步就能给出答案。
+</p>
+</section>
