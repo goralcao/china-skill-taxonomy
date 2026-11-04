@@ -1,0 +1,91 @@
+{
+  "topicId": "mt_optimize",
+  "title": "六件事排在一起，怎么从 14 分钟压到 11 分钟",
+  "template": "explain",
+  "renderer": "clock",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 4,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S2:PP"
+  ],
+  "prerequisites": [
+    "mt_num-100-addsub",
+    "mt_time-hms"
+  ],
+  "next": [],
+  "objectives": [
+    "能找出哪些事必须先后做、哪些事可以同时做",
+    "会用时间轴排出方案，并算出总时长",
+    "理解烙饼问题的交替安排，算出 3 张饼最少 9 分钟"
+  ],
+  "cognitiveAction": "构思",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-04",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "六件事",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "同时做",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "烙饼",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

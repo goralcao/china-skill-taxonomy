@@ -1,0 +1,612 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>六件事排在一起，怎么从 14 分钟压到 11 分钟</h1>
+  <p class="sub">四年级数学 · 沏茶与烙饼问题</p>
+  <div class="tags">
+    <span class="tag">能同时做</span>
+    <span class="tag">时间轴</span>
+    <span class="tag">最少几分钟</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 460 170" width="560" height="207" role="img" aria-label="六件事排在一条时间轴上，烧水的 8 分钟里同时洗杯子、找茶叶">
+      <g font-family="sans-serif">
+        <line x1="30" y1="118" x2="430" y2="118" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/>
+        <g fill="#FFCCBC">
+          <rect x="30" y="70" width="32" height="44" rx="4"/>
+          <rect x="64" y="70" width="32" height="44" rx="4"/>
+        </g>
+        <rect x="98" y="70" width="180" height="44" rx="4" fill="#FF8A65"/>
+        <g fill="#B3E5FC">
+          <rect x="98" y="30" width="72" height="32" rx="4"/>
+          <rect x="172" y="30" width="72" height="32" rx="4"/>
+        </g>
+        <rect x="280" y="70" width="50" height="44" rx="4" fill="#FFCCBC"/>
+
+        <g fill="#4E1B06" font-size="12" text-anchor="middle">
+          <text x="46" y="97">洗壶</text><text x="80" y="97">接水</text>
+          <text x="134" y="52">洗杯</text><text x="208" y="52">找茶</text>
+          <text x="305" y="97">沏茶</text>
+        </g>
+        <text x="188" y="97" fill="#FFFFFF" font-size="13" text-anchor="middle">烧水 8 分钟</text>
+
+        <text x="30" y="146" font-size="12" fill="rgba(255,255,255,.85)">上面两块是趁烧水顺手做的</text>
+        <text x="430" y="146" font-size="12" fill="rgba(255,255,255,.85)" text-anchor="end">总共 11 分钟</text>
+      </g>
+    </svg>
+  </div>
+  <p style="font-size:20px;color:rgba(255,255,255,.92);max-width:600px;line-height:1.8;">
+    顺序不是唯一的答案。<br>
+    <strong>能同时做的事并在一起，时间就省下来了。</strong>
+  </p>
+  <p class="hint">点击右下角箭头开始 或 点击顶部导航跳转</p>
+  <a href="../../viz/index.html#t=mt_optimize" style="margin-top:16px;color:rgba(255,255,255,.78);font-size:16px;text-decoration:underline">← 回到知识图谱</a>
+</div>
+</section>
+
+<!-- ===== p1: 前测 ===== -->
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先答三道，凭感觉</h2>
+  <p class="quiz-hint">都是早上出门前会遇到的事。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 烧一壶水要 8 分钟，等水开的这 8 分钟里，你能做别的事吗？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>能，只要不用那壶水</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>不能，必须站在旁边等</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>要看水壶是什么颜色</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 刷牙 3 分钟、洗脸 2 分钟，这两件只能一件一件做，做完要多久？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>2 分钟</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>5 分钟</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>6 分钟</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 穿袜子 1 分钟、穿鞋 1 分钟，能不能一边穿袜子一边穿鞋？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>能</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>不能，得先穿袜子</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>看心情</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 引入 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">早上 7:20 要出门，六件事怎么排？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 340 250" width="382" height="281" role="img" aria-label="六件事的清单：洗水壶 1 分钟、接水 1 分钟、烧水 8 分钟、洗茶杯 2 分钟、找茶叶 1 分钟、沏茶 1 分钟">
+      <g font-family="sans-serif">
+        <rect x="8" y="10" width="324" height="228" rx="10" fill="#FFF8F5" stroke="#E5B9A8" stroke-width="1.5"/>
+        <text x="26" y="36" font-size="13" font-weight="700" fill="#BF360C">出门前要做完的六件事</text>
+        <g font-size="12.5" fill="#4A2418">
+          <text x="26" y="70">① 洗水壶</text><text x="310" y="70" text-anchor="end" fill="#BF360C">1 分钟</text>
+          <text x="26" y="102">② 接水</text><text x="310" y="102" text-anchor="end" fill="#BF360C">1 分钟</text>
+          <text x="26" y="134">③ 烧水</text><text x="310" y="134" text-anchor="end" fill="#BF360C">8 分钟</text>
+          <text x="26" y="166">④ 洗茶杯</text><text x="310" y="166" text-anchor="end" fill="#BF360C">2 分钟</text>
+          <text x="26" y="198">⑤ 找茶叶</text><text x="310" y="198" text-anchor="end" fill="#BF360C">1 分钟</text>
+          <text x="26" y="230">⑥ 沏茶</text><text x="310" y="230" text-anchor="end" fill="#BF360C">1 分钟</text>
+        </g>
+        <line x1="26" y1="82" x2="310" y2="82" stroke="#F5E3DA" stroke-width="1"/>
+        <line x1="26" y1="114" x2="310" y2="114" stroke="#F5E3DA" stroke-width="1"/>
+        <line x1="26" y1="146" x2="310" y2="146" stroke="#F5E3DA" stroke-width="1"/>
+        <line x1="26" y1="178" x2="310" y2="178" stroke="#F5E3DA" stroke-width="1"/>
+        <line x1="26" y1="210" x2="310" y2="210" stroke="#F5E3DA" stroke-width="1"/>
+      </g>
+    </svg>
+  </div>
+  <p class="teach-text" id="p2s1">
+    早上 7:20 要出门，现在 7:05，只剩 15 分钟。六件事一件一件做，1 + 1 + 8 + 2 + 1 + 1 = 14 分钟，勉强够。
+  </p>
+  <p class="teach-text" id="p2s2">
+    可要是今天稍微磨蹭一点，就赶不上了。有没有办法把这个时间压短？
+  </p>
+  <p class="teach-text" id="p2s3">
+    先分清两件事：哪些<strong>必须排队</strong>（前一件不做完，后一件没法开始），哪些<strong>可以同时</strong>（互不干扰）。
+  </p>
+</div>
+
+<div class="key-box" id="p2s4">
+  能同时做的事并在一起，总时间<strong>按最长的那件算</strong>，不是把所有时间加起来。
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>① 必须排队</h4>
+    <div class="eq">洗壶 → 接水<br>→ 烧水 → 沏茶</div>
+    <p>顺序动了就做不成，这几步省不掉。</p>
+  </div>
+  <div class="card">
+    <h4>② 可以同时</h4>
+    <div class="eq">烧水时<br>洗杯子、找茶叶</div>
+    <p>只要不用那壶水，人闲着也是闲着。</p>
+  </div>
+  <div class="card">
+    <h4>③ 省下的时间</h4>
+    <div class="eq">14 − 11<br>= 3 分钟</div>
+    <p>省的不是动作，是「等待」。</p>
+  </div>
+</div>
+</section>
+
+<!-- ===== p3: 同时做 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">同样六件事，为什么能少花 3 分钟？</h2>
+
+<p class="teach-text" id="p3s1">
+  上面那条是「一件一件做」：每件事接着上一件，总时间 14 分钟。下面那条把「烧水的 8 分钟」利用起来，人去做别的。
+</p>
+
+<div class="fig" id="p3fig" style="margin:6px 0 2px">
+  <svg viewBox="0 0 660 300" width="760" height="345" role="img" aria-label="上下两条时间轴对比：一件一件做 14 分钟，同时做 11 分钟">
+    <g font-family="sans-serif">
+      <!-- 刻度 -->
+      <g stroke="#F0DCD4" stroke-width="1">
+        <line x1="120" y1="46" x2="120" y2="248"/>
+        <line x1="196" y1="46" x2="196" y2="248"/>
+        <line x1="272" y1="46" x2="272" y2="248"/>
+        <line x1="348" y1="46" x2="348" y2="248"/>
+        <line x1="424" y1="46" x2="424" y2="248"/>
+        <line x1="500" y1="46" x2="500" y2="248"/>
+        <line x1="576" y1="46" x2="576" y2="248"/>
+      </g>
+      <g font-size="10.5" fill="#9C7A6C" text-anchor="middle">
+        <text x="120" y="266">0</text><text x="196" y="266">2</text><text x="272" y="266">4</text>
+        <text x="348" y="266">6</text><text x="424" y="266">8</text><text x="500" y="266">10</text>
+        <text x="576" y="266">12</text><text x="644" y="266">14</text>
+      </g>
+
+      <!-- 上：一件一件 -->
+      <text x="10" y="34" font-size="12.5" font-weight="700" fill="#BF360C">一件一件做 · 14 分钟</text>
+      <g>
+        <rect x="120" y="48" width="38" height="40" rx="4" fill="#FFCCBC" stroke="#BF360C" stroke-width="1.2"/>
+        <rect x="158" y="48" width="38" height="40" rx="4" fill="#FFCCBC" stroke="#BF360C" stroke-width="1.2"/>
+        <rect x="196" y="48" width="304" height="40" rx="4" fill="#FF8A65" stroke="#BF360C" stroke-width="1.2"/>
+        <rect x="500" y="48" width="76" height="40" rx="4" fill="#FFCCBC" stroke="#BF360C" stroke-width="1.2"/>
+        <rect x="576" y="48" width="38" height="40" rx="4" fill="#FFCCBC" stroke="#BF360C" stroke-width="1.2"/>
+        <rect x="614" y="48" width="38" height="40" rx="4" fill="#FFCCBC" stroke="#BF360C" stroke-width="1.2"/>
+      </g>
+      <g font-size="10.5" fill="#4E1B06" text-anchor="middle">
+        <text x="139" y="73">洗壶</text><text x="177" y="73">接水</text>
+        <text x="538" y="73">洗杯</text><text x="595" y="73">找茶</text><text x="633" y="73">沏茶</text>
+      </g>
+      <text x="348" y="73" fill="#FFFFFF" font-size="12" text-anchor="middle">烧水 8 分钟（人就站在这儿等）</text>
+
+      <!-- 下：同时 -->
+      <text x="10" y="122" font-size="12.5" font-weight="700" fill="#0288D1">同时做 · 11 分钟</text>
+      <text x="112" y="150" font-size="10.5" fill="#7A5A4C" text-anchor="end">人</text>
+      <rect x="120" y="132" width="38" height="34" rx="4" fill="#FFCCBC" stroke="#BF360C" stroke-width="1.2"/>
+      <rect x="158" y="132" width="38" height="34" rx="4" fill="#FFCCBC" stroke="#BF360C" stroke-width="1.2"/>
+      <rect x="196" y="132" width="76" height="34" rx="4" fill="#B3E5FC" stroke="#0288D1" stroke-width="1.2"/>
+      <rect x="272" y="132" width="38" height="34" rx="4" fill="#B3E5FC" stroke="#0288D1" stroke-width="1.2"/>
+      <rect x="500" y="132" width="38" height="34" rx="4" fill="#FFCCBC" stroke="#BF360C" stroke-width="1.2"/>
+      <g font-size="10.5" fill="#4E1B06" text-anchor="middle">
+        <text x="139" y="154">洗壶</text><text x="177" y="154">接水</text>
+        <text x="234" y="154" fill="#01579B">洗杯</text>
+        <text x="291" y="154" fill="#01579B">找茶</text>
+        <text x="519" y="154">沏茶</text>
+      </g>
+
+      <text x="112" y="196" font-size="10.5" fill="#7A5A4C" text-anchor="end">水壶</text>
+      <rect x="196" y="178" width="304" height="34" rx="4" fill="#FF8A65" stroke="#BF360C" stroke-width="1.2"/>
+      <text x="348" y="200" fill="#FFFFFF" font-size="12" text-anchor="middle">烧水 8 分钟</text>
+
+      <rect x="194" y="126" width="308" height="90" fill="none" stroke="#0288D1" stroke-width="1.4" stroke-dasharray="5 4"/>
+      <text x="508" y="222" font-size="11" fill="#0288D1">这 8 分钟人可以走开</text>
+
+      <!-- 对比 -->
+      <text x="120" y="296" font-size="11.5" fill="#7A5A4C">两条轴起点一样，终点差了 3 分钟</text>
+    </g>
+  </svg>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>① 找「等」</strong>：烧水这 8 分钟，人在等，这就是可以省的地方。</li>
+  <li><strong>② 把事塞进「等」里</strong>：洗茶杯 2 分钟、找茶叶 1 分钟，加起来 3 分钟，塞得进 8 分钟。</li>
+  <li><strong>③ 算总长</strong>：1 + 1 + 8 + 1 = 11 分钟，不是把六个数全加起来。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  同时做的两件事，总时间取<strong>较长的那一件</strong>。8 分钟烧水盖住了 2 分钟洗杯子，所以 2 分钟不用另算。
+</div>
+</section>
+
+<!-- ===== p3b: 连线巩固 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：这一步凭什么这么排</h2>
+<p class="teach-text" id="p3bs1">先点左边，再点右边，连对了变绿。</p>
+<div id="matchP3"></div>
+</section>
+
+<!-- ===== p4: 中测1 ===== -->
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 哪些能同时做</h2>
+  <p class="quiz-hint">三道题都在问：这段时间能不能省。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 洗衣机洗衣服 30 分钟，这段时间里能不能扫地？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>能，两件事互不影响</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>不能，得守着洗衣机</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>要看扫把的颜色</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 烧水 8 分钟，同时洗杯子用了 2 分钟。这两件事合起来占多长时间？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>10 分钟</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>8 分钟</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>2 分钟</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 下面哪两件事不能同时做？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>烧水和擦桌子</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>接水和洗水壶</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>听音乐和走路</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 烙饼 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">3 张饼，为什么 9 分钟就够？</h2>
+
+<p class="teach-text" id="p5s1">
+  一口锅一次最多放 2 张饼，每面要烙 3 分钟。3 张饼一共 6 个面，锅一次能烙 2 个面，所以只要 6 ÷ 2 = 3 次，每次 3 分钟。
+</p>
+
+<div class="fig" id="p5fig" style="margin:6px 0 2px">
+  <svg viewBox="0 0 660 300" width="720" height="327" role="img" aria-label="两种烙法对比：两张两张烙要 12 分钟，交替烙只要 9 分钟">
+    <g font-family="sans-serif">
+      <text x="10" y="32" font-size="12.5" font-weight="700" fill="#BF360C">两张两张烙 · 12 分钟</text>
+      <g>
+        <rect x="120" y="44" width="120" height="42" rx="4" fill="#FFCCBC" stroke="#BF360C" stroke-width="1.2"/>
+        <rect x="240" y="44" width="120" height="42" rx="4" fill="#FFCCBC" stroke="#BF360C" stroke-width="1.2"/>
+        <rect x="360" y="44" width="120" height="42" rx="4" fill="#E0E0E0" stroke="#9E9E9E" stroke-width="1.2"/>
+        <rect x="480" y="44" width="120" height="42" rx="4" fill="#E0E0E0" stroke="#9E9E9E" stroke-width="1.2"/>
+      </g>
+      <g font-size="11.5" text-anchor="middle">
+        <text x="180" y="70" fill="#4E1B06">饼①正 饼②正</text>
+        <text x="300" y="70" fill="#4E1B06">饼①反 饼②反</text>
+        <text x="420" y="70" fill="#5A5A5A">饼③正 · 半锅</text>
+        <text x="540" y="70" fill="#5A5A5A">饼③反 · 半锅</text>
+      </g>
+      <text x="614" y="30" font-size="11" fill="#9E9E9E" text-anchor="end">后两次锅都空着一半</text>
+
+      <text x="10" y="126" font-size="12.5" font-weight="700" fill="#0288D1">交替着烙 · 9 分钟</text>
+      <g>
+        <rect x="120" y="138" width="120" height="42" rx="4" fill="#B3E5FC" stroke="#0288D1" stroke-width="1.2"/>
+        <rect x="240" y="138" width="120" height="42" rx="4" fill="#B3E5FC" stroke="#0288D1" stroke-width="1.2"/>
+        <rect x="360" y="138" width="120" height="42" rx="4" fill="#B3E5FC" stroke="#0288D1" stroke-width="1.2"/>
+      </g>
+      <g font-size="11.5" text-anchor="middle" fill="#01579B">
+        <text x="180" y="164">饼①正 饼②正</text>
+        <text x="300" y="164">饼①反 饼③正</text>
+        <text x="420" y="164">饼②反 饼③反</text>
+      </g>
+
+      <line x1="120" y1="100" x2="120" y2="250" stroke="#F0DCD4" stroke-width="1"/>
+      <line x1="240" y1="100" x2="240" y2="250" stroke="#F0DCD4" stroke-width="1"/>
+      <line x1="360" y1="100" x2="360" y2="250" stroke="#F0DCD4" stroke-width="1"/>
+      <line x1="480" y1="100" x2="480" y2="250" stroke="#F0DCD4" stroke-width="1"/>
+      <line x1="600" y1="100" x2="600" y2="250" stroke="#F0DCD4" stroke-width="1"/>
+
+      <g font-size="10.5" fill="#9C7A6C" text-anchor="middle">
+        <text x="120" y="264">0</text><text x="240" y="264">3</text><text x="360" y="264">6</text>
+        <text x="480" y="264">9</text><text x="600" y="264">12</text>
+      </g>
+      <text x="120" y="286" font-size="11" fill="#9C7A6C">单位：分钟</text>
+
+      <line x1="480" y1="182" x2="480" y2="256" stroke="#0288D1" stroke-width="1.4" stroke-dasharray="4 3"/>
+      <text x="492" y="214" font-size="11.5" fill="#0288D1">9 分钟就结束</text>
+    </g>
+  </svg>
+</div>
+
+<ul class="feature-list" id="p5rules">
+  <li><strong>① 数面</strong>：3 张饼 × 每张 2 面 = 6 个面。</li>
+  <li><strong>② 数容量</strong>：锅一次放 2 张，也就是一次烙 2 个面。</li>
+  <li><strong>③ 算次数</strong>：6 ÷ 2 = 3 次，每次 3 分钟，共 9 分钟。</li>
+</ul>
+
+<div class="key-box" id="p5key">
+  不要按「一张一张」想，要按<strong>「面」</strong>想。锅里每次都必须放满 2 个面，空着就是浪费。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">排一条时间轴：哪块能挪，哪块挪不动</h2>
+  <p class="sim-desc">点按钮切换排法，看总时长怎么变。两个案例：沏茶六件事、烙三张饼。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">沏茶 · 一件一件做 · 14 分钟</span>
+    <span class="sim-tip" id="simTip">六件事首尾相接，中间没有一段是空的</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simPlan(1)">换一种排法</button>
+    <button class="btn-retry" onclick="simCase(-1)">← 上一个案例</button>
+    <button class="btn-retry" onclick="simCase(1)">下一个案例 →</button>
+    <button class="btn-retry" onclick="simReset()">重置</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="348"></canvas>
+      <p class="cap">橙色是一步一步做的事，蓝色是「趁等待顺手做掉」的事；虚线框标出可以并行的时段</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>沏茶从 14 分钟压到 11 分钟，省的是哪一段？</li>
+    <li>烙饼两种排法差 3 分钟，差在锅有没有放满吗？</li>
+    <li>如果把「洗茶杯」改成 10 分钟，还塞得进烧水的 8 分钟里吗？</li>
+    <li>两个案例里，哪一种排法的总时长更短？为什么？</li>
+  </ul>
+</div>
+</section>
+
+<!-- ===== p7: 中测2 ===== -->
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 烙饼与排程</h2>
+  <p class="quiz-hint">三题都从「面」和「次数」下手。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 一口锅一次烙 2 张饼，每面 3 分钟。烙 4 张饼最少要多久？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>6 分钟</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>12 分钟</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>24 分钟</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 3 张饼交替着烙，为什么能省下 3 分钟？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>因为饼变小了</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>因为每次锅里都放满了 2 个面</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>因为火开得更大了</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 烧水 8 分钟，洗杯子 10 分钟。两件事同时开始，做完一共要多久？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>8 分钟</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>10 分钟</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>18 分钟</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 易错辨析 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四个坑，第三个最容易算错</h2>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 把所有时间加起来</h4>
+    <div class="wrong-num">✗ 六件事一共 14 分钟，最少也是 14</div>
+    <p>同时做的事不能相加。烧水 8 分钟盖住了洗杯子 2 分钟，只需算 8。</p>
+  </div>
+
+  <div class="card">
+    <h4>② 把不能并的硬并</h4>
+    <div class="wrong-num">✗ 接水的同时洗水壶</div>
+    <p>水壶没洗就往里接水，等于白接。有先后的事，一步都不能抢。</p>
+  </div>
+
+  <div class="card">
+    <h4>③ 烙饼按「张」算</h4>
+    <div class="wrong-num">✗ 3 张饼，两次烙完，6 分钟</div>
+    <p>锅一次放 2 张，两次只能烙 4 个面，还剩 2 个面没烙。要按面算。</p>
+  </div>
+
+  <div class="card">
+    <h4>④ 忘了锅会空</h4>
+    <div class="wrong-num">✗ 最后一张饼单独烙，慢慢来</div>
+    <p>锅空一半就是浪费。把最后一张的两面拆开，插到前两张的中间去。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  两个问题定方案：<strong>这件事必须等吗？这口锅放满了吗？</strong>一个管先后，一个管并行。
+</div>
+
+<p class="teach-text" id="p8apply">
+  值日也一样：扫地 6 分钟、拖地 4 分钟、擦窗台 3 分钟。拖地必须等扫完，擦窗台不用——所以是 6 + 4 = 10 分钟，不是 13 分钟。
+</p>
+</section>
+
+<!-- ===== p9: 后测 ===== -->
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，排出最少时间</h2>
+  <p class="quiz-hint">前四道算时间，最后一道判断排法对不对。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 沏茶的六件事，最少需要多少分钟？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>11 分钟</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>14 分钟</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>8 分钟</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 一口锅一次烙 2 张，每面 3 分钟。烙 3 张饼最少要多久？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>6 分钟</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>9 分钟</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>12 分钟</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 洗衣机洗 40 分钟，同时做饭用了 25 分钟。这两件事合起来占多久？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>25 分钟</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>40 分钟</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>65 分钟</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 值日：扫地 6 分钟、拖地 4 分钟、擦窗台 3 分钟。拖地必须等扫完，擦窗台随时能做。最少要多久？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>10 分钟</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>13 分钟</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>7 分钟</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 有人说「3 张饼先烙两张的正反面，再单独烙第三张，一共 11 分钟」。这个说法对吗？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>对，11 分钟</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>错，最少只要 9 分钟</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>错，最少要 12 分钟</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">分两类</div>
+        <div class="summary-v4-summary">要等的 / 不用等</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么分<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">前一件不做完后一件没法开始 → 必须排队<br>互不干扰 → 可以同时</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">塞进等待</div>
+        <div class="summary-v4-summary">时间取长的</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么省<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">烧水 8 分钟 + 洗杯 2 分钟<br>并行 → 算 8 分钟，不是 10<br>前提：洗杯子不用那壶水</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">烙饼按面算</div>
+        <div class="summary-v4-summary">6 面 ÷ 2 = 3 次</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么算<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">张数 × 2 = 面数<br>面数 ÷ 每锅容量 = 次数<br>次数 × 每面时间 = 总时间</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">避错</div>
+        <div class="summary-v4-summary">两问定方案</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么查<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">这件事必须等吗？<br>这口锅放满了吗？<br>同时做的事不能相加</div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<p class="teach-text" style="margin-top:18px;color:#2A1208;font-size:19px">
+  下次遇到「最少要多久」，先别急着加：找找哪段时间人在干等，那就是能省的地方。
+</p>
+</section>
