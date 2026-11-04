@@ -1,0 +1,648 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>一格代表 5 元，凭什么不能随手改</h1>
+  <p class="sub">四年级数学 · 条形统计图</p>
+  <div class="tags">
+    <span class="tag">横轴纵轴</span>
+    <span class="tag">一格代表几</span>
+    <span class="tag">读图比较</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 440 200" width="412" height="188" role="img" aria-label="四个小组义卖收入的条形统计图，编织组最高，绘画组最低">
+      <g font-family="sans-serif">
+        <line x1="70" y1="30" x2="70" y2="170" stroke="#FFFFFF" stroke-width="2"/>
+        <line x1="70" y1="170" x2="410" y2="170" stroke="#FFFFFF" stroke-width="2"/>
+        <g stroke="rgba(255,255,255,.22)" stroke-width="1">
+          <line x1="70" y1="140" x2="410" y2="140"/>
+          <line x1="70" y1="110" x2="410" y2="110"/>
+          <line x1="70" y1="80" x2="410" y2="80"/>
+          <line x1="70" y1="50" x2="410" y2="50"/>
+        </g>
+        <g fill="#80CBC4">
+          <rect x="105" y="95" width="46" height="75"/>
+          <rect x="185" y="125" width="46" height="45"/>
+          <rect x="265" y="65" width="46" height="105"/>
+          <rect x="345" y="140" width="46" height="30"/>
+        </g>
+        <g fill="#FFFFFF" font-size="13" text-anchor="middle">
+          <text x="128" y="88">25</text><text x="208" y="118">15</text>
+          <text x="288" y="58">35</text><text x="368" y="133">10</text>
+        </g>
+        <g fill="rgba(255,255,255,.8)" font-size="11.5" text-anchor="middle">
+          <text x="128" y="188">折纸</text><text x="208" y="188">书签</text>
+          <text x="288" y="188">编织</text><text x="368" y="188">绘画</text>
+        </g>
+        <text x="66" y="26" fill="rgba(255,255,255,.7)" font-size="11" text-anchor="end">元</text>
+      </g>
+    </svg>
+  </div>
+  <p style="font-size:20px;color:rgba(255,255,255,.92);max-width:580px;line-height:1.8;">
+    数字排成表，谁多谁少要靠比；<br>
+    <strong>画成条形，眼睛一扫就知道。</strong>
+  </p>
+  <p class="hint">点击右下角箭头开始 或 点击顶部导航跳转</p>
+  <a href="../../viz/index.html#t=mt_bar-chart" style="margin-top:16px;color:rgba(255,255,255,.78);font-size:16px;text-decoration:underline">← 回到知识图谱</a>
+</div>
+</section>
+
+<!-- ===== p1: 前测 ===== -->
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先答三道，凭感觉</h2>
+  <p class="quiz-hint">都跟看图数数有关，答不上来也正常。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 一张表里四行数字：25、15、35、10。哪一行最大？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>第一行 25</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>第三行 35</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>第四行 10</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 一根小棒长 2 厘米，5 根接起来一共多长？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>7 厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>10 厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>25 厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 班里投票选班长，画成条形图时，横轴一般写什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>候选人的名字</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>得票的数字</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>投票的日期</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 引入 为什么画图 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">四个小组卖了 85 元，谁最多？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 420 240" width="470" height="269" role="img" aria-label="左边是四行数字的表格，右边把同样的数字画成四根条形">
+      <g font-family="sans-serif">
+        <text x="80" y="18" font-size="12" fill="#7B87B5" text-anchor="middle">一张表</text>
+        <rect x="10" y="28" width="140" height="170" fill="#F5F7FD" stroke="#B4BEE0" stroke-width="1.5"/>
+        <line x1="10" y1="62" x2="150" y2="62" stroke="#B4BEE0" stroke-width="1.5"/>
+        <line x1="10" y1="96" x2="150" y2="96" stroke="#E3E8F7" stroke-width="1"/>
+        <line x1="10" y1="130" x2="150" y2="130" stroke="#E3E8F7" stroke-width="1"/>
+        <line x1="10" y1="164" x2="150" y2="164" stroke="#E3E8F7" stroke-width="1"/>
+        <g font-size="12" fill="#3A4770" text-anchor="middle">
+          <text x="46" y="49">组别</text><text x="114" y="49">收入</text>
+          <text x="46" y="84">折纸</text><text x="114" y="84">25 元</text>
+          <text x="46" y="118">书签</text><text x="114" y="118">15 元</text>
+          <text x="46" y="152">编织</text><text x="114" y="152">35 元</text>
+          <text x="46" y="186">绘画</text><text x="114" y="186">10 元</text>
+        </g>
+
+        <text x="176" y="124" font-size="19" fill="#00897B" text-anchor="middle">→</text>
+
+        <text x="300" y="18" font-size="12" fill="#7B87B5" text-anchor="middle">一张条形统计图</text>
+        <line x1="200" y1="44" x2="200" y2="198" stroke="#283593" stroke-width="1.8"/>
+        <line x1="200" y1="198" x2="404" y2="198" stroke="#283593" stroke-width="1.8"/>
+        <g stroke="#E3E8F7" stroke-width="1">
+          <line x1="200" y1="51" x2="404" y2="51"/>
+          <line x1="200" y1="72" x2="404" y2="72"/>
+          <line x1="200" y1="93" x2="404" y2="93"/>
+          <line x1="200" y1="114" x2="404" y2="114"/>
+          <line x1="200" y1="135" x2="404" y2="135"/>
+          <line x1="200" y1="156" x2="404" y2="156"/>
+          <line x1="200" y1="177" x2="404" y2="177"/>
+        </g>
+        <g fill="#3949AB">
+          <rect x="215" y="93" width="34" height="105"/>
+          <rect x="259" y="135" width="34" height="63"/>
+          <rect x="303" y="51" width="34" height="147"/>
+          <rect x="347" y="156" width="34" height="42"/>
+        </g>
+        <g fill="#3A4770" font-size="11.5" text-anchor="middle">
+          <text x="232" y="214">折纸</text><text x="276" y="214">书签</text>
+          <text x="320" y="214">编织</text><text x="364" y="214">绘画</text>
+        </g>
+        <text x="302" y="232" font-size="12" fill="#00897B" text-anchor="middle">谁最高，一眼就看出来</text>
+      </g>
+    </svg>
+  </div>
+  <p class="teach-text" id="p2s1">
+    四个小组义卖，一共卖了 85 元：手工书签 2 元一张，折纸花 5 元一朵。钱数记在表里，横看竖看都是数字，谁最多得来回比。
+  </p>
+  <p class="teach-text" id="p2s2">
+    把数字画成<strong>一条一条的直条</strong>，谁高谁矮立刻分明——这就是条形统计图。
+  </p>
+  <p class="teach-text" id="p2s3">
+    它不改变任何数据，只是换了一种「用长短说数量」的说法。<strong>条越高，数越大</strong>。
+  </p>
+</div>
+
+<div class="key-box" id="p2s4">
+  条形统计图的用处只有一句：<strong>让比较变快</strong>。数字越多，这个好处越明显。
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>① 表</h4>
+    <div class="eq">读数准<br>比较慢</div>
+    <p>每行都得看一遍，还要在脑子里比大小。</p>
+  </div>
+  <div class="card">
+    <h4>② 图</h4>
+    <div class="eq">比较快<br>读数要看格</div>
+    <p>高低一眼分明，具体数字还得数格子。</p>
+  </div>
+  <div class="card">
+    <h4>③ 两者都要</h4>
+    <div class="eq">图看趋势<br>表查准确值</div>
+    <p>看图找谁最多，再回表里核对数字。</p>
+  </div>
+</div>
+</section>
+
+<!-- ===== p3: 结构 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">一张图里，哪几样东西必须有？</h2>
+
+<p class="teach-text" id="p3s1">
+  标题说清统计什么，横轴写组名，纵轴标刻度，每根条的顶上写数字。缺一样，别人就可能读错。
+</p>
+
+<div class="fig" id="p3fig" style="margin:6px 0 2px">
+  <svg viewBox="0 0 720 330" width="680" height="312" role="img" aria-label="完整的条形统计图，标注标题、横轴、纵轴、每格代表 5 元">
+    <g font-family="sans-serif">
+      <text x="380" y="30" font-size="16" font-weight="700" fill="#283593" text-anchor="middle">四个小组义卖收入统计图</text>
+      <text x="104" y="58" font-size="13" fill="#00897B">纵轴每格代表 5 元</text>
+
+      <g stroke="#E3E8F7" stroke-width="1">
+        <line x1="100" y1="106" x2="660" y2="106"/>
+        <line x1="100" y1="136" x2="660" y2="136"/>
+        <line x1="100" y1="166" x2="660" y2="166"/>
+        <line x1="100" y1="196" x2="660" y2="196"/>
+        <line x1="100" y1="226" x2="660" y2="226"/>
+        <line x1="100" y1="256" x2="660" y2="256"/>
+      </g>
+
+      <line x1="100" y1="74" x2="100" y2="288" stroke="#283593" stroke-width="2"/>
+      <line x1="100" y1="288" x2="660" y2="288" stroke="#283593" stroke-width="2"/>
+
+      <g font-size="12.5" fill="#3A4770" text-anchor="end">
+        <text x="92" y="292">0</text>
+        <text x="92" y="260">5</text>
+        <text x="92" y="230">10</text>
+        <text x="92" y="200">15</text>
+        <text x="92" y="170">20</text>
+        <text x="92" y="140">25</text>
+        <text x="92" y="110">30</text>
+        <text x="92" y="80">35</text>
+      </g>
+
+      <g fill="#3949AB">
+        <rect x="138" y="138" width="64" height="150"/>
+        <rect x="278" y="198" width="64" height="90"/>
+        <rect x="418" y="78" width="64" height="210"/>
+        <rect x="558" y="228" width="64" height="60"/>
+      </g>
+      <g font-size="13.5" font-weight="700" fill="#283593" text-anchor="middle">
+        <text x="170" y="130">25</text>
+        <text x="310" y="190">15</text>
+        <text x="450" y="70">35</text>
+        <text x="590" y="220">10</text>
+      </g>
+
+      <g font-size="13" fill="#3A4770" text-anchor="middle">
+        <text x="170" y="310">折纸组</text>
+        <text x="310" y="310">书签组</text>
+        <text x="450" y="310">编织组</text>
+        <text x="590" y="310">绘画组</text>
+      </g>
+
+      <text x="44" y="182" font-size="13" fill="#00897B" text-anchor="middle" transform="rotate(-90 44 182)">纵轴（元）</text>
+      <text x="668" y="284" font-size="12.5" fill="#00897B">横轴</text>
+    </g>
+  </svg>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>① 标题</strong>：这张图统计的是什么，写在最上面。</li>
+  <li><strong>② 横轴</strong>：写各组的名字，条就长在名字上面。</li>
+  <li><strong>③ 纵轴</strong>：标刻度，从 0 起，每格代表固定的数。</li>
+  <li><strong>④ 条顶数字</strong>：写具体数值，不用数格子也能读。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  「一格代表几」是整张图的<strong>换算钥匙</strong>：格数 × 每格代表数 = 实际数量。改它，全图的条都要重画。
+</div>
+</section>
+
+<!-- ===== p3b: 连线巩固 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：图上的每个部分管什么</h2>
+<p class="teach-text" id="p3bs1">先点左边，再点右边，连对了变绿。</p>
+<div id="matchP3"></div>
+</section>
+
+<!-- ===== p4: 中测1 ===== -->
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 一格代表几</h2>
+  <p class="quiz-hint">三道题都在问同一件事：格数怎么换成数量。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 一张条形图每格代表 5 元，某组的条高 6 格，这组收入是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>11 元</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>30 元</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>56 元</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 数据最大是 640 人，画图时每格代表 10 人，需要多少格？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>64 格</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>640 格</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>6.4 格</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 数据是 45 元，每格代表 10 元，画出来会怎样？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>正好 4 格半</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>正好 5 格</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>画不出来</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 读图比较 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">不算，光看图能读出几件事？</h2>
+
+<p class="teach-text" id="p5s1">
+  同一张图，除了读出每组各多少，还能直接看出三件事：谁最多、谁最少、最多比最少多多少。
+</p>
+
+<div class="fig" id="p5fig" style="margin:6px 0 2px">
+  <svg viewBox="0 0 720 316" width="680" height="298" role="img" aria-label="同一张条形图，右侧标出最多、最少和两者相差 25 元">
+    <g font-family="sans-serif">
+      <g stroke="#E3E8F7" stroke-width="1">
+        <line x1="90" y1="90" x2="530" y2="90"/>
+        <line x1="90" y1="120" x2="530" y2="120"/>
+        <line x1="90" y1="150" x2="530" y2="150"/>
+        <line x1="90" y1="180" x2="530" y2="180"/>
+        <line x1="90" y1="210" x2="530" y2="210"/>
+        <line x1="90" y1="240" x2="530" y2="240"/>
+      </g>
+      <line x1="90" y1="58" x2="90" y2="272" stroke="#283593" stroke-width="2"/>
+      <line x1="90" y1="272" x2="530" y2="272" stroke="#283593" stroke-width="2"/>
+      <g font-size="12" fill="#3A4770" text-anchor="end">
+        <text x="82" y="276">0</text><text x="82" y="244">5</text><text x="82" y="214">10</text>
+        <text x="82" y="184">15</text><text x="82" y="154">20</text><text x="82" y="124">25</text>
+        <text x="82" y="94">30</text><text x="82" y="64">35</text>
+      </g>
+
+      <g fill="#3949AB">
+        <rect x="116" y="122" width="58" height="150"/>
+        <rect x="226" y="182" width="58" height="90"/>
+        <rect x="336" y="62" width="58" height="210"/>
+        <rect x="446" y="212" width="58" height="60"/>
+      </g>
+      <g font-size="13" font-weight="700" fill="#283593" text-anchor="middle">
+        <text x="145" y="114">25</text><text x="255" y="174">15</text>
+        <text x="365" y="54">35</text><text x="475" y="204">10</text>
+      </g>
+      <g font-size="12.5" fill="#3A4770" text-anchor="middle">
+        <text x="145" y="294">折纸组</text><text x="255" y="294">书签组</text>
+        <text x="365" y="294">编织组</text><text x="475" y="294">绘画组</text>
+      </g>
+
+      <path d="M 396 62 L 396 40 L 542 40" stroke="#2E7D32" stroke-width="1.6" fill="none"/>
+      <text x="548" y="44" font-size="12.5" fill="#2E7D32">最多：编织组 35 元</text>
+
+      <line x1="420" y1="62" x2="420" y2="212" stroke="#EF6C00" stroke-width="1.6" stroke-dasharray="5 4"/>
+      <line x1="412" y1="62" x2="428" y2="62" stroke="#EF6C00" stroke-width="1.6"/>
+      <line x1="412" y1="212" x2="428" y2="212" stroke="#EF6C00" stroke-width="1.6"/>
+      <text x="548" y="144" font-size="12.5" fill="#EF6C00">相差 5 格 = 25 元</text>
+      <text x="548" y="164" font-size="11.5" fill="#B26A2E">35 − 10 = 25（元）</text>
+
+      <path d="M 504 212 L 542 212" stroke="#C62828" stroke-width="1.6" fill="none" stroke-dasharray="5 4"/>
+      <text x="548" y="216" font-size="12.5" fill="#C62828">最少：绘画组 10 元</text>
+
+      <text x="548" y="270" font-size="12" fill="#00897B">横轴：四个小组</text>
+    </g>
+  </svg>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>① 读单个值</h4>
+    <div class="eq">数格 × 每格代表数<br>= 实际数量</div>
+    <p>3 格 × 5 元 = 15 元，对得上条顶的数字。</p>
+  </div>
+  <div class="card">
+    <h4>② 比高低</h4>
+    <div class="eq">条越高<br>数量越多</div>
+    <p>不用读数字，看谁的头伸得高就行。</p>
+  </div>
+  <div class="card">
+    <h4>③ 算相差</h4>
+    <div class="eq">多的 − 少的<br>= 相差</div>
+    <p>也可以数格子差：相差 5 格 → 差 25 元。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  两把尺子要分清：<strong>竖着比高低</strong>看谁多，<strong>横着看名字</strong>看是谁。别把条宽当数量。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">改一格代表几，条高会怎么变</h2>
+  <p class="sim-desc">数据不动，只换「一格代表多少」，四条的高度全部重算。看看哪种最合适。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">一格代表 5 元 · 最高 7 格</span>
+    <span class="sim-tip" id="simTip">7 格刚好画得下，四条的高低差别最清楚</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-retry" onclick="simUnit(1)">一格 = 1 元</button>
+    <button class="btn-primary" onclick="simUnit(5)">一格 = 5 元</button>
+    <button class="btn-retry" onclick="simUnit(10)">一格 = 10 元</button>
+    <button class="btn-retry" onclick="simPick(-1)">← 上一组</button>
+    <button class="btn-retry" onclick="simPick(1)">下一组 →</button>
+    <button class="btn-retry" onclick="simReset()">重置</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">顶部标出当前的「一格代表几」；不满一格的用半格表示，会单独注明</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>一格代表 1 元时，格子有多少？画得下吗？</li>
+    <li>一格代表 10 元时，哪一条出现了半格？为什么？</li>
+    <li>三种情况下，编织组都是最高的吗？为什么。</li>
+    <li>如果数据换成 350 元，一格代表 5 元合适吗？</li>
+  </ul>
+</div>
+</section>
+
+<!-- ===== p7: 中测2 ===== -->
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 读图与比较</h2>
+  <p class="quiz-hint">三题都只看上面那张图，不用重新算数。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 每格代表 5 元，编织组的条有 7 格高，收入是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>12 元</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>35 元</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>75 元</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 收入最高的组比最低的组多多少元？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>20 元</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>25 元</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>45 元</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 如果一格代表 10 元，编织组那条会有多高？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>3 格半</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>7 格</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>35 格</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 易错辨析 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四个坑，第三个最容易看走眼</h2>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 把条宽当数量</h4>
+    <div class="wrong-num">✗ 编织组那条最宽，所以它最多</div>
+    <p>所有条必须一样宽。<strong>只有高低表示多少</strong>，宽度是画图规矩，不是数据。</p>
+  </div>
+
+  <div class="card">
+    <h4>② 纵轴不从 0 起</h4>
+    <div class="wrong-num">✗ 从 20 元开始画，10 元的组就没了</div>
+    <p>纵轴截断会把差距放大几十倍。从 0 起，条的长度才和数量成正比。</p>
+  </div>
+
+  <div class="card">
+    <h4>③ 忘了乘每格代表数</h4>
+    <div class="wrong-num">✗ 7 格高，所以是 7 元</div>
+    <p>7 只是格数，还要乘 5 元。7 × 5 = 35 元，差 5 倍。</p>
+  </div>
+
+  <div class="card">
+    <h4>④ 一格来回换</h4>
+    <div class="wrong-num">✗ 这一条按 5 元算，那条按 10 元算</div>
+    <p>同一张图只能有一个「一格代表几」。换单位就得整张重画。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  读图三步：<strong>先看一格代表几，再数格，最后乘</strong>。少一步就会差好几倍。
+</div>
+
+<p class="teach-text" id="p8apply">
+  下次看到统计图，先找那行小字「每格代表 ××」。找不到它，图上所有数字都不能信。
+</p>
+</section>
+
+<!-- ===== p9: 后测 ===== -->
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，读准再算</h2>
+  <p class="quiz-hint">前三道读图，后两道换到新情境。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 条形统计图里，条形的高低表示什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>数量的多少</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>种类的多少</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>画图的先后</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 每格代表 20 人，某条高 4 格半，表示多少人？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>24 人</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>80 人</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>90 人</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 一张图里，A 条 6 格、B 条 2 格，每格 5 元。A 比 B 多多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>4 元</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>20 元</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>30 元</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 社团招新：机器人 60 人、合唱 45 人、篮球 90 人、绘画 30 人。每格代表 15 人，篮球那条有多高？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>6 格</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>9 格</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>90 格</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 还是上面四个社团，一共招了多少人？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>180 人</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>225 人</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>275 人</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">四个部件</div>
+        <div class="summary-v4-summary">标题轴条数字</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">缺一不可<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">标题：统计什么<br>横轴：组名｜纵轴：刻度<br>条顶：具体数值</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">一格代表几</div>
+        <div class="summary-v4-summary">整张图的钥匙</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么选<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">格数 × 每格代表数 = 数量<br>格子太多 → 代表数改大<br>数据不满一格 → 用半格</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">读图三步</div>
+        <div class="summary-v4-summary">看格数乘</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么读<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">① 找「每格代表 ××」<br>② 数这条有几格<br>③ 格数 × 代表数</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">避错</div>
+        <div class="summary-v4-summary">宽不是数</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">别踩坑<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">条宽一样，只有高低是数量<br>纵轴必须从 0 起<br>一格在整张图里不能变</div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<p class="teach-text" style="margin-top:18px;color:#0B1230;font-size:19px">
+  下次拿到一张统计图，先别读数：找到「每格代表几」那一行，再动手。
+</p>
+</section>
