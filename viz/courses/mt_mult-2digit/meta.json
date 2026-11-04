@@ -1,10 +1,10 @@
 {
   "topicId": "mt_mult-2digit",
-  "title": "三位数乘两位数：两个部分积",
+  "title": "三位数乘两位数：第二行为什么往左错一格",
   "template": "explain",
-  "renderer": "mult2",
-  "duration": 12,
-  "interactions": 2,
+  "renderer": "vertical",
+  "duration": 24,
+  "interactions": 16,
   "grade": 4,
   "subject": "数学",
   "standards": [
@@ -16,17 +16,83 @@
     "mt_big-num"
   ],
   "next": [
-    "mt_div-2digit"
+    "mt_div-2digit",
+    "mt_ops-order",
+    "mt_ops-laws",
+    "mt_ops-laws-mul",
+    "mt_dec-mul"
   ],
   "objectives": [
-    "掌握三位数乘两位数的笔算顺序：先乘个位，再乘十位",
-    "理解用十位上的数去乘时，得数末位要对着十位（向左错一位）",
-    "会把两个部分积相加得到最终结果"
+    "理解三位数乘两位数可以拆成「乘十位」和「乘个位」两笔来算",
+    "掌握竖式写法，知道第二行部分积的末位要与十位对齐",
+    "会用一个因数不变时积随另一个因数变化的规律做简算与估算"
   ],
   "cognitiveAction": "分解",
   "status": "reviewed",
   "author": "goral.cao",
   "license": "CC-BY-SA-4.0",
-  "version": "1.0.0",
-  "updatedAt": "2026-10-27"
+  "version": "3.0.0",
+  "updatedAt": "2026-11-04",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "拆两笔",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "竖式对位",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "积的变化",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
 }

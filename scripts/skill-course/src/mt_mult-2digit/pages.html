@@ -1,0 +1,556 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>145 箱水，竖式第二行为什么往左挪一格？</h1>
+  <p class="sub">四年级数学 · 三位数乘两位数</p>
+  <div class="tags">
+    <span class="tag">竖式</span>
+    <span class="tag">部分积对位</span>
+    <span class="tag">积的变化</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 460 200" width="430" height="187" role="img" aria-label="145 乘 12 的竖式：两行部分积，第二行往左错一格">
+      <g font-family="monospace" font-size="22" fill="#FFFFFF" text-anchor="middle">
+        <text x="300" y="46">1</text><text x="330" y="46">4</text><text x="360" y="46">5</text>
+        <text x="240" y="80">×</text><text x="330" y="80">1</text><text x="360" y="80">2</text>
+      </g>
+      <line x1="215" y1="94" x2="378" y2="94" stroke="#FFFFFF" stroke-width="2"/>
+      <g font-family="monospace" font-size="22" fill="#FFCCBC" text-anchor="middle">
+        <text x="300" y="126">2</text><text x="330" y="126">9</text><text x="360" y="126">0</text>
+        <text x="270" y="158">1</text><text x="300" y="158">4</text><text x="330" y="158">5</text>
+      </g>
+      <line x1="215" y1="172" x2="378" y2="172" stroke="#FFFFFF" stroke-width="2"/>
+      <g font-family="monospace" font-size="22" fill="#FFFFFF" text-anchor="middle">
+        <text x="270" y="198">1</text><text x="300" y="198">7</text><text x="330" y="198">4</text><text x="360" y="198">0</text>
+      </g>
+      <rect x="346" y="140" width="26" height="26" fill="none" stroke="#FF7043" stroke-width="1.6" stroke-dasharray="3 3"/>
+      <text x="378" y="152" font-size="11.5" fill="#FFCCBC" font-family="sans-serif">空着的一格</text>
+    </svg>
+  </div>
+  <p style="font-size:20px;color:rgba(255,255,255,.92);max-width:580px;line-height:1.8;">
+    三箱四箱，口算还能撑住；<br>
+    一到十二箱，就得靠<strong>拆成两笔</strong>。
+  </p>
+  <p class="hint">点击右下角箭头开始 或 点击顶部导航跳转</p>
+  <a href="../../viz/index.html#t=mt_mult-2digit" style="margin-top:16px;color:rgba(255,255,255,.78);font-size:16px;text-decoration:underline">← 回到知识图谱</a>
+</div>
+</section>
+
+<!-- ===== p1: 前测 ===== -->
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先答三道，凭感觉</h2>
+  <p class="quiz-hint">三道题都能口算，答完就知道底子在不在。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 145 × 2 等于多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>270</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>290</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>300</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 145 × 10 等于多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1450</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>145</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>14500</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 290 + 1450 等于多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1640</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>1740</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>1830</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 引入 拆成两笔 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">145 乘以 12，为什么要写成两行？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 320 210" width="286" height="188" role="img" aria-label="面积模型：145 乘 12 拆成 145 乘 10 和 145 乘 2 两块">
+      <rect x="40" y="34" width="230" height="106" fill="#B2DFDB" stroke="#00695C" stroke-width="2"/>
+      <rect x="40" y="140" width="230" height="40" fill="#FFCCBC" stroke="#FF7043" stroke-width="2"/>
+      <text x="155" y="84" font-size="13" fill="#004D40" text-anchor="middle" font-family="sans-serif">145 × 10</text>
+      <text x="155" y="106" font-size="13" fill="#004D40" text-anchor="middle" font-family="sans-serif">= 1450</text>
+      <text x="155" y="165" font-size="12.5" fill="#BF360C" text-anchor="middle" font-family="sans-serif">145 × 2 = 290</text>
+      <text x="30" y="202" font-size="11.5" fill="#4A6B62" font-family="sans-serif">横着切成两块，加起来就是总数</text>
+      <text x="270" y="24" font-size="12" fill="#4A6B62" text-anchor="end" font-family="sans-serif">总数 145 × 12</text>
+    </svg>
+  </div>
+  <p class="teach-text" id="p2s1">
+    校运会订水，每箱 145 元，一共订 12 箱。收银员扫完码，3 秒钟就报出 1740 元——她没背过这个数，是把 12 拆成 10 和 2，两笔一加。
+  </p>
+  <p class="teach-text" id="p2s2">
+    145 × 12 = 145 × <strong>10</strong> + 145 × <strong>2</strong>，也就是 1450 + 290。
+  </p>
+  <p class="teach-text" id="p2s3">
+    竖式就是把这两笔<strong>摞起来写</strong>：第一行记个位那笔，第二行记十位那笔，最后加起来。
+  </p>
+</div>
+
+<div class="key-box" id="p2s4">
+  三位数乘两位数，拆成<strong>两个一位数乘三位数</strong>，再相加。竖式的两行，就是这两笔。
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>① 12 拆成 10 + 2</h4>
+    <div class="eq">12 = 10 + 2</div>
+    <p>拆开以后每一笔都是「乘一位数」，已经学过了。</p>
+  </div>
+  <div class="card">
+    <h4>② 两笔分别是多少</h4>
+    <div class="eq">145 × 10 = 1450<br>145 × 2 = 290</div>
+    <p>1450 是「145 个十」，290 是「290 个一」。</p>
+  </div>
+  <div class="card">
+    <h4>③ 加起来</h4>
+    <div class="eq">1450 + 290 = 1740</div>
+    <p>单位不同也要能加：先把 145 个十看成 1450。</p>
+  </div>
+</div>
+</section>
+
+<!-- ===== p3: 概念1 竖式对位 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">第二行往左错一格，不是写歪了</h2>
+
+<p class="teach-text" id="p3s1">
+  十位上的 1 表示 <strong>1 个十</strong>，用它去乘 145，得到的是 145 个十，也就是 1450。竖式里把这个 0 省掉，改用一个空位顶替——于是第二行看起来往左挪了一格。
+</p>
+
+<div class="fig" id="p3fig" style="margin:8px 0 4px">
+  <svg viewBox="60 0 580 216" width="557" height="207" role="img" aria-label="145 乘 12 的竖式分解：第一行末位对齐个位，第二行末位对齐十位">
+    <g font-family="monospace" font-size="20" fill="#004D40" text-anchor="middle">
+      <text x="304" y="44">1</text><text x="328" y="44">4</text><text x="352" y="44">5</text>
+      <text x="252" y="76">×</text><text x="328" y="76">1</text><text x="352" y="76">2</text>
+    </g>
+    <line x1="236" y1="90" x2="364" y2="90" stroke="#004D40" stroke-width="2"/>
+    <g font-family="monospace" font-size="20" fill="#00695C" text-anchor="middle">
+      <text x="304" y="120">2</text><text x="328" y="120">9</text><text x="352" y="120">0</text>
+    </g>
+    <g font-family="monospace" font-size="20" fill="#BF360C" text-anchor="middle">
+      <text x="280" y="150">1</text><text x="304" y="150">4</text><text x="328" y="150">5</text>
+    </g>
+    <line x1="236" y1="164" x2="364" y2="164" stroke="#004D40" stroke-width="2"/>
+    <g font-family="monospace" font-size="20" fill="#004D40" text-anchor="middle">
+      <text x="280" y="194">1</text><text x="304" y="194">7</text><text x="328" y="194">4</text><text x="352" y="194">0</text>
+    </g>
+
+    <g font-family="sans-serif" font-size="12.5">
+      <path d="M 244 114 L 294 114" stroke="#00695C" stroke-width="1.6" stroke-dasharray="4 3"/>
+      <text x="238" y="108" fill="#00695C" text-anchor="end">① 个位 2 去乘</text>
+      <text x="238" y="125" fill="#00695C" text-anchor="end">末位对个位</text>
+
+      <path d="M 244 150 L 270 150" stroke="#BF360C" stroke-width="1.6" stroke-dasharray="4 3"/>
+      <text x="238" y="144" fill="#BF360C" text-anchor="end">② 十位 1 去乘</text>
+      <text x="238" y="161" fill="#BF360C" text-anchor="end">末位对十位</text>
+
+      <text x="374" y="120" fill="#00695C">= 290 个一，写成 290</text>
+      <text x="374" y="150" fill="#BF360C">= 145 个十，写成 1450</text>
+      <text x="374" y="194" fill="#004D40">两行相加 = 1740</text>
+
+      <text x="286" y="26" fill="#4A6B62" text-anchor="middle">因数</text>
+      <text x="374" y="26" fill="#4A6B62">每一行实际算的是什么</text>
+    </g>
+  </svg>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>① 先乘个位</strong>：用两位数个位上的数去乘三位数，积的末位对齐<strong>个位</strong>。</li>
+  <li><strong>② 再乘十位</strong>：用十位上的数去乘，积的末位对齐<strong>十位</strong>——这一格就是那个被省掉的 0。</li>
+  <li><strong>③ 最后相加</strong>：把两行部分积按数位对齐相加，得到总数。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  第二行往左错一格，错的是<strong>数位</strong>不是位置：它记的是「多少个十」，末位当然要站在十位上。
+</div>
+</section>
+
+<!-- ===== p3b: 连线巩固 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：竖式里每一行在算什么</h2>
+<p class="teach-text" id="p3bs1">先点左边的说法，再点右边的含义，连对了变绿。</p>
+<div id="matchP3"></div>
+</section>
+
+<!-- ===== p4: 中测1 ===== -->
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 先乘谁、站在哪</h2>
+  <p class="quiz-hint">三道题只考一件事：数位对齐。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 三位数乘两位数，竖式里第一步先用哪一位上的数去乘？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>个位</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>十位</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>哪一位都行</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 用十位上的数去乘，得到的部分积末位要和什么对齐？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>个位</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>十位</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>百位</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 算 236 × 34 时，236 × 3 得到的 708 表示 708 个什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>一</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>十</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>百</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 概念2 积的变化 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">一个因数乘 10，积也跟着乘 10</h2>
+
+<p class="teach-text" id="p5s1">
+  145 × 2 = 290，那么 145 × 20 一定是 2900，不用再算一遍。因为 20 是 2 的 10 倍，每一份都变成 10 份。
+</p>
+
+<div class="fig" id="p5fig" style="margin:8px 0 4px">
+  <svg viewBox="0 0 640 168" width="616" height="162" role="img" aria-label="积的变化规律：一个因数不变，另一个因数乘 10，积也乘 10">
+    <g font-family="monospace" font-size="19" fill="#004D40">
+      <text x="60" y="40">25 × 4 =</text><text x="180" y="40" font-weight="bold">100</text>
+      <text x="60" y="88">25 × 40 =</text><text x="180" y="88" font-weight="bold" fill="#FF7043">1000</text>
+      <text x="60" y="136">25 × 400 =</text><text x="180" y="136" font-weight="bold" fill="#FF7043">10000</text>
+    </g>
+    <g font-family="sans-serif" font-size="12.5" fill="#4A6B62">
+      <path d="M 150 52 L 150 76" stroke="#FF7043" stroke-width="1.8"/>
+      <path d="M 145 72 L 150 78 L 155 72" stroke="#FF7043" stroke-width="1.8" fill="none"/>
+      <text x="160" y="70" fill="#BF360C">×10</text>
+      <path d="M 150 100 L 150 124" stroke="#FF7043" stroke-width="1.8"/>
+      <path d="M 145 120 L 150 126 L 155 120" stroke="#FF7043" stroke-width="1.8" fill="none"/>
+      <text x="160" y="118" fill="#BF360C">×10</text>
+
+      <text x="330" y="40">另一个因数 ×10</text>
+      <text x="330" y="60" fill="#BF360C">积也 ×10</text>
+      <text x="330" y="96">因数乘 100，</text>
+      <text x="330" y="116" fill="#BF360C">积就乘 100：100 → 10000</text>
+      <text x="330" y="148">末尾的 0 不是随便添，是「十份、百份」的意思</text>
+    </g>
+  </svg>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>① 用它做简算</h4>
+    <div class="eq">25 × 4 = 100<br>25 × 40 = 1000</div>
+    <p>记住小算式，大算式直接添 0。</p>
+  </div>
+  <div class="card">
+    <h4>② 用它估位数</h4>
+    <div class="eq">408 × 25<br>≈ 400 × 25 = 10000</div>
+    <p>先估出「一万多」，算完看是不是 5 位数。</p>
+  </div>
+  <div class="card">
+    <h4>③ 用它查错</h4>
+    <div class="eq">145 × 12<br>≈ 150 × 12 = 1800</div>
+    <p>算出 1740，和 1800 挨得近，说明没算崩。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  <strong>一个因数不变，另一个因数乘几，积就乘几</strong>。反过来，因数除以几，积也除以几。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">一步一步走：两行部分积是怎么摞起来的</h2>
+  <p class="sim-desc">点「下一步」，左边面积模型和右边竖式同步长出来。留意第二行的末位站在哪一格。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">第 1 步 / 共 4 步</span>
+    <span class="sim-tip" id="simTip">先看题目：145 × 12，两笔怎么拆？</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-retry" onclick="simPrev()">← 上一步</button>
+    <button class="btn-primary" onclick="simNext()">下一步 →</button>
+    <button class="btn-retry" onclick="simSwap()">换一题</button>
+    <button class="btn-retry" onclick="simReset()">重置</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">左边是面积模型（示意，不按比例），右边是竖式；绿色那笔乘个位，橙色那笔乘十位</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>走到第 2 步时，第二行的 5 为什么不在最右边那一列？</li>
+    <li>把 12 换成 21，两行部分积会变成多少？</li>
+    <li>如果把 1450 写成 145，结果会错成多少？</li>
+    <li>为什么可以用「150 × 12」来估「145 × 12」？</li>
+  </ul>
+</div>
+</section>
+
+<!-- ===== p7: 中测2 ===== -->
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 用规律少算一步</h2>
+  <p class="quiz-hint">能靠规律推出来的，就别硬算。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 一个因数不变，另一个因数乘 10，积会怎样？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>也乘 10</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>加 10</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>不变</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 已知 25 × 4 = 100，那么 25 × 40 等于多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>140</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>1000</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>10000</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 408 × 25 的积是几位数？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>4 位</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>5 位</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>6 位</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 易错辨析 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四种错法，三种都出在第二行</h2>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 第二行没错格</h4>
+    <div class="wrong-num">✗ 145 直接对齐个位</div>
+    <p>这样就把「145 个十」当成了「145 个一」，结果少了一个 0，1740 会算成 435。</p>
+  </div>
+
+  <div class="card">
+    <h4>② 漏了进位</h4>
+    <div class="wrong-num">✗ 236 × 34 算出 7284</div>
+    <p>进位的小数字写在横线上方，下一位一定要记得加，漏一次就差几十上百。</p>
+  </div>
+
+  <div class="card">
+    <h4>③ 中间有 0 就跳过</h4>
+    <div class="wrong-num">✗ 408 × 25 少写一行</div>
+    <p>0 也要参与乘：0 乘几都得 0，但进位必须照加，整行不能省。</p>
+  </div>
+
+  <div class="card">
+    <h4>④ 只加不改位</h4>
+    <div class="wrong-num">✗ 290 与 145 左端对齐相加</div>
+    <p>相加时按数位右对齐：个位对个位。对错了，位数越多错得越离谱。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  一个总对策：<strong>写完两行，先用估算看位数对不对，再从右往左逐位相加</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到订水那题：145 × 12。第一行 290，第二行 145 站在十位（其实是 1450），相加 1740 元。若第二行没错格，会算出 435 元——连 3 箱的钱都不够。
+</p>
+</section>
+
+<!-- ===== p9: 后测 ===== -->
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，算得准也说得清</h2>
+  <p class="quiz-hint">前四道考算法，最后一道是应用题。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 145 × 12 的积是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1740</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>1450</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>2900</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 竖式里第二行写的 145，实际表示多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>145</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>1450</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>14500</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 236 × 34 等于多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>7024</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>8024</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>8124</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 一个因数乘 100，另一个因数不变，积会怎样？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>加 100</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>不变</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>乘 100</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 每箱水 48 元，买 125 箱一共多少元？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5000</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>6000</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>6500</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">拆</div>
+        <div class="summary-v4-summary">12 拆成 10 + 2</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">为什么要拆<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">拆成两个「乘一位数」<br>145 × 10 = 1450<br>145 × 2 = 290</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">对位</div>
+        <div class="summary-v4-summary">第二行错一格</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">错在哪<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">个位去乘 → 末位对齐个位<br>十位去乘 → 末位对齐十位<br>错的是数位，不是纸上的位置</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">规律</div>
+        <div class="summary-v4-summary">因数乘几积乘几</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么用<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">25 × 4 = 100<br>25 × 40 = 1000<br>用来简算、估位数、查错</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">查</div>
+        <div class="summary-v4-summary">估一估再相加</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么验<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">先估位数：150 × 12 ≈ 1800<br>再右对齐逐位相加<br>进位小数字一个都别漏</div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<p class="teach-text" style="margin-top:18px;color:#102A26;font-size:19px">
+  下次写竖式先别急着乘：问自己一句「这一行记的是多少个十」，那一格就不会错。
+</p>
+</section>
