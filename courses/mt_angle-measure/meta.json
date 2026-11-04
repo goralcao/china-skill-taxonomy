@@ -1,10 +1,10 @@
 {
   "topicId": "mt_angle-measure",
-  "title": "角的度量：用量角器量出多少度",
+  "title": "角的度量与分类：量角器两圈刻度，该读哪一圈",
   "template": "explain",
   "renderer": "angle",
-  "duration": 11,
-  "interactions": 2,
+  "duration": 24,
+  "interactions": 16,
   "grade": 4,
   "subject": "数学",
   "standards": [
@@ -19,14 +19,76 @@
     "mt_parallelogram"
   ],
   "objectives": [
-    "认识量角器，知道角的度量单位是度",
-    "掌握量角的步骤：中心对顶点、零刻度线对一边、读另一边",
-    "会按度数把角分成锐角、直角、钝角、平角、周角"
+    "认识量角器，知道角的度量单位是度，半圆平均分成 180 份",
+    "掌握量角三步：中心对顶点、零刻度线对一边、读另一边的刻度",
+    "能按度数把角分成锐角、直角、钝角、平角、周角"
   ],
   "cognitiveAction": "逼近",
   "status": "reviewed",
   "author": "goral.cao",
   "license": "CC-BY-SA-4.0",
-  "version": "1.0.0",
-  "updatedAt": "2026-10-27"
+  "version": "3.0.0",
+  "updatedAt": "2026-11-04",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "两个角",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "量角器",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "量角三步",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
 }

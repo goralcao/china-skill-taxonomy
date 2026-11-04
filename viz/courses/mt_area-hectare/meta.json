@@ -1,0 +1,91 @@
+{
+  "topicId": "mt_area-hectare",
+  "title": "公顷和平方千米：操场那一圈，围起来是 1 公顷吗",
+  "template": "explain",
+  "renderer": "geometry",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 4,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S2:GG:GM"
+  ],
+  "prerequisites": [
+    "mt_rect-area",
+    "mt_big-num"
+  ],
+  "next": [],
+  "objectives": [
+    "认识公顷和平方千米，知道 1 公顷 = 10000 平方米、1 平方千米 = 100 公顷",
+    "能用公顷、平方千米描述较大面积，会进行简单的单位换算",
+    "能根据实际场景选择合适的面积单位，不把公顷与平方米混用"
+  ],
+  "cognitiveAction": "累积",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-04",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "操场一圈",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "1公顷",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "平方千米",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

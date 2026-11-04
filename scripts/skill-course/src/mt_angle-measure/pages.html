@@ -1,0 +1,600 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>两把剪刀张开，谁的角度大？眼睛会骗你</h1>
+  <p class="sub">四年级数学 · 角的度量与分类</p>
+  <div class="tags">
+    <span class="tag">量角器</span>
+    <span class="tag">度</span>
+    <span class="tag">锐角到周角</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 460 210" width="430" height="196" role="img" aria-label="两个角：一个两条边很长但张得小，一个两条边短但张得大，说明角的大小只看张开程度">
+      <g stroke="#FFFFFF" stroke-width="3" fill="none">
+        <line x1="90" y1="120" x2="240" y2="120"/>
+        <line x1="90" y1="120" x2="190" y2="80"/>
+      </g>
+      <circle cx="90" cy="120" r="5" fill="#FFB300"/>
+      <text x="165" y="150" font-size="14" fill="#B3E5FC" font-family="sans-serif">边很长，张得小</text>
+
+      <g stroke="#FFFFFF" stroke-width="3" fill="none">
+        <line x1="290" y1="130" x2="360" y2="130"/>
+        <line x1="290" y1="130" x2="340" y2="60"/>
+      </g>
+      <circle cx="290" cy="130" r="5" fill="#FFB300"/>
+      <text x="300" y="165" font-size="14" fill="#B3E5FC" font-family="sans-serif">边较短，张得大</text>
+
+      <text x="230" y="196" font-size="16" fill="#FFE082" font-family="sans-serif" text-anchor="middle">比角的大小，比的是两条边张开的程度</text>
+    </svg>
+  </div>
+  <p style="font-size:20px;color:rgba(255,255,255,.92);max-width:580px;line-height:1.8;">
+    边画得再长，角也不会变大。<br>
+    那到底有多大？得用<strong>量角器</strong>说个数。
+  </p>
+  <p class="hint">点击右下角箭头开始 或 点击顶部导航跳转</p>
+  <a href="../../viz/index.html#t=mt_angle-measure" style="margin-top:16px;color:rgba(255,255,255,.78);font-size:16px;text-decoration:underline">← 回到知识图谱</a>
+</div>
+</section>
+
+<!-- ===== p1: 前测 ===== -->
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先答三道，凭感觉</h2>
+  <p class="quiz-hint">三道题只用你已经在生活里见过的角。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 数学书封面的角，是什么角？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>比直角小</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>直角</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>比直角大</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 钟面上 3 点整，时针和分针张开的角是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>比直角小</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>直角</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>比直角大</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 一扇门越推开，门和门框之间的角？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>越大</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>越小</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>不变</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 引入 两个角 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">两个角摆一起，为什么眼睛常看错？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 320 210" width="286" height="188" role="img" aria-label="两个角叠在一起比较，边长不同的两个角其实一样大">
+      <g stroke="#B8D2EA" stroke-width="2" fill="none">
+        <line x1="40" y1="150" x2="200" y2="150"/>
+        <line x1="40" y1="150" x2="150" y2="70"/>
+      </g>
+      <g stroke="#01579B" stroke-width="3" fill="none">
+        <line x1="40" y1="150" x2="280" y2="150"/>
+        <line x1="40" y1="150" x2="215" y2="30"/>
+      </g>
+      <path d="M 90 150 A 50 50 0 0 0 75 118" stroke="#FFB300" stroke-width="2.5" fill="none"/>
+      <text x="104" y="132" font-size="14" fill="#01579B" font-family="sans-serif">同一个顶点</text>
+      <text x="60" y="186" font-size="13" fill="#5B7B9A" font-family="sans-serif">两条边画长了，角度没变</text>
+    </svg>
+  </div>
+  <p class="teach-text" id="p2s1">
+    两条边画得长一点，角看起来就「大」——这是错觉。把两条边各延长 3 厘米再比，张开的程度一点没变。角的大小只看两条边<strong>张开的程度</strong>，跟边画多长没关系。
+  </p>
+  <p class="teach-text" id="p2s2">
+    要说出「多大」，得有个统一的单位。把半圆平均分成 <strong>180 份</strong>，每份就是 <strong>1 度</strong>，记作 1°。
+  </p>
+  <p class="teach-text" id="p2s3">
+    量角器就是这么来的：一个刻了 180 份的半圆。可它有两圈刻度，读错一圈就差了整整一倍。
+  </p>
+</div>
+
+<div class="key-box" id="p2s4">
+  角的大小 = <strong>两条边张开的程度</strong>，用「度」计量。边画多长都不影响。
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>① 生活里的直角</h4>
+    <div class="eq">书角、窗框、地砖缝<br>都是 90°</div>
+    <p>直角是最容易认的角，拿它当尺子比一比。</p>
+  </div>
+  <div class="card">
+    <h4>② 比直角小</h4>
+    <div class="eq">剪刀半开<br>约 30°～60°</div>
+    <p>张得比直角窄，都叫锐角。</p>
+  </div>
+  <div class="card">
+    <h4>③ 比直角大</h4>
+    <div class="eq">门开到一半<br>约 100°～120°</div>
+    <p>比直角宽、又没摊平，都叫钝角。</p>
+  </div>
+</div>
+</section>
+
+<!-- ===== p3: 概念1 量角器 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">量角器上有两圈数，0 到 180 和 180 到 0</h2>
+
+<p class="teach-text" id="p3s1">
+  外圈从右边 0 数到左边 180，内圈从左边 0 数到右边 180。同一根刻度线上，两圈的读数加起来正好是 180。
+</p>
+
+<div class="fig" id="p3fig" style="margin:10px 0 4px">
+  <svg viewBox="0 0 640 250" width="616" height="241" role="img" aria-label="量角器示意：中心点、零刻度线、内外两圈刻度">
+    <g font-family="sans-serif">
+      <!-- 半圆盘 -->
+      <path d="M 155 205 A 165 165 0 0 1 485 205 Z" fill="#E3F2FD" stroke="#01579B" stroke-width="2"/>
+      <line x1="155" y1="205" x2="485" y2="205" stroke="#01579B" stroke-width="2"/>
+
+      <!-- 7 条刻度线 -->
+      <g stroke="#7E9AB5" stroke-width="1.4">
+        <line x1="485" y1="205" x2="473" y2="205"/>
+        <line x1="462.9" y1="122.5" x2="452.5" y2="128.5"/>
+        <line x1="402.5" y1="62.1" x2="396.5" y2="72.5"/>
+        <line x1="320" y1="40" x2="320" y2="52"/>
+        <line x1="237.5" y1="62.1" x2="243.5" y2="72.5"/>
+        <line x1="177.1" y1="122.5" x2="187.5" y2="128.5"/>
+        <line x1="155" y1="205" x2="167" y2="205"/>
+      </g>
+
+      <!-- 外圈（蓝）：右边 0 → 左边 180 -->
+      <g font-size="12.5" fill="#01579B" text-anchor="middle" dominant-baseline="middle">
+        <text x="503" y="222">0</text>
+        <text x="478" y="113">30</text>
+        <text x="411" y="46">60</text>
+        <text x="320" y="22">90</text>
+        <text x="229" y="46">120</text>
+        <text x="162" y="113">150</text>
+        <text x="137" y="222">180</text>
+      </g>
+
+      <!-- 内圈（橙）：左边 0 → 右边 180 -->
+      <g font-size="12.5" fill="#EF6C00" text-anchor="middle" dominant-baseline="middle">
+        <text x="457" y="188">0</text>
+        <text x="439" y="137">30</text>
+        <text x="389" y="87">60</text>
+        <text x="320" y="70">90</text>
+        <text x="251" y="87">120</text>
+        <text x="201" y="137">150</text>
+        <text x="183" y="188">180</text>
+      </g>
+
+      <!-- 中心 -->
+      <circle cx="320" cy="205" r="4.5" fill="#C62828"/>
+      <text x="320" y="236" font-size="12" fill="#C62828" text-anchor="middle">中心（对准角的顶点）</text>
+
+      <!-- 图例 -->
+      <g font-size="12.5">
+        <rect x="12" y="26" width="11" height="11" fill="#01579B"/>
+        <text x="30" y="36" fill="#01579B">蓝色外圈</text>
+        <text x="30" y="54" fill="#01579B" font-size="11.5">右边 0 数到左边 180</text>
+        <rect x="12" y="74" width="11" height="11" fill="#EF6C00"/>
+        <text x="30" y="84" fill="#EF6C00">橙色内圈</text>
+        <text x="30" y="102" fill="#EF6C00" font-size="11.5">左边 0 数到右边 180</text>
+        <text x="30" y="128" fill="#5B7B9A" font-size="11.5">同一根刻度线，</text>
+        <text x="30" y="146" fill="#5B7B9A" font-size="11.5">两圈读数的和是 180。</text>
+      </g>
+    </g>
+  </svg>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>① 中心</strong>：量角器底边正中的小点，量角时对准角的顶点。</li>
+  <li><strong>② 零刻度线</strong>：底边上标 0 的那条线，对准角的一条边。</li>
+  <li><strong>③ 两圈刻度</strong>：零刻度线在哪边，就读哪一圈——这条规则能避开九成的错。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  <strong>零在右边读外圈，零在左边读内圈</strong>。读错圈时，度数正好变成 180 减去正确度数。
+</div>
+</section>
+
+<!-- ===== p3b: 连线巩固 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：角的名称与量角器的部件</h2>
+<p class="teach-text" id="p3bs1">先点左边的名称，再点右边的含义，连对了变绿。</p>
+<div id="matchP3"></div>
+</section>
+
+<!-- ===== p4: 中测1 ===== -->
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 量与度</h2>
+  <p class="quiz-hint">只盯两件事：中心对哪里、读哪一圈。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 量角器把半圆平均分成 180 份，1 份是多少度？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1 度</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>10 度</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>180 度</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 量角时，量角器的中心要对准哪里？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>角的一条边</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>角的顶点</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>随便放</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 一个角的两条边张开得越大，这个角？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>越大</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>越小</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>不变</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 概念2 量角三步与分类 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">量角三步，第三步最容易读错</h2>
+
+<p class="teach-text" id="p5s1">
+  中心对顶点 → 零刻度线对一条边 → 看另一条边落在哪。三步里前两步是「放对」，第三步才是「读数」。
+</p>
+
+<div class="fig" id="p5fig" style="margin:8px 0 4px">
+  <svg viewBox="0 0 640 168" width="616" height="162" role="img" aria-label="五个角：锐角、直角、钝角、平角、周角，标注度数范围">
+    <g font-family="sans-serif">
+      <g stroke="#01579B" stroke-width="2.4" fill="none">
+        <line x1="30" y1="110" x2="96" y2="110"/><line x1="30" y1="110" x2="80" y2="72"/>
+      </g>
+      <text x="58" y="140" font-size="13" fill="#01579B" text-anchor="middle">锐角</text>
+      <text x="58" y="158" font-size="11" fill="#5B7B9A" text-anchor="middle">小于 90°</text>
+
+      <g stroke="#01579B" stroke-width="2.4" fill="none">
+        <line x1="140" y1="110" x2="206" y2="110"/><line x1="140" y1="110" x2="140" y2="58"/>
+      </g>
+      <text x="172" y="140" font-size="13" fill="#01579B" text-anchor="middle">直角</text>
+      <text x="172" y="158" font-size="11" fill="#5B7B9A" text-anchor="middle">正好 90°</text>
+
+      <g stroke="#01579B" stroke-width="2.4" fill="none">
+        <line x1="250" y1="110" x2="316" y2="110"/><line x1="250" y1="110" x2="272" y2="56"/>
+      </g>
+      <text x="282" y="140" font-size="13" fill="#01579B" text-anchor="middle">钝角</text>
+      <text x="282" y="158" font-size="11" fill="#5B7B9A" text-anchor="middle">90°～180°</text>
+
+      <g stroke="#01579B" stroke-width="2.4" fill="none">
+        <line x1="360" y1="110" x2="426" y2="110"/><line x1="393" y1="110" x2="327" y2="110"/>
+      </g>
+      <circle cx="393" cy="110" r="3" fill="#C62828"/>
+      <text x="393" y="140" font-size="13" fill="#01579B" text-anchor="middle">平角</text>
+      <text x="393" y="158" font-size="11" fill="#5B7B9A" text-anchor="middle">正好 180°</text>
+
+      <g stroke="#01579B" stroke-width="2.4" fill="none">
+        <line x1="500" y1="110" x2="566" y2="110"/>
+        <path d="M 566 110 A 33 33 0 1 1 533 77" stroke="#7CB342" stroke-width="2"/>
+      </g>
+      <circle cx="500" cy="110" r="3" fill="#C62828"/>
+      <text x="533" y="140" font-size="13" fill="#01579B" text-anchor="middle">周角</text>
+      <text x="533" y="158" font-size="11" fill="#5B7B9A" text-anchor="middle">正好 360°</text>
+    </g>
+  </svg>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>① 第一步：对中心</h4>
+    <div class="eq">中心 → 顶点</div>
+    <p>差一毫米，读数就差好几度。这一步不能将就。</p>
+  </div>
+  <div class="card">
+    <h4>② 第二步：对零线</h4>
+    <div class="eq">零刻度线 → 一条边</div>
+    <p>边压在 0 上，读出来的才是真度数。</p>
+  </div>
+  <div class="card">
+    <h4>③ 第三步：读那圈</h4>
+    <div class="eq">零在右读外圈<br>零在左读内圈</div>
+    <p>读错圈，60° 会被读成 120°。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  分类只看度数：<strong>小于 90 锐角、等于 90 直角、90 到 180 钝角、等于 180 平角、等于 360 周角</strong>。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">转一转量角器：同一个角，两圈读出两个数</h2>
+  <p class="sim-desc">调角度，看两条边张开多少度。外圈和内圈会同时显示两个读数——只有对着零刻度线的那一圈才是真答案。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">60° · 锐角</span>
+    <span class="sim-tip" id="simTip">零在右边，读外圈 60°；内圈那个 120° 是错的</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-retry" onclick="simMinus()">− 5°</button>
+    <button class="btn-retry" onclick="simPlus()">+ 5°</button>
+    <button class="btn-primary" onclick="simRight()">直角 90°</button>
+    <button class="btn-primary" onclick="simFlat()">平角 180°</button>
+    <button class="btn-retry" onclick="simSharpen()">锐角 30°</button>
+    <button class="btn-retry" onclick="simObtuse()">钝角 120°</button>
+    <button class="btn-retry" onclick="simReset()">重置</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">蓝色外圈从右往左读，橙色内圈从左往右读；两条边张开多少，角就是多少度</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>把角调到 90°，内外圈读数还会不一样吗？为什么？</li>
+    <li>调到 30° 时，内圈显示多少？两个数加起来是多少？</li>
+    <li>调到 180°，两条边变成什么样子？</li>
+    <li>为什么读数一定要看「零刻度线所在的那一圈」？</li>
+  </ul>
+</div>
+</section>
+
+<!-- ===== p7: 中测2 ===== -->
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 按度数分类</h2>
+  <p class="quiz-hint">先想 90 和 180 这两条线，再看它在哪一段。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 95° 的角是什么角？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>锐角</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>直角</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>钝角</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 平角是多少度？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>90°</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>180°</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>360°</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 一个角是 89°，它比直角？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>大</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>小</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>一样</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 易错辨析 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四种错法，三种都出在「放」上</h2>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 内外圈读反</h4>
+    <div class="wrong-num">✗ 60° 读成 120°</div>
+    <p>零刻度线在右边，就该读外圈。读内圈得到的是 180 − 60 = 120。</p>
+  </div>
+
+  <div class="card">
+    <h4>② 中心没对顶点</h4>
+    <div class="wrong-num">✗ 中心放在边的中间</div>
+    <p>中心一偏，两条边在刻度上的落点全变，读数整体偏大或偏小。</p>
+  </div>
+
+  <div class="card">
+    <h4>③ 边没压零线</h4>
+    <div class="wrong-num">✗ 边停在 10° 上就开始读</div>
+    <p>要先让一条边压在 0 上，读出的才是这个角的度数；从 10 读起，得减掉 10。</p>
+  </div>
+
+  <div class="card">
+    <h4>④ 以为边越长角越大</h4>
+    <div class="wrong-num">✗ 边画长了，角就大</div>
+    <p>角只看张开程度。把两条边延长，度数一点不变。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  四种错法一个对策：<strong>先把中心、零线放准，再盯着零线那一圈读数</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到剪刀那道题：两把剪刀张开的角如果都是 <strong>45°</strong>，不管刀刃多长，角度都一样大——只是边看起来长短不同。
+</p>
+</section>
+
+<!-- ===== p9: 后测 ===== -->
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，盯死零线和圈</h2>
+  <p class="quiz-hint">放准、读对圈、再判断是哪类角。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 量角时，应该读哪一圈的刻度？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>随便哪一圈</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>零刻度线所在的那一圈</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>永远是外圈</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 120° 的角是什么角？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>锐角</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>直角</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>钝角</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 角的大小与两条边画得多长有关吗？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>有关，边越长角越大</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>无关，只看张开程度</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>有关，边越短角越大</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 周角是多少度？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>180°</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>270°</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>360°</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 折叠椅靠背打开到 105°，这是什么角？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>锐角</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>钝角</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>直角</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">度</div>
+        <div class="summary-v4-summary">半圆分 180 份</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">是什么<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">把半圆平均分成 180 份<br>1 份是 1 度，记作 1°<br>直角正好 90°</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">量角</div>
+        <div class="summary-v4-summary">三步：对、压、读</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么做<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">中心对顶点<br>零刻度线对一条边<br>看另一边落在哪</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">读圈</div>
+        <div class="summary-v4-summary">零在哪边读哪圈</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么避错<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">零在右边读外圈<br>零在左边读内圈<br>两圈读数相加等于 180</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">分类</div>
+        <div class="summary-v4-summary">五个名字</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么分<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">锐角 &lt; 90° = 直角<br>钝角在 90° 与 180° 之间<br>平角 180°，周角 360°</div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<p class="teach-text" style="margin-top:18px;color:#12243A;font-size:19px">
+  拿起量角器先别读数：中心对准了吗？一条边压住 0 了吗？这两件做完，读数才有意义。
+</p>
+</section>
