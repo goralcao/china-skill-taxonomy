@@ -1,10 +1,10 @@
 {
   "topicId": "mt_big-num",
-  "title": "大数的认识：从万数到亿",
+  "title": "大数的认识：一个县 80 万人，这里的 0 怎么读",
   "template": "explain",
   "renderer": "counter",
-  "duration": 11,
-  "interactions": 2,
+  "duration": 24,
+  "interactions": 16,
   "grade": 4,
   "subject": "数学",
   "standards": [
@@ -18,14 +18,76 @@
     "mt_mult-2digit"
   ],
   "objectives": [
-    "认识数位顺序表：个、十、百、千、万、十万、百万、千万、亿",
-    "理解每相邻两个计数单位之间的进率都是十",
-    "会把数分级（个级、万级、亿级）并正确读数"
+    "认识万级和亿级的数位与计数单位，知道相邻两个计数单位之间的进率是 10",
+    "掌握四位一级的分级方法，能正确读、写亿以内的数",
+    "会把整万、整亿的数改写成用「万」或「亿」作单位的数"
   ],
-  "cognitiveAction": "累积",
+  "cognitiveAction": "构造",
   "status": "reviewed",
   "author": "goral.cao",
   "license": "CC-BY-SA-4.0",
-  "version": "1.0.0",
-  "updatedAt": "2026-10-27"
+  "version": "3.0.0",
+  "updatedAt": "2026-11-04",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "三个量级",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "数位表",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "四位一级",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
 }

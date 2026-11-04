@@ -1,0 +1,566 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>一个班 45 人，一个县 80 万人，后面那个怎么读？</h1>
+  <p class="sub">四年级数学 · 大数的认识</p>
+  <div class="tags">
+    <span class="tag">数位与计数单位</span>
+    <span class="tag">四位一级</span>
+    <span class="tag">改写</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 460 210" width="440" height="200" role="img" aria-label="数字 800000 被分成 80 和 0000 两段，表示 80 个万，也就是 80 万">
+      <g font-family="monospace" font-size="34" fill="#FFFFFF" text-anchor="middle">
+        <text x="150" y="86">8</text><text x="196" y="86">0</text>
+        <text x="286" y="86">0</text><text x="332" y="86">0</text>
+        <text x="378" y="86">0</text><text x="424" y="86">0</text>
+      </g>
+      <g stroke="#FFE0B2" stroke-width="1.6" fill="none">
+        <rect x="124" y="52" width="98" height="48" rx="6"/>
+        <rect x="258" y="52" width="192" height="48" rx="6"/>
+      </g>
+      <line x1="240" y1="34" x2="240" y2="126" stroke="#FF8F00" stroke-width="2.5" stroke-dasharray="6 5"/>
+      <g font-size="15" fill="#FFE0B2" font-family="sans-serif" text-anchor="middle">
+        <text x="173" y="130">万级：80 个万</text>
+        <text x="354" y="130">个级：0 个一</text>
+      </g>
+      <text x="230" y="172" font-size="22" fill="#FFFFFF" font-family="sans-serif" text-anchor="middle">读作：八十万</text>
+      <text x="230" y="196" font-size="14" fill="#C8E6C9" font-family="sans-serif" text-anchor="middle">六个数字，只读两个字加一个「万」</text>
+    </svg>
+  </div>
+  <p style="font-size:20px;color:rgba(255,255,255,.92);max-width:600px;line-height:1.8;">
+    45 和 800000 都是数字，可位数一多，<br>
+    光靠一个一个数就乱了。今天把<strong>位</strong>理清楚。
+  </p>
+  <p class="hint">点击右下角箭头开始 或 点击顶部导航跳转</p>
+  <a href="../../viz/index.html#t=mt_big-num" style="margin-top:16px;color:rgba(255,255,255,.78);font-size:16px;text-decoration:underline">← 回到知识图谱</a>
+</div>
+</section>
+
+<!-- ===== p1: 前测 ===== -->
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先答三道，凭感觉</h2>
+  <p class="quiz-hint">三道题都只用你已经会的，看看你对「位」有多少感觉。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 全校 1200 人，这里的「2」表示什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>2 个十</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>2 个百</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>2 个千</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 手机存储 128 GB，128 里的「1」在什么位？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>百位</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>十位</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>千位</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 一万是几个一千？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>10 个</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>100 个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>1000 个</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 引入 三个量级 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">45 人、1200 人、80 万人，同一件事换了三个量级，读法为什么不一样？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 330 210" width="300" height="190" role="img" aria-label="三个数量级对比：45 人的班级、1200 人的学校、800000 人的县城">
+      <g font-family="sans-serif">
+        <rect x="20" y="18" width="290" height="46" rx="8" fill="#E8F5E9" stroke="#2E7D32" stroke-width="1.6"/>
+        <text x="34" y="48" font-size="17" fill="#1B5E20">一个班　45 人</text>
+        <text x="286" y="48" font-size="14" fill="#558B2F" text-anchor="end">两位数</text>
+
+        <rect x="20" y="76" width="290" height="46" rx="8" fill="#FFF8E1" stroke="#FF8F00" stroke-width="1.6"/>
+        <text x="34" y="106" font-size="17" fill="#6D4C00">一所学校　1200 人</text>
+        <text x="286" y="106" font-size="14" fill="#EF6C00" text-anchor="end">四位数</text>
+
+        <rect x="20" y="134" width="290" height="46" rx="8" fill="#FFEBEE" stroke="#C62828" stroke-width="1.6"/>
+        <text x="34" y="164" font-size="17" fill="#B71C1C">一个县　800000 人</text>
+        <text x="286" y="164" font-size="14" fill="#C62828" text-anchor="end">六位数</text>
+      </g>
+      <text x="165" y="200" font-size="13" fill="#4E5B3E" font-family="sans-serif" text-anchor="middle">多一位，就多一种读法</text>
+    </svg>
+  </div>
+  <p class="teach-text" id="p2s1">
+    45 人，一眼能数清；1200 人，还读得出来；到了 <strong>800000</strong>，六个数字摆在那儿，先数几个 0 就够费劲。一个人张开手臂大约 1 米 20 厘米，45 人排开 54 米，一个操场装得下；80 万人排开，要排到 960 公里外。
+  </p>
+  <p class="teach-text" id="p2s2">
+    问题不在数字多，在于<strong>没看清每个数字站在哪一位</strong>。同一个「8」，站在个位是 8，站在十万位就是 80 万。
+  </p>
+  <p class="teach-text" id="p2s3">
+    所以大数不是靠一个个数，是靠<strong>认位</strong>：先认出它在哪一级，再读那一位上的数。
+  </p>
+</div>
+
+<div class="key-box" id="p2s4">
+  一个数字的值 = <strong>它本身 × 它所在位表示的计数单位</strong>。8 在十万位，就是 8 个十万。
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>① 班级 → 学校</h4>
+    <div class="eq">1200 ÷ 45 ≈ 27 倍</div>
+    <p>一所学校的人数，抵得上二十七个班。</p>
+  </div>
+  <div class="card">
+    <h4>② 学校 → 县城</h4>
+    <div class="eq">800000 ÷ 1200 ≈ 667 倍</div>
+    <p>一个县的人数，抵得上六百多所学校。</p>
+  </div>
+  <div class="card">
+    <h4>③ 位数也在长</h4>
+    <div class="eq">2 位 → 4 位 → 6 位</div>
+    <p>每多两位就是一百倍。先看位数，比先数 0 快得多。</p>
+  </div>
+</div>
+</section>
+
+<!-- ===== p3: 数位表 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">从右边起第五位，为什么叫万位？</h2>
+
+<p class="teach-text" id="p3s1">
+  因为每往左一位，单位就乘 10：个、十、百、千，第五位正好是<strong>万</strong>。再往左是十万、百万、千万，第九位是<strong>亿</strong>。
+</p>
+
+<div class="fig" id="p3fig" style="margin:10px 0 4px">
+  <svg viewBox="0 0 660 138" width="630" height="132" role="img" aria-label="数位顺序表：个十百千万、十万百万千万、亿，共九位">
+    <g font-family="sans-serif" font-size="13" text-anchor="middle">
+      <rect x="14" y="26" width="70" height="44" rx="5" fill="#C8E6C9" stroke="#2E7D32"/>
+      <rect x="88" y="26" width="70" height="44" rx="5" fill="#C8E6C9" stroke="#2E7D32"/>
+      <rect x="162" y="26" width="70" height="44" rx="5" fill="#C8E6C9" stroke="#2E7D32"/>
+      <rect x="236" y="26" width="70" height="44" rx="5" fill="#C8E6C9" stroke="#2E7D32"/>
+      <rect x="310" y="26" width="70" height="44" rx="5" fill="#FFE0B2" stroke="#EF6C00"/>
+      <rect x="384" y="26" width="70" height="44" rx="5" fill="#FFE0B2" stroke="#EF6C00"/>
+      <rect x="458" y="26" width="70" height="44" rx="5" fill="#FFE0B2" stroke="#EF6C00"/>
+      <rect x="532" y="26" width="70" height="44" rx="5" fill="#FFE0B2" stroke="#EF6C00"/>
+      <rect x="606" y="26" width="40" height="44" rx="5" fill="#FFCDD2" stroke="#C62828"/>
+
+      <g fill="#1B5E20" font-size="15" font-weight="700">
+        <text x="49" y="54">个</text><text x="123" y="54">十</text><text x="197" y="54">百</text><text x="271" y="54">千</text>
+      </g>
+      <g fill="#E65100" font-size="15" font-weight="700">
+        <text x="345" y="54">万</text><text x="419" y="54">十万</text><text x="493" y="54">百万</text><text x="567" y="54">千万</text>
+      </g>
+      <text x="626" y="54" fill="#B71C1C" font-size="15" font-weight="700">亿</text>
+
+      <g fill="#7CB342" font-size="11">
+        <text x="49" y="18">第1位</text><text x="123" y="18">第2位</text><text x="197" y="18">第3位</text><text x="271" y="18">第4位</text>
+      </g>
+      <g fill="#EF6C00" font-size="11">
+        <text x="345" y="18">第5位</text><text x="419" y="18">第6位</text><text x="493" y="18">第7位</text><text x="567" y="18">第8位</text>
+      </g>
+      <text x="626" y="18" fill="#C62828" font-size="11">第9位</text>
+
+      <text x="330" y="92" fill="#4E5B3E" font-size="12.5">← 越往左，单位越大；相邻两位进率都是 10</text>
+      <text x="330" y="116" fill="#EF6C00" font-size="12.5">绿色四格是「个级」，橙色四格是「万级」，再往左是「亿级」</text>
+    </g>
+  </svg>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>① 计数单位</strong>：个、十、百、千、万、十万、百万、千万、亿……</li>
+  <li><strong>② 数位</strong>：计数单位所占的位置。第五位叫万位，第九位叫亿位。</li>
+  <li><strong>③ 进率</strong>：10 个一万是十万，10 个十万是一百万，10 个一千万是一亿。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  记住一句话：<strong>位是位置，单位是这一位值多少</strong>。8 在万位，就是 8 个万。
+</div>
+</section>
+
+<!-- ===== p3b: 连线巩固 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：数位对上它的计数单位</h2>
+<p class="teach-text" id="p3bs1">先点左边的数位，再点右边表示多少，连对了变绿。</p>
+<div id="matchP3"></div>
+</section>
+
+<!-- ===== p4: 中测1 ===== -->
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 数位与计数单位</h2>
+  <p class="quiz-hint">只盯一件事：这个位到底值多少。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 从右边起，第五位是什么位？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>万位</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>千位</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>十万位</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 10 个一千万是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>一千万</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>一亿</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>十亿</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 最高位是百万位的数，是几位数？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>六位</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>七位</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>八位</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 四位一级 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">800000 有五个 0，怎么一眼看出它是 80 万？</h2>
+
+<p class="teach-text" id="p5s1">
+  办法是<strong>从右往左，每四位画一条分级线</strong>。线一画，数就分成几段，每段叫一级：个级、万级、亿级。
+</p>
+
+<div class="fig" id="p5fig" style="margin:8px 0 4px">
+  <svg viewBox="0 0 620 186" width="598" height="180" role="img" aria-label="800000 与 1200000000 的分级写法，从右往左每四位一条分级线">
+    <!-- 第一行：800000 -->
+    <g font-family="monospace" font-size="28" fill="#1B5E20">
+      <text x="56" y="52">8</text><text x="92" y="52">0</text>
+      <text x="160" y="52">0</text><text x="196" y="52">0</text><text x="232" y="52">0</text><text x="268" y="52">0</text>
+    </g>
+    <line x1="130" y1="26" x2="130" y2="66" stroke="#FF8F00" stroke-width="3"/>
+    <g font-size="12.5" fill="#EF6C00" font-family="sans-serif" text-anchor="middle">
+      <text x="74" y="88">万级</text><text x="214" y="88">个级</text>
+    </g>
+    <text x="310" y="52" font-size="17" fill="#4E5B3E" font-family="sans-serif">读作：八十万</text>
+
+    <!-- 第二行：1200000000 -->
+    <g font-family="monospace" font-size="24" fill="#1B5E20">
+      <text x="56" y="142">1</text><text x="86" y="142">2</text>
+      <text x="146" y="142">0</text><text x="176" y="142">0</text><text x="206" y="142">0</text><text x="236" y="142">0</text>
+      <text x="296" y="142">0</text><text x="326" y="142">0</text><text x="356" y="142">0</text><text x="386" y="142">0</text>
+    </g>
+    <line x1="116" y1="118" x2="116" y2="156" stroke="#FF8F00" stroke-width="2.6"/>
+    <line x1="266" y1="118" x2="266" y2="156" stroke="#FF8F00" stroke-width="2.6"/>
+    <g font-size="12" fill="#EF6C00" font-family="sans-serif" text-anchor="middle">
+      <text x="71" y="176">亿级</text><text x="191" y="176">万级</text><text x="341" y="176">个级</text>
+    </g>
+    <text x="430" y="142" font-size="17" fill="#4E5B3E" font-family="sans-serif">读作：十二亿</text>
+  </svg>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>① 先分级</h4>
+    <div class="eq">从右往左<br>每四位一条线</div>
+    <p>分完级，每一级最多四位，再也不会数错 0。</p>
+  </div>
+  <div class="card">
+    <h4>② 再读级</h4>
+    <div class="eq">每级按个级读<br>读完加「万」或「亿」</div>
+    <p>万级读完加「万」，亿级读完加「亿」，个级不加。</p>
+  </div>
+  <div class="card">
+    <h4>③ 零怎么读</h4>
+    <div class="eq">级末尾的 0 不读<br>中间连着几个 0 只读一个</div>
+    <p>「80 0000」读八十万，后面四个 0 一个也不读。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  改写只是换单位，不改大小：<strong>800000 = 80 万</strong>，<strong>1200000000 = 12 亿</strong>。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">数位表拨珠：每一位动一次，读法跟着变</h2>
+  <p class="sim-desc">每个数位上方点「＋」加 1、「－」减 1（0 到 9 循环）。右边实时给出读法——注意 0 什么时候读、什么时候不读。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">读作：八十万</span>
+    <span class="sim-tip" id="simTip">级末尾的 0 不读，中间连着几个 0 只读一个</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simDemo()">演示 800000</button>
+    <button class="btn-retry" onclick="simDemo2()">演示 1002003</button>
+    <button class="btn-retry" onclick="simClear()">全部归零</button>
+    <button class="btn-retry" onclick="simReset()">重置</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">三组色块就是三级；每级四位，读完加「万」或「亿」</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>把万位从 8 加到 9，读法怎么变？再加 1 会进位吗？</li>
+    <li>让中间出现连续两个 0，读法里出现了几个「零」？</li>
+    <li>个级的四位全变成 0，读法还读那四个 0 吗？</li>
+    <li>写出「一亿零一」，需要哪两位是 1？</li>
+  </ul>
+</div>
+</section>
+
+<!-- ===== p7: 中测2 ===== -->
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 读写与改写</h2>
+  <p class="quiz-hint">先分级，再读；改写只换单位，不改大小。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 4005 读作？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>四千零五</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>四千五</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>四千零零五</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 八十万写作？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>80000</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>800000</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>8000000</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 3200000 改写成用「万」作单位是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>320 万</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>32 万</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3200 万</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 易错辨析 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四种错法，都错在零和级</h2>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 少写一个 0</h4>
+    <div class="wrong-num">✗ 八十万 = 80000</div>
+    <p>80000 是八万。八十万要在万级写 80，后面再接四个 0：<strong>800000</strong>。</p>
+  </div>
+
+  <div class="card">
+    <h4>② 级名漏读</h4>
+    <div class="wrong-num">✗ 1200000000 读十二</div>
+    <p>亿级的数读完要加「亿」：<strong>十二亿</strong>。不加级名，数就缩了一亿倍。</p>
+  </div>
+
+  <div class="card">
+    <h4>③ 零全读出来</h4>
+    <div class="wrong-num">✗ 800000 读八十零零零零</div>
+    <p>级末尾的 0 一个也不读。中间连着几个 0，也只读一个「零」。</p>
+  </div>
+
+  <div class="card">
+    <h4>④ 改写当成四舍五入</h4>
+    <div class="wrong-num">✗ 1234567 ≈ 123 万</div>
+    <p>改写只换单位、不改大小，只能对整万整亿的数做。1234567 不能直接写成 123 万。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  四种错法一个根子：<strong>没先分级，也没想清楚每个 0 站在哪一级</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到封面那道题：一个县 80 万人，写作 <strong>800000</strong>；如果是 80 万<strong>零</strong> 45 人，就写成 <strong>800045</strong>，读作八十万零四十五。
+</p>
+</section>
+
+<!-- ===== p9: 后测 ===== -->
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，盯死分级和零</h2>
+  <p class="quiz-hint">先画分级线，再动笔读或写。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 十万里面有 10 个（ ）。</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>万</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>千</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>百万</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 60600000 读作（ ）。</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>六千六百万</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>六千零六十万</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>六千零六万</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 由 5 个亿、3 个万组成的数是（ ）。</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>50030000</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>500003000</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>500030000</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 1200000000 用「亿」作单位是（ ）。</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1.2 亿</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>120 亿</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>12 亿</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 一条短视频播放量 1 亿 2000 万，写成数字是（ ）。</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>120000000</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>1200000000</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>12000000</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">数位</div>
+        <div class="summary-v4-summary">位置决定值多少</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">是什么<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">个位到亿位共九位<br>相邻两位进率是 10<br>8 在万位 = 8 个万</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">分级</div>
+        <div class="summary-v4-summary">四位一级</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么分<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">从右往左每四位一条线<br>个级 / 万级 / 亿级<br>800000 → 80|0000</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">读写</div>
+        <div class="summary-v4-summary">读完加级名</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么读<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">每级按个级读<br>万级加「万」，亿级加「亿」<br>级尾的 0 不读</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">易错</div>
+        <div class="summary-v4-summary">零与级名</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">差在哪<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">少一个 0 就少十倍<br>漏读级名就缩一亿倍<br>改写只换单位不改大小</div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<p class="teach-text" style="margin-top:18px;color:#1F2415;font-size:19px">
+  看到一个长数字，先画分级线；读到万级、亿级，别忘了加那个字。
+</p>
+</section>

@@ -1,0 +1,36 @@
+/* ===== 本课追加：封面标签、三列卡片、易错数字、仿真配色 ===== */
+
+/* 封面 tag：深绿底配琥珀边 */
+.cover-page .tag{background:rgba(255,143,0,.92);border:1px solid rgba(255,255,255,.35);color:#3E2723}
+
+/* p2 / p5：三列卡片 */
+#p2cards.card-grid{grid-template-columns:repeat(3,1fr)}
+#p2cards .card .eq{font-size:16px}
+
+/* p5：分级三步——三列卡片 */
+#p5cards.card-grid{grid-template-columns:repeat(3,1fr)}
+#p5cards .card .eq{font-size:16px}
+
+.card .eq{font-size:18px;font-weight:800;color:var(--primary);margin:8px 0;line-height:1.55;white-space:pre-line}
+
+/* p8：易错卡里的错版说法 */
+.wrong-num{font-size:20px;font-weight:800;color:var(--red);margin:4px 0 8px;line-height:1.4}
+
+/* 仿真：读数条与日志高亮 */
+.sim-readout{font-size:19px;font-weight:800;color:var(--primary)}
+.sim-log .hl{color:var(--accent);font-weight:700}
+.btn-primary{background:var(--primary);color:#fff;border:none}
+.btn-primary:hover{background:var(--primary-light)}
+.btn-retry{background:var(--paper);color:var(--primary);border:1.5px solid var(--accent)}
+
+/* 数位表页图：窄屏等比缩放 */
+#p3fig svg,#p5fig svg{max-width:100%;height:auto}
+
+/* ===== 窄屏适配 ===== */
+@media (max-width:640px){
+  #p2cards.card-grid{grid-template-columns:1fr}
+  #p5cards.card-grid{grid-template-columns:1fr}
+  .card .eq{font-size:16px}
+  .wrong-num{font-size:17px}
+  .cover-fig svg{width:100%;height:auto}
+}
