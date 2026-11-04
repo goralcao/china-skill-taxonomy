@@ -1,0 +1,597 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>3 杯奶茶 40.5 元，一杯到底多少元？</h1>
+  <p class="sub">五年级数学 · 小数除法</p>
+  <div class="tags">
+    <span class="tag">余数换单位</span>
+    <span class="tag">商的小数点对齐</span>
+    <span class="tag">商不变</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 470 210" width="480" height="214" role="img" aria-label="三杯奶茶一共 40.5 元，一杯 13.5 元">
+      <g font-family="sans-serif">
+        <text x="235" y="13" text-anchor="middle" font-size="13" fill="rgba(255,255,255,.82)">3 杯一共 40.5 元，一杯多少元？</text>
+
+        <g>
+          <path d="M40 52 h56 l-7 96 h-42 z" fill="rgba(255,255,255,.88)"/>
+          <path d="M44 84 h48 l-5 60 h-38 z" fill="#FFAB91" opacity=".9"/>
+          <rect x="36" y="44" width="64" height="10" rx="5" fill="#FFE0B2"/>
+          <line x1="68" y1="30" x2="68" y2="48" stroke="#FFE0B2" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="55" cy="106" r="4" fill="#4E342E" opacity=".55"/>
+          <circle cx="70" cy="120" r="4" fill="#4E342E" opacity=".55"/>
+          <circle cx="82" cy="100" r="4" fill="#4E342E" opacity=".55"/>
+        </g>
+        <g>
+          <path d="M118 52 h56 l-7 96 h-42 z" fill="rgba(255,255,255,.88)"/>
+          <path d="M122 84 h48 l-5 60 h-38 z" fill="#FFAB91" opacity=".9"/>
+          <rect x="114" y="44" width="64" height="10" rx="5" fill="#FFE0B2"/>
+          <line x1="146" y1="30" x2="146" y2="48" stroke="#FFE0B2" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="133" cy="106" r="4" fill="#4E342E" opacity=".55"/>
+          <circle cx="148" cy="120" r="4" fill="#4E342E" opacity=".55"/>
+          <circle cx="160" cy="100" r="4" fill="#4E342E" opacity=".55"/>
+        </g>
+        <g>
+          <path d="M196 52 h56 l-7 96 h-42 z" fill="rgba(255,255,255,.88)"/>
+          <path d="M200 84 h48 l-5 60 h-38 z" fill="#FFAB91" opacity=".9"/>
+          <rect x="192" y="44" width="64" height="10" rx="5" fill="#FFE0B2"/>
+          <line x1="224" y1="30" x2="224" y2="48" stroke="#FFE0B2" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="211" cy="106" r="4" fill="#4E342E" opacity=".55"/>
+          <circle cx="226" cy="120" r="4" fill="#4E342E" opacity=".55"/>
+          <circle cx="238" cy="100" r="4" fill="#4E342E" opacity=".55"/>
+        </g>
+
+        <rect x="286" y="40" width="162" height="72" rx="9" fill="rgba(255,255,255,.14)" stroke="rgba(255,255,255,.36)" stroke-width="1.3"/>
+        <text x="302" y="64" font-size="11.5" fill="rgba(255,255,255,.75)">小票</text>
+        <text x="302" y="88" font-size="12.5" fill="#FFFFFF">3 杯 共 40.5 元</text>
+        <text x="302" y="106" font-size="12.5" fill="#FFCCBC">一杯 ? 元</text>
+
+        <rect x="286" y="130" width="162" height="46" rx="9" fill="#FF7043"/>
+        <text x="367" y="160" text-anchor="middle" font-size="20" font-weight="700" fill="#FFFFFF">40.5 ÷ 3</text>
+        <text x="235" y="196" text-anchor="middle" font-size="12" fill="rgba(255,255,255,.82)">除到个位还余 1 元，这 1 元怎么办？</text>
+      </g>
+    </svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先答三道，凭感觉</h2>
+  <p class="quiz-hint">三道题都关于「分不完剩下的怎么办」。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 9 元分给 4 个人，每人先分多少，还剩多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>每人 2 元，剩 1 元</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>每人 1 元，剩 5 元</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>每人 3 元，剩 0 元</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 剩下的 1 元，如果换成角，是多少角？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1 角</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>10 角</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>100 角</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 10 角再分给 4 个人，每人几角？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>2 角，剩 2 角</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>2.5 角</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>4 角</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 40.5 元三个人分，先分整元 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">40.5 元三个人分，先分整元</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 400 250" width="400" height="250" role="img" aria-label="三杯奶茶 40.5 元，先分 40 元每人 13 元余 1 元，1 元换成 10 角，加上 5 角共 15 角，每人再分 5 角，合起来 13.5 元">
+      <g font-family="sans-serif">
+        <rect x="10" y="8" width="380" height="234" rx="10" fill="#FBFDFC" stroke="#B2DFDB" stroke-width="1.6"/>
+        <text x="26" y="32" font-size="12.5" font-weight="700" fill="#004D40">分钱的过程</text>
+        <text x="374" y="32" text-anchor="end" font-size="11" fill="#6B9080">40.5 ÷ 3</text>
+
+        <rect x="26" y="44" width="348" height="52" rx="8" fill="#E0F2F1"/>
+        <text x="42" y="66" font-size="11.5" fill="#00695C">① 先分整元</text>
+        <text x="42" y="86" font-size="14" font-weight="700" fill="#004D40">40 ÷ 3 = 13 元 …… 余 1 元</text>
+
+        <text x="200" y="112" text-anchor="middle" font-size="14" fill="#8CB3A8">↓</text>
+
+        <rect x="26" y="120" width="348" height="52" rx="8" fill="#FFF3E0">
+        <text x="42" y="142" font-size="11.5" fill="#E64A19">② 余下的 1 元换成角</text>
+        <text x="42" y="162" font-size="14" font-weight="700" fill="#BF360C">1 元 = 10 角，加上 5 角 = 15 角</text>
+
+        <text x="200" y="188" text-anchor="middle" font-size="14" fill="#8CB3A8">↓</text>
+
+        <rect x="26" y="196" width="348" height="38" rx="8" fill="#E8F5E9"/>
+        <text x="42" y="220" font-size="13" font-weight="700" fill="#1B5E20">15 ÷ 3 = 5 角 → 13 元 5 角 = 13.5 元</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    三杯奶茶一共 40.5 元，三个人 AA。先分整元：40 ÷ 3 = 13 元，余 1 元。
+  </p>
+  <p class="teach-text" id="p2s2">
+    这 1 元不能扔，也不能让一个人多拿。把它换成角：1 元 = 10 角，再加上原来的 5 角，一共 15 角。
+  </p>
+  <p class="teach-text" id="p2s3">
+    15 角 ÷ 3 = 5 角。13 元 5 角，就是 13.5 元。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>整元先分</h4>
+    <div class="eq">40 ÷ 3 = 13 … 1</div>
+    <p>商 13，余 1。余数比除数小，说明这一步做对了。</p>
+  </div>
+  <div class="card">
+    <h4>余数换单位</h4>
+    <div class="eq">1 元 = 10 角</div>
+    <p>加上原来的 5 角，凑成 15 角继续分。</p>
+  </div>
+  <div class="card">
+    <h4>合起来</h4>
+    <div class="eq">13 元 + 5 角 = 13.5 元</div>
+    <p>小数部分就是第二次分的结果。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  除到哪一位不够除，就把<strong>余下的换成更小的单位</strong>接着除。小数除法就是这么一位一位分下去的。
+</div>
+</section>
+
+<!-- ===== p3: 商的小数点，跟着被除数走 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">商的小数点，跟着被除数走</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 420 246" width="424" height="248" role="img" aria-label="竖式计算 40.5 除以 3，商的小数点与被除数的小数点对齐，商是 13.5">
+      <g font-family="sans-serif">
+        <text x="14" y="22" font-size="12.5" font-weight="700" fill="#004D40">竖式里，商的小数点要对齐被除数</text>
+
+        <rect x="14" y="34" width="240" height="176" rx="9" fill="#F7FBFA" stroke="#B2DFDB" stroke-width="1.4"/>
+
+        <text x="96" y="72" font-size="22" font-weight="700" fill="#00695C">1 3 . 5</text>
+        <text x="40" y="106" font-size="22" font-weight="700" fill="#004D40">3）4 0 . 5</text>
+
+        <text x="96" y="132" font-size="18" fill="#78909C">3</text>
+        <line x1="88" y1="140" x2="212" y2="140" stroke="#90A4AE" stroke-width="1.4"/>
+        <text x="96" y="162" font-size="18" fill="#78909C">1 0</text>
+        <text x="118" y="182" font-size="18" fill="#78909C">9</text>
+        <line x1="112" y1="190" x2="204" y2="190" stroke="#90A4AE" stroke-width="1.4"/>
+
+        <line x1="140" y1="52" x2="140" y2="196" stroke="#C62828" stroke-width="1.3" stroke-dasharray="5 4"/>
+        <text x="146" y="206" font-size="10" fill="#C62828">小数点一路对齐</text>
+
+        <rect x="266" y="46" width="140" height="66" rx="8" fill="#E0F2F1" stroke="#4DB6AC" stroke-width="1.2"/>
+        <text x="336" y="68" text-anchor="middle" font-size="11" fill="#00695C">商的每一位</text>
+        <text x="336" y="88" text-anchor="middle" font-size="11" fill="#00695C">都写在</text>
+        <text x="336" y="106" text-anchor="middle" font-size="11" font-weight="700" fill="#004D40">被除数的正上方</text>
+
+        <rect x="266" y="124" width="140" height="86" rx="8" fill="#FFF3E0" stroke="#FFB74D" stroke-width="1.2"/>
+        <text x="336" y="146" text-anchor="middle" font-size="11" fill="#E64A19">余下的 1 元</text>
+        <text x="336" y="166" text-anchor="middle" font-size="11" fill="#E64A19">添 0 继续除</text>
+        <text x="336" y="192" text-anchor="middle" font-size="11" font-weight="700" fill="#BF360C">10 ÷ 3 = 3 … 1</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    竖式里商写在被除数正上方：个位对个位，十分位对十分位。
+  </p>
+  <p class="teach-text" id="p3s2">
+    所以商的小数点，一定和被除数的小数点上下对齐。对齐了，每一位才落在该在的位上。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>第一步</strong>：按整数除法算，商写在被除数正上方</li>
+  <li><strong>第二步</strong>：商的小数点与被除数的小数点<strong>对齐</strong></li>
+  <li><strong>第三步</strong>：余下的数添 0 继续除，直到余 0 或够精确</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  小数点不是算完再点上去的，是<strong>一边算一边对齐</strong>的。对齐错了，13.5 就写成 1.35。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">这些算式，商各是多少</h2>
+<p class="teach-text" id="p3bs1">先看除数是整数，再一位一位往下除；算完核对商的小数点。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 一位一位分下去</h2>
+  <p class="quiz-hint">三道题只考「余数换单位」和「小数点对齐」。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 40.5 ÷ 3，先算 40 ÷ 3，商几余几？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>13 余 1</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>1 余 1</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>13 余 0</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 余下的 1 元换成角，是多少角？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1 角</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>10 角</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>100 角</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 商 13.5 的小数点应该和谁对齐？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>被除数的小数点</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>除数的末位</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>随便放，看着顺眼就行</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 除数是小数，就把两边一起变大 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">除数是小数，就把两边一起变大</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+    <svg viewBox="0 0 420 246" width="424" height="248" role="img" aria-label="7.2 除以 0.9，被除数和除数同时乘 10 变成 72 除以 9，商不变，等于 8">
+      <g font-family="sans-serif">
+        <text x="14" y="22" font-size="12.5" font-weight="700" fill="#004D40">除数是小数，就把两边一起变大</text>
+
+        <rect x="14" y="38" width="180" height="70" rx="9" fill="#ECEFF1" stroke="#B0BEC5" stroke-width="1.4"/>
+        <text x="104" y="66" text-anchor="middle" font-size="11" fill="#607D8B">原来的算式</text>
+        <text x="104" y="94" text-anchor="middle" font-size="20" font-weight="700" fill="#455A64">7.2 ÷ 0.9</text>
+
+        <path d="M196 60 q14 -20 28 0" fill="none" stroke="#FF7043" stroke-width="2"/>
+        <path d="M222 56 l6 6 l-9 2 z" fill="#FF7043"/>
+        <text x="210" y="44" text-anchor="middle" font-size="10.5" fill="#E64A19">×10</text>
+
+        <rect x="228" y="38" width="180" height="70" rx="9" fill="#E0F2F1" stroke="#4DB6AC" stroke-width="1.6"/>
+        <text x="318" y="66" text-anchor="middle" font-size="11" fill="#00695C">两边同时 ×10</text>
+        <text x="318" y="94" text-anchor="middle" font-size="20" font-weight="700" fill="#004D40">72 ÷ 9</text>
+
+        <rect x="14" y="120" width="180" height="70" rx="9" fill="#ECEFF1" stroke="#B0BEC5" stroke-width="1.4"/>
+        <text x="104" y="148" text-anchor="middle" font-size="11" fill="#607D8B">除数还有小数</text>
+        <text x="104" y="174" text-anchor="middle" font-size="13" font-weight="700" fill="#C62828">0.9 → 还有 1 位</text>
+
+        <path d="M196 142 q14 -20 28 0" fill="none" stroke="#FF7043" stroke-width="2"/>
+        <path d="M222 138 l6 6 l-9 2 z" fill="#FF7043"/>
+        <text x="210" y="126" text-anchor="middle" font-size="10.5" fill="#E64A19">×10</text>
+
+        <rect x="228" y="120" width="180" height="70" rx="9" fill="#FFF3E0" stroke="#FFB74D" stroke-width="1.4"/>
+        <text x="318" y="148" text-anchor="middle" font-size="11" fill="#E64A19">除数变成整数</text>
+        <text x="318" y="176" text-anchor="middle" font-size="17" font-weight="700" fill="#BF360C">商不变：8</text>
+
+        <text x="210" y="216" text-anchor="middle" font-size="11.5" fill="#00695C">被除数和除数同时乘 10，商不变——这是小数除法的钥匙</text>
+        <text x="210" y="236" text-anchor="middle" font-size="10.5" fill="#8CB3A8">7.2 ÷ 0.9 = 72 ÷ 9 = 8</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    7.2 ÷ 0.9 不好直接除，因为除数带着小数。把 0.9 变成 9 就好办了。
+  </p>
+  <p class="teach-text" id="p5s2">
+    0.9 乘 10 变 9，被除数也要乘 10 变 72：72 ÷ 9 = 8。两边一起变，商才不变。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>只变一个就错</h4>
+    <div class="eq">7.2 ÷ 9 = 0.8</div>
+    <p>被除数没跟着变，商就缩小了 10 倍。</p>
+  </div>
+  <div class="card">
+    <h4>两边一起变</h4>
+    <div class="eq">72 ÷ 9 = 8</div>
+    <p>被除数和除数同时乘 10，商不变。</p>
+  </div>
+  <div class="card">
+    <h4>看除数有几位</h4>
+    <div class="eq">0.12 → ×100</div>
+    <p>除数两位小数，两边就都乘 100。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  把除数变成整数是目的，<strong>两边同时扩大相同倍数</strong>是手段。手段漏一半，商必错。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">用 0.9 米的一段，去量 7.2 米</h2>
+  <p class="sim-desc">下面这条彩带是 7.2 米，被分成 72 个 0.1 米的小格。按「量一段」，把 0.9 米的一段接上去，看 7.2 里到底有几个 0.9。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">7.2 米 · 已量 0 段</span>
+    <span class="sim-tip" id="simTip">每一段 0.9 米，量到刚好接满为止</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simStep()">量一段 0.9 米</button>
+    <button class="btn-retry" onclick="simBack()">退一段</button>
+    <button class="btn-retry" onclick="simAll()">一次量完</button>
+    <button class="btn-retry" onclick="simCase()">换一题</button>
+    <button class="btn-retry" onclick="simReset()">重来</button>
+    <button class="btn-retry" onclick="simDemo()">自动演示</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">上面是整条彩带（每 10 小格 = 1 米），下面一段一段接上去</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>量到第 8 段正好接满，8 是怎么从 72 和 9 算出来的？</li>
+    <li>换成 3.6 米、每段 1.2 米，各要量几段？</li>
+    <li>为什么 7.2 ÷ 0.9 和 72 ÷ 9 的答案一样？</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 除数带小数，怎么下手</h2>
+  <p class="quiz-hint">把除数变整数，是这类题的统一起手式。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 7.2 ÷ 0.9 可以先变成哪道算式？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>72 ÷ 9</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>7.2 ÷ 9</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>72 ÷ 90</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 4.5 ÷ 0.9 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>0.5</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>5</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>50</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 把除数 0.12 变成整数，被除数要怎么办？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>不变</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>也扩大 100 倍</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>缩小 100 倍</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四个坑，掉进去答案差十倍 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四个坑，掉进去答案差十倍</h2>
+
+<div class="clearfix">
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>坑一：只变除数</h4>
+    <div class="eq">7.2 ÷ 0.9 写成 7.2 ÷ 9 = 0.8 ✗</div>
+    <p>被除数必须同时扩大，否则商缩小 10 倍。</p>
+  </div>
+  <div class="card">
+    <h4>坑二：小数点不对齐</h4>
+    <div class="eq">40.5 ÷ 3 = 1.35 ✗</div>
+    <p>商的小数点要跟被除数上下对齐，13.5 才对。</p>
+  </div>
+  <div class="card">
+    <h4>坑三：余数比除数还大</h4>
+    <div class="eq">40 ÷ 3 商 12 余 4 ✗</div>
+    <p>余 4 还能再分一个 3，说明商小了，要往上调。</p>
+  </div>
+  <div class="card">
+    <h4>坑四：商中间的 0 漏写</h4>
+    <div class="eq">4.02 ÷ 2 写成 2.1 ✗</div>
+    <p>十位不够商 1 要写 0 占位，正确是 2.01。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  小数除法只查两件事：<strong>余数比除数小吗</strong>，<strong>商的小数点对齐了吗</strong>。两条都过，答案基本稳。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到奶茶：40 ÷ 3 = 13 余 1，1 元 = 10 角，15 角 ÷ 3 = 5 角，合起来 13.5 元。验算：13.5 × 3 = 40.5 ✓
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，换个价钱还算得出吗</h2>
+  <p class="quiz-hint">钱数变了，分法不变。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 小数除以整数，商的小数点怎么定？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>和被除数的小数点对齐</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>和被除数的末位对齐</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>先不管，算完再点</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 40.5 ÷ 3 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1.35</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>13.5</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>135</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 7.2 ÷ 0.9 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>0.8</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>8</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>80</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 3.6 ÷ 8 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>0.45</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>4.5</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>45</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 三个人 AA 一顿 84.6 元，每人付多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>28.2 元</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>2.82 元</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>282 元</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">是什么</div>
+        <div class="summary-v4-summary">一位一位往下分</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>小数除法和整数除法是同一件事：分不完就把余下的换成更小的单位继续分。</p>
+      <p>商写在被除数正上方，小数点自然对齐。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">为什么</div>
+        <div class="summary-v4-summary">余数换单位，位值不变</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>1 元换成 10 角，数值没变，只是单位细了。所以能接着往下分。</p>
+      <p>除数带小数时，两边同时扩大同样倍数，商不变——这也是「换单位」的另一种说法。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">怎么用</div>
+        <div class="summary-v4-summary">两步起手</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>① 除数是整数：直接竖式，商的小数点与被除数对齐，余数添 0 继续。</p>
+      <p>② 除数是小数：把除数变成整数，被除数同时扩大相同倍数，再按①算。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">易错</div>
+        <div class="summary-v4-summary">只变一个、点错位、余数超、漏 0</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>坑一：只把除数变整数，忘了被除数。</p>
+      <p>坑二：商的小数点没对齐，13.5 写成 1.35。</p>
+      <p>坑三：余数比除数还大，商调小了。</p>
+      <p>坑四：商中间的 0 漏写，4.02 ÷ 2 写成 2.1。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  记住这一句：<strong>分不完就换小单位，除数带小数就两边一起变大</strong>；商的小数点永远跟着被除数。
+</p>
+</section>
