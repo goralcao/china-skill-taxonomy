@@ -1,0 +1,96 @@
+{
+  "topicId": "mt_lines",
+  "title": "斑马线一条 3 米，激光笔一按能射多远？",
+  "template": "explain",
+  "renderer": "geometry",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 4,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S2:GG:GM"
+  ],
+  "prerequisites": [
+    "mt_shape-2d",
+    "mt_angle-intro"
+  ],
+  "next": [
+    "mt_angle-measure",
+    "mt_parallelogram",
+    "mt_polygon-area",
+    "mt_circle"
+  ],
+  "objectives": [
+    "能说出线段、射线、直线的区别：端点数分别是 2、1、0，能否量长度、能否延长",
+    "知道两点之间线段最短，过一点能画无数条直线、过两点只能画一条直线",
+    "认识同一平面内两条直线的位置关系：相交（含垂直）与平行"
+  ],
+  "cognitiveAction": "辨析",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-04",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "三样东西",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "三线区别",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "平行与垂直",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

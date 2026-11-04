@@ -1,0 +1,626 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>斑马线一条 3 米，激光笔一按能射多远？</h1>
+  <p class="sub">四年级数学 · 线段、射线、直线</p>
+  <div class="tags">
+    <span class="tag">端点</span>
+    <span class="tag">无限延长</span>
+    <span class="tag">平行与垂直</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 500 200" width="500" height="204" role="img" aria-label="线段有两个端点、射线有一个端点、直线没有端点，有箭头的一端表示无限延长">
+      <g font-family="sans-serif">
+        <text x="10" y="28" font-size="14" font-weight="700" fill="#FFFFFF">线段</text>
+        <line x1="90" y1="48" x2="340" y2="48" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round"/>
+        <circle cx="90" cy="48" r="6.5" fill="#FF7043"/>
+        <text x="90" y="34" text-anchor="middle" font-size="11.5" fill="#FFCCBC">A</text>
+        <circle cx="340" cy="48" r="6.5" fill="#FF7043"/>
+        <text x="340" y="34" text-anchor="middle" font-size="11.5" fill="#FFCCBC">B</text>
+        <text x="418" y="52" font-size="12.5" fill="rgba(255,255,255,.85)">2 个端点</text>
+        <text x="10" y="84" font-size="14" font-weight="700" fill="#FFFFFF">射线</text>
+        <line x1="90" y1="104" x2="340" y2="104" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round"/>
+        <line x1="88" y1="104" x2="60" y2="104" stroke="#FF7043" stroke-width="2.6" stroke-dasharray="7 5"/>
+        <line x1="58" y1="104" x2="38" y2="104" stroke="#FF7043" stroke-width="2.2" stroke-dasharray="4 8" opacity=".5"/>
+        <path d="M30 104 l10 -5.5 l0 11 z" fill="#FF7043"/>
+        <circle cx="340" cy="104" r="6.5" fill="#FF7043"/>
+        <text x="340" y="90" text-anchor="middle" font-size="11.5" fill="#FFCCBC">B</text>
+        <text x="418" y="108" font-size="12.5" fill="rgba(255,255,255,.85)">1 个端点</text>
+        <text x="10" y="140" font-size="14" font-weight="700" fill="#FFFFFF">直线</text>
+        <line x1="90" y1="160" x2="340" y2="160" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round"/>
+        <line x1="88" y1="160" x2="60" y2="160" stroke="#FF7043" stroke-width="2.6" stroke-dasharray="7 5"/>
+        <line x1="58" y1="160" x2="38" y2="160" stroke="#FF7043" stroke-width="2.2" stroke-dasharray="4 8" opacity=".5"/>
+        <path d="M30 160 l10 -5.5 l0 11 z" fill="#FF7043"/>
+        <line x1="342" y1="160" x2="370" y2="160" stroke="#FF7043" stroke-width="2.6" stroke-dasharray="7 5"/>
+        <line x1="372" y1="160" x2="392" y2="160" stroke="#FF7043" stroke-width="2.2" stroke-dasharray="4 8" opacity=".5"/>
+        <path d="M400 160 l-10 -5.5 l0 11 z" fill="#FF7043"/>
+        <text x="418" y="164" font-size="12.5" fill="rgba(255,255,255,.85)">0 个端点</text>
+
+        <text x="10" y="194" font-size="12" fill="rgba(255,255,255,.62)">箭头那一头的线，还能一直画下去</text>
+      </g>
+    </svg>
+  </div>
+  <p style="font-size:20px;color:rgba(255,255,255,.92);max-width:640px;line-height:1.8;">
+    端点是有数的：<strong>2、1、0</strong>。<br>
+    只要有一头没有端点，这条线就<strong>量不出长度</strong>。
+  </p>
+  <p class="hint">点击右下角箭头开始 或 点击顶部导航跳转</p>
+  <a href="../../viz/index.html#t=mt_lines" style="margin-top:16px;color:rgba(255,255,255,.78);font-size:16px;text-decoration:underline">← 回到知识图谱</a>
+</div>
+</section>
+
+<!-- ===== p1: 前测 ===== -->
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先答三道，凭感觉</h2>
+  <p class="quiz-hint">这三道考的是「有没有头、能不能量」。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 线段有几个端点？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>2 个</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>1 个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>0 个</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 下面哪条线能量出长度？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>射线</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>直线</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>线段</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 把线段的一端无限延长，得到的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>射线</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>直线</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>还是线段</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 三样东西（引入） ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">铅笔 18 厘米，激光笔和铁轨又是什么线？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 400 256" width="400" height="256" role="img" aria-label="铅笔量得出 18 厘米是线段，激光笔射出的光一直向前是射线，铁轨两头延伸是直线">
+      <g font-family="sans-serif">
+        <!-- 铅笔 -->
+        <rect x="18" y="14" width="364" height="76" rx="8" fill="#E8EAF6" stroke="#C5CAE9" stroke-width="1.4"/>
+        <text x="32" y="36" font-size="12.5" font-weight="700" fill="#303F9F">铅笔 · 量得出来</text>
+        <rect x="40" y="50" width="250" height="18" rx="3" fill="#FFC107"/>
+        <path d="M290 50 L316 59 L290 68 Z" fill="#FFCCBC"/>
+        <path d="M310 57 L316 59 L310 61 Z" fill="#3E2723"/>
+        <rect x="36" y="52" width="10" height="14" rx="2" fill="#FF7043"/>
+        <line x1="40" y1="82" x2="290" y2="82" stroke="#303F9F" stroke-width="1.2"/>
+        <line x1="40" y1="78" x2="40" y2="86" stroke="#303F9F" stroke-width="1.2"/>
+        <line x1="290" y1="78" x2="290" y2="86" stroke="#303F9F" stroke-width="1.2"/>
+        <text x="165" y="78" text-anchor="middle" font-size="11.5" fill="#303F9F" font-weight="700">18 厘米</text>
+
+        <!-- 激光笔 -->
+        <rect x="18" y="98" width="364" height="74" rx="8" fill="#E8EAF6" stroke="#C5CAE9" stroke-width="1.4"/>
+        <text x="32" y="120" font-size="12.5" font-weight="700" fill="#303F9F">激光笔 · 一直向前</text>
+        <rect x="40" y="132" width="56" height="20" rx="5" fill="#3F51B5"/>
+        <circle cx="96" cy="142" r="4" fill="#FF7043"/>
+        <line x1="100" y1="142" x2="250" y2="142" stroke="#FF7043" stroke-width="2.6"/>
+        <line x1="252" y1="142" x2="300" y2="142" stroke="#FF7043" stroke-width="2.2" stroke-dasharray="7 6"/>
+        <path d="M300 142 l-10 -6 l0 12 z" fill="#FF7043"/>
+        <line x1="306" y1="142" x2="346" y2="142" stroke="#FF7043" stroke-width="1.8" stroke-dasharray="3 9" opacity=".45"/>
+        <text x="186" y="162" text-anchor="middle" font-size="11" fill="#BF360C">一个头，另一头没完</text>
+
+        <!-- 铁轨 -->
+        <rect x="18" y="180" width="364" height="66" rx="8" fill="#E8EAF6" stroke="#C5CAE9" stroke-width="1.4"/>
+        <text x="32" y="202" font-size="12.5" font-weight="700" fill="#303F9F">铁轨 · 两头都延伸</text>
+        <line x1="56" y1="218" x2="300" y2="218" stroke="#3F51B5" stroke-width="3"/>
+        <line x1="56" y1="232" x2="300" y2="232" stroke="#3F51B5" stroke-width="3"/>
+        <line x1="54" y1="218" x2="36" y2="218" stroke="#8C9EFF" stroke-width="2.2" stroke-dasharray="6 6" opacity=".65"/>
+        <line x1="54" y1="232" x2="36" y2="232" stroke="#8C9EFF" stroke-width="2.2" stroke-dasharray="6 6" opacity=".65"/>
+        <g stroke="#8C9EFF" stroke-width="2">
+          <line x1="70" y1="218" x2="70" y2="232"/>
+          <line x1="94" y1="218" x2="94" y2="232"/>
+          <line x1="126" y1="218" x2="126" y2="232"/>
+          <line x1="158" y1="218" x2="158" y2="232"/>
+          <line x1="190" y1="218" x2="190" y2="232"/>
+          <line x1="222" y1="218" x2="222" y2="232"/>
+          <line x1="254" y1="218" x2="254" y2="232"/>
+          <line x1="286" y1="218" x2="286" y2="232"/>
+        </g>
+        <line x1="302" y1="218" x2="342" y2="218" stroke="#8C9EFF" stroke-width="2.2" stroke-dasharray="6 6" opacity=".65"/>
+        <line x1="302" y1="232" x2="342" y2="232" stroke="#8C9EFF" stroke-width="2.2" stroke-dasharray="6 6" opacity=".65"/>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    一支铅笔长 18 厘米，拿尺子一量就知道。激光笔按下去，光跑出去几百米还不见停。铁轨一直铺到看不见的地方。
+  </p>
+  <p class="teach-text" id="p2s2">
+    三样东西都能「画一条线」表示，可<strong>端点不一样多</strong>。端点决定了这条线到底有多长，也决定了能不能量。
+  </p>
+  <p class="teach-text" id="p2s3">
+    有 2 个端点，长度就定死了；少一个端点，那一头就永远走不到底，长度也就没法量。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>铅笔：两头都到头</h4>
+    <div class="eq">A —— B
+2 个端点</div>
+    <p>两头都封住，长度固定，量得出来。</p>
+  </div>
+  <div class="card">
+    <h4>激光：一头没头</h4>
+    <div class="eq">A ——→
+1 个端点</div>
+    <p>另一头一直走，永远走不到底。</p>
+  </div>
+  <div class="card">
+    <h4>铁轨：两头都没头</h4>
+    <div class="eq">←——→
+0 个端点</div>
+    <p>两头都走不到底，长度说不出来。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  判断一条线是什么，就看<strong>端点的个数</strong>：2 个是线段，1 个是射线，0 个是直线。端点数一定，能不能量长度也就定了。
+</div>
+</section>
+
+<!-- ===== p3: 三线区别 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">三条线摆在一起，差在哪三处？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 420 250" width="424" height="252" role="img" aria-label="线段有两个端点能量长度、射线有一个端点量不出长度、直线没有端点量不出长度">
+      <g font-family="sans-serif">
+        <text x="14" y="24" font-size="12" fill="#7986CB">名称</text>
+        <text x="100" y="24" font-size="12" fill="#7986CB">画法</text>
+        <text x="322" y="24" text-anchor="middle" font-size="12" fill="#7986CB">端点</text>
+        <text x="390" y="24" text-anchor="middle" font-size="12" fill="#7986CB">量长度</text>
+        <line x1="14" y1="32" x2="406" y2="32" stroke="#C5CAE9" stroke-width="1.2"/>
+
+        <!-- 线段 -->
+        <rect x="10" y="40" width="396" height="58" rx="6" fill="#FFFFFF" stroke="#E8EAF6" stroke-width="1"/>
+        <text x="20" y="74" font-size="14" font-weight="700" fill="#303F9F">线段</text>
+        <line x1="92" y1="70" x2="280" y2="70" stroke="#303F9F" stroke-width="3"/>
+        <circle cx="92" cy="70" r="5.5" fill="#FF7043"/>
+        <circle cx="280" cy="70" r="5.5" fill="#FF7043"/>
+        <text x="92" y="58" text-anchor="middle" font-size="10.5" fill="#7986CB">A</text>
+        <text x="280" y="58" text-anchor="middle" font-size="10.5" fill="#7986CB">B</text>
+        <text x="322" y="75" text-anchor="middle" font-size="15" font-weight="700" fill="#303F9F">2</text>
+        <text x="390" y="75" text-anchor="middle" font-size="13" font-weight="700" fill="#2E7D32">能</text>
+
+        <!-- 射线 -->
+        <rect x="10" y="102" width="396" height="58" rx="6" fill="#FFFFFF" stroke="#E8EAF6" stroke-width="1"/>
+        <text x="20" y="136" font-size="14" font-weight="700" fill="#303F9F">射线</text>
+        <line x1="92" y1="132" x2="280" y2="132" stroke="#303F9F" stroke-width="3"/>
+        <circle cx="92" cy="132" r="5.5" fill="#FF7043"/>
+        <line x1="282" y1="132" x2="298" y2="132" stroke="#FF7043" stroke-width="2.2" stroke-dasharray="5 4"/>
+        <path d="M304 132 l-7 -4.5 l0 9 z" fill="#FF7043"/>
+        <text x="92" y="120" text-anchor="middle" font-size="10.5" fill="#7986CB">A</text>
+        <text x="322" y="137" text-anchor="middle" font-size="15" font-weight="700" fill="#303F9F">1</text>
+        <text x="390" y="137" text-anchor="middle" font-size="13" font-weight="700" fill="#C62828">不能</text>
+
+        <!-- 直线 -->
+        <rect x="10" y="164" width="396" height="58" rx="6" fill="#FFFFFF" stroke="#E8EAF6" stroke-width="1"/>
+        <text x="20" y="198" font-size="14" font-weight="700" fill="#303F9F">直线</text>
+        <line x1="92" y1="194" x2="280" y2="194" stroke="#303F9F" stroke-width="3"/>
+        <line x1="90" y1="194" x2="74" y2="194" stroke="#FF7043" stroke-width="2.2" stroke-dasharray="5 4"/>
+        <path d="M68 194 l7 -4.5 l0 9 z" fill="#FF7043"/>
+        <line x1="282" y1="194" x2="298" y2="194" stroke="#FF7043" stroke-width="2.2" stroke-dasharray="5 4"/>
+        <path d="M304 194 l-7 -4.5 l0 9 z" fill="#FF7043"/>
+        <text x="322" y="199" text-anchor="middle" font-size="15" font-weight="700" fill="#303F9F">0</text>
+        <text x="390" y="199" text-anchor="middle" font-size="13" font-weight="700" fill="#C62828">不能</text>
+
+        <rect x="10" y="228" width="396" height="26" rx="5" fill="#FFF3E0" stroke="#FFCCBC" stroke-width="1.2"/>
+        <text x="22" y="245" font-size="11.5" fill="#BF360C">端点越少，能管住的地方越少，长度就越说不清</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    三条线都用「一条线加端点」表示，区别只有三处：<strong>几个端点、能不能量长度、能不能延长</strong>。
+  </p>
+  <p class="teach-text" id="p3s2">
+    线段两头都封住，长度固定；射线少一个端点，那一头无限长；直线一个端点都没有，两头都无限长。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>线段 AB</strong>：2 个端点，能量出长度，不能延长</li>
+  <li><strong>射线 AB</strong>：1 个端点，量不出长度，只能向一端无限延长</li>
+  <li><strong>直线</strong>：0 个端点，量不出长度，向两端都能无限延长</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  还有两条规矩要记牢：<strong>两点之间线段最短</strong>；<strong>过一点能画无数条直线，过两点只能画一条</strong>。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">看到这些，能立刻说出是什么吗</h2>
+<p class="teach-text" id="p3bs1">左边是生活里的东西和说法，右边是数学里的名字。先在心里判一判，再连线。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<!-- ===== p4: 中测1 ===== -->
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 三个数记住了吗</h2>
+  <p class="quiz-hint">端点、长度、延长，三道题各考一个。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 射线有几个端点？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>2 个</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>1 个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>0 个</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 下面说法正确的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>直线比射线长</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>射线比线段长</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>射线和直线都量不出长度</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 过两点能画几条直线？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1 条</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>2 条</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>无数条</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 平行与垂直 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">两条直线放在一起，只有两种关系</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+    <svg viewBox="0 0 400 258" width="400" height="258" role="img" aria-label="同一平面内两条直线要么相交、要么平行；相交成直角叫互相垂直">
+      <g font-family="sans-serif">
+        <!-- 平行 -->
+        <rect x="10" y="8" width="380" height="76" rx="8" fill="#E8EAF6" stroke="#C5CAE9" stroke-width="1.2"/>
+        <text x="24" y="28" font-size="12.5" font-weight="700" fill="#303F9F">永不相交 · 互相平行</text>
+        <line x1="34" y1="48" x2="356" y2="48" stroke="#3F51B5" stroke-width="3"/>
+        <path d="M34 48 l9 -5 l0 10 z" fill="#3F51B5"/>
+        <path d="M356 48 l-9 -5 l0 10 z" fill="#3F51B5"/>
+        <line x1="34" y1="72" x2="356" y2="72" stroke="#FF7043" stroke-width="3"/>
+        <path d="M34 72 l9 -5 l0 10 z" fill="#FF7043"/>
+        <path d="M356 72 l-9 -5 l0 10 z" fill="#FF7043"/>
+        <text x="195" y="66" text-anchor="middle" font-size="10.5" fill="#7986CB">隔多远都还是那么远</text>
+
+        <!-- 垂直 -->
+        <rect x="10" y="94" width="380" height="76" rx="8" fill="#E8EAF6" stroke="#C5CAE9" stroke-width="1.2"/>
+        <text x="24" y="114" font-size="12.5" font-weight="700" fill="#303F9F">相交成直角 · 互相垂直</text>
+        <line x1="34" y1="140" x2="356" y2="140" stroke="#3F51B5" stroke-width="3"/>
+        <path d="M34 140 l9 -5 l0 10 z" fill="#3F51B5"/>
+        <path d="M356 140 l-9 -5 l0 10 z" fill="#3F51B5"/>
+        <line x1="190" y1="116" x2="190" y2="164" stroke="#FF7043" stroke-width="3"/>
+        <path d="M190 114 l-5 9 l10 0 z" fill="#FF7043"/>
+        <path d="M190 166 l-5 -9 l10 0 z" fill="#FF7043"/>
+        <rect x="190" y="124" width="14" height="14" fill="none" stroke="#2E7D32" stroke-width="1.8"/>
+        <text x="212" y="134" font-size="11" fill="#2E7D32" font-weight="700">90°</text>
+
+        <!-- 斜交 -->
+        <rect x="10" y="180" width="380" height="68" rx="8" fill="#E8EAF6" stroke="#C5CAE9" stroke-width="1.2"/>
+        <text x="24" y="200" font-size="12.5" font-weight="700" fill="#303F9F">相交但不成直角 · 只是相交</text>
+        <line x1="34" y1="234" x2="270" y2="234" stroke="#3F51B5" stroke-width="3"/>
+        <path d="M34 234 l9 -5 l0 10 z" fill="#3F51B5"/>
+        <path d="M270 234 l-9 -5 l0 10 z" fill="#3F51B5"/>
+        <line x1="56" y1="214" x2="250" y2="248" stroke="#FF7043" stroke-width="3"/>
+        <text x="286" y="228" font-size="11" fill="#BF360C" font-weight="700">夹角不是 90°</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    同一个平面里放两条直线，只有两种结果：<strong>相交</strong>，或者<strong>永不相交（平行）</strong>。没有第三种。
+  </p>
+  <p class="teach-text" id="p5s2">
+    相交里还有一种特殊情况：四个角都是 90°，这时说这两条直线<strong>互相垂直</strong>，交点叫垂足。
+  </p>
+</div>
+
+<ul class="feature-list" id="p5rules">
+  <li><strong>平行</strong>：同一平面内永不相交，两条线之间的距离处处相等</li>
+  <li><strong>垂直</strong>：相交成直角，是相交里最特殊的一种</li>
+  <li><strong>注意</strong>：说平行要先说「同一平面内」，立交桥上下两条路就不算</li>
+</ul>
+
+<div class="key-box" id="p5key">
+  判断平行看<strong>会不会碰到一起</strong>，判断垂直看<strong>夹角是不是 90°</strong>。两件事各管一头，别混着用。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">给线加个端点，它会变成什么？</h2>
+  <p class="sim-desc">按「去掉左端点」「去掉右端点」，看这条线怎么从线段变成射线、再变成直线。端点一少，长度就量不出来了。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">线段 AB · 2 个端点</span>
+    <span class="sim-tip" id="simTip">能量出 8 厘米</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simLeft()">← 去掉左端点</button>
+    <button class="btn-primary" onclick="simRight()">去掉右端点 →</button>
+    <button class="btn-retry" onclick="simBack()">← 装回一个端点</button>
+    <button class="btn-retry" onclick="simCase()">换一条</button>
+    <button class="btn-retry" onclick="simReset()">重来</button>
+    <button class="btn-retry" onclick="simDemo()">自动演示</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">橙色圆点是端点，虚线箭头表示那一头一直延伸下去、走不到底</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>把两端都点掉，这条线上还能不能找到「从头开始量」的地方？</li>
+    <li>射线只剩一个端点，从这个端点往箭头那头走，走得到头吗？</li>
+    <li>线段、射线、直线，哪一条能说出「一共多长」？为什么？</li>
+  </ul>
+</div>
+</section>
+
+<!-- ===== p7: 中测2 ===== -->
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 平行与垂直分得清吗</h2>
+  <p class="quiz-hint">看一眼就要能判断，不用算。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 同一平面内两条直线不相交，它们是什么关系？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>互相平行</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>互相垂直</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>没法判断</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 两条直线相交成 90°，它们是什么关系？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>平行</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>互相垂直</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>重合</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 两条直线相交成 45°，它们是什么关系？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>互相垂直</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>互相平行</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>只是相交，不垂直</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 辨析 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四个坑，看着像对其实全错</h2>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>坑一：直线比射线长</h4>
+    <div class="wrong-num">直线 &gt; 射线 ✗</div>
+    <p>两条都<strong>无限长</strong>，没有尽头，比不了长短。能比长短的只有线段。</p>
+  </div>
+  <div class="card">
+    <h4>坑二：延长一次就成直线</h4>
+    <div class="wrong-num">线段延长 → 直线 ✗</div>
+    <p>只延长<strong>一端</strong>得到射线，必须<strong>两端都延长</strong>才成直线。数端点数最稳：2 → 1 → 0。</p>
+  </div>
+  <div class="card">
+    <h4>坑三：不相交就是平行</h4>
+    <div class="wrong-num">不相交 → 平行 ✗</div>
+    <p>要加一句<strong>同一平面内</strong>。立交桥上下两条路永远碰不到，但它们不平行。</p>
+  </div>
+  <div class="card">
+    <h4>坑四：直线上两点之间也叫直线</h4>
+    <div class="wrong-num">直线上两点间那段 = 直线 ✗</div>
+    <p>直线上两点之间的部分是<strong>线段</strong>，有 2 个端点、量得出长度。名字跟着端点数走。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  三条线的名字不是背的，是<strong>数端点</strong>数出来的：2 个端点叫线段，1 个叫射线，0 个叫直线。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到斑马线：一条白线两头都到头，是线段，能量出 3 米；激光笔的光只有笔头一个端点，是射线；铁轨两头一直延伸，是直线。三样东西，三个名字。
+</p>
+</section>
+
+<!-- ===== p9: 后测 ===== -->
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，端点一数就清楚</h2>
+  <p class="quiz-hint">能用「数端点」解决的，就别背。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 直线有几个端点？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>2 个</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>1 个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>0 个</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 两点之间最短的是什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>线段</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>射线</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>直线</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 过一点能画几条直线？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1 条</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>2 条</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>无数条</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 把线段的两端都无限延长，得到的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>射线</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>直线</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>更长的线段</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 下面哪一组一定是互相平行？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>立交桥上下两条路</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>同一平面内永不相交的两条直线</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>两条一样长的线段</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">是什么</div>
+        <div class="summary-v4-summary">端点 2、1、0</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>线段 2 个端点，射线 1 个，直线 0 个。</p>
+      <p>端点决定长度说不说得清：只有线段量得出来。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">为什么</div>
+        <div class="summary-v4-summary">少一个端点就少一个头</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>端点就是「到头了」的地方。两头都到头，长度固定；一头没到头，长度就没上限；两头都没到头，更说不清。</p>
+      <p>所以射线、直线都量不出长度，也不存在「谁比谁长」。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">怎么用</div>
+        <div class="summary-v4-summary">数端点，判位置，两步走</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>① 判名字：数端点数，2 / 1 / 0 对应三种线。</p>
+      <p>② 判位置：同一平面内两条直线，相交（含垂直）或平行，只有这两种。</p>
+      <p>③ 两条规矩：两点之间线段最短；过一点无数条，过两点 1 条。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">易错</div>
+        <div class="summary-v4-summary">别比长短，别漏「同一平面」</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>坑一：说直线比射线长——两条都无限长。</p>
+      <p>坑二：以为延长一端就成直线——那是射线。</p>
+      <p>坑三：把「不相交」当平行——要同一平面内。</p>
+      <p>坑四：把直线上两点之间那段叫直线——那是线段。</p>
+    </div>
+  </div>
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  记住这一句：<strong>先数端点，再谈长短</strong>。端点数是 2、1、0，名字就定了。
+</p>
+</section>
