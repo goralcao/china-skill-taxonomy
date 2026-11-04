@@ -1,10 +1,10 @@
 {
   "topicId": "mt_triangle-classify",
-  "title": "三角形的分类：按角与按边",
+  "title": "一个三角形，为什么要贴两张标签",
   "template": "explain",
-  "renderer": "triangle",
-  "duration": 12,
-  "interactions": 2,
+  "renderer": "angle",
+  "duration": 24,
+  "interactions": 16,
   "grade": 4,
   "subject": "数学",
   "standards": [
@@ -19,14 +19,76 @@
     "mt_triangle-sides"
   ],
   "objectives": [
-    "会按角把三角形分成锐角、直角、钝角三角形",
-    "会按边把三角形分成不等边、等腰、等边三角形",
-    "理解一个三角形可以兼顾两种分类"
+    "会按角把三角形分成锐角、直角、钝角三角形，知道判断只看最大的那个角",
+    "会按边把三角形分成不等边、等腰、等边三角形，理解等边是特殊的等腰",
+    "知道同一个三角形可以同时拥有按角、按边两张标签，能辨认等腰直角等复合名称"
   ],
-  "cognitiveAction": "比较",
+  "cognitiveAction": "辨析",
   "status": "reviewed",
   "author": "goral.cao",
   "license": "CC-BY-SA-4.0",
-  "version": "1.0.0",
-  "updatedAt": "2026-10-27"
+  "version": "3.0.0",
+  "updatedAt": "2026-11-04",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "两个名字",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "按角分",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "按边分",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
 }

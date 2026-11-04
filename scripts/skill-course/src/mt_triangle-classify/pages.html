@@ -1,0 +1,543 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>一个三角形，为什么要贴两张标签</h1>
+  <p class="sub">四年级数学 · 三角形的分类</p>
+  <div class="tags">
+    <span class="tag">按角分</span>
+    <span class="tag">按边分</span>
+    <span class="tag">两张标签</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 460 190" width="540" height="222" role="img" aria-label="同一个三角形可以同时贴上按角和按边两张分类标签">
+      <g font-family="sans-serif">
+        <text x="230" y="18" text-anchor="middle" font-size="13" fill="rgba(255,255,255,.78)">同一个三角形，可以贴两张标签</text>
+
+        <path d="M230 32 L150 132 L310 132 z" fill="#FFECB3" stroke="#FFFFFF" stroke-width="2"/>
+
+        <rect x="16" y="146" width="204" height="34" rx="8" fill="#FFB300"/>
+        <text x="118" y="168" text-anchor="middle" font-size="13" font-weight="700" fill="#3E2723">按角：锐角三角形</text>
+
+        <rect x="240" y="146" width="204" height="34" rx="8" fill="#43A047"/>
+        <text x="342" y="168" text-anchor="middle" font-size="13" font-weight="700" fill="#FFFFFF">按边：等腰三角形</text>
+      </g>
+    </svg>
+  </div>
+  <p style="font-size:20px;color:rgba(255,255,255,.92);max-width:620px;line-height:1.8;">
+    按角看，它属于锐角、直角、钝角里的某一类；按边看，它又是不等边、等腰、等边里的某一类。<br>
+    <strong>两张标签说的是同一块三角形，谁也不挤掉谁。</strong>
+  </p>
+  <p class="hint">点击右下角箭头开始 或 点击顶部导航跳转</p>
+  <a href="../../viz/index.html#t=mt_triangle-classify" style="margin-top:16px;color:rgba(255,255,255,.78);font-size:16px;text-decoration:underline">← 回到知识图谱</a>
+</div>
+</section>
+
+<!-- ===== p1: 前测 ===== -->
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先答三道，凭感觉</h2>
+  <p class="quiz-hint">红领巾、屋顶、路牌，都是天天见到的三角形。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 红领巾展开是一个三角形，按角分它属于哪一类？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>锐角三角形</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>直角三角形</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>钝角三角形</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 一个三角形里，最多能有几个直角？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1 个</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>2 个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3 个</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 等边三角形按边分是「等边」，按角分呢？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>锐角三角形</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>直角三角形</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>钝角三角形</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 引入 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">3 个角、3 条边，一个三角形为什么能有两个名字？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 380 240" width="390" height="246" role="img" aria-label="等边三角形的路牌按边叫等边三角形，钝角三角形的车棚顶按角叫钝角三角形">
+      <g font-family="sans-serif">
+        <text x="190" y="20" text-anchor="middle" font-size="13" fill="#2E7D32" font-weight="700">同一类板子，叫法却不一样</text>
+
+        <path d="M20 150 L90 29 L160 150 z" fill="#FFECB3" stroke="#FFB300" stroke-width="2.4"/>
+        <text x="90" y="112" text-anchor="middle" font-size="26" font-weight="700" fill="#E65100">!</text>
+        <text x="90" y="178" text-anchor="middle" font-size="13" font-weight="700" fill="#2E7D32">等边三角形</text>
+        <text x="90" y="198" text-anchor="middle" font-size="12" fill="#607D8B">按边叫</text>
+
+        <path d="M200 150 L270 110 L340 150 z" fill="#C8E6C9" stroke="#43A047" stroke-width="2.4"/>
+        <text x="270" y="176" text-anchor="middle" font-size="13" font-weight="700" fill="#2E7D32">钝角三角形</text>
+        <text x="270" y="196" text-anchor="middle" font-size="12" fill="#607D8B">按角叫</text>
+
+        <rect x="20" y="212" width="340" height="22" rx="6" fill="#E8F5E9"/>
+        <text x="190" y="227" text-anchor="middle" font-size="12.5" fill="#1B5E20">分类标准不同，名字就不同</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    校门口新立的警示牌，三条边都是 40 厘米，师傅叫它「等边三角形」；旁边车棚顶那个，师傅却叫它「钝角三角形」。
+  </p>
+  <p class="teach-text" id="p2s2">
+    前一句在数<strong>边</strong>，后一句在看<strong>角</strong>。同一块三角形板，换个标准就换个名字。
+  </p>
+  <p class="teach-text" id="p2s3">
+    所以一个三角形往往能同时领两张标签：一张按角，一张按边。<strong>两张都要说，才算介绍完整。</strong>
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>按角看</h4>
+    <div class="eq">锐角 / 直角 / 钝角</div>
+    <p>只盯最大的那个角，三选一。</p>
+  </div>
+  <div class="card">
+    <h4>按边看</h4>
+    <div class="eq">不等边 / 等腰 / 等边</div>
+    <p>数一数有几条边一样长，三选一。</p>
+  </div>
+  <div class="card">
+    <h4>两张合起来</h4>
+    <div class="eq">等腰直角三角形</div>
+    <p>前半句说边，后半句说角。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  分类不是「二选一」，而是<strong>两个维度各选一个</strong>。问清楚「按什么分」，才答得准。
+</div>
+</section>
+
+<!-- ===== p3: 按角分 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">按角分：只看最大的那个角</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 400 232" width="410" height="238" role="img" aria-label="三个三角形：锐角三角形最大角小于 90 度，直角三角形有一个 90 度，钝角三角形最大角大于 90 度">
+      <g font-family="sans-serif">
+        <path d="M20 170 L70 60 L120 170 z" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+        <text x="70" y="196" text-anchor="middle" font-size="13" font-weight="700" fill="#2E7D32">锐角</text>
+        <text x="70" y="216" text-anchor="middle" font-size="11.5" fill="#607D8B">最大角 67°</text>
+
+        <path d="M150 170 L150 60 L240 170 z" fill="#FFECB3" stroke="#FFB300" stroke-width="2"/>
+        <rect x="150" y="156" width="14" height="14" fill="none" stroke="#E65100" stroke-width="1.8"/>
+        <text x="195" y="196" text-anchor="middle" font-size="13" font-weight="700" fill="#E65100">直角</text>
+        <text x="195" y="216" text-anchor="middle" font-size="11.5" fill="#607D8B">正好 90°</text>
+
+        <path d="M260 170 L320 145 L380 170 z" fill="#FFE0B2" stroke="#EF6C00" stroke-width="2"/>
+        <text x="320" y="196" text-anchor="middle" font-size="13" font-weight="700" fill="#BF360C">钝角</text>
+        <text x="320" y="216" text-anchor="middle" font-size="11.5" fill="#607D8B">最大角 120°</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    三个角都小于 90°，是<strong>锐角三角形</strong>；有一个角正好 90°，是<strong>直角三角形</strong>；有一个角大于 90°，是<strong>钝角三角形</strong>。
+  </p>
+  <p class="teach-text" id="p3s2">
+    判断时只要看<strong>最大的那个角</strong>：它没到 90°，另外两个更不可能到，三个就全是锐角。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>① 最多一个直角或钝角</strong>：两个直角就 180° 了，第三个角没地方放。</li>
+  <li><strong>② 看最大角就够</strong>：最大角 &lt; 90° 全锐，= 90° 直角，&gt; 90° 钝角。</li>
+  <li><strong>③ 别被形状骗了</strong>：很扁的三角形不一定钝，很尖的也不一定锐，量最大角才算数。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  按角分只问一句：<strong>最大的角比 90° 大、小，还是正好相等？</strong>
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：该给这块三角形贴哪张标签</h2>
+<p class="teach-text" id="p3bs1">
+  左边是特征或名字，右边是唯一对应的标签。点左边一项，再点右边一项。
+</p>
+
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<!-- ===== p4: 中测1 ===== -->
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 按角分</h2>
+  <p class="quiz-hint">三题都在考：最大的那个角说了算。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 一个三角形最大的角是 88°，它是哪一类？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>锐角三角形</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>直角三角形</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>钝角三角形</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 三角形里有一个角是 90°，另外两个角？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>都是锐角</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>一个直角一个锐角</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>都是钝角</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 一个三角形有两个角是 45°，按角分是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>锐角三角形</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>直角三角形</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>钝角三角形</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 按边分 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">按边分：数一数有几条边一样长</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+    <svg viewBox="0 0 400 232" width="410" height="238" role="img" aria-label="三个三角形：三条边都不等、只有两条边相等、三条边都相等，用刻痕标出等长的边">
+      <g font-family="sans-serif">
+        <path d="M20 170 L60 60 L140 170 z" fill="#F1F8E9" stroke="#2E7D32" stroke-width="2"/>
+        <text x="80" y="196" text-anchor="middle" font-size="13" font-weight="700" fill="#2E7D32">不等边</text>
+        <text x="80" y="216" text-anchor="middle" font-size="11.5" fill="#607D8B">0 组相等</text>
+
+        <path d="M160 170 L220 60 L280 170 z" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+        <circle cx="190" cy="115" r="3.4" fill="#E65100"/>
+        <circle cx="250" cy="115" r="3.4" fill="#E65100"/>
+        <text x="220" y="196" text-anchor="middle" font-size="13" font-weight="700" fill="#2E7D32">等腰</text>
+        <text x="220" y="216" text-anchor="middle" font-size="11.5" fill="#607D8B">1 组相等</text>
+
+        <path d="M295 170 L340 92 L385 170 z" fill="#FFECB3" stroke="#FFB300" stroke-width="2"/>
+        <circle cx="317" cy="131" r="3.4" fill="#E65100"/>
+        <circle cx="363" cy="131" r="3.4" fill="#E65100"/>
+        <circle cx="340" cy="170" r="3.4" fill="#E65100"/>
+        <text x="340" y="196" text-anchor="middle" font-size="13" font-weight="700" fill="#E65100">等边</text>
+        <text x="340" y="216" text-anchor="middle" font-size="11.5" fill="#607D8B">3 组都相等</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    三条边都不相等，叫<strong>不等边三角形</strong>；有两条相等，叫<strong>等腰三角形</strong>；三条都相等，叫<strong>等边三角形</strong>。
+  </p>
+  <p class="teach-text" id="p5s2">
+    等边三角形三条边两两相等，当然也满足「有两条相等」。<strong>所以等边是等腰里最特殊的一种。</strong>
+  </p>
+</div>
+
+<ul class="feature-list" id="p5rules">
+  <li><strong>① 等腰看「至少两条」</strong>：等边三角形也算等腰，别把它排除在外。</li>
+  <li><strong>② 等边一定三个角都是 60°</strong>：按角分它永远是锐角三角形。</li>
+  <li><strong>③ 复合名字</strong>：「等腰直角三角形」＝按边等腰 + 按角直角，两张标签各管一头。</li>
+</ul>
+
+<div class="key-box" id="p5key">
+  按角、按边是<strong>两条独立的轴</strong>。等腰可以是锐角、直角，也可以是钝角；等边只能是锐角。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">拖一拖顶点，两张标签跟着变</h2>
+  <p class="sim-desc">底边 A、B 固定，橙色手柄是顶点 C。拖它或点画布任意位置，三个角、三条边和两张分类标签会一起重算。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">按角：锐角三角形｜按边：不等边三角形</span>
+    <span class="sim-tip" id="simTip">最大角 61°</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simNext()">下一个形状 →</button>
+    <button class="btn-retry" onclick="simPrev()">← 上一个</button>
+    <button class="btn-retry" onclick="simReset()">重来</button>
+    <button class="btn-retry" onclick="simDemo()">自动演示</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">橙色圆点是顶点 C，按住拖动；右侧六个标签里亮起来的就是它此刻的名字</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>把顶点拖到正中间很高处，按边分变成什么？</li>
+    <li>顶点压到接近底边时，按角分为什么变成钝角？</li>
+    <li>能不能拖出「等边钝角三角形」？为什么？</li>
+    <li>等腰直角三角形要同时满足哪两件事？</li>
+  </ul>
+</div>
+</section>
+
+<!-- ===== p7: 中测2 ===== -->
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 按边分与两张标签</h2>
+  <p class="quiz-hint">三题都在考：别把两条轴搅在一起。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 有两条边相等的三角形叫什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>等边三角形</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>等腰三角形</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>不等边三角形</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 等边三角形一定是等腰三角形吗？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>是，它是最特殊的等腰</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>不是，两者完全分开</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>要看角度才知道</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 「等腰直角三角形」，按边和按角分别属于？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>等边 + 锐角</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>等腰 + 直角</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>不等边 + 钝角</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 易错辨析 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四个坑，第三个最绕</h2>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 看到大角就叫钝角</h4>
+    <div class="wrong-num">✗ 有个角 88°，是钝角</div>
+    <p>钝角要严格大于 90°。88° 还差 2°，最大角没过线就仍是锐角三角形。</p>
+  </div>
+
+  <div class="card">
+    <h4>② 把等边排除出等腰</h4>
+    <div class="wrong-num">✗ 等边不是等腰</div>
+    <p>「有两条边相等」等边也满足，而且满足三次。等边是等腰的特例。</p>
+  </div>
+
+  <div class="card">
+    <h4>③ 以为等腰一定锐角</h4>
+    <div class="wrong-num">✗ 等腰三角形都是锐角</div>
+    <p>等腰只管边。顶点压低就是钝角等腰，抬到特定高度就是等腰直角。</p>
+  </div>
+
+  <div class="card">
+    <h4>④ 只报一张标签</h4>
+    <div class="wrong-num">✗ 它是直角三角形，完了</div>
+    <p>按角说完了，按边还没说。完整说法要两张：不等边直角三角形。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  说名字前先问两句：<strong>按角，最大角过没过 90°？按边，有几条边一样长？</strong>
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到桥架：有一格钢架最大角 120°、两条斜杆一样长，按角是钝角三角形，按边是等腰三角形，合起来叫「等腰钝角三角形」；另一格三根杆都等长、三角都是 60°，就是「等边锐角三角形」。
+</p>
+</section>
+
+<!-- ===== p9: 后测 ===== -->
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，换个场景还会认吗</h2>
+  <p class="quiz-hint">桥架、路牌、三角板，都藏在里面。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 桥架上一格三角形最大角 120°，按角分是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>锐角三角形</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>直角三角形</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>钝角三角形</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 三个角都是 60° 的三角形，同时属于？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>锐角三角形 + 等边三角形</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>直角三角形 + 等腰三角形</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>钝角三角形 + 不等边三角形</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 两个角是 30° 和 60°，这个三角形是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>直角三角形，三条边都不等</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>直角三角形，而且是等腰</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>钝角三角形</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 下面哪种三角形不存在？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>等腰钝角三角形</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>等边钝角三角形</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>等腰直角三角形</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 路牌是等边三角形，边长 40 厘米，按角分属于？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>锐角三角形，三个角都是 60°</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>直角三角形</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>钝角三角形</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">按角</div>
+        <div class="summary-v4-summary">锐角 / 直角 / 钝角</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">只看最大角<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">最大角 &lt; 90°：锐角<br>= 90°：直角<br>&gt; 90°：钝角，最多只有一个</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">按边</div>
+        <div class="summary-v4-summary">不等边 / 等腰 / 等边</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">数相等的边<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">0 组相等：不等边<br>至少 1 组：等腰<br>3 组全等：等边（特殊等腰）</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">两张标签</div>
+        <div class="summary-v4-summary">等腰直角三角形</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">两条独立的轴<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">按角一张、按边一张<br>等腰也能是直角或钝角<br>完整名字两张都要报</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">不存在的组合</div>
+        <div class="summary-v4-summary">等边只能是锐角</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">哪组合不了<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">等边三角都是 60°<br>所以「等边钝角」「等边直角」都没有<br>一个三角形最多一个直角或钝角</div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<p class="teach-text" style="margin-top:18px;color:#1B2E1D;font-size:19px">
+  再看到一个三角形，先问最大角过没过 90°，再数有几条边一样长。两张标签都贴好，名字才算叫全。
+</p>
+</section>
