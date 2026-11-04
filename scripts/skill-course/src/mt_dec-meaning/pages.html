@@ -1,0 +1,586 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>9.8 秒、1.35 米，小数点后面是什么</h1>
+  <p class="sub">四年级数学 · 小数的意义和性质</p>
+  <div class="tags">
+    <span class="tag">十分位</span>
+    <span class="tag">百分位</span>
+    <span class="tag">末尾添 0</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 460 186" width="450" height="182" role="img" aria-label="一条 1 米长的尺子平均分成 10 大格，点亮 3 格半，表示 0.35">
+      <g font-family="sans-serif">
+        <rect x="30" y="46" width="400" height="56" rx="6" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="1.6"/>
+        <rect x="30" y="46" width="143" height="56" rx="6" fill="#FFCA28"/>
+        <g stroke="rgba(255,255,255,.5)" stroke-width="1.2">
+          <line x1="70" y1="46" x2="70" y2="102"/>
+          <line x1="110" y1="46" x2="110" y2="102"/>
+          <line x1="150" y1="46" x2="150" y2="102"/>
+          <line x1="190" y1="46" x2="190" y2="102"/>
+          <line x1="230" y1="46" x2="230" y2="102"/>
+          <line x1="270" y1="46" x2="270" y2="102"/>
+          <line x1="310" y1="46" x2="310" y2="102"/>
+          <line x1="350" y1="46" x2="350" y2="102"/>
+          <line x1="390" y1="46" x2="390" y2="102"/>
+        </g>
+        <text x="30" y="34" font-size="12.5" fill="rgba(255,255,255,.7)">0</text>
+        <text x="430" y="34" font-size="12.5" fill="rgba(255,255,255,.7)" text-anchor="end">1 米</text>
+        <text x="100" y="82" font-size="20" font-weight="700" fill="#4A148C" text-anchor="middle">0.35</text>
+        <text x="230" y="132" font-size="14" fill="rgba(255,255,255,.9)" text-anchor="middle">3 个 0.1</text>
+        <text x="230" y="156" font-size="14" fill="rgba(255,255,255,.9)" text-anchor="middle">+ 5 个 0.01</text>
+        <text x="230" y="180" font-size="14" fill="#FFCA28" text-anchor="middle" font-weight="700">= 0.35 米</text>
+      </g>
+    </svg>
+  </div>
+  <p style="font-size:20px;color:rgba(255,255,255,.92);max-width:620px;line-height:1.8;">
+    小数点右边不是「随便写几个数」，每一位都有自己的名字和身价。<br>
+    <strong>十分位管 0.1，百分位管 0.01，一格一格数得清。</strong>
+  </p>
+  <p class="hint">点击右下角箭头开始 或 点击顶部导航跳转</p>
+  <a href="../../viz/index.html#t=mt_dec-meaning" style="margin-top:16px;color:rgba(255,255,255,.78);font-size:16px;text-decoration:underline">← 回到知识图谱</a>
+</div>
+</section>
+
+<!-- ===== p1: 前测 ===== -->
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先答三道，凭感觉</h2>
+  <p class="quiz-hint">都是量身高、算钱、看成绩会用到的判断。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 1 角是 1 元的几分之几？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>十分之一，也就是 0.1 元</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>百分之一，也就是 0.01 元</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>二分之一，也就是 0.5 元</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 0.5 米等于多少分米？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5 分米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>50 分米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>半分米</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 3.05 米和 3.5 米，哪个长？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>3.05 米长</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3.5 米长</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>一样长</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 引入 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">50 米跑 9.8 秒，快了 0.1 秒是什么概念</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 380 240" width="390" height="246" role="img" aria-label="运动会成绩单：50 米跑 9.8 秒、跳远 3.05 米、身高 1.35 米">
+      <g font-family="sans-serif">
+        <rect x="12" y="12" width="356" height="216" rx="10" fill="#FFFFFF" stroke="#B8A9C4" stroke-width="1.5"/>
+        <text x="190" y="42" text-anchor="middle" font-size="15" font-weight="700" fill="#6A1B9A">四（2）班 · 体测记录</text>
+        <line x1="28" y1="56" x2="352" y2="56" stroke="#E0D6EA" stroke-width="1.2"/>
+
+        <text x="34" y="86" font-size="12.5" fill="#90A4AE">项目</text>
+        <text x="200" y="86" font-size="12.5" fill="#90A4AE">成绩</text>
+        <text x="286" y="86" font-size="12.5" fill="#90A4AE">怎么读</text>
+
+        <text x="34" y="122" font-size="14" fill="#4A148C">50 米跑</text>
+        <text x="200" y="122" font-size="17" font-weight="700" fill="#4A148C">9.8 秒</text>
+        <text x="286" y="122" font-size="12.5" fill="#8E24AA">9 秒多</text>
+
+        <text x="34" y="160" font-size="14" fill="#4A148C">跳远</text>
+        <text x="200" y="160" font-size="17" font-weight="700" fill="#4A148C">3.05 米</text>
+        <text x="286" y="160" font-size="12.5" fill="#8E24AA">3 米 5 厘米</text>
+
+        <text x="34" y="198" font-size="14" fill="#4A148C">身高</text>
+        <text x="200" y="198" font-size="17" font-weight="700" fill="#4A148C">1.35 米</text>
+        <text x="286" y="198" font-size="12.5" fill="#8E24AA">1 米 35 厘米</text>
+
+        <g stroke="#F0EAF6" stroke-width="1">
+          <line x1="28" y1="132" x2="352" y2="132"/>
+          <line x1="28" y1="170" x2="352" y2="170"/>
+        </g>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    体测表上写着 50 米跑 9.8 秒。裁判说「再快 0.1 秒就能进前三」，这 0.1 秒到底是多久？
+  </p>
+  <p class="teach-text" id="p2s2">
+    0.1 秒就是 1 秒平均分成 10 份里的 1 份。9.8 秒 = 9 秒 + 8 个 0.1 秒。
+  </p>
+  <p class="teach-text" id="p2s3">
+    小数点的右边，每一位都有一份固定的大小。<strong>认得这些位，才知道 3.05 和 3.5 差在哪儿。</strong>
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>9.8 秒</h4>
+    <div class="eq">9 秒 + 8 个 0.1 秒</div>
+    <p>十分位上的 8，意思是 8 个 0.1。</p>
+  </div>
+  <div class="card">
+    <h4>3.05 米</h4>
+    <div class="eq">3 米 + 0 分米 + 5 厘米</div>
+    <p>十分位是 0，所以中间那一位空着。</p>
+  </div>
+  <div class="card">
+    <h4>1.35 米</h4>
+    <div class="eq">1 米 + 3 分米 + 5 厘米</div>
+    <p>两位小数，正好对上分米和厘米。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  小数点右边<strong>第一位是十分位</strong>（0.1），<strong>第二位是百分位</strong>（0.01）。位置不同，一格的大小就差十倍。
+</div>
+</section>
+
+<!-- ===== p3: 数位 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">小数点的右边，每位都有自己的名字</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 366 240" width="376" height="246" role="img" aria-label="数位表：个位 1、十分位 3、百分位 5，计数单位分别是 1、0.1、0.01">
+      <g font-family="sans-serif">
+        <rect x="14" y="30" width="100" height="46" rx="6" fill="#F3E5F5" stroke="#B39DDB" stroke-width="1.4"/>
+        <rect x="126" y="30" width="100" height="46" rx="6" fill="#FFECB3" stroke="#FFCA28" stroke-width="1.8"/>
+        <rect x="238" y="30" width="100" height="46" rx="6" fill="#FFECB3" stroke="#FFCA28" stroke-width="1.8"/>
+
+        <text x="64" y="24" text-anchor="middle" font-size="12" fill="#7E57C2">个位</text>
+        <text x="176" y="24" text-anchor="middle" font-size="12" fill="#B28704">十分位</text>
+        <text x="288" y="24" text-anchor="middle" font-size="12" fill="#B28704">百分位</text>
+
+        <text x="64" y="62" text-anchor="middle" font-size="24" font-weight="700" fill="#4A148C">1</text>
+        <text x="176" y="62" text-anchor="middle" font-size="24" font-weight="700" fill="#4A148C">3</text>
+        <text x="288" y="62" text-anchor="middle" font-size="24" font-weight="700" fill="#4A148C">5</text>
+
+        <circle cx="120" cy="53" r="4" fill="#6A1B9A"/>
+
+        <text x="64" y="100" text-anchor="middle" font-size="12" fill="#90A4AE">计数单位</text>
+        <text x="176" y="100" text-anchor="middle" font-size="12" fill="#90A4AE">计数单位</text>
+        <text x="288" y="100" text-anchor="middle" font-size="12" fill="#90A4AE">计数单位</text>
+        <text x="64" y="124" text-anchor="middle" font-size="16" font-weight="700" fill="#7E57C2">1</text>
+        <text x="176" y="124" text-anchor="middle" font-size="16" font-weight="700" fill="#E65100">0.1</text>
+        <text x="288" y="124" text-anchor="middle" font-size="16" font-weight="700" fill="#E65100">0.01</text>
+
+        <line x1="14" y1="146" x2="352" y2="146" stroke="#E0D6EA" stroke-width="1.2"/>
+
+        <text x="14" y="174" font-size="13" fill="#546E7A">1.35 = 1 个 1 + 3 个 0.1 + 5 个 0.01</text>
+        <text x="14" y="200" font-size="13" fill="#E65100">= 1 米 + 3 分米 + 5 厘米</text>
+        <text x="14" y="226" font-size="13" fill="#2E7D32" font-weight="700">= 135 厘米</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    1.35 拆开来看：个位的 1 是 1 个一，十分位的 3 是 3 个 0.1，百分位的 5 是 5 个 0.01。
+  </p>
+  <p class="teach-text" id="p3s2">
+    从左往右，每一位的计数单位都缩小十倍：1 → 0.1 → 0.01 → 0.001。<strong>位置越往右，那一格越不值钱。</strong>
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>① 十分位</strong>：小数点右边第 1 位，计数单位 0.1（十分之一），1 位小数就到这里。</li>
+  <li><strong>② 百分位</strong>：第 2 位，计数单位 0.01（百分之一）。0.35 里的 5 就在这一位。</li>
+  <li><strong>③ 千分位</strong>：第 3 位，计数单位 0.001。0.001 米只有 1 毫米。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  数位看<strong>位置</strong>，不看数字大小。0.05 里的 5 在百分位，比 0.5 里的 5 小十倍。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：这个数该怎么读</h2>
+<p class="teach-text" id="p3bs1">
+  左边每个数，右边都有唯一一个读法或等价的写法。点左边一项，再点右边一项。
+</p>
+
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<!-- ===== p4: 中测1 ===== -->
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 每一位管多少</h2>
+  <p class="quiz-hint">三题都盯着 0.35 这一个数。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 0.35 里的 3 表示什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>3 个 0.1</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3 个 0.01</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3 个 1</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 0.35 里的 5 在哪一位上？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>十分位</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>百分位</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>千分位</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 0.35 里面有多少个 0.01？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>3.5 个</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>35 个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>350 个</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 性质 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">末尾添 0 或去 0，大小不变</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+    <svg viewBox="0 0 356 236" width="368" height="242" role="img" aria-label="三条一样长的色条，分别是 0.3、0.30、0.300，说明它们相等">
+      <g font-family="sans-serif">
+        <text x="14" y="22" font-size="13" fill="#7E57C2">3 个 0.1</text>
+        <rect x="14" y="30" width="300" height="30" rx="4" fill="#F3E5F5" stroke="#B39DDB" stroke-width="1.2"/>
+        <rect x="14" y="30" width="90" height="30" fill="#8E24AA"/>
+        <g stroke="#FFFFFF" stroke-width="1.4">
+          <line x1="44" y1="30" x2="44" y2="60"/>
+          <line x1="74" y1="30" x2="74" y2="60"/>
+        </g>
+
+        <text x="14" y="86" font-size="12.5" fill="#7E57C2">30 个 0.01</text>
+        <rect x="14" y="94" width="300" height="30" rx="4" fill="#F3E5F5" stroke="#B39DDB" stroke-width="1.2"/>
+        <rect x="14" y="94" width="90" height="30" fill="#8E24AA"/>
+        <g stroke="#FFFFFF" stroke-width="0.9">
+          <line x1="23" y1="94" x2="23" y2="124"/>
+          <line x1="32" y1="94" x2="32" y2="124"/>
+        </g>
+
+        <text x="14" y="150" font-size="12" fill="#7E57C2">300 个 0.001</text>
+        <rect x="14" y="158" width="300" height="30" rx="4" fill="#F3E5F5" stroke="#B39DDB" stroke-width="1.2"/>
+        <rect x="14" y="158" width="90" height="30" fill="#8E24AA"/>
+
+        <line x1="104" y1="24" x2="104" y2="196" stroke="#E65100" stroke-width="1.6" stroke-dasharray="5 4"/>
+        <text x="110" y="212" font-size="12.5" fill="#E65100">三条都停在这条线上</text>
+        <text x="322" y="46" font-size="14" font-weight="700" fill="#4A148C">0.3</text>
+        <text x="322" y="110" font-size="14" font-weight="700" fill="#4A148C">0.30</text>
+        <text x="322" y="174" font-size="14" font-weight="700" fill="#4A148C">0.300</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    0.3 是 3 个 0.1；0.30 是 30 个 0.01。10 个 0.01 正好是 1 个 0.1，所以两条一样长，大小也相等。
+  </p>
+  <p class="teach-text" id="p5s2">
+    这就是<strong>小数的性质</strong>：小数末尾添上 0 或去掉 0，小数的大小不变。<strong>注意只在末尾，中间不行。</strong>
+  </p>
+</div>
+
+<ul class="feature-list" id="p5rules">
+  <li><strong>① 末尾添 0</strong>：0.5 = 0.50 = 0.500，长度一样，只是数得更细。</li>
+  <li><strong>② 末尾去 0</strong>：0.700 写成 0.7，更简洁，大小不变。</li>
+  <li><strong>③ 中间不能动</strong>：0.05 去掉 0 变成 0.5，就大了十倍。</li>
+</ul>
+
+<div class="key-box" id="p5key">
+  比大小先看整数部分，整数一样就从十分位一位一位往右比。<strong>位数多的不一定大</strong>：0.5 比 0.05 大。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">1 米的尺子，一格一格数出 0.35</h2>
+  <p class="sim-desc">整条是 1 米，横着分成 10 大格（每格 0.1 米），每大格再分 10 小格（每格 0.01 米）。点亮的格子数和数位表同步变。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">0.35 = 35 个 0.01</span>
+    <span class="sim-tip" id="simTip">3 大格 + 5 小格</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simNext()">下一个数 →</button>
+    <button class="btn-retry" onclick="simPrev()">← 上一个</button>
+    <button class="btn-retry" onclick="simReset()">重来</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">深紫色是点亮的格子；下方数位表实时换成对应的数字</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>点亮 35 小格，为什么写成 0.35 而不是 0.305？</li>
+    <li>0.70 点亮的格子和 0.7 一样多吗？</li>
+    <li>数位表上哪一位空着？空着表示几？</li>
+    <li>0.09 只点亮了 9 小格，它比 0.5 大还是小？</li>
+  </ul>
+</div>
+</section>
+
+<!-- ===== p7: 中测2 ===== -->
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 添 0、去 0、比大小</h2>
+  <p class="quiz-hint">三题都在考：位置变了，大小变没变。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 下面哪个数和 0.3 相等？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>0.03</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>0.30</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3.0</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 把 0.500 末尾的 0 去掉，是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>0.5</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>0.05</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>5</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 0.8、0.79、0.809 三个数，哪个最大？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>0.8</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>0.79</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>0.809</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 易错辨析 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四个坑，第一个最常见</h2>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 位数多就大</h4>
+    <div class="wrong-num">✗ 0.05 比 0.5 大</div>
+    <p>0.05 只有 5 个 0.01，0.5 有 50 个 0.01。位数多，不代表数值大。</p>
+  </div>
+
+  <div class="card">
+    <h4>② 末尾添 0 当成变大</h4>
+    <div class="wrong-num">✗ 0.3 &lt; 0.30</div>
+    <p>3 个 0.1 和 30 个 0.01 一样长。末尾添 0 只是数得更细，大小没变。</p>
+  </div>
+
+  <div class="card">
+    <h4>③ 单位换算错位</h4>
+    <div class="wrong-num">✗ 1.4 米 = 1 米 4 厘米</div>
+    <p>十分位管分米：1.4 米 = 1 米 4 分米 = 1 米 40 厘米。差了十倍。</p>
+  </div>
+
+  <div class="card">
+    <h4>④ 读法写成错位</h4>
+    <div class="wrong-num">✗ 零点三五写成 0.305</div>
+    <p>「三五」是两位，就写两位：0.35。多写一个 0，数就小了一百倍。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  写小数前先问：<strong>这一位是什么位？空着的位要不要补 0？</strong>补错位置，整个数就变了。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到成绩单：3.05 米，十分位是 0，说明没有整分米，只有 5 厘米；而 3.5 米是 3 米 5 分米。所以 3.5 米比 3.05 米长 45 厘米。
+</p>
+</section>
+
+<!-- ===== p9: 后测 ===== -->
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，先认位再动笔</h2>
+  <p class="quiz-hint">前四道判读法，最后一道看体检表。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 1.35 米等于多少厘米？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>135 厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>1350 厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>13.5 厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 0.6 里面有 60 个（　）？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>0.1</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>0.01</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>0.001</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 下面哪个数和 0.40 相等？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>0.04</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>0.4</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>4.0</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 3.05 米和 3.5 米，哪个长？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>3.05 米长</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3.5 米长</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>一样长</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 体检表写身高 1.4 米，医生说「1 米 40 厘米」。这两个说法一致吗？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>一致，1.4 米就是 1 米 40 厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>不一致，1.4 米是 1 米 4 厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>不一致，1.4 米是 14 厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">数位</div>
+        <div class="summary-v4-summary">十分位 0.1 / 百分位 0.01</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">右边第一位是<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">小数点右第 1 位：十分位，0.1<br>第 2 位：百分位，0.01<br>第 3 位：千分位，0.001</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">性质</div>
+        <div class="summary-v4-summary">末尾添 0 去 0，大小不变</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">哪里能添<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">只在末尾：0.5 = 0.50<br>中间不行：0.05 ≠ 0.5<br>去掉末尾 0 更简洁：0.700 → 0.7</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">比大小</div>
+        <div class="summary-v4-summary">从整数部分往右逐位比</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">谁更大<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">先比整数部分<br>再比十分位、百分位<br>位数多不一定大：0.5 &gt; 0.05</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">换算</div>
+        <div class="summary-v4-summary">米 → 分米 → 厘米</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么换<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">十分位对分米，百分位对厘米<br>1.35 米 = 1 米 3 分米 5 厘米<br>= 135 厘米</div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<p class="teach-text" style="margin-top:18px;color:#241A2E;font-size:19px">
+  下次看到小数，先在心里给它排个座：整数部分、十分位、百分位。位置认清了，读、写、比、换都不会错。
+</p>
+</section>
