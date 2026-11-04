@@ -1,0 +1,567 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>三个角撕下来，为什么正好拼成一条直线</h1>
+  <p class="sub">四年级数学 · 三角形的内角和</p>
+  <div class="tags">
+    <span class="tag">撕角拼角</span>
+    <span class="tag">180°</span>
+    <span class="tag">求未知角</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 460 190" width="540" height="222" role="img" aria-label="三角形的三个角撕下来拼在一条直线上，正好铺满一个平角 180 度">
+      <g font-family="sans-serif">
+        <text x="230" y="18" text-anchor="middle" font-size="13" fill="rgba(255,255,255,.78)">把三个角撕下来，往一条直线上拼</text>
+
+        <path d="M30 150 L100 40 L170 150 z" fill="#B2EBF2" stroke="#FFFFFF" stroke-width="2"/>
+        <circle cx="42" cy="140" r="10" fill="#26C6DA"/>
+        <circle cx="100" cy="52" r="10" fill="#FFA726"/>
+        <circle cx="158" cy="140" r="10" fill="#66BB6A"/>
+        <g font-size="10" font-weight="700" fill="#263238" text-anchor="middle">
+          <text x="42" y="144">1</text><text x="100" y="56">2</text><text x="158" y="144">3</text>
+        </g>
+
+        <path d="M196 100 L246 100" stroke="#FFB74D" stroke-width="2.4"/>
+        <path d="M246 100 l-10 -6 l0 12 z" fill="#FFB74D"/>
+
+        <path d="M355 150 L275 150 A80 80 0 0 1 321 77.5 Z" fill="#26C6DA"/>
+        <path d="M355 150 L321 77.5 A80 80 0 0 1 382 75 Z" fill="#FFA726"/>
+        <path d="M355 150 L382 75 A80 80 0 0 1 435 150 Z" fill="#66BB6A"/>
+        <line x1="265" y1="150" x2="445" y2="150" stroke="#FFFFFF" stroke-width="2.6"/>
+        <g font-size="12" font-weight="700" fill="#263238" text-anchor="middle">
+          <text x="310" y="126">65°</text><text x="352" y="102">45°</text><text x="398" y="126">70°</text>
+        </g>
+        <text x="355" y="178" text-anchor="middle" font-size="13" fill="#4DD0E1" font-weight="700">65° + 45° + 70° = 180°</text>
+      </g>
+    </svg>
+  </div>
+  <p style="font-size:20px;color:rgba(255,255,255,.92);max-width:620px;line-height:1.8;">
+    不管三角形是胖是瘦、是大是小，三个角加起来永远是 180°。<br>
+    <strong>知道两个角，第三个角用 180° 一减就出来。</strong>
+  </p>
+  <p class="hint">点击右下角箭头开始 或 点击顶部导航跳转</p>
+  <a href="../../viz/index.html#t=mt_triangle-angle" style="margin-top:16px;color:rgba(255,255,255,.78);font-size:16px;text-decoration:underline">← 回到知识图谱</a>
+</div>
+</section>
+
+<!-- ===== p1: 前测 ===== -->
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先答三道，凭感觉</h2>
+  <p class="quiz-hint">风筝、剪纸、拼角游戏，都是量角时会碰到的事。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 把一个三角形的三个角剪下来拼在一起，会拼成什么角？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>直角 90°</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>平角 180°</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>周角 360°</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 三角形里两个角是 60° 和 70°，第三个角是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>50°</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>60°</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>70°</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 大三角形和小三角形，哪个内角和更大？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>大三角形</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>小三角形</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>一样大，都是 180°</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 引入 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">风筝骨架断了，第 3 个角该切多少度？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 380 240" width="390" height="246" role="img" aria-label="风筝骨架三角形，已知两个角 65 度和 45 度，第三个角未知，用 180 度减去两个已知角得到 70 度">
+      <g font-family="sans-serif">
+        <text x="190" y="20" text-anchor="middle" font-size="13" fill="#5D4037" font-weight="700">三角形骨架，两个角已经量好</text>
+
+        <path d="M40 190 L130 46 L240 190 z" fill="#F0E4DE" stroke="#5D4037" stroke-width="2.4"/>
+        <text x="56" y="176" font-size="13" font-weight="700" fill="#00838F">65°</text>
+        <text x="214" y="176" font-size="13" font-weight="700" fill="#E65100">45°</text>
+        <text x="130" y="70" text-anchor="middle" font-size="17" font-weight="700" fill="#6A1B9A">?</text>
+
+        <rect x="252" y="72" width="118" height="112" rx="8" fill="#FFFFFF" stroke="#4DD0E1" stroke-width="1.8"/>
+        <text x="262" y="96" font-size="12.5" fill="#5D4037">三个角合起来</text>
+        <text x="262" y="118" font-size="14" font-weight="700" fill="#00695C">= 180°</text>
+        <text x="262" y="142" font-size="12.5" fill="#5D4037">减去 65° 和 45°</text>
+        <text x="262" y="166" font-size="15" font-weight="700" fill="#C62828">= 70°</text>
+
+        <rect x="40" y="206" width="330" height="24" rx="6" fill="#B2EBF2"/>
+        <text x="205" y="222" text-anchor="middle" font-size="12.5" fill="#263238">不用补量，算一下就有</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    量角器量出风筝骨架的两个角是 65° 和 45°，第三个角忘了量，离下课只剩 10 分钟，还来得及补量吗？
+  </p>
+  <p class="teach-text" id="p2s2">
+    不用量。三角形三个角加起来恒等于 180°，180° − 65° − 45° = 70°，答案是 70°。
+  </p>
+  <p class="teach-text" id="p2s3">
+    这个 180° 不是背下来的，是<strong>把三个角撕下来往一条直线上一拼</strong>拼出来的：不多不少，正好一条平角。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>已知两角</h4>
+    <div class="eq">65° + 45° = 110°</div>
+    <p>先把已经知道的两个角合起来。</p>
+  </div>
+  <div class="card">
+    <h4>凑成 180°</h4>
+    <div class="eq">180° − 110° = 70°</div>
+    <p>总数固定，剩下的就是第三个角。</p>
+  </div>
+  <div class="card">
+    <h4>第三角</h4>
+    <div class="eq">∠3 = 70°</div>
+    <p>不管换什么形状，这个减法都成立。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  三角形内角和 <strong>180°</strong> 是定值：<strong>知道两个角，第三个角 = 180° − 两角之和</strong>。
+</div>
+</section>
+
+<!-- ===== p3: 拼平角 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">把三个角撕下来，往一条直线上拼</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 400 232" width="410" height="238" role="img" aria-label="撕角拼平角三步：三角形标出三个角、把三个角撕下来、顶点重合拼在直线上正好铺满半圆">
+      <g font-family="sans-serif">
+        <text x="66" y="20" text-anchor="middle" font-size="12" fill="#5D4037" font-weight="700">① 标出三个角</text>
+        <path d="M22 140 L66 56 L110 140 z" fill="#F0E4DE" stroke="#5D4037" stroke-width="1.8"/>
+        <circle cx="30" cy="132" r="7" fill="#26C6DA"/>
+        <circle cx="66" cy="64" r="7" fill="#FFA726"/>
+        <circle cx="102" cy="132" r="7" fill="#66BB6A"/>
+
+        <path d="M122 100 L152 100" stroke="#90A4AE" stroke-width="2"/>
+        <path d="M152 100 l-8 -5 l0 10 z" fill="#90A4AE"/>
+
+        <text x="200" y="20" text-anchor="middle" font-size="12" fill="#5D4037" font-weight="700">② 撕下来</text>
+        <path d="M166 140 L182 108 L198 140 z" fill="#26C6DA"/>
+        <path d="M206 140 L222 108 L238 140 z" fill="#FFA726"/>
+        <path d="M246 140 L262 108 L278 140 z" fill="#66BB6A"/>
+
+        <path d="M288 100 L306 100" stroke="#90A4AE" stroke-width="2"/>
+        <path d="M306 100 l-8 -5 l0 10 z" fill="#90A4AE"/>
+
+        <text x="352" y="20" text-anchor="middle" font-size="12" fill="#5D4037" font-weight="700">③ 拼成平角</text>
+        <path d="M352 140 L312 140 A40 40 0 0 1 335 103 Z" fill="#26C6DA"/>
+        <path d="M352 140 L335 103 A40 40 0 0 1 366 102 Z" fill="#FFA726"/>
+        <path d="M352 140 L366 102 A40 40 0 0 1 392 140 Z" fill="#66BB6A"/>
+        <line x1="306" y1="140" x2="398" y2="140" stroke="#5D4037" stroke-width="2.2"/>
+
+        <text x="200" y="180" text-anchor="middle" font-size="13" fill="#00695C" font-weight="700">三个角铺满一条直线，正好 180°</text>
+        <text x="200" y="204" text-anchor="middle" font-size="12" fill="#607D8B">大三角形、小三角形，拼出来都一样</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    把三角形的三个角分别涂色、剪下来，让三个顶点重合摆在一条直线上。三个角挨着排，正好从直线左端铺到右端。
+  </p>
+  <p class="teach-text" id="p3s2">
+    一条直线是 <strong>180°</strong>，所以 ∠1 + ∠2 + ∠3 = 180°。<strong>换任何一个三角形来剪，结果都一样。</strong>
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>① 撕角拼平角</strong>：三个角顶点重合、依次相邻，铺满半平面就是 180°。</li>
+  <li><strong>② 折叠也能验证</strong>：把三个角往内折，同样能叠成一条直线。</li>
+  <li><strong>③ 与大小无关</strong>：三角形放大十倍，角没变，内角和还是 180°；剪成两个小三角形，每个仍是 180°。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  内角和看的是<strong>三个角</strong>，不是三条边。边再长也不给角度加分。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：知道两个角，第三个角是几度</h2>
+<p class="teach-text" id="p3bs1">
+  左边是已知的两个角，右边是用 180° 减出来的第三个角。点左边一项，再点右边一项。
+</p>
+
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<!-- ===== p4: 中测1 ===== -->
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 内角和 180°</h2>
+  <p class="quiz-hint">三题都在考：这个 180° 到底归谁管。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 任意一个三角形的内角和是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>90°</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>180°</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>360°</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 把一个大三角形沿高剪成两个小三角形，每个小三角形内角和？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>90°，因为被分掉一半</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>180°，和原来一样</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>360°，两个加起来</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 一个三角形里最多能有几个钝角？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1 个</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>2 个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3 个</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 求未知角 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">知道两个角，第三个角用 180° 减</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+    <svg viewBox="0 0 400 232" width="410" height="238" role="img" aria-label="三角形两个角 65 度和 45 度，第三个角用 180 度减去 110 度得到 70 度">
+      <g font-family="sans-serif">
+        <path d="M28 186 L96 52 L196 186 z" fill="#F0E4DE" stroke="#5D4037" stroke-width="2.2"/>
+        <text x="42" y="172" font-size="14" font-weight="700" fill="#00838F">65°</text>
+        <text x="172" y="172" font-size="14" font-weight="700" fill="#E65100">45°</text>
+        <text x="96" y="78" text-anchor="middle" font-size="18" font-weight="700" fill="#6A1B9A">?</text>
+
+        <rect x="216" y="46" width="172" height="150" rx="10" fill="#FFFFFF" stroke="#4DD0E1" stroke-width="1.8"/>
+        <text x="230" y="72" font-size="12.5" fill="#607D8B">① 先加已知两角</text>
+        <text x="230" y="96" font-size="15" font-weight="700" fill="#5D4037">65° + 45° = 110°</text>
+        <line x1="230" y1="108" x2="374" y2="108" stroke="#E0E0E0" stroke-width="1.2"/>
+        <text x="230" y="130" font-size="12.5" fill="#607D8B">② 用 180° 去减</text>
+        <text x="230" y="154" font-size="15" font-weight="700" fill="#5D4037">180° − 110° = 70°</text>
+        <line x1="230" y1="166" x2="374" y2="166" stroke="#E0E0E0" stroke-width="1.2"/>
+        <text x="230" y="188" font-size="16" font-weight="700" fill="#C62828">∠3 = 70°</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    求第三个角就两步：先把已知的两个角加起来，再用 180° 去减。顺序反了或漏减一个，答案就错。
+  </p>
+  <p class="teach-text" id="p5s2">
+    遇到特殊三角形还能更快：<strong>直角三角形</strong>两锐角合起来刚好 90°；<strong>等腰三角形</strong>两个底角相等。
+  </p>
+</div>
+
+<ul class="feature-list" id="p5rules">
+  <li><strong>① 直角三角形</strong>：一个锐角 = 90° − 另一个锐角，不用再减 180°。</li>
+  <li><strong>② 等腰三角形</strong>：底角 = (180° − 顶角) ÷ 2；顶角 = 180° − 2 × 底角。</li>
+  <li><strong>③ 等边三角形</strong>：三个角相等，180° ÷ 3 = 60°，每个都是 60°。</li>
+</ul>
+
+<div class="key-box" id="p5key">
+  反过来还能验真伪：三个角加起来<strong>不是 180° 就围不成三角形</strong>，比如 100°、50°、40° 加起来 190°。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">撕下三个角，一格一格拼成平角</h2>
+  <p class="sim-desc">点「撕下一个角」，左边三角形上的彩色角会飞到右边的直线上，挨着排。拼满时看看一共多少度。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">已拼 0° / 180°，还差 180°</span>
+    <span class="sim-tip" id="simTip">三个角：56° / 40° / 84°</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simNext()">撕下一个角 →</button>
+    <button class="btn-retry" onclick="simPrev()">← 放回去</button>
+    <button class="btn-retry" onclick="simReset()">重来</button>
+    <button class="btn-retry" onclick="simDemo()">自动演示</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">三个彩色扇形顶点重合、依次相邻；铺满半平面就是一条直线</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>换成钝角三角形，第三个角会变得很大还是很小？</li>
+    <li>直角三角形里，另外两个锐角加起来是多少度？</li>
+    <li>把第三个角藏起来，你能用 180° 减出来吗？</li>
+    <li>三角形放大一倍，拼出来的平角会变大吗？</li>
+  </ul>
+</div>
+</section>
+
+<!-- ===== p7: 中测2 ===== -->
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 求未知角</h2>
+  <p class="quiz-hint">三题都要动笔减一减。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 三角形两个角是 50° 和 60°，第三个角是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>70°</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>80°</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>90°</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 直角三角形一个锐角是 35°，另一个锐角是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>45°</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>55°</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>65°</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 等腰三角形顶角 100°，一个底角是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>40°</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>50°</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>80°</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 易错辨析 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四个坑，第一个几乎人人都踩过</h2>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 以为大三角形角更大</h4>
+    <div class="wrong-num">✗ 边长翻倍，内角和也翻倍</div>
+    <p>放大只改边长，角的张口没变。任何三角形内角和都是 180°。</p>
+  </div>
+
+  <div class="card">
+    <h4>② 剪开就把 180° 分掉</h4>
+    <div class="wrong-num">✗ 剪成两块，每块 90°</div>
+    <p>剪出来的每一块仍是三角形，各有自己的三个角，各是 180°。</p>
+  </div>
+
+  <div class="card">
+    <h4>③ 两角相加当第三角</h4>
+    <div class="wrong-num">✗ 65° + 45° = 110° 就是 ∠3</div>
+    <p>110° 是已知两角的和，第三角要用 180° 去减，得 70°。</p>
+  </div>
+
+  <div class="card">
+    <h4>④ 直角忘了先扣掉</h4>
+    <div class="wrong-num">✗ 直角三角形还拿 180° 减两次</div>
+    <p>直角占掉 90°，两个锐角加起来正好 90°，一次就够。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  动笔前先问：<strong>三个角里有没有直角、有没有两个相等的角？</strong>有特殊角就走捷径。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到折叠伞：一格伞骨三角形量出 50° 和 65°，第三角 = 180° − 115° = 65°，两个角相等，说明这格还是等腰的；再核对 50° + 65° + 65° = 180°，一分不差。
+</p>
+</section>
+
+<!-- ===== p9: 后测 ===== -->
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，换个场景还会算吗</h2>
+  <p class="quiz-hint">伞骨、风筝、三角板，都藏在里面。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 折叠伞一格三角骨架，两角 50° 和 65°，第三角是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>65°</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>75°</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>85°</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 等边三角形每个角是多少度？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>60°</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>90°</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>180°</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 直角三角形的两个锐角加起来？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>90°</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>180°</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>要看形状</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 三个角是 100°、50°、40°，能构成三角形吗？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>能，有个钝角也很正常</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>不能，加起来是 190°</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>不能，钝角不能和锐角放一起</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 等腰三角形顶角 40°，两个底角各是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>70°</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>60°</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>140°</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">内角和</div>
+        <div class="summary-v4-summary">恒等于 180°</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">跟什么无关<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">与大小、形状、胖瘦都无关<br>撕角拼平角正好一条直线<br>剪成小三角形，每块仍是 180°</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">怎么来的</div>
+        <div class="summary-v4-summary">撕角 / 折叠 / 量角</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">三种验证<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">剪下三个角，顶点重合拼直线<br>把三个角往内折，叠成平角<br>量角器逐角量，相加是 180°</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">求未知角</div>
+        <div class="summary-v4-summary">180° − 两角之和</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">两步走<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">65° + 45° = 110°<br>180° − 110° = 70°<br>和不是 180° 就围不成</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">特殊捷径</div>
+        <div class="summary-v4-summary">直角 / 等腰 / 等边</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">能省一步<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">直角：两锐角合起来 90°<br>等腰：底角 = (180° − 顶角) ÷ 2<br>等边：每角 180° ÷ 3 = 60°</div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<p class="teach-text" style="margin-top:18px;color:#2A1B16;font-size:19px">
+  再遇到三个角，先在心里拼一拼：能不能铺满一条直线？铺得满就是 180°，缺多少就用 180° 减多少。
+</p>
+</section>
