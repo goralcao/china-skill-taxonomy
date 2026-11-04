@@ -1,10 +1,10 @@
 {
   "topicId": "mt_parallelogram",
-  "title": "平行四边形和梯形：数有几组对边平行",
+  "title": "平行四边形和梯形：一组对边平行还是两组",
   "template": "explain",
-  "renderer": "quad",
-  "duration": 11,
-  "interactions": 2,
+  "renderer": "geometry",
+  "duration": 24,
+  "interactions": 16,
   "grade": 4,
   "subject": "数学",
   "standards": [
@@ -12,20 +12,83 @@
   ],
   "prerequisites": [
     "mt_shape-2d",
-    "mt_lines"
+    "mt_lines",
+    "mt_angle-measure"
   ],
   "next": [
     "mt_triangle"
   ],
   "objectives": [
-    "理解平行四边形两组对边分别平行且相等",
-    "理解梯形只有一组对边平行，认识上底、下底、腰和高",
-    "知道长方形、正方形是特殊的平行四边形"
+    "认识平行四边形和梯形的特征，能分清一组对边平行与两组对边平行",
+    "知道平行四边形的底和高，会画已知底边上的高",
+    "了解平行四边形容易变形、梯形只有一组对边平行"
   ],
-  "cognitiveAction": "比较",
+  "cognitiveAction": "辨析",
   "status": "reviewed",
   "author": "goral.cao",
   "license": "CC-BY-SA-4.0",
-  "version": "1.0.0",
-  "updatedAt": "2026-10-27"
+  "version": "3.0.0",
+  "updatedAt": "2026-11-04",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "两组平行",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "底和高",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "易变形",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
 }

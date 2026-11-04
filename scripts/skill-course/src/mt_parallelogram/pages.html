@@ -1,0 +1,541 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>伸缩门一推就歪，为什么偏要用它？</h1>
+  <p class="sub">四年级数学 · 平行四边形和梯形</p>
+  <div class="tags">
+    <span class="tag">两组平行</span>
+    <span class="tag">底和高</span>
+    <span class="tag">容易变形</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 460 190" width="430" height="178" role="img" aria-label="左边平行四边形，右边梯形，分别标注两组对边平行和一组对边平行">
+      <polygon points="60,130 150,60 250,60 160,130" fill="none" stroke="#FFFFFF" stroke-width="3"/>
+      <line x1="60" y1="130" x2="250" y2="130" stroke="#FFE082" stroke-width="1.4" stroke-dasharray="5 4"/>
+      <line x1="150" y1="60" x2="250" y2="60" stroke="#FFE082" stroke-width="1.4"/>
+      <text x="155" y="152" font-size="13" fill="#FFE082" font-family="sans-serif" text-anchor="middle">两组对边分别平行</text>
+      <text x="155" y="46" font-size="13" fill="#FFFFFF" font-family="sans-serif" text-anchor="middle">平行四边形</text>
+
+      <polygon points="290,130 340,60 420,60 430,130" fill="none" stroke="#FFFFFF" stroke-width="3"/>
+      <line x1="340" y1="60" x2="420" y2="60" stroke="#FFE082" stroke-width="1.4"/>
+      <line x1="290" y1="130" x2="430" y2="130" stroke="#FFE082" stroke-width="1.4"/>
+      <text x="360" y="152" font-size="13" fill="#FFE082" font-family="sans-serif" text-anchor="middle">只有一组对边平行</text>
+      <text x="360" y="46" font-size="13" fill="#FFFFFF" font-family="sans-serif" text-anchor="middle">梯形</text>
+    </svg>
+  </div>
+  <p style="font-size:20px;color:rgba(255,255,255,.92);max-width:580px;line-height:1.8;">
+    它们的区别只有一句话：<br>
+    <strong>平行的是两组，还是一组。</strong>
+  </p>
+  <p class="hint">点击右下角箭头开始 或 点击顶部导航跳转</p>
+  <a href="../../viz/index.html#t=mt_parallelogram" style="margin-top:16px;color:rgba(255,255,255,.78);font-size:16px;text-decoration:underline">← 回到知识图谱</a>
+</div>
+</section>
+
+<!-- ===== p1: 前测 ===== -->
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先答三道，凭感觉</h2>
+  <p class="quiz-hint">都跟你见过的图形有关，答不上来也正常。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 长方形有几组对边互相平行？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1 组</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>2 组</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>一组也没有</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 平行四边形的对边长度有什么关系？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>相等</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>不等</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>说不准</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 一块平行四边形地砖，四个角都是直角吗？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>都是直角</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>都不是直角</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>不一定</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 引入 两组还是一组 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">伸缩门一推就歪，为什么偏要用它？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 300 242" width="270" height="218" role="img" aria-label="上面是平行四边形，两组对边平行；下面是梯形，只有一组对边平行">
+      <polygon points="40,96 90,32 250,32 200,96" fill="#D1C4E9" stroke="#4527A0" stroke-width="2.5"/>
+      <line x1="40" y1="96" x2="200" y2="96" stroke="#FFA000" stroke-width="3"/>
+      <line x1="90" y1="32" x2="250" y2="32" stroke="#FFA000" stroke-width="3"/>
+      <text x="145" y="116" font-size="12.5" fill="#4527A0" text-anchor="middle" font-family="sans-serif">平行四边形 · 两组对边平行</text>
+
+      <polygon points="70,214 110,150 210,150 250,214" fill="#FFE0B2" stroke="#E65100" stroke-width="2.5"/>
+      <line x1="70" y1="214" x2="250" y2="214" stroke="#FFA000" stroke-width="3"/>
+      <line x1="110" y1="150" x2="210" y2="150" stroke="#FFA000" stroke-width="3"/>
+      <text x="160" y="234" font-size="12.5" fill="#E65100" text-anchor="middle" font-family="sans-serif">梯形 · 只有一组对边平行</text>
+
+    </svg>
+  </div>
+  <p class="teach-text" id="p2s1">
+    校门口的伸缩门拉开有 4 米长，收起来只剩 90 厘米。它每一格都做成平行四边形——因为平行四边形一推就变形，正好拿来伸缩。
+  </p>
+  <p class="teach-text" id="p2s2">
+    判断一个四边形是什么，只看一件事：<strong>有几组对边互相平行</strong>。
+  </p>
+  <p class="teach-text" id="p2s3">
+    两组都平行，叫<strong>平行四边形</strong>；只有一组平行，另一组不平行，叫<strong>梯形</strong>。
+  </p>
+</div>
+
+<div class="key-box" id="p2s4">
+  <strong>两组对边分别平行 → 平行四边形；只有一组对边平行 → 梯形。</strong>「只有」两个字不能丢。
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>① 平行四边形</h4>
+    <div class="eq">两组对边<br>平行且相等</div>
+    <p>对角也相等，一推就变形。</p>
+  </div>
+  <div class="card">
+    <h4>② 梯形</h4>
+    <div class="eq">只有一组对边平行<br>另两条叫腰</div>
+    <p>平行的两条是上底和下底。</p>
+  </div>
+  <div class="card">
+    <h4>③ 长方形和正方形</h4>
+    <div class="eq">两组对边都平行<br>→ 也是平行四边形</div>
+    <p>它们是「四个角都是直角」的特殊平行四边形。</p>
+  </div>
+</div>
+</section>
+
+<!-- ===== p3: 概念1 底和高 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">高不是随便一条线，它必须垂直于底</h2>
+
+<p class="teach-text" id="p3s1">
+  选一条边当底，从对边上任意一点向它作垂线，这条垂线段的长度就是<strong>高</strong>。底有两条（上下或左右任选一组），所以高也跟着有两种方向。
+</p>
+
+<div class="fig" id="p3fig" style="margin:8px 0 4px">
+  <svg viewBox="0 0 580 216" width="556" height="207" role="img" aria-label="左图：以长边为底画一条高；右图：同一个平行四边形能画无数条高">
+    <!-- 左：一条高 -->
+    <polygon points="60,170 120,80 300,80 240,170" fill="#EDE7F6" stroke="#4527A0" stroke-width="2.5"/>
+    <line x1="60" y1="170" x2="240" y2="170" stroke="#FFA000" stroke-width="3.5"/>
+    <line x1="120" y1="80" x2="120" y2="170" stroke="#E65100" stroke-width="2.2" stroke-dasharray="6 4"/>
+    <path d="M 120 158 L 132 158 L 132 170" fill="none" stroke="#E65100" stroke-width="1.6"/>
+    <text x="128" y="126" font-size="12.5" fill="#E65100" font-family="sans-serif">高</text>
+    <text x="150" y="190" font-size="12.5" fill="#4527A0" font-family="sans-serif" text-anchor="middle">底</text>
+    <text x="180" y="212" font-size="12" fill="#5E4B8B" font-family="sans-serif" text-anchor="middle">从对边垂直落到底，垂足是直角</text>
+
+    <!-- 右：三条高 -->
+    <polygon points="330,170 380,80 530,80 480,170" fill="#EDE7F6" stroke="#4527A0" stroke-width="2.5"/>
+    <line x1="330" y1="170" x2="480" y2="170" stroke="#FFA000" stroke-width="3.5"/>
+    <g stroke="#E65100" stroke-width="2" stroke-dasharray="5 4">
+      <line x1="380" y1="80" x2="380" y2="170"/>
+      <line x1="420" y1="80" x2="420" y2="170"/>
+      <line x1="460" y1="80" x2="460" y2="170"/>
+    </g>
+    <path d="M 380 158 L 391 158 L 391 170" fill="none" stroke="#E65100" stroke-width="1.5"/>
+    <text x="405" y="190" font-size="12.5" fill="#4527A0" font-family="sans-serif" text-anchor="middle">底</text>
+    <text x="430" y="212" font-size="12" fill="#5E4B8B" font-family="sans-serif" text-anchor="middle">底上每一点都能作高，长度都相等</text>
+
+    <text x="290" y="34" font-size="13" fill="#4527A0" font-family="sans-serif" text-anchor="middle">高必须垂直于底；同一个底上，高有无数条</text>
+  </svg>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>① 底</strong>：你自己选的那条边。选上下两条，或左右两条，都行。</li>
+  <li><strong>② 高</strong>：从对边上一点垂直落到这条底上的线段，垂足处一定有个直角。</li>
+  <li><strong>③ 高有无数条</strong>：底上每一点都能作一条高，长度都一样。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  判断一条线是不是高，只看一件事：<strong>它和底是否成直角</strong>。斜着量出来的叫边，不叫高。
+</div>
+</section>
+
+<!-- ===== p3b: 连线巩固 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：这些说法分别指什么</h2>
+<p class="teach-text" id="p3bs1">先点左边的说法，再点右边的答案，连对了变绿。</p>
+<div id="matchP3"></div>
+</section>
+
+<!-- ===== p4: 中测1 ===== -->
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 特征与高</h2>
+  <p class="quiz-hint">三道题只考定义，不考计算。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 只有一组对边平行的四边形叫什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>平行四边形</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>梯形</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>长方形</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 平行四边形的高与它对应的底是什么关系？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>互相垂直</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>互相平行</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>长度相等</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 一个平行四边形能画出多少条高？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1 条</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>2 条</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>无数条</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 概念2 容易变形 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">同样四条边，为什么它能歪？</h2>
+
+<p class="teach-text" id="p5s1">
+  用四根小棒钉一个长方形，一推就歪成平行四边形；钉成三角形，怎么推都不动。差别就在<strong>边与边之间的角能不能转动</strong>。
+</p>
+
+<div class="fig" id="p5fig" style="margin:8px 0 4px">
+  <svg viewBox="0 0 620 160" width="596" height="154" role="img" aria-label="长方形推歪成平行四边形；三角形推不动">
+    <g font-family="sans-serif">
+      <rect x="30" y="50" width="110" height="70" fill="none" stroke="#4527A0" stroke-width="3"/>
+      <text x="85" y="140" font-size="12" fill="#5E4B8B" text-anchor="middle">长方形</text>
+
+      <text x="160" y="92" font-size="18" fill="#FFA000" text-anchor="middle">→</text>
+
+      <polygon points="185,120 245,50 355,50 295,120" fill="none" stroke="#4527A0" stroke-width="3"/>
+      <text x="270" y="140" font-size="12" fill="#5E4B8B" text-anchor="middle">一推就歪成平行四边形</text>
+
+      <polygon points="420,120 520,120 420,50" fill="none" stroke="#2E7D32" stroke-width="3"/>
+      <text x="470" y="140" font-size="12" fill="#2E7D32" text-anchor="middle">三角形推不动</text>
+      <text x="540" y="92" font-size="12.5" fill="#2E7D32">稳</text>
+    </g>
+  </svg>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>① 容易变形</h4>
+    <div class="eq">平行四边形<br>一推就歪</div>
+    <p>四条边长度不变，四个角却会变。这叫不稳定性。</p>
+  </div>
+  <div class="card">
+    <h4>② 哪里在用它</h4>
+    <div class="eq">伸缩门、升降架<br>折叠晾衣架</div>
+    <p>需要能收能展的地方，都要靠它变形。</p>
+  </div>
+  <div class="card">
+    <h4>③ 哪里不能用它</h4>
+    <div class="eq">自行车车架<br>工地脚手架</div>
+    <p>这些地方要稳，靠的是三角形的稳定性。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  四条边一样长、四个角都能转 → <strong>容易变形</strong>。要稳，就加一根斜撑，把它分成三角形。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">推一推顶点：两组对边还平行吗</h2>
+  <p class="sim-desc">移动上边的两个顶点，看左右两条腰还平不平行。平行四边形两边一起移，梯形只缩上边。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">平行四边形 · 两组对边都平行</span>
+    <span class="sim-tip" id="simTip">上边右移 30 格，四条边长度没变，两组对边始终平行</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-retry" onclick="simSkew(-20)">← 上边左移</button>
+    <button class="btn-retry" onclick="simSkew(20)">上边右移 →</button>
+    <button class="btn-retry" onclick="simTop(-20)">上边变短</button>
+    <button class="btn-retry" onclick="simTop(20)">上边变长</button>
+    <button class="btn-primary" onclick="simMode()">切换梯形 / 平行四边形</button>
+    <button class="btn-retry" onclick="simReset()">重置</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">黄色虚线是右上顶点到底边的垂线（高）；右下角实时判断两组对边是否平行</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>平行四边形时上边右移，两条腰还是平行的吗？为什么？</li>
+    <li>切到梯形后，哪一组对边还平行？哪一组不平行了？</li>
+    <li>只把上边变短，这个图形还是平行四边形吗？</li>
+    <li>为什么伸缩门要做成一格一格的平行四边形？</li>
+  </ul>
+</div>
+</section>
+
+<!-- ===== p7: 中测2 ===== -->
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 用特征判断</h2>
+  <p class="quiz-hint">先找平行的那组边，再看有几组。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 伸缩门做成平行四边形，用的是它的什么特性？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>对边相等</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>容易变形</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>对角相等</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 一个平行四边形相邻两条边分别是 8 厘米和 5 厘米，它的周长是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>13 厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>40 厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>26 厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 长方形是特殊的平行四边形吗？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>是</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>不是</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>要看边长</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 易错辨析 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四个坑，最滑的是第一个</h2>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 丢了「只有」</h4>
+    <div class="wrong-num">✗ 梯形是一组对边平行的四边形</div>
+    <p>少两个字就错了：平行四边形也有「一组」对边平行。必须说<strong>只有一组</strong>。</p>
+  </div>
+
+  <div class="card">
+    <h4>② 高画成斜的</h4>
+    <div class="wrong-num">✗ 沿着一腰画高</div>
+    <p>高必须垂直于底，垂足处要能画出直角。斜着量的是边长，不是高。</p>
+  </div>
+
+  <div class="card">
+    <h4>③ 以为底只有一条</h4>
+    <div class="wrong-num">✗ 底只能是下面那条</div>
+    <p>四条边任选一组对边都能当底，换底高就换，但面积不变。</p>
+  </div>
+
+  <div class="card">
+    <h4>④ 把正方形排除在外</h4>
+    <div class="wrong-num">✗ 正方形不是平行四边形</div>
+    <p>正方形两组对边都平行，也是平行四边形——还是最特殊的那种。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  一句话自查：<strong>平行的是两组还是一组？高和底成直角了吗？</strong>这两问能挡掉大多数错。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到伸缩门：它每格都是平行四边形，两组对边平行、长度不变，所以能推能拉却不散架。如果做成三角形，门就收不起来了。
+</p>
+</section>
+
+<!-- ===== p9: 后测 ===== -->
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，说清特征</h2>
+  <p class="quiz-hint">前四道考概念，最后一道要算。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 平行四边形的两组对边分别怎样？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>平行且相等</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>平行但不等</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>相等但不平行</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 梯形中那组平行的对边，分别叫什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>腰</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>高</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>上底和下底</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 等腰梯形的两条腰有什么关系？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>互相平行</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>长度相等</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>互相垂直</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 从平行四边形一条边上的任意一点，向对边作的垂线段是它的什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>高</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>对角线</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>腰</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 一个梯形上底 6 厘米，下底 10 厘米，两条腰各 5 厘米，周长是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>21 厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>26 厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>32 厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">分家</div>
+        <div class="summary-v4-summary">两组还是一组</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么分<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">两组对边平行 → 平行四边形<br>只有一组对边平行 → 梯形<br>「只有」两个字不能丢</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">底和高</div>
+        <div class="summary-v4-summary">必须垂直</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么定<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">底自己选，四条边都能当底<br>高是从对边垂直落到底上的线段<br>底换，高也换</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">会歪</div>
+        <div class="summary-v4-summary">不稳定性</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">有什么用<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">边不变、角能转 → 一推就歪<br>伸缩门、升降架靠它收展<br>要稳就加斜撑变三角形</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">避错</div>
+        <div class="summary-v4-summary">两问自查</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么查<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">平行的是两组还是一组？<br>高和底成直角了吗？<br>正方形也属于平行四边形</div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<p class="teach-text" style="margin-top:18px;color:#1A1230;font-size:19px">
+  下次看到一个四边形，先别急着叫名字：拿起尺子比一比，到底有几组对边平行。
+</p>
+</section>
