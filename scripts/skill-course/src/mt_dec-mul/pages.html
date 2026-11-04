@@ -1,0 +1,585 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>0.8 元一条，25 条为什么只扣 20 元？</h1>
+  <p class="sub">五年级数学 · 小数乘法</p>
+  <div class="tags">
+    <span class="tag">先按整数乘</span>
+    <span class="tag">再点小数点</span>
+    <span class="tag">位数相加</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 470 210" width="480" height="214" role="img" aria-label="一条短信 0.8 元，发了 25 条，账单扣 20 元；候选答案 2、20、200 里 20 才是对的">
+      <g font-family="sans-serif">
+        <text x="235" y="13" text-anchor="middle" font-size="13" fill="rgba(255,255,255,.82)">一条 0.8 元，25 条扣了 20 元</text>
+
+        <rect x="18" y="24" width="118" height="172" rx="15" fill="rgba(255,255,255,.14)" stroke="rgba(255,255,255,.34)" stroke-width="1.4"/>
+        <rect x="28" y="38" width="98" height="144" rx="8" fill="rgba(255,255,255,.10)"/>
+        <text x="77" y="62" text-anchor="middle" font-size="11.5" fill="rgba(255,255,255,.72)">本月已发</text>
+        <text x="77" y="98" text-anchor="middle" font-size="32" font-weight="700" fill="#FFCA28">25</text>
+        <text x="77" y="116" text-anchor="middle" font-size="11.5" fill="rgba(255,255,255,.72)">条短信</text>
+        <line x1="42" y1="130" x2="112" y2="130" stroke="rgba(255,255,255,.22)" stroke-width="1"/>
+        <text x="77" y="152" text-anchor="middle" font-size="12" fill="rgba(255,255,255,.92)">0.8 元 / 条</text>
+        <text x="77" y="172" text-anchor="middle" font-size="10.5" fill="rgba(255,255,255,.6)">账单 20.00 元</text>
+
+        <text x="168" y="46" font-size="12.5" fill="rgba(255,255,255,.86)">8 × 25 = 200，那 0.8 × 25 是几？</text>
+
+        <rect x="168" y="60" width="82" height="46" rx="9" fill="rgba(255,255,255,.10)" stroke="rgba(255,255,255,.30)" stroke-width="1.2"/>
+        <text x="209" y="91" text-anchor="middle" font-size="22" font-weight="700" fill="rgba(255,255,255,.72)">2</text>
+
+        <rect x="262" y="60" width="82" height="46" rx="9" fill="#FFB300" stroke="#FFD54F" stroke-width="1.6"/>
+        <text x="303" y="91" text-anchor="middle" font-size="22" font-weight="700" fill="#1A2A33">20</text>
+
+        <rect x="356" y="60" width="82" height="46" rx="9" fill="rgba(255,255,255,.10)" stroke="rgba(255,255,255,.30)" stroke-width="1.2"/>
+        <text x="397" y="91" text-anchor="middle" font-size="22" font-weight="700" fill="rgba(255,255,255,.72)">200</text>
+
+        <text x="168" y="136" font-size="11.5" fill="rgba(255,255,255,.72)">0.8 元不到 1 元，25 条最多 25 元</text>
+        <text x="168" y="156" font-size="11.5" fill="rgba(255,255,255,.72)">200 元 = 一条 8 元，一眼就不对</text>
+
+        <line x1="168" y1="172" x2="438" y2="172" stroke="rgba(255,255,255,.22)" stroke-width="1"/>
+        <text x="168" y="192" font-size="12" fill="#FFD54F">差的这十倍，出在小数点上</text>
+      </g>
+    </svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先答三道，凭感觉</h2>
+  <p class="quiz-hint">这三道不看你会不会算小数，只看你对「钱」有没有数。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 一支笔 3 元，买 4 支一共多少钱？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>7 元</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>12 元</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>34 元</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 8 × 25 = 200。那么 0.8 × 25 大约是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>2 元</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>20 元</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>200 元</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 一集动画 24 分钟，用 1.5 倍速看完要多久？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>36 分钟</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>16 分钟</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>25.5 分钟</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 一条 0.8 元，25 条扣了 20 元 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">一条 0.8 元，25 条扣了 20 元</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 400 250" width="400" height="250" role="img" aria-label="话费明细：单价 0.8 元一条，25 条，8 乘 25 得 200，200 个 0.1 是 20，实扣 20 元">
+      <g font-family="sans-serif">
+        <rect x="10" y="8" width="380" height="234" rx="10" fill="#FDFEFF" stroke="#CFE3EC" stroke-width="1.6"/>
+        <text x="26" y="33" font-size="13" font-weight="700" fill="#01579B">话费明细 · 短信</text>
+        <text x="374" y="33" text-anchor="end" font-size="11.5" fill="#6B8A99">本月</text>
+
+        <text x="26" y="66" font-size="13" fill="#0D2B3E">单价</text>
+        <text x="374" y="66" text-anchor="end" font-size="13" font-weight="700" fill="#0D2B3E">0.8 元 / 条</text>
+        <text x="26" y="94" font-size="13" fill="#0D2B3E">条数</text>
+        <text x="374" y="94" text-anchor="end" font-size="13" font-weight="700" fill="#0D2B3E">25 条</text>
+
+        <line x1="26" y1="108" x2="374" y2="108" stroke="#DCEBF2" stroke-width="1.2"/>
+
+        <text x="26" y="136" font-size="12.5" fill="#8FA6B2">先按整数算</text>
+        <text x="374" y="136" text-anchor="end" font-size="13" fill="#8FA6B2" text-decoration="line-through">8 × 25 = 200 元</text>
+
+        <text x="26" y="166" font-size="12.5" fill="#01579B" font-weight="700">再按 0.1 还原</text>
+        <text x="374" y="166" text-anchor="end" font-size="14" font-weight="700" fill="#0277BD">200 × 0.1 = 20 元</text>
+
+        <line x1="26" y1="180" x2="374" y2="180" stroke="#DCEBF2" stroke-width="1.2"/>
+
+        <rect x="26" y="192" width="348" height="38" rx="8" fill="#FFF8E1" stroke="#FFE082" stroke-width="1.2"/>
+        <text x="42" y="216" font-size="13" fill="#7A5B00">实扣</text>
+        <text x="358" y="217" text-anchor="end" font-size="17" font-weight="700" fill="#E65100">20.00 元</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    短信一条 0.8 元，这个月发了 25 条。账单一共扣 20 元。
+  </p>
+  <p class="teach-text" id="p2s2">
+    可 8 × 25 = 200，怎么少了整整十倍？差的那十倍，就藏在小数点上。
+  </p>
+  <p class="teach-text" id="p2s3">
+    0.8 不是 8，是 8 个 0.1。8 个 0.1 乘 25，得到 200 个 0.1，也就是 20。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>整数那步没变</h4>
+    <div class="eq">8 × 25 = 200</div>
+    <p>这一步四年级就熟了，照旧算。</p>
+  </div>
+  <div class="card">
+    <h4>0.8 是 8 个 0.1</h4>
+    <div class="eq">0.8 = 8 × 0.1</div>
+    <p>乘出来的 200，单位是 0.1，不是 1。</p>
+  </div>
+  <div class="card">
+    <h4>200 个 0.1</h4>
+    <div class="eq">200 × 0.1 = 20</div>
+    <p>小数点往左挪一位，20 元就对上了。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  小数乘法不是新算法，是<strong>整数乘法加一道「小数点归位」</strong>。归几位，由两个因数的小数位数决定。
+</div>
+</section>
+
+<!-- ===== p3: 先当成整数乘，再数小数位数 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">先当成整数乘，再数小数位数</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 420 246" width="424" height="248" role="img" aria-label="0.8 乘 25：先把 0.8 当 8，8 乘 25 得 200；0.8 一位小数、25 零位，合计一位；从右数一位点小数点得 20.0，即 20">
+      <g font-family="sans-serif">
+        <text x="16" y="24" font-size="13" font-weight="700" fill="#01579B">① 先把 0.8 当成 8，按整数乘</text>
+
+        <text x="210" y="66" text-anchor="middle" font-size="26" font-weight="700" fill="#0D2B3E">8 × 25 = 200</text>
+
+        <line x1="16" y1="84" x2="404" y2="84" stroke="#DCEBF2" stroke-width="1.2"/>
+
+        <text x="16" y="110" font-size="13" font-weight="700" fill="#01579B">② 数一数两个因数一共几位小数</text>
+
+        <rect x="16" y="120" width="112" height="40" rx="7" fill="#E1F5FE" stroke="#81D4FA" stroke-width="1.2"/>
+        <text x="72" y="145" text-anchor="middle" font-size="13" fill="#01579B">0.8 · <tspan font-weight="700">1 位</tspan></text>
+
+        <rect x="140" y="120" width="112" height="40" rx="7" fill="#EEF4F7" stroke="#CFE3EC" stroke-width="1.2"/>
+        <text x="196" y="145" text-anchor="middle" font-size="13" fill="#6B8A99">25 · <tspan font-weight="700">0 位</tspan></text>
+
+        <rect x="264" y="120" width="140" height="40" rx="7" fill="#FFF8E1" stroke="#FFCA28" stroke-width="1.4"/>
+        <text x="334" y="145" text-anchor="middle" font-size="13" font-weight="700" fill="#B26A00">合计 1 位</text>
+
+        <text x="16" y="186" font-size="13" font-weight="700" fill="#01579B">③ 从右边起数 1 位，点上小数点</text>
+
+        <text x="78" y="228" font-size="30" font-weight="700" fill="#0D2B3E">2</text>
+        <text x="118" y="228" font-size="30" font-weight="700" fill="#0D2B3E">0</text>
+        <text x="158" y="228" font-size="30" font-weight="700" fill="#0D2B3E">0</text>
+        <circle cx="138" cy="232" r="4.6" fill="#C62828"/>
+        <line x1="138" y1="200" x2="138" y2="224" stroke="#C62828" stroke-width="1.4" stroke-dasharray="4 3"/>
+
+        <text x="196" y="228" font-size="20" fill="#6B8A99">→</text>
+        <text x="240" y="228" font-size="26" font-weight="700" fill="#E65100">20.0</text>
+        <text x="316" y="228" font-size="20" fill="#6B8A99">=</text>
+        <text x="352" y="228" font-size="26" font-weight="700" fill="#E65100">20</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    把 0.8 看成 8，25 不变，先算 8 × 25 = 200。
+  </p>
+  <p class="teach-text" id="p3s2">
+    0.8 有 1 位小数，25 有 0 位，合起来 1 位。从 200 的右边起数 1 位点上小数点：20.0，就是 20。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>第一步</strong>：两个因数都当整数，按整数乘法算</li>
+  <li><strong>第二步</strong>：数一数两个因数<strong>一共</strong>几位小数</li>
+  <li><strong>第三步</strong>：从积的右边起，数出同样多位，点上小数点</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  积的小数位数 = 两个因数小数位数之<strong>和</strong>。不是取多的那个，也不是都按一位算。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">这些算式，积各是多少</h2>
+<p class="teach-text" id="p3bs1">都走同一条路：先整数乘，再看一共几位小数。算出来再连线。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 那两步站稳了吗</h2>
+  <p class="quiz-hint">三道题只考「先整数乘」和「数位数」。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 0.8 × 25，先按整数算 8 × 25，得多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>200</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>20</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>2000</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 0.8 和 25 一共几位小数？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>0 位</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>1 位</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>2 位</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 2.5 × 4 的积是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>10</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>100</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 位数不够补 0，末尾的 0 可以划掉 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">位数不够补 0，末尾的 0 可以划掉</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+    <svg viewBox="0 0 420 246" width="424" height="248" role="img" aria-label="左边 0.25 乘 8 得 200，点两位小数是 2.00，末尾两个 0 划掉得 2；右边 0.2 乘 0.3 得 6，点两位小数要补一个 0 变成 0.06">
+      <g font-family="sans-serif">
+        <rect x="8" y="8" width="196" height="230" rx="9" fill="#F4FAFD" stroke="#CFE3EC" stroke-width="1.4"/>
+        <text x="106" y="34" text-anchor="middle" font-size="13" font-weight="700" fill="#01579B">末尾的 0 划掉</text>
+        <text x="106" y="62" text-anchor="middle" font-size="14" fill="#0D2B3E">0.25 × 8</text>
+        <text x="106" y="92" text-anchor="middle" font-size="13" fill="#6B8A99">25 × 8 = 200</text>
+        <text x="106" y="120" text-anchor="middle" font-size="12.5" fill="#6B8A99">两位小数</text>
+        <text x="106" y="152" text-anchor="middle" font-size="22" font-weight="700" fill="#0D2B3E">2.00</text>
+        <line x1="86" y1="146" x2="140" y2="146" stroke="#C62828" stroke-width="1.8"/>
+        <text x="106" y="196" text-anchor="middle" font-size="24" font-weight="700" fill="#E65100">2</text>
+        <text x="106" y="222" text-anchor="middle" font-size="11.5" fill="#6B8A99">大小没变，只是不写</text>
+
+        <rect x="216" y="8" width="196" height="230" rx="9" fill="#F4FAFD" stroke="#CFE3EC" stroke-width="1.4"/>
+        <text x="314" y="34" text-anchor="middle" font-size="13" font-weight="700" fill="#01579B">位数不够补 0</text>
+        <text x="314" y="62" text-anchor="middle" font-size="14" fill="#0D2B3E">0.2 × 0.3</text>
+        <text x="314" y="92" text-anchor="middle" font-size="13" fill="#6B8A99">2 × 3 = 6</text>
+        <text x="314" y="118" text-anchor="middle" font-size="12.5" fill="#6B8A99">两位小数，6 只占一位</text>
+        <text x="314" y="152" text-anchor="middle" font-size="20" font-weight="700" fill="#C62828">✗ 6</text>
+        <text x="314" y="196" text-anchor="middle" font-size="26" font-weight="700" fill="#E65100">0.06</text>
+        <text x="314" y="222" text-anchor="middle" font-size="11.5" fill="#6B8A99">前面补一个 0 占位</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    0.25 × 8：25 × 8 = 200，两位小数，从右边数两位 → 2.00。末尾两个 0 不写，就是 2。
+  </p>
+  <p class="teach-text" id="p5s2">
+    0.2 × 0.3：2 × 3 = 6，可要两位小数，6 只占一位，前面补一个 0 → 0.06。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>末尾去 0</h4>
+    <div class="eq">2.00 → 2</div>
+    <p>小数末尾的 0 不影响大小，写不写都对，习惯上划掉。</p>
+  </div>
+  <div class="card">
+    <h4>位数不足补 0</h4>
+    <div class="eq">6 → 0.06</div>
+    <p>小数点后左边不够位，要补 0 占位，少一个就错十倍。</p>
+  </div>
+  <div class="card">
+    <h4>补在点后</h4>
+    <div class="eq">0.5 × 0.2 = 0.10 = 0.1</div>
+    <p>5 × 2 = 10，两位小数 → 0.10，末尾 0 划掉。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  补 0 和划 0 都只<strong>占位</strong>，不改变大小。区别是：补在<strong>小数点后左边</strong>，划在<strong>最末尾</strong>。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">把小数点拖回家</h2>
+  <p class="sim-desc">中间这串数字是「当整数乘」算出来的积，红点还停在最右边。按「左移一位」把它挪回去，也可以直接点两个数字之间的缝。挪对位置，读数才等于真正的积。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">0.8 × 25 · 小数点在第 0 位</span>
+    <span class="sim-tip" id="simTip">还差 1 位</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simLeft()">小数点左移一位 ←</button>
+    <button class="btn-retry" onclick="simRight()">右移一位 →</button>
+    <button class="btn-retry" onclick="simBack()">归位</button>
+    <button class="btn-retry" onclick="simCase()">换一题</button>
+    <button class="btn-retry" onclick="simReset()">重来</button>
+    <button class="btn-retry" onclick="simDemo()">自动演示</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">中间那串数是整数乘出来的积，红点是小数点，点数字之间的缝也能挪</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>挪到正确位置时，右边读数变成了多少？</li>
+    <li>0.15 × 4 要挪几位？为什么比 0.8 × 25 多一位？</li>
+    <li>故意多挪一位，2.00 会变成 0.200，错在哪一步？</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 换成钱和公里，还认得吗</h2>
+  <p class="quiz-hint">数变了，位数还是加出来的。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 打车 2.4 元一公里，跑了 8.5 公里。先算 24 × 85 = 2040，小数点该点几位？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1 位</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>2 位</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3 位</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 2040 点上两位小数是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>2.04</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>20.40</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>204.0</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 0.2 × 0.3 的积是几位小数？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1 位</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>2 位</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3 位</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四个坑，掉进去就错十倍 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四个坑，掉进去就错十倍</h2>
+
+<div class="clearfix">
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>坑一：像加法一样对齐</h4>
+    <div class="eq">0.8 × 25 小数点对齐 ✗</div>
+    <p>对齐是加法、减法的规矩。乘法先把小数点扔一边，算完再数位数。</p>
+  </div>
+  <div class="card">
+    <h4>坑二：位数取多的那个</h4>
+    <div class="eq">0.8 × 0.5 点 1 位得 4 ✗</div>
+    <p>8 × 5 = 40，两位小数 → 0.40 = 0.4。取一位就放大十倍。</p>
+  </div>
+  <div class="card">
+    <h4>坑三：忘了补 0</h4>
+    <div class="eq">0.2 × 0.3 = 6 ✗</div>
+    <p>两位小数得写成 0.06。少补一个 0，答案就差十倍。</p>
+  </div>
+  <div class="card">
+    <h4>坑四：不算就交卷</h4>
+    <div class="eq">0.8 × 25 = 200 ✗</div>
+    <p>0.8 元不到 1 元，25 条不会超过 25 元。200 一眼就该被拦下来。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  算完做两件事：<strong>数位数</strong>管小数点在哪，<strong>估大小</strong>管结果离不离谱。两关都过才算完。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到话费单：0.8 一位、25 零位，8 × 25 = 200 点一位 → 20.0 = 20 元。估一下：25 条每条不到 1 元，20 元合理 ✓
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，换个价还能算吗</h2>
+  <p class="quiz-hint">数变了，路子不变。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 小数乘法的第一步做什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>把两个因数的小数点对齐</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>把两个因数都当整数乘</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>先数小数位数再乘</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 1.5 × 6 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>9</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>0.9</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>90</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 0.25 × 4 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>10</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>0.1</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 3.6 × 1.5 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5.4</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>54</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>0.54</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 一瓶水 1.5 元，买 12 瓶。先算 15 × 12 = 180，接下来怎么做？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>结果就是 180 元</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>点一位小数，得 18 元</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>点两位小数，得 1.8 元</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">是什么</div>
+        <div class="summary-v4-summary">先按整数乘，再点小数点</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>小数乘法 = 整数乘法 + 小数点归位。两个因数的小数点先不管，算完再安回去。</p>
+      <p>0.8 × 25 就是 8 × 25 = 200，再点一位得 20。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">为什么</div>
+        <div class="summary-v4-summary">0.8 是 8 个 0.1</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>0.8 不是 8，是 8 个 0.1。乘出来 200，单位是 0.1，所以是 20。</p>
+      <p>位数相加的道理也在这：一位小数乘一位小数，得到的是「百分之一」为单位，所以两位。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">怎么用</div>
+        <div class="summary-v4-summary">三步，一步都不能省</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>① 两个因数都当整数，乘出积。</p>
+      <p>② 数两个因数一共几位小数。</p>
+      <p>③ 从积的右边起数出同样多位，点上小数点；位数不够前面补 0，末尾多余的 0 划掉。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">易错</div>
+        <div class="summary-v4-summary">不对齐、不补 0、不估算</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>坑一：像加法一样把小数点对齐。</p>
+      <p>坑二：位数取多的那一个。</p>
+      <p>坑三：0.2 × 0.3 写成 6，忘了补 0。</p>
+      <p>坑四：0.8 × 25 算出 200 就交卷，没估大小。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  记住这一句：<strong>小数乘法 = 整数乘法 + 小数点归位</strong>；位数是加出来的，不是猜出来的。
+</p>
+</section>

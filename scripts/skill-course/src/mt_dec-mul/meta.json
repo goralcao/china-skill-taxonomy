@@ -1,0 +1,93 @@
+{
+  "topicId": "mt_dec-mul",
+  "title": "0.8 元一条，25 条为什么只扣 20 元？",
+  "template": "explain",
+  "renderer": "decMult",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 5,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S3:NA:NO"
+  ],
+  "prerequisites": [
+    "mt_dec-meaning",
+    "mt_mult-2digit"
+  ],
+  "next": [
+    "mt_dec-div"
+  ],
+  "objectives": [
+    "会把小数乘法先按整数乘出积，再按两个因数小数位数的和点小数点",
+    "遇到积的位数不够或末尾有多余的 0，会正确补 0 与划 0",
+    "会用「先估大小」检查积是否离谱，能把方法用到单价、路程等真实情境"
+  ],
+  "cognitiveAction": "变换",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "话费单",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "先当整数",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "补0去0",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}
