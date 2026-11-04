@@ -1,0 +1,569 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>186 + 97 + 214，怎么算才不用列竖式</h1>
+  <p class="sub">四年级数学 · 加法运算律</p>
+  <div class="tags">
+    <span class="tag">交换律</span>
+    <span class="tag">结合律</span>
+    <span class="tag">凑整</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 460 228" width="450" height="223" role="img" aria-label="三张数字卡 186、97、214，箭头表示可以把 97 和 214 换位置">
+      <g font-family="monospace" text-anchor="middle">
+        <rect x="26" y="30" width="112" height="76" rx="12" fill="#FFB74D"/>
+        <text x="82" y="80" font-size="30" font-weight="700" fill="#1A237E">186</text>
+        <rect x="152" y="30" width="112" height="76" rx="12" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-dasharray="6 5"/>
+        <text x="208" y="80" font-size="30" fill="#FFFFFF">97</text>
+        <rect x="278" y="30" width="112" height="76" rx="12" fill="none" stroke="#FFFFFF" stroke-width="1.8"/>
+        <text x="334" y="80" font-size="30" fill="#FFFFFF">214</text>
+
+        <path d="M208 122 C208 166, 334 166, 334 122" fill="none" stroke="#FFB74D" stroke-width="2.4"/>
+        <path d="M208 112 l-8 13 l16 0 z" fill="#FFB74D"/>
+        <path d="M334 112 l-8 13 l16 0 z" fill="#FFB74D"/>
+        <text x="271" y="194" font-size="15" fill="rgba(255,255,255,.92)">换一换位置</text>
+        <text x="271" y="216" font-size="13" fill="rgba(255,255,255,.72)">和一点没变，还是 497</text>
+      </g>
+    </svg>
+  </div>
+  <p style="font-size:20px;color:rgba(255,255,255,.92);max-width:620px;line-height:1.8;">
+    加法的数字可以搬家，搬完总数不变。<br>
+    <strong>把能凑成整百的两个先挪到一起，口算就出来了。</strong>
+  </p>
+  <p class="hint">点击右下角箭头开始 或 点击顶部导航跳转</p>
+  <a href="../../viz/index.html#t=mt_ops-laws-add" style="margin-top:16px;color:rgba(255,255,255,.78);font-size:16px;text-decoration:underline">← 回到知识图谱</a>
+</div>
+</section>
+
+<!-- ===== p1: 前测 ===== -->
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先答三道，凭感觉</h2>
+  <p class="quiz-hint">都是买东西、算钱时会碰到的判断。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 7 + 5 和 5 + 7，结果一样吗？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>一样，都是 12</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>不一样，7 + 5 更大</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>不一样，5 + 7 更大</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 12 − 5 和 5 − 12，结果一样吗？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>一样，都是 7</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>不一样，5 − 12 根本不够减</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>不一样，12 − 5 是 17</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 买三样东西：8 元、2 元、10 元。先算哪两个最快？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>8 和 2，正好凑 10 元</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>8 和 10，先算大的</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>2 和 10，顺序挨着</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 引入 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">186 + 97 + 214，怎么算才不列竖式</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 400 268" width="400" height="268" role="img" aria-label="三堆书，分别 186 本、97 本、214 本，下面一个大括号问一共多少本">
+      <g font-family="sans-serif">
+        <g>
+          <rect x="36" y="152" width="86" height="15" rx="3" fill="#3949AB"/>
+          <rect x="42" y="134" width="74" height="15" rx="3" fill="#5C6BC0"/>
+          <rect x="38" y="116" width="82" height="15" rx="3" fill="#7986CB"/>
+          <rect x="46" y="98" width="66" height="15" rx="3" fill="#9FA8DA"/>
+        </g>
+        <g>
+          <rect x="152" y="152" width="86" height="15" rx="3" fill="#F57C00"/>
+          <rect x="160" y="134" width="70" height="15" rx="3" fill="#FB8C00"/>
+          <rect x="154" y="116" width="80" height="15" rx="3" fill="#FFA726"/>
+        </g>
+        <g>
+          <rect x="268" y="152" width="90" height="15" rx="3" fill="#1A237E"/>
+          <rect x="274" y="134" width="78" height="15" rx="3" fill="#283593"/>
+          <rect x="270" y="116" width="86" height="15" rx="3" fill="#3949AB"/>
+          <rect x="278" y="98" width="70" height="15" rx="3" fill="#5C6BC0"/>
+        </g>
+
+        <g text-anchor="middle" font-weight="700">
+          <text x="79" y="192" font-size="19" fill="#283593">186</text>
+          <text x="195" y="192" font-size="19" fill="#E65100">97</text>
+          <text x="313" y="192" font-size="19" fill="#1A237E">214</text>
+        </g>
+        <g text-anchor="middle" font-size="12" fill="#78909C">
+          <text x="79" y="210">一班</text>
+          <text x="195" y="210">三班</text>
+          <text x="313" y="210">二班</text>
+        </g>
+
+        <path d="M30 222 C30 250, 200 252, 200 250 C200 252, 370 250, 370 222" fill="none" stroke="#B0BEC5" stroke-width="1.8"/>
+        <text x="200" y="266" text-anchor="middle" font-size="15" fill="#546E7A">一共 ? 本</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    口算比赛只给 1 分钟，谁先把三个班的捐书总数报出来，谁赢。三个数是 186、97、214。
+  </p>
+  <p class="teach-text" id="p2s2">
+    照着顺序来：186 + 97 = 283，个位 6 + 7 要进位；再 283 + 214 = 497，又要进位。两次都得在脑子里记，慢。
+  </p>
+  <p class="teach-text" id="p2s3">
+    换个眼：186 + 214 正好 400，一个零头都没有；再加 97，400 + 97 = 497，几乎不用算。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>从前往后</h4>
+    <div class="eq">186 + 97 = 283
+283 + 214 = 497</div>
+    <p>两次进位，脑子里要存一个中间数。</p>
+  </div>
+  <div class="card">
+    <h4>先凑整百</h4>
+    <div class="eq">186 + 214 = 400
+400 + 97 = 497</div>
+    <p>第一次就凑成整百，后面一眼出。</p>
+  </div>
+  <div class="card">
+    <h4>凭什么能换</h4>
+    <div class="eq">186 + 97 + 214
+= 186 + 214 + 97</div>
+    <p>凭加法有交换律。下一节说清楚。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  总数一样，只是<strong>先算谁</strong>变了。这一课就是把「能怎么换、为什么能换」说清楚。
+</div>
+</section>
+
+<!-- ===== p3: 交换律 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">两个数换位置，和一分不少</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 420 272" width="430" height="278" role="img" aria-label="两条同样长的彩条，186 与 214 换位置后总长不变，都是 400">
+      <g font-family="sans-serif">
+        <text x="20" y="26" font-size="12.5" fill="#90A4AE">换之前</text>
+        <rect x="20" y="36" width="177" height="52" rx="6" fill="#3949AB"/>
+        <rect x="197" y="36" width="203" height="52" rx="6" fill="#FFB74D"/>
+        <text x="108" y="68" text-anchor="middle" font-size="17" font-weight="700" fill="#FFFFFF">186</text>
+        <text x="298" y="68" text-anchor="middle" font-size="17" font-weight="700" fill="#1A237E">214</text>
+        <line x1="20" y1="100" x2="400" y2="100" stroke="#90A4AE" stroke-width="1.2"/>
+        <text x="210" y="118" text-anchor="middle" font-size="12.5" fill="#546E7A">一共 400</text>
+
+        <line x1="210" y1="128" x2="210" y2="184" stroke="#B0BEC5" stroke-width="1.8"/>
+        <path d="M210 126 l-7 11 l14 0 z" fill="#B0BEC5"/>
+        <path d="M210 186 l-7 -11 l14 0 z" fill="#B0BEC5"/>
+
+        <text x="20" y="190" font-size="12.5" fill="#90A4AE">换之后</text>
+        <rect x="20" y="200" width="203" height="52" rx="6" fill="#FFB74D"/>
+        <rect x="223" y="200" width="177" height="52" rx="6" fill="#3949AB"/>
+        <text x="121" y="232" text-anchor="middle" font-size="17" font-weight="700" fill="#1A237E">214</text>
+        <text x="311" y="232" text-anchor="middle" font-size="17" font-weight="700" fill="#FFFFFF">186</text>
+        <line x1="20" y1="264" x2="400" y2="264" stroke="#90A4AE" stroke-width="1.2"/>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    两条彩条拼起来还是那么长。数字换位置，长条一点没变，所以<strong>和也不变</strong>。
+  </p>
+  <p class="teach-text" id="p3s2">
+    这条规矩叫<strong>加法交换律</strong>：两个数相加，交换加数的位置，和不变。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>186 + 214 = 214 + 186 = 400</strong>　两边完全相等，不是「差不多」。</li>
+  <li><strong>减法不行</strong>：10 − 3 = 7，可 3 − 10 连减都不够减。能换位置的只有加法（乘法也行）。</li>
+  <li><strong>用处</strong>：把「好算的那一对」挪到前面，先算出整百，剩下的就轻松了。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  换的是<strong>整个数</strong>，不是它的某一位。186 搬过去还是 186，不能搬成 168。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：这个算式可以写成什么样</h2>
+<p class="teach-text" id="p3bs1">
+  左边每个算式，右边都有唯一一个「换了位置但结果一样」的写法。点左边一项，再点右边一项。
+</p>
+
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<!-- ===== p4: 中测1 ===== -->
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 换位置换对了吗</h2>
+  <p class="quiz-hint">三题都在问：能不能换、换成什么样。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 下面哪个算式和 38 + 62 的结果相等？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>62 − 38</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>62 + 38</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>38 × 62</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 42 + 58 + 60，先算哪两个最省事？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>42 + 58</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>58 + 60</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>42 + 60</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 下面哪个「换位置」是错的？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>15 + 25 = 25 + 15</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>40 − 15 = 15 − 40</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>8 + 92 = 92 + 8</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 结合律 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">三个数相加，先捆哪两个都一样</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+    <svg viewBox="0 0 420 288" width="430" height="292" role="img" aria-label="186 加 97 加 214，两种捆法结果都是 497">
+      <g font-family="monospace">
+        <text x="18" y="24" font-size="12" fill="#90A4AE" font-family="sans-serif">捆前两个</text>
+        <text x="18" y="52" font-size="18" fill="#1A237E" font-weight="700">(186 + 214) + 97</text>
+        <path d="M18 66 L18 74 L137 74 L137 66" fill="none" stroke="#FFB74D" stroke-width="2.2"/>
+        <text x="18" y="102" font-size="18" fill="#E65100">400 + 97</text>
+        <text x="18" y="132" font-size="18" fill="#2E7D32" font-weight="700">= 497</text>
+
+        <line x1="18" y1="152" x2="402" y2="152" stroke="#E0E5E8" stroke-width="1.2" stroke-dasharray="4 5"/>
+
+        <text x="18" y="180" font-size="12" fill="#90A4AE" font-family="sans-serif">捆后两个</text>
+        <text x="18" y="208" font-size="18" fill="#1A237E" font-weight="700">186 + (214 + 97)</text>
+        <path d="M83 222 L83 230 L191 230 L191 222" fill="none" stroke="#FFB74D" stroke-width="2.2"/>
+        <text x="18" y="258" font-size="18" fill="#E65100">186 + 311</text>
+        <text x="18" y="286" font-size="18" fill="#2E7D32" font-weight="700">= 497</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    三个数相加，可以先把前两个相加，也可以先把后两个相加。括号画在哪一对上，只是<strong>先算谁</strong>的记号。
+  </p>
+  <p class="teach-text" id="p5s2">
+    这条叫<strong>加法结合律</strong>。两条合起来用，三个数怎么排、怎么捆都随你，结果钉死在 497。
+  </p>
+</div>
+
+<ul class="feature-list" id="p5rules">
+  <li><strong>① 交换律</strong>：a + b = b + a　—— 两个数换位置。</li>
+  <li><strong>② 结合律</strong>：(a + b) + c = a + (b + c)　—— 三个数换捆法。</li>
+  <li><strong>③ 凑整口诀</strong>：先看个位，<strong>哪两个的个位加起来是 10</strong>，就把它们挪到一起。</li>
+</ul>
+
+<div class="key-box" id="p5key">
+  换之前先算一笔小账：<strong>换成哪一对，能凑出整十或整百？</strong>凑得出来的那一对，就是该先算的。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">点两张数字卡，交换位置，看和变不变</h2>
+  <p class="sim-desc">先点一张卡选中它，再点另一张，两张就互换。右上角的和从头到尾不会动，变的只有中间的算法。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">186 + 97 + 214</span>
+    <span class="sim-tip" id="simTip">先点第 2 张，再点第 3 张试试</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simHint()">告诉我该换哪两张</button>
+    <button class="btn-retry" onclick="simCase(1)">换一道题</button>
+    <button class="btn-retry" onclick="simReset()">重来</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">橙色粗框是选中的卡；两张卡的个位加起来是 10 时，下方会亮出「凑成整百」</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>不管把卡换成什么顺序，右上角的「和」动过吗？</li>
+    <li>哪种顺序，第一步就能凑成整百？</li>
+    <li>凑成整百的那一步，心算要进位吗？</li>
+    <li>如果三个数是 47、386、53，你会先换哪两张？</li>
+  </ul>
+</div>
+</section>
+
+<!-- ===== p7: 中测2 ===== -->
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 三个数怎么捆</h2>
+  <p class="quiz-hint">三题都在看：换成哪一对，算起来最轻。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. (37 + 63) + 45 和 37 + (63 + 45)，结果一样吗？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>一样，都是 145</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>不一样，前一个大</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>不一样，后一个大</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 128 + 275 + 72，先算哪两个最省事？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>128 + 275</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>275 + 72</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>128 + 72</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 99 + 1 + 46 按结合律，最好先算哪两个？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>99 + 1</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>1 + 46</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>99 + 46</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 易错辨析 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四个坑，第一个最常见</h2>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 把交换律用到减法上</h4>
+    <div class="wrong-num">✗ 40 − 15 写成 15 − 40</div>
+    <p>能换位置的只有加法和乘法。减法换了，答案连正负都变了。</p>
+  </div>
+
+  <div class="card">
+    <h4>② 搬家搬错了数</h4>
+    <div class="wrong-num">✗ 186 + 97 + 214 = 186 + 214 + 79</div>
+    <p>换的是整个数。97 挪过去还是 97，不是 79。抄错一位，和就差了 18。</p>
+  </div>
+
+  <div class="card">
+    <h4>③ 只会换，不会凑</h4>
+    <div class="wrong-num">✗ 186 + 214 + 97 → 214 + 186 + 97</div>
+    <p>换了等于没换，第一步还是要进位。换的目的是凑整，不是练手速。</p>
+  </div>
+
+  <div class="card">
+    <h4>④ 硬凑整，把数拆散</h4>
+    <div class="wrong-num">✗ 97 想凑 100，从 214 里借 3</div>
+    <p>214 一拆就变成 211 和 3，三个数变四个数，越算越乱。凑整是找现成的一对，不是硬借。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  换之前问自己三句：<strong>这几个都是加法吗？整个数搬对了吗？搬完能凑出整百吗？</strong>
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到捐书：186 + 97 + 214。三个数全是加法 → 把 214 挪到 97 前面 → 186 + 214 = 400，400 + 97 = 497。中间一次进位都没有。
+</p>
+</section>
+
+<!-- ===== p9: 后测 ===== -->
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，先看能不能凑整</h2>
+  <p class="quiz-hint">前四道判对错，最后一道算钱。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 186 + 97 + 214 等于多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>497</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>587</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>397</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 下面哪一条是加法结合律？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>a + b = b + a</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>(a + b) + c = a + (b + c)</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>a × b = b × a</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 46 + 189 + 54 等于多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>289</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>279</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>389</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 下面哪个算式不能把两个数换个位置？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>45 + 68</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>86 − 24</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>12 + 88</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 班级义卖三次收款 128 元、275 元、72 元。怎么算最快？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>128 + 72 = 200，再加 275 = 475 元</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>128 + 275 = 403，再加 72 = 475 元</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>275 + 72 = 347，再加 128 = 475 元</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">交换律</div>
+        <div class="summary-v4-summary">a + b = b + a</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">能换谁<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">加法和乘法能换位置<br>减法和除法不能<br>换的是整个数，不是某一位</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">结合律</div>
+        <div class="summary-v4-summary">(a+b)+c = a+(b+c)</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">先捆谁<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">三个数相加，先捆前两个<br>或先捆后两个，结果一样<br>括号只是「先算谁」的记号</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">凑整</div>
+        <div class="summary-v4-summary">个位凑 10 的先捆</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么找<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">看个位：6 和 4、7 和 3、8 和 2<br>186 + 214 凑 400<br>47 + 53 凑 100</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">避错</div>
+        <div class="summary-v4-summary">三问再动手</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么查<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">全是加法吗？<br>整个数搬对了吗？<br>搬完能凑出整百吗？</div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<p class="teach-text" style="margin-top:18px;color:#1C2033;font-size:19px">
+  下次遇到连加，别急着从左往右按：先扫一眼个位，找到能凑整的那一对，把它们挪到一块儿。
+</p>
+</section>

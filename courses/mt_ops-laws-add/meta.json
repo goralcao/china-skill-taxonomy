@@ -1,10 +1,10 @@
 {
   "topicId": "mt_ops-laws-add",
-  "title": "加法运算律：交换与结合",
+  "title": "186 + 97 + 214，怎么算才不用列竖式",
   "template": "explain",
   "renderer": "law",
-  "duration": 11,
-  "interactions": 2,
+  "duration": 24,
+  "interactions": 16,
   "grade": 4,
   "subject": "数学",
   "standards": [
@@ -14,18 +14,79 @@
     "mt_addsub-10000"
   ],
   "next": [
-    "mt_ops-laws-mul",
-    "mt_dec-addsub2"
+    "mt_ops-laws-mul"
   ],
   "objectives": [
-    "理解加法交换律：交换两个加数位置和不变",
-    "理解加法结合律：先加哪两个和不变，并能用来凑整",
-    "会用字母 a+b=b+a、(a+b)+c=a+(b+c) 表示规律"
+    "理解加法交换律：两个数相加，交换位置和不变",
+    "理解加法结合律：三个数相加，先捆哪两个都一样",
+    "会用凑整的方法做连加口算，并说清为什么可以换位置"
   ],
   "cognitiveAction": "变换",
   "status": "reviewed",
   "author": "goral.cao",
   "license": "CC-BY-SA-4.0",
-  "version": "1.0.0",
-  "updatedAt": "2026-10-27"
+  "version": "3.0.0",
+  "updatedAt": "2026-11-04",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "捐书总数",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "交换律",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "结合律",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
 }
