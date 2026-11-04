@@ -1,0 +1,91 @@
+{
+  "topicId": "mt_position-pairs",
+  "title": "票上写 8 排 5 号，数对为什么写 (5, 8)？",
+  "template": "explain",
+  "renderer": "coords",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 5,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S2:GG:PM"
+  ],
+  "prerequisites": [
+    "mt_num-100-recognition",
+    "mt_position-basic"
+  ],
+  "next": [],
+  "objectives": [
+    "会用数对表示方格纸上点的位置，知道前一个数是列、后一个数是行",
+    "能从「第几列第几行」写出数对，也能从数对说出位置，并把两者互换",
+    "发现同一列第一个数相同、同一行第二个数相同，会用数对解释座位表与柜格编号"
+  ],
+  "cognitiveAction": "构造",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "电影票",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "先列后行",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "行列规律",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}
