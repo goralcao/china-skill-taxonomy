@@ -1,0 +1,617 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>20 米的小路，每 5 米栽一棵，要栽几棵？</h1>
+  <p class="sub">五年级数学 · 植树问题</p>
+  <div class="tags">
+    <span class="tag">间隔数与棵数</span>
+    <span class="tag">两端栽不栽</span>
+    <span class="tag">画图再算</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 470 210" width="480" height="214" role="img" aria-label="一条 20 米的小路，每隔 5 米栽一棵树，两端都栽，一共 5 棵">
+      <g font-family="sans-serif">
+        <text x="235" y="13" text-anchor="middle" font-size="13" fill="rgba(255,255,255,.82)">20 米的路，每 5 米一棵，要栽几棵？</text>
+
+        <rect x="30" y="150" width="410" height="16" rx="4" fill="rgba(255,255,255,.22)"/>
+        <line x1="30" y1="158" x2="440" y2="158" stroke="rgba(255,255,255,.55)" stroke-width="1.4" stroke-dasharray="8 6"/>
+
+        <g>
+          <line x1="40" y1="150" x2="40" y2="112" stroke="#8D6E63" stroke-width="5"/>
+          <circle cx="40" cy="96" r="17" fill="#66BB6A"/>
+          <circle cx="33" cy="104" r="12" fill="#4CAF50"/>
+          <circle cx="48" cy="103" r="11" fill="#81C784"/>
+        </g>
+        <g>
+          <line x1="142" y1="150" x2="142" y2="112" stroke="#8D6E63" stroke-width="5"/>
+          <circle cx="142" cy="96" r="17" fill="#66BB6A"/>
+          <circle cx="135" cy="104" r="12" fill="#4CAF50"/>
+          <circle cx="150" cy="103" r="11" fill="#81C784"/>
+        </g>
+        <g>
+          <line x1="244" y1="150" x2="244" y2="112" stroke="#8D6E63" stroke-width="5"/>
+          <circle cx="244" cy="96" r="17" fill="#66BB6A"/>
+          <circle cx="237" cy="104" r="12" fill="#4CAF50"/>
+          <circle cx="252" cy="103" r="11" fill="#81C784"/>
+        </g>
+        <g>
+          <line x1="346" y1="150" x2="346" y2="112" stroke="#8D6E63" stroke-width="5"/>
+          <circle cx="346" cy="96" r="17" fill="#66BB6A"/>
+          <circle cx="339" cy="104" r="12" fill="#4CAF50"/>
+          <circle cx="355" cy="103" r="11" fill="#81C784"/>
+        </g>
+        <g>
+          <line x1="430" y1="150" x2="430" y2="112" stroke="#8D6E63" stroke-width="5"/>
+          <circle cx="430" cy="96" r="17" fill="#66BB6A"/>
+          <circle cx="423" cy="104" r="12" fill="#4CAF50"/>
+          <circle cx="439" cy="103" r="11" fill="#81C784"/>
+        </g>
+
+        <text x="40" y="182" text-anchor="middle" font-size="10.5" fill="rgba(255,255,255,.7)">0</text>
+        <text x="142" y="182" text-anchor="middle" font-size="10.5" fill="rgba(255,255,255,.7)">5</text>
+        <text x="244" y="182" text-anchor="middle" font-size="10.5" fill="rgba(255,255,255,.7)">10</text>
+        <text x="346" y="182" text-anchor="middle" font-size="10.5" fill="rgba(255,255,255,.7)">15</text>
+        <text x="430" y="182" text-anchor="middle" font-size="10.5" fill="rgba(255,255,255,.7)">20 米</text>
+
+        <text x="235" y="34" text-anchor="middle" font-size="12.5" fill="#FFCA28">4 段间隔，两头各一棵 → 5 棵</text>
+        <text x="235" y="52" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.7)">棵数总比间隔数多 1</text>
+      </g>
+    </svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先答三道，凭感觉</h2>
+  <p class="quiz-hint">三道题都关于「一根绳子剪几刀」这类事。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 一根 10 米长的绳子，每 2 米剪一段，能剪几段？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>4 段</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>5 段</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>6 段</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 一根绳子剪 3 刀，能剪成几段？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>3 段</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>4 段</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>6 段</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 在一条 20 米的小路一侧栽树，每隔 5 米一棵，两头都栽。树会超过 4 棵吗？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>会，比 4 棵多</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>正好 4 棵</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>比 4 棵少</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 20 米分 4 段，两头各一棵 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">20 米分 4 段，两头各一棵</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 400 250" width="400" height="250" role="img" aria-label="20 米的小路每 5 米分一段，共 4 段；两端都栽树，一共 5 棵">
+      <g font-family="sans-serif">
+        <text x="12" y="20" font-size="12.5" font-weight="700" fill="#01579B">先分间隔，再数树</text>
+        <text x="388" y="20" text-anchor="end" font-size="11" fill="#4FC3F7">20 米 · 每 5 米一棵</text>
+
+        <rect x="24" y="88" width="352" height="14" rx="4" fill="#E1F5FE" stroke="#81D4FA" stroke-width="1.2"/>
+        <g stroke="#0288D1" stroke-width="1.4" stroke-dasharray="4 3">
+          <line x1="24" y1="76" x2="24" y2="112"/>
+          <line x1="112" y1="76" x2="112" y2="112"/>
+          <line x1="200" y1="76" x2="200" y2="112"/>
+          <line x1="288" y1="76" x2="288" y2="112"/>
+          <line x1="376" y1="76" x2="376" y2="112"/>
+        </g>
+        <text x="68" y="132" text-anchor="middle" font-size="10.5" fill="#0288D1">5 米</text>
+        <text x="156" y="132" text-anchor="middle" font-size="10.5" fill="#0288D1">5 米</text>
+        <text x="244" y="132" text-anchor="middle" font-size="10.5" fill="#0288D1">5 米</text>
+        <text x="332" y="132" text-anchor="middle" font-size="10.5" fill="#0288D1">5 米</text>
+
+        <g fill="#66BB6A" stroke="#2E7D32" stroke-width="1.2">
+          <circle cx="24" cy="60" r="13"/><circle cx="112" cy="60" r="13"/>
+          <circle cx="200" cy="60" r="13"/><circle cx="288" cy="60" r="13"/>
+          <circle cx="376" cy="60" r="13"/>
+        </g>
+        <text x="200" y="44" text-anchor="middle" font-size="10.5" fill="#2E7D32">树 5 棵（两端都栽）</text>
+
+        <rect x="24" y="150" width="352" height="34" rx="7" fill="#E1F5FE"/>
+        <text x="200" y="172" text-anchor="middle" font-size="12.5" font-weight="700" fill="#01579B">20 ÷ 5 = 4 段</text>
+
+        <rect x="24" y="194" width="352" height="40" rx="8" fill="#FFF8E1" stroke="#FFCA28" stroke-width="1.4"/>
+        <text x="200" y="220" text-anchor="middle" font-size="14" font-weight="700" fill="#B26A00">4 + 1 = 5 棵</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    一条 20 米的小路一侧栽树，每隔 5 米一棵，树苗 12 元一棵，两端都要栽。先算能分几段：20 ÷ 5 = 4 段。
+  </p>
+  <p class="teach-text" id="p2s2">
+    一棵树管一段的起点。4 段有 4 个起点，可路的末端还得多栽一棵，所以是 4 + 1 = 5 棵。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>先求间隔数</h4>
+    <div class="eq">20 ÷ 5 = 4</div>
+    <p>路被分成 4 段，这就是间隔数。</p>
+  </div>
+  <div class="card">
+    <h4>两端都栽</h4>
+    <div class="eq">4 + 1 = 5</div>
+    <p>起点一棵、终点一棵，比段数多 1。</p>
+  </div>
+  <div class="card">
+    <h4>画图核对</h4>
+    <div class="eq">●—●—●—●—●</div>
+    <p>数一数，5 个点、4 段线。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  植树问题先算<strong>间隔数</strong>，再看<strong>两端栽不栽</strong>。算错的多半是忘了这一步加减。
+</div>
+</section>
+
+<!-- ===== p3: 同样 4 段，栽法不同棵数不同 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">同样 4 段，栽法不同棵数不同</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 420 246" width="424" height="248" role="img" aria-label="同样 20 米路每 5 米一棵，两端都栽是 5 棵，只栽一端是 4 棵，两端都不栽是 3 棵">
+      <g font-family="sans-serif">
+        <text x="14" y="22" font-size="12.5" font-weight="700" fill="#01579B">同样 4 段，栽法不同，棵数不同</text>
+
+        <g stroke="#B0BEC5" stroke-width="1.2">
+          <line x1="30" y1="58" x2="400" y2="58"/>
+          <line x1="30" y1="126" x2="400" y2="126"/>
+          <line x1="30" y1="194" x2="400" y2="194"/>
+        </g>
+
+        <g fill="#66BB6A" stroke="#2E7D32" stroke-width="1.1">
+          <circle cx="30" cy="44" r="11"/><circle cx="122" cy="44" r="11"/>
+          <circle cx="214" cy="44" r="11"/><circle cx="306" cy="44" r="11"/><circle cx="398" cy="44" r="11"/>
+        </g>
+        <text x="214" y="26" text-anchor="middle" font-size="11" fill="#2E7D32">两端都栽</text>
+        <text x="214" y="74" text-anchor="middle" font-size="11" font-weight="700" fill="#01579B">4 + 1 = 5 棵</text>
+
+        <g fill="#66BB6A" stroke="#2E7D32" stroke-width="1.1">
+          <circle cx="30" cy="112" r="11"/><circle cx="122" cy="112" r="11"/>
+          <circle cx="214" cy="112" r="11"/><circle cx="306" cy="112" r="11"/>
+        </g>
+        <circle cx="398" cy="112" r="11" fill="#FFFFFF" stroke="#B0BEC5" stroke-width="1.2" stroke-dasharray="3 3"/>
+        <text x="214" y="94" text-anchor="middle" font-size="11" fill="#2E7D32">只栽一端</text>
+        <text x="214" y="142" text-anchor="middle" font-size="11" font-weight="700" fill="#01579B">4 棵（4 + 0）</text>
+
+        <g fill="#66BB6A" stroke="#2E7D32" stroke-width="1.1">
+          <circle cx="122" cy="180" r="11"/><circle cx="214" cy="180" r="11"/><circle cx="306" cy="180" r="11"/>
+        </g>
+        <circle cx="30" cy="180" r="11" fill="#FFFFFF" stroke="#B0BEC5" stroke-width="1.2" stroke-dasharray="3 3"/>
+        <circle cx="398" cy="180" r="11" fill="#FFFFFF" stroke="#B0BEC5" stroke-width="1.2" stroke-dasharray="3 3"/>
+        <text x="214" y="162" text-anchor="middle" font-size="11" fill="#2E7D32">两端都不栽</text>
+        <text x="214" y="210" text-anchor="middle" font-size="11" font-weight="700" fill="#01579B">4 − 1 = 3 棵</text>
+
+        <text x="210" y="234" text-anchor="middle" font-size="10.5" fill="#4FC3F7">间隔数永远是 4，变的只是两头栽不栽</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    两端都栽：4 + 1 = 5 棵。只栽一端：4 棵，另一头不栽就不加。
+  </p>
+  <p class="teach-text" id="p3s2">
+    两端都不栽：4 − 1 = 3 棵，两头都空着，各少一棵。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>两端都栽</strong>：棵数 = 间隔数 + 1</li>
+  <li><strong>只栽一端</strong>：棵数 = 间隔数</li>
+  <li><strong>两端都不栽</strong>：棵数 = 间隔数 − 1</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  间隔数只有一个算法（总长 ÷ 间隔长），<strong>变的是两头栽不栽</strong>。判断清楚再加一、减一。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">总长和间隔配一对，棵数就对上了</h2>
+<p class="teach-text" id="p3bs1">全都按「两端都栽」算，先求间隔数，再加 1。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 先求间隔，再定加减</h2>
+  <p class="quiz-hint">三道题都只考「间隔数」和「两端」。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 20 米的路每 5 米一棵，能分成几段？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>4 段</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>5 段</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3 段</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 4 段的路，两端都栽，一共几棵？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>4 棵</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>5 棵</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3 棵</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 两端都不栽时，4 段的路要栽几棵？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5 棵</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>4 棵</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3 棵</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 围成圈、锯木头，都是同一件事 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">围成圈、锯木头，都是同一件事</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+    <svg viewBox="0 0 420 246" width="424" height="248" role="img" aria-label="圆形花坛一周栽树，棵数等于间隔数；锯木头锯 3 次得 4 段">
+      <g font-family="sans-serif">
+        <text x="14" y="22" font-size="12.5" font-weight="700" fill="#01579B">围成一圈，或多锯一刀</text>
+
+        <g transform="translate(96,120)">
+          <circle cx="0" cy="0" r="66" fill="none" stroke="#B0BEC5" stroke-width="1.4"/>
+          <g fill="#66BB6A" stroke="#2E7D32" stroke-width="1.1">
+            <circle cx="0" cy="-66" r="11"/><circle cx="57" cy="-33" r="11"/>
+            <circle cx="57" cy="33" r="11"/><circle cx="0" cy="66" r="11"/>
+            <circle cx="-57" cy="33" r="11"/><circle cx="-57" cy="-33" r="11"/>
+          </g>
+          <text x="0" y="4" text-anchor="middle" font-size="11" fill="#2E7D32">6 段</text>
+          <text x="0" y="20" text-anchor="middle" font-size="11" font-weight="700" fill="#01579B">6 棵</text>
+        </g>
+        <text x="96" y="214" text-anchor="middle" font-size="10.5" fill="#0288D1">围成一圈：棵数 = 间隔数</text>
+
+        <g transform="translate(232,60)">
+          <rect x="0" y="24" width="150" height="16" rx="3" fill="#DCEDC8" stroke="#7CB342" stroke-width="1.4"/>
+          <line x1="50" y1="18" x2="50" y2="46" stroke="#C62828" stroke-width="2" stroke-dasharray="4 3"/>
+          <line x1="100" y1="18" x2="100" y2="46" stroke="#C62828" stroke-width="2" stroke-dasharray="4 3"/>
+          <text x="25" y="66" text-anchor="middle" font-size="10" fill="#7CB342">1 段</text>
+          <text x="75" y="66" text-anchor="middle" font-size="10" fill="#7CB342">2 段</text>
+          <text x="125" y="66" text-anchor="middle" font-size="10" fill="#7CB342">3 段</text>
+          <text x="75" y="16" text-anchor="middle" font-size="10" fill="#C62828">锯 2 次</text>
+
+          <text x="75" y="104" text-anchor="middle" font-size="10.5" fill="#0288D1">锯的次数 + 1 = 段数</text>
+          <text x="75" y="126" text-anchor="middle" font-size="11" font-weight="700" fill="#01579B">2 + 1 = 3 段</text>
+        </g>
+
+        <text x="210" y="234" text-anchor="middle" font-size="10.5" fill="#4FC3F7">两头都接上了，就不用再 +1</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    围成一个圈时，最后一棵和第一棵重合了，所以棵数 = 间隔数，不用加 1。
+  </p>
+  <p class="teach-text" id="p5s2">
+    锯木头反过来想：锯 2 次得 3 段。次数 + 1 = 段数，跟「两端都栽」是一回事。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>围一圈</h4>
+    <div class="eq">棵数 = 间隔数</div>
+    <p>头尾重合，不加不减。</p>
+  </div>
+  <div class="card">
+    <h4>锯木头</h4>
+    <div class="eq">段数 = 次数 + 1</div>
+    <p>每锯一刀多一段。</p>
+  </div>
+  <div class="card">
+    <h4>上楼梯</h4>
+    <div class="eq">层数 = 段数 + 1</div>
+    <p>从 1 楼到 5 楼要走 4 层。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  这些题长着不同的脸，其实是同一件事：<strong>先数间隔，再看头尾要不要各算一个</strong>。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">在路上一棵一棵摆出来</h2>
+  <p class="sim-desc">路长固定，改间隔就能看到段数和棵数一起变；再切换「两端都栽 / 只栽一端 / 两端都不栽」，看棵数怎么加减。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">20 米 · 每 5 米一棵 · 两端都栽 → 5 棵</span>
+    <span class="sim-tip" id="simTip">4 段间隔，两端都栽 = 4 + 1</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simGapNext()">换个间隔</button>
+    <button class="btn-primary" onclick="simModeNext()">换栽法</button>
+    <button class="btn-retry" onclick="simRoadNext()">换条路</button>
+    <button class="btn-retry" onclick="simReset()">重来</button>
+    <button class="btn-retry" onclick="simDemo()">自动演示</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">下面是路，绿点是树；虚线是间隔线，中间标着间隔数</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>间隔从 5 米改成 4 米，段数变多还是变少？棵数呢？</li>
+    <li>同样 4 段，三种栽法各是几棵？</li>
+    <li>为什么围成一圈时，棵数正好等于间隔数？</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 换成圈和木头还算得对吗</h2>
+  <p class="quiz-hint">先想清楚「头尾要不要各算一个」。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 圆形花坛一圈 24 米，每 4 米栽一棵，要栽几棵？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>6 棵</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>7 棵</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>5 棵</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 一根木头锯成 4 段，要锯几次？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>3 次</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>4 次</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>5 次</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 从 1 楼走到 5 楼，一共走了几层楼梯？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5 层</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>4 层</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>6 层</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四个坑，一错就少一棵多一棵 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四个坑，一错就少一棵多一棵</h2>
+
+<div class="clearfix">
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>坑一：忘了加 1</h4>
+    <div class="eq">20 ÷ 5 = 4 棵 ✗</div>
+    <p>两端都栽还要加末端一棵，是 5 棵。</p>
+  </div>
+  <div class="card">
+    <h4>坑二：段数当棵数</h4>
+    <div class="eq">4 段就是 4 棵 ✗</div>
+    <p>段和棵不是一个东西，画一画就清楚了。</p>
+  </div>
+  <div class="card">
+    <h4>坑三：围一圈也加 1</h4>
+    <div class="eq">一圈 6 段栽 7 棵 ✗</div>
+    <p>头尾重合，棵数 = 间隔数 = 6。</p>
+  </div>
+  <div class="card">
+    <h4>坑四：单位没统一</h4>
+    <div class="eq">20 米 ÷ 5 分米 = 4 ✗</div>
+    <p>先换成同一单位：20 米 = 200 分米，200 ÷ 5 = 40 段。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  解这类题只做三步：<strong>统一单位 → 求间隔数 → 看两端</strong>。三步都过，棵数就不会错。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到小路：20 米每 5 米一棵，20 ÷ 5 = 4 段，两端都栽 4 + 1 = 5 棵。画图点数：●—●—●—●—●，正好 5 个点 ✓
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，换个场景还画得出图吗</h2>
+  <p class="quiz-hint">路灯、彩旗、楼梯，都是同一件事。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 两端都栽时，棵数和间隔数是什么关系？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>棵数 = 间隔数 + 1</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>棵数 = 间隔数</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>棵数 = 间隔数 − 1</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 一条 30 米的路，每 6 米一棵，两端都栽，共几棵？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5 棵</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>6 棵</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>7 棵</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 一条 40 米的路，每 8 米一棵，只栽一端，共几棵？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5 棵</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>6 棵</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>4 棵</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 圆形水池一周 36 米，每 6 米摆一盆花，要几盆？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5 盆</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>6 盆</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>7 盆</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 一条走廊两边都挂灯笼，每 4 米一个，走廊长 20 米，两端都挂。一共几个？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>6 个</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>10 个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>12 个</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">是什么</div>
+        <div class="summary-v4-summary">先数间隔，再看两头</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>间隔数 = 总长 ÷ 间隔长，这是唯一要算的除法。</p>
+      <p>棵数在间隔数上做加减：加 1、不加不减、减 1。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">为什么</div>
+        <div class="summary-v4-summary">一棵树管一段起点</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>每个间隔对应一个起点，最后一棵管末端，所以两端都栽要多 1。</p>
+      <p>围成圈时末端和起点重合，那多出来的 1 就没了。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">怎么用</div>
+        <div class="summary-v4-summary">三步走</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>① 统一单位。</p>
+      <p>② 求间隔数：总长 ÷ 间隔长。</p>
+      <p>③ 看两端：都栽 +1，一端 0，都不栽 −1。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">易错</div>
+        <div class="summary-v4-summary">忘加 1、段棵不分、圈里加 1、单位乱</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>坑一：20 ÷ 5 = 4 棵，忘了加末端。</p>
+      <p>坑二：把段数直接当棵数。</p>
+      <p>坑三：围成一圈还算 +1。</p>
+      <p>坑四：米和分米混着除。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  记住这一句：<strong>先求间隔数，再看两端栽不栽</strong>；画个图，加减就不会错。
+</p>
+</section>

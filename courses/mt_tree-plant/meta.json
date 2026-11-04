@@ -2,15 +2,15 @@
   "status": "reviewed",
   "author": "goral.cao",
   "license": "CC-BY-SA-4.0",
-  "version": "1.0.0",
-  "updatedAt": "2026-10-27",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
   "subject": "数学",
   "template": "explain",
   "topicId": "mt_tree-plant",
-  "title": "植树问题：棵数与间隔数差 1 吗？",
+  "title": "20 米的小路，每 5 米栽一棵，要栽几棵？",
   "renderer": "treePlant",
-  "duration": 11,
-  "interactions": 2,
+  "duration": 24,
+  "interactions": 16,
   "grade": 5,
   "standards": [
     "math-2022:S3:PP"
@@ -21,9 +21,71 @@
   ],
   "next": [],
   "objectives": [
-    "理解间隔数与棵数的关系",
-    "区分两端都栽、只栽一端、两端都不栽三种情况",
-    "会把植树问题的思路用到锯木头、上楼梯等问题"
+    "会用「先求间隔数、再看两端」的办法解决植树问题",
+    "分清两端都栽、只栽一端、两端都不栽三种情况的加减关系",
+    "能把同一规律用到围一圈、锯木头、上楼梯等变形情境"
   ],
-  "cognitiveAction": "比较"
+  "cognitiveAction": "构造",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "20米小路",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "三种栽法",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "围一圈",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
 }
