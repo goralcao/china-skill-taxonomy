@@ -1,0 +1,585 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>一张 12 厘米的纸对折，为什么剪一次就成了一对？</h1>
+  <p class="sub">四年级数学 · 轴对称</p>
+  <div class="tags">
+    <span class="tag">对称轴</span>
+    <span class="tag">对应点</span>
+    <span class="tag">补全另一半</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 470 210" width="480" height="214" role="img" aria-label="一个心形沿中间竖直对称轴左右完全重合，对应点 A 与 A 撇到对称轴一样远">
+      <g font-family="sans-serif">
+        <text x="235" y="18" text-anchor="middle" font-size="13" fill="rgba(255,255,255,.8)">沿中间这条线对折，两边完全重合</text>
+
+        <path d="M235 56 C200 36, 158 66, 158 108 C158 144, 200 164, 235 186 Z" fill="#F06292" stroke="#FFFFFF" stroke-width="2"/>
+        <path d="M235 56 C270 36, 312 66, 312 108 C312 144, 270 164, 235 186 Z" fill="#F8BBD0" stroke="#FFFFFF" stroke-width="2"/>
+
+        <line x1="235" y1="36" x2="235" y2="192" stroke="#FFB74D" stroke-width="2" stroke-dasharray="6 5"/>
+        <text x="235" y="206" text-anchor="middle" font-size="12.5" fill="#FFB74D" font-weight="700">对称轴</text>
+
+        <line x1="180" y1="112" x2="290" y2="112" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="4 4" opacity=".85"/>
+        <circle cx="180" cy="112" r="6" fill="#FFFFFF"/>
+        <circle cx="290" cy="112" r="6" fill="#FFFFFF"/>
+        <text x="180" y="100" text-anchor="middle" font-size="13" font-weight="700" fill="#FFFFFF">A</text>
+        <text x="290" y="100" text-anchor="middle" font-size="13" font-weight="700" fill="#FFFFFF">A′</text>
+        <text x="235" y="132" text-anchor="middle" font-size="11.5" fill="#FFE0B2">一样远</text>
+
+        <text x="60" y="60" font-size="13" fill="rgba(255,255,255,.9)">对折</text>
+        <text x="60" y="82" font-size="12" fill="rgba(255,255,255,.72)">A 压在 A′ 上</text>
+        <text x="368" y="60" font-size="13" fill="rgba(255,255,255,.9)">重合</text>
+        <text x="368" y="82" font-size="12" fill="rgba(255,255,255,.72)">一个点都不差</text>
+      </g>
+    </svg>
+  </div>
+  <p style="font-size:20px;color:rgba(255,255,255,.92);max-width:620px;line-height:1.8;">
+    折痕就是<strong>对称轴</strong>；对应点到它<strong>一样远</strong>。<br>
+    知道这一条，半张图也能补出整张。
+  </p>
+  <p class="hint">点击右下角箭头开始 或 点击顶部导航跳转</p>
+  <a href="../../viz/index.html#t=mt_symmetry" style="margin-top:16px;color:rgba(255,255,255,.78);font-size:16px;text-decoration:underline">← 回到知识图谱</a>
+</div>
+</section>
+
+<!-- ===== p1: 前测 ===== -->
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先答三道，凭感觉</h2>
+  <p class="quiz-hint">窗花、蝴蝶、校徽，都是折出来的。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 把纸对折后剪一个图案，展开后两边会怎样？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>沿折痕成轴对称，对折能完全重合</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>一边大一边小</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>左右错开，凑不到一起</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 正方形有几条对称轴？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>2 条</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>4 条</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>无数条</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 一般的平行四边形是轴对称图形吗？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>是，有 2 条对称轴</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>不是</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>是，有 4 条对称轴</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 对折剪纸（引入） ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">一张 12 厘米的正方形纸对折，剪一次能剪出几个一样的窗花？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 400 240" width="400" height="240" role="img" aria-label="折纸三步：正方形纸沿竖直中线对折、在折好的纸上剪半个蝴蝶、展开得到左右完全重合的一整只蝴蝶">
+      <g font-family="sans-serif">
+        <text x="66" y="20" text-anchor="middle" font-size="12.5" fill="#6A1B9A" font-weight="700">① 对折</text>
+        <rect x="26" y="32" width="80" height="80" rx="4" fill="#F3E5F5" stroke="#8E24AA" stroke-width="1.6"/>
+        <line x1="66" y1="26" x2="66" y2="118" stroke="#FFB74D" stroke-width="2" stroke-dasharray="5 4"/>
+        <path d="M70 40 q-28 8 -22 40" fill="none" stroke="#F06292" stroke-width="2" stroke-dasharray="4 3"/>
+
+        <path d="M118 72 L142 72" stroke="#90A4AE" stroke-width="2"/>
+        <path d="M142 72 l-8 -5 l0 10 z" fill="#90A4AE"/>
+
+        <text x="200" y="20" text-anchor="middle" font-size="12.5" fill="#6A1B9A" font-weight="700">② 剪半只</text>
+        <rect x="156" y="32" width="48" height="80" rx="4" fill="#FCE4EC" stroke="#8E24AA" stroke-width="1.6"/>
+        <path d="M204 44 C182 40, 168 60, 178 80 C186 96, 198 100, 204 106 Z" fill="#F06292"/>
+        <text x="204" y="126" text-anchor="middle" font-size="11.5" fill="#AD1457">只剪这一刀</text>
+
+        <path d="M228 72 L252 72" stroke="#90A4AE" stroke-width="2"/>
+        <path d="M252 72 l-8 -5 l0 10 z" fill="#90A4AE"/>
+
+        <text x="320" y="20" text-anchor="middle" font-size="12.5" fill="#6A1B9A" font-weight="700">③ 展开</text>
+        <line x1="320" y1="28" x2="320" y2="116" stroke="#FFB74D" stroke-width="1.8" stroke-dasharray="5 4"/>
+        <path d="M320 44 C298 40, 278 60, 290 80 C298 96, 312 100, 320 106 Z" fill="#F06292"/>
+        <path d="M320 44 C342 40, 362 60, 350 80 C342 96, 328 100, 320 106 Z" fill="#F8BBD0"/>
+
+        <rect x="26" y="152" width="348" height="70" rx="8" fill="#F3E5F5" stroke="#CE93D8" stroke-width="1.4"/>
+        <text x="40" y="176" font-size="13" fill="#6A1B9A" font-weight="700">折痕 = 对称轴</text>
+        <text x="40" y="200" font-size="12.5" fill="#31102B">沿它对折，两边能完全重合，就叫轴对称图形。</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    拿一张边长 12 厘米的正方形纸，沿中线对折，在折好的纸上剪一个半蝴蝶，展开就是一整只左右一样的蝴蝶。
+  </p>
+  <p class="teach-text" id="p2s2">
+    折痕就是<strong>对称轴</strong>。沿它对折两边完全重合，就叫轴对称图形。
+  </p>
+  <p class="teach-text" id="p2s3">
+    关键在「完全重合」：不是看着差不多，是每一个点都能在另一边找到一个正好压上去的点。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>对折</h4>
+    <div class="eq">1 条折痕</div>
+    <p>折痕就是对称轴，纸的两层叠在一起。</p>
+  </div>
+  <div class="card">
+    <h4>剪一刀</h4>
+    <div class="eq">半只蝴蝶</div>
+    <p>只剪一次，两层同时成形，省一半工夫。</p>
+  </div>
+  <div class="card">
+    <h4>展开</h4>
+    <div class="eq">A ↔ A′</div>
+    <p>对应点到折痕一样远，才能严丝合缝。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  判断办法只有一句：<strong>沿某条直线对折，两侧能不能完全重合</strong>。
+</div>
+</section>
+
+<!-- ===== p3: 对应点 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">对应点凭什么一定「一样远」？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 400 236" width="400" height="236" role="img" aria-label="对称图形上一对对应点 A 和 A 撇，连线垂直于对称轴且被轴平分，两段距离相等">
+      <g font-family="sans-serif">
+        <text x="200" y="18" text-anchor="middle" font-size="12.5" fill="#6A1B9A" font-weight="700">把 A 和 A′ 连起来看看</text>
+
+        <line x1="200" y1="28" x2="200" y2="206" stroke="#FFB74D" stroke-width="2" stroke-dasharray="6 5"/>
+        <text x="212" y="40" font-size="11.5" fill="#E65100" font-weight="700">对称轴</text>
+
+        <path d="M200 52 C160 46, 116 78, 116 122 C116 166, 160 190, 200 200 Z" fill="#F3E5F5" stroke="#8E24AA" stroke-width="1.8"/>
+        <path d="M200 52 C240 46, 284 78, 284 122 C284 166, 240 190, 200 200 Z" fill="#FCE4EC" stroke="#8E24AA" stroke-width="1.8"/>
+
+        <line x1="140" y1="120" x2="260" y2="120" stroke="#AD1457" stroke-width="1.8" stroke-dasharray="5 4"/>
+        <circle cx="140" cy="120" r="6" fill="#6A1B9A"/>
+        <circle cx="260" cy="120" r="6" fill="#F06292"/>
+        <text x="140" y="108" text-anchor="middle" font-size="14" font-weight="700" fill="#6A1B9A">A</text>
+        <text x="260" y="108" text-anchor="middle" font-size="14" font-weight="700" fill="#AD1457">A′</text>
+
+        <rect x="190" y="108" width="20" height="20" fill="none" stroke="#6A1B9A" stroke-width="1.6"/>
+        <text x="170" y="142" text-anchor="middle" font-size="12.5" fill="#AD1457" font-weight="700">3 厘米</text>
+        <text x="230" y="142" text-anchor="middle" font-size="12.5" fill="#AD1457" font-weight="700">3 厘米</text>
+        <text x="200" y="222" text-anchor="middle" font-size="12" fill="#2E7D32" font-weight="700">连线垂直于轴，且被轴平分</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    把图形上的点 A 和它在另一边的<strong>对应点 A′</strong> 连起来，这条连线一定垂直于对称轴，而且被对称轴从正中间切成两半。
+  </p>
+  <p class="teach-text" id="p3s2">
+    所以 A 到轴的距离 = A′ 到轴的距离。<strong>要补全另一半，只要把每个点翻到轴另一边、保持一样远</strong>，再依次连起来。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>① 连线垂直</strong>：A 与 A′ 的连线和对称轴成直角，量距离要沿这条线量。</li>
+  <li><strong>② 距离相等</strong>：对称轴正是 AA′ 的中垂线，两段一样长。</li>
+  <li><strong>③ 轴上点不动</strong>：落在对称轴上的点，翻过去还是它自己，补全时别重复画。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  找对应点别斜着数格子，<strong>沿垂直于对称轴的方向</strong>量过去才是最短距离。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：每个图形有几条对称轴</h2>
+<p class="teach-text" id="p3bs1">
+  左边是平面图形，右边是对折能重合的折痕条数。点左边一项，再点右边一项。
+</p>
+
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<!-- ===== p4: 中测1 ===== -->
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 对应点</h2>
+  <p class="quiz-hint">三题都在考：A 和 A′ 到底怎么配对。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 对应点 A 与 A′ 的连线，和对称轴是什么关系？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>平行</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>垂直</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>重合</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 点 A 到对称轴 3 厘米，它的对应点 A′ 到对称轴多远？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1.5 厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3 厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>6 厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 等腰三角形有几条对称轴？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1 条</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>2 条</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3 条</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 数对称轴 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">同一个图形，对称轴可能不止一条</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+    <svg viewBox="0 0 400 236" width="400" height="236" role="img" aria-label="正方形有 4 条对称轴、长方形有 2 条、圆有无数条，都画出了折痕">
+      <g font-family="sans-serif">
+        <text x="68" y="18" text-anchor="middle" font-size="12.5" fill="#6A1B9A" font-weight="700">正方形 4 条</text>
+        <rect x="28" y="34" width="80" height="80" fill="#F3E5F5" stroke="#8E24AA" stroke-width="1.8"/>
+        <g stroke="#FFB74D" stroke-width="1.5" stroke-dasharray="4 3">
+          <line x1="68" y1="28" x2="68" y2="120"/>
+          <line x1="22" y1="74" x2="114" y2="74"/>
+          <line x1="28" y1="34" x2="108" y2="114"/>
+          <line x1="108" y1="34" x2="28" y2="114"/>
+        </g>
+
+        <text x="200" y="18" text-anchor="middle" font-size="12.5" fill="#6A1B9A" font-weight="700">长方形 2 条</text>
+        <rect x="150" y="44" width="100" height="60" fill="#F3E5F5" stroke="#8E24AA" stroke-width="1.8"/>
+        <g stroke="#FFB74D" stroke-width="1.5" stroke-dasharray="4 3">
+          <line x1="200" y1="38" x2="200" y2="110"/>
+          <line x1="144" y1="74" x2="256" y2="74"/>
+        </g>
+        <text x="200" y="126" text-anchor="middle" font-size="11" fill="#C62828">对角线折过去角对不上</text>
+
+        <text x="332" y="18" text-anchor="middle" font-size="12.5" fill="#6A1B9A" font-weight="700">圆 无数条</text>
+        <circle cx="332" cy="74" r="42" fill="#F3E5F5" stroke="#8E24AA" stroke-width="1.8"/>
+        <g stroke="#FFB74D" stroke-width="1.4" stroke-dasharray="4 3">
+          <line x1="332" y1="28" x2="332" y2="120"/>
+          <line x1="286" y1="74" x2="378" y2="74"/>
+          <line x1="300" y1="42" x2="364" y2="106"/>
+          <line x1="300" y1="106" x2="364" y2="42"/>
+        </g>
+
+        <rect x="28" y="150" width="348" height="72" rx="8" fill="#FCE4EC" stroke="#F8BBD0" stroke-width="1.4"/>
+        <text x="42" y="174" font-size="12.5" fill="#6A1B9A" font-weight="700">正 n 边形有 n 条对称轴，圆有无数条</text>
+        <text x="42" y="198" font-size="12.5" fill="#31102B">一般的平行四边形 0 条：转 180° 能重合是中心对称，对折不重合。</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    正方形沿横、竖、两条对角线对折都能重合，一共 <strong>4 条</strong>；长方形只有横竖 2 条，沿对角线折过去，两个角对不上。
+  </p>
+  <p class="teach-text" id="p5s2">
+    圆最特别：<strong>任意一条直径所在的直线</strong>都是对称轴，所以有无数条。一般的平行四边形一条都没有。
+  </p>
+</div>
+
+<ul class="feature-list" id="p5rules">
+  <li><strong>① 正多边形</strong>：正 n 边形有 n 条 —— 正三角形 3 条、正方形 4 条、正六边形 6 条。</li>
+  <li><strong>② 圆</strong>：无数条，每一条都经过圆心。</li>
+  <li><strong>③ 别被「看着均衡」骗了</strong>：平行四边形转半圈能重合，那是中心对称，不是轴对称。</li>
+</ul>
+
+<div class="key-box" id="p5key">
+  数对称轴要<strong>一条一条折过去验</strong>，不能只看图形方不方正。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">把半个图形，一个点一个点翻过去</h2>
+  <p class="sim-desc">按「翻一个点」，左边的点会沿对称轴翻到右边；按「动一动这个点」改变它到轴的距离，看镜像点怎么跟着走。也可以直接点画布上的点选中它。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">还没翻：右边淡灰的是预期位置</span>
+    <span class="sim-tip" id="simTip">菱形 · 对称轴 1 条</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simNext()">翻一个点 →</button>
+    <button class="btn-retry" onclick="simPrev()">← 放回</button>
+    <button class="btn-retry" onclick="simMove()">动一动这个点</button>
+    <button class="btn-retry" onclick="simCase()">换图形</button>
+    <button class="btn-retry" onclick="simReset()">重来</button>
+    <button class="btn-retry" onclick="simDemo()">自动演示</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">橙色虚线是对称轴，水平虚线连着一对对应点</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>把 B 点往左拉远，B′ 会不会跟着往右走？两边还是一样远吗？</li>
+    <li>落在对称轴上的点，翻过去为什么还是它自己？</li>
+    <li>只翻一半的点就连线，能对折重合吗？</li>
+    <li>换成半只蝴蝶，最先该翻哪个点、最后连哪条边？</li>
+  </ul>
+</div>
+</section>
+
+<!-- ===== p7: 中测2 ===== -->
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 补全另一半</h2>
+  <p class="quiz-hint">三题都要在心里翻一翻。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 点 A 在对称轴左边 4 厘米，它的对应点 A′ 在哪？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>也在左边 4 厘米处</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>正好在对称轴上</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>右边 4 厘米处</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 补全轴对称图形时，对称轴上的一个点翻过去会？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>移到右边去</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>还是它自己</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>消失不见</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 正六边形有几条对称轴？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>3 条</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>6 条</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>12 条</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 易错辨析 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四个坑，第一个几乎人人都踩过</h2>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 把「差不多」当重合</h4>
+    <div class="wrong-num">✗ 平行四边形是轴对称</div>
+    <p>转 180° 能重合是中心对称；沿任何直线对折都压不上，0 条对称轴。</p>
+  </div>
+
+  <div class="card">
+    <h4>② 斜着量距离</h4>
+    <div class="wrong-num">✗ A 到轴斜着量 5 厘米</div>
+    <p>要沿<strong>垂直于对称轴</strong>的方向量最短距离，斜着量会偏大。</p>
+  </div>
+
+  <div class="card">
+    <h4>③ 对角线随便算</h4>
+    <div class="wrong-num">✗ 长方形有 4 条对称轴</div>
+    <p>沿对角线折，两个角对不上；长方形只有横、竖 2 条。</p>
+  </div>
+
+  <div class="card">
+    <h4>④ 把镜像当成平移</h4>
+    <div class="wrong-num">✗ 把 A 直接平移到右边</div>
+    <p>得<strong>翻过去</strong>：方向相反、到轴一样远，连线还要垂直于轴。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  动笔前先问两句：<strong>折痕在哪？折过去每个点能不能压上？</strong>
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到窗花：把 12 厘米的纸对折，剪一个半蝴蝶，展开后 A 与 A′ 都离折痕 4 厘米，连线垂直折痕，整只蝴蝶沿折痕完全重合 —— 校徽、脸谱、剪纸用的都是这一个办法。
+</p>
+</section>
+
+<!-- ===== p9: 后测 ===== -->
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，换个图形还认得出吗</h2>
+  <p class="quiz-hint">窗花、校徽、脸谱，都藏在里面。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 下面哪个是轴对称图形？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>一般的平行四边形</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>等腰梯形</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>任意三角形</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 圆有几条对称轴？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1 条</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>4 条</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>无数条</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. A 到对称轴 5 厘米，A′ 到对称轴多远？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5 厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>2.5 厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>10 厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 正方形有几条对称轴？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>2 条</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>4 条</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>无数条</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 补全轴对称图形另一半，正确做法是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>把左半整个平移到右边</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>把每个点翻到轴另一边、保持一样远</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>画个差不多的图形就行</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">是什么</div>
+        <div class="summary-v4-summary">沿轴对折完全重合</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">判据<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">折痕就是对称轴<br>关键是「完全重合」<br>窗花、蝴蝶、脸谱、校徽</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">对应点</div>
+        <div class="summary-v4-summary">垂直 + 等距</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">三条性质<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">连线垂直于对称轴<br>轴平分 AA′，两段等长<br>轴上的点翻过去还是自己</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">怎么补</div>
+        <div class="summary-v4-summary">逐点翻过去</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">三步走<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">每个点到轴量一样远<br>翻到另一边、方向相反<br>再按原顺序依次连起来</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">怎么数</div>
+        <div class="summary-v4-summary">一条条折过去验</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">常见数<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">正方形 4 条、长方形 2 条<br>正六边形 6 条、圆无数条<br>一般平行四边形 0 条</div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<p class="teach-text" style="margin-top:18px;color:#31102B;font-size:19px">
+  再看到半个图形，先在心里画一条折痕：把每个点翻过去、保持一样远，另一半就自己长出来了。
+</p>
+</section>

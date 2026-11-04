@@ -1,0 +1,91 @@
+{
+  "topicId": "mt_symmetry",
+  "title": "一张 12 厘米的纸对折，为什么剪一次就成了一对？",
+  "template": "explain",
+  "renderer": "symmetry",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 4,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S2:GG:PM"
+  ],
+  "prerequisites": [
+    "mt_shape-move",
+    "mt_shape-2d"
+  ],
+  "next": [],
+  "objectives": [
+    "理解轴对称图形沿对称轴对折能完全重合，会找出常见平面图形的对称轴",
+    "知道对应点到对称轴的距离相等、对应点连线垂直于对称轴且被轴平分",
+    "会根据对称轴补全轴对称图形的另一半，会判断一个图形是不是轴对称"
+  ],
+  "cognitiveAction": "变换",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-04",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "对折剪纸",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "对应点",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "数对称轴",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}
