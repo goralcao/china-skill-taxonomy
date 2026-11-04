@@ -1,31 +1,91 @@
 {
   "topicId": "mt_ops-laws-mul",
-  "title": "乘法运算律：交换、结合与分配",
+  "title": "25 × 7 × 4，为什么先算 25 × 4",
   "template": "explain",
   "renderer": "law",
-  "duration": 13,
-  "interactions": 2,
+  "duration": 24,
+  "interactions": 16,
   "grade": 4,
   "subject": "数学",
   "standards": [
     "math-2022:S2:NA:NO"
   ],
   "prerequisites": [
-    "mt_ops-laws-add",
-    "mt_mult-2digit"
+    "mt_mult-2digit",
+    "mt_ops-laws-add"
   ],
-  "next": [
-    "mt_dec-addsub2"
-  ],
+  "next": [],
   "objectives": [
-    "理解乘法交换律和结合律，并能用来凑整",
-    "理解乘法分配律 a×(b+c)=a×b+a×c",
-    "会用面积模型把 25×44 拆成 25×40+25×4"
+    "理解乘法交换律与结合律，会用它们把能凑整的数先乘",
+    "理解乘法分配律：a × (b + c) = a × b + a × c",
+    "能用面积模型解释分配律，区分它对加法分配、对乘法不分配"
   ],
   "cognitiveAction": "变换",
   "status": "reviewed",
   "author": "goral.cao",
   "license": "CC-BY-SA-4.0",
-  "version": "1.0.0",
-  "updatedAt": "2026-10-27"
+  "version": "3.0.0",
+  "updatedAt": "2026-11-04",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "方阵人数",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "交换与结合",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "分配律",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
 }

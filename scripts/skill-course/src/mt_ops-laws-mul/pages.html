@@ -1,0 +1,572 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>25 × 7 × 4，为什么先算 25 × 4</h1>
+  <p class="sub">四年级数学 · 乘法运算律</p>
+  <div class="tags">
+    <span class="tag">交换律</span>
+    <span class="tag">结合律</span>
+    <span class="tag">分配律</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 460 200" width="450" height="196" role="img" aria-label="25 乘 7 乘 4，把 7 和 4 对调，25 乘 4 先凑成 100，再乘 7 得 700">
+      <g font-family="monospace" text-anchor="middle">
+        <text x="230" y="56" font-size="28" font-weight="700" fill="#FFFFFF">25 × 7 × 4</text>
+
+        <path d="M230 74 C230 106, 297 106, 297 74" fill="none" stroke="#FF8A65" stroke-width="2.2"/>
+        <path d="M230 66 l-7 12 l14 0 z" fill="#FF8A65"/>
+        <path d="M297 66 l-7 12 l14 0 z" fill="#FF8A65"/>
+        <text x="264" y="126" font-size="12.5" fill="rgba(255,255,255,.66)">7 和 4 对调</text>
+
+        <rect x="62" y="140" width="336" height="50" rx="10" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="1.6"/>
+        <text x="230" y="172" font-size="19" fill="#FF8A65" font-weight="700">25 × 4 × 7 = 100 × 7 = 700</text>
+      </g>
+    </svg>
+  </div>
+  <p style="font-size:20px;color:rgba(255,255,255,.92);max-width:620px;line-height:1.8;">
+    乘法的数也能搬家，搬完积不变。<br>
+    <strong>25 和 4 是一对好朋友，凑成 100，后面就好算了。</strong>
+  </p>
+  <p class="hint">点击右下角箭头开始 或 点击顶部导航跳转</p>
+  <a href="../../viz/index.html#t=mt_ops-laws-mul" style="margin-top:16px;color:rgba(255,255,255,.78);font-size:16px;text-decoration:underline">← 回到知识图谱</a>
+</div>
+</section>
+
+<!-- ===== p1: 前测 ===== -->
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先答三道，凭感觉</h2>
+  <p class="quiz-hint">都是排队、装箱、算钱时会碰到的判断。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 3 × 4 和 4 × 3，结果一样吗？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>一样，都是 12</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>不一样，3 × 4 更大</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>不一样，4 × 3 更大</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 一盒铅笔 12 支。买 10 盒和 5 盒，一共有多少支？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>120 + 60 = 180 支</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>12 + 15 = 27 支</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>12 × 10 × 5 = 600 支</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 25 × 4 等于多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>29</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>90</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>100</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 引入 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">三个方阵一共多少人，40 秒内报出来</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 430 168" width="430" height="168" role="img" aria-label="三个方阵，每个方阵 25 人一排、共 4 排，合起来 300 人">
+      <g font-family="sans-serif">
+        <g>
+          <rect x="14" y="26" width="102" height="84" rx="6" fill="#F3E5F5" stroke="#6A1B9A" stroke-width="1.6"/>
+          <g stroke="#B39DDB" stroke-width="1.4">
+            <line x1="14" y1="47" x2="116" y2="47"/>
+            <line x1="14" y1="68" x2="116" y2="68"/>
+            <line x1="14" y1="89" x2="116" y2="89"/>
+          </g>
+          <text x="65" y="22" text-anchor="middle" font-size="12" fill="#6A1B9A">25 人</text>
+          <text x="65" y="126" text-anchor="middle" font-size="12.5" fill="#7E57C2">4 排</text>
+        </g>
+        <g>
+          <rect x="168" y="26" width="102" height="84" rx="6" fill="#F3E5F5" stroke="#6A1B9A" stroke-width="1.6"/>
+          <g stroke="#B39DDB" stroke-width="1.4">
+            <line x1="168" y1="47" x2="270" y2="47"/>
+            <line x1="168" y1="68" x2="270" y2="68"/>
+            <line x1="168" y1="89" x2="270" y2="89"/>
+          </g>
+          <text x="219" y="22" text-anchor="middle" font-size="12" fill="#6A1B9A">25 人</text>
+          <text x="219" y="126" text-anchor="middle" font-size="12.5" fill="#7E57C2">4 排</text>
+        </g>
+        <g>
+          <rect x="322" y="26" width="102" height="84" rx="6" fill="#F3E5F5" stroke="#6A1B9A" stroke-width="1.6"/>
+          <g stroke="#B39DDB" stroke-width="1.4">
+            <line x1="322" y1="47" x2="424" y2="47"/>
+            <line x1="322" y1="68" x2="424" y2="68"/>
+            <line x1="322" y1="89" x2="424" y2="89"/>
+          </g>
+          <text x="373" y="22" text-anchor="middle" font-size="12" fill="#6A1B9A">25 人</text>
+          <text x="373" y="126" text-anchor="middle" font-size="12.5" fill="#7E57C2">4 排</text>
+        </g>
+        <g font-size="18" fill="#B39DDB" text-anchor="middle">
+          <text x="141" y="74">×</text>
+          <text x="295" y="74">×</text>
+        </g>
+        <text x="215" y="158" text-anchor="middle" font-size="14" fill="#6A1B9A" font-weight="700">3 × 4 × 25</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    运动会入场，每个方阵一排 25 人、共 4 排，三个方阵连着走。主持人要在 40 秒内报出总人数。
+  </p>
+  <p class="teach-text" id="p2s2">
+    照着题目顺序是 3 × 4 × 25：3 × 4 = 12，还得再算 12 × 25，得列竖式。可要是先算 4 × 25 = 100，100 × 3 = 300，嘴上就出来了。
+  </p>
+  <p class="teach-text" id="p2s3">
+    能这么换，是因为乘法也有交换律和结合律。<strong>换的目的一直是同一个：先凑整。</strong>
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>按题目顺序</h4>
+    <div class="eq">3 × 4 = 12
+12 × 25 = 300</div>
+    <p>第二步 12 × 25 还得列竖式，快不了。</p>
+  </div>
+  <div class="card">
+    <h4>把 25 挪到中间</h4>
+    <div class="eq">3 × 4 × 25
+= 3 × 25 × 4</div>
+    <p>换完先算 25 × 4 = 100，再 × 3 只添两个零。</p>
+  </div>
+  <div class="card">
+    <h4>好朋友数对</h4>
+    <div class="eq">25 × 4 = 100
+125 × 8 = 1000</div>
+    <p>见到这两个，先想办法把它们凑一块儿。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  乘法里有一批<strong>「好朋友」</strong>：25 和 4、125 和 8、2 和 5。看见它们，先想办法挪到一起。
+</div>
+</section>
+
+<!-- ===== p3: 交换与结合 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">乘法的数，换位置也不吃亏</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 430 250" width="430" height="250" role="img" aria-label="25 乘 7 乘 4 两种算法，都得 700，但右边先凑成 100">
+      <g font-family="monospace">
+        <rect x="10" y="14" width="196" height="106" rx="10" fill="#F6F2FA" stroke="#D1C4E9" stroke-width="1.4"/>
+        <text x="24" y="38" font-size="12" fill="#9575CD" font-family="sans-serif">按顺序</text>
+        <text x="24" y="66" font-size="18" fill="#4A148C" font-weight="700">25 × 7 × 4</text>
+        <text x="24" y="94" font-size="16" fill="#6A1B9A">= 175 × 4</text>
+        <text x="24" y="114" font-size="16" fill="#6A1B9A">= 700</text>
+
+        <rect x="224" y="14" width="196" height="106" rx="10" fill="#FFF3E0" stroke="#FFCC80" stroke-width="1.6"/>
+        <text x="238" y="38" font-size="12" fill="#E64A19" font-family="sans-serif">先凑整百</text>
+        <text x="238" y="66" font-size="18" fill="#BF360C" font-weight="700">25 × 4 × 7</text>
+        <text x="238" y="94" font-size="16" fill="#E65100">= 100 × 7</text>
+        <text x="238" y="114" font-size="16" fill="#E65100" font-weight="700">= 700</text>
+
+        <text x="10" y="152" font-size="13" fill="#90A4AE" font-family="sans-serif">换位置的依据</text>
+        <text x="10" y="180" font-size="16" fill="#4A148C" font-weight="700">(a × b) × c = a × (b × c)</text>
+        <text x="10" y="208" font-size="13" fill="#7E57C2" font-family="sans-serif">三个数相乘，先捆哪两个都一样</text>
+        <line x1="10" y1="226" x2="420" y2="226" stroke="#E0D8EA" stroke-width="1.2"/>
+        <text x="10" y="246" font-size="13" fill="#E65100" font-family="sans-serif">凑成整百的那条路，心算只走两步</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    两条路都得 700，可左边要算 175 × 4，右边只算 100 × 7。差别全在<strong>先跟谁乘</strong>。
+  </p>
+  <p class="teach-text" id="p3s2">
+    乘法有<strong>交换律</strong>（a × b = b × a）和<strong>结合律</strong>（(a × b) × c = a × (b × c)），两条一起用，顺序随你挑。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>① 交换律</strong>：a × b = b × a　—— 两个数换位置，积不变。</li>
+  <li><strong>② 结合律</strong>：(a × b) × c = a × (b × c)　—— 三个数换捆法，积也不变。</li>
+  <li><strong>③ 找朋友</strong>：25 × 4 = 100、125 × 8 = 1000、2 × 5 = 10。先找朋友，再谈别的。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  和加法一样：<strong>换的是整个乘数</strong>。25 搬过去还是 25，不会变成 52。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：这个算式可以写成什么样</h2>
+<p class="teach-text" id="p3bs1">
+  左边每个算式，右边都有唯一一个「换了位置或拆了开来、结果一样」的写法。点左边一项，再点右边一项。
+</p>
+
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<!-- ===== p4: 中测1 ===== -->
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 先跟谁乘</h2>
+  <p class="quiz-hint">三题都在比：哪条路少算一步。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 25 × 7 × 4，先算哪两个最快？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>25 × 7</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>7 × 4</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>25 × 4</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 下面哪个和 12 × 15 的结果相等？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>12 × 10 × 5</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>12 × 10 + 12 × 5</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>12 + 10 × 5</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. (8 × 125) × 3 和 8 × (125 × 3) 结果一样吗？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>一样，都是 3000</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>不一样，前一个大</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>不一样，后一个大</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 分配律 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">一个长方形，能切成两块算</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+    <svg viewBox="0 0 420 268" width="424" height="270" role="img" aria-label="12 乘 15 的长方形，竖着切成 12 乘 10 和 12 乘 5 两块">
+      <g font-family="sans-serif">
+        <rect x="56" y="40" width="200" height="144" fill="#EDE7F6" stroke="#7E57C2" stroke-width="1.6"/>
+        <rect x="256" y="40" width="100" height="144" fill="#FFCCBC" stroke="#E64A19" stroke-width="1.6"/>
+        <line x1="256" y1="40" x2="256" y2="184" stroke="#E64A19" stroke-width="2.4" stroke-dasharray="6 4"/>
+
+        <text x="156" y="118" text-anchor="middle" font-size="16" fill="#4A148C" font-weight="700">12 × 10</text>
+        <text x="156" y="140" text-anchor="middle" font-size="15" fill="#6A1B9A">= 120</text>
+        <text x="306" y="118" text-anchor="middle" font-size="15" fill="#BF360C" font-weight="700">12 × 5</text>
+        <text x="306" y="140" text-anchor="middle" font-size="14" fill="#E64A19">= 60</text>
+
+        <text x="156" y="30" text-anchor="middle" font-size="13" fill="#7E57C2">10</text>
+        <text x="306" y="30" text-anchor="middle" font-size="13" fill="#E64A19">5</text>
+        <text x="38" y="116" text-anchor="middle" font-size="14" fill="#4A148C" font-weight="700">12</text>
+
+        <line x1="56" y1="200" x2="356" y2="200" stroke="#C5B8D8" stroke-width="1.4"/>
+        <text x="206" y="224" text-anchor="middle" font-size="13" fill="#7E57C2">整个：12 × 15 = 180</text>
+        <text x="206" y="250" text-anchor="middle" font-size="13" fill="#E64A19">两块：120 + 60 = 180</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    12 × 15 想不出来？把 15 横着切一刀，变成 10 和 5。长方形分成两块，两块加起来还是原来那块。
+  </p>
+  <p class="teach-text" id="p5s2">
+    这就是<strong>乘法分配律</strong>：a × (b + c) = a × b + a × c。一个数乘一个和，等于它分别乘这两个数再相加。
+  </p>
+</div>
+
+<ul class="feature-list" id="p5rules">
+  <li><strong>① 正着用</strong>：12 × 15 = 12 × 10 + 12 × 5 = 120 + 60 = 180。</li>
+  <li><strong>② 反着用</strong>：12 × 10 + 12 × 5 里两个乘法都有 12，可以提出来写成 12 × 15。</li>
+  <li><strong>③ 只对加减分配</strong>：括号里是加号、减号才拆得开；括号里是乘号，<strong>不能</strong>拆。</li>
+</ul>
+
+<div class="key-box" id="p5key">
+  分配律管的是「<strong>乘进去</strong>」：外面的数要乘括号里的<strong>每一个</strong>，一个都不能漏。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">长方形切一刀，两块面积加起来对不对</h2>
+  <p class="sim-desc">点长方形上任意一列，就在那儿切一刀。左边块和右边块的面积实时重算，可合起来的总面积一次都没变。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">12 × (10 + 5) = 180</span>
+    <span class="sim-tip" id="simTip">试着切在中间，看两块各是多少</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simCut(10)">切在 10 的位置</button>
+    <button class="btn-retry" onclick="simCut(5)">切在 5 的位置</button>
+    <button class="btn-retry" onclick="simReset()">重来</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">左边紫色块是 12 × 左边宽，右边橙色块是 12 × 右边宽，两块加起来永远是 180</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>切在 10 和切在 5，两块的面积换过来了吗？</li>
+    <li>两块加起来，什么时候不是 180？</li>
+    <li>切得越靠边，其中一块会怎样？</li>
+    <li>如果长是 12、宽是 15，你会把 15 拆成哪两个数？</li>
+  </ul>
+</div>
+</section>
+
+<!-- ===== p7: 中测2 ===== -->
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 拆得对不对</h2>
+  <p class="quiz-hint">三题都在看：拆分的时候，外面的数乘全了吗。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 用分配律，15 × 12 可以写成？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>15 × 10 + 15 × 2</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>15 × 10 × 2</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>15 + 10 × 2</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 8 × 23 = 8 × 20 + 8 × 3，等于多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>184</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>166</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>1840</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 下面哪个式子是<strong>错</strong>的？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>12 × (10 + 5) = 12 × 10 + 12 × 5</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>12 × (10 × 5) = 12 × 10 × 12 × 5</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>25 × 4 = 4 × 25</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 易错辨析 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四个坑，第二个最常见</h2>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 把分配律套到乘法上</h4>
+    <div class="wrong-num">✗ 12 × (10 × 5) = 12 × 10 × 12 × 5</div>
+    <p>括号里是乘号，拆不开。12 × 50 = 600，右边算出来 7200。</p>
+  </div>
+
+  <div class="card">
+    <h4>② 只乘了一半</h4>
+    <div class="wrong-num">✗ 12 × (10 + 5) = 12 × 10 + 5</div>
+    <p>外面的 12 要乘括号里的每一个数。漏了 5，答案就从 180 掉到 125。</p>
+  </div>
+
+  <div class="card">
+    <h4>③ 换位把乘号换成加号</h4>
+    <div class="wrong-num">✗ 25 × 7 × 4 = 25 × 7 + 4</div>
+    <p>换的是位置，符号不动。乘号还是乘号，改成加号整个式子就废了。</p>
+  </div>
+
+  <div class="card">
+    <h4>④ 该拆不拆</h4>
+    <div class="wrong-num">✗ 12 × 15 直接列竖式，硬乘</div>
+    <p>15 拆成 10 + 5，两笔小乘法就出答案，比竖式快一半。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  动手前问三句：<strong>有 25 和 4 吗？有 125 和 8 吗？括号里是加号还是乘号？</strong>
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到方阵：3 × 4 × 25。把 25 挪到 4 旁边，先算 4 × 25 = 100，再 100 × 3 = 300 人。两步都是整百整千，一个进位都没有。
+</p>
+</section>
+
+<!-- ===== p9: 后测 ===== -->
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，先找好朋友</h2>
+  <p class="quiz-hint">前四道算结果，最后一道比谁快。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 25 × 7 × 4 等于多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>700</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>175</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>7000</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 下面哪一条是乘法分配律？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>a × b = b × a</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>(a × b) × c = a × (b × c)</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>a × (b + c) = a × b + a × c</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 12 × 15 等于多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>180</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>150</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>175</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 用简便方法算 125 × 8 × 6，第一步先算哪个？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>125 × 8</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>8 × 6</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>125 × 6</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 学校买 24 箱牛奶，每箱 25 盒，每盒 4 元。哪种算法最快？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>先算 25 × 4 = 100，再 100 × 24 = 2400 元</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>先算 24 × 25 = 600，再 600 × 4 = 2400 元</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>先算 25 + 4 = 29，再 29 × 24 = 696 元</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">交换与结合</div>
+        <div class="summary-v4-summary">换位置、换捆法，积不变</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">两条式子<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">a × b = b × a<br>(a × b) × c = a × (b × c)<br>换的是整个乘数</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">分配律</div>
+        <div class="summary-v4-summary">a × (b + c) = a × b + a × c</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么拆<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">外面的数乘括号里的每一个<br>12 × 15 = 12 × 10 + 12 × 5<br>括号里是乘号就拆不开</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">好朋友数对</div>
+        <div class="summary-v4-summary">25×4 / 125×8 / 2×5</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">凑出多少<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">25 × 4 = 100<br>125 × 8 = 1000<br>2 × 5 = 10</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">避错</div>
+        <div class="summary-v4-summary">三问再动手</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怎么查<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">有 25 和 4 吗？<br>有 125 和 8 吗？<br>括号里是加号还是乘号？</div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<p class="teach-text" style="margin-top:18px;color:#1E1830;font-size:19px">
+  下次遇到连乘，先扫一眼有没有 25 和 4、125 和 8：有就先凑，凑完剩下的只添零。
+</p>
+</section>
