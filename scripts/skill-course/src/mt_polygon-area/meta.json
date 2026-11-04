@@ -1,0 +1,94 @@
+{
+  "topicId": "mt_polygon-area",
+  "title": "平行四边形剪一刀，为什么面积一点没少？",
+  "template": "explain",
+  "renderer": "polyArea",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 5,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S3:GG:GM"
+  ],
+  "prerequisites": [
+    "mt_rect-area",
+    "mt_lines",
+    "mt_triangle"
+  ],
+  "next": [
+    "mt_circle-measure"
+  ],
+  "objectives": [
+    "会沿高把平行四边形剪拼成长方形，说出「形状变了、面积没变」",
+    "记住平行四边形面积 = 底 × 高，会用两条底之间的垂直距离当高",
+    "会由平行四边形推得三角形、梯形的面积公式，并分清哪里要 ÷2"
+  ],
+  "cognitiveAction": "变换",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "菜地",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "底×高",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "三角形梯形",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}
