@@ -1,0 +1,595 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>6.8 元加 2.45 元，小数点该对齐谁？</h1>
+  <p class="sub">四年级数学 · 小数加减法</p>
+  <div class="tags">
+    <span class="tag">小数点对齐</span>
+    <span class="tag">末尾补 0</span>
+    <span class="tag">进位与退位</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 470 232" width="480" height="236" role="img" aria-label="小数加法竖式 6.80 加 2.45 等于 9.25，三个小数点排在同一条竖直虚线上">
+      <g font-family="sans-serif">
+        <text x="235" y="18" text-anchor="middle" font-size="13" fill="rgba(255,255,255,.8)">把三个小数点排成一条竖线</text>
+
+        <g font-family="monospace" text-anchor="middle" font-size="27" font-weight="700">
+          <text x="70" y="72" fill="#FFFFFF">6</text>
+          <text x="130" y="72" fill="#FFFFFF">8</text>
+          <text x="160" y="72" fill="#FFFFFF">0</text>
+          <text x="40" y="114" fill="#FF8F00">+</text>
+          <text x="70" y="114" fill="#FFFFFF">2</text>
+          <text x="130" y="114" fill="#FFFFFF">4</text>
+          <text x="160" y="114" fill="#FFFFFF">5</text>
+          <text x="70" y="168" fill="#FFE0B2">9</text>
+          <text x="130" y="168" fill="#FFE0B2">2</text>
+          <text x="160" y="168" fill="#FFE0B2">5</text>
+        </g>
+        <line x1="36" y1="132" x2="186" y2="132" stroke="#FFFFFF" stroke-width="2.2"/>
+        <line x1="100" y1="40" x2="100" y2="182" stroke="#FF8F00" stroke-width="1.7" stroke-dasharray="5 5" opacity=".9"/>
+        <g fill="#FF8F00">
+          <circle cx="100" cy="64" r="4.6"/>
+          <circle cx="100" cy="106" r="4.6"/>
+          <circle cx="100" cy="160" r="4.6"/>
+        </g>
+
+        <text x="248" y="56" font-size="14" font-weight="700" fill="#FFB74D">✓ 三点一线，数位自动对上</text>
+        <text x="248" y="84" font-size="13" fill="rgba(255,255,255,.9)">个位 对 个位</text>
+        <text x="248" y="108" font-size="13" fill="rgba(255,255,255,.9)">十分位 对 十分位</text>
+        <text x="248" y="132" font-size="13" fill="rgba(255,255,255,.9)">百分位 对 百分位</text>
+        <text x="248" y="164" font-size="12.5" fill="#FF8A80">✗ 照整数那样末尾对齐</text>
+        <text x="248" y="184" font-size="12.5" fill="#FF8A80">8 个 0.1 会撞上 5 个 0.01</text>
+
+        <text x="235" y="220" text-anchor="middle" font-size="14" font-weight="700" fill="#FFB74D">6.80 + 2.45 = 9.25 元</text>
+      </g>
+    </svg>
+  </div>
+  <p style="font-size:20px;color:rgba(255,255,255,.92);max-width:620px;line-height:1.8;">
+    整数竖式是<strong>末尾对齐</strong>，小数竖式是<strong>小数点对齐</strong>。<br>
+    位数不一样，先补 0；算完把小数点直直落下来。
+  </p>
+  <p class="hint">点击右下角箭头开始 或 点击顶部导航跳转</p>
+  <a href="../../viz/index.html#t=mt_dec-addsub2" style="margin-top:16px;color:rgba(255,255,255,.78);font-size:16px;text-decoration:underline">← 回到知识图谱</a>
+</div>
+</section>
+
+<!-- ===== p1: 前测 ===== -->
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先答三道，凭感觉</h2>
+  <p class="quiz-hint">买文具、看小票、算找零，都会用到它。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 列竖式算 6.8 + 2.45，两个小数点应该怎么放？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>像整数一样把末尾对齐</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>上下排在同一条竖线上</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>放哪儿都不影响结果</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 6.8 + 2.45 等于多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>9.25</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3.13</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>8.53</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 8 − 2.35 等于多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>6.35</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>5.65</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>5.35</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 购物小票（引入） ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">买了 6.8 元的本子和 2.45 元的笔，一共要付多少钱？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 400 240" width="400" height="240" role="img" aria-label="购物小票上笔记本 6.8 元、中性笔 2.45 元，末尾对齐算出 3.13 元是错的，小数点对齐算出 9.25 元才对">
+      <g font-family="sans-serif">
+        <rect x="14" y="10" width="372" height="60" rx="8" fill="#FFFFFF" stroke="#BBDEFB" stroke-width="1.6"/>
+        <text x="28" y="32" font-size="12.5" fill="#607D8B" font-weight="700">文具店小票</text>
+        <text x="28" y="54" font-size="14" fill="#0D47A1">笔记本 6.8 元</text>
+        <text x="220" y="54" font-size="14" fill="#0D47A1">中性笔 2.45 元</text>
+
+        <text x="14" y="94" font-size="12.5" fill="#C62828" font-weight="700">✗ 末尾对齐：8 和 5 挤一列</text>
+        <g font-family="monospace" text-anchor="middle" font-size="19" font-weight="700">
+          <text x="66" y="120" fill="#C62828">6</text><text x="86" y="120" fill="#C62828">.</text><text x="106" y="120" fill="#C62828">8</text>
+          <text x="20" y="146" fill="#C62828">+</text><text x="46" y="146" fill="#C62828">2</text><text x="66" y="146" fill="#C62828">.</text><text x="86" y="146" fill="#C62828">4</text><text x="106" y="146" fill="#C62828">5</text>
+        </g>
+        <text x="124" y="136" font-size="13" fill="#C62828">→ 3.13 元，比一支笔还便宜</text>
+
+        <text x="14" y="180" font-size="12.5" fill="#2E7D32" font-weight="700">✓ 小数点对齐：先补 0</text>
+        <g font-family="monospace" text-anchor="middle" font-size="19" font-weight="700">
+          <text x="46" y="204" fill="#2E7D32">6</text><text x="66" y="204" fill="#FF8F00">.</text><text x="86" y="204" fill="#2E7D32">8</text><text x="106" y="204" fill="#2E7D32">0</text>
+          <text x="20" y="228" fill="#2E7D32">+</text><text x="46" y="228" fill="#2E7D32">2</text><text x="66" y="228" fill="#FF8F00">.</text><text x="86" y="228" fill="#2E7D32">4</text><text x="106" y="228" fill="#2E7D32">5</text>
+        </g>
+        <text x="124" y="218" font-size="13" fill="#2E7D32">→ 9.25 元</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    文具店小票上，笔记本 6.8 元，中性笔 2.45 元。付了 10 元，该找回多少，先得把这两笔加起来。
+  </p>
+  <p class="teach-text" id="p2s2">
+    有人照整数竖式的习惯，把 8 和 5 右对齐就加，算出 3.13 元 —— 比一支笔还便宜，一看就不对。
+  </p>
+  <p class="teach-text" id="p2s3">
+    问题出在<strong>对错了列</strong>：8 在十分位表示 8 个 0.1，5 在百分位表示 5 个 0.01，不是同一类，不能直接加。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>末尾对齐（错）</h4>
+    <div class="eq">6.8 + 2.45
+= 3.13 元</div>
+    <p>8 和 5 挤在一列，数位全串了位。</p>
+  </div>
+  <div class="card">
+    <h4>小数点对齐</h4>
+    <div class="eq">6.8 = 6.80
+6.80 + 2.45</div>
+    <p>先补 0，两行位数就一样长。</p>
+  </div>
+  <div class="card">
+    <h4>一列一列加</h4>
+    <div class="eq">= 9.25 元</div>
+    <p>百分位 5、十分位 12 进 1、个位 9。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  小数加减法第一条规矩：<strong>小数点对齐</strong>，本质是把<strong>相同数位</strong>对齐。
+</div>
+</section>
+
+<!-- ===== p3: 对齐规则 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">为什么小数点一齐，数位就自动对齐了？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 400 236" width="400" height="236" role="img" aria-label="数位表：十位 个位 十分位 百分位四列，6.80 和 2.45 上下排，小数点在同一条竖线上">
+      <g font-family="sans-serif">
+        <text x="200" y="18" text-anchor="middle" font-size="12.5" fill="#0D47A1" font-weight="700">小数点是「个位 / 十分位」的分界</text>
+
+        <g fill="#E3F2FD" stroke="#BBDEFB" stroke-width="1.2">
+          <rect x="24" y="30" width="70" height="26" rx="4"/>
+          <rect x="100" y="30" width="70" height="26" rx="4"/>
+          <rect x="196" y="30" width="76" height="26" rx="4"/>
+          <rect x="278" y="30" width="88" height="26" rx="4"/>
+        </g>
+        <g font-size="12.5" fill="#0D47A1" font-weight="700" text-anchor="middle">
+          <text x="59" y="48">十位</text>
+          <text x="135" y="48">个位</text>
+          <text x="234" y="48">十分位</text>
+          <text x="322" y="48">百分位</text>
+        </g>
+
+        <line x1="178" y1="24" x2="178" y2="184" stroke="#FF8F00" stroke-width="1.8" stroke-dasharray="5 4"/>
+        <text x="178" y="200" text-anchor="middle" font-size="11.5" fill="#E65100">小数点这一列</text>
+
+        <g font-family="monospace" font-size="24" font-weight="700" text-anchor="middle" fill="#0D47A1">
+          <text x="135" y="98">6</text><text x="234" y="98">8</text><text x="322" y="98">0</text>
+          <text x="135" y="140">2</text><text x="234" y="140">4</text><text x="322" y="140">5</text>
+        </g>
+        <g fill="#FF8F00">
+          <circle cx="178" cy="90" r="4.4"/>
+          <circle cx="178" cy="132" r="4.4"/>
+        </g>
+        <text x="24" y="98" font-size="14" fill="#607D8B">6.80</text>
+        <text x="24" y="140" font-size="14" fill="#607D8B">2.45</text>
+        <line x1="100" y1="152" x2="366" y2="152" stroke="#90A4AE" stroke-width="1.6"/>
+
+        <text x="200" y="224" text-anchor="middle" font-size="12.5" fill="#2E7D32" font-weight="700">同一列 = 同一数位，可以直接加减</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    小数点是个位和十分位的分界。两个小数点上下排齐，右边第一位都是十分位、第二位都是百分位，左边都是个位、十位 —— 整张数位表就自动对上了。
+  </p>
+  <p class="teach-text" id="p3s2">
+    所以先补 0 再算最省事：<strong>6.8 写成 6.80</strong>，每一位都有数，哪列加哪列一眼看清。小数末尾添 0，大小一点没变。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>① 先点小数点</strong>：列竖式先把两个小数点写在同一竖列上，再往两边填数字。</li>
+  <li><strong>② 位数不同补 0</strong>：6.8 = 6.80 = 6.800，整数 8 也可以写成 8.00。</li>
+  <li><strong>③ 得数点回小数点</strong>：算完从上面直直落下来，位置一步都不能挪。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  整数竖式<strong>末尾对齐</strong>，因为个位永远在最右；小数最右一位可能是十分位也可能是百分位，只能靠小数点定列。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：把原题补成对齐的竖式</h2>
+<p class="teach-text" id="p3bs1">
+  左边是原题，右边是补 0 之后、位数一样长的写法。点左边一项，再点右边一项。
+</p>
+
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<!-- ===== p4: 中测1 ===== -->
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 对齐与补 0</h2>
+  <p class="quiz-hint">三题都在考：列竖式之前该先做什么。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 算 5 + 3.75，列竖式时 5 应该写成？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>5.0</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>5.00</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 12.40 + 5.86 里，12.40 的「4」应该和谁对齐？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5.86 的 5（个位）</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>5.86 的 8（十分位）</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>5.86 的 6（百分位）</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 小数点对齐，本质上是为了？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>让竖式看起来整齐</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>把相同数位对齐</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>让小数位数变多</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 补零退位 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">8 − 2.35，个位借走 1 之后还剩几？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+    <svg viewBox="0 0 400 236" width="400" height="236" role="img" aria-label="连续退位竖式 8.00 减 2.35 等于 5.65，个位 8 借出 1 变 7，十分位剩 9，百分位变 10">
+      <g font-family="sans-serif">
+        <text x="200" y="18" text-anchor="middle" font-size="12.5" fill="#0D47A1" font-weight="700">先把 8 写成 8.00，再一路往左借</text>
+
+        <g font-family="monospace" text-anchor="middle" font-size="26" font-weight="700" fill="#0D47A1">
+          <text x="120" y="66">8</text><text x="200" y="66">0</text><text x="270" y="66">0</text>
+          <text x="60" y="112">−</text><text x="120" y="112">2</text><text x="200" y="112">3</text><text x="270" y="112">5</text>
+          <text x="120" y="162" fill="#2E7D32">5</text><text x="200" y="162" fill="#2E7D32">6</text><text x="270" y="162" fill="#2E7D32">5</text>
+        </g>
+        <g fill="#FF8F00">
+          <circle cx="160" cy="58" r="4.4"/>
+          <circle cx="160" cy="104" r="4.4"/>
+          <circle cx="160" cy="154" r="4.4"/>
+        </g>
+        <line x1="88" y1="126" x2="296" y2="126" stroke="#90A4AE" stroke-width="1.8"/>
+
+        <g font-size="11.5" fill="#C62828" font-weight="700" text-anchor="middle">
+          <text x="120" y="46">7</text><text x="200" y="46">9</text><text x="270" y="46">10</text>
+        </g>
+        <text x="200" y="196" text-anchor="middle" font-size="13" fill="#2E7D32" font-weight="700">10−5=5　9−3=6　7−2=5　→　5.65</text>
+        <text x="200" y="222" text-anchor="middle" font-size="12" fill="#607D8B">验算：5.65 + 2.35 = 8.00</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    整数减小数最容易卡住：8 要写成 8.00，百分位 0 − 5 不够减，得一路往左借。不补 0，连可以借的位都没有。
+  </p>
+  <p class="teach-text" id="p5s2">
+    借位是一条链：个位 8 借出 1 变 <strong>7</strong>，十分位拿到 10 又借 1 给百分位、自己剩 <strong>9</strong>，百分位变成 <strong>10</strong>。于是 10 − 5 = 5、9 − 3 = 6、7 − 2 = 5，得 5.65。
+  </p>
+</div>
+
+<ul class="feature-list" id="p5rules">
+  <li><strong>① 补 0 是前提</strong>：8 = 8.00，先把位数补齐，退位才有地方走。</li>
+  <li><strong>② 借位要过桥</strong>：十分位是 0 时，先向个位借成 10，再借 1 给百分位，自己剩 9。</li>
+  <li><strong>③ 加法进位同理</strong>：8 + 4 = 12，十分位写 2、往个位进 1，别把 12 整串写下来。</li>
+</ul>
+
+<div class="key-box" id="p5key">
+  算完顺手验一下：<strong>5.65 + 2.35 = 8.00</strong>，逆运算一加就回到原数，说明退位没算错。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">把小数点排齐，一列一列算给你看</h2>
+  <p class="sim-desc">切换「末尾对齐 / 小数点对齐」，看两行数字怎么错开、怎么归位；对齐后按「算下一列」，从百分位一路算到个位。也可以直接点画布上的小数点。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">末尾对齐：小数点错开，先别急着算</span>
+    <span class="sim-tip" id="simTip">6.80 + 2.45</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simMode()">切换对齐方式</button>
+    <button class="btn-retry" onclick="simNext()">算下一列 →</button>
+    <button class="btn-retry" onclick="simPrev()">← 放回</button>
+    <button class="btn-retry" onclick="simCase()">换一题</button>
+    <button class="btn-retry" onclick="simReset()">重来</button>
+    <button class="btn-retry" onclick="simDemo()">自动演示</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">橙色圆点是小数点，青色虚线是它该待的那一列</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>换成 8 − 2.35，个位借走 1 之后，十分位为什么是 9 不是 10？</li>
+    <li>末尾对齐时，8 个 0.1 到底撞上了谁？为什么不能加？</li>
+    <li>12.4 + 5.86 里，哪一步会往个位进 1？</li>
+    <li>得数的小数点为什么要从上面直直落下来，不能往左挪？</li>
+  </ul>
+</div>
+</section>
+
+<!-- ===== p7: 中测2 ===== -->
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 补 0 与退位</h2>
+  <p class="quiz-hint">三题都要动笔列一列。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 8 − 2.35 等于多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5.65</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>6.35</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>5.35</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 10 − 3.7 等于多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>7.3</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>6.3</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>6.7</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 0.6 + 0.24 等于多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>0.30</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>0.84</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>0.10</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 易错辨析 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四个坑，第一个几乎人人都踩过</h2>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 照整数末尾对齐</h4>
+    <div class="wrong-num">✗ 6.8 + 2.45 = 3.13</div>
+    <p>8 个 0.1 撞上 5 个 0.01，不同数位硬加。补成 6.80 再对齐才对。</p>
+  </div>
+
+  <div class="card">
+    <h4>② 没补 0 就硬退位</h4>
+    <div class="wrong-num">✗ 8 − 2.35 = 6.35</div>
+    <p>把 0 − 5 当成 5 直接落下。8 要写成 8.00，借位才有路可走。</p>
+  </div>
+
+  <div class="card">
+    <h4>③ 得数小数点乱落</h4>
+    <div class="wrong-num">✗ 9.25 写成 92.5</div>
+    <p>小数点必须从上面直直落下来，跟两个加数排在同一条竖线上。</p>
+  </div>
+
+  <div class="card">
+    <h4>④ 补 0 补错位置</h4>
+    <div class="wrong-num">✗ 6.8 写成 6.08</div>
+    <p>0 只能添在小数<strong>末尾</strong>：6.8 = 6.80，插到中间数就变了。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  动笔前先做两件事：<strong>把小数点排成一条竖线</strong>，<strong>把位数补到一样长</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到小票：6.80 + 2.45 = 9.25 元，付 10 元找回 0.75 元。用 9.25 + 0.75 = 10.00 一验，小数点全落在同一条线上，一分不差。
+</p>
+</section>
+
+<!-- ===== p9: 后测 ===== -->
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，换个场景还会算吗</h2>
+  <p class="quiz-hint">小票、找零、长度，都藏在里面。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 6.8 + 2.45 等于多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>9.25</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3.13</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>8.53</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 12.4 + 5.86 等于多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>18.26</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>17.26</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>7.10</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 8 − 2.35 等于多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5.65</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>6.35</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>5.35</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 10 − 3.7 等于多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>6.3</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>7.3</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>6.7</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 算 6.8 + 2.45，下面哪个竖式列对了？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>6.8 与 2.45 末尾对齐</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>6.80 与 2.45 小数点对齐</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>先去掉小数点算 68 + 245</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">第一条规矩</div>
+        <div class="summary-v4-summary">小数点对齐</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">为什么<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">本质是相同数位对齐<br>整数末尾对齐在这儿不适用<br>小数点定住个位与十分位的界</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">位数不同</div>
+        <div class="summary-v4-summary">末尾补 0</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">补在哪儿<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">6.8 = 6.80 = 6.800<br>整数 8 可以写成 8.00<br>0 只能添在末尾，大小不变</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">怎么算</div>
+        <div class="summary-v4-summary">从最低位起</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">进位退位<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">百分位先算，8+4=12 进 1<br>8.00−2.35 要连续退位<br>小数点从上面直直落下</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">怎么验</div>
+        <div class="summary-v4-summary">逆运算 + 估算</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">两道关<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">5.65 + 2.35 = 8.00<br>9.25 比 6.8 大才合理<br>算完看小数点位置对不对</div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<p class="teach-text" style="margin-top:18px;color:#102A43;font-size:19px">
+  再列小数竖式，先在心里画一条竖线：两个小数点都压在线上，位数补到一样长，然后才动笔。
+</p>
+</section>

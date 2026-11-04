@@ -1,0 +1,92 @@
+{
+  "topicId": "mt_dec-addsub2",
+  "title": "6.8 元加 2.45 元，小数点该对齐谁？",
+  "template": "explain",
+  "renderer": "vertical",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 4,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S2:NA:NO"
+  ],
+  "prerequisites": [
+    "mt_dec-meaning",
+    "mt_dec-addsub",
+    "mt_ops-laws-add"
+  ],
+  "next": [],
+  "objectives": [
+    "理解小数加减法必须小数点对齐（也就是相同数位对齐），知道照搬整数竖式末尾对齐会错在哪一列",
+    "会把位数不同的小数末尾补 0 再列竖式，会处理加法进位与减法连续退位",
+    "会用补零、估算、逆运算验算，能判断得数的小数点位置是否合理"
+  ],
+  "cognitiveAction": "比较",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-04",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "购物小票",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "对齐",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "补零退位",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}
