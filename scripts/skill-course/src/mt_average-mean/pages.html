@@ -1,0 +1,604 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>3 分钟里 4 个人跳得不一样，拿哪个数代表全组？</h1>
+  <p class="sub">四年级数学 · 平均数</p>
+  <div class="tags">
+    <span class="tag">移多补少</span>
+    <span class="tag">总数 ÷ 份数</span>
+    <span class="tag">公平比较</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 470 220" width="480" height="224" role="img" aria-label="四根高低不同的柱子，把多的匀给少的之后四根一样高，这条齐平线就是平均数">
+      <g font-family="sans-serif">
+        <text x="235" y="18" text-anchor="middle" font-size="13" fill="rgba(255,255,255,.8)">把多的匀给少的，四根就一样高了</text>
+
+        <g fill="#4DD0E1">
+          <rect x="30" y="118" width="30" height="50" rx="3"/>
+          <rect x="68" y="73" width="30" height="95" rx="3"/>
+          <rect x="106" y="128" width="30" height="40" rx="3"/>
+          <rect x="144" y="83" width="30" height="85" rx="3"/>
+        </g>
+        <line x1="22" y1="168" x2="182" y2="168" stroke="#FFFFFF" stroke-width="2"/>
+
+        <path d="M192 106 L234 106" stroke="#FF8F00" stroke-width="2.6"/>
+        <path d="M234 106 l-10 -6 l0 12 z" fill="#FF8F00"/>
+        <text x="213" y="94" text-anchor="middle" font-size="12" fill="#FFB74D">匀一匀</text>
+
+        <g fill="#FFB74D">
+          <rect x="265" y="100" width="30" height="68" rx="3"/>
+          <rect x="303" y="100" width="30" height="68" rx="3"/>
+          <rect x="341" y="100" width="30" height="68" rx="3"/>
+          <rect x="379" y="100" width="30" height="68" rx="3"/>
+        </g>
+        <line x1="257" y1="168" x2="417" y2="168" stroke="#FFFFFF" stroke-width="2"/>
+        <line x1="255" y1="100" x2="419" y2="100" stroke="#FF8F00" stroke-width="2" stroke-dasharray="6 5"/>
+        <text x="424" y="96" font-size="13" font-weight="700" fill="#FFB74D">100</text>
+
+        <text x="102" y="188" text-anchor="middle" font-size="12.5" fill="rgba(255,255,255,.9)">各跳各的</text>
+        <text x="337" y="188" text-anchor="middle" font-size="12.5" fill="rgba(255,255,255,.9)">都算 100 下</text>
+        <text x="235" y="212" text-anchor="middle" font-size="14" font-weight="700" fill="#FFB74D">96 + 112 + 88 + 104 = 400　→　400 ÷ 4 = 100</text>
+      </g>
+    </svg>
+  </div>
+  <p style="font-size:20px;color:rgba(255,255,255,.92);max-width:620px;line-height:1.8;">
+    平均数不是谁真跳出来的成绩，是把一组数<strong>削平</strong>之后<br>
+    用来代表整组的那个数：<strong>总数 ÷ 份数</strong>。
+  </p>
+  <p class="hint">点击右下角箭头开始 或 点击顶部导航跳转</p>
+  <a href="../../viz/index.html#t=mt_average-mean" style="margin-top:16px;color:rgba(255,255,255,.78);font-size:16px;text-decoration:underline">← 回到知识图谱</a>
+</div>
+</section>
+
+<!-- ===== p1: 前测 ===== -->
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先答三道，凭感觉</h2>
+  <p class="quiz-hint">跳绳、平均分、小组身高，都要用到它。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 96、112、88、104 这四个数的平均数大约是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>88</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>100</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>112</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 一组数的平均数一定在哪里？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>比最大的还大</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>在最小和最大之间</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>就是最小的那个</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 两个小组人数不一样，直接比总成绩公平吗？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>公平，总数大的就强</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>不公平，该比平均数</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>说不清</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 跳绳成绩（引入） ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">3 分钟跳绳，4 个人分别跳了 96、112、88、104 下，全组算多少？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 400 240" width="400" height="240" role="img" aria-label="四根柱子表示 96、112、88、104 下，把高于 100 的部分匀给低于 100 的，四根都停在 100">
+      <g font-family="sans-serif">
+        <text x="200" y="18" text-anchor="middle" font-size="12.5" fill="#006064" font-weight="700">多出来的，正好补给不够的</text>
+
+        <g fill="#4DD0E1">
+          <rect x="24" y="120" width="46" height="60" rx="3"/>
+          <rect x="82" y="70" width="46" height="110" rx="3"/>
+          <rect x="140" y="135" width="46" height="45" rx="3"/>
+          <rect x="198" y="85" width="46" height="95" rx="3"/>
+        </g>
+        <g font-size="13" font-weight="700" fill="#006064" text-anchor="middle">
+          <text x="47" y="114">96</text><text x="105" y="64">112</text>
+          <text x="163" y="129">88</text><text x="221" y="79">104</text>
+        </g>
+        <line x1="16" y1="180" x2="252" y2="180" stroke="#006064" stroke-width="2"/>
+        <line x1="16" y1="100" x2="252" y2="100" stroke="#FF8F00" stroke-width="1.8" stroke-dasharray="6 5"/>
+        <text x="8" y="96" font-size="11.5" fill="#E65100">100</text>
+
+        <path d="M105 76 L163 128" stroke="#E65100" stroke-width="1.8" stroke-dasharray="4 3"/>
+        <path d="M221 91 L47 114" stroke="#E65100" stroke-width="1.8" stroke-dasharray="4 3"/>
+        <text x="134" y="204" text-anchor="middle" font-size="11.5" fill="#E65100">多的 12、4 匀给缺的 12、4</text>
+
+        <rect x="266" y="56" width="126" height="112" rx="8" fill="#E0F2F1" stroke="#FF8F00" stroke-width="1.6"/>
+        <text x="278" y="80" font-size="12" fill="#006064">先合起来</text>
+        <text x="278" y="104" font-size="14" font-weight="700" fill="#006064">96+112+88+104</text>
+        <text x="278" y="124" font-size="14" font-weight="700" fill="#006064">= 400</text>
+        <line x1="278" y1="134" x2="380" y2="134" stroke="#B2DFDB" stroke-width="1.2"/>
+        <text x="278" y="154" font-size="12" fill="#006064">再分成 4 份</text>
+        <text x="278" y="164" font-size="14" font-weight="700" fill="#E65100">400 ÷ 4 = 100</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    体育课 3 分钟跳绳，小组 4 个人分别跳了 96、112、88、104 下。别的小组只有 3 个人，直接比总数并不公平。
+  </p>
+  <p class="teach-text" id="p2s2">
+    把多的匀给少的：112 匀出 12 给 88，104 匀出 4 给 96，四根柱子就都停在 <strong>100</strong> 下。这个削平后的数就是平均数。
+  </p>
+  <p class="teach-text" id="p2s3">
+    换个算法更快：先合起来得 400，再分成 4 份，<strong>400 ÷ 4 = 100</strong>。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>移多补少</h4>
+    <div class="eq">多 12 + 多 4</div>
+    <p>正好补上缺的 12 和 4，一点不多。</p>
+  </div>
+  <div class="card">
+    <h4>先合后分</h4>
+    <div class="eq">400 ÷ 4 = 100</div>
+    <p>总数 ÷ 份数 = 平均数。</p>
+  </div>
+  <div class="card">
+    <h4>代表全组</h4>
+    <div class="eq">每人算 100 下</div>
+    <p>不是谁真跳了 100，是削平后的高度。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  平均数不是「某个人真实的成绩」，是把一组数<strong>削平</strong>之后用来代表整组的数。
+</div>
+</section>
+
+<!-- ===== p3: 先合后分 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">为什么一定要先加起来再除？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 400 236" width="400" height="236" role="img" aria-label="四杯水倒进一个大杯得到总数，再平均倒回四个杯子，每杯一样多">
+      <g font-family="sans-serif">
+        <text x="70" y="18" text-anchor="middle" font-size="12" fill="#006064" font-weight="700">① 四杯不一样</text>
+        <g fill="#B2DFDB" stroke="#006064" stroke-width="1.4">
+          <rect x="16" y="86" width="26" height="40" rx="2"/>
+          <rect x="48" y="66" width="26" height="60" rx="2"/>
+          <rect x="80" y="96" width="26" height="30" rx="2"/>
+          <rect x="112" y="76" width="26" height="50" rx="2"/>
+        </g>
+        <line x1="12" y1="126" x2="142" y2="126" stroke="#006064" stroke-width="1.8"/>
+
+        <path d="M150 96 L176 96" stroke="#FF8F00" stroke-width="2"/>
+        <path d="M176 96 l-8 -5 l0 10 z" fill="#FF8F00"/>
+
+        <text x="216" y="18" text-anchor="middle" font-size="12" fill="#006064" font-weight="700">② 倒进大杯：总数</text>
+        <rect x="188" y="52" width="56" height="74" rx="4" fill="#4DD0E1" stroke="#006064" stroke-width="1.6"/>
+        <text x="216" y="94" text-anchor="middle" font-size="14" font-weight="700" fill="#0E2A2E">400</text>
+
+        <path d="M252 96 L278 96" stroke="#FF8F00" stroke-width="2"/>
+        <path d="M278 96 l-8 -5 l0 10 z" fill="#FF8F00"/>
+
+        <text x="340" y="18" text-anchor="middle" font-size="12" fill="#006064" font-weight="700">③ 均分 4 份</text>
+        <g fill="#FFB74D" stroke="#E65100" stroke-width="1.4">
+          <rect x="288" y="76" width="26" height="50" rx="2"/>
+          <rect x="320" y="76" width="26" height="50" rx="2"/>
+          <rect x="352" y="76" width="26" height="50" rx="2"/>
+          <rect x="384" y="76" width="14" height="50" rx="2"/>
+        </g>
+        <text x="340" y="146" text-anchor="middle" font-size="12.5" fill="#E65100" font-weight="700">每份 100</text>
+
+        <rect x="16" y="164" width="382" height="56" rx="8" fill="#E0F2F1" stroke="#B2DFDB" stroke-width="1.4"/>
+        <text x="30" y="188" font-size="13.5" font-weight="700" fill="#006064">平均数 = 总数 ÷ 份数</text>
+        <text x="30" y="210" font-size="12.5" fill="#0E2A2E">验算：100 × 4 = 400，回到原来的总数。</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    移多补少靠眼睛匀，数据一多就乱。先合后分是它的算术版：<strong>总数不变</strong>，平均分给每一份。
+  </p>
+  <p class="teach-text" id="p3s2">
+    公式只有一条：<strong>平均数 = 总数 ÷ 份数</strong>。几个数相加就除以几，不是除以最大的那个数。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>① 先求总数</strong>：把所有数据加起来，一个都不能漏。</li>
+  <li><strong>② 再数份数</strong>：4 个人就除以 4，5 天就除以 5。</li>
+  <li><strong>③ 回头验一下</strong>：平均数 × 份数 = 总数，100 × 4 = 400 ✓。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  反过来还会求总数：<strong>总数 = 平均数 × 份数</strong>，知道平均和份数就能还原总和。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：这组数的平均数是几</h2>
+<p class="teach-text" id="p3bs1">
+  左边是一组数据，右边是它们削平之后的平均数。点左边一项，再点右边一项。
+</p>
+
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<!-- ===== p4: 中测1 ===== -->
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 总数 ÷ 份数</h2>
+  <p class="quiz-hint">三题都在考：先合起来，再分几份。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 2、4、6 的平均数是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>3</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>4</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>6</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 10、20、30 的平均数是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>15</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>20</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>30</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 平均数 × 份数 等于什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>最大数</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>总数</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>最小数</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 平均数的脾气 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">加进来一个 100，平均数会怎么变？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+    <svg viewBox="0 0 400 236" width="400" height="236" role="img" aria-label="同样是四根柱子，把 40 换成 100 之后平均线从 25 抬到 40，说明平均数怕极端值">
+      <g font-family="sans-serif">
+        <text x="100" y="18" text-anchor="middle" font-size="12.5" fill="#006064" font-weight="700">原来：20 / 22 / 18 / 40</text>
+        <g fill="#4DD0E1">
+          <rect x="24" y="120" width="28" height="40" rx="2"/>
+          <rect x="58" y="116" width="28" height="44" rx="2"/>
+          <rect x="92" y="124" width="28" height="36" rx="2"/>
+          <rect x="126" y="80" width="28" height="80" rx="2"/>
+        </g>
+        <line x1="18" y1="160" x2="160" y2="160" stroke="#006064" stroke-width="1.8"/>
+        <line x1="18" y1="110" x2="160" y2="110" stroke="#FF8F00" stroke-width="1.8" stroke-dasharray="5 4"/>
+        <text x="100" y="182" text-anchor="middle" font-size="12" fill="#E65100" font-weight="700">平均 25 分钟</text>
+
+        <text x="290" y="18" text-anchor="middle" font-size="12.5" fill="#006064" font-weight="700">换成：20 / 22 / 18 / 100</text>
+        <g fill="#4DD0E1">
+          <rect x="214" y="120" width="28" height="40" rx="2"/>
+          <rect x="248" y="116" width="28" height="44" rx="2"/>
+          <rect x="282" y="124" width="28" height="36" rx="2"/>
+          <rect x="316" y="44" width="28" height="116" rx="2" fill="#FF8F00"/>
+        </g>
+        <line x1="208" y1="160" x2="350" y2="160" stroke="#006064" stroke-width="1.8"/>
+        <line x1="208" y1="80" x2="350" y2="80" stroke="#FF8F00" stroke-width="1.8" stroke-dasharray="5 4"/>
+        <text x="290" y="182" text-anchor="middle" font-size="12" fill="#E65100" font-weight="700">平均 40 分钟</text>
+
+        <rect x="18" y="198" width="332" height="30" rx="6" fill="#FFF3E0"/>
+        <text x="184" y="218" text-anchor="middle" font-size="12.5" fill="#E65100" font-weight="700">一个特别大的数，就能把平均数拉走</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    四个同学每天阅读 20、22、18、40 分钟，平均 25 分钟。后来有个同学读了 100 分钟，平均一下子跳到 <strong>40 分钟</strong>。
+  </p>
+  <p class="teach-text" id="p5s2">
+    平均数<strong>很敏感</strong>：一个特别大或特别小的数就能把它拉走。所以看平均成绩时，还得留神有没有极端值。
+  </p>
+</div>
+
+<ul class="feature-list" id="p5rules">
+  <li><strong>① 一定在中间</strong>：平均数不会比最小的小，也不会比最大的大。</li>
+  <li><strong>② 怕极端值</strong>：一个 100 能把 25 拉到 40，比赛打分常要去掉一个最高分。</li>
+  <li><strong>③ 总数不变就不变</strong>：只是把数挪来挪去，总和没动，平均数也不动。</li>
+</ul>
+
+<div class="key-box" id="p5key">
+  平均数<strong>不是中间那个数</strong>，也不是出现最多的数；它是「削平」之后的高度。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">把四根柱子匀成一样高</h2>
+  <p class="sim-desc">按「下一步」，看总数怎么合成、平均线怎么画出来、多出来的怎么补给少的。点任意一根柱子选中它，按「给这根加 4」看平均线怎么动。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">原始数据：80 / 120 / 70 / 130</span>
+    <span class="sim-tip" id="simTip">总数 400 · 4 人 · 平均 100</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simNext()">下一步 →</button>
+    <button class="btn-retry" onclick="simPrev()">← 上一步</button>
+    <button class="btn-retry" onclick="simBump()">给这根加 4</button>
+    <button class="btn-retry" onclick="simCase()">换一组</button>
+    <button class="btn-retry" onclick="simReset()">重来</button>
+    <button class="btn-retry" onclick="simDemo()">自动演示</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">橙色虚线是平均线，红色是要匀出去的部分，绿色是要补进来的部分</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>把最高的柱子再加 4，平均线会往上走多少？</li>
+    <li>换成 20 / 22 / 18 / 100，那个 100 把平均线抬到哪里去了？</li>
+    <li>四根柱子都齐平了，总数变没变？</li>
+    <li>平均数是 100，一定有人正好跳了 100 下吗？</li>
+  </ul>
+</div>
+</section>
+
+<!-- ===== p7: 中测2 ===== -->
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 平均数的脾气</h2>
+  <p class="quiz-hint">三题都要算一算、想一想。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 20、22、18、100 的平均数是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>25</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>40</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>50</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 平均数是 100，一共 4 个数，总数是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>25</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>100</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>400</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 一组数最大 30、最小 10，平均数可能是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>20</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>35</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 易错辨析 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四个坑，第一个几乎人人都踩过</h2>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 拿最大数当平均</h4>
+    <div class="wrong-num">✗ 最高 130，全组算 130 下</div>
+    <p>130 只是一个人；削平之后是 100，平均数一定不超过最大数。</p>
+  </div>
+
+  <div class="card">
+    <h4>② 除以最大数</h4>
+    <div class="wrong-num">✗ 400 ÷ 130</div>
+    <p>份数是「一共几个数」，4 个人就除以 4，和数本身多大没关系。</p>
+  </div>
+
+  <div class="card">
+    <h4>③ 人数不同还比总数</h4>
+    <div class="wrong-num">✗ 4 人组总数大，所以更强</div>
+    <p>人多自然总数大。要比就比平均数，才在同一起跑线上。</p>
+  </div>
+
+  <div class="card">
+    <h4>④ 以为是某人的真实成绩</h4>
+    <div class="wrong-num">✗ 一定有人正好跳了 100 下</div>
+    <p>100 是削平后的代表值，96、112、88、104 里谁都不是 100。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  动笔前先问两句：<strong>总数是多少？一共几份？</strong>
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到跳绳：96 + 112 + 88 + 104 = 400，400 ÷ 4 = 100 下。换成 80、120、70、130，总和还是 400，平均还是 100 —— 数怎么挪不影响平均数，只有总和和份数说了算。
+</p>
+</section>
+
+<!-- ===== p9: 后测 ===== -->
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，换个场景还会算吗</h2>
+  <p class="quiz-hint">阅读、身高、班级平均分，都藏在里面。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 6、8、10、12 的平均数是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>8</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>9</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>10</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 平均数是 20，一共 5 个数，总数是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>4</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>20</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>100</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 一组数是 3、7、11，平均数一定？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>小于 3</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>在 3 和 11 之间</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>大于 11</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 20、22、18、100 的平均数是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>25</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>40</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>60</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 两组人数不一样，公平的比较方式是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>比总数</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>比最大数</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>比平均数</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">是什么</div>
+        <div class="summary-v4-summary">削平后的代表值</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">一个代表数<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">移多补少，四根柱子削平<br>不是谁的真实成绩<br>96/112/88/104 → 100</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">怎么算</div>
+        <div class="summary-v4-summary">总数 ÷ 份数</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">两步走<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">先全加起来求总数<br>再除以个数，不是最大数<br>平均 × 份数 = 总数</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">脾气</div>
+        <div class="summary-v4-summary">介于最大最小之间</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">怕极端值<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">一个 100 把 25 拉到 40<br>总数不变，平均就不变<br>比赛常去掉一个最高分</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">怎么用</div>
+        <div class="summary-v4-summary">人数不同比平均</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body"><div class="summary-v4-inner">
+      <div class="summary-v4-flip" onclick="event.stopPropagation();this.classList.toggle('flipped')">
+        <div class="summary-v4-flip-front">公平比较<span class="fh">点击翻面</span></div>
+        <div class="summary-v4-flip-back">比总数人多占便宜<br>班级平均分、小组平均身高<br>先问总数与份数</div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<p class="teach-text" style="margin-top:18px;color:#0E2A2E;font-size:19px">
+  再遇到一组高低不齐的数，先在心里把它们倒进一个大杯，再平均倒回去 —— 齐平的那条线，就是平均数。
+</p>
+</section>

@@ -1,32 +1,94 @@
 {
   "topicId": "mt_average-mean",
-  "title": "平均数：把多的补给少的",
+  "title": "3 分钟里 4 个人跳得不一样，拿哪个数代表全组？",
   "template": "explain",
   "renderer": "mean",
-  "duration": 11,
-  "interactions": 2,
+  "duration": 24,
+  "interactions": 16,
   "grade": 4,
   "subject": "数学",
   "standards": [
     "math-2022:S2:SP"
   ],
   "prerequisites": [
-    "mt_bar-chart",
     "mt_div-1digit",
-    "mt_stats-table"
+    "mt_stats-table",
+    "mt_bar-chart"
   ],
   "next": [
     "mt_stats-center"
   ],
   "objectives": [
-    "理解平均数的含义：移多补少后同样多的那个数",
-    "会用「总数 ÷ 个数」求平均数",
-    "知道平均数在最大数与最小数之间"
+    "理解平均数是把一组数移多补少削平后得到的那个数，会先求总数再除以份数",
+    "知道平均数介于最大数与最小数之间，会被极端数据拉高或拉低",
+    "会用平均数比较两组数量不同的数据，能判断「总数不变、平均不变」"
   ],
-  "cognitiveAction": "逼近",
+  "cognitiveAction": "累积",
   "status": "reviewed",
   "author": "goral.cao",
   "license": "CC-BY-SA-4.0",
-  "version": "1.0.0",
-  "updatedAt": "2026-10-27"
+  "version": "3.0.0",
+  "updatedAt": "2026-11-04",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "跳绳成绩",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "先合后分",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "平均数的脾气",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
 }
