@@ -1,0 +1,103 @@
+[PASS] MQTT CDN 钉 4.3.7
+[PASS] QR CDN 钉 1.4.4 且 async
+[PASS] isSubmitMode = true（提交模式）
+[PASS] S14 清空确认回调传参 onOk(true)
+[PASS] S14 无裸 onOk() 旧写法
+[PASS] 交付链接禁令：无 ?teacher=1 字面量
+[PASS] 无默认班级字面量残留
+[PASS] 伪全屏兜底 CSS 三条保留
+[PASS] navBtns 定位全 !important（防挤位）
+[PASS] 页码导航 z-index:500 顶层（v2026-10-13：防通信状态/背景图盖住教师入口）
+[PASS] 二维码徽章 z-index:500（与导航同层的教师操作层）
+[PASS] 通信状态 z-index:250（低于导航层；移动端上移让位，见注入样式媒体查询）
+[PASS] body.deployed .qr-badge.on 显式规则在位
+[PASS] 教学控制标准件齐备（startBroadcast/canStudentNavigate/requestCurrentPage）
+[PASS] submitQuiz 先写本地聚合再发布（isSubmitMode 已切 true 且 submitQuiz 定义存在）
+[PASS] PAGE_IDS 与 section 一一对应  | 12 页
+[PASS] QUIZZES 键 ↔ HTML 容器 id 一一对应（容器漏 id = 测验引擎静默失效）  | quizPre,quizMid1,quizMid2,quizPost
+[PASS] 提交按钮数 = 测验页数  | 4/4
+[PASS] 提交按钮 quizId 全部对上 config
+[PASS] 分数元素 = quizScoreId 规则（act+Score）
+[PASS] 无「重做」按钮残留（提交模式）
+[PASS] QR 活动徽章数 = 测验+仿真活动数  | 5/5
+[PASS] 徽章活动名与 config 一致
+[PASS] 每个页面均有 QR 徽章（含首页加入徽章，v2026-10-13 每页徽章制）  | 12/12
+[PASS] 徽章：未部署（静态文件）时无徽章 ON（不误导扫码）  | (none)
+[PASS] 加入弹窗存在（qrPopup_join + qrImg_join）
+[PASS] 每个活动有 qrPopup + qrImg
+[PASS] ⛔ 含统计的 QR 弹窗 innerHTML 必含 xmnClear（缺清空按钮 = 数据无法清除，pagesync 测不出）
+[PASS] 测验活动弹窗含每题详情入口（openDetail）
+[PASS] 详情面板与数据状态条存在
+[PASS] 学生端初始视角：导航隐藏、页码指示器保留（教师唯一入口）
+[PASS] quizPre 提交模式：选完不出即时反馈
+[PASS] quizPre 未答完提交被拦截
+[PASS] quizPre 提交后全对 3/3  | 得分：3/3 (已提交)
+[PASS] quizPre 提交后解析全显示
+[PASS] quizPre 提交后选项锁定（.submitted）
+[PASS] quizPre 提交后按钮禁用
+[PASS] quizPre 提交后改选无效
+[PASS] quizMid1 提交模式：选完不出即时反馈
+[PASS] quizMid1 未答完提交被拦截
+[PASS] quizMid1 提交后全对 3/3  | 得分：3/3 (已提交)
+[PASS] quizMid1 提交后解析全显示
+[PASS] quizMid1 提交后选项锁定（.submitted）
+[PASS] quizMid1 提交后按钮禁用
+[PASS] quizMid1 提交后改选无效
+[PASS] quizMid2 提交模式：选完不出即时反馈
+[PASS] quizMid2 未答完提交被拦截
+[PASS] quizMid2 提交后全对 3/3  | 得分：3/3 (已提交)
+[PASS] quizMid2 提交后解析全显示
+[PASS] quizMid2 提交后选项锁定（.submitted）
+[PASS] quizMid2 提交后按钮禁用
+[PASS] quizMid2 提交后改选无效
+[PASS] quizPost 提交模式：选完不出即时反馈
+[PASS] quizPost 未答完提交被拦截
+[PASS] quizPost 提交后全对 5/5  | 得分：5/5 (已提交)
+[PASS] quizPost 提交后解析全显示
+[PASS] quizPost 提交后选项锁定（.submitted）
+[PASS] quizPost 提交后按钮禁用
+[PASS] quizPost 提交后改选无效
+[PASS] 学生端 nextPage 被拦
+[PASS] 学生端 prevPage 被拦
+[PASS] 学生端方向键被拦（页码不变）
+[PASS] startBroadcast 置 isBroadcaster
+[PASS] stopBroadcast 清 isBroadcaster
+[PASS] 函数存在: xmnBroadcastPage
+[PASS] 函数存在: publishClaim
+[PASS] 函数存在: startBroadcast
+[PASS] 函数存在: stopBroadcast
+[PASS] 函数存在: canStudentNavigate
+[PASS] 函数存在: closeQRPopup
+[PASS] 函数存在: submitQuiz
+[PASS] 函数存在: openDetail
+[PASS] 函数存在: updateBadgeStats
+[PASS] 函数存在: xmnClear
+[PASS] 函数存在: xmnClearDo
+[PASS] 函数存在: requestCurrentPage
+[PASS] 函数存在: toggleQRPopup
+[PASS] openDetail 无数据不抛错
+[PASS] QR 无 nullsrcdoc 坏码  | https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A
+[PASS] QR 含 hash page 与 class 参数  | https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A
+[PASS] QR class 参数与 CLASS_ID 一致（不串台）  | CLASS_ID=wb-
+[PASS] 存在非活动页加入徽章
+[PASS] 加入徽章弹出加入弹窗
+[PASS] 加入二维码无 nullsrcdoc 坏码且含 page 参数  | https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A
+[PASS] 部署前 IS_DEPLOYED = false  | false
+[PASS] 部署前 body 无 deployed 类
+[PASS] 两段式入口后教师身份已写入 localStorage  | key=xmn_teacher_
+[PASS] 重载后 IS_TEACHER = true  | true
+[PASS] 教师端顶部导航可见  | flex
+[PASS] 教师端翻页键可见
+[PASS] 教师端可翻页  | 0→1
+[PASS] 教师端具备广播函数
+[PASS] E1 身份标准件已注入（XMN_IDENTITY_KEY + xmnIdentitySave）
+[PASS] E2 身份上报链路闭合（xmnIdentityReport 调用点 + XMN_IDENTITY_TOPIC 订阅）  | report=true topic=true
+[PASS] E3 identity topic 为 qos0 且不 retain（学号姓名不落 broker 存档）
+[FAIL] E4 CSV 导出标准件已注入（_buildQuizRecordsCSV + _buildStudentsCSV + _csvEscape）
+[PASS] E5 CSV 表头含「题目内容」且正确与否用汉字「正确/错误」
+[PASS] E6 时间戳为 年月日时分秒（YYYY-MM-DD HH:mm:ss）
+[FAIL] E7 身份表单 DOM 已注入（xmnIdentityBox + 学号/姓名输入框）
+[FAIL] E8 首次进入自动展开（无本地记录时表单可见）
+[FAIL] E9 教师端不显示身份表单（xmnIdentityInit 内含 IS_TEACHER 早退守卫）
+[PASS] E10 导出按钮已注入且学生端隐藏
+RESULT: FAILED 4
