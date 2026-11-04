@@ -1,0 +1,603 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>8 格只有 1 格中奖，转 40 次能中几次？</h1>
+  <p class="sub">五年级数学 · 可能性</p>
+  <div class="tags">
+    <span class="tag">一定·可能·不可能</span>
+    <span class="tag">可能性大小</span>
+    <span class="tag">公平性</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 470 210" width="480" height="214" role="img" aria-label="8 格转盘只有 1 格中奖，转一次中奖的可能性是八分之一">
+      <g font-family="sans-serif">
+        <text x="235" y="13" text-anchor="middle" font-size="13" fill="rgba(255,255,255,.82)">8 格只有 1 格中奖，转一次有多大机会？</text>
+        <g transform="translate(96,116)">
+        <path d="M0.0 0.0 L0.0 -88.0 A88.0 88.0 0 0 1 62.2 -62.2 Z" fill="#FFCA28" stroke="rgba(255,255,255,.55)" stroke-width="1.6"/>
+        <path d="M0.0 0.0 L62.2 -62.2 A88.0 88.0 0 0 1 88.0 0.0 Z" fill="#AB47BC" stroke="rgba(255,255,255,.55)" stroke-width="1.6"/>
+        <path d="M0.0 0.0 L88.0 0.0 A88.0 88.0 0 0 1 62.2 62.2 Z" fill="#CE93D8" stroke="rgba(255,255,255,.55)" stroke-width="1.6"/>
+        <path d="M0.0 0.0 L62.2 62.2 A88.0 88.0 0 0 1 0.0 88.0 Z" fill="#AB47BC" stroke="rgba(255,255,255,.55)" stroke-width="1.6"/>
+        <path d="M0.0 0.0 L0.0 88.0 A88.0 88.0 0 0 1 -62.2 62.2 Z" fill="#CE93D8" stroke="rgba(255,255,255,.55)" stroke-width="1.6"/>
+        <path d="M0.0 0.0 L-62.2 62.2 A88.0 88.0 0 0 1 -88.0 0.0 Z" fill="#AB47BC" stroke="rgba(255,255,255,.55)" stroke-width="1.6"/>
+        <path d="M0.0 0.0 L-88.0 0.0 A88.0 88.0 0 0 1 -62.2 -62.2 Z" fill="#CE93D8" stroke="rgba(255,255,255,.55)" stroke-width="1.6"/>
+        <path d="M0.0 0.0 L-62.2 -62.2 A88.0 88.0 0 0 1 -0.0 -88.0 Z" fill="#AB47BC" stroke="rgba(255,255,255,.55)" stroke-width="1.6"/>
+        <circle cx="0.0" cy="0.0" r="14.1" fill="#FFFFFF" stroke="rgba(255,255,255,.55)" stroke-width="1.4"/>
+        </g>
+        <path d="M96 18 l-9 16 h18 z" fill="#FFFFFF"/>
+        <text x="96" y="14" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.85)">指针</text>
+
+        <text x="212" y="52" font-size="12.5" fill="rgba(255,255,255,.86)">8 格一样大，中奖只占 1 格</text>
+        <rect x="212" y="64" width="112" height="44" rx="8" fill="rgba(255,255,255,.14)" stroke="rgba(255,255,255,.34)" stroke-width="1.2"/>
+        <text x="268" y="92" text-anchor="middle" font-size="19" font-weight="700" fill="#FFCA28">1/8</text>
+        <rect x="332" y="64" width="112" height="44" rx="8" fill="rgba(255,255,255,.14)" stroke="rgba(255,255,255,.34)" stroke-width="1.2"/>
+        <text x="388" y="92" text-anchor="middle" font-size="15" font-weight="700" fill="#FFFFFF">12.5%</text>
+
+        <text x="212" y="132" font-size="11.5" fill="rgba(255,255,255,.72)">转 40 次，平均中 5 次</text>
+        <text x="212" y="152" font-size="11.5" fill="rgba(255,255,255,.72)">可实际可能只中 3 次，也可能中 8 次</text>
+        <line x1="212" y1="168" x2="444" y2="168" stroke="rgba(255,255,255,.24)" stroke-width="1"/>
+        <text x="212" y="188" font-size="12" fill="#FFCA28">「可能」不等于「一定」</text>
+      </g>
+    </svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先答三道，凭感觉</h2>
+  <p class="quiz-hint">三道题都关于「会不会发生」，不用算。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 掷一次骰子，掷出 7 点这件事——</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>有可能</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>不可能</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>一定发生</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 袋子里 5 个红球、1 个白球，闭眼摸一个，更可能摸到——</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>红球</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>白球</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>一样可能</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 抛硬币 10 次，一定正好 5 次正面吗？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>一定</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>不一定，可能多也可能少</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>一定不会是 5 次</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 8 格转盘，只有 1 格中奖 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">8 格转盘，只有 1 格中奖</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 400 250" width="400" height="250" role="img" aria-label="转盘 8 个等份，其中 1 份是中奖区，转一次中奖可能性为八分之一，转 40 次平均中 5 次">
+      <g font-family="sans-serif">
+        <text x="12" y="20" font-size="12.5" font-weight="700" fill="#4A148C">超市门口的转盘</text>
+        <text x="388" y="20" text-anchor="end" font-size="11" fill="#7E57C2">8 格一样大</text>
+        <g transform="translate(100,132)">
+        <path d="M0.0 0.0 L0.0 -86.0 A86.0 86.0 0 0 1 60.8 -60.8 Z" fill="#FFCA28" stroke="#FFFFFF" stroke-width="2"/>
+        <path d="M0.0 0.0 L60.8 -60.8 A86.0 86.0 0 0 1 86.0 0.0 Z" fill="#AB47BC" stroke="#FFFFFF" stroke-width="2"/>
+        <path d="M0.0 0.0 L86.0 0.0 A86.0 86.0 0 0 1 60.8 60.8 Z" fill="#CE93D8" stroke="#FFFFFF" stroke-width="2"/>
+        <path d="M0.0 0.0 L60.8 60.8 A86.0 86.0 0 0 1 0.0 86.0 Z" fill="#AB47BC" stroke="#FFFFFF" stroke-width="2"/>
+        <path d="M0.0 0.0 L0.0 86.0 A86.0 86.0 0 0 1 -60.8 60.8 Z" fill="#CE93D8" stroke="#FFFFFF" stroke-width="2"/>
+        <path d="M0.0 0.0 L-60.8 60.8 A86.0 86.0 0 0 1 -86.0 0.0 Z" fill="#AB47BC" stroke="#FFFFFF" stroke-width="2"/>
+        <path d="M0.0 0.0 L-86.0 0.0 A86.0 86.0 0 0 1 -60.8 -60.8 Z" fill="#CE93D8" stroke="#FFFFFF" stroke-width="2"/>
+        <path d="M0.0 0.0 L-60.8 -60.8 A86.0 86.0 0 0 1 -0.0 -86.0 Z" fill="#AB47BC" stroke="#FFFFFF" stroke-width="2"/>
+        <circle cx="0.0" cy="0.0" r="13.8" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1.4"/>
+        </g>
+        <path d="M100 24 l-8 15 h16 z" fill="#4A148C"/>
+        <text x="100" y="196" text-anchor="middle" font-size="10.5" fill="#6A1B9A">金色 = 中奖区，只占 1 格</text>
+
+        <rect x="212" y="40" width="176" height="52" rx="8" fill="#F3E5F5" stroke="#CE93D8" stroke-width="1.2"/>
+        <text x="228" y="60" font-size="11" fill="#6A1B9A">中奖区占几格</text>
+        <text x="228" y="82" font-size="15" font-weight="700" fill="#4A148C">1 格 / 共 8 格</text>
+
+        <rect x="212" y="102" width="176" height="52" rx="8" fill="#FFF8E1" stroke="#FFCA28" stroke-width="1.2"/>
+        <text x="228" y="122" font-size="11" fill="#B26A00">转一次中奖可能</text>
+        <text x="228" y="144" font-size="15" font-weight="700" fill="#E65100">1/8 = 12.5%</text>
+
+        <rect x="212" y="164" width="176" height="52" rx="8" fill="#EDE7F6" stroke="#B39DDB" stroke-width="1.2"/>
+        <text x="228" y="184" font-size="11" fill="#5E35B1">转 40 次平均中</text>
+        <text x="228" y="206" font-size="15" font-weight="700" fill="#4527A0">5 次左右</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    超市门口摆了个转盘，8 格一样大，只有 1 格是中奖区，转一次 0.5 元。
+  </p>
+  <p class="teach-text" id="p2s2">
+    中奖区只占 1 份，一共 8 份，所以中奖的可能性是 1/8，也就是 12.5%。
+  </p>
+  <p class="teach-text" id="p2s3">
+    转 40 次，平均中 40 × 1/8 = 5 次。可「平均 5 次」不等于「一定 5 次」。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>看份数</h4>
+    <div class="eq">1 格 / 8 格</div>
+    <p>可能性大小，先看占了几份。</p>
+  </div>
+  <div class="card">
+    <h4>写成分数</h4>
+    <div class="eq">1/8 = 12.5%</div>
+    <p>份数之比就是可能性，能算出来。</p>
+  </div>
+  <div class="card">
+    <h4>做多次试验</h4>
+    <div class="eq">40 × 1/8 = 5</div>
+    <p>次数越多，实际结果越靠近这个数。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  可能性大小<strong>由份数决定</strong>：占得越多越可能。但「可能」永远不等于「一定」。
+</div>
+</section>
+
+<!-- ===== p3: 一定、可能、不可能，三句话分清 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">一定、可能、不可能，三句话分清</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 420 246" width="424" height="248" role="img" aria-label="三种描述：太阳从东边升起是一定，掷骰子掷出 3 是可能，袋里全红球摸出白球是不可能">
+      <g font-family="sans-serif">
+        <text x="14" y="22" font-size="12.5" font-weight="700" fill="#4A148C">一定、可能、不可能</text>
+
+        <rect x="12" y="34" width="126" height="196" rx="10" fill="#E8F5E9" stroke="#81C784" stroke-width="1.6"/>
+        <text x="75" y="62" text-anchor="middle" font-size="14" font-weight="700" fill="#1B5E20">一定</text>
+        <text x="75" y="82" text-anchor="middle" font-size="10.5" fill="#388E3C">可能性是 1</text>
+        <circle cx="75" cy="122" r="24" fill="#FFCA28"/>
+        <text x="75" y="128" text-anchor="middle" font-size="15" font-weight="700" fill="#7A5B00">☀</text>
+        <text x="75" y="172" text-anchor="middle" font-size="11" fill="#1B5E20">太阳从东边</text>
+        <text x="75" y="190" text-anchor="middle" font-size="11" fill="#1B5E20">升起</text>
+        <text x="75" y="216" text-anchor="middle" font-size="11" fill="#388E3C">天天都这样</text>
+
+        <rect x="146" y="34" width="126" height="196" rx="10" fill="#FFF8E1" stroke="#FFCA28" stroke-width="1.6"/>
+        <text x="209" y="62" text-anchor="middle" font-size="14" font-weight="700" fill="#B26A00">可能</text>
+        <text x="209" y="82" text-anchor="middle" font-size="10.5" fill="#F57F17">可能性在 0 与 1 之间</text>
+        <rect x="187" y="104" width="44" height="44" rx="8" fill="#FFFFFF" stroke="#FF7043" stroke-width="1.8"/>
+        <text x="209" y="132" text-anchor="middle" font-size="18" font-weight="700" fill="#E64A19">3</text>
+        <text x="209" y="172" text-anchor="middle" font-size="11" fill="#B26A00">掷骰子</text>
+        <text x="209" y="190" text-anchor="middle" font-size="11" fill="#B26A00">掷出 3 点</text>
+        <text x="209" y="216" text-anchor="middle" font-size="11" fill="#F57F17">1/6 的机会</text>
+
+        <rect x="280" y="34" width="126" height="196" rx="10" fill="#FFEBEE" stroke="#E57373" stroke-width="1.6"/>
+        <text x="343" y="62" text-anchor="middle" font-size="14" font-weight="700" fill="#B71C1C">不可能</text>
+        <text x="343" y="82" text-anchor="middle" font-size="10.5" fill="#E53935">可能性是 0</text>
+        <circle cx="330" cy="122" r="13" fill="#EF5350"/>
+        <circle cx="356" cy="122" r="13" fill="#EF5350"/>
+        <text x="343" y="172" text-anchor="middle" font-size="11" fill="#B71C1C">袋里全是红球</text>
+        <text x="343" y="190" text-anchor="middle" font-size="11" fill="#B71C1C">摸出白球</text>
+        <text x="343" y="216" text-anchor="middle" font-size="11" fill="#E53935">一个白球都没有</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    太阳从东边升起，每次都是，这叫<strong>一定</strong>，可能性是 1。
+  </p>
+  <p class="teach-text" id="p3s2">
+    掷骰子掷出 3 点，有时有、有时没有，这叫<strong>可能</strong>，可能性在 0 和 1 之间。
+  </p>
+  <p class="teach-text" id="p3s3">
+    袋里全是红球却想摸出白球，一次也不行，这叫<strong>不可能</strong>，可能性是 0。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>一定</strong>：每次都发生，可能性 = 1</li>
+  <li><strong>可能</strong>：会发生也可能不发生，0 &lt; 可能性 &lt; 1</li>
+  <li><strong>不可能</strong>：一次也不会发生，可能性 = 0</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  判断用哪句话，只看一件事：<strong>这件事在全部结果里占几份</strong>。全占就是一定，一份不占就是不可能。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">这些情况，可能性各是多少</h2>
+<p class="teach-text" id="p3bs1">转盘都是 8 格，袋子里的球都是 8 个。数清占几份，再连线。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 份数看得准吗</h2>
+  <p class="quiz-hint">三道题都只问「占几份」。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 8 格转盘只有 1 格红，转一次中奖的可能性是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1/8</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>1/7</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>1</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 8 格转盘有 2 格红，中奖可能性是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1/8</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>1/4</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>1/2</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 下面哪种情况是「一定」？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>8 格全红，转一次中奖</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>8 格 7 红，转一次中奖</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>8 格 0 红，转一次中奖</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 份数一样，游戏才公平 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">份数一样，游戏才公平</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+    <svg viewBox="0 0 420 246" width="424" height="248" role="img" aria-label="左边 4 红 4 蓝的转盘对双方公平，右边 6 红 2 蓝的转盘偏向红方">
+      <g font-family="sans-serif">
+        <text x="14" y="22" font-size="12.5" font-weight="700" fill="#4A148C">份数一样才公平</text>
+
+        <g transform="translate(76,110)">
+        <path d="M0.0 0.0 L0.0 -62.0 A62.0 62.0 0 0 1 43.8 -43.8 Z" fill="#FFCA28" stroke="#FFFFFF" stroke-width="1.6"/>
+        <path d="M0.0 0.0 L43.8 -43.8 A62.0 62.0 0 0 1 62.0 0.0 Z" fill="#FFB300" stroke="#FFFFFF" stroke-width="1.6"/>
+        <path d="M0.0 0.0 L62.0 0.0 A62.0 62.0 0 0 1 43.8 43.8 Z" fill="#FFCA28" stroke="#FFFFFF" stroke-width="1.6"/>
+        <path d="M0.0 0.0 L43.8 43.8 A62.0 62.0 0 0 1 0.0 62.0 Z" fill="#FFB300" stroke="#FFFFFF" stroke-width="1.6"/>
+        <path d="M0.0 0.0 L0.0 62.0 A62.0 62.0 0 0 1 -43.8 43.8 Z" fill="#CE93D8" stroke="#FFFFFF" stroke-width="1.6"/>
+        <path d="M0.0 0.0 L-43.8 43.8 A62.0 62.0 0 0 1 -62.0 0.0 Z" fill="#AB47BC" stroke="#FFFFFF" stroke-width="1.6"/>
+        <path d="M0.0 0.0 L-62.0 0.0 A62.0 62.0 0 0 1 -43.8 -43.8 Z" fill="#CE93D8" stroke="#FFFFFF" stroke-width="1.6"/>
+        <path d="M0.0 0.0 L-43.8 -43.8 A62.0 62.0 0 0 1 -0.0 -62.0 Z" fill="#AB47BC" stroke="#FFFFFF" stroke-width="1.6"/>
+        <circle cx="0.0" cy="0.0" r="9.9" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1.4"/>
+        </g>
+        <text x="76" y="196" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1B5E20">红 4 · 蓝 4</text>
+        <text x="76" y="216" text-anchor="middle" font-size="10.5" fill="#388E3C">各 1/2 · 公平 ✓</text>
+
+        <g transform="translate(280,110)">
+        <path d="M0.0 0.0 L0.0 -62.0 A62.0 62.0 0 0 1 43.8 -43.8 Z" fill="#FFCA28" stroke="#FFFFFF" stroke-width="1.6"/>
+        <path d="M0.0 0.0 L43.8 -43.8 A62.0 62.0 0 0 1 62.0 0.0 Z" fill="#FFB300" stroke="#FFFFFF" stroke-width="1.6"/>
+        <path d="M0.0 0.0 L62.0 0.0 A62.0 62.0 0 0 1 43.8 43.8 Z" fill="#FFCA28" stroke="#FFFFFF" stroke-width="1.6"/>
+        <path d="M0.0 0.0 L43.8 43.8 A62.0 62.0 0 0 1 0.0 62.0 Z" fill="#FFB300" stroke="#FFFFFF" stroke-width="1.6"/>
+        <path d="M0.0 0.0 L0.0 62.0 A62.0 62.0 0 0 1 -43.8 43.8 Z" fill="#FFCA28" stroke="#FFFFFF" stroke-width="1.6"/>
+        <path d="M0.0 0.0 L-43.8 43.8 A62.0 62.0 0 0 1 -62.0 0.0 Z" fill="#FFB300" stroke="#FFFFFF" stroke-width="1.6"/>
+        <path d="M0.0 0.0 L-62.0 0.0 A62.0 62.0 0 0 1 -43.8 -43.8 Z" fill="#CE93D8" stroke="#FFFFFF" stroke-width="1.6"/>
+        <path d="M0.0 0.0 L-43.8 -43.8 A62.0 62.0 0 0 1 -0.0 -62.0 Z" fill="#AB47BC" stroke="#FFFFFF" stroke-width="1.6"/>
+        <circle cx="0.0" cy="0.0" r="9.9" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1.4"/>
+        </g>
+        <text x="280" y="196" text-anchor="middle" font-size="11.5" font-weight="700" fill="#B71C1C">红 6 · 蓝 2</text>
+        <text x="280" y="216" text-anchor="middle" font-size="10.5" fill="#E53935">3/4 对 1/4 · 不公平 ✗</text>
+
+        <rect x="160" y="86" width="44" height="24" rx="6" fill="#F3E5F5"/>
+        <text x="182" y="103" text-anchor="middle" font-size="11" fill="#6A1B9A">对比</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    两个人玩转盘，一人押红、一人押蓝。红 4 格蓝 4 格，各自 1/2，谁都不吃亏。
+  </p>
+  <p class="teach-text" id="p5s2">
+    换成红 6 格蓝 2 格，红方 3/4、蓝方 1/4。蓝方赢的机会只有红的 1/3，这就不公平。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>公平</h4>
+    <div class="eq">4 : 4 → 各 1/2</div>
+    <p>两边份数相等，机会一样。</p>
+  </div>
+  <div class="card">
+    <h4>不公平</h4>
+    <div class="eq">6 : 2 → 3/4 与 1/4</div>
+    <p>份数差得越多，越不公平。</p>
+  </div>
+  <div class="card">
+    <h4>改公平</h4>
+    <div class="eq">把 6 : 2 改成 4 : 4</div>
+    <p>挪两格过去，游戏立刻公平。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  公平不是「谁先转」，而是<strong>双方占的份数一样多</strong>。份数一样，可能性才一样。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">转起来，看实际中几次</h2>
+  <p class="sim-desc">转盘 8 格，金色是中奖区。按「转 1 次」试手感，按「转 100 次」看统计；也可以加减金色格数，看中奖比例怎么变。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">8 格 · 金色 1 格 · 已转 0 次</span>
+    <span class="sim-tip" id="simTip">理论中奖率 1/8，转得越多越接近</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simSpin(1)">转 1 次</button>
+    <button class="btn-primary" onclick="simSpin(100)">转 100 次</button>
+    <button class="btn-retry" onclick="simSpin(1000)">转 1000 次</button>
+    <button class="btn-retry" onclick="simAdd(1)">金色 +1</button>
+    <button class="btn-retry" onclick="simAdd(-1)">金色 −1</button>
+    <button class="btn-retry" onclick="simReset()">清零</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">左边是转盘，右边是统计；虚线是理论值，柱子是实际次数</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>金色 1 格时转 100 次，实际中几次？离 12.5 次差多少？</li>
+    <li>把金色改成 4 格，再转 100 次，中奖率变成多少？</li>
+    <li>转 1000 次和转 10 次，哪种结果更接近理论值？</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 换个数还算得对吗</h2>
+  <p class="quiz-hint">份数、次数、公平，三个角度各一题。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 8 格转盘 3 红 5 蓝，转到蓝的可能性是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5/8</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3/8</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>1/2</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 8 格转盘 1 格红，转 80 次大约中几次？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1 次</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>10 次</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>80 次</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 想让这个 8 格转盘的游戏公平，红蓝各几格？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>4 格和 4 格</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3 格和 5 格</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>1 格和 7 格</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四个坑，掉进去就乱下结论 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四个坑，掉进去就乱下结论</h2>
+
+<div class="clearfix">
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>坑一：转几次没中就说不中</h4>
+    <div class="eq">转 5 次没中 → 不可能中 ✗</div>
+    <p>1/8 的机会，5 次不中很正常。次数太少，说什么都早。</p>
+  </div>
+  <div class="card">
+    <h4>坑二：可能性小当成不可能</h4>
+    <div class="eq">1/8 太难 → 肯定不中 ✗</div>
+    <p>小不等于零。八分之一照样会发生。</p>
+  </div>
+  <div class="card">
+    <h4>坑三：转 8 次必中 1 次</h4>
+    <div class="eq">8 次正好 1 次 ✗</div>
+    <p>8 × 1/8 = 1 是平均值，不是保证。</p>
+  </div>
+  <div class="card">
+    <h4>坑四：以为先转就占便宜</h4>
+    <div class="eq">我先转我就容易中 ✗</div>
+    <p>公平看份数，不看先后。先后不改变可能性。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  判断可能性只做两件事：<strong>数份数</strong>、<strong>看次数够不够多</strong>。次数太少，什么结论都不算数。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到转盘：1 格金色，转一次 1/8。转 100 次理论中 12.5 次，实际可能 9 次也可能 16 次——这不矛盾，这叫随机 ✓
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，换个场景还判得准吗</h2>
+  <p class="quiz-hint">转盘、摸球、抽签，只看占几份。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 抛一枚硬币，正面朝上的可能性是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1/2</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>1</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>0</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 袋里 4 个红球、6 个白球，摸到红球的可能性是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>4/6</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>4/10</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>6/10</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 8 格转盘 5 红 3 蓝，转到蓝的可能性是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>3/8</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>5/8</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3/5</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 8 格转盘 1 格红，转 400 次大约中几次？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5 次</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>50 次</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>400 次</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 班里 40 人抽 8 个名额，抽中的可能性是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1/8</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>8/40</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>40/8</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">是什么</div>
+        <div class="summary-v4-summary">用份数说「有多可能」</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>一定、可能、不可能，是三种描述；可能性的大小可以用分数写出来。</p>
+      <p>占几份除以总份数，就是这个事件的可能性。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">为什么</div>
+        <div class="summary-v4-summary">份数越多越可能</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>转盘上格子一样大，占的格数多，指针停进去的机会就大。</p>
+      <p>袋子里的球，个数多的那种更容易被摸到——道理完全相同。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">怎么用</div>
+        <div class="summary-v4-summary">两句话判断</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>① 数份数：占几份、共几份，写成几分之几。</p>
+      <p>② 看公平：双方份数相等才公平；不相等就挪格子。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">易错</div>
+        <div class="summary-v4-summary">次数太少、小当零、必中、看先后</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>坑一：转 5 次没中就说不可能会中。</p>
+      <p>坑二：把可能性小当成不可能。</p>
+      <p>坑三：以为转 8 次一定中 1 次。</p>
+      <p>坑四：以为谁先转谁占便宜。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  记住这一句：<strong>可能性看份数，验证看次数</strong>；份数定大小，次数多才靠得住。
+</p>
+</section>

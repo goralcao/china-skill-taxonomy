@@ -2,28 +2,89 @@
   "status": "reviewed",
   "author": "goral.cao",
   "license": "CC-BY-SA-4.0",
-  "version": "1.0.0",
-  "updatedAt": "2026-10-27",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
   "subject": "数学",
   "template": "explain",
   "topicId": "mt_probability",
-  "title": "可能性：区域越大，机会越大",
+  "title": "8 格只有 1 格中奖，转 40 次能中几次？",
   "renderer": "spinner",
-  "duration": 11,
-  "interactions": 2,
+  "duration": 24,
+  "interactions": 16,
   "grade": 5,
   "standards": [
     "math-2022:S3:SP"
   ],
   "prerequisites": [
-    "mt_frac-intro",
-    "mt_data-collect"
+    "mt_frac-intro"
   ],
   "next": [],
   "objectives": [
-    "体验随机现象：结果事先无法确定",
-    "知道可能性的大小与区域（数量）占比有关",
-    "通过多次实验发现频率稳定在可能性附近"
+    "会用「一定、可能、不可能」描述事件，并能用分数表示可能性的大小",
+    "知道可能性大小由所占份数决定，份数越多可能性越大",
+    "会判断游戏是否公平，并用多次试验的频率去验证自己的判断"
   ],
-  "cognitiveAction": "逼近"
+  "cognitiveAction": "模拟",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "转盘",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "三种说法",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "公平吗",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
 }
