@@ -2,15 +2,15 @@
   "status": "reviewed",
   "author": "goral.cao",
   "license": "CC-BY-SA-4.0",
-  "version": "1.0.0",
-  "updatedAt": "2026-10-27",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
   "subject": "数学",
   "template": "explain",
   "topicId": "mt_circle",
-  "title": "圆的认识：一根绳子转一圈",
+  "title": "车轮为什么做成圆的，而不是方的？",
   "renderer": "circle",
-  "duration": 11,
-  "interactions": 3,
+  "duration": 24,
+  "interactions": 16,
   "grade": 6,
   "standards": [
     "math-2022:S3:GG:GM"
@@ -21,12 +21,76 @@
   ],
   "next": [
     "mt_circle-measure",
+    "mt_cylinder",
+    "mt_pie-chart",
     "mt_sector"
   ],
   "objectives": [
-    "认识圆心、半径、直径并理解 d=2r",
-    "理解圆心决定圆的位置、半径决定圆的大小",
-    "知道圆是轴对称图形且有无数条对称轴"
+    "认识圆心、半径、直径，会用圆规画指定半径的圆",
+    "掌握同圆内 d = 2r、半径都相等、直径都相等，知道直径是最长的弦",
+    "说明圆有无数条对称轴，并解释车轮、井盖做成圆形的原因"
   ],
-  "cognitiveAction": "构造"
+  "cognitiveAction": "构造",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "圆规画圆",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "d = 2r",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "对称与生活",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
 }

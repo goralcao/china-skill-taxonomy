@@ -1,0 +1,556 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>车轮为什么做成圆的，而不是方的？</h1>
+  <p class="sub">六年级数学 · 圆的认识</p>
+  <div class="tags">
+    <span class="tag">圆心定位置</span>
+    <span class="tag">半径定大小</span>
+    <span class="tag">d = 2r</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 470 212" width="480" height="216" role="img" aria-label="车轮做成圆形，因为圆心到边缘的距离处处相等，半径决定圆的大小">
+      <g font-family="sans-serif">
+        <text x="235" y="20" text-anchor="middle" font-size="13" fill="#FFFFFF">车轮为什么做成圆的，而不是方的？</text>
+        <circle cx="120" cy="112" r="62" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
+        <circle cx="120" cy="112" r="5" fill="#FFD54F"/>
+        <line x1="120" y1="112" x2="182" y2="112" stroke="#FFD54F" stroke-width="2.5"/>
+        <line x1="120" y1="112" x2="58" y2="112" stroke="#81D4FA" stroke-width="2"/>
+        <line x1="58" y1="112" x2="182" y2="112" stroke="rgba(255,255,255,.35)" stroke-width="1" stroke-dasharray="4 3"/>
+        <text x="150" y="106" text-anchor="middle" font-size="11" fill="#FFD54F">r</text>
+        <text x="120" y="190" text-anchor="middle" font-size="10.5" fill="rgba(255,255,255,.85)">圆心 O · 半径 r · 直径 d = 2r</text>
+        <rect x="248" y="36" width="198" height="150" rx="9" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.32)"/>
+        <text x="347" y="60" text-anchor="middle" font-size="11" fill="#FFD54F">关键在「处处相等」</text>
+        <text x="347" y="84" text-anchor="middle" font-size="11" fill="#FFFFFF">圆心到圆上每一点</text>
+        <text x="347" y="104" text-anchor="middle" font-size="11" fill="#FFFFFF">距离都等于 5 厘米</text>
+        <text x="347" y="132" text-anchor="middle" font-size="12.5" font-weight="700" fill="#FFE082">滚起来才平稳</text>
+        <text x="347" y="160" text-anchor="middle" font-size="10.5" fill="rgba(255,255,255,.8)">半径决定大小，圆心决定位置</text>
+      </g>
+    </svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先答三道，凭感觉</h2>
+  <p class="quiz-hint">三道题都在问「圆心、半径、直径」。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 画圆时，圆规针尖扎住的点叫什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>圆心</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>半径</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>直径</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 圆心到圆上任意一点的线段叫？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>直径</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>弦</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>半径</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 一个圆的半径是 5 厘米，直径是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5 厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>10 厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>2.5 厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 圆规两脚张开 5 厘米，画出的圆有多大 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">圆规两脚张开 5 厘米，画出的圆有多大</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="用圆规画圆：针尖固定圆心，两脚距离是半径，旋转一周得到圆">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#01579B">用圆规画圆：定点、定长、旋转一周</text>
+        <circle cx="118" cy="132" r="62" fill="#E1F5FE" stroke="#01579B" stroke-width="2"/>
+        <circle cx="118" cy="132" r="4.5" fill="#01579B"/>
+        <line x1="118" y1="132" x2="180" y2="132" stroke="#FFB300" stroke-width="2.5"/>
+        <text x="118" y="124" font-size="10.5" fill="#01579B">O</text>
+        <text x="150" y="126" text-anchor="middle" font-size="11" fill="#E65100">r = 5 厘米</text>
+        <text x="118" y="212" text-anchor="middle" font-size="10.5" fill="#546E7A">针尖不动，铅笔脚绕一圈</text>
+        <rect x="212" y="30" width="172" height="94" rx="8" fill="#E1F5FE" stroke="#81D4FA" stroke-width="1.2"/>
+        <text x="298" y="52" text-anchor="middle" font-size="11" font-weight="700" fill="#01579B">圆心 O</text>
+        <text x="298" y="74" text-anchor="middle" font-size="10.5" fill="#37474F">针尖扎住的那个点</text>
+        <text x="298" y="94" text-anchor="middle" font-size="10.5" fill="#37474F">决定圆的位置</text>
+        <text x="298" y="114" text-anchor="middle" font-size="10.5" fill="#546E7A">同一个圆里只有一个圆心</text>
+        <rect x="212" y="134" width="172" height="94" rx="8" fill="#FFF8E1" stroke="#FFE082" stroke-width="1.2"/>
+        <text x="298" y="156" text-anchor="middle" font-size="11" font-weight="700" fill="#E65100">半径 r</text>
+        <text x="298" y="178" text-anchor="middle" font-size="10.5" fill="#37474F">圆心到圆上任意一点的线段</text>
+        <text x="298" y="198" text-anchor="middle" font-size="10.5" fill="#37474F">决定圆的大小</text>
+        <text x="298" y="218" text-anchor="middle" font-size="10.5" fill="#546E7A">同一个圆里有无数条半径</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    用圆规画圆分三步：<strong>针尖扎住不动</strong>（定圆心）、两脚张开 5 厘米（定半径）、<strong>旋转一周</strong>。画出的圆上每一点到圆心的距离都是 5 厘米。
+  </p>
+  <p class="teach-text" id="p2s2">
+    针尖那个点叫<strong>圆心 O</strong>，决定圆的<strong>位置</strong>；两脚的距离叫<strong>半径 r</strong>，决定圆的<strong>大小</strong>。
+  </p>
+  <p class="teach-text" id="p2s3">
+    同一个圆里只有一个圆心，却有<strong>无数条半径</strong>，而且每条半径都一样长。这正是车轮滚起来平稳的原因。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>圆心 O</h4>
+    <div class="eq">决定位置</div>
+    <p>针尖扎住的那个点。</p>
+  </div>
+  <div class="card">
+    <h4>半径 r</h4>
+    <div class="eq">决定大小</div>
+    <p>圆心到圆上一点的线段。</p>
+  </div>
+  <div class="card">
+    <h4>旋转一周</h4>
+    <div class="eq">得到圆</div>
+    <p>每一点到 O 都等于 r。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  圆的定义就一句话：<strong>到定点距离等于定长的所有点组成的图形</strong>；定点给位置，定长给大小。
+</div>
+</section>
+
+<!-- ===== p3: 半径 5 厘米，直径 10 厘米：d = 2r ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">半径 5 厘米，直径 10 厘米：d = 2r</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="同一个圆里直径是半径的两倍，半径都相等，直径都相等，直径是最长的弦">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#01579B">d = 2r：直径与半径的关系</text>
+        <circle cx="112" cy="134" r="70" fill="#E1F5FE" stroke="#01579B" stroke-width="2"/>
+        <circle cx="112" cy="134" r="4.5" fill="#01579B"/>
+        <line x1="42" y1="134" x2="182" y2="134" stroke="#FFB300" stroke-width="3"/>
+        <line x1="112" y1="134" x2="112" y2="64" stroke="#0288D1" stroke-width="2"/>
+        <line x1="112" y1="134" x2="62" y2="99" stroke="#0288D1" stroke-width="2"/>
+        <text x="112" y="128" font-size="10.5" fill="#01579B">O</text>
+        <text x="76" y="128" text-anchor="middle" font-size="11" fill="#E65100">d</text>
+        <text x="112" y="96" text-anchor="middle" font-size="11" fill="#0288D1">r</text>
+        <text x="112" y="222" text-anchor="middle" font-size="10.5" fill="#546E7A">直径经过圆心，两端都在圆上</text>
+        <rect x="212" y="30" width="172" height="60" rx="8" fill="#E1F5FE" stroke="#81D4FA" stroke-width="1.2"/>
+        <text x="298" y="52" text-anchor="middle" font-size="11.5" font-weight="700" fill="#01579B">d = 2r　·　r = d/2</text>
+        <text x="298" y="74" text-anchor="middle" font-size="10.5" fill="#37474F">半径 5 厘米 → 直径 10 厘米</text>
+        <rect x="212" y="100" width="172" height="60" rx="8" fill="#FFF8E1" stroke="#FFE082" stroke-width="1.2"/>
+        <text x="298" y="122" text-anchor="middle" font-size="11" font-weight="700" fill="#E65100">同圆内的「都相等」</text>
+        <text x="298" y="144" text-anchor="middle" font-size="10.5" fill="#37474F">无数条半径都相等，无数条直径都相等</text>
+        <rect x="212" y="170" width="172" height="60" rx="8" fill="#F3E5F5" stroke="#CE93D8" stroke-width="1.2"/>
+        <text x="298" y="192" text-anchor="middle" font-size="11" font-weight="700" fill="#6A1B9A">直径是最长的弦</text>
+        <text x="298" y="214" text-anchor="middle" font-size="10.5" fill="#37474F">两端在圆上的线段叫弦</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    <strong>直径 d</strong> 是<strong>经过圆心、两端都在圆上</strong>的线段。一条直径正好由两条半径接起来，所以 <strong>d = 2r</strong>，反过来 r = d/2。
+  </p>
+  <p class="teach-text" id="p3s2">
+    同一个圆里：无数条半径<strong>都相等</strong>，无数条直径<strong>也都相等</strong>；两端在圆上的线段叫<strong>弦</strong>，直径是最长的一条弦。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>d = 2r，r = d ÷ 2</li>
+  <li>直径必须经过圆心，且两端都在圆上</li>
+  <li>同圆内所有半径相等、所有直径相等</li>
+  <li>直径是圆内最长的弦</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  判断一条线段是不是直径，看两件事：<strong>过不过圆心、两端在不在圆上</strong>；缺一个都只是普通弦。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">圆里的名称和关系，连一连</h2>
+<p class="teach-text" id="p3bs1">左边是名称或说法，右边是它的含义。把相配的连起来。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 名称与 d = 2r</h2>
+  <p class="quiz-hint">三道题，注意直径必须过圆心。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 一个圆的直径是 12 厘米，半径是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>6 厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>24 厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>12 厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 下面哪条线段一定是直径？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>两端在圆上但不经过圆心</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>经过圆心且两端都在圆上</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>从圆心出发到圆上一点</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 同一个圆里，半径有多少条？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1 条</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>2 条</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>无数条</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 圆有无数条对称轴，井盖为什么不会掉 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">圆有无数条对称轴，井盖为什么不会掉</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="圆是轴对称图形，直径所在直线是对称轴，有无数条对称轴，圆桌比方桌坐得多">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#01579B">圆的对称性与生活里的圆</text>
+        <circle cx="104" cy="128" r="66" fill="#E1F5FE" stroke="#01579B" stroke-width="2"/>
+        <g stroke="#FFB300" stroke-width="1.6" stroke-dasharray="5 4">
+          <line x1="38" y1="128" x2="170" y2="128"/>
+          <line x1="104" y1="62" x2="104" y2="194"/>
+          <line x1="57" y1="81" x2="151" y2="175"/>
+          <line x1="57" y1="175" x2="151" y2="81"/>
+        </g>
+        <text x="104" y="212" text-anchor="middle" font-size="10.5" fill="#546E7A">每条直径所在直线都是对称轴</text>
+        <rect x="200" y="30" width="184" height="66" rx="8" fill="#E1F5FE" stroke="#81D4FA" stroke-width="1.2"/>
+        <text x="292" y="52" text-anchor="middle" font-size="11" font-weight="700" fill="#01579B">无数条对称轴</text>
+        <text x="292" y="74" text-anchor="middle" font-size="10.5" fill="#37474F">正方形只有 4 条，圆有无数条</text>
+        <rect x="200" y="106" width="184" height="66" rx="8" fill="#FFF8E1" stroke="#FFE082" stroke-width="1.2"/>
+        <text x="292" y="128" text-anchor="middle" font-size="11" font-weight="700" fill="#E65100">井盖、车轮、圆桌</text>
+        <text x="292" y="150" text-anchor="middle" font-size="10.5" fill="#37474F">处处等距 → 不掉落、滚动平稳</text>
+        <rect x="200" y="182" width="184" height="56" rx="8" fill="#E8F5E9" stroke="#A5D6A7" stroke-width="1.2"/>
+        <text x="292" y="204" text-anchor="middle" font-size="11" font-weight="700" fill="#2E7D32">圆桌坐得更多</text>
+        <text x="292" y="224" text-anchor="middle" font-size="10.5" fill="#37474F">周长相同时，圆的面积最大</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    沿任意一条直径所在的直线对折，圆的两半完全重合，所以<strong>圆是轴对称图形，有无数条对称轴</strong>；正方形只有 4 条。
+  </p>
+  <p class="teach-text" id="p5s2">
+    井盖做成圆形，是因为圆的<strong>宽度处处相等</strong>，怎么转都不会从井口掉下去；车轮做成圆形，滚动时圆心高度不变，才平稳。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>对称轴</h4>
+    <div class="eq">直径所在的直线</div>
+    <p>无数条。</p>
+  </div>
+  <div class="card">
+    <h4>车轮</h4>
+    <div class="eq">圆心高度不变</div>
+    <p>滚动才平稳。</p>
+  </div>
+  <div class="card">
+    <h4>井盖</h4>
+    <div class="eq">宽度处处相等</div>
+    <p>不会掉进井口。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  把「<strong>处处等距</strong>」这条性质记住，车轮、井盖、圆桌这些现象就都能解释；圆桌坐得多，是因为周长相同时圆的面积最大。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">拖半径：圆随半径一起变大</h2>
+  <p class="sim-desc">换一组半径，点「加大半径」看圆怎么长，同时观察直径 d = 2r、半径条数、对称轴条数。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">第 1 组 · 半径 3 厘米 · 直径 6 厘米</span>
+    <span class="sim-tip" id="simTip">点画布或按钮加大半径</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simGrow()">① 加大半径</button>
+    <button class="btn-primary" onclick="simRunAll()">一键到底</button>
+    <button class="btn-retry" onclick="simNextCase()">换一组</button>
+    <button class="btn-retry" onclick="simReset()">重来</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">半径越大，圆越大；直径永远等于半径的 2 倍</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>半径决定圆的大小，圆心决定圆的位置。</li>
+    <li>同一个圆里半径有无数条，且长度都相等。</li>
+    <li>d = 2r 与半径取多少无关，始终成立。</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 性质判断</h2>
+  <p class="quiz-hint">这一组要分清「一定」和「不一定」。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 圆有多少条对称轴？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1 条</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>无数条</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>4 条</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 两端都在圆上的线段一定是直径吗？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>一定</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>一定不是</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>不一定</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 在同一个圆里，所有直径的长度？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>都相等</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>都不相等</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>有的相等有的不等</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四个易错点，都在「过不过圆心」和「无数条」上 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四个易错点，都在「过不过圆心」和「无数条」上</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    学圆最容易错的地方，是<strong>把「两端在圆上」就当成直径</strong>，或者<strong>把半径说成只有一条</strong>。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>坑一：弦当直径</h4>
+    <div class="eq">两端在圆上就是直径 ✗</div>
+    <p>还必须经过圆心；否则只是弦。</p>
+  </div>
+  <div class="card">
+    <h4>坑二：半径只有一条</h4>
+    <div class="eq">一个圆只有 1 条半径 ✗</div>
+    <p>圆上有无数个点，半径有无数条。</p>
+  </div>
+  <div class="card">
+    <h4>坑三：直径比半径大 2</h4>
+    <div class="eq">d = r + 2 ✗</div>
+    <p>是 d = 2r，两倍不是多 2。</p>
+  </div>
+  <div class="card">
+    <h4>坑四：对称轴数错</h4>
+    <div class="eq">圆有 4 条对称轴 ✗</div>
+    <p>正方形才是 4 条，圆有无数条。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  一句话：<strong>圆心定位置、半径定大小；d = 2r；同圆内半径直径都各有无数条且分别相等；直径是最长的弦</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到开头的车轮：半径 5 厘米时直径 10 厘米，圆心到地面始终是 5 厘米，滚起来才不颠。若换成方形，中心到边的距离时大时小，车就会上下跳。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题验收</h2>
+  <p class="quiz-hint">最后一组，记得直径必须过圆心。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 用圆规画半径 4 厘米的圆，两脚应张开多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>4 厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>8 厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>2 厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 一个圆的半径是 7 厘米，直径是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>3.5 厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>14 厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>7 厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 圆内最长的弦是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>半径</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>直径</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>不过圆心的弦</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 下面说法正确的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>直径是半径的 2 倍</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>圆只有 1 条半径</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>所有弦都是直径</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 井盖做成圆形，主要利用圆的哪条性质？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>有无数条对称轴</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>面积比正方形大</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>宽度处处相等</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">定义</div>
+        <div class="summary-v4-summary">到定点距离等于定长</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>圆心定位置，半径定大小。</p>
+      <p>圆规：定点、定长、转一周。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">d = 2r</div>
+        <div class="summary-v4-summary">直径过圆心</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>r = d ÷ 2。</p>
+      <p>直径是最长的弦。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">都相等</div>
+        <div class="summary-v4-summary">无数条半径、无数条直径</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>同圆内半径都相等。</p>
+      <p>同圆内直径都相等。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">对称与生活</div>
+        <div class="summary-v4-summary">无数条对称轴</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>直径所在直线即对称轴。</p>
+      <p>车轮平稳、井盖不掉、圆桌坐得多。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  下次遇到圆，先找<strong>圆心和半径</strong>，再套 d = 2r；判断直径时一定问一句「过不过圆心」。
+</p>
+</section>
