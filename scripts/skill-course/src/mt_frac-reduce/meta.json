@@ -1,0 +1,94 @@
+{
+  "topicId": "mt_frac-reduce",
+  "title": "24 块吃掉 18 块，为什么等于吃了 3/4？",
+  "template": "explain",
+  "renderer": "fracReduce",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 5,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S3:NA:NO"
+  ],
+  "prerequisites": [
+    "mt_frac-meaning",
+    "mt_factors"
+  ],
+  "next": [
+    "mt_frac-addsub",
+    "mt_proportion"
+  ],
+  "objectives": [
+    "说出分数的基本性质，并用它解释约分",
+    "用最大公因数把分数一次约成最简分数",
+    "用最小公倍数通分，比较两个异分母分数"
+  ],
+  "cognitiveAction": "变换",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "并一并",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "约分",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "通分",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}
