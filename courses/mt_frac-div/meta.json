@@ -2,15 +2,15 @@
   "status": "reviewed",
   "author": "goral.cao",
   "license": "CC-BY-SA-4.0",
-  "version": "1.0.0",
-  "updatedAt": "2026-10-27",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
   "subject": "数学",
   "template": "explain",
   "topicId": "mt_frac-div",
-  "title": "分数与除法：切饼分人",
-  "renderer": "fracDiv",
-  "duration": 11,
-  "interactions": 2,
+  "title": "3 个饼分给 4 个人，每人能分到一整个吗？",
+  "renderer": "division",
+  "duration": 24,
+  "interactions": 16,
   "grade": 5,
   "standards": [
     "math-2022:S3:NA:NO"
@@ -21,12 +21,75 @@
   ],
   "next": [
     "mt_frac-div2",
-    "mt_ratio"
+    "mt_ratio",
+    "mt_percent-1"
   ],
   "objectives": [
-    "理解 a÷b=a/b：被除数是分子，除数是分母",
-    "认识真分数、假分数和带分数",
-    "会把假分数化成带分数或整数"
+    "用分数表示两个整数相除的商",
+    "说出被除数、除数与分子、分母的对应关系",
+    "用除法求一个数是另一个数的几分之几"
   ],
-  "cognitiveAction": "比较"
+  "cognitiveAction": "构造",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "切开来分",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "除号变法",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "几个之几",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
 }
