@@ -1,0 +1,93 @@
+{
+  "topicId": "mt_frac-mul",
+  "title": "一张饼的 3/4，再取它的 1/2，是整张的几分之几？",
+  "template": "explain",
+  "renderer": "fracOps",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 6,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S3:NA:NO"
+  ],
+  "prerequisites": [
+    "mt_frac-addsub",
+    "mt_frac-meaning"
+  ],
+  "next": [
+    "mt_frac-div2"
+  ],
+  "objectives": [
+    "用面积模型说明分数乘分数的算理，说出重叠格子为什么是分子乘分子、分母乘分母",
+    "掌握分数乘整数、分数乘分数的法则，并养成先约分再乘的习惯",
+    "会用乘法解决「求一个数的几分之几」和食谱缩放等实际问题"
+  ],
+  "cognitiveAction": "累积",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "分数×整数",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "面积模型",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "求几分之几",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

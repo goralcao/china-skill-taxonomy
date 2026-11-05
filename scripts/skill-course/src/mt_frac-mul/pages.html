@@ -1,0 +1,577 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>一张饼的 3/4，再取它的 1/2，是整张的几分之几？</h1>
+  <p class="sub">六年级数学 · 分数乘法</p>
+  <div class="tags">
+    <span class="tag">横竖各切一次</span>
+    <span class="tag">分子乘分子</span>
+    <span class="tag">先约分更省事</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 470 212" width="480" height="216" role="img" aria-label="一张饼先横切取四分之三，再竖切取二分之一，重叠的部分就是乘积">
+      <g font-family="sans-serif">
+        <text x="235" y="20" text-anchor="middle" font-size="13" fill="rgba(255,255,255,.9)">一张饼的 3/4，再取它的 1/2，是整张的几分之几？</text>
+        <rect x="30" y="36" width="180" height="150" fill="#FFF" stroke="#B71C1C" stroke-width="2"/>
+        <rect x="30" y="36" width="180" height="37.5" fill="#FFCDD2"/>
+        <rect x="30" y="73.5" width="180" height="37.5" fill="#FFCDD2"/>
+        <rect x="30" y="111" width="180" height="37.5" fill="#FFCDD2"/>
+        <rect x="30" y="36" width="90" height="150" fill="#FF8F00" opacity=".42"/>
+        <rect x="30" y="36" width="90" height="112.5" fill="#C62828" opacity=".62"/>
+        <g stroke="#B71C1C" stroke-width="1">
+          <line x1="120" y1="36" x2="120" y2="186"/>
+          <line x1="30" y1="73.5" x2="210" y2="73.5"/>
+          <line x1="30" y1="111" x2="210" y2="111"/>
+          <line x1="30" y1="148.5" x2="210" y2="148.5"/>
+        </g>
+        <text x="120" y="204" text-anchor="middle" font-size="11" fill="#FFFFFF">横切取 3/4（红）· 竖切取 1/2（橙）· 重叠深色 3 格</text>
+        <rect x="256" y="36" width="184" height="150" rx="9" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.32)"/>
+        <text x="348" y="62" text-anchor="middle" font-size="11.5" fill="#FFD54F">重叠的深色格子</text>
+        <text x="348" y="88" text-anchor="middle" font-size="13" font-weight="700" fill="#FFF">3 × 1 = 3 格</text>
+        <text x="348" y="112" text-anchor="middle" font-size="11.5" fill="#FFD54F">全部格子</text>
+        <text x="348" y="138" text-anchor="middle" font-size="13" font-weight="700" fill="#FFF">4 × 2 = 8 格</text>
+        <text x="348" y="168" text-anchor="middle" font-size="12.5" font-weight="700" fill="#FFE082">3/4 × 1/2 = 3/8</text>
+      </g>
+    </svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先答三道，凭感觉</h2>
+  <p class="quiz-hint">三道题都在问「一半的一半」「几个相同分数」。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 一杯牛奶先喝掉 1/2，再喝掉剩下的 1/2，一共喝了这杯的几分之几？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1/4</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>1/2</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3/4</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 3 个 2/7 相加，结果是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>6/7</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>2/21</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>5/7</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 一件 100 元的衣服打 8 折，应付多少钱？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>80 元</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>8 元</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>92 元</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 一张饼 12 元，3 个 2/7 张怎么算 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">一张饼 12 元，3 个 2/7 张怎么算</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="3 个 2/7 相加等于 2/7 乘 3，分子乘整数，分母不变">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#C62828">分数 × 整数：就是几个相同分数相加</text>
+        <text x="12" y="40" font-size="11" fill="#5D4037">一张饼 12 元，买 3 个 2/7 张，一共是这张饼的几分之几？</text>
+        <g>
+          <rect x="16" y="52" width="84" height="34" fill="#FFF" stroke="#B71C1C"/>
+          <rect x="16" y="52" width="24" height="34" fill="#EF9A9A" stroke="#B71C1C"/>
+          <rect x="40" y="52" width="24" height="34" fill="#EF9A9A" stroke="#B71C1C"/>
+          <text x="58" y="102" text-anchor="middle" font-size="10.5" fill="#5D4037">2/7</text>
+        </g>
+        <text x="110" y="76" font-size="15" fill="#C62828">+</text>
+        <g>
+          <rect x="128" y="52" width="84" height="34" fill="#FFF" stroke="#B71C1C"/>
+          <rect x="128" y="52" width="24" height="34" fill="#EF9A9A" stroke="#B71C1C"/>
+          <rect x="152" y="52" width="24" height="34" fill="#EF9A9A" stroke="#B71C1C"/>
+          <text x="170" y="102" text-anchor="middle" font-size="10.5" fill="#5D4037">2/7</text>
+        </g>
+        <text x="222" y="76" font-size="15" fill="#C62828">+</text>
+        <g>
+          <rect x="240" y="52" width="84" height="34" fill="#FFF" stroke="#B71C1C"/>
+          <rect x="240" y="52" width="24" height="34" fill="#EF9A9A" stroke="#B71C1C"/>
+          <rect x="264" y="52" width="24" height="34" fill="#EF9A9A" stroke="#B71C1C"/>
+          <text x="282" y="102" text-anchor="middle" font-size="10.5" fill="#5D4037">2/7</text>
+        </g>
+        <text x="336" y="76" font-size="15" fill="#C62828">= ?</text>
+        <rect x="16" y="120" width="368" height="52" rx="8" fill="#FFEBEE" stroke="#EF9A9A" stroke-width="1.2"/>
+        <text x="200" y="144" text-anchor="middle" font-size="12.5" font-weight="700" fill="#C62828">2/7 × 3 = (2 × 3)/7 = 6/7</text>
+        <text x="200" y="164" text-anchor="middle" font-size="11" fill="#5D4037">分母表示「平均分成几份」，份数没变，仍然是 7</text>
+        <rect x="16" y="184" width="368" height="56" rx="8" fill="#FFF8E1" stroke="#FFE082" stroke-width="1.2"/>
+        <text x="200" y="206" text-anchor="middle" font-size="11.5" font-weight="700" fill="#E65100">法则一：分子乘整数，分母不变</text>
+        <text x="200" y="228" text-anchor="middle" font-size="11" fill="#5D4037">能约分的先约分：2/9 × 3 = 2/3，不必算成 6/9 再约</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    一张饼 12 元，先算「3 个 2/7 张是这张饼的几分之几」。把 3 个 2/7 连加，就是 <strong>2/7 × 3</strong>：分子 2 乘 3 得 6，分母 7 表示平均分的份数，没有变。
+  </p>
+  <p class="teach-text" id="p2s2">
+    所以 2/7 × 3 = <strong>6/7</strong>。如果按 12 元算钱，就是 12 × 6/7 元；先别急着算，重点看分母为什么不动。
+  </p>
+  <p class="teach-text" id="p2s3">
+    遇到 2/9 × 3 这类题，可以在乘之前先约分：3 和 9 约成 1 和 3，直接得 2/3，比算成 6/9 再约更省事。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>意义</h4>
+    <div class="eq">几个相同分数相加</div>
+    <p>2/7 × 3 = 2/7 + 2/7 + 2/7。</p>
+  </div>
+  <div class="card">
+    <h4>算法</h4>
+    <div class="eq">分子乘整数</div>
+    <p>分母是份数，保持不变。</p>
+  </div>
+  <div class="card">
+    <h4>技巧</h4>
+    <div class="eq">能约分先约分</div>
+    <p>2/9 × 3 直接得 2/3。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  分数乘整数，只把<strong>分子的个数放大</strong>；分母是「平均分成几份」，份数没变就不动。
+</div>
+</section>
+
+<!-- ===== p3: 2/3 × 3/5：横竖各切一次，数重叠格子 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">2/3 × 3/5：横竖各切一次，数重叠格子</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="分数乘分数用面积模型：横向分 3 份取 2 份，纵向分 5 份取 3 份，重叠 6 格占 15 格">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#C62828">2/3 × 3/5：横竖各切一次，数重叠格子</text>
+        <rect x="16" y="30" width="210" height="140" fill="#FFF"/>
+        <rect x="16" y="30" width="210" height="93.3" fill="#FFCDD2" opacity=".75"/>
+        <rect x="16" y="30" width="126" height="140" fill="#FF8F00" opacity=".42"/>
+        <rect x="16" y="30" width="126" height="93.3" fill="#E53935" opacity=".72"/>
+        <g stroke="#B71C1C" stroke-width="1">
+          <line x1="58" y1="30" x2="58" y2="170"/><line x1="100" y1="30" x2="100" y2="170"/>
+          <line x1="142" y1="30" x2="142" y2="170"/><line x1="184" y1="30" x2="184" y2="170"/>
+          <line x1="16" y1="76.6" x2="226" y2="76.6"/><line x1="16" y1="123.3" x2="226" y2="123.3"/>
+        </g>
+        <rect x="16" y="30" width="210" height="140" fill="none" stroke="#B71C1C" stroke-width="2"/>
+        <rect x="16" y="30" width="126" height="93.3" fill="none" stroke="#C62828" stroke-width="2.4"/>
+        <text x="121" y="188" text-anchor="middle" font-size="10.5" fill="#5D4037">红色 = 2/3（2 行）· 橙色 = 3/5（3 列）· 重叠 2 × 3 = 6 格</text>
+        <rect x="240" y="30" width="144" height="140" rx="8" fill="#FFF8E1" stroke="#FFE082" stroke-width="1.2"/>
+        <text x="312" y="52" text-anchor="middle" font-size="11" font-weight="700" fill="#E65100">怎么算</text>
+        <text x="312" y="76" text-anchor="middle" font-size="11.5" fill="#5D4037">横向分 3 份取 2 份</text>
+        <text x="312" y="98" text-anchor="middle" font-size="11.5" fill="#5D4037">纵向分 5 份取 3 份</text>
+        <text x="312" y="122" text-anchor="middle" font-size="12" font-weight="700" fill="#C62828">2 × 3 = 6</text>
+        <text x="312" y="144" text-anchor="middle" font-size="12" font-weight="700" fill="#C62828">3 × 5 = 15</text>
+        <text x="312" y="164" text-anchor="middle" font-size="10.5" fill="#5D4037">6/15 = 2/5</text>
+        <rect x="16" y="200" width="368" height="44" rx="8" fill="#FFEBEE" stroke="#EF9A9A" stroke-width="1.2"/>
+        <text x="200" y="220" text-anchor="middle" font-size="11.5" font-weight="700" fill="#C62828">法则二：分子乘分子，分母乘分母</text>
+        <text x="200" y="238" text-anchor="middle" font-size="10.5" fill="#5D4037">a/b × c/d = (a×c)/(b×d)，先约分更省事</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    分数乘分数不能把分子、分母分别相加。改用面积模型：一张饼<strong>横向分 3 份取 2 份</strong>（2/3），再<strong>纵向分 5 份取 3 份</strong>（3/5）。
+  </p>
+  <p class="teach-text" id="p3s2">
+    重叠的深色格子有 2 × 3 = 6 个，整张饼被切成 3 × 5 = 15 格，所以 2/3 × 3/5 = <strong>6/15 = 2/5</strong>。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>分子乘分子：2 × 3 = 6（重叠格数）</li>
+  <li>分母乘分母：3 × 5 = 15（总格数）</li>
+  <li>a/b × c/d = (a×c)/(b×d)</li>
+  <li>结果不是最简分数时要约分</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  面积模型把「为什么这样算」画出来了：<strong>重叠格数 = 分子相乘，总格数 = 分母相乘</strong>。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">算式与格子，连一连</h2>
+<p class="teach-text" id="p3bs1">左边是算式或说法，右边是它在面积模型里对应的意思。把相配的连起来。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 分数乘整数</h2>
+  <p class="quiz-hint">三道题，注意分母不要跟着乘。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 2/9 × 3 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>2/27</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>6/9 = 2/3</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>6/27</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 5 × 2/11 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>10/55</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>7/11</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>10/11</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 3/4 × 8，先约分再算，结果是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>24/32</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3/32</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>6</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 求一个数的几分之几，用乘法 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">求一个数的几分之几，用乘法</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="求一个数的几分之几用乘法，以及先约分再乘的两种写法">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#C62828">求一个数的几分之几 → 用乘法</text>
+        <rect x="16" y="30" width="176" height="96" rx="8" fill="#E3F2FD" stroke="#90CAF9" stroke-width="1.2"/>
+        <text x="104" y="52" text-anchor="middle" font-size="11" font-weight="700" fill="#1565C0">一箱 24 元，买它的 3/4</text>
+        <text x="104" y="76" text-anchor="middle" font-size="11.5" fill="#37474F">24 × 3/4</text>
+        <text x="104" y="98" text-anchor="middle" font-size="11.5" fill="#37474F">= 24 ÷ 4 × 3</text>
+        <text x="104" y="118" text-anchor="middle" font-size="12" font-weight="700" fill="#1565C0">= 18 元</text>
+        <rect x="208" y="30" width="176" height="96" rx="8" fill="#FFF3E0" stroke="#FFCC80" stroke-width="1.2"/>
+        <text x="296" y="52" text-anchor="middle" font-size="11" font-weight="700" fill="#E65100">食谱按人数缩放</text>
+        <text x="296" y="76" text-anchor="middle" font-size="11.5" fill="#37474F">2 人份用 3/4 杯米</text>
+        <text x="296" y="98" text-anchor="middle" font-size="11.5" fill="#37474F">4 人份：3/4 × 2</text>
+        <text x="296" y="118" text-anchor="middle" font-size="12" font-weight="700" fill="#E65100">= 3/2 杯</text>
+        <rect x="16" y="138" width="368" height="48" rx="8" fill="#FFEBEE" stroke="#EF9A9A" stroke-width="1.2"/>
+        <text x="200" y="158" text-anchor="middle" font-size="11.5" font-weight="700" fill="#C62828">先约分再乘，数字小得多</text>
+        <text x="200" y="178" text-anchor="middle" font-size="11" fill="#5D4037">3/8 × 4/9：先约成 1/2 × 1/3，直接得 1/6</text>
+        <rect x="16" y="196" width="368" height="48" rx="8" fill="#F1F8E9" stroke="#AED581" stroke-width="1.2"/>
+        <text x="200" y="216" text-anchor="middle" font-size="11.5" font-weight="700" fill="#33691E">积一定比原来的数大吗？</text>
+        <text x="200" y="236" text-anchor="middle" font-size="10.5" fill="#5D4037">乘真分数会变小，乘 1 不变，乘大于 1 的分数才变大</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    一箱 24 元，买它的 3/4 要多少钱？「求一个数的几分之几」就<strong>用这个数乘这个分数</strong>：24 × 3/4 = 24 ÷ 4 × 3 = 18 元。
+  </p>
+  <p class="teach-text" id="p5s2">
+    食谱按人数缩放也一样：2 人份用 3/4 杯米，4 人份就是 3/4 × 2 = 3/2 杯。乘的是「倍数」，不一定是整数。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>24 的 3/4</h4>
+    <div class="eq">24 × 3/4 = 18 元</div>
+    <p>先除分母再乘分子。</p>
+  </div>
+  <div class="card">
+    <h4>食谱 ×2</h4>
+    <div class="eq">3/4 × 2 = 3/2 杯</div>
+    <p>人数翻倍，用量翻倍。</p>
+  </div>
+  <div class="card">
+    <h4>先约分</h4>
+    <div class="eq">3/8 × 4/9 → 1/6</div>
+    <p>交叉约分，数字更小。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  别把「求几分之几」做成除法。<strong>谁的几分之几，就用谁去乘那个分数</strong>；乘真分数，结果会比原数小。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">面积模型：横切一刀，再竖切一刀</h2>
+  <p class="sim-desc">换一组分数，按「横切 → 竖切 → 数重叠 → 约分」一步步看，右侧实时算出乘积与最简结果。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">第 1 组 · 2/3 × 3/5 · 还没切</span>
+    <span class="sim-tip" id="simTip">点画布或按钮推进</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simStep()">① 切一刀</button>
+    <button class="btn-primary" onclick="simRunAll()">一键到底</button>
+    <button class="btn-retry" onclick="simNextCase()">换一组</button>
+    <button class="btn-retry" onclick="simReset()">重来</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">每一格代表 1/(b×d)；深色格子数就是乘积的分子</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>横向分 b 份取 a 份，纵向分 d 份取 c 份，重叠 a×c 格。</li>
+    <li>总格数 b×d 是分母，重叠格数 a×c 是分子。</li>
+    <li>先约分再乘，结果一样但数字小得多。</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 分数乘分数</h2>
+  <p class="quiz-hint">这一组要会用面积模型和约分。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 2/3 × 3/5 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>6/15 = 2/5</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>5/8</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>6/8</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 3/8 × 4/9 先约分再算，结果是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>12/72</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>1/6</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>7/17</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 一个正数乘真分数，积与这个数比？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>积更大</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>一定相等</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>积更小</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四个易错点，都在「分别相乘」和「约分」上 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四个易错点，都在「分别相乘」和「约分」上</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    分数乘法最容易错的地方，是<strong>把分子分母分别相加</strong>，或者<strong>忘了分母也要乘</strong>，还有算完不约分。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>坑一：分子分母相加</h4>
+    <div class="eq">2/3 × 3/5 = 5/8 ✗</div>
+    <p>应该分子乘分子、分母乘分母，得 6/15。</p>
+  </div>
+  <div class="card">
+    <h4>坑二：整数乘进分母</h4>
+    <div class="eq">2/9 × 3 = 2/27 ✗</div>
+    <p>分数乘整数时分母不变，得 6/9 = 2/3。</p>
+  </div>
+  <div class="card">
+    <h4>坑三：不约分</h4>
+    <div class="eq">3/8 × 4/9 = 12/72 就停 ✗</div>
+    <p>要约成 1/6，或先交叉约分。</p>
+  </div>
+  <div class="card">
+    <h4>坑四：求几分之几用除法</h4>
+    <div class="eq">24 的 3/4 = 24 ÷ 3/4 ✗</div>
+    <p>求几分之几用乘法：24 × 3/4 = 18。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  一句话：<strong>分数乘分数，分子乘分子、分母乘分母；分数乘整数，只乘分子；算完一定约成最简</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到开头那张饼：3/4 × 1/2，横向 4 份取 3 份、纵向 2 份取 1 份，重叠 3 格、共 8 格，答案是 3/8。要是把 3/4 和 1/2 的分子分母分别相加成 4/6，就完全错了。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题验收</h2>
+  <p class="quiz-hint">最后一组，记得先约分再乘。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 食谱 2 人份用 3/4 杯米，4 人份要用多少米？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>3/8 杯</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3/2 杯</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3/4 杯</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 一根绳长 4/5 米，用去它的 1/2，用去多少米？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>2/5 米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>4/10 米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>8/5 米</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 3/7 × 14 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>6</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>42/7</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3/98</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 下面哪个算式的积最大？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5/6 × 1/2</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>5/6 × 1</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>5/6 × 3/2</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 2/3 × 9/10 的最简结果是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>18/30</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3/5</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>11/13</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">分数乘整数</div>
+        <div class="summary-v4-summary">分子乘整数，分母不变</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>2/7 × 3 = 6/7。</p>
+      <p>能约分先约分，如 2/9 × 3 = 2/3。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">分数乘分数</div>
+        <div class="summary-v4-summary">分子乘分子，分母乘分母</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>面积模型：重叠格数 / 总格数。</p>
+      <p>a/b × c/d = (a×c)/(b×d)。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">求几分之几</div>
+        <div class="summary-v4-summary">用乘法，不是除法</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>24 的 3/4 = 24 × 3/4 = 18。</p>
+      <p>食谱缩放也是乘倍数。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">约分与大小</div>
+        <div class="summary-v4-summary">先约分、再看积</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>算完要约成最简分数。</p>
+      <p>乘真分数积变小，乘大于 1 的分数积变大。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  下次遇到分数乘法，先在脑中画一遍<strong>横竖各切一次的饼</strong>：重叠几格、总共几格，答案就出来了。别忘了检查有没有约成最简。
+</p>
+</section>
