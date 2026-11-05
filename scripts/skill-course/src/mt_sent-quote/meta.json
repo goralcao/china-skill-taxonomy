@@ -1,0 +1,94 @@
+{
+  "topicId": "mt_sent-quote",
+  "title": "直述转述：替别人传一句话",
+  "template": "explain",
+  "renderer": "transform",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 3,
+  "subject": "语文",
+  "standards": [
+    "chinese-2022:S2:BQ"
+  ],
+  "prerequisites": [
+    "mt_punct-basic",
+    "mt_sent-complete"
+  ],
+  "next": [
+    "mt_punct-advanced",
+    "mt_write-narrative"
+  ],
+  "objectives": [
+    "能说清直述句（原话）与转述句（传话）在标点、人称上的三处差别",
+    "能把一句直述改成转述，不改意思，也不把「我」照抄下来",
+    "能对着三维量规说出自己那一句下一步改哪一处"
+  ],
+  "cognitiveAction": "变换",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "读进去",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "看出来",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "写下来",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "改一处",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "评一评",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

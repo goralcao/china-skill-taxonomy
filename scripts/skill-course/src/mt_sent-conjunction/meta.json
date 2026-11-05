@@ -1,0 +1,92 @@
+{
+  "topicId": "mt_sent-conjunction",
+  "title": "关联词语：先看清关系，再成对地配",
+  "template": "explain",
+  "renderer": "sentBuild",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 3,
+  "subject": "语文",
+  "standards": [
+    "chinese-2022:S2:BQ"
+  ],
+  "prerequisites": [
+    "mt_sent-complete"
+  ],
+  "next": [
+    "mt_punct-advanced"
+  ],
+  "objectives": [
+    "能分辨因果、转折、假设、递进四类关系，说出前后分句怎么连",
+    "能把两个分句用成对关联词连成一句，不混搭、不硬套",
+    "能对着三维量规说出自己那一句下一步改哪一处"
+  ],
+  "cognitiveAction": "构造",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "读进去",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "看出来",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "写下来",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "改一处",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "评一评",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

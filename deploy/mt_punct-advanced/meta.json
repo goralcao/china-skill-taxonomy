@@ -1,0 +1,94 @@
+{
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "subject": "语文",
+  "template": "explain",
+  "topicId": "mt_punct-advanced",
+  "title": "点句读：顿号、分号与书名号",
+  "renderer": "punctPick",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 3,
+  "standards": [
+    "chinese-2022:S2:BQ"
+  ],
+  "prerequisites": [
+    "mt_punct-basic",
+    "mt_sent-conjunction",
+    "mt_sent-quote"
+  ],
+  "next": [
+    "mt_sent-fix"
+  ],
+  "objectives": [
+    "能说清顿号、分号、书名号各管哪一种关系（并列的词 / 并列的分句 / 作品名）",
+    "能给一句话补上该有的符号，并说清「为什么落在这里」",
+    "能对着三维量规说出自己那一句下一步改哪一处"
+  ],
+  "cognitiveAction": "辨析",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "读进去",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "看出来",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "写下来",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "改一处",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "评一评",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "topicId": "mt_oral-retell",
+  "title": "转述与复述：把话准确传出去",
+  "template": "explain",
+  "renderer": "sentBuild",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 3,
+  "subject": "语文",
+  "standards": [
+    "chinese-2022:S2:PR"
+  ],
+  "prerequisites": [
+    "mt_oral-discuss",
+    "mt_book-reading"
+  ],
+  "next": [
+    "mt_oral-debate"
+  ],
+  "objectives": [
+    "能说清复述（一段内容、按原顺序、用自己的话）与转述（准确传话、不添不漏）的差别",
+    "能从一句通知里抓出时间、地点、事情、要带什么四样要点，并连成一句转述",
+    "能对着三维量规说出自己那一句下一步改哪一处"
+  ],
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "cognitiveAction": "辨析",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "读进去",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "看出来",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "写下来",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "改一处",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "评一评",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}
