@@ -1,0 +1,565 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>一件 300 元外套打八折，和满 200 减 40，哪个省？</h1>
+  <p class="sub">六年级数学 · 成数、税率与利率</p>
+  <div class="tags">
+    <span class="tag">成数与折扣</span>
+    <span class="tag">税率</span>
+    <span class="tag">利率</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 470 212" width="480" height="216" role="img" aria-label="折扣、成数、税率、利率本质都是总量乘百分率">
+      <g font-family="sans-serif">
+        <text x="235" y="22" text-anchor="middle" font-size="13" fill="#FFFFFF">一件 300 元外套打八折，和满 200 减 40，哪个省？</text>
+        <rect x="22" y="40" width="136" height="80" rx="9" fill="rgba(255,202,40,.16)" stroke="rgba(255,255,255,.34)"/>
+        <text x="90" y="64" text-anchor="middle" font-size="11.5" font-weight="700" fill="#FFCA28">折扣 · 八折</text>
+        <text x="90" y="88" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">300 × 80%</text>
+        <text x="90" y="108" text-anchor="middle" font-size="11" fill="#FFE082">= 240 元</text>
+        <rect x="167" y="40" width="136" height="80" rx="9" fill="rgba(255,202,40,.16)" stroke="rgba(255,255,255,.34)"/>
+        <text x="235" y="64" text-anchor="middle" font-size="11.5" font-weight="700" fill="#FFCA28">成数 · 二成</text>
+        <text x="235" y="88" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">500 × 20%</text>
+        <text x="235" y="108" text-anchor="middle" font-size="11" fill="#FFE082">= 100 吨</text>
+        <rect x="312" y="40" width="136" height="80" rx="9" fill="rgba(255,202,40,.16)" stroke="rgba(255,255,255,.34)"/>
+        <text x="380" y="64" text-anchor="middle" font-size="11.5" font-weight="700" fill="#FFCA28">利率 · 2.25%</text>
+        <text x="380" y="88" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">1000 × 2.25%</text>
+        <text x="380" y="108" text-anchor="middle" font-size="11" fill="#FFE082">= 22.5 元</text>
+        <rect x="22" y="134" width="426" height="58" rx="9" fill="rgba(255,255,255,.10)" stroke="rgba(255,255,255,.28)"/>
+        <text x="235" y="158" text-anchor="middle" font-size="12.5" font-weight="700" fill="#FFFFFF">看着是四件事，其实只有一个式子</text>
+        <text x="235" y="180" text-anchor="middle" font-size="12" fill="#FFCA28">部分量 = 总量 × 百分率　·　先找以谁为 100%</text>
+      </g>
+    </svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先答三道，凭感觉</h2>
+  <p class="quiz-hint">三道题都在问「百分之几十」。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 打九折就是按原价的多少收？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>90%</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>9%</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>10%</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 二成写成百分数是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>2%</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>20%</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>0.2%</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 利息 100 元、本金 2000 元，年利率是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>2%</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>20%</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>5%</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 一件 300 元的衣服打八折，要付多少钱 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">一件 300 元的衣服打八折，要付多少钱</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="四种说法都化成百分数，再乘总量">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#4E342E">四种说法，化成百分数就统一了</text>
+        <rect x="16" y="28" width="368" height="26" rx="5" fill="#BF360C"/>
+        <text x="56" y="46" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFF">场景</text>
+        <text x="146" y="46" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFF">说法</text>
+        <text x="236" y="46" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFF">百分数</text>
+        <text x="330" y="46" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFF">算式</text>
+        <rect x="16" y="54" width="368" height="27" fill="#FBE9E7"/>
+        <text x="56" y="72" text-anchor="middle" font-size="10.5" fill="#4E342E">折扣</text>
+        <text x="146" y="72" text-anchor="middle" font-size="10.5" fill="#4E342E">八折</text>
+        <text x="236" y="72" text-anchor="middle" font-size="11" font-weight="700" fill="#BF360C">80%</text>
+        <text x="330" y="72" text-anchor="middle" font-size="10" fill="#4E342E">300×80%=240 元</text>
+        <rect x="16" y="81" width="368" height="27" fill="#FFFFFF"/>
+        <text x="56" y="99" text-anchor="middle" font-size="10.5" fill="#4E342E">成数</text>
+        <text x="146" y="99" text-anchor="middle" font-size="10.5" fill="#4E342E">增产二成</text>
+        <text x="236" y="99" text-anchor="middle" font-size="11" font-weight="700" fill="#BF360C">20%</text>
+        <text x="330" y="99" text-anchor="middle" font-size="10" fill="#4E342E">500×20%=100 吨</text>
+        <rect x="16" y="108" width="368" height="27" fill="#FBE9E7"/>
+        <text x="56" y="126" text-anchor="middle" font-size="10.5" fill="#4E342E">税率</text>
+        <text x="146" y="126" text-anchor="middle" font-size="10.5" fill="#4E342E">税率 5%</text>
+        <text x="236" y="126" text-anchor="middle" font-size="11" font-weight="700" fill="#BF360C">5%</text>
+        <text x="330" y="126" text-anchor="middle" font-size="10" fill="#4E342E">5000×5%=250 元</text>
+        <rect x="16" y="135" width="368" height="27" fill="#FFFFFF"/>
+        <text x="56" y="153" text-anchor="middle" font-size="10.5" fill="#4E342E">利率</text>
+        <text x="146" y="153" text-anchor="middle" font-size="10.5" fill="#4E342E">年利率 2.25%</text>
+        <text x="236" y="153" text-anchor="middle" font-size="11" font-weight="700" fill="#BF360C">2.25%</text>
+        <text x="330" y="153" text-anchor="middle" font-size="10" fill="#4E342E">1000×2.25%=22.5 元</text>
+        <rect x="16" y="174" width="368" height="66" rx="8" fill="#FFF8E1" stroke="#FFCA28" stroke-width="1.2"/>
+        <text x="200" y="198" text-anchor="middle" font-size="12" font-weight="700" fill="#BF360C">部分量 = 总量 × 百分率</text>
+        <text x="200" y="220" text-anchor="middle" font-size="10.5" fill="#4E342E">几成就是百分之几十，几折就是百分之几十</text>
+        <text x="200" y="235" text-anchor="middle" font-size="10.5" fill="#6D4C41">税率、利率本来就是百分率，直接用</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    商场里一件外套标价 300 元，标签写「八折」，收银时按 80% 算。农业报道里说「增产二成」，指的也是 20%。说法很多，其实都是百分数。
+  </p>
+  <p class="teach-text" id="p2s2">
+    把说法先<strong>换成百分数</strong>：八折 = 80%，二成 = 20%，税率 5% 和年利率 2.25% 本身就是百分率。
+  </p>
+  <p class="teach-text" id="p2s3">
+    然后统一写成 <strong>部分量 = 总量 × 百分率</strong>。300 × 80% = 240 元，5000 × 5% = 250 元，1000 × 2.25% = 22.5 元。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>成数</h4>
+    <div class="eq">二成 = 20%</div>
+    <p>几成即十分之几。</p>
+  </div>
+  <div class="card">
+    <h4>折扣</h4>
+    <div class="eq">八折 = 80%</div>
+    <p>按原价的 80% 收。</p>
+  </div>
+  <div class="card">
+    <h4>税率 / 利率</h4>
+    <div class="eq">5%、2.25%</div>
+    <p>本来就是百分率。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  四件事看起来不同，落到纸上都是<strong>先定以谁为 100%，再乘一个百分率</strong>；把说法翻译对，算式就只剩一步乘法。
+</div>
+</section>
+
+<!-- ===== p3: 八折少付 60 元，增产二成多收多少，差在哪 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">八折少付 60 元，增产二成多收多少，差在哪</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="先找单位1总量，再乘百分率；增减问题在1上加减">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#4E342E">两步走：定单位「1」，再乘百分率</text>
+        <rect x="16" y="30" width="106" height="52" rx="8" fill="#FBE9E7" stroke="#FFCCBC"/>
+        <text x="69" y="52" text-anchor="middle" font-size="11" font-weight="700" fill="#BF360C">① 单位 1</text>
+        <text x="69" y="70" text-anchor="middle" font-size="10" fill="#6D4C41">以谁为 100%</text>
+        <text x="130" y="60" text-anchor="middle" font-size="17" font-weight="700" fill="#BF360C">→</text>
+        <rect x="146" y="30" width="106" height="52" rx="8" fill="#FFF8E1" stroke="#FFCA28"/>
+        <text x="199" y="52" text-anchor="middle" font-size="11" font-weight="700" fill="#BF360C">② 乘百分率</text>
+        <text x="199" y="70" text-anchor="middle" font-size="10" fill="#6D4C41">× 80%、× 5%</text>
+        <text x="260" y="60" text-anchor="middle" font-size="17" font-weight="700" fill="#BF360C">→</text>
+        <rect x="276" y="30" width="108" height="52" rx="8" fill="#FBE9E7" stroke="#FFCCBC"/>
+        <text x="330" y="52" text-anchor="middle" font-size="11" font-weight="700" fill="#BF360C">③ 部分量</text>
+        <text x="330" y="70" text-anchor="middle" font-size="10" fill="#6D4C41">现价 / 税额 / 利息</text>
+        <rect x="16" y="94" width="368" height="62" rx="8" fill="#E3F2FD" stroke="#90CAF9" stroke-width="1.2"/>
+        <text x="200" y="116" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1565C0">遇到「增产 / 涨价 / 打折」，在 1 上加减</text>
+        <text x="200" y="138" text-anchor="middle" font-size="11" fill="#4E342E">增产二成：500 × (1 + 20%) = 600 吨</text>
+        <text x="200" y="152" text-anchor="middle" font-size="11" fill="#4E342E">打八折：300 × 80% = 240 元（即少 20%）</text>
+        <rect x="16" y="168" width="368" height="72" rx="8" fill="#FFF8E1" stroke="#FFCA28" stroke-width="1.2"/>
+        <text x="200" y="190" text-anchor="middle" font-size="11.5" font-weight="700" fill="#BF360C">三个别混</text>
+        <text x="200" y="210" text-anchor="middle" font-size="10.5" fill="#4E342E">折数是百分率，现价才是钱；利率是百分率，利息才是钱</text>
+        <text x="200" y="230" text-anchor="middle" font-size="10.5" fill="#6D4C41">增加量 ≠ 增加后的量，还要加回原量</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    做题分两步：<strong>先找单位「1」</strong>（谁是总量、以谁为 100%），<strong>再乘百分率</strong>得到部分量。打折求现价、按率求税额、按利率求利息，都是这一步。
+  </p>
+  <p class="teach-text" id="p3s2">
+    若题目说「增产二成」「涨价 10%」，部分量只是<strong>增加的那一份</strong>：新量 = 原量 × (1 + 20%)。打八折则是原量 × 80%，相当于原量 × (1 − 20%)。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>八折 = 80%，八成 = 80%，七成五 = 75%</li>
+  <li>部分量 = 总量 × 百分率，先找单位 1</li>
+  <li>应纳税额 = 应纳税所得额 × 税率</li>
+  <li>利息 = 本金 × 年利率 × 存期</li>
+  <li>增减变式：原量 × (1 ± 百分率)</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  这里最容易混淆的是<strong>把率当成量</strong>：折数、利率是百分率，不是钱数；算出部分量后，还要看题目问的是「这一份」还是「加回去的总量」。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">说法与百分数，连一连</h2>
+<p class="teach-text" id="p3bs1">左边是生活里的说法，右边是它对应的百分数或算法。把相配的连起来。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 意义与互化</h2>
+  <p class="quiz-hint">三道题，先把说法换成百分数。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 八成写成百分数是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>8%</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>0.8%</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>80%</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 一件 200 元商品打九折，应付？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>180 元</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>20 元</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>190 元</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 营业额 5000 元，税率 5%，应纳税额是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>100 元</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>250 元</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>25 元</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 1000 元存一年，到期能拿回多少 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">1000 元存一年，到期能拿回多少</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="折扣税额利息三道算式的完整写法">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#4E342E">把三个场景各算一遍</text>
+        <rect x="16" y="30" width="368" height="58" rx="8" fill="#FBE9E7" stroke="#FFCCBC" stroke-width="1.2"/>
+        <text x="200" y="50" text-anchor="middle" font-size="11.5" font-weight="700" fill="#BF360C">折扣</text>
+        <text x="200" y="72" text-anchor="middle" font-size="12" font-weight="700" fill="#4E342E">300 × 80% = 240 元　（比原价少 60 元）</text>
+        <rect x="16" y="98" width="368" height="58" rx="8" fill="#FFF8E1" stroke="#FFCA28" stroke-width="1.2"/>
+        <text x="200" y="118" text-anchor="middle" font-size="11.5" font-weight="700" fill="#BF360C">税额</text>
+        <text x="200" y="140" text-anchor="middle" font-size="12" font-weight="700" fill="#4E342E">5000 × 5% = 250 元　（按营业额算）</text>
+        <rect x="16" y="166" width="368" height="58" rx="8" fill="#E3F2FD" stroke="#90CAF9" stroke-width="1.2"/>
+        <text x="200" y="186" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1565C0">利息</text>
+        <text x="200" y="208" text-anchor="middle" font-size="12" font-weight="700" fill="#4E342E">1000 × 2.25% × 1 = 22.5 元</text>
+        <text x="200" y="238" text-anchor="middle" font-size="10.5" fill="#6D4C41">本息合计 1022.5 元　·　存半年就乘 0.5 年</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    利息 = 本金 × 年利率 × 存期。1000 元存一年、年利率 2.25%，利息 = 1000 × 2.25% × 1 = <strong>22.5 元</strong>，本息合计 1022.5 元。
+  </p>
+  <p class="teach-text" id="p5s2">
+    别把利率和利息混了：利率是百分率，利息是钱数；存期按年算，半年就乘 0.5。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>折扣</h4>
+    <div class="eq">300 × 80% = 240 元</div>
+    <p>现价 = 原价 × 折数。</p>
+  </div>
+  <div class="card">
+    <h4>税额</h4>
+    <div class="eq">5000 × 5% = 250 元</div>
+    <p>按应纳税所得额算。</p>
+  </div>
+  <div class="card">
+    <h4>利息</h4>
+    <div class="eq">1000 × 2.25% × 1 = 22.5 元</div>
+    <p>本息 = 本金 + 利息。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  三类问题都先问<strong>「以谁为 100%」</strong>，再用同一个乘法式子；遇到「多 / 少 / 增 / 减」，就在 1 上加减百分率。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">换场景、换百分率，看同一个式子怎么变</h2>
+  <p class="sim-desc">切换折扣 / 成数 / 税率 / 利率场景，改变百分率，左侧涂色长条与右侧算式同步更新。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">第 1 组 · 现价 · 80%</span>
+    <span class="sim-tip" id="simTip">点画布或按钮切换</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simNextCase()">① 换场景</button>
+    <button class="btn-primary" onclick="simNextPct()">换百分率</button>
+    <button class="btn-retry" onclick="simReset()">重来</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">几成、几折、税率、利率，本质都是「总量 × 百分率」</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>成数、折扣、税率、利率，本质都是百分数。</li>
+    <li>先找单位「1」（总量），再乘百分率。</li>
+    <li>利息 = 本金 × 利率 × 存期，别漏存期。</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 增减与存期</h2>
+  <p class="quiz-hint">这一组要分清「增加量」和「增加后的量」。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 去年产 400 吨，今年增产二成，今年多少吨？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>420 吨</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>480 吨</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>800 吨</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 本金 2000 元，年利率 3%，存 2 年利息是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>60 元</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>30 元</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>120 元</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 营业额 6000 元按 5% 纳税，税后剩多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5700 元</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>300 元</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>6300 元</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四个易错点，都在「单位 1」和「百分率」上 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四个易错点，都在「单位 1」和「百分率」上</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    学这一课最容易错的地方，是<strong>把打折当成减去的钱</strong>，以及<strong>把利率直接当成利息</strong>。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>坑一：折数当减价</h4>
+    <div class="eq">打八折 = 少 80% ✗</div>
+    <p>打八折按原价 80% 收，只少 20%。</p>
+  </div>
+  <div class="card">
+    <h4>坑二：成数不会换</h4>
+    <div class="eq">二成 = 2% ✗</div>
+    <p>二成 = 20%，几成即百分之几十。</p>
+  </div>
+  <div class="card">
+    <h4>坑三：忘了单位 1</h4>
+    <div class="eq">500×20%=100 吨当今年产量 ✗</div>
+    <p>100 吨是增加量，今年是 500+100=600 吨。</p>
+  </div>
+  <div class="card">
+    <h4>坑四：利率当利息</h4>
+    <div class="eq">2.25% 就是 22.5 元 ✗</div>
+    <p>还要乘本金和存期才有钱数。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  一句话：<strong>先定单位「1」，把成数折数化成百分数，写「总量 × 百分率」；遇到增减先算部分量再加减，利息别忘了存期</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到开头：300 元外套打八折是 300 × 80% = 240 元，满 200 减 40 是 260 元，打八折更省 20 元。若把八折当成「减 80%」，会算成 60 元，全错了。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题验收</h2>
+  <p class="quiz-hint">最后一组，记得先找单位 1。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 七五折写成百分数是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>75%</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>7.5%</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>0.75%</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 原价 400 元打八五折，现价是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>60 元</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>340 元</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>385 元</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 本金 5000 元，年利率 2%，存 3 年利息是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>100 元</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>30 元</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>300 元</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 三成五等于？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>35%</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3.5%</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>350%</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 某数增加 20% 后是 60，原数是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>48</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>50</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>72</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">意义</div>
+        <div class="summary-v4-summary">都是百分数</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>成数、折扣、税率、利率。</p>
+      <p>几成几折先化成百分数。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">单位 1</div>
+        <div class="summary-v4-summary">先找以谁为 100%</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>总量才是被乘的那个数。</p>
+      <p>折数、利率是率，不是量。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">通式</div>
+        <div class="summary-v4-summary">总量 × 百分率</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>现价、税额、利息都这么来。</p>
+      <p>利息还要再乘存期。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">增减</div>
+        <div class="summary-v4-summary">原量 × (1 ± 率)</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>先算部分量，再加减。</p>
+      <p>别忘了问的是哪一份。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  下次遇到「几成、打几折、税率、利率」，先把它化成百分数，再问「以谁为 100%」，最后写那个乘法式子；若是增减，记得在 1 上加减，利息别漏存期。
+</p>
+</section>

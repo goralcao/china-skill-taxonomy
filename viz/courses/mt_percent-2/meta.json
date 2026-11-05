@@ -1,0 +1,91 @@
+{
+  "topicId": "mt_percent-2",
+  "title": "一件 300 元外套打八折，和满 200 减 40，哪个省？",
+  "template": "explain",
+  "renderer": "table",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 6,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S3:NA:AR"
+  ],
+  "prerequisites": [
+    "mt_percent-1",
+    "mt_dec-div"
+  ],
+  "next": [],
+  "objectives": [
+    "知道成数、折扣、税率、利率都是百分数的实际说法，会互化",
+    "会用「部分量 = 总量 × 百分率」算现价、税额与利息",
+    "能处理增产、打折等「在 1 上加减百分率」的变式"
+  ],
+  "cognitiveAction": "变换",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "四个场景",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "找单位1",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "算一算",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}
