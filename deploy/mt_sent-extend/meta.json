@@ -1,0 +1,94 @@
+{
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "subject": "语文",
+  "template": "explain",
+  "topicId": "mt_sent-extend",
+  "title": "扩句：把「小鸟飞」写成一句话",
+  "renderer": "sentBuild",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 3,
+  "standards": [
+    "chinese-2022:S2:BQ"
+  ],
+  "prerequisites": [
+    "mt_sent-complete",
+    "mt_word-accumulate"
+  ],
+  "next": [
+    "mt_sent-compress",
+    "mt_write-observe"
+  ],
+  "objectives": [
+    "能说出「谁 + 做什么」是句子骨架，扩句只往骨架上加修饰语",
+    "能分辨样子、地方、心情三类修饰语，并把「的」「地」放对位置",
+    "能自己写出一句看得见画面的话，并对着三维量规说出下一步改哪一处"
+  ],
+  "cognitiveAction": "构思",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "读进去",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "看出来",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "写下来",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "改一处",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "评一评",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

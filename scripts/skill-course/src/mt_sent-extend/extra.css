@@ -1,0 +1,122 @@
+.cover-page .tag{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);color:#FFF6E6}
+
+#p2cards.card-grid{grid-template-columns:repeat(3,1fr)}
+#p5cards.card-grid{grid-template-columns:repeat(3,1fr)}
+#p2cards .card .eq,#p5cards .card .eq{font-size:17px;line-height:1.7}
+.card .eq{font-size:18px;font-weight:800;color:var(--primary);margin:8px 0;line-height:1.55;white-space:pre-line}
+
+.wrong-num{font-size:20px;font-weight:800;color:var(--red);margin:4px 0 8px;line-height:1.4}
+
+.sim-readout{font-size:19px;font-weight:800;color:var(--primary)}
+.sim-log .hl{color:var(--accent);font-weight:700}
+.btn-primary{background:var(--primary);color:#fff;border:none}
+.btn-primary:hover{background:var(--primary-light)}
+.btn-retry{background:var(--paper);color:var(--primary);border:1.5px solid var(--accent)}
+
+#p3fig svg,#p5fig svg,#p2fig svg{max-width:100%;height:auto}
+
+@media (max-width:640px){
+  #p2cards.card-grid,#p5cards.card-grid{grid-template-columns:1fr}
+  .card .eq{font-size:16px}
+  .wrong-num{font-size:17px}
+  .cover-fig svg{width:100%;height:auto}
+}
+
+.sim-status{display:flex;justify-content:space-between;align-items:baseline;gap:18px;flex-wrap:wrap}
+.sim-status .sim-readout{flex:1 1 auto}
+.sim-status .sim-tip{flex:0 1 auto;text-align:right}
+
+#matchP3 .match-item{padding:10px 14px;margin-bottom:9px;font-size:18px}
+#matchP3 .match-col h4{margin-bottom:8px}
+
+.sim-controls{flex-wrap:wrap}
+.sim-log-line{padding:3px 0;font-size:13px;color:#455A64;border-bottom:1px dashed var(--line)}
+
+#p6 .feature-list{margin-top:10px}
+#p6 .feature-list li{font-size:14px;line-height:1.6;margin:4px 0}
+#p6 .canvas-box canvas{max-height:272px;width:auto;display:block;margin:0 auto}
+#p6 .sim-desc{font-size:14px;line-height:1.6;margin:4px auto 8px;max-width:760px}
+#p6 .sim-log{max-height:58px;overflow:auto}
+
+.cover-page .sub{letter-spacing:2px}
+.key-box{background:#F5F0E4;border-left:4px solid var(--accent)}
+.mini-btn{display:inline-block;background:var(--primary);color:#fff;border:none;border-radius:8px;
+  padding:7px 14px;font-size:14px;cursor:pointer;font-family:inherit}
+.mini-btn.ghost{background:#fff;color:var(--primary);border:1.5px solid var(--accent)}
+.mini-btn:hover{opacity:.88}
+
+.read-pair{display:flex;gap:12px;flex-wrap:wrap;margin:10px 0}
+.read-line{flex:1 1 250px;background:#fff;border:1.5px solid var(--line);border-radius:12px;
+  padding:14px 16px;font-size:18px;line-height:1.7;cursor:pointer;transition:.18s}
+.read-line:hover{border-color:var(--accent)}
+.read-line.picked{background:#FBE9DD;border-color:var(--accent);box-shadow:0 0 0 3px rgba(192,98,47,.12)}
+.read-note{margin-top:10px;padding:12px 14px;border-radius:10px;background:#EDF3EE;
+  font-size:15px;line-height:1.7;min-height:44px}
+
+.ann-line{font-size:22px;line-height:2.2;letter-spacing:1px;margin:8px 0}
+.ann-w{cursor:pointer;padding:2px 3px;border-radius:5px;border-bottom:2px solid transparent}
+.ann-w:hover{background:#FBE9DD}
+.ann-w.on{background:#FBE9DD;border-bottom-color:var(--accent);font-weight:700;color:var(--accent)}
+.ann-w.hint{background:#FFF2C9;border-bottom-color:#E0A93B}
+.ann-count{font-weight:700;color:var(--primary);margin:6px 0}
+.ann-why{min-height:46px;font-size:14px;line-height:1.7;background:#fff;border-radius:8px;
+  padding:10px 12px;margin:6px 0}
+
+.draft-row{width:100%;min-height:46px;border:1.5px solid var(--line);border-radius:9px;
+  padding:9px 11px;font-size:16px;line-height:1.6;margin:6px 0;font-family:inherit;resize:vertical;box-sizing:border-box}
+.draft-row:focus{outline:none;border-color:var(--accent)}
+.draft-chips{margin:8px 0}
+.chip-btn{display:inline-block;background:#fff;border:1.5px dashed var(--accent);color:var(--accent);
+  border-radius:999px;padding:5px 12px;margin:3px 5px 3px 0;font-size:14px;cursor:pointer;font-family:inherit}
+.chip-btn:hover{background:#FBE9DD}
+.sample-fold{background:none;border:none;color:var(--primary);font-weight:700;cursor:pointer;
+  font-size:15px;padding:6px 0;font-family:inherit}
+.sample-body{display:none;background:#fff;border-radius:9px;padding:12px 14px;
+  font-size:15px;line-height:1.8;margin:6px 0;border:1px dashed var(--line)}
+.draft-state{font-size:14px;color:var(--primary);font-weight:700;margin-top:8px;min-height:22px}
+
+.rub-dim{border:1.5px solid var(--line);border-radius:10px;background:#fff;padding:10px 12px;margin:8px 0}
+.rub-dim > b{color:var(--primary);font-size:15px}
+.rub-level{display:inline-block;border:1.5px solid var(--line);border-radius:999px;
+  padding:5px 11px;margin:5px 6px 0 0;font-size:13px;cursor:pointer;color:#4A463E}
+.rub-level:hover{border-color:var(--accent)}
+.rub-level.on{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:700}
+.rub-advice{background:#EDF3EE;border-radius:9px;padding:11px 13px;font-size:14px;
+  line-height:1.7;margin-top:10px;min-height:40px}
+
+.my-sentence{background:#fff;border:1.5px dashed var(--accent);border-radius:12px;
+  padding:14px 16px;font-size:17px;line-height:1.8;margin:12px 0}
+#p6 .canvas-box canvas{max-height:272px;width:auto;display:block;margin:0 auto}
+
+/* 封面 SVG 必须有宽度，否则 shrink-to-fit 会算成 0 */
+.cover-fig{width:min(760px,88%);margin:16px auto 0}
+.cover-fig svg{display:block;width:100%;height:auto}
+
+/* 内容密集页：把关键控件压进一屏，避免被固定导航遮住 */
+#p2 .card-grid,#p5 .card-grid,#p8 .card-grid{display:none}
+#p3 .teach-title,#p5 .teach-title,#p8 .teach-title{font-size:23px;margin:6px 0 10px}
+#p3 .teach-text,#p5 .teach-text,#p8 .teach-text{font-size:15px;line-height:1.6;margin:5px 0}
+#p3 .feature-list li,#p8 .feature-list li{font-size:14px;line-height:1.55;margin:3px 0}
+#p3 .key-box,#p5 .key-box,#p8 .key-box{padding:9px 12px;margin-top:8px}
+#p3 .card-grid,#p8 .card-grid{margin:6px 0}
+
+.read-line{padding:10px 12px;font-size:16px}
+.read-note{padding:8px 11px;min-height:36px;font-size:14px}
+.ann-line{font-size:20px;line-height:1.9;margin:4px 0}
+.ann-why{min-height:36px;padding:7px 10px;margin:4px 0;font-size:13px}
+#p3 .mini-btn{padding:5px 11px;font-size:13px}
+
+.draft-row{min-height:34px;padding:6px 9px;margin:3px 0;font-size:15px}
+.draft-chips{margin:4px 0;line-height:1.5}
+.chip-btn{padding:3px 9px;margin:2px 4px 2px 0;font-size:13px}
+.sample-fold{font-size:14px;padding:3px 0}
+.draft-state{min-height:0;margin-top:4px;font-size:13px}
+#p5 .mini-btn{padding:5px 11px;font-size:13px}
+
+.rub-dim{padding:7px 10px;margin:5px 0}
+.rub-level{padding:3px 9px;margin:3px 5px 0 0;font-size:12px}
+.rub-advice{padding:8px 11px;margin-top:6px;min-height:32px;font-size:13px}
+
+/* 右侧示意图收窄，clearfix 的最小高度跟着降下来 */
+#p2fig,#p3fig,#p5fig{width:210px}
+#p5 .draft-row{min-height:30px}
