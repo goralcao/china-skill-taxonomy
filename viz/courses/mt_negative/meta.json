@@ -1,0 +1,90 @@
+{
+  "topicId": "mt_negative",
+  "title": "零下 5℃ 和零上 5℃，差在哪里？",
+  "template": "explain",
+  "renderer": "numberline",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 6,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S3:NA:NO"
+  ],
+  "prerequisites": [
+    "mt_num-100-recognition"
+  ],
+  "next": [],
+  "objectives": [
+    "结合温度、收支、电梯楼层理解负数表示相反意义的量",
+    "会在数轴上表示正负数并比较大小，知道 0 既不是正数也不是负数",
+    "能用正负数记录并解决简单的温差、收支问题"
+  ],
+  "cognitiveAction": "辨析",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "相反意义的量",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "数轴比大小",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "用正负数算",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}
