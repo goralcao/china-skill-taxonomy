@@ -1,0 +1,91 @@
+{
+  "topicId": "mt_find-defective",
+  "title": "9 瓶饮料里有一瓶少装，天平最少称几次？",
+  "template": "explain",
+  "renderer": "balance",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 5,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S3:PP"
+  ],
+  "prerequisites": [
+    "mt_div-avg",
+    "mt_data-collect"
+  ],
+  "next": [],
+  "objectives": [
+    "说出天平称一次能给出的三种结果",
+    "说明为什么找次品要尽量平均分成三份",
+    "根据 3 的幂次推算给定数量所需的最少称量次数"
+  ],
+  "cognitiveAction": "逼近",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "三种结果",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "为何三份",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "次数规律",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}
