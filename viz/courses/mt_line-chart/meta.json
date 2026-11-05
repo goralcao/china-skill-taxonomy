@@ -1,30 +1,93 @@
 {
   "topicId": "mt_line-chart",
-  "title": "折线统计图：看的是变化的趋势",
+  "title": "一周气温从 18℃ 升到 26℃，哪天升得最快？",
   "template": "explain",
   "renderer": "chart",
-  "duration": 11,
-  "interactions": 2,
+  "duration": 24,
+  "interactions": 16,
   "grade": 5,
   "subject": "数学",
   "standards": [
     "math-2022:S3:SP"
   ],
   "prerequisites": [
-    "mt_bar-chart"
+    "mt_bar-chart",
+    "mt_stats-table"
   ],
   "next": [
     "mt_stats-center"
   ],
   "objectives": [
-    "认识折线统计图：先描点再连线",
-    "会根据折线的升降判断数量的增减",
-    "知道折线图适合表示变化趋势"
+    "读出折线图上某一天对应的数量",
+    "根据线段的升降与陡缓判断增减和变化快慢",
+    "按描点、标数、连线的顺序画出折线统计图"
   ],
-  "cognitiveAction": "比较",
+  "cognitiveAction": "构造",
   "status": "reviewed",
   "author": "goral.cao",
   "license": "CC-BY-SA-4.0",
-  "version": "1.0.0",
-  "updatedAt": "2026-10-27"
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "读图",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "看走向",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "画与选",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
 }
