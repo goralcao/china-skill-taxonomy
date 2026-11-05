@@ -1,0 +1,93 @@
+{
+  "topicId": "mt_factors",
+  "title": "12 块方糖，能摆出几种长方形？",
+  "template": "explain",
+  "renderer": "factorGrid",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 5,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S3:NA:NO"
+  ],
+  "prerequisites": [
+    "mt_div-2digit",
+    "mt_mul-tables-7-9"
+  ],
+  "next": [
+    "mt_frac-reduce"
+  ],
+  "objectives": [
+    "在整数除法中说出谁是谁的因数、谁是谁的倍数",
+    "用一对一对的方法找出一个数的全部因数",
+    "区分「因数个数有限」与「倍数个数无限」"
+  ],
+  "cognitiveAction": "分解",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "三种摆法",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "成对找",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "数得完吗",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

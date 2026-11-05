@@ -1,0 +1,631 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>12 块方糖，能摆出几种长方形？</h1>
+  <p class="sub">五年级数学 · 因数与倍数</p>
+  <div class="tags">
+    <span class="tag">一对一对找</span>
+    <span class="tag">因数有限</span>
+    <span class="tag">倍数无限</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 470 212" width="480" height="216" role="img" aria-label="12 块方糖摆成 3 行 4 列的长方形，下面写着三种摆法">
+      <g font-family="sans-serif">
+        <text x="235" y="20" text-anchor="middle" font-size="13" fill="rgba(255,255,255,.86)">12 块方糖，每行摆同样多</text>
+
+        <rect x="143.0" y="40.0" width="40" height="40" rx="3" fill="#FFE082" stroke="#FFB300" stroke-width="1"/>
+        <rect x="191.0" y="40.0" width="40" height="40" rx="3" fill="#FFE082" stroke="#FFB300" stroke-width="1"/>
+        <rect x="239.0" y="40.0" width="40" height="40" rx="3" fill="#FFE082" stroke="#FFB300" stroke-width="1"/>
+        <rect x="287.0" y="40.0" width="40" height="40" rx="3" fill="#FFE082" stroke="#FFB300" stroke-width="1"/>
+        <rect x="143.0" y="88.0" width="40" height="40" rx="3" fill="#FFE082" stroke="#FFB300" stroke-width="1"/>
+        <rect x="191.0" y="88.0" width="40" height="40" rx="3" fill="#FFE082" stroke="#FFB300" stroke-width="1"/>
+        <rect x="239.0" y="88.0" width="40" height="40" rx="3" fill="#FFE082" stroke="#FFB300" stroke-width="1"/>
+        <rect x="287.0" y="88.0" width="40" height="40" rx="3" fill="#FFE082" stroke="#FFB300" stroke-width="1"/>
+        <rect x="143.0" y="136.0" width="40" height="40" rx="3" fill="#FFE082" stroke="#FFB300" stroke-width="1"/>
+        <rect x="191.0" y="136.0" width="40" height="40" rx="3" fill="#FFE082" stroke="#FFB300" stroke-width="1"/>
+        <rect x="239.0" y="136.0" width="40" height="40" rx="3" fill="#FFE082" stroke="#FFB300" stroke-width="1"/>
+        <rect x="287.0" y="136.0" width="40" height="40" rx="3" fill="#FFE082" stroke="#FFB300" stroke-width="1"/>
+
+        <text x="235" y="196" text-anchor="middle" font-size="12.5" fill="#FFD54F">1 × 12　2 × 6　3 × 4 —— 三种摆法都摆满</text>
+      </g>
+    </svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先答三道，凭感觉</h2>
+  <p class="quiz-hint">三道题都在问「能不能正好分完」。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 12 块糖，每人分 3 块，能正好分给几个人？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>3 人</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>4 人</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>5 人</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 下面哪个数能整除 12，不留余数？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>7</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>4</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 一个数最小的因数是几？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>0</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>它本身</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 12 块方糖，三种摆法都摆满 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">12 块方糖，三种摆法都摆满</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="12 块方糖分别摆成 1 行 12 列、2 行 6 列、3 行 4 列，都是长方形且没有剩余">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#AD1457">每行同样多，摆满不留空</text>
+
+        <g>
+          <rect x="27.8" y="40.0" width="16" height="16" rx="3" fill="#FFE082" stroke="#FFA000" stroke-width="1"/>
+        <rect x="45.2" y="40.0" width="16" height="16" rx="3" fill="#FFE082" stroke="#FFA000" stroke-width="1"/>
+        <rect x="62.8" y="40.0" width="16" height="16" rx="3" fill="#FFE082" stroke="#FFA000" stroke-width="1"/>
+        <rect x="80.2" y="40.0" width="16" height="16" rx="3" fill="#FFE082" stroke="#FFA000" stroke-width="1"/>
+        <rect x="97.8" y="40.0" width="16" height="16" rx="3" fill="#FFE082" stroke="#FFA000" stroke-width="1"/>
+        <rect x="115.2" y="40.0" width="16" height="16" rx="3" fill="#FFE082" stroke="#FFA000" stroke-width="1"/>
+        <rect x="132.8" y="40.0" width="16" height="16" rx="3" fill="#FFE082" stroke="#FFA000" stroke-width="1"/>
+        <rect x="150.2" y="40.0" width="16" height="16" rx="3" fill="#FFE082" stroke="#FFA000" stroke-width="1"/>
+        <rect x="167.8" y="40.0" width="16" height="16" rx="3" fill="#FFE082" stroke="#FFA000" stroke-width="1"/>
+        <rect x="185.2" y="40.0" width="16" height="16" rx="3" fill="#FFE082" stroke="#FFA000" stroke-width="1"/>
+        <rect x="202.8" y="40.0" width="16" height="16" rx="3" fill="#FFE082" stroke="#FFA000" stroke-width="1"/>
+        <rect x="220.2" y="40.0" width="16" height="16" rx="3" fill="#FFE082" stroke="#FFA000" stroke-width="1"/>
+          <text x="252" y="53" font-size="12.5" font-weight="700" fill="#AD1457">1 × 12</text>
+          <text x="252" y="71" font-size="11" fill="#8D6E63">12 ÷ 1 = 12</text>
+        </g>
+        <g>
+          <rect x="56.2" y="81.2" width="24" height="24" rx="3" fill="#FFE082" stroke="#FFA000" stroke-width="1"/>
+        <rect x="81.8" y="81.2" width="24" height="24" rx="3" fill="#FFE082" stroke="#FFA000" stroke-width="1"/>
+        <rect x="107.2" y="81.2" width="24" height="24" rx="3" fill="#FFE082" stroke="#FFA000" stroke-width="1"/>
+        <rect x="132.8" y="81.2" width="24" height="24" rx="3" fill="#FFE082" stroke="#FFA000" stroke-width="1"/>
+        <rect x="158.2" y="81.2" width="24" height="24" rx="3" fill="#FFE082" stroke="#FFA000" stroke-width="1"/>
+        <rect x="183.8" y="81.2" width="24" height="24" rx="3" fill="#FFE082" stroke="#FFA000" stroke-width="1"/>
+        <rect x="56.2" y="106.8" width="24" height="24" rx="3" fill="#FFE082" stroke="#FFA000" stroke-width="1"/>
+        <rect x="81.8" y="106.8" width="24" height="24" rx="3" fill="#FFE082" stroke="#FFA000" stroke-width="1"/>
+        <rect x="107.2" y="106.8" width="24" height="24" rx="3" fill="#FFE082" stroke="#FFA000" stroke-width="1"/>
+        <rect x="132.8" y="106.8" width="24" height="24" rx="3" fill="#FFE082" stroke="#FFA000" stroke-width="1"/>
+        <rect x="158.2" y="106.8" width="24" height="24" rx="3" fill="#FFE082" stroke="#FFA000" stroke-width="1"/>
+        <rect x="183.8" y="106.8" width="24" height="24" rx="3" fill="#FFE082" stroke="#FFA000" stroke-width="1"/>
+          <text x="252" y="111" font-size="12.5" font-weight="700" fill="#AD1457">2 × 6</text>
+          <text x="252" y="129" font-size="11" fill="#8D6E63">12 ÷ 2 = 6</text>
+        </g>
+        <g>
+          <rect x="73.8" y="156.5" width="28" height="28" rx="3" fill="#FFE082" stroke="#FFA000" stroke-width="1"/>
+        <rect x="103.2" y="156.5" width="28" height="28" rx="3" fill="#FFE082" stroke="#FFA000" stroke-width="1"/>
+        <rect x="132.8" y="156.5" width="28" height="28" rx="3" fill="#FFE082" stroke="#FFA000" stroke-width="1"/>
+        <rect x="162.2" y="156.5" width="28" height="28" rx="3" fill="#FFE082" stroke="#FFA000" stroke-width="1"/>
+        <rect x="73.8" y="186.0" width="28" height="28" rx="3" fill="#FFE082" stroke="#FFA000" stroke-width="1"/>
+        <rect x="103.2" y="186.0" width="28" height="28" rx="3" fill="#FFE082" stroke="#FFA000" stroke-width="1"/>
+        <rect x="132.8" y="186.0" width="28" height="28" rx="3" fill="#FFE082" stroke="#FFA000" stroke-width="1"/>
+        <rect x="162.2" y="186.0" width="28" height="28" rx="3" fill="#FFE082" stroke="#FFA000" stroke-width="1"/>
+        <rect x="73.8" y="215.5" width="28" height="28" rx="3" fill="#FFE082" stroke="#FFA000" stroke-width="1"/>
+        <rect x="103.2" y="215.5" width="28" height="28" rx="3" fill="#FFE082" stroke="#FFA000" stroke-width="1"/>
+        <rect x="132.8" y="215.5" width="28" height="28" rx="3" fill="#FFE082" stroke="#FFA000" stroke-width="1"/>
+        <rect x="162.2" y="215.5" width="28" height="28" rx="3" fill="#FFE082" stroke="#FFA000" stroke-width="1"/>
+          <text x="252" y="205" font-size="12.5" font-weight="700" fill="#AD1457">3 × 4</text>
+          <text x="252" y="223" font-size="11" fill="#8D6E63">12 ÷ 3 = 4</text>
+        </g>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    一盒方糖 12 块，卖 6 元。装盒时每行要摆同样多、摆满不留空。先试 1 行：12 ÷ 1 = 12，一行 12 块，正好摆满。
+  </p>
+  <p class="teach-text" id="p2s2">
+    再试 2 行：12 ÷ 2 = 6，每行 6 块；试 3 行：12 ÷ 3 = 4，每行 4 块。三种都摆满了，一块不剩。摆成 4 行 3 列只是转个身，算同一种。
+  </p>
+  <p class="teach-text" id="p2s3">
+    能正好整除 12 的 1、2、3、4、6、12，就是 12 的<strong>因数</strong>。反过来，12 是它们的<strong>倍数</strong>。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>1 行 12 列</h4>
+    <div class="eq">12 ÷ 1 = 12</div>
+    <p>1 和 12 都是 12 的因数。</p>
+  </div>
+  <div class="card">
+    <h4>2 行 6 列</h4>
+    <div class="eq">12 ÷ 2 = 6</div>
+    <p>2 和 6 都是 12 的因数。</p>
+  </div>
+  <div class="card">
+    <h4>3 行 4 列</h4>
+    <div class="eq">12 ÷ 3 = 4</div>
+    <p>3 和 4 都是 12 的因数。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  在整数除法里，商是整数又没有余数，就说<strong>被除数是除数的倍数，除数是 被除数的因数</strong>。12 ÷ 3 = 4 这一道算式，能读出两个说法。
+</div>
+</section>
+
+<!-- ===== p3: 找因数：一对一对地找，撞上就停 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">找因数：一对一对地找，撞上就停</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="12 的因数一对一对地找：1 和 12、2 和 6、3 和 4，一共 6 个因数">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#AD1457">一对一对地找，不用试到底</text>
+
+        <g>
+          <rect x="24" y="34" width="66" height="40" rx="8" fill="#FCE4EC" stroke="#F06292" stroke-width="1.4"/>
+          <text x="57" y="61" text-anchor="middle" font-size="19" font-weight="700" fill="#AD1457">1</text>
+          <text x="118" y="61" text-anchor="middle" font-size="14" fill="#BCAAA4">×</text>
+          <rect x="144" y="34" width="66" height="40" rx="8" fill="#FFF8E1" stroke="#FFB300" stroke-width="1.4"/>
+          <text x="177" y="61" text-anchor="middle" font-size="19" font-weight="700" fill="#B26A00">12</text>
+          <text x="228" y="61" font-size="11" fill="#8D6E63">= 12</text>
+        </g>
+
+        <g>
+          <rect x="24" y="86" width="66" height="40" rx="8" fill="#FCE4EC" stroke="#F06292" stroke-width="1.4"/>
+          <text x="57" y="113" text-anchor="middle" font-size="19" font-weight="700" fill="#AD1457">2</text>
+          <text x="118" y="113" text-anchor="middle" font-size="14" fill="#BCAAA4">×</text>
+          <rect x="144" y="86" width="66" height="40" rx="8" fill="#FFF8E1" stroke="#FFB300" stroke-width="1.4"/>
+          <text x="177" y="113" text-anchor="middle" font-size="19" font-weight="700" fill="#B26A00">6</text>
+          <text x="228" y="113" font-size="11" fill="#8D6E63">= 12</text>
+        </g>
+
+        <g>
+          <rect x="24" y="138" width="66" height="40" rx="8" fill="#FCE4EC" stroke="#F06292" stroke-width="1.4"/>
+          <text x="57" y="165" text-anchor="middle" font-size="19" font-weight="700" fill="#AD1457">3</text>
+          <text x="118" y="165" text-anchor="middle" font-size="14" fill="#BCAAA4">×</text>
+          <rect x="144" y="138" width="66" height="40" rx="8" fill="#FFF8E1" stroke="#FFB300" stroke-width="1.4"/>
+          <text x="177" y="165" text-anchor="middle" font-size="19" font-weight="700" fill="#B26A00">4</text>
+          <text x="228" y="165" font-size="11" fill="#8D6E63">= 12</text>
+        </g>
+
+        <text x="264" y="59" font-size="10.5" fill="#8D6E63">最小的配最大的</text>
+        <text x="264" y="111" font-size="10.5" fill="#8D6E63">中间再配一对</text>
+        <text x="264" y="163" font-size="10.5" fill="#8D6E63">两边快撞上了</text>
+
+        <line x1="26" y1="188" x2="374" y2="188" stroke="#F8BBD0" stroke-width="1.2" stroke-dasharray="5 4"/>
+        <text x="24" y="206" font-size="10.5" fill="#8D6E63">再往下该试 4 了，可 4 已经在第 3 对里出现过 —— 到这里就找全了。</text>
+
+        <rect x="20" y="214" width="360" height="32" rx="8" fill="#FFF3E0" stroke="#FFB300" stroke-width="1.3"/>
+        <text x="200" y="235" text-anchor="middle" font-size="12" font-weight="700" fill="#AD1457">12 的因数：1、2、3、4、6、12　共 6 个</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    一个一个试太慢。1 配 12、2 配 6、3 配 4，每找到一个小因数，就能顺手算出配它的大因数，两个一起记下来。
+  </p>
+  <p class="teach-text" id="p3s2">
+    接着该试 4 了，可 4 已经在「3 和 4」那一对里出现过。左边的数越走越大、右边的数越走越小，两边一撞上，因数就找全了。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>从 1 开始，用 12 依次去除：12 ÷ 1、12 ÷ 2、12 ÷ 3 …</li>
+  <li>除得尽，除数和商就成一对，两个都是因数</li>
+  <li>一对里的两个数越来越靠近，碰到相等或交叉就停</li>
+  <li>一个数最小的因数是 1，最大的因数是它本身</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  12 的因数：<strong>1、2、3、4、6、12</strong>，一共 6 个。写得整齐的秘诀是<strong>成对写</strong>：1 和 12、2 和 6、3 和 4。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">这道算式，能读出什么</h2>
+<p class="teach-text" id="p3bs1">左边是一道道算式，右边是根据它得出的说法。把相配的连起来——注意同一道算式能读出两个方向。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 谁是谁的因数</h2>
+  <p class="quiz-hint">三道题，看清「谁去除谁」。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 下面哪个数是 18 的因数？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>4</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>6</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>8</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 20 的因数一共有几个？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>4 个</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>5 个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>6 个</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 「12 是 3 的倍数」这句话，还可以怎么说？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>12 是 3 的因数</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3 是 12 的因数</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3 是 12 的倍数</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 因数数得完，倍数数不完 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">因数数得完，倍数数不完</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="左边是 12 的 6 个因数，数量有限；右边是 12 的倍数 12、24、36、48 一直写下去，数量无限">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#AD1457">因数数得完，倍数数不完</text>
+
+        <rect x="10" y="32" width="184" height="164" rx="9" fill="#FCE4EC" stroke="#F8BBD0" stroke-width="1.4"/>
+        <text x="102" y="54" text-anchor="middle" font-size="11.5" font-weight="700" fill="#AD1457">12 的因数 · 6 个</text>
+        <g fill="#FFFFFF" stroke="#F06292" stroke-width="1.2">
+          <rect x="26" y="70" width="46" height="30" rx="6"/>
+          <rect x="79" y="70" width="46" height="30" rx="6"/>
+          <rect x="132" y="70" width="46" height="30" rx="6"/>
+          <rect x="26" y="108" width="46" height="30" rx="6"/>
+          <rect x="79" y="108" width="46" height="30" rx="6"/>
+          <rect x="132" y="108" width="46" height="30" rx="6"/>
+        </g>
+        <g font-size="14" font-weight="700" fill="#AD1457" text-anchor="middle">
+          <text x="49" y="90">1</text><text x="102" y="90">2</text><text x="155" y="90">3</text>
+          <text x="49" y="128">4</text><text x="102" y="128">6</text><text x="155" y="128">12</text>
+        </g>
+        <text x="102" y="156" text-anchor="middle" font-size="10.5" fill="#8D6E63">最小是 1，最大是它本身</text>
+        <text x="102" y="178" text-anchor="middle" font-size="11.5" font-weight="700" fill="#C2185B">数得完</text>
+
+        <rect x="206" y="32" width="184" height="164" rx="9" fill="#FFF8E1" stroke="#FFE082" stroke-width="1.4"/>
+        <text x="298" y="54" text-anchor="middle" font-size="11.5" font-weight="700" fill="#B26A00">12 的倍数 · 无限</text>
+        <g fill="#FFFFFF" stroke="#FFB300" stroke-width="1.2">
+          <rect x="222" y="70" width="46" height="30" rx="6"/>
+          <rect x="275" y="70" width="46" height="30" rx="6"/>
+          <rect x="328" y="70" width="46" height="30" rx="6"/>
+          <rect x="222" y="108" width="46" height="30" rx="6"/>
+          <rect x="275" y="108" width="46" height="30" rx="6"/>
+        </g>
+        <g font-size="14" font-weight="700" fill="#B26A00" text-anchor="middle">
+          <text x="245" y="90">12</text><text x="298" y="90">24</text><text x="351" y="90">36</text>
+          <text x="245" y="128">48</text><text x="298" y="128">60</text>
+        </g>
+        <text x="351" y="128" text-anchor="middle" font-size="16" font-weight="700" fill="#B26A00">…</text>
+        <text x="298" y="156" text-anchor="middle" font-size="10.5" fill="#8D6E63">每加 12 就是一个，停不下来</text>
+        <text x="298" y="178" text-anchor="middle" font-size="11.5" font-weight="700" fill="#E65100">数不完</text>
+
+        <text x="200" y="222" text-anchor="middle" font-size="11.5" fill="#5D4037">因数看「谁能整除它」，倍数看「它能整除谁」</text>
+        <text x="200" y="242" text-anchor="middle" font-size="10.5" fill="#8D6E63">12 是 3 的倍数，3 是 12 的因数 —— 同一道除法，两个说法</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    12 的倍数：12、24、36、48、60… 每次都加 12，加多少次都还有下一个，所以倍数<strong>永远数不完</strong>。
+  </p>
+  <p class="teach-text" id="p5s2">
+    因数却只有 6 个。因为比 12 大的数除 12 一定除不尽（12 自己除外），能整除它的数被卡在 1 到 12 之间，数量自然有限。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>因数的范围</h4>
+    <div class="eq">1 ~ 它本身</div>
+    <p>最小 1，最大是它自己，中间挑得出几个算几个。</p>
+  </div>
+  <div class="card">
+    <h4>倍数的范围</h4>
+    <div class="eq">它本身 ~ 无穷</div>
+    <p>最小是它本身，往上没有尽头。</p>
+  </div>
+  <div class="card">
+    <h4>一句话区分</h4>
+    <div class="eq">因数看「谁能整除我」
+倍数看「我能整除谁」</div>
+    <p>同一道除法，两个方向两个说法。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  一个数的<strong>因数有限</strong>（最大是它本身），<strong>倍数无限</strong>（最小是它本身）。这两句话是这一单元最容易考反的地方。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">摆一摆：一盒方糖能摆出几种长方形</h2>
+  <p class="sim-desc">换个数，看看它能摆出几种长方形；每摆出一种，就找到一对因数。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">12 块 · 第 1 种摆法</span>
+    <span class="sim-tip" id="simTip">点画布也能换下一种</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simPrev()">上一种</button>
+    <button class="btn-primary" onclick="simNext()">下一种</button>
+    <button class="btn-retry" onclick="simAll()">一次列全</button>
+    <button class="btn-retry" onclick="simNextN()">换个数</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">长方形的行数 × 列数，就是一对因数</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>每摆成一种长方形，行数和列数就乘出这个数，两个都是它的因数。</li>
+    <li>转个身（3 行 4 列 和 4 行 3 列）算同一种摆法，不重复数。</li>
+    <li>摆法数就是「因数对」的数；16 能摆成 4 行 4 列的正方形，4 只算一次，所以它的因数个数是奇数。</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 数得完还是数不完</h2>
+  <p class="quiz-hint">这一组专门分辨「有限」和「无限」。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 16 的因数一共有几个？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5 个</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>4 个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>8 个</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 下面说法正确的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>一个数的因数有无限个</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>一个数的倍数有无限个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>一个数最大的倍数是它本身</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 15 的最小倍数是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>30</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>15</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四个坑，掉进去就扣分 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四个坑，掉进去就扣分</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    因数和倍数是一对孪生词，说反了意思就全错。判断方向只看那道除法算式：谁被除，谁就是倍数。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>坑一：说反</h4>
+    <div class="eq">12 是 3 的因数 ✗</div>
+    <p>12 比 3 大，是 3 的 4 倍。正确说法：12 是 3 的倍数，3 是 12 的因数。</p>
+  </div>
+  <div class="card">
+    <h4>坑二：只找一半</h4>
+    <div class="eq">12 的因数：1、2、3 ✗</div>
+    <p>找到 3 就停，漏掉了配对的 12、6、4。成对写才不会漏。</p>
+  </div>
+  <div class="card">
+    <h4>坑三：漏掉 1</h4>
+    <div class="eq">12 的因数从 2 开始 ✗</div>
+    <p>1 能整除任何整数，永远是因数，也是最小的那个。</p>
+  </div>
+  <div class="card">
+    <h4>坑四：说倍数有限</h4>
+    <div class="eq">12 最大的倍数是 120 ✗</div>
+    <p>加 12 就有一个新的，没有最大。只有因数才有「最大」。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  判断口诀：<strong>被除数是大词（倍数），除数是小词（因数）</strong>。写因数就成对写，写到两个数撞上为止。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到开头那盒方糖：如果一盒改成 16 块，能摆出 1×16、2×8、4×4 三种，因数有 1、2、4、8、16 共 5 个——比 12 的 6 个还少一个。块数多不一定因数多，这跟它能不能被拆成两堆有关。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题验收</h2>
+  <p class="quiz-hint">最后一组，慢一点，看清每个词。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 24 的因数一共有几个？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>6 个</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>8 个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>10 个</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 下面哪组数，前一个是后一个的倍数？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>8 和 24</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>24 和 8</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>8 和 12</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 一个数最大的因数是 36，这个数是几？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>18</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>36</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 45 的因数中，最大的和最小的相差多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>44</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>45</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>9</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 一箱牛奶 24 盒，要摆成每行同样多、没有剩余的长方形，有几种摆法？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>4 种</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>6 种</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>8 种</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">因数和倍数，是一道算式的两个说法</div>
+        <div class="summary-v4-summary">12 ÷ 3 = 4 整除 → 12 是 3 的倍数，3 是 12 的因数</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>判断只看那道除法：被除数说成倍数，除数说成因数。</p>
+      <p>「12 是倍数」这种半句话不算数，必须说清是谁的倍数。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">找一个数的因数，成对写</div>
+        <div class="summary-v4-summary">1↔12　2↔6　3↔4　→　6 个</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>从 1 开始依次去除，除得尽就把除数和商一起记下。</p>
+      <p>左边的数越来越大、右边的越来越小，一撞上就停，不用试到底。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">因数有限，倍数无限</div>
+        <div class="summary-v4-summary">因数最大是它本身　·　倍数最小是它本身</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>比它大的数除它一定除不尽，所以因数的个数被卡住了。</p>
+      <p>倍数每次加它自己就多一个，永远有下一个，没有「最大的倍数」。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">摆长方形，就是找因数对</div>
+        <div class="summary-v4-summary">12 块 → 1×12、2×6、3×4 三种</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>行数 × 列数 = 总块数，行和列各是一个因数。</p>
+      <p>转个身算同一种；4×4 这种正方形，4 只算一次，所以因数个数会是奇数。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  下次再看到「12 的因数有哪些」，别急着从 1 试到 12——<strong>成对地写</strong>，写三对就收工。看到「12 是 3 的什么」，先在心里把 12 ÷ 3 = 4 念一遍：被除数是大词。
+</p>
+</section>
