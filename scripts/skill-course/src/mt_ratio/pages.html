@@ -1,0 +1,556 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>1 杯米配 2 杯水，煮 3 杯米要几杯水？</h1>
+  <p class="sub">六年级数学 · 比的认识与基本性质</p>
+  <div class="tags">
+    <span class="tag">两列同步放大</span>
+    <span class="tag">比值不变</span>
+    <span class="tag">化简比与分配</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 470 212" width="480" height="216" role="img" aria-label="配方 1 杯米 2 杯水，米和水同步放大 3 倍变成 3 杯米 6 杯水，比值仍是二分之一">
+      <g font-family="sans-serif">
+        <text x="235" y="20" text-anchor="middle" font-size="13" fill="#FFFFFF">1 杯米配 2 杯水，煮 3 杯米要几杯水？</text>
+        <text x="30" y="46" font-size="10.5" fill="rgba(255,255,255,.85)">米</text>
+        <rect x="30" y="54" width="34" height="26" fill="#FFE082" stroke="#4527A0"/>
+        <text x="47" y="72" text-anchor="middle" font-size="11" fill="#3E2723">1</text>
+        <text x="76" y="72" font-size="11" fill="rgba(255,255,255,.8)">:</text>
+        <text x="94" y="46" font-size="10.5" fill="rgba(255,255,255,.85)">水</text>
+        <rect x="94" y="54" width="34" height="26" fill="#B39DDB" stroke="#4527A0"/>
+        <rect x="128" y="54" width="34" height="26" fill="#B39DDB" stroke="#4527A0"/>
+        <text x="145" y="72" text-anchor="middle" font-size="11" fill="#FFF">2</text>
+        <text x="182" y="72" font-size="13" fill="#FFD54F">→ ×3 →</text>
+        <rect x="242" y="54" width="102" height="26" fill="#FFE082" stroke="#4527A0"/>
+        <text x="293" y="72" text-anchor="middle" font-size="11" fill="#3E2723">3 杯</text>
+        <text x="352" y="72" font-size="11" fill="rgba(255,255,255,.8)">:</text>
+        <rect x="366" y="54" width="68" height="26" fill="#B39DDB" stroke="#4527A0"/>
+        <text x="400" y="72" text-anchor="middle" font-size="11" fill="#FFF">6 杯</text>
+        <rect x="30" y="98" width="404" height="94" rx="9" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.32)"/>
+        <text x="232" y="122" text-anchor="middle" font-size="11.5" fill="#FFD54F">前项后项同时乘同一个数（0 除外），比值不变</text>
+        <text x="232" y="148" text-anchor="middle" font-size="12.5" font-weight="700" fill="#FFFFFF">1 : 2 = 3 : 6 = 1/2</text>
+        <text x="232" y="176" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.85)">这就是比的基本性质，也是化简比、按比分配的依据</text>
+      </g>
+    </svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先答三道，凭感觉</h2>
+  <p class="quiz-hint">三道题都在问「两个量之间是什么关系」。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 1 杯米配 2 杯水，米与水的比是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1 : 2</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>2 : 1</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>1 : 3</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 3 : 5 的前项是几？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>8</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 比号「:」相当于哪种运算？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>加</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>乘</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>除</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 1 杯米配 2 杯水，比号为什么是除号 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">1 杯米配 2 杯水，比号为什么是除号</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="比表示两个量的倍数关系，比号相当于除号，前项除以后项得比值">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#4527A0">比 = 两个数相除，表示倍数关系</text>
+        <rect x="16" y="30" width="368" height="52" rx="8" fill="#EDE7F6" stroke="#B39DDB" stroke-width="1.2"/>
+        <text x="200" y="52" text-anchor="middle" font-size="11.5" fill="#37474F">煮饭：1 杯米配 2 杯水 → 米 : 水 = 1 : 2</text>
+        <text x="200" y="72" text-anchor="middle" font-size="11" fill="#5E35B1">地图：图上 3 厘米代表实际 3 千米，也写成两个量的比</text>
+        <rect x="16" y="94" width="368" height="58" rx="8" fill="#FFF8E1" stroke="#FFE082" stroke-width="1.2"/>
+        <text x="200" y="116" text-anchor="middle" font-size="12" font-weight="700" fill="#E65100">a : b = a ÷ b = a/b（b ≠ 0）</text>
+        <text x="200" y="138" text-anchor="middle" font-size="11" fill="#37474F">前项 ÷ 后项 = 比值；比值可以是整数、小数或分数</text>
+        <rect x="16" y="164" width="176" height="76" rx="8" fill="#EDE7F6" stroke="#B39DDB" stroke-width="1.2"/>
+        <text x="104" y="186" text-anchor="middle" font-size="11" font-weight="700" fill="#4527A0">各部分的名称</text>
+        <text x="104" y="208" text-anchor="middle" font-size="11" fill="#37474F">3　:　5</text>
+        <text x="104" y="228" text-anchor="middle" font-size="10.5" fill="#607D8B">前项 比号 后项</text>
+        <rect x="208" y="164" width="176" height="76" rx="8" fill="#F3E5F5" stroke="#CE93D8" stroke-width="1.2"/>
+        <text x="296" y="186" text-anchor="middle" font-size="11" font-weight="700" fill="#6A1B9A">后项不能为 0</text>
+        <text x="296" y="208" text-anchor="middle" font-size="10.5" fill="#37474F">除数为 0 没有意义</text>
+        <text x="296" y="228" text-anchor="middle" font-size="10.5" fill="#37474F">比赛比分 2:0 不是数学的比</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    煮饭配方 1 杯米配 2 杯水，写成<strong>米 : 水 = 1 : 2</strong>。地图上也一样：图上 3 厘米代表实际一段距离，写成两个量的比。
+  </p>
+  <p class="teach-text" id="p2s2">
+    比号的本质就是除号：<strong>a : b = a ÷ b = a/b</strong>（b ≠ 0）。前项除以后项得到的商叫<strong>比值</strong>。
+  </p>
+  <p class="teach-text" id="p2s3">
+    3 : 5 里 3 是前项、5 是后项、中间的「:」是比号。后项不能为 0——除数为 0 没有意义；球赛比分 2:0 只是记分，不是数学里的比。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>写法</h4>
+    <div class="eq">a : b</div>
+    <p>前项 : 后项。</p>
+  </div>
+  <div class="card">
+    <h4>等价</h4>
+    <div class="eq">a ÷ b = a/b</div>
+    <p>比号就是除号。</p>
+  </div>
+  <div class="card">
+    <h4>结果</h4>
+    <div class="eq">比值</div>
+    <p>前项除以后项的商。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  比描述的是<strong>两个量的倍数关系</strong>，不是相差多少；把它写成除法或分数，很多题就通了。
+</div>
+</section>
+
+<!-- ===== p3: 2 : 3 同时乘 2、乘 3，比值为什么不变 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">2 : 3 同时乘 2、乘 3，比值为什么不变</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="比的前项后项同乘或同除一个非零数，比值不变，据此可化简比">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#4527A0">比的基本性质：同乘同除，比值不变</text>
+        <rect x="16" y="30" width="368" height="30" rx="6" fill="#4527A0"/>
+        <text x="70" y="50" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFF">原比</text>
+        <text x="170" y="50" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFF">同时 ×2</text>
+        <text x="270" y="50" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFF">同时 ×3</text>
+        <text x="356" y="50" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFF">比值</text>
+        <rect x="16" y="60" width="368" height="34" fill="#EDE7F6"/>
+        <text x="70" y="82" text-anchor="middle" font-size="12.5" fill="#4527A0">2 : 3</text>
+        <text x="170" y="82" text-anchor="middle" font-size="12.5" fill="#4527A0">4 : 6</text>
+        <text x="270" y="82" text-anchor="middle" font-size="12.5" fill="#4527A0">6 : 9</text>
+        <text x="356" y="82" text-anchor="middle" font-size="12.5" font-weight="700" fill="#E65100">2/3</text>
+        <rect x="16" y="104" width="368" height="58" rx="8" fill="#FFF8E1" stroke="#FFE082" stroke-width="1.2"/>
+        <text x="200" y="126" text-anchor="middle" font-size="11.5" font-weight="700" fill="#E65100">化简比：把前项后项同时除以最大公因数</text>
+        <text x="200" y="148" text-anchor="middle" font-size="11.5" fill="#37474F">12 : 18 = (12÷6) : (18÷6) = 2 : 3</text>
+        <rect x="16" y="174" width="368" height="66" rx="8" fill="#EDE7F6" stroke="#B39DDB" stroke-width="1.2"/>
+        <text x="200" y="196" text-anchor="middle" font-size="11.5" font-weight="700" fill="#4527A0">化简比 ≠ 求比值</text>
+        <text x="200" y="216" text-anchor="middle" font-size="11" fill="#37474F">化简比结果仍是「两个整数的比」；比值是一个数</text>
+        <text x="200" y="234" text-anchor="middle" font-size="10.5" fill="#607D8B">例：12:18 化简为 2:3，比值是 2/3</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    2 : 3 的前项后项同时乘 2 得 4 : 6，同时乘 3 得 6 : 9，比值都还是 <strong>2/3</strong>。这就是<strong>比的基本性质</strong>。
+  </p>
+  <p class="teach-text" id="p3s2">
+    反过来同时除以公因数就能化简比：12 : 18 前后项同除以 6，得 <strong>2 : 3</strong>。注意化简比的结果仍是「一个比」，而比值是一个数。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>前项、后项同乘或同除以相同的数（0 除外），比值不变</li>
+  <li>化简比：同除以前后项的最大公因数</li>
+  <li>化简比结果仍是比，比值是一个数</li>
+  <li>比的基本性质与分数基本性质、商不变规律同源</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  <strong>同乘同除、比值不变</strong>——这是化简比、解比例、按比分配共同的地基。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">比、除法、分数，连一连</h2>
+<p class="teach-text" id="p3bs1">左边是比里的说法，右边是它在除法或分数里的对应物。把相配的连起来。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 比的意义与化简</h2>
+  <p class="quiz-hint">三道题，注意化简比和求比值不一样。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 6 : 8 的比值是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>3/4</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>4/3</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>6/8 不能约</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 12 : 18 化成最简整数比是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>2 : 3</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>6 : 9</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3 : 2</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 比的后项可以是 0 吗？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>可以</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>不可以</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>只有化简时可以</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 40 个橘子按 2 : 3 分，两班各几个 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">40 个橘子按 2 : 3 分，两班各几个</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="按比分配：先求总份数，再求每份是多少，最后分别乘份数">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#4527A0">按比分配：三步走</text>
+        <rect x="16" y="30" width="368" height="46" rx="8" fill="#EDE7F6" stroke="#B39DDB" stroke-width="1.2"/>
+        <text x="200" y="52" text-anchor="middle" font-size="11.5" fill="#37474F">40 个橘子按 2 : 3 分给两个班</text>
+        <text x="200" y="70" text-anchor="middle" font-size="11.5" font-weight="700" fill="#4527A0">总份数 2 + 3 = 5 份</text>
+        <rect x="16" y="86" width="176" height="70" rx="8" fill="#FFF8E1" stroke="#FFE082" stroke-width="1.2"/>
+        <text x="104" y="108" text-anchor="middle" font-size="11" font-weight="700" fill="#E65100">每份多少</text>
+        <text x="104" y="130" text-anchor="middle" font-size="11.5" fill="#37474F">40 ÷ 5 = 8 个</text>
+        <text x="104" y="148" text-anchor="middle" font-size="10.5" fill="#607D8B">先找 1 份</text>
+        <rect x="208" y="86" width="176" height="70" rx="8" fill="#F3E5F5" stroke="#CE93D8" stroke-width="1.2"/>
+        <text x="296" y="108" text-anchor="middle" font-size="11" font-weight="700" fill="#6A1B9A">两班各多少</text>
+        <text x="296" y="130" text-anchor="middle" font-size="11.5" fill="#37474F">8×2 = 16，8×3 = 24</text>
+        <text x="296" y="148" text-anchor="middle" font-size="10.5" fill="#607D8B">16 + 24 = 40 ✓</text>
+        <rect x="16" y="168" width="368" height="72" rx="8" fill="#E8F5E9" stroke="#A5D6A7" stroke-width="1.2"/>
+        <text x="200" y="190" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2E7D32">换个算法：用分数乘</text>
+        <text x="200" y="212" text-anchor="middle" font-size="11.5" fill="#37474F">一班 40 × 2/5 = 16 个，二班 40 × 3/5 = 24 个</text>
+        <text x="200" y="232" text-anchor="middle" font-size="10.5" fill="#607D8B">配方缩放、地图比例尺，本质都是比的应用</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    按比分配先算<strong>总份数</strong>：2 + 3 = 5 份；再算一份是多少：40 ÷ 5 = 8 个；最后分别乘份数：8 × 2 = 16、8 × 3 = 24。
+  </p>
+  <p class="teach-text" id="p5s2">
+    也可以用分数乘：一班拿 40 × 2/5 = 16 个，二班拿 40 × 3/5 = 24 个。检查 16 + 24 = 40，没错。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>总份数</h4>
+    <div class="eq">2 + 3 = 5 份</div>
+    <p>先把比换成份数。</p>
+  </div>
+  <div class="card">
+    <h4>每份</h4>
+    <div class="eq">40 ÷ 5 = 8 个</div>
+    <p>再求 1 份的量。</p>
+  </div>
+  <div class="card">
+    <h4>两班</h4>
+    <div class="eq">16 个 / 24 个</div>
+    <p>分别乘份数并验算。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  按比分配别急着用比里的数直接乘总量，<strong>先求总份数、再求一份</strong>；配方缩放、地图比例尺都是这个套路。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">两列数量同步缩放，比值始终不变</h2>
+  <p class="sim-desc">换一组基础比，点「放大一档」让前项后项同时乘同一个数，看两列怎么一起长、比值怎么保持不变。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">第 1 组 · 基础比 2 : 3 · 放大 ×1 · 比值 2/3</span>
+    <span class="sim-tip" id="simTip">点画布或按钮放大</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simZoom()">① 放大一档</button>
+    <button class="btn-primary" onclick="simRunAll()">放大到底</button>
+    <button class="btn-retry" onclick="simNextCase()">换一组比</button>
+    <button class="btn-retry" onclick="simReset()">重来</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">两列始终同乘一个数：形状变了，比值不变</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>前项、后项同时乘 k，得到 (ak) : (bk)。</li>
+    <li>比值 ak/bk = a/b，与 k 无关。</li>
+    <li>同除以最大公因数就是化简比，方向相反、道理相同。</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 基本性质</h2>
+  <p class="quiz-hint">这一组要会用「同乘同除」。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 3 : 4 的前项后项同时乘 5，得到？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>15 : 20</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3 : 4 不变</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>8 : 9</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 下面哪个比与 2 : 3 的比值相等？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>4 : 9</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>6 : 9</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3 : 2</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 比的基本性质和下面哪条规律同源？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>加法交换律</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>乘法口诀</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>分数的基本性质</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四个易错点，都在「比值不变」和「顺序」上 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四个易错点，都在「比值不变」和「顺序」上</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    学比最容易错的地方，是<strong>把前后项的顺序写反</strong>，或者<strong>把「同时加一个数」当成「同时乘一个数」</strong>。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>坑一：顺序写反</h4>
+    <div class="eq">1 杯米 2 杯水写成 2 : 1 ✗</div>
+    <p>问「谁比谁」就按这个顺序写，米 : 水 = 1 : 2。</p>
+  </div>
+  <div class="card">
+    <h4>坑二：同加不是同乘</h4>
+    <div class="eq">3 : 4 → 8 : 9 以为比值不变 ✗</div>
+    <p>同时加 5 会改变比值；只有同乘同除才不变。</p>
+  </div>
+  <div class="card">
+    <h4>坑三：化简比写成比值</h4>
+    <div class="eq">12 : 18 化简得 2/3 ✗</div>
+    <p>化简比结果是 2 : 3；2/3 是比值。</p>
+  </div>
+  <div class="card">
+    <h4>坑四：后项为 0</h4>
+    <div class="eq">球赛 2 : 0 当成数学的比 ✗</div>
+    <p>后项相当于除数，不能为 0。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  一句话：<strong>比按「谁比谁」定顺序；只有同乘或同除（0 除外）才保比值不变；化简比仍是比，比值是一个数</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到开头的配方：1 : 2 放大 3 倍是 3 : 6，需要 6 杯水。若把前后项各加 2 写成 3 : 4，比值从 1/2 变成 3/4，饭就煮坏了。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题验收</h2>
+  <p class="quiz-hint">最后一组，记得按比分配先求总份数。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 配方 1 : 2 放大 3 倍后是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>3 : 6</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>1 : 6</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3 : 2</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 40 个橘子按 2 : 3 分，两份各多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>20 和 20</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>8 和 12</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>16 和 24</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 5 : 7 的前项加 10，要保持比值不变，后项应？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>加 10</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>加 14</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>乘 2</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 下面哪个比与 3 : 4 不相等？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>6 : 8</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>9 : 12</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>4 : 3</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 0.5 : 2 化成最简整数比是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>0.5 : 2</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>1 : 4</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>2 : 1</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">意义</div>
+        <div class="summary-v4-summary">a : b = a ÷ b</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>前项、比号、后项。</p>
+      <p>后项不能为 0。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">基本性质</div>
+        <div class="summary-v4-summary">同乘同除，比值不变</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>2 : 3 = 4 : 6 = 6 : 9。</p>
+      <p>与分数基本性质同源。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">化简与比值</div>
+        <div class="summary-v4-summary">化简比仍是比</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>12 : 18 → 2 : 3。</p>
+      <p>比值 2/3 是一个数。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">按比分配</div>
+        <div class="summary-v4-summary">总份数 → 一份 → 各份</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>40 按 2 : 3 → 16 和 24。</p>
+      <p>配方、比例尺都是它。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  下次遇到比，先问「谁比谁」定好顺序，再想<strong>同乘同除比值不变</strong>；要分配就拆成总份数、一份、各份三步。
+</p>
+</section>

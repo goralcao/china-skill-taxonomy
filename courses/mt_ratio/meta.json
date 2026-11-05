@@ -1,0 +1,95 @@
+{
+  "topicId": "mt_ratio",
+  "title": "1 杯米配 2 杯水，煮 3 杯米要几杯水？",
+  "template": "explain",
+  "renderer": "law",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 6,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S3:NA:AR"
+  ],
+  "prerequisites": [
+    "mt_frac-div",
+    "mt_frac-meaning",
+    "mt_multiple"
+  ],
+  "next": [
+    "mt_percent-1",
+    "mt_proportion"
+  ],
+  "objectives": [
+    "说出比的意义与各部分名称，理解比与除法、分数的关系",
+    "运用比的基本性质化简比，并区分化简比与求比值",
+    "用按比分配解决配方缩放、分配物品等实际问题"
+  ],
+  "cognitiveAction": "变换",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "比的意义",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "基本性质",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "按比分配",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}
