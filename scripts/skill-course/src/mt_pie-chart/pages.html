@@ -1,0 +1,559 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>班级 40 人的兴趣分布，怎么画成一张饼图？</h1>
+  <p class="sub">六年级数学 · 扇形统计图</p>
+  <div class="tags">
+    <span class="tag">占比 × 360°</span>
+    <span class="tag">部分与整体</span>
+    <span class="tag">合计 100%</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 470 212" width="480" height="216" role="img" aria-label="班级 40 人的兴趣分布画成扇形统计图，占比乘 360 度得到各扇形圆心角">
+      <g font-family="sans-serif">
+        <text x="235" y="20" text-anchor="middle" font-size="13" fill="#FFFFFF">班级 40 人的兴趣分布，怎么画成一张饼图？</text>
+        <g>
+        <path d="M 126.0 112.0 L 126.0 40.0 A 72 72 0 0 1 126.0 184.0 Z" fill="#26A69A" stroke="#FFFFFF" stroke-width="1.6"/>
+        <text x="170.6" y="116.0" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFFFFF">50%</text>
+        <path d="M 126.0 112.0 L 126.0 184.0 A 72 72 0 0 1 54.0 112.0 Z" fill="#FFA726" stroke="#FFFFFF" stroke-width="1.6"/>
+        <text x="94.4" y="147.6" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFFFFF">25%</text>
+        <path d="M 126.0 112.0 L 54.0 112.0 A 72 72 0 0 1 126.0 40.0 Z" fill="#5C6BC0" stroke="#FFFFFF" stroke-width="1.6"/>
+        <text x="94.4" y="84.4" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFFFFF">25%</text>
+        <circle cx="126" cy="112" r="72" fill="none" stroke="#4A148C" stroke-width="1.8"/>
+      </g>
+        <rect x="266" y="36" width="180" height="150" rx="9" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.32)"/>
+        <text x="356" y="58" text-anchor="middle" font-size="11" fill="#FFD54F">占比 → 圆心角</text>
+        <text x="356" y="82" text-anchor="middle" font-size="11.5" fill="#FFFFFF">足球 25% → 90°</text>
+        <text x="356" y="104" text-anchor="middle" font-size="11.5" fill="#FFFFFF">篮球 50% → 180°</text>
+        <text x="356" y="126" text-anchor="middle" font-size="11.5" fill="#FFFFFF">其他 25% → 90°</text>
+        <text x="356" y="152" text-anchor="middle" font-size="11" font-weight="700" fill="#FFE082">圆心角 = 占比 × 360°</text>
+        <text x="356" y="174" text-anchor="middle" font-size="10" fill="rgba(255,255,255,.8)">合计 100% / 360°</text>
+      </g>
+    </svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先答三道，凭感觉</h2>
+  <p class="quiz-hint">三道题都在问「整个圆代表什么」。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 扇形统计图里，整个圆表示什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>总数 100%</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>最大的那一部分</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>具体人数</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 某部分占 25%，它的圆心角是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>25°</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>45°</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>90°</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 扇形统计图最适合看出什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>数量的增减变化</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>各部分占总数的百分比</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>具体数值的大小顺序</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 全班 40 人，整个圆就是这 40 人 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">全班 40 人，整个圆就是这 40 人</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="扇形统计图用整个圆表示总数，各扇形大小表示各部分占总数的百分比">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#6A1B9A">整个圆 = 总数 100%，每块扇形 = 一部分</text>
+        <g>
+        <path d="M 104.0 122.0 L 104.0 44.0 A 78 78 0 0 1 104.0 200.0 Z" fill="#26A69A" stroke="#FFFFFF" stroke-width="1.6"/>
+        <text x="152.4" y="126.0" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFFFFF">50%</text>
+        <path d="M 104.0 122.0 L 104.0 200.0 A 78 78 0 0 1 26.0 122.0 Z" fill="#FFA726" stroke="#FFFFFF" stroke-width="1.6"/>
+        <text x="69.8" y="160.2" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFFFFF">25%</text>
+        <path d="M 104.0 122.0 L 26.0 122.0 A 78 78 0 0 1 104.0 44.0 Z" fill="#5C6BC0" stroke="#FFFFFF" stroke-width="1.6"/>
+        <text x="69.8" y="91.8" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFFFFF">25%</text>
+        <circle cx="104" cy="122" r="78" fill="none" stroke="#4A148C" stroke-width="1.8"/>
+      </g>
+        <rect x="212" y="30" width="172" height="66" rx="8" fill="#F3E5F5" stroke="#CE93D8" stroke-width="1.2"/>
+        <text x="298" y="52" text-anchor="middle" font-size="11" font-weight="700" fill="#6A1B9A">看得见的是占比</text>
+        <text x="298" y="72" text-anchor="middle" font-size="10.5" fill="#37474F">扇形越大，占总数越多</text>
+        <text x="298" y="90" text-anchor="middle" font-size="10.5" fill="#546E7A">不是具体人数</text>
+        <rect x="212" y="106" width="172" height="66" rx="8" fill="#E0F7FA" stroke="#80DEEA" stroke-width="1.2"/>
+        <text x="298" y="128" text-anchor="middle" font-size="11" font-weight="700" fill="#00838F">要算人数得有总数</text>
+        <text x="298" y="148" text-anchor="middle" font-size="10.5" fill="#37474F">40 人的 25% = 10 人</text>
+        <text x="298" y="166" text-anchor="middle" font-size="10.5" fill="#546E7A">光看 25% 算不出人数</text>
+        <rect x="212" y="182" width="172" height="56" rx="8" fill="#FFF8E1" stroke="#FFE082" stroke-width="1.2"/>
+        <text x="298" y="204" text-anchor="middle" font-size="11" font-weight="700" fill="#E65100">与条形图的分工</text>
+        <text x="298" y="224" text-anchor="middle" font-size="10.5" fill="#37474F">条形图看具体数量与增减</text>
+        <text x="298" y="238" text-anchor="middle" font-size="10.5" fill="#546E7A">扇形图看部分与整体的关系</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    一份 200 元的班费支出也能画成饼图：把<strong>整个圆当作总数（100%）</strong>，每一块扇形代表一部分，扇形越大说明占比越高。
+  </p>
+  <p class="teach-text" id="p2s2">
+    注意：图上看到的是<strong>占比，不是人数</strong>。要算人数必须知道总数：40 人的 25% 才是 10 人；光看 25% 算不出多少人。
+  </p>
+  <p class="teach-text" id="p2s3">
+    和条形统计图分工不同：<strong>条形图看具体数量与增减，扇形图看部分与整体的关系</strong>。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>整个圆</h4>
+    <div class="eq">总数 100%</div>
+    <p>所有部分加起来。</p>
+  </div>
+  <div class="card">
+    <h4>每块扇形</h4>
+    <div class="eq">一部分的占比</div>
+    <p>扇形大小 = 占比。</p>
+  </div>
+  <div class="card">
+    <h4>算人数</h4>
+    <div class="eq">总数 × 占比</div>
+    <p>没总数就算不出。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  读扇形图第一句先问「<strong>总数是多少</strong>」：它给出的是比例，不是具体数量。
+</div>
+</section>
+
+<!-- ===== p3: 25% × 360° = 90°：占比换成角度 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">25% × 360° = 90°：占比换成角度</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="圆心角等于占比乘 360 度，画统计图时先算角度再用量角器画扇形">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#6A1B9A">圆心角 = 占比 × 360°</text>
+        <rect x="16" y="30" width="368" height="30" rx="6" fill="#6A1B9A"/>
+        <text x="80" y="50" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFF">项目</text>
+        <text x="190" y="50" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFF">占比</text>
+        <text x="310" y="50" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFF">圆心角</text>
+        <rect x="16" y="60" width="368" height="30" fill="#F3E5F5"/>
+        <text x="80" y="80" text-anchor="middle" font-size="11" fill="#37474F">足球</text>
+        <text x="190" y="80" text-anchor="middle" font-size="11" fill="#37474F">25%</text>
+        <text x="310" y="80" text-anchor="middle" font-size="11.5" font-weight="700" fill="#6A1B9A">25% × 360° = 90°</text>
+        <rect x="16" y="90" width="368" height="30" fill="#FFFFFF"/>
+        <text x="80" y="110" text-anchor="middle" font-size="11" fill="#37474F">篮球</text>
+        <text x="190" y="110" text-anchor="middle" font-size="11" fill="#37474F">50%</text>
+        <text x="310" y="110" text-anchor="middle" font-size="11.5" font-weight="700" fill="#6A1B9A">50% × 360° = 180°</text>
+        <rect x="16" y="120" width="368" height="30" fill="#F3E5F5"/>
+        <text x="80" y="140" text-anchor="middle" font-size="11" fill="#37474F">其他</text>
+        <text x="190" y="140" text-anchor="middle" font-size="11" fill="#37474F">25%</text>
+        <text x="310" y="140" text-anchor="middle" font-size="11.5" font-weight="700" fill="#6A1B9A">25% × 360° = 90°</text>
+        <rect x="16" y="160" width="368" height="40" rx="8" fill="#E0F7FA" stroke="#80DEEA" stroke-width="1.2"/>
+        <text x="200" y="186" text-anchor="middle" font-size="11.5" font-weight="700" fill="#00838F">合计：25% + 50% + 25% = 100%　·　90° + 180° + 90° = 360°</text>
+        <rect x="16" y="208" width="368" height="36" rx="8" fill="#FFF8E1" stroke="#FFE082" stroke-width="1.2"/>
+        <text x="200" y="230" text-anchor="middle" font-size="10.5" fill="#37474F">画图顺序：算占比 → 算圆心角 → 用量角器画扇形 → 标名称与百分比</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    画扇形统计图的关键换算：<strong>圆心角 = 占比 × 360°</strong>。足球 25% → 90°，篮球 50% → 180°，其他 25% → 90°。
+  </p>
+  <p class="teach-text" id="p3s2">
+    画之前一定验算：<strong>占比合计 100%，圆心角合计 360°</strong>，少一块或多一块都说明算错了。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>整个圆的圆心角是 360°，对应 100%</li>
+  <li>圆心角 = 占比 × 360°</li>
+  <li>占比合计 100%，圆心角合计 360°</li>
+  <li>画图顺序：占比 → 角度 → 画扇形 → 标名称与百分比</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  把百分比乘 360°，就得到该扇形该占多少度；这一步做完，剩下的只是用量角器画出来。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">占比、角度、人数，连一连</h2>
+<p class="teach-text" id="p3bs1">左边是占比或说法，右边是对应的圆心角或数量（总数 40 人）。把相配的连起来。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 占比与圆心角</h2>
+  <p class="quiz-hint">三道题，记得乘 360°。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 某部分占 20%，圆心角是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>20°</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>72°</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>36°</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 一个扇形的圆心角是 108°，它占？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>30%</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>108%</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>18%</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 扇形统计图里各扇形圆心角之和是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>100°</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>180°</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>360°</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 40 人的 25% 和 60 人的 25%，人数一样吗 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">40 人的 25% 和 60 人的 25%，人数一样吗</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="读扇形统计图：由占比乘总数求具体数量，占比相同人数不一定相同">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#6A1B9A">读图：占比 × 总数 = 具体数量</text>
+        <rect x="16" y="30" width="368" height="56" rx="8" fill="#F3E5F5" stroke="#CE93D8" stroke-width="1.2"/>
+        <text x="200" y="52" text-anchor="middle" font-size="11.5" fill="#37474F">全班 40 人，足球占 25%</text>
+        <text x="200" y="74" text-anchor="middle" font-size="12" font-weight="700" fill="#6A1B9A">40 × 25% = 10 人</text>
+        <rect x="16" y="96" width="368" height="56" rx="8" fill="#E0F7FA" stroke="#80DEEA" stroke-width="1.2"/>
+        <text x="200" y="118" text-anchor="middle" font-size="11.5" fill="#37474F">另一个班 60 人，足球也占 25%</text>
+        <text x="200" y="140" text-anchor="middle" font-size="12" font-weight="700" fill="#00838F">60 × 25% = 15 人</text>
+        <rect x="16" y="162" width="368" height="78" rx="8" fill="#FFF8E1" stroke="#FFE082" stroke-width="1.2"/>
+        <text x="200" y="184" text-anchor="middle" font-size="11.5" font-weight="700" fill="#E65100">占比相同，人数不一定相同</text>
+        <text x="200" y="206" text-anchor="middle" font-size="10.5" fill="#37474F">扇形大小只反映占比，不反映总数</text>
+        <text x="200" y="226" text-anchor="middle" font-size="10.5" fill="#546E7A">要比较两个班的人数，必须知道各自的总数</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    <strong>占比 × 总数 = 具体数量</strong>：全班 40 人、足球占 25%，就是 40 × 0.25 = <strong>10 人</strong>。
+  </p>
+  <p class="teach-text" id="p5s2">
+    另一个班 60 人、足球也占 25%，却是 60 × 0.25 = <strong>15 人</strong>。<strong>占比相同，人数未必相同</strong>，因为总数不同。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>40 人 × 25%</h4>
+    <div class="eq">10 人</div>
+    <p>占比乘总数。</p>
+  </div>
+  <div class="card">
+    <h4>60 人 × 25%</h4>
+    <div class="eq">15 人</div>
+    <p>扇形一样大，人数不同。</p>
+  </div>
+  <div class="card">
+    <h4>比较人数</h4>
+    <div class="eq">先问总数</div>
+    <p>没总数不能只比占比。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  扇形大小只反映<strong>比例</strong>；要比较两个图里谁人数多，必须各自知道总数再算。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">改占比，扇形角度自动重算</h2>
+  <p class="sim-desc">换一组数据分布，点「加大足球占比」看各扇形怎么重新分配，右侧实时算出每个项目的圆心角与人数（总数 40 人）。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">第 1 组 · 足球 25% · 圆心角 90° · 10 人</span>
+    <span class="sim-tip" id="simTip">点画布或按钮调整占比</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simShift()">① 加大足球占比</button>
+    <button class="btn-primary" onclick="simRunAll()">一键到底</button>
+    <button class="btn-retry" onclick="simNextCase()">换一组</button>
+    <button class="btn-retry" onclick="simReset()">重来</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">三个占比始终合计 100%，三个圆心角始终合计 360°</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>圆心角 = 占比 × 360°，占比变了角度就跟着变。</li>
+    <li>扇形大小反映占比，不反映具体人数。</li>
+    <li>人数 = 总数 40 × 占比，两组数据总数要分别看。</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 读图求数量</h2>
+  <p class="quiz-hint">这一组要用总数去乘占比。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 全班 40 人，篮球占 50%，有多少人？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>20 人</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>10 人</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>50 人</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 甲班 40 人、乙班 60 人，足球都占 25%，两班足球人数？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>都是 10 人</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>都是 15 人</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>甲 10 人、乙 15 人</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 扇形统计图中某部分占比 30%，圆心角是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>108°</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>30°</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>60°</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四个易错点，都在「占比」和「总数」上 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四个易错点，都在「占比」和「总数」上</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    学扇形统计图最容易错的地方，是<strong>把占比当成具体人数</strong>，以及<strong>忘了占比合计必须是 100%</strong>。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>坑一：占比当人数</h4>
+    <div class="eq">40 人里「50%」就是 50 人 ✗</div>
+    <p>50% 是比例，人数是 40 × 50% = 20 人。</p>
+  </div>
+  <div class="card">
+    <h4>坑二：角度没乘 360°</h4>
+    <div class="eq">25% 画成 25° ✗</div>
+    <p>圆心角 = 25% × 360° = 90°。</p>
+  </div>
+  <div class="card">
+    <h4>坑三：合计不是 100%</h4>
+    <div class="eq">各项加起来 95% 就画 ✗</div>
+    <p>必须正好 100%，角度合计 360°。</p>
+  </div>
+  <div class="card">
+    <h4>坑四：跨图比占比</h4>
+    <div class="eq">两个班都 25% 就认为人数相同 ✗</div>
+    <p>总数不同，人数就不同。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  一句话：<strong>整个圆是 100% / 360°；圆心角 = 占比 × 360°；人数 = 总数 × 占比；比较人数先比总数</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到开头那张饼图：足球 25% → 90° → 10 人，篮球 50% → 180° → 20 人，其他 25% → 90° → 10 人，合计 40 人、360°。若把 50% 当成 50 人，全班人数就对不上了。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题验收</h2>
+  <p class="quiz-hint">最后一组，记得先乘 360°、再看总数。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 某部分占 40%，圆心角是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>40°</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>120°</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>144°</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 圆心角 72° 的扇形占？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>20%</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>72%</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>10%</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 50 人的班级，音乐占 20%，有多少人？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>20 人</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>10 人</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>5 人</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 扇形统计图各项目占比之和必须是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>360%</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>100%</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>50%</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 下面说法正确的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>扇形大小表示具体人数</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>占比相同则人数一定相同</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>扇形大小表示部分占总数的百分比</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">整个圆</div>
+        <div class="summary-v4-summary">总数 = 100% = 360°</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>各扇形是部分占比。</p>
+      <p>合计必须是 100%。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">换算</div>
+        <div class="summary-v4-summary">圆心角 = 占比 × 360°</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>25% → 90°，50% → 180°。</p>
+      <p>角度合计 360°。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">求数量</div>
+        <div class="summary-v4-summary">人数 = 总数 × 占比</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>40 人的 25% = 10 人。</p>
+      <p>光看占比算不出人数。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">比较</div>
+        <div class="summary-v4-summary">占比 ≠ 人数</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>占比相同，总数不同人数不同。</p>
+      <p>条形图看数量，扇形图看关系。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  下次看扇形统计图，先找<strong>总数</strong>，再看各块占比；要画就把占比乘 360° 得角度，画完验算合计是不是 100% 和 360°。
+</p>
+</section>
