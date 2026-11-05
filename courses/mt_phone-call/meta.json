@@ -2,15 +2,15 @@
   "status": "reviewed",
   "author": "goral.cao",
   "license": "CC-BY-SA-4.0",
-  "version": "1.0.0",
-  "updatedAt": "2026-10-27",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
   "subject": "数学",
   "template": "explain",
   "topicId": "mt_phone-call",
-  "title": "打电话：每分钟翻一倍",
+  "title": "1 分钟通知 1 人，通知 15 人要几分钟？",
   "renderer": "callTree",
-  "duration": 10,
-  "interactions": 2,
+  "duration": 24,
+  "interactions": 16,
   "grade": 5,
   "standards": [
     "math-2022:S3:PP"
@@ -21,9 +21,71 @@
   ],
   "next": [],
   "objectives": [
-    "理解打电话问题中人人不空闲的策略最优",
-    "发现每过一分钟知道消息的人数翻倍的规律",
-    "会用图示和数据表示通知的过程"
+    "用图示说明每分钟知道消息的人数为什么翻倍",
+    "写出第 n 分钟累计通知的学生数 2ⁿ − 1",
+    "根据学生数推算最少需要几分钟，并说明「不空闲」的必要性"
   ],
-  "cognitiveAction": "构造"
+  "cognitiveAction": "累积",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "两个人一起打",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "列表找规律",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "最少几分钟",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
 }

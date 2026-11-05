@@ -1,0 +1,7 @@
+:root {
+  --primary: #BF360C; --primary-light: #D84315;
+  --accent: #0288D1; --accent-soft: #81D4FA;
+  --ink: #2A1008; --paper: #FFFCFA; --paper-2: #FFF3E0;
+  --line: #FFCC80; --green: #2E7D32; --red: #C62828;
+  --shadow: 0 4px 16px rgba(191,54,12,.16);
+}

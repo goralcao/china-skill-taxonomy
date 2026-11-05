@@ -1,0 +1,593 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>1 分钟通知 1 人，通知 15 人要几分钟？</h1>
+  <p class="sub">五年级数学 · 打电话</p>
+  <div class="tags">
+    <span class="tag">接到的人也帮忙</span>
+    <span class="tag">每分钟翻一倍</span>
+    <span class="tag">谁都不能闲着</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 470 212" width="480" height="216" role="img" aria-label="接到电话的人也帮忙打，每分钟知道消息的人数翻倍，15 人只要 4 分钟">
+      <g font-family="sans-serif">
+        <text x="235" y="20" text-anchor="middle" font-size="13" fill="rgba(255,255,255,.86)">1 分钟通知 1 人，通知 15 人要几分钟？</text>
+
+        <text x="46" y="52" font-size="10.5" fill="rgba(255,255,255,.8)">老师</text>
+        <g>
+        <circle cx="190.0" cy="48" r="9" fill="#FFB74D" stroke="#E65100" stroke-width="1.2"/>
+      </g>
+        <text x="46" y="92" font-size="10.5" fill="rgba(255,255,255,.8)">第 1 分钟</text>
+        <g>
+        <circle cx="190.0" cy="88" r="9" fill="#4FC3F7" stroke="#0288D1" stroke-width="1.2"/>
+      </g>
+        <text x="46" y="132" font-size="10.5" fill="rgba(255,255,255,.8)">第 2 分钟</text>
+        <g>
+        <circle cx="177.0" cy="128" r="9" fill="#4FC3F7" stroke="#0288D1" stroke-width="1.2"/>
+        <circle cx="203.0" cy="128" r="9" fill="#4FC3F7" stroke="#0288D1" stroke-width="1.2"/>
+      </g>
+        <text x="46" y="172" font-size="10.5" fill="rgba(255,255,255,.8)">第 3 分钟</text>
+        <g>
+        <circle cx="151.0" cy="168" r="9" fill="#4FC3F7" stroke="#0288D1" stroke-width="1.2"/>
+        <circle cx="177.0" cy="168" r="9" fill="#4FC3F7" stroke="#0288D1" stroke-width="1.2"/>
+        <circle cx="203.0" cy="168" r="9" fill="#4FC3F7" stroke="#0288D1" stroke-width="1.2"/>
+        <circle cx="229.0" cy="168" r="9" fill="#4FC3F7" stroke="#0288D1" stroke-width="1.2"/>
+      </g>
+
+        <rect x="292" y="42" width="146" height="128" rx="9" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.32)" stroke-width="1.2"/>
+        <text x="365" y="66" text-anchor="middle" font-size="11" fill="#FFD54F">累计知道消息（含老师）</text>
+        <text x="365" y="90" text-anchor="middle" font-size="11.5" fill="#FFFFFF">1 → 2 → 4 → 8 → 16</text>
+        <text x="365" y="116" text-anchor="middle" font-size="11" fill="#FFD54F">已通知学生 = 2ⁿ − 1</text>
+        <text x="365" y="142" text-anchor="middle" font-size="12.5" font-weight="700" fill="#FFFFFF">15 人 → 只要 4 分钟</text>
+        <text x="365" y="162" text-anchor="middle" font-size="10" fill="rgba(255,255,255,.75)">每个人都别闲着</text>
+      </g>
+    </svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先答三道，凭感觉</h2>
+  <p class="quiz-hint">三道题都在问「接到电话的人还能做什么」。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 老师 1 分钟通知 1 人，只靠老师一个人打，通知 15 人要几分钟？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>15 分钟</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>4 分钟</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>8 分钟</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 如果接到电话的同学也立刻帮忙通知别人，第 2 分钟结束时最多有几人知道（含老师）？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>2 人</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3 人</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>4 人</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 这个方案最快的关键是什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>电话打得快一点</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>每个知道消息的人都不闲着</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>只让老师打</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 1 分钟打 1 通，15 人为什么要 15 分钟 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">1 分钟打 1 通，15 人为什么要 15 分钟</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="老师一个人逐个打要 15 分钟，接到电话的人一起打只要 4 分钟">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#BF360C">两个人一起打，比一个人快得多</text>
+
+        <rect x="14" y="32" width="176" height="112" rx="8" fill="#FFEBEE" stroke="#EF9A9A" stroke-width="1.2"/>
+        <text x="102" y="52" text-anchor="middle" font-size="11" font-weight="700" fill="#C62828">只有老师打</text>
+        <text x="102" y="76" text-anchor="middle" font-size="10.5" fill="#5D4037">第 1 分钟累计 1 人</text>
+        <text x="102" y="96" text-anchor="middle" font-size="10.5" fill="#5D4037">第 2 分钟累计 2 人</text>
+        <text x="102" y="116" text-anchor="middle" font-size="10.5" fill="#5D4037">每分钟只多 1 人</text>
+        <text x="102" y="136" text-anchor="middle" font-size="12" font-weight="700" fill="#C62828">15 人要 15 分钟</text>
+
+        <rect x="208" y="32" width="176" height="112" rx="8" fill="#E1F5FE" stroke="#81D4FA" stroke-width="1.2"/>
+        <text x="296" y="52" text-anchor="middle" font-size="11" font-weight="700" fill="#01579B">接到的人都帮忙打</text>
+        <text x="296" y="76" text-anchor="middle" font-size="10.5" fill="#5D4037">第 1 分钟累计 1 人</text>
+        <text x="296" y="96" text-anchor="middle" font-size="10.5" fill="#5D4037">第 2 分钟累计 3 人</text>
+        <text x="296" y="116" text-anchor="middle" font-size="10.5" fill="#5D4037">每分钟翻一倍</text>
+        <text x="296" y="136" text-anchor="middle" font-size="12" font-weight="700" fill="#01579B">15 人只要 4 分钟</text>
+
+        <rect x="16" y="156" width="368" height="86" rx="8" fill="#FFF8E1" stroke="#FFE082" stroke-width="1.3"/>
+        <text x="200" y="178" text-anchor="middle" font-size="11.5" font-weight="700" fill="#E65100">关键规则：每个已经知道消息的人，下一分钟都去通知 1 个还不知道的人</text>
+        <text x="200" y="200" text-anchor="middle" font-size="11" fill="#5D4037">老师不闲着，接到电话的同学也不闲着</text>
+        <text x="200" y="222" text-anchor="middle" font-size="11" fill="#5D4037">这样每分钟「能打电话的人数」就翻一倍</text>
+        <text x="200" y="238" text-anchor="middle" font-size="10" fill="#8D6E63">前提：每通电话正好 1 分钟，且不能重复通知同一个人</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    班里 15 个同学要临时通知一件事，每通电话正好 1 分钟。如果只有老师一个人打，每分钟只多 1 人，15 人就要 15 分钟。
+  </p>
+  <p class="teach-text" id="p2s2">
+    换个办法：<strong>每个接到电话的人，下一分钟也去通知 1 个还不知道的人</strong>。能打电话的人数就每分钟翻一倍。
+  </p>
+  <p class="teach-text" id="p2s3">
+    照这个办法，第 4 分钟结束时累计能通知 15 个同学，比 15 分钟快得多。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>只有老师打</h4>
+    <div class="eq">每分钟 +1 人</div>
+    <p>15 人要 15 分钟。</p>
+  </div>
+  <div class="card">
+    <h4>大家一起打</h4>
+    <div class="eq">每分钟翻一倍</div>
+    <p>1、2、4、8… 越往后越快。</p>
+  </div>
+  <div class="card">
+    <h4>前提</h4>
+    <div class="eq">每通 1 分钟</div>
+    <p>且不重复通知同一个人。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  省时间的不是「打得更快」，是<strong>让更多人有资格打电话</strong>：知道消息的人越多，下一分钟能通知的人就越多。
+</div>
+</section>
+
+<!-- ===== p3: 列个表，规律自己跳出来 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">列个表，规律自己跳出来</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="每分钟新通知人数翻倍：1、2、4、8，累计学生 1、3、7、15">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#BF360C">列个表，规律自己跳出来</text>
+
+        <rect x="16" y="32" width="368" height="28" rx="6" fill="#BF360C"/>
+        <text x="62" y="51" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFFFFF">第几分钟</text>
+        <text x="152" y="51" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFFFFF">这一分钟新通知</text>
+        <text x="262" y="51" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFFFFF">累计学生</text>
+        <text x="350" y="51" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFFFFF">含老师共</text>
+
+        <rect x="16" y="60" width="368" height="30" fill="#FFF3E0"/>
+        <text x="62" y="80" text-anchor="middle" font-size="11.5" fill="#5D4037">1</text>
+        <text x="152" y="80" text-anchor="middle" font-size="11.5" fill="#5D4037">1</text>
+        <text x="262" y="80" text-anchor="middle" font-size="11.5" font-weight="700" fill="#BF360C">1</text>
+        <text x="350" y="80" text-anchor="middle" font-size="11.5" fill="#5D4037">2</text>
+
+        <rect x="16" y="90" width="368" height="30" fill="#FFFFFF"/>
+        <text x="62" y="110" text-anchor="middle" font-size="11.5" fill="#5D4037">2</text>
+        <text x="152" y="110" text-anchor="middle" font-size="11.5" fill="#5D4037">2</text>
+        <text x="262" y="110" text-anchor="middle" font-size="11.5" font-weight="700" fill="#BF360C">3</text>
+        <text x="350" y="110" text-anchor="middle" font-size="11.5" fill="#5D4037">4</text>
+
+        <rect x="16" y="120" width="368" height="30" fill="#FFF3E0"/>
+        <text x="62" y="140" text-anchor="middle" font-size="11.5" fill="#5D4037">3</text>
+        <text x="152" y="140" text-anchor="middle" font-size="11.5" fill="#5D4037">4</text>
+        <text x="262" y="140" text-anchor="middle" font-size="11.5" font-weight="700" fill="#BF360C">7</text>
+        <text x="350" y="140" text-anchor="middle" font-size="11.5" fill="#5D4037">8</text>
+
+        <rect x="16" y="150" width="368" height="30" fill="#FFFFFF"/>
+        <text x="62" y="170" text-anchor="middle" font-size="11.5" fill="#5D4037">4</text>
+        <text x="152" y="170" text-anchor="middle" font-size="11.5" fill="#5D4037">8</text>
+        <text x="262" y="170" text-anchor="middle" font-size="11.5" font-weight="700" fill="#BF360C">15</text>
+        <text x="350" y="170" text-anchor="middle" font-size="11.5" fill="#5D4037">16</text>
+
+        <rect x="16" y="190" width="368" height="52" rx="8" fill="#E1F5FE" stroke="#81D4FA" stroke-width="1.2"/>
+        <text x="200" y="210" text-anchor="middle" font-size="11.5" font-weight="700" fill="#01579B">第 n 分钟：含老师共 2ⁿ 人知道，学生 2ⁿ − 1 人</text>
+        <text x="200" y="232" text-anchor="middle" font-size="11" fill="#5D4037">新通知的那一列：1、2、4、8… 每次都翻一倍</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    第 1 分钟新通知 1 人、累计学生 1 人；第 2 分钟新通知 2 人、累计 3 人；第 3 分钟新通知 4 人、累计 7 人；第 4 分钟新通知 8 人、累计 15 人。
+  </p>
+  <p class="teach-text" id="p3s2">
+    「这一分钟新通知」那一列是 1、2、4、8，每次翻一倍；含老师在内，第 n 分钟共 <strong>2ⁿ</strong> 人知道消息，学生就是 <strong>2ⁿ − 1</strong> 人。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>第 n 分钟含老师共 2ⁿ 人知道消息</li>
+  <li>累计通知学生 = 2ⁿ − 1</li>
+  <li>这一分钟新通知 = 2ⁿ⁻¹ 人</li>
+  <li>每多 1 分钟，能通知的学生数约翻一倍还多 1</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  记住这一列就够了：<strong>1、3、7、15、31、63</strong> —— 分别是 1～6 分钟能通知到的学生数。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">第几分钟，能通知多少人</h2>
+<p class="teach-text" id="p3bs1">左边是分钟数或说法，右边是对应的人数。把相配的连起来。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 翻倍表</h2>
+  <p class="quiz-hint">三道题，先想「这是第几分钟」。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 第 3 分钟结束时，累计通知了多少个学生？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>8 人</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3 人</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>7 人</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 第 4 分钟这一分钟里，新通知了多少人？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>4 人</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>8 人</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>15 人</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 第 5 分钟结束时，含老师一共多少人知道消息？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>32 人</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>31 人</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>16 人</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 最少几分钟，看人数加 1 是 2 的几次方 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">最少几分钟，看人数加 1 是 2 的几次方</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="最少时间等于把人数加一后看它是 2 的几次方，且每个人都不能空闲">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#BF360C">怎么一眼算出最少几分钟</text>
+
+        <rect x="16" y="32" width="368" height="76" rx="8" fill="#E1F5FE" stroke="#81D4FA" stroke-width="1.3"/>
+        <text x="200" y="56" text-anchor="middle" font-size="12" font-weight="700" fill="#01579B">学生数 + 1 = 2ⁿ，那个 n 就是最少分钟数</text>
+        <text x="200" y="80" text-anchor="middle" font-size="11.5" fill="#37474F">15 + 1 = 16 = 2⁴ → 4 分钟　·　31 + 1 = 32 = 2⁵ → 5 分钟</text>
+        <text x="200" y="100" text-anchor="middle" font-size="10.5" fill="#546E7A">不是正好 2 的幂时，往上够一档</text>
+
+        <rect x="16" y="118" width="176" height="120" rx="8" fill="#FFF3E0" stroke="#FFCC80" stroke-width="1.2"/>
+        <text x="104" y="140" text-anchor="middle" font-size="11.5" font-weight="700" fill="#E65100">必须「不空闲」</text>
+        <text x="104" y="162" text-anchor="middle" font-size="10.5" fill="#5D4037">知道消息的人</text>
+        <text x="104" y="182" text-anchor="middle" font-size="10.5" fill="#5D4037">每分钟都要打一通</text>
+        <text x="104" y="204" text-anchor="middle" font-size="10.5" fill="#5D4037">只要有人闲着，</text>
+        <text x="104" y="224" text-anchor="middle" font-size="10.5" fill="#5D4037">就达不到 2ⁿ</text>
+
+        <rect x="208" y="118" width="176" height="120" rx="8" fill="#FFEBEE" stroke="#EF9A9A" stroke-width="1.2"/>
+        <text x="296" y="140" text-anchor="middle" font-size="11.5" font-weight="700" fill="#C62828">常见的浪费</text>
+        <text x="296" y="162" text-anchor="middle" font-size="10.5" fill="#5D4037">老师一个人打到底</text>
+        <text x="296" y="182" text-anchor="middle" font-size="10.5" fill="#5D4037">有人接到电话不帮忙</text>
+        <text x="296" y="204" text-anchor="middle" font-size="10.5" fill="#5D4037">两个人通知同一人</text>
+        <text x="296" y="224" text-anchor="middle" font-size="10.5" fill="#5D4037">都会让时间变长</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    要通知 N 个学生，就看 <strong>N + 1 是 2 的几次方</strong>：15 + 1 = 16 = 2⁴，所以 4 分钟；31 + 1 = 32 = 2⁵，所以 5 分钟。
+  </p>
+  <p class="teach-text" id="p5s2">
+    N 不是正好 2ⁿ − 1 时往上够一档：通知 20 人，20 + 1 = 21 介于 16 和 32 之间，要按 32 算，得 5 分钟。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>15 人</h4>
+    <div class="eq">4 分钟</div>
+    <p>15 + 1 = 16 = 2⁴。</p>
+  </div>
+  <div class="card">
+    <h4>31 人</h4>
+    <div class="eq">5 分钟</div>
+    <p>31 + 1 = 32 = 2⁵。</p>
+  </div>
+  <div class="card">
+    <h4>20 人</h4>
+    <div class="eq">5 分钟</div>
+    <p>21 超过 16，往上够到 32。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  这个最快方案有个硬条件：<strong>每个知道消息的人每分钟都打一通，且不打给已经知道的人</strong>。有人闲着，2ⁿ 就达不到。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">时间轴扩散：过 1 分钟，看人数怎么翻倍</h2>
+  <p class="sim-desc">换目标人数，点「过 1 分钟」看新通知的人一层层铺开，右侧实时算出累计学生与最少分钟数。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">通知 15 人 · 第 0 分钟 · 已通知 0 人</span>
+    <span class="sim-tip" id="simTip">点画布过 1 分钟</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simNextMinute()">① 过 1 分钟</button>
+    <button class="btn-primary" onclick="simRunAll()">一键到底</button>
+    <button class="btn-retry" onclick="simNextTarget()">换目标人数</button>
+    <button class="btn-retry" onclick="simReset()">重来</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">每层圆点 = 这一分钟新通知的人，下一层是上一层的两倍</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>第 1 分钟新通知 1 人，第 2 分钟 2 人，第 3 分钟 4 人，依次翻倍。</li>
+    <li>累计学生数 1、3、7、15、31、63，正好是 2ⁿ − 1。</li>
+    <li>目标人数不是 2ⁿ − 1 时，最少分钟数要往上够一档。</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 最少时间</h2>
+  <p class="quiz-hint">这一组要会用「人数加 1」。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 通知 31 个同学，最少要几分钟？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>6 分钟</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>4 分钟</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>5 分钟</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 通知 20 个同学，最少要几分钟？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>4 分钟</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>5 分钟</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>6 分钟</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 为什么「大家都不闲着」才能最快？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>因为这样每分钟打电话的人数才翻倍</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>因为电话费更便宜</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>因为老师不用打了</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四个易错点，都在「翻倍」和「加 1」上 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四个易错点，都在「翻倍」和「加 1」上</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    打电话最容易错的地方，是<strong>把「含老师的总人数」当成「学生数」</strong>，或者忘了最优方案要求所有人都不空闲。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>坑一：忘了减老师</h4>
+    <div class="eq">第 4 分钟通知 16 人 ✗</div>
+    <p>16 是含老师的总人数，学生是 16 − 1 = 15 人。</p>
+  </div>
+  <div class="card">
+    <h4>坑二：把累计当新增</h4>
+    <div class="eq">第 4 分钟新通知 15 人 ✗</div>
+    <p>15 是累计学生；这一分钟只新通知 8 人。</p>
+  </div>
+  <div class="card">
+    <h4>坑三：按线性数</h4>
+    <div class="eq">每分钟多 1 人要 15 分钟 ✗</div>
+    <p>那是只有老师打；大家帮忙时人数是翻倍的。</p>
+  </div>
+  <div class="card">
+    <h4>坑四：人数没往上够</h4>
+    <div class="eq">20 人按 16 算 4 分钟 ✗</div>
+    <p>21 超过 16，得按 32 那一档算 5 分钟。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  一句话：<strong>学生数 = 2ⁿ − 1，含老师 = 2ⁿ；算最少时间就把人数加 1，再往上够到 2 的幂</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到开头那 15 人：1、3、7、15，第 4 分钟刚好通知完，前提是 4 分钟里每个知道消息的人都在打电话。如果改成 16 人，第 4 分钟只能通知 15 人，还差 1 人，必须再过 1 分钟，共 5 分钟。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题验收</h2>
+  <p class="quiz-hint">最后一组，记得「学生数要减 1」。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 第 6 分钟结束时，累计通知了多少个学生？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>64 人</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>32 人</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>63 人</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 通知 63 个同学，最少要几分钟？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5 分钟</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>6 分钟</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>7 分钟</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 第 5 分钟这一分钟，新通知了多少人？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>16 人</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>31 人</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>32 人</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 第 3 分钟结束时，含老师一共几人知道消息？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>7 人</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>8 人</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>4 人</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 下面哪种做法会让时间变长？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>接到电话的人立刻帮忙打</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>每个知道消息的人每分钟都打一通</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>有同学接到电话后一直不帮忙</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">翻倍从哪来</div>
+        <div class="summary-v4-summary">知道消息的人都能打</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>第 n 分钟含老师共 2ⁿ 人。</p>
+      <p>这一分钟新通知 2ⁿ⁻¹ 人。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">学生数要减 1</div>
+        <div class="summary-v4-summary">累计学生 = 2ⁿ − 1</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>1、3、7、15、31、63。</p>
+      <p>别把含老师的总数当学生数。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">最少几分钟</div>
+        <div class="summary-v4-summary">人数 + 1 → 够到 2 的幂</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>15 + 1 = 16 = 2⁴ → 4 分钟。</p>
+      <p>不是正好时往上够一档。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">不空闲是硬条件</div>
+        <div class="summary-v4-summary">人人每分钟打一通</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>且不能重复通知同一个人。</p>
+      <p>有人闲着，2ⁿ 就达不到。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  下次遇到「最少几分钟」，先把人数<strong>加 1</strong>，再问它落在哪两个 2 的幂之间，往上够一档就是答案。别忘了检查：有没有人一直闲着没打电话。
+</p>
+</section>
