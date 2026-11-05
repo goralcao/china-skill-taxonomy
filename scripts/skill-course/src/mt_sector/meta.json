@@ -1,0 +1,94 @@
+{
+  "topicId": "mt_sector",
+  "title": "披萨切成 6 块，一块的圆心角是多大？",
+  "template": "explain",
+  "renderer": "sector",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 6,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S3:GG:GM"
+  ],
+  "prerequisites": [
+    "mt_angle-measure",
+    "mt_circle",
+    "mt_circle-measure"
+  ],
+  "next": [
+    "mt_pie-chart"
+  ],
+  "objectives": [
+    "认识扇形、弧、圆心角，能判断一个图形是不是扇形",
+    "理解扇形占圆的比例等于圆心角除以 360°，会算扇形面积与弧长",
+    "会把百分比换成扇形圆心角，为扇形统计图打基础"
+  ],
+  "cognitiveAction": "构造",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "认识扇形",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "占圆几分之几",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "扇形统计图",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

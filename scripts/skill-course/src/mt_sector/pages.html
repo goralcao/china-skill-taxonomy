@@ -1,0 +1,544 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>披萨切成 6 块，一块的圆心角是多大？</h1>
+  <p class="sub">六年级数学 · 扇形</p>
+  <div class="tags">
+    <span class="tag">顶点在圆心</span>
+    <span class="tag">圆心角定大小</span>
+    <span class="tag">占圆几分之几</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 470 212" width="480" height="216" role="img" aria-label="披萨切成 6 块，每块是一个扇形，圆心角 60 度，占整个圆的六分之一">
+      <g font-family="sans-serif">
+        <text x="235" y="20" text-anchor="middle" font-size="13" fill="#FFFFFF">披萨切成 6 块，一块的圆心角是多大？</text>
+        <circle cx="120" cy="112" r="72" fill="#FFF3E0" stroke="#FFFFFF" stroke-width="2"/>
+        <path d="M 120.0 112.0 L 120.0 40.0 A 72 72 0 0 1 182.4 76.0 Z" fill="#4DD0E1" stroke="#FFFFFF" stroke-width="1.6"/>
+        <g stroke="rgba(255,255,255,.55)" stroke-width="1.3">
+          <line x1="120" y1="112" x2="120" y2="40"/>
+          <line x1="120" y1="112" x2="182.4" y2="76"/>
+          <line x1="120" y1="112" x2="182.4" y2="148"/>
+          <line x1="120" y1="112" x2="120" y2="184"/>
+          <line x1="120" y1="112" x2="57.6" y2="148"/>
+          <line x1="120" y1="112" x2="57.6" y2="76"/>
+        </g>
+        <text x="120" y="200" text-anchor="middle" font-size="10.5" fill="rgba(255,255,255,.85)">青色那一块 = 一个扇形</text>
+        <rect x="244" y="36" width="202" height="150" rx="9" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.32)"/>
+        <text x="345" y="60" text-anchor="middle" font-size="11" fill="#FFD54F">顶点在圆心，两条半径 + 一段弧</text>
+        <text x="345" y="88" text-anchor="middle" font-size="12.5" font-weight="700" fill="#FFFFFF">360° ÷ 6 = 60°</text>
+        <text x="345" y="114" text-anchor="middle" font-size="11.5" fill="#FFD54F">圆心角 / 360° = 占圆的几分之几</text>
+        <text x="345" y="142" text-anchor="middle" font-size="12.5" font-weight="700" fill="#FFFFFF">60° → 占 1/6</text>
+        <text x="345" y="168" text-anchor="middle" font-size="10.5" fill="rgba(255,255,255,.8)">扇形大小只由圆心角决定</text>
+      </g>
+    </svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先答三道，凭感觉</h2>
+  <p class="quiz-hint">三道题都在问「一块扇形占整个圆的多少」。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 把一个圆平均分成 4 份，每份扇形的圆心角是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>90°</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>60°</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>180°</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 扇形是由什么围成的？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>三条线段</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>两条半径和一段弧</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>一条直径和一段弧</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 圆心角 180° 的扇形占整个圆的？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1/4</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>1/3</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>1/2</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 圆规画一个 90° 的扇形，顶点在哪 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">圆规画一个 90° 的扇形，顶点在哪</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="扇形由圆心角、两条半径和一段弧围成，弧是圆的一部分，顶点必须在圆心">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#E65100">扇形 = 两条半径 + 一段弧</text>
+        <circle cx="108" cy="128" r="78" fill="#FFF3E0" stroke="#E65100" stroke-width="1.6"/><path d="M 108.0 128.0 L 108.0 50.0 A 78 78 0 0 1 186.0 128.0 Z" fill="#4DD0E1" stroke="#E65100" stroke-width="1.6"/><line x1="108" y1="128" x2="108" y2="50" stroke="#E65100" stroke-width="1.4"/><line x1="108" y1="128" x2="186.0" y2="128.0" stroke="#E65100" stroke-width="1.4"/><circle cx="108" cy="128" r="3" fill="#E65100"/><text x="108" y="222" text-anchor="middle" font-size="11" fill="#00695C">圆心角 90°</text>
+        <rect x="212" y="30" width="172" height="60" rx="8" fill="#FFF3E0" stroke="#FFCC80" stroke-width="1.2"/>
+        <text x="298" y="52" text-anchor="middle" font-size="11" font-weight="700" fill="#E65100">圆心角</text>
+        <text x="298" y="74" text-anchor="middle" font-size="10.5" fill="#37474F">顶点在圆心，两条半径夹出的角</text>
+        <rect x="212" y="100" width="172" height="60" rx="8" fill="#E0F7FA" stroke="#80DEEA" stroke-width="1.2"/>
+        <text x="298" y="122" text-anchor="middle" font-size="11" font-weight="700" fill="#00838F">弧</text>
+        <text x="298" y="144" text-anchor="middle" font-size="10.5" fill="#37474F">圆上两点之间的那段曲线</text>
+        <rect x="212" y="170" width="172" height="60" rx="8" fill="#FCE4EC" stroke="#F8BBD0" stroke-width="1.2"/>
+        <text x="298" y="192" text-anchor="middle" font-size="11" font-weight="700" fill="#AD1457">顶点必须在圆心</text>
+        <text x="298" y="214" text-anchor="middle" font-size="10.5" fill="#37474F">角尖不在圆心的不是扇形</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    一张半径 12 厘米的披萨，从圆心引两条半径切下一块。<strong>两条半径 + 它们之间的那段弧</strong>围成的图形就是<strong>扇形</strong>。
+  </p>
+  <p class="teach-text" id="p2s2">
+    两条半径夹出的角叫<strong>圆心角</strong>，它的<strong>顶点必须在圆心</strong>；弧是圆上的一段曲线，不是直线。
+  </p>
+  <p class="teach-text" id="p2s3">
+    角尖不在圆心、或者边不是半径的图形，都不是扇形。一个圆可以切出无数个大小不同的扇形。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>顶点</h4>
+    <div class="eq">必须在圆心</div>
+    <p>否则不是扇形。</p>
+  </div>
+  <div class="card">
+    <h4>两条半径</h4>
+    <div class="eq">夹出圆心角</div>
+    <p>半径长度相同。</p>
+  </div>
+  <div class="card">
+    <h4>弧</h4>
+    <div class="eq">圆上的一段</div>
+    <p>弧长随圆心角变。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  判断扇形只看两件事：<strong>角的顶点在不在圆心、两条边是不是半径</strong>；扇形大小由圆心角唯一决定。
+</div>
+</section>
+
+<!-- ===== p3: 圆心角 90°，扇形就占圆的 1/4 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">圆心角 90°，扇形就占圆的 1/4</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="扇形占圆的比例等于圆心角除以 360 度，面积与弧长都按这个比例计算">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#E65100">圆心角 90°，扇形就占圆的 1/4</text>
+        <circle cx="104" cy="118" r="62" fill="#FFF3E0" stroke="#E65100" stroke-width="1.6"/><path d="M 104.0 118.0 L 104.0 56.0 A 62 62 0 0 1 166.0 118.0 Z" fill="#4DD0E1" stroke="#E65100" stroke-width="1.6"/><line x1="104" y1="118" x2="104" y2="56" stroke="#E65100" stroke-width="1.4"/><line x1="104" y1="118" x2="166.0" y2="118.0" stroke="#E65100" stroke-width="1.4"/><circle cx="104" cy="118" r="3" fill="#E65100"/><text x="104" y="196" text-anchor="middle" font-size="10" fill="#00695C">90° → 占 1/4</text>
+        <circle cx="288" cy="118" r="62" fill="#FFF3E0" stroke="#E65100" stroke-width="1.6"/><path d="M 288.0 118.0 L 288.0 56.0 A 62 62 0 0 1 288.0 180.0 Z" fill="#4DD0E1" stroke="#E65100" stroke-width="1.6"/><line x1="288" y1="118" x2="288" y2="56" stroke="#E65100" stroke-width="1.4"/><line x1="288" y1="118" x2="288.0" y2="180.0" stroke="#E65100" stroke-width="1.4"/><circle cx="288" cy="118" r="3" fill="#E65100"/><text x="288" y="196" text-anchor="middle" font-size="10" fill="#00695C">180° → 占 1/2</text>
+        <rect x="16" y="196" width="368" height="48" rx="8" fill="#E0F7FA" stroke="#80DEEA" stroke-width="1.2"/>
+        <text x="200" y="216" text-anchor="middle" font-size="11.5" font-weight="700" fill="#00838F">扇形面积 = πr² × (圆心角 / 360°)　·　弧长 = 2πr × (圆心角 / 360°)</text>
+        <text x="200" y="236" text-anchor="middle" font-size="10.5" fill="#546E7A">半径 6 厘米、圆心角 90°：面积 = 3.14×36×1/4 = 28.26 平方厘米</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    整个圆的圆心角是 <strong>360°</strong>。扇形占圆的比例 = <strong>圆心角 ÷ 360°</strong>：90° 占 1/4，180° 占 1/2，60° 占 1/6。
+  </p>
+  <p class="teach-text" id="p3s2">
+    所以 <strong>扇形面积 = πr² × (圆心角/360°)</strong>，<strong>弧长 = 2πr × (圆心角/360°)</strong>。半径 6 厘米、圆心角 90° 时面积是 3.14 × 36 × 1/4 = 28.26 平方厘米。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>扇形占比 = 圆心角 ÷ 360°</li>
+  <li>扇形面积 = πr² × 圆心角/360°</li>
+  <li>弧长 = 2πr × 圆心角/360°</li>
+  <li>360° 对应整个圆，180° 对应半圆</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  扇形是「圆的一份」：<strong>先算它占 360° 的几分之几</strong>，再拿这个比例去乘整圆面积或整圆周长。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">圆心角与占比，连一连</h2>
+<p class="teach-text" id="p3bs1">左边是圆心角或说法，右边是它占整个圆的比例。把相配的连起来。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 扇形与圆心角</h2>
+  <p class="quiz-hint">三道题，注意顶点必须在圆心。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 一个圆的圆心角 120° 的扇形，占圆的？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1/3</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>1/4</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>1/2</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 下面哪个图形一定是扇形？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>角尖在圆内但不在圆心的图形</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>顶点在圆心、两条边都是半径的图形</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>任意一块像三角形的图形</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 半径 4 厘米、圆心角 90° 的扇形面积约是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>12.56 平方厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>50.24 平方厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3.14 平方厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 扇形统计图：25% 对应 90° ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">扇形统计图：25% 对应 90°</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="扇形统计图用扇形大小表示占比，扇形与三角形、扇环的区别">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#E65100">扇形统计图：用扇形大小表示占比</text>
+        <rect x="16" y="30" width="368" height="30" rx="6" fill="#E65100"/>
+        <text x="80" y="50" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFF">项目</text>
+        <text x="190" y="50" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFF">占比</text>
+        <text x="310" y="50" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFF">圆心角</text>
+        <rect x="16" y="60" width="368" height="28" fill="#FFF3E0"/>
+        <text x="80" y="79" text-anchor="middle" font-size="11" fill="#37474F">足球</text>
+        <text x="190" y="79" text-anchor="middle" font-size="11" fill="#37474F">25%</text>
+        <text x="310" y="79" text-anchor="middle" font-size="11" font-weight="700" fill="#E65100">90°</text>
+        <rect x="16" y="88" width="368" height="28" fill="#FFFFFF"/>
+        <text x="80" y="107" text-anchor="middle" font-size="11" fill="#37474F">篮球</text>
+        <text x="190" y="107" text-anchor="middle" font-size="11" fill="#37474F">50%</text>
+        <text x="310" y="107" text-anchor="middle" font-size="11" font-weight="700" fill="#E65100">180°</text>
+        <rect x="16" y="116" width="368" height="28" fill="#FFF3E0"/>
+        <text x="80" y="135" text-anchor="middle" font-size="11" fill="#37474F">其他</text>
+        <text x="190" y="135" text-anchor="middle" font-size="11" fill="#37474F">25%</text>
+        <text x="310" y="135" text-anchor="middle" font-size="11" font-weight="700" fill="#E65100">90°</text>
+        <rect x="16" y="154" width="368" height="42" rx="8" fill="#E0F7FA" stroke="#80DEEA" stroke-width="1.2"/>
+        <text x="200" y="180" text-anchor="middle" font-size="11.5" font-weight="700" fill="#00838F">圆心角 = 占比 × 360°　（25% × 360° = 90°）</text>
+        <rect x="16" y="204" width="368" height="40" rx="8" fill="#FCE4EC" stroke="#F8BBD0" stroke-width="1.2"/>
+        <text x="200" y="228" text-anchor="middle" font-size="10.5" fill="#37474F">所有占比加起来必须是 100%，所有圆心角加起来必须是 360°</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    扇形统计图用<strong>每个扇形的大小表示占比</strong>。把百分比换成圆心角：<strong>圆心角 = 占比 × 360°</strong>，25% × 360° = 90°。
+  </p>
+  <p class="teach-text" id="p5s2">
+    画之前要检查：所有占比加起来必须是 <strong>100%</strong>，所有圆心角加起来必须是 <strong>360°</strong>。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>25%</h4>
+    <div class="eq">90°</div>
+    <p>占比 × 360°。</p>
+  </div>
+  <div class="card">
+    <h4>50%</h4>
+    <div class="eq">180°</div>
+    <p>正好半个圆。</p>
+  </div>
+  <div class="card">
+    <h4>合计</h4>
+    <div class="eq">100% / 360°</div>
+    <p>画完要验算。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  扇形统计图看得是<strong>占比</strong>不是具体数量；同一组数据，人数翻倍但占比不变，扇形大小也不变。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">拖圆心角：扇形随角度一起变</h2>
+  <p class="sim-desc">换一组角度，点「加大角度」看扇形怎么张开，右侧实时算出占比、面积与弧长。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">第 1 组 · 圆心角 60° · 占圆 1/6</span>
+    <span class="sim-tip" id="simTip">点画布或按钮加大角度</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simGrow()">① 加大角度</button>
+    <button class="btn-primary" onclick="simRunAll()">一键到底</button>
+    <button class="btn-retry" onclick="simNextCase()">换一组</button>
+    <button class="btn-retry" onclick="simReset()">重来</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">扇形占圆的比例 = 圆心角 ÷ 360°，与半径无关</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>顶点在圆心，两条半径夹出圆心角。</li>
+    <li>占比 = 圆心角 / 360°，面积与弧长都按这个比例取。</li>
+    <li>360° 是整个圆，180° 是半圆。</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 占比与换算</h2>
+  <p class="quiz-hint">这一组要用 360° 作分母。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 扇形统计图中占比 25% 的项目，圆心角是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>25°</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>90°</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>45°</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 圆心角 270° 的扇形占圆的？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1/2</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>2/3</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3/4</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 同一个圆里，把圆心角从 60° 加大到 120°，扇形面积？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>不变</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>扩大到 2 倍</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>扩大到 4 倍</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四个易错点，都在「360°」和「顶点」上 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四个易错点，都在「360°」和「顶点」上</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    学扇形最容易错的地方，是<strong>把占比直接当成圆心角的度数</strong>，或者<strong>忘了顶点的位置要求</strong>。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>坑一：占比当角度</h4>
+    <div class="eq">25% 画成 25° ✗</div>
+    <p>要乘 360°：25% × 360° = 90°。</p>
+  </div>
+  <div class="card">
+    <h4>坑二：顶点不在圆心</h4>
+    <div class="eq">角尖在圆内也算扇形 ✗</div>
+    <p>顶点必须正好在圆心。</p>
+  </div>
+  <div class="card">
+    <h4>坑三：面积忘乘比例</h4>
+    <div class="eq">90° 扇形面积直接写 πr² ✗</div>
+    <p>要乘 90/360 = 1/4。</p>
+  </div>
+  <div class="card">
+    <h4>坑四：占比合计不对</h4>
+    <div class="eq">各项加起来 95% 就画 ✗</div>
+    <p>必须正好 100%、角度合计 360°。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  一句话：<strong>顶点在圆心；占比 = 圆心角 ÷ 360°；扇形面积 = 整圆面积 × 这个占比；统计图里占比 × 360° 才是圆心角</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到开头那块披萨：切成 6 块，每块圆心角 360° ÷ 6 = 60°，占整张饼的 1/6。如果半径 12 厘米，一块的面积就是 3.14 × 144 × 1/6 = 75.36 平方厘米。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题验收</h2>
+  <p class="quiz-hint">最后一组，记得 360° 是分母。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 披萨平均切成 6 块，每块的圆心角是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>30°</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>90°</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>60°</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 占比 40% 的项目，扇形圆心角是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>40°</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>144°</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>120°</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 半径 6 厘米、圆心角 180° 的扇形面积是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>56.52 平方厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>113.04 平方厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>28.26 平方厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 圆心角 45° 的扇形占圆的？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1/6</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>1/4</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>1/8</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 扇形统计图中各项目占比之和必须是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>90%</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>100%</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>360%</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">是什么</div>
+        <div class="summary-v4-summary">两条半径 + 一段弧</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>顶点必须在圆心。</p>
+      <p>圆心角决定扇形大小。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">占比</div>
+        <div class="summary-v4-summary">圆心角 ÷ 360°</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>90° → 1/4，60° → 1/6。</p>
+      <p>与半径大小无关。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">面积与弧长</div>
+        <div class="summary-v4-summary">整圆 × 占比</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>S = πr² × 圆心角/360°。</p>
+      <p>l = 2πr × 圆心角/360°。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">统计图</div>
+        <div class="summary-v4-summary">圆心角 = 占比 × 360°</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>25% → 90°。</p>
+      <p>占比合计 100%、角度合计 360°。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  下次遇到扇形，先确认<strong>顶点在圆心</strong>，再用圆心角除以 360° 求占比；要画统计图就反过来，用占比乘 360° 得角度。
+</p>
+</section>
