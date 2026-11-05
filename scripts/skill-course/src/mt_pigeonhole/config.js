@@ -7,22 +7,22 @@ var curPage = 0;
 var QUIZZES = {
   quizPre: {
     questions: [
-      { answer: 0, explain: "物体比抽屉多 1，至少 2 支。" },
-      { answer: 1, explain: "12 个月就是 12 个抽屉。" },
-      { answer: 2, explain: "「至少」指最坏情况下也保证成立。" }
+      { answer: 2, explain: "物体比抽屉多 1，至少 2 支。" },
+      { answer: 0, explain: "12 个月就是 12 个抽屉。" },
+      { answer: 1, explain: "「至少」指最坏情况下也保证成立。" }
     ]
   },
   quizMid1: {
     questions: [
       { answer: 2, explain: "7 ÷ 3 = 2 余 1，商 + 1 = 3 只。" },
       { answer: 0, explain: "物体比盒子多 1，至少 2 个。" },
-      { answer: 1, explain: "是所有放法里最坏的那个也能保证。" }
+      { answer: 2, explain: "是所有放法里最坏的那个也能保证。" }
     ]
   },
   quizMid2: {
     questions: [
       { answer: 1, explain: "10 ÷ 3 = 3 余 1，商 + 1 = 4 个。" },
-      { answer: 2, explain: "先各抽 1 张，第 5 张必然重复花色。" },
+      { answer: 1, explain: "先各抽 1 张，第 5 张必然重复花色。" },
       { answer: 0, explain: "有余数，商要加 1。" }
     ]
   },

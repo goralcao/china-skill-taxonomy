@@ -1407,7 +1407,7 @@ var QUIZZES = {
   quizPre: {
     questions: [
       { answer: 1, explain: "总价 = 单价 × 数量，一起变大。" },
-      { answer: 2, explain: "y ÷ x = k 一定。" },
+      { answer: 1, explain: "y ÷ x = k 一定。" },
       { answer: 0, explain: "速度 × 时间 = 路程，速度大时间短。" }
     ]
   },
@@ -1415,7 +1415,7 @@ var QUIZZES = {
     questions: [
       { answer: 0, explain: "总价 ÷ 数量 = 单价，商一定。" },
       { answer: 2, explain: "商一定就是正比例。" },
-      { answer: 1, explain: "x × y = k 一定。" }
+      { answer: 2, explain: "x × y = k 一定。" }
     ]
   },
   quizMid2: {

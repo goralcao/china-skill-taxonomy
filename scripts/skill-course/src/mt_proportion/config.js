@@ -8,21 +8,21 @@ var QUIZZES = {
   quizPre: {
     questions: [
       { answer: 0, explain: "比例要有等号，且两边比值相等。" },
-      { answer: 1, explain: "中间两项是内项，两端两项是外项。" },
-      { answer: 2, explain: "交叉相乘：2 × 6 = 3 × 4。" }
+      { answer: 2, explain: "中间两项是内项，两端两项是外项。" },
+      { answer: 1, explain: "交叉相乘：2 × 6 = 3 × 4。" }
     ]
   },
   quizMid1: {
     questions: [
       { answer: 2, explain: "6x = 24，x = 4。" },
       { answer: 0, explain: "4:10 = 2:5，比值都是 0.4。" },
-      { answer: 1, explain: "外项积 ad 等于内项积 bc。" }
+      { answer: 2, explain: "外项积 ad 等于内项积 bc。" }
     ]
   },
   quizMid2: {
     questions: [
       { answer: 1, explain: "4 千米 = 400000 厘米，2:400000 = 1:200000。" },
-      { answer: 2, explain: "5x = 30，x = 6。" },
+      { answer: 1, explain: "5x = 30，x = 6。" },
       { answer: 0, explain: "比的基本性质：前后项同乘一个数，比值不变。" }
     ]
   },
