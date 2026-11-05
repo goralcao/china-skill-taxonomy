@@ -1,0 +1,595 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>1 + 3 + 5 + 7，不用加，摆一摆就知道等于几？</h1>
+  <p class="sub">六年级数学 · 数与形</p>
+  <div class="tags">
+    <span class="tag">L 形逐层加</span>
+    <span class="tag">前 n 个奇数和 = n²</span>
+    <span class="tag">图形看见规律</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 470 212" width="480" height="216" role="img" aria-label="1 加 3 加 5 加 7 摆成一个 4 乘 4 的正方形，和就是 16">
+      <g font-family="sans-serif">
+        <text x="235" y="20" text-anchor="middle" font-size="13" fill="#FFFFFF">1 + 3 + 5 + 7，不用加，摆一摆就知道等于几？</text>
+        <g>
+        <rect x="44" y="40" width="30" height="30" fill="#8BC34A" stroke="#33691E" stroke-width=".8"/>
+        <rect x="74" y="40" width="30" height="30" fill="#FFB300" stroke="#33691E" stroke-width=".8"/>
+        <rect x="44" y="70" width="30" height="30" fill="#FFB300" stroke="#33691E" stroke-width=".8"/>
+        <rect x="74" y="70" width="30" height="30" fill="#FFB300" stroke="#33691E" stroke-width=".8"/>
+        <rect x="104" y="40" width="30" height="30" fill="#42A5F5" stroke="#33691E" stroke-width=".8"/>
+        <rect x="104" y="70" width="30" height="30" fill="#42A5F5" stroke="#33691E" stroke-width=".8"/>
+        <rect x="44" y="100" width="30" height="30" fill="#42A5F5" stroke="#33691E" stroke-width=".8"/>
+        <rect x="74" y="100" width="30" height="30" fill="#42A5F5" stroke="#33691E" stroke-width=".8"/>
+        <rect x="104" y="100" width="30" height="30" fill="#42A5F5" stroke="#33691E" stroke-width=".8"/>
+        <rect x="134" y="40" width="30" height="30" fill="#AB47BC" stroke="#33691E" stroke-width=".8"/>
+        <rect x="134" y="70" width="30" height="30" fill="#AB47BC" stroke="#33691E" stroke-width=".8"/>
+        <rect x="134" y="100" width="30" height="30" fill="#AB47BC" stroke="#33691E" stroke-width=".8"/>
+        <rect x="44" y="130" width="30" height="30" fill="#AB47BC" stroke="#33691E" stroke-width=".8"/>
+        <rect x="74" y="130" width="30" height="30" fill="#AB47BC" stroke="#33691E" stroke-width=".8"/>
+        <rect x="104" y="130" width="30" height="30" fill="#AB47BC" stroke="#33691E" stroke-width=".8"/>
+        <rect x="134" y="130" width="30" height="30" fill="#AB47BC" stroke="#33691E" stroke-width=".8"/>
+        <rect x="44" y="40" width="120" height="120" fill="none" stroke="#33691E" stroke-width="2"/>
+      </g>
+        <text x="202" y="182" text-anchor="middle" font-size="10.5" fill="rgba(255,255,255,.85)">每加一层「L 形」，正方形就长大一圈</text>
+        <rect x="252" y="36" width="194" height="150" rx="9" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.32)"/>
+        <text x="349" y="60" text-anchor="middle" font-size="11" fill="#FFD54F">图形把算式「画」出来</text>
+        <text x="349" y="86" text-anchor="middle" font-size="12" fill="#FFFFFF">1 = 1²</text>
+        <text x="349" y="108" text-anchor="middle" font-size="12" fill="#FFFFFF">1 + 3 = 2² = 4</text>
+        <text x="349" y="130" text-anchor="middle" font-size="12" fill="#FFFFFF">1 + 3 + 5 = 3² = 9</text>
+        <text x="349" y="156" text-anchor="middle" font-size="12.5" font-weight="700" fill="#FFE082">1+3+5+7 = 4² = 16</text>
+        <text x="349" y="176" text-anchor="middle" font-size="10" fill="rgba(255,255,255,.8)">前 n 个奇数之和 = n²</text>
+      </g>
+    </svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先答三道，凭感觉</h2>
+  <p class="quiz-hint">三道题都在问「图形里藏着什么算式」。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 1 + 3 = ?，如果摆成一个正方形，边长是几？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>4</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>2</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 1 + 3 + 5 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>8</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>9</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>12</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 按 1、3、5、7 的规律，下一层要添几块？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>8</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>9</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>11</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 边长 1 厘米的小方块，一层层摆出正方形 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">边长 1 厘米的小方块，一层层摆出正方形</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="边长 1 厘米的小方块逐层摆成 1 乘 1、2 乘 2、3 乘 3 的正方形">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#33691E">用边长 1 厘米的小方块，一层一层摆</text>
+        <g>
+        <rect x="30" y="40" width="26" height="26" fill="#8BC34A" stroke="#33691E" stroke-width=".8"/>
+        <rect x="30" y="40" width="26" height="26" fill="none" stroke="#33691E" stroke-width="2"/>
+      </g>
+        <g>
+        <rect x="132" y="40" width="26" height="26" fill="#8BC34A" stroke="#33691E" stroke-width=".8"/>
+        <rect x="158" y="40" width="26" height="26" fill="#FFB300" stroke="#33691E" stroke-width=".8"/>
+        <rect x="132" y="66" width="26" height="26" fill="#FFB300" stroke="#33691E" stroke-width=".8"/>
+        <rect x="158" y="66" width="26" height="26" fill="#FFB300" stroke="#33691E" stroke-width=".8"/>
+        <rect x="132" y="40" width="52" height="52" fill="none" stroke="#33691E" stroke-width="2"/>
+      </g>
+        <g>
+        <rect x="254" y="40" width="26" height="26" fill="#8BC34A" stroke="#33691E" stroke-width=".8"/>
+        <rect x="280" y="40" width="26" height="26" fill="#FFB300" stroke="#33691E" stroke-width=".8"/>
+        <rect x="254" y="66" width="26" height="26" fill="#FFB300" stroke="#33691E" stroke-width=".8"/>
+        <rect x="280" y="66" width="26" height="26" fill="#FFB300" stroke="#33691E" stroke-width=".8"/>
+        <rect x="306" y="40" width="26" height="26" fill="#42A5F5" stroke="#33691E" stroke-width=".8"/>
+        <rect x="306" y="66" width="26" height="26" fill="#42A5F5" stroke="#33691E" stroke-width=".8"/>
+        <rect x="254" y="92" width="26" height="26" fill="#42A5F5" stroke="#33691E" stroke-width=".8"/>
+        <rect x="280" y="92" width="26" height="26" fill="#42A5F5" stroke="#33691E" stroke-width=".8"/>
+        <rect x="306" y="92" width="26" height="26" fill="#42A5F5" stroke="#33691E" stroke-width=".8"/>
+        <rect x="254" y="40" width="78" height="78" fill="none" stroke="#33691E" stroke-width="2"/>
+      </g>
+        <text x="43" y="104" text-anchor="middle" font-size="10.5" fill="#37474F">1 = 1²</text>
+        <text x="158" y="104" text-anchor="middle" font-size="10.5" fill="#37474F">1+3 = 2²</text>
+        <text x="293" y="120" text-anchor="middle" font-size="10.5" fill="#37474F">1+3+5 = 3²</text>
+        <rect x="16" y="140" width="368" height="46" rx="8" fill="#F1F8E9" stroke="#AED581" stroke-width="1.2"/>
+        <text x="200" y="160" text-anchor="middle" font-size="11.5" font-weight="700" fill="#33691E">每次添的是一个「L 形」：1、3、5、7… 都是奇数</text>
+        <text x="200" y="178" text-anchor="middle" font-size="10.5" fill="#546E7A">L 形的块数 = 新边长 × 2 − 1</text>
+        <rect x="16" y="194" width="368" height="48" rx="8" fill="#FFF8E1" stroke="#FFE082" stroke-width="1.2"/>
+        <text x="200" y="214" text-anchor="middle" font-size="11.5" font-weight="700" fill="#E65100">摆到第 n 层，正好是 n × n 的正方形</text>
+        <text x="200" y="234" text-anchor="middle" font-size="10.5" fill="#546E7A">所以前 n 个连续奇数加起来 = n²</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    拿边长 1 厘米的小方块来摆：先放 1 块，是个 1×1；再沿上边和右边补一个「L 形」的 3 块，就成了 2×2；再补 5 块，成了 3×3。
+  </p>
+  <p class="teach-text" id="p2s2">
+    每一层新添的块数是 <strong>1、3、5、7…</strong> 这样的连续奇数，第 n 层正好添 <strong>2n − 1</strong> 块。
+  </p>
+  <p class="teach-text" id="p2s3">
+    摆到第 n 层，图形就是一个 <strong>n × n 的正方形</strong>，所以累计块数是 n²。算式不用硬加，看图就知道。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>第 1 层</h4>
+    <div class="eq">1 块</div>
+    <p>1 = 1²。</p>
+  </div>
+  <div class="card">
+    <h4>第 2 层</h4>
+    <div class="eq">添 3 块</div>
+    <p>1+3 = 4 = 2²。</p>
+  </div>
+  <div class="card">
+    <h4>第 n 层</h4>
+    <div class="eq">添 2n − 1 块</div>
+    <p>总和 = n²。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  数形结合的第一步是<strong>把算式摆出来</strong>：连续奇数相加恰好一层层拼成正方形，和就是边长的平方。
+</div>
+</section>
+
+<!-- ===== p3: 1、3、5、7 列成表，规律自己跳出来 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">1、3、5、7 列成表，规律自己跳出来</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="算式与图形一一对应：第 n 项是 2n 减 1，前 n 项和是 n 的平方">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#33691E">列个表，规律自己跳出来</text>
+        <rect x="16" y="30" width="368" height="28" rx="6" fill="#33691E"/>
+        <text x="66" y="49" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFF">层数 n</text>
+        <text x="164" y="49" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFF">这一层添</text>
+        <text x="268" y="49" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFF">累计和</text>
+        <text x="352" y="49" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFF">图形</text>
+        <rect x="16" y="58" width="368" height="28" fill="#F1F8E9"/>
+        <text x="66" y="77" text-anchor="middle" font-size="11" fill="#37474F">1</text>
+        <text x="164" y="77" text-anchor="middle" font-size="11" fill="#37474F">1</text>
+        <text x="268" y="77" text-anchor="middle" font-size="11" font-weight="700" fill="#33691E">1 = 1²</text>
+        <text x="352" y="77" text-anchor="middle" font-size="11" fill="#37474F">1×1</text>
+        <rect x="16" y="86" width="368" height="28" fill="#FFFFFF"/>
+        <text x="66" y="105" text-anchor="middle" font-size="11" fill="#37474F">2</text>
+        <text x="164" y="105" text-anchor="middle" font-size="11" fill="#37474F">3</text>
+        <text x="268" y="105" text-anchor="middle" font-size="11" font-weight="700" fill="#33691E">4 = 2²</text>
+        <text x="352" y="105" text-anchor="middle" font-size="11" fill="#37474F">2×2</text>
+        <rect x="16" y="114" width="368" height="28" fill="#F1F8E9"/>
+        <text x="66" y="133" text-anchor="middle" font-size="11" fill="#37474F">3</text>
+        <text x="164" y="133" text-anchor="middle" font-size="11" fill="#37474F">5</text>
+        <text x="268" y="133" text-anchor="middle" font-size="11" font-weight="700" fill="#33691E">9 = 3²</text>
+        <text x="352" y="133" text-anchor="middle" font-size="11" fill="#37474F">3×3</text>
+        <rect x="16" y="142" width="368" height="28" fill="#FFFFFF"/>
+        <text x="66" y="161" text-anchor="middle" font-size="11" fill="#37474F">4</text>
+        <text x="164" y="161" text-anchor="middle" font-size="11" fill="#37474F">7</text>
+        <text x="268" y="161" text-anchor="middle" font-size="11" font-weight="700" fill="#33691E">16 = 4²</text>
+        <text x="352" y="161" text-anchor="middle" font-size="11" fill="#37474F">4×4</text>
+        <rect x="16" y="182" width="368" height="58" rx="8" fill="#FFF8E1" stroke="#FFE082" stroke-width="1.2"/>
+        <text x="200" y="204" text-anchor="middle" font-size="11.5" font-weight="700" fill="#E65100">第 n 项 = 2n − 1　·　前 n 项和 = n²</text>
+        <text x="200" y="226" text-anchor="middle" font-size="10.5" fill="#546E7A">想算 1+3+…+19：末项 19 = 2×10 − 1，共 10 项，和 = 100</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    把层数、这一层添几块、累计和、对应图形列成一张表：1 → 1 → 1²；2 → 3 → 2²；3 → 5 → 3²；4 → 7 → 4²。
+  </p>
+  <p class="teach-text" id="p3s2">
+    得到两个通用结论：<strong>第 n 项 = 2n − 1</strong>，<strong>前 n 项和 = n²</strong>。反过来看末项也能求项数：19 = 2×10 − 1，说明一共 10 项，和是 100。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>第 n 个奇数 = 2n − 1</li>
+  <li>前 n 个连续奇数之和 = n²</li>
+  <li>由末项 m 求项数：n = (m + 1) ÷ 2</li>
+  <li>1 + 3 + … + 19 = 10² = 100</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  有了 n² 这个结论，<strong>长长的连加就变成一次平方</strong>；关键是先由末项数清一共有几项。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">算式与图形，连一连</h2>
+<p class="teach-text" id="p3bs1">左边是算式或说法，右边是它对应的图形结论。把相配的连起来。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 奇数求和</h2>
+  <p class="quiz-hint">三道题，先数清有几项。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 1 + 3 + 5 + 7 + 9 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>25</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>16</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>20</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 第 8 个奇数是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>17</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>15</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>13</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 1 + 3 + … + 19 一共几项？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>9 项</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>10 项</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>19 项</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 一半再加一半的一半，图形也看得见 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">一半再加一半的一半，图形也看得见</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="二分之一加四分之一加八分之一不断逼近 1，以及摆椅子规律都能用图形看出来">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#33691E">换个图形：一半再加一半的一半</text>
+        <rect x="16" y="32" width="240" height="60" fill="#FFFFFF" stroke="#33691E" stroke-width="1.6"/>
+        <rect x="16" y="32" width="120" height="60" fill="#8BC34A" stroke="#33691E" stroke-width="1"/>
+        <rect x="136" y="32" width="60" height="60" fill="#FFB300" stroke="#33691E" stroke-width="1"/>
+        <rect x="196" y="32" width="30" height="60" fill="#42A5F5" stroke="#33691E" stroke-width="1"/>
+        <rect x="226" y="32" width="15" height="60" fill="#AB47BC" stroke="#33691E" stroke-width="1"/>
+        <text x="200" y="110" text-anchor="middle" font-size="10.5" fill="#37474F">1/2 + 1/4 + 1/8 + 1/16 + … 越来越接近 1</text>
+        <rect x="272" y="32" width="112" height="60" rx="8" fill="#F1F8E9" stroke="#AED581" stroke-width="1.2"/>
+        <text x="328" y="54" text-anchor="middle" font-size="10.5" font-weight="700" fill="#33691E">图形帮我们「看见」</text>
+        <text x="328" y="74" text-anchor="middle" font-size="10.5" fill="#37474F">无限多项的和</text>
+        <text x="328" y="88" text-anchor="middle" font-size="10" fill="#546E7A">可以无限逼近 1</text>
+        <rect x="16" y="126" width="368" height="54" rx="8" fill="#FFF8E1" stroke="#FFE082" stroke-width="1.2"/>
+        <text x="200" y="148" text-anchor="middle" font-size="11.5" font-weight="700" fill="#E65100">摆椅子：一张桌子坐 4 人，拼起来每加一张多坐 2 人</text>
+        <text x="200" y="168" text-anchor="middle" font-size="10.5" fill="#37474F">n 张桌子坐 4 + 2(n−1) = 2n + 2 人，画图数一遍就懂</text>
+        <rect x="16" y="190" width="368" height="52" rx="8" fill="#F1F8E9" stroke="#AED581" stroke-width="1.2"/>
+        <text x="200" y="212" text-anchor="middle" font-size="11.5" font-weight="700" fill="#33691E">数与形的一般套路</text>
+        <text x="200" y="232" text-anchor="middle" font-size="10.5" fill="#546E7A">先把前几项画出来 → 找图形规律 → 写成算式 → 再验证</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    把一个长方形先涂 1/2，再涂剩下的 1/2（即 1/4），再涂 1/8、1/16… 涂色部分<strong>越来越接近整个长方形，也就是 1</strong>。
+  </p>
+  <p class="teach-text" id="p5s2">
+    摆椅子也一样：一张桌子坐 4 人，每拼一张多坐 2 人，n 张坐 2n + 2 人。先画前几张桌子，规律就出来了。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>1/2+1/4+1/8+…</h4>
+    <div class="eq">无限逼近 1</div>
+    <p>图形一眼看出。</p>
+  </div>
+  <div class="card">
+    <h4>摆椅子</h4>
+    <div class="eq">2n + 2 人</div>
+    <p>每加一张多 2 人。</p>
+  </div>
+  <div class="card">
+    <h4>套路</h4>
+    <div class="eq">画 → 找 → 写 → 验</div>
+    <p>数形结合四步。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  数和形是同一件事的两种说法：<strong>算式难算就画图，图形看不清就列表</strong>，两边对着看最稳。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">逐层加方块：算式与图形同步长</h2>
+  <p class="sim-desc">点「加一层」看 L 形方块一层层铺成正方形，右侧同步写出连加算式、累计和与 n²。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">第 1 组 · 已摆 1 层 · 1 = 1²</span>
+    <span class="sim-tip" id="simTip">点画布或按钮加一层</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simAddLayer()">① 加一层</button>
+    <button class="btn-primary" onclick="simRunAll()">一键到底</button>
+    <button class="btn-retry" onclick="simNextCase()">换一组</button>
+    <button class="btn-retry" onclick="simReset()">重来</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">第 n 层添 2n − 1 块，摆完正好是 n × n 的正方形</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>每层添的是连续奇数 1、3、5、7…</li>
+    <li>前 n 项和 = n²，不用逐项硬加。</li>
+    <li>由末项 m 求项数：(m + 1) ÷ 2。</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 由末项求项数</h2>
+  <p class="quiz-hint">这一组要会用 (m + 1) ÷ 2。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 1 + 3 + … + 15 的和是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>49</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>56</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>64</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 1 + 3 + … + 29 一共几项？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>15 项</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>14 项</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>29 项</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 1/2 + 1/4 + 1/8 + 1/16 的结果？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>正好等于 1</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>越来越接近 1，但还差一点</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>大于 1</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四个易错点，都在「项数」和「平方」上 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四个易错点，都在「项数」和「平方」上</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    数与形最容易错的地方，是<strong>把项数数错</strong>，以及<strong>把 n² 当成 2n</strong>。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>坑一：项数数错</h4>
+    <div class="eq">1+3+…+19 当成 19 项 ✗</div>
+    <p>末项 19 = 2×10 − 1，只有 10 项。</p>
+  </div>
+  <div class="card">
+    <h4>坑二：n² 当 2n</h4>
+    <div class="eq">前 6 项和算成 12 ✗</div>
+    <p>n² = 36，不是 2×6。</p>
+  </div>
+  <div class="card">
+    <h4>坑三：第 n 项写成 2n+1</h4>
+    <div class="eq">第 4 项算成 9 ✗</div>
+    <p>第 n 项是 2n − 1，第 4 项是 7。</p>
+  </div>
+  <div class="card">
+    <h4>坑四：以为加完正好是 1</h4>
+    <div class="eq">1/2+1/4+1/8 = 1 ✗</div>
+    <p>等于 7/8，只是越来越接近 1。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  一句话：<strong>第 n 项 2n − 1、前 n 项和 n²；先由末项求项数再平方；分数连加是无限逼近，不是正好等于</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到开头 1+3+5+7：末项 7 = 2×4 − 1，共 4 项，摆成 4×4 的正方形，和是 16。要是错把项数当成 7，就会算成 49。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题验收</h2>
+  <p class="quiz-hint">最后一组，记得先数项数再平方。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 1 + 3 + 5 + … + 11 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>30</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>25</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>36</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 前 10 个连续奇数之和是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>100</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>20</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>55</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 第 12 个奇数是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>23</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>24</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>21</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 1 + 3 + … + 39 一共几项？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>39 项</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>20 项</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>19 项</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 下面说法正确的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1/2+1/4+1/8 正好等于 1</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>前 n 个奇数和 = 2n</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>前 n 个奇数和 = n²</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">图形</div>
+        <div class="summary-v4-summary">L 形逐层拼成正方形</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>每层添 1、3、5、7… 块。</p>
+      <p>第 n 层添 2n − 1 块。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">结论</div>
+        <div class="summary-v4-summary">前 n 个奇数和 = n²</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>1+3+5+7 = 4² = 16。</p>
+      <p>第 n 项 = 2n − 1。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">反推</div>
+        <div class="summary-v4-summary">由末项求项数</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>n = (m + 1) ÷ 2。</p>
+      <p>末项 19 → 10 项 → 和 100。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">推广</div>
+        <div class="summary-v4-summary">数形结合看更多规律</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>1/2+1/4+… 无限逼近 1。</p>
+      <p>摆椅子：2n + 2 人。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  下次遇到一长串连加，先<strong>画前几项</strong>看看能不能拼成规则图形；找到图形规律再写成算式，最后用末项验一下项数对不对。
+</p>
+</section>

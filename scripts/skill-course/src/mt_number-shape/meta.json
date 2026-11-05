@@ -1,0 +1,91 @@
+{
+  "topicId": "mt_number-shape",
+  "title": "1 + 3 + 5 + 7，不用加，摆一摆就知道等于几？",
+  "template": "explain",
+  "renderer": "counter",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 6,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S3:PP"
+  ],
+  "prerequisites": [
+    "mt_pattern",
+    "mt_polygon-area"
+  ],
+  "next": [],
+  "objectives": [
+    "用小方块逐层摆正方形，说明前 n 个连续奇数之和等于 n²",
+    "会由末项反推项数并求和，会用图形解释 1/2+1/4+1/8+… 逼近 1",
+    "养成「画图找规律 → 写算式 → 再验证」的数形结合习惯"
+  ],
+  "cognitiveAction": "构造",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "逐层摆方块",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "列表找规律",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "更多数形",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}
