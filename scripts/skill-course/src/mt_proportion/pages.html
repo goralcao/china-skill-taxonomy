@@ -1,0 +1,537 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>地图上 1 厘米等于实际多远？两个比凭什么画等号</h1>
+  <p class="sub">六年级数学 · 比例的意义与基本性质</p>
+  <div class="tags">
+    <span class="tag">比例的意义</span>
+    <span class="tag">内项与外项</span>
+    <span class="tag">解比例</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 470 212" width="480" height="216" role="img" aria-label="比例中外项积等于内项积 2 乘 6 等于 3 乘 4">
+      <g font-family="sans-serif">
+        <text x="235" y="22" text-anchor="middle" font-size="13" fill="#FFFFFF">地图上 1 厘米等于实际多远？两个比凭什么画等号</text>
+        <text x="235" y="62" text-anchor="middle" font-size="26" font-weight="700" fill="#FFFFFF">2 : 3　=　4 : 6</text>
+        <text x="112" y="82" text-anchor="middle" font-size="10.5" fill="#4DD0E1">外项</text>
+        <text x="172" y="82" text-anchor="middle" font-size="10.5" fill="#FFB74D">内项</text>
+        <text x="298" y="82" text-anchor="middle" font-size="10.5" fill="#FFB74D">内项</text>
+        <text x="358" y="82" text-anchor="middle" font-size="10.5" fill="#4DD0E1">外项</text>
+        <rect x="30" y="98" width="196" height="42" rx="8" fill="rgba(38,198,218,.18)" stroke="#4DD0E1" stroke-width="1.2"/>
+        <text x="128" y="124" text-anchor="middle" font-size="12" font-weight="700" fill="#B2EBF2">外项积　2 × 6 = 12</text>
+        <rect x="244" y="98" width="196" height="42" rx="8" fill="rgba(255,183,77,.18)" stroke="#FFB74D" stroke-width="1.2"/>
+        <text x="342" y="124" text-anchor="middle" font-size="12" font-weight="700" fill="#FFE082">内项积　3 × 4 = 12</text>
+        <rect x="30" y="150" width="410" height="48" rx="9" fill="rgba(255,255,255,.10)" stroke="rgba(255,255,255,.28)"/>
+        <text x="235" y="172" text-anchor="middle" font-size="12.5" font-weight="700" fill="#FFFFFF">比值相等才成比例　·　外项积 = 内项积</text>
+        <text x="235" y="190" text-anchor="middle" font-size="11" fill="#4DD0E1">两比同时放大同一个倍数，等式永远成立</text>
+      </g>
+    </svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先答三道，凭感觉</h2>
+  <p class="quiz-hint">三道题都在问「两个比能不能画等号」。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 下面哪个是比例？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>2:3 = 4:6</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>2:3</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>2 + 3 = 5</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 2:3 = 4:6 中，内项是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>2 和 6</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3 和 4</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>2 和 3</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 比例的基本性质是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>两外项和 = 两内项和</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>两外项积 = 两内项积</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>前项都相等</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 一张照片放大到 2 倍，长和宽的比会变吗 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">一张照片放大到 2 倍，长和宽的比会变吗</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="比例是表示两个比相等的式子两端是外项中间是内项">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#4E342E">比例 = 两个比值相等的比，用等号连起来</text>
+        <rect x="16" y="30" width="368" height="62" rx="8" fill="#EFEBE9" stroke="#A1887F" stroke-width="1.2"/>
+        <text x="200" y="56" text-anchor="middle" font-size="20" font-weight="700" fill="#4E342E">2 : 3　=　4 : 6</text>
+        <text x="200" y="80" text-anchor="middle" font-size="10.5" fill="#6D4C41">2÷3 = 4÷6（比值都是 2/3），所以能画等号</text>
+        <rect x="16" y="100" width="176" height="62" rx="8" fill="#E0F7FA" stroke="#26C6DA" stroke-width="1.2"/>
+        <text x="104" y="122" text-anchor="middle" font-size="11.5" font-weight="700" fill="#00838F">外项：两端的两项</text>
+        <text x="104" y="146" text-anchor="middle" font-size="12.5" font-weight="700" fill="#006064">2 和 6</text>
+        <rect x="208" y="100" width="176" height="62" rx="8" fill="#FFF8E1" stroke="#FFB74D" stroke-width="1.2"/>
+        <text x="296" y="122" text-anchor="middle" font-size="11.5" font-weight="700" fill="#E65100">内项：中间的两项</text>
+        <text x="296" y="146" text-anchor="middle" font-size="12.5" font-weight="700" fill="#E65100">3 和 4</text>
+        <rect x="16" y="174" width="368" height="68" rx="8" fill="#E8F5E9" stroke="#81C784" stroke-width="1.2"/>
+        <text x="200" y="196" text-anchor="middle" font-size="12" font-weight="700" fill="#2E7D32">先算比值，再决定能不能写等号</text>
+        <text x="200" y="218" text-anchor="middle" font-size="10.5" fill="#4E342E">2:3 是一个比；2:3 = 4:6 才是一个比例</text>
+        <text x="200" y="236" text-anchor="middle" font-size="10.5" fill="#6D4C41">比值不等的两个比，不能硬凑成比例</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    地图上量得两城相距 5 厘米，实际相距 10 千米；照片放大时长和宽一起变。这些场景都在问同一件事：<strong>两个量的比能不能一直保持相等</strong>。
+  </p>
+  <p class="teach-text" id="p2s2">
+    表示<strong>两个比相等</strong>的式子叫比例，写成 2:3 = 4:6。2:3 只是一个比；加上等号、且比值相等，才是比例。
+  </p>
+  <p class="teach-text" id="p2s3">
+    比例里<strong>两端的两项叫外项</strong>（2 和 6），<strong>中间的两项叫内项</strong>（3 和 4）。名字记住了，性质才好说。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>比</h4>
+    <div class="eq">2 : 3</div>
+    <p>两个数相除，没有等号。</p>
+  </div>
+  <div class="card">
+    <h4>比例</h4>
+    <div class="eq">2:3 = 4:6</div>
+    <p>两个比相等，用等号连。</p>
+  </div>
+  <div class="card">
+    <h4>内外项</h4>
+    <div class="eq">外 2、6 / 内 3、4</div>
+    <p>两端是外项，中间是内项。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  判断能不能组成比例，<strong>先分别算比值</strong>：相等就能写等号，不相等就不能硬凑。
+</div>
+</section>
+
+<!-- ===== p3: 2 × 6 为什么正好等于 3 × 4 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">2 × 6 为什么正好等于 3 × 4</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="比例的基本性质外项积等于内项积以及解比例的三步">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#4E342E">基本性质：两个外项的积 = 两个内项的积</text>
+        <rect x="16" y="30" width="368" height="56" rx="8" fill="#EFEBE9" stroke="#A1887F" stroke-width="1.2"/>
+        <text x="200" y="54" text-anchor="middle" font-size="14" font-weight="700" fill="#4E342E">2 : 3 = 4 : 6　→　2 × 6 = 3 × 4 = 12</text>
+        <text x="200" y="76" text-anchor="middle" font-size="10.5" fill="#6D4C41">交叉相乘，两边一样大；这就是解比例的钥匙</text>
+        <rect x="16" y="96" width="368" height="128" rx="8" fill="#E0F7FA" stroke="#26C6DA" stroke-width="1.2"/>
+        <text x="200" y="118" text-anchor="middle" font-size="11.5" font-weight="700" fill="#006064">解比例 3 : x = 6 : 8</text>
+        <text x="200" y="140" text-anchor="middle" font-size="11" fill="#4E342E">① 认内外项：外项 3 和 8，内项 x 和 6</text>
+        <text x="200" y="162" text-anchor="middle" font-size="11" fill="#4E342E">② 用性质列式：3 × 8 = x × 6</text>
+        <text x="200" y="184" text-anchor="middle" font-size="11" fill="#4E342E">③ 解方程：24 = 6x，所以 x = 4</text>
+        <text x="200" y="210" text-anchor="middle" font-size="11" font-weight="700" fill="#006064">验算：3:4 = 6:8，比值都是 0.75 ✓</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    把 2:3 = 4:6 交叉相乘：外项积 2 × 6 = 12，内项积 3 × 4 = 12，<strong>两边一样大</strong>。这不是巧合，两个比同时乘一个倍数就会这样。
+  </p>
+  <p class="teach-text" id="p3s2">
+    于是解比例有了固定步骤：认内外项 → 用「外项积 = 内项积」列方程 → 解方程。3:x = 6:8 变成 6x = 24，x = 4。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>比例：表示两个比相等的式子</li>
+  <li>两端是外项，中间是内项</li>
+  <li>基本性质：外项积 = 内项积（交叉相乘）</li>
+  <li>解比例：用性质列方程再求解</li>
+  <li>比例尺 = 图上距离 : 实际距离（先统一单位）</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  <strong>交叉相乘是比例里最有用的一把钥匙</strong>：有未知项就列方程，验算时再算一遍比值，看两边是不是真相等。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">名称与式子，连一连</h2>
+<p class="teach-text" id="p3bs1">左边是比例里的名称或说法，右边是它的含义或对应算式。把相配的连起来。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 意义与性质</h2>
+  <p class="quiz-hint">三道题，先算比值。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 3:x = 6:8，x 等于？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>2</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>6</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>4</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 能与 2:5 组成比例的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>4:10</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>5:2</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>2:10</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 若 a:b = c:d，则一定成立的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>a + b = c + d</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>ad = bc</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>ac = bd</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 图上 2 厘米，实际 4 千米，比例尺怎么算 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">图上 2 厘米，实际 4 千米，比例尺怎么算</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="比例尺是图上距离比实际距离先统一单位再解比例">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#4E342E">比例尺：图上距离 : 实际距离</text>
+        <rect x="16" y="30" width="368" height="58" rx="8" fill="#EFEBE9" stroke="#A1887F" stroke-width="1.2"/>
+        <text x="200" y="52" text-anchor="middle" font-size="11.5" font-weight="700" fill="#4E342E">图上 2 厘米，实际 4 千米</text>
+        <text x="200" y="74" text-anchor="middle" font-size="11" fill="#6D4C41">先统一单位：4 千米 = 400000 厘米</text>
+        <rect x="16" y="98" width="368" height="58" rx="8" fill="#E0F7FA" stroke="#26C6DA" stroke-width="1.2"/>
+        <text x="200" y="120" text-anchor="middle" font-size="11.5" font-weight="700" fill="#006064">比例尺 = 2 : 400000 = 1 : 200000</text>
+        <text x="200" y="142" text-anchor="middle" font-size="11" fill="#4E342E">意思是：图上 1 厘米代表实际 2 千米</text>
+        <rect x="16" y="166" width="368" height="76" rx="8" fill="#FFF8E1" stroke="#FFB74D" stroke-width="1.2"/>
+        <text x="200" y="188" text-anchor="middle" font-size="11.5" font-weight="700" fill="#E65100">用比例求实际距离</text>
+        <text x="200" y="210" text-anchor="middle" font-size="11" fill="#4E342E">图上 3 厘米 → 1 : 200000 = 3 : x</text>
+        <text x="200" y="230" text-anchor="middle" font-size="11.5" font-weight="700" fill="#E65100">x = 3 × 200000 = 600000 厘米 = 6 千米</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    比例尺就是「图上距离 : 实际距离」。<strong>先统一单位</strong>：4 千米 = 400000 厘米，所以比例尺 = 2 : 400000 = <strong>1 : 200000</strong>。
+  </p>
+  <p class="teach-text" id="p5s2">
+    反过来求实际距离就用比例：图上 3 厘米时，1:200000 = 3:x，由外项积等于内项积得 x = 3 × 200000 = 600000 厘米 = <strong>6 千米</strong>。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>统一单位</h4>
+    <div class="eq">4 千米 = 400000 厘米</div>
+    <p>不统一单位一定算错。</p>
+  </div>
+  <div class="card">
+    <h4>比例尺</h4>
+    <div class="eq">2 : 400000 = 1 : 200000</div>
+    <p>化成前项为 1。</p>
+  </div>
+  <div class="card">
+    <h4>求实际</h4>
+    <div class="eq">3 × 200000 = 6 千米</div>
+    <p>用比例列式解出来。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  比例尺问题的两个坑：<strong>单位要先统一</strong>，以及<strong>写成比例后再用外项积 = 内项积</strong>，别凭感觉乘除。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">两比同步放大：外项积永远等于内项积</h2>
+  <p class="sim-desc">调节放大倍数或换一组基础比，看两个比一起变、比值不变，右侧实时验算交叉相乘。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">第 1 组 · 2:3 = 4:6 · 放大 ×2</span>
+    <span class="sim-tip" id="simTip">点画布或按钮调节倍数</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simUp()">① 放大倍数 +1</button>
+    <button class="btn-primary" onclick="simDown()">缩小倍数 −1</button>
+    <button class="btn-primary" onclick="simNextCase()">换一组比</button>
+    <button class="btn-retry" onclick="simReset()">重来</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">两比同步放大，比值不变；外项积始终等于内项积</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>比例是表示两个比相等的式子，先确认比值相等。</li>
+    <li>两端是外项，中间是内项；外项积 = 内项积。</li>
+    <li>解比例就用这个性质列方程，比例尺要先统一单位。</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 解比例与比例尺</h2>
+  <p class="quiz-hint">这一组要会列方程。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 图上 2 厘米表示实际 4 千米，比例尺是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1:2</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>1:200000</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>2:1</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 比例 5:2 = 15:x，x 等于？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>3</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>6</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>10</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 2:3 的前项乘 4，要使比值不变，后项要？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>也乘 4</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>除以 4</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>加 4</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四个易错点，都在「内项外项」和「交叉相乘」上 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四个易错点，都在「内项外项」和「交叉相乘」上</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    学这一课最容易错的地方，是<strong>把比当成比例</strong>，以及<strong>交叉相乘时配错了项</strong>。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>坑一：比当比例</h4>
+    <div class="eq">2:3 是比例 ✗</div>
+    <p>2:3 是比，要有等号才是比例。</p>
+  </div>
+  <div class="card">
+    <h4>坑二：内外项认反</h4>
+    <div class="eq">2:3=4:6 内项是 2 和 6 ✗</div>
+    <p>两端 2、6 是外项，中间 3、4 是内项。</p>
+  </div>
+  <div class="card">
+    <h4>坑三：交叉配错</h4>
+    <div class="eq">2 × 4 = 3 × 6 ✗</div>
+    <p>外项 2 × 6，内项 3 × 4，都是 12。</p>
+  </div>
+  <div class="card">
+    <h4>坑四：忘统一单位</h4>
+    <div class="eq">2 厘米 : 4 千米直接化 ✗</div>
+    <p>先把 4 千米化成 400000 厘米。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  一句话：<strong>先确认两个比值相等，再标内外项，用「外项积 = 内项积」列方程</strong>；比例尺务必先统一单位。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到开头：地图上 1 厘米对应实际 2 千米，写成 1:200000；放大照片时长和宽同乘一个倍数，两个比始终相等，画面才不会变形。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题验收</h2>
+  <p class="quiz-hint">最后一组，记得先验比值。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 下面哪个式子是比例？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>3:4 = 6:8</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3:4</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3 + 4 = 7</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 1:3 = 5:x，x 等于？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>10</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>15</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 外项是 3 和 8，内项是 4 和 6，能组成比例吗？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>3×8≠4×6，不能</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>无法判断</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3×8=4×6，能</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 比例尺 1:100000，图上 3 厘米是实际？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>3 千米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>30 千米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>300 千米</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 比例 4:7 = x:21，x 等于？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>7</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>12</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>28</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">意义</div>
+        <div class="summary-v4-summary">两个比相等的式子</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>先分别算比值。</p>
+      <p>相等才用等号连起来。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">名称</div>
+        <div class="summary-v4-summary">外项 / 内项</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>两端两项是外项。</p>
+      <p>中间两项是内项。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">性质</div>
+        <div class="summary-v4-summary">外项积 = 内项积</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>交叉相乘两边一样大。</p>
+      <p>解比例就靠它列方程。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">应用</div>
+        <div class="summary-v4-summary">比例尺与缩放</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>图上距离 : 实际距离。</p>
+      <p>先统一单位再列式。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  下次写比例，先确认两个比的比值真的相等，再标出内外项，用交叉相乘列方程；遇到比例尺记得先把单位统一成同一个。
+</p>
+</section>

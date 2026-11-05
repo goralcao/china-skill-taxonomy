@@ -1,0 +1,93 @@
+{
+  "topicId": "mt_proportion",
+  "title": "地图上 1 厘米等于实际多远？两个比凭什么画等号",
+  "template": "explain",
+  "renderer": "law",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 6,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S3:NA:AR"
+  ],
+  "prerequisites": [
+    "mt_ratio",
+    "mt_frac-reduce"
+  ],
+  "next": [
+    "mt_direct-inverse"
+  ],
+  "objectives": [
+    "理解比例是表示两个比相等的式子，能判断两个比能否组成比例",
+    "认识比例的内项与外项，掌握「外项积 = 内项积」并会解比例",
+    "能用比例解决比例尺、照片缩放等简单实际问题"
+  ],
+  "cognitiveAction": "变换",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "什么是比例",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "基本性质",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "比例尺",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}
