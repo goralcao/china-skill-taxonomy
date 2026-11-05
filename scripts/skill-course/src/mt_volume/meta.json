@@ -1,0 +1,94 @@
+{
+  "topicId": "mt_volume",
+  "title": "1 厘米的小方块，几个能装满这个盒子？",
+  "template": "explain",
+  "renderer": "volume",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 5,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S3:GG:GM"
+  ],
+  "prerequisites": [
+    "mt_area-intro",
+    "mt_cuboid",
+    "mt_rect-area"
+  ],
+  "next": [
+    "mt_cylinder"
+  ],
+  "objectives": [
+    "说出体积的含义并认识 cm³、dm³、m³",
+    "用长×宽×高计算长方体和正方体的体积",
+    "分清体积与容积，完成 L、mL 与体积单位的换算"
+  ],
+  "cognitiveAction": "累积",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "数方块",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "单位进率",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "公式容积",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

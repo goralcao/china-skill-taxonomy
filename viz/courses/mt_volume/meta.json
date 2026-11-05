@@ -2,31 +2,93 @@
   "status": "reviewed",
   "author": "goral.cao",
   "license": "CC-BY-SA-4.0",
-  "version": "1.0.0",
-  "updatedAt": "2026-10-27",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
   "subject": "数学",
   "template": "explain",
   "topicId": "mt_volume",
-  "title": "体积与容积单位：一个小正方体就是 1",
+  "title": "1 厘米的小方块，几个能装满这个盒子？",
   "renderer": "volume",
-  "duration": 12,
-  "interactions": 2,
+  "duration": 24,
+  "interactions": 16,
   "grade": 5,
   "standards": [
     "math-2022:S3:GG:GM"
   ],
   "prerequisites": [
+    "mt_area-intro",
     "mt_cuboid",
-    "mt_rect-area",
-    "mt_area-intro"
+    "mt_rect-area"
   ],
   "next": [
     "mt_cylinder"
   ],
   "objectives": [
-    "理解体积的含义：物体所占空间的大小",
-    "认识体积单位：棱长 1cm/1dm/1m 的正方体是 1cm³/1dm³/1m³",
-    "会用「每层个数 × 层数」求长方体体积"
+    "说出体积的含义并认识 cm³、dm³、m³",
+    "用长×宽×高计算长方体和正方体的体积",
+    "分清体积与容积，完成 L、mL 与体积单位的换算"
   ],
-  "cognitiveAction": "构造"
+  "cognitiveAction": "累积",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "数方块",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "单位进率",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "公式容积",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
 }
