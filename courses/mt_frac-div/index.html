@@ -2031,7 +2031,7 @@ function simBind() {
   cv.addEventListener('click', function (e) {
     var r = cv.getBoundingClientRect();
     var x = (e.clientX - r.left) * (SIM_W / r.width);
-    if (x > 510) { simPie(1); return; }
+    if (x > 510) { simAddPie(1); return; }
     simMan(1);
   });
 }
