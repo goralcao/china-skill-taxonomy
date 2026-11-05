@@ -1,0 +1,558 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>学写日记：一天里只挑一件事</h1>
+  <p class="sub">三年级语文 · 习作</p>
+  <div class="tags">
+    <span class="tag">语文要素·习作</span>
+    <span class="tag">构思</span>
+    <span class="tag">2022课标</span>
+    <span class="tag">一页能读的东西</span>
+  </div>
+  <div class="cover-fig">
+<svg viewBox="0 0 760 190" width="760" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="从八张生活卡到一页书">
+  <rect x="0" y="0" width="760" height="190" rx="18" fill="#FFFFFF" opacity=".10"/>
+  <text x="28" y="30" font-size="15" fill="#F3EDE0" font-weight="700">一天里只挑一件事：先撒开，再收拢，最后出刊</text>
+  <rect x="28" y="48" width="212" height="112" rx="12" fill="#EDF3EE" stroke="#8FB9A3"/>
+  <text x="44" y="72" font-size="13" fill="#2E5C4A" font-weight="700">起意 · 8 张生活卡</text>
+  <text x="44" y="98" font-size="13" fill="#4A463E">点进素材池 → 只收 1 张进主格</text>
+  <text x="44" y="126" font-size="13" fill="#4A463E">再点 3 个「我还要写的词」</text>
+  <text x="252" y="104" font-size="24" fill="#FFC48A">⟶</text>
+  <rect x="286" y="48" width="200" height="112" rx="12" fill="#FFFFFF" stroke="#DDD3BE"/>
+  <text x="302" y="72" font-size="13" fill="#2E5C4A" font-weight="700">搭骨架 · 起草</text>
+  <text x="302" y="98" font-size="13" fill="#4A463E">三格，每格写一件事</text>
+  <text x="302" y="126" font-size="13" fill="#4A463E">日期、天气先定格式</text>
+  <text x="498" y="104" font-size="24" fill="#FFC48A">⟶</text>
+  <rect x="530" y="48" width="202" height="112" rx="12" fill="#FBE9DD" stroke="#C0622F"/>
+  <text x="546" y="72" font-size="13" fill="#C0622F" font-weight="700">改 · 出刊</text>
+  <text x="546" y="98" font-size="13" fill="#4A463E">5 条体检单，增删改调换</text>
+  <text x="546" y="126" font-size="13" fill="#4A463E">我的一页书，自己署名</text>
+</svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">前测 · 日记的格式和选材</h2>
+  <p class="quiz-hint">三道题都有唯一答案，答错会告诉你错在哪。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 日记开头先要写清哪两样？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>日期和天气</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>题目和字数</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>姓名和班级</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 一天里发生了很多事，日记该写几件？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>从早到晚全写</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>只挑一件，把它写清楚</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>至少写五件</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 「然后……然后……然后……」这种写法，问题出在哪？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>标点太少</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>字数不够</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>一路「然后」到底，成了流水账</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 起意 · 一天 24 小时，日记只写几件？ ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">起意 · 一天 24 小时，日记只写几件？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="先撒后收">
+  <rect x="8" y="10" width="284" height="66" rx="10" fill="#EDF3EE" stroke="#8FB9A3"/>
+  <text x="22" y="34" font-size="14" fill="#2E5C4A" font-weight="700">撒：8 张卡随便点进素材池</text>
+  <text x="22" y="58" font-size="13" fill="#4A463E">空输入框＝把构思难题原样退回</text>
+  <rect x="8" y="86" width="284" height="70" rx="10" fill="#FBE9DD" stroke="#C0622F"/>
+  <text x="22" y="110" font-size="14" fill="#C0622F" font-weight="700">收：只拖 1 张进主格</text>
+  <text x="22" y="136" font-size="13" fill="#4A463E">日记只写这一件，别写流水账</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    一天发生的事太多，日记只挑一件。先「撒」：8 张生活卡随便点进素材池；再「收」：只留 1 张进主格。
+  </p>
+  <p class="teach-text" id="p2s2">
+    最后点 3 个「我还要写的词」。<b>点哪张都行，不判好坏</b>——空输入框等于把构思难题原样退回给你。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>撒</h4>
+    <div class="eq">8 张卡进池</div>
+    <p>先有的可想。</p>
+  </div>
+  <div class="card">
+    <h4>收</h4>
+    <div class="eq">1 张进主格</div>
+    <p>只写这一件。</p>
+  </div>
+  <div class="card">
+    <h4>词</h4>
+    <div class="eq">点 3 个词</div>
+    <p>起草时用得上。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  <div id="idBox">
+  <div class="id-wall"><div class="id-card" data-n="1">早上 7:30 被闹钟叫醒</div>
+    <div class="id-card" data-n="2">早餐时把牛奶洒了</div>
+    <div class="id-card" data-n="3">课间同桌借我橡皮</div>
+    <div class="id-card" data-n="4">体育课跑了 50 米</div>
+    <div class="id-card" data-n="5">午饭吃到一颗很酸的葡萄</div>
+    <div class="id-card" data-n="6">放学下雨，伞偏向同桌</div>
+    <div class="id-card" data-n="7">晚上帮妈妈择菜</div>
+    <div class="id-card" data-n="8">睡前读了两页书</div></div>
+  <div class="id-pool"></div>
+  <div class="id-main"></div>
+  <div class="id-words"><span class="id-word">湿了一路</span>
+    <span class="id-word">没发现</span>
+    <span class="id-word">讲笑话</span>
+    <span class="id-word">书包</span>
+    <span class="id-word">干的</span>
+    <span class="id-word">悄悄</span></div>
+  <div class="trace-why" id="idWhy">花 <b>10 分钟</b>把 8 张卡翻一遍：先随便点进素材池，再收 1 张进主格，最后点 3 个「我还要写的词」。</div>
+  <div class="trace-note" id="idNote">素材池 0 张 · 主格 0 / 1 张 · 想写的词 0 / 3（不判好坏）</div>
+</div>
+</div>
+</section>
+
+<!-- ===== p3: 搭骨架 · 三格，每格都给它一个任务 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">搭骨架 · 三格，每格都给它一个任务</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="三格骨架各有功能">
+  <rect x="8" y="10" width="284" height="44" rx="9" fill="#FFFFFF" stroke="#DDD3BE"/>
+  <text x="20" y="38" font-size="13" fill="#4A463E">第一格　开头：什么时候、在哪儿</text>
+  <rect x="8" y="62" width="284" height="44" rx="9" fill="#EDF3EE" stroke="#8FB9A3"/>
+  <text x="20" y="90" font-size="13" fill="#2E5C4A">第二格　经过：最要紧的那一步（详）</text>
+  <rect x="8" y="114" width="284" height="44" rx="9" fill="#FBE9DD" stroke="#C0622F"/>
+  <text x="20" y="142" font-size="13" fill="#C0622F" font-weight="700">第三格　结尾：后来怎么样了（略）</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    给三格事件条排顺序，每格填一句「这段要让人知道___」，再点一下详还是略。
+  </p>
+  <p class="teach-text" id="p3s2">
+    这里只报「三格功能填了几格、详略点了几格」，<b>不判好坏</b>，填不完整也能往下走。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>每格填一句功能，让三段各有任务；别一路「然后……然后……」到底。</li>
+  <li>事件条可以上移调顺序，调完把三段头一句连起来读一遍。</li>
+  <li>详的那段多写几行，略的一段带过；详略点一下就行，不用写理由。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  <div id="boBox">
+  <div class="bo-rows"><div class="bo-row"><span class="bo-up">↑ 上移</span><span class="bo-txt">放学时雨下得很急，我和同桌一起走</span><input class="bo-fn" placeholder="这段要让人知道___"><span class="bo-level">详</span><span class="bo-level">略</span></div>
+    <div class="bo-row"><span class="bo-up">↑ 上移</span><span class="bo-txt">我把伞往他那边挪，自己肩膀湿了</span><input class="bo-fn" placeholder="这段要让人知道___"><span class="bo-level">详</span><span class="bo-level">略</span></div>
+    <div class="bo-row"><span class="bo-up">↑ 上移</span><span class="bo-txt">到家发现作业本倒是干的</span><input class="bo-fn" placeholder="这段要让人知道___"><span class="bo-level">详</span><span class="bo-level">略</span></div></div>
+  <div class="trace-why" id="boWhy">每格都填一句「这段要让人知道___」，再点一下详略。事件条可以上移调顺序，别一路「然后」到底。</div>
+  <div class="trace-note" id="boNote">三格功能 0 / 3 · 详略 0 / 3（不判好坏）</div>
+</div>
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连 · 日记的格式，各自管什么</h2>
+<p class="teach-text" id="p3bs1">左边是日记里的做法，右边是它管的事。连完不用交卷，只看自己能不能说清「为什么」。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 构思不能只给一个输入框</h2>
+  <p class="quiz-hint">三道题都有唯一答案，重点看「先撒后收」和「每格有任务」。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 8 张生活卡点了一堆进素材池，下一步该做什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>只收 1 张进主格当主线</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>全部写进正文</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>按卡片大小排序</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 搭骨架时，每格都要填「这段要让人知道___」，是为了？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>凑够字数</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>让每段有个任务，别一路「然后」到底</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>让字写得好看</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 起草分三格，每格顶上那句「这格写什么」是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>要抄下来的范文</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>必须照着写的格式</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>一句提示，帮你别写跑题</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 起草 · 先定格式，再分三格写 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">起草 · 先定格式，再分三格写</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="日记格式与三格起草">
+  <rect x="8" y="10" width="284" height="50" rx="9" fill="#EDF3EE" stroke="#8FB9A3"/>
+  <text x="20" y="32" font-size="13" fill="#2E5C4A" font-weight="700">格式先定：日期　天气</text>
+  <text x="20" y="52" font-size="12" fill="#4A463E">填空条前置，不填也不拦路</text>
+  <rect x="8" y="68" width="284" height="88" rx="9" fill="#FFFFFF" stroke="#DDD3BE"/>
+  <text x="20" y="92" font-size="13" fill="#4A463E">第一格　这格写什么</text>
+  <text x="20" y="116" font-size="13" fill="#4A463E">第二格　这格写什么</text>
+  <text x="20" y="140" font-size="13" fill="#C0622F" font-weight="700">第三格　这格写什么</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    日期、天气做成填空条前置锁定；三格各顶一句「这格写什么」，写多写少都行。
+  </p>
+  <p class="teach-text" id="p5s2">
+    这里<b>只判写没写，不判好坏</b>。<b>先写后看范文</b>——这一页没有范文，也没有好词好句库。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>格式条</h4>
+    <div class="eq">日期 + 天气</div>
+    <p>先定下来。</p>
+  </div>
+  <div class="card">
+    <h4>三格</h4>
+    <div class="eq">开头 / 经过 / 结尾</div>
+    <p>各写各的。</p>
+  </div>
+  <div class="card">
+    <h4>存本</h4>
+    <div class="eq">写没写看得出</div>
+    <p>好坏不打分。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  <div id="ddBox">
+  <div class="dd-head">
+    <input id="ddDate" placeholder="日期，如 10 月 12 日">
+    <input id="ddWeather" placeholder="天气，如 晴">
+  </div>
+  <div class="trace-why" id="ddHeadState">先填日期和天气，把日记的格式定下来；没填也照样能写（不拦路）。</div>
+  <div class="dd-row"><b>第一格 · 开头：什么时候、在哪儿</b><textarea id="ddR1" placeholder="写一句就够"></textarea></div>
+  <div class="dd-row"><b>第二格 · 经过：最要紧的那一步（详）</b><textarea id="ddR2" placeholder="这里可以多写两行"></textarea></div>
+  <div class="dd-row"><b>第三格 · 结尾：后来怎么样了（略）</b><textarea id="ddR3" placeholder="一句收住"></textarea></div>
+  <button class="mini-btn" id="ddSave" type="button">存进我的本子</button>
+  <div class="trace-note" id="ddNote">三格写了 0 / 3 行（只判写没写，不判好坏）。这里没有范文。</div>
+  <div class="trace-why" id="ddState"></div>
+</div>
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">改 · 按体检单，改的是句子</h2>
+  <p class="sim-desc">先点右边一条体检项，全文会高亮可疑句；再点左边一句，才算记下一处改动。增删改调换，不给分数。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">已改 0 / 5 处（改的是句子，不是错别字）</span>
+    <span class="sim-tip" id="simTip">先自己试一次，再看老师改这一句</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn" onclick="simNextCase()">换一篇草稿</button>
+    <button class="btn" onclick="simReset()">重来</button>
+    <button class="btn-primary" onclick="simDemo()">看老师改这一句</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">红删、绿增、蓝调；错别字不在这张单子上</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>点清单只算看到问题，点中句子才算改过；改完左右对照。</li>
+    <li>能给学生看的只有事实：这个词出现 3 次、这段有两句「我」开头。</li>
+    <li>不判情感、不判立意、不查好词好句；字数也只说「还差 X 字」。</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 增删改调换，改的不是错别字</h2>
+  <p class="quiz-hint">三道题都有唯一答案，注意「点中一句才允许打勾」。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 体检单里「数『然后』，超过 2 个删 1 个」属于哪种改法？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>删</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>增</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>调</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 「只有动作没有感觉」这一句，该改的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>把错别字改掉</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>增：点中该句，插入「我听见／我看见」</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>整段删掉</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 下面哪一项不属于三年级「改」的四件事？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>删</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>调</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>改错别字</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 出刊 · 我的一页书 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">出刊 · 我的一页书</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    把三格拼成一页，署上自己的名字，对着三条标准自查，再点「发布」。勾不满也能出刊。
+  </p>
+  <p class="teach-text" id="p8s2">
+    顺手把四个<b>易错</b>点看一遍：别把流水账当日记，别把好词好句库挂在输入框旁，别先发范文再说照着写，也别把改错别字当成「改」。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 一件事</h4>
+    <div class="eq">这一段只讲一件</div>
+    <p>不跑题。</p>
+  </div>
+  <div class="card">
+    <h4>② 都相关</h4>
+    <div class="eq">每句都跟它有关</div>
+    <p>不掺水。</p>
+  </div>
+  <div class="card">
+    <h4>③ 能听懂</h4>
+    <div class="eq">读一遍给别人</div>
+    <p>不打分。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  <div id="pbBox">
+  <div class="pb-page" id="pbPage">（还没起草。回到「起草」那一页写三格，它就会出现在这页书上。）</div>
+  <input class="pb-sign" id="pbSign" placeholder="署名（写不写都行）">
+  <div class="pb-cks">
+    <span class="pb-ck">① 这一段只讲一件事</span>
+    <span class="pb-ck">② 每句话都跟这件事有关</span>
+    <span class="pb-ck">③ 我读一遍，别人能听懂</span>
+  </div>
+  <button class="mini-btn" id="pbGo" type="button">发布我的一页书</button>
+  <div class="trace-why" id="pbAdvice">三条只问「这一段清楚吗」，不问「写得好不好」——勾不满也照样能出刊。</div>
+  <div class="trace-note" id="pbState"></div>
+</div>
+</div>
+
+<p class="teach-text" id="p8apply">
+  这一页没有分数，也没有排行榜。机器能说的是「事实」：字数、句数、这个词出现几次；「写得好不好」由你自己读一遍说了算。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，把写作的边界说清楚</h2>
+  <p class="quiz-hint">五道题都有唯一答案。做完这一页，你就知道哪些能查、哪些只能自己读。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 为什么必须先写，范文随后才给？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>先给范文，全班会写成同一句</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>范文太长</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>还没打印出来</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 「很开心」「很好玩」这类词，修改时怎么处理？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>换成成语</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>换成具体的动作，让人看见你做了什么</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>多写几遍</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 体检单点一条后，为什么必须点中一句才允许打勾？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>为了慢一点</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>系统要求</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>让改动落在句子上，不是点一下就算改了</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 出刊页「我的一页书」最不能少的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>拼好的全文和自己的署名</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>一个分数</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>一张排行榜</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 日记写完后自查，哪一条最管用？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>数字数够不够</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>读一遍，别人能不能听懂这一件事</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>查有没有用成语</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">留下的是一页书，不是分数</div>
+        <div class="summary-v4-summary">起意 → 出刊</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>写作课的产出物是一页能读的东西：全文＋署名。</p>
+      <p>过关的实质是写前想清楚、写后知道改哪一处。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">构思先撒后收</div>
+        <div class="summary-v4-summary">8 张卡 → 1 张主格</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>空输入框等于把构思难题原样退回；先撒再收才想得出来。</p>
+      <p>日记只写一件事，别写成从早到晚的流水账。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">最容易翻车的三处</div>
+        <div class="summary-v4-summary">流水账 / 好词库 / 错别字</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>三段都靠「然后」串、每格没有功能，是骨架没搭好。</p>
+      <p>输入框旁挂好词好句库教的是拼贴；改错别字不等于「改」。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">只给事实，不给判断</div>
+        <div class="summary-v4-summary">增 删 调 换</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>能给学生看的是「这个词出现 3 次」，不能给的是情感、立意评分。</p>
+      <p>点中一句才允许打勾；自评不合格也照样能出刊。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  <div class="my-page" id="myPage"><b>我的一页书</b>　（结算页会显示你在「起草」那一页写下的三格。）</div>
+把这一页读给同桌听：他听得出是哪一件事、后来怎么样了，就成了。他听不出的地方，就是下次要改的那一句。
+</p>
+</section>

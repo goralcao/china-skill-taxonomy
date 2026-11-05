@@ -3,8 +3,8 @@
   "title": "学写日记：一天里只挑一件事",
   "template": "explain",
   "renderer": "draft",
-  "duration": 14,
-  "interactions": 6,
+  "duration": 30,
+  "interactions": 16,
   "grade": 3,
   "subject": "语文",
   "standards": [
@@ -19,14 +19,76 @@
     "mt_write-application"
   ],
   "objectives": [
-    "能写出日期、星期、天气齐全的日记格式头",
-    "能只挑一件事写完整，不写成从早到晚的流水账",
-    "能写出当时具体的动作或想法，不用「很开心」收尾"
+    "能从 8 张生活卡里先撒后收，只挑 1 件当主线，并点出 3 个想写的词",
+    "能给三格骨架各填一个功能、点出详略，再分三格起草并前置锁定日期与天气",
+    "能按 5 条体检单增删改调换，点中句子才记改动，最后出刊成一页书"
   ],
   "status": "reviewed",
   "author": "goral.cao",
   "license": "CC-BY-SA-4.0",
-  "version": "1.0.0",
-  "updatedAt": "2026-11-03",
-  "cognitiveAction": "构思"
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "cognitiveAction": "构思",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "起意",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "搭骨架",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "起草",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "改",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "出刊",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
 }
