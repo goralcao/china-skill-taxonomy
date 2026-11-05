@@ -2,31 +2,93 @@
   "status": "reviewed",
   "author": "goral.cao",
   "license": "CC-BY-SA-4.0",
-  "version": "1.0.0",
-  "updatedAt": "2026-10-27",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
   "subject": "数学",
   "template": "explain",
   "topicId": "mt_circle-measure",
-  "title": "圆的周长与面积：π 是量出来的",
+  "title": "圆形花坛绕一圈要多少米栅栏，铺草皮又要多少平方米？",
   "renderer": "circleMeasure",
-  "duration": 12,
-  "interactions": 3,
+  "duration": 24,
+  "interactions": 16,
   "grade": 6,
   "standards": [
     "math-2022:S3:GG:GM"
   ],
   "prerequisites": [
     "mt_circle",
-    "mt_polygon-area",
-    "mt_dec-div"
+    "mt_dec-div",
+    "mt_polygon-area"
   ],
   "next": [
     "mt_sector"
   ],
   "objectives": [
-    "理解圆周率的意义：周长除以直径是一个固定常数",
-    "掌握 C=πd=2πr 并会求周长",
-    "理解圆面积公式的来历：剪拼成长方形后 S=πr²"
+    "通过滚动测量理解 π 的意义，掌握 C = πd = 2πr",
+    "通过切拼成长方形理解并运用 S = πr²",
+    "区分周长与面积的单位，会算半圆周长与组合图形"
   ],
-  "cognitiveAction": "变换"
+  "cognitiveAction": "逼近",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "滚出 π",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "切拼得面积",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "周长与面积",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
 }

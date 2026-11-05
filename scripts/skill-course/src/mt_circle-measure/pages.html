@@ -1,0 +1,548 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>圆形花坛绕一圈要多少米栅栏，铺草皮又要多少平方米？</h1>
+  <p class="sub">六年级数学 · 圆的周长与面积</p>
+  <div class="tags">
+    <span class="tag">滚一圈得 π</span>
+    <span class="tag">切拼成矩形</span>
+    <span class="tag">周长面积别混</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 470 212" width="480" height="216" role="img" aria-label="花坛绕一圈的栅栏是周长，铺满草皮是面积；圆周长是直径的三倍多一点">
+      <g font-family="sans-serif">
+        <text x="235" y="20" text-anchor="middle" font-size="13" fill="#FFFFFF">圆形花坛绕一圈要多少米栅栏，铺草皮又要多少平方米？</text>
+        <circle cx="112" cy="116" r="62" fill="#80CBC4" stroke="#FFFFFF" stroke-width="2"/>
+        <circle cx="112" cy="116" r="62" fill="none" stroke="#FFCC80" stroke-width="4" stroke-dasharray="7 5"/>
+        <line x1="50" y1="116" x2="174" y2="116" stroke="#FF7043" stroke-width="2.5"/>
+        <circle cx="112" cy="116" r="4" fill="#004D40"/>
+        <text x="112" y="110" text-anchor="middle" font-size="10.5" fill="#004D40">d</text>
+        <text x="112" y="196" text-anchor="middle" font-size="10.5" fill="rgba(255,255,255,.85)">虚线 = 周长 C　·　绿色 = 面积 S</text>
+        <rect x="228" y="36" width="218" height="150" rx="9" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.32)"/>
+        <text x="337" y="60" text-anchor="middle" font-size="11" fill="#FFD54F">滚一圈量出来的规律</text>
+        <text x="337" y="86" text-anchor="middle" font-size="13" font-weight="700" fill="#FFFFFF">C ÷ d ≈ 3.14</text>
+        <text x="337" y="110" text-anchor="middle" font-size="11.5" fill="#FFD54F">这个固定的倍数叫 π</text>
+        <text x="337" y="138" text-anchor="middle" font-size="12.5" font-weight="700" fill="#FFFFFF">C = πd = 2πr</text>
+        <text x="337" y="164" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.85)">切成小份拼成长方形 → S = πr²</text>
+      </g>
+    </svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先答三道，凭感觉</h2>
+  <p class="quiz-hint">三道题都在问「一圈多长」还是「铺满多大」。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 绕圆形花坛走一圈，求的是圆的什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>周长</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>面积</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>直径</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 一个圆的直径是 10 厘米，周长大约是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>约 31.4 厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>约 314 厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>约 20 厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. π 表示什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>圆的面积</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>半径的两倍</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>周长除以直径的固定倍数</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 直径 10 厘米的圆，滚一周走了多远 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">直径 10 厘米的圆，滚一周走了多远</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="圆沿直尺滚动一周，走过的距离就是周长，测得周长约是直径的 3.14 倍">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#00695C">滚一圈：周长总是直径的 3 倍多一点</text>
+        <line x1="20" y1="146" x2="384" y2="146" stroke="#00695C" stroke-width="1.6"/>
+        <g stroke="#80CBC4" stroke-width="1">
+          <line x1="20" y1="140" x2="20" y2="152"/><line x1="111" y1="140" x2="111" y2="152"/>
+          <line x1="202" y1="140" x2="202" y2="152"/><line x1="293" y1="140" x2="293" y2="152"/>
+          <line x1="384" y1="140" x2="384" y2="152"/>
+        </g>
+        <circle cx="65" cy="102" r="44" fill="#E0F2F1" stroke="#00695C" stroke-width="2"/>
+        <line x1="21" y1="102" x2="109" y2="102" stroke="#FF7043" stroke-width="2"/>
+        <text x="65" y="98" text-anchor="middle" font-size="10.5" fill="#004D40">d</text>
+        <text x="65" y="62" text-anchor="middle" font-size="10.5" fill="#004D40">起点</text>
+        <text x="200" y="170" text-anchor="middle" font-size="10.5" fill="#546E7A">0　　d　　2d　　3d　　3.14d</text>
+        <rect x="16" y="184" width="368" height="56" rx="8" fill="#E0F2F1" stroke="#80CBC4" stroke-width="1.2"/>
+        <text x="200" y="206" text-anchor="middle" font-size="12" font-weight="700" fill="#00695C">C ÷ d = π ≈ 3.14　→　C = πd = 2πr</text>
+        <text x="200" y="228" text-anchor="middle" font-size="10.5" fill="#546E7A">π 是固定的倍数，与圆的大小无关；计算时通常取 3.14</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    把一个直径 10 厘米的圆片沿直尺滚一圈，停下时读数约是 31.4 厘米。<strong>滚过的这段就是周长</strong>，它差不多是直径的 3 倍多一点。
+  </p>
+  <p class="teach-text" id="p2s2">
+    换大小不同的圆再量，<strong>周长 ÷ 直径</strong> 总是同一个数，约 <strong>3.14</strong>，这个固定的倍数叫<strong>圆周率 π</strong>。
+  </p>
+  <p class="teach-text" id="p2s3">
+    于是 <strong>C = πd = 2πr</strong>。计算时 π 通常取 3.14；π 是无限不循环小数，3.14 只是近似值。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>测量</h4>
+    <div class="eq">滚一周</div>
+    <p>走过的长度 = 周长。</p>
+  </div>
+  <div class="card">
+    <h4>规律</h4>
+    <div class="eq">C ÷ d ≈ 3.14</div>
+    <p>与圆大小无关。</p>
+  </div>
+  <div class="card">
+    <h4>公式</h4>
+    <div class="eq">C = πd = 2πr</div>
+    <p>知直径或半径都能算。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  π 不是某一步算出来的，而是<strong>量出来的固定倍数</strong>：任何圆的周长都是它直径的 π 倍。
+</div>
+</section>
+
+<!-- ===== p3: 把圆切成小份拼成长方形，面积 = πr² ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">把圆切成小份拼成长方形，面积 = πr²</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="把圆平均切成许多小扇形拼成近似长方形，长是半周长 πr，宽是半径 r，面积就是 πr 乘 r">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#00695C">切拼：把圆变成近似长方形</text>
+        <rect x="24" y="40" width="344" height="76" rx="4" fill="#E0F2F1" stroke="#00695C" stroke-width="1.6"/>
+        <g stroke="#80CBC4" stroke-width="1">
+          <line x1="67" y1="40" x2="67" y2="116"/><line x1="110" y1="40" x2="110" y2="116"/>
+          <line x1="153" y1="40" x2="153" y2="116"/><line x1="196" y1="40" x2="196" y2="116"/>
+          <line x1="239" y1="40" x2="239" y2="116"/><line x1="282" y1="40" x2="282" y2="116"/>
+          <line x1="325" y1="40" x2="325" y2="116"/>
+        </g>
+        <text x="196" y="132" text-anchor="middle" font-size="11" fill="#00695C">长 ≈ 周长的一半 = πr</text>
+        <text x="382" y="84" font-size="11" fill="#FF7043">宽 = r</text>
+        <rect x="16" y="150" width="368" height="42" rx="8" fill="#FFF3E0" stroke="#FFCC80" stroke-width="1.2"/>
+        <text x="200" y="176" text-anchor="middle" font-size="12.5" font-weight="700" fill="#E65100">S = 长 × 宽 = πr × r = πr²</text>
+        <rect x="16" y="200" width="368" height="44" rx="8" fill="#E0F2F1" stroke="#80CBC4" stroke-width="1.2"/>
+        <text x="200" y="220" text-anchor="middle" font-size="11" fill="#37474F">r = 10 厘米：C = 2×3.14×10 = 62.8 厘米</text>
+        <text x="200" y="238" text-anchor="middle" font-size="11" font-weight="700" fill="#00695C">S = 3.14×10² = 314 平方厘米</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    把圆平均切成 16 份、32 份……越切越细，交错拼起来就越接近一个<strong>长方形</strong>：长是周长的一半 πr，宽是半径 r。
+  </p>
+  <p class="teach-text" id="p3s2">
+    所以 <strong>S = 长 × 宽 = πr × r = πr²</strong>。半径 10 厘米时，C = 62.8 厘米，S = 3.14 × 10² = 314 平方厘米。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>切得越细，拼出的图形越接近长方形</li>
+  <li>长 ≈ 半周长 = πr，宽 = r</li>
+  <li>S = πr²</li>
+  <li>已知直径先求半径：r = d ÷ 2</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  面积公式不是死记的：<strong>把圆「化曲为直」拼成长方形</strong>，长 πr、宽 r，一乘就得 πr²。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">公式与它的来处，连一连</h2>
+<p class="teach-text" id="p3bs1">左边是量或公式，右边是它的含义。把相配的连起来。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 周长公式</h2>
+  <p class="quiz-hint">三道题，注意已知的是直径还是半径。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 半径 3 厘米的圆，周长约是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>18.84 厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>9.42 厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>28.26 厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 一个圆的周长是 31.4 厘米，直径是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>10 厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>5 厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>31.4 厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. π 与 3.14 的关系是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>π 就是 3.14</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>π 比 3.14 小</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3.14 是 π 的近似值</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 栅栏是周长，草皮是面积 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">栅栏是周长，草皮是面积</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="周长和面积单位不同，半圆周长要加直径，半径扩大两倍面积扩大四倍">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#00695C">周长看「一圈」，面积看「铺满」</text>
+        <rect x="16" y="30" width="176" height="88" rx="8" fill="#E0F2F1" stroke="#80CBC4" stroke-width="1.2"/>
+        <text x="104" y="52" text-anchor="middle" font-size="11" font-weight="700" fill="#00695C">栅栏、跑一圈、滚一周</text>
+        <text x="104" y="74" text-anchor="middle" font-size="11" fill="#37474F">求周长 C = πd</text>
+        <text x="104" y="94" text-anchor="middle" font-size="11" fill="#37474F">单位是厘米、米</text>
+        <text x="104" y="112" text-anchor="middle" font-size="10.5" fill="#546E7A">长度单位，不带平方</text>
+        <rect x="208" y="30" width="176" height="88" rx="8" fill="#FFF3E0" stroke="#FFCC80" stroke-width="1.2"/>
+        <text x="296" y="52" text-anchor="middle" font-size="11" font-weight="700" fill="#E65100">铺草皮、刷漆、桌面</text>
+        <text x="296" y="74" text-anchor="middle" font-size="11" fill="#37474F">求面积 S = πr²</text>
+        <text x="296" y="94" text-anchor="middle" font-size="11" fill="#37474F">单位是平方厘米、平方米</text>
+        <text x="296" y="112" text-anchor="middle" font-size="10.5" fill="#546E7A">面积单位，带平方</text>
+        <rect x="16" y="130" width="368" height="52" rx="8" fill="#FCE4EC" stroke="#F8BBD0" stroke-width="1.2"/>
+        <text x="200" y="152" text-anchor="middle" font-size="11.5" font-weight="700" fill="#AD1457">半圆的周长 ≠ 圆周长的一半</text>
+        <text x="200" y="172" text-anchor="middle" font-size="11" fill="#37474F">半圆周长 = πr + 2r（半圆弧 + 一条直径）</text>
+        <rect x="16" y="192" width="368" height="52" rx="8" fill="#E8F5E9" stroke="#A5D6A7" stroke-width="1.2"/>
+        <text x="200" y="214" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2E7D32">半径变化，周长与面积变化不一样</text>
+        <text x="200" y="234" text-anchor="middle" font-size="10.5" fill="#37474F">r 扩大 2 倍 → C 扩大 2 倍，S 扩大 4 倍（2²）</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    绕花坛一圈的栅栏、沿跑道跑一圈，求的是<strong>周长</strong>，用长度单位（米、厘米）；铺满草皮、刷漆，求的是<strong>面积</strong>，用平方单位（平方米、平方厘米）。
+  </p>
+  <p class="teach-text" id="p5s2">
+    特别小心<strong>半圆的周长</strong>：它不是整圆周长的一半，还要加上那条直径，即 <strong>πr + 2r</strong>。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>周长</h4>
+    <div class="eq">C = πd = 2πr</div>
+    <p>单位：米、厘米。</p>
+  </div>
+  <div class="card">
+    <h4>面积</h4>
+    <div class="eq">S = πr²</div>
+    <p>单位：平方米、平方厘米。</p>
+  </div>
+  <div class="card">
+    <h4>半圆周长</h4>
+    <div class="eq">πr + 2r</div>
+    <p>半圆弧 + 直径，别漏。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  半径扩大 2 倍时，周长只扩大 2 倍，面积却扩大 <strong>4 倍（2²）</strong>——因为面积里半径是平方。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">滚动量周长，切拼逼近面积</h2>
+  <p class="sim-desc">换一个半径，按「滚一圈 → 切成小份 → 拼成长方形 → 读出 C 与 S」一步步看，切得越细拼得越像长方形。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">第 1 组 · 半径 3 厘米 · 还没滚</span>
+    <span class="sim-tip" id="simTip">点画布或按钮推进</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simStep()">① 下一步</button>
+    <button class="btn-primary" onclick="simRunAll()">一键到底</button>
+    <button class="btn-retry" onclick="simNextCase()">换半径</button>
+    <button class="btn-retry" onclick="simReset()">重来</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">切得越细，拼出的图形越接近长方形：长 πr、宽 r</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>滚一圈走过的长度就是周长 C = 2πr。</li>
+    <li>长方形长 ≈ 半周长 πr，宽 = r。</li>
+    <li>S = πr × r = πr²；周长用长度单位，面积用平方单位。</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 面积公式</h2>
+  <p class="quiz-hint">这一组要注意 r² 和单位。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 半径 2 厘米的圆，面积约是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>6.28 平方厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>12.56 平方厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>12.56 厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 把圆切拼成长方形后，长相当于？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>半径 r</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>周长的一半 πr</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>直径 2r</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 半径扩大到原来的 3 倍，面积扩大到？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>3 倍</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>6 倍</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>9 倍</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四个易错点，都在「平方」和「单位」上 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四个易错点，都在「平方」和「单位」上</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    圆的周长面积最容易错的地方，是<strong>把 r² 算成 2r</strong>，以及<strong>把周长和面积的单位写混</strong>。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>坑一：r² 当成 2r</h4>
+    <div class="eq">r = 3 时 πr² 算成 3.14×6 ✗</div>
+    <p>r² = 3×3 = 9，应是 3.14×9 = 28.26。</p>
+  </div>
+  <div class="card">
+    <h4>坑二：单位写错</h4>
+    <div class="eq">面积写成 12.56 厘米 ✗</div>
+    <p>面积要用平方厘米、平方米。</p>
+  </div>
+  <div class="card">
+    <h4>坑三：半圆周长漏直径</h4>
+    <div class="eq">半圆周长 = πr ✗</div>
+    <p>还要加一条直径：πr + 2r。</p>
+  </div>
+  <div class="card">
+    <h4>坑四：直径直接代入 r</h4>
+    <div class="eq">d = 10 就算 π×10² ✗</div>
+    <p>先求 r = 5，再算 π×5²。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  一句话：<strong>周长 C = πd = 2πr（长度单位），面积 S = πr²（平方单位）；r² 是 r 乘 r，不是 2 乘 r</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到开头那个花坛：假设半径 5 米，栅栏要 C = 2 × 3.14 × 5 = 31.4 米，草皮要 S = 3.14 × 25 = 78.5 平方米。若错把 5² 当成 10，草皮就少算了一半。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题验收</h2>
+  <p class="quiz-hint">最后一组，记得先求半径、看清单位。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 直径 8 厘米的圆，周长约是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>25.12 厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>50.24 厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>12.56 厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 半径 4 厘米的圆，面积约是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>12.56 平方厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>25.12 平方厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>50.24 平方厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 半径 6 厘米的半圆，周长是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>18.84 厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>30.84 厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>37.68 厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 一个圆的半径扩大 2 倍，周长和面积分别？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>都扩大 2 倍</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>周长 2 倍、面积 4 倍</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>周长 4 倍、面积 2 倍</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 下面哪个单位是面积单位？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>平方米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>米</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">π 的来处</div>
+        <div class="summary-v4-summary">C ÷ d ≈ 3.14</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>滚一圈量出来的固定倍数。</p>
+      <p>与圆的大小无关。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">周长</div>
+        <div class="summary-v4-summary">C = πd = 2πr</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>单位：米、厘米。</p>
+      <p>半圆周长要加直径 πr + 2r。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">面积</div>
+        <div class="summary-v4-summary">S = πr²</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>切拼成长方形：长 πr、宽 r。</p>
+      <p>单位：平方米、平方厘米。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">变化</div>
+        <div class="summary-v4-summary">r 变，C 与 S 变得不同</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>r 扩大 2 倍 → C 扩 2 倍。</p>
+      <p>S 扩大 2² = 4 倍。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  下次遇到圆，先问「<strong>求一圈还是求铺满</strong>」：一圈用 C = πd，铺满用 S = πr²；算面积前一定先把半径找对、把 r² 算成 r×r。
+</p>
+</section>
