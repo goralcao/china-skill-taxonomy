@@ -1,0 +1,91 @@
+{
+  "topicId": "mt_pigeonhole",
+  "title": "13 个人里，为什么一定有两人同月生日？",
+  "template": "explain",
+  "renderer": "division",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 6,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S3:PP"
+  ],
+  "prerequisites": [
+    "mt_div-avg",
+    "mt_classify"
+  ],
+  "next": [],
+  "objectives": [
+    "理解鸽巢原理：物体比抽屉多时，至少有一个抽屉里有两个或更多",
+    "会用最不利原则「先尽量平均放」分析，并算出至少数",
+    "能辨认实际问题中的物体与抽屉，解决生日、摸牌、分物等简单问题"
+  ],
+  "cognitiveAction": "逼近",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "怎么放都躲不掉",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "最不利原则",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "两道经典题",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

@@ -1,0 +1,551 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>13 个人里，为什么一定有两人同月生日？</h1>
+  <p class="sub">六年级数学 · 鸽巢问题</p>
+  <div class="tags">
+    <span class="tag">抽屉原理</span>
+    <span class="tag">最不利原则</span>
+    <span class="tag">至少数</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 470 212" width="480" height="216" role="img" aria-label="13个人放进12个月份抽屉至少两人同月生日">
+      <g font-family="sans-serif">
+        <text x="235" y="22" text-anchor="middle" font-size="13" fill="#FFFFFF">13 个人里，为什么一定有两人同月生日？</text>
+        <rect x="22" y="38" width="196" height="94" rx="9" fill="rgba(77,208,225,.16)" stroke="rgba(255,255,255,.32)"/>
+        <text x="120" y="58" text-anchor="middle" font-size="11.5" font-weight="700" fill="#4DD0E1">物体：13 个人</text>
+        <text x="120" y="82" text-anchor="middle" font-size="12" fill="#FFFFFF">先让 12 个人各占一个月</text>
+        <text x="120" y="104" text-anchor="middle" font-size="12" fill="#FFFFFF">第 13 个人躲不掉了</text>
+        <text x="120" y="124" text-anchor="middle" font-size="10.5" fill="#B2EBF2">这就是最不利原则</text>
+        <rect x="252" y="38" width="196" height="94" rx="9" fill="rgba(77,208,225,.16)" stroke="rgba(255,255,255,.32)"/>
+        <text x="350" y="58" text-anchor="middle" font-size="11.5" font-weight="700" fill="#4DD0E1">抽屉：12 个月</text>
+        <text x="350" y="82" text-anchor="middle" font-size="12" fill="#FFFFFF">13 ÷ 12 = 1 余 1</text>
+        <text x="350" y="104" text-anchor="middle" font-size="12.5" font-weight="700" fill="#FFE082">至少 1 + 1 = 2 人同月</text>
+        <text x="350" y="124" text-anchor="middle" font-size="10.5" fill="#B2EBF2">有余数，商就要加 1</text>
+        <rect x="22" y="142" width="426" height="58" rx="9" fill="rgba(255,255,255,.10)" stroke="rgba(255,255,255,.28)"/>
+        <text x="235" y="166" text-anchor="middle" font-size="12.5" font-weight="700" fill="#FFFFFF">物体比抽屉多，就总有一个抽屉挤进去两个</text>
+        <text x="235" y="188" text-anchor="middle" font-size="11.5" fill="#4DD0E1">关键词是「至少」：最不利的情况下也保证成立</text>
+      </g>
+    </svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先答三道，凭感觉</h2>
+  <p class="quiz-hint">三道题都在问「最坏情况下能保证什么」。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 4 支笔放进 3 个抽屉，总有一个抽屉至少几支？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>2 支</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>1 支</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>4 支</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 13 人中至少有两人同月生日，依据是把人放进？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>12 个抽屉（月份）</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>13 个抽屉</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>2 个抽屉</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 鸽巢原理的关键是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>运气好</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>最不利情况也躲不掉</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>随便放</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 4 支笔放进 3 个抽屉，为什么总有一个抽屉至少 2 支 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">4 支笔放进 3 个抽屉，为什么总有一个抽屉至少 2 支</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="4支笔放进3个抽屉不管怎么放总有一个抽屉至少2支">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#4E342E">4 支笔放进 3 个抽屉，换三种放法试试</text>
+        <rect x="16" y="30" width="368" height="46" rx="7" fill="#EFEBE9" stroke="#BCAAA4" stroke-width="1.2"/>
+        <text x="30" y="50" font-size="10.5" font-weight="700" fill="#5D4037">放法一</text>
+        <text x="30" y="68" font-size="11" fill="#5D4037">2、1、1　→　第一个抽屉 2 支</text>
+        <text x="340" y="58" text-anchor="end" font-size="11" font-weight="700" fill="#00838F">✓ 至少 2</text>
+        <rect x="16" y="80" width="368" height="46" rx="7" fill="#FFFFFF" stroke="#BCAAA4" stroke-width="1.2"/>
+        <text x="30" y="100" font-size="10.5" font-weight="700" fill="#5D4037">放法二</text>
+        <text x="30" y="118" font-size="11" fill="#5D4037">1、2、1　→　第二个抽屉 2 支</text>
+        <text x="340" y="108" text-anchor="end" font-size="11" font-weight="700" fill="#00838F">✓ 至少 2</text>
+        <rect x="16" y="130" width="368" height="46" rx="7" fill="#EFEBE9" stroke="#BCAAA4" stroke-width="1.2"/>
+        <text x="30" y="150" font-size="10.5" font-weight="700" fill="#5D4037">放法三</text>
+        <text x="30" y="168" font-size="11" fill="#5D4037">4、0、0　→　第一个抽屉 4 支</text>
+        <text x="340" y="158" text-anchor="end" font-size="11" font-weight="700" fill="#00838F">✓ 至少 2</text>
+        <rect x="16" y="186" width="368" height="58" rx="8" fill="#E0F7FA" stroke="#4DD0E1" stroke-width="1.2"/>
+        <text x="200" y="208" text-anchor="middle" font-size="12" font-weight="700" fill="#006064">怎么放都躲不掉「至少 2 支」</text>
+        <text x="200" y="230" text-anchor="middle" font-size="10.5" fill="#5D4037">物体数 4 &gt; 抽屉数 3，这就是鸽巢原理</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    桌上有 4 支笔（每支 2 元），随手放进 3 个抽屉。换了好几种放法：2、1、1，1、2、1，甚至 4、0、0，<strong>每次都躲不掉「某个抽屉至少 2 支」</strong>。
+  </p>
+  <p class="teach-text" id="p2s2">
+    这不是巧合：物体数 4 比抽屉数 3 多，只要一个抽屉最多只放 1 支，3 个抽屉最多只能装 3 支，第 4 支必然挤进已有抽屉。
+  </p>
+  <p class="teach-text" id="p2s3">
+    这就是<strong>鸽巢原理</strong>（抽屉原理）：把 n+1 个物体放进 n 个抽屉，至少有一个抽屉里有 2 个或更多。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>物体</h4>
+    <div class="eq">4 支笔</div>
+    <p>要被放进去的东西。</p>
+  </div>
+  <div class="card">
+    <h4>抽屉</h4>
+    <div class="eq">3 个抽屉</div>
+    <p>可以归进去的类别。</p>
+  </div>
+  <div class="card">
+    <h4>结论</h4>
+    <div class="eq">至少 2 支</div>
+    <p>最坏情况下也保证。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  先分清<strong>谁是物体、谁是抽屉</strong>；只要物体比抽屉多，就总有一个抽屉要挤进两个。
+</div>
+</section>
+
+<!-- ===== p3: 把「最不利」的放法摆出来，再看第 4 支 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">把「最不利」的放法摆出来，再看第 4 支</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="最不利原则先给每个抽屉放1个第4个必然落进已有抽屉">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#4E342E">最不利原则：先尽量平均放，别让它挤</text>
+        <rect x="16" y="30" width="112" height="64" rx="8" fill="#EFEBE9" stroke="#BCAAA4"/>
+        <text x="72" y="52" text-anchor="middle" font-size="11" font-weight="700" fill="#5D4037">① 三个抽屉</text>
+        <text x="72" y="74" text-anchor="middle" font-size="10.5" fill="#5D4037">各先放 1 支</text>
+        <text x="72" y="88" text-anchor="middle" font-size="10" fill="#00838F">用掉 3 支</text>
+        <text x="136" y="66" text-anchor="middle" font-size="15" font-weight="700" fill="#4DD0E1">→</text>
+        <rect x="148" y="30" width="112" height="64" rx="8" fill="#EFEBE9" stroke="#BCAAA4"/>
+        <text x="204" y="52" text-anchor="middle" font-size="11" font-weight="700" fill="#5D4037">② 还剩 1 支</text>
+        <text x="204" y="74" text-anchor="middle" font-size="10.5" fill="#5D4037">没有空抽屉了</text>
+        <text x="204" y="88" text-anchor="middle" font-size="10" fill="#E65100">躲不掉</text>
+        <text x="268" y="66" text-anchor="middle" font-size="15" font-weight="700" fill="#4DD0E1">→</text>
+        <rect x="280" y="30" width="104" height="64" rx="8" fill="#E0F7FA" stroke="#4DD0E1"/>
+        <text x="332" y="52" text-anchor="middle" font-size="11" font-weight="700" fill="#006064">③ 必然有</text>
+        <text x="332" y="74" text-anchor="middle" font-size="10.5" fill="#006064">抽屉变成 2 支</text>
+        <text x="332" y="88" text-anchor="middle" font-size="10" fill="#006064">至少 2 成立</text>
+        <rect x="16" y="106" width="368" height="58" rx="8" fill="#FFF8E1" stroke="#FFB74D" stroke-width="1.2"/>
+        <text x="200" y="130" text-anchor="middle" font-size="11.5" font-weight="700" fill="#E65100">一般算法：m ÷ k = 商 … 余数</text>
+        <text x="200" y="152" text-anchor="middle" font-size="11" fill="#5D4037">有余数时，至少数 = 商 + 1；没余数时 = 商</text>
+        <rect x="16" y="174" width="368" height="68" rx="8" fill="#E0F7FA" stroke="#4DD0E1" stroke-width="1.2"/>
+        <text x="200" y="196" text-anchor="middle" font-size="11.5" font-weight="700" fill="#006064">例：7 只鸽子，3 个笼子</text>
+        <text x="200" y="218" text-anchor="middle" font-size="11" fill="#5D4037">7 ÷ 3 = 2 余 1　→　至少 2 + 1 = 3 只</text>
+        <text x="200" y="236" text-anchor="middle" font-size="10" fill="#5D4037">先看最不利的「2、2、2」，第 7 只必然挤进某个笼子</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    想让抽屉尽量不挤，就<strong>先尽量平均放</strong>：3 个抽屉各放 1 支，正好用掉 3 支。这时每个抽屉都只有 1 支，是最不利的情况。
+  </p>
+  <p class="teach-text" id="p3s2">
+    可第 4 支还没放，而已经没有空抽屉了——不管放哪儿，那个抽屉都会变成 2 支。一般地 <strong>m ÷ k = 商 … 余数</strong>，有余数时至少数 = 商 + 1。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>物体数 > 抽屉数 → 至少有一个抽屉 ≥ 2</li>
+  <li>最不利原则：先让每个抽屉尽量平均、尽量少</li>
+  <li>m ÷ k 有余数时，至少数 = 商 + 1</li>
+  <li>没余数时，至少数 = 商</li>
+  <li>答的是「至少」，不是「恰好」</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  「至少」是<strong>一种保证</strong>：不是运气好才出现，而是把所有放法里最不利的那种也算进去了。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">物体、抽屉与结论，连一连</h2>
+<p class="teach-text" id="p3bs1">左边是情境或说法，右边是它在鸽巢问题里对应的角色或结论。把相配的连起来。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 原理与算法</h2>
+  <p class="quiz-hint">三道题，记得先平均放。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 7 只鸽子飞进 3 个笼子，至少有一个笼子几只？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>2 只</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>4 只</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3 只</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 把 5 个球放进 4 个盒，至少有一个盒子？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>≥ 2 个</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>≥ 4 个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>恰好 1 个</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 鸽巢原理里的「至少」是指？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>运气最好时</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>最不利情况下也成立</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>平均情况</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 13 人 12 个月、52 张牌，抽屉分别是什么 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">13 人 12 个月、52 张牌，抽屉分别是什么</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="生日同月与摸牌两个鸽巢问题算例">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#4E342E">两道经典题，都先找「谁是抽屉」</text>
+        <rect x="16" y="30" width="368" height="88" rx="8" fill="#E0F7FA" stroke="#4DD0E1" stroke-width="1.2"/>
+        <text x="200" y="52" text-anchor="middle" font-size="11.5" font-weight="700" fill="#006064">13 个人里至少 2 人同月生日</text>
+        <text x="200" y="74" text-anchor="middle" font-size="11" fill="#5D4037">物体 = 13 人，抽屉 = 12 个月</text>
+        <text x="200" y="96" text-anchor="middle" font-size="11.5" font-weight="700" fill="#006064">13 ÷ 12 = 1 余 1 → 至少 2 人</text>
+        <rect x="16" y="128" width="368" height="88" rx="8" fill="#FFF8E1" stroke="#FFB74D" stroke-width="1.2"/>
+        <text x="200" y="150" text-anchor="middle" font-size="11.5" font-weight="700" fill="#E65100">52 张牌至少抽几张保证 2 张同花色</text>
+        <text x="200" y="172" text-anchor="middle" font-size="11" fill="#5D4037">抽屉 = 4 种花色，先各抽 1 张用掉 4 张</text>
+        <text x="200" y="194" text-anchor="middle" font-size="11.5" font-weight="700" fill="#E65100">第 5 张必然与已有某张同花色 → 抽 5 张</text>
+        <text x="200" y="230" text-anchor="middle" font-size="10.5" fill="#5D4037">答「至少」，不是「恰好」；认错抽屉就全错了</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    生日问题：<strong>人是物体，12 个月是抽屉</strong>。13 ÷ 12 = 1 余 1，所以至少 1 + 1 = 2 人同月。
+  </p>
+  <p class="teach-text" id="p5s2">
+    摸牌问题：<strong>4 种花色是抽屉</strong>。最不利是先各抽 1 张用掉 4 张，第 5 张必然与已有某张同花色，所以抽 <strong>5 张</strong>就能保证。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>生日</h4>
+    <div class="eq">物体 13 人 / 抽屉 12 月</div>
+    <p>13 ÷ 12 = 1 余 1。</p>
+  </div>
+  <div class="card">
+    <h4>摸牌</h4>
+    <div class="eq">抽屉 4 种花色</div>
+    <p>先各抽 1 张，第 5 张躲不掉。</p>
+  </div>
+  <div class="card">
+    <h4>答案</h4>
+    <div class="eq">至少，不是恰好</div>
+    <p>保证数，可能更多。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  难题多半难在<strong>抽屉没认出来</strong>：月份、花色、类别、盒子都可能是抽屉，先把它找出来再算。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">一个一个放，看「至少 2」什么时候躲不掉</h2>
+  <p class="sim-desc">按最不利原则轮流把物体放进抽屉，逐个投放，观察最多那个抽屉的数量怎样一步步逼近保证值。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">第 1 组 · 4 个物体，3 个抽屉 · 已放 0 / 4</span>
+    <span class="sim-tip" id="simTip">点画布或按钮放一个</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simDrop()">① 放一个</button>
+    <button class="btn-primary" onclick="simNextCase()">换一组</button>
+    <button class="btn-retry" onclick="simRunAll()">一键放满</button>
+    <button class="btn-retry" onclick="simReset()">重来</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">最不利原则：先轮流平均放，放到第 k+1 个时必然挤进已有抽屉</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>物体比抽屉多，至少有一个抽屉里有两个或更多。</li>
+    <li>最不利原则：先让每个抽屉尽量平均、尽量少。</li>
+    <li>m ÷ k 有余数时至少数 = 商 + 1，答「至少」不是「恰好」。</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 至少数计算</h2>
+  <p class="quiz-hint">这一组要用商 + 1。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 10 个苹果放进 3 个抽屉，至少有一个抽屉几个？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>3 个</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>4 个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>5 个</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 52 张牌（4 种花色），至少抽几张保证 2 张同花色？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>4 张</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>5 张</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>13 张</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. m ÷ k = q 余 r（r > 0），至少数是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>q + 1</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>q</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>q + r</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四个易错点，都在「抽屉是谁」和「至少」上 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四个易错点，都在「抽屉是谁」和「至少」上</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    学这一课最容易错的地方，是<strong>把物体和抽屉认反</strong>，以及<strong>把「至少」当成「恰好」</strong>。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>坑一：抽屉认错</h4>
+    <div class="eq">13 人当成 13 个抽屉 ✗</div>
+    <p>抽屉是 12 个月，13 人是物体。</p>
+  </div>
+  <div class="card">
+    <h4>坑二：至少当恰好</h4>
+    <div class="eq">至少 2 支 = 恰好 2 支 ✗</div>
+    <p>至少是保底数，实际可能更多。</p>
+  </div>
+  <div class="card">
+    <h4>坑三：忘了最不利</h4>
+    <div class="eq">随便放一次没重复就下结论 ✗</div>
+    <p>要看所有放法里最不利的那种。</p>
+  </div>
+  <div class="card">
+    <h4>坑四：余数忘 +1</h4>
+    <div class="eq">7 ÷ 3 = 2 余 1，答 2 只 ✗</div>
+    <p>有余数要商 + 1，答 3 只。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  一句话：<strong>先分清物体和抽屉，用最不利原则平均放一遍；m ÷ k 有余数就商 + 1</strong>，答的是「至少」不是「恰好」。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到开头：13 个人对应 12 个月，先让 12 个人各占一个月，第 13 个人必然落进已有月份，所以至少 2 人同月。若把 13 个人当成 13 个抽屉，就怎么也算不出来了。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题验收</h2>
+  <p class="quiz-hint">最后一组，先找抽屉。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 6 支笔放进 5 个笔筒，至少有一个笔筒？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>2 支</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>5 支</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>6 支</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 13 人中至少 2 人同月生日，抽屉是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>13 个人</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>12 个月</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>2 个人</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 25 个球放进 6 个盒，至少有一个盒子几个？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>4 个</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>6 个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>5 个</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 最不利原则要求先？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>尽量平均放</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>全放一个盒子</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>随便放</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 鸽巢原理能回答的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>恰好有几个</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>至少有几个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>最多有几个</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">模型</div>
+        <div class="summary-v4-summary">物体放进抽屉</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>先分清谁是物体、谁是抽屉。</p>
+      <p>物体多于抽屉就有结论。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">最不利</div>
+        <div class="summary-v4-summary">先尽量平均放</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>让每个抽屉尽量少。</p>
+      <p>再放一个就躲不掉。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">计算</div>
+        <div class="summary-v4-summary">m ÷ k 有余数 → 商 + 1</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>没余数时至少数 = 商。</p>
+      <p>7 ÷ 3 = 2 余 1 → 3。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">应用</div>
+        <div class="summary-v4-summary">生日 / 摸牌 / 分物</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>月份、花色都是抽屉。</p>
+      <p>答「至少」，不是「恰好」。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  下次遇到「至少……保证……」，先找谁是物体、谁是抽屉，再按最不利原则平均放一遍；m ÷ k 有余数记得商加 1，答的是「至少」不是「恰好」。
+</p>
+</section>
