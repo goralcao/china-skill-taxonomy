@@ -1,0 +1,91 @@
+{
+  "topicId": "mt_stats-center",
+  "title": "班级平均分 82，能代表我考得怎么样吗？",
+  "template": "explain",
+  "renderer": "mean",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 6,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S3:SP"
+  ],
+  "prerequisites": [
+    "mt_average-mean",
+    "mt_line-chart"
+  ],
+  "next": [],
+  "objectives": [
+    "会求一组数据的平均数、中位数与众数，知道偶数个数据时中位数怎么取",
+    "理解极端值对三个统计量的不同影响，能判断何时该用哪一个",
+    "能用三个统计量描述并解释简单的实际数据"
+  ],
+  "cognitiveAction": "辨析",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "三个统计量",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "极端值",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "何时用哪个",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

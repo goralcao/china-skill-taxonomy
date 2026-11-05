@@ -1,0 +1,553 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>班级平均分 82，能代表我考得怎么样吗？</h1>
+  <p class="sub">六年级数学 · 平均数、中位数与众数</p>
+  <div class="tags">
+    <span class="tag">平均数</span>
+    <span class="tag">中位数</span>
+    <span class="tag">众数</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 470 212" width="480" height="216" role="img" aria-label="平均数中位数众数三个统计量从不同角度描述一组数据">
+      <g font-family="sans-serif">
+        <text x="235" y="22" text-anchor="middle" font-size="13" fill="#FFFFFF">班级平均分 82，能代表我考得怎么样吗？</text>
+        <rect x="22" y="38" width="136" height="80" rx="9" fill="rgba(255,143,0,.16)" stroke="rgba(255,255,255,.32)"/>
+        <text x="90" y="60" text-anchor="middle" font-size="11.5" font-weight="700" fill="#FFB74D">平均数</text>
+        <text x="90" y="84" text-anchor="middle" font-size="12" fill="#FFFFFF">总和 ÷ 个数</text>
+        <text x="90" y="104" text-anchor="middle" font-size="10.5" fill="#FFE082">怕极端值拉偏</text>
+        <rect x="167" y="38" width="136" height="80" rx="9" fill="rgba(255,143,0,.16)" stroke="rgba(255,255,255,.32)"/>
+        <text x="235" y="60" text-anchor="middle" font-size="11.5" font-weight="700" fill="#FFB74D">中位数</text>
+        <text x="235" y="84" text-anchor="middle" font-size="12" fill="#FFFFFF">排序取正中间</text>
+        <text x="235" y="104" text-anchor="middle" font-size="10.5" fill="#FFE082">看一般水平更稳</text>
+        <rect x="312" y="38" width="136" height="80" rx="9" fill="rgba(255,143,0,.16)" stroke="rgba(255,255,255,.32)"/>
+        <text x="380" y="60" text-anchor="middle" font-size="11.5" font-weight="700" fill="#FFB74D">众数</text>
+        <text x="380" y="84" text-anchor="middle" font-size="12" fill="#FFFFFF">出现次数最多</text>
+        <text x="380" y="104" text-anchor="middle" font-size="10.5" fill="#FFE082">看最普遍情况</text>
+        <rect x="22" y="132" width="426" height="66" rx="9" fill="rgba(255,255,255,.10)" stroke="rgba(255,255,255,.28)"/>
+        <text x="235" y="156" text-anchor="middle" font-size="12.5" font-weight="700" fill="#FFFFFF">三个数描述的是同一组数据，角度完全不同</text>
+        <text x="235" y="180" text-anchor="middle" font-size="11.5" fill="#FFB74D">来了个 100 分，平均数动了，中位数和众数却没怎么变</text>
+      </g>
+    </svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先答三道，凭感觉</h2>
+  <p class="quiz-hint">三道题都用同一组数据：2、3、3、5、7。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 数据 2、3、3、5、7 的平均数是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>4</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>5</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 同一组数据的中位数是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>4</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>5</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 同一组数据的众数是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>2</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>5</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 7 个人的成绩摆出来，哪个数最能代表这组 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">7 个人的成绩摆出来，哪个数最能代表这组</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="七个成绩排序后算出平均数中位数与众数">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#004D40">先把数据从小到大排好</text>
+        <rect x="16" y="32" width="368" height="44" rx="8" fill="#E0F7FA" stroke="#80CBC4" stroke-width="1.2"/>
+        <text x="200" y="58" text-anchor="middle" font-size="14" font-weight="700" fill="#006064">72　78　80　80　85　88　90</text>
+        <text x="200" y="88" text-anchor="middle" font-size="10.5" fill="#006064">↑ 中位数是正中间第 4 个：80</text>
+        <rect x="16" y="100" width="116" height="62" rx="8" fill="#FFF8E1" stroke="#FFB74D" stroke-width="1.2"/>
+        <text x="74" y="122" text-anchor="middle" font-size="11" font-weight="700" fill="#E65100">平均数</text>
+        <text x="74" y="144" text-anchor="middle" font-size="12" font-weight="700" fill="#006064">573 ÷ 7 ≈ 81.9</text>
+        <text x="74" y="158" text-anchor="middle" font-size="10" fill="#455A64">总和 ÷ 个数</text>
+        <rect x="142" y="100" width="116" height="62" rx="8" fill="#E0F7FA" stroke="#80CBC4" stroke-width="1.2"/>
+        <text x="200" y="122" text-anchor="middle" font-size="11" font-weight="700" fill="#006064">中位数</text>
+        <text x="200" y="144" text-anchor="middle" font-size="13" font-weight="700" fill="#006064">80</text>
+        <text x="200" y="158" text-anchor="middle" font-size="10" fill="#455A64">排序后正中间</text>
+        <rect x="268" y="100" width="116" height="62" rx="8" fill="#E8F5E9" stroke="#81C784" stroke-width="1.2"/>
+        <text x="326" y="122" text-anchor="middle" font-size="11" font-weight="700" fill="#2E7D32">众数</text>
+        <text x="326" y="144" text-anchor="middle" font-size="13" font-weight="700" fill="#2E7D32">80（2 次）</text>
+        <text x="326" y="158" text-anchor="middle" font-size="10" fill="#455A64">出现最多</text>
+        <rect x="16" y="174" width="368" height="68" rx="8" fill="#FFF8E1" stroke="#FFB74D" stroke-width="1.2"/>
+        <text x="200" y="196" text-anchor="middle" font-size="11.5" font-weight="700" fill="#E65100">偶数个数据怎么办</text>
+        <text x="200" y="218" text-anchor="middle" font-size="11" fill="#004D40">2、4、6、8 → 中位数 = (4 + 6) ÷ 2 = 5</text>
+        <text x="200" y="236" text-anchor="middle" font-size="10.5" fill="#455A64">中间两个数的平均数，不是随便取一个</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    一次 60 分钟的随堂测验，7 个同学的成绩是 72、78、80、80、85、88、90。先把它们<strong>从小到大排好</strong>，三个统计量就都好算了。
+  </p>
+  <p class="teach-text" id="p2s2">
+    <strong>平均数</strong> = 总和 ÷ 个数 = 573 ÷ 7 ≈ 81.9；<strong>中位数</strong>是排序后正中间第 4 个数 80；<strong>众数</strong>是出现次数最多的 80（出现 2 次）。
+  </p>
+  <p class="teach-text" id="p2s3">
+    数据个数是<strong>偶数</strong>时，中位数取中间两个数的平均：2、4、6、8 的中位数是 (4 + 6) ÷ 2 = 5。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>平均数</h4>
+    <div class="eq">总和 ÷ 个数</div>
+    <p>每个数都参与计算。</p>
+  </div>
+  <div class="card">
+    <h4>中位数</h4>
+    <div class="eq">排序取正中间</div>
+    <p>偶数个取中间两数平均。</p>
+  </div>
+  <div class="card">
+    <h4>众数</h4>
+    <div class="eq">出现次数最多</div>
+    <p>可能不止一个，也可能没有。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  求中位数<strong>第一步永远是排序</strong>；三个量看的是同一组数据的不同侧面，不能互相代替。
+</div>
+</section>
+
+<!-- ===== p3: 塞进一个 100 分，哪个数被拉跑了 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">塞进一个 100 分，哪个数被拉跑了</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="加入一个极端高分后平均数明显变化而中位数众数基本不动">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#004D40">往这组数据里塞一个 100 分</text>
+        <rect x="16" y="32" width="176" height="88" rx="8" fill="#E0F7FA" stroke="#80CBC4" stroke-width="1.2"/>
+        <text x="104" y="52" text-anchor="middle" font-size="11.5" font-weight="700" fill="#006064">原来 7 人</text>
+        <text x="104" y="72" text-anchor="middle" font-size="10.5" fill="#004D40">平均数 ≈ 81.9</text>
+        <text x="104" y="90" text-anchor="middle" font-size="10.5" fill="#004D40">中位数 80</text>
+        <text x="104" y="108" text-anchor="middle" font-size="10.5" fill="#004D40">众数 80</text>
+        <rect x="208" y="32" width="176" height="88" rx="8" fill="#FFF8E1" stroke="#FFB74D" stroke-width="1.2"/>
+        <text x="296" y="52" text-anchor="middle" font-size="11.5" font-weight="700" fill="#E65100">加 1 个 100 分后</text>
+        <text x="296" y="72" text-anchor="middle" font-size="10.5" font-weight="700" fill="#E65100">平均数 ≈ 84.1 ↑</text>
+        <text x="296" y="90" text-anchor="middle" font-size="10.5" fill="#004D40">中位数 80 →</text>
+        <text x="296" y="108" text-anchor="middle" font-size="10.5" fill="#004D40">众数 80 →</text>
+        <rect x="16" y="130" width="368" height="50" rx="8" fill="#E8F5E9" stroke="#81C784" stroke-width="1.2"/>
+        <text x="200" y="152" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2E7D32">平均数被拉高了，另两个几乎没动</text>
+        <text x="200" y="172" text-anchor="middle" font-size="10.5" fill="#004D40">因为平均数用到了每一个数，中位数只看位置</text>
+        <rect x="16" y="190" width="368" height="52" rx="8" fill="#FFF8E1" stroke="#FFB74D" stroke-width="1.2"/>
+        <text x="200" y="212" text-anchor="middle" font-size="11.5" font-weight="700" fill="#E65100">所以别只看平均分</text>
+        <text x="200" y="232" text-anchor="middle" font-size="10.5" fill="#004D40">几个特别高或特别低的值，就能把平均数带偏</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    往上面 7 个成绩里再加一个 100 分：总和变成 673，个数 8，平均数升到 ≈ 84.1；中位数还是 80，众数还是 80。
+  </p>
+  <p class="teach-text" id="p3s2">
+    原因很简单：<strong>平均数用到了每一个数</strong>，一个极端值就能把它拉走；中位数只看「排在中间的位置」，众数只看「谁出现最多」，都更稳。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>平均数 = 总和 ÷ 个数，怕极端值</li>
+  <li>中位数：先排序，取正中间；偶数个取中间两数平均</li>
+  <li>众数：出现次数最多的数，可有多个或没有</li>
+  <li>极端值主要影响平均数</li>
+  <li>看「一般水平」时中位数往往更可信</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  看到「平均」两个字先留个心眼：<strong>它可能被几个特别高或特别低的值带偏</strong>，配上中位数一起看才全面。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">统计量与算法，连一连</h2>
+<p class="teach-text" id="p3bs1">左边是统计量或情境，右边是它的算法或适用说法。把相配的连起来。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 三量计算</h2>
+  <p class="quiz-hint">三道题，先排序再算。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 数据 1、2、3、4、100，平均数是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>3</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>110</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>22</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 同一组数据的中位数是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>3</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>100</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>4</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 极端值主要影响？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>众数</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>平均数</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>中位数</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 收入、进货、平均分，各该看哪个数 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">收入、进货、平均分，各该看哪个数</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="三个统计量各自适合的使用场景">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#004D40">什么时候用哪一个</text>
+        <rect x="16" y="30" width="368" height="60" rx="8" fill="#FFF8E1" stroke="#FFB74D" stroke-width="1.2"/>
+        <text x="200" y="50" text-anchor="middle" font-size="11.5" font-weight="700" fill="#E65100">平均数 · 数据比较均匀时</text>
+        <text x="200" y="72" text-anchor="middle" font-size="10.5" fill="#004D40">算班级平均分、平均身高；有极端值会被拉偏</text>
+        <rect x="16" y="98" width="368" height="60" rx="8" fill="#E0F7FA" stroke="#80CBC4" stroke-width="1.2"/>
+        <text x="200" y="118" text-anchor="middle" font-size="11.5" font-weight="700" fill="#006064">中位数 · 想看「一般水平」时</text>
+        <text x="200" y="140" text-anchor="middle" font-size="10.5" fill="#004D40">收入、房价有少数极高值，中位数更能代表多数人</text>
+        <rect x="16" y="166" width="368" height="60" rx="8" fill="#E8F5E9" stroke="#81C784" stroke-width="1.2"/>
+        <text x="200" y="186" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2E7D32">众数 · 想看「哪个最多」时</text>
+        <text x="200" y="208" text-anchor="middle" font-size="10.5" fill="#004D40">鞋店进货尺码、最受欢迎的颜色，看出现次数最多</text>
+        <text x="200" y="242" text-anchor="middle" font-size="10.5" fill="#455A64">一组数据可以有多个众数，也可以没有众数</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    数据比较均匀、想算总体水平时用<strong>平均数</strong>；有少数极高或极低值、想看「一般水平」时用<strong>中位数</strong>。
+  </p>
+  <p class="teach-text" id="p5s2">
+    想知道「哪个最多」时用<strong>众数</strong>：鞋店进货看哪个尺码卖得最多，比算平均尺码有用得多。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>均匀数据</h4>
+    <div class="eq">用平均数</div>
+    <p>班级平均分、平均身高。</p>
+  </div>
+  <div class="card">
+    <h4>有极端值</h4>
+    <div class="eq">用中位数</div>
+    <p>收入、房价更可信。</p>
+  </div>
+  <div class="card">
+    <h4>看最普遍</h4>
+    <div class="eq">用众数</div>
+    <p>进货尺码、热门颜色。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  选哪个统计量，取决于<strong>你要回答什么问题</strong>；不是随便挑一个好看的数报出去。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">加一个数据点，看三个统计量怎么变</h2>
+  <p class="sim-desc">往 5 个成绩里逐个加入高分、低分或相同分，点图上的圆点与右侧三个统计量实时同步。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">第 1 组 · 加入高分 100 · 已加 0 / 3 个</span>
+    <span class="sim-tip" id="simTip">点画布或按钮加数据</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simAdd()">① 加一个数据</button>
+    <button class="btn-primary" onclick="simRemove()">减一个数据</button>
+    <button class="btn-primary" onclick="simNextCase()">换一种数据</button>
+    <button class="btn-retry" onclick="simReset()">重来</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">数据点增删，平均数 / 中位数 / 众数实时变化</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>平均数 = 总和 ÷ 个数，容易被极端值拉偏。</li>
+    <li>中位数要先把数据排序，偶数个取中间两数的平均。</li>
+    <li>众数是出现次数最多的数，反映最普遍的情况。</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 选择与解释</h2>
+  <p class="quiz-hint">这一组要想清楚「问的是什么」。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 数据 2、4、6、8 的中位数是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>4</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>6</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>5</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 鞋店进货最该参考？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>平均数</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>中位数</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>众数</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 数据很均匀、想反映一般水平，用？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>平均数</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>众数</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>中位数</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四个易错点，都在「排序」和「极端值」上 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四个易错点，都在「排序」和「极端值」上</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    学这一课最容易错的地方，是<strong>求中位数忘了先排序</strong>，以及<strong>把平均数当成所有人的水平</strong>。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>坑一：忘排序</h4>
+    <div class="eq">直接取原顺序中间那个 ✗</div>
+    <p>求中位数必须先从小到大排。</p>
+  </div>
+  <div class="card">
+    <h4>坑二：偶数个取错</h4>
+    <div class="eq">4 个数取第 2 个 ✗</div>
+    <p>要取中间两个数的平均数。</p>
+  </div>
+  <div class="card">
+    <h4>坑三：被极端值骗</h4>
+    <div class="eq">平均分就代表大多数人 ✗</div>
+    <p>一个极端值能把平均数拉高很多。</p>
+  </div>
+  <div class="card">
+    <h4>坑四：众数只认一个</h4>
+    <div class="eq">众数只能有一个 ✗</div>
+    <p>并列最多时可以有多个，也可能没有。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  一句话：<strong>求中位数先排序，偶数个取中间两数平均；有极端值时别只看平均数</strong>，看一般水平用中位数，看最多数用众数。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到开头：班级平均分 82 分可能被几个 100 分拉高，若中位数只有 76，说明一半同学不到 76 分——平均分并不能代表「我」考得怎么样。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题验收</h2>
+  <p class="quiz-hint">最后一组，记得先排序。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 数据 5、5、5、9 的众数是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>6</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>9</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 数据 3、5、7、9 的平均数是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>7</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>6</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>8</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 招聘写「平均月薪 2 万」，几个高管极高，大多数人是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>差不多 2 万</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>都低于 2 万</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>低于平均，看中位数更真实</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 求中位数第一步要？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>先排序</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>先求总和</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>先找出现最多的</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 一组数据中出现次数最多的数叫？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>平均数</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>众数</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>中位数</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">平均数</div>
+        <div class="summary-v4-summary">总和 ÷ 个数</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>每个数都参与。</p>
+      <p>怕极端值拉偏。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">中位数</div>
+        <div class="summary-v4-summary">排序取正中间</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>偶数个取中间两数平均。</p>
+      <p>看一般水平更稳。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">众数</div>
+        <div class="summary-v4-summary">出现次数最多</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>可以有多个或没有。</p>
+      <p>看最普遍情况。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">选择</div>
+        <div class="summary-v4-summary">看要回答什么</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>均匀数据用平均数。</p>
+      <p>有极端值用中位数。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  下次看一组数据，先排序再算三个量；遇到极端值别急着信平均数，想问「一般水平」看中位数，想问「哪个最多」看众数。
+</p>
+</section>
