@@ -1,0 +1,93 @@
+{
+  "topicId": "mt_frac-div2",
+  "title": "3/4 米彩带，每 1/8 米剪一段，能剪几段？",
+  "template": "explain",
+  "renderer": "fracDiv",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 6,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S3:NA:NO"
+  ],
+  "prerequisites": [
+    "mt_frac-div",
+    "mt_frac-mul"
+  ],
+  "next": [
+    "mt_direct-inverse"
+  ],
+  "objectives": [
+    "用分数条说明分数除法的意义是「求被除数里包含几个除数」",
+    "理解并运用「除以一个不为零的数等于乘它的倒数」",
+    "能判断商与被除数的大小关系，并解决剪绳、分装等实际问题"
+  ],
+  "cognitiveAction": "分解",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "包含除",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "乘倒数",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "为什么能变乘",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}
