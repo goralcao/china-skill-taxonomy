@@ -1,0 +1,93 @@
+{
+  "topicId": "mt_percent-1",
+  "title": "手机电量 37%，到底是什么意思？",
+  "template": "explain",
+  "renderer": "decGrid",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 6,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S3:NA:AR"
+  ],
+  "prerequisites": [
+    "mt_frac-div",
+    "mt_ratio"
+  ],
+  "next": [
+    "mt_percent-2"
+  ],
+  "objectives": [
+    "理解百分数表示一个数是另一个数的百分之几，知道它只表示比率、不带单位",
+    "熟练进行百分数与小数、分数的互化",
+    "会求常见百分率，并会求一个数的百分之几"
+  ],
+  "cognitiveAction": "变换",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "百分数的意义",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "三种写法互化",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "两类问题",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}
