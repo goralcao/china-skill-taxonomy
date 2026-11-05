@@ -1,0 +1,94 @@
+{
+  "topicId": "mt_frac-addsub",
+  "title": "一张饼吃了 3/8，又吃了 1/4，一共吃掉多少？",
+  "template": "explain",
+  "renderer": "fracOps",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 5,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S3:NA:NO"
+  ],
+  "prerequisites": [
+    "mt_frac-reduce",
+    "mt_frac-same-addsub",
+    "mt_ops-order"
+  ],
+  "next": [
+    "mt_frac-mul"
+  ],
+  "objectives": [
+    "说清同分母分数加减为什么分母不变",
+    "会把异分母分数通分后相加减",
+    "算完能判断结果要不要约分"
+  ],
+  "cognitiveAction": "累积",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "同分母",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "异分母",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "两步走",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}
