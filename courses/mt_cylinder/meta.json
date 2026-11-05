@@ -2,30 +2,92 @@
   "status": "reviewed",
   "author": "goral.cao",
   "license": "CC-BY-SA-4.0",
-  "version": "1.0.0",
-  "updatedAt": "2026-10-27",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
   "subject": "数学",
   "template": "explain",
   "topicId": "mt_cylinder",
-  "title": "圆柱与圆锥：剪开、倒满",
+  "title": "一圆柱水倒进等底等高圆锥，能倒满几次？",
   "renderer": "cylinder",
-  "duration": 12,
-  "interactions": 3,
+  "duration": 24,
+  "interactions": 16,
   "grade": 6,
   "standards": [
     "math-2022:S3:GG:GM"
   ],
   "prerequisites": [
-    "mt_circle",
-    "mt_cuboid",
     "mt_shape-3d",
+    "mt_cuboid",
+    "mt_circle",
     "mt_volume"
   ],
   "next": [],
   "objectives": [
-    "认识圆柱、圆锥的特征与高的含义",
-    "理解圆柱侧面展开是长方形，会求侧面积与表面积",
-    "掌握圆柱体积公式，理解圆锥体积是等底等高圆柱的 1/3"
+    "认识圆柱与圆锥的各部分，会把圆柱侧面展开成长方形并推出侧面积",
+    "理解圆柱体积 = 底面积 × 高，会算表面积与体积",
+    "通过等底等高倒水实验理解圆锥体积是圆柱的 1/3 并能计算"
   ],
-  "cognitiveAction": "变换"
+  "cognitiveAction": "逼近",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "侧面展开",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "倒水实验",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "算一算",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
 }

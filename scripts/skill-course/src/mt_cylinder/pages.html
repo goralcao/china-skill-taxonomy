@@ -1,0 +1,562 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>一圆柱水倒进等底等高圆锥，能倒满几次？</h1>
+  <p class="sub">六年级数学 · 圆柱与圆锥</p>
+  <div class="tags">
+    <span class="tag">侧面展开</span>
+    <span class="tag">圆柱体积</span>
+    <span class="tag">圆锥三分之一</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 470 212" width="480" height="216" role="img" aria-label="等底等高的圆柱装满水倒进圆锥三次正好装满">
+      <g font-family="sans-serif">
+        <text x="235" y="22" text-anchor="middle" font-size="13" fill="#FFFFFF">一圆柱水倒进等底等高圆锥，能倒满几次？</text>
+        <rect x="30" y="40" width="88" height="86" rx="6" fill="rgba(255,255,255,.10)" stroke="#B2EBF2" stroke-width="1.4"/>
+        <ellipse cx="74" cy="48" rx="32" ry="7" fill="#B2EBF2" stroke="#FFFFFF" stroke-width="1.2"/>
+        <text x="74" y="76" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF">圆柱</text>
+        <text x="74" y="96" text-anchor="middle" font-size="10.5" fill="#B2EBF2">装满水</text>
+        <ellipse cx="74" cy="120" rx="32" ry="7" fill="none" stroke="#FFFFFF" stroke-width="1.2"/>
+        <text x="146" y="88" text-anchor="middle" font-size="17" font-weight="700" fill="#FFB300">→</text>
+        <text x="146" y="106" text-anchor="middle" font-size="10" fill="#FFE082">倒 3 次</text>
+        <rect x="176" y="40" width="88" height="86" rx="6" fill="rgba(255,255,255,.10)" stroke="#FFB300" stroke-width="1.4"/>
+        <polygon points="220,52 256,118 184,118" fill="rgba(255,179,0,.32)" stroke="#FFB300" stroke-width="1.4"/>
+        <text x="220" y="96" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF">圆锥</text>
+        <ellipse cx="220" cy="118" rx="36" ry="7" fill="none" stroke="#FFB300" stroke-width="1.2"/>
+        <text x="292" y="88" text-anchor="middle" font-size="17" font-weight="700" fill="#FFB300">→</text>
+        <rect x="316" y="40" width="124" height="86" rx="6" fill="rgba(255,179,0,.18)" stroke="#FFB300" stroke-width="1.4"/>
+        <text x="378" y="66" text-anchor="middle" font-size="11" font-weight="700" fill="#FFE082">正好装满</text>
+        <text x="378" y="90" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">V锥 = V柱 ÷ 3</text>
+        <text x="378" y="110" text-anchor="middle" font-size="10.5" fill="#B2EBF2">前提是等底等高</text>
+        <rect x="30" y="140" width="410" height="54" rx="9" fill="rgba(255,255,255,.10)" stroke="rgba(255,255,255,.28)"/>
+        <text x="235" y="164" text-anchor="middle" font-size="12.5" font-weight="700" fill="#FFFFFF">先剪开侧面、再倒三次水，公式不是凭空来的</text>
+        <text x="235" y="184" text-anchor="middle" font-size="11.5" fill="#FFB300">圆柱 V = πr²h　·　圆锥 V = 1/3 πr²h</text>
+      </g>
+    </svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先答三道，凭感觉</h2>
+  <p class="quiz-hint">三道题都在问「圆柱和圆锥长什么样」。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 圆柱有几个底面？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1 个</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>2 个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3 个</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 圆柱侧面沿高剪开，展开是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>三角形</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>圆</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>长方形</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 等底等高时，圆锥体积是圆柱的？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>三分之一</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>一半</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3 倍</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 一个半径 3 厘米、高 10 厘米的圆柱，侧面展开是什么 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">一个半径 3 厘米、高 10 厘米的圆柱，侧面展开是什么</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="圆柱侧面沿高剪开展开是长方形长等于底面周长宽等于高">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#006064">把侧面沿高剪开，摊平看看</text>
+        <rect x="16" y="32" width="150" height="106" rx="8" fill="#E0F7FA" stroke="#80DEEA" stroke-width="1.2"/>
+        <ellipse cx="91" cy="52" rx="40" ry="9" fill="#B2EBF2" stroke="#00838F" stroke-width="1.4"/>
+        <line x1="51" y1="52" x2="51" y2="118" stroke="#00838F" stroke-width="1.4"/>
+        <line x1="131" y1="52" x2="131" y2="118" stroke="#00838F" stroke-width="1.4"/>
+        <ellipse cx="91" cy="118" rx="40" ry="9" fill="none" stroke="#00838F" stroke-width="1.4"/>
+        <line x1="91" y1="43" x2="91" y2="127" stroke="#E65100" stroke-width="1.6" stroke-dasharray="4 3"/>
+        <text x="91" y="140" text-anchor="middle" font-size="10.5" fill="#E65100">沿高剪开 ↑</text>
+        <text x="91" y="30" text-anchor="middle" font-size="10.5" font-weight="700" fill="#006064">圆柱</text>
+        <text x="192" y="90" text-anchor="middle" font-size="18" font-weight="700" fill="#FFB300">→</text>
+        <rect x="222" y="52" width="162" height="66" fill="#FFF8E1" stroke="#FFB300" stroke-width="1.6"/>
+        <text x="303" y="44" text-anchor="middle" font-size="10.5" font-weight="700" fill="#E65100">长 = 底面周长 2πr</text>
+        <text x="303" y="88" text-anchor="middle" font-size="11" font-weight="700" fill="#006064">长方形</text>
+        <text x="360" y="88" text-anchor="middle" font-size="10.5" fill="#E65100">宽 = h</text>
+        <text x="222" y="132" text-anchor="start" font-size="10" fill="#607D8B">长正好绕底面一圈</text>
+        <rect x="16" y="152" width="368" height="42" rx="8" fill="#E0F7FA" stroke="#80DEEA" stroke-width="1.2"/>
+        <text x="200" y="178" text-anchor="middle" font-size="12" font-weight="700" fill="#006064">侧面积 = 底面周长 × 高 = 2πrh</text>
+        <rect x="16" y="202" width="368" height="42" rx="8" fill="#FFF8E1" stroke="#FFB300" stroke-width="1.2"/>
+        <text x="200" y="228" text-anchor="middle" font-size="11.5" font-weight="700" fill="#E65100">表面积 = 侧面积 + 两个底面积 = 2πrh + 2πr²</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    拿一个半径 3 厘米、高 10 厘米的易拉罐，把侧面的纸沿高剪开摊平，会得到一个<strong>长方形</strong>。这一步不用任何公式，剪一次就看见了。
+  </p>
+  <p class="teach-text" id="p2s2">
+    长方形的<strong>长</strong>正好绕底面一圈，也就是底面周长 2πr；<strong>宽</strong>就是圆柱的高 h。于是侧面积 = 长 × 宽 = 2πrh。
+  </p>
+  <p class="teach-text" id="p2s3">
+    别忘了还有上下两个圆：圆柱表面积 = 侧面积 + 2 个底面积 = 2πrh + 2πr²。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>侧面</h4>
+    <div class="eq">展开是长方形</div>
+    <p>长 = 2πr，宽 = h。</p>
+  </div>
+  <div class="card">
+    <h4>侧面积</h4>
+    <div class="eq">2πrh</div>
+    <p>底面周长 × 高。</p>
+  </div>
+  <div class="card">
+    <h4>表面积</h4>
+    <div class="eq">2πrh + 2πr²</div>
+    <p>侧面积加两个底面。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  公式是<strong>剪出来、量出来</strong>的：先看清展开图的长和宽，2πrh 就只是长方形面积；表面积再加上两个圆。
+</div>
+</section>
+
+<!-- ===== p3: 倒 3 次正好装满，那个 1/3 是怎么来的 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">倒 3 次正好装满，那个 1/3 是怎么来的</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="等底等高倒水三次正好装满圆锥所以圆锥体积是圆柱三分之一">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#006064">倒水实验：等底等高，倒 3 次正好装满</text>
+        <rect x="16" y="32" width="164" height="118" rx="8" fill="#E0F7FA" stroke="#80DEEA" stroke-width="1.2"/>
+        <text x="98" y="48" text-anchor="middle" font-size="10.5" font-weight="700" fill="#006064">圆柱 · 装满水分 3 份</text>
+        <rect x="44" y="56" width="108" height="78" fill="rgba(79,195,247,.55)" stroke="#00838F" stroke-width="1.4"/>
+        <line x1="44" y1="82" x2="152" y2="82" stroke="#00838F" stroke-width="1" stroke-dasharray="4 3"/>
+        <line x1="44" y1="108" x2="152" y2="108" stroke="#00838F" stroke-width="1" stroke-dasharray="4 3"/>
+        <text x="98" y="76" text-anchor="middle" font-size="9.5" fill="#006064">第 3 份</text>
+        <text x="98" y="102" text-anchor="middle" font-size="9.5" fill="#006064">第 2 份</text>
+        <text x="98" y="128" text-anchor="middle" font-size="9.5" fill="#006064">第 1 份</text>
+        <text x="192" y="72" text-anchor="middle" font-size="15" font-weight="700" fill="#FFB300">①</text>
+        <text x="192" y="98" text-anchor="middle" font-size="15" font-weight="700" fill="#FFB300">②</text>
+        <text x="192" y="124" text-anchor="middle" font-size="15" font-weight="700" fill="#FFB300">③</text>
+        <rect x="216" y="32" width="168" height="118" rx="8" fill="#FFF8E1" stroke="#FFB300" stroke-width="1.2"/>
+        <text x="300" y="48" text-anchor="middle" font-size="10.5" font-weight="700" fill="#E65100">圆锥 · 等底等高</text>
+        <polygon points="300,58 352,134 248,134" fill="rgba(255,179,0,.30)" stroke="#FFB300" stroke-width="1.4"/>
+        <text x="300" y="96" text-anchor="middle" font-size="10" fill="#E65100">倒 3 次</text>
+        <text x="300" y="114" text-anchor="middle" font-size="10" fill="#E65100">正好装满</text>
+        <rect x="16" y="162" width="368" height="40" rx="8" fill="#E0F7FA" stroke="#80DEEA" stroke-width="1.2"/>
+        <text x="200" y="188" text-anchor="middle" font-size="12" font-weight="700" fill="#006064">圆柱体积 = 底面积 × 高 = πr²h</text>
+        <rect x="16" y="210" width="368" height="36" rx="8" fill="#FFF8E1" stroke="#FFB300" stroke-width="1.2"/>
+        <text x="200" y="234" text-anchor="middle" font-size="12" font-weight="700" fill="#E65100">圆锥体积 = 1/3 πr²h　（等底等高才成立）</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    圆柱体积可以像长方体一样想：<strong>底面积 × 高</strong> = πr²h。圆锥没有现成公式，就做一次实验。
+  </p>
+  <p class="teach-text" id="p3s2">
+    拿<strong>等底等高</strong>的圆柱和圆锥，把圆柱装满水分成 3 份，一份一份倒进圆锥：<strong>倒 3 次正好装满</strong>。所以圆锥体积 = 1/3 πr²h。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>圆柱侧面积 = 底面周长 × 高 = 2πrh</li>
+  <li>圆柱表面积 = 2πrh + 2πr²</li>
+  <li>圆柱体积 = 底面积 × 高 = πr²h</li>
+  <li>等底等高：圆锥体积 = 1/3 圆柱体积</li>
+  <li>圆锥体积 = 1/3 πr²h（等底等高才成立）</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  1/3 不是硬背的：<strong>它来自「等底等高 + 倒三次」这个实验</strong>。若底或高不一样，就不能直接套 1/3。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">图形与公式，连一连</h2>
+<p class="teach-text" id="p3bs1">左边是图形或操作，右边是对应的结论或公式。把相配的连起来。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 展开与面积</h2>
+  <p class="quiz-hint">三道题，先想展开图。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 圆柱侧面积怎么算？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>底面周长 × 高</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>底面周长 + 高</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>底面积 × 高</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. r = 2，h = 5，π 取 3.14，圆柱体积是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>31.4</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>12.56</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>62.8</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 等底等高的圆柱体积 60，圆锥体积是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>180</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>20</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>30</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 半径 3 厘米、高 10 厘米，体积各是多少 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">半径 3 厘米、高 10 厘米，体积各是多少</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="半径3厘米高10厘米时底面积圆柱体积圆锥体积与侧面积的算法">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#006064">r = 3 厘米，h = 10 厘米，π 取 3.14</text>
+        <rect x="16" y="30" width="368" height="44" rx="8" fill="#E0F7FA" stroke="#80DEEA" stroke-width="1.2"/>
+        <text x="200" y="48" text-anchor="middle" font-size="11" font-weight="700" fill="#006064">① 先算底面积</text>
+        <text x="200" y="66" text-anchor="middle" font-size="12" font-weight="700" fill="#006064">3.14 × 3² = 28.26 平方厘米</text>
+        <rect x="16" y="82" width="368" height="44" rx="8" fill="#E0F7FA" stroke="#80DEEA" stroke-width="1.2"/>
+        <text x="200" y="100" text-anchor="middle" font-size="11" font-weight="700" fill="#006064">② 圆柱体积 = 底面积 × 高</text>
+        <text x="200" y="118" text-anchor="middle" font-size="12" font-weight="700" fill="#006064">28.26 × 10 = 282.6 立方厘米</text>
+        <rect x="16" y="134" width="368" height="44" rx="8" fill="#FFF8E1" stroke="#FFB300" stroke-width="1.2"/>
+        <text x="200" y="152" text-anchor="middle" font-size="11" font-weight="700" fill="#E65100">③ 等底等高圆锥，再除以 3</text>
+        <text x="200" y="170" text-anchor="middle" font-size="12" font-weight="700" fill="#E65100">282.6 ÷ 3 = 94.2 立方厘米</text>
+        <rect x="16" y="186" width="368" height="56" rx="8" fill="#F5F5F5" stroke="#B0BEC5" stroke-width="1.2"/>
+        <text x="200" y="206" text-anchor="middle" font-size="11" font-weight="700" fill="#455A64">顺带：侧面积 = 底面周长 × 高</text>
+        <text x="200" y="228" text-anchor="middle" font-size="11.5" fill="#455A64">2 × 3.14 × 3 × 10 = 188.4 平方厘米</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    先算底面那个圆：3.14 × 3² = <strong>28.26 平方厘米</strong>。再乘高：V柱 = 28.26 × 10 = <strong>282.6 立方厘米</strong>。
+  </p>
+  <p class="teach-text" id="p5s2">
+    等底等高的圆锥再除以 3：V锥 = 282.6 ÷ 3 = <strong>94.2 立方厘米</strong>。侧面积另算：底面周长 × 高 = 2 × 3.14 × 3 × 10 = 188.4 平方厘米。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>底面积</h4>
+    <div class="eq">3.14 × 3² = 28.26 cm²</div>
+    <p>先把底面圆算出来。</p>
+  </div>
+  <div class="card">
+    <h4>圆柱体积</h4>
+    <div class="eq">28.26 × 10 = 282.6 cm³</div>
+    <p>底面积 × 高。</p>
+  </div>
+  <div class="card">
+    <h4>圆锥体积</h4>
+    <div class="eq">282.6 ÷ 3 = 94.2 cm³</div>
+    <p>等底等高取 1/3。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  三个量都从<strong>底面积 πr²</strong>出发；别把侧面积 2πrh 和体积 πr²h 混了，更别忘了圆锥那个 1/3。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">等底等高倒水：倒几次能装满圆锥</h2>
+  <p class="sim-desc">点「倒一次」把圆柱里的水一份一份倒进等底等高的圆锥，看几次装满，右侧体积同步算出。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">第 1 组 · r=3 厘米，h=10 厘米 · 已倒 0 / 3 次</span>
+    <span class="sim-tip" id="simTip">点画布或按钮倒水</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simPour()">① 倒一次</button>
+    <button class="btn-primary" onclick="simNextCase()">换一组尺寸</button>
+    <button class="btn-retry" onclick="simRunAll()">一键倒满</button>
+    <button class="btn-retry" onclick="simReset()">重来</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">等底等高：3 次正好装满，圆锥体积是圆柱的 1/3</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>圆柱侧面沿高剪开是长方形，长 = 底面周长，宽 = 高。</li>
+    <li>圆柱体积 = 底面积 × 高 = πr²h。</li>
+    <li>等底等高的圆锥，体积是圆柱的 1/3，别忘记除以 3。</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 体积与实验</h2>
+  <p class="quiz-hint">这一组要会用 πr²h 和 1/3。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. r = 3，h = 10，π 取 3.14，圆柱体积是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>94.2</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>188.4</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>282.6</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 圆柱侧面展开的长方形，长等于？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>底面周长</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>圆柱的高</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>底面直径</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 倒 3 次圆柱水装满等底等高圆锥，说明？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>两者体积相等</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>圆柱是圆锥的 3 倍</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>圆锥是圆柱的 3 倍</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四个易错点，都在「底面积」和「三分之一」上 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四个易错点，都在「底面积」和「三分之一」上</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    学这一课最容易错的地方，是<strong>把侧面积当成体积</strong>，以及<strong>算圆锥时忘记除以 3</strong>。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>坑一：漏 1/3</h4>
+    <div class="eq">圆锥也用 πr²h ✗</div>
+    <p>等底等高时圆锥只有圆柱的 1/3。</p>
+  </div>
+  <div class="card">
+    <h4>坑二：周长当底面积</h4>
+    <div class="eq">V = 2πr × h ✗</div>
+    <p>体积用底面积 πr²，不是底面周长。</p>
+  </div>
+  <div class="card">
+    <h4>坑三：少算一个底面</h4>
+    <div class="eq">表面积 = 侧面积 + πr² ✗</div>
+    <p>圆柱有两个底面，要加 2πr²。</p>
+  </div>
+  <div class="card">
+    <h4>坑四：半径平方算错</h4>
+    <div class="eq">3² = 6 ✗</div>
+    <p>3² = 9，底面积是 28.26。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  一句话：<strong>先算底面积 πr²</strong>，圆柱体积 = 底面积 × 高，圆锥再除以 3；表面积是侧面积加两个底面，别混。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到开头：一圆柱水倒进等底等高圆锥，3 次正好装满，所以圆锥体积是圆柱的 1/3。若忘记除以 3，会把 94.2 算成 282.6，整整差 3 倍。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题验收</h2>
+  <p class="quiz-hint">最后一组，记得先算底面积。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 圆柱表面积 = 侧面积 + ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1 个底面积</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>2 个底面积</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3 个底面积</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. r = 1，h = 3，π 取 3.14，圆柱侧面积是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>18.84</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>9.42</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>6.28</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 等底等高，圆柱体积 90，圆锥体积是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>270</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>45</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>30</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 圆锥体积公式是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>πr²h</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>1/3 πr²h</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>2πrh</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 把圆柱削成等底等高圆锥，削去部分占圆柱的？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>三分之二</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>三分之一</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>一半</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">侧面</div>
+        <div class="summary-v4-summary">展开是长方形</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>长 = 底面周长 2πr。</p>
+      <p>宽 = 高 h，侧面积 2πrh。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">表面积</div>
+        <div class="summary-v4-summary">侧面积 + 2 个底面</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>2πrh + 2πr²。</p>
+      <p>别漏上面那个圆。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">圆柱体积</div>
+        <div class="summary-v4-summary">底面积 × 高</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>V = πr²h。</p>
+      <p>先算 πr² 再乘 h。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">圆锥体积</div>
+        <div class="summary-v4-summary">等底等高取 1/3</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>倒 3 次正好装满。</p>
+      <p>V = 1/3 πr²h。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  下次遇到圆柱圆锥，先把底面圆算出来（πr²），再乘高；圆锥记得除以 3，表面积记得有两个底面，侧面积用的是底面周长而不是底面积。
+</p>
+</section>
