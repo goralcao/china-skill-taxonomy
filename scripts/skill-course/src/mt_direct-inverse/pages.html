@@ -1,0 +1,580 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>路程一定，开得越快到得越早：两个量为什么反着变？</h1>
+  <p class="sub">六年级数学 · 正比例与反比例</p>
+  <div class="tags">
+    <span class="tag">相关联的量</span>
+    <span class="tag">商一定</span>
+    <span class="tag">积一定</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 470 212" width="480" height="216" role="img" aria-label="商一定是正比例图像为过原点直线，积一定是反比例图像为曲线">
+      <g font-family="sans-serif">
+        <text x="235" y="22" text-anchor="middle" font-size="13" fill="#FFFFFF">路程一定，开得越快到得越早：两个量为什么反着变？</text>
+        <rect x="22" y="38" width="204" height="106" rx="9" fill="rgba(255,167,38,.16)" stroke="rgba(255,255,255,.32)"/>
+        <text x="124" y="58" text-anchor="middle" font-size="12" font-weight="700" fill="#FFA726">商一定 → 正比例</text>
+        <line x1="46" y1="126" x2="200" y2="126" stroke="#B0BEC5" stroke-width="1.2"/>
+        <line x1="46" y1="126" x2="46" y2="66" stroke="#B0BEC5" stroke-width="1.2"/>
+        <line x1="46" y1="126" x2="196" y2="70" stroke="#FFA726" stroke-width="2.6"/>
+        <text x="124" y="96" text-anchor="middle" font-size="10.5" fill="#FFFFFF">过原点的直线</text>
+        <text x="124" y="136" text-anchor="middle" font-size="10" fill="#FFE082">总价 ÷ 数量 = 单价</text>
+        <rect x="244" y="38" width="204" height="106" rx="9" fill="rgba(255,167,38,.16)" stroke="rgba(255,255,255,.32)"/>
+        <text x="346" y="58" text-anchor="middle" font-size="12" font-weight="700" fill="#FFA726">积一定 → 反比例</text>
+        <line x1="268" y1="126" x2="422" y2="126" stroke="#B0BEC5" stroke-width="1.2"/>
+        <line x1="268" y1="126" x2="268" y2="66" stroke="#B0BEC5" stroke-width="1.2"/>
+        <path d="M 274,72 Q 300,116 418,124" fill="none" stroke="#FFA726" stroke-width="2.6"/>
+        <text x="346" y="96" text-anchor="middle" font-size="10.5" fill="#FFFFFF">一条向下弯的曲线</text>
+        <text x="346" y="136" text-anchor="middle" font-size="10" fill="#FFE082">速度 × 时间 = 路程</text>
+        <rect x="22" y="154" width="426" height="46" rx="9" fill="rgba(255,255,255,.10)" stroke="rgba(255,255,255,.28)"/>
+        <text x="235" y="176" text-anchor="middle" font-size="12.5" font-weight="700" fill="#FFFFFF">判断只有一句话：算商，还是算积</text>
+        <text x="235" y="194" text-anchor="middle" font-size="11" fill="#FFA726">商处处相等 → 正比例　·　积处处相等 → 反比例</text>
+      </g>
+    </svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先答三道，凭感觉</h2>
+  <p class="quiz-hint">三道题都在问「两个量怎么一起变」。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 单价一定，买得越多总价越？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>越少</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>越多</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>不变</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 正比例中一定不变的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>乘积</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>比值（商）</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>差</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 路程一定，速度越快所需时间？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>越短</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>越长</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>不变</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 买 3 支笔花 12 元，买 6 支要多少 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">买 3 支笔花 12 元，买 6 支要多少</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="单价一定时总价随数量变化且比值恒定为正比例">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#1A237E">先看正比例：单价 4 元，总价随数量变</text>
+        <rect x="16" y="30" width="368" height="28" rx="5" fill="#1A237E"/>
+        <text x="72" y="49" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFF">数量 / 支</text>
+        <text x="164" y="49" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFF">1</text>
+        <text x="220" y="49" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFF">2</text>
+        <text x="276" y="49" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFF">3</text>
+        <text x="340" y="49" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFF">4</text>
+        <rect x="16" y="58" width="368" height="28" fill="#E8EAF6"/>
+        <text x="72" y="77" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1A237E">总价 / 元</text>
+        <text x="164" y="77" text-anchor="middle" font-size="11" fill="#1A237E">4</text>
+        <text x="220" y="77" text-anchor="middle" font-size="11" fill="#1A237E">8</text>
+        <text x="276" y="77" text-anchor="middle" font-size="11" fill="#1A237E">12</text>
+        <text x="340" y="77" text-anchor="middle" font-size="11" fill="#1A237E">16</text>
+        <rect x="16" y="86" width="368" height="28" fill="#FFFFFF"/>
+        <text x="72" y="105" text-anchor="middle" font-size="10.5" font-weight="700" fill="#E65100">总价 ÷ 数量</text>
+        <text x="164" y="105" text-anchor="middle" font-size="11" font-weight="700" fill="#E65100">4</text>
+        <text x="220" y="105" text-anchor="middle" font-size="11" font-weight="700" fill="#E65100">4</text>
+        <text x="276" y="105" text-anchor="middle" font-size="11" font-weight="700" fill="#E65100">4</text>
+        <text x="340" y="105" text-anchor="middle" font-size="11" font-weight="700" fill="#E65100">4</text>
+        <rect x="16" y="124" width="368" height="48" rx="8" fill="#FFF8E1" stroke="#FFA726" stroke-width="1.2"/>
+        <text x="200" y="146" text-anchor="middle" font-size="12" font-weight="700" fill="#E65100">比值（商）永远是 4，一定不变</text>
+        <text x="200" y="166" text-anchor="middle" font-size="10.5" fill="#1A237E">总价 = 4 × 数量　→　总价和数量成正比例</text>
+        <rect x="16" y="182" width="368" height="60" rx="8" fill="#E8EAF6" stroke="#9FA8DA" stroke-width="1.2"/>
+        <text x="200" y="204" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1A237E">两个条件缺一不可</text>
+        <text x="200" y="224" text-anchor="middle" font-size="10.5" fill="#1A237E">① 一种量变，另一种也跟着变　② 比值一定</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    文具店里 3 支笔 12 元，买 6 支就是 24 元。数量翻倍，总价也翻倍——但更关键的是<strong>总价 ÷ 数量永远等于 4 元</strong>。
+  </p>
+  <p class="teach-text" id="p2s2">
+    像这样，两种量<strong>相关联</strong>（一种变，另一种也跟着变），而且<strong>比值（商）一定</strong>，就说它们成<strong>正比例</strong>：总价 ÷ 数量 = 单价（一定）。
+  </p>
+  <p class="teach-text" id="p2s3">
+    写成式子是 y ÷ x = k，或 y = kx。图像是一条<strong>过原点的直线</strong>，画在坐标纸上很好认。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>相关联</h4>
+    <div class="eq">一个变，另一个跟着变</div>
+    <p>这是前提。</p>
+  </div>
+  <div class="card">
+    <h4>正比例</h4>
+    <div class="eq">y ÷ x = k（一定）</div>
+    <p>看商，不看差。</p>
+  </div>
+  <div class="card">
+    <h4>图像</h4>
+    <div class="eq">过原点的直线</div>
+    <p>表格里商处处相等。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  判断正比例别只看「一起变大」：<strong>一定要算出商，并且处处相等</strong>；同增同减的量未必成比例。
+</div>
+</section>
+
+<!-- ===== p3: 速度乘时间总是 24，为什么时间反而变短 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">速度乘时间总是 24，为什么时间反而变短</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="正反比例对比商一定与积一定以及图像差别">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#1A237E">再看反比例：路程 24 千米不变</text>
+        <rect x="16" y="30" width="368" height="26" rx="5" fill="#1A237E"/>
+        <text x="72" y="48" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFF">速度</text>
+        <text x="164" y="48" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFF">2</text>
+        <text x="220" y="48" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFF">4</text>
+        <text x="276" y="48" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFF">6</text>
+        <text x="340" y="48" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFF">8</text>
+        <rect x="16" y="56" width="368" height="26" fill="#E8EAF6"/>
+        <text x="72" y="74" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1A237E">时间 / 时</text>
+        <text x="164" y="74" text-anchor="middle" font-size="11" fill="#1A237E">12</text>
+        <text x="220" y="74" text-anchor="middle" font-size="11" fill="#1A237E">6</text>
+        <text x="276" y="74" text-anchor="middle" font-size="11" fill="#1A237E">4</text>
+        <text x="340" y="74" text-anchor="middle" font-size="11" fill="#1A237E">3</text>
+        <rect x="16" y="82" width="368" height="26" fill="#FFFFFF"/>
+        <text x="72" y="100" text-anchor="middle" font-size="10.5" font-weight="700" fill="#E65100">速度 × 时间</text>
+        <text x="164" y="100" text-anchor="middle" font-size="11" font-weight="700" fill="#E65100">24</text>
+        <text x="220" y="100" text-anchor="middle" font-size="11" font-weight="700" fill="#E65100">24</text>
+        <text x="276" y="100" text-anchor="middle" font-size="11" font-weight="700" fill="#E65100">24</text>
+        <text x="340" y="100" text-anchor="middle" font-size="11" font-weight="700" fill="#E65100">24</text>
+        <rect x="16" y="118" width="176" height="58" rx="8" fill="#FFF8E1" stroke="#FFA726" stroke-width="1.2"/>
+        <text x="104" y="140" text-anchor="middle" font-size="11.5" font-weight="700" fill="#E65100">正比例</text>
+        <text x="104" y="160" text-anchor="middle" font-size="10.5" fill="#1A237E">商一定　y ÷ x = k</text>
+        <text x="104" y="172" text-anchor="middle" font-size="10" fill="#1A237E">图像：过原点的直线</text>
+        <rect x="208" y="118" width="176" height="58" rx="8" fill="#E8EAF6" stroke="#9FA8DA" stroke-width="1.2"/>
+        <text x="296" y="140" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1A237E">反比例</text>
+        <text x="296" y="160" text-anchor="middle" font-size="10.5" fill="#1A237E">积一定　x × y = k</text>
+        <text x="296" y="172" text-anchor="middle" font-size="10" fill="#1A237E">图像：一条曲线</text>
+        <rect x="16" y="186" width="368" height="56" rx="8" fill="#F5F5F5" stroke="#B0BEC5" stroke-width="1.2"/>
+        <text x="200" y="208" text-anchor="middle" font-size="11.5" font-weight="700" fill="#37474F">同增同减还不够</text>
+        <text x="200" y="230" text-anchor="middle" font-size="10.5" fill="#37474F">反比例里一个变大、另一个反而变小，但乘积始终不变</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    路程 24 千米不变：速度 2 走 12 小时，速度 4 走 6 小时，速度 8 走 3 小时。一个变大、另一个变小，但 <strong>速度 × 时间 = 24 始终不变</strong>。
+  </p>
+  <p class="teach-text" id="p3s2">
+    两种量相关联，且<strong>乘积一定</strong>，就说它们成<strong>反比例</strong>：x × y = k。图像不是直线，而是一条<strong>向下弯的曲线</strong>。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>前提：两种量相关联，一种变另一种跟着变</li>
+  <li>商一定（y ÷ x = k）→ 正比例</li>
+  <li>积一定（x × y = k）→ 反比例</li>
+  <li>正比例图像：过原点的直线</li>
+  <li>反比例图像：一条曲线</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  正反比例只差一个字：<strong>看商还是看积</strong>。把同一组数据既算商又算积，哪个处处相等就归哪一类。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">情境与关系，连一连</h2>
+<p class="teach-text" id="p3bs1">左边是生活情境或关系式，右边是它对应的比例关系。把相配的连起来。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 意义与判断</h2>
+  <p class="quiz-hint">三道题，先想商还是积。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 下面哪组量成正比例？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>单价一定，总价和数量</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>路程一定，速度和时间</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>面积一定，长和宽</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. x 与 y 的比值恒为 5，它们？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>成反比例</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>不成比例</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>成正比例</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 反比例中一定不变的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>比值</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>差</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>乘积</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 拿到两组量，怎么判断成什么比例 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">拿到两组量，怎么判断成什么比例</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="判断正反比例的三步流程与例题">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#1A237E">拿到两组量，按三步判断</text>
+        <rect x="16" y="30" width="112" height="52" rx="8" fill="#E8EAF6" stroke="#9FA8DA"/>
+        <text x="72" y="52" text-anchor="middle" font-size="11" font-weight="700" fill="#1A237E">① 相关联吗</text>
+        <text x="72" y="70" text-anchor="middle" font-size="10" fill="#1A237E">一个变另一个跟着变</text>
+        <text x="136" y="60" text-anchor="middle" font-size="15" font-weight="700" fill="#FFA726">→</text>
+        <rect x="148" y="30" width="112" height="52" rx="8" fill="#E8EAF6" stroke="#9FA8DA"/>
+        <text x="204" y="52" text-anchor="middle" font-size="11" font-weight="700" fill="#1A237E">② 算商</text>
+        <text x="204" y="70" text-anchor="middle" font-size="10" fill="#1A237E">处处相等 → 正比例</text>
+        <text x="268" y="60" text-anchor="middle" font-size="15" font-weight="700" fill="#FFA726">→</text>
+        <rect x="280" y="30" width="104" height="52" rx="8" fill="#FFF8E1" stroke="#FFA726"/>
+        <text x="332" y="52" text-anchor="middle" font-size="11" font-weight="700" fill="#E65100">③ 算积</text>
+        <text x="332" y="70" text-anchor="middle" font-size="10" fill="#E65100">处处相等 → 反比例</text>
+        <rect x="16" y="94" width="368" height="58" rx="8" fill="#E8EAF6" stroke="#9FA8DA" stroke-width="1.2"/>
+        <text x="200" y="116" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1A237E">例：正方形边长与周长</text>
+        <text x="200" y="138" text-anchor="middle" font-size="11" fill="#1A237E">周长 ÷ 边长 = 4（一定）→ 正比例</text>
+        <rect x="16" y="160" width="368" height="58" rx="8" fill="#FFF8E1" stroke="#FFA726" stroke-width="1.2"/>
+        <text x="200" y="182" text-anchor="middle" font-size="11.5" font-weight="700" fill="#E65100">例：路程 120 千米，速度与时间</text>
+        <text x="200" y="204" text-anchor="middle" font-size="11" fill="#E65100">速度 × 时间 = 120（一定）→ 反比例</text>
+        <text x="200" y="234" text-anchor="middle" font-size="10.5" fill="#37474F">商和积都不一定 → 不成比例</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    三步走：先确认<strong>两种量相关联</strong>；再算<strong>商</strong>，处处相等就是正比例；不然算<strong>积</strong>，处处相等就是反比例。
+  </p>
+  <p class="teach-text" id="p5s2">
+    两个都不相等，就<strong>不成比例</strong>。例如正方形周长 ÷ 边长 = 4，是正比例；路程 120 千米时速度 × 时间 = 120，是反比例。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>第一步</h4>
+    <div class="eq">看是否相关联</div>
+    <p>一个变另一个跟着变。</p>
+  </div>
+  <div class="card">
+    <h4>第二步</h4>
+    <div class="eq">算商 y ÷ x</div>
+    <p>处处相等 → 正比例。</p>
+  </div>
+  <div class="card">
+    <h4>第三步</h4>
+    <div class="eq">算积 x × y</div>
+    <p>处处相等 → 反比例。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  别凭「一个变大另一个也变大」就下结论：<strong>一定要列表算几组数据</strong>，商和积都算一遍才稳。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">表格 + 图像：看商一定还是积一定</h2>
+  <p class="sim-desc">切换正 / 反比例场景，换一列数据，左表高亮该列、右图同步点亮对应的点，底部读出恒定不变的量。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">第 1 组 · 正比例 · 单价 4 元 · 第 3 列</span>
+    <span class="sim-tip" id="simTip">点画布或按钮换列</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simNextCase()">① 切换正 / 反比例</button>
+    <button class="btn-primary" onclick="simNextX()">换一列数据</button>
+    <button class="btn-retry" onclick="simReset()">重来</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">表格看商 / 积是否一定，图像看是直线还是曲线</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>两种相关联的量，一种变另一种也跟着变。</li>
+    <li>比值（商）一定 → 正比例，图像是过原点的直线。</li>
+    <li>乘积一定 → 反比例，图像是一条曲线。</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 图像与计算</h2>
+  <p class="quiz-hint">这一组要会用 y = kx 与 xy = k。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 路程 120 千米，速度 60 千米/时，时间是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1 小时</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3 小时</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>2 小时</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 正比例图像是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>过原点的直线</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>曲线</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>折线</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. x × y = 24 一定，x 变大时 y？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>变大</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>变小</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>不变</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四个易错点，都在「一定的是商还是积」上 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四个易错点，都在「一定的是商还是积」上</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    学这一课最容易错的地方，是<strong>只看两个量同增同减就判成正比例</strong>，以及<strong>把商一定和积一定搞反</strong>。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>坑一：只看同增同减</h4>
+    <div class="eq">一起变大就是正比例 ✗</div>
+    <p>还要看比值是不是处处相等。</p>
+  </div>
+  <div class="card">
+    <h4>坑二：商积搞反</h4>
+    <div class="eq">积一定就是正比例 ✗</div>
+    <p>商一定是正比例，积一定是反比例。</p>
+  </div>
+  <div class="card">
+    <h4>坑三：漏了相关联</h4>
+    <div class="eq">两个不相干的量也能成比例 ✗</div>
+    <p>必须一种量变、另一种跟着变。</p>
+  </div>
+  <div class="card">
+    <h4>坑四：反比例当直线</h4>
+    <div class="eq">反比例图像是直线 ✗</div>
+    <p>正比例才是直线，反比例是曲线。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  一句话：<strong>先确认两个量相关联且一起变，再算商、算积</strong>；商处处相等是正比例，积处处相等是反比例，都不是就不成比例。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到开头：路程 120 千米一定，速度 × 时间 = 120 是积一定，所以开得越快花的时间越短。若误当成正比例，会以为「越快花的时间越多」，正好说反了。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题验收</h2>
+  <p class="quiz-hint">最后一组，记得先列表算一算。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 下面哪个是反比例？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>单价一定，总价与数量</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>路程一定，速度与时间</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>正方形边长与周长</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. y = 3x，y 与 x？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>成正比例</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>成反比例</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>不成比例</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. xy = 30，x = 5 时 y = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>150</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>6</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 正比例的关系式是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>xy = k</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>y ÷ x = k</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>x + y = k</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 判断正反比例，先看？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>商一定还是积一定</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>谁大谁小</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>单位是否相同</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">前提</div>
+        <div class="summary-v4-summary">两种量相关联</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>一种量变，另一种跟着变。</p>
+      <p>不相干的量谈不上比例。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">正比例</div>
+        <div class="summary-v4-summary">商一定</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>y ÷ x = k，y = kx。</p>
+      <p>图像是过原点的直线。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">反比例</div>
+        <div class="summary-v4-summary">积一定</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>x × y = k。</p>
+      <p>图像是一条曲线。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">判断</div>
+        <div class="summary-v4-summary">先算商，再算积</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>商处处相等 → 正比例。</p>
+      <p>积处处相等 → 反比例。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  下次判断两个量成什么比例，先列表算几组：商处处相等就是正比例，积处处相等就是反比例，两个都不相等就不成比例；画图时正比例是过原点的直线，反比例是曲线。
+</p>
+</section>

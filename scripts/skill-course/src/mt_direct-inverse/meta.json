@@ -1,0 +1,91 @@
+{
+  "topicId": "mt_direct-inverse",
+  "title": "路程一定，开得越快到得越早：两个量为什么反着变？",
+  "template": "explain",
+  "renderer": "coords",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 6,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S3:NA:AR"
+  ],
+  "prerequisites": [
+    "mt_proportion",
+    "mt_frac-div2"
+  ],
+  "next": [],
+  "objectives": [
+    "理解正比例与反比例的意义，知道两种量必须相关联且一起变化",
+    "会用「比值一定」与「乘积一定」判断正比例、反比例",
+    "能结合表格与图像说明两种比例关系，并解决简单实际问题"
+  ],
+  "cognitiveAction": "辨析",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "正比例",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "反比例",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "怎么判断",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}
