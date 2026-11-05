@@ -1,0 +1,650 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>一个纸盒，为什么正好 12 条棱？</h1>
+  <p class="sub">五年级数学 · 长方体和正方体</p>
+  <div class="tags">
+    <span class="tag">面 6 棱 12 顶点 8</span>
+    <span class="tag">棱分三组</span>
+    <span class="tag">正方体是特殊的长方体</span>
+  </div>
+  <div class="cover-fig">
+    <svg viewBox="0 0 470 214" width="480" height="218" role="img" aria-label="一个长方体的透明线框，能看到 6 个面、12 条棱、8 个顶点">
+      <g font-family="sans-serif">
+        <text x="235" y="18" text-anchor="middle" font-size="13" fill="rgba(255,255,255,.86)">拆开一个纸盒，先数清它有几张面孔</text>
+
+        <polygon points="235.0,42.0 312.9,87.0 259.2,118.0 181.3,73.0" fill="rgba(255,255,255,.14)"/>
+        <line x1="181.3" y1="143.0" x2="259.2" y2="188.0" stroke="#B0BEC5" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="5 5"/>
+        <line x1="181.3" y1="143.0" x2="235.0" y2="112.0" stroke="#B0BEC5" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="5 5"/>
+        <line x1="181.3" y1="143.0" x2="181.3" y2="73.0" stroke="#B0BEC5" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="5 5"/>
+        <line x1="235.0" y1="112.0" x2="312.9" y2="157.0" stroke="rgba(255,255,255,.94)" stroke-width="3.2" stroke-linecap="round"/>
+        <line x1="235.0" y1="42.0" x2="312.9" y2="87.0" stroke="rgba(255,255,255,.94)" stroke-width="3.2" stroke-linecap="round"/>
+        <line x1="181.3" y1="73.0" x2="259.2" y2="118.0" stroke="rgba(255,255,255,.94)" stroke-width="3.2" stroke-linecap="round"/>
+        <line x1="235.0" y1="42.0" x2="181.3" y2="73.0" stroke="rgba(255,255,255,.74)" stroke-width="3.2" stroke-linecap="round"/>
+        <line x1="312.9" y1="157.0" x2="259.2" y2="188.0" stroke="rgba(255,255,255,.74)" stroke-width="3.2" stroke-linecap="round"/>
+        <line x1="312.9" y1="87.0" x2="259.2" y2="118.0" stroke="rgba(255,255,255,.74)" stroke-width="3.2" stroke-linecap="round"/>
+        <line x1="235.0" y1="112.0" x2="235.0" y2="42.0" stroke="rgba(255,255,255,.56)" stroke-width="3.2" stroke-linecap="round"/>
+        <line x1="312.9" y1="157.0" x2="312.9" y2="87.0" stroke="rgba(255,255,255,.56)" stroke-width="3.2" stroke-linecap="round"/>
+        <line x1="259.2" y1="188.0" x2="259.2" y2="118.0" stroke="rgba(255,255,255,.56)" stroke-width="3.2" stroke-linecap="round"/>
+        <circle cx="235.0" cy="112.0" r="3.2" fill="#37474F"/>
+        <circle cx="235.0" cy="42.0" r="3.2" fill="#37474F"/>
+        <circle cx="181.3" cy="143.0" r="3.2" fill="#37474F"/>
+        <circle cx="181.3" cy="73.0" r="3.2" fill="#37474F"/>
+        <circle cx="312.9" cy="157.0" r="3.2" fill="#37474F"/>
+        <circle cx="312.9" cy="87.0" r="3.2" fill="#37474F"/>
+        <circle cx="259.2" cy="188.0" r="3.2" fill="#37474F"/>
+        <circle cx="259.2" cy="118.0" r="3.2" fill="#37474F"/>
+
+        <text x="235" y="208" text-anchor="middle" font-size="12.5" fill="#FFD180">6 个面　12 条棱　8 个顶点</text>
+      </g>
+    </svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先答三道，凭感觉</h2>
+  <p class="quiz-hint">三道题都在数一个纸盒身上的东西。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 一个长方体纸盒，一共有几个面？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>4 个</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>6 个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>8 个</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 长方体两个面相交的那条边，叫什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>棱</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>顶点</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>角</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 长 5 厘米、宽 4 厘米、高 3 厘米的框架，12 条棱加起来多长？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>12 厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>48 厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>60 厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 一个纸盒：6 个面、12 条棱、8 个顶点 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">一个纸盒：6 个面、12 条棱、8 个顶点</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="透明长方体线框，标注出 6 个面、12 条棱、8 个顶点">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#BF360C">摸一摸这个纸盒</text>
+
+        <polygon points="130.0,42.0 213.1,90.0 156.0,123.0 72.8,75.0" fill="#EFEBE9"/>
+        <line x1="72.8" y1="147.0" x2="156.0" y2="195.0" stroke="#B0BEC5" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="4 4"/>
+        <line x1="72.8" y1="147.0" x2="130.0" y2="114.0" stroke="#B0BEC5" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="4 4"/>
+        <line x1="72.8" y1="147.0" x2="72.8" y2="75.0" stroke="#B0BEC5" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="4 4"/>
+        <line x1="130.0" y1="114.0" x2="213.1" y2="162.0" stroke="#8D6E63" stroke-width="2.4" stroke-linecap="round"/>
+        <line x1="130.0" y1="42.0" x2="213.1" y2="90.0" stroke="#8D6E63" stroke-width="2.4" stroke-linecap="round"/>
+        <line x1="72.8" y1="75.0" x2="156.0" y2="123.0" stroke="#8D6E63" stroke-width="2.4" stroke-linecap="round"/>
+        <line x1="130.0" y1="42.0" x2="72.8" y2="75.0" stroke="#8D6E63" stroke-width="2.4" stroke-linecap="round"/>
+        <line x1="213.1" y1="162.0" x2="156.0" y2="195.0" stroke="#8D6E63" stroke-width="2.4" stroke-linecap="round"/>
+        <line x1="213.1" y1="90.0" x2="156.0" y2="123.0" stroke="#8D6E63" stroke-width="2.4" stroke-linecap="round"/>
+        <line x1="130.0" y1="114.0" x2="130.0" y2="42.0" stroke="#8D6E63" stroke-width="2.4" stroke-linecap="round"/>
+        <line x1="213.1" y1="162.0" x2="213.1" y2="90.0" stroke="#8D6E63" stroke-width="2.4" stroke-linecap="round"/>
+        <line x1="156.0" y1="195.0" x2="156.0" y2="123.0" stroke="#8D6E63" stroke-width="2.4" stroke-linecap="round"/>
+        <circle cx="130.0" cy="114.0" r="3.2" fill="#37474F"/>
+        <circle cx="130.0" cy="42.0" r="3.2" fill="#37474F"/>
+        <circle cx="72.8" cy="147.0" r="3.2" fill="#37474F"/>
+        <circle cx="72.8" cy="75.0" r="3.2" fill="#37474F"/>
+        <circle cx="213.1" cy="162.0" r="3.2" fill="#37474F"/>
+        <circle cx="213.1" cy="90.0" r="3.2" fill="#37474F"/>
+        <circle cx="156.0" cy="195.0" r="3.2" fill="#37474F"/>
+        <circle cx="156.0" cy="123.0" r="3.2" fill="#37474F"/>
+
+        <circle cx="228" cy="54" r="5" fill="#0277BD"/>
+        <text x="240" y="59" font-size="12" font-weight="700" fill="#0277BD">面　6 个</text>
+        <text x="240" y="76" font-size="10" fill="#90A4AE">都是长方形</text>
+
+        <circle cx="228" cy="104" r="5" fill="#E65100"/>
+        <text x="240" y="109" font-size="12" font-weight="700" fill="#E65100">棱　12 条</text>
+        <text x="240" y="126" font-size="10" fill="#90A4AE">两个面相交的边</text>
+
+        <circle cx="228" cy="154" r="5" fill="#2E7D32"/>
+        <text x="240" y="159" font-size="12" font-weight="700" fill="#2E7D32">顶点　8 个</text>
+        <text x="240" y="176" font-size="10" fill="#90A4AE">三条棱相交的点</text>
+
+        <rect x="20" y="208" width="360" height="34" rx="8" fill="#FFF3E0" stroke="#FFB74D" stroke-width="1.3"/>
+        <text x="200" y="230" text-anchor="middle" font-size="11.5" font-weight="700" fill="#BF360C">面 6　棱 12　顶点 8 —— 跟尺寸无关</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    拿一个长方体纸盒，它值 8 元，摸上去有 6 个面：上、下、前、后、左、右。每个面都是长方形，相对的两个面一模一样。
+  </p>
+  <p class="teach-text" id="p2s2">
+    两个面相交的那条边叫<strong>棱</strong>，数一数有 12 条；三条棱相交的那个点叫<strong>顶点</strong>，一共 8 个。
+  </p>
+  <p class="teach-text" id="p2s3">
+    这不是巧合：8 个顶点，每个顶点伸出 3 条棱，8 × 3 = 24，可每条棱被两个顶点共用，24 ÷ 2 = 12。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>面</h4>
+    <div class="eq">6 个</div>
+    <p>上、下、前、后、左、右，相对的两个面完全相同。</p>
+  </div>
+  <div class="card">
+    <h4>棱</h4>
+    <div class="eq">12 条</div>
+    <p>两个面相交的边，四面墙一样的道理。</p>
+  </div>
+  <div class="card">
+    <h4>顶点</h4>
+    <div class="eq">8 个</div>
+    <p>三条棱相交的点，像盒子的八个角。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  不管盒子多大多小，只要它是长方体，就一定是<strong>6 个面、12 条棱、8 个顶点</strong>。这三个数跟尺寸无关。
+</div>
+</section>
+
+<!-- ===== p3: 12 条棱看着多，其实只有三组 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">12 条棱看着多，其实只有三组</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="长方体按方向把 12 条棱分成三组：4 条长是蓝色、4 条宽是橙色、4 条高是绿色">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#BF360C">12 条棱，只有三组长短</text>
+
+        <polygon points="128.0,50.0 202.5,93.0 150.5,123.0 76.0,80.0" fill="#FAFAFA"/>
+        <line x1="76.0" y1="146.0" x2="150.5" y2="189.0" stroke="#B0BEC5" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="4 4"/>
+        <line x1="76.0" y1="146.0" x2="128.0" y2="116.0" stroke="#B0BEC5" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="4 4"/>
+        <line x1="76.0" y1="146.0" x2="76.0" y2="80.0" stroke="#B0BEC5" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="4 4"/>
+        <line x1="128.0" y1="116.0" x2="202.5" y2="159.0" stroke="#1565C0" stroke-width="4.0" stroke-linecap="round"/>
+        <line x1="128.0" y1="50.0" x2="202.5" y2="93.0" stroke="#1565C0" stroke-width="4.0" stroke-linecap="round"/>
+        <line x1="76.0" y1="80.0" x2="150.5" y2="123.0" stroke="#1565C0" stroke-width="4.0" stroke-linecap="round"/>
+        <line x1="128.0" y1="50.0" x2="76.0" y2="80.0" stroke="#EF6C00" stroke-width="4.0" stroke-linecap="round"/>
+        <line x1="202.5" y1="159.0" x2="150.5" y2="189.0" stroke="#EF6C00" stroke-width="4.0" stroke-linecap="round"/>
+        <line x1="202.5" y1="93.0" x2="150.5" y2="123.0" stroke="#EF6C00" stroke-width="4.0" stroke-linecap="round"/>
+        <line x1="128.0" y1="116.0" x2="128.0" y2="50.0" stroke="#2E7D32" stroke-width="4.0" stroke-linecap="round"/>
+        <line x1="202.5" y1="159.0" x2="202.5" y2="93.0" stroke="#2E7D32" stroke-width="4.0" stroke-linecap="round"/>
+        <line x1="150.5" y1="189.0" x2="150.5" y2="123.0" stroke="#2E7D32" stroke-width="4.0" stroke-linecap="round"/>
+        <circle cx="128.0" cy="116.0" r="3.2" fill="#37474F"/>
+        <circle cx="128.0" cy="50.0" r="3.2" fill="#37474F"/>
+        <circle cx="76.0" cy="146.0" r="3.2" fill="#37474F"/>
+        <circle cx="76.0" cy="80.0" r="3.2" fill="#37474F"/>
+        <circle cx="202.5" cy="159.0" r="3.2" fill="#37474F"/>
+        <circle cx="202.5" cy="93.0" r="3.2" fill="#37474F"/>
+        <circle cx="150.5" cy="189.0" r="3.2" fill="#37474F"/>
+        <circle cx="150.5" cy="123.0" r="3.2" fill="#37474F"/>
+
+        <rect x="246" y="42" width="142" height="34" rx="7" fill="#E3F2FD" stroke="#90CAF9" stroke-width="1.2"/>
+        <text x="258" y="64" font-size="12" font-weight="700" fill="#1565C0">长　4 条</text>
+        <text x="376" y="64" text-anchor="end" font-size="10" fill="#5C6BC0">一样长</text>
+
+        <rect x="246" y="84" width="142" height="34" rx="7" fill="#FFF3E0" stroke="#FFCC80" stroke-width="1.2"/>
+        <text x="258" y="106" font-size="12" font-weight="700" fill="#E65100">宽　4 条</text>
+        <text x="376" y="106" text-anchor="end" font-size="10" fill="#EF6C00">一样长</text>
+
+        <rect x="246" y="126" width="142" height="34" rx="7" fill="#E8F5E9" stroke="#A5D6A7" stroke-width="1.2"/>
+        <text x="258" y="148" font-size="12" font-weight="700" fill="#2E7D32">高　4 条</text>
+        <text x="376" y="148" text-anchor="end" font-size="10" fill="#43A047">一样长</text>
+
+        <text x="246" y="182" font-size="10.5" fill="#78909C">4 + 4 + 4 = 12 条</text>
+
+        <rect x="20" y="200" width="360" height="40" rx="8" fill="#FFF3E0" stroke="#FFB74D" stroke-width="1.3"/>
+        <text x="200" y="217" text-anchor="middle" font-size="11" fill="#8D6E63">搭一个框架，只要三种长度的小棒</text>
+        <text x="200" y="233" text-anchor="middle" font-size="12" font-weight="700" fill="#BF360C">每种 4 根，一共 12 根</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    12 条棱按方向分，只有三组：4 条长的、4 条宽的、4 条高的。同一组的 4 条棱长度完全一样。
+  </p>
+  <p class="teach-text" id="p3s2">
+    所以焊一个长方体框架，只要准备三种长度的小棒，每种 4 根——不用量 12 次。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>长、宽、高各 4 条，4 + 4 + 4 = 12 条</li>
+  <li>相对的两个面完全相同，面积也相等</li>
+  <li>相交于同一个顶点的三条棱，分别就是长、宽、高</li>
+  <li>棱长总和 =（长 + 宽 + 高）× 4</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  棱长总和 =（长 + 宽 + 高）× 4。长 5、宽 4、高 3 的盒子，就是（5+4+3）×4 = <strong>48 厘米</strong>。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">这些数，都数清楚了吗</h2>
+<p class="teach-text" id="p3bs1">左边是问题，右边是答案。把相配的连起来，注意别把「面」「棱」「顶点」三个词弄混。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 数清楚这三个数</h2>
+  <p class="quiz-hint">三道题，看清问的是面、棱还是顶点。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 一个长方体，棱一共有多少条？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>12 条</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>8 条</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>6 条</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 长 6 厘米、宽 5 厘米、高 4 厘米的长方体框架，棱长总和是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>15 厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>60 厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>30 厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 相交于一个顶点的三条棱，分别是这个长方体的什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>三条棱都一样长</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>三个面的面积</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>长、宽、高</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 正方体，是特殊的长方体 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">正方体，是特殊的长方体</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+    <svg viewBox="0 0 400 252" width="400" height="252" role="img" aria-label="左边是长宽高不同的长方体，右边是长宽高都相等的正方体，箭头表示正方体是特殊的长方体">
+      <g font-family="sans-serif">
+        <text x="12" y="18" font-size="12.5" font-weight="700" fill="#BF360C">长宽高都一样，就成了正方体</text>
+
+        <polygon points="96.0,46.0 165.3,86.0 116.8,114.0 47.5,74.0" fill="#E3F2FD"/>
+        <line x1="47.5" y1="138.0" x2="116.8" y2="178.0" stroke="#B0BEC5" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="4 4"/>
+        <line x1="47.5" y1="138.0" x2="96.0" y2="110.0" stroke="#B0BEC5" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="4 4"/>
+        <line x1="47.5" y1="138.0" x2="47.5" y2="74.0" stroke="#B0BEC5" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="4 4"/>
+        <line x1="96.0" y1="110.0" x2="165.3" y2="150.0" stroke="#1565C0" stroke-width="2.6" stroke-linecap="round"/>
+        <line x1="96.0" y1="46.0" x2="165.3" y2="86.0" stroke="#1565C0" stroke-width="2.6" stroke-linecap="round"/>
+        <line x1="47.5" y1="74.0" x2="116.8" y2="114.0" stroke="#1565C0" stroke-width="2.6" stroke-linecap="round"/>
+        <line x1="96.0" y1="46.0" x2="47.5" y2="74.0" stroke="#EF6C00" stroke-width="2.6" stroke-linecap="round"/>
+        <line x1="165.3" y1="150.0" x2="116.8" y2="178.0" stroke="#EF6C00" stroke-width="2.6" stroke-linecap="round"/>
+        <line x1="165.3" y1="86.0" x2="116.8" y2="114.0" stroke="#EF6C00" stroke-width="2.6" stroke-linecap="round"/>
+        <line x1="96.0" y1="110.0" x2="96.0" y2="46.0" stroke="#2E7D32" stroke-width="2.6" stroke-linecap="round"/>
+        <line x1="165.3" y1="150.0" x2="165.3" y2="86.0" stroke="#2E7D32" stroke-width="2.6" stroke-linecap="round"/>
+        <line x1="116.8" y1="178.0" x2="116.8" y2="114.0" stroke="#2E7D32" stroke-width="2.6" stroke-linecap="round"/>
+        <circle cx="96.0" cy="110.0" r="3.2" fill="#37474F"/>
+        <circle cx="96.0" cy="46.0" r="3.2" fill="#37474F"/>
+        <circle cx="47.5" cy="138.0" r="3.2" fill="#37474F"/>
+        <circle cx="47.5" cy="74.0" r="3.2" fill="#37474F"/>
+        <circle cx="165.3" cy="150.0" r="3.2" fill="#37474F"/>
+        <circle cx="165.3" cy="86.0" r="3.2" fill="#37474F"/>
+        <circle cx="116.8" cy="178.0" r="3.2" fill="#37474F"/>
+        <circle cx="116.8" cy="114.0" r="3.2" fill="#37474F"/>
+
+        <polygon points="296.0,36.0 356.6,71.0 296.0,106.0 235.4,71.0" fill="#F3E5F5"/>
+        <line x1="235.4" y1="141.0" x2="296.0" y2="176.0" stroke="#B0BEC5" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="4 4"/>
+        <line x1="235.4" y1="141.0" x2="296.0" y2="106.0" stroke="#B0BEC5" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="4 4"/>
+        <line x1="235.4" y1="141.0" x2="235.4" y2="71.0" stroke="#B0BEC5" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="4 4"/>
+        <line x1="296.0" y1="106.0" x2="356.6" y2="141.0" stroke="#4A148C" stroke-width="2.6" stroke-linecap="round"/>
+        <line x1="296.0" y1="36.0" x2="356.6" y2="71.0" stroke="#4A148C" stroke-width="2.6" stroke-linecap="round"/>
+        <line x1="235.4" y1="71.0" x2="296.0" y2="106.0" stroke="#4A148C" stroke-width="2.6" stroke-linecap="round"/>
+        <line x1="296.0" y1="36.0" x2="235.4" y2="71.0" stroke="#8E24AA" stroke-width="2.6" stroke-linecap="round"/>
+        <line x1="356.6" y1="141.0" x2="296.0" y2="176.0" stroke="#8E24AA" stroke-width="2.6" stroke-linecap="round"/>
+        <line x1="356.6" y1="71.0" x2="296.0" y2="106.0" stroke="#8E24AA" stroke-width="2.6" stroke-linecap="round"/>
+        <line x1="296.0" y1="106.0" x2="296.0" y2="36.0" stroke="#BA68C8" stroke-width="2.6" stroke-linecap="round"/>
+        <line x1="356.6" y1="141.0" x2="356.6" y2="71.0" stroke="#BA68C8" stroke-width="2.6" stroke-linecap="round"/>
+        <line x1="296.0" y1="176.0" x2="296.0" y2="106.0" stroke="#BA68C8" stroke-width="2.6" stroke-linecap="round"/>
+        <circle cx="296.0" cy="106.0" r="3.2" fill="#37474F"/>
+        <circle cx="296.0" cy="36.0" r="3.2" fill="#37474F"/>
+        <circle cx="235.4" cy="141.0" r="3.2" fill="#37474F"/>
+        <circle cx="235.4" cy="71.0" r="3.2" fill="#37474F"/>
+        <circle cx="356.6" cy="141.0" r="3.2" fill="#37474F"/>
+        <circle cx="356.6" cy="71.0" r="3.2" fill="#37474F"/>
+        <circle cx="296.0" cy="176.0" r="3.2" fill="#37474F"/>
+        <circle cx="296.0" cy="106.0" r="3.2" fill="#37474F"/>
+
+        <text x="100" y="202" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1565C0">长方体</text>
+        <text x="100" y="218" text-anchor="middle" font-size="10" fill="#78909C">长 ≠ 宽 ≠ 高</text>
+
+        <text x="296" y="202" text-anchor="middle" font-size="11.5" font-weight="700" fill="#7B1FA2">正方体</text>
+        <text x="296" y="218" text-anchor="middle" font-size="10" fill="#78909C">长 = 宽 = 高</text>
+
+        <path d="M 176 108 L 224 108" stroke="#BF360C" stroke-width="1.6" stroke-dasharray="5 4"/>
+        <path d="M 218 103 L 226 108 L 218 113" fill="none" stroke="#BF360C" stroke-width="1.6"/>
+
+        <text x="200" y="92" text-anchor="middle" font-size="9.5" fill="#BF360C">12 条棱</text>
+        <text x="200" y="128" text-anchor="middle" font-size="9.5" fill="#BF360C">全变一样</text>
+
+        <text x="200" y="242" text-anchor="middle" font-size="10" fill="#78909C">正方体满足长方体的全部条件 → 它是特殊的长方体</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    当长、宽、高变得一样长，12 条棱就全相等，6 个面也全变成正方形——这就是正方体。
+  </p>
+  <p class="teach-text" id="p5s2">
+    正方体并没有丢掉长方体的任何一条性质：6 个面、12 条棱、8 个顶点它都有。所以它只是长方体里最整齐的那一种。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>长方体</h4>
+    <div class="eq">6 面 · 12 棱 · 8 顶点</div>
+    <p>相对的面相同，相对的棱相等，但长宽高不一定相等。</p>
+  </div>
+  <div class="card">
+    <h4>正方体</h4>
+    <div class="eq">6 面 · 12 棱 · 8 顶点</div>
+    <p>12 条棱全相等，6 个面全是正方形。</p>
+  </div>
+  <div class="card">
+    <h4>两者的关系</h4>
+    <div class="eq">正方体 ⊂ 长方体</div>
+    <p>正方体是特殊的长方体，但长方体不一定是正方体。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  课本上这句话要能说清：<strong>正方体是特殊的长方体</strong>。反过来不成立——长方体不一定是正方体。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">搭一个框架，看 12 条棱怎么分组</h2>
+  <p class="sim-desc">按「搭一组」依次放上长、宽、高的棱，看 12 条棱是怎么凑齐的；也可以换个尺寸或缩成正方体。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">5 × 4 × 3 · 已放 0/12</span>
+    <span class="sim-tip" id="simTip">点画布也能搭一组</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simAdd()">搭一组</button>
+    <button class="btn-primary" onclick="simNextCase()">换尺寸</button>
+    <button class="btn-retry" onclick="simReset()">重搭</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">同一方向的 4 条棱一样长，三个方向一共 12 条</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>长、宽、高三个方向各 4 条棱，4 + 4 + 4 = 12，这是「12 条棱」的来历。</li>
+    <li>换成 8×5×2 时，棱长总和 =（8+5+2）× 4 = 60 厘米，可见尺寸变了、条数不变。</li>
+    <li>缩成 4×4×4 时 12 条棱全一样长、6 个面全是正方形，这就是正方体。</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 算棱长总和</h2>
+  <p class="quiz-hint">这一组都要动笔算，先加再乘 4。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 棱长 5 厘米的正方体，棱长总和是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>20 厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>60 厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>30 厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 用 48 厘米长的铁丝焊一个长方体框架，长 6 厘米、宽 4 厘米，高是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>2 厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3 厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>4 厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 下面说法正确的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>长方体一定是正方体</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>正方体一定是长方体</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>长方体 12 条棱都相等</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四个坑，都是背混了 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四个坑，都是背混了</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    面、棱、顶点是三个不同的东西，考试最爱在这里换数字。记住一句话：<strong>面 6、棱 12、顶点 8</strong>。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>坑一：数混</h4>
+    <div class="eq">8 条棱、12 个顶点 ✗</div>
+    <p>正好反了。棱 12、顶点 8，可以记「棱比顶点多 4」。</p>
+  </div>
+  <div class="card">
+    <h4>坑二：以为都相等</h4>
+    <div class="eq">长方体 12 条棱一样长 ✗</div>
+    <p>只有正方体才 12 条全相等。长方体是每 4 条一组相等。</p>
+  </div>
+  <div class="card">
+    <h4>坑三：忘乘 4</h4>
+    <div class="eq">长5宽4高3：5+4+3=12 ✗</div>
+    <p>12 只是一组长宽高，框架有 4 组，要再乘 4 得 48 厘米。</p>
+  </div>
+  <div class="card">
+    <h4>坑四：关系说反</h4>
+    <div class="eq">长方体一定是正方体 ✗</div>
+    <p>反了。正方体是特殊的长方体，长方体不一定正方。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  三个数记牢：<strong>面 6、棱 12、顶点 8</strong>。算棱长总和先加长宽高，再<strong>乘 4</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到开头那个纸盒：如果厂里把它改成长 8、宽 5、高 2 厘米，棱还是 12 条、面还是 6 个，可棱长总和变成（8+5+2）×4 = 60 厘米，用的纸板边料更多了——形状变了，条数没变。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题验收</h2>
+  <p class="quiz-hint">最后一组，面、棱、顶点三个词看仔细。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 一个长方体，面、棱、顶点各是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>6 面、12 棱、8 顶点</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>6 面、8 棱、12 顶点</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>8 面、12 棱、6 顶点</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 长 7 厘米、宽 4 厘米、高 3 厘米的长方体，棱长总和是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>14 厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>56 厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>42 厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 棱长 8 厘米的正方体，棱长总和是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>32 厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>64 厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>96 厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 一个长方体框架用了 60 厘米铁丝，长 7 厘米、宽 5 厘米，高是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>3 厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>2 厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>4 厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 关于正方体和长方体，哪种说法对？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>正方体不是长方体</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>正方体是特殊的长方体</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>长方体的 6 个面都是正方形</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">面 6、棱 12、顶点 8</div>
+        <div class="summary-v4-summary">跟盒子多大没关系，形状定了数就定了</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>两个面相交的边叫棱，三条棱相交的点叫顶点。</p>
+      <p>8 个顶点各伸出 3 条棱，每条被数两遍，8×3÷2 = 12。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">12 条棱只有三组长短</div>
+        <div class="summary-v4-summary">长 4 条 · 宽 4 条 · 高 4 条</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>同一方向的 4 条棱一样长，做框架只要三种长度的小棒。</p>
+      <p>相交于一个顶点的三条棱，就是长、宽、高。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">棱长总和 =（长+宽+高）× 4</div>
+        <div class="summary-v4-summary">（5+4+3）×4 = 48 厘米</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>先加一组长宽高，再乘 4 组。</p>
+      <p>已知总和反求高：总和 ÷ 4 − 长 − 宽。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">正方体是特殊的长方体</div>
+        <div class="summary-v4-summary">长 = 宽 = 高 时，12 条棱全相等</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>正方体一个条件都没少，只是长宽高恰好相等。</p>
+      <p>反过来说「长方体一定是正方体」就错了。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  下次拿到一个盒子，先别急着量——<strong>先数</strong>：6 个面、12 条棱、8 个顶点。数完了再想要不要乘 4，因为 12 条棱本来就是 3 组 × 4 条。
+</p>
+</section>
