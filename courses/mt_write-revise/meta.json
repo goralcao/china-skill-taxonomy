@@ -2,17 +2,19 @@
   "status": "reviewed",
   "author": "goral.cao",
   "license": "CC-BY-SA-4.0",
-  "version": "1.0.0",
-  "updatedAt": "2026-10-30",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
   "subject": "语文",
   "template": "explain",
   "topicId": "mt_write-revise",
-  "title": "修改习作：先敢删，再谈改",
+  "title": "修改习作：8 张旧文句卡，先敢删再谈改",
   "renderer": "checkup",
-  "duration": 13,
-  "interactions": 6,
+  "duration": 30,
+  "interactions": 16,
   "grade": 3,
-  "standards": [],
+  "standards": [
+    "chinese-2022:S2:LR"
+  ],
   "prerequisites": [
     "mt_write-picture",
     "mt_write-imitate"
@@ -21,9 +23,71 @@
     "mt_write-summary"
   ],
   "objectives": [
-    "知道三年级要改的是增、删、调、换，不是只找错别字",
-    "用五条体检清单找出该改的句子，每条都必须落到具体一句上",
-    "删掉一句可有可无的话，把地方让给真正重要的事"
+    "能从 8 张旧文句卡里先撒后收，只挑 1 句「我最想删的」，点出 3 个要用的词",
+    "能按字词、句子、内容三层给骨架各填一个功能，再抄原句、写改后、说一句为什么改",
+    "能按 5 条体检单增删改调换，点中句子才记改动，最后出刊成改前改后对照页"
   ],
-  "cognitiveAction": "辨析"
+  "cognitiveAction": "辨析",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "起意",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "搭骨架",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "起草",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "改",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "出刊",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
 }

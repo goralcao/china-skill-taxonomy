@@ -1,0 +1,569 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>修改习作：8 张旧文句卡，先敢删再谈改</h1>
+  <p class="sub">三年级语文 · 习作</p>
+  <div class="tags">
+    <span class="tag">语文要素·习作</span>
+    <span class="tag">出声读与敢删</span>
+    <span class="tag">2022课标</span>
+    <span class="tag">改前改后对照</span>
+  </div>
+  <div class="cover-fig">
+<svg viewBox="0 0 760 190" width="760" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="从八张旧文句卡到改前后对照">
+  <rect x="0" y="0" width="760" height="190" rx="18" fill="#FFFFFF" opacity=".10"/>
+  <text x="28" y="30" font-size="15" fill="#EAF2EE" font-weight="700">不写新作文：从旧文里挑一句，敢删、敢改，出刊成对照页</text>
+  <rect x="28" y="48" width="212" height="112" rx="12" fill="#EAE8F1" stroke="#9189AC"/>
+  <text x="44" y="74" font-size="13" fill="#4A4A6B" font-weight="700">起意 · 8 张旧文句卡</text>
+  <text x="44" y="100" font-size="13" fill="#4A463E">圈出重复啰嗦的整句</text>
+  <text x="44" y="126" font-size="13" fill="#4A463E">只收 1 句「我最想删的」</text>
+  <text x="252" y="104" font-size="24" fill="#FFC48A">⟶</text>
+  <rect x="286" y="48" width="200" height="112" rx="12" fill="#FFFFFF" stroke="#DDD3BE"/>
+  <text x="302" y="74" font-size="13" fill="#4A4A6B" font-weight="700">搭骨架 · 读旧文</text>
+  <text x="302" y="100" font-size="13" fill="#4A463E">字词 → 句子 → 内容三层</text>
+  <text x="302" y="126" font-size="13" fill="#4A463E">原句 / 改后 / 为什么改</text>
+  <text x="498" y="104" font-size="24" fill="#FFC48A">⟶</text>
+  <rect x="530" y="48" width="202" height="112" rx="12" fill="#FBEAD9" stroke="#B26B3A"/>
+  <text x="546" y="74" font-size="13" fill="#B26B3A" font-weight="700">改 · 出刊</text>
+  <text x="546" y="100" font-size="13" fill="#4A463E">5 条体检单，点中一句才算改</text>
+  <text x="546" y="126" font-size="13" fill="#4A463E">改前 / 改后对照，自己署名</text>
+</svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">前测 · 什么才算「修改」</h2>
+  <p class="quiz-hint">三道题都有唯一答案，答错会告诉你错在哪。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 写完习作，第一步最该做什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>出声读一遍，听听哪里拗口</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>先数够字数</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>先抄一遍范文</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 三年级说的「修改」，主要改的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>只改错别字</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>句子上的增、删、调、换</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>纸张的整洁</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 「把错别字改掉」为什么不算这一课的「改」？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>错别字不用改</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>字数会变少</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>它改的是字，不是句子；改一节课只改几个字，文章还是那样</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 起意 · 8 张旧文句卡，只收 1 句最想删的 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">起意 · 8 张旧文句卡，只收 1 句最想删的</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+<svg viewBox="0 0 300 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="三层检查与敢删">
+  <rect x="8" y="8" width="284" height="52" rx="10" fill="#EAE8F1" stroke="#9189AC"/>
+  <text x="22" y="34" font-size="14" fill="#4A4A6B" font-weight="700">字词 → 句子 → 内容</text>
+  <text x="22" y="56" font-size="13" fill="#4A463E">三层逐层查，别一上来就改字</text>
+  <rect x="8" y="70" width="284" height="52" rx="10" fill="#FFFFFF" stroke="#DDD3BE"/>
+  <text x="22" y="96" font-size="14" fill="#4A463E">最难的是「敢删」</text>
+  <text x="22" y="118" font-size="13" fill="#4A463E">删掉重复啰嗦的整句，不是只改字</text>
+  <rect x="8" y="132" width="284" height="48" rx="10" fill="#FBEAD9" stroke="#B26B3A"/>
+  <text x="22" y="158" font-size="13" fill="#B26B3A" font-weight="700">出声读一遍，拗口处自己会冒出来</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    这一课<b>不写新作文</b>。把上次那篇翻出来，出声读一遍，「然后……然后……」和连着三个「我」自己就会冒出来。
+  </p>
+  <p class="teach-text" id="p2s2">
+    花 <b>10 分钟</b>把 8 张旧文句卡翻一遍：先随便点进素材池，再收 1 张进主格当「我最想删的一句」。<b>点哪张都行，不判好坏</b>。
+  </p>
+  <p class="teach-text" id="p2s3">
+    最后点 3 个「我还要用的词」。这一步只留一个痕迹：<b>这轮我打算改哪一处</b>。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>撒</h4>
+    <div class="eq">8 张旧文句卡</div>
+    <p>先把旧文翻一遍。</p>
+  </div>
+  <div class="card">
+    <h4>收</h4>
+    <div class="eq">1 句最想删的</div>
+    <p>这轮只改一处。</p>
+  </div>
+  <div class="card">
+    <h4>词</h4>
+    <div class="eq">点 3 个词</div>
+    <p>写改后时用得上。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  <div id="idBox">
+  <div class="id-wall">
+    <div class="id-card" data-n="1">然后放下书包，然后拿出作业本</div>
+    <div class="id-card" data-n="2">我跑过去看，什么也没看见</div>
+    <div class="id-card" data-n="3">我很开心，很好玩</div>
+    <div class="id-card" data-n="4">这一天就这样过去了</div>
+    <div class="id-card" data-n="5">早上我起床，然后刷牙，然后吃饭</div>
+    <div class="id-card" data-n="6">我看见一只猫</div>
+    <div class="id-card" data-n="7">今天真好，真高兴</div>
+    <div class="id-card" data-n="8">就这样吧</div>
+  </div>
+  <div class="id-pool"></div>
+  <div class="id-main"></div>
+  <div class="id-words">
+    <span class="id-word">删掉</span>
+    <span class="id-word">换成</span>
+    <span class="id-word">调一下</span>
+    <span class="id-word">出声读</span>
+    <span class="id-word">空词</span>
+    <span class="id-word">具体动作</span>
+  </div>
+  <div class="trace-why" id="idWhy">花 <b>10 分钟</b>把 8 张旧文句卡翻一遍：先随便点进素材池，再收 1 张进主格当「我最想删的一句」，最后点 3 个「我还要用的词」。</div>
+  <div class="trace-note" id="idNote">素材池 0 张 · 主格 0 / 1 张 · 想写的词 0 / 3（不判好坏）</div>
+</div>
+</div>
+</section>
+
+<!-- ===== p3: 搭骨架 · 字词、句子、内容，三层逐层查 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">搭骨架 · 字词、句子、内容，三层逐层查</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="三层检查三格各有功能">
+  <rect x="8" y="10" width="284" height="44" rx="9" fill="#FFFFFF" stroke="#DDD3BE"/>
+  <text x="20" y="38" font-size="13" fill="#4A463E">第一格　字词：用词、标点对不对</text>
+  <rect x="8" y="62" width="284" height="44" rx="9" fill="#EAE8F1" stroke="#9189AC"/>
+  <text x="20" y="90" font-size="13" fill="#4A4A6B">第二格　句子：重复啰嗦的整句（详）</text>
+  <rect x="8" y="114" width="284" height="44" rx="9" fill="#FBEAD9" stroke="#B26B3A"/>
+  <text x="20" y="142" font-size="13" fill="#B26B3A" font-weight="700">第三格　内容：这段跟那件事有关吗</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    给三格排顺序：字词 → 句子 → 内容。每格填一句「这层要让人知道___」，再点详略。
+  </p>
+  <p class="teach-text" id="p3s2">
+    这里只报「三格功能填了几格、详略点了几格」，<b>不判好坏</b>，填不完整也能往下走。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>三层逐层查：字词看用词标点，句子看重复啰嗦，内容看这段跟那件事有没有关系。</li>
+  <li>每格填一句功能；别一上来就只改错别字，那不属于这一课的「改」。</li>
+  <li>句子层多写几行，字词层带过；详略点一下就行，不用写理由。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  <div id="boBox">
+  <div class="bo-rows">
+    <div class="bo-row"><span class="bo-up">↑ 上移</span><span class="bo-txt">字词层：用词、标点对不对</span><input class="bo-fn" placeholder="这层要让人知道___"><span class="bo-level">详</span><span class="bo-level">略</span></div>
+    <div class="bo-row"><span class="bo-up">↑ 上移</span><span class="bo-txt">句子层：重复啰嗦的整句（详）</span><input class="bo-fn" placeholder="这层要让人知道___"><span class="bo-level">详</span><span class="bo-level">略</span></div>
+    <div class="bo-row"><span class="bo-up">↑ 上移</span><span class="bo-txt">内容层：这段跟那件事有关吗</span><input class="bo-fn" placeholder="这层要让人知道___"><span class="bo-level">详</span><span class="bo-level">略</span></div>
+  </div>
+  <div class="trace-why" id="boWhy">每格都填一句「这层要让人知道___」，再点一下详略。三层可以上移调顺序，别一上来就只改错别字。</div>
+  <div class="trace-note" id="boNote">三格功能 0 / 3 · 详略 0 / 3（不判好坏，填不完整也能往下走）</div>
+</div>
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连 · 四件事和四条规矩，各回各家</h2>
+<p class="teach-text" id="p3bs1">左边是修改时的做法，右边是它管的事。连完不用交卷，只看自己能不能说清「为什么」。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 三层检查与「敢删」</h2>
+  <p class="quiz-hint">三道题都有唯一答案，重点看「只收 1 句」和「删整句」。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 8 张旧文句子卡撒开后，下一步该做什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>只收 1 张进主格：我最想删的一句</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>8 张全删掉</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>按句子长短排序</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 「删」在三层检查里主要落在？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>只删一个标点</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>删掉重复啰嗦的整句</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>删掉整篇重新写</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 下面哪一句最像「出声读一遍」能发现的问题？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>题目没写</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>署名没写</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>「我我我」连着三个，读起来拗口</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 读旧文 · 抄原句、写改后、说一句为什么 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">读旧文 · 抄原句、写改后、说一句为什么</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="读旧文三格：原句改后为什么">
+  <rect x="8" y="10" width="284" height="50" rx="9" fill="#EAE8F1" stroke="#9189AC"/>
+  <text x="20" y="32" font-size="13" fill="#4A4A6B" font-weight="700">格式先定：旧文第几句　怎么改</text>
+  <text x="20" y="52" font-size="12" fill="#4A463E">填空条前置，不填也不拦路</text>
+  <rect x="8" y="68" width="284" height="88" rx="9" fill="#FFFFFF" stroke="#DDD3BE"/>
+  <text x="20" y="92" font-size="13" fill="#4A463E">第一格　原句（照抄下来）</text>
+  <text x="20" y="116" font-size="13" fill="#4A463E">第二格　改后（我改的那一句）</text>
+  <text x="20" y="140" font-size="13" fill="#B26B3A" font-weight="700">第三格　为什么改（说一句）</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    「旧文第几句」「打算怎么改」做成填空条前置；三格分别是原句、改后、为什么改。<b>这一页不写新作文</b>。
+  </p>
+  <p class="teach-text" id="p5s2">
+    这里<b>只判写没写，不判好坏</b>。<b>先自己改，再看参考</b>——这一页没有范文，也没有好词好句库。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>格式条</h4>
+    <div class="eq">第几句 + 怎么改</div>
+    <p>先定这一轮。</p>
+  </div>
+  <div class="card">
+    <h4>三格</h4>
+    <div class="eq">原句 / 改后 / 理由</div>
+    <p>各写各的。</p>
+  </div>
+  <div class="card">
+    <h4>存本</h4>
+    <div class="eq">改没改看得出</div>
+    <p>好坏不打分。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  <div id="ddBox">
+  <div class="dd-head">
+    <input id="ddH1" placeholder="旧文第几句，如 第 1 句">
+    <input id="ddH2" placeholder="打算怎么改，如 删">
+  </div>
+  <div class="trace-why" id="ddHeadState">先填旧文第几句和打算怎么改，把这一轮定下来；没填也照样能写（不拦路）。</div>
+  <div class="dd-row"><b>第一格 · 原句（照抄下来）</b><textarea id="ddR1" placeholder="把那句原样抄一遍"></textarea></div>
+  <div class="dd-row"><b>第二格 · 改后（我改的那一句）</b><textarea id="ddR2" placeholder="删 / 增 / 调 / 换，写清改了什么"></textarea></div>
+  <div class="dd-row"><b>第三格 · 为什么改（略）</b><textarea id="ddR3" placeholder="一句说清理由"></textarea></div>
+  <button class="mini-btn" id="ddSave" type="button">存进我的本子</button>
+  <div class="trace-note" id="ddNote">三格写了 0 / 3 行（只判写没写，不判好坏）。这里不写新作文。</div>
+  <div class="trace-why" id="ddState"></div>
+</div>
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">改 · 按体检单，改的是句子</h2>
+  <p class="sim-desc">先点右边一条体检项，旧文高亮可疑句；再点左边一句，才算记下一处改动。增删改调换，不给分数。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">已改 0 / 5 处（改的是句子，不是错别字）</span>
+    <span class="sim-tip" id="simTip">先自己试一次，再看老师改这一句</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn" onclick="simNextCase()">换一篇旧文</button>
+    <button class="btn" onclick="simReset()">重来</button>
+    <button class="btn-primary" onclick="simDemo()">看老师改这一句</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">红删、绿增、蓝调；错别字不在这张单子上，改得好不好也不打分</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>点清单只算看到问题，点中句子才算改过；改完左右对照。</li>
+    <li>能给学生看的只有事实：这个词出现 3 次、这段有两句「我」开头。</li>
+    <li>不判情感、不判立意、不查好词好句；字数也只说「还差 X 字」。</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 增删改调换，改的不是错别字</h2>
+  <p class="quiz-hint">三道题都有唯一答案，注意「点中一句才允许打勾」。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 体检单里「数『然后』，超过 2 个删 1 个」属于哪种改法？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>删</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>增</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>调</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 「只有动作没有感觉」这一句，该改的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>把错别字改掉</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>增：点中该句，插入「我听见／我看见」</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>整段删掉</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 下面哪一项不属于这一课的「改」？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>删掉重复的整句</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>调：把段序理顺</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>给同学作文排个名次</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 出刊 · 改前 / 改后对照 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">出刊 · 改前 / 改后对照</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    把改后的三格拼成一页，署上自己的名字，对着三条标准自查，再点「发布」。勾不满也能出刊。
+  </p>
+  <p class="teach-text" id="p8s2">
+    顺手把四个<b>易错</b>点看一遍：别把改错别字当成「改」，别不敢删整句，别只点清单就算改过，也别在互评里下结论、排名次。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 敢删</h4>
+    <div class="eq">删掉重复整句</div>
+    <p>不啰嗦。</p>
+  </div>
+  <div class="card">
+    <h4>② 落句上</h4>
+    <div class="eq">点中一句才算改</div>
+    <p>不空勾。</p>
+  </div>
+  <div class="card">
+    <h4>③ 有礼貌</h4>
+    <div class="eq">一优点一建议</div>
+    <p>不打分。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  <div id="pbBox">
+  <div class="pb-page" id="pbPage">（还没读旧文。回到「读旧文」那一页写三格，它就会出现在这页书上。）</div>
+  <input class="pb-sign" id="pbSign" placeholder="署名（写不写都行）">
+  <div class="pb-cks">
+    <span class="pb-ck">① 我删掉了重复啰嗦的整句</span>
+    <span class="pb-ck">② 每处改动都落在某一句上</span>
+    <span class="pb-ck">③ 我能说出同学的一个优点和一条建议</span>
+  </div>
+  <button class="mini-btn" id="pbGo" type="button">发布我的一页书</button>
+  <div class="trace-why" id="pbAdvice">三条只问「这一处改清楚了吗」，不问「改得好不好」——勾不满也照样能出刊。</div>
+  <div class="trace-note" id="pbState"></div>
+</div>
+</div>
+
+<p class="teach-text" id="p8apply">
+  这一页没有分数，也没有排行榜。机器能说的是「事实」：删了几句、这个词出现几次；「文章好不好」由你自己出声读一遍说了算。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，把修改的边界说清楚</h2>
+  <p class="quiz-hint">五道题都有唯一答案。做完这一页，你就知道哪些能查、哪些只能自己读。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 互评时，最合适的说法是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>「你这段很清楚，要是把重复的『然后』删掉会更好」</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>「你写得不行」</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>「你排第几」</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 点清单后，为什么必须点中一句才允许打勾？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>为了慢一点</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>让改动落在句子上，不是点一下就算改了</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>系统要求</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 下面哪一项最能说明「敢删」？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>把字写大一点</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>多抄两个成语</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>把重复了三次的「然后……」整句划掉</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 出刊页「改前 / 改后对照」最不能少的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>改后的全文和自己的署名</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>一个分数</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>一张排行榜</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 修改完自查，哪一条最管用？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>数字数够不够</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>读一遍，别人能不能听懂这一件事</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>查有没有用成语</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">留下的是对照页，不是分数</div>
+        <div class="summary-v4-summary">起意 → 出刊</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>修改课的产出物是一页能读的东西：改后全文＋署名。</p>
+      <p>过关的实质是敢删一处、并且改动真的落在句子上。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">三层逐层查</div>
+        <div class="summary-v4-summary">字词 → 句子 → 内容</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>出声读一遍，拗口和重复自己会冒出来。</p>
+      <p>最难的是「敢删」：删掉重复啰嗦的整句，不是只改字。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">最容易翻车的三处</div>
+        <div class="summary-v4-summary">错别字 / 空勾 / 排名次</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>改错别字不等于「改」；点清单不算改过，点中句子才算。</p>
+      <p>互评里下结论、排名次，都不是指到具体那一句的建议。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">只给事实，不给判断</div>
+        <div class="summary-v4-summary">增 删 调 换</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>能给学生看的是「这个词出现 3 次」，不能给的是情感、立意评分。</p>
+      <p>点中一句才允许打勾；自评不合格也照样能出刊。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  <div class="my-page" id="myPage"><b>我改好的一页</b>　（还没读旧文。回到「读旧文」那一页写三格，它就会出现在这里。）</div>
+把改前、改后两行连着读给同桌听：他听得出你删了哪一句、为什么删吗？他说不出的地方，就是下一轮要再改的那一句。下一步练写字，正好接着练「只对照、不打分」。
+</p>
+</section>

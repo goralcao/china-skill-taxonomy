@@ -2,15 +2,15 @@
   "status": "reviewed",
   "author": "goral.cao",
   "license": "CC-BY-SA-4.0",
-  "version": "1.0.0",
-  "updatedAt": "2026-10-30",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
   "subject": "语文",
   "template": "explain",
   "topicId": "mt_word-idiom",
-  "title": "四个字，怎么就能讲一件事？",
+  "title": "成语与四字词语：8 张故事卡，讲清来历意思用法",
   "renderer": "story",
-  "duration": 15,
-  "interactions": 7,
+  "duration": 30,
+  "interactions": 16,
   "grade": 2,
   "standards": [
     "chinese-2022:S1:BQ"
@@ -23,9 +23,71 @@
     "mt_write-narrative"
   ],
   "objectives": [
-    "知道成语多有来历，意思要到故事里去找",
-    "能讲清守株待兔、亡羊补牢各讲了什么事、笑什么夸什么",
-    "能把成语的意思写进一句话里，不硬塞四个字"
+    "能从 8 张故事线索卡里先撒后收，只挑 1 个成语，点出 3 个要用的词",
+    "能给故事、意思、用法三格各填一个功能、点出详略，再分三格写一张成语卡",
+    "能按 5 条体检单增删改调换，点中句子才记改动，最后出刊成一页成语卡"
   ],
-  "cognitiveAction": "辨析"
+  "cognitiveAction": "辨析",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "起意",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "搭骨架",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "起草",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "改",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "出刊",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
 }

@@ -1,0 +1,94 @@
+{
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "subject": "语文",
+  "template": "explain",
+  "topicId": "mt_write-observe",
+  "title": "观察与写清楚：8 张感官卡，只收 1 件事",
+  "renderer": "senses",
+  "duration": 30,
+  "interactions": 16,
+  "grade": 3,
+  "standards": [
+    "chinese-2022:S2:LR"
+  ],
+  "prerequisites": [
+    "mt_sent-extend",
+    "mt_word-accumulate"
+  ],
+  "next": [
+    "mt_write-narrative",
+    "mt_write-person"
+  ],
+  "objectives": [
+    "能从 8 张感官卡里先撒后收，只挑 1 个观察对象，点出 3 个要用的感官词",
+    "能给三格骨架各填一个功能、点出详略，按从外到内或连着三天的顺序轴起草",
+    "能按 5 条体检单增删改调换，点中句子才记改动，最后出刊成一页观察记录"
+  ],
+  "cognitiveAction": "构思",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "起意",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "搭骨架",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "起草",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "改",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "出刊",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

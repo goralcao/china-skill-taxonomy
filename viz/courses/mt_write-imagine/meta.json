@@ -1,10 +1,10 @@
 {
   "topicId": "mt_write-imagine",
-  "title": "想象作文：越想得野，越要站得住",
+  "title": "想象作文：8 张「假如」卡，越想得野越要接得上",
   "template": "explain",
-  "renderer": "checkup",
-  "duration": 15,
-  "interactions": 6,
+  "renderer": "draft",
+  "duration": 30,
+  "interactions": 16,
   "grade": 3,
   "subject": "语文",
   "standards": [
@@ -18,14 +18,76 @@
     "mt_write-center"
   ],
   "objectives": [
-    "能说出想象故事为什么必须给理由、不能前后打架",
-    "能在一篇故事里找出凭空多出的设定和矛盾处",
-    "能只改一处地编出有起因、麻烦、解决的小故事"
+    "能从 8 张「假如」卡里先撒后收，只挑 1 个故事起点，点出 3 个要用的词",
+    "能给起因、经过、结果三格各填一个功能、点出详略，再分三格起草完整故事",
+    "能按 5 条矛盾检查增删改调换，点中句子才记改动，最后出刊成一页故事"
   ],
   "status": "reviewed",
   "author": "goral.cao",
   "license": "CC-BY-SA-4.0",
-  "version": "1.0.0",
-  "updatedAt": "2026-11-03",
-  "cognitiveAction": "构思"
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "cognitiveAction": "构思",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "起意",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "搭骨架",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "起草",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "改",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "出刊",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
 }
