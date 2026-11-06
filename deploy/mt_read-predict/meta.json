@@ -1,0 +1,94 @@
+{
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "subject": "语文",
+  "template": "explain",
+  "topicId": "mt_read-predict",
+  "title": "一边读一边猜：把「我猜」留到读完再翻",
+  "renderer": "predict",
+  "duration": 30,
+  "interactions": 16,
+  "grade": 3,
+  "standards": [
+    "chinese-2022:S2:LR",
+    "chinese-2022:S2:CR"
+  ],
+  "prerequisites": [
+    "mt_read-silent",
+    "mt_read-mark"
+  ],
+  "next": [
+    "mt_read-question"
+  ],
+  "objectives": [
+    "能从题目、插图和上文里找出线索，写出「我猜……因为……」并指回第几句",
+    "能把四张句卡归进「我猜／因为／后来」三栏与「都不支撑」筐，并分别补出依据",
+    "读完能回头对照「后来」和「我猜」差在哪，猜错了也把这一条留着"
+  ],
+  "cognitiveAction": "比较",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "起疑",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "取证",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "对齐",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "说清",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "换文",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

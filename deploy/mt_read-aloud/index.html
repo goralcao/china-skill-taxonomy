@@ -1,0 +1,4269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>朗读：把标点读出来，自己再听一遍</title>
+<style>
+/* ===== 配色方案：从 references/color-schemes.md 选一个 :root 块 ===== */
+:root {
+  --primary: #7A4A2E; --primary-light: #9A6040;
+  --accent: #2F7A6B; --accent-soft: #E4F1EC;
+  --ink: #2B2B28; --paper: #FBF8F0; --paper-2: #F3EDE0;
+  --line: #DDD3BE; --green: #2E7D32; --red: #C62828;
+  --shadow: 0 4px 16px rgba(122,74,46,.12);
+}
+
+/* ===== 课件配置块（所有常量集中声明） ===== */
+/* IMG_PREFIX: 图片路径前缀，统一为 'img/'（图片放 deploy/img/ 子目录，部署后 URL 为 img/xxx.jpg） */
+/* 不在 CSS 中声明，在 JS 中用 var IMG_PREFIX = 'img/'; */
+
+/* ===== 基础样式 ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{overflow:hidden;height:100%}
+body{
+  font-family:"Noto Serif SC","Songti SC","Microsoft YaHei",serif;
+  background:var(--paper);color:var(--ink);
+  height:100dvh;overflow:hidden;position:relative;
+  font-size:21px;line-height:1.65;
+  display:flex;flex-direction:column;
+}
+
+/* ===== 导航条 ===== */
+nav#topNav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  background:linear-gradient(135deg,var(--primary),var(--primary-light));
+  padding:6px 12px;display:flex;align-items:center;gap:10px;
+  flex-wrap:nowrap;overflow-x:auto;
+  box-shadow:0 2px 12px rgba(0,0,0,.15);
+  -webkit-overflow-scrolling:touch;
+}
+nav#topNav::-webkit-scrollbar{height:3px}
+nav#topNav::-webkit-scrollbar-thumb{background:rgba(255,255,255,.3);border-radius:2px}
+nav#topNav .chip{
+  flex-shrink:0;padding:5px 14px;border-radius:20px;
+  background:rgba(255,255,255,.15);color:rgba(255,255,255,.8);
+  font-size:16px;cursor:pointer;transition:all .25s;
+  white-space:nowrap;border:1px solid transparent;font-weight:500;
+}
+nav#topNav .chip:hover{background:rgba(255,255,255,.25)}
+nav#topNav .chip.active{
+  background:var(--accent);color:#fff;font-weight:700;
+  border-color:var(--accent);box-shadow:0 2px 8px rgba(255,143,0,.4);
+}
+/* 导航芯片类型样式 */
+nav#topNav .chip.pre{background:rgba(255,143,0,.25);color:#fff}
+nav#topNav .chip.mid{background:rgba(0,137,123,.25);color:#fff}
+nav#topNav .chip.post{background:rgba(211,47,47,.25);color:#fff}
+nav#topNav .chip.sim{background:rgba(21,101,192,.25);color:#fff}
+nav#topNav .chip-end{background:rgba(255,255,255,.25);color:#fff}
+
+/* ===== 进度条 ===== */
+#progressWrap{
+  position:fixed;top:44px;left:0;right:0;height:4px;z-index:201;
+  background:rgba(0,0,0,.08);
+}
+#progressBar{
+  height:100%;background:var(--accent);
+  width:0%;transition:width .4s ease;border-radius:0 2px 2px 0;
+}
+
+/* ===== 翻页容器 ===== */
+#pageContainer{flex:1;position:relative;overflow:hidden;margin-top:48px}
+
+/* ===== 页面通用 ===== */
+.page{
+  position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;
+  display:none;padding:32px 36px 40px;
+  animation:fadeSlide .4s ease;
+}
+.page.active{display:block}
+@keyframes fadeSlide{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.page::-webkit-scrollbar{width:5px}
+.page::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
+
+/* ===== 全屏按钮：v2026-09-28e 定案「默认不放」 =====
+   资料库外壳 sandbox 无 allow-fullscreen，网页代码达不到 F11 式真全屏；
+   故骨架不放全屏按钮（HTML/CSS/JS 三件套一律不配）。
+   课堂需要全屏时：引导用户直接按键盘 F11，或下载 HTML 直开。
+   确需按钮的特殊场景 → 从 teaching-control.js 取三级降级实现（见 SKILL.md §3.6③）。 */
+
+/* ===== 翻页按钮 ===== */
+/* ⚠ !important 加固（v2026-09-29）：页码与翻页键必须恒在底部居中——
+   实测部分课件会被其它 fixed/absolute 样式挤到左侧，全部属性加 !important 防挤占。 */
+/* ⚠ z-index 500 顶层（v2026-10-13；v1.7.0 改两段式）：页码指示器是教师端入口第一击（1.5s 双击武装 + 点封面徽章），
+   必须恒在页面内容/通信状态/揭示遮罩之上可点击。预留层级表见 workflow-dev.md §3.6④——
+   页面内容元素 z-index 一律 ≤99，禁止与导航层（500）争层级。 */
+#navBtns{
+  position:fixed !important;bottom:20px !important;left:50% !important;
+  right:auto !important;top:auto !important;transform:translateX(-50%) !important;
+  display:flex !important;align-items:center;justify-content:center;gap:16px;z-index:500;
+}
+#navBtns button{
+  width:48px;height:48px;border-radius:50%;border:2px solid var(--primary);
+  background:var(--paper);color:var(--primary);font-size:22px;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:all .2s;box-shadow:var(--shadow);
+}
+#navBtns button:hover{background:var(--primary);color:#fff}
+#navBtns button:disabled{opacity:.35;cursor:default}
+#navBtns button:disabled:hover{background:var(--paper);color:var(--primary)}
+#pageIndicator{font-size:20px;font-weight:700;color:var(--primary);min-width:80px;text-align:center}
+
+/* ===== 封面页 =====
+   注意：display:flex 必须写为 .page.active .cover-page（级联选择器，特异性 0,3,0），
+   绝不能写 .cover-page.active、也绝不能裸写 .cover-page{display:flex}！
+   原因：翻页系统 showPage() 只给 <section class="page"> 加/减 active 类，
+   嵌套的 .cover-page div 永远没有 active 类 → .cover-page.active 永不匹配；
+   裸写 .cover-page{display:flex} 则同特异性(0,1,0)下源码靠后覆盖 .page{display:none}，
+   导致封面翻走后仍渲染（《价格理论》翻走后不消失、《氓》浅黄底+白字均源于此坑）。
+   另：本规则必须自带深色 background 衬托白字 —— 否则白字落在浅色 --paper 上＝整页白底白字
+   （《基尔霍夫定律》封面即此坑：技能内 page-templates.html 用内联渐变、而本骨架曾缺失，
+   两份模板不一致；现已统一由本 CSS 提供默认深色底，任何配色下白字都有对比度）。 */
+.page.active .cover-page{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+  width:100%;height:100%;color:#fff;
+  background:linear-gradient(135deg,rgba(0,0,0,.15),rgba(0,0,0,.35)),linear-gradient(135deg,var(--primary),var(--primary-light));
+}
+#p0{padding:0;overflow:hidden}
+.cover-page h1{font-size:48px;font-weight:900;color:#fff;margin-bottom:12px;text-shadow:0 3px 12px rgba(0,0,0,.5)}
+.cover-page .sub{font-size:24px;color:rgba(255,255,255,.9);margin-bottom:32px}
+.cover-page .tags{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:36px}
+.cover-page .tag{padding:8px 20px;border-radius:24px;background:rgba(255,143,0,.7);color:#fff;font-size:18px;font-weight:600}
+.cover-page .hint{margin-top:40px;font-size:18px;color:rgba(255,255,255,.7)}
+
+/* ===== 讲授页 ===== */
+.teach-title{font-size:34px;font-weight:900;color:var(--primary);margin-bottom:24px;border-bottom:3px solid var(--accent);padding-bottom:10px}
+.teach-text{font-size:21px;line-height:1.8;margin-bottom:20px}
+.teach-text strong{color:var(--accent)}
+.key-box{
+  background:var(--paper-2);border-left:5px solid var(--accent);
+  padding:16px 20px;border-radius:0 10px 10px 0;margin:16px 0;font-size:20px;
+}
+.key-box strong{color:var(--primary)}
+.feature-list{list-style:none;padding:0}
+.feature-list li{padding:10px 0 10px 32px;position:relative;font-size:20px;border-bottom:1px dashed var(--line)}
+.feature-list li::before{content:'';position:absolute;left:4px;top:16px;width:12px;height:12px;border-radius:50%;background:var(--accent)}
+.card-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0}
+.card{background:var(--paper-2);border-radius:12px;padding:20px;border:1px solid var(--line);transition:all .25s}
+.card:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
+.card h4{color:var(--primary);font-size:22px;margin-bottom:10px}
+.card p{font-size:19px;line-height:1.7}
+.highlight-num{
+  display:inline-block;background:var(--accent);color:#fff;
+  width:32px;height:32px;border-radius:50%;text-align:center;
+  line-height:32px;font-size:18px;font-weight:700;margin-right:8px;
+}
+
+/* ===== 仿真页 ===== */
+.sim-page{padding:24px 20px 40px}
+.sim-title{font-size:30px;font-weight:900;color:var(--primary);margin-bottom:12px;text-align:center}
+.sim-desc{text-align:center;font-size:19px;color:var(--primary-light);margin-bottom:20px}
+.sim-controls{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:8px}
+.sim-controls label{font-size:19px;font-weight:600;color:var(--primary)}
+.sim-controls input[type="range"]{width:200px;accent-color:var(--accent)}
+.sim-controls input[type="range"]:focus{outline:none}
+.sim-controls .val-display{font-size:20px;font-weight:700;color:var(--accent);min-width:80px;text-align:center}
+.sim-canvas-wrap{display:flex;justify-content:center;align-items:flex-start;gap:20px;flex-wrap:wrap;margin-top:8px}
+.canvas-box{text-align:center}
+.canvas-box canvas{border:2px solid var(--line);border-radius:12px;background:#fff;max-width:100%;height:auto}
+.canvas-box .cap{font-size:18px;color:var(--primary);margin-top:6px;font-weight:600}
+
+/* ===== 测验页 ===== */
+.quiz-page{padding:28px 36px 48px}
+.quiz-title{font-size:30px;font-weight:900;color:var(--primary);margin-bottom:20px;text-align:center}
+.quiz-hint{font-size:18px;color:var(--primary-light);text-align:center;margin-bottom:24px}
+.quiz-q{
+  background:var(--paper-2);border-radius:14px;padding:20px 24px;
+  margin-bottom:16px;border:2px solid var(--line);transition:border-color .3s;
+}
+.quiz-q.answered{border-color:var(--primary-light)}
+.quiz-q .q-stem{font-size:21px;font-weight:700;color:var(--ink);margin-bottom:14px}
+.quiz-q .opts{display:flex;flex-direction:column;gap:10px}
+.quiz-q .opt{
+  display:flex;align-items:center;gap:12px;padding:12px 16px;
+  border-radius:10px;border:2px solid var(--line);cursor:pointer;
+  transition:all .2s;font-size:20px;
+}
+.quiz-q .opt:hover{border-color:var(--accent);background:var(--accent-soft)}
+.quiz-q .opt.selected{border-color:var(--accent);background:var(--accent-soft)}
+.quiz-q .opt .badge{
+  width:36px;height:36px;border-radius:50%;background:var(--primary-light);
+  color:#fff;display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:18px;flex-shrink:0;
+}
+.quiz-q .opt.correct{border-color:var(--green);background:#e0f2f1}
+.quiz-q .opt.correct .badge{background:var(--green)}
+.quiz-q .opt.wrong{border-color:var(--red);background:#fbe9e7}
+.quiz-q .opt.wrong .badge{background:var(--red)}
+/* ⚠ v2026-09-29 定案「提交前可随时修改」：选项锁定挂 .submitted 前缀（submitQuiz 时加），
+   .answered 只表示已作答、不锁——学生提交前可随时改选/重确认。禁止改回 .answered 前缀锁定。 */
+.quiz-q.submitted .opt{pointer-events:none;opacity:.85}
+.quiz-q.submitted .opt.correct{opacity:1}
+.feedback{margin-top:12px;padding:12px 16px;border-radius:8px;font-size:19px;display:none;line-height:1.7}
+.feedback.show{display:block;animation:fadeSlide .25s}
+.feedback.correct-fb{background:#e0f2f1;border:1px solid var(--green);color:#004d40}
+.feedback.wrong-fb{background:#fbe9e7;border:1px solid var(--red);color:#4e1a06}
+.feedback .fb-icon{margin-right:8px;font-weight:700}
+.quiz-actions{display:flex;justify-content:center;gap:12px;margin-top:28px;flex-wrap:wrap}
+.quiz-actions button{padding:12px 32px;border-radius:30px;font-size:21px;font-weight:700;cursor:pointer;border:2px solid var(--accent);transition:all .2s}
+.btn-submit{background:var(--accent);color:#fff;border-color:var(--accent)!important}
+.btn-submit:hover{background:#e67e00;box-shadow:0 4px 12px rgba(255,143,0,.3)}
+.btn-submit:disabled{background:#ccc;color:#999;border-color:#ccc!important;cursor:not-allowed;box-shadow:none}
+.btn-retry{background:var(--paper);color:var(--primary)}
+.btn-retry:hover{background:var(--paper-2)}
+.quiz-score{text-align:center;font-size:24px;font-weight:700;color:var(--green);margin-top:20px;display:none}
+
+/* ===== 总结页 ===== */
+.summary-page{padding:28px 36px 48px}
+.summary-title{font-size:34px;font-weight:900;color:var(--primary);margin-bottom:24px;text-align:center}
+.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.summary-item{background:var(--paper-2);border-radius:14px;padding:20px;border-left:5px solid var(--accent)}
+.summary-item h4{font-size:22px;color:var(--primary);margin-bottom:8px}
+.summary-item p{font-size:19px;line-height:1.7}
+.mantra{text-align:center;font-size:28px;font-weight:900;color:var(--accent);margin:24px 0;padding:20px;background:var(--paper-2);border-radius:14px}
+.score-compare{display:flex;justify-content:center;align-items:center;gap:32px;margin:24px 0;flex-wrap:wrap}
+.score-compare .sc{text-align:center;padding:20px 28px;background:var(--paper-2);border-radius:14px;min-width:140px}
+.score-compare .sc .label{font-size:20px;color:var(--primary-light);margin-bottom:4px}
+.score-compare .sc .val{font-size:36px;font-weight:900;color:var(--primary)}
+.score-compare .sc .val.green{color:var(--green)}
+.score-compare .arrow{font-size:40px;color:var(--accent);font-weight:900}
+
+/* ===== 知识结构图（HTML可折叠树） ===== */
+.mindmap .node{cursor:pointer;padding:10px 16px;border-radius:8px;border-left:4px solid var(--primary);margin:4px 0;background:var(--paper-2)}
+.mindmap .branch{margin-left:24px}
+.mindmap .branch.collapsed{display:none}
+.mindmap .icon{margin-right:8px}
+.mindmap .brief{display:block;font-size:14px;color:var(--primary-light);margin-top:4px}
+
+/* ===== 响应式 ===== */
+@media(max-width:768px){
+  .page{padding:20px 16px 56px}
+  .cover-page h1{font-size:32px}
+  .cover-page .sub{font-size:20px}
+  .teach-title{font-size:28px}
+  .teach-text{font-size:20px}
+  .card-grid{grid-template-columns:1fr}
+  .sim-canvas-wrap{flex-direction:column;align-items:center}
+  .sim-controls input[type="range"]{width:140px}
+  nav#topNav{padding:4px 8px;gap:6px}
+  nav#topNav .chip{padding:4px 10px;font-size:14px}
+  #navBtns button{width:40px;height:40px;font-size:18px}
+  /* v2026-10-13：收窄页码防 320px 窄屏与右下二维码徽章相碰；揭示提示条上移，
+     为通信状态条（step4 注入，移动端 bottom:84px）让位 */
+  #pageIndicator{min-width:56px;font-size:18px}
+  #revealHint{bottom:124px}
+  .quiz-q{padding:16px}
+  .quiz-q .q-stem{font-size:20px}
+  .quiz-q .opt{font-size:19px;padding:10px 12px}
+  .summary-grid{grid-template-columns:1fr}
+  .score-compare{gap:16px}
+  .score-compare .sc{padding:14px 20px}
+  .score-compare .sc .val{font-size:28px}
+}
+
+/* ===== 图文混排（有图有文页面必用，禁止把图堆到页面底部） ===== */
+/* ⚠ v1.5.5 图文层叠铁律：图片恒在文字之上（含「图片先揭示、文字后揭示」）
+   —— 浮动图用 float 时是脱离文档流的，后续文字块一旦因 transform（reveal 动画）
+   或 position:relative 形成层叠上下文，就会整块画在图上，把图压住（文字背景条尤其明显）。
+   因此 .fig / .reveal-img-group / .page-img 一律 position:relative + z-index:2，
+   而页面内文字块（含背景条）层级不得 ≥2。 */
+.clearfix::after{content:'';display:block;clear:both}
+.fig{text-align:center;margin:8px 0;position:relative;z-index:2}
+.fig img{width:100%;border-radius:12px;box-shadow:var(--shadow);border:1px solid var(--line)}
+.fig .caption{font-size:16px;color:var(--primary-light);margin-top:4px;font-weight:600;line-height:1.5}
+.fig.float-r{float:right;width:44%;margin-left:24px;margin-bottom:12px}
+.fig.float-l{float:left;width:42%;margin-right:24px;margin-bottom:12px}
+@media(max-width:768px){
+  .fig.float-r,.fig.float-l{float:none;width:100%;margin:12px 0}
+}
+/* 图文组（img + caption 作为一步揭示）：整组同样压住文字块 */
+.reveal-img-group{position:relative;z-index:2;isolation:isolate}
+.reveal-img-group img{width:100%;border-radius:12px;box-shadow:var(--shadow);border:1px solid var(--line)}
+.page-img{display:block;margin:20px auto;max-width:92%;height:auto;border-radius:12px;box-shadow:var(--shadow);border:1px solid var(--line);position:relative;z-index:2}
+.img-caption{text-align:center;font-size:18px;color:var(--primary-light);margin-top:6px;font-weight:600}
+
+/* ===== 全局滚动条 ===== */
+::-webkit-scrollbar{width:5px;height:5px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
+
+/* ===== 渐进呈现动画系统（24种） ===== */
+/* 基础隐藏状态 */
+.reveal-hidden{opacity:0;visibility:hidden;pointer-events:none}
+.reveal-hidden.reveal-done{animation-fill-mode:forwards;visibility:visible;opacity:1;pointer-events:auto}
+/* 揭示进度指示器 */
+#revealHint{
+  position:fixed;bottom:80px;left:50%;transform:translateX(-50%);z-index:140;
+  display:none;align-items:center;gap:8px;
+  background:rgba(200,16,46,.12);color:var(--primary);padding:6px 16px;
+  border-radius:20px;font-size:16px;font-weight:600;
+  pointer-events:none;transition:opacity .3s;
+}
+#revealHint .r-dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+#revealHint .r-progress{color:var(--accent);font-weight:700}
+
+/* A1: 淡入上浮 */
+.reveal-fade-up{animation:fadeUp .5s cubic-bezier(.25,.46,.45,.94) both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+/* A2: 打字机 — JS实现，此处仅光标样式 */
+.reveal-typewriter .tw-cursor{border-right:2px solid var(--accent);animation:blink .8s infinite}
+@keyframes blink{50%{border-color:transparent}}
+/* A3: 段落逐现 — 配合 animation-delay */
+.reveal-fade-up-seq{animation:fadeUp .5s cubic-bezier(.25,.46,.45,.94) both}
+/* A4: 模糊聚焦 */
+.reveal-blur-focus{animation:blurFocus .6s ease both}
+@keyframes blurFocus{from{opacity:0;filter:blur(8px)}to{opacity:1;filter:blur(0)}}
+/* A5: 高亮脉冲 */
+.reveal-pulse{animation:highlightPulse .8s ease both}
+@keyframes highlightPulse{0%{box-shadow:0 0 0 0 var(--accent-soft)}50%{box-shadow:0 0 16px 8px var(--accent-soft)}100%{box-shadow:0 0 0 0 var(--accent-soft)}}
+/* A6: 字幕展开 */
+.reveal-slide-x{animation:slideX .5s cubic-bezier(.25,.46,.45,.94) both}
+@keyframes slideX{from{opacity:0;transform:scaleX(0);transform-origin:left}to{opacity:1;transform:scaleX(1)}}
+
+/* B1: 列表逐条滑入 */
+.reveal-li-slide{animation:liSlide .45s cubic-bezier(.25,.46,.45,.94) both}
+@keyframes liSlide{from{opacity:0;transform:translateX(-30px)}to{opacity:1;transform:translateX(0)}}
+/* B2: 编号步骤 — 圆圈弹入 */
+.reveal-step-num .highlight-num{animation:popIn .45s cubic-bezier(.34,1.56,.64,1) both}
+@keyframes popIn{from{transform:scale(0)}60%{transform:scale(1.2)}to{transform:scale(1)}}
+.reveal-step-num.reveal-hidden .highlight-num{transform:scale(0)}
+/* F1: 勾选清单（编号与 SKILL.md 动画目录一致） */
+.reveal-check{animation:checkReveal .5s ease both}
+@keyframes checkReveal{from{opacity:0;transform:translateX(-12px)}to{opacity:1;transform:translateX(0)}}
+/* F2: 层级缩进展开（编号与 SKILL.md 动画目录一致） */
+.reveal-indent{animation:indentExpand .45s ease both;overflow:hidden}
+@keyframes indentExpand{from{opacity:0;max-height:0;padding-top:0;padding-bottom:0}to{opacity:1;max-height:200px}}
+
+/* C1: 帷幕揭图 */
+.reveal-curtain{position:relative;overflow:hidden}
+.reveal-curtain img{display:block}
+.reveal-curtain::before,.reveal-curtain::after{content:'';position:absolute;top:0;width:50%;height:100%;z-index:2;transition:transform .7s cubic-bezier(.7,0,.3,1)}
+.reveal-curtain::before{left:0;background:var(--primary)}
+.reveal-curtain::after{right:0;background:var(--primary)}
+.reveal-curtain.reveal-hidden::before{transform:translateX(0)}
+.reveal-curtain.reveal-hidden::after{transform:translateX(0)}
+.reveal-curtain.reveal-done::before{transform:translateX(-100%)}
+.reveal-curtain.reveal-done::after{transform:translateX(100%)}
+/* C2: 底片显影 */
+.reveal-sepia{animation:sepiaDevelop 1s ease both}
+@keyframes sepiaDevelop{from{filter:sepia(1) brightness(.3)}to{filter:sepia(0) brightness(1)}}
+/* C3: 框入聚焦 */
+.reveal-focus-in{animation:focusIn .55s cubic-bezier(.34,1.56,.64,1) both}
+@keyframes focusIn{from{opacity:0;transform:scale(.85)}60%{transform:scale(1.03)}to{opacity:1;transform:scale(1)}}
+/* C4: 浮动入位 — 右浮图片专用 */
+.reveal-float-in-r{animation:floatInR .5s cubic-bezier(.25,.46,.45,.94) both}
+@keyframes floatInR{from{opacity:0;transform:translateX(60px)}to{opacity:1;transform:translateX(0)}}
+.reveal-float-in-l{animation:floatInL .5s cubic-bezier(.25,.46,.45,.94) both}
+@keyframes floatInL{from{opacity:0;transform:translateX(-60px)}to{opacity:1;transform:translateX(0)}}
+/* C5: Ken Burns 慢移（持续） */
+.reveal-kenburns img{animation:kenBurns 8s ease alternate infinite}
+@keyframes kenBurns{from{transform:scale(1)}to{transform:scale(1.08) translate(-2%,-1%)}}
+
+/* F3: 卡片翻转（编号与 SKILL.md 动画目录一致） */
+.reveal-flip-card{perspective:800px}
+.reveal-flip-card .flip-inner{transition:transform .6s;transform-style:preserve-3d}
+.reveal-flip-card.reveal-done .flip-inner{transform:rotateY(180deg)}
+.reveal-flip-card .flip-front,.reveal-flip-card .flip-back{backface-visibility:hidden;position:absolute;inset:0}
+.reveal-flip-card .flip-back{transform:rotateY(180deg)}
+/* D2: 卡片弹入 */
+.reveal-card-pop{animation:cardPop .55s cubic-bezier(.34,1.56,.64,1) both}
+@keyframes cardPop{from{opacity:0;transform:scale(.7)}60%{transform:scale(1.06)}to{opacity:1;transform:scale(1)}}
+/* D3: 网格填充 — 配合 animation-delay */
+.reveal-card-grid .card{animation:cardPop .55s cubic-bezier(.34,1.56,.64,1) both}
+.reveal-card-grid.reveal-hidden .card{opacity:0;animation:none}
+/* D4: 折叠展开 */
+.reveal-fold{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.25,.46,.45,.94)}
+.reveal-fold.reveal-done{max-height:600px}
+
+/* E1: 关键框滑入 */
+.reveal-slide-left{animation:slideLeft .5s cubic-bezier(.25,.46,.45,.94) both}
+@keyframes slideLeft{from{opacity:0;transform:translateX(-60px)}to{opacity:1;transform:translateX(0)}}
+.reveal-slide-right{animation:slideRight .5s cubic-bezier(.25,.46,.45,.94) both}
+@keyframes slideRight{from{opacity:0;transform:translateX(60px)}to{opacity:1;transform:translateX(0)}}
+/* E2: 引用金句 */
+.reveal-quote{animation:quoteReveal .6s ease both}
+@keyframes quoteReveal{from{opacity:0;transform:scale(.9)}40%{opacity:1;transform:scale(1.03)}to{opacity:1;transform:scale(1)}}
+/* E3: 表格逐行 */
+.reveal-tr-fade{animation:fadeUp .4s cubic-bezier(.25,.46,.45,.94) both}
+/* E4: 数字跳动 — JS实现 */
+.reveal-count-up{}
+/* E5: 聚光灯 */
+.reveal-spotlight{position:relative}
+.reveal-spotlight::before{content:'';position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:300;transition:opacity .4s}
+.reveal-spotlight.reveal-done::before{opacity:0;pointer-events:none}
+.reveal-spotlight > *{position:relative;z-index:301}
+
+/* ===== 图片全屏灯箱 ===== */
+#imgLightbox{
+  display:none;position:fixed;inset:0;z-index:9999;
+  background:rgba(0,0,0,.92);justify-content:center;align-items:center;
+  cursor:zoom-out;
+}
+#imgLightbox.show{display:flex}
+#imgLightbox img{
+  max-width:95vw;max-height:95vh;object-fit:contain;
+  border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,.5);
+  animation:lightboxIn .3s ease;
+}
+@keyframes lightboxIn{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
+#imgLightbox .lb-close{
+  position:absolute;top:20px;right:24px;width:44px;height:44px;
+  border-radius:50%;background:rgba(255,255,255,.15);color:#fff;
+  font-size:24px;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  border:none;transition:background .2s;
+}
+#imgLightbox .lb-close:hover{background:rgba(255,255,255,.3)}
+/* 图片可点击放大提示 */
+.teach-text img, .fig img, .page-img, .card img{cursor:zoom-in;transition:opacity .2s}
+.teach-text img:hover, .fig img:hover, .page-img:hover, .card img:hover{opacity:.85}
+
+/* ===== 伪全屏兜底 CSS（第四代标准件 §3）=====
+   默认不放「全屏按钮」，但下面三条规则必须保留——
+   删了 pagesync-test-mqtt.js 的 S7 直接 FAIL；伪全屏时顶部导航须压课件层之上。 */
+body.fs-pseudo #pageContainer{position:fixed;inset:0;z-index:9999}
+body.fs-pseudo #topNav{z-index:10001 !important}
+body.fs-pseudo #navBtns, body.fs-pseudo #mqttStatus{z-index:10000 !important}
+
+/* ===== 底部导航胶囊（深色封面上也看得见页码） ===== */
+#navBtns{background:rgba(245,248,251,.95);border-radius:34px;padding:5px 10px;box-shadow:0 6px 22px rgba(0,0,0,.18)}
+#revealHint{bottom:98px}
+#matchP3{max-width:780px;margin:0 auto}
+.page{padding-bottom:104px}
+
+/* ===== 表格（讲授页对比表） ===== */
+.teach-table{width:100%;border-collapse:collapse;margin:18px 0;font-size:19px;background:#fff;border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
+.teach-table th{background:var(--primary);color:#fff;padding:12px 14px;text-align:left;font-weight:700;font-size:17px}
+.teach-table td{padding:12px 14px;border-bottom:1px solid var(--line)}
+.teach-table tr:last-child td{border-bottom:none}
+.teach-table td:first-child{font-weight:700;color:var(--primary)}
+
+/* ===== 按钮 ===== */
+.btn-retry,.btn-primary{padding:9px 24px;border-radius:22px;font-size:17px;font-weight:600;cursor:pointer;border:2px solid var(--primary);background:var(--paper);color:var(--primary);transition:all .2s;margin:6px 4px}
+.btn-retry:hover,.btn-primary:hover{background:var(--primary);color:#fff}
+.btn-primary:disabled{opacity:.5;cursor:default}
+
+/* ===== 仿真读数 ===== */
+.sim-readout{text-align:center;font-size:34px;font-weight:800;letter-spacing:2px;color:var(--primary);margin:12px 0 4px;font-variant-numeric:tabular-nums}
+.sim-tip{text-align:center;font-size:18px;color:var(--primary-light);margin-bottom:10px;min-height:26px}
+
+@media(max-width:768px){.page{padding-bottom:104px}}
+
+/* ===== V4 模块卡片总结页 ===== */
+.summary-v4-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr));gap:20px;margin-bottom:20px}
+.summary-v4-card{background:#fff;border:2px solid var(--line);border-radius:16px;overflow:hidden;transition:all .35s;cursor:pointer}
+.summary-v4-card:hover{border-color:var(--primary);box-shadow:0 4px 16px rgba(0,0,0,.08)}
+.summary-v4-card.expanded{border-color:var(--primary);box-shadow:0 6px 24px rgba(0,0,0,.12);grid-column:span 2}
+@media(max-width:700px){.summary-v4-card.expanded{grid-column:auto}}
+.summary-v4-header{padding:22px 24px;display:flex;align-items:center;gap:16px;background:var(--paper-2);transition:background .3s}
+.summary-v4-card.expanded .summary-v4-header{background:var(--paper)}
+.summary-v4-num{width:44px;height:44px;border-radius:50%;background:var(--line);color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:500;flex-shrink:0;transition:all .3s}
+.summary-v4-card.expanded .summary-v4-num{background:var(--primary);color:#fff}
+.summary-v4-title{font-size:24px;font-weight:700;color:var(--primary);flex:1}
+.summary-v4-summary{font-size:18px;color:var(--primary-light);line-height:1.5}
+.summary-v4-indicator{font-size:18px;color:var(--line);transition:transform .35s;flex-shrink:0}
+.summary-v4-card.expanded .summary-v4-indicator{transform:rotate(180deg);color:var(--primary)}
+.summary-v4-body{max-height:0;overflow:hidden;transition:max-height .5s ease}
+.summary-v4-card.expanded .summary-v4-body{max-height:900px}
+.summary-v4-inner{padding:0 20px 20px;display:flex;flex-direction:column;gap:14px}
+.summary-v4-flip{perspective:600px;height:150px;cursor:pointer}
+.summary-v4-flip-inner{position:relative;width:100%;height:100%;transition:transform .45s;transform-style:preserve-3d}
+.summary-v4-flip.flipped .summary-v4-flip-inner{transform:rotateY(180deg)}
+.summary-v4-flip-front,.summary-v4-flip-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:12px;display:flex;align-items:center;justify-content:center;padding:16px 18px;font-size:20px;line-height:1.6}
+.summary-v4-flip-front{background:var(--accent-soft);border:2px solid var(--accent);color:var(--primary);font-weight:700;text-align:center;flex-direction:column}
+.summary-v4-flip-front .fh{font-size:14px;color:var(--primary-light);font-weight:400;margin-top:6px}
+.summary-v4-flip-back{background:#fff;border:2px solid var(--primary);color:var(--ink);text-align:left;transform:rotateY(180deg);overflow-y:auto;padding:16px 18px;font-size:17px}
+@keyframes popIn{0%{transform:scale(.95);opacity:0}100%{transform:scale(1);opacity:1}}
+.summary-v4-card.expanded{animation:popIn .3s ease}
+.summary-v4-toolbar{display:flex;gap:12px;margin-bottom:16px}
+.summary-v4-toolbar button{padding:8px 20px;border-radius:18px;font-size:16px;font-weight:600;cursor:pointer;border:2px solid var(--primary);background:var(--paper);color:var(--primary);transition:all .2s}
+.summary-v4-toolbar button:hover{background:var(--primary);color:#fff}
+
+.cover-page .tag{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);color:#FFF6E6}
+
+#p2cards.card-grid{grid-template-columns:repeat(3,1fr)}
+#p5cards.card-grid{grid-template-columns:repeat(3,1fr)}
+#p2cards .card .eq,#p5cards .card .eq{font-size:17px;line-height:1.7}
+.card .eq{font-size:18px;font-weight:800;color:var(--primary);margin:8px 0;line-height:1.55;white-space:pre-line}
+
+.wrong-num{font-size:20px;font-weight:800;color:var(--red);margin:4px 0 8px;line-height:1.4}
+
+.sim-readout{font-size:19px;font-weight:800;color:var(--primary)}
+.sim-log .hl{color:var(--accent);font-weight:700}
+.btn-primary{background:var(--primary);color:#fff;border:none}
+.btn-primary:hover{background:var(--primary-light)}
+.btn-retry{background:var(--paper);color:var(--primary);border:1.5px solid var(--accent)}
+
+#p3fig svg,#p5fig svg,#p2fig svg{max-width:100%;height:auto}
+
+@media (max-width:640px){
+  #p2cards.card-grid,#p5cards.card-grid{grid-template-columns:1fr}
+  .card .eq{font-size:16px}
+  .wrong-num{font-size:17px}
+  .cover-fig svg{width:100%;height:auto}
+}
+
+.sim-status{display:flex;justify-content:space-between;align-items:baseline;gap:18px;flex-wrap:wrap}
+.sim-status .sim-readout{flex:1 1 auto}
+.sim-status .sim-tip{flex:0 1 auto;text-align:right}
+
+#matchP3 .match-item{padding:10px 14px;margin-bottom:9px;font-size:18px}
+#matchP3 .match-col h4{margin-bottom:8px}
+
+.sim-controls{flex-wrap:wrap}
+.sim-log-line{padding:3px 0;font-size:13px;color:#455A64;border-bottom:1px dashed var(--line)}
+
+#p6 .feature-list{margin-top:10px}
+#p6 .feature-list li{font-size:14px;line-height:1.6;margin:4px 0}
+#p6 .canvas-box canvas{max-height:272px;width:auto;display:block;margin:0 auto}
+#p6 .sim-desc{font-size:14px;line-height:1.6;margin:4px auto 8px;max-width:760px}
+#p6 .sim-log{max-height:58px;overflow:auto}
+
+/* 封面 SVG 必须有固有宽度，否则 shrink-to-fit 会算成 0 */
+.cover-fig{width:min(760px,88%);margin:14px auto 0}
+.cover-fig svg{display:block;width:100%;height:auto}
+
+/* 内容密集页：隐藏辅助卡片，把关键控件压进一屏，避免被固定导航遮住 */
+#p2 .card-grid,#p3 .card-grid,#p5 .card-grid,#p8 .card-grid{display:none}
+#p2 .teach-title,#p3 .teach-title,#p5 .teach-title,#p8 .teach-title{font-size:23px;margin:6px 0 8px}
+#p2 .teach-text,#p3 .teach-text,#p5 .teach-text,#p8 .teach-text{font-size:15px;line-height:1.6;margin:4px 0}
+#p2 .feature-list li,#p3 .feature-list li,#p8 .feature-list li{font-size:14px;line-height:1.5;margin:2px 0}
+#p2 .key-box,#p3 .key-box,#p5 .key-box,#p8 .key-box{padding:9px 12px;margin-top:8px}
+#p2fig,#p3fig,#p5fig{width:205px}
+#p6 .canvas-box canvas{max-height:272px;width:auto;display:block;margin:0 auto}
+
+/* 通用小控件 */
+.mini-btn{display:inline-block;background:var(--primary);color:#fff;border:none;border-radius:8px;
+  padding:6px 12px;font-size:13px;cursor:pointer;font-family:inherit}
+.mini-btn.ghost{background:#fff;color:var(--primary);border:1.5px solid var(--accent)}
+.mini-btn:hover{opacity:.88}
+.trace-note{font-weight:700;color:var(--primary);margin:6px 0;font-size:14px}
+.trace-why{min-height:34px;font-size:13px;line-height:1.6;background:#fff;border-radius:8px;
+  padding:7px 10px;margin:5px 0}
+
+/* 起疑 p2 */
+.rd-text{font-size:16px;line-height:1.9;background:#fff;border-radius:10px;padding:10px 13px;border:1px solid var(--line)}
+.rd-s{display:block;padding:5px 7px;margin:3px 0;border-radius:7px;cursor:pointer;border-left:3px solid transparent}
+.rd-s:hover{background:#F5F0E4}
+.rd-s.stopped{background:#ECEFF1;color:#607D8B;border-left-color:#90A4AE}
+
+/* 取证 p3 */
+.ev-syms{margin:6px 0}
+.ev-sym{background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:4px 11px;
+  margin:2px 5px 2px 0;font-size:13px;cursor:pointer;font-family:inherit;color:#4A463E}
+.ev-sym:hover{border-color:var(--accent)}
+.ev-sym.on{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:700}
+.ev-text{font-size:15px;line-height:1.85;background:#fff;border-radius:10px;padding:9px 12px;border:1px solid var(--line)}
+.ev-s{display:block;padding:4px 6px;margin:2px 0;border-radius:6px;cursor:pointer}
+.ev-s:hover{background:#F5F0E4}
+.ev-s.marked{background:#FFF2C9;border-left:3px solid #E0A93B}
+.ev-badge{font-style:normal;color:var(--accent);font-weight:800;margin-left:6px}
+.ev-idea{width:100%;box-sizing:border-box;border:1.5px dashed var(--accent);border-radius:8px;
+  padding:7px 10px;font-size:15px;font-family:inherit;margin-top:6px}
+.ev-idea:focus{outline:none;border-style:solid}
+
+/* 对齐 p5 */
+.al-cards,.al-slots{display:flex;gap:7px;flex-wrap:wrap;margin:5px 0}
+.ev-card{flex:1 1 210px;background:#fff;border:1.5px solid var(--line);border-radius:9px;
+  padding:7px 9px;font-size:13px;line-height:1.5;cursor:pointer}
+.ev-card:hover{border-color:var(--accent)}
+.ev-card.on{background:#FFF2C9;border-color:#E0A93B}
+.ev-card > b{color:var(--primary);font-size:12px}
+.ev-slot{flex:1 1 210px;min-height:56px;background:#EDF3EE;border:1.5px dashed #8FB9A3;
+  border-radius:9px;padding:6px 8px;font-size:12px}
+.ev-slot[data-slot="X"]{background:#FBE9DD;border-color:var(--accent)}
+.ev-slot > b{display:block;color:var(--primary);font-size:13px;margin-bottom:3px}
+.ev-slot .ev-card{margin-top:4px;flex:1 1 auto;font-size:12px}
+.ev-paras{margin-top:4px}
+.ev-para{display:inline-block;border:1px solid var(--line);border-radius:6px;background:#fff;
+  padding:2px 7px;margin:2px 4px 0 0;font-size:11px;cursor:pointer;color:#4A463E}
+.ev-para:hover{border-color:var(--accent)}
+.ev-para.on{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:700}
+
+/* 换文 p8 */
+.tr-text{font-size:15px;line-height:1.85;background:#fff;border-radius:10px;padding:9px 12px;border:1px solid var(--line)}
+.tr-s{display:block;padding:4px 6px;margin:2px 0;border-radius:6px;cursor:pointer;border-bottom:2px solid transparent}
+.tr-s:hover{background:#F5F0E4}
+.tr-s.marked{border-bottom-color:var(--accent);background:#FBE9DD}
+.tr-cks{margin:7px 0 3px}
+.tr-ck{display:inline-block;background:#fff;border:1.5px solid var(--line);border-radius:8px;
+  padding:5px 10px;margin:3px 6px 0 0;font-size:12px;cursor:pointer;color:#4A463E}
+.tr-ck:hover{border-color:var(--accent)}
+.tr-ck.on{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:700}
+.my-chain{background:#fff;border:1.5px dashed var(--accent);border-radius:12px;
+  padding:12px 15px;font-size:16px;line-height:1.8;margin:12px 0}
+
+/* p6 底部说明压进一屏 */
+#p6 .sim-desc{font-size:13px;line-height:1.5;margin:3px auto 6px}
+#p6 .feature-list{margin-top:4px}
+#p6 .feature-list li{font-size:13px;line-height:1.45;margin:1px 0}
+#p6 .sim-log{max-height:30px}
+#p6 .sim-controls{margin:4px 0}
+#p6 .sim-page{padding-bottom:18px}
+#p2 .card-grid,#p5 .card-grid,#p8 .card-grid{display:none}
+#p2 .teach-title,#p3 .teach-title,#p5 .teach-title,#p8 .teach-title{font-size:23px;margin:6px 0 8px}
+#p2 .teach-text,#p3 .teach-text,#p5 .teach-text,#p8 .teach-text{font-size:15px;line-height:1.6;margin:4px 0}
+#p3 .feature-list li{font-size:14px;line-height:1.55;margin:3px 0}
+#p3 .key-box,#p5 .key-box,#p8 .key-box{padding:9px 12px;margin-top:8px}
+#p3 .card-grid,#p8 .card-grid{margin:6px 0}
+.rd-text{padding:9px 12px}
+.rd-s{padding:4px 6px;margin:2px 0;font-size:15px}
+.ev-text{padding:8px 11px;font-size:14px}
+.ev-s{padding:3px 5px}
+.ev-idea{font-size:14px;padding:6px 9px;margin-top:4px}
+.trace-why{min-height:32px;padding:6px 9px;margin:4px 0;font-size:13px}
+.trace-note{font-size:13px;margin:4px 0}
+.ev-card{padding:6px 8px;font-size:12px}
+.ev-slot{min-height:50px;padding:5px 7px}
+.ev-para{padding:2px 6px;font-size:11px}
+.tr-text{padding:8px 11px;font-size:14px}
+.tr-ck{padding:4px 9px;font-size:12px}
+#p2fig,#p3fig,#p5fig{width:244px}
+#p2fig svg text,#p3fig svg text,#p5fig svg text{font-size:14px}
+</style>
+<script>
+(function(){
+  var mqttSources = [
+    'https://cdn.jsdelivr.net/npm/mqtt@4.3.7/dist/mqtt.min.js',
+    'https://fastly.jsdelivr.net/npm/mqtt@4.3.7/dist/mqtt.min.js',
+    'https://unpkg.com/mqtt@4.3.7/dist/mqtt.min.js'
+  ];
+  var mIdx = 0;
+  function tryLoadMqtt() {
+    if (mIdx >= mqttSources.length) { console.warn('[MQTT] 所有CDN源均加载失败'); return; }
+    var s = document.createElement('script');
+    s.src = mqttSources[mIdx];
+    s.async = true;
+    s.onload = function() { console.log('[MQTT] 加载成功，源:', mqttSources[mIdx]); };
+    s.onerror = function() { console.warn('[MQTT] 加载失败:', mqttSources[mIdx]); mIdx++; tryLoadMqtt(); };
+    document.head.appendChild(s);
+  }
+  tryLoadMqtt();
+})();
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"
+        onerror="console.warn('QR generator CDN failed')"></script>
+<style>
+#mqttStatus{position:fixed;left:14px;bottom:14px;z-index:250;display:flex;align-items:center;gap:7px;background:rgba(26,58,92,.82);color:#fff;padding:6px 12px;border-radius:18px;font-size:14px;font-weight:600;box-shadow:0 4px 14px rgba(0,0,0,.2)}
+#mqttStatus .dot{width:10px;height:10px;border-radius:50%;background:#f44336;display:inline-block}
+#mqttStatus .dot.online{background:#4CAF50}
+#mqttStatus .dot.offline{background:#f44336}
+/* v2026-10-13 页码导航置于顶层（教师唯一入口，勿被通信状态/背景图盖住）：
+   注入式覆盖，令存量课件（旧骨架 z-index:150）重新注入后也能拿到顶层导航层 */
+#navBtns{z-index:500 !important}
+.qr-badge{position:fixed;bottom:28px;right:28px;z-index:500;width:48px;height:48px;border-radius:50%;background:var(--accent,#E8871E);color:#fff;font-size:24px;cursor:pointer;display:none;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(232,135,30,.4);transition:transform .2s}
+body.deployed .qr-badge.on{display:flex}
+.qr-badge:hover{transform:scale(1.1)}
+.qr-popup{display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,.5);justify-content:center;align-items:center}
+.qr-popup.show{display:flex}
+.qr-popup-inner{position:relative;background:#fff;border-radius:16px;padding:28px 32px;max-width:360px;width:90%;text-align:center;box-shadow:0 12px 48px rgba(0,0,0,.25)}
+.qr-close-x{position:absolute;top:12px;right:12px;width:32px;height:32px;border:none;border-radius:50%;background:transparent;color:var(--primary,#1A3A5C);font-size:20px;cursor:pointer;line-height:32px;padding:0}
+.qr-close-x:hover{background:var(--red,#D93025);color:#fff}
+.qr-img-wrap{margin:8px 0 16px}
+.qr-img-wrap img{max-width:200px;height:auto;border-radius:8px}
+.qr-stat-row{font-size:20px;margin:6px 0;font-weight:600}
+.qr-stat-row span{color:var(--accent,#E8871E);font-weight:700}
+.qr-mini-bars{margin:12px 0;min-height:20px}
+.qr-mini-row{display:flex;align-items:center;gap:8px;margin:4px 0;font-size:14px}
+.qr-mini-row .qlabel{width:28px;color:var(--primary,#1A3A5C);font-weight:700}
+.qr-mini-row .qbar-bg{flex:1;height:14px;background:#e9ecef;border-radius:7px;overflow:hidden}
+.qr-mini-row .qbar-fill{height:100%;border-radius:7px;transition:width .3s}
+.qr-mini-row .qbar-fill.green{background:var(--green,#4CAF50)}
+.qr-mini-row .qbar-fill.orange{background:var(--accent,#E8871E)}
+.qr-mini-row .qpct{width:36px;text-align:right;color:var(--primary,#1A3A5C);font-weight:600}
+.qr-detail-link{display:inline-block;margin:8px 0;padding:8px 18px;border-radius:20px;background:var(--primary,#1A3A5C);color:#fff;font-size:16px;cursor:pointer;text-decoration:none;font-weight:600}
+.qr-detail-link:hover{background:var(--accent,#E8871E)}
+.qr-clear-btn{margin-top:14px;padding:0;background:transparent;border:none;color:#999;font-size:14px;cursor:pointer;text-decoration:underline}
+.qr-clear-btn:hover{color:var(--red,#D93025)}
+.detail-overlay{display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,.55);justify-content:center;align-items:flex-start;padding-top:40px}
+.detail-overlay.show{display:flex}
+.detail-panel{background:#fff;border-radius:16px;width:min(92vw,700px);max-height:88vh;overflow-y:auto;box-shadow:0 12px 48px rgba(0,0,0,.25);padding:28px 32px 32px;position:relative}
+.detail-close-btn{position:absolute;top:16px;right:20px;width:36px;height:36px;border-radius:50%;border:2px solid var(--line,#ddd);background:#fff;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--primary,#1A3A5C);transition:background .2s}
+.detail-close-btn:hover{background:var(--red,#D93025);color:#fff;border-color:var(--red,#D93025)}
+.detail-q-block{border:1px solid var(--line,#ddd);border-radius:12px;padding:12px 18px;margin-bottom:12px;background:var(--paper,#fff)}
+.detail-q-title{font-size:16px;font-weight:700;color:var(--primary,#1A3A5C);margin-bottom:6px}
+.detail-q-bar .bar-row{position:relative;display:block;padding:5px 0;border-bottom:1px dashed var(--line,#ddd)}
+.detail-q-bar .bar-row:last-child{border-bottom:none}
+.detail-q-bar .opt-barline{display:flex;align-items:center;gap:10px}
+.detail-q-bar .opt-tag{font-weight:800;font-size:18px;min-width:44px;flex:none;white-space:nowrap}
+.detail-q-bar .bar-bg{flex:1;height:18px;background:var(--paper-2,#f2f2f2);border-radius:5px;overflow:hidden}
+.detail-q-bar .bar-fill{height:100%;border-radius:5px;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;font-size:13px;color:#fff;font-weight:700}
+.detail-q-bar .bar-fill.green{background:var(--green,#4CAF50)}
+.detail-q-bar .bar-fill.orange{background:var(--accent,#E8871E)}
+.detail-q-bar .bar-fill.gray{background:#b8bcc2}
+.detail-q-bar .opt-pct{width:56px;text-align:right;font-size:20px;font-weight:800;color:var(--primary,#1A3A5C);flex:none}
+.detail-q-bar .opt-tip{position:absolute;bottom:100%;left:0;right:0;margin-bottom:6px;z-index:20;background:var(--primary,#1A3A5C);color:#fff;font-size:13px;line-height:1.45;padding:7px 11px;border-radius:8px;box-shadow:0 6px 18px rgba(30,58,95,.28);opacity:0;visibility:hidden;transform:translateY(4px);transition:opacity .12s ease,transform .12s ease;pointer-events:none;word-break:break-word}
+.detail-q-bar .bar-row:hover .opt-tip{opacity:1;visibility:visible;transform:translateY(0)}
+.qr-join-title{font-size:20px;font-weight:700;color:var(--primary,#1A3A5C);margin:6px 0 2px}
+.qr-join-hint{font-size:15px;color:#666;margin:2px 0 0;line-height:1.5}
+/* v2026-10-13 移动端避让：通信状态条/退出教师按钮上移至导航行（bottom:20px）之上，
+   revealHint 由骨架媒体查询上移至 124px——保证底部页码区只属于导航层（z-index:500） */
+@media(max-width:768px){
+  #mqttStatus{bottom:84px}
+  #teacherExit{left:auto !important;right:14px !important;bottom:84px !important}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== 顶部导航 ===== -->
+<!-- 每个chip: class="chip" + 类型样式(pre/mid/post/sim) + data-page序号 -->
+<nav id="topNav">
+  <span class="chip active" data-page="0">封面</span>
+  <span class="chip pre" data-page="1">前测</span>
+  <span class="chip" data-page="2">起疑</span>
+  <span class="chip" data-page="3">取证</span>
+  <span class="chip" data-page="4">连一连</span>
+  <span class="chip mid" data-page="5">中测1</span>
+  <span class="chip" data-page="6">对齐</span>
+  <span class="chip sim" data-page="7">说清</span>
+  <span class="chip mid" data-page="8">中测2</span>
+  <span class="chip" data-page="9">换文</span>
+  <span class="chip post" data-page="10">后测</span>
+  <span class="chip chip-end" data-page="11">存起来</span>
+</nav>
+
+<!-- ===== 进度条 ===== -->
+<!-- ===== 进度条 ===== -->
+<div id="progressWrap"><div id="progressBar"></div></div>
+
+<!-- ===== 页面容器 ===== -->
+<div id="pageContainer">
+
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>朗读：把标点读出来，自己再听一遍</h1>
+  <p class="sub">一年级语文 · 朗读</p>
+  <div class="tags">
+    <span class="tag">语文要素·朗读</span>
+    <span class="tag">按标点停顿</span>
+    <span class="tag">2022课标</span>
+    <span class="tag">只回放不评分</span>
+  </div>
+  <div class="cover-fig">
+<svg viewBox="0 0 760 190" width="760" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="按标点停一停再回放">
+  <rect x="0" y="0" width="760" height="190" rx="18" fill="#FFFFFF" opacity=".10"/>
+  <text x="28" y="30" font-size="15" fill="#F6EDE4" font-weight="700">标点已经把拍子写好了：看见它，停一停，再出声读</text>
+  <rect x="28" y="48" width="300" height="112" rx="12" fill="#F7E9D9" stroke="#A4552F"/>
+  <text x="44" y="74" font-size="13" fill="#A4552F" font-weight="700">书上的句子</text>
+  <text x="44" y="104" font-size="20" fill="#4A463E">清晨<tspan fill="#C2703A">，</tspan>小鸟在树上唱歌<tspan fill="#C2703A">。</tspan></text>
+  <text x="44" y="134" font-size="14" fill="#4A463E">逗号停半拍　句号停一拍</text>
+  <text x="352" y="104" font-size="26" fill="#FFC48A">⟶</text>
+  <rect x="392" y="48" width="340" height="112" rx="12" fill="#E4F1EC" stroke="#2F7A6B"/>
+  <text x="408" y="74" font-size="13" fill="#2F7A6B" font-weight="700">自己标过的停顿卡</text>
+  <text x="408" y="104" font-size="18" fill="#4A463E">清晨 ｜ 小鸟在树上唱歌 ∥</text>
+  <text x="408" y="134" font-size="14" fill="#4A463E">回放一遍：只听，不打分</text>
+</svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">前测 · 标点已经把拍子写好了</h2>
+  <p class="quiz-hint">三道题都有唯一答案，答错会告诉你错在哪。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 读到逗号，该怎么处理？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>停半拍，别把句子读断</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>立刻换一口气读下一句</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>声音越大越好</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 句末是问号，语气该？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>往下压</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>自然上扬</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>和句号完全一样</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 「不丢字、不加字」说的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>把不认识的字跳过去</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>读得越快越好</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>不自己添字、也不漏掉书上的字</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button id="quizPre_submitBtn" class="btn-submit" onclick="submitQuiz('quizPre','pre')">提交本页成绩</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 起疑 · 哪一句你读着卡了一下？ ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">起疑 · 哪一句你读着卡了一下？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+<svg viewBox="0 0 300 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="读着卡住的三个地方">
+  <rect x="8" y="10" width="284" height="52" rx="10" fill="#F7E9D9" stroke="#A4552F"/>
+  <text x="22" y="34" font-size="14" fill="#A4552F" font-weight="700">逗号该停多久？</text>
+  <text x="22" y="56" font-size="13" fill="#4A463E">半拍，别把词读断</text>
+  <rect x="8" y="70" width="284" height="52" rx="10" fill="#FFFFFF" stroke="#DDD3BE"/>
+  <text x="22" y="94" font-size="14" fill="#4A463E">问号要怎么收？</text>
+  <text x="22" y="116" font-size="13" fill="#4A463E">语气自然上扬</text>
+  <rect x="8" y="130" width="284" height="52" rx="10" fill="#E4F1EC" stroke="#2F7A6B"/>
+  <text x="22" y="154" font-size="14" fill="#2F7A6B" font-weight="700">字有没有读丢？</text>
+  <text x="22" y="176" font-size="13" fill="#4A463E">出声读一遍再听</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    先小声读三句话。「清晨，小鸟在树上唱歌。」中间那个逗号，读的时候要不要停？停多久？
+  </p>
+  <p class="teach-text" id="p2s2">
+    读到让你卡了一下的那一句，点它，让它变灰。<b>点哪句都行，这里不判对错</b>；灰的必须落在整句上。
+  </p>
+  <p class="teach-text" id="p2s3">
+    这一步只留一个痕迹：<b>我读过、而且卡住过</b>。读得好不好，这一课从头到尾都不打分。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>看标点</h4>
+    <div class="eq">先分好拍</div>
+    <p>逗号、句号、问号。</p>
+  </div>
+  <div class="card">
+    <h4>读中停</h4>
+    <div class="eq">点句子变灰</div>
+    <p>卡住的整句。</p>
+  </div>
+  <div class="card">
+    <h4>再回放</h4>
+    <div class="eq">自己听一遍</div>
+    <p>只听，不评分。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  <div class="rd-text" id="rdText">
+  <span class="rd-s" data-p="1">清晨，小鸟在树上唱歌。</span>
+  <span class="rd-s" data-p="2">你今天去不去公园？</span>
+  <span class="rd-s" data-p="3">我先把作业本放好，再出去玩。</span>
+</div>
+<div class="trace-why" id="rdNote">花 <b>20 秒</b>小声读一遍，点一句「我在这儿卡了一下」。<b>点哪句都行，不判对错。</b></div>
+</div>
+</section>
+
+<!-- ===== p3: 取证 · 圈出标点，写下卡住的那一句 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">取证 · 圈出标点，写下卡住的那一句</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="四种标点四种读法">
+  <rect x="8" y="8" width="284" height="34" rx="9" fill="#FFFFFF" stroke="#DDD3BE"/>
+  <text x="20" y="31" font-size="13" fill="#4A463E">，逗号　停半拍</text>
+  <rect x="8" y="48" width="284" height="34" rx="9" fill="#FFFFFF" stroke="#DDD3BE"/>
+  <text x="20" y="71" font-size="13" fill="#4A463E">。句号　停一拍，一句读完</text>
+  <rect x="8" y="88" width="284" height="34" rx="9" fill="#F7E9D9" stroke="#A4552F"/>
+  <text x="20" y="111" font-size="13" fill="#A4552F" font-weight="700">？问号　语气上扬</text>
+  <rect x="8" y="128" width="284" height="34" rx="9" fill="#E4F1EC" stroke="#2F7A6B"/>
+  <text x="20" y="151" font-size="13" fill="#2F7A6B">！感叹号　语气加强</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    先选一种读法，再点一句把那个标点划黄；下边写一句「我在第几句停了一下，因为这里有……」。
+  </p>
+  <p class="teach-text" id="p3s2">
+    <b>这一课只回放、不评分</b>。这里只报「已圈几处标点、那一句写没写」，绝不说「你读得好不好」。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>，逗号停半拍，。句号停一拍，？问号语气上扬，！感叹号语气加强。</li>
+  <li>按标点停，别在「小鸟」「唱歌」这种词中间把句子劈开。</li>
+  <li>书上有几个字读几个：不自己添字，也不漏掉字。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  <div id="evBox">
+  <div class="ev-syms">
+    <button class="ev-sym" type="button" data-s="，">， 逗号 停半拍</button>
+    <button class="ev-sym" type="button" data-s="。">。 句号 停一拍</button>
+    <button class="ev-sym" type="button" data-s="？">？ 问号 上扬</button>
+    <button class="ev-sym" type="button" data-s="！">！ 感叹号 加强</button>
+  </div>
+  <div class="ev-text">
+    <span class="ev-s" data-p="1">清晨，小鸟在树上唱歌。<i class="ev-badge"></i></span>
+    <span class="ev-s" data-p="2">你今天去不去公园？<i class="ev-badge"></i></span>
+    <span class="ev-s" data-p="3">我先把作业本放好，再出去玩。<i class="ev-badge"></i></span>
+  </div>
+  <input class="ev-idea" id="evIdea" placeholder="我在第 1 句停了半拍，因为这里有逗号……">
+  <div class="trace-why" id="evWhy">先选一种读法，再点一句把标点划下来。</div>
+  <div class="trace-note" id="evNote">已圈标点 0 处 · 那一句还没写（只记痕迹，不判对错）</div>
+</div>
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连 · 标点和它要求的读法</h2>
+<p class="teach-text" id="p3bs1">左边是标点或朗读规矩，右边是它要求的读法。连完不用交卷，只看自己能不能说清「为什么」。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 停顿落在哪儿才对</h2>
+  <p class="quiz-hint">三道题都有唯一答案，重点看「别在词中间断开」。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 「一群小鸟｜在树上唱歌」中间这一竖，最可能表示什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>逗号处停半拍</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>句号，整句读完了</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>这里要大声喊</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 「你今天去不去公园？」读到最后，该？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>和陈述句一样平着收</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>语气上扬，像在问人</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>直接停住不读</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 下面哪一句算「按标点停顿」，不是随便断？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>一群｜小鸟在树｜上唱歌</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>一群小鸟在树上唱｜歌</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>一群小鸟，在树上唱歌。</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button id="quizMid1_submitBtn" class="btn-submit" onclick="submitQuiz('quizMid1','mid1')">提交本页成绩</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 对齐 · 四张卡，三种停顿，一个筐 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">对齐 · 四张卡，三种停顿，一个筐</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="四张卡归进三种停顿栏加干扰筐">
+  <rect x="8" y="10" width="128" height="150" rx="10" fill="#FFFFFF" stroke="#DDD3BE"/>
+  <text x="18" y="32" font-size="13" fill="#7A7263" font-weight="700">左：卡 4 张</text>
+  <text x="18" y="58" font-size="12" fill="#4A463E">3 真 + 1 干扰</text>
+  <rect x="152" y="10" width="140" height="34" rx="9" fill="#F7E9D9" stroke="#A4552F"/>
+  <text x="164" y="32" font-size="13" fill="#A4552F">停半拍栏</text>
+  <rect x="152" y="50" width="140" height="34" rx="9" fill="#FFFFFF" stroke="#DDD3BE"/>
+  <text x="164" y="72" font-size="13" fill="#4A463E">停一拍栏</text>
+  <rect x="152" y="90" width="140" height="34" rx="9" fill="#E4F1EC" stroke="#2F7A6B"/>
+  <text x="164" y="112" font-size="13" fill="#2F7A6B">语气上扬栏</text>
+  <rect x="152" y="130" width="140" height="34" rx="9" fill="#FBEAD9" stroke="#A4552F"/>
+  <text x="164" y="152" font-size="13" fill="#A4552F" font-weight="700">都不支撑筐</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    把 4 张卡放进「停半拍／停一拍／语气上扬」三栏或「都不支撑」筐。有一张跟怎么读完全无关。
+  </p>
+  <p class="teach-text" id="p5s2">
+    放完<b>强制补一步</b>：点这张卡下面的「第几句」把依据记下。<b>归栏和依据分别记录</b>，都不判对错。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>3 真 + 1 干扰</h4>
+    <div class="eq">三栏不是四栏</div>
+    <p>必有「都不支撑」筐。</p>
+  </div>
+  <div class="card">
+    <h4>一句可连多栏</h4>
+    <div class="eq">破除一对一</div>
+    <p>别用排除法蒙。</p>
+  </div>
+  <div class="card">
+    <h4>只说再读一遍</h4>
+    <div class="eq">不给分数</div>
+    <p>不说对错。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  <div id="alBox">
+  <div class="al-cards" id="alCards">
+    <div class="ev-card" data-n="1"><b>卡 1</b><br>，　逗号：中间停半拍<div class="ev-paras"><span class="ev-para" data-p="1">第1句</span><span class="ev-para" data-p="2">第2句</span><span class="ev-para" data-p="3">第3句</span></div></div>
+    <div class="ev-card" data-n="2"><b>卡 2</b><br>。　句号：一句读完停一拍<div class="ev-paras"><span class="ev-para" data-p="1">第1句</span><span class="ev-para" data-p="2">第2句</span><span class="ev-para" data-p="3">第3句</span></div></div>
+    <div class="ev-card" data-n="3"><b>卡 3</b><br>？　问号：尾音往上提<div class="ev-paras"><span class="ev-para" data-p="1">第1句</span><span class="ev-para" data-p="2">第2句</span><span class="ev-para" data-p="3">第3句</span></div></div>
+    <div class="ev-card" data-n="4"><b>卡 4（干扰）</b><br>书脊的颜色<div class="ev-paras"><span class="ev-para" data-p="1">第1句</span><span class="ev-para" data-p="2">第2句</span><span class="ev-para" data-p="3">第3句</span></div></div>
+  </div>
+  <div class="al-slots">
+    <div class="ev-slot" data-slot="A"><b>停半拍栏：逗号</b>把逗号放进来</div>
+    <div class="ev-slot" data-slot="B"><b>停一拍栏：句号</b>把句号放进来</div>
+    <div class="ev-slot" data-slot="C"><b>语气上扬栏：问号</b>把问号放进来</div>
+    <div class="ev-slot" data-slot="X"><b>都不支撑筐</b>和怎么读无关的内容</div>
+  </div>
+  <div class="trace-why" id="alWhy">点一张卡，再点一栏放进去；放完还要补「我是根据第几句连的」。</div>
+  <div class="trace-note" id="alNote">已归位 0 / 4 · 依据补了 0 / 4（连线和依据分别记，不判对错）</div>
+</div>
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">说清 · 节拍回放台（只回放，不评分）</h2>
+  <p class="sim-desc">点左边一句，按标点分好的拍子就摆出来；再点右边一处读法，给这句标上停顿。这里只报「标了几处、回放了几遍」，读得好不好要自己出声听。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">已标 0 / 3 处（不判对错）</span>
+    <span class="sim-tip" id="simTip">先自己读一遍，再看老师的节拍</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn" onclick="simNextCase()">换一段短文</button>
+    <button class="btn" onclick="simReset()">重来</button>
+    <button class="btn-primary" onclick="simDemo()">看一遍示范节拍</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">逗号处留一道停顿刻度，点读法标一处；机器听不见你出声，所以不打分</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>逗号停半拍、句号停一拍、问号上扬；别在词中间把句子读断。</li>
+    <li>书上有几个字读几个，不自己添字、也不漏掉字。</li>
+    <li>回放只查「停够没、丢字没」，不给分数、不说读得好不好。</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 为什么这一课不打分</h2>
+  <p class="quiz-hint">三道题都有唯一答案，注意「机器听不见出声」「只留痕迹」。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 回放自己读的那一遍，最该听什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>有没有按标点停够、有没有丢字加字</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>声音好不好听、该打几分</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>比同桌快了多少</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 为什么这一课不给朗读打分？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>打分太麻烦</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>机器听不见你出声，读得好不好要自己听、老师听</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>一年级不用读</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 有同学把句末的「吗」读丢了，最该说什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>你错了，扣分</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>不用管，差不多</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>回到那一句，看着书再读一遍，把字补齐</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button id="quizMid2_submitBtn" class="btn-submit" onclick="submitQuiz('quizMid2','mid2')">提交本页成绩</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 换文 · 撤掉标记，自己圈、自己停 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">换文 · 撤掉标记，自己圈、自己停</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    换一段没标停顿的短文，自己圈标点、按标点停一停、出声读一遍，再对着三条标准自查。勾不满也能翻页。
+  </p>
+  <p class="teach-text" id="p8s2">
+    顺手把四个<b>易错</b>点看一遍：别抢快，别在词中间断，别丢字加字，也别把「我读着别扭」藏起来。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 圈出标点</h4>
+    <div class="eq">，。？！</div>
+    <p>拍子先看清。</p>
+  </div>
+  <div class="card">
+    <h4>② 按标点停</h4>
+    <div class="eq">半拍 / 一拍</div>
+    <p>别在词中间断。</p>
+  </div>
+  <div class="card">
+    <h4>③ 出声再听</h4>
+    <div class="eq">丢字了吗</div>
+    <p>只听，不评分。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  <div id="trBox">
+  <div class="tr-text">
+    <span class="tr-s">放学了，雨还在下。你把伞带上了吗？</span>
+    <span class="tr-s">我们一起走吧！别忘了把作业本收好。</span>
+  </div>
+  <div class="trace-note" id="trNote">自发划了 0 处（不判对错）。换了一段没标停顿的短文，只剩「圈标点」和「按标点停一停」。</div>
+  <div class="tr-cks">
+    <span class="tr-ck">① 我按标点停够了吗</span>
+    <span class="tr-ck">② 问号 / 感叹号读出来了吗</span>
+    <span class="tr-ck">③ 我有没有丢字、加字</span>
+  </div>
+  <div class="trace-why" id="trAdvice">自查勾不满也照样能翻页：这三条只问「有没有按标点读、有没有丢字」，不问「读得好不好」。</div>
+</div>
+</div>
+
+<p class="teach-text" id="p8apply">
+  这一页只问「能不能按标点读、有没有丢字」，不问「读得好不好」。停够没停够可以自己听，好不好听，机器不下结论。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，把朗读的边界说清楚</h2>
+  <p class="quiz-hint">五道题都有唯一答案。做完这一页，你就知道哪些能判、哪些只能自己听。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 下面哪一处能当「停顿标记」？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>逗号、句号</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>书页的页码</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>封面的颜色</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 这一课最后要留下的是什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>一次朗读得分</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>一张自己标过停顿的句子卡</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>一张排行榜</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 换一段没标停顿的新短文，只准用哪两样？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>看分数和听范读</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>抄答案和背下来</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>圈标点、按标点停一停再回放</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 「？」「。」「，」三个符号里，停顿最长的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>句号</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>问号</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>逗号</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 出声读之前，最稳的第一步是什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>先比谁读得快</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>先看清标点在哪儿，心里分好拍</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>先把不认识的字跳过去</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button id="quizPost_submitBtn" class="btn-submit" onclick="submitQuiz('quizPost','post')">提交本页成绩</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">留下的是句子卡，不是朗读得分</div>
+        <div class="summary-v4-summary">圈标点 → 停一停 → 回放</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>产出物是一张自己标过停顿的句子卡。</p>
+      <p>能按标点停、能听出丢没丢字，才叫读得正确流利。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">四个标点，四种读法</div>
+        <div class="summary-v4-summary">，半拍 / 。一拍 / ？上扬 / ！加强</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>逗号停半拍、句号停一拍，问号管语气上扬不是停多久。</p>
+      <p>别在「小鸟」「唱歌」这种词中间把句子劈开。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">最容易翻车的三处</div>
+        <div class="summary-v4-summary">抢快 / 词中间断 / 丢字加字</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>比谁读得快，最容易把标点读没了。</p>
+      <p>不自己添「的、了」，也不跳过书上的字。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">只给事实，不给判断</div>
+        <div class="summary-v4-summary">看着书再读一遍</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>读着别扭或丢字时，只提示「回那一句、看着书再读」，不给分数不说对错。</p>
+      <p>这一课从头到尾只回放、不评分：读得好不好，要自己听、老师听。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  <div class="my-chain" id="myChain"><b>你标过停顿的那一句</b>　（还没存。回到「取证」那一页写一句你读着卡住的话，它就会出现在这里。）</div>
+把这张句子卡读给同桌听：先指给他看你在哪儿标了停顿，再按标点出声读一遍，最后自己回放听一听有没有丢字。他听出来你停错的地方，就是你下次要补的那一处。下一步学默读，正好接着练不出声也能读进去。
+</p>
+</section>
+</div><!-- /pageContainer -->
+
+<!-- ===== 渐进揭示提示条 ===== -->
+<div id="revealHint"><span class="r-dot"></span>点击页面继续揭示 <span class="r-progress" id="revealProgress"></span></div>
+
+<!-- ===== 图片全屏灯箱 ===== -->
+<div id="imgLightbox" onclick="closeLightbox()">
+  <button class="lb-close" onclick="closeLightbox()">✕</button>
+  <img id="lbImg" src="" alt="全屏查看">
+</div>
+
+<!-- ===== 底部翻页按钮 ===== -->
+<div id="navBtns">
+  <button id="btnPrev" onclick="prevPage()" disabled>◀</button>
+  <span id="pageIndicator">1/N</span>
+  <button id="btnNext" onclick="nextPage()">▶</button>
+</div>
+
+<script>
+// ⚠ 加载顺序：page-flip-system.js 必须最先（其中定义了 getPageParam，供 mqtt-framework/teaching-control 复用）
+// 引用: references/templates/page-flip-system.js
+// 引用: references/templates/quiz-engine.js
+// 引用: references/templates/matching-quiz.js
+// 引用: references/templates/canvas-engine-patterns.js
+// 引用: references/templates/infographic-generator.js
+// 各仿真和绘制函数按需添加...
+
+// ===== 全屏：v2026-09-28e 定案「默认不放按钮」 =====
+// 外壳 sandbox 无 allow-fullscreen，网页代码达不到 F11 式真全屏，故不放全屏按钮及其 JS。
+// 需要全屏 → 用户按 F11 或直开 HTML；确需按钮 → 从 teaching-control.js 取三级降级实现。
+
+
+// ===== 渐进呈现动画引擎 =====
+// 使用方式：在 onPageEnter 中调用 setupReveal(pageId, [...]), 定义每步揭示的元素
+// 每个 item: { sel: 'CSS选择器', anim: '动画class名', delay: 可选延迟ms }
+// 学生在讲授页点击空白区域依次揭示
+
+var pageRevealQueues = {};   // { p2: [{sel, anim, delay}, ...], ... }
+var pageRevealIndex = {};    // { p2: 2, ... }
+var pageRevealActive = {};   // { p2: true, ... }
+var _revealPlaying = {};     // 上一步动画现场 { p2: {els, anim, t0, dur} }，用于连点快进
+
+/* ---------- 视觉顺序（v1.5.5 新增）----------
+   揭示顺序一律按「版面位置」判定：先上后下、同行先左后右，禁止依赖 DOM 书写顺序。
+   原因：grid/flex 的 order、column-count 多列、绝对定位、模板套用都会让 DOM 顺序 ≠ 视觉顺序，
+   于是出现「下面的比上面的先出现」「右面的比左边的先出现」。 */
+function _revealSortEls(els) {
+  var arr = Array.prototype.slice.call(els).map(function(el, i) { return { el: el, i: i }; });
+  var TOL = 12; // 同一行的容差（px）：卡片行内 top 完全一致，容差只为吸收亚像素/阴影差
+  arr.sort(function(a, b) {
+    var ra = a.el.getBoundingClientRect(), rb = b.el.getBoundingClientRect();
+    if (Math.abs(ra.top - rb.top) > TOL) return ra.top - rb.top;
+    if (Math.abs(ra.left - rb.left) > TOL) return ra.left - rb.left;
+    return a.i - b.i; // 位置相同 → 保持原序（稳定）
+  });
+  return arr.map(function(o) { return o.el; });
+}
+
+/* 一步揭示实际命中的元素（支持 item.children：容器内子元素逐个揭示） */
+function _revealMatch(pageId, item) {
+  var base = document.querySelectorAll('#' + pageId + ' ' + item.sel);
+  if (item.children) {
+    var out = [];
+    Array.prototype.forEach.call(base, function(c) {
+      out = out.concat(Array.prototype.slice.call(c.querySelectorAll(item.children)));
+    });
+    return out;
+  }
+  return Array.prototype.slice.call(base);
+}
+
+function setupReveal(pageId, items) {
+  pageRevealQueues[pageId] = items;
+  pageRevealIndex[pageId] = 0;
+  pageRevealActive[pageId] = items.length > 0;
+  _revealPlaying[pageId] = null;
+  // 初始隐藏所有待揭示元素
+  items.forEach(function(item) {
+    var els = _revealMatch(pageId, item);
+    if (!els.length) {
+      console.warn('[reveal] 选择器未命中，该步会被跳过并导致后续顺序前移：#' + pageId + ' ' + item.sel);
+    }
+    els.forEach(function(el) { el.classList.add('reveal-hidden'); });
+  });
+  updateRevealHint(pageId);
+}
+
+/* 零配置揭示：页面内元素标 data-reveal 即可，队列按视觉顺序自动生成（推荐，永不乱序）
+   用法：
+     <p data-reveal>段落</p>                        → 淡入上浮（默认）
+     <figure class="fig float-r" data-reveal="reveal-float-in-r">…</figure>
+     <div data-reveal data-reveal-children=".card" data-reveal-seq="150">…卡片组…</div>
+   属性：data-reveal=动画class / data-reveal-children=组内逐个元素 / data-reveal-seq / data-reveal-delay */
+function setupRevealAuto(pageId) {
+  var root = document.getElementById(pageId);
+  if (!root) { console.warn('[reveal] 页面不存在：' + pageId); return; }
+  var nodes = Array.prototype.slice.call(root.querySelectorAll('[data-reveal]'));
+  // 嵌套去重：祖先已带 data-reveal 的节点不再单独入队
+  nodes = nodes.filter(function(el) {
+    var p = el.parentElement;
+    while (p && p !== root) {
+      if (p.hasAttribute && p.hasAttribute('data-reveal')) return false;
+      p = p.parentElement;
+    }
+    return true;
+  });
+  nodes.forEach(function(el, i) {
+    if (!el.hasAttribute('data-reveal-id')) el.setAttribute('data-reveal-id', pageId + 'RV' + i);
+  });
+
+  function build() {
+    var ordered = _revealSortEls(nodes);   // 每次重建都按当前真实位置排序
+    var items = ordered.map(function(el) {
+      return {
+        sel: '[data-reveal-id="' + el.getAttribute('data-reveal-id') + '"]',
+        anim: el.getAttribute('data-reveal') || 'reveal-fade-up',
+        children: el.getAttribute('data-reveal-children') || '',
+        seqDelay: parseInt(el.getAttribute('data-reveal-seq'), 10) || 0,
+        delay: parseInt(el.getAttribute('data-reveal-delay'), 10) || 0
+      };
+    });
+    setupReveal(pageId, items);
+  }
+  build();
+
+  // 若调用时页面还没完成布局（元素 rect 全为 0，例如 display:none 中提前建队列），
+  // 下一帧按真实位置重排一次队列——否则退化成 DOM 顺序，正是「下面先出/右面先出」的根源。
+  var unmeasurable = nodes.some(function(el) {
+    var r = el.getBoundingClientRect();
+    return r.width === 0 && r.height === 0;
+  });
+  if (unmeasurable) {
+    requestAnimationFrame(function() {
+      if (pageRevealIndex[pageId] === 0) build();
+    });
+  }
+}
+
+function nextReveal(pageId) {
+  if (!pageRevealActive[pageId]) return;
+  var queue = pageRevealQueues[pageId];
+  var idx = pageRevealIndex[pageId];
+  if (!queue || idx >= queue.length) return;
+
+  // ① 连点快进（v1.5.5）：上一步动画尚未播完就点了下一步 → 直接把上一步定格到终态。
+  //    否则两次动画时间轴交叠，会出现「后一步还停在透明度 0 已开始计时、前一步刚过半」的倒序错觉。
+  var prev = _revealPlaying[pageId];
+  if (prev) {
+    var elapsed = Date.now() - prev.t0;
+    if (prev.dur > 0 && elapsed < prev.dur) {
+      prev.els.forEach(function(el) { el.classList.remove(prev.anim); });
+    }
+    _revealPlaying[pageId] = null;
+  }
+
+  var item = queue[idx];
+  var els = _revealMatch(pageId, item);
+  if (!els.length) {
+    console.warn('[reveal] 选择器未命中，该步被跳过：#' + pageId + ' ' + item.sel);
+  }
+  // ② 组内揭示顺序 = 视觉顺序（上→下、左→右），与 querySelectorAll 的 DOM 顺序无关
+  els = _revealSortEls(els);
+
+  var delay = item.delay || 0;
+  var seq = item.seqDelay || 0;
+  els.forEach(function(el, i) {
+    var d = delay + seq * i;
+    el.style.animationDelay = d + 'ms';
+    el.classList.add(item.anim);
+    el.classList.add('reveal-done');
+  });
+
+  // ③ 记录本步动画时长（含组内错峰），供下一步连点快进判断
+  var dur = 0;
+  if (els.length) {
+    var ad = '';
+    try { ad = getComputedStyle(els[0]).animationDuration || '0s'; } catch (e) {}
+    dur = parseFloat(ad) * 1000;
+    if (!isFinite(dur) || dur <= 0 || dur > 5000) dur = 0; // 持续型（kenburns 8s 等）不快进
+    else dur += delay + seq * Math.max(0, els.length - 1);
+  }
+  _revealPlaying[pageId] = { els: els, anim: item.anim, t0: Date.now(), dur: dur };
+
+  pageRevealIndex[pageId]++;
+  updateRevealHint(pageId);
+  // 全部揭示完 → 隐藏提示条
+  if (pageRevealIndex[pageId] >= queue.length) {
+    pageRevealActive[pageId] = false;
+  }
+}
+
+// 逆向回退：撤销上一步揭示（配合键盘箭头回退，见 SKILL.md「Progressive Reveal Animation System」章节）
+function prevReveal(pageId) {
+  var queue = pageRevealQueues[pageId];
+  var idx = pageRevealIndex[pageId];
+  if (!queue || idx <= 0) return;
+  idx--;
+  var item = queue[idx];
+  var els = _revealMatch(pageId, item);
+  els.forEach(function(el) {
+    el.classList.remove(item.anim, 'reveal-done');
+    el.classList.add('reveal-hidden');
+    el.style.animationDelay = '';
+    // 项目扩展：此处重置该元素内的 count-num / typewriter 等特殊效果
+    // 完整版（含 _twTimer 中断）见 SKILL.md「Progressive Reveal Animation System」章节 prevReveal 完整代码
+  });
+  _revealPlaying[pageId] = null;
+  pageRevealIndex[pageId] = idx;
+  pageRevealActive[pageId] = true;
+  updateRevealHint(pageId);
+}
+
+function updateRevealHint(pageId) {
+  var hint = document.getElementById('revealHint');
+  var progress = document.getElementById('revealProgress');
+  var active = pageRevealActive[pageId];
+  var queue = pageRevealQueues[pageId];
+  if (!active || !queue) { hint.style.display = 'none'; return; }
+  var idx = pageRevealIndex[pageId];
+  var remain = queue.length - idx;
+  if (remain <= 0) { hint.style.display = 'none'; return; }
+  hint.style.display = 'flex';
+  progress.textContent = (idx + 1) + '/' + queue.length + ' ←→';
+}
+
+// 讲授页全局点击 → 触发 nextReveal（排除链接、按钮、quiz-q 等交互元素）
+document.addEventListener('click', function(e) {
+  var pageEl = document.querySelector('.page.active');
+  if (!pageEl) return;
+  var pid = pageEl.id;
+  if (!pageRevealActive[pid]) return;
+  // 排除交互元素（含图片——图片点击触发灯箱而非揭示）
+  var tag = e.target.tagName;
+  if (tag === 'A' || tag === 'BUTTON' || tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || tag === 'IMG') return;
+  if (e.target.closest('.quiz-q') || e.target.closest('.opt') ||
+      e.target.closest('nav') || e.target.closest('#navBtns') || e.target.closest('.timeline-card') ||
+      e.target.closest('.mindmap') || e.target.closest('#imgLightbox')) return;
+  nextReveal(pid);
+});
+
+// 翻页时重置提示条状态
+var _origShowPage = showPage;
+showPage = function(i) {
+  _origShowPage(i);
+  var pid = PAGE_IDS[i];
+  setTimeout(function() { updateRevealHint(pid); }, 100);
+};
+
+// ===== 图片全屏灯箱 =====
+function openLightbox(src) {
+  document.getElementById('lbImg').src = src;
+  document.getElementById('imgLightbox').classList.add('show');
+}
+function closeLightbox() {
+  document.getElementById('imgLightbox').classList.remove('show');
+}
+// 页面图片点击 → 全屏放大
+document.addEventListener('click', function(e) {
+  if (e.target.tagName === 'IMG' && !e.target.closest('#imgLightbox') && !e.target.closest('.qr-img-wrap')) {
+    e.stopPropagation();
+    openLightbox(e.target.src);
+  }
+});
+// ESC 关闭灯箱
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    var lb = document.getElementById('imgLightbox');
+    if (lb.classList.contains('show')) { closeLightbox(); e.preventDefault(); }
+  }
+});
+
+var PAGE_IDS = ["p0", "p1", "p2", "p3", "p3b", "p4", "p5", "p6", "p7", "p8", "p9", "p10"];
+var PAGE_LABELS = ["封面", "前测", "起疑", "取证", "连一连", "中测1", "对齐", "说清", "中测2", "换文", "后测", "存起来"];
+var IMG_PREFIX = 'img/';
+var curPage = 0;
+
+// ===== 测验数据 =====
+var QUIZZES = {
+  quizPre: {
+    questions: [
+      { answer: 0, explain: "逗号管一句话中间的小停顿，停半拍就够；停太久就把句子读散了。" },
+      { answer: 1, explain: "问号是在问人，句尾语气自然往上提；压下去就听不出是在问。" },
+      { answer: 2, explain: "「正确」第一步是照着书上的字读：书上有几个字读几个，不添「的、了」，也不跳过。" }
+    ]
+  },
+  quizMid1: {
+    questions: [
+      { answer: 0, explain: "竖线标的是一处小停顿，正好落在逗号上。句号要停得更长，也不该在词中间断开。" },
+      { answer: 1, explain: "问号要读出「在问」的感觉，尾音往上提；平着收就变成了陈述。" },
+      { answer: 2, explain: "前两句把「小鸟」「唱歌」这些词从中间劈开了。第三句照着逗号、句号停，才没把词读断。" }
+    ]
+  },
+  quizMid2: {
+    questions: [
+      { answer: 0, explain: "回放只查两件能自己核实的事：停顿和字。好不好听、快不快，都不该由机器下结论。" },
+      { answer: 1, explain: "静态课件拿不到录音，更不该假装能判「读得好不好」。这一课只留痕迹：标了哪几处、回放了几遍。" },
+      { answer: 2, explain: "只提示「回那一句、看着书再读」，不给否定结论。丢字是能自己听出来的，不必扣分。" }
+    ]
+  },
+  quizPost: {
+    questions: [
+      { answer: 0, explain: "标点就是书上写好的拍子。页码、封面颜色和怎么读没有关系。" },
+      { answer: 1, explain: "产出物是标过停顿的句子卡，不是分数、更不是排名。" },
+      { answer: 2, explain: "换文就是把提示全撤掉，只剩「圈标点」和「自己停一停」。" },
+      { answer: 0, explain: "逗号最短（半拍），句号一句读完停一拍；问号管的是语气上扬，不是停多久。" },
+      { answer: 1, explain: "先看标点、心里分好拍，再出声，比抢速度稳得多；跳字恰恰是这一课要改的。" }
+    ]
+  }
+};
+// ===== 翻页系统 =====
+function getPageParam(k) {
+  try {
+    var h = location.hash || '';
+    if (h.indexOf(k + '=') >= 0) {
+      var m1 = new RegExp('[#&]' + k + '=([^&#]*)').exec(h);
+      if (m1) return decodeURIComponent(m1[1]);
+    }
+    var q = location.search || '';
+    if (q.indexOf(k + '=') >= 0) {
+      var m2 = new RegExp('[?&]' + k + '=([^&#]*)').exec(q);
+      if (m2) return decodeURIComponent(m2[1]);
+    }
+    if (window.parent && window.parent !== window) {
+      try {
+        var psrc = (window.parent.location.hash || '') + '&' + (window.parent.location.search || '');
+        if (psrc.indexOf(k + '=') >= 0) {
+          var m3 = new RegExp('[#&?]' + k + '=([^&#]*)').exec(psrc);
+          if (m3) return decodeURIComponent(m3[1]);
+        }
+      } catch (e) {}
+    }
+  } catch (e) {}
+  return null;
+}
+
+function showPage(i) {
+  if (i < 0 || i >= PAGE_IDS.length) return;
+  var oldEl = document.querySelector('.page.active');
+  if (oldEl) oldEl.classList.remove('active');
+  var newEl = document.getElementById(PAGE_IDS[i]);
+  if (newEl) { newEl.classList.add('active'); newEl.scrollTop = 0; }
+  curPage = i;
+  document.querySelectorAll('#topNav .chip').forEach(function(c, idx) {
+    c.classList.toggle('active', idx === i);
+  });
+  document.getElementById('progressBar').style.width = ((i + 1) / PAGE_IDS.length * 100) + '%';
+  document.getElementById('pageIndicator').textContent = (i + 1) + '/' + PAGE_IDS.length;
+  document.getElementById('btnPrev').disabled = (i === 0);
+  document.getElementById('btnNext').disabled = (i === PAGE_IDS.length - 1);
+  onPageEnter(i);
+  var activeChip = document.querySelector('#topNav .chip.active');
+  if (activeChip && typeof activeChip.scrollIntoView === 'function') activeChip.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+
+  if (isBroadcaster && !syncing) xmnBroadcastPage();
+  if (!syncing) lastManualNav = Date.now();}
+
+function nextPage() { if (!canStudentNavigate()) return; if (curPage < PAGE_IDS.length - 1) showPage(curPage + 1); }
+function prevPage() { if (!canStudentNavigate()) return; if (curPage > 0) showPage(curPage - 1); }
+
+document.querySelectorAll('#topNav .chip').forEach(function(chip) {
+  chip.addEventListener('click', function() {
+    showPage(parseInt(this.getAttribute('data-page')));
+  });
+});
+
+document.addEventListener('keydown', function(e) {
+  var pid = PAGE_IDS[curPage];
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') {
+    e.preventDefault();
+    if (typeof pageRevealActive !== 'undefined' && pageRevealActive[pid] &&
+        pageRevealQueues[pid] && pageRevealIndex[pid] < pageRevealQueues[pid].length) {
+      nextReveal(pid);
+    } else { nextPage(); }
+  } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+    e.preventDefault();
+    if (typeof pageRevealQueues !== 'undefined' && pageRevealQueues[pid] && pageRevealIndex[pid] > 0) {
+      prevReveal(pid);
+    } else { prevPage(); }
+  }
+});
+
+var touchStartX = 0, touchStartY = 0;
+document.addEventListener('touchstart', function(e) {
+  touchStartX = e.touches[0].clientX; touchStartY = e.touches[0].clientY;
+}, { passive: true });
+document.addEventListener('touchend', function(e) {
+  var dx = e.changedTouches[0].clientX - touchStartX;
+  var dy = e.changedTouches[0].clientY - touchStartY;
+  if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 60) {
+    if (dx < 0) nextPage(); else prevPage();
+  }
+});
+
+var pageEntered = {};
+function onPageEnter(i) {
+  /* [4A] per-page QR badge display（每次进入都切徽章，不可放进 pageEntered 守卫内） */
+  if (typeof IS_DEPLOYED !== 'undefined' && IS_DEPLOYED) {
+    try { document.querySelectorAll('.qr-badge').forEach(function(b){ b.classList.remove('on'); }); } catch(e){}
+    var _qrId = PAGE_IDS[i];
+    /* v2026-10-28 角色感知：教师=当前页徽章；学生=仅封面徽章（学号姓名登记唯一入口） */
+    var _teach = (typeof IS_TEACHER !== 'undefined' && IS_TEACHER);
+    var _cover = (typeof PAGE_IDS !== 'undefined' && PAGE_IDS) ? PAGE_IDS[0] : null;
+    var _wantId = (_teach || _qrId === _cover) ? _qrId : null;
+    var _b = (typeof _wantId === 'string') ? document.querySelector('.qr-badge[data-page="' + _wantId + '"]') : null;
+    if (_b) _b.classList.add('on');
+  }
+
+  var id = PAGE_IDS[i];
+  if (pageEntered[id]) return;
+  pageEntered[id] = true;
+  if (id === 'p2') {
+    setupReveal('p2', [
+      { sel: '#p2s1', anim: 'reveal-fade-up' },
+      { sel: '#p2fig', anim: 'reveal-float-in-r' },
+      { sel: '#p2s2', anim: 'reveal-fade-up' },
+      { sel: '#p2s3', anim: 'reveal-fade-up' },
+      { sel: '#p2cards', anim: 'reveal-card-grid', children: '.card', seqDelay: 110 },
+      { sel: '#p2key', anim: 'reveal-fade-up' }
+    ]);
+  }
+  if (id === 'p3') {
+    setupReveal('p3', [
+      { sel: '#p3s1', anim: 'reveal-fade-up' },
+      { sel: '#p3fig', anim: 'reveal-float-in-r' },
+      { sel: '#p3s2', anim: 'reveal-fade-up' },
+      { sel: '#p3rules', anim: 'reveal-fade-up' },
+      { sel: '#p3key', anim: 'reveal-fade-up' }
+    ]);
+  }
+  if (id === 'p3b') {
+    setupReveal('p3b', [{ sel: '#p3bs1', anim: 'reveal-fade-up' }]);
+    initMatching('matchP3', [
+      ['，逗号', '停半拍'],
+      ['。句号', '停一拍，一句读完'],
+      ['？问号', '语气上扬'],
+      ['！感叹号', '语气加强'],
+      ['不丢字', '书上有几个字读几个'],
+      ['不加字', '不自己添「的、了」'],
+      ['按标点停', '别在词中间断开'],
+      ['回放一遍', '只听，不打分']
+    ], { leftTitle: '标点 / 规矩', rightTitle: '该怎么读', onDone: function(){ var d=document.querySelector('#matchP3 .mq-done'); if(d) d.textContent='✓ 八处都归位了：四个标点、四条规矩，各回各家'; } });
+  }
+  if (id === 'p5') {
+    setupReveal('p5', [
+      { sel: '#p5s1', anim: 'reveal-fade-up' },
+      { sel: '#p5fig', anim: 'reveal-float-in-r' },
+      { sel: '#p5s2', anim: 'reveal-fade-up' },
+      { sel: '#p5cards', anim: 'reveal-card-grid', children: '.card', seqDelay: 120 },
+      { sel: '#p5key', anim: 'reveal-fade-up' }
+    ]);
+  }
+  if (id === 'p6') { simBind(); simDraw(); }
+  if (id === 'p8') {
+    setupReveal('p8', [
+      { sel: '#p8cards', anim: 'reveal-card-grid', children: '.card', seqDelay: 120 },
+      { sel: '#p8key', anim: 'reveal-fade-up' },
+      { sel: '#p8apply', anim: 'reveal-fade-up' }
+    ]);
+  }
+
+  if (id === 'p2') { bindDoubt(); }
+  if (id === 'p3') { bindEvidence(); }
+  if (id === 'p5') { bindAlign(); }
+  if (id === 'p8') { bindTransfer(); }
+  if (id === 'p10') { updateMyChain(); }
+}
+
+// ===== 测验引擎 =====
+(function(){
+  if (document.getElementById('quiz-engine-css')) return;
+  var st = document.createElement('style');
+  st.id = 'quiz-engine-css';
+  st.textContent = [
+    '.q-type{display:inline-block;font-size:14px;font-weight:700;padding:1px 10px;border-radius:12px;margin-right:8px;vertical-align:2px;background:var(--primary-light);color:#fff;letter-spacing:1px}',
+    '.q-type.multi{background:var(--accent)}',
+    '.opt-confirm{margin-top:10px;padding:7px 22px;border-radius:18px;font-size:16px;font-weight:600;cursor:pointer;border:2px solid var(--accent);background:var(--paper);color:var(--accent);transition:all .2s}',
+    '.opt-confirm:hover{background:var(--accent);color:#fff}',
+    '.quiz-q.submitted .opt-confirm{display:none}'
+  ].join('\n');
+  document.head.appendChild(st);
+})();
+
+function isMultiQ(q){ return !!(q && q.multi && Array.isArray(q.answer)); }
+function sameIdxArr(a, b){
+  if (!Array.isArray(a) || !Array.isArray(b) || a.length !== b.length) return false;
+  for (var i = 0; i < a.length; i++) if (a[i] !== b[i]) return false;
+  return true;
+}
+function ascArr(a){ return a.slice().sort(function(x, y){ return x - y; }); }
+function isCorrectChoice(q, chosen){
+  if (isMultiQ(q)) return sameIdxArr(chosen, ascArr(q.answer));
+  return chosen === q.answer;
+}
+function idxInAnswer(q, j){
+  return Array.isArray(q.answer) ? q.answer.indexOf(j) >= 0 : j === q.answer;
+}
+function idxInChosen(c, j){
+  return Array.isArray(c) ? c.indexOf(j) >= 0 : c === j;
+}
+function quizScoreId(containerId){
+  var s = String(containerId).replace(/^quiz/, '');
+  return s.charAt(0).toLowerCase() + s.slice(1) + 'Score';
+}
+
+function initQuiz(quizId) {
+  var container = document.getElementById(quizId);
+  if (!container || !QUIZZES[quizId]) return;
+  if (container._initialized) return;
+  container._initialized = true;
+  container._questions = QUIZZES[quizId].questions;
+  container._chosen = container._questions.map(function(q){ return isMultiQ(q) ? null : -1; });
+  container._picked = container._questions.map(function(q){ return isMultiQ(q) ? [] : null; });
+  var isSubmitMode = true;
+
+  container.querySelectorAll('.quiz-q').forEach(function(qq, qi) {
+    var q = container._questions[qi];
+    if (!q) return;
+    var opts = qq.querySelectorAll('.opt');
+    if (isMultiQ(q)) {
+      opts.forEach(function(opt) {
+        opt.addEventListener('click', function() {
+          if (container._submitted) return;
+          var idx = parseInt(this.getAttribute('data-idx'));
+          var pos = container._picked[qi].indexOf(idx);
+          if (pos >= 0) { container._picked[qi].splice(pos, 1); this.classList.remove('selected'); }
+          else { container._picked[qi].push(idx); this.classList.add('selected'); }
+        });
+      });
+      var btn = qq.querySelector('.opt-confirm');
+      if (btn) btn.addEventListener('click', function() {
+        if (container._submitted) return;
+        if (container._picked[qi].length === 0) return;
+        container._chosen[qi] = ascArr(container._picked[qi]);
+        qq.classList.add('answered');
+        if (!isSubmitMode) { showFeedback(quizId, qi); updateQuizScore(quizId); }
+      });
+    } else {
+      opts.forEach(function(opt) {
+        opt.addEventListener('click', function() {
+          if (container._submitted) return;
+          var idx = parseInt(this.getAttribute('data-idx'));
+          container._chosen[qi] = idx;
+          opts.forEach(function(o) { o.classList.remove('selected'); });
+          this.classList.add('selected');
+          qq.classList.add('answered');
+          if (!isSubmitMode) { showFeedback(quizId, qi); updateQuizScore(quizId); }
+        });
+      });
+    }
+  });
+}
+
+function showFeedback(quizId, qi) {
+  var container = document.getElementById(quizId);
+  var q = container._questions[qi];
+  var c = container._chosen[qi];
+  var qq = document.getElementById('qq_' + quizId + '_' + qi);
+  var fb = document.getElementById('fb_' + quizId + '_' + qi);
+  if (!qq || !fb) return;
+  var isCorrect = isCorrectChoice(q, c);
+  fb.innerHTML = '<span class="fb-icon">' + (isCorrect ? '✓' : '✗') + '</span>' +
+    (isCorrect ? '答对了。' : '再看一遍。') + q.explain;
+  fb.className = 'feedback show ' + (isCorrect ? 'correct-fb' : 'wrong-fb');
+  qq.querySelectorAll('.opt').forEach(function(o, j) {
+    if (idxInAnswer(q, j)) o.classList.add('correct');
+    if (!isCorrect && idxInChosen(c, j) && !idxInAnswer(q, j)) o.classList.add('wrong');
+    o.style.pointerEvents = 'none';
+  });
+}
+
+function updateQuizScore(quizId) {
+  var container = document.getElementById(quizId);
+  var total = container._questions.length;
+  var done = 0, score = 0;
+  container._questions.forEach(function(q, i) {
+    var c = container._chosen[i];
+    var answered = isMultiQ(q) ? (Array.isArray(c) && c.length > 0) : c >= 0;
+    if (answered) { done++; if (isCorrectChoice(q, c)) score++; }
+  });
+  var scoreEl = document.getElementById(quizScoreId(quizId));
+  if (scoreEl) {
+    scoreEl.style.display = 'block';
+    if (done === total) {
+      scoreEl.innerHTML = '得分：' + score + '/' + total + ' &nbsp;&nbsp;' +
+        (score === total ? '🌟 全部正确！' : score >= total * 0.6 ? '👍 不错，继续加油！' : '💪 回到前面再看一遍');
+    } else {
+      scoreEl.textContent = '已答：' + done + '/' + total + ' 正确：' + score;
+    }
+  }
+  try { localStorage.setItem('xmn_' + quizId, JSON.stringify({ score: score, total: total, done: done })); } catch (e) {}
+}
+
+function retryQuiz(quizId) {
+  var container = document.getElementById(quizId);
+  if (!container) return;
+  container._chosen = container._questions.map(function(q){ return isMultiQ(q) ? null : -1; });
+  container._picked = container._questions.map(function(q){ return isMultiQ(q) ? [] : null; });
+  container.querySelectorAll('.quiz-q').forEach(function(qq) {
+    qq.classList.remove('answered');
+    qq.querySelectorAll('.opt').forEach(function(o) {
+      o.classList.remove('selected', 'correct', 'wrong');
+      o.style.pointerEvents = 'auto';
+    });
+  });
+  container.querySelectorAll('.feedback').forEach(function(fb) { fb.className = 'feedback'; fb.innerHTML = ''; });
+  var el = document.getElementById(quizScoreId(quizId));
+  if (el) el.style.display = 'none';
+}
+
+Object.keys(QUIZZES).forEach(function(k) { initQuiz(k); });
+
+// ===== 连线题引擎 =====
+(function(){
+  var CSS = [
+    '.match-wrap{position:relative;margin:14px 0}',
+    '.match-cols{display:grid;grid-template-columns:1fr 1fr;gap:40px}',
+    '.match-col h4{font-size:18px;color:var(--primary);margin-bottom:10px;text-align:center}',
+    '.match-item{padding:14px 18px;margin-bottom:12px;border:2px solid var(--line);border-radius:12px;background:#fff;font-size:19px;cursor:pointer;transition:all .2s;text-align:center}',
+    '.match-item:hover{border-color:var(--primary-light)}',
+    '.match-item.sel{border-color:var(--accent);background:var(--accent-soft)}',
+    '.match-item.ok{border-color:var(--green);background:#E8F5F3}',
+    '.match-item.bad{border-color:var(--red);animation:shakeX .35s}',
+    '@keyframes shakeX{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}',
+    '.match-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}',
+    '.mq-actions{text-align:center;margin-top:10px}',
+    '.mq-actions button{padding:7px 22px;border-radius:18px;font-size:16px;font-weight:600;cursor:pointer;border:2px solid var(--primary);background:var(--paper);color:var(--primary)}',
+    '.mq-done{text-align:center;font-size:18px;font-weight:700;color:var(--green);margin-top:8px;min-height:24px}'
+  ].join('\n');
+  var st = document.createElement('style');
+  st.textContent = CSS;
+  document.head.appendChild(st);
+})();
+
+function initMatching(containerId, pairs, options){
+  options = options || {};
+  var c = document.getElementById(containerId);
+  if (!c || c._initialized) return;
+  c._initialized = true;
+  var list = pairs.map(function(p){ return Array.isArray(p) ? {left:p[0], right:p[1]} : p; });
+  var order = list.map(function(_, i){ return i; });
+  for (var i = order.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var t = order[i]; order[i] = order[j]; order[j] = t;
+  }
+  c.innerHTML =
+    '<div class="match-wrap"><div class="match-cols">' +
+      '<div class="match-col"><h4>' + (options.leftTitle || '左侧') + '</h4>' +
+        list.map(function(p, k){ return '<div class="match-item" data-side="L" data-i="' + k + '">' + p.left + '</div>'; }).join('') +
+      '</div>' +
+      '<div class="match-col"><h4>' + (options.rightTitle || '右侧') + '</h4>' +
+        order.map(function(k){ return '<div class="match-item" data-side="R" data-i="' + k + '">' + list[k].right + '</div>'; }).join('') +
+      '</div>' +
+    '</div><svg class="match-svg"></svg></div>' +
+    '<div class="mq-actions"><button type="button" data-act="retry">重试</button></div>' +
+    '<div class="mq-done"></div>';
+
+  var wrap = c.querySelector('.match-wrap');
+  var svg = c.querySelector('.match-svg');
+  var state = { sel: null, links: {}, ok: {} };
+
+  function itemAt(side, idx){ return c.querySelector('.match-item[data-side="' + side + '"][data-i="' + idx + '"]'); }
+
+  function drawLinks(){
+    var box = wrap.getBoundingClientRect();
+    svg.setAttribute('viewBox', '0 0 ' + box.width + ' ' + box.height);
+    svg.innerHTML = '';
+    Object.keys(state.links).forEach(function(l){
+      var a = itemAt('L', Number(l)), b = itemAt('R', state.links[l]);
+      if (!a || !b) return;
+      var ra = a.getBoundingClientRect(), rb = b.getBoundingClientRect();
+      var line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      line.setAttribute('x1', ra.right - box.left);
+      line.setAttribute('y1', ra.top + ra.height / 2 - box.top);
+      line.setAttribute('x2', rb.left - box.left);
+      line.setAttribute('y2', rb.top + rb.height / 2 - box.top);
+      line.setAttribute('stroke', state.ok[l] ? '#00897B' : '#D84315');
+      line.setAttribute('stroke-width', '3');
+      line.setAttribute('stroke-linecap', 'round');
+      svg.appendChild(line);
+    });
+  }
+
+  function checkDone(){
+    var total = list.length;
+    var done = Object.keys(state.ok).filter(function(k){ return state.ok[k]; }).length;
+    if (done === total) {
+      c.querySelector('.mq-done').textContent = '✓ 全部连对，三根针的速度都记住了';
+      if (options.onDone) options.onDone(done, total);
+    }
+  }
+
+  c.addEventListener('click', function(e){
+    var el = e.target.closest('.match-item');
+    if (!el) return;
+    var side = el.getAttribute('data-side');
+    var idx = parseInt(el.getAttribute('data-i'), 10);
+    if (el.classList.contains('ok')) return;
+
+    if (!state.sel || state.sel.side === side) {
+      c.querySelectorAll('.match-item.sel').forEach(function(x){ x.classList.remove('sel'); });
+      state.sel = { side: side, idx: idx };
+      el.classList.add('sel');
+      return;
+    }
+    var l = side === 'L' ? idx : state.sel.idx;
+    var r = side === 'R' ? idx : state.sel.idx;
+    if (state.links[l] !== undefined) delete state.links[l];
+    state.links[l] = r;
+    state.ok[l] = (l === r);
+    var leftEl = itemAt('L', l), rightEl = itemAt('R', r);
+    c.querySelectorAll('.match-item.sel').forEach(function(x){ x.classList.remove('sel'); });
+    if (state.ok[l]) {
+      leftEl.classList.add('ok'); rightEl.classList.add('ok');
+    } else {
+      leftEl.classList.add('bad'); rightEl.classList.add('bad');
+      setTimeout(function(){ leftEl.classList.remove('bad'); rightEl.classList.remove('bad'); }, 400);
+    }
+    state.sel = null;
+    drawLinks();
+    checkDone();
+  });
+
+  c.querySelector('[data-act="retry"]').addEventListener('click', function(){
+    state = { sel: null, links: {}, ok: {} };
+    c.querySelectorAll('.match-item').forEach(function(x){ x.className = 'match-item'; });
+    c.querySelector('.mq-done').textContent = '';
+    drawLinks();
+  });
+  window.addEventListener('resize', drawLinks);
+}
+
+// ===== 六年级仿真通用绘图库（每课 course.js 前缀） =====
+var SIM_W = 880, SIM_H = 360;
+var SIM_FONT = '"Microsoft YaHei","Noto Sans SC",sans-serif';
+
+function simCtx() { return document.getElementById('simCanvas').getContext('2d'); }
+
+function simTxt(t, x, y, size, color, weight, align) {
+  var ctx = simCtx();
+  ctx.save();
+  ctx.font = (weight ? weight + ' ' : '') + size + 'px ' + SIM_FONT;
+  ctx.fillStyle = color;
+  ctx.textAlign = align || 'left';
+  ctx.fillText(t, x, y);
+  ctx.restore();
+}
+
+function simLine(x1, y1, x2, y2, color, w, dash) {
+  var ctx = simCtx();
+  ctx.save();
+  ctx.strokeStyle = color; ctx.lineWidth = w || 1.6; ctx.lineCap = 'round';
+  if (dash) ctx.setLineDash(dash);
+  ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
+  ctx.restore();
+}
+
+function simBox(x, y, w, h, fill, stroke, r) {
+  var ctx = simCtx();
+  r = (r === undefined) ? 8 : r;
+  if (r > Math.min(w, h) / 2) r = Math.min(w, h) / 2;
+  ctx.save();
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.lineTo(x + w - r, y); ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+  ctx.lineTo(x + w, y + h - r); ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+  ctx.lineTo(x + r, y + h); ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+  ctx.lineTo(x, y + r); ctx.quadraticCurveTo(x, y, x + r, y);
+  ctx.closePath();
+  if (fill) { ctx.fillStyle = fill; ctx.fill(); }
+  if (stroke) { ctx.strokeStyle = stroke; ctx.lineWidth = 1.6; ctx.stroke(); }
+  ctx.restore();
+}
+
+function simDot(x, y, r, fill, stroke) {
+  var ctx = simCtx();
+  ctx.save();
+  ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2);
+  ctx.fillStyle = fill; ctx.fill();
+  if (stroke) { ctx.strokeStyle = stroke; ctx.lineWidth = 1.4; ctx.stroke(); }
+  ctx.restore();
+}
+
+function simArc(cx, cy, r, a0, a1, fill, stroke, w) {
+  var ctx = simCtx();
+  ctx.save();
+  ctx.beginPath(); ctx.moveTo(cx, cy);
+  ctx.arc(cx, cy, r, a0, a1); ctx.closePath();
+  if (fill) { ctx.fillStyle = fill; ctx.fill(); }
+  if (stroke) { ctx.strokeStyle = stroke; ctx.lineWidth = w || 1.6; ctx.stroke(); }
+  ctx.restore();
+}
+
+function simRing(cx, cy, r, color, w, dash) {
+  var ctx = simCtx();
+  ctx.save();
+  ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2);
+  ctx.strokeStyle = color; ctx.lineWidth = w || 1.6;
+  if (dash) ctx.setLineDash(dash);
+  ctx.stroke(); ctx.restore();
+}
+
+function simLog(msg) {
+  var box = document.getElementById('simLog');
+  if (!box) return;
+  var d = document.createElement('div');
+  d.className = 'sim-log-line'; d.innerHTML = msg;
+  box.appendChild(d);
+  if (box.children.length > 3) box.removeChild(box.firstChild);
+  box.scrollTop = box.scrollHeight;
+}
+
+function simFrac(n, d) { return n + '/' + d; }
+function simGcd(a, b) { while (b) { var t = a % b; a = b; b = t; } return a; }
+function simReduce(n, d) { var g = simGcd(n, d); return [n / g, d / g]; }
+
+var CN = {"leftTitle": "要读的句子（点一下看节拍）", "rightTitle": "这一处怎么读", "linkNoun": "处", "readout": "已标 %N% / %T% 处（不判对错）", "canvasTitle": "看拍子读一遍：%N%", "footCount": "依据链已连 %N% / %T% %U%", "footNote": "点左边一句先看节拍，再点右边一处标上停顿 —— 只留痕迹，不判读得好不好", "legend": "连线记「连没连」，依据另记「第几句」，两样分开留痕", "logLink": "第 %P% 句 → 标了「%T%」（只记痕迹，不判对错）", "logPickLeft": "选中第 %P% 句，节拍条亮了；再点右边一处标停顿（只回放，不评分）", "logNeedLeft": "先点左边一句看看节拍，再点右边的读法", "logDup": "这一环已经连过了，换一句试试", "logNext": "换一段：%N%，自己圈标点、自己停一停，再回放", "logReset": "重来：句子还在，标过的停顿和回放次数先收回去", "logDemo": "看老师标一遍：只示范节拍，不给你打分。自己出声读一遍才算数。", "badgeFmt": "第 %P% 句", "demoLinks": [[0, 0], [1, 1], [2, 2]], "doubtNote": "停了 <b>%N%</b> 下。灰的是你读着卡了一下的整句——<b>点哪句都行，不判对错</b>；卡住多半是标点没看清。", "doubtUnit": "下", "evWhySym": "选了「%S%」这种读法。现在点一句，把这个标点划下来。", "evWhyLine": "这一句在<b>第 %P% 句</b>。标点就是书上写好的拍子；<b>按标点停，别在词中间断开</b>。", "evNote": "已圈标点 <b>%N%</b> 处 · %H%（<b>只记痕迹，不判对错</b>，读得好不好机器不下结论）", "evHas": "那一句已写下", "evNone": "那一句还没写", "alWhyCard": "选中第 %N% 张卡。点右边一栏把它放进去；放完还要补一句「我是根据第几句连的」。", "alWhySlot": "放好了。<b>现在点这张卡下面的「第几句」</b>，把依据补上——归栏归栏，依据归依据，两样都留痕才算数。", "alWhyPara": "依据记在第 <b>%P% 句</b>。要是读着别扭，只提示「回那一句、看着书再读一遍」，不给分数、不说对错。", "alNote": "已归位 <b>%N% / %T%</b> · 依据补了 <b>%W% / %T%</b>（<b>连线和依据分别记，不判对错</b>）", "trNote": "自发划了 <b>%N%</b> 处（<b>不判对错</b>）。换了一段没标停顿的短文，只剩「圈标点」和「按标点停一停」。", "trAdvice": "自查勾了 <b>%N% / %T%</b> 条。三条都只问「有没有按标点读、有没有丢字」，不问「读得好不好」——<b>勾不满也照样能翻页</b>。", "myLabel": "你标过停顿的那一句", "myEmpty": "（还没存。回到「取证」那一页写一句你读着卡住的话，它就会出现在这里。）", "myTail": "　→　按标点停一停 → 出声读给同桌听，自己再回放一遍。", "defaultSym": "，", "replay": true, "replayNote": "回放 <b>%N%</b> 遍（<b>只回放，不评分</b>）", "cases": [{"name": "清晨（第一组）", "left": [{"p": 1, "t": "清晨，小鸟在树上唱歌。"}, {"p": 2, "t": "你今天去不去公园？"}, {"p": 3, "t": "我先把作业本放好，再出去玩。"}], "right": ["逗号处停半拍，别把词读断", "问号处语气上扬，像在问人", "句号处停一拍，把一句收住"]}, {"name": "放学（换文）", "left": [{"p": 1, "t": "放学了，雨还在下。"}, {"p": 2, "t": "你把伞带上了吗？"}, {"p": 3, "t": "我们一起走吧！"}], "right": ["逗号停半拍，别在词中间断", "问号上扬，尾音提一点", "感叹号语气加强，稳稳收住"]}], "colors": {"primary": "#7A4A2E", "accent": "#2F7A6B", "primarySoft": "#F7E9D9", "accentSoft": "#E4F1EC", "line": "#DDD3BE", "paper": "#FBF8F0", "ink": "#2B2B28", "muted": "#7A7263"}, "lsKey": "cn_mt_read_aloud_idea", "ringTotal": 3};
+// ===== 阅读课「五段」通用仿真与留痕迹互动 =====
+// 每课数据由 run_r.py 注入为全局 CN。设计约定（chinese-reading-writing.md）：
+// 只判「有没有痕迹、依据在哪」，不判「好不好」；关键词命中 ≠ 理解；
+// 开放表达永不给否定结论；连线与依据分别记录，防止一一对应排除法。
+// 仿真页是「依据链工作台」：点左边原文句 → 点右边想法 → 连成一环，不给分数。
+// 结构测试契约：simAdd / simDemo / simNextCase / simReset / simBind / SIM.hits / 画布着色。
+
+var SIM = { ci: 0, links: [], selL: null, hits: [], bound: false,
+            replayCount: 0, replayStep: 0, replayLine: 0 };
+
+function simCase() { return CN.cases[SIM.ci]; }
+function simRingTotal() { return CN.ringTotal || simCase().right.length; }
+function simFmt(s, kv) {
+  var out = String(s);
+  for (var k in kv) if (Object.prototype.hasOwnProperty.call(kv, k))
+    out = out.split('%' + k + '%').join(kv[k]);
+  return out;
+}
+function simLinked(l, i) {
+  return SIM.links.some(function (x) { return x.l === l && x.i === i; });
+}
+function simPlain(s) { return String(s).replace(/<[^>]+>/g, ''); }
+function simSetReadout() {
+  var el = document.getElementById('simReadout');
+  if (!el) return;
+  var n = simRingTotal();
+  var txt = simFmt(CN.readout, { N: SIM.links.length, T: n });
+  if (CN.replay) txt = simFmt(simPlain(CN.replayNote), { N: SIM.replayCount }) + ' · ' + txt;
+  el.textContent = txt;
+}
+function simWrap(t, n) {
+  return t.length <= n ? [t] : [t.slice(0, n), t.slice(n)];
+}
+
+function simDraw() {
+  var ctx = simCtx(), C = CN.colors;
+  ctx.fillStyle = C.paper;
+  ctx.fillRect(0, 0, SIM_W, SIM_H);
+  var c = simCase(), n = simRingTotal();
+  SIM.hits = [];
+
+  simTxt(simFmt(CN.canvasTitle, { N: c.name }), 28, 30, 18, C.primary, '700');
+  simTxt(CN.leftTitle, 28, 52, 13, C.muted, '700');
+  simTxt(CN.rightTitle, 590, 52, 13, C.muted, '700');
+
+  var ys = [66, 146, 226];
+  // 左：原文句块（可点）
+  for (var l = 0; l < 3; l++) {
+    var on = SIM.selL === l;
+    simBox(24, ys[l], 400, 62, on ? '#FFF2C9' : '#FFFFFF', on ? '#E0A93B' : C.line, 10);
+    var ls = simWrap(c.left[l].t, 20);
+    for (var k = 0; k < ls.length; k++) simTxt(ls[k], 38, ys[l] + 25 + k * 22, 15, C.ink, '600');
+    simTxt(simFmt(CN.badgeFmt, { P: c.left[l].p }), 412, ys[l] + 55, 11, C.muted, '400', 'right');
+    SIM.hits.push({ x: 24, y: ys[l], w: 400, h: 62, kind: 'l', idx: l });
+  }
+  // 右：想法块（可点）
+  for (var i = 0; i < 3; i++) {
+    var used = SIM.links.some(function (x) { return x.i === i; });
+    simBox(480, ys[i], 376, 62, used ? C.accentSoft : '#FFFFFF', used ? C.accent : C.line, 10);
+    var is = simWrap(c.right[i], 19);
+    for (var m = 0; m < is.length; m++) simTxt(is[m], 496, ys[i] + 25 + m * 22, 15, C.ink, '600');
+    SIM.hits.push({ x: 480, y: ys[i], w: 376, h: 62, kind: 'i', idx: i });
+  }
+  // 中：连线（已连实线朱砂，未连淡虚线）
+  for (var a = 0; a < 3; a++) {
+    for (var b = 0; b < 3; b++) {
+      var linked = simLinked(a, b);
+      if (!linked && !(a === b)) continue;
+      simLine(424, ys[a] + 31, 480, ys[b] + 31,
+              linked ? C.accent : '#E6DECB', linked ? 2.6 : 1, linked ? null : [4, 4]);
+      if (linked) simDot(452, (ys[a] + ys[b]) / 2 + 31, 4, C.accent, null);
+    }
+  }
+
+  simBox(24, 306, 832, 40, C.primarySoft, null, 8);
+  if (CN.replay) {
+    // 朗读课：只回放节拍，不评分。按标点把句子切成「拍」，拍与拍之间留一道停顿刻度。
+    var li = SIM.replayLine, line = c.left[li] || c.left[0];
+    var chars = line.t.split(''), bx = 40, seg = 0;
+    ctx.save(); ctx.font = '17px ' + SIM_FONT;
+    for (var q = 0; q < chars.length && bx < 545; q++) {
+      var ch = chars[q], isP = /[，。？！、；：]/.test(ch);
+      var bw2 = isP ? 20 : 28;
+      var bg = (seg % 2 === 0) ? C.primarySoft : C.accentSoft;
+      var fc = (seg % 2 === 0) ? C.primary : C.accent;
+      simBox(bx, 313, bw2 - 4, 26, bg, fc, 4);
+      simTxt(ch, bx + (bw2 - 4) / 2, 332, 17, fc, isP ? '700' : '400', 'center');
+      bx += bw2;
+      if (isP) {                       // 标点＝一拍结束：竖线 + 空隙，就是「停半拍」
+        simLine(bx + 2, 313, bx + 2, 339, C.accent, 1.8);
+        bx += 12; seg++;
+      }
+    }
+    ctx.restore();
+    simTxt('已回放 ' + SIM.replayCount + ' 遍 · 不评分', 596, 331, 15, C.primary, '700');
+  } else {
+    simTxt(simFmt(CN.footCount, { N: SIM.links.length, T: n, U: CN.linkNoun }),
+           40, 331, 16, C.primary, '700');
+    simTxt(CN.footNote, 268, 331, 13, C.ink, '400');
+  }
+  simSetReadout();
+}
+
+function simLink(l, i) {
+  var c = simCase(), n = simRingTotal();
+  if (l < 0 || l > 2 || i < 0 || i > 2) return;
+  if (simLinked(l, i)) { simLog(CN.logDup); return; }
+  SIM.links.push({ l: l, i: i });
+  SIM.selL = null;
+  simLog(simFmt(CN.logLink, { P: c.left[l].p, T: '<span class="hl">' + c.right[i] + '</span>' }));
+  simDraw();
+}
+// 结构测试入口：与数学/语言知识课保持同一签名
+function simAdd(l, i) { simLink(l, i); }
+
+function simPick(kind, idx) {
+  var c = simCase();
+  if (kind === 'l') {
+    if (CN.replay) {
+      SIM.replayCount++; SIM.replayStep = 0; SIM.replayLine = idx;
+    }
+    SIM.selL = idx;
+    simLog(simFmt(CN.logPickLeft, { P: c.left[idx].p }));
+    simDraw();
+    return;
+  }
+  if (SIM.selL === null) { simLog(CN.logNeedLeft); simDraw(); return; }
+  simLink(SIM.selL, idx);
+}
+
+function simNextCase() {
+  SIM.ci = (SIM.ci + 1) % CN.cases.length;
+  SIM.links = []; SIM.selL = null; SIM.replayStep = 0; SIM.replayLine = 0;
+  simLog(simFmt(CN.logNext, { N: simCase().name }));
+  simDraw();
+}
+function simReset() {
+  SIM.links = []; SIM.selL = null; SIM.replayCount = 0; SIM.replayStep = 0;
+  simLog(CN.logReset);
+  simDraw();
+}
+function simDemo() {
+  SIM.links = []; SIM.selL = null;
+  var pairs = CN.demoLinks || [[0, 0], [1, 1], [2, 2]];
+  for (var k = 0; k < pairs.length; k++) SIM.links.push({ l: pairs[k][0], i: pairs[k][1] });
+  if (CN.replay) { SIM.replayCount++; SIM.replayStep = 99; }
+  simLog(CN.logDemo);
+  simDraw();
+}
+function simBind() {
+  var cv = document.getElementById('simCanvas');
+  if (!cv || cv.__simBound) return;
+  cv.__simBound = true;
+  cv.addEventListener('click', function (e) {
+    var r = cv.getBoundingClientRect();
+    var x = (e.clientX - r.left) * (SIM_W / r.width);
+    var y = (e.clientY - r.top) * (SIM_H / r.height);
+    for (var j = 0; j < SIM.hits.length; j++) {
+      var h = SIM.hits[j];
+      if (x >= h.x && x <= h.x + h.w && y >= h.y && y <= h.y + h.h) { simPick(h.kind, h.idx); return; }
+    }
+  });
+}
+
+// ===================== 五段里的「留痕迹」互动（都不判分） =====================
+
+// 1 起疑 p2：点句子标灰「我在这儿停了一下」
+function bindDoubt() {
+  var box = document.getElementById('rdText');
+  if (!box || box.__bound) return;
+  box.__bound = true;
+  box.addEventListener('click', function (e) {
+    var el = e.target.closest('.rd-s');
+    if (!el) return;
+    el.classList.toggle('stopped');
+    var n = box.querySelectorAll('.rd-s.stopped').length;
+    var out = document.getElementById('rdNote');
+    if (out) out.innerHTML = simFmt(CN.doubtNote, { N: n });
+  });
+}
+
+// 2 取证 p3：先选符号，再点句子划黄；想法框非空即可，都不判对错
+function bindEvidence() {
+  var root = document.getElementById('evBox');
+  if (!root || root.__bound) return;
+  root.__bound = true;
+  var sym = '';
+  function refresh() {
+    var marked = root.querySelectorAll('.ev-s.marked').length;
+    var idea = document.getElementById('evIdea');
+    var has = idea && idea.value.trim().length > 0;
+    var out = document.getElementById('evNote');
+    if (out) out.innerHTML = simFmt(CN.evNote, {
+      N: marked, H: has ? CN.evHas : CN.evNone
+    });
+    if (idea) { try { localStorage.setItem(CN.lsKey, idea.value.trim()); } catch (e) { } }
+  }
+  root.addEventListener('click', function (e) {
+    var b = e.target.closest('.ev-sym');
+    if (b) {
+      root.querySelectorAll('.ev-sym').forEach(function (n) { n.classList.remove('on'); });
+      b.classList.add('on'); sym = b.getAttribute('data-s');
+      var w = document.getElementById('evWhy');
+      if (w) w.innerHTML = simFmt(CN.evWhySym, { S: sym });
+      return;
+    }
+    var s = e.target.closest('.ev-s');
+    if (s) {
+      s.classList.toggle('marked');
+      if (s.classList.contains('marked')) {
+        var badge = s.querySelector('.ev-badge');
+        if (badge) badge.textContent = sym || CN.defaultSym;
+      }
+      var w2 = document.getElementById('evWhy');
+      if (w2) w2.innerHTML = simFmt(CN.evWhyLine, { P: s.getAttribute('data-p') });
+      refresh();
+      return;
+    }
+  });
+  var idea = document.getElementById('evIdea');
+  if (idea) idea.addEventListener('input', refresh);
+}
+
+// 3 对齐 p5：句卡 → 观点槽 + 都不支撑筐；连线后强制补「第几句」，分别记录
+function bindAlign() {
+  var root = document.getElementById('alBox');
+  if (!root || root.__bound) return;
+  root.__bound = true;
+  var sel = null;
+  var total = root.querySelectorAll('.ev-card').length;
+  function refresh() {
+    var placed = root.querySelectorAll('.ev-card[data-slot]').length;
+    var why = root.querySelectorAll('.ev-card[data-para]').length;
+    var out = document.getElementById('alNote');
+    if (out) out.innerHTML = simFmt(CN.alNote, { N: placed, W: why, T: total });
+  }
+  root.addEventListener('click', function (e) {
+    var para = e.target.closest('.ev-para');
+    // 依据按钮优先：卡片归位后会被移进槽里，此时它同时命中 .ev-slot
+    if (para) {
+      var c2 = para.closest('.ev-card');
+      if (c2) {
+        var pv = para.getAttribute('data-p');
+        c2.setAttribute('data-para', pv);
+        c2.querySelectorAll('.ev-para').forEach(function (n) { n.classList.remove('on'); });
+        para.classList.add('on');
+        var w3 = document.getElementById('alWhy');
+        if (w3) w3.innerHTML = simFmt(CN.alWhyPara, { P: pv });
+        refresh();
+      }
+      return;
+    }
+    var card = e.target.closest('.ev-card');
+    var slot = e.target.closest('.ev-slot');
+    if (card) {
+      root.querySelectorAll('.ev-card').forEach(function (n) { n.classList.remove('on'); });
+      card.classList.add('on'); sel = card;
+      var w = document.getElementById('alWhy');
+      if (w) w.innerHTML = simFmt(CN.alWhyCard, { N: card.getAttribute('data-n') });
+      return;
+    }
+    if (slot && sel) {
+      sel.setAttribute('data-slot', slot.getAttribute('data-slot'));
+      slot.appendChild(sel);
+      sel.classList.remove('on');
+      sel = null;
+      var w2 = document.getElementById('alWhy');
+      if (w2) w2.innerHTML = CN.alWhySlot;
+      refresh();
+      return;
+    }
+  });
+  refresh();
+}
+
+// 5 换文 p8：新短文只用「划」和「连」+ 三条自查，只回执不判分
+function bindTransfer() {
+  var root = document.getElementById('trBox');
+  if (!root || root.__bound) return;
+  root.__bound = true;
+  var total = root.querySelectorAll('.tr-ck').length;
+  root.addEventListener('click', function (e) {
+    var s = e.target.closest('.tr-s');
+    if (s) {
+      s.classList.toggle('marked');
+      var n = root.querySelectorAll('.tr-s.marked').length;
+      var out = document.getElementById('trNote');
+      if (out) out.innerHTML = simFmt(CN.trNote, { N: n });
+      return;
+    }
+    var ck = e.target.closest('.tr-ck');
+    if (ck) {
+      ck.classList.toggle('on');
+      var k = root.querySelectorAll('.tr-ck.on').length;
+      var a = document.getElementById('trAdvice');
+      if (a) a.innerHTML = simFmt(CN.trAdvice, { N: k, T: total });
+      return;
+    }
+  });
+}
+
+// 存起来 p10：结算必须显示学生自己留下的依据链
+function updateMyChain() {
+  var el = document.getElementById('myChain');
+  if (!el) return;
+  var idea = '';
+  try { idea = localStorage.getItem(CN.lsKey) || ''; } catch (e) { }
+  el.innerHTML = idea
+    ? '<b>' + CN.myLabel + '</b>　' + idea.replace(/</g, '&lt;') + CN.myTail
+    : '<b>' + CN.myLabel + '</b>　' + CN.myEmpty;
+}
+// ===== V4 总结页 =====
+function toggleCardV4(card){ card.classList.toggle('expanded'); }
+function expandAllV4(){ document.querySelectorAll('.summary-v4-card').forEach(function(c){ c.classList.add('expanded'); }); }
+function collapseAllV4(){ document.querySelectorAll('.summary-v4-card').forEach(function(c){ c.classList.remove('expanded'); }); }
+
+// ===== 初始显示 =====
+var _urlPage = getPageParam('page');
+var _initIdx = (_urlPage && PAGE_IDS.indexOf(_urlPage) >= 0) ? PAGE_IDS.indexOf(_urlPage) : 0;
+
+/* 4A_INTERACTION_STANDARD_BLOCK: MQTT + submit-mode + QR badge + teaching control A-H + identity + csv */
+// MQTT Data Collection Framework (Robust Edition)
+// Copy into <script> of single-file HTML
+//
+// ⚠ 前置依赖 — CDN 多源 fallback（必须放在 <head> 中，不能与 mqtt-framework.js 合并）：
+//   见 SKILL.md 4A.2「MQTT 多源 fallback + 状态指示器」完整代码块。
+//   中国网络环境下 unpkg.com 经常超时，手机扫码后 MQTT 库加载失败是教师端看不到数据的首要原因。
+//
+// ⚠ 状态指示器 — CSS + HTML（必须放在 <style> 和 <body> 中）：
+//   见 SKILL.md 4A.2 的 CSS 和 HTML 代码块。左下角绿/红 dot 实时显示 MQTT 连接状态。
+
+// === MQTT 配置 ===
+// ⚠ 两端（手机/电脑）必须连到「同一个」broker 才能互相同步。
+// ⚠ 关键坑：若两端各自独立 fallback（手机 HiveMQ 慢→切 EMQX，教师端留 HiveMQ），
+//   会落到不同 broker，导致"手机提交、电脑收不到"。故 broker 选择必须【确定性】——
+//   用 CLASS_ID 哈希选同一个 broker，两端必落同一 broker（见下方 xmnBrokerHash）。
+// ⚠ 国内课堂优先 broker-cn.emqx.io（EMQX 中国节点，国内网络可达，避免 HiveMQ 被运营商封 8884）。
+var MQTT_BROKERS = ['wss://broker-cn.emqx.io:8084/mqtt', 'wss://broker.emqx.io:8084/mqtt', 'wss://broker.hivemq.com:8884/mqtt'];
+var MQTT_BROKER_INDEX = 0;
+var MQTT_BROKER = MQTT_BROKERS[0];
+var MQTT_TRIES = 0;            // 当前 broker 已尝试次数
+var MQTT_MAX_TRIES = 3;        // 同一 broker 最多重试次数，超过才切备用
+// ⚠ CLASS_ID 铁律：必须节点级隔离（否则所有课件共享同一话题的 answers → 答题数据跨课件串台）。
+//   一律走 getPageParam（hash→search→parent，抗外壳剥离 query），派生 'wb-<NODE_ID>' 兜底；
+//   不得在课件任何位置（含注释）留占位类名字面量（发布预检会拦截）。
+var CLASS_ID = (typeof getPageParam === 'function' ? getPageParam('class') : null) || ('wb-' + ((typeof NODE_ID !== 'undefined') ? NODE_ID : ''));
+var XMN_BASE = 'xmn/'+CLASS_ID+'/answers';
+// v2026-10-26：身份 topic（学号姓名，不 retain / qos 0，隐私保护）
+var XMN_IDENTITY_TOPIC = 'xmn/'+CLASS_ID+'/identity';
+// ⚠ 确定性选 broker：同一 CLASS_ID 的教师端与学生端算出同一个序号 → 必落同一 broker，
+// 从根上消除"手机在 EMQX、电脑在 HiveMQ"导致的数据不同步。
+function xmnBrokerHash(cid){ var h = 0; for (var i = 0; i < cid.length; i++){ h = (h * 31 + cid.charCodeAt(i)) | 0; } return Math.abs(h) % MQTT_BROKERS.length; }
+MQTT_BROKER_INDEX = xmnBrokerHash(CLASS_ID);
+MQTT_BROKER = MQTT_BROKERS[MQTT_BROKER_INDEX];
+var mqttClient = null, mqttConnected = false, mqttExplicitlyOffline = false;
+
+// === 学生 ID（localStorage 持久化，try/catch 防手机隐私模式） ===
+var studentId = (function(){
+  try{ var sid = localStorage.getItem('xmnSid'); if(sid) return sid; }catch(e){}
+  var sid = Math.random().toString(36).slice(2,10);
+  try{ localStorage.setItem('xmnSid', sid); }catch(e){}
+  return sid;
+})();
+var offlineQueue = [];
+var xmnAgg = {}; // {activity: [{sid, score, total, answers, ts}]}
+
+// === 连接 ===
+function xmnConnect(){
+  if(typeof mqtt === 'undefined'){ setTimeout(xmnConnect, 500); return; }
+  if(mqttClient){ try{ mqttClient.end(true); }catch(e){} }
+  mqttConnected = false;
+  mqttExplicitlyOffline = false;
+  MQTT_BROKER = MQTT_BROKERS[MQTT_BROKER_INDEX];
+  MQTT_TRIES++;
+  var _cid = 'xmn_'+studentId+'_'+Date.now();
+  myClientId = _cid;   // 【C】回填本端 clientId：claim 需自带 id，否则仲裁判据失效（{id:''} 被全网忽略）
+  mqttClient = mqtt.connect(MQTT_BROKER, {
+    clientId: _cid,
+    clean: true,
+    connectTimeout: 4000,
+    reconnectPeriod: 3000,
+    keepalive: 30,
+    // 【C】遗嘱：控制端关页面/崩溃/进程被杀时 broker 代发 bye → 其他端立即释约，无需等 CLAIM_TTL 过期
+    will: { topic: SYNC_CTL_TOPIC, payload: JSON.stringify({id:_cid, bye:true, ts:0}), qos:1, retain:true }
+  });
+  mqttClient.on('connect', function(){
+    mqttConnected = true;
+    console.log('[MQTT] 已连接:', MQTT_BROKER);
+    // 更新状态指示器（需配合 CSS/HTML，见 SKILL.md 4A.2「MQTT 连接状态指示器」）
+    var dot = document.getElementById('mqttDot');
+    var txt = document.getElementById('mqttText');
+    if(dot){ dot.className = 'dot online'; }
+    if(txt){ txt.textContent = '数据同步: 已连接 ('+MQTT_BROKER.split('/')[2].split(':')[0]+')'; }
+    mqttClient.subscribe(XMN_BASE+'/#', {qos:1}, function(err){
+      if(err) console.warn('[MQTT] 订阅失败', err); else console.log('[MQTT] 已订阅:', XMN_BASE+'/#');
+    });
+    // 【D】页码同步 / 【C】claim 仲裁：必须订阅，否则学生收不到教师翻页广播（漏订=学生停首页）
+    mqttClient.subscribe(SYNC_TOPIC, {qos:1}, function(err){ if(err) console.warn('[MQTT] 同步订阅失败', err); else console.log('[MQTT] 已订阅:', SYNC_TOPIC); });
+    mqttClient.subscribe(SYNC_CTL_TOPIC, {qos:1}, function(err){ if(err) console.warn('[MQTT] 控制订阅失败', err); else console.log('[MQTT] 已订阅:', SYNC_CTL_TOPIC); });
+    // v2026-10-26：身份 topic 订阅（教师端接收学生学号姓名）
+    mqttClient.subscribe(XMN_IDENTITY_TOPIC+'/#', {qos:0}, function(err){ if(err) console.warn('[MQTT] 身份订阅失败', err); else console.log('[MQTT] 已订阅:', XMN_IDENTITY_TOPIC+'/#'); });
+    // 连接后刷新badge统计（可能收到retained消息）
+    Object.keys(ACTIVITY_QUIZ_MAP).forEach(function(act){ updateBadgeStats(act); });
+    offlineQueue.forEach(function(q){ mqttClient.publish(q.topic, q.payload, {qos:1, retain:true}); });
+    offlineQueue = [];
+    // 【C/G】教师：先收集 retain 中的活跃租约，再决定「持权广播 / 进观察态」（函数见 teaching-control.js）
+    if(IS_TEACHER){ setTimeout(function(){ xmnEnterTeacherRole(); }, 600); }
+    // 【H】学生：进入主动请求当前页（300ms 首发 + 每 600ms 重试直到 syncReceived，≤4 次）
+    else {
+      var _reqTries = 0;
+      var _reqTimer = setInterval(function(){
+        if(syncReceived || _reqTries >= 4){ clearInterval(_reqTimer); return; }
+        _reqTries++; requestCurrentPage();
+      }, 600);
+      setTimeout(function(){ requestCurrentPage(); }, 300);
+    }
+  });
+  mqttClient.on('message', function(topic, message){
+    var _raw = message.toString();
+    // 【C】控制子话题（租约仲裁 + req 回播）/【D】页码同步：交由教学控制标准件处理（集成点②）
+    if(topic === SYNC_CTL_TOPIC){ handleControlMessage(_raw); return; }
+    if(topic === SYNC_TOPIC){ handleSyncMessage(_raw); return; }
+    // v2026-10-26：身份 topic（学号姓名）→ 教师端缓存（不进 xmnAgg）
+    if(topic.indexOf(XMN_IDENTITY_TOPIC + '/') === 0){
+      try {
+        var imsg = JSON.parse(_raw);
+        if(imsg && imsg.sid && imsg.sno && imsg.name){
+          if(typeof xmnHandleIdentity === 'function') xmnHandleIdentity(imsg);
+        }
+      } catch(e){}
+      return;
+    }
+    try{
+      var str = _raw;
+      if(!str) return; // cleared retained message
+      var msg = JSON.parse(str), act = msg.activity;
+      if(!act) return;
+      console.log('[MQTT] 收到数据:', act, '来自:', msg.sid, '得分:', msg.score);
+      if(!xmnAgg[act]) xmnAgg[act] = [];
+      var idx = xmnAgg[act].findIndex(function(x){return x.sid===msg.sid;});
+      if(idx>=0) xmnAgg[act][idx] = msg; else xmnAgg[act].push(msg);
+      updateBadgeStats(act);
+    }catch(e){}
+  });
+  mqttClient.on('offline', function(){
+    mqttConnected = false;
+    mqttExplicitlyOffline = true;
+    console.warn('[MQTT] 连接断开(offline)');
+    var dot = document.getElementById('mqttDot');
+    var txt = document.getElementById('mqttText');
+    if(dot){ dot.className = 'dot offline'; }
+    if(txt){ txt.textContent = '数据同步: 已断开'; }
+  });
+  mqttClient.on('error', function(err){
+    mqttConnected = false;
+    console.warn('[MQTT] 连接错误('+MQTT_BROKER+'):', err && err.message);
+    var dot = document.getElementById('mqttDot');
+    var txt = document.getElementById('mqttText');
+    if(dot){ dot.className = 'dot offline'; }
+    if(txt){ txt.textContent = '数据同步: 连接失败'; }
+    xmnRetryOrNextBroker();
+  });
+}
+
+// 先在当前 broker 指数退避重试；多次失败再切备用，且所有 broker 都失败会重置回主 broker，
+// 以保证手机与电脑两端最终收敛到同一 broker（这是跨设备同步能成立的前提）。
+function xmnRetryOrNextBroker(){
+  if(MQTT_TRIES < MQTT_MAX_TRIES){ setTimeout(xmnConnect, 2000 * MQTT_TRIES); return; }
+  // 环形切到下一个 broker：两端起始序号相同(由 CLASS_ID 决定)，失败时也按同一顺序切换，
+  // 因此教师端与学生端始终落在同一 broker，不会分叉导致数据不同步。
+  MQTT_BROKER_INDEX = (MQTT_BROKER_INDEX + 1) % MQTT_BROKERS.length;
+  MQTT_TRIES = 0;
+  console.log('Switching to fallback MQTT broker:', MQTT_BROKERS[MQTT_BROKER_INDEX]);
+  xmnConnect();
+}
+setTimeout(function(){
+  xmnConnect();
+  setTimeout(function(){
+    if(!mqttConnected && !mqttExplicitlyOffline) xmnRetryOrNextBroker();
+  }, 6500);
+}, 800);
+
+// === 发布 ===
+function xmnPublish(activity, data){
+  var payload = JSON.stringify(Object.assign({sid:studentId, activity:activity, ts:Date.now()}, data));
+  var topic = XMN_BASE+'/'+studentId+'/'+activity;
+  if(mqttConnected && mqttClient){
+    mqttClient.publish(topic, payload, {qos:1, retain:true});
+    console.log('[MQTT] 已发布:', activity, '得分:', data.score);
+  } else {
+    offlineQueue.push({topic:topic, payload:payload});
+    console.warn('[MQTT] 离线队列暂存:', activity, '(待连接后自动发送)');
+  }
+}
+
+// === 清空（含 UI 重置） ===
+// ⚠ 此映射必须与 unified-quiz-submit.js 的 ACTIVITY_QUIZ_MAP 和 detail-stats.js 的 DETAIL_QUIZ_MAP 保持一致
+// 每个项目根据实际测验页数量修改此映射
+var ACTIVITY_QUIZ_MAP = {pre:'quizPre', mid1:'quizMid1', mid2:'quizMid2', post:'quizPost'};
+// 可按需扩展更多中测: mid4, mid5, ...
+
+var ACTIVITY_LABELS = {pre:'前测', mid1:'中测1', mid2:'中测2', mid3:'中测3', post:'后测'};
+// 注意：xmnClear 会清空 ACTIVITY_QUIZ_MAP 中全部活动，不限于传入的 activity 参数。
+// 这是为了让教师在任何 QR 弹窗中点击"清空数据"都能一键重置整门课件的所有测验数据。
+
+function xmnClear(activity){
+  var allQuizActivities = Object.keys(ACTIVITY_QUIZ_MAP);
+  // iframe 沙箱可能禁用原生 confirm —— 优先自建模态 showConfirmModal（teaching-control.js），缺失时才退回原生
+  var _msg = '确定要清空本课件中全部测验题的数据吗？此操作不可恢复。';
+  if (typeof showConfirmModal === 'function') {
+    showConfirmModal(_msg, function(ok){ if (ok) xmnClearDo(allQuizActivities); });
+    return;
+  }
+  if(!confirm(_msg)) return;
+  xmnClearDo(allQuizActivities);
+}
+function xmnClearDo(allQuizActivities){
+  // 收集所有已知学生 ID（含本机和其他扫码学生），防止误清后 retained 消息重新弹出旧数据
+  var allSids = {};
+  allQuizActivities.forEach(function(act){
+    (xmnAgg[act] || []).forEach(function(s){ if(s && s.sid) allSids[s.sid] = true; });
+    allSids[studentId] = true;
+  });
+  // 清除全部测验活动的 retained 消息、本地聚合、localStorage，并重置界面
+  allQuizActivities.forEach(function(act){
+    if(mqttConnected && mqttClient){
+      Object.keys(allSids).forEach(function(sid){
+        mqttClient.publish(XMN_BASE+'/'+sid+'/'+act, '', {qos:1, retain:true});
+      });
+    }
+    xmnAgg[act] = [];
+    try{ localStorage.removeItem('xmn_'+act); }catch(e){}
+    var containerId = ACTIVITY_QUIZ_MAP[act];
+    if(containerId){
+      var c = document.getElementById(containerId);
+      if(c){
+        c._submitted = false;
+        // per-type reset; NEVER _chosen.fill(-1) (corrupts multi-select)
+        c._chosen = c._questions.map(function(q){ return isMultiQ(q) ? null : -1; });
+        c._picked = c._questions.map(function(q){ return isMultiQ(q) ? [] : null; });
+        var btn = document.getElementById(containerId+'_submitBtn');
+        if(btn){ btn.disabled = false; btn.textContent = '提交本页成绩'; }
+        c.querySelectorAll('.quiz-q').forEach(function(qq){
+          qq.classList.remove('answered','submitted');
+          qq.querySelectorAll('.opt').forEach(function(o){ o.classList.remove('selected','correct','wrong'); o.style.pointerEvents=''; });
+        });
+        c.querySelectorAll('.feedback').forEach(function(fb){ fb.className='feedback'; fb.innerHTML=''; });
+      }
+    }
+    updateBadgeStats(act);
+  });
+}
+
+// === 统计面板刷新（内置通用实现，无需项目再写） ===
+// ⚠ avgEl 必须始终更新（含清空时重置为 '-'），否则 xmnClear 后旧值残留
+// ⚠ 依赖 detail-stats.js 的 DETAIL_QUIZ_MAP 与 quiz-engine.js 的 QUIZZES（两者均需先复制）
+function updateBadgeStats(activity) {
+  var subs = xmnAgg[activity] || [];
+  var partEl = document.getElementById('qrPart_' + activity);
+  if (partEl) partEl.textContent = subs.length;
+  var avgEl = document.getElementById('qrAvg_' + activity);
+  if (avgEl) {
+    if (subs.length > 0) {
+      var total = subs.reduce(function(s, x) { return s + x.score; }, 0);
+      avgEl.textContent = (total / subs.length).toFixed(1);
+    } else {
+      avgEl.textContent = '-';
+    }
+  }
+  if (typeof populateMiniStats === 'function') populateMiniStats(activity);
+}
+
+// === 内置 UI 反馈：showToast / showConfirmModal（MQTT 版标准件） ===
+// 存在理由：unified-quiz-submit.js（未答提示）与 xmnClear（清空确认）会调用它们，
+//   而 iframe 沙箱常禁用原生 alert/confirm → 提示/确认会静默失效。
+//   云变体把这两个函数放在 cloud-sync-framework.js/page-sync.js；母技能对应放在本文件。
+//   function 声明会提升，放在文件末尾不影响上方调用。
+function showToast(msg, ms){
+  try{
+    var t = document.getElementById('xmnToast');
+    if(!t){ t = document.createElement('div'); t.id = 'xmnToast';
+      t.style.cssText = 'position:fixed;left:50%;top:80px;transform:translateX(-50%);z-index:3000;background:rgba(26,58,92,.92);color:#fff;padding:10px 22px;border-radius:22px;font-size:17px;font-weight:600;box-shadow:0 4px 16px rgba(0,0,0,.25)';
+      document.body.appendChild(t); }
+    t.textContent = msg; t.style.display = 'block';
+    clearTimeout(t._timer); t._timer = setTimeout(function(){ t.style.display = 'none'; }, ms || 2500);
+  }catch(e){}
+}
+
+function showConfirmModal(msg, onOk){
+  try{
+    var ov = document.createElement('div');
+    ov.id = 'xmnConfirm';
+    ov.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:4000;display:flex;align-items:center;justify-content:center';
+    var box = document.createElement('div');
+    box.style.cssText = 'background:#fff;border-radius:14px;padding:26px 30px;max-width:440px;box-shadow:0 10px 34px rgba(0,0,0,.3)';
+    var p = document.createElement('p');
+    p.style.cssText = 'font-size:19px;color:#1a3a5c;line-height:1.65;margin:0';
+    p.textContent = msg;
+    var row = document.createElement('div');
+    row.style.cssText = 'margin-top:22px;text-align:right';
+    var bc = document.createElement('button');
+    bc.textContent = '取消';
+    bc.style.cssText = 'font-size:17px;padding:9px 20px;margin-right:10px;border:1px solid #ccc;background:#fff;color:#555;border-radius:8px;cursor:pointer';
+    var bo = document.createElement('button');
+    bo.textContent = '确定';
+    bo.style.cssText = 'font-size:17px;padding:9px 22px;border:none;background:#e8722d;color:#fff;border-radius:8px;cursor:pointer;font-weight:600';
+    bc.onclick = function(){ try{ document.body.removeChild(ov); }catch(e){} };
+    bo.onclick = function(){ try{ document.body.removeChild(ov); }catch(e){} try{ onOk && onOk(true); }catch(e){ console.warn(e); } };
+    row.appendChild(bc); row.appendChild(bo);
+    box.appendChild(p); box.appendChild(row); ov.appendChild(box);
+    document.body.appendChild(ov);
+    return true;
+  }catch(e){
+    if (window.confirm(msg)) { try{ onOk && onOk(true); }catch(e2){} return true; }
+    return false;
+  }
+}
+
+
+/* constants: NODE_ID/PUBLISH_BASE rewritten by publish_to_library.py */
+var NODE_ID = '';
+var PUBLISH_BASE = '';
+var SYNC_TOPIC = 'xmn-sync/' + (NODE_ID || CLASS_ID);
+var SYNC_CTL_TOPIC = SYNC_TOPIC + '/ctl';
+var IS_DEPLOYED = (function(){ try { return location.protocol !== 'file:' && /^https?:\/\//.test(PUBLISH_BASE || ''); } catch(e){ return false; } })();
+try { document.body.classList.toggle('deployed', IS_DEPLOYED); } catch(e){}
+/* per-page QR badge init: badges appended at end of <body>, so sync AFTER DOM ready (v2026-10-13) */
+(function(){ function _xmnBadgeSync(){
+  if (typeof IS_DEPLOYED === 'undefined' || !IS_DEPLOYED) return;
+  try {
+    var _i = (typeof xmnCurIndex === 'function') ? xmnCurIndex() : ((typeof curPage === 'number') ? curPage : 0);
+    var _id = (typeof PAGE_IDS !== 'undefined' && PAGE_IDS[_i]) ? PAGE_IDS[_i] : null;
+    /* v2026-10-28 角色感知：教师=当前页徽章；学生=仅封面徽章（学号姓名登记唯一入口） */
+    var _teach = (typeof IS_TEACHER !== 'undefined' && IS_TEACHER);
+    var _cover = (typeof PAGE_IDS !== 'undefined' && PAGE_IDS) ? PAGE_IDS[0] : null;
+    var _want = _teach ? _id : ((_id === _cover) ? _id : null);
+    document.querySelectorAll('.qr-badge').forEach(function(b){ b.classList.remove('on'); });
+    var _nb = _want ? document.querySelector('.qr-badge[data-page="' + _want + '"]') : null;
+    if (_nb) _nb.classList.add('on');
+  } catch(e){}
+} if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', _xmnBadgeSync); else _xmnBadgeSync(); })();
+
+// Unified Quiz Submit System — 统一测验提交逻辑
+// 复制到 Step 4 课件 <script> 中（与 quiz-engine.js 的 initQuiz 配合使用）
+//
+// 设计说明：
+//   initQuiz（来自 quiz-engine.js）负责选项绑定与选择锁定
+//   submitQuiz（本文件）负责提交评分、MQTT 上报、UI 反馈
+//   两套逻辑不冲突：initQuiz 只管"选"，submitQuiz 只管"交"
+//
+// ⚠ Step 4 要求：所有有 QR 徽章的测验页必须使用提交模式
+//   initQuiz 中 isSubmitMode 必须设为 true（不再即时反馈）
+//   去掉"重做"按钮，改为"提交本页成绩"按钮
+// ⚠ 多选题支持：isCorrectChoice / idxInAnswer / idxInChosen 来自 quiz-engine.js；
+//   多选题判定 = 学生升序索引数组与答案 100% 一致（不多选不漏选）才算正确
+//   ⚠ 发布后（提交模式）：只有点击「提交本页成绩」后才显示每题答案与解析——
+//   initQuiz(isSubmitMode=true) 选完不反馈，submitQuiz 统一填充 feedback
+// ⚠ 答题可改规约（v2026-09-29 定案）：提交模式下学生可随时改答案（单选改选、多选重选/重确认），
+//   唯一锁定点是本函数的 container._submitted——提交前自由修改、提交后立即锁死（防刷分）。
+//   initQuiz 侧的选项闸门必须写 if (container._submitted) return; 禁止恢复旧的
+//   _chosen[qi]>=0 / !==null 锁定写法（见 SKILL.md 标准件章「答题可改与导航条居中」）。
+
+// ===== activity → containerId 映射 =====
+// 单一事实来源：mqtt-framework.js 先定义则直接复用（保持三文件一致，禁止各自重新定义）
+// 每个项目根据实际测验页数量修改此处（或 mqtt-framework.js）的映射
+var ACTIVITY_QUIZ_MAP = (typeof ACTIVITY_QUIZ_MAP !== 'undefined')
+  ? ACTIVITY_QUIZ_MAP
+  : {pre:'quizPre', mid1:'quizMid1', mid2:'quizMid2', mid3:'quizMid3', post:'quizPost'};
+// 可按需扩展更多中测: mid4, mid5, ...
+
+// ===== 测验容器 HTML 结构要求 =====
+// 每个测验容器需包含：
+//   1. id="quizXxx" — 对应 ACTIVITY_QUIZ_MAP 中的 containerId
+//   2. class="quiz-q" 元素，id="qq_quizXxx_N"（N=题目序号0起）
+//   3. class="opt" 元素，data-idx="0/1/2/3"
+//   4. class="feedback" 元素，id="fb_quizXxx_N"
+//   5. 提交按钮（Step 4 必须有）：
+//      <div class="quiz-actions">
+//        <button id="quizXxx_submitBtn" class="btn-submit" onclick="submitQuiz('quizXxx','xxx')">提交本页成绩</button>
+//      </div>
+//      ⚠ Step 4 中不要加"重做"按钮（retryQuiz），只有"提交本页成绩"
+//   6. 分数显示：<span id="xxxScore" class="quiz-score"></span>
+//      ⚠ 分数元素ID格式：去掉"quiz"前缀 + "Score"，如 quizPre → preScore
+// ⚠ Step 4 必须去掉"重做"按钮，避免与提交模式冲突
+
+function submitQuiz(containerId, activity){
+  var container = document.getElementById(containerId);
+  if(container._submitted) return; // 已提交，阻止重复
+  // 未答检查：单选 -1 / 多选 null（未确认）均视为未完成
+  var hasUnanswered = container._chosen.some(function(c){ return Array.isArray(c) ? false : (c === null || c < 0); });
+  if(hasUnanswered){ if (typeof showToast === 'function') { showToast('请先完成所有题目再提交！'); } else { alert('请先完成所有题目再提交！'); } return; } // iframe 沙箱可能禁原生 alert，优先自建 toast
+
+  container._submitted = true;
+  var qs = container._questions;
+  var answers = [], score = 0;
+
+  container._chosen.forEach(function(c, i){
+    // 判定：单选 = 索引相等；多选 = 升序索引数组与答案 100% 一致（isCorrectChoice 来自 quiz-engine.js）
+    var isCorrect = isCorrectChoice(qs[i], c);
+    if(isCorrect) score++;
+    answers.push({qi:i, chosen:c, correct:qs[i].answer, isCorrect:isCorrect});
+
+    // 显示每题反馈
+    var qq = document.getElementById('qq_'+containerId+'_'+i);
+    qq.classList.add('answered');
+    // ⚠ 必须同步加 submitted 类：v2026-09-29 定案「提交前可随时修改」——
+    //   CSS 锁（.opt{pointer-events:none} / .opt-confirm{display:none}）挂在 .submitted 前缀下，
+    //   只加 answered 不加 submitted 会导致提交后选项仍可点击（防刷分锁定失效）。
+    qq.classList.add('submitted');
+    qq.querySelectorAll('.opt').forEach(function(o, j){
+      if(idxInAnswer(qs[i], j)) o.classList.add('correct');
+      if(!isCorrect && idxInChosen(c, j) && !idxInAnswer(qs[i], j)) o.classList.add('wrong');
+    });
+    var fb = document.getElementById('fb_'+containerId+'_'+i);
+    // ⚠ 反馈格式：✓/✗ 图标 + "回答正确。"/"回答有误。" + 解析文本
+    // 正确答案旁只加 ✓，不单独写"正确"标签（详情面板中遵守此规则）
+    fb.innerHTML = '<span class="fb-icon">'+(isCorrect?'✓':'✗')+'</span>'+
+      (isCorrect?'回答正确。':'回答有误。')+qs[i].explain;
+    fb.className = 'feedback show '+(isCorrect?'correct-fb':'wrong-fb');
+  });
+
+  // 锁定提交按钮
+  var btn = document.getElementById(containerId+'_submitBtn');
+  if(btn){ btn.disabled = true; btn.textContent = '已提交 ✓ (不可重复提交)'; }
+
+  // 显示分数
+  // 分数元素ID由 quiz-engine.js 的 quizScoreId() 统一生成（quizPre → preScore）
+  var scoreEl = document.getElementById(quizScoreId(containerId));
+  if(scoreEl){ scoreEl.style.display='block'; scoreEl.textContent = '得分：'+score+'/'+qs.length+' (已提交)'; }
+
+  // 持久化到 localStorage
+  try{ localStorage.setItem('xmn_'+activity, JSON.stringify({score:score, total:qs.length, answers:answers})); }catch(e){}
+
+  // ⚠ 关键：先写入本地聚合数据，再 MQTT 上报，不依赖 MQTT 回环时序
+  // 否则教师端可能因 broker 延迟/丢包而暂时看不到刚提交的统计
+  var msg = {sid:studentId, activity:activity, ts:Date.now(), score:score, total:qs.length, answers:answers};
+  if(!xmnAgg[activity]) xmnAgg[activity] = [];
+  var oldIdx = xmnAgg[activity].findIndex(function(x){return x.sid===studentId;});
+  if(oldIdx>=0) xmnAgg[activity][oldIdx] = msg; else xmnAgg[activity].push(msg);
+
+  // 刷新统计（本地数据已就绪，立即生效，不依赖 MQTT 回环）
+  if(typeof updateBadgeStats === 'function') updateBadgeStats(activity);
+
+  // v2026-10-26：身份上报（独立 topic，不 retain / qos 0）
+  if(typeof xmnIdentityReport === 'function') xmnIdentityReport();
+  // MQTT 上报（如已接入）
+  if(typeof xmnPublish === 'function') xmnPublish(activity, {score:score, total:qs.length, answers:answers});
+}
+
+
+// QR Badge Injection — 交互页QR徽章注入模板（Robust Edition）
+// 在Step 4（学生交互模式）中，为每个测验/仿真页注入QR徽章
+
+// ===== 依赖脚本 =====
+// 课件 <head> 中需放入（本模板自带注释，勿在此处写 script 结束标签字面量）：
+//   qrcode-generator CDN：cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js（async）
+// ⚠ 坑：JS 注释里出现 script 结束标签字面量会提前截断所在 script 元素，
+//      导致其后整段标准件失效（syntax-check 报 Invalid or unexpected token）。
+
+// ===== HTML模板 =====
+/*
+  在每个交互页的section末尾添加:
+  <div class="qr-badge" data-activity="pre" data-page="p1" onclick="toggleQRPopup(this)">📱</div>
+
+  弹窗模板（新布局：关闭叉在右上角，QR图下方依次是人数/迷你条形图/查看详情/清空数据）:
+  注意：清空数据按钮的 onclick 只调 xmnClear，【不要】追加 closeQRPopup——
+  否则点清空后弹窗被关闭，用户会"离开二维码页面"（已在《价格理论》课件踩坑）。
+  <div class="qr-popup" id="qrPopup_pre">
+    <div class="qr-popup-inner">
+      <button class="qr-close-x" onclick="closeQRPopup('pre')">✕</button>
+      <div class="qr-img-wrap"><img id="qrImg_pre" src="" alt="扫码参与前测"></div>
+      <p class="qr-stat-row">参与人数: <span id="qrPart_pre">0</span></p>
+      <div class="qr-mini-bars" id="qrMiniBars_pre"></div>
+      <a class="qr-detail-link" onclick="openDetail('pre');closeQRPopup('pre')">查看每题详情 →</a>
+      <button class="qr-clear-btn" onclick="xmnClear('pre')">清空数据</button>
+    </div>
+  </div>
+
+  后测弹窗可额外显示平均得分:
+  <p class="qr-stat-row">参与人数: <span id="qrPart_post">0</span>&nbsp;&nbsp;平均得分: <span id="qrAvg_post">-</span></p>
+
+  ⚠ 每页徽章制（v2026-10-13）：非活动页（封面/讲授/总结）也必须有徽章——
+  无 data-activity 的「加入」徽章，点击走 openJoinPopup 分支（共用加入弹窗，二维码按页动态生成）。
+  加入弹窗由 step4_inject.py 的 build_body 自动注入，无需手写：
+  <div class="qr-popup" id="qrPopup_join">
+    <div class="qr-popup-inner">
+      <button class="qr-close-x" onclick="closeQRPopup('join')">✕</button>
+      <div class="qr-img-wrap"><img id="qrImg_join" src="" alt="扫码加入课堂"></div>
+      <p class="qr-join-title">学生扫码加入本节课</p>
+      <p class="qr-join-hint">扫码后进入当前页，并自动跟随教师端同步</p>
+      <p class="qr-join-student-title">登记学号姓名</p>
+    </div>
+  </div>
+
+  ⚠ v2026-10-28：封面徽章弹窗 = 学生身份登记唯一入口（共用加入弹窗）
+   - 学生端：二维码区/加入标题/提示 全部隐藏，只显示 .qr-join-student-title + 身份槽
+   - 教师端：显示二维码区 + 加入标题/提示；身份槽显示「重置姓名学号」
+   - 身份槽 .xmn-id-slot 仅当 pageId === PAGE_IDS[0]（封面）时可见（openJoinPopup 判定）
+*/
+
+// ===== CSS =====
+/*
+.qr-badge{
+  position:fixed;bottom:28px;right:28px;z-index:500;
+  width:48px;height:48px;border-radius:50%;
+  background:var(--accent);color:#fff;font-size:24px;
+  cursor:pointer;display:none;align-items:center;justify-content:center;
+  box-shadow:0 4px 12px rgba(255,143,0,.4);transition:transform .2s;
+}
+body.deployed .qr-badge.on{display:flex}
+.qr-badge:hover{transform:scale(1.1)}
+.qr-popup{
+  display:none;position:fixed;inset:0;z-index:999;
+  background:rgba(0,0,0,.5);justify-content:center;align-items:center;
+}
+.qr-popup.show{display:flex}
+.qr-popup-inner{
+  position:relative;background:#fff;border-radius:16px;padding:28px 32px;
+  max-width:360px;width:90%;text-align:center;box-shadow:0 12px 48px rgba(0,0,0,.25);
+}
+.qr-close-x{
+  position:absolute;top:12px;right:12px;width:32px;height:32px;
+  border:none;border-radius:50%;background:transparent;color:var(--primary);
+  font-size:20px;cursor:pointer;line-height:32px;padding:0;
+}
+.qr-close-x:hover{background:var(--red);color:#fff}
+.qr-img-wrap{margin:8px 0 16px}
+.qr-img-wrap img{max-width:200px;height:auto;border-radius:8px}
+.qr-stat-row{font-size:20px;margin:6px 0;font-weight:600}
+.qr-stat-row span{color:var(--accent);font-weight:700}
+.qr-mini-bars{margin:12px 0;min-height:20px}
+.qr-mini-row{display:flex;align-items:center;gap:8px;margin:4px 0;font-size:14px}
+.qr-mini-row .qlabel{width:28px;color:var(--primary);font-weight:700}
+.qr-mini-row .qbar-bg{flex:1;height:14px;background:#e9ecef;border-radius:7px;overflow:hidden}
+.qr-mini-row .qbar-fill{height:100%;border-radius:7px;transition:width .3s}
+.qr-mini-row .qbar-fill.green{background:var(--green)}
+.qr-mini-row .qbar-fill.orange{background:var(--accent)}
+.qr-mini-row .qpct{width:36px;text-align:right;color:var(--primary);font-weight:600}
+.qr-detail-link{
+  display:inline-block;margin:8px 0;padding:8px 18px;border-radius:20px;
+  background:var(--primary-light);color:#fff;font-size:16px;cursor:pointer;
+  text-decoration:none;font-weight:600;
+}
+.qr-detail-link:hover{background:var(--accent)}
+.qr-clear-btn{
+  margin-top:14px;padding:0;background:transparent;border:none;
+  color:#999;font-size:14px;cursor:pointer;text-decoration:underline;
+}
+.qr-clear-btn:hover{color:var(--red)}
+.qr-join-title{font-size:20px;font-weight:700;color:var(--primary);margin:6px 0 2px}
+.qr-join-hint{font-size:15px;color:#666;margin:2px 0 0;line-height:1.5}
+.qr-join-student-title{font-size:18px;font-weight:700;color:var(--primary);margin:6px 0 2px;display:none}
+*/
+
+// ===== JS逻辑 =====
+// ⚠ CLASS_ID 由 mqtt-framework.js 定义（唯一来源），此处直接复用，不得重复声明
+//   （若本文件先于 mqtt-framework.js 复制，可在课件 <script> 顶部补：
+//    var CLASS_ID = getPageParam('class') || ('wb-' + NODE_ID);）
+
+// ===== QR 基址（坑表「nullsrcdoc 坏码」处方）：PUBLISH_BASE 优先；srcdoc/file 场景绝不生成坏码 =====
+function getQrBase() {
+  if (typeof PUBLISH_BASE !== 'undefined' && PUBLISH_BASE && PUBLISH_BASE.indexOf('https://') === 0) return PUBLISH_BASE;
+  if ((location.protocol === 'https:' || location.protocol === 'http:') && location.origin && location.origin !== 'null') {
+    return location.origin + location.pathname;
+  }
+  return null;
+}
+
+// 本地优先生成 QR dataURI（v2026-10-13 提为模块级：加入弹窗 openJoinPopup 复用）
+function _xmnLocalQr(img, url) {
+  if (typeof qrcode === 'undefined') return false;
+  try { var q = qrcode(0, 'L'); q.addData(url); q.make(); img.src = q.createDataURL(4, 0); return true; }
+  catch (e) { return false; }
+}
+
+// v2026-10-13 每页徽章制：非活动页（封面/讲授/总结）的「加入」徽章 → 共用加入弹窗。
+// QR URL 按徽章 data-page 动态重建——每次打开都重新生成（禁用 src 缓存，不同页不同 URL）。
+function openJoinPopup(pageId) {
+  var popup = document.getElementById('qrPopup_join');
+  if (!popup) return;
+
+  // v2026-10-28：角色 + 封面判定
+  //   教师：出示当前页二维码（供学生扫码加入）+ 身份槽含「重置姓名学号」
+  //   学生：隐藏二维码区（学生看自己的加入码无意义且易误解），只留身份登记
+  //   身份槽仅在【封面】显示（登记入口唯一化，避免误操作）
+  var isCover = (typeof PAGE_IDS !== 'undefined' && PAGE_IDS && PAGE_IDS[0] === pageId);
+  var isTeacher = (typeof IS_TEACHER !== 'undefined' && IS_TEACHER);
+  try {
+    if (typeof xmnIdRefreshAll === 'function') xmnIdRefreshAll();
+    if (typeof xmnIdSetSlotVisible === 'function') xmnIdSetSlotVisible(isCover);
+    ['.qr-img-wrap', '.qr-join-title', '.qr-join-hint'].forEach(function (sel) {
+      var el = popup.querySelector(sel); if (el) el.style.display = isTeacher ? '' : 'none';
+    });
+    var st = popup.querySelector('.qr-join-student-title');
+    if (st) st.style.display = isTeacher ? 'none' : '';
+  } catch (e) {}
+
+  // 学生端无需生成二维码（已隐藏），跳过生成以免触发「未发布」提示打断登记
+  if (!isTeacher) { popup.classList.add('show'); return; }
+
+  var qrBase = getQrBase();
+  if (!qrBase) { if (typeof showToast === 'function') showToast('请先发布课件后再使用扫码功能', 3000); return; }
+  var qrUrl = qrBase + '#page=' + pageId + '&class=' + CLASS_ID;
+  var qrImg = document.getElementById('qrImg_join');
+  if (qrImg) {
+    qrImg.removeAttribute('data-qrdone');
+    if (!_xmnLocalQr(qrImg, qrUrl)) {
+      qrImg.src = 'https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=' + encodeURIComponent(qrUrl);
+    }
+  }
+  popup.classList.add('show');
+}
+
+function toggleQRPopup(badge) {
+  var activity = badge.getAttribute('data-activity');
+  var pageId = badge.getAttribute('data-page');
+  // 无 data-activity = 非活动页加入徽章（v2026-10-13 每页徽章制）→ 加入弹窗分支
+  if (!activity) { openJoinPopup(pageId); return; }
+  var popup = document.getElementById('qrPopup_' + activity);
+  if (!popup) return;
+
+  var qrBase = getQrBase();
+  if (!qrBase) { if (typeof showToast === 'function') showToast('请先发布课件后再使用扫码功能', 3000); return; }
+  var qrUrl = qrBase + '#page=' + pageId + '&class=' + CLASS_ID;
+  var qrImg = document.getElementById('qrImg_' + activity);
+  // ⚠ 必须用 getAttribute('src') 判断，因为 element.src 在属性为空时会返回当前页URL
+  // ⚠ 本地优先（v2026-10-02 定案）：qrcode-generator 以 async 引入，同步调用时库未就绪
+  //   → 旧写法恒走远端 qrserver（国内慢/不可达），且库就绪后 src 非空、本地生成永不执行。
+  //   处方：首次先试本地，失败挂远端占位；已挂远端的，轮询（≤6s）等库就绪换本地 data URI，data-qrdone 防重复。
+  if (qrImg) {
+    if (!qrImg.getAttribute('src')) {
+      if (!_xmnLocalQr(qrImg, qrUrl)) {
+        qrImg.src = 'https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=' + encodeURIComponent(qrUrl);
+      }
+    } else if (qrImg.getAttribute('src').indexOf('data:image') !== 0 && !qrImg.getAttribute('data-qrdone')) {
+      var _t0 = Date.now();
+      var _iv = setInterval(function () {
+        if (_xmnLocalQr(qrImg, qrUrl)) { qrImg.setAttribute('data-qrdone', '1'); clearInterval(_iv); }
+        else if (Date.now() - _t0 > 6000) { clearInterval(_iv); }
+      }, 250);
+    }
+  }
+
+  popup.classList.toggle('show');
+  if (popup.classList.contains('show')) populateMiniStats(activity);
+}
+
+function closeQRPopup(activity) {
+  var popup = document.getElementById('qrPopup_' + activity);
+  if (popup) popup.classList.remove('show');
+  // 【A】student closes popup: defensive stopBroadcast; teacher keeps broadcasting
+  if (!IS_TEACHER) stopBroadcast();
+}
+
+// 弹窗内迷你条形图（每题正确率）
+// ⚠ 依赖 DETAIL_QUIZ_MAP（来自 detail-stats.js）和 QUIZZES（来自 quiz-engine.js）
+// 确保这两个变量在调用 populateMiniStats 之前已定义（detail-stats.js 和 quiz-engine.js 需先复制到 <script>）
+function populateMiniStats(activity) {
+  var quizId = DETAIL_QUIZ_MAP ? DETAIL_QUIZ_MAP[activity] : null;
+  var barsEl = document.getElementById('qrMiniBars_' + activity);
+  if (!barsEl) return;
+  var questions = quizId && QUIZZES[quizId] ? QUIZZES[quizId].questions : [];
+  var submissions = xmnAgg[activity] || [];
+  var totalSubs = submissions.length;
+  if (totalSubs === 0 || questions.length === 0) { barsEl.innerHTML = ''; return; }
+  var html = '';
+  for (var qi = 0; qi < questions.length; qi++) {
+    var correctCount = 0;
+    submissions.forEach(function(sub) {
+      if (sub.answers && sub.answers[qi] && sub.answers[qi].isCorrect) correctCount++;
+    });
+    var pct = Math.round(correctCount / totalSubs * 100);
+    html += '<div class="qr-mini-row">';
+    html += '<span class="qlabel">Q' + (qi+1) + '</span>';
+    html += '<div class="qbar-bg"><div class="qbar-fill ' + (pct >= 60 ? 'green' : 'orange') + '" style="width:' + Math.max(pct, 2) + '%"></div></div>';
+    html += '<span class="qpct">' + pct + '%</span>';
+    html += '</div>';
+  }
+  barsEl.innerHTML = html;
+}
+
+// 需在页面进入时显示对应QR徽章
+// onPageEnter 示例（⚠ 必须加 IS_DEPLOYED 闸门：未部署的静态文件绝不显示徽章，否则误导用户以为可扫码互动）：
+// var IS_DEPLOYED = (function(){ try { return location.protocol!=='file:' && /^https?:\/\//.test(PUBLISH_BASE||''); } catch(e){ return false; } })();
+//
+// ⚠ v2026-10-13 每页徽章制：build_body 为每个页面 section 都注入一枚徽章
+//   （活动页带 data-activity，其余页为加入徽章）——「全部下架+当前页上架」天然实现
+//   「每页都有且只有一枚可见徽章（含首页）」。
+//
+// ⚠⚠ 徽章切换有【两个必守点位】（step4_inject.py 已按此注入，勿手改回退）：
+//   ① onPageEnter 开头的 toggle 必须插在函数【开头】（`if (pageEntered[id]) return;` 守卫【之前】）——
+//      插在函数末尾会被守卫拦截：回访某页时守卫提前 return，徽章停在上一页（「回访错显」）。
+//   ② 徽章 HTML 追加在文档末尾、body 收尾标签之前（晚于初始 showPage 与 JS 块），故加载时 onPageEnter 查不到徽章 →
+//      必须在 DOMContentLoaded 后再同步一次「当前页徽章」（build_js_block 注入的 _xmnBadgeSync），
+//      否则首屏（含首页）徽章永不显示（「首屏无徽章」）。
+
+
+// Detail Stats Panel — 每题选项分布条形图（含选项文本内容，便于教师对照）
+// 复制到 Step 4 课件 <script> 中，仅需修改 DETAIL_QUIZ_MAP 映射
+//
+// 依赖：QUIZZES（测验数据）、xmnAgg（MQTT聚合数据）、detailOverlay（HTML面板）
+//
+// 注意：submitQuiz 中必须先把数据写入本地 xmnAgg（不依赖 MQTT 回环时序），
+//       否则教师端可能看不到刚提交的统计。参见 mqtt-framework.js 中的注释。
+//
+// v2026-10-13 增强：
+//   ① 每个选项行展示「选项文本内容」（从 DOM 读取，不依赖 QUIZZES 数据模型，向后兼容已发布课件）；
+//   ② 修复多选题统计——chosen 为数组，原 `chosen>=0` 判断恒 false 导致多选统计全 0；
+//   ③ 修复多选题正确项标记——原 `oi===q.answer` 对数组恒 false，正确项不显示 ✓/绿色；
+//   ④ 题干去除「单选题/多选题」徽章噪声，并去除重复的前导题号。
+
+// ===== 活动→测验名称映射（复用 mqtt-framework.js 的 ACTIVITY_QUIZ_MAP，单一事实来源） =====
+// 键值结构与 ACTIVITY_QUIZ_MAP 完全一致（pre→quizPre…），存在时直接复用，不重复定义
+var DETAIL_QUIZ_MAP = (typeof ACTIVITY_QUIZ_MAP !== 'undefined')
+  ? ACTIVITY_QUIZ_MAP
+  : { pre:'quizPre', mid1:'quizMid1', mid2:'quizMid2', mid3:'quizMid3', post:'quizPost' };
+
+// 活动中文标签（复用 ACTIVITY_LABELS；仅当独立引入本文件时使用兜底表）
+var DETAIL_LABELS = (typeof ACTIVITY_LABELS !== 'undefined')
+  ? ACTIVITY_LABELS
+  : { pre:'前测', mid1:'中测1', mid2:'中测2', mid3:'中测3', post:'后测' };
+
+var OPT_LABELS = ['A', 'B', 'C', 'D'];
+
+// 判断某个选项索引是否为正确答案（兼容单选 number / 多选 array）
+function _dsIsCorrectIdx(q, idx) {
+  if (!q) return false;
+  if (Array.isArray(q.answer)) return q.answer.indexOf(idx) >= 0;
+  return q.answer === idx;
+}
+
+// 从 DOM 读取某题某选项的选项文本内容（剥掉 .badge 字母，仅保留选项文字）
+function _dsGetOptText(qEl, idx) {
+  if (!qEl) return '';
+  var opt = qEl.querySelector('.opt[data-idx="' + idx + '"]');
+  if (!opt) return '';
+  var clone = opt.cloneNode(true);
+  var b = clone.querySelector('.badge');
+  if (b) b.parentNode.removeChild(b);
+  return (clone.textContent || '').replace(/\s+/g, ' ').trim();
+}
+
+function openDetail(activity) {
+  var quizId = DETAIL_QUIZ_MAP[activity];
+  if (!quizId) return;
+  var questions = QUIZZES[quizId] ? QUIZZES[quizId].questions : [];
+  var submissions = xmnAgg[activity] || [];
+  var totalSubs = submissions.length;
+
+  var html = '<h3 style="font-size:26px;color:var(--primary);margin-bottom:12px">'
+    + (DETAIL_LABELS[activity] || activity) + ' — 每题统计</h3>';
+
+  for (var qi = 0; qi < questions.length; qi++) {
+    var q = questions[qi];
+    var qEl = document.getElementById('qq_' + quizId + '_' + qi);
+    var stemText = qEl ? qEl.querySelector('.q-stem').textContent : ('第' + (qi + 1) + '题');
+    // 题干清理：剥掉 .q-type 徽章文字，并去掉重复的前导题号（如 "1. "）
+    if (qEl) {
+      var stClone = qEl.querySelector('.q-stem').cloneNode(true);
+      var stBadge = stClone.querySelector('.q-type');
+      if (stBadge) stBadge.parentNode.removeChild(stBadge);
+      stemText = (stClone.textContent || '').replace(/\s+/g, ' ').trim();
+      stemText = stemText.replace(/^\s*\d+[\.、]\s*/, '');
+    }
+    var optCounts = [0, 0, 0, 0];
+
+    submissions.forEach(function(sub) {
+      var a = sub.answers && sub.answers[qi];
+      if (!a) return;
+      var ch = a.chosen;
+      if (Array.isArray(ch)) {
+        ch.forEach(function(ix) { if (ix >= 0 && ix < 4) optCounts[ix]++; });
+      } else if (ch >= 0 && ch < 4) {
+        optCounts[ch]++;
+      }
+    });
+
+    var maxCount = Math.max.apply(null, optCounts.concat([1]));
+
+    html += '<div class="detail-q-block">';
+    html += '<div class="detail-q-title">' + (qi + 1) + '. ' + stemText + '</div>';
+    html += '<div class="detail-q-bar">';
+    for (var oi = 0; oi < 4; oi++) {
+      var isCorrectOpt = _dsIsCorrectIdx(q, oi);
+      var barW = totalSubs > 0 ? Math.round(optCounts[oi] / maxCount * 100) : 0;
+      var barClass = isCorrectOpt ? 'green'
+        : (optCounts[oi] > 0 ? 'orange' : 'gray');
+      var tagColor = isCorrectOpt ? 'var(--green)' : 'var(--primary)';
+      var optText = _dsGetOptText(qEl, oi);
+      html += '<div class="bar-row">';
+      // 主视觉：选项标签 + 条形图 + 百分比（选项统计为视觉重点）
+      html += '<div class="opt-barline">';
+      html += '<span class="opt-tag" style="color:' + tagColor + '">'
+        + OPT_LABELS[oi] + (isCorrectOpt ? ' ✓' : '') + '</span>';
+      html += '<div class="bar-bg"><div class="bar-fill ' + barClass
+        + '" style="width:' + barW + '%">'
+        + (optCounts[oi] > 0 ? optCounts[oi] + '人' : '') + '</div></div>';
+      html += '<span class="opt-pct">'
+        + (totalSubs > 0 ? Math.round(optCounts[oi] / totalSubs * 100) : 0) + '%</span>';
+      html += '</div>';
+      // 选项文本内容：默认隐藏，悬停整行时以浮窗显示（非重点、省高度）；浮窗文本最前加选项字母(A/B/C/D)便于识别
+      html += '<span class="opt-tip"><b>' + OPT_LABELS[oi] + '</b> ' + (optText || '（无选项文本）') + '</span>';
+      html += '</div>';
+    }
+    html += '</div>';
+    html += '</div>';
+  }
+
+  if (questions.length === 0) {
+    html += '<p style="text-align:center;font-size:20px;color:var(--primary-light);padding:40px">该测验无题目数据</p>';
+  } else if (totalSubs === 0) {
+    html += '<p style="text-align:center;font-size:20px;color:var(--primary-light);padding:40px">暂无提交数据</p>';
+  }
+
+  document.getElementById('detailContent').innerHTML = html;
+  document.getElementById('detailOverlay').classList.add('show');
+}
+
+function closeDetail() {
+  document.getElementById('detailOverlay').classList.remove('show');
+}
+
+// ===== 需配合的 HTML + CSS =====
+// 1) 复制 detail-modal.html 中的 CSS + HTML 到课件中
+// 2) 每个 QR 弹窗需加按钮:
+//    <a class="qr-detail-link" onclick="openDetail('post');closeQRPopup('post')">查看每题详情 →</a>
+// 3) 确保 CSS 中的关闭按钮类名为 .detail-close-btn（与 detail-modal.html 一致）
+
+
+/**
+ * teaching-control.js — 教学控制标准件（第四代 · 资料库路线 · 控制端唯一版）
+ * =====================================================================
+ * 覆盖 SKILL.md「资料库发布 & 教学控制标准件（第四代硬规则）」整章：
+ *   A 关弹窗不清广播(教师端) · B 学生端隐藏徽章
+ *   C 控制端唯一：全网唯一广播者 —— 租约制（首师优先 since 仲裁）+ MQTT 遗嘱 + 观察态
+ *     + 失联自动接管（防闲屏）+ 长按 1.5s 强制接管（后门，无「一键接管」按钮）
+ *     ⛔ 页面内**零**「连点页码进教师模式」提示（2026-10-14 定案：学生看到会自行连点夺取控制权）。
+ *   D 学生焊死纯跟随(+8s宽限) · E 跟随时隐藏导航 · F 两段式教师入口
+ *     v1.7.0（2026-10-30）：教师入口由「三连点直接切换」改为「两段式」——
+ *       ① 页码指示器 1.5s 内【双击】→ 仅「武装」3 秒（不直接切）；
+ *       ② 武装窗口内点击右下角封面徽章 → 才切教师。学生误触需凑两段，概率极低。
+ *   G 广播权随教师模式常驻 · H 学生进入主动请求当前页（仅持权者回播）
+ *   + 三级降级全屏（v2026-09-28e 定案：默认不启用，不放 #fullscreenBtn 按钮，需要时引导按 F11）
+ *
+ * ⛔ C 为何不能用「最新 ts 恒赢」：两端各按 2s 心跳续约时，后发布者 ts 必然更大 →
+ *    非持权者每次心跳都必定窃权 → 广播权以心跳速率确定性易主 → 学生端在两源页面间来回跳。
+ *    正解 = 租约制：持权者活跃期间，任何更新的外来 claim 都夺不走权；仅在【失联超 CLAIM_TTL】
+ *    或【带 force 的显式接管】时才易主。判定用「本地最后听到该端续约的时刻」，不跨设备比 ts
+ *    （规避两端时钟漂移）。实证：大模型工作原理课件 2026-10-12 控制端唯一改造。
+ *
+ * 依赖（加载本文件前必须已存在，全部来自 courseware-skeleton / mqtt-framework / 页面主脚本）：
+ *   PAGE_IDS, showPage(i), showToast(msg,ms), showConfirmModal(msg,onOk,confirmText), getPageParam(key),
+ *   当前页索引 curPage（或经 xmnCurIndex() 桥接）,  // 见下方「索引兼容取值」
+ *   NODE_ID, SYNC_TOPIC, CLASS_ID, ACTIVITY_QUIZ_MAP, IS_DEPLOYED(可选),
+ *   mqttClient, mqttConnected, MQTT_BROKERS, MQTT_BROKER_INDEX, MQTT_TRIES, MQTT_MAX_TRIES,
+ *   xmnConnect, xmnRetryOrNextBroker, updateBadgeStats, offlineQueue, updateSyncStatusUI(可选)
+ *
+ * 集成点（7 处，缺一不可——半集成会静默失效）：
+ *   ① mqtt 'connect' 回调（教师）：  setTimeout(function(){ xmnEnterTeacherRole(); }, 600);   【C/G】
+ *      （xmnEnterTeacherRole：探到活跃租约→观察态不广播；否则 startBroadcast 持权）
+ *   ② mqtt 'message' 回调开头：      handleControlMessage(raw) / handleSyncMessage(raw)（下方已给出，照抄）
+ *   ③ showPage 末尾追加：            if (isBroadcaster && !syncing) xmnBroadcastPage();
+ *                                    if (!syncing) lastManualNav = Date.now();      【D】
+ *   ④ nextPage/prevPage 首行加闸门：  if (!canStudentNavigate()) return;            【E】
+ *   ⑤ closeQRPopup：                 教师端【不要】调 stopBroadcast（弹窗只是出示二维码的工具）；
+ *                                    仅学生端防御性 if(!IS_TEACHER) stopBroadcast(); 【A】
+ *   ⑥ mqtt 'connect' 回调（学生端）： requestCurrentPage();                        【H】
+ *   ⑦ xmnConnect：                   clientId 提升为变量 → 回填 myClientId；connect options 增加 will 遗嘱
+ *                                    （topic=SYNC_CTL_TOPIC，payload={id,bye:true}，qos1，retain）【C】
+ *
+ * 伪全屏 CSS（必须复制到 <style>，菜单必须盖在课件层之上且不透明——实测反模式警告见 SKILL.md §3）：
+ *   body.fs-pseudo #pageContainer{position:fixed !important;inset:0 !important;margin-top:0 !important;z-index:9999 !important}
+ *   body.fs-pseudo #topNav{z-index:10001 !important}
+ *   body.fs-pseudo #navBtns, body.fs-pseudo #mqttStatus{z-index:10000 !important}
+ * ===================================================================== */
+
+// （showToast / showConfirmModal 由 mqtt-framework.js 统一提供，此处不再重复定义）
+// ---- 状态变量（粘贴到主脚本模块级；NODE_ID/PUBLISH_BASE 由 publish_to_library.py 发布时回写） ----
+var TEACHER_KEY = 'xmn_teacher_' + NODE_ID;
+// 教师身份判定：query（直开时）→ localStorage（设备记忆，裸链保持教师端）。
+// ⚠⚠ 交付禁令（2026-09-30 定案）：绝不可把 URL 参数形式写进交付给老师的链接或话术！
+//   资料库外壳 302 → iframe 白名单会剥掉 query 与 hash，课件 iframe 内取不到该参数
+//   → 教师点开链接仍是学生视角（已实测复现）。_teacherByUrl 仅作「本地直开 / 自托管调试」兜底。
+//   唯一可靠的教师入口是下方【F】两段式入口（页码双击武装 + 封面徽章点击，不依赖任何 URL 参数）。
+//   交付话术见 SKILL.md §4.5：三条原文照写，**链接一律用裸链**（不带任何 query）。
+var _teacherByUrl = getPageParam('teacher') === '1';
+try { if (_teacherByUrl) localStorage.setItem(TEACHER_KEY, '1'); } catch(e){}
+var IS_TEACHER = _teacherByUrl || (function(){ try { return localStorage.getItem(TEACHER_KEY) === '1'; } catch(e){ return false; } })();
+var SYNC_CTL_TOPIC = SYNC_TOPIC + '/ctl';           // 【C】控制端唯一：租约 + 请求 控制子话题
+var CLAIM_TTL = 6000;                               // 租约有效期(ms)：3× 心跳周期，连续 3 次未续约即失联易主
+var myClientId = '';                                // 本端 MQTT clientId（xmnConnect 时回填）
+var activeClaimId = '';                             // 当前唯一控制端的设备 id
+var activeClaimTs = 0;                              // 本地「最后一次听到该端续租」的时刻（不跨设备比 ts）
+var observedTeacher = false;                        // 观察态：本端有教师身份但课堂已有活跃控制端，暂不广播
+var broadcastSinceTs = 0;                           // 本端认领租约的时刻（冷启动双认领的裁决窗口）
+var myBroadcastSince = 0;                           // 【P1】本端开始广播的时刻（随 claim 的 since 广播，首师优先裁决）
+var _xmnMonitorStarted = false;                     // 【P2】观察端自动接管监控幂等锁
+var followTeacher = true;                           // 【D】学生端焊死纯跟随：恒为 true，无自由浏览开关
+var lastManualNav = 0;                              // 【D】学生手动翻页时间戳（8s 宽限）
+var syncing = false;                                // 同步触发的翻页（不计入手动）
+var isBroadcaster = false;                          // 本端是否为「当前唯一控制端」并正在广播
+var syncHeartbeat = null;                           // 2s 心跳：续租 +（仅持权者）广播页码
+var syncReceived = false;                           // 本端是否收到过老师页码广播
+
+// ---- 页码广播（retain 确保晚进来的学生立即拿到当前页） ----
+function xmnBroadcastPage(){
+  if(!isBroadcaster || !mqttConnected || !mqttClient) return;
+  try{
+    // 索引兼容取值：模板分页引擎用 curPage；存量课件沿用旧变量名（如 cur）时经 xmnCurIndex() 桥接。
+    // ⚠ 必须内联（勿抽成独立函数）：pagesync-test-mqtt.js 只把具名函数抽进沙箱驱动，
+    //   依赖文件内其他自定义函数会 ReferenceError → 回归 FAIL。
+    var _ci = (typeof xmnCurIndex === 'function') ? xmnCurIndex() : ((typeof curPage !== 'undefined') ? curPage : -1);
+    var payload = JSON.stringify({activity:'__sync__', class:CLASS_ID, page:PAGE_IDS[_ci], idx:_ci, ts:Date.now()});
+    mqttClient.publish(SYNC_TOPIC, payload, {qos:1, retain:true});
+  }catch(e){}
+}
+// 【C】续租本端租约（retain 让后来者一进来就读到「课堂已有控制端」）；force=true 为用户显式接管
+function publishClaim(force){
+  if(!mqttConnected || !mqttClient) return;
+  try{
+    var _p = {id:myClientId, ts:Date.now(), since:(typeof myBroadcastSince !== 'undefined' ? myBroadcastSince : 0)};
+    if(force) _p.force = true;
+    mqttClient.publish(SYNC_CTL_TOPIC, JSON.stringify(_p), {qos:1, retain:true});
+  }catch(e){}
+}
+// 【C】租约仲裁：在位者优先（本地时间判定，不跨设备比 ts → 规避时钟漂移）
+function onClaim(c){
+  if(!c || !c.id) return;
+  if(c.bye){ if(c.id === activeClaimId){ activeClaimId = ''; activeClaimTs = 0; } return; }  // 遗嘱/主动退出 → 立即释约
+  // 【学生端早退守卫 · v1.6.5 定案 2026-10-29】⛔ 学生端只跟踪、不抢权、不弹 UI。
+  //   根因：MQTT clean:true 每次连接无状态，学生端读到 retain 遗留租约时本地 activeClaimId 为空
+  //   → 旧代码直接采纳他人租约并弹观察态横幅（「已有其它网页成为控制端，是否需要接管」）——学生端绝不该弹此窗。
+  //   正确行为：仅静默更新跟踪时间戳（供仲裁用），一律 return，不进入下方易主/降级分支。
+  //   回归：pagesync C 组 + 大模型课件 dnn-fix-3issues-test.js R1~R4。
+  if (typeof IS_TEACHER !== 'undefined' && !IS_TEACHER){
+    if(c.id !== myClientId){ activeClaimId = c.id; activeClaimTs = Date.now(); }
+    return;
+  }
+  if(!c.ts) return;
+  if(c.id === myClientId){ activeClaimTs = Date.now(); return; }                              // 自己续租的回声
+  var fresh = activeClaimId && (Date.now() - activeClaimTs <= CLAIM_TTL);                     // 在位者是否仍活跃
+  if(fresh && !c.force){
+    // 【P1 首师优先·v1.7.0】比「谁先开始广播」(since)，早者永不被迟到设备夺权；同刻才退化为 id 字典序。
+    //   缺口修复：旧逻辑只防「自己刚认领 ≤3s」，不防「自己早已在位」→ 迟到且本该观察的设备会夺走首师。
+    var mySince = (typeof myBroadcastSince !== 'undefined' && myBroadcastSince) ? myBroadcastSince : broadcastSinceTs;
+    var inSince = (typeof c.since === 'number') ? c.since : c.ts;
+    if(inSince < mySince){
+      activeClaimId = c.id; activeClaimTs = Date.now();
+      if(isBroadcaster) xmnDowngradeToObserver(c.id);     // 对方更早广播 → 我让权
+    } else if(inSince === mySince && activeClaimId === myClientId && c.id < myClientId){
+      activeClaimId = c.id; activeClaimTs = Date.now();
+      if(isBroadcaster) xmnDowngradeToObserver(c.id);     // 同刻双认领 → id 小者胜
+    }
+    // inSince > mySince → 我更早广播 → 忽略对方（永不向迟到者让权）
+    return;
+  }
+  activeClaimId = c.id; activeClaimTs = Date.now();                                           // 无主/失联/强制接管 → 采纳
+  if(isBroadcaster) xmnDowngradeToObserver(c.id);
+}
+// 让权为观察态（不 publish 空 retain，避免清掉新控制端的租约/页码）
+function xmnDowngradeToObserver(holderId){
+  isBroadcaster = false;
+  if(syncHeartbeat){ clearInterval(syncHeartbeat); syncHeartbeat = null; }
+  observedTeacher = true;
+  showTeacherObserveBanner(holderId);   // 提示窗自带 3 秒倒计时，超时自动隐藏
+}
+// 【H】学生进入主动请求当前页：摆脱对 2s 心跳/retain 的被动等待，进入即秒级跳页
+function requestCurrentPage(){
+  if(!mqttConnected || !mqttClient || IS_TEACHER) return;
+  try{ mqttClient.publish(SYNC_CTL_TOPIC, JSON.stringify({req:'page', from:myClientId, ts:Date.now()}), {qos:1}); }catch(e){}
+}
+function startBroadcast(force){
+  isBroadcaster = true;
+  observedTeacher = false;
+  activeClaimId = myClientId; activeClaimTs = Date.now(); broadcastSinceTs = Date.now(); myBroadcastSince = broadcastSinceTs;  // 认领租约
+  publishClaim(force);
+  if(syncHeartbeat) clearInterval(syncHeartbeat);
+  // 每 2s：租约续期 +（仅当本端持权时）广播页码——在位者续租、非在位者静默等待，杜绝心跳级易主
+  syncHeartbeat = setInterval(function(){
+    if(!activeClaimId || activeClaimId === myClientId || Date.now() - activeClaimTs > CLAIM_TTL) publishClaim();
+    if(activeClaimId === myClientId) xmnBroadcastPage();
+  }, 2000);
+  xmnBroadcastPage();
+}
+function stopBroadcast(){
+  isBroadcaster = false;
+  if(syncHeartbeat){ clearInterval(syncHeartbeat); syncHeartbeat = null; }
+  // 清 retain：避免晚来的学生被旧页码/旧 claim 拽走
+  if(mqttConnected && mqttClient){
+    try{ mqttClient.publish(SYNC_TOPIC, '', {qos:1, retain:true}); }catch(e){}
+    try{ mqttClient.publish(SYNC_CTL_TOPIC, '', {qos:1, retain:true}); }catch(e){}
+  }
+}
+// 主动让权（退出/切换身份）：发一次 bye 让其他端立即释约，再清 retain
+function yieldBroadcast(){
+  isBroadcaster = false;
+  if(syncHeartbeat){ clearInterval(syncHeartbeat); syncHeartbeat = null; }
+  if(mqttConnected && mqttClient){
+    try{ mqttClient.publish(SYNC_CTL_TOPIC, JSON.stringify({id:myClientId, bye:true, ts:Date.now()}), {qos:1, retain:true}); }catch(e){}
+    try{ mqttClient.publish(SYNC_CTL_TOPIC, '', {qos:1, retain:true}); }catch(e){}
+    try{ mqttClient.publish(SYNC_TOPIC, '', {qos:1, retain:true}); }catch(e){}
+  }
+}
+
+// ---- mqtt 'message' 回调的两个前置分支（照抄到回调开头，处理完 return） ----
+function handleControlMessage(raw){
+  try{
+    var _c = JSON.parse(raw);
+    if(!_c) return;
+    // 【H】学生请求当前页 → 仅持权者回播（M 个广播源也不会回播风暴）
+    if(_c.req === 'page'){ if(isBroadcaster && activeClaimId === myClientId) xmnBroadcastPage(); return; }
+    onClaim(_c);
+  }catch(e){}
+}
+function handleSyncMessage(raw){
+  try{
+    var s = JSON.parse(raw);
+    if(s && s.page && PAGE_IDS.indexOf(s.page) >= 0){
+      syncReceived = true;
+      if(IS_TEACHER) return;                            // 【C】教师是广播源，永不跟随
+      if(!followTeacher) return;                        // 【D】焊死后恒不触发（纯跟随）
+      if(Date.now() - lastManualNav < 8000) return;     // 【D】手动翻页 8s 宽限
+      var target = PAGE_IDS.indexOf(s.page);
+      var _cur = (typeof xmnCurIndex === 'function') ? xmnCurIndex() : ((typeof curPage !== 'undefined') ? curPage : -1);
+      if(target !== _cur){
+        syncing = true; showPage(target); syncing = false;
+        showToast('已同步到老师正在展示的页面', 2500);
+      }
+    }
+  }catch(e){}
+}
+
+// ---- 【C】教师角色进入决策：观察态 / 持权广播 ----
+// 【P2 防闲屏·v1.7.0】唯一广播者失联/崩溃未发遗嘱时，教师观察端在 CLAIM_TTL 余量后自动接管，杜绝课堂冻结（学生停页）。
+//   随机退避避免多教师端雷鸣群；先广播者 since 更早，迟到者按 P1 自动让权，无分裂脑。
+function xmnStartObserverMonitor(){
+  if(_xmnMonitorStarted) return; _xmnMonitorStarted = true;
+  setInterval(function(){
+    if(!IS_TEACHER || isBroadcaster) return;
+    var lost = !activeClaimId || (Date.now() - activeClaimTs > CLAIM_TTL + 1505);
+    if(!lost) return;
+    var backoff = Math.random() * 1500;
+    setTimeout(function(){
+      if(!IS_TEACHER || isBroadcaster) return;
+      var stillLost = !activeClaimId || (Date.now() - activeClaimTs > CLAIM_TTL + 1505);
+      if(stillLost){
+        startBroadcast();
+        showToast('控制端失联，本机已自动接管为唯一控制端', 3000);
+      }
+    }, backoff);
+  }, 2000);
+}
+function xmnEnterTeacherRole(){
+  var freshHolder = activeClaimId && activeClaimId !== myClientId && (Date.now() - activeClaimTs <= CLAIM_TTL);
+  if(freshHolder){
+    observedTeacher = true;
+    showTeacherObserveBanner(activeClaimId);   // 提示窗自带 3 秒倒计时，超时自动隐藏
+  } else {
+    observedTeacher = false;
+    hideTeacherObserveBanner();
+    startBroadcast();
+  }
+}
+// 【C】强制接管（自动接管 / 长按后门调用）：强制认领租约并广播（旧控制端收到 force claim 后立即降级为观察态）
+function xmnTakeover(){
+  activeClaimId = myClientId; activeClaimTs = Date.now(); broadcastSinceTs = Date.now();
+  observedTeacher = false;
+  hideTeacherObserveBanner();
+  startBroadcast(true);
+  showToast('已接管：本机成为唯一控制端', 3000);
+}
+// 【C】观察态提示窗（多端抢控制权时弹出）：居中弹窗 + **3 秒倒计时**（v1.7.0 起无「一键接管」按钮）；
+//   3 秒内不接管 → 弹窗自动隐藏；仅在横幅上「长按 1.5s」才强制接管（后门，仅教师知晓）。
+var TAKEOVER_CD_SEC = 3;
+function clearTakeoverCountdown(b){
+  try{ if(b && b._cdTimer){ clearInterval(b._cdTimer); b._cdTimer = null; } }catch(e){}
+}
+function showTeacherObserveBanner(holderId){
+  try{
+    var b = document.getElementById('xmnObserveBanner');
+    if(!b){
+      b = document.createElement('div'); b.id = 'xmnObserveBanner';
+      b.style.cssText = 'position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3100;' +
+        'background:#fff;color:#1A3A5C;padding:22px 26px;border-radius:16px;text-align:center;' +
+        'box-shadow:0 14px 50px rgba(0,0,0,.35);border-top:5px solid #E8892B;max-width:320px;width:86%;';
+      var msg = document.createElement('div');
+      msg.style.cssText = 'font-size:16px;font-weight:700;line-height:1.5;';
+      msg.appendChild(document.createTextNode('⚠ 课堂已有控制端，本机处于观察态（不广播）'));
+      b.appendChild(msg);
+      var cd = document.createElement('div'); cd.id = 'xmnTakeoverCd';
+      cd.style.cssText = 'margin-top:10px;font-size:14px;color:#8A6D3B;font-weight:600;';
+      b.appendChild(cd);
+      // 【P3 乙·v1.7.0】无「一键接管」按钮：健康首师不可被普通一键抢走控制权。
+      //   仅「长按横幅 1.5s」触发强制接管（后门，仅教师知晓）；控制端确已失联由 xmnStartObserverMonitor 自动接管。
+      if (!b._lpBound){
+        var _lpTimer = null;
+        var _lpStart = function(){ if(_lpTimer) return; _lpTimer = setTimeout(function(){ clearTakeoverCountdown(b); b.style.display = 'none'; xmnTakeover(); }, 1500); };
+        var _lpEnd = function(){ if(_lpTimer){ clearTimeout(_lpTimer); _lpTimer = null; } };
+        b.addEventListener('mousedown', _lpStart); b.addEventListener('touchstart', _lpStart, {passive:true});
+        b.addEventListener('mouseup', _lpEnd); b.addEventListener('touchend', _lpEnd); b.addEventListener('mouseleave', _lpEnd);
+        b._lpBound = true;
+      }
+      document.body.appendChild(b);
+    }
+    b.style.display = 'block';
+    // 3 秒倒计时：不接管则自动收起（仅隐藏本次提示，不改变控制权归属）
+    var _left = TAKEOVER_CD_SEC;
+    var _cd = document.getElementById('xmnTakeoverCd');
+    var _tick = function(){
+      if(_left > 0){ if(_cd) _cd.textContent = '若不接管，' + _left + ' 秒后自动关闭'; }
+      else { clearTakeoverCountdown(b); b.style.display = 'none'; }
+      _left--;
+    };
+    clearTakeoverCountdown(b);
+    _tick();
+    b._cdTimer = setInterval(_tick, 1000);
+  }catch(e){}
+}
+function hideTeacherObserveBanner(){
+  try{ var b = document.getElementById('xmnObserveBanner'); if(b){ clearTakeoverCountdown(b); b.style.display = 'none'; } }catch(e){}
+}
+
+// ---- 【E】学生端导航闸门（键盘/触摸/按钮全拦，仅页内「逐步揭示」不受影响） ----
+function canStudentNavigate(){ return IS_TEACHER; }
+// 焊死纯跟随（v2026-09-28e 定案）：学生恒禁导航（按钮/键盘/滑动全锁），仅教师可翻页
+// 用法：function nextPage(){ if (!canStudentNavigate()) return; ... }
+//      function prevPage(){ if (!canStudentNavigate()) return; ... }
+
+// ---- 初始化（B / 退出按钮 / E / D / F）——在 body 末尾 IIFE 执行 ----
+(function xmnInitTeachingControl(){
+  // 【B】学生模式：隐藏 📱 徽章（无法误触变成广播者）；教师模式可见
+  // ⚠ v2026-10-28 收敛定案：学生端【仅保留封面徽章】（封面徽章 = 学号姓名登记唯一入口），
+  //   其余页徽章一律隐藏，避免误触变成广播者/误开二维码弹窗。封面判定用 PAGE_IDS[0]，
+  //   与 step4_inject.py 注入的 _xmnBadgeSync / onPageEnter 判定保持一致。
+  // ⚠ 时序坑（2026-10-28 修复）：徽章 HTML 追加在 body 末尾（晚于本 JS 块），
+  //   立即执行 querySelectorAll('.qr-badge') 必然查空 → 学生端徽章隐藏【从未生效】
+  //   （症状：学生端每一页都能看到二维码徽章）。处方：DOM 就绪后再跑一次。
+  function xmnStudentBadgeGuard(){
+    if (IS_TEACHER) return;
+    var coverId = (typeof PAGE_IDS !== 'undefined' && PAGE_IDS) ? PAGE_IDS[0] : null;
+    document.querySelectorAll('.qr-badge').forEach(function(el){
+      if (el.getAttribute('data-page') !== coverId) el.style.display = 'none';
+    });
+  }
+  xmnStudentBadgeGuard();
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', xmnStudentBadgeGuard);
+  else setTimeout(xmnStudentBadgeGuard, 0);
+
+  if(!IS_TEACHER){
+    xmnStudentBadgeGuard();
+    // 【F-提示已移除 · 2026-10-14 定案】⛔ 任何「连点页码进教师模式」的**页面内提示一律不得出现**
+    //   （含 xmnTeacherHint 及任何形式的 toast/浮条）。原因：学生看到后自行连点即夺取控制端权限，
+    //   造成课堂混乱。教师入口只靠**线下交付话术**告知（SKILL.md §4B【教师必看】第 2 条），页面零提示。
+    // 【H】在 mqtt connect 成功的回调里调用 requestCurrentPage() 主动拉取当前页，
+    //     摆脱对 2s 心跳/retain 的被动等待；300ms 首发 + 每 600ms 重试直到 syncReceived（≤4 次）。
+    // 片段（放入 mqttClient.on('connect') 内、订阅 SYNC_TOPIC 之后）：
+    //   var _reqTries = 0;
+    //   var _reqTimer = setInterval(function(){
+    //     if(syncReceived || _reqTries >= 4){ clearInterval(_reqTimer); return; }
+    //     _reqTries++; requestCurrentPage();
+    //   }, 600);
+    //   setTimeout(function(){ requestCurrentPage(); }, 300);
+  } else {
+    showToast('老师控制模式：翻页将自动同步学生端（点 📱 出示答题二维码）', 4000);
+    // 教师端绝不出现「跟随老师」开关（学生专属）；提供退出入口便于预览学生视角
+    var tb = document.createElement('button');
+    tb.id = 'teacherExit';
+    tb.style.cssText = 'position:fixed;left:14px;bottom:56px;z-index:250;padding:5px 12px;border:none;border-radius:16px;font-size:12px;background:rgba(0,0,0,.45);color:#fff;cursor:pointer;';
+    tb.textContent = '🚪 退出教师模式';
+    tb.onclick = function(){ try{ localStorage.removeItem(TEACHER_KEY); }catch(e){} yieldBroadcast(); location.reload(); };
+    document.body.appendChild(tb);
+  }
+  // 【E】学生端导航隐藏（v2026-09-28e 焊死：无自由浏览，永不恢复）
+  function setStudentNav(show){
+    ['topNav','btnPrev','btnNext'].forEach(function(id){
+      var el = document.getElementById(id); if(el) el.style.display = show ? '' : 'none';
+    });
+  }
+  // 【D】焊死纯跟随（v2026-09-28e 定案）：不创建任何「跟随/自由浏览」开关，
+  // 学生端导航隐藏且永不恢复；页内"逐步揭示"、答题、仿真交互不受影响。
+  if(!IS_TEACHER){ setStudentNav(false); }
+  // 【F·v1.7.0】两段式教师入口（取代原「三连点直接切换」，根治学生误触成广播者→闪动）：
+  //   第①段：1.5s 内【双击】页码指示器 → 仅「武装(armed)」3 秒（不直接切换，学生随手连点不夺权）；
+  //   第②段：武装窗口内点击右下角【封面徽章】(身份登记入口) → 才切教师（仅封面页可见，复用 .qr-badge[data-page=封面]）。
+  //   ⚠ 不依赖任何 URL 参数；页面零提示（S13）；学生误触需凑「双击页码+点右下徽章」两段，概率极低。
+  var _piTaps = [];
+  var _piEl = document.getElementById('pageIndicator');   // ⚠ 页码指示器元素 id，按课件实际调整
+  var _xmnArmTimer = null;
+  var _xmnCoverSel = (typeof PAGE_IDS !== 'undefined' && PAGE_IDS && PAGE_IDS[0]) ? ('.qr-badge[data-page="' + PAGE_IDS[0] + '"]') : '.qr-badge[data-page="p0"]';
+  function xmnSetArmed(on){
+    window._xmnTeacherArmed = !!on;
+    if (_piEl) _piEl.classList.toggle('xmn-armed', !!on);
+    var _cb = document.querySelector(_xmnCoverSel); if (_cb) _cb.classList.toggle('xmn-armed', !!on);
+    if (_xmnArmTimer){ clearTimeout(_xmnArmTimer); _xmnArmTimer = null; }
+    if (on){ _xmnArmTimer = setTimeout(function(){ xmnSetArmed(false); }, 3000); }  // 武装 3 秒窗口
+  }
+  function xmnEnterTeacherMode(){
+    try { localStorage.setItem(TEACHER_KEY, '1'); } catch(e){}   // 跨源沙箱 localStorage 可能抛，吞掉
+    try { location.reload(); } catch(e){}   // 刷新后按身份重渲染（最稳，避免就地切换的状态不一致）
+  }
+  function xmnExitTeacherMode(){
+    try { localStorage.removeItem(TEACHER_KEY); } catch(e){}
+    IS_TEACHER = false;
+    xmnStudentBadgeGuard();
+    yieldBroadcast();
+    observedTeacher = false;
+    try { if (typeof hideTeacherObserveBanner === 'function') hideTeacherObserveBanner(); } catch(e){}
+    setStudentNav(false);
+    showToast('已切回学生模式', 2500);
+  }
+  if (_piEl){
+    _piEl.style.cursor = 'default';
+    _piEl.addEventListener('click', function(){
+      if (IS_TEACHER){ xmnExitTeacherMode(); _piTaps = []; return; }  // 教师端：双击直接退出
+      var now = Date.now();
+      _piTaps = _piTaps.filter(function(t){ return now - t < 1500; });
+      _piTaps.push(now);
+      if (_piTaps.length < 2) return;   // 【v1.7.0】双击即武装（原为三次）
+      _piTaps = [];
+      xmnSetArmed(true);   // 仅武装，不直接切换
+    });
+  }
+  // 第②段：武装窗口内点击封面徽章 → 切教师；否则走原身份登记流程（不劫持学生登记）
+  function xmnWrapCoverBadge(){
+    var _cb = document.querySelector(_xmnCoverSel); if (!_cb) return;
+    _cb.onclick = function(ev){
+      if (window._xmnTeacherArmed){ window._xmnTeacherArmed = false; xmnSetArmed(false); xmnEnterTeacherMode(); return false; }
+      if (typeof toggleQRPopup === 'function') toggleQRPopup(_cb);
+      return false;
+    };
+  }
+  (function xmnWrapCoverBadgeRetry(n){ var _cb = document.querySelector(_xmnCoverSel); if (_cb){ xmnWrapCoverBadge(); return; } if (n > 0) setTimeout(function(){ xmnWrapCoverBadgeRetry(n - 1); }, 120); })(30);
+  // 武装态低调视觉反馈（橙色描边，不弹文字提示，遵守 S13）
+  var _xmnArmStyle = document.createElement('style');
+  _xmnArmStyle.textContent = '.xmn-armed{outline:2px solid #E8832A !important;outline-offset:2px;border-radius:8px;} .qr-badge.xmn-armed{box-shadow:0 0 0 3px #E8832A !important;}';
+  document.head.appendChild(_xmnArmStyle);
+  xmnStartObserverMonitor();   // 【P2】启动观察端自动接管监控（防闲屏）
+  console.log('[XMN] teaching-control ready | IS_TEACHER=' + IS_TEACHER + ' | TEACHER_KEY=' + TEACHER_KEY);
+})();
+
+/* =====================================================================
+ * 三级降级全屏：已抽离为独立 opt-in 模板 references/templates/fullscreen-fallback.js
+ *   v2026-09-28e 定案：新课件默认不放全屏按钮、不注入本段；确需时整体复制该文件。
+ *   伪全屏 CSS 三条仍需保留在课件 <style>（骨架默认已有），否则回归 S7 FAIL。
+ * ===================================================================== */
+
+/* ===== ⑩ student-identity.js ===== */
+// Student Identity — 登记入口=右下角二维码徽章弹窗（v2026-10-28 改版）
+// 设计：
+//   - 学生身份登记入口 = **首页（封面）二维码徽章**的弹出窗（共用 qrPopup_join）。
+//     身份槽位 .xmn-id-slot 只注入 qrPopup_join，活动弹窗（前/中/后测、仿真）不放。
+//   - 未登记：槽位显示「输入学号姓名 →」文字链接，点击打开二级登记窗。
+//   - 已登记：槽位灰色显示「学号：xxx　姓名：yyy」，不再提供任何修改入口。
+//   - 教师模式：槽位显示「重置姓名学号」按钮（仅供教师在本机纠错，清掉本地 xmnIdentity）。
+//   - 学号姓名存 localStorage['xmnIdentity']，全局单一身份；每次提交随消息上报 identity topic (qos0/不retain)。
+// 依赖：studentId / mqttClient / mqttConnected / CLASS_ID / IS_TEACHER（mqtt-framework.js）
+
+var XMN_IDENTITY_KEY = 'xmnIdentity';
+var XMN_IDMAP_KEY = 'xmnIdMap';  // 教师端缓存 { sid: {sno, name} }
+
+function xmnIdentityLoad() {
+  try { var raw = localStorage.getItem(XMN_IDENTITY_KEY); if (raw) return JSON.parse(raw); } catch (e) {}
+  return null;
+}
+function xmnIdentitySave(sno, name) {
+  var id = { sid: studentId, sno: sno, name: name, savedAt: Date.now() };
+  try { localStorage.setItem(XMN_IDENTITY_KEY, JSON.stringify(id)); } catch (e) {}
+  return id;
+}
+function xmnIdentityClear() {
+  try { localStorage.removeItem(XMN_IDENTITY_KEY); } catch (e) {}
+}
+
+function xmnIdMapGet(sid) {
+  try { var map = JSON.parse(localStorage.getItem(XMN_IDMAP_KEY) || '{}'); return map[sid] || null; } catch (e) { return null; }
+}
+function xmnIdMapSet(sid, sno, name) {
+  try { var map = JSON.parse(localStorage.getItem(XMN_IDMAP_KEY) || '{}'); map[sid] = { sno: sno, name: name }; localStorage.setItem(XMN_IDMAP_KEY, JSON.stringify(map)); } catch (e) {}
+}
+
+function xmnIdentityReport() {
+  if (typeof mqttClient === 'undefined' || !mqttClient || !mqttConnected) return;
+  try {
+    var id = xmnIdentityLoad();
+    if (!id || !id.sno || !id.name) return;
+    var topic = 'xmn/' + CLASS_ID + '/identity/' + studentId;
+    var payload = JSON.stringify({ sid: studentId, sno: id.sno, name: id.name, ts: Date.now() });
+    mqttClient.publish(topic, payload, { qos: 0 });
+  } catch (e) {}
+}
+function xmnHandleIdentity(msg) {
+  if (!msg || !msg.sid) return;
+  if (msg.sno && msg.name) xmnIdMapSet(msg.sid, msg.sno, msg.name);
+}
+
+function xmnEscapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, function (c) {
+    return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+  });
+}
+
+// 槽位内容：按状态渲染（学生未登记/已登记、教师）
+function xmnIdSlotHTML() {
+  if (typeof IS_TEACHER !== 'undefined' && IS_TEACHER) {
+    return '<button class="xmn-id-clear" onclick="xmnIdentityClearLocal()">重置姓名学号</button>';
+  }
+  var id = xmnIdentityLoad();
+  if (id && id.sno && id.name) {
+    return '<span class="xmn-id-done">学号：' + xmnEscapeHtml(id.sno) + '　姓名：' + xmnEscapeHtml(id.name) + '</span>';
+  }
+  return '<a class="xmn-id-link" onclick="xmnIdRegOpen()">输入学号姓名 →</a>';
+}
+
+// 只往「加入弹窗」(qrPopup_join，封面徽章用) 注入/刷新身份槽；活动弹窗不再含身份槽。
+function xmnIdRefreshAll() {
+  try {
+    var join = document.getElementById('qrPopup_join');
+    if (!join) return;
+    var inner = join.querySelector('.qr-popup-inner'); if (!inner) return;
+    var slot = inner.querySelector('.xmn-id-slot');
+    if (!slot) { slot = document.createElement('div'); slot.className = 'xmn-id-slot'; inner.appendChild(slot); }
+    slot.innerHTML = xmnIdSlotHTML();
+  } catch (e) {}
+}
+
+// 控制身份槽显隐（仅封面徽章打开时显示；由 openJoinPopup 调用）
+function xmnIdSetSlotVisible(show) {
+  try {
+    var join = document.getElementById('qrPopup_join');
+    if (!join) return;
+    var slot = join.querySelector('.xmn-id-slot');
+    if (slot) slot.style.display = show ? '' : 'none';
+  } catch (e) {}
+}
+
+function xmnIdentityClearLocal() {
+  xmnIdentityClear();
+  xmnIdRefreshAll();
+  if (typeof showToast === 'function') showToast('姓名学号已重置，学生可重新登记');
+}
+
+// ===== 二级登记窗 =====
+function xmnIdRegOpen() {
+  if (typeof IS_TEACHER !== 'undefined' && IS_TEACHER) return;
+  var id = xmnIdentityLoad();
+  if (id && id.sno && id.name) return; // 已登记不可改
+  var ov = document.getElementById('xmnIdRegOverlay');
+  if (ov) ov.classList.add('show');
+}
+function xmnIdRegClose() {
+  var ov = document.getElementById('xmnIdRegOverlay');
+  if (ov) ov.classList.remove('show');
+  var s = document.getElementById('xmnSnoInput'), n = document.getElementById('xmnNameInput');
+  if (s) s.value = ''; if (n) n.value = '';
+}
+function xmnIdRegDoSave() {
+  var s = document.getElementById('xmnSnoInput'), n = document.getElementById('xmnNameInput');
+  if (!s || !n) return;
+  var sno = (s.value || '').trim(), name = (n.value || '').trim();
+  if (!sno) { if (typeof showToast === 'function') showToast('请输入学号'); else alert('请输入学号'); return; }
+  if (!name) { if (typeof showToast === 'function') showToast('请输入姓名'); else alert('请输入姓名'); return; }
+  xmnIdentitySave(sno, name);
+  xmnIdentityReport();
+  xmnIdRegClose();
+  xmnIdRefreshAll();
+  if (typeof showToast === 'function') showToast('已登记：' + sno + ' ' + name);
+}
+
+var XMN_ID_CSS = ''
+  + '.xmn-id-slot{margin-top:14px;padding-top:12px;border-top:1px solid #eee;text-align:center}'
+  + '.xmn-id-link{display:inline-block;color:#E8871E;font-size:15px;font-weight:700;cursor:pointer;text-decoration:none;border-bottom:1px dashed #E8871E;padding-bottom:2px}'
+  + '.xmn-id-link:hover{color:#C66E12}'
+  + '.xmn-id-done{display:inline-block;color:#9aa0a6;font-size:14px;letter-spacing:.5px}'
+  + '.xmn-id-clear{margin-top:6px;padding:2px 8px;border:none;background:transparent;color:#bbb;font-size:12px;cursor:pointer;text-decoration:underline}'
+  + '.xmn-id-clear:hover{color:#999}'
+  + '.xmn-id-reg-overlay{display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.5);justify-content:center;align-items:center;padding:20px}'
+  + '.xmn-id-reg-overlay.show{display:flex}'
+  + '.xmn-id-reg-panel{position:relative;background:#fff;border-radius:18px;padding:28px 30px;max-width:400px;width:92%;box-shadow:0 12px 48px rgba(0,0,0,.25)}'
+  + '.xmn-id-reg-title{margin:0 0 6px;font-size:20px;color:#1A3A5C;font-weight:800}'
+  + '.xmn-id-reg-warn{margin:0 0 18px;padding:10px 14px;border-radius:10px;background:#fff4e5;border:1px solid #ffd9a8;color:#B5530B;font-size:13px;line-height:1.5;font-weight:600}'
+  + '.xmn-id-reg-field{margin-bottom:14px}'
+  + '.xmn-id-reg-field label{display:block;font-size:14px;color:#333;margin-bottom:6px}'
+  + '.xmn-id-input{width:100%;padding:11px 14px;border:2px solid #e2e6ec;border-radius:10px;font-size:15px;outline:none;box-sizing:border-box}'
+  + '.xmn-id-input:focus{border-color:#E8871E;background:#fffdf9}'
+  + '.xmn-id-reg-save{width:100%;padding:12px 20px;border:none;border-radius:10px;background:#E8871E;color:#fff;font-size:16px;font-weight:700;cursor:pointer}'
+  + '.xmn-id-reg-save:hover{background:#C66E12}'
+  + '.xmn-id-reg-close{position:absolute;top:12px;right:14px;width:32px;height:32px;border:none;border-radius:50%;background:transparent;color:#999;font-size:20px;cursor:pointer;line-height:32px;padding:0}'
+  + '.xmn-id-reg-close:hover{background:#f0f0f0;color:#333}';
+
+var XMN_ID_REG_HTML = ''
+  + '<div class="xmn-id-reg-overlay" id="xmnIdRegOverlay">'
+  + '  <div class="xmn-id-reg-panel">'
+  + '    <button class="xmn-id-reg-close" id="xmnIdClose">✕</button>'
+  + '    <h3 class="xmn-id-reg-title">学生登记</h3>'
+  + '    <p class="xmn-id-reg-warn">⚠ 学号、姓名只允许填写一次，无法修改，请确保准确！</p>'
+  + '    <div class="xmn-id-reg-field"><label>学号</label><input id="xmnSnoInput" class="xmn-id-input" placeholder="如：20230101" maxlength="32"></div>'
+  + '    <div class="xmn-id-reg-field"><label>姓名</label><input id="xmnNameInput" class="xmn-id-input" placeholder="如：张三" maxlength="20"></div>'
+  + '    <button id="xmnIdSave" class="xmn-id-reg-save">保存</button>'
+  + '  </div>'
+  + '</div>';
+
+function xmnIdentityInject() {
+  try {
+    if (!document.getElementById('xmnIdStyle')) {
+      var st = document.createElement('style'); st.id = 'xmnIdStyle'; st.textContent = XMN_ID_CSS; document.head.appendChild(st);
+    }
+    if (!document.getElementById('xmnIdRegOverlay')) {
+      document.body.insertAdjacentHTML('beforeend', XMN_ID_REG_HTML);
+      var save = document.getElementById('xmnIdSave'); if (save) save.addEventListener('click', xmnIdRegDoSave);
+      var close = document.getElementById('xmnIdClose'); if (close) close.addEventListener('click', xmnIdRegClose);
+      var ov = document.getElementById('xmnIdRegOverlay');
+      if (ov) ov.addEventListener('click', function (e) { if (e.target === ov) xmnIdRegClose(); });
+      [document.getElementById('xmnSnoInput'), document.getElementById('xmnNameInput')].forEach(function (inp) {
+        if (inp) inp.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); xmnIdRegDoSave(); } });
+      });
+    }
+    // 点击任意徽章时刷新加入弹窗身份槽（实际显隐由 openJoinPopup 按封面/角色决定）
+    document.querySelectorAll('.qr-badge').forEach(function (b) {
+      b.addEventListener('click', xmnIdRefreshAll);
+    });
+  } catch (e) {}
+}
+
+(function () {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () { xmnIdentityInject(); xmnIdRefreshAll(); });
+  } else { xmnIdentityInject(); xmnIdRefreshAll(); }
+})();
+
+
+/* ===== ⑪ csv-export.js ===== */
+// CSV Export — 教师端课堂数据导出（v2026-10-28 改版）
+// 设计：
+//   - 教师端「导出数据」按钮（导航条"总结"后）与「导出测验数据」按钮（后测弹窗）→ 均调用 xmnExportShow() 打开同一导出弹窗（含班级名输入）
+//   - 填班级名，点「导出」→ 仅生成 quiz_records.csv（每题明细）下载一次
+//   - 取消 students.csv（其全部汇总字段均可由 quiz_records 透视得到，避免重复下载）
+//
+// CSV 列（v2026-10-28 定案，11 列）：
+//   quiz_records.csv:
+//     sid, 学号, 姓名, 测验, 题号, 题目内容(题干+全部选项),
+//     学生选项(字母A/多选A+C), 正确答案(字母B/多选B+D),
+//     正确与否(汉字"正确"/"错误"), 单题得分(0/1), 提交时间(YYYY-MM-DD HH:mm:ss)
+//   说明：students.csv 中的「首次/最后提交时间、提交测验数、各测验得分、总题数、正确率、
+//         总过程分」均可在 Excel 中按「学号+测验」透视 quiz_records 得到，无数据遗漏。
+//
+// 关键实现：
+//   - 选项文本从 DOM 读（复用 detail-stats.js 的 _dsGetOptText）
+//   - 题目内容 = 题干 + 每个选项带字母前缀（A. B. C. D.）
+//   - 时间戳格式 YYYY-MM-DD HH:mm:ss
+//   - 正确与否用汉字「正确」「错误」
+//   - CSV 转义：含逗号/引号/换行用双引号包裹；公式注入防护（前导 = + - @ 加单引号）
+//   - UTF-8 with BOM（Excel 中文不乱码）
+//   - 修复重复下载：xmnExportInit 幂等（仅绑定一次）；按钮 onclick 只调 xmnExportShow
+//
+// 依赖：xmnAgg（mqtt-framework.js）、xmnIdMapGet（student-identity.js）、QUIZZES（quiz-engine.js）
+// 复用：_dsGetOptText / _dsIsCorrectIdx（detail-stats.js）、OPT_LABELS（detail-stats.js）
+
+// ⛔ 标签映射必须与 ACTIVITY_QUIZ_MAP 全键对齐（2026-10-29 定案）：
+//   曾漏 mid25 → CSV 测验列漏出英文 'mid25'；mid3 误标'中测3' → 错位。
+//   新增测验档位时：本表与 ACTIVITY_LABELS（若课件有）同步补，键必须逐一覆盖。
+var XMN_CSV_LABELS = { pre:'前测', mid1:'中测1', mid2:'中测2', mid25:'中测3', mid3:'中测4', post:'后测' };
+
+// ===== CSV 工具函数 =====
+
+function _csvEscape(s) {
+  s = String(s == null ? '' : s);
+  // 公式注入防护：前导 = + - @ 加单引号
+  s = s.replace(/^[=+\-@]/, "'" + "$&");
+  // 含逗号/引号/换行 → 双引号包裹，内部双引号转义
+  if (/[",\n\r]/.test(s)) return '"' + s.replace(/"/g, '""') + '"';
+  return s;
+}
+
+function _csvTime(ts) {
+  if (!ts || isNaN(ts)) return '';
+  var d = new Date(ts);
+  var p = function (n) { return (n < 10 ? '0' : '') + n; };
+  return d.getFullYear() + '-' + p(d.getMonth()+1) + '-' + p(d.getDate()) + ' '
+       + p(d.getHours()) + ':' + p(d.getMinutes()) + ':' + p(d.getSeconds());
+}
+
+function _idxToLetters(chosen, q) {
+  if (Array.isArray(chosen)) {
+    return chosen.map(function (i) { return OPT_LABELS[i]; }).join('+');
+  }
+  return OPT_LABELS[chosen];
+}
+
+function _answerToLetters(q) {
+  if (Array.isArray(q.answer)) {
+    return q.answer.map(function (i) { return OPT_LABELS[i]; }).join('+');
+  }
+  return OPT_LABELS[q.answer];
+}
+
+// 从 DOM 读某题完整题目内容（题干 + 全部选项带字母前缀）
+function _csvQuestionText(qEl) {
+  if (!qEl) return '';
+  var stemEl = qEl.querySelector('.q-stem');
+  var stemText = '';
+  if (stemEl) {
+    var clone = stemEl.cloneNode(true);
+    var badge = clone.querySelector('.q-type');
+    if (badge) badge.parentNode.removeChild(badge);
+    stemText = (clone.textContent || '').replace(/\s+/g, ' ').trim();
+    stemText = stemText.replace(/^\s*\d+[\.、]\s*/, '');
+  }
+  var lines = [stemText];
+  var opts = qEl.querySelectorAll('.opt');
+  opts.forEach(function (opt) {
+    var idx = parseInt(opt.getAttribute('data-idx'), 10);
+    var label = (typeof OPT_LABELS !== 'undefined') ? OPT_LABELS[idx] : String.fromCharCode(65 + idx);
+    var text = (typeof _dsGetOptText === 'function') ? _dsGetOptText(qEl, idx) : (opt.textContent || '').replace(/\s+/g,' ').trim();
+    if (text) lines.push(label + '. ' + text);
+  });
+  return lines.join('\n');
+}
+
+// ===== 生成 quiz_records.csv（每题一行，过程分原材料） =====
+function _buildQuizRecordsCSV() {
+  var header = ['sid','学号','姓名','测验','题号','题目内容','学生选项','正确答案','正确与否','单题得分','提交时间'];
+  var rows = [header.map(_csvEscape).join(',')];
+
+  var allActs = Object.keys(ACTIVITY_QUIZ_MAP || {});
+  allActs.forEach(function (act) {
+    var quizId = ACTIVITY_QUIZ_MAP[act];
+    var questions = (typeof QUIZZES !== 'undefined' && QUIZZES[quizId]) ? QUIZZES[quizId].questions : [];
+    var submissions = xmnAgg[act] || [];
+
+    submissions.forEach(function (sub) {
+      var sid = sub.sid;
+      var id = xmnIdMapGet(sid);
+      var sno = id ? id.sno : '';
+      var name = id ? id.name : '';
+      var answers = sub.answers || [];
+      var ts = sub.ts || 0;
+
+      answers.forEach(function (a, qi) {
+        var q = questions[qi];
+        var qEl = document.getElementById('qq_' + quizId + '_' + qi);
+        var qText = _csvQuestionText(qEl);
+        var studentChoice = _idxToLetters(a.chosen, q);
+        var correctAnswer = q ? _answerToLetters(q) : '';
+        var correctness = a.isCorrect ? '正确' : '错误';  // 汉字
+        var score = a.isCorrect ? 1 : 0;
+
+        rows.push([
+          sid, sno, name,
+          XMN_CSV_LABELS[act] || act,
+          qi + 1,
+          qText,
+          studentChoice,
+          correctAnswer,
+          correctness,
+          score,
+          _csvTime(ts)
+        ].map(_csvEscape).join(','));
+      });
+    });
+  });
+
+  return rows.join('\r\n');
+}
+
+// ===== CSV 下载（一次） =====
+function _downloadCSV(content, filename) {
+  var blob = new Blob(['﻿' + content], { type: 'text/csv;charset=utf-8;' });
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+// ===== 导出弹窗 =====
+var _xmnExportInited = false;
+function xmnExportInit() {
+  if (_xmnExportInited) return;                       // 幂等：仅绑定一次，避免重复下载
+  if (typeof IS_TEACHER === 'undefined' || !IS_TEACHER) return;
+
+  var overlay = document.getElementById('xmnExportOverlay');
+  var classInput = document.getElementById('xmnExportClass');
+  var exportBtn = document.getElementById('xmnExportDo');
+  var closeBtn = document.getElementById('xmnExportClose');
+  var statusEl = document.getElementById('xmnExportStatus');
+  if (!overlay || !exportBtn) return;
+
+  function show() {
+    overlay.classList.add('show');
+    classInput.value = localStorage.getItem('xmnLastClass') || '';
+    var totalSubs = 0;
+    Object.keys(ACTIVITY_QUIZ_MAP || {}).forEach(function (act) {
+      totalSubs += (xmnAgg[act] || []).length;
+    });
+    statusEl.textContent = '当前已聚合 ' + totalSubs + ' 条答题记录。';
+  }
+  function hide() { overlay.classList.remove('show'); }
+
+  closeBtn.addEventListener('click', hide);
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) hide();
+  });
+  exportBtn.addEventListener('click', function () {
+    var className = (classInput.value || '').trim() || '未命名班级';
+    var totalSubs = 0;
+    Object.keys(ACTIVITY_QUIZ_MAP || {}).forEach(function (act) {
+      totalSubs += (xmnAgg[act] || []).length;
+    });
+    if (totalSubs === 0) {
+      if (typeof showToast === 'function') showToast('暂无答题数据，请先收集');
+      else alert('暂无答题数据，请先收集');
+      return;
+    }
+    try { localStorage.setItem('xmnLastClass', className); } catch (e) {}
+
+    // 文件名：课件名称_班级名称_测验日期_导出时间(时分)
+    _downloadCSV(_buildQuizRecordsCSV(), _buildExportFilename(className));
+
+    statusEl.textContent = '已导出 quiz_records.csv（每题明细，含全部答题记录）。';
+    if (typeof showToast === 'function') showToast('CSV 导出完成');
+  });
+
+  _xmnExportInited = true;
+}
+
+// ===== 导出文件名：课件名称_班级名称_测验日期_导出时间(时分) =====
+// 测验日期从答题记录提交时间戳推导（取最新一条的提交日期）；无数据则回退到导出日期
+function _getQuizDate() {
+  var maxTs = 0;
+  Object.keys(ACTIVITY_QUIZ_MAP || {}).forEach(function (act) {
+    (xmnAgg[act] || []).forEach(function (sub) {
+      if (sub && sub.ts && sub.ts > maxTs) maxTs = sub.ts;
+    });
+  });
+  if (!maxTs) return '';
+  var d = new Date(maxTs);
+  var p = function (n) { return (n < 10 ? '0' : '') + n; };
+  return d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate());
+}
+
+function _buildExportFilename(className) {
+  var raw = (typeof document !== 'undefined' && document.title) ? document.title : '';
+  var courseName = raw.replace(/[\s·•・\-_]+交互式课件$/, '').replace(/[\\/:*?"<>|]/g, '_').trim() || '课件';
+  var cls = (className || '').trim() || '未命名班级';
+  var qDate = _getQuizDate();
+  var now = new Date();
+  var p = function (n) { return (n < 10 ? '0' : '') + n; };
+  var expTime = p(now.getHours()) + p(now.getMinutes());
+  var datePart = qDate || (now.getFullYear() + '-' + p(now.getMonth() + 1) + '-' + p(now.getDate()));
+  return courseName + '_' + cls + '_' + datePart + '_' + expTime + '.csv';
+}
+
+function xmnExportShow() {
+  var overlay = document.getElementById('xmnExportOverlay');
+  if (overlay) overlay.classList.add('show');
+}
+
+// 顶部导航「导出数据」按钮：点击直接下载（使用上次班级名，免去弹窗）
+function xmnExportDirect() {
+  var teacher = (typeof IS_TEACHER !== 'undefined' && IS_TEACHER);
+  if (!teacher) return;
+  var totalSubs = 0;
+  Object.keys(ACTIVITY_QUIZ_MAP || {}).forEach(function (act) {
+    totalSubs += (xmnAgg[act] || []).length;
+  });
+  if (totalSubs === 0) {
+    if (typeof showToast === 'function') showToast('暂无答题数据，请先收集');
+    else alert('暂无答题数据，请先收集');
+    return;
+  }
+  var className = localStorage.getItem('xmnLastClass') || '未命名班级';
+  try { localStorage.setItem('xmnLastClass', className); } catch (e) {}
+  _downloadCSV(_buildQuizRecordsCSV(), _buildExportFilename(className));
+  if (typeof showToast === 'function') showToast('CSV 导出完成');
+}
+
+// ===== 导出弹窗 HTML（注入到 body 末尾；触发按钮为静态元素：导航条"总结"后 + 后测弹窗，共用 xmnExportShow / xmnExportDirect） =====
+// 注意：触发按钮统一带 class="xmn-export-trigger" 且内联 display:none，由 xmnExportSetTeacherUI 控制显隐
+var XMN_CSV_HTML = ''
++ '<div class="xmn-export-overlay" id="xmnExportOverlay">'
++ '  <div class="xmn-export-panel">'
++ '    <button class="xmn-export-close" id="xmnExportClose">✕</button>'
++ '    <h3 style="margin:0 0 16px;font-size:20px;color:var(--primary,#1A3A5C)">导出测验数据</h3>'
++ '    <p style="margin:0 0 12px;font-size:14px;color:#666;line-height:1.5">导出 CSV 留档，用于计算学生过程分。生成 1 个文件：quiz_records.csv（每题明细）。</p>'
++ '    <p id="xmnExportStatus" style="margin:0 0 12px;font-size:14px;color:#888"></p>'
++ '    <div style="margin-bottom:14px">'
++ '      <label style="display:block;font-size:14px;color:#333;margin-bottom:6px">班级名称</label>'
++ '      <input id="xmnExportClass" class="xmn-export-input" placeholder="如：高三1班" maxlength="40">'
++ '    </div>'
++ '    <button id="xmnExportDo" class="xmn-export-do">导出 CSV</button>'
++ '  </div>'
++ '</div>';
+
+var XMN_CSV_CSS = ''
++ '.xmn-export-btn{padding:6px 14px;border-radius:16px;background:#E8871E;color:#fff;font-size:14px;font-weight:700;cursor:pointer;border:none;box-shadow:0 2px 8px rgba(232,135,30,.3);transition:background .2s}'
++ '.xmn-export-btn:hover{background:#C66E12}'
++ '.xmn-export-overlay{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.55);justify-content:center;align-items:center;padding:20px}'
++ '.xmn-export-overlay.show{display:flex}'
++ '.xmn-export-panel{background:#fff;border-radius:16px;padding:28px 32px;max-width:480px;width:90%;box-shadow:0 12px 48px rgba(0,0,0,.25);position:relative}'
++ '.xmn-export-close{position:absolute;top:14px;right:18px;width:32px;height:32px;border:none;border-radius:50%;background:transparent;color:#999;font-size:20px;cursor:pointer}'
++ '.xmn-export-close:hover{background:#f0f0f0;color:#333}'
++ '.xmn-export-input{width:100%;padding:10px 14px;border:2px solid #ddd;border-radius:10px;font-size:15px;outline:none;box-sizing:border-box}'
++ '.xmn-export-input:focus{border-color:#E8871E}'
++ '.xmn-export-do{width:100%;padding:12px 20px;border:none;border-radius:10px;background:#E8871E;color:#fff;font-size:16px;font-weight:700;cursor:pointer;transition:background .2s}'
++ '.xmn-export-do:hover{background:#C66E12}'
++ '.qr-export-btn{display:block;width:100%;margin:8px 0 0;padding:8px 0;border:none;border-radius:10px;background:#1A3A5C;color:#fff;font-size:13px;font-weight:700;cursor:pointer;text-align:center}'
++ '.qr-export-btn:hover{background:#2f5d8f}'
+// v2026-10-28：导航条「导出数据」按钮由本模块运行时自动注入（新课件无需手写）
++ '.xmn-export-navbtn{margin-left:8px;padding:4px 12px;border:none;border-radius:14px;background:rgba(232,135,30,.92);color:#fff;font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap;line-height:1.6}'
++ '.xmn-export-navbtn:hover{background:#C66E12}';
+
+// v2026-10-28：导航条「导出数据」按钮自动注入（教师端入口之一，另一个是后测弹窗按钮）
+// 位置优先级：nav#topNav 末尾 → #navBtns 末尾 → 无固定容器则右上角浮标
+// 按钮带 xmn-export-trigger，由 xmnExportSetTeacherUI 控制仅教师可见
+function xmnCsvInjectNavBtn() {
+  try {
+    if (document.getElementById('xmnExportBtn')) return;
+    var btn = document.createElement('button');
+    btn.id = 'xmnExportBtn';
+    btn.className = 'xmn-export-navbtn xmn-export-trigger';
+    btn.textContent = '导出数据';
+    btn.style.display = 'none';
+    btn.setAttribute('onclick', 'xmnExportShow()');
+    var nav = document.getElementById('topNav');
+    if (nav) { nav.appendChild(btn); return; }
+    var nb = document.getElementById('navBtns');
+    if (nb) { nb.appendChild(btn); return; }
+    btn.style.position = 'fixed'; btn.style.top = '52px'; btn.style.right = '14px'; btn.style.zIndex = '250';
+    document.body.appendChild(btn);
+  } catch (e) { console.warn('[XMN] csv nav btn inject failed', e); }
+}
+
+function xmnCsvInjectDom() {
+  try {
+    var style = document.createElement('style');
+    style.id = 'xmnCsvStyle';
+    style.textContent = XMN_CSV_CSS;
+    document.head.appendChild(style);
+  } catch (e) { console.warn('[XMN] csv CSS inject failed', e); }
+  try {
+    if (!document.getElementById('xmnExportOverlay')) {
+      document.body.insertAdjacentHTML('beforeend', XMN_CSV_HTML);
+    }
+  } catch (e) { console.warn('[XMN] csv HTML inject failed', e); }
+  xmnCsvInjectNavBtn();
+}
+
+// ===== 教师端显示所有导出触发按钮（学生端隐藏） =====
+function xmnExportSetTeacherUI() {
+  var teacher = (typeof IS_TEACHER !== 'undefined' && IS_TEACHER);
+  var triggers = document.querySelectorAll('.xmn-export-trigger');
+  triggers.forEach(function (el) {
+    el.style.display = teacher ? '' : 'none';
+  });
+}
+
+// DOMContentLoaded 后注入并初始化
+(function () {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () {
+      xmnCsvInjectDom();
+      xmnExportInit();
+      xmnExportSetTeacherUI();
+    });
+  } else {
+    xmnCsvInjectDom();
+    xmnExportInit();
+    xmnExportSetTeacherUI();
+  }
+})();
+
+
+showPage(_initIdx);
+
+</script>
+<div id="mqttStatus"><span class="dot" id="mqttDot"></span><span id="mqttText">数据同步: 等待连接</span></div>
+<div class="detail-overlay" id="detailOverlay">
+  <div class="detail-panel" id="detailPanel">
+    <button class="detail-close-btn" onclick="closeDetail()">✕</button>
+    <div id="detailContent"></div>
+  </div>
+</div>
+<div class="qr-badge" data-activity="pre" data-page="p1" onclick="toggleQRPopup(this)">📱</div>
+<div class="qr-badge" data-activity="mid1" data-page="p4" onclick="toggleQRPopup(this)">📱</div>
+<div class="qr-badge" data-activity="mid2" data-page="p7" onclick="toggleQRPopup(this)">📱</div>
+<div class="qr-badge" data-activity="post" data-page="p9" onclick="toggleQRPopup(this)">📱</div>
+<div class="qr-badge" data-activity="sim1" data-page="p6" onclick="toggleQRPopup(this)">📱</div>
+<div class="qr-badge" data-page="p0" onclick="toggleQRPopup(this)">📱</div>
+<div class="qr-badge" data-page="p2" onclick="toggleQRPopup(this)">📱</div>
+<div class="qr-badge" data-page="p3" onclick="toggleQRPopup(this)">📱</div>
+<div class="qr-badge" data-page="p3b" onclick="toggleQRPopup(this)">📱</div>
+<div class="qr-badge" data-page="p5" onclick="toggleQRPopup(this)">📱</div>
+<div class="qr-badge" data-page="p8" onclick="toggleQRPopup(this)">📱</div>
+<div class="qr-badge" data-page="p10" onclick="toggleQRPopup(this)">📱</div>
+<div class="qr-popup" id="qrPopup_join">
+  <div class="qr-popup-inner">
+    <button class="qr-close-x" onclick="closeQRPopup('join')">✕</button>
+    <div class="qr-img-wrap"><img id="qrImg_join" src="" alt="扫码加入课堂"></div>
+    <p class="qr-join-title">学生扫码加入本节课</p>
+    <p class="qr-join-hint">扫码后进入当前页，并自动跟随教师端同步</p>
+    <p class="qr-join-student-title" style="display:none;margin:6px 0 2px;font-size:18px;font-weight:700;color:var(--primary,#1A3A5C)">登记学号姓名</p>
+  </div>
+</div>
+<div class="qr-popup" id="qrPopup_pre">
+  <div class="qr-popup-inner">
+    <button class="qr-close-x" onclick="closeQRPopup('pre')">✕</button>
+    <div class="qr-img-wrap"><img id="qrImg_pre" src="" alt="扫码参与pre"></div>
+    <p class="qr-stat-row">参与人数: <span id="qrPart_pre">0</span></p>
+    <div class="qr-mini-bars" id="qrMiniBars_pre"></div>
+    <a class="qr-detail-link" onclick="openDetail('pre');closeQRPopup('pre')">查看每题详情 →</a>
+    <button class="qr-clear-btn" onclick="xmnClear('pre')">清空数据</button>
+  </div>
+</div>
+<div class="qr-popup" id="qrPopup_mid1">
+  <div class="qr-popup-inner">
+    <button class="qr-close-x" onclick="closeQRPopup('mid1')">✕</button>
+    <div class="qr-img-wrap"><img id="qrImg_mid1" src="" alt="扫码参与mid1"></div>
+    <p class="qr-stat-row">参与人数: <span id="qrPart_mid1">0</span></p>
+    <div class="qr-mini-bars" id="qrMiniBars_mid1"></div>
+    <a class="qr-detail-link" onclick="openDetail('mid1');closeQRPopup('mid1')">查看每题详情 →</a>
+    <button class="qr-clear-btn" onclick="xmnClear('mid1')">清空数据</button>
+  </div>
+</div>
+<div class="qr-popup" id="qrPopup_mid2">
+  <div class="qr-popup-inner">
+    <button class="qr-close-x" onclick="closeQRPopup('mid2')">✕</button>
+    <div class="qr-img-wrap"><img id="qrImg_mid2" src="" alt="扫码参与mid2"></div>
+    <p class="qr-stat-row">参与人数: <span id="qrPart_mid2">0</span></p>
+    <div class="qr-mini-bars" id="qrMiniBars_mid2"></div>
+    <a class="qr-detail-link" onclick="openDetail('mid2');closeQRPopup('mid2')">查看每题详情 →</a>
+    <button class="qr-clear-btn" onclick="xmnClear('mid2')">清空数据</button>
+  </div>
+</div>
+<div class="qr-popup" id="qrPopup_post">
+  <div class="qr-popup-inner">
+    <button class="qr-close-x" onclick="closeQRPopup('post')">✕</button>
+    <div class="qr-img-wrap"><img id="qrImg_post" src="" alt="扫码参与post"></div>
+    <p class="qr-stat-row">参与人数: <span id="qrPart_post">0</span></p>
+    <div class="qr-mini-bars" id="qrMiniBars_post"></div>
+    <a class="qr-detail-link" onclick="openDetail('post');closeQRPopup('post')">查看每题详情 →</a>
+    <button class="qr-export-btn xmn-export-trigger" style="display:none" onclick="xmnExportShow()">导出测验数据</button>
+    <button class="qr-clear-btn" onclick="xmnClear('post')">清空数据</button>
+  </div>
+</div>
+<div class="qr-popup" id="qrPopup_sim1">
+  <div class="qr-popup-inner">
+    <button class="qr-close-x" onclick="closeQRPopup('sim1')">✕</button>
+    <div class="qr-img-wrap"><img id="qrImg_sim1" src="" alt="扫码进入仿真页"></div>
+    <p class="qr-stat-row">参与人数: <span id="qrPart_sim1">0</span></p>
+    <button class="qr-clear-btn" onclick="xmnClear('sim1')">清空数据</button>
+  </div>
+</div>
+</body>
+</html>

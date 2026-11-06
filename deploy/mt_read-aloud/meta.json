@@ -1,0 +1,94 @@
+{
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "subject": "语文",
+  "template": "explain",
+  "topicId": "mt_read-aloud",
+  "title": "朗读：把标点读出来，自己再听一遍",
+  "renderer": "readAloud",
+  "duration": 30,
+  "interactions": 16,
+  "grade": 1,
+  "standards": [
+    "chinese-2022:S1:LR"
+  ],
+  "prerequisites": [
+    "mt_pinyin-reading"
+  ],
+  "next": [
+    "mt_read-silent",
+    "mt_read-feel",
+    "mt_poem-recite"
+  ],
+  "objectives": [
+    "能说出逗号停半拍、句号停一拍、问号语气上扬，不在词中间把句子读断",
+    "能把标点卡归进「停半拍／停一拍／语气上扬」三栏，并补出依据在第几句",
+    "能自己圈标点、按标点停一停、出声读一遍再回放，只留痕迹不打分"
+  ],
+  "cognitiveAction": "模拟",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "起疑",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "取证",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "对齐",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "说清",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "换文",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

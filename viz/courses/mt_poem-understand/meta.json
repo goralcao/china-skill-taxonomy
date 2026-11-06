@@ -1,10 +1,10 @@
 {
   "topicId": "mt_poem-understand",
-  "title": "借助注释读懂一首诗：从四句到一段话",
+  "title": "借注释读懂《山行》：把注释、诗句和画面接起来",
   "template": "explain",
   "renderer": "poemNote",
-  "duration": 14,
-  "interactions": 7,
+  "duration": 30,
+  "interactions": 16,
   "grade": 3,
   "subject": "语文",
   "standards": [
@@ -18,14 +18,76 @@
     "mt_book-classic"
   ],
   "objectives": [
-    "能把注释送回它解释的诗句，说出每一句的意思",
-    "能指出诗中让画面动起来的动词",
-    "能用自己的话讲出整首诗的大意和读后的感觉"
+    "能借注释说出「坐、寒山、石径、霜叶、红于」在《山行》里各当什么讲",
+    "能把注释卡、诗句卡、大意卡三方对齐，并指出依据落在第几句",
+    "能用「我停下车，是因为……」这类自己的话说出诗句写的景，不逐字硬译"
   ],
   "status": "reviewed",
   "author": "goral.cao",
   "license": "CC-BY-SA-4.0",
-  "version": "1.0.0",
-  "updatedAt": "2026-11-03",
-  "cognitiveAction": "辨析"
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "cognitiveAction": "比较",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "起疑",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "取证",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "对齐",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "说清",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "换文",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
 }

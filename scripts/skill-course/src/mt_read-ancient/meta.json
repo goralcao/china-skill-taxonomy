@@ -1,0 +1,92 @@
+{
+  "topicId": "mt_read-ancient",
+  "title": "注释、插图和已有经验：读懂《守株待兔》",
+  "template": "explain",
+  "renderer": "poemNote",
+  "duration": 30,
+  "interactions": 16,
+  "grade": 3,
+  "subject": "语文",
+  "standards": [
+    "chinese-2022:S2:LR"
+  ],
+  "prerequisites": [
+    "mt_poem-recite"
+  ],
+  "next": [
+    "mt_poem-understand"
+  ],
+  "objectives": [
+    "能借注释说出「走、株、因、释、耒、冀、身」在《守株待兔》里各当什么讲",
+    "能把注释卡、句子卡、插图场景卡三方对齐，并指出依据落在第几句",
+    "能用注释＋插图＋已有经验拼出场景，用自己的话讲一遍，不逐字硬译"
+  ],
+  "cognitiveAction": "分解",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "起疑",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "取证",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "对齐",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "说清",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "换文",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

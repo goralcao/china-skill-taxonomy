@@ -1,0 +1,569 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>一边读一边猜：把「我猜」留到读完再翻</h1>
+  <p class="sub">三年级语文 · 阅读策略</p>
+  <div class="tags">
+    <span class="tag">语文要素·阅读</span>
+    <span class="tag">预测与推想</span>
+    <span class="tag">2022课标</span>
+    <span class="tag">一条预测链</span>
+  </div>
+  <div class="cover-fig">
+<svg viewBox="0 0 760 190" width="760" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="我猜因为后来三栏时间轴">
+  <rect x="0" y="0" width="760" height="190" rx="18" fill="#FFFFFF" opacity=".10"/>
+  <text x="28" y="30" font-size="15" fill="#EAF2F6" font-weight="700">猜完别急着翻结尾：留着，读完再回头对一对</text>
+  <rect x="28" y="48" width="222" height="112" rx="12" fill="#E8F0F7" stroke="#7FA8CC"/>
+  <text x="44" y="74" font-size="13" fill="#2E5C7A" font-weight="700">① 我猜</text>
+  <text x="44" y="100" font-size="15" fill="#4A463E">后面还会有人来求老屋</text>
+  <text x="44" y="128" font-size="14" fill="#4A463E">还没读到的，先写下来</text>
+  <text x="262" y="104" font-size="24" fill="#FFC48A">⟶</text>
+  <rect x="292" y="48" width="222" height="112" rx="12" fill="#EDF3EE" stroke="#8FB9A3"/>
+  <text x="308" y="74" font-size="13" fill="#2E5C4A" font-weight="700">② 因为</text>
+  <text x="308" y="100" font-size="15" fill="#4A463E">第 2 段老屋又答应了</text>
+  <text x="308" y="128" font-size="14" fill="#4A463E">线索要指回原文</text>
+  <text x="526" y="104" font-size="24" fill="#FFC48A">⟶</text>
+  <rect x="556" y="48" width="176" height="112" rx="12" fill="#FBEAD9" stroke="#C0782F"/>
+  <text x="572" y="74" font-size="13" fill="#C0782F" font-weight="700">③ 后来</text>
+  <text x="572" y="100" font-size="15" fill="#4A463E">读到结尾，还站着</text>
+  <text x="572" y="128" font-size="14" fill="#4A463E">猜错了也留着</text>
+</svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">前测 · 猜到底算不算「读」</h2>
+  <p class="quiz-hint">三道题都有唯一答案，答错会告诉你错在哪。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 「预测」是读故事时做什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>读到一半先猜后面会怎样</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>把不认识的字查出来</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>把好词好句抄下来</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 猜的依据最该来自哪儿？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>封面好不好看</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>题目、插图和上文已经写出来的线索</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>同桌猜了什么</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 读完发现「我猜错了」，最该怎么做？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>把那一栏擦掉</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>改成「我猜对了」</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>留着，并写清后来到底怎样</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 起疑 · 读到哪句，你忍不住想猜后面？ ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">起疑 · 读到哪句，你忍不住想猜后面？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+<svg viewBox="0 0 300 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="起疑只停在整句">
+  <rect x="8" y="10" width="284" height="52" rx="10" fill="#E8F0F7" stroke="#7FA8CC"/>
+  <text x="22" y="34" font-size="14" fill="#2E5C7A" font-weight="700">读前·看题目</text>
+  <text x="22" y="56" font-size="13" fill="#4A463E">《总也倒不了的老屋》→ 先猜一猜</text>
+  <rect x="8" y="70" width="284" height="52" rx="10" fill="#EDF3EE" stroke="#8FB9A3"/>
+  <text x="22" y="94" font-size="14" fill="#2E5C4A" font-weight="700">读中·停一下</text>
+  <text x="22" y="116" font-size="13" fill="#4A463E">点一句变灰，落在整句上</text>
+  <rect x="8" y="130" width="284" height="52" rx="10" fill="#FBEAD9" stroke="#C0782F"/>
+  <text x="22" y="154" font-size="14" fill="#C0782F" font-weight="700">读后·对一对</text>
+  <text x="22" y="176" font-size="13" fill="#4A463E">「后来」和「我猜」差在哪</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    先读《总也倒不了的老屋》开头三段。题目说「总也倒不了」，可第一段老屋自己说「我到了倒下的时候了」——这里就该停一下。
+  </p>
+  <p class="teach-text" id="p2s2">
+    读到让你忍不住想猜后文的那一句，点它，让它变灰。<b>点哪句都行，这里不判对错</b>；灰的必须落在整句上。
+  </p>
+  <p class="teach-text" id="p2s3">
+    这一步只留一个痕迹：<b>我读过、而且卡住过</b>。猜什么还没写，依据也还没找，正常。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>看题目</h4>
+    <div class="eq">先猜一猜</div>
+    <p>《总也倒不了的老屋》。</p>
+  </div>
+  <div class="card">
+    <h4>读中停</h4>
+    <div class="eq">点句子变灰</div>
+    <p>停下的整句。</p>
+  </div>
+  <div class="card">
+    <h4>读后对</h4>
+    <div class="eq">后来对不对</div>
+    <p>再下一步。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  <div class="rd-text" id="rdText">
+  <span class="rd-s" data-p="1">老屋已经活了一百多岁，窗户破了，门板也歪了。它说：「我到了倒下的时候了。」</span>
+  <span class="rd-s" data-p="2">「等等，老屋！」一个小小的声音在门前响起，「再过一个晚上行吗？今晚有暴风雨，我找不到安心睡觉的地方。」</span>
+  <span class="rd-s" data-p="3">老屋低下头看看，把老花的眼睛使劲往前凑：「哦，是小猫啊。好吧，我就再站一个晚上。」</span>
+</div>
+<div class="trace-why" id="rdNote">花 <b>20 秒</b>读一遍，点一句「我在这儿停了一下」。<b>点哪句都行，不判对错。</b></div>
+</div>
+</section>
+
+<!-- ===== p3: 取证 · 猜要能指回第几句 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">取证 · 猜要能指回第几句</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="四种线索来源">
+  <rect x="8" y="10" width="284" height="34" rx="9" fill="#FFFFFF" stroke="#DDD3BE"/>
+  <text x="20" y="33" font-size="14" fill="#4A463E">题　题目里藏着的线索</text>
+  <rect x="8" y="50" width="284" height="34" rx="9" fill="#FFFFFF" stroke="#DDD3BE"/>
+  <text x="20" y="73" font-size="14" fill="#4A463E">图　插图画了什么</text>
+  <rect x="8" y="90" width="284" height="34" rx="9" fill="#FFFFFF" stroke="#DDD3BE"/>
+  <text x="20" y="113" font-size="14" fill="#4A463E">上　上文反复出现的句子</text>
+  <rect x="8" y="130" width="284" height="34" rx="9" fill="#FBEAD9" stroke="#C0782F"/>
+  <text x="20" y="153" font-size="14" fill="#C0782F" font-weight="700">？　还没读懂、要回头的地方</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    先选一个线索来源，再点一句原文把它划黄；下边写一句「我猜……因为……」。两样都留痕，就能往下走。
+  </p>
+  <p class="teach-text" id="p3s2">
+    <b>猜中不等于读懂</b>。这里只报「已找几处线索、我猜写没写」，不说「你猜对了」，也不给分数。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>题＝题目、图＝插图、上＝上文反复出现的句子、？＝还没读懂的地方，四个来源各管一样。</li>
+  <li>「因为」后面要能接上第几段哪一句，不能只写「我觉得」。</li>
+  <li>猜想和依据分开记：想法框非空、且至少一处指回原文，才算留下痕迹。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  <div id="evBox">
+  <div class="ev-syms">
+    <button class="ev-sym" type="button" data-s="题">题 题目</button>
+    <button class="ev-sym" type="button" data-s="图">图 插图</button>
+    <button class="ev-sym" type="button" data-s="上">上 上文</button>
+    <button class="ev-sym" type="button" data-s="？">？ 不懂</button>
+  </div>
+  <div class="ev-text">
+    <span class="ev-s" data-p="1">老屋已经活了一百多岁，它说：「我到了倒下的时候了。」<i class="ev-badge"></i></span>
+    <span class="ev-s" data-p="2">小猫说：「再过一个晚上行吗？今晚有暴风雨。」<i class="ev-badge"></i></span>
+    <span class="ev-s" data-p="3">老屋说：「好吧，我就再站一个晚上。」<i class="ev-badge"></i></span>
+  </div>
+  <input class="ev-idea" id="evIdea" placeholder="我猜后面会……，因为第 X 段写了……">
+  <div class="trace-why" id="evWhy">先选一个线索来源，再点一句原文把它划下来。</div>
+  <div class="trace-note" id="evNote">已找线索 0 处 · 我猜还没写（只记痕迹，不判对错）</div>
+</div>
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连 · 三栏里，每一栏管什么</h2>
+<p class="teach-text" id="p3bs1">左边是预测时的做法，右边是它留下的痕迹。连完不用交卷，只看自己能不能说清「为什么」。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 什么样的猜才算有依据</h2>
+  <p class="quiz-hint">三道题都有唯一答案，重点看「能不能指回原文」。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 题目叫《总也倒不了的老屋》，看到题目最合理的猜法是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>老屋为什么总也不倒，可能一直有人来求它</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>老屋一共有多少块砖</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>作者叫什么名字</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 「小猫请求老屋再站一晚」之后，接着猜「还会有谁来」，依据是哪一条？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>插图里画了一只小猫</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>老屋每次都答应了，前面已经来过好几个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>窗台上有半粒米</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 下面哪一句算「有依据的猜」，不是随便想？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>我觉得老屋会变成一座城堡</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>我猜明天会下雨</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>老屋说「好吧，我就再站一个晚上」，所以我猜还会有人来</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 对齐 · 四张卡，三栏时间轴，一个筐 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">对齐 · 四张卡，三栏时间轴，一个筐</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="四张卡归进三栏加一个干扰筐">
+  <rect x="8" y="10" width="128" height="150" rx="10" fill="#FFFFFF" stroke="#DDD3BE"/>
+  <text x="18" y="32" font-size="13" fill="#7A7263" font-weight="700">左：句卡 4 张</text>
+  <text x="18" y="58" font-size="12" fill="#4A463E">3 真 + 1 干扰</text>
+  <rect x="152" y="10" width="140" height="34" rx="9" fill="#E8F0F7" stroke="#7FA8CC"/>
+  <text x="164" y="32" font-size="13" fill="#2E5C7A">我猜栏</text>
+  <rect x="152" y="50" width="140" height="34" rx="9" fill="#EDF3EE" stroke="#8FB9A3"/>
+  <text x="164" y="72" font-size="13" fill="#2E5C4A">因为栏</text>
+  <rect x="152" y="90" width="140" height="34" rx="9" fill="#EDF3EE" stroke="#8FB9A3"/>
+  <text x="164" y="112" font-size="13" fill="#2E5C4A">后来栏</text>
+  <rect x="152" y="130" width="140" height="34" rx="9" fill="#FBEAD9" stroke="#C0782F"/>
+  <text x="164" y="152" font-size="13" fill="#C0782F" font-weight="700">都不支撑筐</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    把 4 张句卡放进「我猜／因为／后来」三栏或「都不支撑」筐。有一张是原文里出现过、却撑不起任何一栏的干扰句。
+  </p>
+  <p class="teach-text" id="p5s2">
+    放完<b>强制补一步</b>：点这张卡下面的「第几段」把依据记下。<b>归栏和依据分别记录</b>，都不判对错。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>3 真 + 1 干扰</h4>
+    <div class="eq">三栏不是四栏</div>
+    <p>必有「都不支撑」筐。</p>
+  </div>
+  <div class="card">
+    <h4>多对一</h4>
+    <div class="eq">一句可连多栏</div>
+    <p>破除一对一暗示。</p>
+  </div>
+  <div class="card">
+    <h4>只说再读第 X 段</h4>
+    <div class="eq">不给分数</div>
+    <p>不说对错。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  <div id="alBox">
+  <div class="al-cards" id="alCards">
+    <div class="ev-card" data-n="1"><b>句卡 1</b><br>我猜后面还会有人来求老屋。<div class="ev-paras"><span class="ev-para" data-p="1">第1段</span><span class="ev-para" data-p="2">第2段</span><span class="ev-para" data-p="3">第3段</span></div></div>
+    <div class="ev-card" data-n="2"><b>句卡 2</b><br>老屋说：「好吧，我就再站一个晚上。」<div class="ev-paras"><span class="ev-para" data-p="1">第1段</span><span class="ev-para" data-p="2">第2段</span><span class="ev-para" data-p="3">第3段</span></div></div>
+    <div class="ev-card" data-n="3"><b>句卡 3</b><br>读到结尾，老屋还站着，一直没倒。<div class="ev-paras"><span class="ev-para" data-p="1">第1段</span><span class="ev-para" data-p="2">第2段</span><span class="ev-para" data-p="3">第3段</span></div></div>
+    <div class="ev-card" data-n="4"><b>句卡 4（干扰）</b><br>窗台上并没有半粒米。<div class="ev-paras"><span class="ev-para" data-p="1">第1段</span><span class="ev-para" data-p="2">第2段</span><span class="ev-para" data-p="3">第3段</span></div></div>
+  </div>
+  <div class="al-slots">
+    <div class="ev-slot" data-slot="A"><b>我猜栏：还没读到的后面</b>把猜想放进来</div>
+    <div class="ev-slot" data-slot="B"><b>因为栏：依据落在原文</b>把线索放进来</div>
+    <div class="ev-slot" data-slot="C"><b>后来栏：读完实际写的</b>把结果放进来</div>
+    <div class="ev-slot" data-slot="X"><b>都不支撑筐</b>原文有、但不撑任何一栏</div>
+  </div>
+  <div class="trace-why" id="alWhy">点一张卡，再点一栏放进去；同一张卡可以连多栏，放完还要补「我是根据第几句连的」。</div>
+  <div class="trace-note" id="alNote">已归位 0 / 4 · 依据补了 0 / 4（连线和依据分别记，不判对错）</div>
+</div>
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">说清 · 把猜接回线索</h2>
+  <p class="sim-desc">点左边一条线索，再点右边一个猜想，连成一环。用「我猜……因为第 X 段那句……后来……」说清——不给分数，只看猜能不能落回原文。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">预测链已连 0 / 3 环（不判对错）</span>
+    <span class="sim-tip" id="simTip">先自己猜一次，再看老师连一条</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn" onclick="simNextCase()">换一篇短文</button>
+    <button class="btn" onclick="simReset()">重来</button>
+    <button class="btn-primary" onclick="simDemo()">看老师连一条</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">左边是文本里有的，右边是我猜的或后来读到的；第三环「猜错了」也算一条真痕迹</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>一条线索能撑住多个猜想；连错了换一篇重连就行。</li>
+    <li>连线记「连没连」，依据另记「第几句」，两样分开留痕。</li>
+    <li>猜和原文对不上时只说「再读第 X 段」，不给分数、不说对错。</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 为什么不能变成「猜谜得分」</h2>
+  <p class="quiz-hint">三道题都有唯一答案，注意「不提前翻结尾」「猜错也留着」这两条硬规矩。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 三栏时间轴里，「因为」这一栏该写什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>我猜的时候依据的是哪句原文或哪处插图</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>我最后得了多少分</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>这个故事一共有几页</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 为什么猜完不马上翻到结尾看答案？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>省时间</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>让「我猜」和「后来」分开留痕，读完才好回头对照</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>结尾的字太小</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 「后来」和「我猜」不一样时，说明什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>我读错了，要重读一遍</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>书印错了</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>我的推想和文本对不上，正好回头找漏掉的线索</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 换文 · 撤掉提示，只剩划和连 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">换文 · 撤掉提示，只剩划和连</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    换一篇没提示的短文《雨里的一把伞》，自己划线索、自己猜、自己对照，再对着三条标准自查。勾不满也能翻页。
+  </p>
+  <p class="teach-text" id="p8s2">
+    顺手把四个<b>易错</b>点看一遍：别把检索当预测，别凭空猜，别提前翻结尾，也别把「我猜错了」藏起来。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 线索在文本</h4>
+    <div class="eq">指得出段</div>
+    <p>依据能定位。</p>
+  </div>
+  <div class="card">
+    <h4>② 猜接得上线索</h4>
+    <div class="eq">因为第几句</div>
+    <p>推想建立。</p>
+  </div>
+  <div class="card">
+    <h4>③ 读完回头对</h4>
+    <div class="eq">后来差在哪</div>
+    <p>对照落地。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  <div id="trBox">
+  <div class="tr-text">
+    <span class="tr-s">放学时雨下得很急。我把伞往同桌那边挪了挪，自己半边肩膀湿了一路。</span>
+    <span class="tr-s">他一路都在讲笑话，没发现伞偏了。到家我才发现，书包里那本作业本倒是干的。</span>
+  </div>
+  <div class="trace-note" id="trNote">自发划了 0 处（不判对错）。换了一篇没提示的短文，只剩「划线索」和「连成链」。</div>
+  <div class="tr-cks">
+    <span class="tr-ck">① 我能指出线索在第几段</span>
+    <span class="tr-ck">② 我能说出「我猜……因为……」</span>
+    <span class="tr-ck">③ 读完我能对照「后来」差在哪</span>
+  </div>
+  <div class="trace-why" id="trAdvice">自查勾不满也照样能翻页：这三条只问「猜能不能指回原文」，不问「猜对了没有」。</div>
+</div>
+</div>
+
+<p class="teach-text" id="p8apply">
+  这一页只问「能不能指回原文」，不问「读懂了没有」。猜中提到没提到可以查，猜得对不对，机器不下结论。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，把预测的边界说清楚</h2>
+  <p class="quiz-hint">五道题都有唯一答案。做完这一页，你就知道哪些能判、哪些只能留痕。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 下面哪一处能当预测的线索？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>上文反复出现的句式「好吧，我就再站一个晚上」</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>书脊的颜色</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>教室窗外有没有人</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 预测策略单元最看重学生留下什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>猜对的次数</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>一条能回头对照的「我猜—因为—后来」记录</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>读得快不快</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 换一篇没有提示的短文，只准用哪两样工具？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>看分数和排行榜</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>查字典和背下来</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>划线索和连成链</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 有同学猜「老屋会倒」，读完发现它一直没倒。老师最该说什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>回到第 3 段，看看老屋每次是怎么答应的</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>你猜错了，扣分</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>别猜了，直接抄答案</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 这一课最后要留下的是什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>一次猜对几题</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>一条能回头对照的预测链</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>一张排行榜</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">留下的是预测链，不是猜对率</div>
+        <div class="summary-v4-summary">我猜 → 因为 → 后来</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>阅读课的产出物是一条能回头对照的预测链。</p>
+      <p>能指出第几句、能说清差在哪，才叫会预测。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">依据只从三处来</div>
+        <div class="summary-v4-summary">题目 / 插图 / 上文</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>凭外观、凭别人猜、凭空想，都不算依据。</p>
+      <p>上文反复出现的句式，是最稳的一条线索。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">最容易翻车的三处</div>
+        <div class="summary-v4-summary">检索当预测 / 提前翻结尾 / 擦掉猜错</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>数砖、查作者是检索，不是推想。</p>
+      <p>提前看答案，「后来」就变成抄来的；擦掉「猜错了」，链就断了一环。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">只给事实，不给判断</div>
+        <div class="summary-v4-summary">再读第 X 段</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>猜和原文对不上时只说「再读第 X 段」，不给分数不说对错。</p>
+      <p>「我猜错了」要留着，它是预测链里最诚实的一环。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  <div class="my-chain" id="myChain"><b>你留下的预测链</b>　（还没存。回到「取证」那一页写一句「我猜……因为……」，它就会出现在这里。）</div>
+把这条预测链讲给同桌听：先说你当时猜了什么，再翻回原文指给他看是第几句，最后说读到结尾差在哪。他指不出来的地方，就是你下次要补的那一环。下一步学「提问」，正好接着练把想问的写下来。
+</p>
+</section>
