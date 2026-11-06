@@ -2509,7 +2509,7 @@ var MQTT_MAX_TRIES = 3;        // 同一 broker 最多重试次数，超过才�
 // ⚠ CLASS_ID 铁律：必须节点级隔离（否则所有课件共享同一话题的 answers → 答题数据跨课件串台）。
 //   一律走 getPageParam（hash→search→parent，抗外壳剥离 query），派生 'wb-<NODE_ID>' 兜底；
 //   不得在课件任何位置（含注释）留占位类名字面量（发布预检会拦截）。
-var CLASS_ID = (typeof getPageParam === 'function' ? getPageParam('class') : null) || ('wb-' + ((typeof NODE_ID !== 'undefined') ? NODE_ID : ''));
+var CLASS_ID = getPageParam('class') || 'wb-758uCrArfRlgRa03BC7NGT';
 var XMN_BASE = 'xmn/'+CLASS_ID+'/answers';
 // v2026-10-26：身份 topic（学号姓名，不 retain / qos 0，隐私保护）
 var XMN_IDENTITY_TOPIC = 'xmn/'+CLASS_ID+'/identity';
@@ -2784,8 +2784,8 @@ function showConfirmModal(msg, onOk){
 
 
 /* constants: NODE_ID/PUBLISH_BASE rewritten by publish_to_library.py */
-var NODE_ID = '';
-var PUBLISH_BASE = '';
+var NODE_ID = '758uCrArfRlgRa03BC7NGT';
+var PUBLISH_BASE = 'https://workbuddy.link/p/758uCrArfRlgRa03BC7NGT';
 var SYNC_TOPIC = 'xmn-sync/' + (NODE_ID || CLASS_ID);
 var SYNC_CTL_TOPIC = SYNC_TOPIC + '/ctl';
 var IS_DEPLOYED = (function(){ try { return location.protocol !== 'file:' && /^https?:\/\//.test(PUBLISH_BASE || ''); } catch(e){ return false; } })();
