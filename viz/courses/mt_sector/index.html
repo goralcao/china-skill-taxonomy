@@ -519,7 +519,7 @@ body.fs-pseudo #navBtns, body.fs-pseudo #mqttStatus{z-index:10000 !important}
 #p6 .sim-desc{font-size:14px;line-height:1.6;margin:4px auto 8px;max-width:760px}
 #p6 .sim-log{max-height:58px;overflow:auto}
 </style>
-<script>window.__GRAPH = {"id": "mt_sector", "name": "扇形", "subject": "数学", "domain": "图形与几何", "stage": "第三学段（5~6年级）", "grade": 6, "gradeEnd": 6, "standards": ["math-2022:S3:GG:GM"], "textbooks": ["pep-math:6a:u5"], "textbookLabels": ["人教版数学 · 6 年级上 第 5 单元"], "prereqs": [{"id": "mt_angle-measure", "name": "角的度量与分类", "grade": 4, "subject": "数学", "course": "reviewed", "hard": true, "reason": "扇形的大小用圆心角的度数来刻画"}, {"id": "mt_circle", "name": "圆的认识", "grade": 6, "subject": "数学", "course": "reviewed", "hard": true, "reason": "扇形由圆心角两条半径和一段弧围成"}, {"id": "mt_circle-measure", "name": "圆的周长与面积", "grade": 6, "subject": "数学", "course": "reviewed", "hard": false, "reason": "扇形弧长面积计算用到圆的周长面积"}], "unlocks": [{"id": "mt_pie-chart", "name": "扇形统计图", "grade": 6, "subject": "数学", "course": null, "hard": false}], "siblings": [{"id": "mt_position-pairs", "name": "位置（数对）", "grade": 5, "subject": "数学", "course": "reviewed", "hard": false}, {"id": "mt_polygon-area", "name": "多边形的面积", "grade": 5, "subject": "数学", "course": "reviewed", "hard": false}, {"id": "mt_cuboid", "name": "长方体和正方体", "grade": 5, "subject": "数学", "course": "reviewed", "hard": false}, {"id": "mt_volume", "name": "体积与容积单位", "grade": 5, "subject": "数学", "course": "reviewed", "hard": false}]};</script>
+<script>window.__GRAPH = {"id": "mt_sector", "name": "扇形", "subject": "数学", "domain": "图形与几何", "stage": "第三学段（5~6年级）", "grade": 6, "gradeEnd": 6, "standards": ["math-2022:S3:GG:GM"], "textbooks": ["pep-math:6a:u5"], "textbookLabels": ["人教版数学 · 6 年级上 第 5 单元"], "prereqs": [{"id": "mt_angle-measure", "name": "角的度量与分类", "grade": 4, "subject": "数学", "course": "reviewed", "hard": true, "reason": "扇形的大小用圆心角的度数来刻画"}, {"id": "mt_circle", "name": "圆的认识", "grade": 6, "subject": "数学", "course": "reviewed", "hard": true, "reason": "扇形由圆心角两条半径和一段弧围成"}, {"id": "mt_circle-measure", "name": "圆的周长与面积", "grade": 6, "subject": "数学", "course": "reviewed", "hard": false, "reason": "扇形弧长面积计算用到圆的周长面积"}], "unlocks": [{"id": "mt_pie-chart", "name": "扇形统计图", "grade": 6, "subject": "数学", "course": "reviewed", "hard": false}], "siblings": [{"id": "mt_position-pairs", "name": "位置（数对）", "grade": 5, "subject": "数学", "course": "reviewed", "hard": false}, {"id": "mt_polygon-area", "name": "多边形的面积", "grade": 5, "subject": "数学", "course": "reviewed", "hard": false}, {"id": "mt_cuboid", "name": "长方体和正方体", "grade": 5, "subject": "数学", "course": "reviewed", "hard": false}, {"id": "mt_volume", "name": "体积与容积单位", "grade": 5, "subject": "数学", "course": "reviewed", "hard": false}]};</script>
 </head>
 <body>
 
@@ -2011,5 +2011,44 @@ var _initIdx = (_urlPage && PAGE_IDS.indexOf(_urlPage) >= 0) ? PAGE_IDS.indexOf(
 showPage(_initIdx);
 
 </script>
+<!-- GRAPH-BACK-START -->
+<style>
+#graphBack{position:fixed;left:14px;bottom:20px;z-index:450;
+  display:inline-flex;align-items:center;padding:7px 14px;border-radius:20px;
+  background:rgba(18,30,48,.84);color:#fff;text-decoration:none;
+  font:600 14px/1.2 system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+  letter-spacing:.3px;border:1px solid rgba(255,255,255,.30);
+  box-shadow:0 3px 12px rgba(0,0,0,.25);
+  backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+#graphBack:hover{background:rgba(18,30,48,.97)}
+/* 小屏：底部居中 navBtns 约占 x=94..282（375 宽），按钮必须收在 x<94 内，避免相交 */
+@media(max-width:640px){#graphBack{left:8px;bottom:14px;padding:4px 7px;font-size:11px;letter-spacing:0;border-radius:14px}}
+</style>
+<script>
+(function(){
+  if (document.getElementById('graphBack')) return;
+  var TID = "mt_sector", ONLINE = "https://acd118508358062b1.app.workbuddy.host/?sharecode=DHL4TJAQCG";
+  var a = document.createElement('a');
+  a.id = 'graphBack';
+  a.textContent = '\u2190 \u5b66\u9636\u56fe\u8c31';
+  a.title = '\u56de\u5230\u5b66\u9636\u56fe\u8c31\uff0c\u5b9a\u4f4d\u5230\u8fd9\u4e00\u8bfe';
+  a.setAttribute('data-topic', TID);
+  var base;
+  if (location.protocol === 'file:') {
+    // 本地两种副本：courses/<id>/ 与 viz/courses/<id>/（图谱内嵌版路径层级不同）
+    var inViz = /[\/\\]viz[\/\\]courses[\/\\]/.test(location.pathname);
+    base = '../../' + (inViz ? '' : 'viz/') + 'index.html';
+  } else {
+    // 资料库单文件托管：相对路径无效，必须用在线图谱站的绝对地址
+    base = ONLINE;
+  }
+  a.href = base + '#t=' + encodeURIComponent(TID);
+  document.body.appendChild(a);
+  // 兜底：即便静态清理遗漏，运行时也移除会 404 的老引擎死链
+  var old = document.querySelector('a[href^="../../index.html"]');
+  if (old && old !== a) old.parentNode.removeChild(old);
+})();
+</script>
+<!-- GRAPH-BACK-END -->
 </body>
 </html>

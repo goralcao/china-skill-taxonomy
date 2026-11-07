@@ -591,14 +591,30 @@ def build_clusters(topics):
     return {"version": VERSION, "schemaVersion": SCHEMA_VERSION, "clusters": clusters}
 
 
+def published_links():
+    """已发布课件白名单：deploy/links.json 是「哪些课件真的上线了」的唯一事实来源。
+
+    courses/ 下混着未发布的老引擎高中课件，直接全量扫描会让图谱多算，
+    也会把没有线上地址的条目挂出去。返回 {topicId: link}；文件不存在时
+    返回空 dict，退回「全部 reviewed」的旧行为，保证早期仓库也能构建。
+    """
+    p = ROOT / "deploy" / "links.json"
+    if not p.exists():
+        return {}
+    return {x["course"]: x for x in json.loads(p.read_text(encoding="utf-8"))}
+
+
 def build_courses(topics):
-    """课件层索引：扫描 courses/*/meta.json，校验 topicId 与模板，供可视化读取。"""
+    """课件层索引：以已发布清单为白名单扫描 courses/*/meta.json，供可视化读取。"""
     topic_by_id = {t["id"]: t for t in topics}
     allowed_tpl = {"explain", "drill", "explore", "review"}
     items = []
     root = ROOT / "courses"
+    links = published_links()
     if root.exists():
         for d in sorted(p for p in root.iterdir() if p.is_dir()):
+            if links and d.name not in links:
+                continue          # 未发布的老引擎课件不进图谱索引
             meta_path = d / "meta.json"
             html_path = d / "index.html"
             if not meta_path.exists():
@@ -618,8 +634,18 @@ def build_courses(topics):
                     raise SystemExit(f"课件 {d.name}: 课标 {code} 不在主题 {tid} 的 standards 里")
             item = dict(meta)
             item["path"] = f"courses/{d.name}/"
+            # 线上正式课件地址（资料库单页）。图谱在 https:// 下直接跳这里，
+            # 而不是跳图谱应用内托管的静态副本 —— 只有发布版带完整交互注入。
+            if d.name in links:
+                item["url"] = links[d.name]["url"]
             item["bytes"] = html_path.stat().st_size
             items.append(item)
+
+        # 白名单与源目录必须对齐，否则图谱会少挂课件却没人发现
+        missing = [tid for tid in links if not (root / tid / "meta.json").exists()]
+        if missing:
+            raise SystemExit(
+                f"deploy/links.json 里 {len(missing)} 门课件缺 meta.json：{missing[:5]}")
 
     by_tpl, by_status, by_subject = {}, {}, {}
     for it in items:
@@ -868,6 +894,7 @@ def sync_courses_to_viz(topics, deps):
     dst = VIZ / "courses"
     if not src.exists():
         return 0
+    links = published_links()   # 与 build_courses 同一白名单，别把老引擎副本带上线
 
     base_css_path = ROOT / "templates" / "base.css"
     renderers_path = ROOT / "templates" / "renderers.js"
@@ -885,6 +912,8 @@ def sync_courses_to_viz(topics, deps):
     # 先扫一遍课件状态，推荐里才能标出「已有课件」
     course_state = {}
     for d in sorted(p for p in src.iterdir() if p.is_dir()):
+        if links and d.name not in links:
+            continue
         mp = d / "meta.json"
         if mp.exists():
             m = json.loads(mp.read_text(encoding="utf-8"))
@@ -894,6 +923,8 @@ def sync_courses_to_viz(topics, deps):
     shutil.rmtree(dst, ignore_errors=True)
     n = 0
     for d in sorted(p for p in src.iterdir() if p.is_dir()):
+        if links and d.name not in links:
+            continue
         meta_path = d / "meta.json"
         html_path = d / "index.html"
         if not (meta_path.exists() and html_path.exists()):

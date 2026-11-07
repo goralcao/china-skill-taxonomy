@@ -621,7 +621,7 @@ body.fs-pseudo #navBtns, body.fs-pseudo #mqttStatus{z-index:10000 !important}
 #p2fig,#p3fig,#p5fig{width:244px}
 #p2fig svg text,#p3fig svg text,#p5fig svg text{font-size:14px}
 </style>
-<script>window.__GRAPH = {"id": "mt_read-aloud", "name": "朗读", "subject": "语文", "domain": "阅读", "stage": "第一学段（1~2年级）", "grade": 1, "gradeEnd": 1, "standards": ["chinese-2022:S1:LR"], "textbooks": ["tongbian-chinese:1a#课文", "tongbian-chinese:1b#和大人一起读"], "textbookLabels": ["tongbian-chinese:1a#课文", "tongbian-chinese:1b#和大人一起读"], "prereqs": [{"id": "mt_pinyin-reading", "name": "借助拼音识字和阅读", "grade": 1, "subject": "语文", "course": null, "hard": true, "reason": "读准字音是朗读的基础，先借助拼音识字"}], "unlocks": [{"id": "mt_oral-listen", "name": "听故事、讲故事", "grade": 1, "subject": "语文", "course": null, "hard": true}, {"id": "mt_poem-recite", "name": "古诗文的背诵与积累", "grade": 1, "subject": "语文", "course": null, "hard": true}, {"id": "mt_read-silent", "name": "默读", "grade": 2, "subject": "语文", "course": null, "hard": true}, {"id": "mt_read-feel", "name": "体会文章的思想感情", "grade": 4, "subject": "语文", "course": null, "hard": true}], "siblings": [{"id": "mt_read-silent", "name": "默读", "grade": 2, "subject": "语文", "course": null, "hard": false}]};</script>
+<script>window.__GRAPH = {"id": "mt_read-aloud", "name": "朗读", "subject": "语文", "domain": "阅读", "stage": "第一学段（1~2年级）", "grade": 1, "gradeEnd": 1, "standards": ["chinese-2022:S1:LR"], "textbooks": ["tongbian-chinese:1a#课文", "tongbian-chinese:1b#和大人一起读"], "textbookLabels": ["tongbian-chinese:1a#课文", "tongbian-chinese:1b#和大人一起读"], "prereqs": [{"id": "mt_pinyin-reading", "name": "借助拼音识字和阅读", "grade": 1, "subject": "语文", "course": "reviewed", "hard": true, "reason": "读准字音是朗读的基础，先借助拼音识字"}], "unlocks": [{"id": "mt_oral-listen", "name": "听故事、讲故事", "grade": 1, "subject": "语文", "course": null, "hard": true}, {"id": "mt_poem-recite", "name": "古诗文的背诵与积累", "grade": 1, "subject": "语文", "course": null, "hard": true}, {"id": "mt_read-silent", "name": "默读", "grade": 2, "subject": "语文", "course": null, "hard": true}, {"id": "mt_read-feel", "name": "体会文章的思想感情", "grade": 4, "subject": "语文", "course": null, "hard": true}], "siblings": [{"id": "mt_read-silent", "name": "默读", "grade": 2, "subject": "语文", "course": null, "hard": false}]};</script>
 </head>
 <body>
 
@@ -2337,5 +2337,44 @@ var _initIdx = (_urlPage && PAGE_IDS.indexOf(_urlPage) >= 0) ? PAGE_IDS.indexOf(
 showPage(_initIdx);
 
 </script>
+<!-- GRAPH-BACK-START -->
+<style>
+#graphBack{position:fixed;left:14px;bottom:20px;z-index:450;
+  display:inline-flex;align-items:center;padding:7px 14px;border-radius:20px;
+  background:rgba(18,30,48,.84);color:#fff;text-decoration:none;
+  font:600 14px/1.2 system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+  letter-spacing:.3px;border:1px solid rgba(255,255,255,.30);
+  box-shadow:0 3px 12px rgba(0,0,0,.25);
+  backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+#graphBack:hover{background:rgba(18,30,48,.97)}
+/* 小屏：底部居中 navBtns 约占 x=94..282（375 宽），按钮必须收在 x<94 内，避免相交 */
+@media(max-width:640px){#graphBack{left:8px;bottom:14px;padding:4px 7px;font-size:11px;letter-spacing:0;border-radius:14px}}
+</style>
+<script>
+(function(){
+  if (document.getElementById('graphBack')) return;
+  var TID = "mt_read-aloud", ONLINE = "https://acd118508358062b1.app.workbuddy.host/?sharecode=DHL4TJAQCG";
+  var a = document.createElement('a');
+  a.id = 'graphBack';
+  a.textContent = '\u2190 \u5b66\u9636\u56fe\u8c31';
+  a.title = '\u56de\u5230\u5b66\u9636\u56fe\u8c31\uff0c\u5b9a\u4f4d\u5230\u8fd9\u4e00\u8bfe';
+  a.setAttribute('data-topic', TID);
+  var base;
+  if (location.protocol === 'file:') {
+    // 本地两种副本：courses/<id>/ 与 viz/courses/<id>/（图谱内嵌版路径层级不同）
+    var inViz = /[\/\\]viz[\/\\]courses[\/\\]/.test(location.pathname);
+    base = '../../' + (inViz ? '' : 'viz/') + 'index.html';
+  } else {
+    // 资料库单文件托管：相对路径无效，必须用在线图谱站的绝对地址
+    base = ONLINE;
+  }
+  a.href = base + '#t=' + encodeURIComponent(TID);
+  document.body.appendChild(a);
+  // 兜底：即便静态清理遗漏，运行时也移除会 404 的老引擎死链
+  var old = document.querySelector('a[href^="../../index.html"]');
+  if (old && old !== a) old.parentNode.removeChild(old);
+})();
+</script>
+<!-- GRAPH-BACK-END -->
 </body>
 </html>

@@ -703,6 +703,15 @@
   const courseList = (D.courses && D.courses.courses) || [];
   const courseByTopic = new Map(
     courseList.filter(c => c.status === 'reviewed').map(c => [c.topicId, c]));
+  // 课件跳转：线上走资料库正式发布页（只有那一版带 4A 注入与完整交互），
+  // 本地 file:// 打开图谱时退回 viz/courses 下的相对副本，离线也能翻。
+  // 老数据没有 url 字段时同样退回相对路径，兼容早期快照。
+  function courseHref(c) {
+    if (c.url && location.protocol !== 'file:') return c.url;
+    let sc = '';
+    try { sc = new URLSearchParams(location.search).get('sharecode'); } catch (e) { /* 老浏览器忽略 */ }
+    return c.path + 'index.html' + (sc ? '?sharecode=' + encodeURIComponent(sc) : '');
+  }
   // 有诊断题的知识点：题库在那 50 个点上，首屏只带 id 列表（约 1.5KB）
   const quizSet = new Set(Array.isArray(D.quizTopics) ? D.quizTopics : []);
   const courseDone = new Set();
@@ -1507,7 +1516,7 @@
     dmCard().querySelectorAll('.dg-go').forEach(b => {
       b.onclick = () => {
         const c = courseByTopic.get(b.getAttribute('data-go'));
-        if (c) location.href = c.path + 'index.html';
+        if (c) location.href = courseHref(c);
       };
     });
     document.getElementById('dgAgain').onclick = () => startDiag(dg.topicId, true);
@@ -2462,10 +2471,7 @@
       courseBtn.style.display = '';
       courseBtn.textContent = (courseDone.has(n.id) ? '▶ 再看一遍课件' : '▶ 打开课件')
         + '（' + course.duration + ' 分钟）';
-      courseBtn.onclick = () => {
-        const sc = new URLSearchParams(location.search).get('sharecode');
-        location.href = course.path + 'index.html' + (sc ? '?sharecode=' + encodeURIComponent(sc) : '');
-      };
+      courseBtn.onclick = () => { location.href = courseHref(course); };
     } else {
       courseBtn.style.display = 'none';
     }

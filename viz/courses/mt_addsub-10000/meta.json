@@ -1,10 +1,9 @@
 {
   "topicId": "mt_addsub-10000",
-  "title": "万以内的加减法：进位和退位怎么不出错",
-  "template": "drill",
-  "renderer": "vertical",
-  "duration": 10,
-  "interactions": 6,
+  "title": "476 + 358，为什么有人算出 734？",
+  "template": "explain",
+  "duration": 25,
+  "interactions": 17,
   "grade": 3,
   "subject": "数学",
   "standards": [
@@ -18,14 +17,77 @@
     "mt_mult-1digit"
   ],
   "objectives": [
-    "连续进位时每个进位都不漏",
-    "连续退位时一级一级处理",
-    "用估算判断结果是否合理"
+    "相同数位对齐，从个位算起",
+    "哪一位满十，就在前一位写一个小 1 并加上",
+    "0 上退位要隔位借，借来的是「十」不是「个」",
+    "用「差 + 减数 = 被减数」验算"
   ],
   "cognitiveAction": "分解",
   "status": "reviewed",
   "author": "goral.cao",
   "license": "CC-BY-SA-4.0",
-  "version": "2.0.0",
-  "updatedAt": "2026-10-27"
+  "version": "3.0.0",
+  "updatedAt": "2026-11-04",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "义卖",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "进位",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "退位",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
 }

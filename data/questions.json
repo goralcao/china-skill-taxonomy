@@ -5,73 +5,15 @@
  "audited": false,
  "note": "题目与解析出自课件原文，未经教师独立复核；题干已剔除依赖配图与上下文的题。",
  "counts": {
-  "total": 141,
+  "total": 104,
   "byType": {
-   "choice": 88,
-   "numeric": 53
+   "choice": 70,
+   "numeric": 34
   },
-  "topicsCovered": 63,
+  "topicsCovered": 48,
   "topicsTotal": 1273
  },
  "questions": [
-  {
-   "type": "choice",
-   "prompt": "量一个角时，量角器的中心要对准什么？",
-   "answer": "角的顶点",
-   "choices": [
-    "角的顶点",
-    "角的一条边",
-    "角的开口方向"
-   ],
-   "explanation": "中心对准顶点，零刻度线对准一条边，另一条边指的就是度数。",
-   "refute": {
-    "角的一条边": "边是要和零刻度线重合的，不是和中心重合；中心只对准顶点。",
-    "角的开口方向": "开口方向不是量角器上的部件，读度数靠的是另一条边指向的刻度。"
-   },
-   "id": "mt_angle-measure_q1",
-   "topicId": "mt_angle-measure",
-   "difficulty": "standard",
-   "origin": "courses/mt_angle-measure/content.json#step4"
-  },
-  {
-   "type": "numeric",
-   "prompt": "一个角是 135°，它比直角大多少度？",
-   "answer": "45",
-   "explanation": "直角 90°，135°−90°=45°，所以比直角大 45°（135° 是钝角）。",
-   "id": "mt_angle-measure_q2",
-   "topicId": "mt_angle-measure",
-   "difficulty": "basic",
-   "origin": "courses/mt_angle-measure/content.json#step5"
-  },
-  {
-   "type": "choice",
-   "prompt": "说「这张纸比那张大」，比的是哪个量？",
-   "answer": "面积",
-   "choices": [
-    "面积",
-    "周长",
-    "边长"
-   ],
-   "explanation": "纸的「大小」指表面铺满多少，是面积。",
-   "refute": {
-    "周长": "周长是绕边一圈的长度，不能代表纸面的大小。",
-    "边长": "只看一条边长，会漏掉另一方向的大小。"
-   },
-   "id": "mt_area-intro_q1",
-   "topicId": "mt_area-intro",
-   "difficulty": "standard",
-   "origin": "courses/mt_area-intro/content.json#step4"
-  },
-  {
-   "type": "numeric",
-   "prompt": "每格 1 平方厘米，4 格宽、3 格高的长方形面积是多少平方厘米？",
-   "answer": "12",
-   "explanation": "铺满共有 4×3 = 12 格，每格 1 平方厘米，面积就是 12 平方厘米。",
-   "id": "mt_area-intro_q2",
-   "topicId": "mt_area-intro",
-   "difficulty": "basic",
-   "origin": "courses/mt_area-intro/content.json#step6"
-  },
   {
    "type": "choice",
    "prompt": "一组数据里最大 11、最小 4，它们的平均数一定？",
@@ -100,74 +42,6 @@
    "topicId": "mt_average-mean",
    "difficulty": "basic",
    "origin": "courses/mt_average-mean/content.json#step5"
-  },
-  {
-   "type": "choice",
-   "prompt": "10 个一百万是多少？",
-   "answer": "一千万",
-   "choices": [
-    "一千万",
-    "一亿",
-    "十万"
-   ],
-   "explanation": "百万满十进到千万：10 个一百万 = 一千万。",
-   "refute": {
-    "一亿": "一亿是 10 个一千万，还差一级；百万到千万只跳一级。",
-    "十万": "十万比百万还小，方向反了——满十是往高位进，不是往低位退。"
-   },
-   "id": "mt_big-num_q1",
-   "topicId": "mt_big-num",
-   "difficulty": "standard",
-   "origin": "courses/mt_big-num/content.json#step4"
-  },
-  {
-   "type": "numeric",
-   "prompt": "一个数由 5 个亿和 3 个万组成，这个数是多少？",
-   "answer": "500030000",
-   "explanation": "5 个亿是 500000000，3 个万是 30000，合起来是 500030000。",
-   "id": "mt_big-num_q2",
-   "topicId": "mt_big-num",
-   "difficulty": "basic",
-   "origin": "courses/mt_big-num/content.json#step5"
-  },
-  {
-   "type": "numeric",
-   "prompt": "平年一年有多少天？",
-   "answer": "365",
-   "explanation": "7 个大月共 31×7 = 217 天，4 个小月共 30×4 = 120 天，二月 28 天，合起来 365 天。",
-   "id": "mt_calendar_q1",
-   "topicId": "mt_calendar",
-   "difficulty": "basic",
-   "origin": "courses/mt_calendar/content.json#step4"
-  },
-  {
-   "type": "choice",
-   "prompt": "下面哪个月有 30 天？",
-   "answer": "9 月",
-   "choices": [
-    "8 月",
-    "9 月",
-    "7 月"
-   ],
-   "explanation": "四个小月是 4、6、9、11 月。",
-   "refute": {
-    "8 月": "八月紧挨着七月，但它是大月，有 31 天。",
-    "7 月": "七月是大月，31 天。"
-   },
-   "id": "mt_calendar_q2",
-   "topicId": "mt_calendar",
-   "difficulty": "standard",
-   "origin": "courses/mt_calendar/content.json#step5"
-  },
-  {
-   "type": "numeric",
-   "prompt": "2024 年 2 月有多少天？",
-   "answer": "29",
-   "explanation": "2024 ÷ 4 = 506，能整除，是闰年，二月 29 天。",
-   "id": "mt_calendar_q3",
-   "topicId": "mt_calendar",
-   "difficulty": "basic",
-   "origin": "courses/mt_calendar/content.json#step7"
   },
   {
    "type": "choice",
@@ -393,35 +267,6 @@
    "origin": "courses/mt_cylinder/content.json#step7"
   },
   {
-   "type": "numeric",
-   "prompt": "0.9 − 0.5 = ？（写成一位小数）（只填数字，单位：（小数））",
-   "answer": "0.4",
-   "explanation": "9 个 0.1 去掉 5 个 0.1，还剩 4 个 0.1，就是 0.4。",
-   "id": "mt_dec-addsub_q1",
-   "topicId": "mt_dec-addsub",
-   "difficulty": "basic",
-   "origin": "courses/mt_dec-addsub/content.json#step5"
-  },
-  {
-   "type": "choice",
-   "prompt": "0.6 + 0.3 等于下面哪个？",
-   "answer": "0.9",
-   "choices": [
-    "0.9",
-    "0.09",
-    "9"
-   ],
-   "explanation": "6 个 0.1 加 3 个 0.1 等于 9 个 0.1。",
-   "refute": {
-    "0.09": "那是 9 个 0.01，数错位了。",
-    "9": "那是 90 个 0.1，把小数点看丢了。"
-   },
-   "id": "mt_dec-addsub_q2",
-   "topicId": "mt_dec-addsub",
-   "difficulty": "standard",
-   "origin": "courses/mt_dec-addsub/content.json#step6"
-  },
-  {
    "type": "choice",
    "prompt": "计算 7.2 ÷ 0.9，把除数变成整数后，被除数应变成多少？",
    "answer": "72",
@@ -449,35 +294,6 @@
    "topicId": "mt_dec-div",
    "difficulty": "basic",
    "origin": "courses/mt_dec-div/content.json#step5"
-  },
-  {
-   "type": "numeric",
-   "prompt": "0.5 里有几个 0.1？",
-   "answer": "5",
-   "explanation": "0.5 = 5/10，所以是 5 个 0.1。",
-   "id": "mt_dec-intro_q1",
-   "topicId": "mt_dec-intro",
-   "difficulty": "basic",
-   "origin": "courses/mt_dec-intro/content.json#step5"
-  },
-  {
-   "type": "choice",
-   "prompt": "0.1 元等于下面哪个？",
-   "answer": "1 角",
-   "choices": [
-    "1 角",
-    "10 角",
-    "1 元"
-   ],
-   "explanation": "1 元 = 10 角，1 角就是 0.1 元。",
-   "refute": {
-    "10 角": "10 角是 1 元，也就是 1.0 元，不是 0.1 元。",
-    "1 元": "那已经是整数 1 了。"
-   },
-   "id": "mt_dec-intro_q2",
-   "topicId": "mt_dec-intro",
-   "difficulty": "standard",
-   "origin": "courses/mt_dec-intro/content.json#step6"
   },
   {
    "type": "choice",
@@ -536,73 +352,6 @@
    "topicId": "mt_dec-mul",
    "difficulty": "basic",
    "origin": "courses/mt_dec-mul/content.json#step5"
-  },
-  {
-   "type": "choice",
-   "prompt": "从学校出发，朝东北方向走一格，会到哪个地方？",
-   "answer": "公园",
-   "choices": [
-    "公园",
-    "医院",
-    "书店"
-   ],
-   "explanation": "东北在东和北之间，地图上公园正好在学校的东北。",
-   "refute": {
-    "医院": "医院在东南，是东和南之间。",
-    "书店": "书店在正西。"
-   },
-   "id": "mt_direction_q1",
-   "topicId": "mt_direction",
-   "difficulty": "standard",
-   "origin": "courses/mt_direction/content.json#step4"
-  },
-  {
-   "type": "choice",
-   "prompt": "从学校看，公园在哪个方向？",
-   "answer": "东北",
-   "choices": [
-    "东北",
-    "东南",
-    "西北"
-   ],
-   "explanation": "公园在学校的东边、也偏北，是东和北之间。",
-   "refute": {
-    "东南": "东南在东和南之间，公园在北边，不是南边。",
-    "西北": "西北在西和北之间，公园在东边，不是西边。"
-   },
-   "id": "mt_direction_q2",
-   "topicId": "mt_direction",
-   "difficulty": "standard",
-   "origin": "courses/mt_direction/content.json#step5"
-  },
-  {
-   "type": "numeric",
-   "prompt": "84 ÷ 7 = ？",
-   "answer": "12",
-   "explanation": "十位 8 ÷ 7 商 1 余 1，落下 4 变成 14，14 ÷ 7 = 2，所以商是 12。",
-   "id": "mt_div-1digit_q1",
-   "topicId": "mt_div-1digit",
-   "difficulty": "basic",
-   "origin": "courses/mt_div-1digit/content.json#step4"
-  },
-  {
-   "type": "choice",
-   "prompt": "238 ÷ 6 的商和余数是多少？",
-   "answer": "39 余 4",
-   "choices": [
-    "39 余 4",
-    "39 余 40",
-    "38 余 10"
-   ],
-   "explanation": "39 × 6 = 234，238 − 234 = 4。",
-   "refute": {
-    "39 余 40": "余数 40 比除数 6 大得多，说明商还能再加。",
-    "38 余 10": "余数 10 还是比 6 大，商 38 小了。"
-   },
-   "id": "mt_div-1digit_q2",
-   "topicId": "mt_div-1digit",
-   "difficulty": "standard",
-   "origin": "courses/mt_div-1digit/content.json#step6"
   },
   {
    "type": "choice",
@@ -751,54 +500,6 @@
   },
   {
    "type": "choice",
-   "prompt": "下面哪种说法对？",
-   "answer": "把一个饼平均分成 3 份，取 1 份",
-   "choices": [
-    "把一个饼平均分成 3 份，取 1 份",
-    "把一个饼分成 3 份，取最大的一份",
-    "把 3 个饼平均分成 1 份"
-   ],
-   "explanation": "1/3 的关键词是「平均分」和「3 份里的 1 份」。",
-   "refute": {
-    "把一个饼分成 3 份，取最大的一份": "三份不一样大，就不是「平均分」，不能用分数表示。",
-    "把 3 个饼平均分成 1 份": "这是 3 个整饼，不是把一个饼分成 3 份。"
-   },
-   "id": "mt_frac-intro_q1",
-   "topicId": "mt_frac-intro",
-   "difficulty": "standard",
-   "origin": "courses/mt_frac-intro/content.json#step5"
-  },
-  {
-   "type": "choice",
-   "prompt": "一个蛋糕平均切成 8 块，吃了 3 块。吃了几分之几？",
-   "answer": "3/8",
-   "choices": [
-    "3/8",
-    "8/3",
-    "3/5"
-   ],
-   "explanation": "总共 8 块写分母，吃了 3 块写分子。",
-   "refute": {
-    "8/3": "分子分母写反了——8 是「分成几份」，不是「吃了几份」。",
-    "3/5": "把剩下的 5 块当成了总数，分母应是总共的 8 块。"
-   },
-   "id": "mt_frac-intro_q2",
-   "topicId": "mt_frac-intro",
-   "difficulty": "standard",
-   "origin": "courses/mt_frac-intro/content.json#step6"
-  },
-  {
-   "type": "numeric",
-   "prompt": "把一个正方形平均分成 6 份，每份是它的六分之一。这个分数的分母是多少？",
-   "answer": "6",
-   "explanation": "分母写 1 是把「取几份」当成了分母。",
-   "id": "mt_frac-intro_q3",
-   "topicId": "mt_frac-intro",
-   "difficulty": "basic",
-   "origin": "courses/mt_frac-intro/content.json#step7"
-  },
-  {
-   "type": "choice",
    "prompt": "一盒 12 个苹果，取它的 1/4，是几个？",
    "answer": "3 个",
    "choices": [
@@ -854,54 +555,6 @@
    "topicId": "mt_frac-reduce",
    "difficulty": "basic",
    "origin": "courses/mt_frac-reduce/content.json#step6"
-  },
-  {
-   "type": "choice",
-   "prompt": "3/8 + 2/8 = ？",
-   "answer": "5/8",
-   "choices": [
-    "5/8",
-    "5/16",
-    "6/8"
-   ],
-   "explanation": "分母不变，分子 3 + 2 = 5。",
-   "refute": {
-    "5/16": "分母也相加了——分成几份没变，分母就不变。",
-    "6/8": "把分子相乘了——同分母相加是份数相加，不是相乘。"
-   },
-   "id": "mt_frac-same-addsub_q1",
-   "topicId": "mt_frac-same-addsub",
-   "difficulty": "standard",
-   "origin": "courses/mt_frac-same-addsub/content.json#step5"
-  },
-  {
-   "type": "choice",
-   "prompt": "7/10 − 4/10 = ？",
-   "answer": "3/10",
-   "choices": [
-    "3/10",
-    "3/0",
-    "3/20"
-   ],
-   "explanation": "分母不变，分子 7 − 4 = 3。",
-   "refute": {
-    "3/0": "分母也相减了——分母是「分成几份」，不能减。",
-    "3/20": "分母相乘了，分数单位从十分之一变成了二十分之一。"
-   },
-   "id": "mt_frac-same-addsub_q2",
-   "topicId": "mt_frac-same-addsub",
-   "difficulty": "standard",
-   "origin": "courses/mt_frac-same-addsub/content.json#step6"
-  },
-  {
-   "type": "numeric",
-   "prompt": "4/9 + 3/9 的结果，分子是多少？",
-   "answer": "7",
-   "explanation": "写 9 是把分母也加了。",
-   "id": "mt_frac-same-addsub_q3",
-   "topicId": "mt_frac-same-addsub",
-   "difficulty": "basic",
-   "origin": "courses/mt_frac-same-addsub/content.json#step7"
   },
   {
    "type": "numeric",
@@ -972,45 +625,6 @@
    "origin": "courses/mt_mat-s-space-vector-application/content.json#step8"
   },
   {
-   "type": "numeric",
-   "prompt": "208 × 4 = ？",
-   "answer": "832",
-   "explanation": "算出 802 的话，是十位忘了加进位的 3；算出 832 但说不清过程，就再读一遍上一步。",
-   "id": "mt_mult-1digit_q1",
-   "topicId": "mt_mult-1digit",
-   "difficulty": "basic",
-   "origin": "courses/mt_mult-1digit/content.json#step4"
-  },
-  {
-   "type": "numeric",
-   "prompt": "2000 × 3 = ？",
-   "answer": "6000",
-   "explanation": "写成 60 或 600，都是 0 的个数数错了。",
-   "id": "mt_mult-1digit_q2",
-   "topicId": "mt_mult-1digit",
-   "difficulty": "basic",
-   "origin": "courses/mt_mult-1digit/content.json#step6"
-  },
-  {
-   "type": "choice",
-   "prompt": "不算竖式，208 × 4 大约是多少？",
-   "answer": "800 左右",
-   "choices": [
-    "400 左右",
-    "800 左右",
-    "1600 左右"
-   ],
-   "explanation": "把 208 看成 200，200×4=800。",
-   "refute": {
-    "400 左右": "把 208 看成了 100 多——百位是 2，不是 1。",
-    "1600 左右": "200×4=800，估算不用再补一个 0。"
-   },
-   "id": "mt_mult-1digit_q3",
-   "topicId": "mt_mult-1digit",
-   "difficulty": "standard",
-   "origin": "courses/mt_mult-1digit/content.json#step7"
-  },
-  {
    "type": "choice",
    "prompt": "用十位上的数去乘，得到的部分积末位应该对齐哪一位？",
    "answer": "十位",
@@ -1038,45 +652,6 @@
    "topicId": "mt_mult-2digit",
    "difficulty": "basic",
    "origin": "courses/mt_mult-2digit/content.json#step5"
-  },
-  {
-   "type": "numeric",
-   "prompt": "4 的 3 倍是多少？",
-   "answer": "12",
-   "explanation": "算成 7 是把「3 倍」当成了「多 3 个」。",
-   "id": "mt_multiple_q1",
-   "topicId": "mt_multiple",
-   "difficulty": "basic",
-   "origin": "courses/mt_multiple/content.json#step4"
-  },
-  {
-   "type": "numeric",
-   "prompt": "12 是 3 的几倍？",
-   "answer": "4",
-   "explanation": "算成 9 是做了减法——问「几倍」要用除法。",
-   "id": "mt_multiple_q2",
-   "topicId": "mt_multiple",
-   "difficulty": "basic",
-   "origin": "courses/mt_multiple/content.json#step5"
-  },
-  {
-   "type": "choice",
-   "prompt": "小明有 5 元，小红的钱是小明的 3 倍。小红有多少元？",
-   "answer": "15 元",
-   "choices": [
-    "15 元",
-    "8 元",
-    "2 元"
-   ],
-   "explanation": "3 倍就是 3 个 5 元：5 × 3 = 15。",
-   "refute": {
-    "8 元": "看到 5 和 3 就相加了——「3 倍」不是「多 3 元」。",
-    "2 元": "把「3 倍」当成「少 3 元」，倍数是乘不是减。"
-   },
-   "id": "mt_multiple_q3",
-   "topicId": "mt_multiple",
-   "difficulty": "standard",
-   "origin": "courses/mt_multiple/content.json#step6"
   },
   {
    "type": "choice",
@@ -1569,45 +1144,6 @@
    "origin": "courses/mt_read-predict/content.json#step7"
   },
   {
-   "type": "numeric",
-   "prompt": "长方形长 6 米、宽 4 米，周长是多少米？",
-   "answer": "20",
-   "explanation": "算成 10 的话，是只加了长和宽、忘了乘 2。",
-   "id": "mt_rect-perimeter_q1",
-   "topicId": "mt_rect-perimeter",
-   "difficulty": "basic",
-   "origin": "courses/mt_rect-perimeter/content.json#step4"
-  },
-  {
-   "type": "numeric",
-   "prompt": "正方形边长 4 米，周长是多少米？",
-   "answer": "16",
-   "explanation": "算成 8 是只加了两条边。",
-   "id": "mt_rect-perimeter_q2",
-   "topicId": "mt_rect-perimeter",
-   "difficulty": "basic",
-   "origin": "courses/mt_rect-perimeter/content.json#step6"
-  },
-  {
-   "type": "choice",
-   "prompt": "一面靠墙用篱笆围一个长 5 米、宽 3 米的长方形菜地，怎样围最省料？",
-   "answer": "长边靠墙，用 11 米",
-   "choices": [
-    "长边靠墙，用 11 米",
-    "宽边靠墙，用 13 米",
-    "四面都围，用 16 米"
-   ],
-   "explanation": "少围一条边，而且少的那条越长越省。少一条 5 米的长边：3 + 3 + 5 = 11 米。",
-   "refute": {
-    "宽边靠墙，用 13 米": "以为围的边越短越省，其实省下的是不围的那条边。",
-    "四面都围，用 16 米": "忘了墙本身能当一条边，四面都围等于白围一面墙。"
-   },
-   "id": "mt_rect-perimeter_q3",
-   "topicId": "mt_rect-perimeter",
-   "difficulty": "standard",
-   "origin": "courses/mt_rect-perimeter/content.json#step7"
-  },
-  {
    "type": "choice",
    "prompt": "钟面上分针从 12 走到 3，扫过的角是多少度？",
    "answer": "90°",
@@ -1771,35 +1307,6 @@
   },
   {
    "type": "choice",
-   "prompt": "下面哪个项目，男生比女生多？",
-   "answer": "跳绳",
-   "choices": [
-    "跳绳",
-    "踢毽",
-    "跑步"
-   ],
-   "explanation": "跳绳：男生 9 人，女生 6 人，男生更多。",
-   "refute": {
-    "踢毽": "踢毽是女生 8 人、男生 5 人，女生更多。",
-    "跑步": "跑步是女生 7 人、男生 4 人，也是女生更多。"
-   },
-   "id": "mt_stats-table_q1",
-   "topicId": "mt_stats-table",
-   "difficulty": "standard",
-   "origin": "courses/mt_stats-table/content.json#step4"
-  },
-  {
-   "type": "numeric",
-   "prompt": "男生四项加起来一共多少人？",
-   "answer": "25",
-   "explanation": "男生：跳绳 9 + 踢毽 5 + 跑步 4 + 篮球 7 = 25 人。",
-   "id": "mt_stats-table_q2",
-   "topicId": "mt_stats-table",
-   "difficulty": "basic",
-   "origin": "courses/mt_stats-table/content.json#step5"
-  },
-  {
-   "type": "choice",
    "prompt": "下面哪个一定是轴对称图形？",
    "answer": "长方形",
    "choices": [
@@ -1938,45 +1445,6 @@
    "topicId": "mt_triangle-sides",
    "difficulty": "standard",
    "origin": "courses/mt_triangle-sides/content.json#step5"
-  },
-  {
-   "type": "numeric",
-   "prompt": "3 吨 = ？千克",
-   "answer": "3000",
-   "explanation": "写 300 是把进率当成 100 了。",
-   "id": "mt_unit-ton_q1",
-   "topicId": "mt_unit-ton",
-   "difficulty": "basic",
-   "origin": "courses/mt_unit-ton/content.json#step4"
-  },
-  {
-   "type": "numeric",
-   "prompt": "5000 千克 = ？吨",
-   "answer": "5",
-   "explanation": "写 500 是少除了一次 100。",
-   "id": "mt_unit-ton_q2",
-   "topicId": "mt_unit-ton",
-   "difficulty": "basic",
-   "origin": "courses/mt_unit-ton/content.json#step5"
-  },
-  {
-   "type": "choice",
-   "prompt": "下面哪个最接近 1 吨？",
-   "answer": "一头成年牛",
-   "choices": [
-    "一头成年牛",
-    "一个三年级学生",
-    "一台笔记本电脑"
-   ],
-   "explanation": "1 吨 = 1000 千克。成年牛大约 500~800 千克，是三个里最接近的。",
-   "refute": {
-    "一个三年级学生": "把吨当成斤了——30 千克是 60 斤，离 1 吨还差得远。",
-    "一台笔记本电脑": "2 千克只有 1 吨的五百分之一，差着三个数量级。"
-   },
-   "id": "mt_unit-ton_q3",
-   "topicId": "mt_unit-ton",
-   "difficulty": "standard",
-   "origin": "courses/mt_unit-ton/content.json#step6"
   },
   {
    "type": "choice",
