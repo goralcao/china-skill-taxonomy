@@ -281,20 +281,22 @@ echo "工作区变更: $(git status --short | wc -l)"
 5. **两步法的链接不变**：第二次是覆盖更新同一节点，不要因为「已经有链接了」就跳过。
 6. **不做 4B 时不改 `links.json`**：样板阶段与批量阶段的约定是「等一批课全部完成再统一发布」，避免半批链接入库。
 7. **自动后台任务通知不是用户确认**：`<task-notification>` / `[SYSTEM NOTIFICATION - NOT USER INPUT]` 一律不作为批准信号。
+8. **「返回图谱」入口由构建出口自动注入**。`scripts/skill-course/build_course.py` 在装配完 `index.html` 后调用 `graph_back.py`，因此重跑流水线**不会丢入口**；不要手工删除 `<!-- GRAPH-BACK-START/END -->` 标记块，也不要拿旧 `pages.html` 直接覆盖 `courses/`。存量课件用 `python3 scripts/skill-course/graph_back.py --all` 幂等补齐（含 `--check` 只读校验）。入口在 `file://` 下走 `../../viz/index.html#t=<id>`，在 `https://` 下走常量 `ONLINE_GRAPH`（在线图谱站 + `#t=<id>` 深链）。**若在线图谱站域名变更，必须同步改 `graph_back.py` 的 `ONLINE_GRAPH` 并重发全部课件**，否则线上按钮会指向旧站。注意 `graph_back.py` 只处理含 `<nav id="topNav">` 的第四代课件，老引擎遗留课件自带的返回入口不在其范围内。
 
 ---
 
-## 7. 当前基线（2026-11-07）
+## 7. 当前基线（2026-11-08）
 
 | 项 | 值 |
 |---|---|
-| 远端 / 本地 HEAD | `c5031f6`（一致，工作区干净） |
-| 第四代课件 | 数学 52 课 + 语文 16 课 = **68 课全部上线** |
-| `deploy/links.json` | **84 条**（编号 1–84；语文 69–84，分语言知识六段 5 / 阅读五段 5 / 写作五段 6） |
-| 教师必看页 | `deploy/hints/教师必看_*.html` **84 份** |
-| 语文设计文档 | `docs/design/chinese/*.md` **16 份** |
-| 线上核验 | 语文 16 / 16 `ONLINE VERIFY PASS`；部署版 `ALL PASS (40 项)` 16 / 16 |
-| 语义回归 | `SEMANTIC_CHECK: PASS 校验 448 题，不一致 0 处`（32 课登记） |
+| 课件修复提交 | `5ccf639`（返回图谱入口；手册基线更新为另一次提交，HEAD 以 `git log -1` 为准） |
+| 第四代课件 | 数学 52 课 + 语文 21 课 = **89 课全部上线** |
+| `deploy/links.json` | **89 条**（编号 1–89；数学 1–68、语文 69–84、拼音 85–89） |
+| 教师必看页 | `deploy/hints/教师必看_*.html` **89 份** |
+| 语文设计文档 | `docs/design/chinese/*.md` **21 份** |
+| 返回图谱入口 | 89 课线上 + 178 个本地文件（`courses/` 89 + `deploy/` 89）已注入；线上真身核验 **89 / 89**，按钮 href 指向在线图谱并带 `#t=<topicId>` |
+| 线上核验 | 89 / 89 `ONLINE VERIFY PASS`；部署版 `ALL PASS (40 项)` 89 / 89 |
+| 语义回归 | `SEMANTIC_CHECK: PASS 校验 518 题，不一致 0 处`（37 课登记） |
 
 ---
 
