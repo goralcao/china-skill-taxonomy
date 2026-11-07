@@ -9,7 +9,7 @@
   "topicId": "mt_read-predict",
   "title": "一边读一边猜：把「我猜」留到读完再翻",
   "renderer": "predict",
-  "duration": 30,
+  "duration": 24,
   "interactions": 16,
   "grade": 3,
   "standards": [

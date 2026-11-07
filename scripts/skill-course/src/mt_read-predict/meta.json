@@ -3,7 +3,7 @@
   "title": "一边读一边猜：把「我猜」留到读完再翻",
   "template": "explain",
   "renderer": "predict",
-  "duration": 30,
+  "duration": 24,
   "interactions": 16,
   "grade": 3,
   "subject": "语文",

@@ -283,6 +283,7 @@ echo "工作区变更: $(git status --short | wc -l)"
 7. **自动后台任务通知不是用户确认**：`<task-notification>` / `[SYSTEM NOTIFICATION - NOT USER INPUT]` 一律不作为批准信号。
 8. **「返回图谱」入口由构建出口自动注入**。`scripts/skill-course/build_course.py` 在装配完 `index.html` 后调用 `graph_back.py`，因此重跑流水线**不会丢入口**；不要手工删除 `<!-- GRAPH-BACK-START/END -->` 标记块，也不要拿旧 `pages.html` 直接覆盖 `courses/`。存量课件用 `python3 scripts/skill-course/graph_back.py --all` 幂等补齐（含 `--check` 只读校验）。入口在 `file://` 下走 `../../viz/index.html#t=<id>`，在 `https://` 下走常量 `ONLINE_GRAPH`（在线图谱站 + `#t=<id>` 深链）。**若在线图谱站域名变更，必须同步改 `graph_back.py` 的 `ONLINE_GRAPH` 并重发全部课件**，否则线上按钮会指向旧站。注意 `graph_back.py` 只处理含 `<nav id="topNav">` 的第四代课件，老引擎遗留课件自带的返回入口不在其范围内。
 9. **图谱的「有课件」计数不是实时统计，新增课件后必须重跑 `scripts/build.py`**。`viz/index.html` 读的是内嵌静态文件 `viz/data.js`（即 `data/courses.json` 的快照），不是 `deploy/links.json`。只更新 `courses/*/meta.json` 与 `deploy/links.json` 而不重跑构建，图谱会一直显示旧数字，新课件在节点上也不会出现「打开课件」按钮。`build.py` 的 `build_courses()` 与 `sync_courses_to_viz()` 现在都按 `deploy/links.json` 的已发布白名单工作：排除未发布的老引擎课件、给每条写入 `url`（资料库正式课件地址）、并校验白名单与 `courses/` 一一对应。线上图谱应用托管的是 `viz/` 目录静态服务，**重跑构建后文件即时生效，不需要重新发布应用**；跳转由 `courseHref()` 自适应：`https://` 走 `url`，`file://` 退回 `viz/courses/<id>/index.html` 本地副本。
+10. **课件元数据有多份副本，改 `duration` 之类字段要同步四处**：`scripts/skill-course/src/<id>/meta.json`（源分片，重跑流水线会覆盖 `courses/`）、`courses/<id>/meta.json`（构建输入）、`deploy/<id>/meta.json`（4B 发布副本），以及由 `build.py` 自动同步、不要手改的 `viz/courses/<id>/meta.json`。改完必须重跑 `scripts/build.py` 让 `data/courses.json` 与 `viz/data.js` 跟着更新，并用 `node scripts/validate-courses.mjs` 复核（规则：`duration` 5~25 分钟）。第四代课件统一按 **24 分钟 / 16 交互** 口径；语文阅读、写作装配器早期默认值误设成 30，已于 2026-11-08 统一修正。
 
 ---
 
@@ -300,7 +301,8 @@ echo "工作区变更: $(git status --short | wc -l)"
 | 语义回归 | `SEMANTIC_CHECK: PASS 校验 518 题，不一致 0 处`（37 课登记） |
 | 图谱课件索引 | `v0.49.5`：`data/courses.json` 与 `viz/data.js` 均为 **89 条**（数学 68 / 语文 21，全部带 `url`）；线上图谱显示「有课件 89」、筛选后 89 个知识点；`viz/courses/` 89 份副本均带返回图谱入口。浏览器验收：三个抽样节点（含此前漏收的 `mt_ratio`、`mt_pinyin-finals`）按钮可见且跳到 `workbuddy.link/p/<nodeId>`，`file://` 下退回本地副本，0 个 JS 报错 |
 | 题库 | 重跑构建后从现存 `content.json` 重抽为 **104 题 / 48 个主题**，`validate-questions.mjs` 0 警告；旧 141 题中有 37 题的 `origin` 指向已删除的 `content.json`（HEAD 既有脏数据，旧版校验 37 项阻断） |
-| 已知遗留 | `validate-courses.mjs` 对 12 门语文课件报 `duration 30 > 25`（HEAD 既有，与图谱索引修复无关）；第四代课件 `config.js` 里的题尚未接入题库抽取器，若要恢复「可测 63 个点」需另立任务 |
+| 课件时长 | 12 门越界课件（11 门语文 30 分钟 + `mt_div-2digit` 26 分钟）统一为 **24 分钟**；源分片、`courses/`、`deploy/`、`viz/courses/` 四处副本同步，临时装配器默认值一并改为 24。`validate-courses.mjs` **92 个课件 0 阻断 0 警告**，图谱按钮时长文案同步更新 |
+| 已知遗留 | 第四代课件 `config.js` 里的题尚未接入题库抽取器，若要恢复「可测 63 个点」需另立任务 |
 
 ---
 

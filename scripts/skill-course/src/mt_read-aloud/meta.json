@@ -3,7 +3,7 @@
   "title": "朗读：把标点读出来，自己再听一遍",
   "template": "explain",
   "renderer": "readAloud",
-  "duration": 30,
+  "duration": 24,
   "interactions": 16,
   "grade": 1,
   "subject": "语文",
