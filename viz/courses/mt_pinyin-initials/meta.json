@@ -1,0 +1,94 @@
+{
+  "topicId": "mt_pinyin-initials",
+  "title": "声母的认读：把 b 和 d 摆正",
+  "template": "explain",
+  "renderer": "pinyin",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 1,
+  "subject": "语文",
+  "standards": [
+    "chinese-2022:S1:BQ"
+  ],
+  "prerequisites": [
+    "mt_pinyin-finals"
+  ],
+  "next": [
+    "mt_pinyin-blending",
+    "mt_pinyin-whole",
+    "mt_char-phonetic-order"
+  ],
+  "objectives": [
+    "能认准形近声母 b d p q，说清竖在哪边、半圆朝哪边",
+    "知道声母读得轻短、头上不戴调号，能摆出一组完整音节",
+    "能对着三条标准说出自己那一组下一步改哪一处"
+  ],
+  "cognitiveAction": "辨析",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "听一听",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "看一看",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "摆一摆",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "拼一拼",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "查一查",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}
