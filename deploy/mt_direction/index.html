@@ -644,7 +644,6 @@ body.deployed .qr-badge.on{display:flex}
     先认准东，东南西北就都定下来了。
   </p>
   <p class="hint">点击右下角箭头开始 或 点击顶部导航跳转</p>
-  <a href="../../viz/index.html#t=mt_direction" style="margin-top:16px;color:rgba(255,255,255,.78);font-size:16px;text-decoration:underline">← 回到知识图谱</a>
 </div>
 </section>
 
@@ -3870,5 +3869,44 @@ showPage(_initIdx);
     <button class="qr-clear-btn" onclick="xmnClear('sim1')">清空数据</button>
   </div>
 </div>
+<!-- GRAPH-BACK-START -->
+<style>
+#graphBack{position:fixed;left:14px;bottom:20px;z-index:450;
+  display:inline-flex;align-items:center;padding:7px 14px;border-radius:20px;
+  background:rgba(18,30,48,.84);color:#fff;text-decoration:none;
+  font:600 14px/1.2 system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+  letter-spacing:.3px;border:1px solid rgba(255,255,255,.30);
+  box-shadow:0 3px 12px rgba(0,0,0,.25);
+  backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+#graphBack:hover{background:rgba(18,30,48,.97)}
+/* 小屏：底部居中 navBtns 约占 x=94..282（375 宽），按钮必须收在 x<94 内，避免相交 */
+@media(max-width:640px){#graphBack{left:8px;bottom:14px;padding:4px 7px;font-size:11px;letter-spacing:0;border-radius:14px}}
+</style>
+<script>
+(function(){
+  if (document.getElementById('graphBack')) return;
+  var TID = "mt_direction", ONLINE = "https://acd118508358062b1.app.workbuddy.host/?sharecode=DHL4TJAQCG";
+  var a = document.createElement('a');
+  a.id = 'graphBack';
+  a.textContent = '\u2190 \u5b66\u9636\u56fe\u8c31';
+  a.title = '\u56de\u5230\u5b66\u9636\u56fe\u8c31\uff0c\u5b9a\u4f4d\u5230\u8fd9\u4e00\u8bfe';
+  a.setAttribute('data-topic', TID);
+  var base;
+  if (location.protocol === 'file:') {
+    // 本地两种副本：courses/<id>/ 与 viz/courses/<id>/（图谱内嵌版路径层级不同）
+    var inViz = /[\/\\]viz[\/\\]courses[\/\\]/.test(location.pathname);
+    base = '../../' + (inViz ? '' : 'viz/') + 'index.html';
+  } else {
+    // 资料库单文件托管：相对路径无效，必须用在线图谱站的绝对地址
+    base = ONLINE;
+  }
+  a.href = base + '#t=' + encodeURIComponent(TID);
+  document.body.appendChild(a);
+  // 兜底：即便静态清理遗漏，运行时也移除会 404 的老引擎死链
+  var old = document.querySelector('a[href^="../../viz/index.html"]');
+  if (old && old !== a) old.parentNode.removeChild(old);
+})();
+</script>
+<!-- GRAPH-BACK-END -->
 </body>
 </html>

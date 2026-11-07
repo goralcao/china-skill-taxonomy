@@ -22,6 +22,11 @@ SKILL = os.path.join(ROOT, 'scripts', 'skill-course')
 SHELL = os.path.join(SKILL, 'shell.html')
 SRC = os.path.join(SKILL, 'src')
 
+# 「返回图谱」入口：所有第四代课件的构建出口统一注入，避免升级后丢失。
+# 详见 graph_back.py；此处插 sys.path 以兼容被 build.py 等脚本 import 的场景。
+sys.path.insert(0, SKILL)
+from graph_back import inject as inject_graph_back  # noqa: E402
+
 CHIP_CLS = {'': 'chip', 'active': 'chip active', 'pre': 'chip pre', 'mid': 'chip mid',
             'post': 'chip post', 'sim': 'chip sim', 'end': 'chip chip-end'}
 
@@ -80,6 +85,8 @@ def build(topic):
         html = html.replace(k, v, 1)
     if '@@' in html:
         raise SystemExit('仍有未替换的占位符：' + str([l for l in html.split('\n') if '@@' in l][:3]))
+    # 统一注入「返回图谱」常驻入口（幂等，不改现有 DOM 结构）
+    html = inject_graph_back(html, topic)
     out_dir = os.path.join(ROOT, 'courses', topic)
     os.makedirs(out_dir, exist_ok=True)
     out = os.path.join(out_dir, 'index.html')
