@@ -707,7 +707,9 @@
   // 本地 file:// 打开图谱时退回 viz/courses 下的相对副本，离线也能翻。
   // 老数据没有 url 字段时同样退回相对路径，兼容早期快照。
   function courseHref(c) {
-    if (c.url && location.protocol !== 'file:') return c.url;
+    // 课件统一走本目录下的 courses/<id>/index.html 干净副本（在线图谱站与本地 file:// 均可打开）。
+    // 2026-11-08：去掉 https 下走 c.url（workbuddy.link 发布页）的分支——发布页带 4A 教学控制，
+    // 会锁死学生端翻页；回归本地副本后翻页与「返回图谱」都可用，也不再依赖线上托管。
     let sc = '';
     try { sc = new URLSearchParams(location.search).get('sharecode'); } catch (e) { /* 老浏览器忽略 */ }
     return c.path + 'index.html' + (sc ? '?sharecode=' + encodeURIComponent(sc) : '');

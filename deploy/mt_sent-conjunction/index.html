@@ -3445,9 +3445,9 @@ function hideTeacherObserveBanner(){
   try{ var b = document.getElementById('xmnObserveBanner'); if(b){ clearTakeoverCountdown(b); b.style.display = 'none'; } }catch(e){}
 }
 
-// ---- 【E】学生端导航闸门（键盘/触摸/按钮全拦，仅页内「逐步揭示」不受影响） ----
-function canStudentNavigate(){ return IS_TEACHER; }
-// 焊死纯跟随（v2026-09-28e 定案）：学生恒禁导航（按钮/键盘/滑动全锁），仅教师可翻页
+// ---- 【E】导航闸门（2026-11-08 放宽：学生可自主翻页；教师广播仍同步当前页） ----
+function canStudentNavigate(){ return true; }
+// 2026-11-08 已放宽：不再锁死学生端导航，学生可自由翻页浏览
 // 用法：function nextPage(){ if (!canStudentNavigate()) return; ... }
 //      function prevPage(){ if (!canStudentNavigate()) return; ... }
 
@@ -3495,15 +3495,15 @@ function canStudentNavigate(){ return IS_TEACHER; }
     tb.onclick = function(){ try{ localStorage.removeItem(TEACHER_KEY); }catch(e){} yieldBroadcast(); location.reload(); };
     document.body.appendChild(tb);
   }
-  // 【E】学生端导航隐藏（v2026-09-28e 焊死：无自由浏览，永不恢复）
+  // 【E】导航显示控制（show=true 常驻；false 隐藏）
   function setStudentNav(show){
     ['topNav','btnPrev','btnNext'].forEach(function(id){
       var el = document.getElementById(id); if(el) el.style.display = show ? '' : 'none';
     });
   }
-  // 【D】焊死纯跟随（v2026-09-28e 定案）：不创建任何「跟随/自由浏览」开关，
-  // 学生端导航隐藏且永不恢复；页内"逐步揭示"、答题、仿真交互不受影响。
-  if(!IS_TEACHER){ setStudentNav(false); }
+  // 【D】2026-11-08 放宽：学生端导航常驻、可自主翻页；教师广播仍同步当前页。
+  // 页内"逐步揭示"、答题、仿真交互不受影响。
+  if(!IS_TEACHER){ setStudentNav(true); }
   // 【F·v1.7.0】两段式教师入口（取代原「三连点直接切换」，根治学生误触成广播者→闪动）：
   //   第①段：1.5s 内【双击】页码指示器 → 仅「武装(armed)」3 秒（不直接切换，学生随手连点不夺权）；
   //   第②段：武装窗口内点击右下角【封面徽章】(身份登记入口) → 才切教师（仅封面页可见，复用 .qr-badge[data-page=封面]）。
@@ -3530,7 +3530,7 @@ function canStudentNavigate(){ return IS_TEACHER; }
     yieldBroadcast();
     observedTeacher = false;
     try { if (typeof hideTeacherObserveBanner === 'function') hideTeacherObserveBanner(); } catch(e){}
-    setStudentNav(false);
+    setStudentNav(true);
     showToast('已切回学生模式', 2500);
   }
   if (_piEl){

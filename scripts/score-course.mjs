@@ -288,9 +288,18 @@ function scoreCourse(dir) {
   };
 }
 
+// 已发布课件白名单：CI 的 --min 门槛只约束 deploy/links.json 里的正式课件。
+// 未纳入发布清单的老引擎遗留课件（3 门高中课件，87/88 分）仍可单独打分查看，但不拉低门槛。
+let published = null;
+try {
+  const links = JSON.parse(fs.readFileSync(path.join(ROOT, 'deploy', 'links.json'), 'utf8'));
+  published = new Set(links.map(x => x.course));
+} catch (e) { /* 无链接表时退化为全量扫描 */ }
+
 const dirs = fs.readdirSync(path.join(ROOT, 'courses'))
   .filter(d => fs.existsSync(path.join(ROOT, 'courses', d, 'meta.json')))
   .filter(d => !only || d === only || d.includes(only))
+  .filter(d => only || !published || published.has(d))
   .sort();
 
 const results = dirs.map(scoreCourse);
