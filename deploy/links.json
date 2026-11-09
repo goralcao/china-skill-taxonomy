@@ -710,5 +710,50 @@
   "nodeId": "4dDD46MShF4jQy4BKoINTq",
   "url": "https://workbuddy.link/p/4dDD46MShF4jQy4BKoINTq",
   "pages": 12
+ },
+ {
+  "no": 90,
+  "course": "mt_en-letter-name",
+  "title": "字母的名称与认读：A 的名字不叫 /æ/",
+  "nodeId": "",
+  "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-letter-name/index.html",
+  "pages": 12,
+  "delivery": "local"
+ },
+ {
+  "no": 91,
+  "course": "mt_en-letter-write",
+  "title": "字母的书写规范：大写都住上两格吗？",
+  "nodeId": "",
+  "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-letter-write/index.html",
+  "pages": 12,
+  "delivery": "local"
+ },
+ {
+  "no": 92,
+  "course": "mt_en-phonics",
+  "title": "字母音与自然拼读：cat 是怎么拼出来的",
+  "nodeId": "",
+  "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-phonics/index.html",
+  "pages": 12,
+  "delivery": "local"
+ },
+ {
+  "no": 93,
+  "course": "mt_en-num-color",
+  "title": "数字与颜色词汇：a red apple 怎么说",
+  "nodeId": "",
+  "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-num-color/index.html",
+  "pages": 12,
+  "delivery": "local"
+ },
+ {
+  "no": 94,
+  "course": "mt_en-body-stationery",
+  "title": "身体部位与文具：eye 和 eraser",
+  "nodeId": "",
+  "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-body-stationery/index.html",
+  "pages": 12,
+  "delivery": "local"
  }
 ]

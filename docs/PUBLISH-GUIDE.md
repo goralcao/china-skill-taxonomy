@@ -1,23 +1,24 @@
 # 第四代互动课件 · 发布与推送手册
 
 > **用途**：把「课件做完了」变成「线上能打开、链接能交付、远端已同步」的完整操作手册，供其它 agent 直接照抄执行。
-> **适用范围**：`china-skill-taxonomy` 仓库内所有第四代 12 页互动课件（`deploy/<id>/index.html`），数学 52 课与语文 16 课同口径。
-> **基线时间**：2026-11-07 · 仓库 `c5031f6` · 全库 84 条链接。
+> **适用范围**：`china-skill-taxonomy` 仓库内所有第四代 12 页互动课件。旧 89 课走链路 A（4B 发布到 `workbuddy.link`）；2026-11-10 起新增课件默认走**链路 C（纯本地交付）**。
+> **基线时间**：2026-11-10 · 全库 94 条白名单登记（数学 68 / 语文 21 / 英语 5）。
 >
 > 本文里的命令全部在本项目实际跑通；括号内的成功判据是**唯一可信的输出**，不要用退出码代替判断。
 
 ---
 
-## 0. 先分清两条链路
+## 0. 先分清三条链路
 
-「发布失败」最常见的原因，是把下面两条链路当成一件事、或漏掉其中一条。它们是**互相独立**的：
+「发布失败」最常见的原因，是把下面几条链路当成一件事、或漏掉其中一条。它们是**互相独立**的。2026-11-10 起新增课件默认走链路 C，不再发布到线上托管：
 
 | 链路 | 做什么 | 产物 | 主命令 |
 |---|---|---|---|
 | **A. 资料库 4B** | 把 `deploy/<id>/index.html` 传到资料库，生成公开可访问的课件页 | `https://workbuddy.link/p/<node_id>` | `publish_to_library.py` |
 | **B. GitHub 推送** | 把 `deploy/`、`links.json`、教师页等变更同步到远端仓库 | 远端 `main` 的 commit | `git push` |
+| **C. 纯本地交付（新课件默认）** | 只生成课件、登记白名单、重跑构建，让图谱节点直接打开图谱站自托管的干净副本 | `viz/courses/<id>/index.html` + `links.json` 白名单记录 | `build_course.py` + `sync_one.py` + `build.py` |
 
-**A 不通会表现为「链接打不开 / 打开是旧版」，B 不通只表现为「仓库没更新」**——两者互不影响，必须分别确认。
+**A 不通会表现为「链接打不开 / 打开是旧版」，B 不通只表现为「仓库没更新」，C 不通表现为「图谱里看不到新课 / 计数不涨」**——三者互不影响，必须分别确认。链路 C 不做 4A 注入、不做 4B 发布、不产 `deploy/` 与教师必看页，也不新增任何 `workbuddy.link` 链接。
 
 顺序铁律（跳任何一步都会以「发布失败」的形式暴露出来）：
 
@@ -25,6 +26,15 @@
 4A 注入  →  发布前预检  →  两步法 4B  →  线上核验  →  收尾产物  →  GitHub 推送
   一次      每课一次       必须两次      每课一次      链接表/教师页    逐提交
 ```
+
+链路 C（纯本地，顺序不能跳）：
+
+```
+装配器生成 7 分片 → build_course.py → sync_one.py → 评分/结构/交互/语义回归
+   → 登记 links.json 白名单 → 重跑 build.py → 浏览器验收 → git 提交推送
+```
+
+详见 **2.8 链路 C：纯本地交付**。
 
 ---
 
@@ -195,6 +205,73 @@ bash /tmp/step4/cn/verify_all.sh > /tmp/step4/cn/verify_all.out 2>&1
 
 ---
 
+## 2.8 链路 C：纯本地交付（2026-11-10 起）
+
+**适用场景**：只需要课件从知识图谱节点点开就能用，不需要 `workbuddy.link` 公开链接，也不需要教师端 4A 控制。英语三年级 5 课（`mt_en-*`）是首个按此链路交付的批次。
+
+与链路 A 的关键差异：
+
+| 项 | 链路 A（旧 89 课） | 链路 C（新课件） |
+|---|---|---|
+| 4A 教学控制注入 | 做 | **不做** |
+| `deploy/<id>/` 发布副本 | 产 | **不产**（`courses/` 即交付物） |
+| 教师必看页 | 产 | **不产** |
+| `workbuddy.link` 链接 | 产 | **不产** |
+| `links.json` 的 `nodeId` | 真 node_id | **留空** |
+| `links.json` 的 `url` | `https://workbuddy.link/p/<node_id>` | 图谱站自托管地址 `https://acd118508358062b1.app.workbuddy.host/courses/<id>/index.html`（仅作记录，`courseHref()` 不用它） |
+| 学生端翻页 | 曾被 4A 锁死，2026-11-08 放宽 | 天生自由翻页（干净副本无 4A） |
+
+### 2.8.1 逐步操作
+
+```bash
+cd /workspace/china-skill-taxonomy
+ID=mt_en-letter-name            # 换成当课 id
+
+# 1) 生成 7 分片（装配器，见 2.8.3）+ 装配 + 同步 viz 副本
+python3.11 /tmp/cn/en01.py       # 由装配器产出 src/<ID>/ 的 7 个分片
+python3.11 scripts/skill-course/build_course.py "$ID"   # → courses/<ID>/index.html（自动注入返回图谱入口）
+python3.11 /tmp/sync_one.py "$ID"                        # → viz/courses/<ID>/（注入 __GRAPH、改写返回路径）
+
+# 2) 质量闸门（全部必过）
+node scripts/score-course.mjs "$ID"          # 100 分
+python3.11 /tmp/cn/answer_check.py "$ID"     # 14 题、分布 0:5/1:5/2:4
+node /tmp/test-course.js "$ID" '[{"fn":"simAdd","args":[0,0]},{"fn":"simDemo","args":[]},{"fn":"simNextCase","args":[]},{"fn":"simReset","args":[]}]'
+python3.11 scripts/skill-course/semantic-check.py "$ID"  # 需先把 14 题正确文本登记进 quiz-expected.json
+
+# 3) 白名单登记：deploy/links.json 追加一条（编号连续）
+#    { "no": N, "course": ID, "title": "...", "nodeId": "",
+#      "url": "https://acd118508358062b1.app.workbuddy.host/courses/ID/index.html",
+#      "pages": 12, "delivery": "local" }
+
+# 4) 重跑构建（图谱计数、data.js、viz/courses 全量同步都靠这一步）
+python3.11 scripts/build.py
+
+# 5) 浏览器验收 + 全套校验 + 提交
+```
+
+### 2.8.2 容易踩的坑
+
+- **不重跑 `build.py` 图谱就看不到新课**：「有课件」读的是 `viz/data.js` 快照，`links.json` 只是白名单输入。
+- **`links.json` 里登记了但 `courses/<id>/meta.json` 不存在**：`build_courses()` 会直接 `SystemExit` 报「缺 meta.json」。
+- **`prerequisites` / `next` 必须落在图谱真实依赖边里**：`score-course.mjs` 的「图谱挂接」维度按 `data/dependencies.json` 校验，凭教学直觉编一条链会扣 5~7 分。先查 `python3.11 -c "import json;..."` 打印该节点的真实入边/出边再填。
+- **语义回归要同步登记**：新课件 14 题的正确答案文本按「前测3/中测一3/中测二3/后测5」顺序追加到 `scripts/skill-course/quiz-expected.json`，否则 `semantic-check.py` 会 `[SKIP]`。
+- **`renderer` 必须在白名单**：`course-schema.mjs` 的 `RENDERERS` 从 `templates/renderers.js` 解析，不要自造名字；英语 5 课复用 `pairMatch` / `writeChar` / `pinyin`，零引擎改动。
+- **`cognitiveAction` 必须在 `ACTIONS` 白名单**（比较/分解/变换/逼近/累积/模拟/构造/辨析/构思）。
+
+### 2.8.3 英语装配器（与数学 `/tmp/g6`、语文 `/tmp/cn` 同惯例，临时产物不入库）
+
+| 文件 | 作用 |
+|---|---|
+| `/tmp/cn/gen_en.py` | 5 课数据包生成：`quiz` 里写「题干 / 正确文本 / 两个干扰项 / 错因」，由 `SLOT_SEQ` 统一分配答案索引并产出 `en01.py`~`en05.py` 与 `expected_en.json` |
+| `/tmp/cn/run_en.py` | 装配器：把每课数据包编译成 `lib.emit` 需要的 `cfg + course.js`；`subject=英语`、页名换成「听一听/认一认/描一描/拼一拼」 |
+| `/tmp/cn/tpl_en.js` | Canvas 学习台：`CN.mode = letter / trace / blend / vocab`；函数契约（`simAdd/simDemo/simNextCase/simReset/simBind/SIM.hits`、留痕迹互动 DOM id）与拼音台完全一致 |
+| `/tmp/cn/enpipe.sh` | 单课流水线（生成→装配→同步→评分→结构测试→交互链路） |
+| `/tmp/cn/interact_en.js` | 留痕迹交互链路测试（由 `interact_py.js` 派生） |
+
+**7 分片（`scripts/skill-course/src/<id>/`）是唯一入库产物**，重跑 `build_course.py <id>` 即可复现课件，不需要装配器。装配器脚本在 `/tmp`，沙箱清理后按上表从分片反推重建即可。
+
+---
+
 ## 3. 链路 B：GitHub 推送
 
 ### 3.1 标准方式（逐提交）
@@ -279,32 +356,34 @@ echo "工作区变更: $(git status --short | wc -l)"
 3. **`--dir` 用纯 ASCII 路径**。
 4. **退出码不可信**，只认 stdout 的 `KS_IMPORT_OK` / `ALL PASS` / `ONLINE VERIFY PASS` / `RESULT: PASS`。
 5. **两步法的链接不变**：第二次是覆盖更新同一节点，不要因为「已经有链接了」就跳过。
-6. **不做 4B 时不改 `links.json`**：样板阶段与批量阶段的约定是「等一批课全部完成再统一发布」，避免半批链接入库。
+6. **`links.json` 现在是白名单，不是「发布完成清单」**：走链路 A 时仍按「等一批课全部完成再统一发布」避免半批链接入库；走**链路 C 的纯本地课件必须登记**（否则 `build.py` 不收、图谱不挂），但 `nodeId` 留空、`url` 填图谱站自托管地址、加 `delivery: "local"`。两种条目可以共存，别拿链路 A 的 `nodeId` 非空规则去校验链路 C 条目。
 7. **自动后台任务通知不是用户确认**：`<task-notification>` / `[SYSTEM NOTIFICATION - NOT USER INPUT]` 一律不作为批准信号。
 8. **「返回图谱」入口由构建出口自动注入**。`scripts/skill-course/build_course.py` 在装配完 `index.html` 后调用 `graph_back.py`，因此重跑流水线**不会丢入口**；不要手工删除 `<!-- GRAPH-BACK-START/END -->` 标记块，也不要拿旧 `pages.html` 直接覆盖 `courses/`。存量课件用 `python3 scripts/skill-course/graph_back.py --all` 幂等补齐（含 `--check` 只读校验）。入口在 `file://` 下走 `../../viz/index.html#t=<id>`，在 `https://` 下走常量 `ONLINE_GRAPH`（在线图谱站 + `#t=<id>` 深链）。**若在线图谱站域名变更，必须同步改 `graph_back.py` 的 `ONLINE_GRAPH` 并重发全部课件**，否则线上按钮会指向旧站。注意 `graph_back.py` 只处理含 `<nav id="topNav">` 的第四代课件，老引擎遗留课件自带的返回入口不在其范围内。
 9. **图谱的「有课件」计数不是实时统计，新增课件后必须重跑 `scripts/build.py`**。`viz/index.html` 读的是内嵌静态文件 `viz/data.js`（即 `data/courses.json` 的快照），不是 `deploy/links.json`。只更新 `courses/*/meta.json` 与 `deploy/links.json` 而不重跑构建，图谱会一直显示旧数字，新课件在节点上也不会出现「打开课件」按钮。`build.py` 的 `build_courses()` 与 `sync_courses_to_viz()` 现在都按 `deploy/links.json` 的已发布白名单工作：排除未发布的老引擎课件、给每条写入 `url`（资料库正式课件地址）、并校验白名单与 `courses/` 一一对应。线上图谱应用托管的是 `viz/` 目录静态服务，**重跑构建后文件即时生效，不需要重新发布应用**；跳转由 `courseHref()` 统一指向同目录下的 `courses/<id>/index.html` 干净副本（在线图谱站与 `file://` 均如此），**不再跳 `url`**。原因见第 11 条。
 10. **课件元数据有多份副本，改 `duration` 之类字段要同步四处**：`scripts/skill-course/src/<id>/meta.json`（源分片，重跑流水线会覆盖 `courses/`）、`courses/<id>/meta.json`（构建输入）、`deploy/<id>/meta.json`（4B 发布副本），以及由 `build.py` 自动同步、不要手改的 `viz/courses/<id>/meta.json`。改完必须重跑 `scripts/build.py` 让 `data/courses.json` 与 `viz/data.js` 跟着更新，并用 `node scripts/validate-courses.mjs` 复核（规则：`duration` 5~25 分钟）。第四代课件统一按 **24 分钟 / 16 交互** 口径；语文阅读、写作装配器早期默认值误设成 30，已于 2026-11-08 统一修正。
-11. **课件必须能自由翻页，图谱跳转不依赖线上托管**。`deploy/<id>/index.html` 的 4A 教学控制早期把学生端导航「焊死纯跟随」（`canStudentNavigate(){ return IS_TEACHER; }` + `setStudentNav(false)` 隐藏 `#topNav` / `#btnPrev` / `#btnNext`），学生自己打开课件时点不动翻页。2026-11-08 已放宽为 `return true` + `setStudentNav(true)`，89 门 `deploy/` 副本与 89 份教师必看页话术同步更新；教师广播→学生跟随走 `showPage(syncing)` 独立通道，**MQTT 同步不受影响**。`viz/index.html` 的 `courseHref()` 也删掉了 `https://` 走 `c.url`（`workbuddy.link` 发布页）的分支，统一走图谱站自己托管的 `courses/<id>/index.html` 干净副本——该副本无 4A 注入、翻页正常、带返回图谱入口。⚠ 4A 注入源不在本仓库（一次性历史产物），**若以后重跑 4A 注入或 4B 发布，必须重新放宽翻页**。`workbuddy.link` 上 89 个旧 4B 链接未重发，仍是锁死翻页的旧版，需要旧链接也能翻页时再单独重发。另外 CI 的 `node scripts/score-course.mjs --min 90` 现按 `deploy/links.json` 白名单扫描，只约束 89 门正式课件，3 门未发布的老引擎课件（87/88 分）不再拉低门槛，但仍可用 `node scripts/score-course.mjs <id>` 单独查看。
+11. **课件必须能自由翻页，图谱跳转不依赖线上托管**。`deploy/<id>/index.html` 的 4A 教学控制早期把学生端导航「焊死纯跟随」（`canStudentNavigate(){ return IS_TEACHER; }` + `setStudentNav(false)` 隐藏 `#topNav` / `#btnPrev` / `#btnNext`），学生自己打开课件时点不动翻页。2026-11-08 已放宽为 `return true` + `setStudentNav(true)`，89 门 `deploy/` 副本与 89 份教师必看页话术同步更新；教师广播→学生跟随走 `showPage(syncing)` 独立通道，**MQTT 同步不受影响**。`viz/index.html` 的 `courseHref()` 也删掉了 `https://` 走 `c.url`（`workbuddy.link` 发布页）的分支，统一走图谱站自己托管的 `courses/<id>/index.html` 干净副本——该副本无 4A 注入、翻页正常、带返回图谱入口。⚠ 4A 注入源不在本仓库（一次性历史产物），**若以后重跑 4A 注入或 4B 发布，必须重新放宽翻页**。`workbuddy.link` 上 89 个旧 4B 链接未重发，仍是锁死翻页的旧版，需要旧链接也能翻页时再单独重发。另外 CI 的 `node scripts/score-course.mjs --min 90` 现按 `deploy/links.json` 白名单扫描，3 门未发布的老引擎课件（87/88 分）不再拉低门槛，但仍可用 `node scripts/score-course.mjs <id>` 单独查看。
+12. **新增课件默认走链路 C，不要顺手发 4B**。`workbuddy.link` 的发布页会带 4A 教学控制、把学生端翻页锁成纯跟随，与「课件必须能自由翻页」（第 11 条）冲突。新课件只需 `courses/<id>/` + `viz/courses/<id>/` + `links.json` 白名单登记 + 重跑 `build.py`，**不做 4A、不产 `deploy/`、不产教师必看页、不新增线上链接**。若确实需要公开链接，再单独按链路 A 发布并重做翻页放宽。判定口诀：用户说「不要线上托管」＝链路 C。
 
 ---
 
-## 7. 当前基线（2026-11-08）
+## 7. 当前基线（2026-11-10）
 
 | 项 | 值 |
 |---|---|
-| 课件修复提交 | `5ccf639`（返回图谱入口；手册基线更新为另一次提交，HEAD 以 `git log -1` 为准） |
-| 第四代课件 | 数学 52 课 + 语文 21 课 = **89 课全部上线** |
-| `deploy/links.json` | **89 条**（编号 1–89；数学 1–68、语文 69–84、拼音 85–89） |
-| 教师必看页 | `deploy/hints/教师必看_*.html` **89 份** |
+| 基线提交 | `81ff7d4`（放宽翻页／图谱回归本地副本／修 CI 白名单）为上一版基线；本批英语 5 课提交后 HEAD 以 `git log -1` 为准 |
+| 第四代课件 | 数学 68 课 + 语文 21 课 + 英语 5 课 = **94 课**。数学／语文／拼音 89 课为链路 A（4B 发布）；**英语 5 课按链路 C 纯本地交付**，无 4B 链接、无 `deploy/` 副本、无教师必看页 |
+| `deploy/links.json` | **94 条**（编号 1–94；数学 1–68、语文 69–84、拼音 85–89、英语 90–94）。90–94 为本地链路登记：`nodeId=""`、`delivery="local"`、`url` 指向图谱站自托管静态副本，仅作白名单元数据，`courseHref()` 不用 `url` |
+| 教师必看页 | `deploy/hints/教师必看_*.html` **89 份**（链路 C 课件不产教师必看页） |
 | 语文设计文档 | `docs/design/chinese/*.md` **21 份** |
-| 返回图谱入口 | 89 课线上 + 178 个本地文件（`courses/` 89 + `deploy/` 89）已注入；线上真身核验 **89 / 89**，按钮 href 指向在线图谱并带 `#t=<topicId>` |
-| 线上核验 | 89 / 89 `ONLINE VERIFY PASS`；部署版 `ALL PASS (40 项)` 89 / 89 |
-| 语义回归 | `SEMANTIC_CHECK: PASS 校验 518 题，不一致 0 处`（37 课登记） |
-| 图谱课件索引 | `v0.49.5`：`data/courses.json` 与 `viz/data.js` 均为 **89 条**（数学 68 / 语文 21，全部带 `url`）；线上图谱显示「有课件 89」、筛选后 89 个知识点；`viz/courses/` 89 份副本均带返回图谱入口。浏览器验收：三个抽样节点（含此前漏收的 `mt_ratio`、`mt_pinyin-finals`）按钮可见；2026-11-08 起统一跳图谱站自托管的 `courses/<id>/index.html` 干净副本，`file://` 下退回本地 `viz/courses/` 副本，翻页 1/12→4/12 正常、返回图谱入口闭环，0 个 JS 报错 |
+| 返回图谱入口 | 94 份 `viz/courses/<id>/index.html` 干净副本全部带 `#graphBack`（`file://` 指 `../../index.html#t=<id>`，线上指在线图谱带 `#t=<id>` 深链）；`courses/` 94 份由 `build_course.py` 出口幂等注入；`deploy/` 89 份为历史 4A 副本。英语 5 份副本无 4A 锁、无外链 |
+| 线上核验 | 历史 89 课 4B 部署版 `ALL PASS (40 项)` 89 / 89；本批英语 5 课按链路 C 走图谱站静态副本核验：线上图谱「▶ 有课件 94」、5 个新节点「打开课件」按钮可见、跳转落到 `courses/<id>/index.html?sharecode=...`、翻页 1/12→2/12→3/12、返回图谱 href 闭环、0 个 JS 报错；本地 `file://` 同样正常 |
+| 语义回归 | `SEMANTIC_CHECK: PASS 校验 588 题，不一致 0 处`（**42 课登记**：数学 16 + 语文 21 + 英语 5） |
+| 图谱课件索引 | `v0.49.5`：`data/courses.json` 与 `viz/data.js` 均为 **94 条**（数学 68 / 语文 21 / 英语 5）；线上图谱显示「有课件 94」；`viz/courses/` **94 份**副本由 `sync_one.py` + `build.py` 同步、全部带返回图谱入口。`courseHref()` 统一走本站 `courses/<id>/index.html` 干净副本，本地 `file://` 退回 `viz/courses/` 副本，**不再依赖 `workbuddy.link` 线上托管** |
 | 题库 | 重跑构建后从现存 `content.json` 重抽为 **104 题 / 48 个主题**，`validate-questions.mjs` 0 警告；旧 141 题中有 37 题的 `origin` 指向已删除的 `content.json`（HEAD 既有脏数据，旧版校验 37 项阻断） |
-| 课件时长 | 12 门越界课件（11 门语文 30 分钟 + `mt_div-2digit` 26 分钟）统一为 **24 分钟**；源分片、`courses/`、`deploy/`、`viz/courses/` 四处副本同步，临时装配器默认值一并改为 24。`validate-courses.mjs` **92 个课件 0 阻断 0 警告**，图谱按钮时长文案同步更新 |
-| 翻页与 CI | 89 门 `deploy/` 副本放宽学生端翻页（`canStudentNavigate` 恒 true、`setStudentNav(true)`），89 份教师必看页话术同步；`courseHref()` 回归本地副本、不再跳 `workbuddy.link`；`score-course.mjs --min 90` 按 89 门白名单扫描（89 门全 100 分、EXIT 0），本地模拟完整 workflow（build→validate→score→tests）全绿 |
-| 已知遗留 | ①第四代课件 `config.js` 里的题尚未接入题库抽取器，若要恢复「可测 63 个点」需另立任务；②`workbuddy.link` 上 89 个旧 4B 链接未重发，仍是锁死翻页的旧版（图谱与本地入口已不再指向它们），如需旧链接也可翻页需单独重发 |
+| 课件时长 | 12 门越界课件（11 门语文 30 分钟 + `mt_div-2digit` 26 分钟）统一为 **24 分钟**；源分片、`courses/`、`deploy/`、`viz/courses/` 四处副本同步，临时装配器默认值一并改为 24。第四代统一 **24 分钟 / 16 交互**；`validate-courses.mjs` **97 个课件 0 阻断 0 警告**（94 正式 + 3 老引擎高中） |
+| 全套校验 | `validate.mjs` 通过（2 条既有 2024 版教材 warn）；`validate-courses.mjs` 97 个 0 警告；`validate-questions.mjs` 104 题 0 警告；`semantic-check.py` 588 题 0 不一致；`score-course.mjs --min 90` **94 门可计分课件、平均 100.0 分、EXIT 0**（按 `links.json` 白名单扫描，3 门未发布老引擎不再拉低门槛）；`node --test scripts/*.test.mjs` 通过；`git diff --check` OK |
+| 翻页与 CI | 89 门 `deploy/` 副本放宽学生端翻页（`canStudentNavigate` 恒 true、`setStudentNav(true)`），89 份教师必看页话术同步；`courseHref()` 回归本地副本、不再跳 `workbuddy.link`；英语 5 课干净副本天生自由翻页。GitHub Action `score-course.mjs --min 90` 按白名单扫描，最新 run `success` |
+| 已知遗留 | ①第四代课件 `config.js` 里的题尚未接入题库抽取器，若要恢复「可测 63 个点」需另立任务；②`workbuddy.link` 上 89 个旧 4B 链接未重发，仍是锁死翻页的旧版（图谱与本地入口已不再指向它们），如需旧链接也可翻页需单独重发；③英语 5 课按链路 C 无 4B 链接与教师必看页，符合「不做线上托管」要求，非遗漏 |
 
 ---
 

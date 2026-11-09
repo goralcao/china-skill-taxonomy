@@ -1,18 +1,19 @@
 {
   "version": "v0.49.5",
   "schemaVersion": 1,
-  "generatedAt": "2026-11-08",
+  "generatedAt": "2026-11-10",
   "counts": {
-    "total": 89,
+    "total": 94,
     "byTemplate": {
-      "explain": 89
+      "explain": 94
     },
     "byStatus": {
-      "reviewed": 89
+      "reviewed": 94
     },
     "bySubject": {
       "数学": 68,
-      "语文": 21
+      "语文": 21,
+      "英语": 5
     }
   },
   "courses": [
@@ -2325,6 +2326,488 @@
       "path": "courses/mt_div-2digit/",
       "url": "https://workbuddy.link/p/fGwuikKI3wwB4BzDwBHrZ6",
       "bytes": 101087
+    },
+    {
+      "topicId": "mt_en-body-stationery",
+      "title": "身体部位与文具：eye 和 eraser",
+      "template": "explain",
+      "renderer": "pinyin",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 3,
+      "subject": "英语",
+      "standards": [
+        "english-2022:L1:LK"
+      ],
+      "prerequisites": [
+        "mt_en-phonics",
+        "mt_en-num-color"
+      ],
+      "next": [
+        "mt_en-family",
+        "mt_en-animals",
+        "mt_en-clothes"
+      ],
+      "objectives": [
+        "能听说认读 eye、nose、mouth 等身体部位和 pen、ruler 等文具词",
+        "能听懂 Touch your nose. / Show me your pencil. 这类课堂指令并做出反应",
+        "能把词按「长在身上 / 装在书包里」两类分开，并在指认时用出来"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "听一听",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "认一认",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "描一描",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "拼一拼",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "查一查",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_en-body-stationery/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-body-stationery/index.html",
+      "bytes": 117029
+    },
+    {
+      "topicId": "mt_en-letter-name",
+      "title": "字母的名称与认读：A 的名字不叫 /æ/",
+      "template": "explain",
+      "renderer": "pairMatch",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 3,
+      "subject": "英语",
+      "standards": [
+        "english-2022:L1:LK"
+      ],
+      "prerequisites": [],
+      "next": [
+        "mt_en-letter-write",
+        "mt_en-phonics"
+      ],
+      "objectives": [
+        "能按顺序认出 26 个字母的大小写，把字形和名称音对上",
+        "能说出字母「名称音」和「在单词里的发音」不是一回事",
+        "能对着三条标准说出自己那一组下一步改哪一处"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "听一听",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "认一认",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "描一描",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "拼一拼",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "查一查",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_en-letter-name/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-letter-name/index.html",
+      "bytes": 117619
+    },
+    {
+      "topicId": "mt_en-letter-write",
+      "title": "字母的书写规范：大写都住上两格吗？",
+      "template": "explain",
+      "renderer": "writeChar",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 3,
+      "subject": "英语",
+      "standards": [
+        "english-2022:L1:LK"
+      ],
+      "prerequisites": [
+        "mt_en-letter-name"
+      ],
+      "next": [
+        "mt_en-spelling-rules",
+        "mt_en-copying"
+      ],
+      "objectives": [
+        "知道四线三格的四条线、三个格，能说出大写一律占上两格",
+        "能按「有辫 / 有尾 / 无辫无尾」给小写字母分三类",
+        "能按示范→书空→描红→仿写的顺序练，并对照范字找出出格的一笔"
+      ],
+      "cognitiveAction": "比较",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "听一听",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "认一认",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "描一描",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "拼一拼",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "查一查",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_en-letter-write/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-letter-write/index.html",
+      "bytes": 117585
+    },
+    {
+      "topicId": "mt_en-num-color",
+      "title": "数字与颜色词汇：a red apple 怎么说",
+      "template": "explain",
+      "renderer": "pinyin",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 3,
+      "subject": "英语",
+      "standards": [
+        "english-2022:L1:LK"
+      ],
+      "prerequisites": [
+        "mt_en-letter-name"
+      ],
+      "next": [
+        "mt_en-body-stationery",
+        "mt_en-demonstratives",
+        "mt_en-listening"
+      ],
+      "objectives": [
+        "能听说认读 one 到 ten，以及 red、yellow、blue 等常见颜色词",
+        "知道英语里颜色词放在名词前，能把词放进 a red apple 这样的小短语",
+        "能在数数、问答年龄、说颜色的情境里用上这些词"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "听一听",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "认一认",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "描一描",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "拼一拼",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "查一查",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_en-num-color/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-num-color/index.html",
+      "bytes": 116890
+    },
+    {
+      "topicId": "mt_en-phonics",
+      "title": "字母音与自然拼读：cat 是怎么拼出来的",
+      "template": "explain",
+      "renderer": "pinyin",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 3,
+      "subject": "英语",
+      "standards": [
+        "english-2022:L1:LK"
+      ],
+      "prerequisites": [
+        "mt_en-letter-name"
+      ],
+      "next": [
+        "mt_en-spelling-rules",
+        "mt_en-body-stationery",
+        "mt_en-reading-pictures"
+      ],
+      "objectives": [
+        "能说出字母名称音与字母在单词中发音的区别，说出常见字母的基本发音",
+        "能按「首字母 + 元音 + 尾字母」把 CVC 单词一个音一个音拼出来",
+        "能对着三条标准说出自己拼的那一组下一步改哪一处"
+      ],
+      "cognitiveAction": "构造",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "听一听",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "认一认",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "描一描",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "拼一拼",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "查一查",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_en-phonics/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-phonics/index.html",
+      "bytes": 117125
     },
     {
       "topicId": "mt_factors",

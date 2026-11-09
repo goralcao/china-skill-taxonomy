@@ -1,0 +1,94 @@
+{
+  "topicId": "mt_en-phonics",
+  "title": "字母音与自然拼读：cat 是怎么拼出来的",
+  "template": "explain",
+  "renderer": "pinyin",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 3,
+  "subject": "英语",
+  "standards": [
+    "english-2022:L1:LK"
+  ],
+  "prerequisites": [
+    "mt_en-letter-name"
+  ],
+  "next": [
+    "mt_en-spelling-rules",
+    "mt_en-body-stationery",
+    "mt_en-reading-pictures"
+  ],
+  "objectives": [
+    "能说出字母名称音与字母在单词中发音的区别，说出常见字母的基本发音",
+    "能按「首字母 + 元音 + 尾字母」把 CVC 单词一个音一个音拼出来",
+    "能对着三条标准说出自己拼的那一组下一步改哪一处"
+  ],
+  "cognitiveAction": "构造",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "听一听",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "认一认",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "描一描",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "拼一拼",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "查一查",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "topicId": "mt_en-num-color",
+  "title": "数字与颜色词汇：a red apple 怎么说",
+  "template": "explain",
+  "renderer": "pinyin",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 3,
+  "subject": "英语",
+  "standards": [
+    "english-2022:L1:LK"
+  ],
+  "prerequisites": [
+    "mt_en-letter-name"
+  ],
+  "next": [
+    "mt_en-body-stationery",
+    "mt_en-demonstratives",
+    "mt_en-listening"
+  ],
+  "objectives": [
+    "能听说认读 one 到 ten，以及 red、yellow、blue 等常见颜色词",
+    "知道英语里颜色词放在名词前，能把词放进 a red apple 这样的小短语",
+    "能在数数、问答年龄、说颜色的情境里用上这些词"
+  ],
+  "cognitiveAction": "辨析",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "听一听",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "认一认",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "描一描",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "拼一拼",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "查一查",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

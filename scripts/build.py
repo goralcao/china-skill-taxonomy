@@ -634,8 +634,9 @@ def build_courses(topics):
                     raise SystemExit(f"课件 {d.name}: 课标 {code} 不在主题 {tid} 的 standards 里")
             item = dict(meta)
             item["path"] = f"courses/{d.name}/"
-            # 线上正式课件地址（资料库单页）。图谱在 https:// 下直接跳这里，
-            # 而不是跳图谱应用内托管的静态副本 —— 只有发布版带完整交互注入。
+            # 课件地址：资料库 4B 发布页（旧 89 课）或图谱站自托管的静态副本
+            # （2026-11-10 起新增的本地链路课件）。仅作元数据记录：图谱跳转
+            # courseHref() 统一走 c.path + 'index.html' 的本地副本，不再用 url。
             if d.name in links:
                 item["url"] = links[d.name]["url"]
             item["bytes"] = html_path.stat().st_size

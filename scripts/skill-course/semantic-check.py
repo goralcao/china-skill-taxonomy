@@ -8,8 +8,8 @@
 每题三个选项，从 config.js 取 answer，断言 opts[answer] 等于 quiz-expected.json
 中人工核对过的正确文本。
 
-覆盖范围：quiz-expected.json 中登记的课件（六年级数学 16 课 + 小学语文 21 课，
-共 37 课 518 题）。新增课件时，把其 14 题的正确答案文本按
+覆盖范围：quiz-expected.json 中登记的课件（数学 16 课 + 语文 21 课 +
+英语 5 课，共 42 课 588 题）。新增课件时，把其 14 题的正确答案文本按
 前测3/中测一3/中测二3/后测5 顺序追加到 quiz-expected.json 即可纳入回归。
 
 用法：

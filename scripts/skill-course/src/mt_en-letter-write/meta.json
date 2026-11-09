@@ -1,0 +1,93 @@
+{
+  "topicId": "mt_en-letter-write",
+  "title": "字母的书写规范：大写都住上两格吗？",
+  "template": "explain",
+  "renderer": "writeChar",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 3,
+  "subject": "英语",
+  "standards": [
+    "english-2022:L1:LK"
+  ],
+  "prerequisites": [
+    "mt_en-letter-name"
+  ],
+  "next": [
+    "mt_en-spelling-rules",
+    "mt_en-copying"
+  ],
+  "objectives": [
+    "知道四线三格的四条线、三个格，能说出大写一律占上两格",
+    "能按「有辫 / 有尾 / 无辫无尾」给小写字母分三类",
+    "能按示范→书空→描红→仿写的顺序练，并对照范字找出出格的一笔"
+  ],
+  "cognitiveAction": "比较",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "听一听",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "认一认",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "描一描",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "拼一拼",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "查一查",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}
