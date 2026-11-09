@@ -1,0 +1,95 @@
+{
+  "topicId": "mt_en-wh-questions",
+  "title": "特殊疑问句：What、Who、Where 怎么挑？",
+  "template": "explain",
+  "renderer": "pinyin",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 3,
+  "subject": "英语",
+  "standards": [
+    "english-2022:L1:LK"
+  ],
+  "prerequisites": [
+    "mt_en-family",
+    "mt_en-pronouns",
+    "mt_en-be-verb",
+    "mt_en-yes-no-questions"
+  ],
+  "next": [
+    "mt_en-speaking-routine"
+  ],
+  "objectives": [
+    "能按要问的内容挑对 What / Who / Where / How old / How many",
+    "知道疑问词放句首、后面还要接 be 动词，且不能用 Yes / No 回答",
+    "能用 What is your name? / Where is my book? 问出信息并作出简单回答"
+  ],
+  "cognitiveAction": "构造",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "听一听",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "认一认",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "描一描",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "拼一拼",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "查一查",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

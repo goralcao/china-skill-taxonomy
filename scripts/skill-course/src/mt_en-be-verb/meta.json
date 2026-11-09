@@ -1,0 +1,101 @@
+{
+  "topicId": "mt_en-be-verb",
+  "title": "be动词：I am、He is、They are 怎么挑？",
+  "template": "explain",
+  "renderer": "pinyin",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 3,
+  "subject": "英语",
+  "standards": [
+    "english-2022:L1:LK"
+  ],
+  "prerequisites": [
+    "mt_en-family",
+    "mt_en-demonstratives",
+    "mt_en-pronouns"
+  ],
+  "next": [
+    "mt_en-yes-no-questions",
+    "mt_en-wh-questions",
+    "mt_en-present-simple",
+    "mt_en-progressive",
+    "mt_en-going-to",
+    "mt_en-comparatives",
+    "mt_en-writing-short",
+    "mt_en-past-tense"
+  ],
+  "objectives": [
+    "能按主语挑对 am / is / are：I 用 am，单数用 is，you 和复数用 are",
+    "知道名词变复数常加 -s，复数主语与 a 不能同时用",
+    "能用 I am ... / He is ... / They are ... 把 be 动词放进完整句子"
+  ],
+  "cognitiveAction": "比较",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "听一听",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "认一认",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "描一描",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "拼一拼",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "查一查",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}
