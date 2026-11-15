@@ -1,19 +1,19 @@
 {
   "version": "v0.49.5",
   "schemaVersion": 1,
-  "generatedAt": "2026-11-10",
+  "generatedAt": "2026-11-15",
   "counts": {
-    "total": 104,
+    "total": 107,
     "byTemplate": {
-      "explain": 104
+      "explain": 107
     },
     "byStatus": {
-      "reviewed": 104
+      "reviewed": 107
     },
     "bySubject": {
       "数学": 68,
       "语文": 21,
-      "英语": 15
+      "英语": 18
     }
   },
   "courses": [
@@ -2627,6 +2627,102 @@
       "bytes": 117029
     },
     {
+      "topicId": "mt_en-copying",
+      "title": "抄写与仿写句子：字母占格、词间距、标点",
+      "template": "explain",
+      "renderer": "writeChar",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 3,
+      "subject": "英语",
+      "standards": [
+        "english-2022:L1:LK"
+      ],
+      "prerequisites": [
+        "mt_en-letter-write",
+        "mt_en-num-color"
+      ],
+      "next": [
+        "mt_en-writing-short"
+      ],
+      "objectives": [
+        "能按规范抄写单词和句子，注意字母占格、词间距和标点",
+        "能看清句式把词填进正确的空，并和范句逐字核对",
+        "能照着例句仿写一个同句式的新句子"
+      ],
+      "cognitiveAction": "比较",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "听一听",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "认一认",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "描一描",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "拼一拼",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "查一查",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_en-copying/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-copying/index.html",
+      "bytes": 118538
+    },
+    {
       "topicId": "mt_en-demonstratives",
       "title": "指示代词：this、that、these、those 怎么挑？",
       "template": "explain",
@@ -3205,6 +3301,103 @@
       "bytes": 117585
     },
     {
+      "topicId": "mt_en-listening",
+      "title": "听指令与获取关键信息：听到什么就做什么",
+      "template": "explain",
+      "renderer": "pairMatch",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 3,
+      "subject": "英语",
+      "standards": [
+        "english-2022:L1:ST"
+      ],
+      "prerequisites": [
+        "mt_en-phonics",
+        "mt_en-num-color",
+        "mt_en-greetings"
+      ],
+      "next": [
+        "mt_en-speaking-routine"
+      ],
+      "objectives": [
+        "能听懂课堂指令和简短对话，边听边做出反应",
+        "能抓住指令里的数字、颜色、动作三类关键词",
+        "能在真实情境中听音获取关键信息，不靠逐词翻译"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "听一听",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "认一认",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "描一描",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "拼一拼",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "查一查",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_en-listening/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-listening/index.html",
+      "bytes": 118681
+    },
+    {
       "topicId": "mt_en-num-color",
       "title": "数字与颜色词汇：a red apple 怎么说",
       "template": "explain",
@@ -3590,6 +3783,102 @@
       "path": "courses/mt_en-pronouns/",
       "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-pronouns/index.html",
       "bytes": 116836
+    },
+    {
+      "topicId": "mt_en-reading-pictures",
+      "title": "图文匹配与阅读理解：看图，选出说得对的话",
+      "template": "explain",
+      "renderer": "pairMatch",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 3,
+      "subject": "英语",
+      "standards": [
+        "english-2022:L1:ST"
+      ],
+      "prerequisites": [
+        "mt_en-phonics",
+        "mt_en-body-stationery"
+      ],
+      "next": [
+        "mt_en-guessing-words"
+      ],
+      "objectives": [
+        "能借助图画和上下文理解简单图文材料，完成配对、判断",
+        "能看图抓住主谓宾，选出与图相符的那句话",
+        "能连看几幅图，说出配图小故事的大意"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "听一听",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "认一认",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "描一描",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "拼一拼",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "查一查",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_en-reading-pictures/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-reading-pictures/index.html",
+      "bytes": 118391
     },
     {
       "topicId": "mt_en-wh-questions",

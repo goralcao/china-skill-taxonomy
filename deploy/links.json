@@ -845,5 +845,32 @@
     "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-greetings/index.html",
     "pages": 12,
     "delivery": "local"
+  },
+  {
+    "no": 105,
+    "course": "mt_en-listening",
+    "title": "听指令与获取关键信息：听到什么就做什么",
+    "nodeId": "",
+    "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-listening/index.html",
+    "pages": 12,
+    "delivery": "local"
+  },
+  {
+    "no": 106,
+    "course": "mt_en-copying",
+    "title": "抄写与仿写句子：字母占格、词间距、标点",
+    "nodeId": "",
+    "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-copying/index.html",
+    "pages": 12,
+    "delivery": "local"
+  },
+  {
+    "no": 107,
+    "course": "mt_en-reading-pictures",
+    "title": "图文匹配与阅读理解：看图，选出说得对的话",
+    "nodeId": "",
+    "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-reading-pictures/index.html",
+    "pages": 12,
+    "delivery": "local"
   }
 ]

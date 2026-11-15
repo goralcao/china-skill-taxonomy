@@ -1,0 +1,545 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>图文匹配与阅读理解：看图，选出说得对的话</h1>
+  <p class="sub">三年级英语 · 阅读</p>
+  <div class="tags">
+    <span class="tag">英语要素·阅读</span>
+    <span class="tag">三年级</span>
+    <span class="tag">2022课标</span>
+    <span class="tag">留下痕迹</span>
+  </div>
+  <div class="cover-fig">
+<svg viewBox="0 0 760 190" width="760" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="看图，选出说得对的话">
+  <rect x="0" y="0" width="760" height="190" rx="18" fill="#FFFFFF" opacity=".10"/>
+  <text x="28" y="32" font-size="15" fill="#EAF1F8" font-weight="700">看图，选出说得对的话</text>
+  <g>    <rect x="28" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="111" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">cat</text>
+    <text x="111" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">猫</text>
+    <rect x="212" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="295" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">desk</text>
+    <text x="295" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">桌子</text>
+    <rect x="396" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="479" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">red</text>
+    <text x="479" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">红</text>
+    <rect x="580" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="663" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">running</text>
+    <text x="663" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">跑</text>
+  </g>
+</svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">前测 · 先看看你已经知道什么</h2>
+  <p class="quiz-hint">三道题都有唯一答案，答错会告诉你错在哪。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 做图文匹配题，第一步看什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>直接读选项句子</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>图里有什么、在做什么</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>数图里有几个字</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 图里一只猫在桌子上，哪句话配它？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>The cat is on the desk.</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>The dog is big.</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>I like apples.</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 读配图小故事，应该先？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>直接翻译每段</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>只看最后一幅图</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>看封面和图，再读文字</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 听一听 · 一幅图，配哪句话？ ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">听一听 · 一幅图，配哪句话？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="图文怎么配对">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">先看图里有什么</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">再看在做什么</text>
+  <text x="22" y="86" font-size="15" fill="#3B4FA8" font-weight="700">找说同一件事的句子</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">图句对得上才选</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    先听老师读一遍：<b>The cat is on the desk.　猫在桌子上</b>。
+  </p>
+  <p class="teach-text" id="p2s2">
+    再听这一组：<b>Three red apples.　三个红苹果</b>。今天不背定义，只做一件事：<b>把音、形、义对上</b>。
+  </p>
+  <p class="teach-text" id="p2s3">
+    <b>最容易</b>踩的坑是只盯图里一个词，不看整幅图就选句子。<b>各 10 秒钟</b>，先听再点。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>听一听</h4>
+    <p>跟着老师读，先别急着判对错</p>
+  </div>
+  <div class="card">
+    <h4>对一对</h4>
+    <p>把音、形、义三样对上</p>
+  </div>
+  <div class="card">
+    <h4>留痕迹</h4>
+    <p>点过、摆过就留下一处，不打分</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  <div class="read-pair" id="readPair">
+  <div class="read-line" data-k="a">The cat is on the desk.　猫在桌子上</div>
+  <div class="read-line" data-k="b">Three red apples.　三个红苹果</div>
+</div>
+<div class="read-note" id="readNote">先给两句各 <b>10 秒钟</b>，看图再点。<b>点哪句都行，这里不判对错。</b></div>
+</div>
+</section>
+
+<!-- ===== p3: 认一认 · 圈出这一课要找的三处 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">认一认 · 圈出这一课要找的三处</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="读图抓主谓宾">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">谁 who</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">做什么 what</text>
+  <text x="22" y="86" font-size="15" fill="#3B4FA8" font-weight="700">对象 what / where</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">和读句子一样</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    下面一排里，有三处是这一课要找的。点出来，点错也没关系。
+  </p>
+  <p class="teach-text" id="p3s2">
+    这里只报「已圈出 X 处」，不标红、不拦路。圈够了才提示往下走。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>点中一处，就留下一处痕迹，并看到它是什么。</li>
+  <li>点错了不判错，只提示「再看看别处」。</li>
+  <li>圈够 3 处，这一课的三样东西就都认全了。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  <div class="ann-line" id="annLine"><span class="ann-w" data-t="cat">cat</span><span class="ann-w" data-t="desk">desk</span><span class="ann-w" data-t="red">red</span><span class="ann-w" data-t="book">book</span><span class="ann-w" data-t="/æ/">/æ/</span><span class="ann-w" data-t="run">run</span></div>
+<div class="ann-count" id="annCount">已圈出 0 / 3 处（点错不标红，也不拦你）</div>
+<div class="ann-why" id="annWhy">点一个，看它是图里的动物、位置还是颜色。</div>
+<button class="mini-btn ghost" id="annHintBtn" type="button">看看还剩哪几处没被注意到</button>
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连 · 每样东西管什么</h2>
+<p class="teach-text" id="p3bs1">左边是词或图，右边是它管的事。连完不用交卷，只看自己能不能说清「为什么」。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 边听边认</h2>
+  <p class="quiz-hint">三道题都有唯一答案，做完再看讲解。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 图里有三个红苹果，应该选？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>A blue bag.</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>The boy runs.</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>Three red apples.</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 图和句子不一致时，应该？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>随便选一句</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>以图为准，选说得对的那句</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>选最长的</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 为什么看图能帮我们理解？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>画面直接给出情境</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>图比字简单</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>图不用读</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 描一描 · 摆出自己的那一组 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">描一描 · 摆出自己的那一组</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="三行读一读">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">第一行　看整幅图</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">第二行　找主谓宾</text>
+  <text x="22" y="86" font-size="15" fill="#3B4FA8" font-weight="700">第三行　选相配句</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">先全后局再选</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    三行，一行比一行难。摆不出来就点支架块——但尽量自己挑。
+  </p>
+  <p class="teach-text" id="p5s2">
+    这里只判「摆没摆」，不判好不好。摆不满三行也能往下走，先摆后看老师摆的。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>第一行</h4>
+    <div class="eq">写出图里有什么（英文）</div>
+    <p>先写一样，不用全对。</p>
+  </div>
+  <div class="card">
+    <h4>第二行</h4>
+    <div class="eq">写出它在做什么</div>
+    <p>再写第二样。</p>
+  </div>
+  <div class="card">
+    <h4>第三行</h4>
+    <div class="eq">选一句和图相配的话</div>
+    <p>最后合成一小句。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  <div id="draftBox">
+  <textarea class="draft-row" id="draftRow1" placeholder="第一行：写出图里有什么（英文）"></textarea>
+  <textarea class="draft-row" id="draftRow2" placeholder="第二行：写出它在做什么"></textarea>
+  <textarea class="draft-row" id="draftRow3" placeholder="第三行：选一句和图相配的话"></textarea>
+  <div class="draft-chips"><span style="font-size:14px;color:#7A7263">卡住了就点一个，用不用随你：</span><br>
+    <button class="chip-btn" data-ins="cat" type="button">cat</button>
+    <button class="chip-btn" data-ins="desk" type="button">desk</button>
+    <button class="chip-btn" data-ins="red" type="button">red</button>
+    <button class="chip-btn" data-ins="boy" type="button">boy</button>
+    <button class="chip-btn" data-ins="running" type="button">running</button>
+    <button class="chip-btn" data-ins="apple" type="button">apple</button></div>
+  <button class="sample-fold" type="button">摆完再看老师摆的 ▾</button>
+  <div class="sample-body" id="sampleBody">cat + on the desk → The cat is on the desk.　｜　three red apples → Three red apples.<br>
+    <span style="font-size:13px;color:#7A7263">先说图里有什么，再选说得对的句子。<b>先摆后看，才不会全班摆成同一句</b>。</span></div>
+  <div style="margin-top:10px"><button class="mini-btn" id="draftSave" type="button">存起来</button></div>
+  <div class="draft-state" id="draftState"></div>
+</div>
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">拼一拼 · 看图，选一句配得上的话</h2>
+  <p class="sim-desc">点候选块，看一幅图后选一句说得对的话。这里不打分，只看摆没摆齐。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">已摆 0 / 1 处（不判对错）</span>
+    <span class="sim-tip" id="simTip">先自己试一次，再看老师摆</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn" onclick="simNextCase()">换一组</button>
+    <button class="btn" onclick="simReset()">重来</button>
+    <button class="btn-primary" onclick="simDemo()">看老师摆一次</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">点一块，看它落到台子哪儿</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>先看懂图里谁、做什么、对象，再看句子。</li>
+    <li>句子说的事图里都要有，才选它。</li>
+    <li>别只盯一个词，要顾全整幅图。</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 换个角度再认一次</h2>
+  <p class="quiz-hint">三道题都有唯一答案，注意别把名字和读音弄反。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 图里一个男孩在跑，应该选？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>The boy is running.</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>The girl sings.</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>It is a book.</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 读图找关键词，和读句子一样要找？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>首尾字母</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>图的颜色</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>主谓宾</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 「配图故事的大意」指的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>每一幅图的颜色</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>几幅图连起来讲了什么</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>故事有几页</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 查一查 · 对着三条标准看自己摆的那一组 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">查一查 · 对着三条标准看自己摆的那一组</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    怎么选都不影响往下走，也不给分数。这一页只输出「下一步改哪一处」。
+  </p>
+  <p class="teach-text" id="p8s2">
+    顺手把这一课的<b>易错</b>处再看一遍：整幅图都看，再选说得最全的那句。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>图看全了吗</h4>
+    <div class="eq">合格 → 优秀</div>
+    <p>回去把图里的人、物、动作、颜色各补一个词。</p>
+  </div>
+  <div class="card">
+    <h4>主谓宾找到了吗</h4>
+    <div class="eq">合格 → 优秀</div>
+    <p>问自己「谁、做什么、对象」，别只看一个词。</p>
+  </div>
+  <div class="card">
+    <h4>句图配上了吗</h4>
+    <div class="eq">合格 → 优秀</div>
+    <p>拿句子去图里找，每样都能对上才选它。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  <div id="rubricBox">
+  <div class="rub-dim" data-name="图看全了吗"><b>图看全了吗</b><br>
+    <span class="rub-level" data-k="合格">合格：写了一个</span>
+    <span class="rub-level" data-k="良好">良好：写了两个</span>
+    <span class="rub-level" data-k="优秀">优秀：人事物色都有</span>
+    </div>
+  <div class="rub-dim" data-name="主谓宾找到了吗"><b>主谓宾找到了吗</b><br>
+    <span class="rub-level" data-k="合格">合格：只写了词</span>
+    <span class="rub-level" data-k="良好">良好：找出主谓</span>
+    <span class="rub-level" data-k="优秀">优秀：还能说大意</span>
+    </div>
+  <div class="rub-dim" data-name="句图配上了吗"><b>句图配上了吗</b><br>
+    <span class="rub-level" data-k="合格">合格：只读了句</span>
+    <span class="rub-level" data-k="良好">良好：能选一句</span>
+    <span class="rub-level" data-k="优秀">优秀：说清为什么配</span>
+    </div>
+  <div class="rub-advice" id="rubAdvice">选一级，看看它要求什么。自评不合格也照样能翻页。</div>
+</div>
+</div>
+
+<p class="teach-text" id="p8apply">
+  哪一维还没到「优秀」，就只补那一处。补完说一句让同桌看图找——他找岔的那一个，就是你下次要先抓的细节。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，把今天学的说清楚</h2>
+  <p class="quiz-hint">五道题都有唯一答案。做完这一页，这一课就装进去了。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 图里一朵黄色的花，应该选？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>A red apple.</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>A yellow flower.</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>The cat sleeps.</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 图文题最容易错的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>只盯一个词，不看整幅图</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>看图太认真</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>句子太短</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 读图的顺序建议是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>只看中间</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>从下往上</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>整体 → 局部 → 再回整体</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 图和句子怎么算「配得上」？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>句子说的事图里都有</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>句子够长</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>都有红色</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 平时练读图最稳的办法是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>只背单词</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>多读配图小故事</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>只抄句子</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">图文先看图</div>
+        <div class="summary-v4-summary">有什么、做什么</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>先整体感知画面，再抠细节。</p>
+      <p>图给情境，生词有了着落。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">抓主谓宾</div>
+        <div class="summary-v4-summary">谁 / 做啥 / 对象</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>读图和读句子一样找这三样。</p>
+      <p>别只盯一个词被带偏。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">句图要对上</div>
+        <div class="summary-v4-summary">图里都要有</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>句子说的人事物动作，图里找得到才选。</p>
+      <p>不一致就以图为准。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">连图说大意</div>
+        <div class="summary-v4-summary">把裁判权还给眼睛</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>几幅图串起来讲了什么，就是大意。</p>
+      <p>多读配图小故事，读图越来越会。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  <div class="my-sentence" id="mySentence"><b>你摆好的那一组</b>　（结算页会显示你在「描一描」那一页存下的一组。）</div>
+把今天看的那幅图说给同桌听，让他选出相配的句子。读图上了手，就能借助图画去读没见过的小故事了。
+</p>
+</section>

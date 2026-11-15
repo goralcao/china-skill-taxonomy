@@ -1,0 +1,545 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>听指令与获取关键信息：听到什么就做什么</h1>
+  <p class="sub">三年级英语 · 听力</p>
+  <div class="tags">
+    <span class="tag">英语要素·听力</span>
+    <span class="tag">三年级</span>
+    <span class="tag">2022课标</span>
+    <span class="tag">留下痕迹</span>
+  </div>
+  <div class="cover-fig">
+<svg viewBox="0 0 760 190" width="760" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="听到什么，就做什么">
+  <rect x="0" y="0" width="760" height="190" rx="18" fill="#FFFFFF" opacity=".10"/>
+  <text x="28" y="32" font-size="15" fill="#EAF1F8" font-weight="700">听到什么，就做什么</text>
+  <g>    <rect x="28" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="111" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">three</text>
+    <text x="111" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">数字3</text>
+    <rect x="212" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="295" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">red</text>
+    <text x="295" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">颜色红</text>
+    <rect x="396" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="479" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">Touch</text>
+    <text x="479" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">动作</text>
+    <rect x="580" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="663" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">Show me</text>
+    <text x="663" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">出示</text>
+  </g>
+</svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">前测 · 先看看你已经知道什么</h2>
+  <p class="quiz-hint">三道题都有唯一答案，答错会告诉你错在哪。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 听到 "Show me two books."，你应该做什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>拿出一本书</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>拿出两本书</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>拿出两支笔</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 指令 "Touch your nose." 让你做什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>摸摸鼻子</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>摸摸眼睛</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>举起手</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 听到 "three red apples"，最关键的信息是哪两类？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>字母 a 和 p</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>句子的长短</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>数字三和颜色红</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 听一听 · 听一句指令，做出什么反应？ ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">听一听 · 听一句指令，做出什么反应？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="听力抓三类关键词">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">数字 three / five / eight</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">颜色 red / blue / green</text>
+  <text x="22" y="86" font-size="15" fill="#3B4FA8" font-weight="700">动作 Touch / Show me / Open</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">先分三类再听</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    先听老师读一遍：<b>Show me three red apples.　拿出三个红苹果</b>。
+  </p>
+  <p class="teach-text" id="p2s2">
+    再听这一组：<b>Touch your nose.　摸摸鼻子</b>。今天不背定义，只做一件事：<b>把音、形、义对上</b>。
+  </p>
+  <p class="teach-text" id="p2s3">
+    <b>最容易</b>踩的坑是被长句子吓住，忘了先抓数字、颜色、动作三类关键词。<b>各 10 秒钟</b>，先听再点。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>听一听</h4>
+    <p>跟着老师读，先别急着判对错</p>
+  </div>
+  <div class="card">
+    <h4>对一对</h4>
+    <p>把音、形、义三样对上</p>
+  </div>
+  <div class="card">
+    <h4>留痕迹</h4>
+    <p>点过、摆过就留下一处，不打分</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  <div class="read-pair" id="readPair">
+  <div class="read-line" data-k="a">Show me three red apples.　拿出三个红苹果</div>
+  <div class="read-line" data-k="b">Touch your nose.　摸摸鼻子</div>
+</div>
+<div class="read-note" id="readNote">先给两句各 <b>10 秒钟</b>，听老师读一遍再点。<b>点哪句都行，这里不判对错。</b></div>
+</div>
+</section>
+
+<!-- ===== p3: 认一认 · 圈出这一课要找的三处 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">认一认 · 圈出这一课要找的三处</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="常见课堂指令">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">Show me … 出示</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">Touch … 摸</text>
+  <text x="22" y="86" font-size="15" fill="#3B4FA8" font-weight="700">Open / Close 开 / 关</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">边听边做</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    下面一排里，有三处是这一课要找的。点出来，点错也没关系。
+  </p>
+  <p class="teach-text" id="p3s2">
+    这里只报「已圈出 X 处」，不标红、不拦路。圈够了才提示往下走。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>点中一处，就留下一处痕迹，并看到它是什么。</li>
+  <li>点错了不判错，只提示「再看看别处」。</li>
+  <li>圈够 3 处，这一课的三样东西就都认全了。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  <div class="ann-line" id="annLine"><span class="ann-w" data-t="three">three</span><span class="ann-w" data-t="red">red</span><span class="ann-w" data-t="Touch">Touch</span><span class="ann-w" data-t="book">book</span><span class="ann-w" data-t="cat">cat</span><span class="ann-w" data-t="/æ/">/æ/</span></div>
+<div class="ann-count" id="annCount">已圈出 0 / 3 处（点错不标红，也不拦你）</div>
+<div class="ann-why" id="annWhy">点一个，看它是数字、颜色还是动作关键词。</div>
+<button class="mini-btn ghost" id="annHintBtn" type="button">看看还剩哪几处没被注意到</button>
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连 · 每样东西管什么</h2>
+<p class="teach-text" id="p3bs1">左边是词或图，右边是它管的事。连完不用交卷，只看自己能不能说清「为什么」。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 边听边认</h2>
+  <p class="quiz-hint">三道题都有唯一答案，做完再看讲解。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 老师问 "How many pencils?" 是在问什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>颜色</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>位置</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>数量</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 听到 "Open your book." 你应该？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>合上书</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>打开书</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>把书收起来</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 句子一长听不懂时，最稳的办法是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>先抓数字、颜色、动作关键词</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>每个词都翻译成中文</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>直接猜最后一个词</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 描一描 · 摆出自己的那一组 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">描一描 · 摆出自己的那一组</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="三行听一听">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">第一行　听数字词</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">第二行　听颜色词</text>
+  <text x="22" y="86" font-size="15" fill="#3B4FA8" font-weight="700">第三行　听动作指令</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">一听二做三核对</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    三行，一行比一行难。摆不出来就点支架块——但尽量自己挑。
+  </p>
+  <p class="teach-text" id="p5s2">
+    这里只判「摆没摆」，不判好不好。摆不满三行也能往下走，先摆后看老师摆的。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>第一行</h4>
+    <div class="eq">写一个你听到的数字词</div>
+    <p>先写一样，不用全对。</p>
+  </div>
+  <div class="card">
+    <h4>第二行</h4>
+    <div class="eq">写一个颜色词</div>
+    <p>再写第二样。</p>
+  </div>
+  <div class="card">
+    <h4>第三行</h4>
+    <div class="eq">用它们说一句听到的话</div>
+    <p>最后合成一小句。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  <div id="draftBox">
+  <textarea class="draft-row" id="draftRow1" placeholder="第一行：写一个你听到的数字词"></textarea>
+  <textarea class="draft-row" id="draftRow2" placeholder="第二行：写一个颜色词"></textarea>
+  <textarea class="draft-row" id="draftRow3" placeholder="第三行：用它们说一句听到的话"></textarea>
+  <div class="draft-chips"><span style="font-size:14px;color:#7A7263">卡住了就点一个，用不用随你：</span><br>
+    <button class="chip-btn" data-ins="three" type="button">three</button>
+    <button class="chip-btn" data-ins="red" type="button">red</button>
+    <button class="chip-btn" data-ins="Show me" type="button">Show me</button>
+    <button class="chip-btn" data-ins="two" type="button">two</button>
+    <button class="chip-btn" data-ins="blue" type="button">blue</button>
+    <button class="chip-btn" data-ins="Touch" type="button">Touch</button></div>
+  <button class="sample-fold" type="button">摆完再看老师摆的 ▾</button>
+  <div class="sample-body" id="sampleBody">three + red apples → 听到「Show me three red apples.」就拿出三个红苹果。<br>
+    <span style="font-size:13px;color:#7A7263">先抓数字和颜色再看动作。<b>先摆后看，才不会全班摆成同一句</b>。</span></div>
+  <div style="margin-top:10px"><button class="mini-btn" id="draftSave" type="button">存起来</button></div>
+  <div class="draft-state" id="draftState"></div>
+</div>
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">拼一拼 · 听指令，选正确反应</h2>
+  <p class="sim-desc">点候选块，听一句指令后选一个正确反应。这里不打分，只看摆没摆齐。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">已摆 0 / 1 处（不判对错）</span>
+    <span class="sim-tip" id="simTip">先自己试一次，再看老师摆</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn" onclick="simNextCase()">换一组</button>
+    <button class="btn" onclick="simReset()">重来</button>
+    <button class="btn-primary" onclick="simDemo()">看老师摆一次</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">点一块，看它落到台子哪儿</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>先抓数字、颜色、动作三类关键词。</li>
+    <li>长句子不用逐词翻译，听懂大意就够。</li>
+    <li>听不懂就请老师再读一遍，不慌。</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 换个角度再认一次</h2>
+  <p class="quiz-hint">三道题都有唯一答案，注意别把名字和读音弄反。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 指令 "Close the door." 让你做什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>关门</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>开门</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>擦门</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 听到 "one blue bag"，下面哪个反应正确？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>拿一个红色的书包</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>拿两只蓝色的书包</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>拿一个蓝色的书包</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 为什么练听力要先练抓关键词？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>单词越背越多越好</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>听懂大意不靠逐词翻译</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>要把每个音写下来</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 查一查 · 对着三条标准看自己摆的那一组 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">查一查 · 对着三条标准看自己摆的那一组</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    怎么选都不影响往下走，也不给分数。这一页只输出「下一步改哪一处」。
+  </p>
+  <p class="teach-text" id="p8s2">
+    顺手把这一课的<b>易错</b>处再看一遍：数字、颜色、动作三类关键词先抓，长句不要慌。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>关键词抓住了没</h4>
+    <div class="eq">合格 → 优秀</div>
+    <p>回去按「数字 / 颜色 / 动作」各补一个关</p>
+  </div>
+  <div class="card">
+    <h4>反应做对没</h4>
+    <div class="eq">合格 → 优秀</div>
+    <p>给每个关键词配一个动作，边听边做。</p>
+  </div>
+  <div class="card">
+    <h4>整句听懂没</h4>
+    <div class="eq">合格 → 优秀</div>
+    <p>请同桌读一句，你做出来，看他对不对。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  <div id="rubricBox">
+  <div class="rub-dim" data-name="关键词抓住了没"><b>关键词抓住了没</b><br>
+    <span class="rub-level" data-k="合格">合格：写了一个</span>
+    <span class="rub-level" data-k="良好">良好：写了两个</span>
+    <span class="rub-level" data-k="优秀">优秀：数字颜色动作都有</span>
+    </div>
+  <div class="rub-dim" data-name="反应做对没"><b>反应做对没</b><br>
+    <span class="rub-level" data-k="合格">合格：只写了词</span>
+    <span class="rub-level" data-k="良好">良好：能反应</span>
+    <span class="rub-level" data-k="优秀">优秀：还能做给同桌看</span>
+    </div>
+  <div class="rub-dim" data-name="整句听懂没"><b>整句听懂没</b><br>
+    <span class="rub-level" data-k="合格">合格：只抓一词</span>
+    <span class="rub-level" data-k="良好">良好：抓住大意</span>
+    <span class="rub-level" data-k="优秀">优秀：能复述听到的话</span>
+    </div>
+  <div class="rub-advice" id="rubAdvice">选一级，看看它要求什么。自评不合格也照样能翻页。</div>
+</div>
+</div>
+
+<p class="teach-text" id="p8apply">
+  哪一维还没到「优秀」，就只补那一处。补完做一组指令让同桌猜——他做岔的那一个，就是你下次要练的关键词。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，把今天学的说清楚</h2>
+  <p class="quiz-hint">五道题都有唯一答案。做完这一页，这一课就装进去了。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 听到 "Stand up, please." 你应该？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>坐下</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>起立</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>举手</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 听到数字 "eight" 时，合适的反应是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>举起八根手指或拿八件东西</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>写一个字母 e</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>指自己的耳朵</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 听到 "Point to the blackboard." 应该做什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>擦黑板</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>坐在黑板前</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>指向黑板</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 听指令和读句子最大的不同是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>听是声音输入，要边听边反应</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>听更难</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>听不用看图</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 平时练听力最稳的办法是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>只背单词表</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>在真实指令和对话里听</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>只抄写句子</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">听指令先抓三类词</div>
+        <div class="summary-v4-summary">数字 / 颜色 / 动作</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>three、five、eight 是数字；red、blue、green 是颜色。</p>
+      <p>Show me 出示、Touch 摸、Open 开，是动作。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">边听边做</div>
+        <div class="summary-v4-summary">把裁判权还给耳朵</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>听是声音输入，听完立刻反应，不靠翻译。</p>
+      <p>听不懂请老师再读一遍，不慌。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">抓大意不抠词</div>
+        <div class="summary-v4-summary">听懂就够</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>长句子抓关键词，不必逐词翻。</p>
+      <p>How many 问数量，What colour 问颜色。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">在情境里练</div>
+        <div class="summary-v4-summary">听得多了自然会</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>课堂指令、简短对话都是真实听料。</p>
+      <p>只背词表，用的时候还是反应不过来。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  <div class="my-sentence" id="mySentence"><b>你摆好的那一组</b>　（结算页会显示你在「描一描」那一页存下的一组。）</div>
+把今天听的那组指令做给同桌看，让他猜你听到的是哪一句。听力上了手，就能把听到的变成说出来的。
+</p>
+</section>
