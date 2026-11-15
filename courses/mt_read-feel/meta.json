@@ -1,0 +1,93 @@
+{
+  "topicId": "mt_read-feel",
+  "title": "怎么读出文字背后藏着的感情？",
+  "template": "explain",
+  "renderer": "readAloud",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 4,
+  "subject": "语文",
+  "standards": [
+    "chinese-2022:S2:LR"
+  ],
+  "prerequisites": [
+    "mt_read-aloud",
+    "mt_read-main"
+  ],
+  "next": [
+    "mt_read-appreciate"
+  ],
+  "objectives": [
+    "学会通过有感情地朗读、抓关键语句、联系生活三种方法体会思想感情",
+    "能说出自己受到的触动，并指出这份触动是从哪句话来的",
+    "养成「把自己放进文章里读」的习惯，不空喊「很感动」"
+  ],
+  "cognitiveAction": "辨析",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "起疑",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "取证",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "对齐",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "说清",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "换文",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

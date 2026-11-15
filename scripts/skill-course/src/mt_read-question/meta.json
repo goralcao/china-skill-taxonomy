@@ -1,0 +1,97 @@
+{
+  "topicId": "mt_read-question",
+  "title": "读一篇文章，怎么提出好问题？",
+  "template": "explain",
+  "renderer": "predict",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 4,
+  "subject": "语文",
+  "standards": [
+    "chinese-2022:S2:CR",
+    "chinese-2022:S2:LR"
+  ],
+  "prerequisites": [
+    "mt_read-mark",
+    "mt_read-predict"
+  ],
+  "next": [
+    "mt_read-speed",
+    "mt_read-purpose",
+    "mt_read-main",
+    "mt_oral-debate"
+  ],
+  "objectives": [
+    "学会从内容、写法、启示等不同角度提问，不只会问「这个词什么意思」",
+    "能分清「从文中能找到答案」和「要联系生活动脑筋」两类问题",
+    "养成带着问题读、读完试着回答并追问的习惯"
+  ],
+  "cognitiveAction": "辨析",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "起疑",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "取证",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "对齐",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "说清",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "换文",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

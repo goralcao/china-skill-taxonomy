@@ -1,0 +1,96 @@
+{
+  "topicId": "mt_book-classic",
+  "title": "读一本名著，怎么读出自己的收获？",
+  "template": "explain",
+  "renderer": "story",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 5,
+  "subject": "语文",
+  "standards": [
+    "chinese-2022:S3:WB"
+  ],
+  "prerequisites": [
+    "mt_book-reading",
+    "mt_read-speed",
+    "mt_poem-understand",
+    "mt_read-appreciate",
+    "mt_write-person"
+  ],
+  "next": [
+    "mt_write-summary"
+  ],
+  "objectives": [
+    "学会做读书笔记：摘录、批注、写感受，把读过的书留下痕迹",
+    "能梳理人物与情节，说出自己最感兴趣的人物和理由",
+    "养成读整本书、读后交流感受的习惯，在经典里认识更广的世界"
+  ],
+  "cognitiveAction": "累积",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "起疑",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "取证",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "对齐",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "说清",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "换文",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

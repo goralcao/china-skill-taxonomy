@@ -1,0 +1,93 @@
+{
+  "topicId": "mt_write-application",
+  "title": "写一封信，格式和称呼错在哪儿？",
+  "template": "explain",
+  "renderer": "draft",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 4,
+  "subject": "语文",
+  "standards": [
+    "chinese-2022:S2:PR"
+  ],
+  "prerequisites": [
+    "mt_write-diary",
+    "mt_sent-quote"
+  ],
+  "next": [
+    "mt_write-center"
+  ],
+  "objectives": [
+    "掌握书信、留言条、通知的基本格式和用途",
+    "能根据对象和目的写出得体、清楚的应用文",
+    "养成「先看对象再定语气、写完核对格式」的习惯"
+  ],
+  "cognitiveAction": "构造",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "起意",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "搭骨架",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "起草",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "改",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "出刊",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

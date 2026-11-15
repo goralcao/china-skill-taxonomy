@@ -1,0 +1,93 @@
+{
+  "topicId": "mt_write-center",
+  "title": "作文的中心，怎么做到不跑偏？",
+  "template": "explain",
+  "renderer": "draft",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 6,
+  "subject": "语文",
+  "standards": [
+    "chinese-2022:S3:LR"
+  ],
+  "prerequisites": [
+    "mt_write-narrative",
+    "mt_read-main",
+    "mt_write-imagine",
+    "mt_write-application"
+  ],
+  "next": [],
+  "objectives": [
+    "写前先想清楚中心意思，用一句话把它写出来",
+    "能围绕中心选择材料、安排详略，删去与中心无关的内容",
+    "养成「写完回看每段是否服务中心」的习惯"
+  ],
+  "cognitiveAction": "构思",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "起意",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "搭骨架",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "起草",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "改",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "出刊",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

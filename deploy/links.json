@@ -1043,5 +1043,140 @@
     "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-comparatives/index.html",
     "pages": 12,
     "delivery": "local"
+  },
+  {
+    "no": 127,
+    "course": "mt_sent-fix",
+    "title": "一句话里，3 种毛病怎么找出来改掉？",
+    "nodeId": "",
+    "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_sent-fix/index.html",
+    "pages": 12,
+    "delivery": "local"
+  },
+  {
+    "no": 128,
+    "course": "mt_sent-compress",
+    "title": "长句子里，哪几个字才是主干？",
+    "nodeId": "",
+    "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_sent-compress/index.html",
+    "pages": 12,
+    "delivery": "local"
+  },
+  {
+    "no": 129,
+    "course": "mt_read-question",
+    "title": "读一篇文章，怎么提出好问题？",
+    "nodeId": "",
+    "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_read-question/index.html",
+    "pages": 12,
+    "delivery": "local"
+  },
+  {
+    "no": 130,
+    "course": "mt_read-main",
+    "title": "一篇文章讲了什么，怎么说得又全又简？",
+    "nodeId": "",
+    "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_read-main/index.html",
+    "pages": 12,
+    "delivery": "local"
+  },
+  {
+    "no": 131,
+    "course": "mt_read-feel",
+    "title": "怎么读出文字背后藏着的感情？",
+    "nodeId": "",
+    "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_read-feel/index.html",
+    "pages": 12,
+    "delivery": "local"
+  },
+  {
+    "no": 132,
+    "course": "mt_read-appreciate",
+    "title": "一句话好在哪儿，怎么说得清楚？",
+    "nodeId": "",
+    "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_read-appreciate/index.html",
+    "pages": 12,
+    "delivery": "local"
+  },
+  {
+    "no": 133,
+    "course": "mt_read-speed",
+    "title": "读得快，还能读懂，怎么做到的？",
+    "nodeId": "",
+    "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_read-speed/index.html",
+    "pages": 12,
+    "delivery": "local"
+  },
+  {
+    "no": 134,
+    "course": "mt_read-purpose",
+    "title": "带着一个目的读书，读法要怎么变？",
+    "nodeId": "",
+    "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_read-purpose/index.html",
+    "pages": 12,
+    "delivery": "local"
+  },
+  {
+    "no": 135,
+    "course": "mt_oral-debate",
+    "title": "不同意对方，怎么讲得有理又有礼？",
+    "nodeId": "",
+    "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_oral-debate/index.html",
+    "pages": 12,
+    "delivery": "local"
+  },
+  {
+    "no": 136,
+    "course": "mt_book-classic",
+    "title": "读一本名著，怎么读出自己的收获？",
+    "nodeId": "",
+    "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_book-classic/index.html",
+    "pages": 12,
+    "delivery": "local"
+  },
+  {
+    "no": 137,
+    "course": "mt_write-narrative",
+    "title": "把一件事写清楚，要交代哪六样？",
+    "nodeId": "",
+    "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_write-narrative/index.html",
+    "pages": 12,
+    "delivery": "local"
+  },
+  {
+    "no": 138,
+    "course": "mt_write-person",
+    "title": "写一个人，怎么让别人像看见了他？",
+    "nodeId": "",
+    "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_write-person/index.html",
+    "pages": 12,
+    "delivery": "local"
+  },
+  {
+    "no": 139,
+    "course": "mt_write-application",
+    "title": "写一封信，格式和称呼错在哪儿？",
+    "nodeId": "",
+    "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_write-application/index.html",
+    "pages": 12,
+    "delivery": "local"
+  },
+  {
+    "no": 140,
+    "course": "mt_write-center",
+    "title": "作文的中心，怎么做到不跑偏？",
+    "nodeId": "",
+    "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_write-center/index.html",
+    "pages": 12,
+    "delivery": "local"
+  },
+  {
+    "no": 141,
+    "course": "mt_write-summary",
+    "title": "把一本书压成几百字，留什么删什么？",
+    "nodeId": "",
+    "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_write-summary/index.html",
+    "pages": 12,
+    "delivery": "local"
   }
 ]

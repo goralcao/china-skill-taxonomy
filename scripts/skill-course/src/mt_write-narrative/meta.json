@@ -1,0 +1,96 @@
+{
+  "topicId": "mt_write-narrative",
+  "title": "把一件事写清楚，要交代哪六样？",
+  "template": "explain",
+  "renderer": "draft",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 4,
+  "subject": "语文",
+  "standards": [
+    "chinese-2022:S2:LR"
+  ],
+  "prerequisites": [
+    "mt_write-observe",
+    "mt_write-diary",
+    "mt_sent-quote",
+    "mt_word-idiom"
+  ],
+  "next": [
+    "mt_write-person",
+    "mt_write-center"
+  ],
+  "objectives": [
+    "知道时间、地点、人物和起因、经过、结果这六要素",
+    "能按事情发展顺序，把一件小事写完整、写清楚",
+    "养成「写完对照六要素查一遍」的习惯，不漏关键环节"
+  ],
+  "cognitiveAction": "构造",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "起意",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "搭骨架",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "起草",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "改",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "出刊",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

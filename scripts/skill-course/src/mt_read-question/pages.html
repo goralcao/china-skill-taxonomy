@@ -1,0 +1,556 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>读一篇文章，怎么提出好问题？</h1>
+  <p class="sub">四年级语文 · 阅读</p>
+  <div class="tags">
+    <span class="tag">语文要素·提问</span>
+    <span class="tag">阅读策略</span>
+    <span class="tag">2022课标</span>
+    <span class="tag">留下痕迹</span>
+  </div>
+  <div class="cover-fig">
+<svg viewBox="0 0 760 190" width="760" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="提问：敢问、会问、能答，读书才走得深">
+  <rect x="0" y="0" width="760" height="190" rx="18" fill="#FFFFFF" opacity=".10"/>
+  <text x="28" y="32" font-size="15" fill="#EAF1F8" font-weight="700">提问：敢问、会问、能答，读书才走得深</text>
+  <g>    <rect x="28" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="111" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">问</text>
+    <text x="111" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">从不同角度</text>
+    <rect x="212" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="295" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">分</text>
+    <text x="295" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">两类问题</text>
+    <rect x="396" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="479" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">答</text>
+    <text x="479" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">回文中找</text>
+    <rect x="580" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="663" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">追</text>
+    <text x="663" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">再问一层</text>
+  </g>
+</svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">前测 · 先看看你已经知道什么</h2>
+  <p class="quiz-hint">三道题都有唯一答案，答错会告诉你错在哪。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 读文章时，下面哪种提问角度最全面？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>只问字词意思</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>内容、写法、启示都可以问</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>只问作者是谁</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 「蝙蝠和雷达有什么关系？」这个问题主要从哪个角度提出？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>文章内容与原理</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>文章的写法</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>自己的启示</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 「作者为什么要用这么多问句开头？」属于哪类问题？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>针对字词</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>针对启示</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>针对写法的提问</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 起疑 · 同一段话，能问出几种问题？ ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">起疑 · 同一段话，能问出几种问题？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="提问三角度">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">内容：写了什么</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">写法：怎么写</text>
+  <text x="22" y="86" font-size="15" fill="#3B4FA8" font-weight="700">启示：想到什么</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">角度不同，问题不同</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    先读一段关于<b>蝙蝠探路</b>的短文。读的时候，把你脑子里冒出来的问题记下来。<b>问题不分好坏，先敢问。</b>
+  </p>
+  <p class="teach-text" id="p2s2">
+    同一句话，有人问「蝙蝠靠什么探路」，有人问「作者为什么这样开头」，还有人问「这事给我什么启发」。<b>点一句你最想问的，这里不判对错。</b>
+  </p>
+  <p class="teach-text" id="p2s3">
+    今天只做一件事：<b>把问题问出来，再给它分个角度</b>。能问，就已经在读深了。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>问</h4>
+    <div class="eq">敢问出来</div>
+    <p>先别怕错</p>
+  </div>
+  <div class="card">
+    <h4>角</h4>
+    <div class="eq">分个角度</div>
+    <p>内容/写法/启示</p>
+  </div>
+  <div class="card">
+    <h4>答</h4>
+    <div class="eq">回文找</div>
+    <p>答案有依据</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  <div class="rd-text" id="rdText">
+  <span class="rd-s" data-p="1">蝙蝠夜里飞行，靠的不是眼睛，而是用嘴和耳朵配合探路。</span>
+  <span class="rd-s" data-p="2">它一边飞，一边从嘴里发出超声波，超声波碰到障碍物就反射回来。</span>
+  <span class="rd-s" data-p="3">科学家从蝙蝠身上得到启示，发明了雷达。</span>
+</div>
+<div class="trace-why" id="rdNote">花 <b>20 秒</b>读一遍，点一句「我最想问的地方」。<b>点哪句都行，不判对错。</b></div>
+</div>
+</section>
+
+<!-- ===== p3: 取证 · 给问题找依据 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">取证 · 给问题找依据</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="两类问题">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">文中找得到</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">要动脑筋想</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">两类都值得问</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    先选一个角度，再点一句原文当作你问题的依据；下面写一句「我想问……因为……」。两样都留痕，就能往下走。
+  </p>
+  <p class="teach-text" id="p3s2">
+    <b>问得出不等于问得好</b>。这里只报「已找几处依据、问题写没写」，不说「你问得好」，也不给分数。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>内容问「写了什么」，写法问「怎么写」，启示问「想到什么」，三个角度各管一样。</li>
+  <li>「因为」后面要能接上第几段哪一句，不能只写「我好奇」。</li>
+  <li>问题和依据分开记：问题框非空、且至少一处指回原文，才算留下痕迹。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  <div id="evBox">
+  <div class="ev-syms">
+    <button class="ev-sym" type="button" data-s="内">内容角度</button>
+    <button class="ev-sym" type="button" data-s="写">写法角度</button>
+    <button class="ev-sym" type="button" data-s="启">启示角度</button>
+    <button class="ev-sym" type="button" data-s="？">最想问</button>
+  </div>
+  <div class="ev-text">
+    <span class="ev-s" data-p="1">蝙蝠靠嘴和耳朵配合探路，不是靠眼睛。<i class="ev-badge"></i></span>
+    <span class="ev-s" data-p="2">它发出超声波，碰到障碍物就反射回来。<i class="ev-badge"></i></span>
+    <span class="ev-s" data-p="3">科学家据此发明了雷达。<i class="ev-badge"></i></span>
+  </div>
+  <input class="ev-idea" id="evIdea" placeholder="我想问……，因为第 X 段写了……">
+  <div class="trace-why" id="evWhy">先选一个角度，再点一句原文划下来，作为问题的依据。</div>
+  <div class="trace-note" id="evNote">已找依据 0 处 · 问题还没写（只记痕迹，不判对错）</div>
+</div>
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连 · 三类角度各配什么问题</h2>
+<p class="teach-text" id="p3bs1">左边是提问的角度，右边是它可能问出的问题。连完不用交卷，只看自己能不能说清「为什么」。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 边读边想</h2>
+  <p class="quiz-hint">三道题都有唯一答案，做完再看讲解。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 下面哪个问题的答案能直接从文中找到？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>我们应该怎样保护动物</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>如果你是蝙蝠会怎么想</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>蝙蝠靠什么探路</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 「读了这个故事，你受到什么启发？」属于哪类问题？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>文中直接有答案</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>要联系自己动脑筋</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>只问字词</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 提问策略里，「带着问题读」的好处是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>读的时候更有方向，容易抓重点</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>可以读得更快</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>可以不用做笔记</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 对齐 · 把问题分进两类 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">对齐 · 把问题分进两类</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="好问题三条">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">和文章有关</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">答案有依据</text>
+  <text x="22" y="86" font-size="15" fill="#3B4FA8" font-weight="700">能引出追问</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">不是越难越好</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    把 4 张问题卡放进「文中找得到 / 要动脑筋」两类，有一张是「问了也没意义」的干扰卡。
+  </p>
+  <p class="teach-text" id="p5s2">
+    放完<b>强制补一步</b>：点问题卡下面的「第几段」把依据记下。<b>分类和依据分别记录</b>，都不判对错。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>3 真 + 1 干扰</h4>
+    <div class="eq">两类不是三类</div>
+    <p>必有「无意义」筐。</p>
+  </div>
+  <div class="card">
+    <h4>看答法</h4>
+    <div class="eq">能否回文找</div>
+    <p>决定归哪一类。</p>
+  </div>
+  <div class="card">
+    <h4>只说再读第 X 段</h4>
+    <div class="eq">不给分数</div>
+    <p>不说对错。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  <div id="alBox">
+  <div class="al-cards" id="alCards">
+    <div class="ev-card" data-n="1"><b>问题卡 1</b><br>蝙蝠靠什么探路？<div class="ev-paras"><span class="ev-para" data-p="1">第1段</span><span class="ev-para" data-p="2">第2段</span><span class="ev-para" data-p="3">第3段</span></div></div>
+    <div class="ev-card" data-n="2"><b>问题卡 2</b><br>这个故事给你什么启发？<div class="ev-paras"><span class="ev-para" data-p="1">第1段</span><span class="ev-para" data-p="2">第2段</span><span class="ev-para" data-p="3">第3段</span></div></div>
+    <div class="ev-card" data-n="3"><b>问题卡 3</b><br>作者为什么用蝙蝠和雷达做题目？<div class="ev-paras"><span class="ev-para" data-p="1">第1段</span><span class="ev-para" data-p="2">第2段</span><span class="ev-para" data-p="3">第3段</span></div></div>
+    <div class="ev-card" data-n="4（干扰）"><b>问题卡 4</b><br>这篇文章一共有多少个字？<div class="ev-paras"><span class="ev-para" data-p="1">第1段</span><span class="ev-para" data-p="2">第2段</span><span class="ev-para" data-p="3">第3段</span></div></div>
+  </div>
+  <div class="al-slots">
+    <div class="ev-slot" data-slot="A"><b>文中找得到</b>答案有原文依据</div>
+    <div class="ev-slot" data-slot="B"><b>要动脑筋</b>联系生活去想</div>
+    <div class="ev-slot" data-slot="X"><b>无意义筐</b>问了也读不深</div>
+  </div>
+  <div class="trace-why" id="alWhy">点一张问题卡，再点一类放进去；放完补一句「我是根据第几句分的」。</div>
+  <div class="trace-note" id="alNote">已归位 0 / 4 · 依据补了 0 / 4（分类和依据分别记，不判对错）</div>
+</div>
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">说清 · 把问题接回原文</h2>
+  <p class="sim-desc">点左边一条原文线索，再点右边一个问题，连成一环。用「我想问……因为第 X 段……」说清——不给分数，只看问题能不能落回原文。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">依据链已连 0 / 3 环（不判对错）</span>
+    <span class="sim-tip" id="simTip">先自己问一次，再看老师连一条</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn" onclick="simNextCase()">换一组</button>
+    <button class="btn" onclick="simReset()">重来</button>
+    <button class="btn-primary" onclick="simDemo()">看老师做一遍</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">左边是文中有的，右边是想问的；问偏了也算一条真痕迹</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>一条线索能引出多个问题；问偏了换一篇重问就行。</li>
+    <li>问题记「问没问」，依据另记「第几句」，两样分开留痕。</li>
+    <li>文中找不到答案时只说「再读第 X 段、再想想」，不给分数。</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 换个角度再认一次</h2>
+  <p class="quiz-hint">三道题都有唯一答案，注意别把方法用反。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 提出一个好问题的基本前提是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>真正读懂了文章</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>问题越难越好</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>问题越多越好</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 「为什么说尾巴是猫的平衡器？」文中找不到直接答案时怎么办？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>放弃这个问题</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>随便猜一个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>联系上下文和生活经验推想</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 读完自己的问题后，最好的下一步是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>把问题忘掉</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>试着回答，并追问一层</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>立刻换一篇文章</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 换文 · 自己提一个问题 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">换文 · 自己提一个问题</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    换一段没提示的短文《蚂蚁搬家》，自己找角度提问、自己分两类，再对着三条标准自查。勾不满也能翻页。
+  </p>
+  <p class="teach-text" id="p8s2">
+    顺手把四个<b>易错</b>点看一遍：别只问字词，别把文中有的说成只能想，别瞎猜答案，也别问「有多少字」这类无意义问题。
+  </p>
+  <p class="teach-text" id="p8s3">
+    顺手把这一课<b>最容易</b>翻车的地方再看一遍：别把「这个词什么意思」当成全部问题，也别把文中明明找得到答案的问题说成「只能靠想」——两类问题的答法不一样。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 有角度</h4>
+    <div class="eq">内容/写法/启示</div>
+    <p>不只问字词</p>
+  </div>
+  <div class="card">
+    <h4>② 分两类</h4>
+    <div class="eq">找得到/要想</div>
+    <p>答法不同</p>
+  </div>
+  <div class="card">
+    <h4>③ 有依据</h4>
+    <div class="eq">能指回原文</div>
+    <p>不瞎猜</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  <div id="trBox">
+  <div class="tr-text">
+    <span class="tr-s">下雨前，蚂蚁排着队把家搬到高处，还衔着白色的蚁卵。</span>
+    <span class="tr-s">我蹲下看了很久，它们一次也没有走散。</span>
+  </div>
+  <div class="trace-note" id="trNote">自发提了 0 个问题（不判对错）。换了一段没提示的短文，只剩「提问」和「找依据」。</div>
+  <div class="tr-cks">
+    <span class="tr-ck">① 我能从至少两个角度提问</span>
+    <span class="tr-ck">② 我能分清哪类问题文中找得到</span>
+    <span class="tr-ck">③ 我能给自己的问题找一句原文依据</span>
+  </div>
+  <div class="trace-why" id="trAdvice">自查勾不满也照样能翻页：这三条只问「问题能不能指回原文」，不问「问得对不对」。</div>
+</div>
+</div>
+
+<p class="teach-text" id="p8apply">
+  这一页只问「问题有没有角度、能不能指回原文」，不问「问题提得有多高明」。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，把今天学的说清楚</h2>
+  <p class="quiz-hint">五道题都有唯一答案。做完这一页，这一课就装进去了。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 下面哪个问题「不适合」作为阅读提问？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>作者为什么这样结尾</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>这篇文章有多少个字</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>故事给了你什么启发</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 提问时「从文中找依据」这一步主要在做什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>让答案站得住，而不是瞎猜</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>凑字数</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>显示读得多</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 小组交流问题时，哪种态度最合适？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>只听自己的</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>嘲笑简单的问题</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>尊重不同的问题，选有价值的深入</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 「课文为什么用『蝙蝠和雷达』做题目？」这属于？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>针对题目与写法的提问</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>针对字词的提问</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>针对启示的提问</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 这一课最后要养成的习惯是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>只问字词意思</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>多角度问，分两类答，读完再追问</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>问得越多越好</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">敢问</div>
+        <div class="summary-v4-summary">先别怕问错</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>读时冒出的问题，先记下来。</p>
+      <p>问题不分高低，敢问才读得深。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">会问</div>
+        <div class="summary-v4-summary">内容/写法/启示</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>同一句话能问出不同角度。</p>
+      <p>角度越丰富，理解越立体。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">分两类</div>
+        <div class="summary-v4-summary">找得到/要想</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>文中有的回文找答案。</p>
+      <p>没有的联系生活去想。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">有依据</div>
+        <div class="summary-v4-summary">读完再追问</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>答案要能指回原文。</p>
+      <p>回答后再问一层，理解往前推。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  <div class="my-chain" id="myChain"><b>你留下的依据链</b>　（还没存想法。回到「取证」那一页写一句，它就会出现在这里。）</div>
+把今天提的一个问题说给同桌听：先说它属于哪个角度，再说它能不能从文中找到答案，最后指一句原文当依据。同桌能听出「这问题有根」，这次提问就站住了。下一步学「提高阅读速度」，带着问题读会更快。
+</p>
+</section>

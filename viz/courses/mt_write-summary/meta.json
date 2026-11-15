@@ -1,0 +1,95 @@
+{
+  "topicId": "mt_write-summary",
+  "title": "把一本书压成几百字，留什么删什么？",
+  "template": "explain",
+  "renderer": "transform",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 6,
+  "subject": "语文",
+  "standards": [
+    "chinese-2022:S3:PR",
+    "chinese-2022:S3:WB"
+  ],
+  "prerequisites": [
+    "mt_read-main",
+    "mt_book-classic",
+    "mt_sent-compress",
+    "mt_read-purpose",
+    "mt_write-revise"
+  ],
+  "next": [],
+  "objectives": [
+    "知道梗概要读懂全书后提炼主要情节，保留主干、删去细节",
+    "能用连贯的语言写出作品的梗概，让人没读过也能了解大意",
+    "养成「先理脉络再动笔、写完核对主干」的习惯"
+  ],
+  "cognitiveAction": "分解",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "起意",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "搭骨架",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "起草",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "改",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "出刊",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

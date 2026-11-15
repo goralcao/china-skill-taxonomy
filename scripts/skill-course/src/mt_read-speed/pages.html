@@ -1,0 +1,555 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>读得快，还能读懂，怎么做到的？</h1>
+  <p class="sub">五年级语文 · 阅读</p>
+  <div class="tags">
+    <span class="tag">语文要素·阅读速度</span>
+    <span class="tag">阅读策略</span>
+    <span class="tag">2022课标</span>
+    <span class="tag">留下痕迹</span>
+  </div>
+  <div class="cover-fig">
+<svg viewBox="0 0 760 190" width="760" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="提速：连读、扩视、会跳，读懂是前提">
+  <rect x="0" y="0" width="760" height="190" rx="18" fill="#FFFFFF" opacity=".10"/>
+  <text x="28" y="32" font-size="15" fill="#EAF1F8" font-weight="700">提速：连读、扩视、会跳，读懂是前提</text>
+  <g>    <rect x="28" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="111" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">连</text>
+    <text x="111" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">连词成句</text>
+    <rect x="212" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="295" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">视</text>
+    <text x="295" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">扩大视域</text>
+    <rect x="396" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="479" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">跳</text>
+    <text x="479" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">略过枝节</text>
+    <rect x="580" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="663" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">测</text>
+    <text x="663" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">读后自测</text>
+  </g>
+</svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">前测 · 先看看你已经知道什么</h2>
+  <p class="quiz-hint">三道题都有唯一答案，答错会告诉你错在哪。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 提高阅读速度的前提是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>读得越多越好</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>读懂内容</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>眼睛动得越快越好</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 「连词成句地读」指的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>一眼看一串词，不成字成字读</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>每个字都读出声</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>只看第一个字</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 扩大视域的正确做法是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>把书拿得很远</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>闭着眼猜</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>视线扫得更宽，一次看更多字</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 起疑 · 读得越快越好吗？ ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">起疑 · 读得越快越好吗？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="三种方法">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">连词成句读</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">扩大视线范围</text>
+  <text x="22" y="86" font-size="15" fill="#3B4FA8" font-weight="700">跳过无关词</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">都要以读懂为底</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    先给 <b>30 秒</b>读一段短文，读完合上书，看看能说出多少。别急着快，先留意自己眼睛是怎么动的。
+  </p>
+  <p class="teach-text" id="p2s2">
+    有人一个字一个字挪，有人一眼扫一串。哪种更快、还能读懂？<b>点一句你的看法，这里不判对错。</b>
+  </p>
+  <p class="teach-text" id="p2s3">
+    今天只做一件事：<b>学会几种提速方法，但读懂是底线</b>。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>连</h4>
+    <div class="eq">连词成句</div>
+    <p>别逐字挪</p>
+  </div>
+  <div class="card">
+    <h4>视</h4>
+    <div class="eq">扩大视域</div>
+    <p>一次看更多</p>
+  </div>
+  <div class="card">
+    <h4>测</h4>
+    <div class="eq">读后自测</div>
+    <p>读懂才算</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  <div class="rd-text" id="rdText">
+  <span class="rd-s" data-p="1">鲸不是鱼，而是哺乳动物。</span>
+  <span class="rd-s" data-p="2">它用肺呼吸，胎生，幼鲸靠母乳长大。</span>
+  <span class="rd-s" data-p="3">蓝鲸是已知最大的动物，体重可达上百吨。</span>
+</div>
+<div class="trace-why" id="rdNote">花 <b>30 秒</b>读一遍。<b>读法没有对错，先留意自己的眼睛怎么动。</b></div>
+</div>
+</section>
+
+<!-- ===== p3: 取证 · 圈出能跳过的词 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">取证 · 圈出能跳过的词</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="快与懂">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">只快不懂=白读</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">又懂又快=真本事</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">速度服从理解</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    先选一个方法（连读 / 扩视 / 会跳），再点出一句里可以「暂时跳过」的部分；下面写一句你的自测。两样都留痕，就能往下走。
+  </p>
+  <p class="teach-text" id="p3s2">
+    <b>会用方法不等于读懂</b>。这里只报「找了几处、自测写没写」，不打分。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>连读把词连成短句认；扩视一次看更大的范围。</li>
+  <li>只能跳过「不影响理解」的词，关键词和主干绝不能跳。</li>
+  <li>方法和自测分开记：自测框非空、且能讲出大意，才算留下痕迹。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  <div id="evBox">
+  <div class="ev-syms">
+    <button class="ev-sym" type="button" data-s="连">连词成句</button>
+    <button class="ev-sym" type="button" data-s="视">扩大视域</button>
+    <button class="ev-sym" type="button" data-s="跳">跳过枝节</button>
+    <button class="ev-sym" type="button" data-s="？">关键处</button>
+  </div>
+  <div class="ev-text">
+    <span class="ev-s" data-p="1">鲸不是鱼，而是哺乳动物。<i class="ev-badge"></i></span>
+    <span class="ev-s" data-p="2">它用肺呼吸、胎生。<i class="ev-badge"></i></span>
+    <span class="ev-s" data-p="3">蓝鲸体重可达上百吨。<i class="ev-badge"></i></span>
+  </div>
+  <input class="ev-idea" id="evIdea" placeholder="合上书，我发现我能说出……">
+  <div class="trace-why" id="evWhy">先选一个方法，再点一句原文里可以处理的部分。</div>
+  <div class="trace-note" id="evNote">已找方法 0 处 · 自测还没写（只记痕迹，不判对错）</div>
+</div>
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连 · 方法和适用情形</h2>
+<p class="teach-text" id="p3bs1">左边是提速方法，右边是它适合的情形。连完不用交卷，只看自己能不能说清「为什么」。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 边读边想</h2>
+  <p class="quiz-hint">三道题都有唯一答案，做完再看讲解。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 读中遇到不影响理解的陌生词，较好的处理是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>立刻停下来查字典</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>反复读十遍</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>暂时跳过，继续往下读</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 下面哪种情况应该放慢速度？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>读到熟悉的词</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>遇到关键句和难懂的段落</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>读标点</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 读后自测理解，最好的方式是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>合上书说说主要内容、答关键问题</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>再从头读一遍</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>数读了多少字</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 对齐 · 把方法和自测配起来 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">对齐 · 把方法和自测配起来</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="自测两问">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">讲得主要内容吗</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">答得出关键问题吗</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">读懂才算数</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    把 4 张方法卡放进「用对了 / 用偏了」两类，有一张是「跑题」干扰卡。
+  </p>
+  <p class="teach-text" id="p5s2">
+    放完<b>强制补一步</b>：点卡片下面的「第几句」把依据记下。<b>分类和依据分别记录</b>，都不判对错。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>用对了</h4>
+    <div class="eq">又快又懂</div>
+    <p>真提速</p>
+  </div>
+  <div class="card">
+    <h4>用偏了</h4>
+    <div class="eq">只快不懂</div>
+    <p>假提速</p>
+  </div>
+  <div class="card">
+    <h4>跑题筐</h4>
+    <div class="eq">与方法无关</div>
+    <p>另放</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  <div id="alBox">
+  <div class="al-cards" id="alCards">
+    <div class="ev-card" data-n="1"><b>卡 1</b><br>一眼扫一串词，读完能讲出大意<div class="ev-paras"><span class="ev-para" data-p="1">第1句</span><span class="ev-para" data-p="2">第2句</span><span class="ev-para" data-p="3">第3句</span></div></div>
+    <div class="ev-card" data-n="2"><b>卡 2</b><br>跳过陌生但不影响理解的词<div class="ev-paras"><span class="ev-para" data-p="1">第1句</span><span class="ev-para" data-p="2">第2句</span><span class="ev-para" data-p="3">第3句</span></div></div>
+    <div class="ev-card" data-n="3"><b>卡 3</b><br>关键句放慢，确认读懂<div class="ev-paras"><span class="ev-para" data-p="1">第1句</span><span class="ev-para" data-p="2">第2句</span><span class="ev-para" data-p="3">第3句</span></div></div>
+    <div class="ev-card" data-n="4（干扰）"><b>卡 4</b><br>这本书是某出版社出的<div class="ev-paras"><span class="ev-para" data-p="1">第1句</span><span class="ev-para" data-p="2">第2句</span><span class="ev-para" data-p="3">第3句</span></div></div>
+  </div>
+  <div class="al-slots">
+    <div class="ev-slot" data-slot="A"><b>用对了</b>读懂又提速</div>
+    <div class="ev-slot" data-slot="B"><b>用偏了</b>只快不懂</div>
+    <div class="ev-slot" data-slot="X"><b>跑题筐</b>与方法无关</div>
+  </div>
+  <div class="trace-why" id="alWhy">点一张卡，再点一类放进去；放完补一句「我根据第几句分的」。</div>
+  <div class="trace-note" id="alNote">已归位 0 / 4 · 依据补了 0 / 4（分类和依据分别记，不判对错）</div>
+</div>
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">说清 · 把方法接回理解</h2>
+  <p class="sim-desc">点左边一个方法，再点右边一种效果，连成一环。用「这样做能……但前提是读懂」说清——不给分数，只看方法有没有落到理解上。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">依据链已连 0 / 3 环（不判对错）</span>
+    <span class="sim-tip" id="simTip">先自己试一次，再看老师连一条</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn" onclick="simNextCase()">换一组</button>
+    <button class="btn" onclick="simReset()">重来</button>
+    <button class="btn-primary" onclick="simDemo()">看老师做一遍</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">左边是方法，右边是效果；用偏了换一条重来</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>一个方法能配多种情形；用偏了回头看「懂没懂」。</li>
+    <li>方法记「用没用」，依据另记「第几句」，两样分开留痕。</li>
+    <li>只快不懂时只说「再读第 X 句」，不给分数。</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 换个角度再认一次</h2>
+  <p class="quiz-hint">三道题都有唯一答案，注意别把方法用反。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 计时阅读的主要作用是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>督促自己专注，看到进步</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>证明自己最厉害</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>代替理解</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 「扫读」最适合的阅读目的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>细细体会情感</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>品味用词</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>快速找某个具体信息</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 阅读时出声默念每个字，会怎样？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>提高理解</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>拖慢速度</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>扩大视域</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 换文 · 自己计时读一段 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">换文 · 自己计时读一段</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    换一段没提示的短文《蜂鸟》，给自己 <b>30 秒</b>，用今天的方法读，再合上书自测。勾不满也能翻页。
+  </p>
+  <p class="teach-text" id="p8s2">
+    顺手把四个<b>易错</b>点看一遍：别逐字挪，别跳过关键词，别只求快不懂，别忘读后自测。
+  </p>
+  <p class="teach-text" id="p8s3">
+    顺手把这一课<b>最容易</b>翻车的地方再看一遍：别把「跳读」当成「随便扫一眼」——跳过的是不影响理解的词句，关键词和主干绝不能跳；更不能为了快而牺牲理解。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 用了方法</h4>
+    <div class="eq">连读/扩视</div>
+    <p>不只逐字</p>
+  </div>
+  <div class="card">
+    <h4>② 读懂了</h4>
+    <div class="eq">能讲大意</div>
+    <p>不白读</p>
+  </div>
+  <div class="card">
+    <h4>③ 会自测</h4>
+    <div class="eq">答关键问</div>
+    <p>验效果</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  <div id="trBox">
+  <div class="tr-text">
+    <span class="tr-s">蜂鸟是世界上最小的鸟，体重只有几克。</span>
+    <span class="tr-s">它翅膀扇动极快，能悬停在半空吸食花蜜。</span>
+  </div>
+  <div class="trace-note" id="trNote">自测写了 0 句（不判对错）。换了一段没提示的短文，只剩「用方法」「验理解」。</div>
+  <div class="tr-cks">
+    <span class="tr-ck">① 我用上了至少一种提速方法</span>
+    <span class="tr-ck">② 我能合上书讲出大意</span>
+    <span class="tr-ck">③ 我能答出一个关键问题</span>
+  </div>
+  <div class="trace-why" id="trAdvice">自查勾不满也照样翻页：这三条只问「方法用得对、读懂没有」，不问「读得多快」。</div>
+</div>
+</div>
+
+<p class="teach-text" id="p8apply">
+  这一页只问「方法用得对不对、读懂没有」，不问「你读得有多快」。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，把今天学的说清楚</h2>
+  <p class="quiz-hint">五道题都有唯一答案。做完这一页，这一课就装进去了。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 提速训练中，哪种态度最正确？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>一味求快不管懂不懂</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>在读懂基础上逐步提速</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>永远不计时</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 下面哪项最能动证明你「读懂了」？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>能用自己的话讲出大意</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>读得很快</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>页数翻得多</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 读一段说明文想快速抓要点，宜？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>逐字背下来</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>只看插图</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>关注段首段尾的中心句</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 如果读完发现什么都没记住，应该？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>放慢速度，抓关键重新读</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>继续加速</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>放弃阅读</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 这一课最后要养成的习惯是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>只比谁读得快</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>连读扩视会跳，读懂再提速</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>跳过所有难句</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">读懂为先</div>
+        <div class="summary-v4-summary">速度服从理解</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>只快不懂等于白读。</p>
+      <p>关键处要舍得慢。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">连读扩视</div>
+        <div class="summary-v4-summary">别逐字挪</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>一眼看一串词。</p>
+      <p>视线一次看更宽。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">会跳会停</div>
+        <div class="summary-v4-summary">分清主次</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>枝节可跳过。</p>
+      <p>主干关键词不跳。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">读后自测</div>
+        <div class="summary-v4-summary">验懂没懂</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>合书讲大意。</p>
+      <p>答出关键问题。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  <div class="my-chain" id="myChain"><b>你留下的依据链</b>　（还没存想法。回到「取证」那一页写一句，它就会出现在这里。）</div>
+把今天读的一段讲给同桌听：先说你用了哪种提速方法，再合上书讲出大意、答一个关键问题。同桌听完说「你真读懂了」，这次提速就站住了。下一步学「有目的地阅读」，按目的选读法。
+</p>
+</section>

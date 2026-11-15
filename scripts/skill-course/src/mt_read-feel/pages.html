@@ -1,0 +1,557 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>怎么读出文字背后藏着的感情？</h1>
+  <p class="sub">四年级语文 · 阅读</p>
+  <div class="tags">
+    <span class="tag">语文要素·体会情感</span>
+    <span class="tag">有感情朗读</span>
+    <span class="tag">2022课标</span>
+    <span class="tag">留下痕迹</span>
+  </div>
+  <div class="cover-fig">
+<svg viewBox="0 0 760 190" width="760" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="体会情感：读进去，找关键，联自己">
+  <rect x="0" y="0" width="760" height="190" rx="18" fill="#FFFFFF" opacity=".10"/>
+  <text x="28" y="32" font-size="15" fill="#EAF1F8" font-weight="700">体会情感：读进去，找关键，联自己</text>
+  <g>    <rect x="28" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="111" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">读</text>
+    <text x="111" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">有感情朗读</text>
+    <rect x="212" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="295" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">找</text>
+    <text x="295" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">抓关键句</text>
+    <rect x="396" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="479" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">联</text>
+    <text x="479" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">联系自己</text>
+    <rect x="580" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="663" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">说</text>
+    <text x="663" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">讲出触动</text>
+  </g>
+</svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">前测 · 先看看你已经知道什么</h2>
+  <p class="quiz-hint">三道题都有唯一答案，答错会告诉你错在哪。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 体会文章思想感情，下面哪种方法最全面？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>只默读一遍</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>朗读、抓关键句、联系生活结合</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>只看注释</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 「他攥紧拳头，眼泪在眼眶里打转」主要表现人物什么心情？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>激动或委屈</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>轻松愉快</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>漫不经心</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 有感情地朗读主要是为了？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>读得更快</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>显示声音大</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>通过语气读出文字里的情绪</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 起疑 · 同一句话，读出的是什么心情？ ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">起疑 · 同一句话，读出的是什么心情？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="三条路">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">读出语气</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">抓住关键句</text>
+  <text x="22" y="86" font-size="15" fill="#3B4FA8" font-weight="700">联系自己</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">三路并用，感受更深</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    先读一段短文《母亲的背影》：深夜，「我」看见母亲还在灯下为我缝校服，背影被灯光拉得很长。
+  </p>
+  <p class="teach-text" id="p2s2">
+    同一句「母亲的背影被灯光拉得很长」，有人读出辛苦，有人读出温暖。你读出什么？<b>点一句你最有感觉的，这里不判对错。</b>
+  </p>
+  <p class="teach-text" id="p2s3">
+    今天只做一件事：<b>把感情读出来，并说清它是从哪句来的</b>。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>读</h4>
+    <div class="eq">有感情朗读</div>
+    <p>读出语气</p>
+  </div>
+  <div class="card">
+    <h4>找</h4>
+    <div class="eq">抓关键句</div>
+    <p>词与标点</p>
+  </div>
+  <div class="card">
+    <h4>联</h4>
+    <div class="eq">联系自己</div>
+    <p>唤起共鸣</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  <div class="rd-text" id="rdText">
+  <span class="rd-s" data-p="1">夜很深了，母亲还在灯下缝我的校服。</span>
+  <span class="rd-s" data-p="2">她的背影被灯光拉得很长，头发上落着一层白。</span>
+  <span class="rd-s" data-p="3">我站在门口，喉咙像被什么堵住，轻轻叫了一声「妈」。</span>
+</div>
+<div class="trace-why" id="rdNote">花 <b>20 秒</b>读一遍，点一句「最有感觉的地方」。<b>点哪句都行，不判对错。</b></div>
+</div>
+</section>
+
+<!-- ===== p3: 取证 · 圈出藏情感的词 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">取证 · 圈出藏情感的词</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="情感藏在哪">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">动词形容词</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">标点与反复</text>
+  <text x="22" y="86" font-size="15" fill="#3B4FA8" font-weight="700">景物描写</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">字里有情绪</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    先选一个方法（朗读 / 抓关键句 / 联系生活），再点出一句藏着情感的原文；下面写一句你的感受。两样都留痕，就能往下走。
+  </p>
+  <p class="teach-text" id="p3s2">
+    <b>有感觉不等于说清了</b>。这里只报「已找几处关键句、感受写没写」，不打分。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>朗读用语气和节奏把情绪读出来；抓关键句盯住动词、形容词和标点。</li>
+  <li>「联系自己」要能说出相似的经历，不能只说「我懂」。</li>
+  <li>感受和依据分开记：感受框非空、且至少一句指回原文，才算留下痕迹。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  <div id="evBox">
+  <div class="ev-syms">
+    <button class="ev-sym" type="button" data-s="朗">朗读体会</button>
+    <button class="ev-sym" type="button" data-s="词">抓关键词</button>
+    <button class="ev-sym" type="button" data-s="联">联系自己</button>
+    <button class="ev-sym" type="button" data-s="？">最触动</button>
+  </div>
+  <div class="ev-text">
+    <span class="ev-s" data-p="1">母亲深夜还在缝校服。<i class="ev-badge"></i></span>
+    <span class="ev-s" data-p="2">背影被拉得很长，头发落着白。<i class="ev-badge"></i></span>
+    <span class="ev-s" data-p="3">我喉咙像被堵住，轻轻叫了声「妈」。<i class="ev-badge"></i></span>
+  </div>
+  <input class="ev-idea" id="evIdea" placeholder="我从「……」读出……，想到自己……">
+  <div class="trace-why" id="evWhy">先选一个方法，再点一句原文划下来。</div>
+  <div class="trace-note" id="evNote">已找关键句 0 处 · 感受还没写（只记痕迹，不判对错）</div>
+</div>
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连 · 三种方法各管什么</h2>
+<p class="teach-text" id="p3bs1">左边是体会情感的方法，右边是它能带你发现的东西。连完不用交卷，只看自己能不能说清「为什么」。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 边读边想</h2>
+  <p class="quiz-hint">三道题都有唯一答案，做完再看讲解。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 「感时花溅泪，恨别鸟惊心」借景物表达了什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>赏花的愉悦</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>游山玩水的轻松</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>忧国伤时的沉痛</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 说「我很受触动」时，最该补上什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>再多用一个形容词</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>是哪一句、让我想到自己的什么</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>把声音提高</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 体会情感时「联系自己生活」的作用是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>用相似经历唤起共鸣，读懂作者</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>证明自己比作者强</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>把文章换成自己的事</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 对齐 · 把情感和依据配起来 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">对齐 · 把情感和依据配起来</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="说出触动">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">我从哪句读出</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">想到自己什么</text>
+  <text x="22" y="86" font-size="15" fill="#3B4FA8" font-weight="700">不说空话</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">有根的感受才算</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    把 4 张感受卡放进「有依据 / 空喊」两类，有一张是「跑题」干扰卡。
+  </p>
+  <p class="teach-text" id="p5s2">
+    放完<b>强制补一步</b>：点卡片下面的「第几段」把依据记下。<b>分类和依据分别记录</b>，都不判对错。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>有依据</h4>
+    <div class="eq">能指出句子</div>
+    <p>感受落地</p>
+  </div>
+  <div class="card">
+    <h4>空喊</h4>
+    <div class="eq">只说感动</div>
+    <p>无根</p>
+  </div>
+  <div class="card">
+    <h4>跑题筐</h4>
+    <div class="eq">与文无关</div>
+    <p>另放</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  <div id="alBox">
+  <div class="al-cards" id="alCards">
+    <div class="ev-card" data-n="1"><b>卡 1</b><br>我从「头发落着一层白」读出母亲老了<div class="ev-paras"><span class="ev-para" data-p="1">第1段</span><span class="ev-para" data-p="2">第2段</span><span class="ev-para" data-p="3">第3段</span></div></div>
+    <div class="ev-card" data-n="2"><b>卡 2</b><br>「喉咙像被堵住」让我想起自己离家时的难受<div class="ev-paras"><span class="ev-para" data-p="1">第1段</span><span class="ev-para" data-p="2">第2段</span><span class="ev-para" data-p="3">第3段</span></div></div>
+    <div class="ev-card" data-n="3"><b>卡 3</b><br>反复的「妈」字写出我的哽咽<div class="ev-paras"><span class="ev-para" data-p="1">第1段</span><span class="ev-para" data-p="2">第2段</span><span class="ev-para" data-p="3">第3段</span></div></div>
+    <div class="ev-card" data-n="4（干扰）"><b>卡 4</b><br>我很喜欢这篇文章的封面<div class="ev-paras"><span class="ev-para" data-p="1">第1段</span><span class="ev-para" data-p="2">第2段</span><span class="ev-para" data-p="3">第3段</span></div></div>
+  </div>
+  <div class="al-slots">
+    <div class="ev-slot" data-slot="A"><b>有依据</b>能指回原文</div>
+    <div class="ev-slot" data-slot="B"><b>空喊</b>只有情绪词</div>
+    <div class="ev-slot" data-slot="X"><b>跑题筐</b>与文无关</div>
+  </div>
+  <div class="trace-why" id="alWhy">点一张卡，再点一类放进去；放完补一句「我是根据第几句分的」。</div>
+  <div class="trace-note" id="alNote">已归位 0 / 4 · 依据补了 0 / 4（分类和依据分别记，不判对错）</div>
+</div>
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">说清 · 把感受接回句子</h2>
+  <p class="sim-desc">点左边一句原文，再点右边一种感受，连成一环。用「我从这句读出……想到自己……」说清——不给分数，只看感受能不能落回原文。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">依据链已连 0 / 3 环（不判对错）</span>
+    <span class="sim-tip" id="simTip">先自己读一次，再看老师连一条</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn" onclick="simNextCase()">换一组</button>
+    <button class="btn" onclick="simReset()">重来</button>
+    <button class="btn-primary" onclick="simDemo()">看老师做一遍</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">左边是文里的句子，右边是你的感受；说偏了换一段重来</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>一句能引出多种感受；说偏了回头找依据就行。</li>
+    <li>感受记「有没有」，依据另记「第几句」，两样分开留痕。</li>
+    <li>感受和原文对不上时只说「再读第 X 段」，不给分数。</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 换个角度再认一次</h2>
+  <p class="quiz-hint">三道题都有唯一答案，注意别把方法用反。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 下面哪一句最能体现人物的「不舍」？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>他一步三回头，直到车开远了还在挥手</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>他上车坐好</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>天色渐渐暗了</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 文章里反复出现同一句话，通常说明？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>作者忘了换词</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>排版需要</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>那句话承载着强烈情感或主旨</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 体会感情和「概括主要内容」的区别是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>两者完全一样</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>前者抓情感，后者抓事件</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>概括比体会更细</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 换文 · 自己读一段 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">换文 · 自己读一段</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    换一段没提示的短文《雨中的同学》，自己找关键句、自己读出感受，再对着三条标准自查。勾不满也能翻页。
+  </p>
+  <p class="teach-text" id="p8s2">
+    顺手把四个<b>易错</b>点看一遍：别空喊感动，别混清谁的情感，别只看热闹，别忘联系自己。
+  </p>
+  <p class="teach-text" id="p8s3">
+    顺手把这一课<b>最容易</b>翻车的地方再看一遍：别只喊「我很感动」却不说是哪一句打动你，也别把人物心情和自己的感受混成一团——先说清「谁的情感」。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 有依据</h4>
+    <div class="eq">落在句子</div>
+    <p>不空喊</p>
+  </div>
+  <div class="card">
+    <h4>② 分得清</h4>
+    <div class="eq">谁的情感</div>
+    <p>不混成一团</p>
+  </div>
+  <div class="card">
+    <h4>③ 联自己</h4>
+    <div class="eq">说出触动</div>
+    <p>有共鸣</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  <div id="trBox">
+  <div class="tr-text">
+    <span class="tr-s">同桌把伞往我这边挪了挪，自己半边肩膀湿了一路。</span>
+    <span class="tr-s">他一路都在讲笑话，好像什么都没发生。</span>
+  </div>
+  <div class="trace-note" id="trNote">自己写了 0 句感受（不判对错）。换了一段没提示的短文，只剩「找句子」「说感受」。</div>
+  <div class="tr-cks">
+    <span class="tr-ck">① 我能指出是哪句打动我</span>
+    <span class="tr-ck">② 我能说清这是谁的心情</span>
+    <span class="tr-ck">③ 我能联系自己说一句触动</span>
+  </div>
+  <div class="trace-why" id="trAdvice">自查勾不满也照样翻页：这三条只问「感受有没有落在句子上」，不问「感受深不深」。</div>
+</div>
+</div>
+
+<p class="teach-text" id="p8apply">
+  这一页只问「感受有没有落在具体句子上」，不问「感受有多深刻」。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，把今天学的说清楚</h2>
+  <p class="quiz-hint">五道题都有唯一答案。做完这一页，这一课就装进去了。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 读到关键句时，最好的做法是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>立刻跳过去</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>停下来品一品，读出语气</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>只看下一句</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 一句景物描写让人觉得悲伤，这种写法叫？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>借景抒情</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>开门见山</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>平铺直叙</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 和同学交流阅读感受时，哪种做法最好？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>要求别人和自己一样</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>只听不问</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>各自说出依据，尊重不同感受</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 「母亲的手粗糙得像老树皮」这句话让你体会到？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>母亲的辛劳与「我」的心疼</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>手很好看</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>天气很冷</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 这一课最后要养成的习惯是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>只喊感动</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>读进去、找关键、联自己，说出依据</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>只看热闹</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">读进去</div>
+        <div class="summary-v4-summary">有感情朗读</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>用语气把情绪读出来。</p>
+      <p>关键句要停下来品。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">找关键</div>
+        <div class="summary-v4-summary">动词形容词</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>字词里藏着情绪。</p>
+      <p>反复和标点也有话。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">联自己</div>
+        <div class="summary-v4-summary">唤起共鸣</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>相似经历帮你读懂。</p>
+      <p>但要说清是哪一句。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">说触动</div>
+        <div class="summary-v4-summary">落在句子</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>不空喊「很感动」。</p>
+      <p>有依据的感受才算数。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  <div class="my-chain" id="myChain"><b>你留下的依据链</b>　（还没存想法。回到「取证」那一页写一句，它就会出现在这里。）</div>
+把今天写的一句感受读给同桌听：先说你从哪一句读出来的，再说它让你想到自己的什么。同桌听完知道「这份感受有根」，这次体会就站住了。下一步学「赏析语言」，把这份感受说得更具体。
+</p>
+</section>

@@ -1,0 +1,556 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>一篇文章讲了什么，怎么说得又全又简？</h1>
+  <p class="sub">四年级语文 · 阅读</p>
+  <div class="tags">
+    <span class="tag">语文要素·概括</span>
+    <span class="tag">主要内容</span>
+    <span class="tag">2022课标</span>
+    <span class="tag">留下痕迹</span>
+  </div>
+  <div class="cover-fig">
+<svg viewBox="0 0 760 190" width="760" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="概括：抓主干，去细节，几句话讲清整篇">
+  <rect x="0" y="0" width="760" height="190" rx="18" fill="#FFFFFF" opacity=".10"/>
+  <text x="28" y="32" font-size="15" fill="#EAF1F8" font-weight="700">概括：抓主干，去细节，几句话讲清整篇</text>
+  <g>    <rect x="28" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="111" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">读</text>
+    <text x="111" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">逐段读懂</text>
+    <rect x="212" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="295" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">串</text>
+    <text x="295" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">连起段意</text>
+    <rect x="396" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="479" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">抓</text>
+    <text x="479" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">六要素</text>
+    <rect x="580" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="663" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">核</text>
+    <text x="663" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">回文对照</text>
+  </g>
+</svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">前测 · 先看看你已经知道什么</h2>
+  <p class="quiz-hint">三道题都有唯一答案，答错会告诉你错在哪。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 概括文章主要内容，最核心的要求是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>越详细越好</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>既全面又简洁</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>越短越好</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 「串联段意法」的正确步骤是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>先概括每段，再连起来</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>只读第一段</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>把每段抄一遍</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 抓六要素概括，主要适合哪类文章？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>所有说明文</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>诗歌</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>记事类文章</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 起疑 · 六要素里，哪一样最能带动全篇？ ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">起疑 · 六要素里，哪一样最能带动全篇？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="两种办法">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">串联段意：一段一句</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">六要素：时间地点人物事</text>
+  <text x="22" y="86" font-size="15" fill="#3B4FA8" font-weight="700">合起来说一遍</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">方法不同，目标一样</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    先读一段短文《雨中的伞》：放学下雨，「我」把伞借给没带伞的同桌，自己淋了半边肩膀。
+  </p>
+  <p class="teach-text" id="p2s2">
+    同样讲这件事，有人说「讲了一把伞」，有人说「讲『我』借伞给同桌、自己淋雨」。哪一种让别人听得明白？<b>点一句你认同的，这里不判对错。</b>
+  </p>
+  <p class="teach-text" id="p2s3">
+    今天只做一件事：<b>抓主干、去细节</b>，把一篇文章说成几句清楚的话。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>读</h4>
+    <div class="eq">逐段读懂</div>
+    <p>先Know讲什么</p>
+  </div>
+  <div class="card">
+    <h4>抓</h4>
+    <div class="eq">找六要素</div>
+    <p>谁何时何地</p>
+  </div>
+  <div class="card">
+    <h4>串</h4>
+    <div class="eq">连成几句</div>
+    <p>通顺不堆细节</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  <div class="rd-text" id="rdText">
+  <span class="rd-s" data-p="1">放学时雨下得很大，我没带伞，同桌也没带。</span>
+  <span class="rd-s" data-p="2">我把仅有的一把伞塞给同桌，说「你先用」。</span>
+  <span class="rd-s" data-p="3">一路淋着雨回家，我半边肩膀湿透，心里却暖暖的。</span>
+</div>
+<div class="trace-why" id="rdNote">花 <b>20 秒</b>读一遍，点一句你觉得「最能概括这事」的说法。<b>点哪句都行，不判对错。</b></div>
+</div>
+</section>
+
+<!-- ===== p3: 取证 · 圈出六要素 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">取证 · 圈出六要素</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="六要素">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">何时何地何人</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">起因经过结果</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">记事文抓这六样</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    先选一个方法（串段意 / 抓六要素），再点出原文里对应的句子；下面写一句你的概括。两样都留痕，就能往下走。
+  </p>
+  <p class="teach-text" id="p3s2">
+    <b>圈得出不等于概括得好</b>。这里只报「已找几处要素、概括写没写」，不打分。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>串段意：先每段一句，再连成一段；抓六要素：何时何地何人、起因经过结果。</li>
+  <li>「因为」后面要能接上第几段哪一句，不能只写「我很感动」。</li>
+  <li>要素和概括分开记：概括框非空、且至少一处指回原文，才算留下痕迹。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  <div id="evBox">
+  <div class="ev-syms">
+    <button class="ev-sym" type="button" data-s="时">时间</button>
+    <button class="ev-sym" type="button" data-s="地">地点</button>
+    <button class="ev-sym" type="button" data-s="人">人物</button>
+    <button class="ev-sym" type="button" data-s="事">事情</button>
+  </div>
+  <div class="ev-text">
+    <span class="ev-s" data-p="1">放学时下大雨。<i class="ev-badge"></i></span>
+    <span class="ev-s" data-p="2">我把伞塞给同桌。<i class="ev-badge"></i></span>
+    <span class="ev-s" data-p="3">我淋雨回家，心里却暖。<i class="ev-badge"></i></span>
+  </div>
+  <input class="ev-idea" id="evIdea" placeholder="这篇主要讲……（谁、做了什么、结果怎样）">
+  <div class="trace-why" id="evWhy">先选一个方法，再点一句原文划下来。</div>
+  <div class="trace-note" id="evNote">已找要素 0 处 · 概括还没写（只记痕迹，不判对错）</div>
+</div>
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连 · 六种要素各管什么</h2>
+<p class="teach-text" id="p3bs1">左边是六要素的名目，右边是它回答的问题。连完不用交卷，只看自己能不能说清「为什么」。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 边读边想</h2>
+  <p class="quiz-hint">三道题都有唯一答案，做完再看讲解。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 「他很感动」这样的概括最大的问题是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>太长了</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>用了成语</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>太空泛，没说清谁因什么感动</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 概括时遇到大量细节描写，应该？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>全部保留</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>抓住主干，细节可略去</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>一个字不留</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 下面哪个概括比较合格？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>写「我」小时候和小伙伴偷摘邻居家桃子，事后主动道歉的故事</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>写「这篇文章讲了一件难忘的事」</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>把全文每段都抄一句</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 对齐 · 把细节和主干分开 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">对齐 · 把细节和主干分开</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="概括三要">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">不漏重点</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">不堆细节</text>
+  <text x="22" y="86" font-size="15" fill="#3B4FA8" font-weight="700">回文核对</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">别人听得懂才算</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    把 4 张句子卡放进「主干 / 细节」两类，有一张是「空话」干扰卡。
+  </p>
+  <p class="teach-text" id="p5s2">
+    放完<b>强制补一步</b>：点卡片下面的「第几段」把依据记下。<b>分类和依据分别记录</b>，都不判对错。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>主干要全</h4>
+    <div class="eq">谁做什么结果</div>
+    <p>不能漏</p>
+  </div>
+  <div class="card">
+    <h4>细节可略</h4>
+    <div class="eq">描写可删</div>
+    <p>不堆砌</p>
+  </div>
+  <div class="card">
+    <h4>空话要弃</h4>
+    <div class="eq">没信息量</div>
+    <p>另放一筐</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  <div id="alBox">
+  <div class="al-cards" id="alCards">
+    <div class="ev-card" data-n="1"><b>卡 1</b><br>我把伞借给同桌<div class="ev-paras"><span class="ev-para" data-p="1">第1段</span><span class="ev-para" data-p="2">第2段</span><span class="ev-para" data-p="3">第3段</span></div></div>
+    <div class="ev-card" data-n="2"><b>卡 2</b><br>同桌接过伞说谢谢<div class="ev-paras"><span class="ev-para" data-p="1">第1段</span><span class="ev-para" data-p="2">第2段</span><span class="ev-para" data-p="3">第3段</span></div></div>
+    <div class="ev-card" data-n="3"><b>卡 3</b><br>我淋雨回家，肩膀湿透<div class="ev-paras"><span class="ev-para" data-p="1">第1段</span><span class="ev-para" data-p="2">第2段</span><span class="ev-para" data-p="3">第3段</span></div></div>
+    <div class="ev-card" data-n="4（干扰）"><b>卡 4</b><br>这篇文章讲了一件感人的事<div class="ev-paras"><span class="ev-para" data-p="1">第1段</span><span class="ev-para" data-p="2">第2段</span><span class="ev-para" data-p="3">第3段</span></div></div>
+  </div>
+  <div class="al-slots">
+    <div class="ev-slot" data-slot="A"><b>主干</b>概括必须留下</div>
+    <div class="ev-slot" data-slot="B"><b>细节</b>可以略去</div>
+    <div class="ev-slot" data-slot="X"><b>空话筐</b>没有信息量</div>
+  </div>
+  <div class="trace-why" id="alWhy">点一张卡，再点一类放进去；放完补一句「我是根据第几句分的」。</div>
+  <div class="trace-note" id="alNote">已归位 0 / 4 · 依据补了 0 / 4（分类和依据分别记，不判对错）</div>
+</div>
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">说清 · 用六要素串起全文</h2>
+  <p class="sim-desc">点左边一条要素，再点右边一句概括，连成一环。用「谁、什么时候、做了什么、结果怎样」说清——不给分数，只看主干全不全。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">依据链已连 0 / 3 环（不判对错）</span>
+    <span class="sim-tip" id="simTip">先自己串一次，再看老师连一条</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn" onclick="simNextCase()">换一组</button>
+    <button class="btn" onclick="simReset()">重来</button>
+    <button class="btn-primary" onclick="simDemo()">看老师做一遍</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">左边是文里的要素，右边是你的概括；说漏了换一篇重来</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>一个要素能撑起概括的一块；串漏了回头补就行。</li>
+    <li>分类记「放哪类」，依据另记「第几句」，两样分开留痕。</li>
+    <li>概括和原文对不上时只说「再读第 X 段」，不给分数。</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 换个角度再认一次</h2>
+  <p class="quiz-hint">三道题都有唯一答案，注意别把方法用反。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 六要素里的「起因」指的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>事情为什么发生</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>事情发生在哪</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>事情的结果</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 概括完主要内容后，最好的核对方法是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>问同桌喜不喜欢</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>数一数字数</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>回到原文看重点有没有漏</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 串段意时，各段之间要注意什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>每段都单独成句不连</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>用连接词连得通顺</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>删掉所有动词</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 换文 · 自己概括一篇 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">换文 · 自己概括一篇</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    换一段没提示的短文《蚂蚁搬家》，自己抓要素、自己概括，再对着三条标准自查。勾不满也能翻页。
+  </p>
+  <p class="teach-text" id="p8s2">
+    顺手把四个<b>易错</b>点看一遍：别抄流水账，别写空话，别堆细节，别忘回文核对。
+  </p>
+  <p class="teach-text" id="p8s3">
+    顺手把这一课<b>最容易</b>翻车的地方再看一遍：别把每段都复述一遍变成「缩写流水账」，也别只写「这篇文章讲了一件感人的事」这种空话——要说出谁、做了什么、结果如何。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 主干全</h4>
+    <div class="eq">谁+事+果</div>
+    <p>重点不漏</p>
+  </div>
+  <div class="card">
+    <h4>② 够简洁</h4>
+    <div class="eq">细节略去</div>
+    <p>不堆砌</p>
+  </div>
+  <div class="card">
+    <h4>③ 能对回文</h4>
+    <div class="eq">有依据</div>
+    <p>回文核对</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  <div id="trBox">
+  <div class="tr-text">
+    <span class="tr-s">下雨前，蚂蚁排着队把家搬到高处，还衔着白色的蚁卵。</span>
+    <span class="tr-s">我蹲下看了很久，它们一次也没走散。</span>
+  </div>
+  <div class="trace-note" id="trNote">自己写了 0 句概括（不判对错）。换了一段没提示的短文，只剩「抓主干」「连成句」。</div>
+  <div class="tr-cks">
+    <span class="tr-ck">① 我能说出谁、做了什么、结果怎样</span>
+    <span class="tr-ck">② 我的概括里没有大段细节</span>
+    <span class="tr-ck">③ 我能指回原文说明依据</span>
+  </div>
+  <div class="trace-why" id="trAdvice">自查勾不满也照样翻页：这三条只问「主干抓没抓住」，不问「说得好不好」。</div>
+</div>
+</div>
+
+<p class="teach-text" id="p8apply">
+  这一页只问「主干抓没抓住、细节有没有堆」，不问「概括得有多精彩」。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，把今天学的说清楚</h2>
+  <p class="quiz-hint">五道题都有唯一答案。做完这一页，这一课就装进去了。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 「把每段第一句抄下来」当概括，问题在哪？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>抄得太少</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>中心句不总在段首，照抄可能不准</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>抄得太多</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 概括和「复述」的主要区别是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>概括更简洁，复述更具体</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>两者完全一样</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>复述比概括短</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 说明文概括主要内容，重点抓什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>人物的心情</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>故事的结局</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>说明对象和它的特征</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 如果一篇文章既记事又抒情，概括时应？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>以事件主干为主，情感点到为止</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>只写情感</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>只写景物</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 这一课最后要养成的习惯是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>每段都抄一句</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>抓主干，去细节，回文核对</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>只写一句空话</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">抓主干</div>
+        <div class="summary-v4-summary">谁做什么结果</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>六要素是记事文的主干。</p>
+      <p>说明文抓对象和特征。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">去细节</div>
+        <div class="summary-v4-summary">描写可略</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>细节服务于内容，可大胆删。</p>
+      <p>别写成逐段流水账。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">连通顺</div>
+        <div class="summary-v4-summary">段意相加</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>先每段一句，再连成一段。</p>
+      <p>加连接词，读起来连贯。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">回文核</div>
+        <div class="summary-v4-summary">不漏不添</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>概括完回原文对照。</p>
+      <p>别人听得懂才算数。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  <div class="my-chain" id="myChain"><b>你留下的依据链</b>　（还没存想法。回到「取证」那一页写一句，它就会出现在这里。）</div>
+把今天写的一句概括说给同桌听：先说你用的是串段意还是抓六要素，再指出你留下的一处主干和删掉的一处细节。同桌听完能复述出这件事，这次概括就站住了。下一步学「缩句」，把提主干练到句子层面。
+</p>
+</section>

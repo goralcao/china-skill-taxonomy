@@ -1,0 +1,94 @@
+{
+  "topicId": "mt_oral-debate",
+  "title": "不同意对方，怎么讲得有理又有礼？",
+  "template": "explain",
+  "renderer": "predict",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 5,
+  "subject": "语文",
+  "standards": [
+    "chinese-2022:S3:CR",
+    "chinese-2022:S3:PR"
+  ],
+  "prerequisites": [
+    "mt_oral-discuss",
+    "mt_read-question",
+    "mt_sent-fix",
+    "mt_oral-retell"
+  ],
+  "next": [],
+  "objectives": [
+    "学会围绕话题明确表态、列举理由，理由要能支撑观点",
+    "能听出对方观点的漏洞，有礼貌地反驳，不跑题不人身攻击",
+    "养成当众表达大方有条理、先想清楚再开口的习惯"
+  ],
+  "cognitiveAction": "辨析",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "起疑",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "取证",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "对齐",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "说清",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "换文",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

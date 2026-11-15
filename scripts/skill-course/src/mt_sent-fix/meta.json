@@ -1,0 +1,94 @@
+{
+  "topicId": "mt_sent-fix",
+  "title": "一句话里，3 种毛病怎么找出来改掉？",
+  "template": "explain",
+  "renderer": "sentBuild",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 4,
+  "subject": "语文",
+  "standards": [
+    "chinese-2022:S2:BQ"
+  ],
+  "prerequisites": [
+    "mt_sent-complete",
+    "mt_char-homophone",
+    "mt_punct-advanced"
+  ],
+  "next": [
+    "mt_oral-debate"
+  ],
+  "objectives": [
+    "能认出成分残缺、重复啰嗦、搭配不当这 3 种常见毛病，并说清各自错在哪",
+    "会按「读一读→找一找→改一改」的步骤动笔，改完句子仍通顺、意思不变",
+    "养成「改动越少越好、原意不能变」的修改习惯，不把句子越改越长"
+  ],
+  "cognitiveAction": "辨析",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "读进去",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "看出来",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "写下来",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "改一处",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "评一评",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "topicId": "mt_read-purpose",
+  "title": "带着一个目的读书，读法要怎么变？",
+  "template": "explain",
+  "renderer": "predict",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 6,
+  "subject": "语文",
+  "standards": [
+    "chinese-2022:S3:PR",
+    "chinese-2022:S3:LR"
+  ],
+  "prerequisites": [
+    "mt_read-speed",
+    "mt_read-question"
+  ],
+  "next": [
+    "mt_write-summary"
+  ],
+  "objectives": [
+    "明白读书前要先明确目的，根据目的选择浏览、精读、查找等读法",
+    "能围绕一个问题从长文中快速定位、筛选相关信息",
+    "养成「为目的服务」的阅读习惯，不为读而读"
+  ],
+  "cognitiveAction": "辨析",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "起疑",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "取证",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "对齐",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "说清",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "换文",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}
