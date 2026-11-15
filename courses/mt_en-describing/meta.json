@@ -1,0 +1,95 @@
+{
+  "topicId": "mt_en-describing",
+  "title": "连贯描述人与事物：让听的人不用追问",
+  "template": "explain",
+  "renderer": "pairMatch",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 5,
+  "subject": "英语",
+  "standards": [
+    "english-2022:L2:PS"
+  ],
+  "prerequisites": [
+    "mt_en-clothes",
+    "mt_en-activities",
+    "mt_en-speaking-routine",
+    "mt_en-jobs"
+  ],
+  "next": [
+    "mt_en-comparatives"
+  ],
+  "objectives": [
+    "能按一定顺序（整体到局部、外貌到性格）连贯描述人物和事物",
+    "会用 and / also / but 等连接词把句子接起来，让别人不用追问就听明白",
+    "能把服装、活动、职业等旧话题的词放进成段描述里"
+  ],
+  "cognitiveAction": "构造",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "听一听",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "认一认",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "描一描",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "拼一拼",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "查一查",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

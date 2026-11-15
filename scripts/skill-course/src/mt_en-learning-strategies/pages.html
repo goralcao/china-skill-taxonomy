@@ -1,0 +1,545 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>借助工具与资源学英语：先猜，再查</h1>
+  <p class="sub">五年级英语 · 学习策略</p>
+  <div class="tags">
+    <span class="tag">英语要素·学习策略</span>
+    <span class="tag">五年级</span>
+    <span class="tag">2022课标</span>
+    <span class="tag">留下痕迹</span>
+  </div>
+  <div class="cover-fig">
+<svg viewBox="0 0 760 190" width="760" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="工具各有各的用处">
+  <rect x="0" y="0" width="760" height="190" rx="18" fill="#FFFFFF" opacity=".10"/>
+  <text x="28" y="32" font-size="15" fill="#EAF1F8" font-weight="700">工具各有各的用处</text>
+  <g>    <rect x="28" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="111" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">🖼 / 猜</text>
+    <text x="111" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">先自己推断</text>
+    <rect x="212" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="295" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">📖</text>
+    <text x="295" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">词典验证</text>
+    <rect x="396" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="479" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">🗂</text>
+    <text x="479" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">词卡/纠错本</text>
+    <rect x="580" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="663" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">🎧</text>
+    <text x="663" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">录音跟读</text>
+  </g>
+</svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">前测 · 先看看你已经知道什么</h2>
+  <p class="quiz-hint">三道题都有唯一答案，答错会告诉你错在哪。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 读到生词，正确的顺序是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>立刻查词典</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>先用上下文猜，猜不出再查词典</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>直接跳过不管</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 查词典主要用来？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>确认读音、词义和用法</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>代替自己思考</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>把全文翻译好</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 把错过的题记下来反复看，用的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>词卡</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>录音</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>纠错本 / 错题集</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 听一听 · 遇到生词，3 件工具该先拿起哪一件？ ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">听一听 · 遇到生词，3 件工具该先拿起哪一件？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="工具与用途">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">picture 帮猜义　dictionary 验证</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">word cards 复习　recording 跟读</text>
+  <text x="22" y="86" font-size="15" fill="#3B4FA8" font-weight="700">mind map 归类整理</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">按需选，不迷信一件</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    先听老师读一遍：<b>guess first　先猜　then check　再查</b>。
+  </p>
+  <p class="teach-text" id="p2s2">
+    再听这一组：<b>word cards 词卡　recording 录音　mind map 导图</b>。今天不背定义，只做一件事：<b>把词、形、用对上</b>。
+  </p>
+  <p class="teach-text" id="p2s3">
+    <b>最容易</b>踩的坑是一遇生词立刻查词典、错题攒着不改、只一个人闷头学。<b>各 10 秒钟</b>，先听再点。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>听一听</h4>
+    <p>跟着老师读，先别急着判对错</p>
+  </div>
+  <div class="card">
+    <h4>对一对</h4>
+    <p>把词、形、用法三样对上</p>
+  </div>
+  <div class="card">
+    <h4>留痕迹</h4>
+    <p>点过、摆过就留下一处，不打分</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  <div class="read-pair" id="readPair">
+  <div class="read-line" data-k="a">guess first　先猜　then check　再查</div>
+  <div class="read-line" data-k="b">word cards 词卡　recording 录音　mind map 导图</div>
+</div>
+<div class="read-note" id="readNote">先给两组各 <b>10 秒钟</b>，听老师读一遍再点。<b>点哪组都行，这里不判对错。</b></div>
+</div>
+</section>
+
+<!-- ===== p3: 认一认 · 圈出这一课要找的三处 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">认一认 · 圈出这一课要找的三处</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="好习惯">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">先猜后查、预习 + 复习</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">纠错本及时改错</text>
+  <text x="22" y="86" font-size="15" fill="#3B4FA8" font-weight="700">定小计划、与同伴合作</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">会安排才会学</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    下面一排里，有三处是这一课要找的。点出来，点错也没关系。
+  </p>
+  <p class="teach-text" id="p3s2">
+    这里只报「已圈出 X 处」，不标红、不拦路。圈够了才提示往下走。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>点中一处，就留下一处痕迹，并看到它是什么。</li>
+  <li>点错了不判错，只提示「再看看别处」。</li>
+  <li>圈够 3 处，这一课的三样东西就都认全了。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  <div class="ann-line" id="annLine"><span class="ann-w" data-t="dictionary">dictionary</span><span class="ann-w" data-t="word cards">word cards</span><span class="ann-w" data-t="guess first">guess first</span><span class="ann-w" data-t="apple">apple</span><span class="ann-w" data-t="red">red</span><span class="ann-w" data-t="run">run</span></div>
+<div class="ann-count" id="annCount">已圈出 0 / 3 处（点错不标红，也不拦你）</div>
+<div class="ann-why" id="annWhy">点一个，看它是学习工具，还是「先猜后查」这类做法。</div>
+<button class="mini-btn ghost" id="annHintBtn" type="button">看看还剩哪几处没被注意到</button>
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连 · 每样东西管什么</h2>
+<p class="teach-text" id="p3bs1">左边是词或句，右边是它管的事。连完不用交卷，只看自己能不能说清「为什么」。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 边听边认</h2>
+  <p class="quiz-hint">三道题都有唯一答案，做完再看讲解。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 听录音跟读主要练？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>书写占格</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>语法分析</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>语音语调和听力</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. word cards（单词卡）最适合？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>查语法规则</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>随时复习、自测单词</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>改作文</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. mind map（思维导图）帮我们？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>把一类词或知识整理成图</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>把字写漂亮</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>测听力</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 描一描 · 摆出自己的那一组 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">描一描 · 摆出自己的那一组</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="三行摆一摆">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">第一行　写一个遇到生词的场景</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">第二行　选一件该用的工具</text>
+  <text x="22" y="86" font-size="15" fill="#3B4FA8" font-weight="700">第三行　写一句自己的小计划</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">一行比一行难</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    三行，一行比一行难。摆不出来就点支架块——但尽量自己挑。
+  </p>
+  <p class="teach-text" id="p5s2">
+    这里只判「摆没摆」，不判好不好。摆不满三行也能往下走，先摆后看老师摆的。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>第一行</h4>
+    <div class="eq">写一个遇到生词或听不懂的场景</div>
+    <p>先写一样，不用全对。</p>
+  </div>
+  <div class="card">
+    <h4>第二行</h4>
+    <div class="eq">选一件该用的工具</div>
+    <p>再写第二样。</p>
+  </div>
+  <div class="card">
+    <h4>第三行</h4>
+    <div class="eq">写一句自己能坚持的小计划</div>
+    <p>最后合成一小句。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  <div id="draftBox">
+  <textarea class="draft-row" id="draftRow1" placeholder="第一行：写一个遇到生词或听不懂的场景"></textarea>
+  <textarea class="draft-row" id="draftRow2" placeholder="第二行：选一件该用的工具"></textarea>
+  <textarea class="draft-row" id="draftRow3" placeholder="第三行：写一句自己能坚持的小计划"></textarea>
+  <div class="draft-chips"><span style="font-size:14px;color:#7A7263">卡住了就点一个，用不用随你：</span><br>
+    <button class="chip-btn" data-ins="guess first" type="button">guess first</button>
+    <button class="chip-btn" data-ins="dictionary" type="button">dictionary</button>
+    <button class="chip-btn" data-ins="word cards" type="button">word cards</button>
+    <button class="chip-btn" data-ins="recording" type="button">recording</button>
+    <button class="chip-btn" data-ins="纠错本" type="button">纠错本</button>
+    <button class="chip-btn" data-ins="mind map" type="button">mind map</button></div>
+  <button class="sample-fold" type="button">摆完再看老师摆的 ▾</button>
+  <div class="sample-body" id="sampleBody">遇到生词 → guess first 先猜 → 还不懂再查 dictionary → 记进 word cards 每天复习 5 个。<br>
+    <span style="font-size:13px;color:#7A7263"><b>先摆后看，才不会全班摆成同一件工具</b>。场景、工具、计划分三行，最容易看清「按需选」。</span></div>
+  <div style="margin-top:10px"><button class="mini-btn" id="draftSave" type="button">存起来</button></div>
+  <div class="draft-state" id="draftState"></div>
+</div>
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">拼一拼 · 看场景，选该用的工具或做法</h2>
+  <p class="sim-desc">点候选块，看一个学习场景后选该用的工具或做法。这里不打分，只看摆没摆齐。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">已摆 0 / 1 处（不判对错）</span>
+    <span class="sim-tip" id="simTip">先自己试一次，再看老师摆</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn" onclick="simNextCase()">换一组</button>
+    <button class="btn" onclick="simReset()">重来</button>
+    <button class="btn-primary" onclick="simDemo()">看老师摆一次</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">点一块，看它落到台子哪儿</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>先借上下文/插图猜，猜不出再查词典验证。</li>
+    <li>词卡复习、录音跟读、导图归类、纠错本改错，各有用途。</li>
+    <li>预习+复习、定小计划、与同伴合作，学会安排和调控。</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 换个角度再认一次</h2>
+  <p class="quiz-hint">三道题都有唯一答案，换个角度再认一次。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 预习和复习的作用是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>课前有准备、课后防遗忘</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>多花时间而已</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>代替听课</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 和同伴一起练，最大的好处是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>可以少做作业</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>不用自己开口</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>能互问互答、互相纠错</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 给自己定「每天记 5 个词」属于？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>一次背完所有词</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>制定可执行的小计划</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>只靠临时突击</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 查一查 · 对着三条标准看自己摆的那一组 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">查一查 · 对着三条标准看自己摆的那一组</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    怎么选都不影响往下走，也不给分数。这一页只输出「下一步改哪一处」。
+  </p>
+  <p class="teach-text" id="p8s2">
+    顺手把这一课的<b>易错</b>处再看一遍：一遇生词立刻查词典、错题攒着不改、只一个人闷头学。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>工具选对了吗</h4>
+    <div class="eq">合格 → 优秀</div>
+    <p>回去把 dictionary、word ca</p>
+  </div>
+  <div class="card">
+    <h4>顺序对了吗</h4>
+    <div class="eq">合格 → 优秀</div>
+    <p>记住「先借上下文猜，猜不出再查」，查完放回句</p>
+  </div>
+  <div class="card">
+    <h4>会安排了吗</h4>
+    <div class="eq">合格 → 优秀</div>
+    <p>定一个「每天 5 个词」的小计划，配一本纠错</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  <div id="rubricBox">
+  <div class="rub-dim" data-name="工具选对了吗"><b>工具选对了吗</b><br>
+    <span class="rub-level" data-k="合格">合格：认出一件</span>
+    <span class="rub-level" data-k="良好">良好：两三件分清</span>
+    <span class="rub-level" data-k="优秀">优秀：说出各自用途</span>
+    </div>
+  <div class="rub-dim" data-name="顺序对了吗"><b>顺序对了吗</b><br>
+    <span class="rub-level" data-k="合格">合格：直接查</span>
+    <span class="rub-level" data-k="良好">良好：知道先猜</span>
+    <span class="rub-level" data-k="优秀">优秀：先猜后查还能验证</span>
+    </div>
+  <div class="rub-dim" data-name="会安排了吗"><b>会安排了吗</b><br>
+    <span class="rub-level" data-k="合格">合格：没有计划</span>
+    <span class="rub-level" data-k="良好">良好：会预习复习</span>
+    <span class="rub-level" data-k="优秀">优秀：能定小计划并回头调整</span>
+    </div>
+  <div class="rub-advice" id="rubAdvice">选一级，看看它要求什么。自评不合格也照样能翻页。</div>
+</div>
+</div>
+
+<p class="teach-text" id="p8apply">
+  哪一维还没到「优秀」，就只补那一处。补完给自己排一周的小计划，周末回看哪件工具最有用——没用上的那一件，就是下次要试的。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，把今天学的说清楚</h2>
+  <p class="quiz-hint">五道题都有唯一答案。做完这一页，这一课就装进去了。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 只背新词、从不回头复习，容易？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>记得特别牢</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>学过就忘</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>读音更准</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 错题一直不改，会？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>同样的错一犯再犯</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>自动变对</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>只影响书写</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 插图 picture 在学习里的作用是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>给出语法名称</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>代替词典全部功能</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>帮理解和猜义</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 遇到听不懂的录音，较好的做法是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>再听一遍、对照文本，必要时请教</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>直接放弃</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>只调大音量</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 「学会学习」最核心的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>工具买得最全</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>会选工具、会安排、会反思调整</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>花的时间最长</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">先猜后查</div>
+        <div class="summary-v4-summary">工具用在刀刃上</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>先借上下文和插图猜，猜不出再查词典验证。</p>
+      <p>词典是验证，不替代自己推断。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">工具各有用途</div>
+        <div class="summary-v4-summary">picture / cards / recording / map</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>picture 猜义、word cards 复习、recording 跟读、mind map 归类。</p>
+      <p>纠错本集中改易错点。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">好习惯防遗忘</div>
+        <div class="summary-v4-summary">预习 / 复习 / 及时改错</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>课前预习带问题，课后按节奏复习。</p>
+      <p>错题及时改，别一犯再犯。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">学会安排和调控</div>
+        <div class="summary-v4-summary">小计划 + 合作</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>定「每天 5 个词」这类可坚持的小目标。</p>
+      <p>与同伴互问互纠，周末回头看效果再调整。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  <div class="my-sentence" id="mySentence"><b>你摆好的那一组</b>　（结算页会显示你在「描一描」那一页存下的一组。）</div>
+把今天摆的那套「场景—工具—计划」说给同桌听，再给自己排一周小计划。会按需选工具、会安排、会回头调整，就真的学会学习了。
+</p>
+</section>

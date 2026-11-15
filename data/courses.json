@@ -1,19 +1,19 @@
 {
   "version": "v0.49.5",
   "schemaVersion": 1,
-  "generatedAt": "2026-11-15",
+  "generatedAt": "2026-11-16",
   "counts": {
-    "total": 107,
+    "total": 126,
     "byTemplate": {
-      "explain": 107
+      "explain": 126
     },
     "byStatus": {
-      "reviewed": 107
+      "reviewed": 126
     },
     "bySubject": {
       "数学": 68,
       "语文": 21,
-      "英语": 18
+      "英语": 37
     }
   },
   "courses": [
@@ -2328,6 +2328,108 @@
       "bytes": 101087
     },
     {
+      "topicId": "mt_en-activities",
+      "title": "日常活动短语：play football 中间为什么不加 the？",
+      "template": "explain",
+      "renderer": "pairMatch",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 4,
+      "subject": "英语",
+      "standards": [
+        "english-2022:L1:LK"
+      ],
+      "prerequisites": [
+        "mt_en-places",
+        "mt_en-jobs"
+      ],
+      "next": [
+        "mt_en-transport",
+        "mt_en-present-simple",
+        "mt_en-speaking-routine",
+        "mt_en-past-tense",
+        "mt_en-describing",
+        "mt_en-progressive",
+        "mt_en-writing-short"
+      ],
+      "objectives": [
+        "能听说认读 play football、read books、watch TV、do homework、go swimming 等活动短语",
+        "知道「play + 球类」不加 the、「play + 乐器」加 the，动词与名词有固定搭配",
+        "能用 I like ... / I often ... 谈论课余生活与爱好"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "听一听",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "认一认",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "描一描",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "拼一拼",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "查一查",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_en-activities/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-activities/index.html",
+      "bytes": 120660
+    },
+    {
       "topicId": "mt_en-animals",
       "title": "动物词汇：两条鱼是 two fish 还是 two fishes？",
       "template": "explain",
@@ -2627,6 +2729,197 @@
       "bytes": 117029
     },
     {
+      "topicId": "mt_en-clothes",
+      "title": "服装词汇：shoes 为什么总带着 s？",
+      "template": "explain",
+      "renderer": "pairMatch",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 4,
+      "subject": "英语",
+      "standards": [
+        "english-2022:L1:LK"
+      ],
+      "prerequisites": [
+        "mt_en-body-stationery",
+        "mt_en-weather"
+      ],
+      "next": [
+        "mt_en-describing"
+      ],
+      "objectives": [
+        "能听说认读 hat、coat、dress、skirt、shirt、shoes、socks、pants 等服装词",
+        "知道鞋、袜、裤子成双成对，常用复数，并用 a pair of 表示「一双/一条」",
+        "能用 Whose ... is this? 和 Its mine. 谈论衣物所属"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "听一听",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "认一认",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "描一描",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "拼一拼",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "查一查",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_en-clothes/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-clothes/index.html",
+      "bytes": 120161
+    },
+    {
+      "topicId": "mt_en-comparatives",
+      "title": "形容词比较级：A 比 B 高，一个 than 就够",
+      "template": "explain",
+      "renderer": "pairMatch",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 6,
+      "subject": "英语",
+      "standards": [
+        "english-2022:L2:LK"
+      ],
+      "prerequisites": [
+        "mt_en-be-verb",
+        "mt_en-past-tense",
+        "mt_en-describing"
+      ],
+      "next": [],
+      "objectives": [
+        "知道比较级用于两者比较，结构 A + be + 比较级 + than + B",
+        "掌握 -er / more 的选择、双写（big→bigger）、变 y 为 i（happy→happier）与不规则（good→better）",
+        "能用 much 修饰比较级、说清比较对象，比较两个人或事物的差异并说明理由"
+      ],
+      "cognitiveAction": "比较",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "听一听",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "认一认",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "描一描",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "拼一拼",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "查一查",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_en-comparatives/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-comparatives/index.html",
+      "bytes": 120510
+    },
+    {
       "topicId": "mt_en-copying",
       "title": "抄写与仿写句子：字母占格、词间距、标点",
       "template": "explain",
@@ -2721,6 +3014,103 @@
       "path": "courses/mt_en-copying/",
       "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-copying/index.html",
       "bytes": 118538
+    },
+    {
+      "topicId": "mt_en-culture",
+      "title": "中外节日与文化差异：习俗别张冠李戴",
+      "template": "explain",
+      "renderer": "pairMatch",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 5,
+      "subject": "英语",
+      "standards": [
+        "english-2022:L2:PSOC"
+      ],
+      "prerequisites": [
+        "mt_en-family",
+        "mt_en-food",
+        "mt_en-speaking-routine"
+      ],
+      "next": [
+        "mt_en-learning-strategies"
+      ],
+      "objectives": [
+        "能认读 Spring Festival、Christmas、Mid-Autumn Festival、Thanksgiving 等节日名称",
+        "知道主要节日对应的典型习俗（饺子、月饼、圣诞树、火鸡），节日名首字母大写",
+        "能比较饮食、礼仪等差异，养成尊重不同文化的交际意识"
+      ],
+      "cognitiveAction": "比较",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "听一听",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "认一认",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "描一描",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "拼一拼",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "查一查",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_en-culture/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-culture/index.html",
+      "bytes": 119942
     },
     {
       "topicId": "mt_en-demonstratives",
@@ -2818,6 +3208,104 @@
       "path": "courses/mt_en-demonstratives/",
       "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-demonstratives/index.html",
       "bytes": 117287
+    },
+    {
+      "topicId": "mt_en-describing",
+      "title": "连贯描述人与事物：让听的人不用追问",
+      "template": "explain",
+      "renderer": "pairMatch",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 5,
+      "subject": "英语",
+      "standards": [
+        "english-2022:L2:PS"
+      ],
+      "prerequisites": [
+        "mt_en-clothes",
+        "mt_en-activities",
+        "mt_en-speaking-routine",
+        "mt_en-jobs"
+      ],
+      "next": [
+        "mt_en-comparatives"
+      ],
+      "objectives": [
+        "能按一定顺序（整体到局部、外貌到性格）连贯描述人物和事物",
+        "会用 and / also / but 等连接词把句子接起来，让别人不用追问就听明白",
+        "能把服装、活动、职业等旧话题的词放进成段描述里"
+      ],
+      "cognitiveAction": "构造",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "听一听",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "认一认",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "描一描",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "拼一拼",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "查一查",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_en-describing/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-describing/index.html",
+      "bytes": 120171
     },
     {
       "topicId": "mt_en-family",
@@ -3017,6 +3505,102 @@
       "bytes": 117130
     },
     {
+      "topicId": "mt_en-going-to",
+      "title": "一般将来时：be going to 说说你的打算",
+      "template": "explain",
+      "renderer": "pairMatch",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 6,
+      "subject": "英语",
+      "standards": [
+        "english-2022:L2:LK"
+      ],
+      "prerequisites": [
+        "mt_en-transport",
+        "mt_en-be-verb",
+        "mt_en-present-simple",
+        "mt_en-progressive"
+      ],
+      "next": [],
+      "objectives": [
+        "知道一般将来时 be going to + 动词原形表计划和打算，常配 tomorrow、next week",
+        "掌握 be 随主语变、to 后面动词一律用原形，会变疑问和否定",
+        "能用 What are you going to do ...? 谈论周末和假期安排"
+      ],
+      "cognitiveAction": "比较",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "听一听",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "认一认",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "描一描",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "拼一拼",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "查一查",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_en-going-to/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-going-to/index.html",
+      "bytes": 120772
+    },
+    {
       "topicId": "mt_en-greetings",
       "title": "问候与自我介绍：Good morning 不是全天都能说",
       "template": "explain",
@@ -3109,6 +3693,295 @@
       "path": "courses/mt_en-greetings/",
       "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-greetings/index.html",
       "bytes": 117700
+    },
+    {
+      "topicId": "mt_en-guessing-words",
+      "title": "借助上下文猜词义：一遇生词别急着查词典",
+      "template": "explain",
+      "renderer": "pairMatch",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 4,
+      "subject": "英语",
+      "standards": [
+        "english-2022:L1:ST"
+      ],
+      "prerequisites": [
+        "mt_en-phonics",
+        "mt_en-reading-pictures",
+        "mt_en-spelling-rules"
+      ],
+      "next": [
+        "mt_en-writing-passage",
+        "mt_en-learning-strategies"
+      ],
+      "objectives": [
+        "能借助插图、上下文情节和生活经验猜测生词词义",
+        "知道 but 表转折、because 表原因、like 举例这些线索词能帮忙推断",
+        "能猜完把词义放回句子验证是否讲得通，减少对词典的依赖"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "听一听",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "认一认",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "描一描",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "拼一拼",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "查一查",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_en-guessing-words/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-guessing-words/index.html",
+      "bytes": 120033
+    },
+    {
+      "topicId": "mt_en-jobs",
+      "title": "职业词汇：teach 加 -er 就变成 teacher",
+      "template": "explain",
+      "renderer": "pairMatch",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 4,
+      "subject": "英语",
+      "standards": [
+        "english-2022:L1:LK"
+      ],
+      "prerequisites": [
+        "mt_en-family",
+        "mt_en-places"
+      ],
+      "next": [
+        "mt_en-activities",
+        "mt_en-describing"
+      ],
+      "objectives": [
+        "能听说认读 doctor、nurse、teacher、driver、farmer、worker、cook 等职业词",
+        "知道动词加 -er / -or / -man 可以构成职业词，单数职业前要用 a 或 an",
+        "能用 What does he do? / He is a ... 谈论家人的职业"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "听一听",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "认一认",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "描一描",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "拼一拼",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "查一查",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_en-jobs/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-jobs/index.html",
+      "bytes": 120212
+    },
+    {
+      "topicId": "mt_en-learning-strategies",
+      "title": "借助工具与资源学英语：先猜，再查",
+      "template": "explain",
+      "renderer": "pairMatch",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 5,
+      "subject": "英语",
+      "standards": [
+        "english-2022:L2:ST"
+      ],
+      "prerequisites": [
+        "mt_en-guessing-words",
+        "mt_en-culture"
+      ],
+      "next": [],
+      "objectives": [
+        "知道 picture、dictionary、word card、recording、mind map 等工具各帮什么忙",
+        "养成「先借上下文猜、再查工具验证」和预习、复习、及时纠错的习惯",
+        "愿意与同伴合作、制定小计划，逐步学会自主安排学习"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "听一听",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "认一认",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "描一描",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "拼一拼",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "查一查",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_en-learning-strategies/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-learning-strategies/index.html",
+      "bytes": 120131
     },
     {
       "topicId": "mt_en-letter-name",
@@ -3495,6 +4368,103 @@
       "bytes": 116890
     },
     {
+      "topicId": "mt_en-past-tense",
+      "title": "一般过去时：动词换个尾，讲讲已经发生的事",
+      "template": "explain",
+      "renderer": "pairMatch",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 6,
+      "subject": "英语",
+      "standards": [
+        "english-2022:L2:LK"
+      ],
+      "prerequisites": [
+        "mt_en-activities",
+        "mt_en-be-verb",
+        "mt_en-present-simple"
+      ],
+      "next": [
+        "mt_en-comparatives"
+      ],
+      "objectives": [
+        "知道一般过去时表已经发生的事，常配 yesterday、last night、... ago",
+        "掌握规则动词加 -ed、常见不规则动词（go-went、see-saw、have-had）与 was / were",
+        "知道疑问 did / 否定 didnt 后动词回原形，能讲述并区分现在与过去"
+      ],
+      "cognitiveAction": "比较",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "听一听",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "认一认",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "描一描",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "拼一拼",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "查一查",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_en-past-tense/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-past-tense/index.html",
+      "bytes": 120170
+    },
+    {
       "topicId": "mt_en-phonics",
       "title": "字母音与自然拼读：cat 是怎么拼出来的",
       "template": "explain",
@@ -3592,6 +4562,104 @@
       "bytes": 117125
     },
     {
+      "topicId": "mt_en-places",
+      "title": "学校与场所词汇：in the library、on the playground",
+      "template": "explain",
+      "renderer": "pairMatch",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 4,
+      "subject": "英语",
+      "standards": [
+        "english-2022:L1:LK"
+      ],
+      "prerequisites": [
+        "mt_en-body-stationery",
+        "mt_en-prepositions"
+      ],
+      "next": [
+        "mt_en-activities",
+        "mt_en-jobs",
+        "mt_en-transport"
+      ],
+      "objectives": [
+        "能听说认读 classroom、library、playground、canteen、computer room 等校园场所词",
+        "知道「在操场/场地」常用 on，室内房间用 in，并能用 next to / on the second floor 说位置",
+        "能用 Where is the ...? / It is on the ... floor. 问答场所位置"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "听一听",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "认一认",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "描一描",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "拼一拼",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "查一查",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_en-places/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-places/index.html",
+      "bytes": 120480
+    },
+    {
       "topicId": "mt_en-prepositions",
       "title": "方位介词：in、on、under 摆在哪儿？",
       "template": "explain",
@@ -3686,6 +4754,203 @@
       "path": "courses/mt_en-prepositions/",
       "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-prepositions/index.html",
       "bytes": 116927
+    },
+    {
+      "topicId": "mt_en-present-simple",
+      "title": "一般现在时：he 后面为什么动词要加 s？",
+      "template": "explain",
+      "renderer": "pairMatch",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 5,
+      "subject": "英语",
+      "standards": [
+        "english-2022:L2:LK"
+      ],
+      "prerequisites": [
+        "mt_en-activities",
+        "mt_en-be-verb",
+        "mt_en-yes-no-questions"
+      ],
+      "next": [
+        "mt_en-progressive",
+        "mt_en-going-to",
+        "mt_en-past-tense",
+        "mt_en-writing-passage"
+      ],
+      "objectives": [
+        "知道一般现在时表习惯和常态，常配 every day、often、usually 等时间词",
+        "掌握第三人称单数动词加 -s / -es，疑问用 does、否定用 doesnt 后动词回原形",
+        "能区分 I / you / we / they 用原形、he / she / it 用三单，描述日常作息"
+      ],
+      "cognitiveAction": "比较",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "听一听",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "认一认",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "描一描",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "拼一拼",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "查一查",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_en-present-simple/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-present-simple/index.html",
+      "bytes": 120356
+    },
+    {
+      "topicId": "mt_en-progressive",
+      "title": "现在进行时：be 加 V-ing，一个都不能少",
+      "template": "explain",
+      "renderer": "pairMatch",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 5,
+      "subject": "英语",
+      "standards": [
+        "english-2022:L2:LK"
+      ],
+      "prerequisites": [
+        "mt_en-activities",
+        "mt_en-be-verb",
+        "mt_en-present-simple"
+      ],
+      "next": [
+        "mt_en-going-to"
+      ],
+      "objectives": [
+        "知道现在进行时表此刻正在发生，结构是 be + V-ing，常配 now、Look!、Listen!",
+        "掌握 V-ing 的拼写变化：一般加 -ing、去 e 加 -ing、双写末尾辅音",
+        "能区分「正在做」与「经常做」，把 now 与 every day 对应到两种时态"
+      ],
+      "cognitiveAction": "比较",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "听一听",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "认一认",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "描一描",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "拼一拼",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "查一查",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_en-progressive/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-progressive/index.html",
+      "bytes": 120265
     },
     {
       "topicId": "mt_en-pronouns",
@@ -3881,6 +5146,394 @@
       "bytes": 118391
     },
     {
+      "topicId": "mt_en-speaking-routine",
+      "title": "日常话题的口头表达：会问也会答，才算能聊",
+      "template": "explain",
+      "renderer": "pairMatch",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 4,
+      "subject": "英语",
+      "standards": [
+        "english-2022:L1:PS"
+      ],
+      "prerequisites": [
+        "mt_en-activities",
+        "mt_en-wh-questions",
+        "mt_en-listening",
+        "mt_en-greetings"
+      ],
+      "next": [
+        "mt_en-describing",
+        "mt_en-culture"
+      ],
+      "objectives": [
+        "能围绕学校生活、家庭、爱好等日常话题听懂并回应常见问题",
+        "知道问答要配对：How are you 问近况、What is your name 问名字，不能串",
+        "能在真实交流里大胆开口，会提问也会接话，做到声音清楚"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "听一听",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "认一认",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "描一描",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "拼一拼",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "查一查",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_en-speaking-routine/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-speaking-routine/index.html",
+      "bytes": 119638
+    },
+    {
+      "topicId": "mt_en-spelling-rules",
+      "title": "常见字母组合的发音规则：sh 不是 s 加 h",
+      "template": "explain",
+      "renderer": "pinyin",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 4,
+      "subject": "英语",
+      "standards": [
+        "english-2022:L1:LK"
+      ],
+      "prerequisites": [
+        "mt_en-letter-write",
+        "mt_en-phonics"
+      ],
+      "next": [
+        "mt_en-weather",
+        "mt_en-guessing-words"
+      ],
+      "objectives": [
+        "能认出 sh、ch、th、ee、ea、oo、ar、oa 等常见字母组合，知道它们常读一个音",
+        "能按组合把 ship、sea、car、boat 这样的生词试着读出来，不再逐字母念",
+        "能把字母组合规则和自然拼读连起来，遇到生词先找组合再拼"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "听一听",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "认一认",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "描一描",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "拼一拼",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "查一查",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_en-spelling-rules/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-spelling-rules/index.html",
+      "bytes": 120222
+    },
+    {
+      "topicId": "mt_en-transport",
+      "title": "交通方式与问路：by bus 中间为什么不加 a？",
+      "template": "explain",
+      "renderer": "pairMatch",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 5,
+      "subject": "英语",
+      "standards": [
+        "english-2022:L2:LK"
+      ],
+      "prerequisites": [
+        "mt_en-places",
+        "mt_en-activities"
+      ],
+      "next": [
+        "mt_en-going-to"
+      ],
+      "objectives": [
+        "能听说认读 bus、subway、train、plane、bike、taxi、on foot 等出行方式词",
+        "知道 by + 交通工具（中间不加冠词），步行用 on foot，问路用 turn left / go straight",
+        "能用 How do you go to ...? / by 与 take 两种说法谈论出行"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "听一听",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "认一认",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "描一描",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "拼一拼",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "查一查",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_en-transport/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-transport/index.html",
+      "bytes": 120251
+    },
+    {
+      "topicId": "mt_en-weather",
+      "title": "天气词汇：It is rain 为什么不对？",
+      "template": "explain",
+      "renderer": "pinyin",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 4,
+      "subject": "英语",
+      "standards": [
+        "english-2022:L1:LK"
+      ],
+      "prerequisites": [
+        "mt_en-food",
+        "mt_en-spelling-rules"
+      ],
+      "next": [
+        "mt_en-clothes"
+      ],
+      "objectives": [
+        "能听说认读 sunny、rainy、cloudy、windy、snowy、hot、cold、warm、cool 等天气词",
+        "知道名词加 -y 变形容词，It is 后面要接 rainy 这样的形容词",
+        "能用 What is the weather like? 问答并谈论当天的天气和穿着"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "听一听",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "认一认",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "描一描",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "拼一拼",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "查一查",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_en-weather/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-weather/index.html",
+      "bytes": 120077
+    },
+    {
       "topicId": "mt_en-wh-questions",
       "title": "特殊疑问句：What、Who、Where 怎么挑？",
       "template": "explain",
@@ -3977,6 +5630,198 @@
       "path": "courses/mt_en-wh-questions/",
       "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-wh-questions/index.html",
       "bytes": 116960
+    },
+    {
+      "topicId": "mt_en-writing-passage",
+      "title": "写小短文：有开头、有结尾、句子连得起来",
+      "template": "explain",
+      "renderer": "writeChar",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 5,
+      "subject": "英语",
+      "standards": [
+        "english-2022:L2:PS"
+      ],
+      "prerequisites": [
+        "mt_en-present-simple",
+        "mt_en-guessing-words",
+        "mt_en-writing-short"
+      ],
+      "next": [],
+      "objectives": [
+        "能围绕一个话题写成有开头有结尾的小短文，句子之间用简单词连接",
+        "知道开头句点题、中间句展开、结尾句收束，会用 first / then / also / finally",
+        "能按要点增删内容、修改草稿，写完通读检查时态与连接"
+      ],
+      "cognitiveAction": "构造",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "听一听",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "认一认",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "描一描",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "拼一拼",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "查一查",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_en-writing-passage/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-writing-passage/index.html",
+      "bytes": 120626
+    },
+    {
+      "topicId": "mt_en-writing-short",
+      "title": "写几句话介绍日常生活：大写、词距、标点一个都不能少",
+      "template": "explain",
+      "renderer": "writeChar",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 4,
+      "subject": "英语",
+      "standards": [
+        "english-2022:L1:PS"
+      ],
+      "prerequisites": [
+        "mt_en-activities",
+        "mt_en-be-verb",
+        "mt_en-copying"
+      ],
+      "next": [
+        "mt_en-writing-passage"
+      ],
+      "objectives": [
+        "能围绕日常生活写出意思连贯的几句话，句首大写、句末标点、词间留空格",
+        "知道 I 永远大写、用 and 把两个意思连起来、写后通读检查",
+        "能写完自己读一遍，找出并改正大小写、标点和词距的小错"
+      ],
+      "cognitiveAction": "构造",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "听一听",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "认一认",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "描一描",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "拼一拼",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "查一查",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_en-writing-short/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-writing-short/index.html",
+      "bytes": 120294
     },
     {
       "topicId": "mt_en-yes-no-questions",

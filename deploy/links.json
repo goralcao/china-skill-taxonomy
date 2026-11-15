@@ -872,5 +872,176 @@
     "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-reading-pictures/index.html",
     "pages": 12,
     "delivery": "local"
+  },
+  {
+    "no": 108,
+    "course": "mt_en-spelling-rules",
+    "title": "常见字母组合的发音规则：sh 不是 s 加 h",
+    "nodeId": "",
+    "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-spelling-rules/index.html",
+    "pages": 12,
+    "delivery": "local"
+  },
+  {
+    "no": 109,
+    "course": "mt_en-weather",
+    "title": "天气词汇：It is rain 为什么不对？",
+    "nodeId": "",
+    "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-weather/index.html",
+    "pages": 12,
+    "delivery": "local"
+  },
+  {
+    "no": 110,
+    "course": "mt_en-clothes",
+    "title": "服装词汇：shoes 为什么总带着 s？",
+    "nodeId": "",
+    "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-clothes/index.html",
+    "pages": 12,
+    "delivery": "local"
+  },
+  {
+    "no": 111,
+    "course": "mt_en-jobs",
+    "title": "职业词汇：teach 加 -er 就变成 teacher",
+    "nodeId": "",
+    "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-jobs/index.html",
+    "pages": 12,
+    "delivery": "local"
+  },
+  {
+    "no": 112,
+    "course": "mt_en-places",
+    "title": "学校与场所词汇：in the library、on the playground",
+    "nodeId": "",
+    "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-places/index.html",
+    "pages": 12,
+    "delivery": "local"
+  },
+  {
+    "no": 113,
+    "course": "mt_en-activities",
+    "title": "日常活动短语：play football 中间为什么不加 the？",
+    "nodeId": "",
+    "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-activities/index.html",
+    "pages": 12,
+    "delivery": "local"
+  },
+  {
+    "no": 114,
+    "course": "mt_en-speaking-routine",
+    "title": "日常话题的口头表达：会问也会答，才算能聊",
+    "nodeId": "",
+    "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-speaking-routine/index.html",
+    "pages": 12,
+    "delivery": "local"
+  },
+  {
+    "no": 115,
+    "course": "mt_en-guessing-words",
+    "title": "借助上下文猜词义：一遇生词别急着查词典",
+    "nodeId": "",
+    "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-guessing-words/index.html",
+    "pages": 12,
+    "delivery": "local"
+  },
+  {
+    "no": 116,
+    "course": "mt_en-writing-short",
+    "title": "写几句话介绍日常生活：大写、词距、标点一个都不能少",
+    "nodeId": "",
+    "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-writing-short/index.html",
+    "pages": 12,
+    "delivery": "local"
+  },
+  {
+    "no": 117,
+    "course": "mt_en-transport",
+    "title": "交通方式与问路：by bus 中间为什么不加 a？",
+    "nodeId": "",
+    "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-transport/index.html",
+    "pages": 12,
+    "delivery": "local"
+  },
+  {
+    "no": 118,
+    "course": "mt_en-present-simple",
+    "title": "一般现在时：he 后面为什么动词要加 s？",
+    "nodeId": "",
+    "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-present-simple/index.html",
+    "pages": 12,
+    "delivery": "local"
+  },
+  {
+    "no": 119,
+    "course": "mt_en-progressive",
+    "title": "现在进行时：be 加 V-ing，一个都不能少",
+    "nodeId": "",
+    "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-progressive/index.html",
+    "pages": 12,
+    "delivery": "local"
+  },
+  {
+    "no": 120,
+    "course": "mt_en-describing",
+    "title": "连贯描述人与事物：让听的人不用追问",
+    "nodeId": "",
+    "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-describing/index.html",
+    "pages": 12,
+    "delivery": "local"
+  },
+  {
+    "no": 121,
+    "course": "mt_en-writing-passage",
+    "title": "写小短文：有开头、有结尾、句子连得起来",
+    "nodeId": "",
+    "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-writing-passage/index.html",
+    "pages": 12,
+    "delivery": "local"
+  },
+  {
+    "no": 122,
+    "course": "mt_en-culture",
+    "title": "中外节日与文化差异：习俗别张冠李戴",
+    "nodeId": "",
+    "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-culture/index.html",
+    "pages": 12,
+    "delivery": "local"
+  },
+  {
+    "no": 123,
+    "course": "mt_en-learning-strategies",
+    "title": "借助工具与资源学英语：先猜，再查",
+    "nodeId": "",
+    "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-learning-strategies/index.html",
+    "pages": 12,
+    "delivery": "local"
+  },
+  {
+    "no": 124,
+    "course": "mt_en-going-to",
+    "title": "一般将来时：be going to 说说你的打算",
+    "nodeId": "",
+    "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-going-to/index.html",
+    "pages": 12,
+    "delivery": "local"
+  },
+  {
+    "no": 125,
+    "course": "mt_en-past-tense",
+    "title": "一般过去时：动词换个尾，讲讲已经发生的事",
+    "nodeId": "",
+    "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-past-tense/index.html",
+    "pages": 12,
+    "delivery": "local"
+  },
+  {
+    "no": 126,
+    "course": "mt_en-comparatives",
+    "title": "形容词比较级：A 比 B 高，一个 than 就够",
+    "nodeId": "",
+    "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_en-comparatives/index.html",
+    "pages": 12,
+    "delivery": "local"
   }
 ]

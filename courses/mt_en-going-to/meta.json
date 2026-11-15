@@ -1,0 +1,93 @@
+{
+  "topicId": "mt_en-going-to",
+  "title": "一般将来时：be going to 说说你的打算",
+  "template": "explain",
+  "renderer": "pairMatch",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 6,
+  "subject": "英语",
+  "standards": [
+    "english-2022:L2:LK"
+  ],
+  "prerequisites": [
+    "mt_en-transport",
+    "mt_en-be-verb",
+    "mt_en-present-simple",
+    "mt_en-progressive"
+  ],
+  "next": [],
+  "objectives": [
+    "知道一般将来时 be going to + 动词原形表计划和打算，常配 tomorrow、next week",
+    "掌握 be 随主语变、to 后面动词一律用原形，会变疑问和否定",
+    "能用 What are you going to do ...? 谈论周末和假期安排"
+  ],
+  "cognitiveAction": "比较",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "听一听",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "认一认",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "描一描",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "拼一拼",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "查一查",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "topicId": "mt_en-spelling-rules",
+  "title": "常见字母组合的发音规则：sh 不是 s 加 h",
+  "template": "explain",
+  "renderer": "pinyin",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 4,
+  "subject": "英语",
+  "standards": [
+    "english-2022:L1:LK"
+  ],
+  "prerequisites": [
+    "mt_en-letter-write",
+    "mt_en-phonics"
+  ],
+  "next": [
+    "mt_en-weather",
+    "mt_en-guessing-words"
+  ],
+  "objectives": [
+    "能认出 sh、ch、th、ee、ea、oo、ar、oa 等常见字母组合，知道它们常读一个音",
+    "能按组合把 ship、sea、car、boat 这样的生词试着读出来，不再逐字母念",
+    "能把字母组合规则和自然拼读连起来，遇到生词先找组合再拼"
+  ],
+  "cognitiveAction": "辨析",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "听一听",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "认一认",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "描一描",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "拼一拼",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "查一查",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

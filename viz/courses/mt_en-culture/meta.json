@@ -1,0 +1,94 @@
+{
+  "topicId": "mt_en-culture",
+  "title": "中外节日与文化差异：习俗别张冠李戴",
+  "template": "explain",
+  "renderer": "pairMatch",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 5,
+  "subject": "英语",
+  "standards": [
+    "english-2022:L2:PSOC"
+  ],
+  "prerequisites": [
+    "mt_en-family",
+    "mt_en-food",
+    "mt_en-speaking-routine"
+  ],
+  "next": [
+    "mt_en-learning-strategies"
+  ],
+  "objectives": [
+    "能认读 Spring Festival、Christmas、Mid-Autumn Festival、Thanksgiving 等节日名称",
+    "知道主要节日对应的典型习俗（饺子、月饼、圣诞树、火鸡），节日名首字母大写",
+    "能比较饮食、礼仪等差异，养成尊重不同文化的交际意识"
+  ],
+  "cognitiveAction": "比较",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "听一听",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "认一认",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "描一描",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "拼一拼",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "查一查",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

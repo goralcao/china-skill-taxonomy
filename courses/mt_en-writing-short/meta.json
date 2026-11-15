@@ -1,0 +1,94 @@
+{
+  "topicId": "mt_en-writing-short",
+  "title": "写几句话介绍日常生活：大写、词距、标点一个都不能少",
+  "template": "explain",
+  "renderer": "writeChar",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 4,
+  "subject": "英语",
+  "standards": [
+    "english-2022:L1:PS"
+  ],
+  "prerequisites": [
+    "mt_en-activities",
+    "mt_en-be-verb",
+    "mt_en-copying"
+  ],
+  "next": [
+    "mt_en-writing-passage"
+  ],
+  "objectives": [
+    "能围绕日常生活写出意思连贯的几句话，句首大写、句末标点、词间留空格",
+    "知道 I 永远大写、用 and 把两个意思连起来、写后通读检查",
+    "能写完自己读一遍，找出并改正大小写、标点和词距的小错"
+  ],
+  "cognitiveAction": "构造",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "听一听",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "认一认",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "描一描",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "拼一拼",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "查一查",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

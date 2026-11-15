@@ -1,0 +1,95 @@
+{
+  "topicId": "mt_en-places",
+  "title": "学校与场所词汇：in the library、on the playground",
+  "template": "explain",
+  "renderer": "pairMatch",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 4,
+  "subject": "英语",
+  "standards": [
+    "english-2022:L1:LK"
+  ],
+  "prerequisites": [
+    "mt_en-body-stationery",
+    "mt_en-prepositions"
+  ],
+  "next": [
+    "mt_en-activities",
+    "mt_en-jobs",
+    "mt_en-transport"
+  ],
+  "objectives": [
+    "能听说认读 classroom、library、playground、canteen、computer room 等校园场所词",
+    "知道「在操场/场地」常用 on，室内房间用 in，并能用 next to / on the second floor 说位置",
+    "能用 Where is the ...? / It is on the ... floor. 问答场所位置"
+  ],
+  "cognitiveAction": "辨析",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "听一听",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "认一认",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "描一描",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "拼一拼",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "查一查",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "topicId": "mt_en-past-tense",
+  "title": "一般过去时：动词换个尾，讲讲已经发生的事",
+  "template": "explain",
+  "renderer": "pairMatch",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 6,
+  "subject": "英语",
+  "standards": [
+    "english-2022:L2:LK"
+  ],
+  "prerequisites": [
+    "mt_en-activities",
+    "mt_en-be-verb",
+    "mt_en-present-simple"
+  ],
+  "next": [
+    "mt_en-comparatives"
+  ],
+  "objectives": [
+    "知道一般过去时表已经发生的事，常配 yesterday、last night、... ago",
+    "掌握规则动词加 -ed、常见不规则动词（go-went、see-saw、have-had）与 was / were",
+    "知道疑问 did / 否定 didnt 后动词回原形，能讲述并区分现在与过去"
+  ],
+  "cognitiveAction": "比较",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "听一听",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "认一认",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "描一描",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "拼一拼",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "查一查",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}
