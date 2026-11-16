@@ -1,0 +1,92 @@
+{
+  "topicId": "mt_observe-object",
+  "title": "同一个盒子，为什么看到的面不一样",
+  "template": "explain",
+  "renderer": "geometry",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 2,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S1:GG:GM"
+  ],
+  "prerequisites": [
+    "mt_shape-3d"
+  ],
+  "next": [
+    "mt_cuboid"
+  ],
+  "objectives": [
+    "知道从不同位置观察物体看到的形状不同",
+    "能辨认从不同方向看到的图形",
+    "发展空间观念"
+  ],
+  "cognitiveAction": "比较",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "引入",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "概念一",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "概念二",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

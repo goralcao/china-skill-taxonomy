@@ -1,0 +1,98 @@
+{
+  "topicId": "mt_div-avg",
+  "title": "12 个苹果，每 4 个一份，能分几份",
+  "template": "explain",
+  "renderer": "division",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 2,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S1:NA:NO",
+    "math-2022:S1:NA:AR"
+  ],
+  "prerequisites": [
+    "mt_num-10-composition",
+    "mt_mul-meaning"
+  ],
+  "next": [
+    "mt_div-tables-2-6",
+    "mt_frac-meaning",
+    "mt_frac-div",
+    "mt_find-defective",
+    "mt_pigeonhole"
+  ],
+  "objectives": [
+    "理解平均分的意义",
+    "认识除法算式及各部分",
+    "会用除法解决平均分问题"
+  ],
+  "cognitiveAction": "分解",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "引入",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "概念一",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "概念二",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

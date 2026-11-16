@@ -1,0 +1,97 @@
+{
+  "topicId": "mt_num-100-pen",
+  "title": "笔算 48 + 27，为什么个位要对齐",
+  "template": "explain",
+  "renderer": "vertical",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 2,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S2:NA:NO"
+  ],
+  "prerequisites": [
+    "mt_num-100-addsub",
+    "mt_num-100-recognition",
+    "mt_num-20-borrow"
+  ],
+  "next": [
+    "mt_addsub-10000",
+    "mt_dec-addsub",
+    "mt_dec-addsub2",
+    "mt_chicken-rabbit"
+  ],
+  "objectives": [
+    "掌握竖式数位对齐",
+    "会计算两位数的进位加与退位减",
+    "理解满十进一/退一当十"
+  ],
+  "cognitiveAction": "分解",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "引入",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "概念一",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "概念二",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "topicId": "mt_mass-g-kg",
+  "title": "1 千克等于多少克",
+  "template": "explain",
+  "renderer": "balance",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 2,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S1:GG:GM"
+  ],
+  "prerequisites": [
+    "mt_num-100-recognition"
+  ],
+  "next": [
+    "mt_unit-ton"
+  ],
+  "objectives": [
+    "认识克和千克",
+    "知道 1 千克=1000 克",
+    "会选择合适的质量单位"
+  ],
+  "cognitiveAction": "比较",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "引入",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "概念一",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "概念二",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

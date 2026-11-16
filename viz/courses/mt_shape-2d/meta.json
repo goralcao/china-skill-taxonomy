@@ -1,0 +1,103 @@
+{
+  "topicId": "mt_shape-2d",
+  "title": "正方形、长方形、圆、三角形，怎么分",
+  "template": "explain",
+  "renderer": "geometry",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 1,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S1:GG:GM"
+  ],
+  "prerequisites": [
+    "mt_shape-3d"
+  ],
+  "next": [
+    "mt_angle-intro",
+    "mt_shape-move",
+    "mt_frac-intro",
+    "mt_direction",
+    "mt_rect-perimeter",
+    "mt_area-intro",
+    "mt_lines",
+    "mt_parallelogram",
+    "mt_triangle",
+    "mt_triangle-classify",
+    "mt_symmetry",
+    "mt_circle"
+  ],
+  "objectives": [
+    "认识常见平面图形",
+    "能说出图形的边和角特征",
+    "能在生活中找到这些图形"
+  ],
+  "cognitiveAction": "比较",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "引入",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "概念一",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "概念二",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

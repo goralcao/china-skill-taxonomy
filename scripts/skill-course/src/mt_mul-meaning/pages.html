@@ -1,0 +1,482 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>乘法的意义：3 盘每盘 4 个，为什么不是 3+4</h1>
+  <p class="sub">二年级数学 · 数与运算</p>
+  <div class="tags">
+    <span class="tag">乘法的意义</span>
+    <span class="tag">二年级</span>
+    <span class="tag">2022课标</span>
+    <span class="tag">判分课</span>
+  </div>
+  <div class="cover-fig">
+<svg viewBox="0 0 760 190" width="760" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="3盘每盘4个">
+  <rect x="0" y="0" width="760" height="190" rx="18" fill="#FFFFFF" opacity=".08"/>
+  <g fill="#FFFFFF" opacity=".9">
+    <circle cx="96" cy="60" r="13"/><circle cx="130" cy="60" r="13"/><circle cx="164" cy="60" r="13"/>
+    <rect x="79" y="86" width="102" height="26" rx="13" fill="#FFFFFF" opacity=".22"/>
+    <text x="130" y="105" font-size="17" text-anchor="middle">1 2 3</text>
+  </g>
+  <text x="216" y="82" font-size="30" fill="#FFFFFF" font-weight="800">3盘每盘4个</text>
+  <text x="218" y="126" font-size="18" fill="rgba(255,255,255,.85)">乘法的意义</text>
+</svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先猜三道，凭感觉答</h2>
+  <p class="quiz-hint">凭直觉，答完看解析。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 3 盘饺子，每盘 4 个，一共几个？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>12 个</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>7 个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>9 个</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 2+2+2+2 改成乘法是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>2+4</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>2×4</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>2×2</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 5×3 表示什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5 加 3</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>5 个 3 相乘</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3 个 5 相加</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 从连加到乘法 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">从连加到乘法</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+<svg viewBox="0 0 300 170"><text x="40" y="50" font-size="16" fill="#1565C0">盘1: 4个</text><text x="40" y="90" font-size="16" fill="#1565C0">盘2: 4个</text><text x="40" y="130" font-size="16" fill="#1565C0">盘3: 4个</text><text x="200" y="95" font-size="20" fill="#EF6C00">4×3</text></svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    摆 3 盘，每盘 4 个：<strong>4+4+4=12</strong>。
+  </p>
+  <p class="teach-text" id="p2s2">
+    3 个相同的 4 相加，可以写成 <strong>4×3=12</strong>。
+  </p>
+  <p class="teach-text" id="p2s3">
+    乘法就是「几个相同加数相加」的简便写法。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>连加</h4>
+    <div class="eq">4+4+4</div>
+    <p>3 个 4</p>
+  </div>
+  <div class="card">
+    <h4>乘法</h4>
+    <div class="eq">4×3</div>
+    <p>简便写法</p>
+  </div>
+  <div class="card">
+    <h4>结果</h4>
+    <div class="eq">12</div>
+    <p>一样多</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  相同加数连着加，写成<strong>乘法</strong>更简便。
+</div>
+</section>
+
+<!-- ===== p3: 乘法算式各部分的名字 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">乘法算式各部分的名字</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+<svg viewBox="0 0 300 140"><text x="150" y="50" font-size="26" text-anchor="middle" fill="#333">4 × 3 = 12</text><text x="60" y="90" font-size="14" fill="#1565C0">每组个数</text><text x="150" y="90" font-size="14" fill="#EF6C00">组数</text><text x="240" y="90" font-size="14" fill="#2E7D32">总数</text></svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    在 <strong>4×3=12</strong> 里，4 是每组的个数，3 是有几组，12 是总数。
+  </p>
+  <p class="teach-text" id="p3s2">
+    读作「4 乘 3 等于 12」，表示 3 个 4 相加。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>相同加数</strong>写在乘号前面。</li>
+  <li><strong>个数</strong>写在乘号后面。</li>
+  <li>积就是连加的结果。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  a×b 就是 <strong>b 个 a</strong> 相加，别把前后写反。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：连加与乘法</h2>
+<p class="teach-text" id="p3bs1">把连加和对应的乘法连起来。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 认乘法</h2>
+  <p class="quiz-hint">看清是几个几。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 4 个 3 相加，写成乘法是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>3×4</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3+4</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>4×4</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 6×2 里的 6 表示？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>组数</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>每组的个数</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>一共几个</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 3+3+3 的和是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>6</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>9</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 「几个几」要说清 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">「几个几」要说清</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+<svg viewBox="0 0 300 140"><circle cx="70" cy="60" r="12" fill="#1565C0"/><circle cx="105" cy="60" r="12" fill="#1565C0"/><text x="88" y="100" font-size="14" text-anchor="middle" fill="#333">一组2个</text><text x="210" y="70" font-size="18" fill="#EF6C00">× 3组</text></svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    看图先数「每组几个」，再数「有几组」，列出乘法。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>每组</h4>
+    <div class="eq">2 个</div>
+    <p>相同加数</p>
+  </div>
+  <div class="card">
+    <h4>组数</h4>
+    <div class="eq">3 组</div>
+    <p>个数</p>
+  </div>
+  <div class="card">
+    <h4>一共</h4>
+    <div class="eq">2×3=6</div>
+    <p>总数</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  先看每组几个，再看几组，<strong>几个几</strong>不能反。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">摆阵列：每行几个，共几行</h2>
+  <p class="sim-desc">「+ 加一个」往阵列里添一个圆点；「换一组」换一组行列数。看清楚每行几个、共几行。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">一共 %N% 个</span>
+    <span class="sim-tip" id="simTip">橙色行是第 2、4 行</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simAdd()">+ 加一个</button>
+    <button class="btn" onclick="simNextCase()">换一组</button>
+    <button class="btn" onclick="simDemo()">看老师做</button>
+    <button class="btn-retry" onclick="simReset()">清空</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">满一行就是「几个」，行数就是「几组」</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>把第一行摆满（比如 4 个），是多少？</li>
+    <li>摆满 3 行，用乘法怎么写？</li>
+    <li>换一组后行列变了，总数怎么算更快？</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 用乘法</h2>
+  <p class="quiz-hint">先想几个几，再列式。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 每排 5 人，站了 3 排，一共几人？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>15 人</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>8 人</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>12 人</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 4×2 和 2×4 的结果？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>不一样</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>一样，都是 8</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>都是 6</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 一盒 6 支笔，2 盒几支？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>8 支</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3 支</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>12 支</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四处最容易错 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四处最容易错</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    学乘法，最容易混这四处。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>加法当乘法</h4>
+    <div class="eq">✗ 3盘每盘4个 = 3+4</div>
+    <p>应是 4+4+4=4×3。</p>
+  </div>
+  <div class="card">
+    <h4>前后写反</h4>
+    <div class="eq">✗ 4个3 = 4×3</div>
+    <p>4 个 3 是 3×4（3 是相同加数）。</p>
+  </div>
+  <div class="card">
+    <h4>忘乘只加</h4>
+    <div class="eq">✗ 5×2 = 7</div>
+    <p>5×2 是 2 个 5＝10，不是 5+2。</p>
+  </div>
+  <div class="card">
+    <h4>运算顺序</h4>
+    <div class="eq">✗ 2×3+1 = 8</div>
+    <p>先乘后加：2×3=6，+1=7。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  记住：<strong>乘法是相同加数的简便写法</strong>，不是加法换了个符号。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到 3 盘饺子：4×3 = <strong>12 个</strong>。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题</h2>
+  <p class="quiz-hint">看清几个几，再下笔。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 7 个 2 相加，乘法算式是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>2×7</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>2+7</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>7×7</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 3×5 表示？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>3 加 5</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>5 个 3 相加</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3 个 5 相乘</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 每袋 4 颗糖，买 5 袋，一共几颗？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>9 颗</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>15 颗</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>20 颗</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 2×3 加 1 等于？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>7</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>6</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>5</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 下面哪个是 4 个 6？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>6+4</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>6×4</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>4+4+4</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">乘法的意义</div>
+        <div class="summary-v4-summary">几个几</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>乘法是相同加数的简便写法。</p>
+      <p>a×b 表示 b 个 a 相加。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">算式各部分</div>
+        <div class="summary-v4-summary">看清前后</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>相同加数写在前面。</p>
+      <p>个数写在后面。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">用乘法</div>
+        <div class="summary-v4-summary">列式计算</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>先数每组几个，再数几组。</p>
+      <p>积就是连加的结果。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">别踩坑</div>
+        <div class="summary-v4-summary">四处别错</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>乘法≠加法。</p>
+      <p>几个几不能写反。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  看见「几个几」，就用乘法。
+</p>
+</section>

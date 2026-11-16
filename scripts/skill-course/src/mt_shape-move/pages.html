@@ -1,0 +1,467 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>平移和旋转，变的是位置还是方向</h1>
+  <p class="sub">二年级数学 · 图形与几何</p>
+  <div class="tags">
+    <span class="tag">图形运动</span>
+    <span class="tag">二年级</span>
+    <span class="tag">2022课标</span>
+    <span class="tag">判分课</span>
+  </div>
+  <div class="cover-fig">
+<svg viewBox="0 0 760 190" width="760" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="平移和旋转，变的是位置还是方向">
+  <rect x="0" y="0" width="760" height="190" rx="18" fill="#FFFFFF" opacity=".08"/>
+  <g fill="#FFFFFF" opacity=".9">
+    <circle cx="96" cy="60" r="13"/><circle cx="130" cy="60" r="13"/><circle cx="164" cy="60" r="13"/>
+    <rect x="79" y="86" width="102" height="26" rx="13" fill="#FFFFFF" opacity=".22"/>
+    <text x="130" y="105" font-size="17" text-anchor="middle">1 2 3</text>
+  </g>
+  <text x="216" y="82" font-size="30" fill="#FFFFFF" font-weight="800">平移和旋转，变的是位置还是方向</text>
+  <text x="218" y="126" font-size="18" fill="rgba(255,255,255,.85)">图形的运动</text>
+</svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先判断三道</h2>
+  <p class="quiz-hint">想想怎么动。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 电梯上下移动，是什么运动？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>旋转</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>平移</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>都不是</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 风扇叶片转动，是什么运动？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>平移</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>都不是</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>旋转</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 推拉抽屉，是什么运动？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>平移</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>旋转</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>都不是</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 两种基本运动 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">两种基本运动</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p2s1">
+    <strong>平移</strong>：直直地移动，位置变、方向不变，比如电梯、推拉窗。
+  </p>
+  <p class="teach-text" id="p2s2">
+    <strong>旋转</strong>：绕一个点转，方向变了，比如风扇、钟表指针。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>平移</h4>
+    <div class="eq">直直移动</div>
+    <p>电梯推窗</p>
+  </div>
+  <div class="card">
+    <h4>旋转</h4>
+    <div class="eq">绕点转动</div>
+    <p>风扇指针</p>
+  </div>
+  <div class="card">
+    <h4>区分</h4>
+    <div class="eq">方向变不变</div>
+    <p>不变是平移</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  平移<strong>方向不变</strong>，旋转<strong>绕点转向</strong>。
+</div>
+</section>
+
+<!-- ===== p3: 平移要数清格数 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">平移要数清格数</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p3s1">
+    画平移后的图形，要选一个点，数清楚<strong>向哪个方向移了几格</strong>。
+  </p>
+  <p class="teach-text" id="p3s2">
+    每个点都移动相同的格数，图形才不变形。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>平移：位置变，<strong>方向大小不变</strong>。</li>
+  <li>旋转：绕中心<strong>转向</strong>。</li>
+  <li>画平移要数清<strong>方向和格数</strong>。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  区分平移旋转，就看<strong>方向变没变</strong>。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：运动方式</h2>
+<p class="teach-text" id="p3bs1">把现象和运动方式连起来。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 认平移</h2>
+  <p class="quiz-hint">位置变、方向不变。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 平移后，图形的方向？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>改变</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>不变</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>转一圈</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 升旗时国旗上升是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>旋转</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>摆动</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>平移</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 滑雪的人直线滑下是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>平移</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>旋转</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>都不是</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 生活中的运动 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">生活中的运动</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p5s1">
+    升国旗是平移，风车转是旋转。一个物体可能同时有多种运动。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>升国旗</h4>
+    <div class="eq">平移</div>
+    <p>直线上升</p>
+  </div>
+  <div class="card">
+    <h4>风车</h4>
+    <div class="eq">旋转</div>
+    <p>绕轴转</p>
+  </div>
+  <div class="card">
+    <h4>汽车</h4>
+    <div class="eq">车身平移+车轮旋转</div>
+    <p>两种都有</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  生活中平移和旋转<strong>常常一起出现</strong>。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">动一动：平移还是旋转</h2>
+  <p class="sim-desc">点「+ 加一个」让图形移动一步；「换一组」换一个物体。看它是直直移动（平移）还是绕点转（旋转）。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">第 %N% 步</span>
+    <span class="sim-tip" id="simTip">看图形怎么动</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simAdd()">+ 加一个</button>
+    <button class="btn" onclick="simNextCase()">换一组</button>
+    <button class="btn" onclick="simDemo()">看老师做</button>
+    <button class="btn-retry" onclick="simReset()">清空</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">直直移动是平移，绕点转是旋转</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>现在图形移动了几次？</li>
+    <li>它的方向变了吗？</li>
+    <li>换一组后怎么动？</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 认旋转</h2>
+  <p class="quiz-hint">绕着一个点转。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 旋转时，图形绕着什么转？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>一条边</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>一个点或轴</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>随便</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 钟表指针走动是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>平移</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>都不是</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>旋转</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 荡秋千是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>摆动（像旋转）</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>平移</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>完全不动</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四处容易看错 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四处容易看错</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    判断运动最容易错在这四处。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>方向看错</h4>
+    <div class="eq">✗ 说平移方向改变</div>
+    <p>平移方向不变。</p>
+  </div>
+  <div class="card">
+    <h4>旋转当平移</h4>
+    <div class="eq">✗ 说风扇是平移</div>
+    <p>风扇绕中心转，是旋转。</p>
+  </div>
+  <div class="card">
+    <h4>格数错</h4>
+    <div class="eq">✗ 平移数格多数一格</div>
+    <p>从起点数到终点，一格一格数清。</p>
+  </div>
+  <div class="card">
+    <h4>混淆</h4>
+    <div class="eq">✗ 车轮前进说成平移</div>
+    <p>车轮滚动是旋转。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  判断关键：<strong>方向变没变、是不是绕点转</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  电梯是<strong>平移</strong>，风扇是<strong>旋转</strong>。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题</h2>
+  <p class="quiz-hint">看怎么动。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 平移改变的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>方向</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>位置</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>大小</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 旋转改变的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>大小</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>颜色</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>方向</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 汽车直线前进，车身是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>平移</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>旋转</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>都不是</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 拧瓶盖是什么运动？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>平移</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>旋转</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>都不是</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 移桌子时桌子方向不变，是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>旋转</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>摆动</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>平移</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">平移</div>
+        <div class="summary-v4-summary">直直移动</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>位置变、方向不变。</p>
+      <p>电梯、推拉窗。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">旋转</div>
+        <div class="summary-v4-summary">绕点转动</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>绕中心转向。</p>
+      <p>风扇、指针。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">画平移</div>
+        <div class="summary-v4-summary">数方向格数</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>选一个点。</p>
+      <p>数清移几格。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">别踩坑</div>
+        <div class="summary-v4-summary">四处别错</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>别看错方向。</p>
+      <p>车轮是旋转。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  平移方向不变，旋转绕点转向。
+</p>
+</section>

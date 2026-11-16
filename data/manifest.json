@@ -1,15 +1,15 @@
 {
   "name": "学阶图谱 · China Skill Taxonomy",
-  "version": "v0.49.5",
+  "version": "v0.49.6",
   "schemaVersion": 1,
-  "generatedAt": "2026-11-16",
+  "generatedAt": "2026-11-17",
   "counts": {
     "topics": 1273,
     "dependencies": 1647,
     "curriculumStandards": 186,
     "clusters": 204,
     "teachingResearchRecords": 1268,
-    "courses": 141,
+    "courses": 174,
     "hardEdges": 952,
     "softEdges": 695
   },
@@ -65,31 +65,31 @@
   },
   "files": {
     "topics.json": {
-      "sha256": "4fb9d1ce6af0e3bf70b0541863b29bfc4665e72df2aeabef0baa005743ab47a6",
+      "sha256": "184cc67f1c1105d77797100ad9edda75e467d0d2754c4ad56a655a4f50c23234",
       "bytes": 1269573
     },
     "dependencies.json": {
-      "sha256": "fa411beeff5a04d0e67ae6ca3be00761045434bc6c9045fd47cc1d61a5371da1",
+      "sha256": "9dc560c7e6356cd6dd930125e0b8d34cf716a1eed02d39f8c2a9cf96e8470463",
       "bytes": 309972
     },
     "curriculum-standards.json": {
-      "sha256": "0c855d38f618fdfb10d3504fcfea2fd3ffa88140f321521cca9802cbcb3e7398",
+      "sha256": "09067e1d7bfc984e2a80557891f2b19bd8d091fdf8ae4a7fd740e01188361761",
       "bytes": 91293
     },
     "textbooks.json": {
-      "sha256": "9884ebee2a982c1b975a699df1f0e4ada47b90cf5165ab2a765c7373bae23bab",
+      "sha256": "db5a0e0defd93086be81c3c4f4c2ed3056bacfdd78b58f944bc318a615cd21f4",
       "bytes": 242405
     },
     "clusters.json": {
-      "sha256": "40fa658b0c0f3a6b0893bb9c711f0859fba28b8af56210662b29e777fe58f42f",
+      "sha256": "8b0fa03340d28dc9a74de4647476b64a835623600bec68cebc93a79559ae308d",
       "bytes": 134162
     },
     "courses.json": {
-      "sha256": "549ccd0697410b4bf0cd4611587978d09cf9f56415db2fa4d528a8e9bfb8c548",
-      "bytes": 318782
+      "sha256": "935649b1eed1d89d256d930e41a7da10931cbcd1ac36ed900e4036fb3894b024",
+      "bytes": 389761
     },
     "teaching-research.json": {
-      "sha256": "bb121275d74ecd03a63515f622e0361e537f3d05e1e674def658678b64a5cd0e",
+      "sha256": "b9a9870e920d844941504f38dd9b70544fc85f93991ffed56b4dd8b34a38e9c6",
       "bytes": 3122781
     }
   }

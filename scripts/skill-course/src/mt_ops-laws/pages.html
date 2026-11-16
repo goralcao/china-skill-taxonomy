@@ -1,0 +1,470 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>25×4×7，先算哪两个最快</h1>
+  <p class="sub">四年级数学 · 数与运算</p>
+  <div class="tags">
+    <span class="tag">运算律</span>
+    <span class="tag">四年级</span>
+    <span class="tag">2022课标</span>
+    <span class="tag">判分课</span>
+  </div>
+  <div class="cover-fig">
+<svg viewBox="0 0 760 190" width="760" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="25×4×7，先算哪两个最快">
+  <rect x="0" y="0" width="760" height="190" rx="18" fill="#FFFFFF" opacity=".08"/>
+  <g fill="#FFFFFF" opacity=".9">
+    <circle cx="96" cy="60" r="13"/><circle cx="130" cy="60" r="13"/><circle cx="164" cy="60" r="13"/>
+    <rect x="79" y="86" width="102" height="26" rx="13" fill="#FFFFFF" opacity=".22"/>
+    <text x="130" y="105" font-size="17" text-anchor="middle">1 2 3</text>
+  </g>
+  <text x="216" y="82" font-size="30" fill="#FFFFFF" font-weight="800">25×4×7，先算哪两个最快</text>
+  <text x="218" y="126" font-size="18" fill="rgba(255,255,255,.85)">运算律</text>
+</svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先算三道，想想窍门</h2>
+  <p class="quiz-hint">想想有没有简便算法。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 25×4×7 怎样算最快？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>先算 4×7=28</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>从左往右硬算</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>先算 25×4=100</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 37+56+63 怎样算最快？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>先算 37+63=100</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>先算 56+63</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>从左往右</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. a+b=b+a 是什么律？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>乘法结合律</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>加法交换律</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>加法结合律</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 凑整算得快 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">凑整算得快</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p2s1">
+    25×4=100、125×8=1000、凑成整百整千，计算就快。
+  </p>
+  <p class="teach-text" id="p2s2">
+    25×4×7，先算 25×4=100，再 100×7=<strong>700</strong>。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>凑整</h4>
+    <div class="eq">25×4=100</div>
+    <p>先算这对</p>
+  </div>
+  <div class="card">
+    <h4>再乘</h4>
+    <div class="eq">100×7=700</div>
+    <p>变得简单</p>
+  </div>
+  <div class="card">
+    <h4>技巧</h4>
+    <div class="eq">看数字特点</div>
+    <p>找能凑整的</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  简算的关键：<strong>先找能凑整的数</strong>算。
+</div>
+</section>
+
+<!-- ===== p3: 五个运算律 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">五个运算律</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p3s1">
+    加法：交换律 a+b=b+a，结合律 (a+b)+c=a+(b+c)。
+  </p>
+  <p class="teach-text" id="p3s2">
+    乘法：交换律、结合律，还有分配律 (a+b)×c=a×c+b×c。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>交换律</strong>：交换位置，结果不变。</li>
+  <li><strong>结合律</strong>：改变结合顺序，结果不变。</li>
+  <li><strong>分配律</strong>：(a+b)×c=a×c+b×c。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  运算律让计算<strong>可以换顺序、凑整数</strong>，结果不变。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：运算律</h2>
+<p class="teach-text" id="p3bs1">把算式和运算律连起来。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 交换律结合律</h2>
+  <p class="quiz-hint">看清是交换还是结合。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. a×b=b×a 是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>乘法结合律</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>加法交换律</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>乘法交换律</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. (a+b)+c=a+(b+c) 是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>加法结合律</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>加法交换律</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>乘法结合律</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 125×8×5 先算？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>8×5=40</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>125×8=1000</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>从左往右</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 分配律的妙用 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">分配律的妙用</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p5s1">
+    102×5，把 102 拆成 100+2：100×5+2×5=500+10=510。
+  </p>
+  <p class="teach-text" id="p5s2">
+    99×7，拆成 (100−1)×7=700−7=693。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>拆数</h4>
+    <div class="eq">102=100+2</div>
+    <p>凑整</p>
+  </div>
+  <div class="card">
+    <h4>分配</h4>
+    <div class="eq">100×5+2×5</div>
+    <p>分别乘</p>
+  </div>
+  <div class="card">
+    <h4>相加</h4>
+    <div class="eq">500+10=510</div>
+    <p>得结果</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  接近整百的数，用<strong>分配律</strong>拆开算最简便。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">分步算：凑整简算</h2>
+  <p class="sim-desc">点「+ 加一个」模拟凑整的过程；「换一组」换一道简算题。先把能凑整的部分算出来。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">凑整第 %N% 步</span>
+    <span class="sim-tip" id="simTip">先算能凑整的部分</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simAdd()">+ 加一个</button>
+    <button class="btn" onclick="simNextCase()">换一组</button>
+    <button class="btn" onclick="simDemo()">看老师做</button>
+    <button class="btn-retry" onclick="simReset()">清空</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">25×4=100，凑整后再乘</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>25×4 凑成多少？</li>
+    <li>凑整后再乘 7 是多少？</li>
+    <li>换一组后先凑哪两个？</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 分配律</h2>
+  <p class="quiz-hint">乘法分配律。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. (a+b)×c = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>a+b×c</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>a×b+c</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>a×c+b×c</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 102×5 用分配律怎么算？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>100×5+2×5</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>100×5</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>102+5</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 99×7 = ?（用简便方法）</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>99×7 硬算</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>100×7−7</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>100×7</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四处容易算错 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四处容易算错</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    用运算律最容易错在这四处。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>分配漏项</h4>
+    <div class="eq">✗ (20+4)×25=20×25+4</div>
+    <p>应 20×25+4×25，两项都要乘 25。</p>
+  </div>
+  <div class="card">
+    <h4>凑整错</h4>
+    <div class="eq">✗ 25×4=100 记成 25×4=90</div>
+    <p>25×4=100 要记牢。</p>
+  </div>
+  <div class="card">
+    <h4>律用错</h4>
+    <div class="eq">✗ a+b=b+a 说乘法交换律</div>
+    <p>a+b 是加法交换律。</p>
+  </div>
+  <div class="card">
+    <h4>硬算</h4>
+    <div class="eq">✗ 102×5 一位位硬乘</div>
+    <p>拆成 100+2 用分配律更快。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  运算律用得好：<strong>凑整、简算、不易错</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  25×4×7：先 100，再 <strong>700</strong>。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题</h2>
+  <p class="quiz-hint">用运算律简算。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 4×13×25 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>130</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>1325</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>1300</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 68+47+32 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>147</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>147 之外</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>146</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. (20+4)×25 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>520</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>600</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>124</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 101×8 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>808 附近</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>800</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>808</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 运算律的作用是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>使计算简便</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>让答案变大</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>没有用</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">交换律</div>
+        <div class="summary-v4-summary">换位置</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>a+b=b+a。</p>
+      <p>a×b=b×a。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">结合律</div>
+        <div class="summary-v4-summary">换结合</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>(a+b)+c=a+(b+c)。</p>
+      <p>结果不变。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">分配律</div>
+        <div class="summary-v4-summary">拆开乘</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>(a+b)×c=a×c+b×c。</p>
+      <p>两项都要乘。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">简算</div>
+        <div class="summary-v4-summary">先凑整</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>找能凑整的数。</p>
+      <p>25×4、125×8。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  运算律帮你换顺序、凑整数，算得又快又准。
+</p>
+</section>

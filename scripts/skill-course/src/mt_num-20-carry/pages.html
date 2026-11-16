@@ -1,0 +1,464 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>9 + 6，凑成十再数</h1>
+  <p class="sub">一年级数学 · 数与运算</p>
+  <div class="tags">
+    <span class="tag">进位加法</span>
+    <span class="tag">一年级</span>
+    <span class="tag">2022课标</span>
+    <span class="tag">判分课</span>
+  </div>
+  <div class="cover-fig">
+<svg viewBox="0 0 760 190" width="760" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="9 + 6，凑成十再数">
+  <rect x="0" y="0" width="760" height="190" rx="18" fill="#FFFFFF" opacity=".08"/>
+  <g fill="#FFFFFF" opacity=".9">
+    <circle cx="96" cy="60" r="13"/><circle cx="130" cy="60" r="13"/><circle cx="164" cy="60" r="13"/>
+    <rect x="79" y="86" width="102" height="26" rx="13" fill="#FFFFFF" opacity=".22"/>
+    <text x="130" y="105" font-size="17" text-anchor="middle">1 2 3</text>
+  </g>
+  <text x="216" y="82" font-size="30" fill="#FFFFFF" font-weight="800">9 + 6，凑成十再数</text>
+  <text x="218" y="126" font-size="18" fill="rgba(255,255,255,.85)">20以内进位加法</text>
+</svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先算三道，凭感觉答</h2>
+  <p class="quiz-hint">凭直觉，答完看解析。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 9 + 6 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>15</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>14</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>16</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 8 + 5 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>12</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>13</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>14</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 9 + 9 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>17</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>19</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>18</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 9 + 6 怎么算得快 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">9 + 6 怎么算得快</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p2s1">
+    9 再添 <strong>1</strong> 就满 10 了。
+  </p>
+  <p class="teach-text" id="p2s2">
+    把 6 拆成 1 和 5：9+1=<strong>10</strong>，10+5=<strong>15</strong>。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>拆小数</h4>
+    <div class="eq">6 = 1 + 5</div>
+    <p>先拿 1 凑十</p>
+  </div>
+  <div class="card">
+    <h4>凑十</h4>
+    <div class="eq">9 + 1 = 10</div>
+    <p>变成整十</p>
+  </div>
+  <div class="card">
+    <h4>再加剩的</h4>
+    <div class="eq">10 + 5 = 15</div>
+    <p>得答案</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  进位加用<strong>凑十法</strong>：看谁离 10 近，把它先凑满十。
+</div>
+</section>
+
+<!-- ===== p3: 凑十三步走 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">凑十三步走</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p3s1">
+    一看：哪个数离 10 近？二拆：把另一个数拆开。三凑：先凑十，再加剩下的。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>看大数<strong>差几凑十</strong>。</li>
+  <li>把小数拆成「差的数」和「剩下的」。</li>
+  <li>先凑成 10，再加上剩下的数。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  凑十法：<strong>拆小数、凑大数、加剩余</strong>。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：凑十怎么拆</h2>
+<p class="teach-text" id="p3bs1">把算式和拆法连起来。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 凑十</h2>
+  <p class="quiz-hint">先把第一个数凑成十。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 7 + 6 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>13</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>12</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>14</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 6 + 5 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>10</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>11</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>12</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 8 + 8 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>15</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>17</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>16</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 交换位置也能凑十 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">交换位置也能凑十</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p5s1">
+    4+9 里 9 离十近，就把 4 拆成 1 和 3：9+1=10，10+3=13。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>大数凑十</h4>
+    <div class="eq">9 差 1</div>
+    <p>优先凑 9</p>
+  </div>
+  <div class="card">
+    <h4>拆另一个</h4>
+    <div class="eq">4 = 1+3</div>
+    <p>拆成 1 和 3</p>
+  </div>
+  <div class="card">
+    <h4>得出</h4>
+    <div class="eq">10+3=13</div>
+    <p>结果</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  谁离十近就<strong>凑谁</strong>，另一个数拆开来配合。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">数位桶：满十进一</h2>
+  <p class="sim-desc">点「+ 加一个」往个位桶添珠；「换一组」换一道进位加。满 10 个就捆成 1 个进到十位。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">一共 %N% 个</span>
+    <span class="sim-tip" id="simTip">个位满 10 就向十位进 1</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simAdd()">+ 加一个</button>
+    <button class="btn" onclick="simNextCase()">换一组</button>
+    <button class="btn" onclick="simDemo()">看老师做</button>
+    <button class="btn-retry" onclick="simReset()">清空</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">蓝色是个位，满十打包送进十位</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>个位添到第 10 个时发生了什么？</li>
+    <li>9+6 要添几次？满十后进了几位？</li>
+    <li>换一组后还是从 0 开始吗？</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 进位加</h2>
+  <p class="quiz-hint">看谁满十了。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 9 + 3 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>12</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>11</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>13</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 5 + 7 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>11</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>12</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>13</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 4 + 9 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>12</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>14</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>13</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四处容易算错 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四处容易算错</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    进位加最容易错在这四处。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>忘进位</h4>
+    <div class="eq">✗ 9+6=15 写成 15 却十位错</div>
+    <p>9+6 满十，十位进 1，个位是 5，是 15。</p>
+  </div>
+  <div class="card">
+    <h4>拆错数</h4>
+    <div class="eq">✗ 8+5 拆成 2+3</div>
+    <p>5 应拆成 2 和 3 没错，但 8+2=10，10+3=13。</p>
+  </div>
+  <div class="card">
+    <h4>只加一次</h4>
+    <div class="eq">✗ 9+6 算成 9+1=10 就停</div>
+    <p>还要加剩下的 5，得 15。</p>
+  </div>
+  <div class="card">
+    <h4>不凑十</h4>
+    <div class="eq">✗ 硬数手指 9+6</div>
+    <p>用凑十法更快更准。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  进位加的关键：<strong>先凑十，别漏加剩下的数</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  9 + 6：9+1=10，10+5=<strong>15</strong>。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题</h2>
+  <p class="quiz-hint">用凑十法，别数手指。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 9 + 7 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>16</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>15</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>17</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 8 + 6 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>13</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>14</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>15</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 7 + 9 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>15</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>17</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>16</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 盒里 8 个苹果，又放 7 个，一共几个？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>15 个</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>14 个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>16 个</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 6 + 6 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>11</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>12</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>13</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">凑十法</div>
+        <div class="summary-v4-summary">先凑满十</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>看谁离 10 近。</p>
+      <p>把另一个数拆开配合。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">三步走</div>
+        <div class="summary-v4-summary">拆凑加</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>拆小数、凑大数。</p>
+      <p>再加剩下的数。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">进位</div>
+        <div class="summary-v4-summary">十位进 1</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>个位满 10 进 1。</p>
+      <p>结果是十几。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">别踩坑</div>
+        <div class="summary-v4-summary">别漏加</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>凑十后别停。</p>
+      <p>还要加剩余数。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  进位加，凑十法，拆小数加剩余。
+</p>
+</section>

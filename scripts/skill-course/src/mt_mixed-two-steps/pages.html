@@ -1,0 +1,467 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>3×4+2，先算乘还是先算加</h1>
+  <p class="sub">二年级数学 · 数与运算</p>
+  <div class="tags">
+    <span class="tag">混合运算</span>
+    <span class="tag">二年级</span>
+    <span class="tag">2022课标</span>
+    <span class="tag">判分课</span>
+  </div>
+  <div class="cover-fig">
+<svg viewBox="0 0 760 190" width="760" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="3×4+2，先算乘还是先算加">
+  <rect x="0" y="0" width="760" height="190" rx="18" fill="#FFFFFF" opacity=".08"/>
+  <g fill="#FFFFFF" opacity=".9">
+    <circle cx="96" cy="60" r="13"/><circle cx="130" cy="60" r="13"/><circle cx="164" cy="60" r="13"/>
+    <rect x="79" y="86" width="102" height="26" rx="13" fill="#FFFFFF" opacity=".22"/>
+    <text x="130" y="105" font-size="17" text-anchor="middle">1 2 3</text>
+  </g>
+  <text x="216" y="82" font-size="30" fill="#FFFFFF" font-weight="800">3×4+2，先算乘还是先算加</text>
+  <text x="218" y="126" font-size="18" fill="rgba(255,255,255,.85)">两步混合运算</text>
+</svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先算三道，看清符号</h2>
+  <p class="quiz-hint">看清运算符号。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 3×4+2 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>14</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>18</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>9</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 10−2×3 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>24</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>4</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>7</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. (3+4)×2 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>11</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>10</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>14</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 先算乘，再算加减 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">先算乘，再算加减</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p2s1">
+    3×4+2 里又有乘又有加，要<strong>先算乘法</strong>。
+  </p>
+  <p class="teach-text" id="p2s2">
+    3×4=12，再算 12+2=<strong>14</strong>。如果从左往右算成 3×(4+2) 就错了。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>先乘</h4>
+    <div class="eq">3×4=12</div>
+    <p>乘法优先</p>
+  </div>
+  <div class="card">
+    <h4>后加</h4>
+    <div class="eq">12+2=14</div>
+    <p>再加</p>
+  </div>
+  <div class="card">
+    <h4>别乱序</h4>
+    <div class="eq">✗ 3×6</div>
+    <p>不能先算加法</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  没有括号时，<strong>先乘除、后加减</strong>。
+</div>
+</section>
+
+<!-- ===== p3: 括号最优先 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">括号最优先</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p3s1">
+    有括号要先算<strong>括号里面</strong>的：(3+4)×2，先算 3+4=7。
+  </p>
+  <p class="teach-text" id="p3s2">
+    括号能改变运算顺序，看到括号别漏看。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>有括号<strong>先算括号</strong>。</li>
+  <li>没括号先<strong>乘除</strong>后<strong>加减</strong>。</li>
+  <li>同级运算<strong>从左往右</strong>。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  运算顺序：<strong>括号 → 乘除 → 加减</strong>。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：先算什么</h2>
+<p class="teach-text" id="p3bs1">把算式和第一步连起来。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 乘加乘减</h2>
+  <p class="quiz-hint">先算乘法。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 5×2+3 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>13</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>16</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>10</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 20−3×4 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>68</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>8</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>17</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 6+2×3 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>24</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>11</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>12</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 解决两步问题 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">解决两步问题</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p5s1">
+    每盒 4 支笔买 3 盒又送 2 支：先算 4×3=12，再 12+2=14。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>第一步</h4>
+    <div class="eq">4×3=12</div>
+    <p>先算买的数量</p>
+  </div>
+  <div class="card">
+    <h4>第二步</h4>
+    <div class="eq">12+2=14</div>
+    <p>再加上送的</p>
+  </div>
+  <div class="card">
+    <h4>答</h4>
+    <div class="eq">14 支</div>
+    <p>一共</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  两步应用题：<strong>先算一步，再用结果算第二步</strong>。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">分步算：一步一步来</h2>
+  <p class="sim-desc">点「+ 加一个」模拟第一步的数量变化；「换一组」换一道混合运算。先算出的结果作为第二步的起点。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">第一步得 %N%</span>
+    <span class="sim-tip" id="simTip">先算出第一步的结果</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simAdd()">+ 加一个</button>
+    <button class="btn" onclick="simNextCase()">换一组</button>
+    <button class="btn" onclick="simDemo()">看老师做</button>
+    <button class="btn-retry" onclick="simReset()">清空</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">先乘除后加减，括号最先</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>3×4 摆满是几？</li>
+    <li>再加 2 后是多少？</li>
+    <li>有括号时该先算什么？</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 括号</h2>
+  <p class="quiz-hint">括号最优先。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. (8−3)×2 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>10</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>13</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>16</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 3×(2+4) = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>10</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>18</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>12</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 12÷(2+1) = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>7</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>5</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>4</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四处容易算错 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四处容易算错</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    混合运算最容易错在这四处。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>乱顺序</h4>
+    <div class="eq">✗ 3×4+2 算 3×6</div>
+    <p>要先乘：3×4=12，再+2=14。</p>
+  </div>
+  <div class="card">
+    <h4>漏括号</h4>
+    <div class="eq">✗ (3+4)×2 算 3+8</div>
+    <p>先算括号 3+4=7，再×2=14。</p>
+  </div>
+  <div class="card">
+    <h4>减法乱</h4>
+    <div class="eq">✗ 10−2×3 算 8×3</div>
+    <p>先乘 2×3=6，再 10−6=4。</p>
+  </div>
+  <div class="card">
+    <h4>同级乱</h4>
+    <div class="eq">✗ 12−3−2 算 12−1</div>
+    <p>同级从左往右：12−3=9，9−2=7。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  运算顺序记牢：<strong>括号最先，然后乘除，最后加减</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  3×4+2：先 12，再 +2 = <strong>14</strong>。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题</h2>
+  <p class="quiz-hint">先乘除、后加减、括号最先。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 4×3+5 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>17</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>32</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>12</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 15−2×5 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>65</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>5</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>13</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. (6+2)×3 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>12</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>20</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>24</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 每盒 4 支笔，买 3 盒又送 2 支，一共几支？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>14 支</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>18 支</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>9 支</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 24÷(6−2) = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>4</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>6</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>8</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">运算顺序</div>
+        <div class="summary-v4-summary">括号→乘除→加减</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>有括号先算括号。</p>
+      <p>先乘除后加减。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">同级</div>
+        <div class="summary-v4-summary">从左往右</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>只有加减时从左往右。</p>
+      <p>只有乘除时也从左往右。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">两步题</div>
+        <div class="summary-v4-summary">分步算</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>先算第一步。</p>
+      <p>用结果算第二步。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">别踩坑</div>
+        <div class="summary-v4-summary">四处别错</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>别乱顺序。</p>
+      <p>别漏括号。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  混合运算有顺序：括号先、乘除次、加减后。
+</p>
+</section>

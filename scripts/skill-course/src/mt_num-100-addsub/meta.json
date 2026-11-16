@@ -1,0 +1,97 @@
+{
+  "topicId": "mt_num-100-addsub",
+  "title": "30 + 40 和 70 − 30，整十怎么算",
+  "template": "explain",
+  "renderer": "counter",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 1,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S1:NA:NO"
+  ],
+  "prerequisites": [
+    "mt_num-100-recognition",
+    "mt_num-10-addsub"
+  ],
+  "next": [
+    "mt_num-100-pen",
+    "mt_mul-meaning",
+    "mt_multiple",
+    "mt_rect-perimeter",
+    "mt_optimize"
+  ],
+  "objectives": [
+    "会口算整十数加减",
+    "会口算两位数加一位数",
+    "理解相同数位相加减"
+  ],
+  "cognitiveAction": "变换",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "引入",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "概念一",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "概念二",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

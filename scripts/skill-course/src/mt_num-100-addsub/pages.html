@@ -1,0 +1,467 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>30 + 40 和 70 − 30，整十怎么算</h1>
+  <p class="sub">一年级数学 · 数与运算</p>
+  <div class="tags">
+    <span class="tag">100以内口算</span>
+    <span class="tag">一年级</span>
+    <span class="tag">2022课标</span>
+    <span class="tag">判分课</span>
+  </div>
+  <div class="cover-fig">
+<svg viewBox="0 0 760 190" width="760" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="30 + 40 和 70 − 30，整十怎么算">
+  <rect x="0" y="0" width="760" height="190" rx="18" fill="#FFFFFF" opacity=".08"/>
+  <g fill="#FFFFFF" opacity=".9">
+    <circle cx="96" cy="60" r="13"/><circle cx="130" cy="60" r="13"/><circle cx="164" cy="60" r="13"/>
+    <rect x="79" y="86" width="102" height="26" rx="13" fill="#FFFFFF" opacity=".22"/>
+    <text x="130" y="105" font-size="17" text-anchor="middle">1 2 3</text>
+  </g>
+  <text x="216" y="82" font-size="30" fill="#FFFFFF" font-weight="800">30 + 40 和 70 − 30，</text>
+  <text x="218" y="126" font-size="18" fill="rgba(255,255,255,.85)">100以内加减法（口算）</text>
+</svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先算三道，凭感觉答</h2>
+  <p class="quiz-hint">凭直觉，答完看解析。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 30 + 40 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>70</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>34</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>710</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 70 − 30 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>37</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>40</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>100</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 45 + 3 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>75</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>42</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>48</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 整十数加减 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">整十数加减</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p2s1">
+    30+40，就是 3 个十加 4 个十，等于 7 个十，即 <strong>70</strong>。
+  </p>
+  <p class="teach-text" id="p2s2">
+    把整十数看成「几个十」，加减就变简单了。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>30</h4>
+    <div class="eq">3 个十</div>
+    <p>整十</p>
+  </div>
+  <div class="card">
+    <h4>40</h4>
+    <div class="eq">4 个十</div>
+    <p>整十</p>
+  </div>
+  <div class="card">
+    <h4>合</h4>
+    <div class="eq">7 个十 = 70</div>
+    <p>结果</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  整十数加减，只要把<strong>几个十</strong>相加减。
+</div>
+</section>
+
+<!-- ===== p3: 相同数位相加减 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">相同数位相加减</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p3s1">
+    45+3，个位 5+3=8，十位 4 不动，得 48。
+  </p>
+  <p class="teach-text" id="p3s2">
+    个位和个位加，十位和十位加，不能混。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>个位</strong>和个位相加减。</li>
+  <li>整十数就是<strong>几个十</strong>。</li>
+  <li>两位数加一位，只动个位。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  口算的窍门：<strong>相同数位相加减</strong>。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：算得数</h2>
+<p class="teach-text" id="p3bs1">把算式和得数连起来。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 整十加减</h2>
+  <p class="quiz-hint">几个十加几个十。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 20 + 50 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>70</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>25</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>52</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 90 − 60 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>36</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>30</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>150</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 10 + 80 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>18</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>81</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>90</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 整十加几 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">整十加几</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p5s1">
+    40+8 就是 4 个十再加 8 个一，写作 48。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>整十</h4>
+    <div class="eq">40 = 4 个十</div>
+    <p>十位</p>
+  </div>
+  <div class="card">
+    <h4>加几</h4>
+    <div class="eq">+8 = 8 个一</div>
+    <p>个位</p>
+  </div>
+  <div class="card">
+    <h4>合起来</h4>
+    <div class="eq">48</div>
+    <p>几十几</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  整十加几，就是<strong>几十几</strong>。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">数位桶：十位个位分开算</h2>
+  <p class="sim-desc">点「+ 加一个」往个位添，看满十进十；「换一组」换一道口算。十位和个位分开看。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">一共 %N% 个</span>
+    <span class="sim-tip" id="simTip">个位满十就进到十位</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simAdd()">+ 加一个</button>
+    <button class="btn" onclick="simNextCase()">换一组</button>
+    <button class="btn" onclick="simDemo()">看老师做</button>
+    <button class="btn-retry" onclick="simReset()">清空</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">蓝色是个位，进位的珠子在十位</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>添到 10 个时，十位发生了什么？</li>
+    <li>45+3 就是在 45 上添 3 次。</li>
+    <li>换一组后最多添到几？</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 两位数加一位</h2>
+  <p class="quiz-hint">个位相加，十位不动。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 32 + 5 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>37</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>82</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>27</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 56 − 4 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>16</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>52</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>60</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 40 + 8 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>12</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>408</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>48</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四处容易算错 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四处容易算错</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    100 以内口算最容易错在这四处。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>数位混</h4>
+    <div class="eq">✗ 45+3 算成 75</div>
+    <p>个位 5+3=8，不是把 3 加到十位。</p>
+  </div>
+  <div class="card">
+    <h4>整十当几</h4>
+    <div class="eq">✗ 30+40=34</div>
+    <p>30 是 3 个十，40 是 4 个十，合起来是 70。</p>
+  </div>
+  <div class="card">
+    <h4>退位乱</h4>
+    <div class="eq">✗ 70−30=37</div>
+    <p>7 十减 3 十是 4 十，即 40。</p>
+  </div>
+  <div class="card">
+    <h4>漏 0</h4>
+    <div class="eq">✗ 40+8=408</div>
+    <p>4 个十加 8 个一是 48。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  记住：<strong>几个十加减几个十，个位加减个位</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  30+40=<strong>70</strong>，70−30=<strong>40</strong>。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题</h2>
+  <p class="quiz-hint">看清是几个十几个一。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 50 + 30 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>80</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>53</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>83</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 80 − 20 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>82</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>60</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>100</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 63 + 4 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>103</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>59</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>67</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 两堆各 30 个，一共几个？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>60 个</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>33 个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>90 个</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 75 − 5 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>25</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>70</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>80</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">整十加减</div>
+        <div class="summary-v4-summary">几个十</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>30+40 是 3 十加 4 十。</p>
+      <p>得 7 十即 70。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">相同数位</div>
+        <div class="summary-v4-summary">分开算</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>个位加减个位。</p>
+      <p>十位加减十位。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">整十加几</div>
+        <div class="summary-v4-summary">几十几</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>40+8=48。</p>
+      <p>个位变，十位不变。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">别踩坑</div>
+        <div class="summary-v4-summary">四处别错</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>数位别混。</p>
+      <p>整十别当几。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  整十加减看几个十，两位数加减相同数位算。
+</p>
+</section>

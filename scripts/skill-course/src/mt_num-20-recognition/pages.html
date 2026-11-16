@@ -1,0 +1,467 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>13 里的 1 和 3，站在不同位置</h1>
+  <p class="sub">一年级数学 · 数与运算</p>
+  <div class="tags">
+    <span class="tag">认识数位</span>
+    <span class="tag">一年级</span>
+    <span class="tag">2022课标</span>
+    <span class="tag">判分课</span>
+  </div>
+  <div class="cover-fig">
+<svg viewBox="0 0 760 190" width="760" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="13 里的 1 和 3，站在不同位置">
+  <rect x="0" y="0" width="760" height="190" rx="18" fill="#FFFFFF" opacity=".08"/>
+  <g fill="#FFFFFF" opacity=".9">
+    <circle cx="96" cy="60" r="13"/><circle cx="130" cy="60" r="13"/><circle cx="164" cy="60" r="13"/>
+    <rect x="79" y="86" width="102" height="26" rx="13" fill="#FFFFFF" opacity=".22"/>
+    <text x="130" y="105" font-size="17" text-anchor="middle">1 2 3</text>
+  </g>
+  <text x="216" y="82" font-size="30" fill="#FFFFFF" font-weight="800">13 里的 1 和 3，站在不同位置</text>
+  <text x="218" y="126" font-size="18" fill="rgba(255,255,255,.85)">20以内数的认识与数位</text>
+</svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先认三道，凭感觉答</h2>
+  <p class="quiz-hint">凭直觉，答完看解析。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 13 是由几个十和几个一组成？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1 个十和 3 个一</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>13 个一</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3 个十和 1 个一</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 10 里面有几个十？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>10 个十</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>1 个十</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>0 个十</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 1 个十和 5 个一是几？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>51</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>6</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>15</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 满十个就捆成一捆 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">满十个就捆成一捆</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p2s1">
+    一根一根数，数到 10 根，就<strong>捆成一捆</strong>，当作 1 个十。
+  </p>
+  <p class="teach-text" id="p2s2">
+    13 根就是 1 捆（十）再加 3 根（一），写作 <strong>13</strong>。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>一捆</h4>
+    <div class="eq">10 根 = 1 个十</div>
+    <p>十位写 1</p>
+  </div>
+  <div class="card">
+    <h4>散的</h4>
+    <div class="eq">3 根 = 3 个一</div>
+    <p>个位写 3</p>
+  </div>
+  <div class="card">
+    <h4>合起来</h4>
+    <div class="eq">1 十 + 3 一 = 13</div>
+    <p>读作十三</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  满 10 根<strong>捆成 1 捆</strong>，放在十位；剩下的放个位。
+</div>
+</section>
+
+<!-- ===== p3: 个位和十位 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">个位和十位</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p3s1">
+    13 里，右边的 3 在<strong>个位</strong>，表示 3 个一；左边的 1 在<strong>十位</strong>，表示 1 个十。
+  </p>
+  <p class="teach-text" id="p3s2">
+    数位不同，表示的大小就不同。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>右边是个位</strong>，表示几个一。</li>
+  <li><strong>左边是十位</strong>，表示几个十。</li>
+  <li>2 个十是 20，个位写 0 占位。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  同样的数字，站在<strong>不同数位</strong>，表示的大小不一样。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：数的组成</h2>
+<p class="teach-text" id="p3bs1">把数和它的组成连起来。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 数位</h2>
+  <p class="quiz-hint">看清十位个位。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 18 的十位是几？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>8</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>18</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 18 的个位是几？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>8</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>18</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 二十写作什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>2</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>02</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>20</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 读数和写数 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">读数和写数</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p5s1">
+    十位是 1 读「十几」，是 2 读「二十」；个位数字跟着读。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>十位是 1</h4>
+    <div class="eq">14 → 十四</div>
+    <p>一十几</p>
+  </div>
+  <div class="card">
+    <h4>十位是 2</h4>
+    <div class="eq">20 → 二十</div>
+    <p>个位 0 不读</p>
+  </div>
+  <div class="card">
+    <h4>写作</h4>
+    <div class="eq">十七 → 17</div>
+    <p>听到几写几</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  读数从<strong>十位</strong>读起，写数也从十位写起。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">捆小棒：满十捆一捆</h2>
+  <p class="sim-desc">点「+ 加一个」添一根小棒；「换一组」换一个数。蓝色是散的（个位），满了十就捆成一捆（十位）。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">一共 %N% 根</span>
+    <span class="sim-tip" id="simTip">满 10 根就捆成一捆</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simAdd()">+ 加一个</button>
+    <button class="btn" onclick="simNextCase()">换一组</button>
+    <button class="btn" onclick="simDemo()">看老师做</button>
+    <button class="btn-retry" onclick="simReset()">清空</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">蓝色散根是个位，凑够 10 换成十位</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>添到第 10 根时，数位发生了什么？</li>
+    <li>13 根里有几捆、几根散的？</li>
+    <li>换一组后最多添到几？</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 数的组成</h2>
+  <p class="quiz-hint">拆成十和一。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 14 = 10 + ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>4</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>1</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>14</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 比 19 多 1 是几？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>18</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>20</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>21</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 1 个十和 7 个一组成的数，读作？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>七十</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>一七</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>十七</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四处容易认错 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四处容易认错</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    认识 20 以内数，最容易乱在这四处。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>数位反</h4>
+    <div class="eq">✗ 13 的十位是 3</div>
+    <p>十位是左边那位，是 1。</p>
+  </div>
+  <div class="card">
+    <h4>组成反</h4>
+    <div class="eq">✗ 1 十 5 一是 51</div>
+    <p>1 个十加 5 个一是 15。</p>
+  </div>
+  <div class="card">
+    <h4>20 写错</h4>
+    <div class="eq">✗ 二十写作 2</div>
+    <p>2 个十是 20，个位要写 0 占位。</p>
+  </div>
+  <div class="card">
+    <h4>读法错</h4>
+    <div class="eq">✗ 17 读成 七一</div>
+    <p>十位是 1 读十七，不是七一。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  记住：<strong>左十位、右个位</strong>，十位表示十，个位表示一。
+</div>
+
+<p class="teach-text" id="p8apply">
+  13 = <strong>1 个十 + 3 个一</strong>，你分清数位了吗？
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题</h2>
+  <p class="quiz-hint">看清十位个位再答。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 12 里的「2」在哪位？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>个位</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>十位</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>百位</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 1 个十和 9 个一是几？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>91</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>19</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>10</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 20 里面有几个十？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>20 个十</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>0 个十</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>2 个十</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 16 的个位数字是几？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>6</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>1</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>16</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 小明有 1 捆 10 根和 4 根小棒，一共几根？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5 根</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>14 根</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>41 根</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">满十进一</div>
+        <div class="summary-v4-summary">捆成一捆</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>10 根＝1 个十。</p>
+      <p>十位写 1，个位写 0。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">数位</div>
+        <div class="summary-v4-summary">左十右个</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>十位表示几个十。</p>
+      <p>个位表示几个一。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">读写</div>
+        <div class="summary-v4-summary">从十位起</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>十几、二十这样读。</p>
+      <p>听到几就写几。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">别踩坑</div>
+        <div class="summary-v4-summary">四处别错</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>数位别反。</p>
+      <p>20 别写成 2。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  左十位右个位，满十捆成一捆。
+</p>
+</section>

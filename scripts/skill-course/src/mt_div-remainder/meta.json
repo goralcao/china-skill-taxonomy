@@ -1,0 +1,90 @@
+{
+  "topicId": "mt_div-remainder",
+  "title": "13 个苹果每 4 个一袋，装满 3 袋还剩 1 个",
+  "template": "explain",
+  "renderer": "division",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 2,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S1:NA:NO"
+  ],
+  "prerequisites": [
+    "mt_div-tables-2-6"
+  ],
+  "next": [],
+  "objectives": [
+    "理解余数含义",
+    "知道余数一定比除数小",
+    "会写有余数除法算式"
+  ],
+  "cognitiveAction": "分解",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "引入",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "概念一",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "概念二",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

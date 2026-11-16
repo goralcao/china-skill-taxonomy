@@ -1,0 +1,467 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>13 个苹果每 4 个一袋，装满 3 袋还剩 1 个</h1>
+  <p class="sub">二年级数学 · 数与运算</p>
+  <div class="tags">
+    <span class="tag">有余数除法</span>
+    <span class="tag">二年级</span>
+    <span class="tag">2022课标</span>
+    <span class="tag">判分课</span>
+  </div>
+  <div class="cover-fig">
+<svg viewBox="0 0 760 190" width="760" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="13 个苹果每 4 个一袋，装满 3 袋还剩 1 个">
+  <rect x="0" y="0" width="760" height="190" rx="18" fill="#FFFFFF" opacity=".08"/>
+  <g fill="#FFFFFF" opacity=".9">
+    <circle cx="96" cy="60" r="13"/><circle cx="130" cy="60" r="13"/><circle cx="164" cy="60" r="13"/>
+    <rect x="79" y="86" width="102" height="26" rx="13" fill="#FFFFFF" opacity=".22"/>
+    <text x="130" y="105" font-size="17" text-anchor="middle">1 2 3</text>
+  </g>
+  <text x="216" y="82" font-size="30" fill="#FFFFFF" font-weight="800">13 个苹果每 4 个一袋，装满 3</text>
+  <text x="218" y="126" font-size="18" fill="rgba(255,255,255,.85)">有余数的除法</text>
+</svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先分三道，看看剩几个</h2>
+  <p class="quiz-hint">凭直觉，答完看解析。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 13 个苹果每 4 个一袋，装满几袋剩几个？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>3 袋剩 0</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3 袋剩 1 个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>4 袋</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 9÷2 的余数是几？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>0</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>2</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>1</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 余数一定要比除数怎样？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>小</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>大</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>相等</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 分完还剩下 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">分完还剩下</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p2s1">
+    13 个苹果每 4 个装一袋，装满 3 袋用了 12 个。
+  </p>
+  <p class="teach-text" id="p2s2">
+    还剩 1 个不够再装一袋，这 1 个就是<strong>余数</strong>。记作 13÷4=3……1。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>总数</h4>
+    <div class="eq">13 个</div>
+    <p>被除数</p>
+  </div>
+  <div class="card">
+    <h4>每袋</h4>
+    <div class="eq">4 个</div>
+    <p>除数</p>
+  </div>
+  <div class="card">
+    <h4>装满</h4>
+    <div class="eq">3 袋</div>
+    <p>商</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  平均分后<strong>剩下的、不够再分一份</strong>的，叫余数。
+</div>
+</section>
+
+<!-- ===== p3: 余数一定比除数小 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">余数一定比除数小</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p3s1">
+    如果剩下的数和除数一样多或更多，就还能再装满一袋，说明还没分完。
+  </p>
+  <p class="teach-text" id="p3s2">
+    所以余数一定<strong>比除数小</strong>。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>先想：除数×商<strong>不超过</strong>被除数。</li>
+  <li>余数＝被除数−除数×商。</li>
+  <li>余数<strong>一定小于除数</strong>。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  有余数除法铁律：<strong>余数一定比除数小</strong>。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：算式与结果</h2>
+<p class="teach-text" id="p3bs1">把除法算式和结果连起来。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 求余数</h2>
+  <p class="quiz-hint">装满后剩下的是余数。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 17÷5 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>2……3</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3……2</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>4……1</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 23÷6 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>4……1</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3……4</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3……5</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 14÷4 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>3……2</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>2……6</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>4……2</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 有余数除法三步 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">有余数除法三步</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p5s1">
+    算 17÷5：一想 5×3=15 最接近 17；二减 17−15=2；三查 2＜5，对。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>一想</h4>
+    <div class="eq">5×3=15</div>
+    <p>找最大乘积</p>
+  </div>
+  <div class="card">
+    <h4>二减</h4>
+    <div class="eq">17−15=2</div>
+    <p>算余数</p>
+  </div>
+  <div class="card">
+    <h4>三查</h4>
+    <div class="eq">2 < 5</div>
+    <p>余数比除数小</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  有余数除法三步：<strong>想乘积、算余数、查大小</strong>。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">分一分：看余数</h2>
+  <p class="sim-desc">点「+ 加一个」往阵列添点；「换一组」换每份个数。摆满整行是一份，剩下不足一行的是余数。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">一共 %N% 个</span>
+    <span class="sim-tip" id="simTip">满一行是一份，剩下的是余数</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simAdd()">+ 加一个</button>
+    <button class="btn" onclick="simNextCase()">换一组</button>
+    <button class="btn" onclick="simDemo()">看老师做</button>
+    <button class="btn-retry" onclick="simReset()">清空</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">橙色是最后没摆满的一行（余数）</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>摆到 13 个、每行 4 个，是几行余几个？</li>
+    <li>余数会不会比每行个数还多？</li>
+    <li>换一组后余数是多少？</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 余数比除数小</h2>
+  <p class="quiz-hint">检查余数对不对。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 下面哪个余数是对的？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>19÷6=2……7</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>19÷6=3……1</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>19÷6=3……6</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 26÷5 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>4……6</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>5……0</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>5……1</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 最大余数比除数小几？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>小 1</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>小 0</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>小 2</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四处容易算错 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四处容易算错</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    有余数除法最容易错在这四处。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>余数太大</h4>
+    <div class="eq">✗ 19÷6=2……7</div>
+    <p>7＞6 还能再分，应是 3……1。</p>
+  </div>
+  <div class="card">
+    <h4>余数等除数</h4>
+    <div class="eq">✗ 19÷6=3……6</div>
+    <p>余数不能等于除数，应是 3……1。</p>
+  </div>
+  <div class="card">
+    <h4>忘余数</h4>
+    <div class="eq">✗ 13÷4=3</div>
+    <p>还剩 1 个，要写 ……1。</p>
+  </div>
+  <div class="card">
+    <h4>乘积过大</h4>
+    <div class="eq">✗ 17÷5=4……(−3)</div>
+    <p>5×4=20 超了，应取 5×3=15。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  牢记：<strong>余数比除数小，分完别忘写余数</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  13÷4 = 3……<strong>1</strong>，剩下 1 个。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题</h2>
+  <p class="quiz-hint">想乘积、算余数。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 29÷6 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5……1</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>4……5</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>4……3</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 20÷3 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5……5</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>7……1</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>6……2</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 余数最大不能超过？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>比除数小 1</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>除数本身</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>比除数大</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 22 个糖每 5 个装一袋，装满几袋剩几个？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5 袋剩 0</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>4 袋剩 2 个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3 袋剩 7 个</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 31÷7 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>3……10</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>5……4</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>4……3</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">余数含义</div>
+        <div class="summary-v4-summary">分完剩下</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>不够再分一份的是余数。</p>
+      <p>13÷4=3……1。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">铁律</div>
+        <div class="summary-v4-summary">余数小于除数</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>余数一定比除数小。</p>
+      <p>否则还能再分。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">三步</div>
+        <div class="summary-v4-summary">想减查</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>想最大乘积。</p>
+      <p>算余数并查大小。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">别踩坑</div>
+        <div class="summary-v4-summary">四处别错</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>余数别超除数。</p>
+      <p>分完别忘写余数。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  有余数除法：余数一定比除数小。
+</p>
+</section>

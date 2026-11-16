@@ -1,0 +1,464 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>13 − 8，个位不够减怎么办</h1>
+  <p class="sub">一年级数学 · 数与运算</p>
+  <div class="tags">
+    <span class="tag">退位减法</span>
+    <span class="tag">一年级</span>
+    <span class="tag">2022课标</span>
+    <span class="tag">判分课</span>
+  </div>
+  <div class="cover-fig">
+<svg viewBox="0 0 760 190" width="760" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="13 − 8，个位不够减怎么办">
+  <rect x="0" y="0" width="760" height="190" rx="18" fill="#FFFFFF" opacity=".08"/>
+  <g fill="#FFFFFF" opacity=".9">
+    <circle cx="96" cy="60" r="13"/><circle cx="130" cy="60" r="13"/><circle cx="164" cy="60" r="13"/>
+    <rect x="79" y="86" width="102" height="26" rx="13" fill="#FFFFFF" opacity=".22"/>
+    <text x="130" y="105" font-size="17" text-anchor="middle">1 2 3</text>
+  </g>
+  <text x="216" y="82" font-size="30" fill="#FFFFFF" font-weight="800">13 − 8，个位不够减怎么办</text>
+  <text x="218" y="126" font-size="18" fill="rgba(255,255,255,.85)">20以内退位减法</text>
+</svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先算三道，凭感觉答</h2>
+  <p class="quiz-hint">凭直觉，答完看解析。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 13 − 8 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>6</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>4</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>5</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 15 − 9 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>6</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>5</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>7</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 12 − 7 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>6</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>5</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>4</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 个位不够减，怎么办 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">个位不够减，怎么办</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p2s1">
+    13 − 8，个位 3 减 8 <strong>不够减</strong>。
+  </p>
+  <p class="teach-text" id="p2s2">
+    把 13 拆成 10 和 3：先用 10−8=<strong>2</strong>，再加 3 得 <strong>5</strong>。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>破十</h4>
+    <div class="eq">13 = 10 + 3</div>
+    <p>拆出 10</p>
+  </div>
+  <div class="card">
+    <h4>先减</h4>
+    <div class="eq">10 − 8 = 2</div>
+    <p>用 10 去减</p>
+  </div>
+  <div class="card">
+    <h4>再加</h4>
+    <div class="eq">2 + 3 = 5</div>
+    <p>加回个位</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  个位不够减，就用<strong>破十法</strong>：拆出 10 来减，再加剩下的。
+</div>
+</section>
+
+<!-- ===== p3: 破十法三步 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">破十法三步</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p3s1">
+    一拆：把被减数拆成 10 和几。二减：用 10 减。三加：加上拆出的几。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>个位<strong>不够减</strong>才需要破十。</li>
+  <li>把十几<strong>拆成 10 和几</strong>。</li>
+  <li>先用 10 减，再加回个位。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  退位减用<strong>破十法</strong>，和凑十法正好反过来。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：破十怎么算</h2>
+<p class="teach-text" id="p3bs1">把算式和第一步连起来。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 破十</h2>
+  <p class="quiz-hint">个位不够减，找十位帮忙。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 14 − 6 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>7</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>9</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>8</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 11 − 5 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>6</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>5</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>7</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 16 − 8 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>7</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>8</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>9</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 想加算减 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">想加算减</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p5s1">
+    13−8，也可以想：8 加几等于 13？8+5=13，所以 13−8=5。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>破十</h4>
+    <div class="eq">10−8=2，2+3=5</div>
+    <p>拆十来减</p>
+  </div>
+  <div class="card">
+    <h4>想加</h4>
+    <div class="eq">8+5=13</div>
+    <p>加法帮减法</p>
+  </div>
+  <div class="card">
+    <h4>互逆</h4>
+    <div class="eq">减是加的逆</div>
+    <p>学会一种另一种也会</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  退位减可以<strong>破十</strong>，也可以<strong>想加算减</strong>。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">数位桶：借一当十</h2>
+  <p class="sim-desc">点「+ 加一个」先摆出被减数；「换一组」换一道退位减。个位不够时，从十位借 1 当 10。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">一共 %N% 个</span>
+    <span class="sim-tip" id="simTip">个位不够就向十位借 1</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simAdd()">+ 加一个</button>
+    <button class="btn" onclick="simNextCase()">换一组</button>
+    <button class="btn" onclick="simDemo()">看老师做</button>
+    <button class="btn-retry" onclick="simReset()">清空</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">蓝色是个位，借来一个十拆成 10 个一</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>摆到十几后，个位有几个？</li>
+    <li>减 8 时个位够减吗？不够怎么办？</li>
+    <li>借来一个十，拆成几个一？</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 退位减</h2>
+  <p class="quiz-hint">想想凑十的逆过程。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 17 − 9 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>7</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>9</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>8</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 13 − 5 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>8</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>7</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>9</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 12 − 9 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>2</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>4</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四处容易减错 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四处容易减错</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    退位减最容易错在这四处。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>硬减</h4>
+    <div class="eq">✗ 13−8 个位 3−8 得 −5</div>
+    <p>个位不够减要破十，答案是 5。</p>
+  </div>
+  <div class="card">
+    <h4>忘加回</h4>
+    <div class="eq">✗ 13−8 算成 10−8=2 就停</div>
+    <p>还要加回个位的 3，得 5。</p>
+  </div>
+  <div class="card">
+    <h4>借位忘减</h4>
+    <div class="eq">✗ 借走十后十位没变</div>
+    <p>十几借走 1 个十，只剩个位在算。</p>
+  </div>
+  <div class="card">
+    <h4>方向反</h4>
+    <div class="eq">✗ 想加算减时 8+3=11</div>
+    <p>要想 8 加几是 13，是 5。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  退位减的关键：<strong>个位不够就破十，减完别忘加回个位</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  13 − 8：10−8=2，2+3=<strong>5</strong>。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题</h2>
+  <p class="quiz-hint">个位不够就破十。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 15 − 7 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>7</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>9</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>8</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 18 − 9 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>9</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>8</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>10</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 11 − 3 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>7</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>8</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>9</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 有 14 颗糖，吃了 6 颗，还剩几颗？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>7 颗</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>9 颗</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>8 颗</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 13 − 4 − 3 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>6</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>7</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>5</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">破十法</div>
+        <div class="summary-v4-summary">拆十来减</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>个位不够就拆出 10。</p>
+      <p>用 10 减完再加回个位。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">三步</div>
+        <div class="summary-v4-summary">拆减加</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>拆成 10 和几。</p>
+      <p>先减再加。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">想加算减</div>
+        <div class="summary-v4-summary">加法帮忙</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>想减数加几得被减数。</p>
+      <p>减是加的逆。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">别踩坑</div>
+        <div class="summary-v4-summary">别忘加回</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>破十后别停在半路。</p>
+      <p>个位不够别硬减。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  退位减，破十法，减完别忘加个位。
+</p>
+</section>

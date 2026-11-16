@@ -1,0 +1,467 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>七八五十六，难记的口诀怎么破</h1>
+  <p class="sub">二年级数学 · 数与运算</p>
+  <div class="tags">
+    <span class="tag">乘法口诀</span>
+    <span class="tag">二年级</span>
+    <span class="tag">2022课标</span>
+    <span class="tag">判分课</span>
+  </div>
+  <div class="cover-fig">
+<svg viewBox="0 0 760 190" width="760" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="七八五十六，难记的口诀怎么破">
+  <rect x="0" y="0" width="760" height="190" rx="18" fill="#FFFFFF" opacity=".08"/>
+  <g fill="#FFFFFF" opacity=".9">
+    <circle cx="96" cy="60" r="13"/><circle cx="130" cy="60" r="13"/><circle cx="164" cy="60" r="13"/>
+    <rect x="79" y="86" width="102" height="26" rx="13" fill="#FFFFFF" opacity=".22"/>
+    <text x="130" y="105" font-size="17" text-anchor="middle">1 2 3</text>
+  </g>
+  <text x="216" y="82" font-size="30" fill="#FFFFFF" font-weight="800">七八五十六，难记的口诀怎么破</text>
+  <text x="218" y="126" font-size="18" fill="rgba(255,255,255,.85)">7~9的乘法口诀</text>
+</svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先答三道，看看会不会</h2>
+  <p class="quiz-hint">凭记忆，答完看解析。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 7 × 8 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>54</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>63</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>56</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 9 × 9 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>81</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>72</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>89</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 8 × 6 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>42</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>48</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>54</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 7~9 的口诀怎么记 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">7~9 的口诀怎么记</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p2s1">
+    7~9 的口诀数大，但仍有规律：每多一行，就多一个 7（或 8、9）。
+  </p>
+  <p class="teach-text" id="p2s2">
+    七八五十六，可以想「7 个 8」或「8 个 7」，还可以用相邻口诀推算。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>七八</h4>
+    <div class="eq">56</div>
+    <p>7个8</p>
+  </div>
+  <div class="card">
+    <h4>相邻</h4>
+    <div class="eq">7×9=63</div>
+    <p>比 56 多 7</p>
+  </div>
+  <div class="card">
+    <h4>交换</h4>
+    <div class="eq">8×7=56</div>
+    <p>也能用</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  难记的口诀用<strong>相邻推算</strong>和<strong>一句两用</strong>来帮忙。
+</div>
+</section>
+
+<!-- ===== p3: 相邻口诀差一个因数 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">相邻口诀差一个因数</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p3s1">
+    7×7=49，7×8 就在 49 上加一个 7，得 56。
+  </p>
+  <p class="teach-text" id="p3s2">
+    记住一句，就能推出相邻的一句。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>每多一行，积就<strong>多一个因数</strong>。</li>
+  <li>忘了就<strong>想相邻</strong>的那一句。</li>
+  <li>交换因数，<strong>积不变</strong>。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  口诀记不清？用<strong>相邻口诀加一加</strong>就推算出来。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：口诀与积</h2>
+<p class="teach-text" id="p3bs1">把口诀和得数连起来。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 7 的口诀</h2>
+  <p class="quiz-hint">七的口诀。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 7 × 7 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>42</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>56</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>49</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 7 × 9 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>63</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>56</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>72</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 7 × 4 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>21</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>28</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>35</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 九的口诀有小秘密 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">九的口诀有小秘密</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p5s1">
+    9×几，积的十位比「几」少 1，个位和十位加起来是 9。比如 9×7=63，6+3=9。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>9×7</h4>
+    <div class="eq">63</div>
+    <p>十位是6</p>
+  </div>
+  <div class="card">
+    <h4>9×8</h4>
+    <div class="eq">72</div>
+    <p>6变7</p>
+  </div>
+  <div class="card">
+    <h4>小秘密</h4>
+    <div class="eq">数字和为9</div>
+    <p>检验对错</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  九的口诀有规律：<strong>十位少 1，数字和是 9</strong>。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">摆阵列：大口诀看得见</h2>
+  <p class="sim-desc">点「+ 加一个」往阵列添点；「换一组」换一组行列数。摆满就是这句 7~9 口诀的积。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">一共 %N% 个</span>
+    <span class="sim-tip" id="simTip">每行几个 × 几行</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simAdd()">+ 加一个</button>
+    <button class="btn" onclick="simNextCase()">换一组</button>
+    <button class="btn" onclick="simDemo()">看老师做</button>
+    <button class="btn-retry" onclick="simReset()">清空</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">摆满阵列就是口诀的积</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>7 行每行 8 个，摆满是多少？</li>
+    <li>这就是七八五十六吗？</li>
+    <li>换一组后怎么推算？</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 8、9 的口诀</h2>
+  <p class="quiz-hint">八的、九的。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 8 × 8 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>56</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>72</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>64</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 9 × 7 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>63</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>56</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>72</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 8 × 9 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>63</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>72</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>81</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四处容易算错 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四处容易算错</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    7~9 口诀最容易错在这四处。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>口诀混</h4>
+    <div class="eq">✗ 7×8=54</div>
+    <p>七八五十六，54 是 6×9。</p>
+  </div>
+  <div class="card">
+    <h4>相邻错</h4>
+    <div class="eq">✗ 7×8 想成 49+8</div>
+    <p>应在 7×7=49 上加一个 7，得 56。</p>
+  </div>
+  <div class="card">
+    <h4>交换乱</h4>
+    <div class="eq">✗ 8×7 不会算</div>
+    <p>七八五十六，交换因数积不变。</p>
+  </div>
+  <div class="card">
+    <h4>进位错</h4>
+    <div class="eq">✗ 9×9=89</div>
+    <p>九九八十一。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  难记的口诀：<strong>想相邻、用交换、找规律</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  7 个 8：七八<strong>五十六</strong>。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题</h2>
+  <p class="quiz-hint">口诀要背熟。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 9 × 6 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>45</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>63</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>54</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 8 × 7 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>56</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>48</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>63</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 忘了 8×7 怎么办？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>放弃</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>想 7×8 或用 7×8=56</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>乱猜</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 一排 9 个，8 排一共几个？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>63 个</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>81 个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>72 个</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 9 × 8 和 8 × 9 的结果？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>一样，都是 72</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>不一样</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>都是 81</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">7~9 口诀</div>
+        <div class="summary-v4-summary">数大要背熟</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>每多一行多一个因数。</p>
+      <p>相邻口诀能推算。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">一句两用</div>
+        <div class="summary-v4-summary">交换积不变</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>7×8=8×7。</p>
+      <p>忘了就反过来想。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">九的规律</div>
+        <div class="summary-v4-summary">数字和为9</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>9×7=63，6+3=9。</p>
+      <p>十位比几少 1。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">别踩坑</div>
+        <div class="summary-v4-summary">四处别错</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>口诀别混。</p>
+      <p>相邻别加错。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  7~9 口诀难，想相邻、用交换、找规律。
+</p>
+</section>

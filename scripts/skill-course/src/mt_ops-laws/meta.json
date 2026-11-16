@@ -1,0 +1,93 @@
+{
+  "topicId": "mt_ops-laws",
+  "title": "25×4×7，先算哪两个最快",
+  "template": "explain",
+  "renderer": "law",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 4,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S2:NA:NO"
+  ],
+  "prerequisites": [
+    "mt_addsub-10000",
+    "mt_mult-2digit"
+  ],
+  "next": [
+    "mt_dec-addsub2"
+  ],
+  "objectives": [
+    "掌握加法交换律、结合律",
+    "掌握乘法交换律、结合律、分配律",
+    "会用运算律简算"
+  ],
+  "cognitiveAction": "变换",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "引入",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "概念一",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "概念二",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

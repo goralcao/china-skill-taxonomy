@@ -1,0 +1,467 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>正方形、长方形、圆、三角形，怎么分</h1>
+  <p class="sub">一年级数学 · 图形与几何</p>
+  <div class="tags">
+    <span class="tag">平面图形</span>
+    <span class="tag">一年级</span>
+    <span class="tag">2022课标</span>
+    <span class="tag">判分课</span>
+  </div>
+  <div class="cover-fig">
+<svg viewBox="0 0 760 190" width="760" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="正方形、长方形、圆、三角形，怎么分">
+  <rect x="0" y="0" width="760" height="190" rx="18" fill="#FFFFFF" opacity=".08"/>
+  <g fill="#FFFFFF" opacity=".9">
+    <circle cx="96" cy="60" r="13"/><circle cx="130" cy="60" r="13"/><circle cx="164" cy="60" r="13"/>
+    <rect x="79" y="86" width="102" height="26" rx="13" fill="#FFFFFF" opacity=".22"/>
+    <text x="130" y="105" font-size="17" text-anchor="middle">1 2 3</text>
+  </g>
+  <text x="216" y="82" font-size="30" fill="#FFFFFF" font-weight="800">正方形、长方形、圆、三角形，怎么分</text>
+  <text x="218" y="126" font-size="18" fill="rgba(255,255,255,.85)">平面图形的认识</text>
+</svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先认三道，凭感觉答</h2>
+  <p class="quiz-hint">凭直觉，答完看解析。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 红领巾是什么形状？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>正方形</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>三角形</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>圆</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 硬币的面是什么形状？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>正方形</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>三角形</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>圆</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 正方形有几条边？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>4 条</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3 条</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>5 条</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 认四种平面图形 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">认四种平面图形</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p2s1">
+    正方形<strong>四边一样长</strong>，长方形<strong>对边一样长</strong>。
+  </p>
+  <p class="teach-text" id="p2s2">
+    三角形有 3 条边，圆是弯弯的、没有角。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>正方形</h4>
+    <div class="eq">4 边相等</div>
+    <p>方方正正</p>
+  </div>
+  <div class="card">
+    <h4>长方形</h4>
+    <div class="eq">对边相等</div>
+    <p>扁长</p>
+  </div>
+  <div class="card">
+    <h4>圆</h4>
+    <div class="eq">弯弯没角</div>
+    <p>圆圆的</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  认平面图形看<strong>边的条数</strong>和<strong>有没有角</strong>。
+</div>
+</section>
+
+<!-- ===== p3: 边和角的特征 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">边和角的特征</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p3s1">
+    正方形、长方形都有 4 条边 4 个角；三角形有 3 条边 3 个角；圆没有角。
+  </p>
+  <p class="teach-text" id="p3s2">
+    正方形是特殊的长方形（四边相等）。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>正方形</strong>：4 边相等。</li>
+  <li><strong>长方形</strong>：对边相等。</li>
+  <li><strong>圆</strong>：没有角，弯弯的。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  看<strong>几条边、几个角</strong>就认出平面图形。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：生活图形</h2>
+<p class="teach-text" id="p3bs1">把物体和图形连起来。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 认图形</h2>
+  <p class="quiz-hint">看边和角。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 长方形有几条边？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>3 条</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>4 条</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>6 条</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 三角形有几个角？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>4 个</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>2 个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3 个</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 哪种图形没有角？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>圆</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>正方形</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>三角形</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 从物体面到图形 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">从物体面到图形</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p5s1">
+    把立体图形的一个平平的面描下来，就得到平面图形。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>正方体面</h4>
+    <div class="eq">正方形</div>
+    <p>描下来</p>
+  </div>
+  <div class="card">
+    <h4>圆柱底面</h4>
+    <div class="eq">圆</div>
+    <p>描下来</p>
+  </div>
+  <div class="card">
+    <h4>长方体面</h4>
+    <div class="eq">长方形</div>
+    <p>描下来</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  平面图形就在<strong>物体的面上</strong>，描一描就能找到。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">变一变：认识平面图形</h2>
+  <p class="sim-desc">点「+ 加一个」轮换展示平面图形；「换一组」换一组。看每种图形的边和角。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">第 %N% 种图形</span>
+    <span class="sim-tip" id="simTip">点一下换一种平面图形</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simAdd()">+ 加一个</button>
+    <button class="btn" onclick="simNextCase()">换一组</button>
+    <button class="btn" onclick="simDemo()">看老师做</button>
+    <button class="btn-retry" onclick="simReset()">清空</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">依次看正方形、长方形、圆、三角形</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>现在是第几种？</li>
+    <li>哪种没有角？</li>
+    <li>换一组后图形变了吗？</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 找生活图形</h2>
+  <p class="quiz-hint">想想生活中的东西。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 课本封面接近什么图形？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>圆</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>长方形</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>三角形</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 方手帕是什么图形？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>圆</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>三角形</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>正方形</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 钟面是什么图形？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>圆</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>正方形</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>长方形</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四处容易认错 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四处容易认错</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    认平面图形最容易错在这四处。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>圆与球</h4>
+    <div class="eq">✗ 把圆说成球</div>
+    <p>圆是平面的，球是立体的。</p>
+  </div>
+  <div class="card">
+    <h4>边数错</h4>
+    <div class="eq">✗ 三角形 4 条边</div>
+    <p>三角形 3 条边。</p>
+  </div>
+  <div class="card">
+    <h4>正方形长方形</h4>
+    <div class="eq">✗ 说正方形不是长方形</div>
+    <p>正方形是四边相等的特殊长方形。</p>
+  </div>
+  <div class="card">
+    <h4>角数错</h4>
+    <div class="eq">✗ 说圆有角</div>
+    <p>圆没有角。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  认平面图形：<strong>数边、数角、看曲直</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  红领巾是<strong>三角形</strong>，有 3 条边。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题</h2>
+  <p class="quiz-hint">看特征辨认。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 三角形有几条边？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>4 条</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3 条</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>2 条</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 正方形和长方形相同的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>都一样长</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>都没有角</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>都有 4 条边 4 个角</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 下面哪个没有角？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>圆</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>正方形</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>三角形</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 三角尺是什么图形？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>圆</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>三角形</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>正方形</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 用 4 根一样长的小棒能摆成？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>三角形</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>圆</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>正方形</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">四种图形</div>
+        <div class="summary-v4-summary">方圆长三</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>正方形四边相等。</p>
+      <p>三角形三条边。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">边和角</div>
+        <div class="summary-v4-summary">数一数</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>长方形对边相等。</p>
+      <p>圆没有角。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">生活应用</div>
+        <div class="summary-v4-summary">找图形</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>物体的面是平面图形。</p>
+      <p>生活中到处都有。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">别踩坑</div>
+        <div class="summary-v4-summary">四处别错</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>圆不是球。</p>
+      <p>别数错边。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  数边数角看曲直，认出四种平面图形。
+</p>
+</section>

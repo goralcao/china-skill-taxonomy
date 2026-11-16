@@ -1,0 +1,482 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>10 以内数的认识：3 添上 2，到底几个</h1>
+  <p class="sub">一年级数学 · 数与运算</p>
+  <div class="tags">
+    <span class="tag">数的认识</span>
+    <span class="tag">一年级</span>
+    <span class="tag">2022课标</span>
+    <span class="tag">判分课</span>
+  </div>
+  <div class="cover-fig">
+<svg viewBox="0 0 760 190" width="760" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="3 添上 2 是几">
+  <rect x="0" y="0" width="760" height="190" rx="18" fill="#FFFFFF" opacity=".08"/>
+  <g fill="#FFFFFF" opacity=".9">
+    <circle cx="96" cy="60" r="13"/><circle cx="130" cy="60" r="13"/><circle cx="164" cy="60" r="13"/>
+    <rect x="79" y="86" width="102" height="26" rx="13" fill="#FFFFFF" opacity=".22"/>
+    <text x="130" y="105" font-size="17" text-anchor="middle">1 2 3</text>
+  </g>
+  <text x="216" y="82" font-size="30" fill="#FFFFFF" font-weight="800">3 添上 2 是几</text>
+  <text x="218" y="126" font-size="18" fill="rgba(255,255,255,.85)">10以内数的认识</text>
+</svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先数三堆，凭感觉答</h2>
+  <p class="quiz-hint">不用数得很慢，凭第一感觉。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 小盘里有 3 个苹果，又放进 2 个，一共几个？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5 个</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>4 个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>6 个</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 下面哪个数是 4？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>●●●</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>●●●●</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>●●●●●</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 从 1 数到 5，5 的前面一个数是几？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>3</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>6</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>4</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 摆一摆：3 个添上 2 个是几个 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">摆一摆：3 个添上 2 个是几个</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+<svg viewBox="0 0 300 170"><circle cx="50" cy="70" r="16" fill="#1565C0"/><circle cx="95" cy="70" r="16" fill="#1565C0"/><circle cx="140" cy="70" r="16" fill="#1565C0"/><text x="95" y="40" font-size="15" text-anchor="middle" fill="#1565C0">原来 3 个</text><circle cx="190" cy="70" r="16" fill="#EF6C00"/><circle cx="235" cy="70" r="16" fill="#EF6C00"/><text x="212" y="40" font-size="15" text-anchor="middle" fill="#EF6C00">添 2 个</text><text x="150" y="128" font-size="18" text-anchor="middle" fill="#333">3 + 2 = 5</text></svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    桌上有 <strong>3 个</strong> 圆片，再添上 <strong>2 个</strong>。
+  </p>
+  <p class="teach-text" id="p2s2">
+    一个一个数：3、4、5。一共 <strong>5 个</strong>。
+  </p>
+  <p class="teach-text" id="p2s3">
+    数数要从 1 开始、一个挨着一个数，不能跳。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>按序数</h4>
+    <div class="eq">3 → 4 → 5</div>
+    <p>一个挨一个数</p>
+  </div>
+  <div class="card">
+    <h4>合起来</h4>
+    <div class="eq">3 + 2 = 5</div>
+    <p>添上就是加</p>
+  </div>
+  <div class="card">
+    <h4>别跳数</h4>
+    <div class="eq">✗ 3 → 5</div>
+    <p>漏掉 4 就错了</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  数数要<strong>一个挨着一个</strong>，添上几个就往后数几个。
+</div>
+</section>
+
+<!-- ===== p3: 「几个」和「第几个」 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">「几个」和「第几个」</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+<svg viewBox="0 0 300 150"><circle cx="40" cy="70" r="14" fill="#90CAF9"/><circle cx="85" cy="70" r="14" fill="#90CAF9"/><circle cx="130" cy="70" r="14" fill="#EF6C00"/><circle cx="175" cy="70" r="14" fill="#90CAF9"/><circle cx="220" cy="70" r="14" fill="#90CAF9"/><text x="130" y="118" font-size="15" text-anchor="middle" fill="#EF6C00">第 3 个（橙）</text><text x="130" y="35" font-size="14" text-anchor="middle" fill="#333">一共 5 个</text></svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    <strong>几个</strong>问的是数量，<strong>第几个</strong>问的是位置。
+  </p>
+  <p class="teach-text" id="p3s2">
+    同样是 5 个小朋友排队，「5 个」是总数，「第 5 个」是一个人的位置。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>几个</strong>＝总数，答「有 5 个」。</li>
+  <li><strong>第几个</strong>＝位置，答「第 3 个」。</li>
+  <li>数第几个时，要从队伍的<strong>那一头</strong>数起。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  问「几个」答总数，问「第几个」答位置，别混。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：几个还是第几个</h2>
+<p class="teach-text" id="p3bs1">先读清问题，再连线。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 认数</h2>
+  <p class="quiz-hint">看清是「几个」还是「第几个」。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 排队时，小明排在第 3 个，「第 3」表示什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>他的位置</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>共有 3 人</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>有 3 个小明</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 5 个里拿走 1 个，还剩几个？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5 个</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>4 个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>6 个</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 比 6 少 1 的数是几？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>7</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>4</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>5</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 分与合：一个数拆成两部分 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">分与合：一个数拆成两部分</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+<svg viewBox="0 0 300 150"><circle cx="150" cy="40" r="22" fill="#1565C0"/><text x="150" y="47" font-size="18" fill="#fff" text-anchor="middle">5</text><line x1="150" y1="62" x2="80" y2="105" stroke="#CCC" stroke-width="2"/><line x1="150" y1="62" x2="220" y2="105" stroke="#CCC" stroke-width="2"/><circle cx="80" cy="118" r="20" fill="#EF6C00"/><text x="80" y="125" font-size="17" fill="#fff" text-anchor="middle">2</text><circle cx="220" cy="118" r="20" fill="#2E7D32"/><text x="220" y="125" font-size="17" fill="#fff" text-anchor="middle">3</text></svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    5 可以分成 1 和 4、2 和 3。两部分合起来还是 5。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>5 分成</h4>
+    <div class="eq">2 和 3</div>
+    <p>2 + 3 = 5</p>
+  </div>
+  <div class="card">
+    <h4>5 分成</h4>
+    <div class="eq">1 和 4</div>
+    <p>1 + 4 = 5</p>
+  </div>
+  <div class="card">
+    <h4>合起来</h4>
+    <div class="eq">2 和 3</div>
+    <p>又变回 5</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  分与合是一对：<strong>分成</strong>两部分，<strong>合起来</strong>回到原数。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">数一数：点一下添一个</h2>
+  <p class="sim-desc">点「+ 加一个」往桌上一个一个添圆片，数清楚一共几个；「换一组」换一道数数题。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">一共 %N% 个</span>
+    <span class="sim-tip" id="simTip">从 1 开始一个一个数</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simAdd()">+ 加一个</button>
+    <button class="btn" onclick="simNextCase()">换一组</button>
+    <button class="btn" onclick="simDemo()">看老师做</button>
+    <button class="btn-retry" onclick="simReset()">清空</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">蓝色是原有，橙色是新添的，数总数时全算上</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>点三次「加一个」，读数变成几？</li>
+    <li>换一组后 max 变了，为什么起始是 0？</li>
+    <li>数到 10 以后还可以继续吗？这一课先练到 10。</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 数的组成</h2>
+  <p class="quiz-hint">一个数可以拆成两部分。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 5 可以分成 2 和几？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>3</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>2</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>4</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 3 和 4 合起来是几？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>7</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>6</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 7 个里，左边 3 个，右边几个？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>3 个</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>5 个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>4 个</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四处最容易数错 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四处最容易数错</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    数数看着简单，一年级最容易在这四处摔跤。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>跳着数</h4>
+    <div class="eq">✗ 3 添 2 = 5 却数成 3、5</div>
+    <p>中间漏了 4，要一个挨一个。</p>
+  </div>
+  <div class="card">
+    <h4>几个当第几个</h4>
+    <div class="eq">✗ 看见 5 就答第 5</div>
+    <p>问总数答 5 个，问位置答第 5 个。</p>
+  </div>
+  <div class="card">
+    <h4>漏数起点</h4>
+    <div class="eq">✗ 从 2 数到 6 答 4 个</div>
+    <p>2、3、4、5、6 是 5 个，别只减。</p>
+  </div>
+  <div class="card">
+    <h4>分合搞反</h4>
+    <div class="eq">✗ 5 分成 2 和 2</div>
+    <p>2 + 2 = 4，不是 5；应是 2 和 3。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  数数三件事：<strong>按顺序、不重复、不遗漏</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到开头那盘苹果：3 + 2 = <strong>5 个</strong>，你数对了吗？
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题</h2>
+  <p class="quiz-hint">慢慢数，别着急。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 盘里有 4 块糖，再放 1 块，一共几块？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5 块</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3 块</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>6 块</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 下面哪个数最小？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>2</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>9</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 8 可以分成 5 和几？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>2</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>4</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 从 2 数到 6，一共数了几个数？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5 个</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>4 个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>6 个</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 第 5 个的前面是第几个？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>第 6 个</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>第 4 个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>第 3 个</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">10 以内各村</div>
+        <div class="summary-v4-summary">会数、会认</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>从 1 数到 10，一个挨一个。</p>
+      <p>看清是「几个」还是「第几个」。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">数的分与合</div>
+        <div class="summary-v4-summary">拆得开、合得回</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>5 可以分成 2 和 3。</p>
+      <p>2 和 3 合起来还是 5。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">比多少</div>
+        <div class="summary-v4-summary">多与少</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>数一数再比，不靠眼睛猜。</p>
+      <p>一样多就是都不多不少。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">别踩坑</div>
+        <div class="summary-v4-summary">四个错法</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>不跳数、不漏数。</p>
+      <p>几个≠第几个。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  数清楚，先按顺序一个一个数。
+</p>
+</section>

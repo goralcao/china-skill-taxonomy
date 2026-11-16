@@ -1,0 +1,467 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>1 米等于多少厘米</h1>
+  <p class="sub">二年级数学 · 图形与几何</p>
+  <div class="tags">
+    <span class="tag">长度单位</span>
+    <span class="tag">二年级</span>
+    <span class="tag">2022课标</span>
+    <span class="tag">判分课</span>
+  </div>
+  <div class="cover-fig">
+<svg viewBox="0 0 760 190" width="760" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="1 米等于多少厘米">
+  <rect x="0" y="0" width="760" height="190" rx="18" fill="#FFFFFF" opacity=".08"/>
+  <g fill="#FFFFFF" opacity=".9">
+    <circle cx="96" cy="60" r="13"/><circle cx="130" cy="60" r="13"/><circle cx="164" cy="60" r="13"/>
+    <rect x="79" y="86" width="102" height="26" rx="13" fill="#FFFFFF" opacity=".22"/>
+    <text x="130" y="105" font-size="17" text-anchor="middle">1 2 3</text>
+  </g>
+  <text x="216" y="82" font-size="30" fill="#FFFFFF" font-weight="800">1 米等于多少厘米</text>
+  <text x="218" y="126" font-size="18" fill="rgba(255,255,255,.85)">厘米和米</text>
+</svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先估三道</h2>
+  <p class="quiz-hint">凭感觉估一估。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 量铅笔的长度，用什么单位？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>千米</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 1 米等于多少厘米？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>10 厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>100 厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>1000 厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 量教室的长，用什么单位合适？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>毫米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>米</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 厘米量短的，米量长的 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">厘米量短的，米量长的</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p2s1">
+    量铅笔、橡皮用<strong>厘米</strong>，量教室、跑道用<strong>米</strong>。
+  </p>
+  <p class="teach-text" id="p2s2">
+    <strong>1 米 = 100 厘米</strong>，记住这个进率。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>厘米</h4>
+    <div class="eq">量短物体</div>
+    <p>铅笔橡皮</p>
+  </div>
+  <div class="card">
+    <h4>米</h4>
+    <div class="eq">量长物体</div>
+    <p>教室跑道</p>
+  </div>
+  <div class="card">
+    <h4>进率</h4>
+    <div class="eq">1 米 = 100 厘米</div>
+    <p>要记牢</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  短物用厘米、长物用米，<strong>1 米 = 100 厘米</strong>。
+</div>
+</section>
+
+<!-- ===== p3: 用尺量长度 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">用尺量长度</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p3s1">
+    量的时候，物体一端对准尺的<strong>0 刻度</strong>，另一端对着几就是几厘米。
+  </p>
+  <p class="teach-text" id="p3s2">
+    不从 0 开始量的话，要用末端刻度减起始刻度。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>物体一端对准 <strong>0 刻度</strong>。</li>
+  <li>尺要<strong>放直</strong>，贴着物体。</li>
+  <li>短物用厘米，长物用米。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  量长度：<strong>对准 0 刻度、尺放直</strong>。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：选单位</h2>
+<p class="teach-text" id="p3bs1">把物体和合适的单位连起来。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 选单位</h2>
+  <p class="quiz-hint">看物体长短。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 量数学书的长边，用？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>千米</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 量跑道长，用？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>分米</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 1 米 − 30 厘米 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>71 厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>30 厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>70 厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 米和厘米换算 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">米和厘米换算</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p5s1">
+    1 米=100 厘米。2 米就是 2 个 100，是 200 厘米。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>1 米</h4>
+    <div class="eq">100 厘米</div>
+    <p>基础</p>
+  </div>
+  <div class="card">
+    <h4>2 米</h4>
+    <div class="eq">200 厘米</div>
+    <p>2×100</p>
+  </div>
+  <div class="card">
+    <h4>1米20厘米</h4>
+    <div class="eq">120 厘米</div>
+    <p>100+20</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  米换厘米<strong>乘 100</strong>，厘米换米<strong>除以 100</strong>。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">量一量：直尺读数</h2>
+  <p class="sim-desc">点「+ 加一个」把测量长度加长 1 厘米；「换一组」换一个物体。看尺上的读数怎么变。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">量得 %N% 厘米</span>
+    <span class="sim-tip" id="simTip">游标指向读数</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simAdd()">+ 加一个</button>
+    <button class="btn" onclick="simNextCase()">换一组</button>
+    <button class="btn" onclick="simDemo()">看老师做</button>
+    <button class="btn-retry" onclick="simReset()">清空</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">尺上每大格是 1 厘米</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>添到 10 厘米时游标在哪？</li>
+    <li>1 米要添多少次 1 厘米？</li>
+    <li>换一组后起点变了吗？</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 测量</h2>
+  <p class="quiz-hint">注意量法。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 用尺量物体，物体一端要对准？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>0 刻度</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>尺的边缘</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>中间</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 2 米 = ? 厘米</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>20 厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>200 厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>102 厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 量身高用什么单位？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>千米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>毫米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>厘米或米</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四处容易量错 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四处容易量错</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    量长度最容易错在这四处。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>选错单位</h4>
+    <div class="eq">✗ 量铅笔用米</div>
+    <p>铅笔短，用厘米。</p>
+  </div>
+  <div class="card">
+    <h4>进率错</h4>
+    <div class="eq">✗ 1米=10厘米</div>
+    <p>1 米=100 厘米。</p>
+  </div>
+  <div class="card">
+    <h4>不对0</h4>
+    <div class="eq">✗ 从尺边缘乱量</div>
+    <p>一端要对准 0 刻度。</p>
+  </div>
+  <div class="card">
+    <h4>换算错</h4>
+    <div class="eq">✗ 2米=20厘米</div>
+    <p>2 米=200 厘米。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  记住：<strong>1 米=100 厘米，量长从 0 起</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  1 米 = <strong>100 厘米</strong>，你记住了吗？
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题</h2>
+  <p class="quiz-hint">看清单位再答。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 1 米 = ? 厘米</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>100</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>10</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>1000</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 量橡皮长，用？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>千米</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 3 米 = ? 厘米</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>30 厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>103 厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>300 厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 量桌子高约 70？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>千米</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 1 米 20 厘米 = ? 厘米</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>102 厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>120 厘米</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>12 厘米</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">两个单位</div>
+        <div class="summary-v4-summary">厘米和米</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>短的用厘米。</p>
+      <p>长的用米。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">进率</div>
+        <div class="summary-v4-summary">1米=100厘米</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>米换厘米乘 100。</p>
+      <p>厘米换米除 100。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">测量</div>
+        <div class="summary-v4-summary">对准0刻度</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>尺放直。</p>
+      <p>从 0 开始量。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">别踩坑</div>
+        <div class="summary-v4-summary">四处别错</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>单位别选错。</p>
+      <p>进率别记错。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  短用厘米长用米，1 米等于 100 厘米。
+</p>
+</section>

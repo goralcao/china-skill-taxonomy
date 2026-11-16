@@ -1,0 +1,467 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>全班最爱吃什么，怎么统计</h1>
+  <p class="sub">二年级数学 · 统计与概率</p>
+  <div class="tags">
+    <span class="tag">数据统计</span>
+    <span class="tag">二年级</span>
+    <span class="tag">2022课标</span>
+    <span class="tag">判分课</span>
+  </div>
+  <div class="cover-fig">
+<svg viewBox="0 0 760 190" width="760" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="全班最爱吃什么，怎么统计">
+  <rect x="0" y="0" width="760" height="190" rx="18" fill="#FFFFFF" opacity=".08"/>
+  <g fill="#FFFFFF" opacity=".9">
+    <circle cx="96" cy="60" r="13"/><circle cx="130" cy="60" r="13"/><circle cx="164" cy="60" r="13"/>
+    <rect x="79" y="86" width="102" height="26" rx="13" fill="#FFFFFF" opacity=".22"/>
+    <text x="130" y="105" font-size="17" text-anchor="middle">1 2 3</text>
+  </g>
+  <text x="216" y="82" font-size="30" fill="#FFFFFF" font-weight="800">全班最爱吃什么，怎么统计</text>
+  <text x="218" y="126" font-size="18" fill="rgba(255,255,255,.85)">数据收集整理</text>
+</svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先想三道</h2>
+  <p class="quiz-hint">想想怎么统计。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 要知道全班同学最喜欢的水果，应该？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>调查每个人</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>问一个人</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>猜一猜</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 调查时，每人只能选一项，是为了？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>更好看</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>不重复不遗漏</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>更快</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 统计结果用什么记录清楚？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>随便记</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>不记</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>画正字或表格</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 统计要先收集数据 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">统计要先收集数据</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p2s1">
+    想知道全班最爱吃什么，要<strong>调查每一个人</strong>。
+  </p>
+  <p class="teach-text" id="p2s2">
+    用画「正」字的方法记录：一个正字代表 <strong>5</strong>。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>定问题</h4>
+    <div class="eq">最爱吃什么</div>
+    <p>先明确</p>
+  </div>
+  <div class="card">
+    <h4>调查</h4>
+    <div class="eq">一个个数</div>
+    <p>不漏不重</p>
+  </div>
+  <div class="card">
+    <h4>记录</h4>
+    <div class="eq">画正字</div>
+    <p>一个正=5</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  统计三步：<strong>定问题、收集数据、整理记录</strong>。
+</div>
+</section>
+
+<!-- ===== p3: 整理成统计图表 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">整理成统计图表</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p3s1">
+    把记录的数据填入表格，或画成<strong>条形统计图</strong>，一眼看出多少。
+  </p>
+  <p class="teach-text" id="p3s2">
+    条形越高，表示选的人越多。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>先<strong>明确调查问题</strong>。</li>
+  <li>用<strong>画正字</strong>等方法记录。</li>
+  <li>条形越高，<strong>数量越多</strong>。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  统计图让数据<strong>一目了然</strong>，条形高就是多。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：统计步骤</h2>
+<p class="teach-text" id="p3bs1">把步骤和做法连起来。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 收集数据</h2>
+  <p class="quiz-hint">方法要对。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 用画「正」字记录，一个正字代表？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>1</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>10</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 调查时不漏掉任何人，要？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>随便问</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>一个个数</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>只问朋友</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 收集数据前先要明确？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>吃什么</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>穿什么</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>调查什么问题</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 用统计回答问题 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">用统计回答问题</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p5s1">
+    看条形统计图，最高的那项就是最受欢迎的，最低的就是最少的。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>看最高</h4>
+    <div class="eq">最受欢迎</div>
+    <p>人最多</p>
+  </div>
+  <div class="card">
+    <h4>看最低</h4>
+    <div class="eq">最少人</div>
+    <p>人最少</p>
+  </div>
+  <div class="card">
+    <h4>作决定</h4>
+    <div class="eq">据此安排</div>
+    <p>用数据说话</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  统计是为了<strong>回答问题、帮助决定</strong>。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">涂一涂：整理数据</h2>
+  <p class="sim-desc">点「+ 加一个」给当前类别添一票；「换一组」换一组数据。涂色条越高表示票数越多。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">当前类 %N% 票</span>
+    <span class="sim-tip" id="simTip">涂色条表示票数</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simAdd()">+ 加一个</button>
+    <button class="btn" onclick="simNextCase()">换一组</button>
+    <button class="btn" onclick="simDemo()">看老师做</button>
+    <button class="btn-retry" onclick="simReset()">清空</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">条形越高，这一类越多</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>添 5 票后条形多高？</li>
+    <li>哪一类最多，怎么看？</li>
+    <li>换一组后有几类？</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 读统计图</h2>
+  <p class="quiz-hint">看图回答问题。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 条形统计图中，条形越高表示？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>数量越多</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>数量越少</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>越不重要</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 统计表里数字最大的那项？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>最不受欢迎</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>最受欢迎</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>没有意义</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 统计完成后要做？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>扔掉</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>不看</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>分析并回答</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四处容易统计错 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四处容易统计错</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    统计最容易错在这四处。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>漏人</h4>
+    <div class="eq">✗ 只问几个人</div>
+    <p>要调查每一个人。</p>
+  </div>
+  <div class="card">
+    <h4>重复</h4>
+    <div class="eq">✗ 一人选两项</div>
+    <p>每人只选一项。</p>
+  </div>
+  <div class="card">
+    <h4>正字错</h4>
+    <div class="eq">✗ 一个正字当 1</div>
+    <p>一个正字是 5。</p>
+  </div>
+  <div class="card">
+    <h4>不看图</h4>
+    <div class="eq">✗ 数据堆着不分析</div>
+    <p>要读图回答问题。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  统计要<strong>不漏不重、记录清楚、读图分析</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  一个「正」字代表 <strong>5</strong>，别数错。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题</h2>
+  <p class="quiz-hint">先想收集方法。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 统计全班最爱吃的水果，第一步是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>明确调查问题</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>直接画表</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>猜结果</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 画正字记录，3 个正字加 2 画是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>17</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>32</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 条形最高的一项说明？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>人数最少</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>无关</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>人数最多</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 调查时每人只选一项，避免？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>重复计数</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>数得太快</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>写得太少</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 统计的目的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>好看</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>了解情况、回答问题</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>完成任务</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">收集</div>
+        <div class="summary-v4-summary">调查每个人</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>明确调查问题。</p>
+      <p>不漏不重。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">记录</div>
+        <div class="summary-v4-summary">画正字</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>一个正字是 5。</p>
+      <p>填表也清楚。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">分析</div>
+        <div class="summary-v4-summary">读统计图</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>条形越高越多。</p>
+      <p>据此回答问题。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">别踩坑</div>
+        <div class="summary-v4-summary">四处别错</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>别漏人。</p>
+      <p>正字别数错。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  统计先收集、再整理、后分析，用数据回答问题。
+</p>
+</section>

@@ -1,0 +1,467 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>1000 有多大，万以内怎么写</h1>
+  <p class="sub">二年级数学 · 数与运算</p>
+  <div class="tags">
+    <span class="tag">万以内数</span>
+    <span class="tag">二年级</span>
+    <span class="tag">2022课标</span>
+    <span class="tag">判分课</span>
+  </div>
+  <div class="cover-fig">
+<svg viewBox="0 0 760 190" width="760" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="1000 有多大，万以内怎么写">
+  <rect x="0" y="0" width="760" height="190" rx="18" fill="#FFFFFF" opacity=".08"/>
+  <g fill="#FFFFFF" opacity=".9">
+    <circle cx="96" cy="60" r="13"/><circle cx="130" cy="60" r="13"/><circle cx="164" cy="60" r="13"/>
+    <rect x="79" y="86" width="102" height="26" rx="13" fill="#FFFFFF" opacity=".22"/>
+    <text x="130" y="105" font-size="17" text-anchor="middle">1 2 3</text>
+  </g>
+  <text x="216" y="82" font-size="30" fill="#FFFFFF" font-weight="800">1000 有多大，万以内怎么写</text>
+  <text x="218" y="126" font-size="18" fill="rgba(255,255,255,.85)">万以内数的认识</text>
+</svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先认三道，凭感觉答</h2>
+  <p class="quiz-hint">凭直觉，答完看解析。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 10 个一百是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>100</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>1000</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>10000</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 3250 里的「2」在哪位？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>十位</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>千位</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>百位</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 3 个千和 5 个一组成的数是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>3005</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>35</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>30005</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 从一数到一万 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">从一数到一万</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p2s1">
+    10 个一是十，10 个十是百，10 个百是<strong>千</strong>，10 个千是<strong>万</strong>。
+  </p>
+  <p class="teach-text" id="p2s2">
+    数位顺序：个、十、百、千、万，满十就向前一位进一。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>10 个一</h4>
+    <div class="eq">= 1 个十</div>
+    <p>满十进一</p>
+  </div>
+  <div class="card">
+    <h4>10 个百</h4>
+    <div class="eq">= 1 个千</div>
+    <p>1000</p>
+  </div>
+  <div class="card">
+    <h4>10 个千</h4>
+    <div class="eq">= 1 个万</div>
+    <p>10000</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  数位从右往左是<strong>个十百千万</strong>，满十进一。
+</div>
+</section>
+
+<!-- ===== p3: 读写万以内的数 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">读写万以内的数</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p3s1">
+    3250：千位 3、百位 2、十位 5、个位 0，读作三千二百五十。
+  </p>
+  <p class="teach-text" id="p3s2">
+    中间或末尾有 0 时，0 要写出来占位，但读法有讲究。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>从<strong>高位</strong>读起。</li>
+  <li>中间有 0 读「零」，末尾的 0 不读。</li>
+  <li>哪一位上一个单位也没有，就写 <strong>0 占位</strong>。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  读写都<strong>从高位起</strong>，空位写 0 占位。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：数的组成</h2>
+<p class="teach-text" id="p3bs1">把数和组成连起来。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 数位</h2>
+  <p class="quiz-hint">从右往左数数位。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 四位数的左起第一位是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>百位</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>千位</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>万位</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 5000 里有几个千？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5 个百</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>50 个千</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>5 个千</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 九千九百九十九写作？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>9999</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>999</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>99999</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 比较大小：从高位比 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">比较大小：从高位比</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p5s1">
+    3250 和 3520，千位相同比百位：5＞2，所以 3520 大。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>先比位数</h4>
+    <div class="eq">四位数＞三位数</div>
+    <p>位数多的大</p>
+  </div>
+  <div class="card">
+    <h4>再比高位</h4>
+    <div class="eq">千位→百位→十位</div>
+    <p>从大到小比</p>
+  </div>
+  <div class="card">
+    <h4>相同继续</h4>
+    <div class="eq">一位一位比</div>
+    <p>直到分出大小</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  比大小：<strong>先比位数，再从最高位比起</strong>。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">数位表：填出万以内的数</h2>
+  <p class="sim-desc">点「+ 加一个」往个位添（满十进一，数位会往前进）；「换一组」换一个数。看数位怎么变化。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">一共 %N%</span>
+    <span class="sim-tip" id="simTip">从个位添起，满十进一</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simAdd()">+ 加一个</button>
+    <button class="btn" onclick="simNextCase()">换一组</button>
+    <button class="btn" onclick="simDemo()">看老师做</button>
+    <button class="btn-retry" onclick="simReset()">清空</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">满十进到高一位，数位依次是个十百千万</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>添到 10 时数位怎么变？</li>
+    <li>什么时候会出现千位？</li>
+    <li>换一组后从哪里开始？</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 比大小</h2>
+  <p class="quiz-hint">从最高位比起。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 3250 和 3520 哪个大？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>3250</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3520</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>一样大</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 最大的四位数是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1000</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>999</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>9999</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 1000 和 999 哪个大？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1000</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>999</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>一样大</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四处容易认错 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四处容易认错</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    万以内数最容易错在这四处。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>数位顺序</h4>
+    <div class="eq">✗ 3250 的 2 在十位</div>
+    <p>从右往左个十百千，2 在百位。</p>
+  </div>
+  <div class="card">
+    <h4>丢 0</h4>
+    <div class="eq">✗ 3005 写成 35</div>
+    <p>中间百位十位是 0，要写 0 占位，是 3005。</p>
+  </div>
+  <div class="card">
+    <h4>读零</h4>
+    <div class="eq">✗ 7010 读七千一十</div>
+    <p>百位是 0 要读零：七千零一十。</p>
+  </div>
+  <div class="card">
+    <h4>比大小</h4>
+    <div class="eq">✗ 999＞1000</div>
+    <p>1000 是四位数，比三位数 999 大。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  记住：<strong>数位从右往左、空位写 0、比大小从高位</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  6 个千、2 个十、8 个一是 <strong>6028</strong>。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题</h2>
+  <p class="quiz-hint">看清数位再答。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 6 个千、2 个十、8 个一组成的数是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>628</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>6028</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>6208</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 10 个一千是多少？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1000</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>100000</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>10000</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 7010 读作？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>七千零一十</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>七千一十</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>七千一百</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 4800 的百位是几？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>4</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>8</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>0</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 一千里有几个一百？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1 个</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>100 个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>10 个</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">数位顺序</div>
+        <div class="summary-v4-summary">个十百千万</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>从右往左排。</p>
+      <p>满十进一。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">读写</div>
+        <div class="summary-v4-summary">从高位起</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>空位写 0。</p>
+      <p>中间 0 要读零。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">比大小</div>
+        <div class="summary-v4-summary">先看位数</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>位数多的大。</p>
+      <p>从最高位比起。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">别踩坑</div>
+        <div class="summary-v4-summary">四处别错</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>数位别数反。</p>
+      <p>0 别丢。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  数位个十百千万，读写比大小都从高位看。
+</p>
+</section>

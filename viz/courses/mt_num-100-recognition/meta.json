@@ -1,0 +1,99 @@
+{
+  "topicId": "mt_num-100-recognition",
+  "title": "100 里有几个十",
+  "template": "explain",
+  "renderer": "counter",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 1,
+  "subject": "数学",
+  "standards": [
+    "math-2022:S1:NA:NO"
+  ],
+  "prerequisites": [
+    "mt_num-20-recognition"
+  ],
+  "next": [
+    "mt_num-100-addsub",
+    "mt_num-100-pen",
+    "mt_num-10000-recognition",
+    "mt_mass-g-kg",
+    "mt_time-hms",
+    "mt_dec-intro",
+    "mt_position-pairs",
+    "mt_negative"
+  ],
+  "objectives": [
+    "能数、读、写 100 以内的数",
+    "理解几个十和几个一",
+    "会比较数的大小"
+  ],
+  "cognitiveAction": "比较",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "引入",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "概念一",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "概念二",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

@@ -1,0 +1,470 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>笔算 48 + 27，为什么个位要对齐</h1>
+  <p class="sub">二年级数学 · 数与运算</p>
+  <div class="tags">
+    <span class="tag">竖式笔算</span>
+    <span class="tag">二年级</span>
+    <span class="tag">2022课标</span>
+    <span class="tag">判分课</span>
+  </div>
+  <div class="cover-fig">
+<svg viewBox="0 0 760 190" width="760" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="笔算 48 + 27，为什么个位要对齐">
+  <rect x="0" y="0" width="760" height="190" rx="18" fill="#FFFFFF" opacity=".08"/>
+  <g fill="#FFFFFF" opacity=".9">
+    <circle cx="96" cy="60" r="13"/><circle cx="130" cy="60" r="13"/><circle cx="164" cy="60" r="13"/>
+    <rect x="79" y="86" width="102" height="26" rx="13" fill="#FFFFFF" opacity=".22"/>
+    <text x="130" y="105" font-size="17" text-anchor="middle">1 2 3</text>
+  </g>
+  <text x="216" y="82" font-size="30" fill="#FFFFFF" font-weight="800">笔算 48 + 27，为什么个位要对</text>
+  <text x="218" y="126" font-size="18" fill="rgba(255,255,255,.85)">100以内笔算加减法</text>
+</svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先算三道，凭感觉答</h2>
+  <p class="quiz-hint">凭直觉，答完看解析。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 竖式计算时，什么要对齐？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>数字大小</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>从左到右</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>相同数位</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 48 + 27 的个位是几？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>15</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>6</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 52 − 19 的个位是几？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>7</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>13</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 为什么要数位对齐 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">为什么要数位对齐</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p2s1">
+    笔算 48+27，要把<strong>个位对个位、十位对十位</strong>写成竖式。
+  </p>
+  <p class="teach-text" id="p2s2">
+    从个位算起：8+7=15，写 5 向十位进 1。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>对齐</h4>
+    <div class="eq">48 / +27</div>
+    <p>个位对个位</p>
+  </div>
+  <div class="card">
+    <h4>个位</h4>
+    <div class="eq">8+7=15</div>
+    <p>写5进1</p>
+  </div>
+  <div class="card">
+    <h4>十位</h4>
+    <div class="eq">4+2+1=7</div>
+    <p>别忘进位</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  竖式要<strong>数位对齐，从个位算起</strong>。
+</div>
+</section>
+
+<!-- ===== p3: 满十进一 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">满十进一</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p3s1">
+    个位相加满 10，就向十位进 1，这个小 1 写在十位顶上。
+  </p>
+  <p class="teach-text" id="p3s2">
+    算十位时，一定要把这个进位的 1 加上。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>相同数位<strong>对齐</strong>。</li>
+  <li>从<strong>个位</strong>算起。</li>
+  <li>满十进一，十位<strong>别忘加进位</strong>。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  进位加的关键：<strong>满十进一，别忘了加那个 1</strong>。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：笔算步骤</h2>
+<p class="teach-text" id="p3bs1">把竖式和结果连起来。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 进位加</h2>
+  <p class="quiz-hint">个位满十要进一。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 36 + 27 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>53</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>73</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>63</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 45 + 38 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>83</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>73</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>93</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 59 + 23 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>72</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>82</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>92</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 退位减：借一当十 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">退位减：借一当十</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p5s1">
+    64−28，个位 4 减 8 不够，向十位借 1 当 10，14−8=6。
+  </p>
+  <p class="teach-text" id="p5s2">
+    十位 6 借走 1 剩 5，5−2=3，结果是 36。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>个位</h4>
+    <div class="eq">14−8=6</div>
+    <p>借一当十</p>
+  </div>
+  <div class="card">
+    <h4>十位</h4>
+    <div class="eq">5−2=3</div>
+    <p>借走要减1</p>
+  </div>
+  <div class="card">
+    <h4>结果</h4>
+    <div class="eq">36</div>
+    <p>别忘借位</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  退位减：<strong>个位不够向十位借，借走后十位要减 1</strong>。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">数位桶：笔算看得见</h2>
+  <p class="sim-desc">点「+ 加一个」往个位桶添珠；「换一组」换一道题。个位满 10 自动捆成 1 个进到十位，看到进位过程。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">一共 %N% 个</span>
+    <span class="sim-tip" id="simTip">个位满十向十位进 1</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simAdd()">+ 加一个</button>
+    <button class="btn" onclick="simNextCase()">换一组</button>
+    <button class="btn" onclick="simDemo()">看老师做</button>
+    <button class="btn-retry" onclick="simReset()">清空</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">蓝色个位，满十打包进十位</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>个位添到第 10 个时发生了什么？</li>
+    <li>48+27 中进位发生了几次？</li>
+    <li>退位减时借来的十拆成几个一？</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 退位减</h2>
+  <p class="quiz-hint">个位不够要借一。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 64 − 28 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>46</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>44</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>36</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 71 − 35 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>36</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>46</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>34</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 80 − 47 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>43</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>33</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>37</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四处容易算错 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四处容易算错</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    笔算最容易错在这四处。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>不对齐</h4>
+    <div class="eq">✗ 个位对十位</div>
+    <p>相同数位要对齐，个位对个位。</p>
+  </div>
+  <div class="card">
+    <h4>忘进位</h4>
+    <div class="eq">✗ 48+27 十位算 4+2=6</div>
+    <p>还要加进位 1，是 7，结果 75。</p>
+  </div>
+  <div class="card">
+    <h4>忘借位</h4>
+    <div class="eq">✗ 64−28 十位算 6−2=4</div>
+    <p>借走 1 后是 5−2=3。</p>
+  </div>
+  <div class="card">
+    <h4>从十位算</h4>
+    <div class="eq">✗ 先算十位</div>
+    <p>一定从个位算起。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  笔算口诀：<strong>数位对齐、从个位起、满十进一、退一当十</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  48+27=<strong>75</strong>（个位5、十位7），你算对了吗？
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题</h2>
+  <p class="quiz-hint">列竖式，对齐数位。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 37 + 45 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>72</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>92</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>82</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 92 − 56 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>36</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>46</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>34</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 竖式里，进位的「1」写在哪？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>个位旁边</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>十位顶上</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>最前面</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 一本书 48 页，看了 29 页，还剩几页？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>21 页</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>29 页</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>19 页</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 50 − 18 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>32</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>42</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>38</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">数位对齐</div>
+        <div class="summary-v4-summary">列竖式</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>个位对个位。</p>
+      <p>十位对十位。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">进位加</div>
+        <div class="summary-v4-summary">满十进一</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>从个位算起。</p>
+      <p>十位别忘加进位 1。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">退位减</div>
+        <div class="summary-v4-summary">退一当十</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>个位不够向十位借。</p>
+      <p>借走后十位减 1。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">别踩坑</div>
+        <div class="summary-v4-summary">四处别错</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>别忘进位/借位。</p>
+      <p>别从十位算起。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  竖式笔算：数位对齐、从个位起、满十进一、退一当十。
+</p>
+</section>

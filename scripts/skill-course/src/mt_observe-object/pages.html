@@ -1,0 +1,467 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>同一个盒子，为什么看到的面不一样</h1>
+  <p class="sub">二年级数学 · 图形与几何</p>
+  <div class="tags">
+    <span class="tag">观察物体</span>
+    <span class="tag">二年级</span>
+    <span class="tag">2022课标</span>
+    <span class="tag">判分课</span>
+  </div>
+  <div class="cover-fig">
+<svg viewBox="0 0 760 190" width="760" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="同一个盒子，为什么看到的面不一样">
+  <rect x="0" y="0" width="760" height="190" rx="18" fill="#FFFFFF" opacity=".08"/>
+  <g fill="#FFFFFF" opacity=".9">
+    <circle cx="96" cy="60" r="13"/><circle cx="130" cy="60" r="13"/><circle cx="164" cy="60" r="13"/>
+    <rect x="79" y="86" width="102" height="26" rx="13" fill="#FFFFFF" opacity=".22"/>
+    <text x="130" y="105" font-size="17" text-anchor="middle">1 2 3</text>
+  </g>
+  <text x="216" y="82" font-size="30" fill="#FFFFFF" font-weight="800">同一个盒子，为什么看到的面不一样</text>
+  <text x="218" y="126" font-size="18" fill="rgba(255,255,255,.85)">观察物体</text>
+</svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先看三道，想想位置</h2>
+  <p class="quiz-hint">想想站在哪里看。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 从正面和后面看同一个盒子，看到的形状？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>一定相同</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>都一样</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>可能不同</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 从上面看一个圆柱，看到的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>圆</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>长方形</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>正方形</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 站在物体正前方看，叫从哪面看？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>侧面</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>正面</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>上面</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 站的位置不同，看到的面不同 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">站的位置不同，看到的面不同</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p2s1">
+    同一个盒子，从<strong>正面</strong>看是一个长方形，从<strong>上面</strong>看可能是另一个形状。
+  </p>
+  <p class="teach-text" id="p2s2">
+    所以观察物体，先要说清<strong>站在哪个方向</strong>。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>正面</h4>
+    <div class="eq">正对着看</div>
+    <p>前面</p>
+  </div>
+  <div class="card">
+    <h4>侧面</h4>
+    <div class="eq">从旁边看</div>
+    <p>左/右</p>
+  </div>
+  <div class="card">
+    <h4>上面</h4>
+    <div class="eq">从上往下看</div>
+    <p>顶部</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  观察物体先看<strong>站在哪个方向</strong>，位置不同看到的面不同。
+</div>
+</section>
+
+<!-- ===== p3: 辨认从不同方向看到的图 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">辨认从不同方向看到的图</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p3s1">
+    想象自己站到那个位置，正对着物体，看到的就是那个方向的视图。
+  </p>
+  <p class="teach-text" id="p3s2">
+    球从任何方向看都是圆，因为它圆滚滚。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>先确定<strong>观察方向</strong>。</li>
+  <li>想象站在那个位置<strong>正对着看</strong>。</li>
+  <li>球从各方向看都是圆。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  辨认视图：<strong>先定方向，再想象站在那里看</strong>。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：从哪面看</h2>
+<p class="teach-text" id="p3bs1">把观察位置和看到的面连起来。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 不同方向</h2>
+  <p class="quiz-hint">先看观察位置。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 从侧面看一个长方体，可能看到？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>一定是圆</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>一定是三角</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>长方形</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 从上面看正方体，看到的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>正方形</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>圆</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>三角形</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 小明在物体左边看，他看到的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>正面</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>左面</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>右面</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 动手观察验证 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">动手观察验证</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p5s1">
+    拿一个盒子，绕着它走一圈，从不同位置看，画下看到的形状。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>正面看</h4>
+    <div class="eq">画下来</div>
+    <p>一个面</p>
+  </div>
+  <div class="card">
+    <h4>侧面看</h4>
+    <div class="eq">画下来</div>
+    <p>另一个面</p>
+  </div>
+  <div class="card">
+    <h4>上面看</h4>
+    <div class="eq">画下来</div>
+    <p>顶面</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  光想不够，<strong>动手绕着看一看</strong>最清楚。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">转一转：从不同面看</h2>
+  <p class="sim-desc">点「+ 加一个」转动物体看不同的面；「换一组」换一个物体。看每转一次，看到的形状怎么变。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">第 %N% 个面</span>
+    <span class="sim-tip" id="simTip">点一下转动物体</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simAdd()">+ 加一个</button>
+    <button class="btn" onclick="simNextCase()">换一组</button>
+    <button class="btn" onclick="simDemo()">看老师做</button>
+    <button class="btn-retry" onclick="simReset()">清空</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">每转一次换一个观察方向</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>转一次后看到的是哪面？</li>
+    <li>球转来转去看到的变吗？</li>
+    <li>换一组后物体变了吗？</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 辨认视图</h2>
+  <p class="quiz-hint">想象站在那个位置。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 从正面看一个球，看到的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>正方形</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>三角形</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>圆</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 两个人从相对两面看同一物体，看到的？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>可能不同</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>一定相同</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>完全一样</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 要看到物体的顶部，应从哪里看？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>正面</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>上面</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>侧面</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四处容易看错 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四处容易看错</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    观察物体最容易错在这四处。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>不看位置</h4>
+    <div class="eq">✗ 不分正面侧面</div>
+    <p>先说清从哪个方向看。</p>
+  </div>
+  <div class="card">
+    <h4>左右混</h4>
+    <div class="eq">✗ 站左边说看右面</div>
+    <p>站左边看左面。</p>
+  </div>
+  <div class="card">
+    <h4>球看错</h4>
+    <div class="eq">✗ 说球从上面看是方</div>
+    <p>球从任何方向看都是圆。</p>
+  </div>
+  <div class="card">
+    <h4>凭感觉</h4>
+    <div class="eq">✗ 不验证乱猜</div>
+    <p>动手观察画一画。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  观察物体：<strong>定方向、站位置、动手看</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  同一个盒子，站不同位置看到的面<strong>可能不同</strong>。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题</h2>
+  <p class="quiz-hint">先定观察位置。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 从不同位置观察同一物体，结果？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>一定相同</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>没有规律</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>可能不同</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 从上面看一个球，看到的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>圆</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>方</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>三角</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 从正面看一个正方体，看到的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>圆</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>正方形</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>三角形</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 想看到物体的右侧面，应站在？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>左边</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>前面</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>右边</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 观察物体时，先要明确？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>观察的位置</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>颜色</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>重量</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">观察方向</div>
+        <div class="summary-v4-summary">先定位置</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>正面、侧面、上面。</p>
+      <p>位置不同面不同。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">辨认视图</div>
+        <div class="summary-v4-summary">想象站着看</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>站在那个方向。</p>
+      <p>正对着看。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">球</div>
+        <div class="summary-v4-summary">各向皆圆</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>球从各方向看都是圆。</p>
+      <p>因为圆滚滚。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">别踩坑</div>
+        <div class="summary-v4-summary">四处别错</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>别混左右。</p>
+      <p>别凭感觉乱猜。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  观察物体先定方向，站在那里正对着看。
+</p>
+</section>

@@ -1,0 +1,467 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>3 + 2 和 5 − 2，是一对</h1>
+  <p class="sub">一年级数学 · 数与运算</p>
+  <div class="tags">
+    <span class="tag">加减法</span>
+    <span class="tag">一年级</span>
+    <span class="tag">2022课标</span>
+    <span class="tag">判分课</span>
+  </div>
+  <div class="cover-fig">
+<svg viewBox="0 0 760 190" width="760" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="3 + 2 和 5 − 2，是一对">
+  <rect x="0" y="0" width="760" height="190" rx="18" fill="#FFFFFF" opacity=".08"/>
+  <g fill="#FFFFFF" opacity=".9">
+    <circle cx="96" cy="60" r="13"/><circle cx="130" cy="60" r="13"/><circle cx="164" cy="60" r="13"/>
+    <rect x="79" y="86" width="102" height="26" rx="13" fill="#FFFFFF" opacity=".22"/>
+    <text x="130" y="105" font-size="17" text-anchor="middle">1 2 3</text>
+  </g>
+  <text x="216" y="82" font-size="30" fill="#FFFFFF" font-weight="800">3 + 2 和 5 − 2，是一对</text>
+  <text x="218" y="126" font-size="18" fill="rgba(255,255,255,.85)">10以内加减法</text>
+</svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先算三道，凭感觉答</h2>
+  <p class="quiz-hint">凭直觉，答完看解析。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 3 + 2 等于几？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>4</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>6</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>5</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 5 − 2 等于几？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>3</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>2</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>4</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 4 + 0 等于几？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>0</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>4</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>5</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 添上用加，拿走用减 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">添上用加，拿走用减</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p2s1">
+    有 3 个球，再<strong>添上</strong> 2 个，用加法：3+2=5。
+  </p>
+  <p class="teach-text" id="p2s2">
+    有 5 个球，<strong>拿走</strong> 2 个，用减法：5−2=3。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>添上</h4>
+    <div class="eq">3 + 2 = 5</div>
+    <p>变多用加</p>
+  </div>
+  <div class="card">
+    <h4>拿走</h4>
+    <div class="eq">5 − 2 = 3</div>
+    <p>变少用减</p>
+  </div>
+  <div class="card">
+    <h4>合起来</h4>
+    <div class="eq">5 − 2 = 3 ↔ 3 + 2 = 5</div>
+    <p>加减一对</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  添上用<strong>加</strong>，拿走用<strong>减</strong>。
+</div>
+</section>
+
+<!-- ===== p3: 加减是一对（互逆） ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">加减是一对（互逆）</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p3s1">
+    3+2=5，那么 5−2 就一定等于 3。
+  </p>
+  <p class="teach-text" id="p3s2">
+    一道加法能写出两道减法，用数的组成来想。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>看到 <strong>a + b = c</strong>，就有 <strong>c − b = a</strong>。</li>
+  <li>用数的组成：5 分成 3 和 2，所以 5−2=3。</li>
+  <li>加 0、减 0 都还是原数。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  加减<strong>互逆</strong>：会用加法，就会用减法检查。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：算一算</h2>
+<p class="teach-text" id="p3bs1">把算式和得数连起来。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 加法</h2>
+  <p class="quiz-hint">往多里算。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 2 + 5 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>6</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>8</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>7</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 6 + 3 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>9</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>8</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>10</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 1 + 1 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>2</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 用组成算得又快又准 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">用组成算得又快又准</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p5s1">
+    算 5−2 时，想「5 分成 2 和几」，是 3，所以得 3。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>想组成</h4>
+    <div class="eq">7 分成 3 和 4</div>
+    <p>7−3=4</p>
+  </div>
+  <div class="card">
+    <h4>接着数</h4>
+    <div class="eq">6+3：7、8、9</div>
+    <p>往后数 3 个</p>
+  </div>
+  <div class="card">
+    <h4>互逆查</h4>
+    <div class="eq">8−5=3</div>
+    <p>想 3+5=8</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  用<strong>数的组成</strong>或<strong>接着数</strong>，算得又快又准。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">数一数：加减看得见</h2>
+  <p class="sim-desc">点「+ 加一个」往桌上一个一个添圆片，看加法；「换一组」换一道题。读数告诉你一共几个。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">一共 %N% 个</span>
+    <span class="sim-tip" id="simTip">从 0 一个一个添</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simAdd()">+ 加一个</button>
+    <button class="btn" onclick="simNextCase()">换一组</button>
+    <button class="btn" onclick="simDemo()">看老师做</button>
+    <button class="btn-retry" onclick="simReset()">清空</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">每添一个，总数就多 1</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>添 3 个是几？再添 2 个呢？</li>
+    <li>这正好演示 3+2=5。</li>
+    <li>换一组后最多能添到几？</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 减法</h2>
+  <p class="quiz-hint">往少里算。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 7 − 3 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>3</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>4</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 9 − 4 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>6</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>4</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 6 − 6 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>1</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>0</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>6</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四处容易算错 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四处容易算错</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    10 以内加减，最容易混这四处。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>加减混</h4>
+    <div class="eq">✗ 拿走 2 却算 5+2</div>
+    <p>拿走是变少，用减法 5−2。</p>
+  </div>
+  <div class="card">
+    <h4>方向反</h4>
+    <div class="eq">✗ 6 往后数 3 得 8</div>
+    <p>6 往后数 3：7、8、9，是 9。</p>
+  </div>
+  <div class="card">
+    <h4>漏数位</h4>
+    <div class="eq">✗ 5−2 想成 5 分成 1 和 4</div>
+    <p>5 分成 2 和 3，所以 5−2=3。</p>
+  </div>
+  <div class="card">
+    <h4>0 出错</h4>
+    <div class="eq">✗ 6−0=0</div>
+    <p>减 0 一个不拿走，还是 6。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  先想清楚是<strong>添上</strong>还是<strong>拿走</strong>，再决定加减。
+</div>
+
+<p class="teach-text" id="p8apply">
+  3+2=<strong>5</strong>，5−2=<strong>3</strong>，你分清了吗？
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题</h2>
+  <p class="quiz-hint">看清是加还是减。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 4 + 4 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>7</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>9</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>8</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 8 − 5 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>3</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>4</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>2</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 10 − 0 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>0</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>10</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>9</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 3 + ? = 6，问号是几？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>2</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>4</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 小明有 5 颗糖，吃了 2 颗，还剩几颗？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>3 颗</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>7 颗</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>2 颗</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">加法</div>
+        <div class="summary-v4-summary">添上就加</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>添上几个就往后数几个。</p>
+      <p>合起来用加法。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">减法</div>
+        <div class="summary-v4-summary">拿走就减</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>拿走几个就往前数几个。</p>
+      <p>变少用减法。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">互逆</div>
+        <div class="summary-v4-summary">加减一家</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>a+b=c ↔ c−b=a。</p>
+      <p>用加法能查减法。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">巧算</div>
+        <div class="summary-v4-summary">组成与接着数</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>想数的组成。</p>
+      <p>或接着往后数。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  添上用加，拿走用减，加减互逆是一家。
+</p>
+</section>

@@ -2,6 +2,18 @@
 
 本项目遵循[语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [v0.49.6] - 2026-11-16
+
+### 小学数学剩余 33 课：小学数学整体收口，全库 174 课
+
+把小学数学 101 个主题里最后 33 个（一年级 14 / 二年级 17 / 四年级 2）补齐，纯本地链路 C 交付。全库从 141 → **174 课**（数学 101 / 语文 36 / 英语 37），小学数学与小学英语双双整体收口。
+
+- **装配器**：数学课件 `course.js` 原本每课手写 Canvas 仿真，无法批量。新建 `run_math.py`（复用 `lib.emit` 出 6 分片）+ `tpl_math.js`（全局 `MN.mode` 数据驱动：count / compose / addsub / array / shape / measure / stat 七种仿真模式，统一暴露 `simAdd/simDemo/simNextCase/simReset` 契约）。33 课数据包由 `gen_math.py` + `m_batch1..5.py` 生成，权威元数据（standards/prereq/next）直接取 `data/topics.json` 与依赖边。
+- **质量口径**：每课 12 页 / 14 题 / 1 Canvas / 24 分钟 / 16 交互；`Q()` 按课内序号轮转正确答案，分布严格 `{0:5,1:5,2:4}`；答案文本登记进 `quiz-expected.json`，`semantic-check.py` 校验 **1708 题 0 不一致**。
+- **本地链路 C**：`deploy/links.json` 登记 142–174（`nodeId=""`、`delivery="local"`），不新增 `workbuddy.link`、不做 4A/4B；`build.py` 重生成图谱索引与 174 份 `viz/courses` 副本。
+- **回归**：`validate.mjs` / `node --test` 14/14 / `validate-courses.mjs` 177 个 0 警告 / `validate-questions.mjs` 0 警告 / `semantic-check.py` / `score-course.mjs --min 90`（174 门平均 99.1 分）/ `git diff --check` 全绿；浏览器验收 7 份代表课件覆盖全部仿真模式 + 图谱「有课件 174」，0 JS 报错。
+- **修复**：3 课乘法主题 `renderer=array` 不在白名单，改为 `mult2` 后全绿。
+
 ## [v0.49.5] - 2026-11-04
 
 ### 万以内加减重做：第 2 课，外加一套「分片装配」工装

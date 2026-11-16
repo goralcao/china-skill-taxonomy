@@ -1,17 +1,17 @@
 {
-  "version": "v0.49.5",
+  "version": "v0.49.6",
   "schemaVersion": 1,
-  "generatedAt": "2026-11-16",
+  "generatedAt": "2026-11-17",
   "counts": {
-    "total": 141,
+    "total": 174,
     "byTemplate": {
-      "explain": 141
+      "explain": 174
     },
     "byStatus": {
-      "reviewed": 141
+      "reviewed": 174
     },
     "bySubject": {
-      "数学": 68,
+      "数学": 101,
       "语文": 36,
       "英语": 37
     }
@@ -112,6 +112,102 @@
       "path": "courses/mt_addsub-10000/",
       "url": "https://workbuddy.link/p/vAaSAihoyz6XLdxUB75mE5",
       "bytes": 106677
+    },
+    {
+      "topicId": "mt_angle-intro",
+      "title": "角的大小和边画多长有关系吗",
+      "template": "explain",
+      "renderer": "angle",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 2,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S1:GG:GM"
+      ],
+      "prerequisites": [
+        "mt_shape-2d"
+      ],
+      "next": [
+        "mt_lines",
+        "mt_angle-measure"
+      ],
+      "objectives": [
+        "认识角的顶点和边",
+        "知道角的大小与张开程度有关",
+        "会辨认直角、锐角、钝角"
+      ],
+      "cognitiveAction": "比较",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_angle-intro/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_angle-intro/index.html",
+      "bytes": 105215
     },
     {
       "topicId": "mt_angle-measure",
@@ -1272,6 +1368,103 @@
       "bytes": 100002
     },
     {
+      "topicId": "mt_classify",
+      "title": "这些图形怎么分两类",
+      "template": "explain",
+      "renderer": "chart",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 1,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S1:SP"
+      ],
+      "prerequisites": [
+        "mt_num-10-recognition"
+      ],
+      "next": [
+        "mt_data-collect",
+        "mt_stats-table",
+        "mt_pigeonhole"
+      ],
+      "objectives": [
+        "会按给定标准分类",
+        "能自己定标准分类",
+        "能整理并数出每类数量"
+      ],
+      "cognitiveAction": "比较",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_classify/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_classify/index.html",
+      "bytes": 105381
+    },
+    {
       "topicId": "mt_cuboid",
       "title": "一个纸盒，为什么正好 12 条棱？",
       "template": "explain",
@@ -1463,6 +1656,105 @@
       "path": "courses/mt_cylinder/",
       "url": "https://workbuddy.link/p/24P235Pdsz9jXPGuaEvOdH",
       "bytes": 101559
+    },
+    {
+      "topicId": "mt_data-collect",
+      "title": "全班最爱吃什么，怎么统计",
+      "template": "explain",
+      "renderer": "chart",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 2,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S1:SP"
+      ],
+      "prerequisites": [
+        "mt_classify"
+      ],
+      "next": [
+        "mt_stats-table",
+        "mt_bar-chart",
+        "mt_probability",
+        "mt_find-defective",
+        "mt_phone-call"
+      ],
+      "objectives": [
+        "经历数据收集过程",
+        "会用调查表记录",
+        "能读简单的统计图表"
+      ],
+      "cognitiveAction": "累积",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_data-collect/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_data-collect/index.html",
+      "bytes": 105312
     },
     {
       "topicId": "mt_dec-addsub",
@@ -2425,6 +2717,395 @@
       "path": "courses/mt_div-2digit/",
       "url": "https://workbuddy.link/p/fGwuikKI3wwB4BzDwBHrZ6",
       "bytes": 101087
+    },
+    {
+      "topicId": "mt_div-avg",
+      "title": "12 个苹果，每 4 个一份，能分几份",
+      "template": "explain",
+      "renderer": "division",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 2,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S1:NA:NO",
+        "math-2022:S1:NA:AR"
+      ],
+      "prerequisites": [
+        "mt_num-10-composition",
+        "mt_mul-meaning"
+      ],
+      "next": [
+        "mt_div-tables-2-6",
+        "mt_frac-meaning",
+        "mt_frac-div",
+        "mt_find-defective",
+        "mt_pigeonhole"
+      ],
+      "objectives": [
+        "理解平均分的意义",
+        "认识除法算式及各部分",
+        "会用除法解决平均分问题"
+      ],
+      "cognitiveAction": "分解",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_div-avg/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_div-avg/index.html",
+      "bytes": 105106
+    },
+    {
+      "topicId": "mt_div-remainder",
+      "title": "13 个苹果每 4 个一袋，装满 3 袋还剩 1 个",
+      "template": "explain",
+      "renderer": "division",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 2,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S1:NA:NO"
+      ],
+      "prerequisites": [
+        "mt_div-tables-2-6"
+      ],
+      "next": [],
+      "objectives": [
+        "理解余数含义",
+        "知道余数一定比除数小",
+        "会写有余数除法算式"
+      ],
+      "cognitiveAction": "分解",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_div-remainder/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_div-remainder/index.html",
+      "bytes": 105278
+    },
+    {
+      "topicId": "mt_div-tables-2-6",
+      "title": "12÷3 等于几，想乘法口诀",
+      "template": "explain",
+      "renderer": "division",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 2,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S1:NA:NO"
+      ],
+      "prerequisites": [
+        "mt_mul-tables-2-6",
+        "mt_div-avg"
+      ],
+      "next": [
+        "mt_div-tables-7-9",
+        "mt_mixed-two-steps",
+        "mt_div-remainder"
+      ],
+      "objectives": [
+        "会用乘法口诀求商",
+        "理解除法和乘法的关系",
+        "能熟练计算表内除法"
+      ],
+      "cognitiveAction": "分解",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_div-tables-2-6/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_div-tables-2-6/index.html",
+      "bytes": 104530
+    },
+    {
+      "topicId": "mt_div-tables-7-9",
+      "title": "56÷7 等于几，想七八五十六",
+      "template": "explain",
+      "renderer": "division",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 2,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S1:NA:NO",
+        "math-2022:S1:NA:AR"
+      ],
+      "prerequisites": [
+        "mt_mul-tables-7-9",
+        "mt_div-tables-2-6"
+      ],
+      "next": [
+        "mt_div-1digit"
+      ],
+      "objectives": [
+        "会用7~9的乘法口诀求商",
+        "能熟练计算表内除法",
+        "会用除法解决平均分问题"
+      ],
+      "cognitiveAction": "分解",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_div-tables-7-9/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_div-tables-7-9/index.html",
+      "bytes": 104347
     },
     {
       "topicId": "mt_en-activities",
@@ -6987,6 +7668,104 @@
       "bytes": 92399
     },
     {
+      "topicId": "mt_length-cm-m",
+      "title": "1 米等于多少厘米",
+      "template": "explain",
+      "renderer": "geometry",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 2,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S1:GG:GM"
+      ],
+      "prerequisites": [
+        "mt_num-10-recognition"
+      ],
+      "next": [
+        "mt_measure-compare",
+        "mt_rect-perimeter",
+        "mt_area-intro",
+        "mt_tree-plant"
+      ],
+      "objectives": [
+        "认识厘米和米",
+        "知道 1 米=100 厘米",
+        "会用尺量物体长度"
+      ],
+      "cognitiveAction": "比较",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_length-cm-m/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_length-cm-m/index.html",
+      "bytes": 104804
+    },
+    {
       "topicId": "mt_line-chart",
       "title": "一周气温从 18℃ 升到 26℃，哪天升得最快？",
       "template": "explain",
@@ -7180,6 +7959,586 @@
       "path": "courses/mt_lines/",
       "url": "https://workbuddy.link/p/A4cB3oCItDDI1PQ1RWDNTV",
       "bytes": 107097
+    },
+    {
+      "topicId": "mt_mass-g-kg",
+      "title": "1 千克等于多少克",
+      "template": "explain",
+      "renderer": "balance",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 2,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S1:GG:GM"
+      ],
+      "prerequisites": [
+        "mt_num-100-recognition"
+      ],
+      "next": [
+        "mt_unit-ton"
+      ],
+      "objectives": [
+        "认识克和千克",
+        "知道 1 千克=1000 克",
+        "会选择合适的质量单位"
+      ],
+      "cognitiveAction": "比较",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_mass-g-kg/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_mass-g-kg/index.html",
+      "bytes": 104656
+    },
+    {
+      "topicId": "mt_measure-compare",
+      "title": "量一量，谁更长谁更重",
+      "template": "explain",
+      "renderer": "geometry",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 2,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S1:PP"
+      ],
+      "prerequisites": [
+        "mt_length-cm-m"
+      ],
+      "next": [],
+      "objectives": [
+        "会用尺量长度、用天平比轻重",
+        "能用统一的单位比较",
+        "能估计并验证"
+      ],
+      "cognitiveAction": "比较",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_measure-compare/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_measure-compare/index.html",
+      "bytes": 105063
+    },
+    {
+      "topicId": "mt_mixed-two-steps",
+      "title": "3×4+2，先算乘还是先算加",
+      "template": "explain",
+      "renderer": "law",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 2,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S1:NA:NO",
+        "math-2022:S1:NA:AR"
+      ],
+      "prerequisites": [
+        "mt_num-10-mixed",
+        "mt_mul-tables-2-6",
+        "mt_div-tables-2-6"
+      ],
+      "next": [
+        "mt_ops-order",
+        "mt_chicken-rabbit"
+      ],
+      "objectives": [
+        "掌握乘加、乘减的运算顺序",
+        "理解有括号先算括号",
+        "能解决两步计算的实际问题"
+      ],
+      "cognitiveAction": "分解",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_mixed-two-steps/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_mixed-two-steps/index.html",
+      "bytes": 104519
+    },
+    {
+      "topicId": "mt_mul-meaning",
+      "title": "乘法的意义：3 盘每盘 4 个，为什么不是 3+4",
+      "template": "explain",
+      "renderer": "mult2",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 2,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S1:NA:NO",
+        "math-2022:S1:NA:AR"
+      ],
+      "prerequisites": [
+        "mt_num-100-addsub"
+      ],
+      "next": [
+        "mt_mul-tables-2-6",
+        "mt_div-avg",
+        "mt_multiple"
+      ],
+      "objectives": [
+        "理解乘法是求几个相同加数和的简便运算",
+        "能说出乘法算式里各部分的含义",
+        "能把连加改写成乘法"
+      ],
+      "cognitiveAction": "分解",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_mul-meaning/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_mul-meaning/index.html",
+      "bytes": 106568
+    },
+    {
+      "topicId": "mt_mul-tables-2-6",
+      "title": "三七二十一，口诀怎么记住",
+      "template": "explain",
+      "renderer": "mult2",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 2,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S1:NA:NO"
+      ],
+      "prerequisites": [
+        "mt_mul-meaning"
+      ],
+      "next": [
+        "mt_mul-tables-7-9",
+        "mt_div-tables-2-6",
+        "mt_mixed-two-steps"
+      ],
+      "objectives": [
+        "理解乘法口诀的含义",
+        "熟记 2~6 的乘法口诀",
+        "会用口诀求积"
+      ],
+      "cognitiveAction": "累积",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_mul-tables-2-6/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_mul-tables-2-6/index.html",
+      "bytes": 104618
+    },
+    {
+      "topicId": "mt_mul-tables-7-9",
+      "title": "七八五十六，难记的口诀怎么破",
+      "template": "explain",
+      "renderer": "mult2",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 2,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S1:NA:NO",
+        "math-2022:S1:NA:AR"
+      ],
+      "prerequisites": [
+        "mt_mul-tables-2-6"
+      ],
+      "next": [
+        "mt_div-tables-7-9",
+        "mt_mult-1digit",
+        "mt_factors"
+      ],
+      "objectives": [
+        "熟记 7~9 的乘法口诀",
+        "会用相邻口诀推算",
+        "能熟练求积"
+      ],
+      "cognitiveAction": "累积",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_mul-tables-7-9/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_mul-tables-7-9/index.html",
+      "bytes": 104558
     },
     {
       "topicId": "mt_mult-1digit",
@@ -7570,6 +8929,1091 @@
       "bytes": 102922
     },
     {
+      "topicId": "mt_num-10-addsub",
+      "title": "3 + 2 和 5 − 2，是一对",
+      "template": "explain",
+      "renderer": "counter",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 1,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S1:NA:NO"
+      ],
+      "prerequisites": [
+        "mt_num-10-recognition",
+        "mt_num-10-composition"
+      ],
+      "next": [
+        "mt_num-10-mixed",
+        "mt_num-20-carry",
+        "mt_num-20-borrow",
+        "mt_num-100-addsub",
+        "mt_frac-same-addsub"
+      ],
+      "objectives": [
+        "能计算 10 以内加减法",
+        "理解加与减的互逆关系",
+        "会用数的组成帮助计算"
+      ],
+      "cognitiveAction": "变换",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_num-10-addsub/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_num-10-addsub/index.html",
+      "bytes": 104533
+    },
+    {
+      "topicId": "mt_num-10-composition",
+      "title": "5 能分成几和几",
+      "template": "explain",
+      "renderer": "counter",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 1,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S1:NA:NO"
+      ],
+      "prerequisites": [
+        "mt_num-10-recognition"
+      ],
+      "next": [
+        "mt_num-10-addsub",
+        "mt_num-20-carry",
+        "mt_div-avg",
+        "mt_frac-intro"
+      ],
+      "objectives": [
+        "能把 10 以内的数分成两部分",
+        "知道两部分合起来还是原数",
+        "能有序地找出所有分法"
+      ],
+      "cognitiveAction": "分解",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_num-10-composition/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_num-10-composition/index.html",
+      "bytes": 104691
+    },
+    {
+      "topicId": "mt_num-10-mixed",
+      "title": "3 + 2 − 1，先算哪一步",
+      "template": "explain",
+      "renderer": "counter",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 1,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S1:NA:NO"
+      ],
+      "prerequisites": [
+        "mt_num-10-addsub"
+      ],
+      "next": [
+        "mt_mixed-two-steps"
+      ],
+      "objectives": [
+        "会按从左到右的顺序算连加连减",
+        "能读懂加减混合算式",
+        "理解中间结果的作用"
+      ],
+      "cognitiveAction": "分解",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_num-10-mixed/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_num-10-mixed/index.html",
+      "bytes": 104483
+    },
+    {
+      "topicId": "mt_num-10-recognition",
+      "title": "10 以内数的认识：3 添上 2，到底几个",
+      "template": "explain",
+      "renderer": "counter",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 1,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S1:NA:NO"
+      ],
+      "prerequisites": [],
+      "next": [
+        "mt_num-10-composition",
+        "mt_num-10-addsub",
+        "mt_num-20-recognition",
+        "mt_classify",
+        "mt_pattern",
+        "mt_length-cm-m"
+      ],
+      "objectives": [
+        "能从 1 数到 10，一个挨着一个数",
+        "能分清「几个」和「第几个」",
+        "会把 10 以内的数分成两部分"
+      ],
+      "cognitiveAction": "分解",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_num-10-recognition/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_num-10-recognition/index.html",
+      "bytes": 107785
+    },
+    {
+      "topicId": "mt_num-100-addsub",
+      "title": "30 + 40 和 70 − 30，整十怎么算",
+      "template": "explain",
+      "renderer": "counter",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 1,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S1:NA:NO"
+      ],
+      "prerequisites": [
+        "mt_num-100-recognition",
+        "mt_num-10-addsub"
+      ],
+      "next": [
+        "mt_num-100-pen",
+        "mt_mul-meaning",
+        "mt_multiple",
+        "mt_rect-perimeter",
+        "mt_optimize"
+      ],
+      "objectives": [
+        "会口算整十数加减",
+        "会口算两位数加一位数",
+        "理解相同数位相加减"
+      ],
+      "cognitiveAction": "变换",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_num-100-addsub/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_num-100-addsub/index.html",
+      "bytes": 104524
+    },
+    {
+      "topicId": "mt_num-100-pen",
+      "title": "笔算 48 + 27，为什么个位要对齐",
+      "template": "explain",
+      "renderer": "vertical",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 2,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S2:NA:NO"
+      ],
+      "prerequisites": [
+        "mt_num-100-addsub",
+        "mt_num-100-recognition",
+        "mt_num-20-borrow"
+      ],
+      "next": [
+        "mt_addsub-10000",
+        "mt_dec-addsub",
+        "mt_dec-addsub2",
+        "mt_chicken-rabbit"
+      ],
+      "objectives": [
+        "掌握竖式数位对齐",
+        "会计算两位数的进位加与退位减",
+        "理解满十进一/退一当十"
+      ],
+      "cognitiveAction": "分解",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_num-100-pen/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_num-100-pen/index.html",
+      "bytes": 105274
+    },
+    {
+      "topicId": "mt_num-100-recognition",
+      "title": "100 里有几个十",
+      "template": "explain",
+      "renderer": "counter",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 1,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S1:NA:NO"
+      ],
+      "prerequisites": [
+        "mt_num-20-recognition"
+      ],
+      "next": [
+        "mt_num-100-addsub",
+        "mt_num-100-pen",
+        "mt_num-10000-recognition",
+        "mt_mass-g-kg",
+        "mt_time-hms",
+        "mt_dec-intro",
+        "mt_position-pairs",
+        "mt_negative"
+      ],
+      "objectives": [
+        "能数、读、写 100 以内的数",
+        "理解几个十和几个一",
+        "会比较数的大小"
+      ],
+      "cognitiveAction": "比较",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_num-100-recognition/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_num-100-recognition/index.html",
+      "bytes": 104709
+    },
+    {
+      "topicId": "mt_num-10000-recognition",
+      "title": "1000 有多大，万以内怎么写",
+      "template": "explain",
+      "renderer": "counter",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 2,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S1:NA:NO"
+      ],
+      "prerequisites": [
+        "mt_num-100-recognition"
+      ],
+      "next": [
+        "mt_addsub-10000",
+        "mt_unit-ton",
+        "mt_mult-1digit",
+        "mt_div-1digit",
+        "mt_big-num",
+        "mt_dec-meaning",
+        "mt_frac-meaning"
+      ],
+      "objectives": [
+        "认识千位、万位，理解数位顺序",
+        "会读写万以内的数",
+        "会比较万以内数的大小"
+      ],
+      "cognitiveAction": "比较",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_num-10000-recognition/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_num-10000-recognition/index.html",
+      "bytes": 105372
+    },
+    {
+      "topicId": "mt_num-20-borrow",
+      "title": "13 − 8，个位不够减怎么办",
+      "template": "explain",
+      "renderer": "counter",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 1,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S1:NA:NO"
+      ],
+      "prerequisites": [
+        "mt_num-20-recognition",
+        "mt_num-10-addsub",
+        "mt_num-20-carry"
+      ],
+      "next": [
+        "mt_num-100-pen"
+      ],
+      "objectives": [
+        "理解破十法和平十法",
+        "会计算 20 以内退位减法",
+        "知道个位不够减要从十位借"
+      ],
+      "cognitiveAction": "分解",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_num-20-borrow/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_num-20-borrow/index.html",
+      "bytes": 104550
+    },
+    {
+      "topicId": "mt_num-20-carry",
+      "title": "9 + 6，凑成十再数",
+      "template": "explain",
+      "renderer": "counter",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 1,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S1:NA:NO"
+      ],
+      "prerequisites": [
+        "mt_num-20-recognition",
+        "mt_num-10-composition",
+        "mt_num-10-addsub"
+      ],
+      "next": [
+        "mt_num-20-borrow"
+      ],
+      "objectives": [
+        "理解凑十法",
+        "会计算 20 以内进位加法",
+        "能把第二个数拆开凑十"
+      ],
+      "cognitiveAction": "分解",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_num-20-carry/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_num-20-carry/index.html",
+      "bytes": 104626
+    },
+    {
+      "topicId": "mt_num-20-recognition",
+      "title": "13 里的 1 和 3，站在不同位置",
+      "template": "explain",
+      "renderer": "counter",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 1,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S1:NA:NO"
+      ],
+      "prerequisites": [
+        "mt_num-10-recognition"
+      ],
+      "next": [
+        "mt_num-20-carry",
+        "mt_num-20-borrow",
+        "mt_num-100-recognition"
+      ],
+      "objectives": [
+        "认识 11~20 各数，知道个位和十位",
+        "理解十位上的 1 表示一个十",
+        "能读出并写出 20 以内的数"
+      ],
+      "cognitiveAction": "比较",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_num-20-recognition/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_num-20-recognition/index.html",
+      "bytes": 105195
+    },
+    {
       "topicId": "mt_number-shape",
       "title": "1 + 3 + 5 + 7，不用加，摆一摆就知道等于几？",
       "template": "explain",
@@ -7662,6 +10106,197 @@
       "path": "courses/mt_number-shape/",
       "url": "https://workbuddy.link/p/LF2tLauBO0XNPJqnoJJPs1",
       "bytes": 101904
+    },
+    {
+      "topicId": "mt_observe-object",
+      "title": "同一个盒子，为什么看到的面不一样",
+      "template": "explain",
+      "renderer": "geometry",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 2,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S1:GG:GM"
+      ],
+      "prerequisites": [
+        "mt_shape-3d"
+      ],
+      "next": [
+        "mt_cuboid"
+      ],
+      "objectives": [
+        "知道从不同位置观察物体看到的形状不同",
+        "能辨认从不同方向看到的图形",
+        "发展空间观念"
+      ],
+      "cognitiveAction": "比较",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_observe-object/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_observe-object/index.html",
+      "bytes": 105492
+    },
+    {
+      "topicId": "mt_ops-laws",
+      "title": "25×4×7，先算哪两个最快",
+      "template": "explain",
+      "renderer": "law",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 4,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S2:NA:NO"
+      ],
+      "prerequisites": [
+        "mt_addsub-10000",
+        "mt_mult-2digit"
+      ],
+      "next": [
+        "mt_dec-addsub2"
+      ],
+      "objectives": [
+        "掌握加法交换律、结合律",
+        "掌握乘法交换律、结合律、分配律",
+        "会用运算律简算"
+      ],
+      "cognitiveAction": "变换",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_ops-laws/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_ops-laws/index.html",
+      "bytes": 105035
     },
     {
       "topicId": "mt_ops-laws-add",
@@ -8332,6 +10967,103 @@
       "path": "courses/mt_parallelogram/",
       "url": "https://workbuddy.link/p/0bZjjsySwGRAG9CNpgONIh",
       "bytes": 98812
+    },
+    {
+      "topicId": "mt_pattern",
+      "title": "红黄红黄，下一个是什么",
+      "template": "explain",
+      "renderer": "geometry",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 1,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S1:PP"
+      ],
+      "prerequisites": [
+        "mt_num-10-recognition"
+      ],
+      "next": [
+        "mt_tree-plant",
+        "mt_phone-call",
+        "mt_number-shape"
+      ],
+      "objectives": [
+        "能发现简单的排列规律",
+        "能按规律接着排",
+        "能用规律解决简单问题"
+      ],
+      "cognitiveAction": "逼近",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_pattern/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_pattern/index.html",
+      "bytes": 105131
     },
     {
       "topicId": "mt_percent-1",
@@ -9480,6 +12212,100 @@
       "path": "courses/mt_polygon-area/",
       "url": "https://workbuddy.link/p/bNnbleub3TLwwWjGtMQN73",
       "bytes": 101216
+    },
+    {
+      "topicId": "mt_position-basic",
+      "title": "你的左手边是谁",
+      "template": "explain",
+      "renderer": "geometry",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 1,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S1:GG:PM"
+      ],
+      "prerequisites": [],
+      "next": [
+        "mt_direction",
+        "mt_position-pairs"
+      ],
+      "objectives": [
+        "会用上下、前后、左右描述位置",
+        "能确定参照物",
+        "理解左右的相对性"
+      ],
+      "cognitiveAction": "比较",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_position-basic/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_position-basic/index.html",
+      "bytes": 105303
     },
     {
       "status": "reviewed",
@@ -11707,6 +14533,303 @@
       "bytes": 113432
     },
     {
+      "topicId": "mt_shape-2d",
+      "title": "正方形、长方形、圆、三角形，怎么分",
+      "template": "explain",
+      "renderer": "geometry",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 1,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S1:GG:GM"
+      ],
+      "prerequisites": [
+        "mt_shape-3d"
+      ],
+      "next": [
+        "mt_angle-intro",
+        "mt_shape-move",
+        "mt_frac-intro",
+        "mt_direction",
+        "mt_rect-perimeter",
+        "mt_area-intro",
+        "mt_lines",
+        "mt_parallelogram",
+        "mt_triangle",
+        "mt_triangle-classify",
+        "mt_symmetry",
+        "mt_circle"
+      ],
+      "objectives": [
+        "认识常见平面图形",
+        "能说出图形的边和角特征",
+        "能在生活中找到这些图形"
+      ],
+      "cognitiveAction": "比较",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_shape-2d/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_shape-2d/index.html",
+      "bytes": 105074
+    },
+    {
+      "topicId": "mt_shape-3d",
+      "title": "球能滚，正方体能滚吗",
+      "template": "explain",
+      "renderer": "solid",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 1,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S1:GG:GM"
+      ],
+      "prerequisites": [],
+      "next": [
+        "mt_shape-2d",
+        "mt_observe-object",
+        "mt_cuboid",
+        "mt_cylinder"
+      ],
+      "objectives": [
+        "认识长方体、正方体、圆柱、球",
+        "能说出立体图形的特征",
+        "能按特征分类"
+      ],
+      "cognitiveAction": "比较",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_shape-3d/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_shape-3d/index.html",
+      "bytes": 105284
+    },
+    {
+      "topicId": "mt_shape-move",
+      "title": "平移和旋转，变的是位置还是方向",
+      "template": "explain",
+      "renderer": "geometry",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 2,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S1:GG:PM"
+      ],
+      "prerequisites": [
+        "mt_shape-2d"
+      ],
+      "next": [
+        "mt_symmetry"
+      ],
+      "objectives": [
+        "认识平移和旋转",
+        "能辨认生活中的平移和旋转",
+        "会画出简单图形的平移"
+      ],
+      "cognitiveAction": "变换",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_shape-move/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_shape-move/index.html",
+      "bytes": 105196
+    },
+    {
       "topicId": "mt_stats-center",
       "title": "班级平均分 82，能代表我考得怎么样吗？",
       "template": "explain",
@@ -12116,6 +15239,103 @@
       "path": "courses/mt_tree-plant/",
       "url": "https://workbuddy.link/p/svE8cufCLoA4gJrZ0Cb37g",
       "bytes": 100580
+    },
+    {
+      "topicId": "mt_triangle",
+      "title": "三根小棒一定能摆成三角形吗",
+      "template": "explain",
+      "renderer": "triangle",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 4,
+      "subject": "数学",
+      "standards": [
+        "math-2022:S2:GG:GM"
+      ],
+      "prerequisites": [
+        "mt_shape-2d",
+        "mt_angle-measure",
+        "mt_parallelogram"
+      ],
+      "next": [
+        "mt_polygon-area"
+      ],
+      "objectives": [
+        "理解三角形三边关系",
+        "知道三角形具有稳定性",
+        "会按角或边分类三角形"
+      ],
+      "cognitiveAction": "比较",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_triangle/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_triangle/index.html",
+      "bytes": 105701
     },
     {
       "topicId": "mt_triangle-angle",

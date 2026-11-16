@@ -1,0 +1,467 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>12 个苹果，每 4 个一份，能分几份</h1>
+  <p class="sub">二年级数学 · 数与运算</p>
+  <div class="tags">
+    <span class="tag">除法初步</span>
+    <span class="tag">二年级</span>
+    <span class="tag">2022课标</span>
+    <span class="tag">判分课</span>
+  </div>
+  <div class="cover-fig">
+<svg viewBox="0 0 760 190" width="760" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="12 个苹果，每 4 个一份，能分几份">
+  <rect x="0" y="0" width="760" height="190" rx="18" fill="#FFFFFF" opacity=".08"/>
+  <g fill="#FFFFFF" opacity=".9">
+    <circle cx="96" cy="60" r="13"/><circle cx="130" cy="60" r="13"/><circle cx="164" cy="60" r="13"/>
+    <rect x="79" y="86" width="102" height="26" rx="13" fill="#FFFFFF" opacity=".22"/>
+    <text x="130" y="105" font-size="17" text-anchor="middle">1 2 3</text>
+  </g>
+  <text x="216" y="82" font-size="30" fill="#FFFFFF" font-weight="800">12 个苹果，每 4 个一份，能分几</text>
+  <text x="218" y="126" font-size="18" fill="rgba(255,255,255,.85)">平均分与除法的意义</text>
+</svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">先分三道，凭感觉答</h2>
+  <p class="quiz-hint">凭直觉，答完看解析。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 8 个糖，每 2 个一份，能分几份？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>2 份</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>4 份</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>6 份</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 12÷3 表示什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>12 加 3</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>12 减 3</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>把 12 每 3 个一份</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 10 个苹果平均分给 5 人，每人几个？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>2 个</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>5 个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>15 个</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 每份一样多，叫平均分 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">每份一样多，叫平均分</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p2s1">
+    12 个苹果，<strong>每 4 个一份</strong>，正好分 3 份。
+  </p>
+  <p class="teach-text" id="p2s2">
+    这种「每份一样多」的分法叫<strong>平均分</strong>，用除法：12÷4=3。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>总数</h4>
+    <div class="eq">12 个苹果</div>
+    <p>被除数</p>
+  </div>
+  <div class="card">
+    <h4>每份</h4>
+    <div class="eq">4 个</div>
+    <p>除数</p>
+  </div>
+  <div class="card">
+    <h4>份数</h4>
+    <div class="eq">3 份</div>
+    <p>商</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  <strong>每份一样多</strong>叫平均分，用除法算。
+</div>
+</section>
+
+<!-- ===== p3: 除法算式各部分 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">除法算式各部分</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p3s1">
+    12÷4=3 读作「12 除以 4 等于 3」。12 是被除数，4 是除数，3 是商。
+  </p>
+  <p class="teach-text" id="p3s2">
+    也可以想乘法：4×3=12，所以 12÷4=3。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>÷ 叫<strong>除号</strong>。</li>
+  <li>除号前是<strong>被除数</strong>（总数）。</li>
+  <li>除号后是<strong>除数</strong>（每份几个），结果是<strong>商</strong>（几份）。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  除法各部分：<strong>被除数 ÷ 除数 = 商</strong>。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：算一算</h2>
+<p class="teach-text" id="p3bs1">把除法算式商连起来。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测 1 · 平均分</h2>
+  <p class="quiz-hint">每份一样多才叫平均分。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 下面哪种是平均分？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>一份2个一份4个</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>每份都是 3 个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>随便分</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 9÷3 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>6</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>2</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 6 个球平均放进 2 个筐，每筐几个？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>3 个</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>2 个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>4 个</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 用乘法想除法 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">用乘法想除法</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p5s1">
+    算 12÷4，想「4 乘几等于 12」？4×3=12，所以商是 3。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>除法</h4>
+    <div class="eq">12÷4</div>
+    <p>平均分</p>
+  </div>
+  <div class="card">
+    <h4>想乘</h4>
+    <div class="eq">4×3=12</div>
+    <p>口诀三四十二</p>
+  </div>
+  <div class="card">
+    <h4>得商</h4>
+    <div class="eq">3</div>
+    <p>能分3份</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  算除法可以<strong>想乘法口诀</strong>：除数×商=被除数。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">分一分：每几个一份</h2>
+  <p class="sim-desc">点「+ 加一个」往托盘添一个物体；「换一组」换每份个数。阵列按每行的个数自动分组，看能分几组。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">一共 %N% 个</span>
+    <span class="sim-tip" id="simTip">橙色行是新的一组</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simAdd()">+ 加一个</button>
+    <button class="btn" onclick="simNextCase()">换一组</button>
+    <button class="btn" onclick="simDemo()">看老师做</button>
+    <button class="btn-retry" onclick="simReset()">清空</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">每行是一份，数数有几行就有几份</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>每行 4 个，添到 12 个是几行？</li>
+    <li>12÷4=3，ARRAY 里看到 3 行了吗？</li>
+    <li>换一组后每行几个？</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测 2 · 除法算式</h2>
+  <p class="quiz-hint">认识除号。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 12÷4=3 里的「÷」叫什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>加号</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>除号</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>乘号</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 15÷5 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>10</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>5</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 把 20 平均分成 4 份，每份几？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>5</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>4</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>16</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四处容易分错 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四处容易分错</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    学除法最容易错在这四处。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>不平均分</h4>
+    <div class="eq">✗ 每份不一样多也算</div>
+    <p>平均分要求每份一样多。</p>
+  </div>
+  <div class="card">
+    <h4>算式反</h4>
+    <div class="eq">✗ 12÷4 写成 4÷12</div>
+    <p>总数是被除数，写在除号前。</p>
+  </div>
+  <div class="card">
+    <h4>意义混</h4>
+    <div class="eq">✗ 12÷4 当成 12−4</div>
+    <p>除法是平均分，不是减。</p>
+  </div>
+  <div class="card">
+    <h4>口诀错</h4>
+    <div class="eq">✗ 12÷4=2</div>
+    <p>想 4×3=12，商是 3。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  记住：除法是<strong>平均分</strong>，算时用<strong>乘法口诀</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  12 个苹果每 4 个一份，能分 <strong>3 份</strong>。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题</h2>
+  <p class="quiz-hint">先想平均分。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 16÷4 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>12</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>4</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>6</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 18 个饼干，每 3 个装一袋，能装几袋？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>15 袋</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>5 袋</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>6 袋</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 24÷6 = ?</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>4</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>18</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>3</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 平均分给 4 人，每人 5 个，一共几个？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>9 个</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>20 个</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>45 个</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 12÷2 和 12÷6 的结果？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>一样</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>都是 6</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>6 和 2</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">平均分</div>
+        <div class="summary-v4-summary">每份一样多</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>平均分才用除法。</p>
+      <p>总数÷每份=份数。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">算式</div>
+        <div class="summary-v4-summary">被除÷除=商</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>÷ 是除号。</p>
+      <p>被除数÷除数=商。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">想乘算除</div>
+        <div class="summary-v4-summary">用口诀</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>除数×商=被除数。</p>
+      <p>想乘法口诀求商。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">别踩坑</div>
+        <div class="summary-v4-summary">四处别错</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>每份要一样。</p>
+      <p>算式别写反。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  每份一样多是平均分，用除法，算时想乘法。
+</p>
+</section>
