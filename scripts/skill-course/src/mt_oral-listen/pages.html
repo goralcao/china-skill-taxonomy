@@ -1,0 +1,557 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>听一个故事，怎么记住关键再讲给别人？</h1>
+  <p class="sub">一年级语文 · 口语交际</p>
+  <div class="tags">
+    <span class="tag">语文要素·口语</span>
+    <span class="tag">听与讲</span>
+    <span class="tag">2022课标</span>
+    <span class="tag">留下痕迹</span>
+  </div>
+  <div class="cover-fig">
+<svg viewBox="0 0 760 190" width="760" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="听与讲：听清记关键，按顺序讲出来">
+  <rect x="0" y="0" width="760" height="190" rx="18" fill="#FFFFFF" opacity=".10"/>
+  <text x="28" y="32" font-size="15" fill="#EAF1F8" font-weight="700">听与讲：听清记关键，按顺序讲出来</text>
+  <g>    <rect x="28" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="111" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">听</text>
+    <text x="111" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">认真听</text>
+    <rect x="212" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="295" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">记</text>
+    <text x="295" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">记关键</text>
+    <rect x="396" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="479" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">序</text>
+    <text x="479" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">按顺序</text>
+    <rect x="580" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="663" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">讲</text>
+    <text x="663" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">响亮讲</text>
+  </g>
+</svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">前测 · 先看看你已经知道什么</h2>
+  <p class="quiz-hint">三道题都有唯一答案，答错会告诉你错在哪。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 听故事时，最该抓住什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>每个字</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>人物、事情和先后顺序</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>插图颜色</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 讲故事时，用哪组连接词最清楚？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>先……接着……最后……</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>然后……然后……</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>随便说</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 听别人讲故事时，应该？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>随便插话</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>不听</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>认真听、不打断</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 读进去 · 听一遍故事，能记住哪几样？ ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">读进去 · 听一遍故事，能记住哪几样？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="听故事三抓">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">抓人物：有谁</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">抓事情：做什么</text>
+  <text x="22" y="86" font-size="15" fill="#3B4FA8" font-weight="700">抓顺序：先后</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">听清才记得住</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    老师讲一个《小马过河》的故事。<b>听的时候别走神</b>，看看你能记住多少。
+  </p>
+  <p class="teach-text" id="p2s2">
+    有人记住了小马，有人记住了老牛和松鼠，有人记住了顺序。<b>点你最想先记的一样，这里不判对错。</b>
+  </p>
+  <p class="teach-text" id="p2s3">
+    今天只做一件事：<b>听清、记住、按顺序讲出来</b>。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>听</h4>
+    <div class="eq">认真听</div>
+    <p>不走神</p>
+  </div>
+  <div class="card">
+    <h4>记</h4>
+    <div class="eq">记关键</div>
+    <p>人物事情</p>
+  </div>
+  <div class="card">
+    <h4>讲</h4>
+    <div class="eq">按顺序</div>
+    <p>响亮清楚</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  <div class="rd-text" id="rdText">
+  <span class="rd-s" data-p="1">小马要过河，不知道河水深浅。</span>
+  <span class="rd-s" data-p="2">老牛说水很浅，松鼠说水很深。</span>
+  <span class="rd-s" data-p="3">小马自己试了试，原来水既不像老牛说的那么浅，也不像松鼠说的那么深。</span>
+</div>
+<div class="trace-why" id="rdNote">花 <b>20 秒</b>读一遍故事，点一句你最想记住的地方。<b>点哪句都行，不判对错。</b></div>
+</div>
+</section>
+
+<!-- ===== p3: 取证 · 给故事找出人物和顺序 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">取证 · 给故事找出人物和顺序</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="讲故事顺序">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">先……</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">接着……</text>
+  <text x="22" y="86" font-size="15" fill="#3B4FA8" font-weight="700">最后……</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">按顺序讲得清</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    先选一个人物，再点一句写他做了什么的话当依据；下面写一句「我先记住了……」。两样都留痕。
+  </p>
+  <p class="teach-text" id="p3s2">
+    <b>听得出不等于记得牢</b>。这里只报「找几处、写没写」，不说「你记得好」，也不给分数。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>听故事抓三样：人物、事情、先后顺序。</li>
+  <li>「因为」后面要能接上故事里的哪一句，不能只写「我记住了」。</li>
+  <li>人物和顺序分开记：框非空、且点到一处原文，才算留痕。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  <div id="evBox">
+  <div class="ev-syms">
+    <button class="ev-sym" type="button" data-s="人">人物</button>
+    <button class="ev-sym" type="button" data-s="事">事情</button>
+    <button class="ev-sym" type="button" data-s="序">顺序</button>
+    <button class="ev-sym" type="button" data-s="？">最想记</button>
+  </div>
+  <div class="ev-text">
+    <span class="ev-s" data-p="1">小马要过河，不知道深浅。<i class="ev-badge"></i></span>
+    <span class="ev-s" data-p="2">老牛说浅，松鼠说深。<i class="ev-badge"></i></span>
+    <span class="ev-s" data-p="3">小马自己试，才明白。<i class="ev-badge"></i></span>
+  </div>
+  <input class="ev-idea" id="evIdea" placeholder="我先记住了……，因为故事里写了……">
+  <div class="trace-why" id="evWhy">先选人物，再点一句相关的话当依据。</div>
+  <div class="trace-note" id="evNote">已找依据 0 处 · 还没写（只记痕迹，不判对错）</div>
+</div>
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连 · 听讲的要点各归各</h2>
+<p class="teach-text" id="p3bs1">左边是听讲的要点，右边是它对应的做法。连完不用交卷，只看能不能说清「为什么」。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 边读边想</h2>
+  <p class="quiz-hint">三道题都有唯一答案，做完再看讲解。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 讲故事的音量应该？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>越小越好</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>忽大忽小</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>响亮，让大家都听见</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 「龟兔赛跑」里主要人物是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>猫和狗</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>乌龟和兔子</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>老虎和狮子</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 讲完故事后，听的人可以？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>复述或提问</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>一直沉默</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>立刻换话题</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 对齐 · 把故事顺序排一排 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">对齐 · 把故事顺序排一排</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="讲故事三要求">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">声音响亮</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">看着对方</text>
+  <text x="22" y="86" font-size="15" fill="#3B4FA8" font-weight="700">按先后顺序</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">别人听得懂</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    把 4 张故事卡按「先、接着、然后、最后」排好，有一张是打乱的干扰卡。
+  </p>
+  <p class="teach-text" id="p5s2">
+    放完<b>强制补一步</b>：点卡片下的「第几句」把依据记下。<b>顺序和依据分别记录</b>，都不判对错。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>3 真 + 1 干扰</h4>
+    <div class="eq">按先后排</div>
+    <p>别漏顺序词。</p>
+  </div>
+  <div class="card">
+    <h4>看连接词</h4>
+    <div class="eq">先接着最后</div>
+    <p>决定怎么排。</p>
+  </div>
+  <div class="card">
+    <h4>只说再听第 X 句</h4>
+    <div class="eq">不给分数</div>
+    <p>不说对错。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  <div id="alBox">
+  <div class="al-cards" id="alCards">
+    <div class="ev-card" data-n="1"><b>故事卡 1</b><br>小马要过河，不知深浅。<div class="ev-paras"><span class="ev-para" data-p="1">第1句</span><span class="ev-para" data-p="2">第2句</span><span class="ev-para" data-p="3">第3句</span></div></div>
+    <div class="ev-card" data-n="2"><b>故事卡 2</b><br>老牛说水很浅。<div class="ev-paras"><span class="ev-para" data-p="1">第1句</span><span class="ev-para" data-p="2">第2句</span><span class="ev-para" data-p="3">第3句</span></div></div>
+    <div class="ev-card" data-n="3"><b>故事卡 3</b><br>松鼠说水很深。<div class="ev-paras"><span class="ev-para" data-p="1">第1句</span><span class="ev-para" data-p="2">第2句</span><span class="ev-para" data-p="3">第3句</span></div></div>
+    <div class="ev-card" data-n="4（干扰）"><b>故事卡 4</b><br>小马家住在山上。<div class="ev-paras"><span class="ev-para" data-p="1">第1句</span><span class="ev-para" data-p="2">第2句</span><span class="ev-para" data-p="3">第3句</span></div></div>
+  </div>
+  <div class="al-slots">
+    <div class="ev-slot" data-slot="先"><b>先</b>故事开头</div>
+    <div class="ev-slot" data-slot="接"><b>接着</b>往下发展</div>
+    <div class="ev-slot" data-slot="后"><b>最后</b>故事结尾</div>
+  </div>
+  <div class="trace-why" id="alWhy">点一张卡，再点一个顺序位置放进去；放完补一句依据。</div>
+  <div class="trace-note" id="alNote">已排 0 / 4 · 依据补了 0 / 4（顺序和依据分别记）</div>
+</div>
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">说清 · 按顺序讲一段</h2>
+  <p class="sim-desc">点左边一条故事线索，再点右边一个连接词，连成一环。用「先……接着……最后……」讲清——不给分数，只看顺序清不清。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">依据链已连 0 / 3 环（不判对错）</span>
+    <span class="sim-tip" id="simTip">先自己讲一次，再看老师讲</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn" onclick="simNextCase()">换一组</button>
+    <button class="btn" onclick="simReset()">重来</button>
+    <button class="btn-primary" onclick="simDemo()">看老师做一遍</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">左边是故事里的事，右边是顺序词；按顺序讲才清楚</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>一件事能引出多句话；讲乱了重新排顺序就行。</li>
+    <li>顺序记「怎么排」，依据另记「第几句」，两样分开留痕。</li>
+    <li>讲不清时只说「再听第 X 句」，不给分数。</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 换个角度再认一次</h2>
+  <p class="quiz-hint">三道题都有唯一答案，注意别把方法用反。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 记故事关键，好方法是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>记住人物和先后发生的事</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>背每一句话</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>只记标题</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 讲故事时看着听众，是为了？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>数人数</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>看窗外</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>交流和礼貌</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 下面哪种讲法最容易听懂？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>想到哪说到哪</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>按事情先后，一句句说清</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>只说结果</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 换文 · 自己讲一个小故事 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">换文 · 自己讲一个小故事</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    换一个没提示的小故事《小猫钓鱼》，自己抓人物和顺序，按「先……接着……最后……」讲一遍，再自查。
+  </p>
+  <p class="teach-text" id="p8s2">
+    顺手把四个<b>易错</b>点看一遍：别漏人物，别讲乱顺序，别声音太小，别打断别人。
+  </p>
+  <p class="teach-text" id="p8s3">
+    顺手把这一课<b>最容易</b>翻车的地方再看一遍：别听完就急着讲、漏掉人物和顺序；也别讲时声音太小、东拉西扯，别人听不清。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 有人物</h4>
+    <div class="eq">说清有谁</div>
+    <p>不漏</p>
+  </div>
+  <div class="card">
+    <h4>② 有顺序</h4>
+    <div class="eq">先接着最后</div>
+    <p>不乱</p>
+  </div>
+  <div class="card">
+    <h4>③ 讲得响</h4>
+    <div class="eq">看着大家</div>
+    <p>听得清</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  <div id="trBox">
+  <div class="tr-text">
+    <span class="tr-s">小猫钓鱼，一会儿捉蜻蜓，一会儿捉蝴蝶。</span>
+    <span class="tr-s">后来它专心钓，终于钓到了一条大鱼。</span>
+  </div>
+  <div class="trace-note" id="trNote">自己讲了 0 遍（不判对错）。换了新故事，只剩「抓人物」和「按顺序」。</div>
+  <div class="tr-cks">
+    <span class="tr-ck">① 我能说出故事里有谁</span>
+    <span class="tr-ck">② 我能按顺序讲</span>
+    <span class="tr-ck">③ 我讲故事声音响亮、看着对方</span>
+  </div>
+  <div class="trace-why" id="trAdvice">自查勾不满也照样能翻页：这三条只问「讲得清不清楚」，不问「讲得精不精彩」。</div>
+</div>
+</div>
+
+<p class="teach-text" id="p8apply">
+  这一页只问「抓没抓住人物事情顺序」，不问「讲得多花哨」。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，把今天学的说清楚</h2>
+  <p class="quiz-hint">五道题都有唯一答案。做完这一页，这一课就装进去了。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 听故事时没听清，最好？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>马上打断</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>等讲完再礼貌询问</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>不懂装懂</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 复述故事和背故事的区别是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>复述用自己的话讲清大意</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>完全一样</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>复述要一字不差</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 讲故事前先想一想，主要是想？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>穿什么衣服</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>讲多久</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>故事有谁、先发生什么、结果怎样</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 听故事记顺序，可以用哪组词？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>先、然后、最后</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>苹果、香蕉、梨</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>红色、黄色、蓝色</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 这一课最后要养成的习惯是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>听着玩</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>认真听、抓关键、按顺序、响亮讲</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>讲得越快越好</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">认真听</div>
+        <div class="summary-v4-summary">抓人物事情</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>听时抓谁、做什么。</p>
+      <p>别漏掉先后顺序。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">按顺序</div>
+        <div class="summary-v4-summary">先接着最后</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>用连接词讲清楚。</p>
+      <p>一句一句往下说。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">响亮讲</div>
+        <div class="summary-v4-summary">看着对方</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>声音响亮大家听见。</p>
+      <p>眼神交流更礼貌。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">会互动</div>
+        <div class="summary-v4-summary">听完复述提问</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>听完讲讲记住了什么。</p>
+      <p>没听清礼貌再问。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  <div class="my-chain" id="myChain"><b>你留下的依据链</b>　（还没存想法。回到「取证」那一页写一句，它就会出现在这里。）</div>
+把今天听来的一个故事讲给同桌听：先说故事里有谁，再按「先……接着……最后……」讲清楚，最后声音响亮地看着他。同桌能复述出来，这次讲故事就站住了。下一步学「古诗背诵」，把诗的音韵和画面记在心里。
+</p>
+</section>

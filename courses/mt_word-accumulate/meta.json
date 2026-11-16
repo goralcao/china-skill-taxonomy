@@ -1,0 +1,95 @@
+{
+  "topicId": "mt_word-accumulate",
+  "title": "「苹果、香蕉、白菜」里，哪个不和别的同类？",
+  "template": "explain",
+  "renderer": "checkup",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 2,
+  "subject": "语文",
+  "standards": [
+    "chinese-2022:S1:BQ"
+  ],
+  "prerequisites": [
+    "mt_word-understand",
+    "mt_char-radical-lookup"
+  ],
+  "next": [
+    "mt_word-idiom",
+    "mt_sent-extend",
+    "mt_write-observe"
+  ],
+  "objectives": [
+    "能按类别（水果、蔬菜、动物等）给词语归类",
+    "能找出不同类的词，说出归类标准",
+    "养成分类积累词语、按类别运用的习惯"
+  ],
+  "cognitiveAction": "比较",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "读进去",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "看出来",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "写下来",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "改一处",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "评一评",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "topicId": "mt_char-homophone",
+  "title": "「在」和「再」读音一样，怎么用才对？",
+  "template": "explain",
+  "renderer": "annotate",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 2,
+  "subject": "语文",
+  "standards": [
+    "chinese-2022:S1:BQ"
+  ],
+  "prerequisites": [
+    "mt_char-pictographic",
+    "mt_char-radical"
+  ],
+  "next": [
+    "mt_sent-fix"
+  ],
+  "objectives": [
+    "能分清常见同音字（在/再、的/地/得）和形近字（己/已、日/目）",
+    "学会「以义定字」，根据意思选对字",
+    "养成写完读一读、按意思核对易混字的习惯"
+  ],
+  "cognitiveAction": "辨析",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "读进去",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "看出来",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "写下来",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "改一处",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "评一评",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

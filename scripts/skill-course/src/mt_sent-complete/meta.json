@@ -1,0 +1,101 @@
+{
+  "topicId": "mt_sent-complete",
+  "title": "「小鸟飞」算一句话吗，句子要有哪些部分？",
+  "template": "explain",
+  "renderer": "sentBuild",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 1,
+  "subject": "语文",
+  "standards": [
+    "chinese-2022:S1:BQ"
+  ],
+  "prerequisites": [
+    "mt_char-pictographic"
+  ],
+  "next": [
+    "mt_punct-basic",
+    "mt_sent-ba-bei",
+    "mt_sent-rhetoric",
+    "mt_sent-extend",
+    "mt_sent-conjunction",
+    "mt_sent-quote",
+    "mt_sent-fix",
+    "mt_sent-compress",
+    "mt_write-picture",
+    "mt_oral-listen"
+  ],
+  "objectives": [
+    "知道完整句要说出「谁（什么）」和「做什么（怎么样）」",
+    "能把不完整的碎片补成完整句，判断一句话是否完整",
+    "养成写完检查「谁＋做什么」是否齐全的习惯"
+  ],
+  "cognitiveAction": "构造",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "读进去",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "看出来",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "写下来",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "改一处",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "评一评",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

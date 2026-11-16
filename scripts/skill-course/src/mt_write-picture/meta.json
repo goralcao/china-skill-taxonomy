@@ -1,0 +1,95 @@
+{
+  "topicId": "mt_write-picture",
+  "title": "看着一幅图，怎么写清楚「什么时候谁在干什么」？",
+  "template": "explain",
+  "renderer": "draft",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 1,
+  "subject": "语文",
+  "standards": [
+    "chinese-2022:S1:LR"
+  ],
+  "prerequisites": [
+    "mt_sent-complete",
+    "mt_char-writing"
+  ],
+  "next": [
+    "mt_write-imitate",
+    "mt_write-imagine",
+    "mt_write-revise"
+  ],
+  "objectives": [
+    "学会看图时先整体观察，再抓时间、地点、人物和事情",
+    "能按「什么时候，谁，在哪里，干什么」写几句通顺的话",
+    "养成写完对照图检查、不漏要点的习惯"
+  ],
+  "cognitiveAction": "构造",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "起意",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "搭骨架",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "起草",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "改",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "出刊",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

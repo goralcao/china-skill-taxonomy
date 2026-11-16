@@ -1,0 +1,556 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>读到不懂的词，怎么自己弄明白意思？</h1>
+  <p class="sub">二年级语文 · 词语积累</p>
+  <div class="tags">
+    <span class="tag">语文要素·词语</span>
+    <span class="tag">理解词语</span>
+    <span class="tag">2022课标</span>
+    <span class="tag">留下痕迹</span>
+  </div>
+  <div class="cover-fig">
+<svg viewBox="0 0 760 190" width="760" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="懂词语：联系上下文、想生活、查工具">
+  <rect x="0" y="0" width="760" height="190" rx="18" fill="#FFFFFF" opacity=".10"/>
+  <text x="28" y="32" font-size="15" fill="#EAF1F8" font-weight="700">懂词语：联系上下文、想生活、查工具</text>
+  <g>    <rect x="28" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="111" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">猜</text>
+    <text x="111" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">联系上下文</text>
+    <rect x="212" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="295" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">想</text>
+    <text x="295" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">想生活</text>
+    <rect x="396" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="479" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">查</text>
+    <text x="479" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">查字典</text>
+    <rect x="580" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="663" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">验</text>
+    <text x="663" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">放回句中</text>
+  </g>
+</svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">前测 · 先看看你已经知道什么</h2>
+  <p class="quiz-hint">三道题都有唯一答案，答错会告诉你错在哪。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 遇到不懂的词语，第一种好办法是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>马上跳过</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>联系上下文猜一猜</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>只看一个字</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 理解「颤巍巍」，可以联系什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>老人走路摇晃的样子</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>天气变化</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>颜色深浅</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 「绿油油」是什么意思？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>很红</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>很高</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>形容很绿、有光泽</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 读进去 · 一个不懂的词，能想出几种办法？ ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">读进去 · 一个不懂的词，能想出几种办法？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="理解词语四法">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">① 联系上下文</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">② 结合生活经验</text>
+  <text x="22" y="86" font-size="15" fill="#3B4FA8" font-weight="700">③ 找近义词</text>
+  <text x="22" y="112" font-size="15" fill="#3B4FA8" font-weight="700">④ 查字典</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">多法并用</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    读到「<b>颤巍巍</b>」这个词，不懂意思。<b>你是跳过去，还是想办法？</b>
+  </p>
+  <p class="teach-text" id="p2s2">
+    会读书的人会联系上下文、想生活、查字典。<b>点一种你想用的办法，这里不判对错。</b>
+  </p>
+  <p class="teach-text" id="p2s3">
+    今天只做一件事：<b>学会几种理解词语的方法</b>，自己读懂不懂的词。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>猜</h4>
+    <div class="eq">联系上下文</div>
+    <p>看前后句</p>
+  </div>
+  <div class="card">
+    <h4>想</h4>
+    <div class="eq">想生活</div>
+    <p>联实际</p>
+  </div>
+  <div class="card">
+    <h4>查</h4>
+    <div class="eq">查字典</div>
+    <p>找准确</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  <div class="rd-text" id="rdText">
+  <span class="rd-s" data-p="1">那位老人颤巍巍地走过马路。</span>
+  <span class="rd-s" data-p="2">田野里绿油油的麦苗长势喜人。</span>
+  <span class="rd-s" data-p="3">他高兴得一蹦三尺高。</span>
+</div>
+<div class="trace-why" id="rdNote">花 <b>20 秒</b>读这三句，点一句里有你不懂的词。<b>点哪句都行，不判对错。</b></div>
+</div>
+</section>
+
+<!-- ===== p3: 取证 · 给词语找理解方法 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">取证 · 给词语找理解方法</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="联系实际">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">「颤巍巍」想老人走路</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">「绿油油」想田野颜色</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">生活里有答案</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    先选一个词语，再点一种能理解它的方法当依据；下面写一句「我想用……理解它」。
+  </p>
+  <p class="teach-text" id="p3s2">
+    <b>猜得出不等于猜得准</b>。这里只报「找几处、写没写」，不说「你想得好」，也不给分数。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>联系上下文、想生活、找近义词、查字典，都是理解词语的方法。</li>
+  <li>「因为」后面要能接上怎么理解这个词，不能只写「我猜的」。</li>
+  <li>词语和方法分开记：框非空、且点到一处方法，才算留痕。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  <div id="evBox">
+  <div class="ev-syms">
+    <button class="ev-sym" type="button" data-s="上">上下文</button>
+    <button class="ev-sym" type="button" data-s="活">生活</button>
+    <button class="ev-sym" type="button" data-s="典">字典</button>
+    <button class="ev-sym" type="button" data-s="？">我想用</button>
+  </div>
+  <div class="ev-text">
+    <span class="ev-s" data-p="1">老人颤巍巍——想老人走路摇晃。<i class="ev-badge"></i></span>
+    <span class="ev-s" data-p="2">绿油油的麦苗——想田野的绿。<i class="ev-badge"></i></span>
+    <span class="ev-s" data-p="3">一蹦三尺高——联系高兴的心情。<i class="ev-badge"></i></span>
+  </div>
+  <input class="ev-idea" id="evIdea" placeholder="我想用……理解……，因为……">
+  <div class="trace-why" id="evWhy">选一个词语，再点一种理解方法作依据。</div>
+  <div class="trace-note" id="evNote">已找方法 0 处 · 还没写（只记痕迹，不判对错）</div>
+</div>
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连 · 方法和词语各归各</h2>
+<p class="teach-text" id="p3bs1">左边是理解方法，右边是适用的词语。连完不用交卷，只看能不能说清「为什么」。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 边读边想</h2>
+  <p class="quiz-hint">三道题都有唯一答案，做完再看讲解。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 找近义词理解词语，是用什么意思的词？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>意思相反的词</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>随便一个词</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>意思相近的词</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 联系上下文理解词语，主要看？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>词语的第几画</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>这个词前后的句子</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>书的页数</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 查字典理解词语，应该看？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>词语的意思解释</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>页码颜色</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>字数</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 对齐 · 把理解步骤排一排 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">对齐 · 把理解步骤排一排</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="验一验">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">把意思放回句子</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">读通就对了</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">读懂才算会</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    把 4 张方法卡按先后排好，有一张是无效的干扰卡。
+  </p>
+  <p class="teach-text" id="p5s2">
+    放完<b>强制补一步</b>：点卡片下的依据记下。<b>顺序和依据分别记录</b>，都不判对错。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>3 真 + 1 干扰</h4>
+    <div class="eq">按先后排</div>
+    <p>别排乱。</p>
+  </div>
+  <div class="card">
+    <h4>看方法</h4>
+    <div class="eq">先猜后查</div>
+    <p>决定怎么排。</p>
+  </div>
+  <div class="card">
+    <h4>只说再读第 X 条</h4>
+    <div class="eq">不给分数</div>
+    <p>不说对错。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  <div id="alBox">
+  <div class="al-cards" id="alCards">
+    <div class="ev-card" data-n="1"><b>方法卡 1</b><br>联系上下文猜一猜。<div class="ev-paras"><span class="ev-para" data-p="1">第1条</span><span class="ev-para" data-p="2">第2条</span><span class="ev-para" data-p="3">第3条</span></div></div>
+    <div class="ev-card" data-n="2"><b>方法卡 2</b><br>想生活或查字典。<div class="ev-paras"><span class="ev-para" data-p="1">第1条</span><span class="ev-para" data-p="2">第2条</span><span class="ev-para" data-p="3">第3条</span></div></div>
+    <div class="ev-card" data-n="3"><b>方法卡 3</b><br>放回句子验一验。<div class="ev-paras"><span class="ev-para" data-p="1">第1条</span><span class="ev-para" data-p="2">第2条</span><span class="ev-para" data-p="3">第3条</span></div></div>
+    <div class="ev-card" data-n="4（干扰）"><b>方法卡 4</b><br>跳过去不管。<div class="ev-paras"><span class="ev-para" data-p="1">第1条</span><span class="ev-para" data-p="2">第2条</span><span class="ev-para" data-p="3">第3条</span></div></div>
+  </div>
+  <div class="al-slots">
+    <div class="ev-slot" data-slot="先"><b>第一步</b>猜</div>
+    <div class="ev-slot" data-slot="接"><b>第二步</b>查</div>
+    <div class="ev-slot" data-slot="后"><b>第三步</b>验</div>
+  </div>
+  <div class="trace-why" id="alWhy">点一张卡，再点顺序位置放进去；放完补一句依据。</div>
+  <div class="trace-note" id="alNote">已排 0 / 4 · 依据补了 0 / 4（顺序和依据分别记）</div>
+</div>
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">验一验 · 把意思放回句子</h2>
+  <p class="sim-desc">点左边一个词语，再点右边一种方法，连成一环。用「猜—查—验」串起来——不给分数，只看方法对不对。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">依据链已连 0 / 3 环（不判对错）</span>
+    <span class="sim-tip" id="simTip">先自己试一次，再看老师试</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn" onclick="simNextCase()">换一组</button>
+    <button class="btn" onclick="simReset()">重来</button>
+    <button class="btn-primary" onclick="simDemo()">看老师做一遍</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">左边是不懂的词，右边是理解方法；方法对才解得开</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>一个词能用多种方法理解；方法不对换一种再试。</li>
+    <li>顺序记「怎么排」，依据另记「第几条」，两样分开留痕。</li>
+    <li>仍不懂时只说「再读第 X 句」，不给分数。</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 换个角度再认一次</h2>
+  <p class="quiz-hint">三道题都有唯一答案，注意别把方法用反。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 理解词语后，「放回句子验一验」是为了？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>看意思放进句子通不通</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>凑字数</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>写得更长</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 结合生活经验理解词语，是指？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>背字典</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>数笔画</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>想生活中见过的情景</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 下面哪种理解词语的方法不对？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>联系上下文</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>完全不管直接跳过</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>查字典</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 换词 · 自己理解一个新词 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">换词 · 自己理解一个新词</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    换一段没提示的话，找出一个不懂的词，自己用方法理解，再自查。
+  </p>
+  <p class="teach-text" id="p8s2">
+    顺手把四个<b>易错</b>点看一遍：别跳过，别只猜不查，别查完不验，别只看字面。
+  </p>
+  <p class="teach-text" id="p8s3">
+    顺手把这一课<b>最容易</b>翻车的地方再看一遍：别遇到不懂的词就跳过或只查字典——先联系上下文猜一猜，再查证，最后放回句子验一验。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 会猜</h4>
+    <div class="eq">联系上下文</div>
+    <p>想生活</p>
+  </div>
+  <div class="card">
+    <h4>② 会查</h4>
+    <div class="eq">查字典</div>
+    <p>找准确</p>
+  </div>
+  <div class="card">
+    <h4>③ 会验</h4>
+    <div class="eq">放回句子</div>
+    <p>读得通</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  <div id="trBox">
+  <div class="tr-text">
+    <span class="tr-s">他小心翼翼地捧着那只受伤的小鸟。</span>
+    <span class="tr-s">我们都屏住呼吸，看着它。</span>
+  </div>
+  <div class="trace-note" id="trNote">自己理解了 0 个词（不判对错）。换了新段落，只剩「猜」和「验」。</div>
+  <div class="tr-cks">
+    <span class="tr-ck">① 我能联系上下文猜出词的大意</span>
+    <span class="tr-ck">② 我能用想生活或查字典确认意思</span>
+    <span class="tr-ck">③ 我能把意思放回句子，读通验证</span>
+  </div>
+  <div class="trace-why" id="trAdvice">自查勾不满也照样能翻页：这三条只问「会不会理解词语」，不问「解释得多漂亮」。</div>
+</div>
+</div>
+
+<p class="teach-text" id="p8apply">
+  这一页只问「用没用对方法、放回句子通不通」，不问「解释得漂不漂亮」。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，把今天学的说清楚</h2>
+  <p class="quiz-hint">五道题都有唯一答案。做完这一页，这一课就装进去了。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 「他高兴得一蹦三尺高」，「一蹦三尺高」形容？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>跳得真有三尺</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>非常高兴</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>在量身高</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 多种理解词语的方法，可以？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>结合起来用</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>只能用一种</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>都不能用</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 理解词语的最终目的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>背下所有词</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>写长句子</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>读懂句子和文章</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 猜词语意思后，为什么还要查证？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>猜的可能不准，查证更可靠</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>查了更慢</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>没必要查</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 这一课最后要养成的习惯是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>遇到就跳过</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>联系上下文、想生活、查字典、放回句子验</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>只查不动脑</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">联系上下文</div>
+        <div class="summary-v4-summary">看前后句</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>看这个词前后的句子。</p>
+      <p>往往能猜出大意。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">想生活</div>
+        <div class="summary-v4-summary">联实际</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>想想生活中的情景。</p>
+      <p>很多词有画面。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">查字典</div>
+        <div class="summary-v4-summary">找准确</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>猜的未必准。</p>
+      <p>查字典确认意思。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">放回句子</div>
+        <div class="summary-v4-summary">验一验</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>把意思放回原句。</p>
+      <p>读通才算真懂。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  <div class="my-chain" id="myChain"><b>你留下的依据链</b>　（还没存想法。回到「取证」那一页写一句，它就会出现在这里。）</div>
+把今天理解的一个词讲给同桌听：先说你怎么猜的、用了什么办法确认，再说把意思放回句子读通了没有。同桌听完也懂了这个词，这次理解词语就站住了。
+</p>
+</section>

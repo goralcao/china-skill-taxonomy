@@ -1,0 +1,557 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>读一本厚厚的书，怎么读得下去又有收获？</h1>
+  <p class="sub">二年级语文 · 古诗文与整本书阅读</p>
+  <div class="tags">
+    <span class="tag">语文要素·阅读</span>
+    <span class="tag">整本书阅读</span>
+    <span class="tag">2022课标</span>
+    <span class="tag">留下痕迹</span>
+  </div>
+  <div class="cover-fig">
+<svg viewBox="0 0 760 190" width="760" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="读整本书：看目录、定计划、边读边记">
+  <rect x="0" y="0" width="760" height="190" rx="18" fill="#FFFFFF" opacity=".10"/>
+  <text x="28" y="32" font-size="15" fill="#EAF1F8" font-weight="700">读整本书：看目录、定计划、边读边记</text>
+  <g>    <rect x="28" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="111" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">看</text>
+    <text x="111" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">看封面目录</text>
+    <rect x="212" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="295" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">定</text>
+    <text x="295" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">定小计划</text>
+    <rect x="396" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="479" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">记</text>
+    <text x="479" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">边读边记</text>
+    <rect x="580" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="663" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">讲</text>
+    <text x="663" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">读后交流</text>
+  </g>
+</svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">前测 · 先看看你已经知道什么</h2>
+  <p class="quiz-hint">三道题都有唯一答案，答错会告诉你错在哪。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 读一本整书，开始之前最好先看什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>最后一页</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>封面和目录</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>随便一页</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 读厚书定计划，指的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>每天读多少、多久读完</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>一次读完</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>不用计划</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 读整本书时，边读边记什么最有用？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>每个标点符号</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>书的页数</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>主要人物和关键情节</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 读进去 · 一本厚书，从哪一页开始读？ ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">读进去 · 一本厚书，从哪一页开始读？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="读书四步">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">① 看封面目录</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">② 定阅读计划</text>
+  <text x="22" y="86" font-size="15" fill="#3B4FA8" font-weight="700">③ 边读边记</text>
+  <text x="22" y="112" font-size="15" fill="#3B4FA8" font-weight="700">④ 读后交流</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">一本书慢慢读完</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    一本厚厚的《西游记》摆在面前，<b>从第一页硬读？还是先看看别的？</b>
+  </p>
+  <p class="teach-text" id="p2s2">
+    会读书的人先看封面和目录，再定个小计划。<b>点你的做法，这里不判对错。</b>
+  </p>
+  <p class="teach-text" id="p2s3">
+    今天只做一件事：<b>学会读整本书的方法</b>，把厚书也能读完。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>看</h4>
+    <div class="eq">看目录</div>
+    <p>知结构</p>
+  </div>
+  <div class="card">
+    <h4>定</h4>
+    <div class="eq">定计划</div>
+    <p>每天读</p>
+  </div>
+  <div class="card">
+    <h4>记</h4>
+    <div class="eq">边读记</div>
+    <p>人物情节</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  <div class="rd-text" id="rdText">
+  <span class="rd-s" data-p="1">封面：书名《西游记》、作者吴承恩。</span>
+  <span class="rd-s" data-p="2">目录：猴王出世、大闹天宫、三打白骨精……</span>
+  <span class="rd-s" data-p="3">计划：每天读 10 页，两周读完。</span>
+</div>
+<div class="trace-why" id="rdNote">花 <b>20 秒</b>看这三条，点一句你觉得最有用的。<b>点哪句都行，不判对错。</b></div>
+</div>
+</section>
+
+<!-- ===== p3: 取证 · 给读书方法找依据 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">取证 · 给读书方法找依据</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="读中记什么">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">主要人物</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">关键情节</text>
+  <text x="22" y="86" font-size="15" fill="#3B4FA8" font-weight="700">我的疑问</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">记下来才不忘</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    先选一个做法，再点一句能支持它的内容当依据；下面写一句「我打算……」。
+  </p>
+  <p class="teach-text" id="p3s2">
+    <b>知道方法不等于做得到</b>。这里只报「找几处、写没写」，不说「你计划得好」，也不给分数。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>读整本书先看目录、定计划，再坚持每天读。</li>
+  <li>「因为」后面要能接上书里或目录里的内容，不能只写「我要读」。</li>
+  <li>做法和依据分开记：框非空、且点到一处内容，才算留痕。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  <div id="evBox">
+  <div class="ev-syms">
+    <button class="ev-sym" type="button" data-s="目">目录</button>
+    <button class="ev-sym" type="button" data-s="计">计划</button>
+    <button class="ev-sym" type="button" data-s="记">记录</button>
+    <button class="ev-sym" type="button" data-s="？">我打算</button>
+  </div>
+  <div class="ev-text">
+    <span class="ev-s" data-p="1">目录列出猴王出世、大闹天宫等章节。<i class="ev-badge"></i></span>
+    <span class="ev-s" data-p="2">每天读 10 页，两周可以读完。<i class="ev-badge"></i></span>
+    <span class="ev-s" data-p="3">读书时记人物、情节和疑问。<i class="ev-badge"></i></span>
+  </div>
+  <input class="ev-idea" id="evIdea" placeholder="我打算……，因为……">
+  <div class="trace-why" id="evWhy">选一个做法，再点一句支持它的内容。</div>
+  <div class="trace-note" id="evNote">已找依据 0 处 · 还没写（只记痕迹，不判对错）</div>
+</div>
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连 · 读书步骤各归各</h2>
+<p class="teach-text" id="p3bs1">左边是读书步骤，右边是具体做法。连完不用交卷，只看能不能说清「为什么」。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 边读边想</h2>
+  <p class="quiz-hint">三道题都有唯一答案，做完再看讲解。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 读完整本书后，可以做什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>立刻忘掉</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>不再翻</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>讲讲主要内容、交流感受</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 《西游记》里，主要人物不包括？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>孙悟空</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>鲁迅</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>唐僧</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 读整本书遇到不感兴趣的部分，可以？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>坚持读或跳读后补上</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>整本放弃</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>撕掉那页</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 对齐 · 把读书顺序排一排 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">对齐 · 把读书顺序排一排</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="坚持读完">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">每天读一点</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">读完再交流</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">日积月累有收获</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    把 4 张读书卡按先后顺序排好，有一张是无关的干扰卡。
+  </p>
+  <p class="teach-text" id="p5s2">
+    放完<b>强制补一步</b>：点卡片下的依据记下。<b>顺序和依据分别记录</b>，都不判对错。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>3 真 + 1 干扰</h4>
+    <div class="eq">按先后排</div>
+    <p>别排乱。</p>
+  </div>
+  <div class="card">
+    <h4>看步骤</h4>
+    <div class="eq">先准备后读</div>
+    <p>决定怎么排。</p>
+  </div>
+  <div class="card">
+    <h4>只说再读第 X 条</h4>
+    <div class="eq">不给分数</div>
+    <p>不说对错。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  <div id="alBox">
+  <div class="al-cards" id="alCards">
+    <div class="ev-card" data-n="1"><b>读书卡 1</b><br>看封面和目录。<div class="ev-paras"><span class="ev-para" data-p="1">第1条</span><span class="ev-para" data-p="2">第2条</span><span class="ev-para" data-p="3">第3条</span></div></div>
+    <div class="ev-card" data-n="2"><b>读书卡 2</b><br>定每天读多少的计划。<div class="ev-paras"><span class="ev-para" data-p="1">第1条</span><span class="ev-para" data-p="2">第2条</span><span class="ev-para" data-p="3">第3条</span></div></div>
+    <div class="ev-card" data-n="3"><b>读书卡 3</b><br>边读边记人物情节。<div class="ev-paras"><span class="ev-para" data-p="1">第1条</span><span class="ev-para" data-p="2">第2条</span><span class="ev-para" data-p="3">第3条</span></div></div>
+    <div class="ev-card" data-n="4（干扰）"><b>读书卡 4</b><br>把书放到书架上。<div class="ev-paras"><span class="ev-para" data-p="1">第1条</span><span class="ev-para" data-p="2">第2条</span><span class="ev-para" data-p="3">第3条</span></div></div>
+  </div>
+  <div class="al-slots">
+    <div class="ev-slot" data-slot="先"><b>第一步</b>准备</div>
+    <div class="ev-slot" data-slot="接"><b>第二步</b>计划</div>
+    <div class="ev-slot" data-slot="后"><b>第三步</b>读中</div>
+  </div>
+  <div class="trace-why" id="alWhy">点一张卡，再点一个顺序位置放进去；放完补一句依据。</div>
+  <div class="trace-note" id="alNote">已排 0 / 4 · 依据补了 0 / 4（顺序和依据分别记）</div>
+</div>
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">讲一讲 · 把书的内容说出来</h2>
+  <p class="sim-desc">点左边一条读书线索，再点右边一个说法，连成一环。用「先……接着……最后……」讲清——不给分数，只看顺序清不清。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">依据链已连 0 / 3 环（不判对错）</span>
+    <span class="sim-tip" id="simTip">先自己讲一次，再看老师讲</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn" onclick="simNextCase()">换一组</button>
+    <button class="btn" onclick="simReset()">重来</button>
+    <button class="btn-primary" onclick="simDemo()">看老师做一遍</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">左边是书里的信息，右边是讲法；按顺序讲才清楚</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>一本书能记下好几条线索；讲乱了重新排顺序就行。</li>
+    <li>顺序记「怎么排」，依据另记「第几条」，两样分开留痕。</li>
+    <li>讲不清时只说「再读第 X 条」，不给分数。</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 换个角度再认一次</h2>
+  <p class="quiz-hint">三道题都有唯一答案，注意别把方法用反。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 目录能告诉我们什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>书里有哪些章节</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>每句话的意思</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>作者多大</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 做阅读计划的好处是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>读得更快就行</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>没有用</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>能坚持、能读完</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 下面哪种读整本书的习惯最好？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>一口气读过就再也不看。</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>每天读一点，边读边记</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>只看插图不读字</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 换书 · 自己定一个读书计划 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">换书 · 自己定一个读书计划</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    换一本没提示的书《夏洛的网》，自己看目录、定计划、想好记什么，再自查。
+  </p>
+  <p class="teach-text" id="p8s2">
+    顺手把四个<b>易错</b>点看一遍：别不看目录就硬读，别没有计划，别读一半放弃，别读完不交流。
+  </p>
+  <p class="teach-text" id="p8s3">
+    顺手把这一课<b>最容易</b>翻车的地方再看一遍：别一上来就从头硬读、不知计划——先看目录、定每天读多少；也别读一半就丢开。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 有计划</h4>
+    <div class="eq">每天读多少</div>
+    <p>能坚持</p>
+  </div>
+  <div class="card">
+    <h4>② 边读记</h4>
+    <div class="eq">人物情节</div>
+    <p>有收获</p>
+  </div>
+  <div class="card">
+    <h4>③ 会交流</h4>
+    <div class="eq">讲主要内容</div>
+    <p>读得深</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  <div id="trBox">
+  <div class="tr-text">
+    <span class="tr-s">《夏洛的网》讲小猪威尔伯和蜘蛛夏洛的友谊。</span>
+    <span class="tr-s">先定每天读 8 页，再把喜欢的人物记下来。</span>
+  </div>
+  <div class="trace-note" id="trNote">自己定了 0 个计划（不判对错）。换了新书，只剩「定计划」和「边读记」。</div>
+  <div class="tr-cks">
+    <span class="tr-ck">① 我能先看目录定个读书计划</span>
+    <span class="tr-ck">② 我能边读边记人物和情节</span>
+    <span class="tr-ck">③ 我能坚持读完并和人交流</span>
+  </div>
+  <div class="trace-why" id="trAdvice">自查勾不满也照样能翻页：这三条只问「会不会读整本书」，不问「读得多快」。</div>
+</div>
+</div>
+
+<p class="teach-text" id="p8apply">
+  这一页只问「有没有计划、记没记人物情节」，不问「读得多快」。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，把今天学的说清楚</h2>
+  <p class="quiz-hint">五道题都有唯一答案。做完这一页，这一课就装进去了。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 读后讲主要内容，应该讲清？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>只讲页数</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>谁、做了什么、结果怎样</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>只讲封面</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 读书时产生疑问，最好？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>记下来，读完后找答案</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>跳过不想。</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>立刻翻到最后一页</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 整本书阅读和读一篇短文的区别是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>完全一样</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>整书不用记</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>整书更长，需要计划和坚持</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 下面哪项适合写进读书记录？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>我最喜欢的人物和理由</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>今天天气</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>我几点起床</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 这一课最后要养成的习惯是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>随便翻翻。</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>看目录、定计划、边读边记、读后交流</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>只看目录不读书</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">看目录</div>
+        <div class="summary-v4-summary">先了解书</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>看封面知书名作者。</p>
+      <p>看目录知章节结构。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">定计划</div>
+        <div class="summary-v4-summary">每天读一点</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>把厚书分成小块。</p>
+      <p>每天读才能读完。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">边读边记</div>
+        <div class="summary-v4-summary">记人物情节</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>记主要人物和情节。</p>
+      <p>记下疑问带着读。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">读后交流</div>
+        <div class="summary-v4-summary">讲主要内容</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>读完讲讲谁做了什么。</p>
+      <p>与人交流收获更大。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  <div class="my-chain" id="myChain"><b>你留下的依据链</b>　（还没存想法。回到「取证」那一页写一句，它就会出现在这里。）</div>
+把今天读的一本书介绍给同桌：先说你看了目录定了什么计划，再说你记下了哪些人物情节，最后讲讲主要内容。同桌听完也想去读，这次整本书阅读就站住了。下一步学「讨论与发表意见」，把读后的想法说给大家听。
+</p>
+</section>

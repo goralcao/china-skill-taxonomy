@@ -1,6 +1,6 @@
 {
   "name": "学阶图谱 · China Skill Taxonomy",
-  "version": "v0.49.6",
+  "version": "v0.49.7",
   "schemaVersion": 1,
   "generatedAt": "2026-11-17",
   "counts": {
@@ -9,7 +9,7 @@
     "curriculumStandards": 186,
     "clusters": 204,
     "teachingResearchRecords": 1268,
-    "courses": 174,
+    "courses": 193,
     "hardEdges": 952,
     "softEdges": 695
   },
@@ -65,31 +65,31 @@
   },
   "files": {
     "topics.json": {
-      "sha256": "184cc67f1c1105d77797100ad9edda75e467d0d2754c4ad56a655a4f50c23234",
+      "sha256": "c649a51ef50a4dca638e815d0f72f7f0cabe8ea28f40ba23999708fef8f88804",
       "bytes": 1269573
     },
     "dependencies.json": {
-      "sha256": "9dc560c7e6356cd6dd930125e0b8d34cf716a1eed02d39f8c2a9cf96e8470463",
+      "sha256": "2f17d1196847b83e5ff9d0c6953b4f44563f1d81d37da3b08ad3143fedc41b50",
       "bytes": 309972
     },
     "curriculum-standards.json": {
-      "sha256": "09067e1d7bfc984e2a80557891f2b19bd8d091fdf8ae4a7fd740e01188361761",
+      "sha256": "2050ed3864bc87ca5b25dfe38f0ebeb7ecaf86ae8490c993cd842b58d7de75f2",
       "bytes": 91293
     },
     "textbooks.json": {
-      "sha256": "db5a0e0defd93086be81c3c4f4c2ed3056bacfdd78b58f944bc318a615cd21f4",
+      "sha256": "87e3820ae497c9f8a045e3dfef64e34d3d9cce6760c45d4e81c95a4faf4503a8",
       "bytes": 242405
     },
     "clusters.json": {
-      "sha256": "8b0fa03340d28dc9a74de4647476b64a835623600bec68cebc93a79559ae308d",
+      "sha256": "f3803d5af160417687dc3ee89fbb65f6c411fee7f6336cd10fc8cd3ac370a989",
       "bytes": 134162
     },
     "courses.json": {
-      "sha256": "935649b1eed1d89d256d930e41a7da10931cbcd1ac36ed900e4036fb3894b024",
-      "bytes": 389761
+      "sha256": "2109b6488b263857a58f1092defc2f2e505aa68a7212ceac8ad1ac15bb84c6f0",
+      "bytes": 433052
     },
     "teaching-research.json": {
-      "sha256": "b9a9870e920d844941504f38dd9b70544fc85f93991ffed56b4dd8b34a38e9c6",
+      "sha256": "d180acca88894f9f2dc552ed558310ce8867b3b077202bdcd4311fbcdf5e65a5",
       "bytes": 3122781
     }
   }

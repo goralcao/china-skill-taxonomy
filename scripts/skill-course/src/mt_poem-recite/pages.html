@@ -1,0 +1,557 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>背古诗总忘词，怎么记住一幅幅画面？</h1>
+  <p class="sub">一年级语文 · 古诗文与整本书阅读</p>
+  <div class="tags">
+    <span class="tag">语文要素·古诗</span>
+    <span class="tag">诵读积累</span>
+    <span class="tag">2022课标</span>
+    <span class="tag">留下痕迹</span>
+  </div>
+  <div class="cover-fig">
+<svg viewBox="0 0 760 190" width="760" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="背古诗：读准音、想画面、有节奏、记住它">
+  <rect x="0" y="0" width="760" height="190" rx="18" fill="#FFFFFF" opacity=".10"/>
+  <text x="28" y="32" font-size="15" fill="#EAF1F8" font-weight="700">背古诗：读准音、想画面、有节奏、记住它</text>
+  <g>    <rect x="28" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="111" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">读</text>
+    <text x="111" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">读准字音</text>
+    <rect x="212" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="295" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">想</text>
+    <text x="295" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">想画面</text>
+    <rect x="396" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="479" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">节</text>
+    <text x="479" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">读出节奏</text>
+    <rect x="580" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="663" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">背</text>
+    <text x="663" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">记住积累</text>
+  </g>
+</svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">前测 · 先看看你已经知道什么</h2>
+  <p class="quiz-hint">三道题都有唯一答案，答错会告诉你错在哪。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 背古诗前，先做什么最容易记住？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>逐字死记</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>读懂意思、想象画面</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>只看标题</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 《静夜思》的作者是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>李白</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>杜甫</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>白居易</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 「床前明月光」的下一句是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>举头望明月</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>低头思故乡</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>疑是地上霜</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 读进去 · 一首诗，能在脑子里变成几幅画？ ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">读进去 · 一首诗，能在脑子里变成几幅画？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="背诗三步">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">① 读准字音节奏</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">② 想想诗的画面</text>
+  <text x="22" y="86" font-size="15" fill="#3B4FA8" font-weight="700">③ 看着画面背</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">读懂才好背</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    「床前明月光，疑是地上霜。」读这两句，你<b>看见画面</b>了吗？
+  </p>
+  <p class="teach-text" id="p2s2">
+    有人看见月光洒在地上，有人想起家乡。<b>点你脑中出现的画面，这里不判对错。</b>
+  </p>
+  <p class="teach-text" id="p2s3">
+    今天只做一件事：<b>读懂、想画面、有节奏地背</b>。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>读</h4>
+    <div class="eq">读准字音</div>
+    <p>读通</p>
+  </div>
+  <div class="card">
+    <h4>想</h4>
+    <div class="eq">想画面</div>
+    <p>看见景</p>
+  </div>
+  <div class="card">
+    <h4>背</h4>
+    <div class="eq">有节奏</div>
+    <p>记住它</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  <div class="rd-text" id="rdText">
+  <span class="rd-s" data-p="1">床前明月光，</span>
+  <span class="rd-s" data-p="2">疑是地上霜。</span>
+  <span class="rd-s" data-p="3">举头望明月，低头思故乡。</span>
+</div>
+<div class="trace-why" id="rdNote">花 <b>20 秒</b>读《静夜思》，点一句你最有画面的地方。<b>点哪句都行，不判对错。</b></div>
+</div>
+</section>
+
+<!-- ===== p3: 取证 · 给诗句找画面 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">取证 · 给诗句找画面</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="静夜思的画面">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">床前明月光</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">疑是地上霜</text>
+  <text x="22" y="86" font-size="15" fill="#3B4FA8" font-weight="700">举头望明月</text>
+  <text x="22" y="112" font-size="15" fill="#3B4FA8" font-weight="700">低头思故乡</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">四句四幅画</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    先选一句诗，再点一个画面当依据；下面写一句「我仿佛看见……」。两样都留痕。
+  </p>
+  <p class="teach-text" id="p3s2">
+    <b>读得出不等于背得下</b>。这里只报「找几处、写没写」，不说「你想得好」，也不给分数。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>一边读一边想诗句描写的画面，能帮助记忆。</li>
+  <li>「因为」后面要能接上诗句里写了什么景，不能只写「好看」。</li>
+  <li>诗句和画面分开记：框非空、且点到一处画面，才算留痕。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  <div id="evBox">
+  <div class="ev-syms">
+    <button class="ev-sym" type="button" data-s="月">月光</button>
+    <button class="ev-sym" type="button" data-s="霜">霜</button>
+    <button class="ev-sym" type="button" data-s="望">举头</button>
+    <button class="ev-sym" type="button" data-s="？">我想象</button>
+  </div>
+  <div class="ev-text">
+    <span class="ev-s" data-p="1">床前洒满明亮的月光。<i class="ev-badge"></i></span>
+    <span class="ev-s" data-p="2">白白的像地上结了霜。<i class="ev-badge"></i></span>
+    <span class="ev-s" data-p="3">抬头看月亮，低头想家乡。<i class="ev-badge"></i></span>
+  </div>
+  <input class="ev-idea" id="evIdea" placeholder="我仿佛看见……，因为诗里写了……">
+  <div class="trace-why" id="evWhy">选一句诗，再点一幅画面作依据。</div>
+  <div class="trace-note" id="evNote">已找画面 0 处 · 还没写（只记痕迹，不判对错）</div>
+</div>
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连 · 诗句和画面各归各</h2>
+<p class="teach-text" id="p3bs1">左边是诗句，右边是它描写的画面。连完不用交卷，只看能不能说清「为什么」。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 边读边想</h2>
+  <p class="quiz-hint">三道题都有唯一答案，做完再看讲解。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 读古诗时，节奏应该？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>越快越好</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>一字一顿</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>按诗句停顿，读出韵律</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 《静夜思》表达的感情是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>很高兴</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>思念故乡</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>很生气</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 「举头望明月，低头思故乡」中，诗人看到了什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>明月</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>霜</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>故乡</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 对齐 · 把诗句顺序排一排 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">对齐 · 把诗句顺序排一排</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="诵读两要">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">字音读准</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">节奏分明</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">有板有眼地读</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    把 4 句诗按《静夜思》的顺序排好，有一张是别首诗的干扰卡。
+  </p>
+  <p class="teach-text" id="p5s2">
+    放完<b>强制补一步</b>：点诗句下的依据记下。<b>顺序和依据分别记录</b>，都不判对错。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>3 真 + 1 干扰</h4>
+    <div class="eq">按诗的顺序</div>
+    <p>别混别的诗。</p>
+  </div>
+  <div class="card">
+    <h4>看画面</h4>
+    <div class="eq">一句一幅画</div>
+    <p>决定怎么排。</p>
+  </div>
+  <div class="card">
+    <h4>只说再读第 X 句</h4>
+    <div class="eq">不给分数</div>
+    <p>不说对错。</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  <div id="alBox">
+  <div class="al-cards" id="alCards">
+    <div class="ev-card" data-n="1"><b>诗句 1</b><br>床前明月光<div class="ev-paras"><span class="ev-para" data-p="1">第1句</span><span class="ev-para" data-p="2">第2句</span><span class="ev-para" data-p="3">第3句</span></div></div>
+    <div class="ev-card" data-n="2"><b>诗句 2</b><br>疑是地上霜<div class="ev-paras"><span class="ev-para" data-p="1">第1句</span><span class="ev-para" data-p="2">第2句</span><span class="ev-para" data-p="3">第3句</span></div></div>
+    <div class="ev-card" data-n="3"><b>诗句 3</b><br>举头望明月，低头思故乡<div class="ev-paras"><span class="ev-para" data-p="1">第1句</span><span class="ev-para" data-p="2">第2句</span><span class="ev-para" data-p="3">第3句</span></div></div>
+    <div class="ev-card" data-n="4（干扰）"><b>诗句 4</b><br>春眠不觉晓<div class="ev-paras"><span class="ev-para" data-p="1">第1句</span><span class="ev-para" data-p="2">第2句</span><span class="ev-para" data-p="3">第3句</span></div></div>
+  </div>
+  <div class="al-slots">
+    <div class="ev-slot" data-slot="先"><b>第一句</b>开头</div>
+    <div class="ev-slot" data-slot="接"><b>第二句</b>承接</div>
+    <div class="ev-slot" data-slot="后"><b>第三四句</b>结尾</div>
+  </div>
+  <div class="trace-why" id="alWhy">点一句诗，再点顺序位置放进去；放完补一句依据。</div>
+  <div class="trace-note" id="alNote">已排 0 / 4 · 依据补了 0 / 4（顺序和依据分别记）</div>
+</div>
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">诵一诵 · 有节奏地读出来</h2>
+  <p class="sim-desc">点左边一句诗，再点右边一个节奏读法，连成一环。用「读—想—背」串起来——不给分数，只看节奏对不对。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">依据链已连 0 / 3 环（不判对错）</span>
+    <span class="sim-tip" id="simTip">先自己读一次，再看老师读</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn" onclick="simNextCase()">换一组</button>
+    <button class="btn" onclick="simReset()">重来</button>
+    <button class="btn-primary" onclick="simDemo()">看老师做一遍</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">左边是诗句，右边是读法；有节奏才读得有韵味</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>一首诗能想成几幅画；想乱了再读一遍诗句。</li>
+    <li>顺序记「怎么排」，画面另记「第几句」，两样分开留痕。</li>
+    <li>读不清时只说「再读第 X 句」，不给分数。</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 换个角度再认一次</h2>
+  <p class="quiz-hint">三道题都有唯一答案，注意别把方法用反。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 背完古诗，巩固的好方法是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>再读一遍并说说诗意</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>背完就丢开</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>只看一次</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 下面哪句写出了「月光白得像霜」？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>低头思故乡</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>床前明月光</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>疑是地上霜</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 积累古诗的好办法是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>背一次就够</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>理解着背，常常温习</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>只读不背</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 换文 · 自己背一首小诗 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">换文 · 自己背一首小诗</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    换一首没提示的小诗《咏鹅》，自己想画面、按节奏读，试着背下来，再自查。
+  </p>
+  <p class="teach-text" id="p8s2">
+    顺手把四个<b>易错</b>点看一遍：别读错字音，别读破句，别死记硬背，别背完不复习。
+  </p>
+  <p class="teach-text" id="p8s3">
+    顺手把这一课<b>最容易</b>翻车的地方再看一遍：别死记硬背一个个字——先懂诗意、想画面，背得快也记得牢；也别读破句、读错字音。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 读得准</h4>
+    <div class="eq">字音节奏</div>
+    <p>不读破</p>
+  </div>
+  <div class="card">
+    <h4>② 有画面</h4>
+    <div class="eq">想景</div>
+    <p>好记</p>
+  </div>
+  <div class="card">
+    <h4>③ 常温习</h4>
+    <div class="eq">背完复习</div>
+    <p>记得牢</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  <div id="trBox">
+  <div class="tr-text">
+    <span class="tr-s">鹅鹅鹅，曲项向天歌。</span>
+    <span class="tr-s">白毛浮绿水，红掌拨清波。</span>
+  </div>
+  <div class="trace-note" id="trNote">自己读了 0 遍（不判对错）。换了新诗，只剩「想画面」和「读节奏」。</div>
+  <div class="tr-cks">
+    <span class="tr-ck">① 我能读准字音、读出节奏</span>
+    <span class="tr-ck">② 我能想象诗里的画面</span>
+    <span class="tr-ck">③ 我能看着画面把诗背下来</span>
+  </div>
+  <div class="trace-why" id="trAdvice">自查勾不满也照样能翻页：这三条只问「读懂、想画面、有节奏」，不问「背得多快」。</div>
+</div>
+</div>
+
+<p class="teach-text" id="p8apply">
+  这一页只问「想象到画面没、节奏对不对」，不问「背得多快」。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，把今天学的说清楚</h2>
+  <p class="quiz-hint">五道题都有唯一答案。做完这一页，这一课就装进去了。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 读古诗遇到不认识的字，应该？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>跳过不管</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>查清楚读音再读</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>随便读</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 《咏鹅》「白毛浮绿水」的下一句是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>红掌拨清波</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>曲项向天歌</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>鹅鹅鹅</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 想象画面背古诗，是把诗句变成？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>一串数字</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>一个公式</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>一幅幅看得见的景</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 下面哪句是《咏鹅》里的？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>曲项向天歌</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>疑是地上霜</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>更上一层楼</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 这一课最后要养成的习惯是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>背得越快越好</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>读准音、想画面、懂诗意、常温习</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>死记每个字</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">读准音</div>
+        <div class="summary-v4-summary">读通诗句</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>字音读准确。</p>
+      <p>按节奏停顿。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">想画面</div>
+        <div class="summary-v4-summary">一句一景</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>把诗句变成画。</p>
+      <p>有画面好记忆。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">懂诗意</div>
+        <div class="summary-v4-summary">明白意思</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>先懂再背更快。</p>
+      <p>说出诗写什么。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">常温习</div>
+        <div class="summary-v4-summary">背完复习</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>背完回想画面。</p>
+      <p>时常温习才牢。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  <div class="my-chain" id="myChain"><b>你留下的依据链</b>　（还没存想法。回到「取证」那一页写一句，它就会出现在这里。）</div>
+把今天背的一首诗吟给同桌听：先有节奏地读一遍，再说你脑中出现了什么画面，最后说说诗里写了什么。同桌听完也能记住，这次背诗就站住了。下一步学「整本书阅读」，把读一首诗的本领用到读一本书。
+</p>
+</section>

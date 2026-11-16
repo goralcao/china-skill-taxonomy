@@ -1,0 +1,548 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>古人没有拼音，怎么造出「山」「水」？</h1>
+  <p class="sub">一年级语文 · 识字与写字</p>
+  <div class="tags">
+    <span class="tag">语文要素·识字</span>
+    <span class="tag">象形字</span>
+    <span class="tag">2022课标</span>
+    <span class="tag">留下痕迹</span>
+  </div>
+  <div class="cover-fig">
+<svg viewBox="0 0 760 190" width="760" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="象形字：画成画，慢慢变成字">
+  <rect x="0" y="0" width="760" height="190" rx="18" fill="#FFFFFF" opacity=".10"/>
+  <text x="28" y="32" font-size="15" fill="#EAF1F8" font-weight="700">象形字：画成画，慢慢变成字</text>
+  <g>    <rect x="28" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="111" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">看</text>
+    <text x="111" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">看事物</text>
+    <rect x="212" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="295" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">画</text>
+    <text x="295" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">画成形</text>
+    <rect x="396" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="479" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">变</text>
+    <text x="479" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">变笔画</text>
+    <rect x="580" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="663" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">猜</text>
+    <text x="663" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">看图猜字</text>
+  </g>
+</svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">前测 · 先看看你已经知道什么</h2>
+  <p class="quiz-hint">三道题都有唯一答案，答错会告诉你错在哪。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 象形字是怎么造出来的？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>随便写的符号</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>照着事物的样子画下来</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>用拼音拼出来的</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 古文字里圆圆的、中间一点，最可能是哪个字？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>日</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>月</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>山</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 「月」字弯弯的形状，像什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>圆圆的太阳</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>尖尖的山峰</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>弯弯的月牙</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 读进去 · 3 张古画，能猜出是什么字吗？ ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">读进去 · 3 张古画，能猜出是什么字吗？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="象形三步">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">① 看实物什么样</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">② 照样子画下来</text>
+  <text x="22" y="86" font-size="15" fill="#3B4FA8" font-weight="700">③ 越写越像字</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">字是从画变来的</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    古人没有拼音，看到太阳就<b>画个圈</b>，看到山就<b>画几个尖</b>。这叫象形字。
+  </p>
+  <p class="teach-text" id="p2s2">
+    给你 3 张古文字的画：圆圈的、弯月的、三座尖峰的。<b>点一张你猜得出的，这里不判对错。</b>
+  </p>
+  <p class="teach-text" id="p2s3">
+    今天只做一件事：<b>看图猜字，再看字形像在哪里</b>，学会由形想义。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>看</h4>
+    <div class="eq">看实物</div>
+    <p>太阳什么样</p>
+  </div>
+  <div class="card">
+    <h4>画</h4>
+    <div class="eq">照样画</div>
+    <p>画成古文字</p>
+  </div>
+  <div class="card">
+    <h4>变</h4>
+    <div class="eq">变笔画</div>
+    <p>成了今天的字</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  <div class="read-pair" id="readPair">
+  <div class="read-line" data-k="a">古文字「日」：一个圆圈，中间一个点。</div>
+  <div class="read-line" data-k="b">古文字「山」：三个连着的尖峰。</div>
+</div>
+<div class="read-note" id="readNote">看 10 秒，猜猜它们是什么字。<b>点哪张都行，不判对错。</b></div>
+</div>
+</section>
+
+<!-- ===== p3: 看出来 · 圈出字形像事物的地方 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">看出来 · 圈出字形像事物的地方</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="看图猜字">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">圆圆的像太阳→日</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">弯弯的像月亮→月</text>
+  <text x="22" y="86" font-size="15" fill="#3B4FA8" font-weight="700">三座尖峰→山</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">字形像事物的样子</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    下面一排字形里，有的像事物、有的不像。点出你认为是象形字、且说出「像什么」的那几个。
+  </p>
+  <p class="teach-text" id="p3s2">
+    这里只报「已圈出几处」，不标红、不拦路；圈够了才提示往下走。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>象形字照事物外形画，字形和样子像。</li>
+  <li>「日」像太阳，「月」像月牙，「山」像山峰。</li>
+  <li>形声字（如「河」）不是象形，别混进来。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  <div class="ann-line" id="annLine"><span class="ann-w" data-t="日">日</span><span class="ann-w" data-t="山">山</span><span class="ann-w" data-t="水">水</span><span class="ann-w" data-t="河">河</span></div>
+<div class="ann-count" id="annCount">已圈出 0 / 3 处（点错不标红，也不拦你）</div>
+<div class="ann-why" id="annWhy">点一个字，想想它像什么事物。</div>
+<button class="mini-btn ghost" id="annHintBtn" type="button">看看还剩哪几处没被注意到</button>
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连 · 字形和事物各归各</h2>
+<p class="teach-text" id="p3bs1">左边是象形字，右边是它照着画的事物。连完不用交卷，只看能不能说清「像在哪里」。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 边读边想</h2>
+  <p class="quiz-hint">三道题都有唯一答案，做完再看讲解。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 下面哪个字不是典型的象形字？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>日</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>山</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>河（形声字）</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 「山」字三个尖峰，表示？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>三棵树</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>一座座山峰</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>三条河</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 学象形字时，「由形想义」指的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>看字形想起它表示的事物</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>只看笔画数</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>死记读音</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 写下来 · 给三个字写出「像什么」 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">写下来 · 给三个字写出「像什么」</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="识字两用">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">由形想义</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">由义记形</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">形义相连记得牢</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    三行，写出这个字像什么事物。写不出来就点支架块——但尽量自己先想。
+  </p>
+  <p class="teach-text" id="p5s2">
+    这里只判「写没写」，不判好不好；写完看看字形和事物对不对得上。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>第一行</h4>
+    <div class="eq">日像什么</div>
+    <p>圆太阳</p>
+  </div>
+  <div class="card">
+    <h4>第二行</h4>
+    <div class="eq">山像什么</div>
+    <p>尖山峰</p>
+  </div>
+  <div class="card">
+    <h4>第三行</h4>
+    <div class="eq">月像什么</div>
+    <p>弯月牙</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  <div id="draftBox">
+  <textarea class="draft-row" id="draftRow1" placeholder="第一行：日，像 ___"></textarea>
+  <textarea class="draft-row" id="draftRow2" placeholder="第二行：山，像 ___"></textarea>
+  <textarea class="draft-row" id="draftRow3" placeholder="第三行：月，像 ___"></textarea>
+  <div class="draft-chips"><span style="font-size:14px;color:#7A7263">卡住了就点一个，用不用随你：</span><br>
+    <button class="chip-btn" data-ins="圆圆的太阳" type="button">日像太阳</button>
+    <button class="chip-btn" data-ins="三座山峰" type="button">山像山峰</button>
+    <button class="chip-btn" data-ins="弯弯的月牙" type="button">月像月牙</button>
+    <button class="chip-btn" data-ins="流动的水" type="button">水像水纹</button></div>
+  <button class="sample-fold" type="button">写完再看参考稿 ▾</button>
+  <div class="sample-body" id="sampleBody">日像圆圆的太阳。山像三座尖尖的山峰。月像弯弯的月牙。<br>
+    <span style="font-size:13px;color:#7A7263">都说出了字形像什么。<b>先想后看，才不会照抄。</b></span></div>
+  <div style="margin-top:10px"><button class="mini-btn" id="draftSave" type="button">存起来</button></div>
+  <div class="draft-state" id="draftState"></div>
+</div>
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">画一画 · 从实物到字形</h2>
+  <p class="sim-desc">点下面的字块，把它和对应的事物连起来。每连一次就懂一个字——这里不打分，只看字形像不像。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">已添 0 / 3 处（不判对错）</span>
+    <span class="sim-tip" id="simTip">先自己猜一次，再看老师连</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn" onclick="simNextCase()">换一组</button>
+    <button class="btn" onclick="simReset()">重来</button>
+    <button class="btn-primary" onclick="simDemo()">看老师改这一句</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">左边是字形，右边是事物；象形字就是照样子画的</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>象形字照事物外形画，形和义连着。</li>
+    <li>由形想义、由义记形，比死记笔画牢。</li>
+    <li>不是所有汉字都象形，形声字是另一类。</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 换个角度再认一次</h2>
+  <p class="quiz-hint">三道题都有唯一答案，注意别把方法用反。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 「水」的古文字画像什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>流动的水纹</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>一团火</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>一张网</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 象形字在汉字里所占比例？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>绝大多数</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>一个也没有</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>数量不多但很基础</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 看象形字猜意思，主要靠什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>字有几画</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>字形和事物外形的相似</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>读音像什么</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 评一评 · 对着三条标准看自己猜得对不对 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">评一评 · 对着三条标准看自己猜得对不对</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    怎么选都不影响往下走，也不给分数。这一页只输出「下一步该想哪一处」。
+  </p>
+  <p class="teach-text" id="p8s2">
+    三条标准都只问「看没看出字形像事物」，不问「字写得好不好」。
+  </p>
+  <p class="teach-text" id="p8s3">
+    顺手把这一课<b>最容易</b>翻车的地方再看一遍：别把象形字当成纯笔画死记硬背——它本来是幅画，看事物样子就记住了；也别以为所有汉字都是象形字。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 会看图</h4>
+    <div class="eq">由形想义</div>
+    <p>猜出字</p>
+  </div>
+  <div class="card">
+    <h4>② 说像啥</h4>
+    <div class="eq">形义相连</div>
+    <p>讲得出</p>
+  </div>
+  <div class="card">
+    <h4>③ 会区分</h4>
+    <div class="eq">象形和形声</div>
+    <p>不混淆</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  <div id="rubricBox">
+  <div class="rub-dim" data-name="看图猜字"><b>看图猜字</b><br>
+    <span class="rub-level" data-k="合格">合格：知道是象形</span>
+    <span class="rub-level" data-k="良好">良好：猜出常见字</span>
+    <span class="rub-level" data-k="优秀">优秀：能说出像在哪里</span>
+    </div>
+  <div class="rub-dim" data-name="形义联结"><b>形义联结</b><br>
+    <span class="rub-level" data-k="合格">合格：知道像事物</span>
+    <span class="rub-level" data-k="良好">良好：能由形想义</span>
+    <span class="rub-level" data-k="优秀">优秀：能由义记形</span>
+    </div>
+  <div class="rub-dim" data-name="辨字"><b>辨字</b><br>
+    <span class="rub-level" data-k="合格">合格：认得象形字</span>
+    <span class="rub-level" data-k="良好">良好：能举出例子</span>
+    <span class="rub-level" data-k="优秀">优秀：能分清象形与形声</span>
+    </div>
+  <div class="rub-advice" id="rubAdvice">选一级，看看它要求什么。自评不合格也照样能翻页。</div>
+</div>
+</div>
+
+<p class="teach-text" id="p8apply">
+  这一页只问「字形像不像那个东西、能不能由形想义」，不问「字写得好不好看」。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，把今天学的说清楚</h2>
+  <p class="quiz-hint">五道题都有唯一答案。做完这一页，这一课就装进去了。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 「火」的古文字像什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>一块石头</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>跳动的火苗</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>一滴水</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 山下加一横变成「旦」，这属于？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>在象形基础上加符号表意</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>仍是纯象形</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>变成拼音</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 「由义记形」的意思是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>只记意思不管写法</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>只抄十遍</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>知道意思后记住它的写法</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 下面哪一组都是象形字？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>日、月、山、水</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>河、湖、海、洋</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>妈、姐、妹、姑</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 这一课最后要养成的习惯是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>把每个字抄十遍</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>看字形想事物，形义联着记</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>只看拼音</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">画成画</div>
+        <div class="summary-v4-summary">照事物样子</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>象形字照着实物外形画。</p>
+      <p>字形和事物很像。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">慢慢变字</div>
+        <div class="summary-v4-summary">画变笔画</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>古画越写越像字。</p>
+      <p>成了今天的象形字。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">由形想义</div>
+        <div class="summary-v4-summary">看形猜义</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>看字形想起事物。</p>
+      <p>理解着记更牢。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">会区分</div>
+        <div class="summary-v4-summary">象形与形声</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>日月山水是象形。</p>
+      <p>河湖海多是形声。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  <div class="my-sentence" id="mySentence"><b>你写下的那一句</b>　（结算页会显示你在「写下来」那一页存下的句子。）</div>
+把今天学的一个象形字说给同桌听：先说它照着什么事物画，再说字形像在哪里，最后指给同桌看今天的字还留下哪点画的样子。同桌一听就能猜出，这次识字就站住了。下一步学「偏旁部首」，看看字是怎么用部件拼出来的。
+</p>
+</section>

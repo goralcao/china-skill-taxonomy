@@ -1,0 +1,94 @@
+{
+  "topicId": "mt_sent-rhetoric",
+  "title": "「月亮像小船」和「花儿笑了」，各用了什么招？",
+  "template": "explain",
+  "renderer": "sentBuild",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 2,
+  "subject": "语文",
+  "standards": [
+    "chinese-2022:S1:BQ",
+    "chinese-2022:S1:LR"
+  ],
+  "prerequisites": [
+    "mt_sent-complete"
+  ],
+  "next": [
+    "mt_read-appreciate",
+    "mt_write-imagine"
+  ],
+  "objectives": [
+    "认识比喻（用「像、仿佛」打比方）和拟人（把物当人写）",
+    "能分辨比喻句和拟人句，说出把什么比作什么、把什么当人写",
+    "养成读句子想「用了什么招、好在哪里」的习惯"
+  ],
+  "cognitiveAction": "辨析",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "读进去",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "看出来",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "写下来",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "改一处",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "评一评",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

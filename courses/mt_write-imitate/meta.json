@@ -1,0 +1,94 @@
+{
+  "topicId": "mt_write-imitate",
+  "title": "照着一句好句子，怎么仿写出自己的句子？",
+  "template": "explain",
+  "renderer": "draft",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 2,
+  "subject": "语文",
+  "standards": [
+    "chinese-2022:S1:LR"
+  ],
+  "prerequisites": [
+    "mt_write-picture",
+    "mt_sent-ba-bei"
+  ],
+  "next": [
+    "mt_write-diary",
+    "mt_write-revise"
+  ],
+  "objectives": [
+    "读懂例句子的句式特点（如比喻、叠词、排比）",
+    "能照着句式，换上自己的内容仿写句子",
+    "养成「先读懂句式、再换词仿写、写完对照」的习惯"
+  ],
+  "cognitiveAction": "构造",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "起意",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "搭骨架",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "起草",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "改",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "出刊",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

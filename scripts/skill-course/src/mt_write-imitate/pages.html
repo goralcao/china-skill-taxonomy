@@ -1,0 +1,560 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>照着一句好句子，怎么仿写出自己的句子？</h1>
+  <p class="sub">二年级语文 · 习作</p>
+  <div class="tags">
+    <span class="tag">习作·仿写</span>
+    <span class="tag">句子仿写</span>
+    <span class="tag">2022课标</span>
+    <span class="tag">留下痕迹</span>
+  </div>
+  <div class="cover-fig">
+<svg viewBox="0 0 760 190" width="760" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="仿写：读懂句式、换上自己、写对照">
+  <rect x="0" y="0" width="760" height="190" rx="18" fill="#FFFFFF" opacity=".10"/>
+  <text x="28" y="32" font-size="15" fill="#EAF1F8" font-weight="700">仿写：读懂句式、换上自己、写对照</text>
+  <g>    <rect x="28" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="111" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">读</text>
+    <text x="111" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">读懂例句</text>
+    <rect x="212" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="295" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">找</text>
+    <text x="295" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">找句式</text>
+    <rect x="396" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="479" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">换</text>
+    <text x="479" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">换自己的词</text>
+    <rect x="580" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="663" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">查</text>
+    <text x="663" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">对照句式</text>
+  </g>
+</svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">前测 · 先看看你已经知道什么</h2>
+  <p class="quiz-hint">三道题都有唯一答案，答错会告诉你错在哪。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 仿写句子，主要是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>照抄例句</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>照句式换上自己的内容</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>随便写一句</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 例「弯弯的月儿像小船」，这句用了什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>比喻</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>拟人</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>夸张</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 仿「弯弯的月儿像小船」，下面哪句最合适？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>弯弯的月儿像小船。</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>天空很蓝。</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>弯弯的香蕉像月牙</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 读进去 · 一句好句子，能仿出多少句新的？ ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">读进去 · 一句好句子，能仿出多少句新的？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="仿写三步">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">① 读懂例句句式</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">② 想好自己的内容</text>
+  <text x="22" y="86" font-size="15" fill="#3B4FA8" font-weight="700">③ 照句式写出来</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">先懂再仿</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    例句「<b>弯弯的月儿像小船</b>」。照着它，能仿出「弯弯的香蕉像月牙」。句式一样，内容全新。
+  </p>
+  <p class="teach-text" id="p2s2">
+    仿写就是<b>照句式、换内容</b>。<b>点一句你想仿的句子，这里不判好坏。</b>
+  </p>
+  <p class="teach-text" id="p2s3">
+    今天只做一件事：<b>读懂句式、换上自己的话、写完对照</b>。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>读</h4>
+    <div class="eq">读懂例句</div>
+    <p>找句式</p>
+  </div>
+  <div class="card">
+    <h4>换</h4>
+    <div class="eq">换内容</div>
+    <p>用自己的</p>
+  </div>
+  <div class="card">
+    <h4>查</h4>
+    <div class="eq">对照</div>
+    <p>句式对</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  <div id="idBox">
+  <div class="id-wall">
+    <div class="id-card" data-n="1">弯弯的月儿像小船</div>
+    <div class="id-card" data-n="2">小鸟在树上唱歌</div>
+    <div class="id-card" data-n="3">苹果又大又红</div>
+    <div class="id-card" data-n="4">天上的云像棉花</div>
+    <div class="id-card" data-n="5">弯弯的香蕉像月牙</div>
+    <div class="id-card" data-n="6">花儿在风里点头</div>
+  </div>
+  <div class="id-pool"></div>
+  <div class="id-main"></div>
+  <div class="id-words">
+    <span class="id-word">弯弯的</span>
+    <span class="id-word">像</span>
+    <span class="id-word">唱歌</span>
+    <span class="id-word">又……又……</span>
+    <span class="id-word">点头</span>
+    <span class="id-word">仿写</span>
+  </div>
+  <div class="trace-why" id="idWhy">花 <b>8 分钟</b>把 6 张卡片翻一遍：分分哪张是例句、哪张是仿句，再收 1 个你想仿的句式。</div>
+  <div class="trace-note" id="idNote">素材池 0 张 · 主句式 0 / 1 件 · 想用的词 0 / 3（不判好坏）</div>
+</div>
+</div>
+</section>
+
+<!-- ===== p3: 搭骨架 · 给仿写排顺序 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">搭骨架 · 给仿写排顺序</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="仿写例子">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">例：弯弯的月儿像小船</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">仿：弯弯的香蕉像月牙</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">句式一样内容新</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    给三格排顺序：读例句、找句式、换新内容。每格填一句「这格做什么」，再点哪格最关键。
+  </p>
+  <p class="teach-text" id="p3s2">
+    这里只报「三格填了几格、关键点了没」，<b>不判好坏</b>，填不完整也能往下走。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>顺序：先读懂例句，再找句式，最后换上自己的内容。</li>
+  <li>每格填一句功能；「换内容」这格最关键。</li>
+  <li>关键点一下就行，不用写理由。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  <div id="boBox">
+  <div class="bo-rows">
+    <div class="bo-row"><span class="bo-up">↑ 上移</span><span class="bo-txt">读例句：这句什么句式</span><input class="bo-fn" placeholder="这格做什么___"><span class="bo-level">详</span><span class="bo-level">略</span></div>
+    <div class="bo-row"><span class="bo-up">↑ 上移</span><span class="bo-txt">找句式：像／拟人／又…又…</span><input class="bo-fn" placeholder="这格做什么___"><span class="bo-level">详</span><span class="bo-level">略</span></div>
+    <div class="bo-row"><span class="bo-up">↑ 上移</span><span class="bo-txt">换内容：写自己的事物（关键）</span><input class="bo-fn" placeholder="这格做什么___"><span class="bo-level">详</span><span class="bo-level">略</span></div>
+  </div>
+  <div class="trace-why" id="boWhy">每格填一句「这格做什么」，再点关键。换内容这步最关键。</div>
+  <div class="trace-note" id="boNote">三格功能 0 / 3 · 关键 0 / 3（不判好坏，填不完整也能往下走）</div>
+</div>
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连 · 句式和仿句各归各</h2>
+<p class="teach-text" id="p3bs1">左边是例句，右边是仿句。连完不用交卷，只看能不能说清「句式一样在哪」。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 边读边想</h2>
+  <p class="quiz-hint">三道题都有唯一答案，做完再看讲解。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 仿写前先要做什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>直接写</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>只看字数</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>读懂例句的句式特点</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 例「小鸟在树上唱歌」用了拟人或比喻中的哪种？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>比喻</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>拟人</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>都没有</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 仿写「……像……」句式，关键是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>两个事物要有相似点</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>随便找个词</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>写长一点</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 起草 · 照句式写自己的句子 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">起草 · 照句式写自己的句子</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="仿写两查">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">句式对不对</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">是不是自己的话</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">照着写不像抄</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    「仿哪句」「什么句式」做成填空条前置锁定；三格各顶一句「这格写什么」。
+  </p>
+  <p class="teach-text" id="p5s2">
+    这里<b>只判写没写，不判好坏</b>。<b>先写后看参考句</b>——这一页没有范文。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>格式条</h4>
+    <div class="eq">例句＋句式</div>
+    <p>先定下来</p>
+  </div>
+  <div class="card">
+    <h4>三格</h4>
+    <div class="eq">读找换</div>
+    <p>各写各的</p>
+  </div>
+  <div class="card">
+    <h4>存本</h4>
+    <div class="eq">写没写看得出</div>
+    <p>好坏不打分</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  <div id="ddBox">
+  <div class="dd-head">
+    <input id="ddH1" placeholder="我仿的例句，如 月儿像小船">
+    <input id="ddH2" placeholder="句式，如 ……像……">
+  </div>
+  <div class="trace-why" id="ddHeadState">先填「仿哪句」和「什么句式」，把句式定下来；没填也照样能写（不拦路）。</div>
+  <div class="dd-row"><b>读例句 · 什么句式</b><textarea id="ddR1" placeholder="写出句式特点"></textarea></div>
+  <div class="dd-row"><b>找句式 · 像／拟人／又…又…</b><textarea id="ddR2" placeholder="一句点明"></textarea></div>
+  <div class="dd-row"><b>换内容 · 写自己的（详）</b><textarea id="ddR3" placeholder="这里写出仿句"></textarea></div>
+  <button class="mini-btn" id="ddSave" type="button">存进我的本子</button>
+  <div class="trace-note" id="ddNote">三格写了 0 / 3 行（只判写没写，不判好坏）。这里没有范文。</div>
+  <div class="trace-why" id="ddState"></div>
+</div>
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">改 · 对照句式改句子</h2>
+  <p class="sim-desc">先点右边一条检查项，全文高亮可疑句；再点左边一句，才算记下一处改动。增删改调换，不给分数。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">已改 0 / 4 处（改的是句子，不是错别字）</span>
+    <span class="sim-tip" id="simTip">先自己试一次，再看老师改这句</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn" onclick="simNextCase()">换一组</button>
+    <button class="btn" onclick="simReset()">重来</button>
+    <button class="btn-primary" onclick="simDemo()">看老师做一遍</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">按句式检查；错别字不在这张单子上，好坏也不打分</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>点清单只算看到问题，点中句子才算改过。</li>
+    <li>能提供的只有事实：这个句式没照对、内容还是例句的。</li>
+    <li>不判情感、不判立意；字数只说「还差 X 字」。</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 换个角度再认一次</h2>
+  <p class="quiz-hint">三道题都有唯一答案，注意别把方法用反。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 下面哪句是照「又……又……」仿写的？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>苹果又大又红</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>苹果很好吃。</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>红红的苹果。</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 仿写和抄写的区别是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>完全一样</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>仿写不用看例句</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>仿写换内容，抄写照搬</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 例「天上的云像棉花」，仿写哪句更好？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>天上的云像棉花。</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>地上的花像星星</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>天气很好。</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 出刊 · 对照句式自查 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">出刊 · 对照句式自查</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    把仿句署上自己的名字，对着三条标准自查，再点「发布」。勾不满也能出刊。
+  </p>
+  <p class="teach-text" id="p8s2">
+    顺手把四个<b>易错</b>点看一遍：别照抄例句，别不看句式，别换个标点就算，别忘记对照。
+  </p>
+  <p class="teach-text" id="p8s3">
+    顺手把这一课<b>最容易</b>翻车的地方再看一遍：别照抄例句内容（那不是仿写），也别完全不看句式乱写——仿写是「照句式、换内容」。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 句式对</h4>
+    <div class="eq">照例句</div>
+    <p>结构一样</p>
+  </div>
+  <div class="card">
+    <h4>② 内容新</h4>
+    <div class="eq">自己的话</div>
+    <p>不照抄</p>
+  </div>
+  <div class="card">
+    <h4>③ 会对照</h4>
+    <div class="eq">查句式</div>
+    <p>改到位</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  <div id="pbBox">
+  <div class="pb-page" id="pbPage">（还没起草。回到「起草」那一页写三格，它就会出现在这页上。）</div>
+  <input class="pb-sign" id="pbSign" placeholder="署名（写不写都行）">
+  <div class="pb-cks">
+    <span class="pb-ck">① 我的仿句和例句句式一样</span>
+    <span class="pb-ck">② 我换上了自己的内容，不是照抄</span>
+    <span class="pb-ck">③ 我对照例句检查过，改到了位</span>
+  </div>
+  <button class="mini-btn" id="pbGo" type="button">发布我的一页书</button>
+  <div class="trace-why" id="pbAdvice">三条只问「句式对不对、内容新不新」，不问「美不美」——勾不满也照样能出刊。</div>
+  <div class="trace-note" id="pbState"></div>
+</div>
+</div>
+
+<p class="teach-text" id="p8apply">
+  这一页只问「句式对不对、有没有换成自己的内容」，不问「句子多华丽」。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，把今天学的说清楚</h2>
+  <p class="quiz-hint">五道题都有唯一答案。做完这一页，这一课就装进去了。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 仿写后对照例句，主要看？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>字数一不一样</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>句式对不对、内容新不新</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>标点多少</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 仿写能帮我们什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>学习好句子的写法，积累表达</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>不用动脑</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>写得更快</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 例「小溪唱着歌向前跑」，仿写用拟人，哪句合适？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>小溪在流水。</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>水很清。</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>花儿在风里点头</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 仿写时「换成自己的内容」指的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>写自己想到的新事物</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>把例句抄一遍</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>只换个标点</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 这一课最后要养成的习惯是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>照抄例句。</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>读懂句式、换上自己、写完对照</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>随便乱写。</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">读例句</div>
+        <div class="summary-v4-summary">找句式</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>先读懂例句结构。</p>
+      <p>是像／拟人／又…又…。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">换内容</div>
+        <div class="summary-v4-summary">用自己的</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>['换上自己的事物。', '不是照抄例句。']</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">仿比喻</div>
+        <div class="summary-v4-summary">找相似点</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>「……像……」句式。</p>
+      <p>两样要有相似点。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">写完对照</div>
+        <div class="summary-v4-summary">查句式</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>对照例句检查。</p>
+      <p>句式对内容新才行。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  <div class="my-page" id="myPage"><b>我的一页书</b>　（还没起草。回到「起草」那一页写三格，它就会出现在这里。）</div>
+把今天仿写的一句读给同桌听：先说你仿的是哪句、什么句式，再说你换上了什么新内容，最后让同桌对照例句看看句式对不对。同桌说「句式一样、内容新鲜」，这次仿写就站住了。
+</p>
+</section>

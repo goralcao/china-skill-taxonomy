@@ -1,0 +1,95 @@
+{
+  "topicId": "mt_char-radical",
+  "title": "「江、河、湖」都有三点水，藏着什么秘密？",
+  "template": "explain",
+  "renderer": "writeChar",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 1,
+  "subject": "语文",
+  "standards": [
+    "chinese-2022:S1:BQ"
+  ],
+  "prerequisites": [
+    "mt_char-pictographic"
+  ],
+  "next": [
+    "mt_char-writing",
+    "mt_char-radical-lookup",
+    "mt_char-homophone",
+    "mt_word-understand"
+  ],
+  "objectives": [
+    "认识常见偏旁（三点水、提手旁、木字旁等），知道偏旁常表示意思",
+    "能按偏旁给字归类，发现同一偏旁的字意思上有联系",
+    "养成「看偏旁猜意思、记字形」的识字习惯"
+  ],
+  "cognitiveAction": "比较",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "读进去",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "看出来",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "写下来",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "改一处",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "评一评",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

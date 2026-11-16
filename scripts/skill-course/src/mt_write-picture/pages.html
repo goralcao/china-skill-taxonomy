@@ -1,0 +1,561 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>看着一幅图，怎么写清楚「什么时候谁在干什么」？</h1>
+  <p class="sub">一年级语文 · 习作</p>
+  <div class="tags">
+    <span class="tag">习作·看图写话</span>
+    <span class="tag">低年级写话</span>
+    <span class="tag">2022课标</span>
+    <span class="tag">留下痕迹</span>
+  </div>
+  <div class="cover-fig">
+<svg viewBox="0 0 760 190" width="760" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="看图写话：看图、定要素、写通顺、对照查">
+  <rect x="0" y="0" width="760" height="190" rx="18" fill="#FFFFFF" opacity=".10"/>
+  <text x="28" y="32" font-size="15" fill="#EAF1F8" font-weight="700">看图写话：看图、定要素、写通顺、对照查</text>
+  <g>    <rect x="28" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="111" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">看</text>
+    <text x="111" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">看懂图</text>
+    <rect x="212" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="295" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">定</text>
+    <text x="295" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">定四要素</text>
+    <rect x="396" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="479" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">写</text>
+    <text x="479" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">写几句</text>
+    <rect x="580" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="663" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">查</text>
+    <text x="663" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">对照图</text>
+  </g>
+</svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">前测 · 先看看你已经知道什么</h2>
+  <p class="quiz-hint">三道题都有唯一答案，答错会告诉你错在哪。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 看图写话前，第一步应该？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>立刻写</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>先整体看懂图意</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>只看一个角</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 看图写话常说的四要素是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>时间、地点、人物、事情</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>字数标点段落</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>颜色形状大小</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 「公园里，小朋友在放风筝。」缺了哪个要素？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>地点</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>人物</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>时间</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 读进去 · 一幅图里，能找到哪 4 样？ ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">读进去 · 一幅图里，能找到哪 4 样？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="看图四要素">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">什么时候</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">谁</text>
+  <text x="22" y="86" font-size="15" fill="#3B4FA8" font-weight="700">在哪里</text>
+  <text x="22" y="112" font-size="15" fill="#3B4FA8" font-weight="700">干什么</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">四样齐，话就完整</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    看一幅图：<b>春天，公园里，几个小朋友在放风筝</b>。你能从图里找出几样信息？
+  </p>
+  <p class="teach-text" id="p2s2">
+    看懂图要抓四样：<b>什么时候、谁、在哪里、干什么</b>。<b>点你最先看到的一样，这里不判好坏。</b>
+  </p>
+  <p class="teach-text" id="p2s3">
+    今天只做一件事：<b>看图、抓四要素、写几句通顺的话</b>。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>看</h4>
+    <div class="eq">看懂图</div>
+    <p>整体看</p>
+  </div>
+  <div class="card">
+    <h4>定</h4>
+    <div class="eq">四要素</div>
+    <p>时地人事</p>
+  </div>
+  <div class="card">
+    <h4>写</h4>
+    <div class="eq">写几句</div>
+    <p>要通顺</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  <div id="idBox">
+  <div class="id-wall">
+    <div class="id-card" data-n="1">春天的一个星期天</div>
+    <div class="id-card" data-n="2">公园里</div>
+    <div class="id-card" data-n="3">小明和同学们</div>
+    <div class="id-card" data-n="4">放风筝</div>
+    <div class="id-card" data-n="5">风筝飞得很高</div>
+    <div class="id-card" data-n="6">大家很开心</div>
+  </div>
+  <div class="id-pool"></div>
+  <div class="id-main"></div>
+  <div class="id-words">
+    <span class="id-word">春天</span>
+    <span class="id-word">星期天</span>
+    <span class="id-word">公园</span>
+    <span class="id-word">放风筝</span>
+    <span class="id-word">飞得高</span>
+    <span class="id-word">开心</span>
+  </div>
+  <div class="trace-why" id="idWhy">花 <b>8 分钟</b>把 6 张要素卡翻一遍：分分哪张是时间、哪张是人物，再收 1 幅你想写的图。</div>
+  <div class="trace-note" id="idNote">素材池 0 张 · 主图 0 / 1 件 · 想写的词 0 / 3（不判好坏）</div>
+</div>
+</div>
+</section>
+
+<!-- ===== p3: 搭骨架 · 给四要素排顺序 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">搭骨架 · 给四要素排顺序</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="写话顺序">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">先看整体</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">再看细节</text>
+  <text x="22" y="86" font-size="15" fill="#3B4FA8" font-weight="700">最后写下来</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">看懂再写</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    给三格排顺序：时间地点、人物、事情。每格填一句「这格要写什么」，再点一下哪格详写。
+  </p>
+  <p class="teach-text" id="p3s2">
+    这里只报「三格填了几格、详略点了几格」，<b>不判好坏</b>，填不完整也能往下走。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>顺序：什么时候、在哪里在前，谁和干什么跟上。</li>
+  <li>每格填一句功能，让三句各有任务；事情那格通常详写。</li>
+  <li>详略点一下就行，不用写理由。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  <div id="boBox">
+  <div class="bo-rows">
+    <div class="bo-row"><span class="bo-up">↑ 上移</span><span class="bo-txt">时间地点：什么时候、在哪里</span><input class="bo-fn" placeholder="这格要写什么___"><span class="bo-level">详</span><span class="bo-level">略</span></div>
+    <div class="bo-row"><span class="bo-up">↑ 上移</span><span class="bo-txt">人物：有谁</span><input class="bo-fn" placeholder="这格要写什么___"><span class="bo-level">详</span><span class="bo-level">略</span></div>
+    <div class="bo-row"><span class="bo-up">↑ 上移</span><span class="bo-txt">事情：在干什么（详写）</span><input class="bo-fn" placeholder="这格要写什么___"><span class="bo-level">详</span><span class="bo-level">略</span></div>
+  </div>
+  <div class="trace-why" id="boWhy">每格填一句「这格写什么」，再点详略。事情部分通常详写，时间地点略写。</div>
+  <div class="trace-note" id="boNote">三格功能 0 / 3 · 详略 0 / 3（不判好坏，填不完整也能往下走）</div>
+</div>
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连 · 四要素各归各</h2>
+<p class="teach-text" id="p3bs1">左边是四要素，右边是它回答的问题。连完不用交卷，只看能不能说清「为什么」。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 边读边想</h2>
+  <p class="quiz-hint">三道题都有唯一答案，做完再看讲解。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 写看图写话，句子应该？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>越短越好。</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>越长越好。</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>通顺、意思清楚</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 「春天的一个星期天，小明在公园里放风筝。」要素全吗？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>缺人物。</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>全，时间地点人物事都有</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>什么都不缺</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 看图中人物在做什么，主要看？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>动作和表情</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>衣服颜色。</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>背景大小。</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 起草 · 把这幅图写成几句 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">起草 · 把这幅图写成几句</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="写完两查">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">四要素齐不齐</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">句子通不通</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">对照图补一补</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    「写哪幅图」「什么时候在哪里」做成填空条前置锁定；三格各顶一句「这格写什么」。
+  </p>
+  <p class="teach-text" id="p5s2">
+    这里<b>只判写没写，不判好坏</b>。<b>先写后看参考话</b>——这一页没有范文。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>格式条</h4>
+    <div class="eq">图＋时间地点</div>
+    <p>先定下来</p>
+  </div>
+  <div class="card">
+    <h4>三格</h4>
+    <div class="eq">人物和事</div>
+    <p>各写各的</p>
+  </div>
+  <div class="card">
+    <h4>存本</h4>
+    <div class="eq">写没写看得出</div>
+    <p>好坏不打分</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  <div id="ddBox">
+  <div class="dd-head">
+    <input id="ddH1" placeholder="我写的图，如 放风筝">
+    <input id="ddH2" placeholder="时间地点，如 春天星期天在公园">
+  </div>
+  <div class="trace-why" id="ddHeadState">先填「写哪幅图」和「时间地点」，把要素定下来；没填也照样能写（不拦路）。</div>
+  <div class="dd-row"><b>时间地点 · 什么时候在哪里</b><textarea id="ddR1" placeholder="写清时间地点"></textarea></div>
+  <div class="dd-row"><b>人物 · 有谁（略）</b><textarea id="ddR2" placeholder="一句交代"></textarea></div>
+  <div class="dd-row"><b>事情 · 在干什么（详）</b><textarea id="ddR3" placeholder="这里多写两行，写具体"></textarea></div>
+  <button class="mini-btn" id="ddSave" type="button">存进我的本子</button>
+  <div class="trace-note" id="ddNote">三格写了 0 / 3 行（只判写没写，不判好坏）。这里没有范文。</div>
+  <div class="trace-why" id="ddState"></div>
+</div>
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">改 · 对照图，改的是句子</h2>
+  <p class="sim-desc">先点右边一条检查项，全文高亮可疑句；再点左边一句，才算记下一处改动。增删改调换，不给分数。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">已改 0 / 4 处（改的是句子，不是错别字）</span>
+    <span class="sim-tip" id="simTip">先自己试一次，再看老师改这句</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn" onclick="simNextCase()">换一组</button>
+    <button class="btn" onclick="simReset()">重来</button>
+    <button class="btn-primary" onclick="simDemo()">看老师做一遍</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">按四要素检查；错别字不在这张单子上，好坏也不打分</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>点清单只算看到问题，点中句子才算改过。</li>
+    <li>能提供的只有事实：这个要素没写、事情只用了一句话。</li>
+    <li>不判情感、不判立意；字数只说「还差 X 字」。</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 换个角度再认一次</h2>
+  <p class="quiz-hint">三道题都有唯一答案，注意别把方法用反。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 写完看图写话，最好？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>对照图检查要素齐不齐</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>立刻交卷。</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>不看图了。</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 下面哪句最像看图写话？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>今天真开心。</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>一只小狗。</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>放学后，小红在教室里擦黑板。</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 图中是下雨天，写话时可以写？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>「天气不错」。</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>「下雨了，他打着伞回家」</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>「太阳很圆」。</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 出刊 · 对照图和四要素自查 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">出刊 · 对照图和四要素自查</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    把三格拼成几句话，署上自己的名字，对着三条标准自查，再点「发布」。勾不满也能出刊。
+  </p>
+  <p class="teach-text" id="p8s2">
+    顺手把四个<b>易错</b>点看一遍：别没看懂图，别漏要素，别写空话，别句子不通。
+  </p>
+  <p class="teach-text" id="p8s3">
+    顺手把这一课<b>最容易</b>翻车的地方再看一遍：别没看懂图就急着写，也别只写「他们在玩」这种空话——要说清谁、在哪、干什么。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 四要素全</h4>
+    <div class="eq">时地人事</div>
+    <p>不缺</p>
+  </div>
+  <div class="card">
+    <h4>② 事情具体</h4>
+    <div class="eq">动作表情</div>
+    <p>不空</p>
+  </div>
+  <div class="card">
+    <h4>③ 句子通</h4>
+    <div class="eq">读得顺</div>
+    <p>有意思</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  <div id="pbBox">
+  <div class="pb-page" id="pbPage">（还没起草。回到「起草」那一页写三格，它就会出现在这页上。）</div>
+  <input class="pb-sign" id="pbSign" placeholder="署名（写不写都行）">
+  <div class="pb-cks">
+    <span class="pb-ck">① 时间、地点、人物、事情都写到了</span>
+    <span class="pb-ck">② 事情部分写了动作或表情，不是空话</span>
+    <span class="pb-ck">③ 句子读得通顺，别人能看懂</span>
+  </div>
+  <button class="mini-btn" id="pbGo" type="button">发布我的一页书</button>
+  <div class="trace-why" id="pbAdvice">三条只问「写得清不清楚」，不问「感不感人」——勾不满也照样能出刊。</div>
+  <div class="trace-note" id="pbState"></div>
+</div>
+</div>
+
+<p class="teach-text" id="p8apply">
+  这一页只问「四要素齐不齐、句子通不通」，不问「写得多感人」。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，把今天学的说清楚</h2>
+  <p class="quiz-hint">五道题都有唯一答案。做完这一页，这一课就装进去了。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 看图写话的要点，说话顺序最好是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>想到哪写到哪。</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>按看到什么就写什么，有条理</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>倒着写。</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 「他们玩得很开心」要写具体，可以加？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>他们做了什么、笑得怎样</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>再多写几个开心。</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>加感叹号。</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 两幅图的写话，要注意？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>两幅都写一样。</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>只写一幅。</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>写出图与图之间的变化</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 看图写话里「什么时候」属于？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>时间要素</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>地点要素。</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>人物要素。</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 这一课最后要养成的习惯是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>随便写几句。</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>看懂图、抓四要素、写通顺、对照查</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>只看不想</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">先看图</div>
+        <div class="summary-v4-summary">整体看懂</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>先看懂画的是什么事。</p>
+      <p>别没看懂就写。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">抓四要素</div>
+        <div class="summary-v4-summary">时间地点人事</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>['什么时候、在哪。', '谁、干什么。']</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">写通顺</div>
+        <div class="summary-v4-summary">一句句清楚</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>['按观察顺序写。', '事情部分写具体。']</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">对照查</div>
+        <div class="summary-v4-summary">看图补漏</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>写完回来看图。</p>
+      <p>缺要素就补上。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  <div class="my-page" id="myPage"><b>我的一页书</b>　（还没起草。回到「起草」那一页写三格，它就会出现在这里。）</div>
+把今天写的一段看图写话读给同桌听，请他说出时间、地点、人物和事情。四样他都说得出、句子也通顺，这段写话就站住了。下一步学「仿写与写话」，学着照着好句子自己写。
+</p>
+</section>

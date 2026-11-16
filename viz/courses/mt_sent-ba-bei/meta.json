@@ -1,0 +1,92 @@
+{
+  "topicId": "mt_sent-ba-bei",
+  "title": "「我关门」换成把字句和被字句，怎么换？",
+  "template": "explain",
+  "renderer": "transform",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 2,
+  "subject": "语文",
+  "standards": [
+    "chinese-2022:S1:BQ"
+  ],
+  "prerequisites": [
+    "mt_sent-complete"
+  ],
+  "next": [
+    "mt_write-imitate"
+  ],
+  "objectives": [
+    "认识把字句和被字句的结构，知道谁做的是、谁被怎么样",
+    "能把一般句改写成把字句和被字句，保持意思不变",
+    "养成改写后读一遍、核对意思没变的习惯"
+  ],
+  "cognitiveAction": "变换",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "读进去",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "看出来",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "写下来",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "改一处",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "评一评",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

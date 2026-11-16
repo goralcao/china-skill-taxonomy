@@ -1,0 +1,97 @@
+{
+  "topicId": "mt_read-silent",
+  "title": "不出声地读，怎么才能读懂又不走神？",
+  "template": "explain",
+  "renderer": "predict",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 2,
+  "subject": "语文",
+  "standards": [
+    "chinese-2022:S1:LR"
+  ],
+  "prerequisites": [
+    "mt_read-aloud"
+  ],
+  "next": [
+    "mt_read-mark",
+    "mt_read-predict",
+    "mt_read-speed",
+    "mt_read-main",
+    "mt_book-reading",
+    "mt_oral-discuss"
+  ],
+  "objectives": [
+    "做到默读时不出声、不指读，用眼睛看、用脑子想",
+    "能边默读边思考，抓住关键信息",
+    "养成专注默读、读后能说出内容的习惯"
+  ],
+  "cognitiveAction": "逼近",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "起疑",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "取证",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "对齐",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "说清",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "换文",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

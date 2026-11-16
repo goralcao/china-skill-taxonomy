@@ -1,0 +1,95 @@
+{
+  "topicId": "mt_word-understand",
+  "title": "读到不懂的词，怎么自己弄明白意思？",
+  "template": "explain",
+  "renderer": "predict",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 2,
+  "subject": "语文",
+  "standards": [
+    "chinese-2022:S1:BQ"
+  ],
+  "prerequisites": [
+    "mt_char-radical",
+    "mt_char-radical-lookup"
+  ],
+  "next": [
+    "mt_word-accumulate",
+    "mt_word-idiom",
+    "mt_read-mark"
+  ],
+  "objectives": [
+    "学会联系上下文、结合生活、找近义词等理解词语的方法",
+    "遇到不懂的词能试着自己想办法弄懂",
+    "养成「猜一猜、查一查、放到句子里验一验」的习惯"
+  ],
+  "cognitiveAction": "逼近",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "起疑",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "取证",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "对齐",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "说清",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "换文",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "存起来",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

@@ -1,0 +1,550 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>不认识的字，怎么在字典里找到它？</h1>
+  <p class="sub">二年级语文 · 识字与写字</p>
+  <div class="tags">
+    <span class="tag">语文要素·识字</span>
+    <span class="tag">部首查字法</span>
+    <span class="tag">2022课标</span>
+    <span class="tag">留下痕迹</span>
+  </div>
+  <div class="cover-fig">
+<svg viewBox="0 0 760 190" width="760" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="部首查字：定部首、数笔画、查检字、翻正文">
+  <rect x="0" y="0" width="760" height="190" rx="18" fill="#FFFFFF" opacity=".10"/>
+  <text x="28" y="32" font-size="15" fill="#EAF1F8" font-weight="700">部首查字：定部首、数笔画、查检字、翻正文</text>
+  <g>    <rect x="28" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="111" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">定</text>
+    <text x="111" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">定部首</text>
+    <rect x="212" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="295" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">数</text>
+    <text x="295" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">数余画</text>
+    <rect x="396" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="479" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">查</text>
+    <text x="479" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">检字表</text>
+    <rect x="580" y="52" width="166" height="112" rx="12" fill="#FFFFFF" opacity=".14"/>
+    <text x="663" y="112" font-size="34" fill="#FFFFFF" text-anchor="middle" font-weight="700">翻</text>
+    <text x="663" y="150" font-size="14" fill="#CFE3D6" text-anchor="middle">翻正文</text>
+  </g>
+</svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">前测 · 先看看你已经知道什么</h2>
+  <p class="quiz-hint">三道题都有唯一答案，答错会告诉你错在哪。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 部首查字法适合查哪种字？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>只会读不会写的字</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>知道字形、不知道读音的字</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>既不知音也不知形的字</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 用部首查字法，第一步是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>确定这个字的部首</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>直接翻正文</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>数整个字的笔画</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 「河」字的部首是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>可</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>整个字</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>三点水（氵）</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 读进去 · 一个不认识的字，4 步怎么查？ ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">读进去 · 一个不认识的字，4 步怎么查？</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="部首查字四步">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">① 定部首</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">② 数除部首外几画</text>
+  <text x="22" y="86" font-size="15" fill="#3B4FA8" font-weight="700">③ 查检字表</text>
+  <text x="22" y="112" font-size="15" fill="#3B4FA8" font-weight="700">④ 翻正文页码</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">不认识的字用部首查</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    读课外书遇到一个<b>不认识的字</b>，不会读音，音序查字法用不上。这时用<b>部首查字法</b>。
+  </p>
+  <p class="teach-text" id="p2s2">
+    它分四步：定部首、数余画、查检字表、翻正文。<b>点一步你最想弄清的，这里不判对错。</b>
+  </p>
+  <p class="teach-text" id="p2s3">
+    今天只做一件事：<b>按四步查字</b>，不认识的字也能自己查出来。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>定</h4>
+    <div class="eq">定部首</div>
+    <p>找准部件</p>
+  </div>
+  <div class="card">
+    <h4>数</h4>
+    <div class="eq">数余画</div>
+    <p>除部首外</p>
+  </div>
+  <div class="card">
+    <h4>查</h4>
+    <div class="eq">检字表</div>
+    <p>按笔画找</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  <div class="read-pair" id="readPair">
+  <div class="read-line" data-k="a">「河」：不认识，只知道长这样。</div>
+  <div class="read-line" data-k="b">「花」：不认识，看得出有草字头。</div>
+</div>
+<div class="read-note" id="readNote">看 10 秒，想想先找什么。<b>点哪句都行，不判对错。</b></div>
+</div>
+</section>
+
+<!-- ===== p3: 看出来 · 圈出正确的部首 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">看出来 · 圈出正确的部首</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="找准部首">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">上下查上、左右查左</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">外形查外、无部查起笔</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">部首找对才查得到</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    下面几个字里，有的部首找对了、有的找错了。点出你认为是正确部首的那几个字。
+  </p>
+  <p class="teach-text" id="p3s2">
+    这里只报「已圈出几处」，不标红、不拦路；圈够了才提示往下走。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li>左右结构查左边（河查氵），上下结构查上边（花查艹）。</li>
+  <li>半包围查外框（问查门），独体字查起笔。</li>
+  <li>部首找对了，数余画、翻检字表才不会错。</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  <div class="ann-line" id="annLine"><span class="ann-w" data-t="河">河</span><span class="ann-w" data-t="花">花</span><span class="ann-w" data-t="问">问</span><span class="ann-w" data-t="可">可</span></div>
+<div class="ann-count" id="annCount">已圈出 0 / 3 处（点错不标红，也不拦你）</div>
+<div class="ann-why" id="annWhy">点一个字，想想它的部首是什么。</div>
+<button class="mini-btn ghost" id="annHintBtn" type="button">看看还剩哪几处没被注意到</button>
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连 · 结构和部首位置各归各</h2>
+<p class="teach-text" id="p3bs1">左边是字的结构，右边是部首一般在哪。连完不用交卷，只看能不能说清「为什么」。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 边读边想</h2>
+  <p class="quiz-hint">三道题都有唯一答案，做完再看讲解。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 找到部首后，要数什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>整个字的笔画数</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>部首的笔画数</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>除去部首外剩下的笔画数</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 左右结构的字，部首一般在？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>右边</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>左边</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>中间</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 上下结构的字，部首一般在？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>上边</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>下边</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>中间</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 写下来 · 给三个字写出部首和余画 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">写下来 · 给三个字写出部首和余画</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+<svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="查后两核对">
+  <rect x="8" y="10" width="284" height="128" rx="12" fill="#E8ECF8" stroke="#7A8FD0"/>
+    <text x="22" y="34" font-size="22" fill="#3B4FA8" font-weight="700">字形对不对</text>
+  <text x="22" y="60" font-size="15" fill="#3B4FA8" font-weight="700">读音意思对不对</text>
+  <text x="22" y="150" font-size="13" fill="#4A463E">查完再读一遍</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    三行，写出这个字的部首和除去部首后的笔画数。写不出来就点支架块。
+  </p>
+  <p class="teach-text" id="p5s2">
+    这里只判「写没写」，不判好不好；写完看看部首对不对。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>第一行</h4>
+    <div class="eq">河</div>
+    <p>部首氵余5画</p>
+  </div>
+  <div class="card">
+    <h4>第二行</h4>
+    <div class="eq">花</div>
+    <p>部首艹余4画</p>
+  </div>
+  <div class="card">
+    <h4>第三行</h4>
+    <div class="eq">问</div>
+    <p>部首门余3画</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  <div id="draftBox">
+  <textarea class="draft-row" id="draftRow1" placeholder="第一行：河，部首 ___，除部首外 ___ 画"></textarea>
+  <textarea class="draft-row" id="draftRow2" placeholder="第二行：花，部首 ___，除部首外 ___ 画"></textarea>
+  <textarea class="draft-row" id="draftRow3" placeholder="第三行：问，部首 ___，除部首外 ___ 画"></textarea>
+  <div class="draft-chips"><span style="font-size:14px;color:#7A7263">卡住了就点一个，用不用随你：</span><br>
+    <button class="chip-btn" data-ins="氵" type="button">部首</button>
+    <button class="chip-btn" data-ins="5" type="button">余5画</button>
+    <button class="chip-btn" data-ins="艹" type="button">草字头</button>
+    <button class="chip-btn" data-ins="4" type="button">余4画</button>
+    <button class="chip-btn" data-ins="门" type="button">门字框</button>
+    <button class="chip-btn" data-ins="3" type="button">余3画</button></div>
+  <button class="sample-fold" type="button">写完再看参考稿 ▾</button>
+  <div class="sample-body" id="sampleBody">河：部首氵，余 5 画。花：部首艹，余 4 画。问：部首门，余 3 画。<br>
+    <span style="font-size:13px;color:#7A7263">部首和余画都对了。<b>先想后看，才不会照抄。</b></span></div>
+  <div style="margin-top:10px"><button class="mini-btn" id="draftSave" type="button">存起来</button></div>
+  <div class="draft-state" id="draftState"></div>
+</div>
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">查一查 · 按四步找到那个字</h2>
+  <p class="sim-desc">点下面的步骤块，按部首查字顺序走一遍。每点一步就往下走——这里不打分，只看步骤对不对。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">已添 0 / 3 处（不判对错）</span>
+    <span class="sim-tip" id="simTip">先自己走一遍，再看老师走</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn" onclick="simNextCase()">换一组</button>
+    <button class="btn" onclick="simReset()">重来</button>
+    <button class="btn-primary" onclick="simDemo()">看老师改这一句</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">定部首、数余画、查检字表、翻正文</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>只知字形不知读音，用部首查字法。</li>
+    <li>部首找准是关键，数余画别把部首算进去。</li>
+    <li>查到后核对字形、读音、意思。</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 换个角度再认一次</h2>
+  <p class="quiz-hint">三道题都有唯一答案，注意别把方法用反。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 「花」字的部首是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>草字头（艹）</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>化</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>整个字</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 查检字表找到字后，旁边的数字是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>笔画数</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>部首编号</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>正文页码</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 一个字查不到部首时，可以查？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>随便翻</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>这个字的起笔笔画</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>放弃不查</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 评一评 · 对着三条标准看自己查得对不对 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">评一评 · 对着三条标准看自己查得对不对</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    怎么选都不影响往下走，也不给分数。这一页只输出「下一步该核哪一步」。
+  </p>
+  <p class="teach-text" id="p8s2">
+    三条标准都只问「步骤对不对、部首准不准」，不问「查得快不快」。
+  </p>
+  <p class="teach-text" id="p8s3">
+    顺手把这一课<b>最容易</b>翻车的地方再看一遍：别把整个字当部首（部首是表意的部件），也别数错除去部首后的笔画数——数错就翻不到正确页码。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>① 部首准</h4>
+    <div class="eq">找对部件</div>
+    <p>位置对</p>
+  </div>
+  <div class="card">
+    <h4>② 余画对</h4>
+    <div class="eq">数剩下的</div>
+    <p>不算部首</p>
+  </div>
+  <div class="card">
+    <h4>③ 会核对</h4>
+    <div class="eq">翻到正文</div>
+    <p>认准字</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  <div id="rubricBox">
+  <div class="rub-dim" data-name="部首准确"><b>部首准确</b><br>
+    <span class="rub-level" data-k="合格">合格：知道要定部首</span>
+    <span class="rub-level" data-k="良好">良好：找准常见部首</span>
+    <span class="rub-level" data-k="优秀">优秀：按结构判断位置</span>
+    </div>
+  <div class="rub-dim" data-name="余画正确"><b>余画正确</b><br>
+    <span class="rub-level" data-k="合格">合格：会数笔画</span>
+    <span class="rub-level" data-k="良好">良好：数对余画</span>
+    <span class="rub-level" data-k="优秀">优秀：不把部首算进去</span>
+    </div>
+  <div class="rub-dim" data-name="核对到位"><b>核对到位</b><br>
+    <span class="rub-level" data-k="合格">合格：翻到页码</span>
+    <span class="rub-level" data-k="良好">良好：找到字</span>
+    <span class="rub-level" data-k="优秀">优秀：核对出正是要查的字</span>
+    </div>
+  <div class="rub-advice" id="rubAdvice">选一级，看看它要求什么。自评不合格也照样能翻页。</div>
+</div>
+</div>
+
+<p class="teach-text" id="p8apply">
+  这一页只问「部首定对没、余画数对没」，不问「查得快不快」。
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，把今天学的说清楚</h2>
+  <p class="quiz-hint">五道题都有唯一答案。做完这一页，这一课就装进去了。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 查到字以后，应该核对什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>页码数字</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>字形、读音和意思对不对</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>字典厚度</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 「问」字查什么部首？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>门字框（门）</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>口</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>整个字</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 部首查字法和音序查字法的区别是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>完全一样</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>都能按读音查</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>前者按字形部首、后者按读音</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 数「除去部首外的笔画」时，部首本身？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>不算进去</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>要算进去</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>算一半</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 这一课最后要养成的习惯是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>随便猜页码</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>定准部首、数对余画、查后核对</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>查到就完</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">定部首</div>
+        <div class="summary-v4-summary">按结构找</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>左右查左、上下查上。</p>
+      <p>包围查外、独体查起笔。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">数余画</div>
+        <div class="summary-v4-summary">除部首外</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>数剩下的笔画。</p>
+      <p>部首那几笔不算。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">查检字</div>
+        <div class="summary-v4-summary">按笔画找</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>检字表按余画排。</p>
+      <p>找到字看页码。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">查后核</div>
+        <div class="summary-v4-summary">认准字</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>按页码翻到正文。</p>
+      <p>核对读音和意思。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  <div class="my-sentence" id="mySentence"><b>你写下的那一句</b>　（结算页会显示你在「写下来」那一页存下的句子。）</div>
+把今天查的一个字说给同桌听：先说它的部首是什么、为什么，再说除去部首余几画，最后说翻到正文怎么核对。同桌照你的步骤也能查到，这次查字就站住了。下一步学「把字句与被字句」，换个说法表达同一个意思。
+</p>
+</section>

@@ -1,18 +1,18 @@
 {
-  "version": "v0.49.6",
+  "version": "v0.49.7",
   "schemaVersion": 1,
   "generatedAt": "2026-11-17",
   "counts": {
-    "total": 174,
+    "total": 193,
     "byTemplate": {
-      "explain": 174
+      "explain": 193
     },
     "byStatus": {
-      "reviewed": 174
+      "reviewed": 193
     },
     "bySubject": {
       "数学": 101,
-      "语文": 36,
+      "语文": 55,
       "英语": 37
     }
   },
@@ -888,6 +888,102 @@
       "bytes": 115793
     },
     {
+      "topicId": "mt_book-reading",
+      "title": "读一本厚厚的书，怎么读得下去又有收获？",
+      "template": "explain",
+      "renderer": "story",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 2,
+      "subject": "语文",
+      "standards": [
+        "chinese-2022:S1:WB"
+      ],
+      "prerequisites": [
+        "mt_read-silent"
+      ],
+      "next": [
+        "mt_book-classic",
+        "mt_oral-retell"
+      ],
+      "objectives": [
+        "知道读整本书要先看目录、定计划，再一页页读下去",
+        "能边读边记人物和情节，读后讲出主要内容",
+        "养成坚持读完、读后交流的阅读习惯"
+      ],
+      "cognitiveAction": "逼近",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "起疑",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "取证",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "对齐",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "说清",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "换文",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_book-reading/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_book-reading/index.html",
+      "bytes": 115616
+    },
+    {
       "topicId": "mt_calendar",
       "title": "年、月、日：为什么二月只有 28 天",
       "template": "explain",
@@ -980,6 +1076,585 @@
       "path": "courses/mt_calendar/",
       "url": "https://workbuddy.link/p/Iae9Td8t7TuvEAtIgOHPmm",
       "bytes": 97862
+    },
+    {
+      "topicId": "mt_char-homophone",
+      "title": "「在」和「再」读音一样，怎么用才对？",
+      "template": "explain",
+      "renderer": "annotate",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 2,
+      "subject": "语文",
+      "standards": [
+        "chinese-2022:S1:BQ"
+      ],
+      "prerequisites": [
+        "mt_char-pictographic",
+        "mt_char-radical"
+      ],
+      "next": [
+        "mt_sent-fix"
+      ],
+      "objectives": [
+        "能分清常见同音字（在/再、的/地/得）和形近字（己/已、日/目）",
+        "学会「以义定字」，根据意思选对字",
+        "养成写完读一读、按意思核对易混字的习惯"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "读进去",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "看出来",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "写下来",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "改一处",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "评一评",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_char-homophone/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_char-homophone/index.html",
+      "bytes": 111325
+    },
+    {
+      "topicId": "mt_char-phonetic-order",
+      "title": "只知道读音，怎么在字典里找到这个字？",
+      "template": "explain",
+      "renderer": "pinyin",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 1,
+      "subject": "语文",
+      "standards": [
+        "chinese-2022:S1:BQ"
+      ],
+      "prerequisites": [
+        "mt_pinyin-initials"
+      ],
+      "next": [
+        "mt_char-radical-lookup"
+      ],
+      "objectives": [
+        "知道音序查字法按字的读音查，第一步先找音序（声母大写字母）",
+        "能按「认音序—找音节—翻页码」三步，在字典里查到只知读音的字",
+        "养成查前先读准音、查后核对音节和页码的习惯"
+      ],
+      "cognitiveAction": "分解",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "读进去",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "看出来",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "写下来",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "改一处",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "评一评",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_char-phonetic-order/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_char-phonetic-order/index.html",
+      "bytes": 112305
+    },
+    {
+      "topicId": "mt_char-pictographic",
+      "title": "古人没有拼音，怎么造出「山」「水」？",
+      "template": "explain",
+      "renderer": "writeChar",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 1,
+      "subject": "语文",
+      "standards": [
+        "chinese-2022:S1:BQ"
+      ],
+      "prerequisites": [
+        "mt_pinyin-reading"
+      ],
+      "next": [
+        "mt_char-radical",
+        "mt_char-stroke",
+        "mt_char-homophone",
+        "mt_sent-complete"
+      ],
+      "objectives": [
+        "知道象形字是照着事物样子画出来的，字形和字义有联系",
+        "能看图猜出「日、月、山、水」等常见象形字，说出像在哪里",
+        "养成「由形想义、由义记形」的识字习惯"
+      ],
+      "cognitiveAction": "模拟",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "读进去",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "看出来",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "写下来",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "改一处",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "评一评",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_char-pictographic/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_char-pictographic/index.html",
+      "bytes": 111599
+    },
+    {
+      "topicId": "mt_char-radical",
+      "title": "「江、河、湖」都有三点水，藏着什么秘密？",
+      "template": "explain",
+      "renderer": "writeChar",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 1,
+      "subject": "语文",
+      "standards": [
+        "chinese-2022:S1:BQ"
+      ],
+      "prerequisites": [
+        "mt_char-pictographic"
+      ],
+      "next": [
+        "mt_char-writing",
+        "mt_char-radical-lookup",
+        "mt_char-homophone",
+        "mt_word-understand"
+      ],
+      "objectives": [
+        "认识常见偏旁（三点水、提手旁、木字旁等），知道偏旁常表示意思",
+        "能按偏旁给字归类，发现同一偏旁的字意思上有联系",
+        "养成「看偏旁猜意思、记字形」的识字习惯"
+      ],
+      "cognitiveAction": "比较",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "读进去",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "看出来",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "写下来",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "改一处",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "评一评",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_char-radical/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_char-radical/index.html",
+      "bytes": 111683
+    },
+    {
+      "topicId": "mt_char-radical-lookup",
+      "title": "不认识的字，怎么在字典里找到它？",
+      "template": "explain",
+      "renderer": "writeChar",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 2,
+      "subject": "语文",
+      "standards": [
+        "chinese-2022:S1:BQ"
+      ],
+      "prerequisites": [
+        "mt_char-radical",
+        "mt_char-phonetic-order"
+      ],
+      "next": [
+        "mt_word-understand",
+        "mt_word-accumulate"
+      ],
+      "objectives": [
+        "知道部首查字法用于只知字形、不知读音的字",
+        "能按「定部首—数笔画—翻检字表—查正文」四步查字",
+        "养成查前先找准部首、查后核对的习惯"
+      ],
+      "cognitiveAction": "分解",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "读进去",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "看出来",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "写下来",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "改一处",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "评一评",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_char-radical-lookup/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_char-radical-lookup/index.html",
+      "bytes": 111498
+    },
+    {
+      "topicId": "mt_char-stroke",
+      "title": "写字先横还是先竖，笔画有规矩吗？",
+      "template": "explain",
+      "renderer": "writeChar",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 1,
+      "subject": "语文",
+      "standards": [
+        "chinese-2022:S1:BQ"
+      ],
+      "prerequisites": [
+        "mt_char-pictographic"
+      ],
+      "next": [
+        "mt_char-writing"
+      ],
+      "objectives": [
+        "认识横、竖、撇、捺等基本笔画，能说出常见笔画名称",
+        "记住「先横后竖、先撇后捺、从上到下、从左到右」等基本笔顺规则",
+        "养成按笔顺规范写字、把字写端正的习惯"
+      ],
+      "cognitiveAction": "分解",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "读进去",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "看出来",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "写下来",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "改一处",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "评一评",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_char-stroke/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_char-stroke/index.html",
+      "bytes": 111394
     },
     {
       "status": "reviewed",
@@ -10776,6 +11451,200 @@
       "bytes": 115962
     },
     {
+      "topicId": "mt_oral-discuss",
+      "title": "小组讨论时，怎么说出自己的想法？",
+      "template": "explain",
+      "renderer": "readAloud",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 2,
+      "subject": "语文",
+      "standards": [
+        "chinese-2022:S1:PR",
+        "chinese-2022:S1:CR"
+      ],
+      "prerequisites": [
+        "mt_oral-listen",
+        "mt_read-silent"
+      ],
+      "next": [
+        "mt_oral-retell",
+        "mt_oral-debate"
+      ],
+      "objectives": [
+        "学会在讨论中清楚说出自己的想法和理由",
+        "能认真听别人发言，尊重不同意见",
+        "养成先想再说、轮流发言、礼貌回应的习惯"
+      ],
+      "cognitiveAction": "逼近",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "起疑",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "取证",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "对齐",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "说清",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "换文",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_oral-discuss/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_oral-discuss/index.html",
+      "bytes": 115251
+    },
+    {
+      "topicId": "mt_oral-listen",
+      "title": "听一个故事，怎么记住关键再讲给别人？",
+      "template": "explain",
+      "renderer": "readAloud",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 1,
+      "subject": "语文",
+      "standards": [
+        "chinese-2022:S1:PR"
+      ],
+      "prerequisites": [
+        "mt_read-aloud",
+        "mt_sent-complete"
+      ],
+      "next": [
+        "mt_oral-discuss"
+      ],
+      "objectives": [
+        "学会听故事时抓住人物、事情和顺序",
+        "能按「先……接着……最后……」把听来的故事讲清楚",
+        "养成认真听、听完想、讲时看着对方声音响亮的习惯"
+      ],
+      "cognitiveAction": "分解",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "起疑",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "取证",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "对齐",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "说清",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "换文",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_oral-listen/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_oral-listen/index.html",
+      "bytes": 115411
+    },
+    {
       "topicId": "mt_oral-retell",
       "title": "转述与复述：把话准确传出去",
       "template": "explain",
@@ -12021,6 +12890,104 @@
       "bytes": 117669
     },
     {
+      "topicId": "mt_poem-recite",
+      "title": "背古诗总忘词，怎么记住一幅幅画面？",
+      "template": "explain",
+      "renderer": "poemNote",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 1,
+      "subject": "语文",
+      "standards": [
+        "chinese-2022:S1:BQ",
+        "chinese-2022:S1:LR"
+      ],
+      "prerequisites": [
+        "mt_read-aloud",
+        "mt_pinyin-reading"
+      ],
+      "next": [
+        "mt_read-ancient",
+        "mt_poem-understand"
+      ],
+      "objectives": [
+        "学会一边读一边想画面，借画面帮助记忆古诗",
+        "能正确、有节奏地诵读，并背下短小的古诗",
+        "养成「读懂意思再背、背完想象画面」的习惯"
+      ],
+      "cognitiveAction": "逼近",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "起疑",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "取证",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "对齐",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "说清",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "换文",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_poem-recite/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_poem-recite/index.html",
+      "bytes": 115027
+    },
+    {
       "topicId": "mt_poem-understand",
       "title": "借注释读懂《山行》：把注释、诗句和画面接起来",
       "template": "explain",
@@ -12686,6 +13653,103 @@
       "path": "courses/mt_punct-advanced/",
       "url": "https://workbuddy.link/p/EijaQovj18HLMyvOMCJj8n",
       "bytes": 113697
+    },
+    {
+      "topicId": "mt_punct-basic",
+      "title": "一句话说完用什么符号，问话又用什么？",
+      "template": "explain",
+      "renderer": "punctPick",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 1,
+      "subject": "语文",
+      "standards": [
+        "chinese-2022:S1:BQ"
+      ],
+      "prerequisites": [
+        "mt_sent-complete"
+      ],
+      "next": [
+        "mt_sent-quote",
+        "mt_punct-advanced",
+        "mt_write-diary"
+      ],
+      "objectives": [
+        "认识逗号、句号、问号、感叹号，知道各自的用法",
+        "能根据句子的语气和停顿，选出合适的标点",
+        "养成写完读一读、按语气加标点的习惯"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "读进去",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "看出来",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "写下来",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "改一处",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "评一评",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_punct-basic/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_punct-basic/index.html",
+      "bytes": 111396
     },
     {
       "topicId": "mt_ratio",
@@ -13660,6 +14724,106 @@
       "bytes": 117203
     },
     {
+      "topicId": "mt_read-silent",
+      "title": "不出声地读，怎么才能读懂又不走神？",
+      "template": "explain",
+      "renderer": "predict",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 2,
+      "subject": "语文",
+      "standards": [
+        "chinese-2022:S1:LR"
+      ],
+      "prerequisites": [
+        "mt_read-aloud"
+      ],
+      "next": [
+        "mt_read-mark",
+        "mt_read-predict",
+        "mt_read-speed",
+        "mt_read-main",
+        "mt_book-reading",
+        "mt_oral-discuss"
+      ],
+      "objectives": [
+        "做到默读时不出声、不指读，用眼睛看、用脑子想",
+        "能边默读边思考，抓住关键信息",
+        "养成专注默读、读后能说出内容的习惯"
+      ],
+      "cognitiveAction": "逼近",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "起疑",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "取证",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "对齐",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "说清",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "换文",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_read-silent/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_read-silent/index.html",
+      "bytes": 115118
+    },
+    {
       "topicId": "mt_read-speed",
       "title": "读得快，还能读懂，怎么做到的？",
       "template": "explain",
@@ -14049,6 +15213,205 @@
       "path": "courses/mt_sector/",
       "url": "https://workbuddy.link/p/BNYh7RiEff0KmH4LPc7Ufq",
       "bytes": 98397
+    },
+    {
+      "topicId": "mt_sent-ba-bei",
+      "title": "「我关门」换成把字句和被字句，怎么换？",
+      "template": "explain",
+      "renderer": "transform",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 2,
+      "subject": "语文",
+      "standards": [
+        "chinese-2022:S1:BQ"
+      ],
+      "prerequisites": [
+        "mt_sent-complete"
+      ],
+      "next": [
+        "mt_write-imitate"
+      ],
+      "objectives": [
+        "认识把字句和被字句的结构，知道谁做的是、谁被怎么样",
+        "能把一般句改写成把字句和被字句，保持意思不变",
+        "养成改写后读一遍、核对意思没变的习惯"
+      ],
+      "cognitiveAction": "变换",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "读进去",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "看出来",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "写下来",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "改一处",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "评一评",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_sent-ba-bei/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_sent-ba-bei/index.html",
+      "bytes": 111839
+    },
+    {
+      "topicId": "mt_sent-complete",
+      "title": "「小鸟飞」算一句话吗，句子要有哪些部分？",
+      "template": "explain",
+      "renderer": "sentBuild",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 1,
+      "subject": "语文",
+      "standards": [
+        "chinese-2022:S1:BQ"
+      ],
+      "prerequisites": [
+        "mt_char-pictographic"
+      ],
+      "next": [
+        "mt_punct-basic",
+        "mt_sent-ba-bei",
+        "mt_sent-rhetoric",
+        "mt_sent-extend",
+        "mt_sent-conjunction",
+        "mt_sent-quote",
+        "mt_sent-fix",
+        "mt_sent-compress",
+        "mt_write-picture",
+        "mt_oral-listen"
+      ],
+      "objectives": [
+        "知道完整句要说出「谁（什么）」和「做什么（怎么样）」",
+        "能把不完整的碎片补成完整句，判断一句话是否完整",
+        "养成写完检查「谁＋做什么」是否齐全的习惯"
+      ],
+      "cognitiveAction": "构造",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "读进去",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "看出来",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "写下来",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "改一处",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "评一评",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_sent-complete/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_sent-complete/index.html",
+      "bytes": 111734
     },
     {
       "topicId": "mt_sent-compress",
@@ -14531,6 +15894,103 @@
       "path": "courses/mt_sent-quote/",
       "url": "https://workbuddy.link/p/mp9CZRZs4bxR7Sof8KqqXB",
       "bytes": 113432
+    },
+    {
+      "topicId": "mt_sent-rhetoric",
+      "title": "「月亮像小船」和「花儿笑了」，各用了什么招？",
+      "template": "explain",
+      "renderer": "sentBuild",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 2,
+      "subject": "语文",
+      "standards": [
+        "chinese-2022:S1:BQ",
+        "chinese-2022:S1:LR"
+      ],
+      "prerequisites": [
+        "mt_sent-complete"
+      ],
+      "next": [
+        "mt_read-appreciate",
+        "mt_write-imagine"
+      ],
+      "objectives": [
+        "认识比喻（用「像、仿佛」打比方）和拟人（把物当人写）",
+        "能分辨比喻句和拟人句，说出把什么比作什么、把什么当人写",
+        "养成读句子想「用了什么招、好在哪里」的习惯"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "读进去",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "看出来",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "写下来",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "改一处",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "评一评",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_sent-rhetoric/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_sent-rhetoric/index.html",
+      "bytes": 111756
     },
     {
       "topicId": "mt_shape-2d",
@@ -15816,6 +17276,104 @@
       "bytes": 118994
     },
     {
+      "topicId": "mt_word-accumulate",
+      "title": "「苹果、香蕉、白菜」里，哪个不和别的同类？",
+      "template": "explain",
+      "renderer": "checkup",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 2,
+      "subject": "语文",
+      "standards": [
+        "chinese-2022:S1:BQ"
+      ],
+      "prerequisites": [
+        "mt_word-understand",
+        "mt_char-radical-lookup"
+      ],
+      "next": [
+        "mt_word-idiom",
+        "mt_sent-extend",
+        "mt_write-observe"
+      ],
+      "objectives": [
+        "能按类别（水果、蔬菜、动物等）给词语归类",
+        "能找出不同类的词，说出归类标准",
+        "养成分类积累词语、按类别运用的习惯"
+      ],
+      "cognitiveAction": "比较",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "读进去",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "看出来",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "写下来",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "改一处",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "评一评",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_word-accumulate/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_word-accumulate/index.html",
+      "bytes": 111213
+    },
+    {
       "status": "reviewed",
       "author": "goral.cao",
       "license": "CC-BY-SA-4.0",
@@ -15910,6 +17468,104 @@
       "path": "courses/mt_word-idiom/",
       "url": "https://workbuddy.link/p/2UIKf11MZBDntR9nxqQlLu",
       "bytes": 124137
+    },
+    {
+      "topicId": "mt_word-understand",
+      "title": "读到不懂的词，怎么自己弄明白意思？",
+      "template": "explain",
+      "renderer": "predict",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 2,
+      "subject": "语文",
+      "standards": [
+        "chinese-2022:S1:BQ"
+      ],
+      "prerequisites": [
+        "mt_char-radical",
+        "mt_char-radical-lookup"
+      ],
+      "next": [
+        "mt_word-accumulate",
+        "mt_word-idiom",
+        "mt_read-mark"
+      ],
+      "objectives": [
+        "学会联系上下文、结合生活、找近义词等理解词语的方法",
+        "遇到不懂的词能试着自己想办法弄懂",
+        "养成「猜一猜、查一查、放到句子里验一验」的习惯"
+      ],
+      "cognitiveAction": "逼近",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "起疑",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "取证",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "对齐",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "说清",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "换文",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_word-understand/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_word-understand/index.html",
+      "bytes": 115176
     },
     {
       "topicId": "mt_write-application",
@@ -16297,6 +17953,103 @@
       "bytes": 123860
     },
     {
+      "topicId": "mt_write-imitate",
+      "title": "照着一句好句子，怎么仿写出自己的句子？",
+      "template": "explain",
+      "renderer": "draft",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 2,
+      "subject": "语文",
+      "standards": [
+        "chinese-2022:S1:LR"
+      ],
+      "prerequisites": [
+        "mt_write-picture",
+        "mt_sent-ba-bei"
+      ],
+      "next": [
+        "mt_write-diary",
+        "mt_write-revise"
+      ],
+      "objectives": [
+        "读懂例句子的句式特点（如比喻、叠词、排比）",
+        "能照着句式，换上自己的内容仿写句子",
+        "养成「先读懂句式、再换词仿写、写完对照」的习惯"
+      ],
+      "cognitiveAction": "构造",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "起意",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "搭骨架",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "起草",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "改",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "出刊",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_write-imitate/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_write-imitate/index.html",
+      "bytes": 119377
+    },
+    {
       "topicId": "mt_write-narrative",
       "title": "把一件事写清楚，要交代哪六样？",
       "template": "explain",
@@ -16588,6 +18341,104 @@
       "path": "courses/mt_write-person/",
       "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_write-person/index.html",
       "bytes": 119684
+    },
+    {
+      "topicId": "mt_write-picture",
+      "title": "看着一幅图，怎么写清楚「什么时候谁在干什么」？",
+      "template": "explain",
+      "renderer": "draft",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 1,
+      "subject": "语文",
+      "standards": [
+        "chinese-2022:S1:LR"
+      ],
+      "prerequisites": [
+        "mt_sent-complete",
+        "mt_char-writing"
+      ],
+      "next": [
+        "mt_write-imitate",
+        "mt_write-imagine",
+        "mt_write-revise"
+      ],
+      "objectives": [
+        "学会看图时先整体观察，再抓时间、地点、人物和事情",
+        "能按「什么时候，谁，在哪里，干什么」写几句通顺的话",
+        "养成写完对照图检查、不漏要点的习惯"
+      ],
+      "cognitiveAction": "构造",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "起意",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "搭骨架",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "起草",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "改",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "出刊",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "存起来",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_write-picture/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_write-picture/index.html",
+      "bytes": 119594
     },
     {
       "status": "reviewed",
