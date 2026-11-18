@@ -1,0 +1,91 @@
+{
+  "topicId": "mt_mor-p-life-source",
+  "title": "生活用品哪里来",
+  "template": "explain",
+  "renderer": "senses",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 4,
+  "subject": "道德与法治",
+  "standards": [
+    "morality-2022:S2:MO"
+  ],
+  "prerequisites": [
+    "mt_mor-p-labor",
+    "mt_mor-p-occupation"
+  ],
+  "next": [],
+  "objectives": [
+    "了解农业工业服务业的生产",
+    "知道吃穿用度来自劳动",
+    "理解艰苦奋斗与创新价值"
+  ],
+  "cognitiveAction": "累积",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "引入",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "概念一",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "概念二",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

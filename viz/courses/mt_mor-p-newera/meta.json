@@ -1,0 +1,92 @@
+{
+  "topicId": "mt_mor-p-newera",
+  "title": "走进新时代",
+  "template": "explain",
+  "renderer": "solid",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 5,
+  "subject": "道德与法治",
+  "standards": [
+    "morality-2022:S3:GU"
+  ],
+  "prerequisites": [
+    "mt_mor-p-party-history"
+  ],
+  "next": [
+    "mt_mor-p-betterworld"
+  ],
+  "objectives": [
+    "了解党的十八大以来的历史性成就",
+    "认识中国梦的内涵",
+    "把个人成长融入国家发展"
+  ],
+  "cognitiveAction": "累积",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "引入",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "概念一",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "概念二",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

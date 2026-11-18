@@ -1,0 +1,97 @@
+{
+  "topicId": "mt_mor-p-public",
+  "title": "公共生活靠大家",
+  "template": "explain",
+  "renderer": "checkup",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 3,
+  "subject": "道德与法治",
+  "standards": [
+    "morality-2022:S2:MO"
+  ],
+  "prerequisites": [
+    "mt_mor-p-class"
+  ],
+  "next": [
+    "mt_mor-j-society",
+    "mt_mor-p-consume",
+    "mt_mor-p-ecoprotection",
+    "mt_mor-p-info",
+    "mt_mor-p-law",
+    "mt_mor-p-occupation"
+  ],
+  "objectives": [
+    "认识公共空间和公共设施",
+    "知道公共利益需共同维护",
+    "学会在公共场所守秩序、爱护设施、文明有礼"
+  ],
+  "cognitiveAction": "累积",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "引入",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "概念一",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "概念二",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "topicId": "mt_mor-p-family-comm",
+  "title": "和家人好好说话",
+  "template": "explain",
+  "renderer": "senses",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 5,
+  "subject": "道德与法治",
+  "standards": [
+    "morality-2022:S3:MO"
+  ],
+  "prerequisites": [
+    "mt_mor-p-family-duty"
+  ],
+  "next": [],
+  "objectives": [
+    "了解家庭沟通的障碍与有效方式",
+    "学会表达感受和需求",
+    "能在家庭变化中调整角色"
+  ],
+  "cognitiveAction": "辨析",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "引入",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "概念一",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "概念二",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

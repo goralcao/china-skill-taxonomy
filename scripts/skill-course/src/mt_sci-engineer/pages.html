@@ -1,0 +1,499 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>塔台怎样搭得稳</h1>
+  <p class="sub">六年级科学 · 技术与工程</p>
+  <div class="tags">
+    <span class="tag">工程</span>
+    <span class="tag">六年级</span>
+    <span class="tag">2022课标</span>
+    <span class="tag">工程课</span>
+  </div>
+  <div class="cover-fig">
+<svg viewBox="0 0 760 190" width="760" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="塔台怎样搭得稳">
+  <rect x="0" y="0" width="760" height="190" rx="18" fill="#FFFFFF" opacity=".08"/>
+  <g fill="#FFFFFF" opacity=".9"><circle cx="96" cy="58" r="15"/><circle cx="138" cy="58" r="15"/><path d="M78 92 h78 v10 h-78 z" opacity=".35"/></g>
+  <text x="216" y="82" font-size="30" fill="#FFFFFF" font-weight="800">塔台怎样搭得稳</text>
+  <text x="218" y="126" font-size="18" fill="rgba(255,255,255,.85)">小小工程师</text>
+</svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">前测 · 先看看你已经知道什么</h2>
+  <p class="quiz-hint">三道题都有唯一答案，答错会告诉你错在哪。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 工程设计第一步通常是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>明确任务和要求</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>直接动手做</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>只有最后一种对</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 下面哪种结构最稳定？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>四边形</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>三角形</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>圆形</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 要让塔台更稳，应该设计成？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>上大下小</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>上下一样</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>上小下大</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 1 个数看清：塔台怎样搭得稳 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">1 个数看清：塔台怎样搭得稳</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="认识小小工程师"><rect x="8" y="8" width="284" height="184" rx="12" fill="#F4FAFF" stroke="#00838F"/><text x="20" y="30" font-size="16" fill="#00838F" font-weight="700">认识小小工程师</text>
+  <circle cx="26" cy="40" r="9" fill="#00838F"/><text x="26" y="44" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">1</text><text x="46" y="45" font-size="15" fill="#333">明确任务：定要求</text>
+  <circle cx="26" cy="70" r="9" fill="#00838F"/><text x="26" y="74" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">2</text><text x="46" y="75" font-size="15" fill="#333">设计方案：画图</text>
+  <circle cx="26" cy="100" r="9" fill="#00838F"/><text x="26" y="104" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">3</text><text x="46" y="105" font-size="15" fill="#333">三角形：最稳定</text>
+  <circle cx="26" cy="130" r="9" fill="#00838F"/><text x="26" y="134" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">4</text><text x="46" y="135" font-size="15" fill="#333">上小下大：重心低</text>
+  <circle cx="26" cy="160" r="9" fill="#00838F"/><text x="26" y="164" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">5</text><text x="46" y="165" font-size="15" fill="#333">测试改进：循环</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    今天来认识<b>小小工程师</b>。先看整体，再一样一样拆开看。
+  </p>
+  <p class="teach-text" id="p2s2">
+    先看最关键的一点：<strong>明确任务</strong>。工程先明确要做什么、有什么限制条件
+  </p>
+  <p class="teach-text" id="p2s3">
+    抓住这几点，小小工程师 就清楚了。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>明确任务</h4>
+    <div class="eq">定要求</div>
+    <p>工程先明确要做什么、有什么限制条件</p>
+  </div>
+  <div class="card">
+    <h4>设计方案</h4>
+    <div class="eq">画图</div>
+    <p>在限制条件下画出可行设计</p>
+  </div>
+  <div class="card">
+    <h4>三角形</h4>
+    <div class="eq">最稳定</div>
+    <p>三角形结构稳定，常用来加固</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  <strong>明确任务</strong>是这一课的关键，先记住它。
+</div>
+</section>
+
+<!-- ===== p3: 拆成几条：每条讲清一件事 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">拆成几条：每条讲清一件事</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="要点一览"><rect x="8" y="8" width="284" height="184" rx="12" fill="#F4FAFF" stroke="#00838F"/><text x="20" y="30" font-size="16" fill="#00838F" font-weight="700">要点一览</text>
+  <circle cx="26" cy="40" r="9" fill="#00838F"/><text x="26" y="44" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">1</text><text x="46" y="45" font-size="15" fill="#333">明确任务</text>
+  <circle cx="26" cy="70" r="9" fill="#00838F"/><text x="26" y="74" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">2</text><text x="46" y="75" font-size="15" fill="#333">设计方案</text>
+  <circle cx="26" cy="100" r="9" fill="#00838F"/><text x="26" y="104" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">3</text><text x="46" y="105" font-size="15" fill="#333">三角形</text>
+  <circle cx="26" cy="130" r="9" fill="#00838F"/><text x="26" y="134" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">4</text><text x="46" y="135" font-size="15" fill="#333">上小下大</text>
+  <circle cx="26" cy="160" r="9" fill="#00838F"/><text x="26" y="164" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">5</text><text x="46" y="165" font-size="15" fill="#333">测试改进</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    小小工程师 可以拆成几个要点，一条一条记。
+  </p>
+  <p class="teach-text" id="p3s2">
+    下面这几条要分清，别把它们弄混。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>明确任务</strong>：工程先明确要做什么、有什么限制条件</li>
+  <li><strong>设计方案</strong>：在限制条件下画出可行设计</li>
+  <li><strong>三角形</strong>：三角形结构稳定，常用来加固</li>
+  <li><strong>上小下大</strong>：上小下大、上轻下重的建筑更稳</li>
+  <li><strong>测试改进</strong>：制作—测试—改进，反复优化</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  一条一条对号入座，<strong>名称</strong>和<strong>作用</strong>别弄反。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：名称和要点对起来</h2>
+<p class="teach-text" id="p3bs1">先读左边的名称，再连右边的要点。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 边学边想</h2>
+  <p class="quiz-hint">三道题都有唯一答案，做完再看讲解。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 工程活动中，测试的目的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>发现问题以便改进</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>证明自己对了</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>以上做法都正确</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 在限定材料和时间下完成，这是工程的？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>无关因素</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>限制条件</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>三种说法都不准确</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 下面哪个做法能让塔台抗风更好？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>做得越高越好</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>没有正确答案</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>加斜撑形成三角</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 再看一层：把要点补齐 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">再看一层：把要点补齐</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+<svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="补要点"><rect x="8" y="8" width="284" height="134" rx="12" fill="#F4FAFF" stroke="#00838F"/><text x="20" y="30" font-size="16" fill="#00838F" font-weight="700">补要点</text>
+  <circle cx="26" cy="40" r="9" fill="#00838F"/><text x="26" y="44" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">1</text><text x="46" y="45" font-size="15" fill="#333">三角形：最稳定</text>
+  <circle cx="26" cy="70" r="9" fill="#00838F"/><text x="26" y="74" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">2</text><text x="46" y="75" font-size="15" fill="#333">上小下大：重心低</text>
+  <circle cx="26" cy="100" r="9" fill="#00838F"/><text x="26" y="104" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">3</text><text x="46" y="105" font-size="15" fill="#333">测试改进：循环</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    再换个角度，把 小小工程师 剩下的要点补齐。
+  </p>
+  <p class="teach-text" id="p5s2">
+    这几条常常一起考，要能一口气说清。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>三角形</h4>
+    <div class="eq">最稳定</div>
+    <p>三角形结构稳定，常用来加固</p>
+  </div>
+  <div class="card">
+    <h4>上小下大</h4>
+    <div class="eq">重心低</div>
+    <p>上小下大、上轻下重的建筑更稳</p>
+  </div>
+  <div class="card">
+    <h4>测试改进</h4>
+    <div class="eq">循环</div>
+    <p>制作—测试—改进，反复优化</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  前后要点连起来，才是<strong>完整的 小小工程师</strong>。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">搭塔台：一步步来</h2>
+  <p class="sim-desc">点「搭建下一步」完成塔台工程；「换一组」换任务。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">工程 %N% 步</span>
+    <span class="sim-tip" id="simTip">先设计、稳为主</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simAdd()">+ 搭建下一步</button>
+    <button class="btn" onclick="simNextCase()">换一组</button>
+    <button class="btn" onclick="simDemo()">看老师做</button>
+    <button class="btn-retry" onclick="simReset()">清空</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">测试后记得改进</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>工程一般分哪几步？</li>
+    <li>为什么三角形更稳？</li>
+    <li>换一组后任务变了吗？</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 换个角度再认一次</h2>
+  <p class="quiz-hint">三道题都有唯一答案，注意别把概念用反。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 设计方案画出来的好处是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>便于交流和修改</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>让工程变复杂</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>以上都不恰当</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 塔台重心低，会怎样？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>更易倒</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>更稳定</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>以上都符合要求</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 制作模型后发现不稳，应该？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>放弃</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>前两种都对</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>分析原因并改进</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四处最容易翻车 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四处最容易翻车</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    小小工程师 看着简单，最容易在这四处翻车。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>跳过设计</h4>
+    <div class="eq">✗ 边想边搭</div>
+    <p>先设计再制作，减少返工</p>
+  </div>
+  <div class="card">
+    <h4>上大下小</h4>
+    <div class="eq">✗ 塔台上宽下窄</div>
+    <p>上小下大才稳</p>
+  </div>
+  <div class="card">
+    <h4>不管限制</h4>
+    <div class="eq">✗ 材料随便用</div>
+    <p>要在限定材料、时间内完成</p>
+  </div>
+  <div class="card">
+    <h4>一次定稿</h4>
+    <div class="eq">✗ 搭好就不改</div>
+    <p>测试后要改进，工程是循环过程</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  记住：<strong>工程先明确要做什么、有什么限制条件</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到开头那个数：塔台怎样搭得稳。现在你能说清为什么了吗？
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，把今天学的说清楚</h2>
+  <p class="quiz-hint">五道题都有唯一答案。做完这一页，这一课就装进去了。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 下面哪个不是工程产品？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>彩虹</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>桥梁</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>塔台</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 小组合作做工程，最重要的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>各做各的</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>分工协作</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>只有最后一种对</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 评价一个塔台，主要看？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>是否最漂亮</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>以上答案都不合适</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>是否达成任务要求</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 同样材料，搭法不同，稳定性？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>会不同</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>完全一样</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>以上说法都不对</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 工程流程的正确顺序是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>制作→改进→设计</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>设计→制作→测试→改进</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>以上做法都正确</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">明确任务</div>
+        <div class="summary-v4-summary">定要求</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>工程先明确要做什么、有什么限制条件</p>
+      <p>在限制条件下画出可行设计</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">三角形</div>
+        <div class="summary-v4-summary">最稳定</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>三角形结构稳定，常用来加固</p>
+      <p>上小下大、上轻下重的建筑更稳</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">连一连</div>
+        <div class="summary-v4-summary">名称对要点</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>看到名称想到要点。</p>
+      <p>看到要点能说出名称。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">别踩坑</div>
+        <div class="summary-v4-summary">四处易错</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>先设计再制作，减少返工</p>
+      <p>上小下大才稳</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  工程就是<strong>设计—制作—测试—改进</strong>的循环，稳字当头。
+</p>
+</section>

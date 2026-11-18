@@ -1,0 +1,499 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>量长度该用什么</h1>
+  <p class="sub">一年级科学 · 科学态度与方法</p>
+  <div class="tags">
+    <span class="tag">科学工具</span>
+    <span class="tag">一年级</span>
+    <span class="tag">2022课标</span>
+    <span class="tag">方法课</span>
+  </div>
+  <div class="cover-fig">
+<svg viewBox="0 0 760 190" width="760" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="量长度该用什么">
+  <rect x="0" y="0" width="760" height="190" rx="18" fill="#FFFFFF" opacity=".08"/>
+  <g fill="#FFFFFF" opacity=".9"><circle cx="96" cy="58" r="15"/><circle cx="138" cy="58" r="15"/><path d="M78 92 h78 v10 h-78 z" opacity=".35"/></g>
+  <text x="216" y="82" font-size="30" fill="#FFFFFF" font-weight="800">量长度该用什么</text>
+  <text x="218" y="126" font-size="18" fill="rgba(255,255,255,.85)">测量与使用工具</text>
+</svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">前测 · 先看看你已经知道什么</h2>
+  <p class="quiz-hint">三道题都有唯一答案，答错会告诉你错在哪。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 测一片树叶的长度，用什么工具？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>软尺</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>温度计</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>天平</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 测一杯水的温度，用什么工具？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>量筒</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>温度计</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>软尺</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 温度的单位是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>厘米（cm）</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>克（g）</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>摄氏度（℃）</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 1 个数看清：量长度该用什么 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">1 个数看清：量长度该用什么</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="认识测量与使用工具"><rect x="8" y="8" width="284" height="184" rx="12" fill="#F4FAFF" stroke="#00838F"/><text x="20" y="30" font-size="16" fill="#00838F" font-weight="700">认识测量与使用工具</text>
+  <circle cx="26" cy="40" r="9" fill="#00838F"/><text x="26" y="44" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">1</text><text x="46" y="45" font-size="15" fill="#333">软尺：测长度</text>
+  <circle cx="26" cy="70" r="9" fill="#00838F"/><text x="26" y="74" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">2</text><text x="46" y="75" font-size="15" fill="#333">温度计：测温度</text>
+  <circle cx="26" cy="100" r="9" fill="#00838F"/><text x="26" y="104" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">3</text><text x="46" y="105" font-size="15" fill="#333">天平：测质量</text>
+  <circle cx="26" cy="130" r="9" fill="#00838F"/><text x="26" y="134" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">4</text><text x="46" y="135" font-size="15" fill="#333">量筒：测体积</text>
+  <circle cx="26" cy="160" r="9" fill="#00838F"/><text x="26" y="164" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">5</text><text x="46" y="165" font-size="15" fill="#333">测力计：测力</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    今天来认识<b>测量与使用工具</b>。先看整体，再一样一样拆开看。
+  </p>
+  <p class="teach-text" id="p2s2">
+    先看最关键的一点：<strong>软尺</strong>。量树叶、书本的长度，读数要带单位
+  </p>
+  <p class="teach-text" id="p2s3">
+    抓住这几点，测量与使用工具 就清楚了。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>软尺</h4>
+    <div class="eq">测长度</div>
+    <p>量树叶、书本的长度，读数要带单位</p>
+  </div>
+  <div class="card">
+    <h4>温度计</h4>
+    <div class="eq">测温度</div>
+    <p>看液柱顶端读数，单位是摄氏度（℃）</p>
+  </div>
+  <div class="card">
+    <h4>天平</h4>
+    <div class="eq">测质量</div>
+    <p>比较物体轻重，读数带克或千克</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  <strong>软尺</strong>是这一课的关键，先记住它。
+</div>
+</section>
+
+<!-- ===== p3: 拆成几条：每条讲清一件事 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">拆成几条：每条讲清一件事</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="要点一览"><rect x="8" y="8" width="284" height="184" rx="12" fill="#F4FAFF" stroke="#00838F"/><text x="20" y="30" font-size="16" fill="#00838F" font-weight="700">要点一览</text>
+  <circle cx="26" cy="40" r="9" fill="#00838F"/><text x="26" y="44" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">1</text><text x="46" y="45" font-size="15" fill="#333">软尺</text>
+  <circle cx="26" cy="70" r="9" fill="#00838F"/><text x="26" y="74" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">2</text><text x="46" y="75" font-size="15" fill="#333">温度计</text>
+  <circle cx="26" cy="100" r="9" fill="#00838F"/><text x="26" y="104" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">3</text><text x="46" y="105" font-size="15" fill="#333">天平</text>
+  <circle cx="26" cy="130" r="9" fill="#00838F"/><text x="26" y="134" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">4</text><text x="46" y="135" font-size="15" fill="#333">量筒</text>
+  <circle cx="26" cy="160" r="9" fill="#00838F"/><text x="26" y="164" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">5</text><text x="46" y="165" font-size="15" fill="#333">测力计</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    测量与使用工具 可以拆成几个要点，一条一条记。
+  </p>
+  <p class="teach-text" id="p3s2">
+    下面这几条要分清，别把它们弄混。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>软尺</strong>：量树叶、书本的长度，读数要带单位</li>
+  <li><strong>温度计</strong>：看液柱顶端读数，单位是摄氏度（℃）</li>
+  <li><strong>天平</strong>：比较物体轻重，读数带克或千克</li>
+  <li><strong>量筒</strong>：看液面凹处读数，单位是毫升（mL）</li>
+  <li><strong>测力计</strong>：测力的大小，单位是牛顿（N）</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  一条一条对号入座，<strong>名称</strong>和<strong>作用</strong>别弄反。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：名称和要点对起来</h2>
+<p class="teach-text" id="p3bs1">先读左边的名称，再连右边的要点。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 边学边想</h2>
+  <p class="quiz-hint">三道题都有唯一答案，做完再看讲解。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 下面哪个是质量（轻重）的单位？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>千克（kg）</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>米（m）</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>升（L）</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 用量筒量水，读数时视线要？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>从上往下斜看</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>与液面凹处齐平</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>以上说法都不对</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 测力计测出的力，单位是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>千克（kg）</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>摄氏度（℃）</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>牛顿（N）</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 再看一层：把要点补齐 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">再看一层：把要点补齐</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+<svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="补要点"><rect x="8" y="8" width="284" height="134" rx="12" fill="#F4FAFF" stroke="#00838F"/><text x="20" y="30" font-size="16" fill="#00838F" font-weight="700">补要点</text>
+  <circle cx="26" cy="40" r="9" fill="#00838F"/><text x="26" y="44" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">1</text><text x="46" y="45" font-size="15" fill="#333">天平：测质量</text>
+  <circle cx="26" cy="70" r="9" fill="#00838F"/><text x="26" y="74" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">2</text><text x="46" y="75" font-size="15" fill="#333">量筒：测体积</text>
+  <circle cx="26" cy="100" r="9" fill="#00838F"/><text x="26" y="104" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">3</text><text x="46" y="105" font-size="15" fill="#333">测力计：测力</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    再换个角度，把 测量与使用工具 剩下的要点补齐。
+  </p>
+  <p class="teach-text" id="p5s2">
+    这几条常常一起考，要能一口气说清。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>天平</h4>
+    <div class="eq">测质量</div>
+    <p>比较物体轻重，读数带克或千克</p>
+  </div>
+  <div class="card">
+    <h4>量筒</h4>
+    <div class="eq">测体积</div>
+    <p>看液面凹处读数，单位是毫升（mL）</p>
+  </div>
+  <div class="card">
+    <h4>测力计</h4>
+    <div class="eq">测力</div>
+    <p>测力的大小，单位是牛顿（N）</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  前后要点连起来，才是<strong>完整的 测量与使用工具</strong>。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">选工具：量一量</h2>
+  <p class="sim-desc">点「量下一项」认识不同测量工具和读数；「换一组」换测量对象。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">已量 %N% 项</span>
+    <span class="sim-tip" id="simTip">先选对工具再读数</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simAdd()">+ 量下一项</button>
+    <button class="btn" onclick="simNextCase()">换一组</button>
+    <button class="btn" onclick="simDemo()">看老师做</button>
+    <button class="btn-retry" onclick="simReset()">清空</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">量不同的量要选不同的工具</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>量长度用什么工具？</li>
+    <li>读数时为什么要注意单位？</li>
+    <li>换一组后测量对象变了吗？</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 换个角度再认一次</h2>
+  <p class="quiz-hint">三道题都有唯一答案，注意别把概念用反。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 记录测量结果，正确写法是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>15 厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>15</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>三种说法都不准确</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 量筒上「50 mL」表示什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>长度50厘米</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>体积是50毫升</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>没有正确答案</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 多次测量取平均，是为了？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>让数字变大</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>以上都不恰当</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>减小误差</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四处最容易翻车 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四处最容易翻车</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    测量与使用工具 看着简单，最容易在这四处翻车。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>忘写单位</h4>
+    <div class="eq">✗ 写「长 12」</div>
+    <p>要写「12 厘米」，数值加单位</p>
+  </div>
+  <div class="card">
+    <h4>工具选错</h4>
+    <div class="eq">✗ 用天平量长度</div>
+    <p>量长度用尺，量温度用温度计</p>
+  </div>
+  <div class="card">
+    <h4>读数视角歪</h4>
+    <div class="eq">✗ 斜着看液柱</div>
+    <p>视线与液柱顶端齐平再读</p>
+  </div>
+  <div class="card">
+    <h4>只量一次</h4>
+    <div class="eq">✗ 量一次就当准</div>
+    <p>多量几次取平均，误差更小</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  记住：<strong>量树叶、书本的长度，读数要带单位</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到开头那个数：量长度该用什么。现在你能说清为什么了吗？
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，把今天学的说清楚</h2>
+  <p class="quiz-hint">五道题都有唯一答案。做完这一页，这一课就装进去了。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 下面搭配正确的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>天平—测质量</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>温度计—测长度</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>以上都符合要求</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 读温度计，应看液柱的哪一端？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>底端</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>顶端</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>中间</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 量一根细铁丝的直径，较好的办法是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>直接量一次</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>以上说法都正确</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>量多圈总长再除以圈数</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 测量前先要做什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>选合适的工具和单位</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>随便拿个工具量</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>只有最后一种对</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 下面哪个需要用到量筒？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>量桌子高度</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>量一杯水的体积</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>以上答案都不合适</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">软尺</div>
+        <div class="summary-v4-summary">测长度</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>量树叶、书本的长度，读数要带单位</p>
+      <p>看液柱顶端读数，单位是摄氏度（℃）</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">天平</div>
+        <div class="summary-v4-summary">测质量</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>比较物体轻重，读数带克或千克</p>
+      <p>看液面凹处读数，单位是毫升（mL）</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">连一连</div>
+        <div class="summary-v4-summary">名称对要点</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>看到名称想到要点。</p>
+      <p>看到要点能说出名称。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">别踩坑</div>
+        <div class="summary-v4-summary">四处易错</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>要写「12 厘米」，数值加单位</p>
+      <p>量长度用尺，量温度用温度计</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  测量的三步：<strong>选对工具、规范读数、带上单位</strong>。
+</p>
+</section>

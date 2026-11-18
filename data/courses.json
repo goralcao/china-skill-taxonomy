@@ -1,19 +1,21 @@
 {
-  "version": "v0.49.7",
+  "version": "v0.49.8",
   "schemaVersion": 1,
-  "generatedAt": "2026-11-17",
+  "generatedAt": "2026-11-18",
   "counts": {
-    "total": 193,
+    "total": 270,
     "byTemplate": {
-      "explain": 193
+      "explain": 270
     },
     "byStatus": {
-      "reviewed": 193
+      "reviewed": 270
     },
     "bySubject": {
       "数学": 101,
       "语文": 55,
-      "英语": 37
+      "英语": 37,
+      "道德与法治": 38,
+      "科学": 39
     }
   },
   "courses": [
@@ -8923,6 +8925,3637 @@
       "bytes": 104519
     },
     {
+      "topicId": "mt_mor-p-adapt",
+      "title": "我是一名小学生了",
+      "template": "explain",
+      "renderer": "checkup",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 1,
+      "subject": "道德与法治",
+      "standards": [
+        "morality-2022:S1:ME"
+      ],
+      "prerequisites": [],
+      "next": [
+        "mt_mor-p-campus",
+        "mt_mor-p-self"
+      ],
+      "objectives": [
+        "能说出小学与幼儿园的不同",
+        "学会整理书包、管理个人物品",
+        "乐于上学、敢于提问"
+      ],
+      "cognitiveAction": "变换",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_mor-p-adapt/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_mor-p-adapt/index.html",
+      "bytes": 117101
+    },
+    {
+      "topicId": "mt_mor-p-betterworld",
+      "title": "让世界更美好",
+      "template": "explain",
+      "renderer": "solid",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 6,
+      "subject": "道德与法治",
+      "standards": [
+        "morality-2022:S3:GU"
+      ],
+      "prerequisites": [
+        "mt_mor-p-ecoprotection",
+        "mt_mor-p-newera",
+        "mt_mor-p-worldcivil"
+      ],
+      "next": [
+        "mt_mor-j-world"
+      ],
+      "objectives": [
+        "了解科技造福人类与国际组织作用",
+        "认识中国的大国担当",
+        "树立人类命运共同体意识"
+      ],
+      "cognitiveAction": "累积",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_mor-p-betterworld/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_mor-p-betterworld/index.html",
+      "bytes": 116787
+    },
+    {
+      "topicId": "mt_mor-p-campus",
+      "title": "校园里有哪些规矩",
+      "template": "explain",
+      "renderer": "checkup",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 1,
+      "subject": "道德与法治",
+      "standards": [
+        "morality-2022:S1:MO"
+      ],
+      "prerequisites": [
+        "mt_mor-p-adapt"
+      ],
+      "next": [
+        "mt_mor-p-class",
+        "mt_mor-p-habit"
+      ],
+      "objectives": [
+        "知道校园主要场所和设施",
+        "了解上课、课间、午餐等环节的要求",
+        "理解规则让校园更安全有序"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_mor-p-campus/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_mor-p-campus/index.html",
+      "bytes": 116880
+    },
+    {
+      "topicId": "mt_mor-p-citizen",
+      "title": "我是中国公民",
+      "template": "explain",
+      "renderer": "checkup",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 6,
+      "subject": "道德与法治",
+      "standards": [
+        "morality-2022:S3:LE"
+      ],
+      "prerequisites": [
+        "mt_mor-p-law"
+      ],
+      "next": [
+        "mt_mor-j-constitution",
+        "mt_mor-p-legal-rights"
+      ],
+      "objectives": [
+        "了解公民身份与国籍含义",
+        "认识国家标识和公民基本权利义务",
+        "知道台湾香港澳门是中国领土不可分割的一部分"
+      ],
+      "cognitiveAction": "累积",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_mor-p-citizen/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_mor-p-citizen/index.html",
+      "bytes": 117031
+    },
+    {
+      "topicId": "mt_mor-p-civility",
+      "title": "礼貌用语会说话",
+      "template": "explain",
+      "renderer": "pairMatch",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 1,
+      "subject": "道德与法治",
+      "standards": [
+        "morality-2022:S1:MO"
+      ],
+      "prerequisites": [
+        "mt_mor-p-habit"
+      ],
+      "next": [],
+      "objectives": [
+        "会使用请、谢谢、对不起等礼貌用语",
+        "知道不同场合的文明行为",
+        "理解尊重他人就是尊重自己"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_mor-p-civility/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_mor-p-civility/index.html",
+      "bytes": 116506
+    },
+    {
+      "topicId": "mt_mor-p-class",
+      "title": "班级是我家",
+      "template": "explain",
+      "renderer": "checkup",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 2,
+      "subject": "道德与法治",
+      "standards": [
+        "morality-2022:S2:MO"
+      ],
+      "prerequisites": [
+        "mt_mor-p-campus"
+      ],
+      "next": [
+        "mt_mor-p-collective",
+        "mt_mor-p-public"
+      ],
+      "objectives": [
+        "知道班级是共同学习的集体",
+        "了解班级事务人人有责",
+        "学会值日为集体服务"
+      ],
+      "cognitiveAction": "累积",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_mor-p-class/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_mor-p-class/index.html",
+      "bytes": 116803
+    },
+    {
+      "topicId": "mt_mor-p-collective",
+      "title": "个人和集体",
+      "template": "explain",
+      "renderer": "checkup",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 3,
+      "subject": "道德与法治",
+      "standards": [
+        "morality-2022:S2:MO"
+      ],
+      "prerequisites": [
+        "mt_mor-p-class"
+      ],
+      "next": [],
+      "objectives": [
+        "理解个人与集体相互成就",
+        "学会在合作中分工、倾听、妥协",
+        "能处理与同学的矛盾、遵守共同约定"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_mor-p-collective/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_mor-p-collective/index.html",
+      "bytes": 116982
+    },
+    {
+      "topicId": "mt_mor-p-communicate",
+      "title": "交朋友有方法",
+      "template": "explain",
+      "renderer": "pairMatch",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 3,
+      "subject": "道德与法治",
+      "standards": [
+        "morality-2022:S2:MO"
+      ],
+      "prerequisites": [
+        "mt_mor-p-growup"
+      ],
+      "next": [
+        "mt_mor-p-teen"
+      ],
+      "objectives": [
+        "掌握友好交往的方法",
+        "学会倾听、换位思考、诚实守信",
+        "能识别不友好行为并勇敢说不"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_mor-p-communicate/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_mor-p-communicate/index.html",
+      "bytes": 116492
+    },
+    {
+      "topicId": "mt_mor-p-consume",
+      "title": "做个聪明消费者",
+      "template": "explain",
+      "renderer": "checkup",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 4,
+      "subject": "道德与法治",
+      "standards": [
+        "morality-2022:S2:LE"
+      ],
+      "prerequisites": [
+        "mt_mor-p-public"
+      ],
+      "next": [],
+      "objectives": [
+        "了解消费者的基本权利",
+        "学会看包装比价格留票据",
+        "理性消费、权益受损会维权"
+      ],
+      "cognitiveAction": "累积",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_mor-p-consume/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_mor-p-consume/index.html",
+      "bytes": 116743
+    },
+    {
+      "topicId": "mt_mor-p-dream",
+      "title": "我的梦想",
+      "template": "explain",
+      "renderer": "story",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 2,
+      "subject": "道德与法治",
+      "standards": [
+        "morality-2022:S1:MO"
+      ],
+      "prerequisites": [
+        "mt_mor-p-growup"
+      ],
+      "next": [
+        "mt_mor-j-future"
+      ],
+      "objectives": [
+        "敢于想象未来、说出愿望",
+        "知道梦想需要目标与行动",
+        "把个人梦想与好好学习联系起来"
+      ],
+      "cognitiveAction": "累积",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_mor-p-dream/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_mor-p-dream/index.html",
+      "bytes": 116720
+    },
+    {
+      "topicId": "mt_mor-p-ecoprotection",
+      "title": "地球的共同责任",
+      "template": "explain",
+      "renderer": "solid",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 6,
+      "subject": "道德与法治",
+      "standards": [
+        "morality-2022:S3:MO"
+      ],
+      "prerequisites": [
+        "mt_mor-p-nature",
+        "mt_mor-p-public"
+      ],
+      "next": [
+        "mt_mor-p-betterworld"
+      ],
+      "objectives": [
+        "了解地球面临的环境问题",
+        "知道减排护绿垃圾分类是公民责任",
+        "能制定执行一个环保方案"
+      ],
+      "cognitiveAction": "累积",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_mor-p-ecoprotection/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_mor-p-ecoprotection/index.html",
+      "bytes": 116734
+    },
+    {
+      "topicId": "mt_mor-p-family",
+      "title": "我爱我的家",
+      "template": "explain",
+      "renderer": "senses",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 1,
+      "subject": "道德与法治",
+      "standards": [
+        "morality-2022:S1:MO"
+      ],
+      "prerequisites": [],
+      "next": [
+        "mt_mor-p-family-duty",
+        "mt_mor-p-goodchild",
+        "mt_mor-p-holiday",
+        "mt_mor-p-hometown"
+      ],
+      "objectives": [
+        "认识家庭成员及角色",
+        "知道父母长辈的辛劳",
+        "学会自己的事自己做、帮家里做事"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_mor-p-family/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_mor-p-family/index.html",
+      "bytes": 116865
+    },
+    {
+      "topicId": "mt_mor-p-family-comm",
+      "title": "和家人好好说话",
+      "template": "explain",
+      "renderer": "senses",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 5,
+      "subject": "道德与法治",
+      "standards": [
+        "morality-2022:S3:MO"
+      ],
+      "prerequisites": [
+        "mt_mor-p-family-duty"
+      ],
+      "next": [],
+      "objectives": [
+        "了解家庭沟通的障碍与有效方式",
+        "学会表达感受和需求",
+        "能在家庭变化中调整角色"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_mor-p-family-comm/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_mor-p-family-comm/index.html",
+      "bytes": 116803
+    },
+    {
+      "topicId": "mt_mor-p-family-duty",
+      "title": "我是家庭一员",
+      "template": "explain",
+      "renderer": "senses",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 3,
+      "subject": "道德与法治",
+      "standards": [
+        "morality-2022:S2:MO"
+      ],
+      "prerequisites": [
+        "mt_mor-p-family"
+      ],
+      "next": [
+        "mt_mor-p-family-comm"
+      ],
+      "objectives": [
+        "知道家庭责任需要共同分担",
+        "学会用商量的方式参与家庭事务",
+        "能承担力所能及的家庭角色"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_mor-p-family-duty/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_mor-p-family-duty/index.html",
+      "bytes": 116701
+    },
+    {
+      "topicId": "mt_mor-p-goodchild",
+      "title": "争做好儿童",
+      "template": "explain",
+      "renderer": "checkup",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 1,
+      "subject": "道德与法治",
+      "standards": [
+        "morality-2022:S1:CT"
+      ],
+      "prerequisites": [
+        "mt_mor-p-family"
+      ],
+      "next": [
+        "mt_mor-p-motherland"
+      ],
+      "objectives": [
+        "知道红领巾是红旗的一角",
+        "了解少年先锋队的意义",
+        "理解爱学习、爱劳动、爱祖国的好儿童标准"
+      ],
+      "cognitiveAction": "累积",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_mor-p-goodchild/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_mor-p-goodchild/index.html",
+      "bytes": 116826
+    },
+    {
+      "topicId": "mt_mor-p-growup",
+      "title": "我在长大",
+      "template": "explain",
+      "renderer": "story",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 1,
+      "subject": "道德与法治",
+      "standards": [
+        "morality-2022:S1:MO"
+      ],
+      "prerequisites": [
+        "mt_mor-p-self"
+      ],
+      "next": [
+        "mt_mor-p-communicate",
+        "mt_mor-p-dream"
+      ],
+      "objectives": [
+        "知道身体在长大、本领在增长",
+        "理解成长中有快乐也有烦恼",
+        "学会定小目标并感谢帮助自己的人"
+      ],
+      "cognitiveAction": "累积",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_mor-p-growup/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_mor-p-growup/index.html",
+      "bytes": 116569
+    },
+    {
+      "topicId": "mt_mor-p-habit",
+      "title": "好习惯怎么养成",
+      "template": "explain",
+      "renderer": "checkup",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 1,
+      "subject": "道德与法治",
+      "standards": [
+        "morality-2022:S1:MO"
+      ],
+      "prerequisites": [
+        "mt_mor-p-campus"
+      ],
+      "next": [
+        "mt_mor-p-civility"
+      ],
+      "objectives": [
+        "认识作息、卫生、倾听等好习惯",
+        "知道好习惯让人受益",
+        "会用打卡方法坚持养成习惯"
+      ],
+      "cognitiveAction": "累积",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_mor-p-habit/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_mor-p-habit/index.html",
+      "bytes": 116684
+    },
+    {
+      "topicId": "mt_mor-p-holiday",
+      "title": "传统节日我知道",
+      "template": "explain",
+      "renderer": "calendar",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 2,
+      "subject": "道德与法治",
+      "standards": [
+        "morality-2022:S1:CT"
+      ],
+      "prerequisites": [
+        "mt_mor-p-family"
+      ],
+      "next": [
+        "mt_mor-p-virtue",
+        "mt_mor-p-worldcivil"
+      ],
+      "objectives": [
+        "了解主要传统节日的时间与习俗",
+        "知道节日承载的情感与文化",
+        "会合理安排假期、注意安全"
+      ],
+      "cognitiveAction": "累积",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_mor-p-holiday/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_mor-p-holiday/index.html",
+      "bytes": 116674
+    },
+    {
+      "topicId": "mt_mor-p-hometown",
+      "title": "我爱家乡",
+      "template": "explain",
+      "renderer": "senses",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 2,
+      "subject": "道德与法治",
+      "standards": [
+        "morality-2022:S2:GU"
+      ],
+      "prerequisites": [
+        "mt_mor-p-family"
+      ],
+      "next": [
+        "mt_mor-p-local-culture",
+        "mt_mor-p-motherland",
+        "mt_mor-p-nature"
+      ],
+      "objectives": [
+        "了解家乡的位置、风景、物产和名人",
+        "会用照片图画小报告介绍家乡",
+        "萌发热爱家乡、建设家乡的情感"
+      ],
+      "cognitiveAction": "累积",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_mor-p-hometown/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_mor-p-hometown/index.html",
+      "bytes": 116736
+    },
+    {
+      "topicId": "mt_mor-p-info",
+      "title": "学会辨别信息",
+      "template": "explain",
+      "renderer": "checkup",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 4,
+      "subject": "道德与法治",
+      "standards": [
+        "morality-2022:S2:LE"
+      ],
+      "prerequisites": [
+        "mt_mor-p-public"
+      ],
+      "next": [
+        "mt_mor-p-law"
+      ],
+      "objectives": [
+        "认识获取信息的多种方式",
+        "学会辨别信息真假",
+        "知道网络文明与保护个人信息、不沉迷网络"
+      ],
+      "cognitiveAction": "累积",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_mor-p-info/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_mor-p-info/index.html",
+      "bytes": 116700
+    },
+    {
+      "topicId": "mt_mor-p-labor",
+      "title": "劳动最光荣",
+      "template": "explain",
+      "renderer": "senses",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 3,
+      "subject": "道德与法治",
+      "standards": [
+        "morality-2022:S2:MO"
+      ],
+      "prerequisites": [
+        "mt_mor-p-occupation"
+      ],
+      "next": [
+        "mt_mor-j-duty",
+        "mt_mor-p-life-source"
+      ],
+      "objectives": [
+        "参加劳动实践、学会基本劳动技能",
+        "体验劳动的辛苦与快乐",
+        "懂得珍惜他人劳动成果"
+      ],
+      "cognitiveAction": "累积",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_mor-p-labor/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_mor-p-labor/index.html",
+      "bytes": 116493
+    },
+    {
+      "topicId": "mt_mor-p-law",
+      "title": "生活离不开法律",
+      "template": "explain",
+      "renderer": "checkup",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 6,
+      "subject": "道德与法治",
+      "standards": [
+        "morality-2022:S3:LE"
+      ],
+      "prerequisites": [
+        "mt_mor-p-info",
+        "mt_mor-p-public"
+      ],
+      "next": [
+        "mt_mor-j-law-society",
+        "mt_mor-p-citizen",
+        "mt_mor-p-legal-rights"
+      ],
+      "objectives": [
+        "认识法律是规范行为的规则体系",
+        "了解基本法律分类与身边法律",
+        "知道违法要承担责任"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_mor-p-law/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_mor-p-law/index.html",
+      "bytes": 116855
+    },
+    {
+      "topicId": "mt_mor-p-legal-rights",
+      "title": "依法维护权益",
+      "template": "explain",
+      "renderer": "checkup",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 6,
+      "subject": "道德与法治",
+      "standards": [
+        "morality-2022:S3:LE"
+      ],
+      "prerequisites": [
+        "mt_mor-p-citizen",
+        "mt_mor-p-law"
+      ],
+      "next": [
+        "mt_mor-j-rights"
+      ],
+      "objectives": [
+        "知道守法是公民基本素养",
+        "了解诉讼调解仲裁等维权途径",
+        "树立法律面前人人平等观念"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_mor-p-legal-rights/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_mor-p-legal-rights/index.html",
+      "bytes": 116549
+    },
+    {
+      "topicId": "mt_mor-p-life-source",
+      "title": "生活用品哪里来",
+      "template": "explain",
+      "renderer": "senses",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 4,
+      "subject": "道德与法治",
+      "standards": [
+        "morality-2022:S2:MO"
+      ],
+      "prerequisites": [
+        "mt_mor-p-labor",
+        "mt_mor-p-occupation"
+      ],
+      "next": [],
+      "objectives": [
+        "了解农业工业服务业的生产",
+        "知道吃穿用度来自劳动",
+        "理解艰苦奋斗与创新价值"
+      ],
+      "cognitiveAction": "累积",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_mor-p-life-source/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_mor-p-life-source/index.html",
+      "bytes": 116568
+    },
+    {
+      "topicId": "mt_mor-p-local-culture",
+      "title": "家乡文化真精彩",
+      "template": "explain",
+      "renderer": "senses",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 4,
+      "subject": "道德与法治",
+      "standards": [
+        "morality-2022:S2:CT"
+      ],
+      "prerequisites": [
+        "mt_mor-p-hometown"
+      ],
+      "next": [
+        "mt_mor-p-party-history"
+      ],
+      "objectives": [
+        "了解家乡饮食民居方言手工艺等文化",
+        "知道文化需要传承创新",
+        "能为家乡文化做记录或宣传"
+      ],
+      "cognitiveAction": "累积",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_mor-p-local-culture/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_mor-p-local-culture/index.html",
+      "bytes": 116806
+    },
+    {
+      "topicId": "mt_mor-p-minor",
+      "title": "我们受特殊保护",
+      "template": "explain",
+      "renderer": "checkup",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 6,
+      "subject": "道德与法治",
+      "standards": [
+        "morality-2022:S3:MH"
+      ],
+      "prerequisites": [
+        "mt_mor-p-teen"
+      ],
+      "next": [],
+      "objectives": [
+        "了解未成年人身心特点",
+        "知道未成年人保护法的六大保护",
+        "学会用法律保护自己"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_mor-p-minor/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_mor-p-minor/index.html",
+      "bytes": 116974
+    },
+    {
+      "topicId": "mt_mor-p-motherland",
+      "title": "我爱你，中国",
+      "template": "explain",
+      "renderer": "checkup",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 2,
+      "subject": "道德与法治",
+      "standards": [
+        "morality-2022:S2:GU"
+      ],
+      "prerequisites": [
+        "mt_mor-p-goodchild",
+        "mt_mor-p-hometown"
+      ],
+      "next": [
+        "mt_mor-j-interest",
+        "mt_mor-p-party-history"
+      ],
+      "objectives": [
+        "知道我国全称、首都、国旗与国庆节",
+        "了解祖国山河与民族团结",
+        "知道台湾、香港、澳门是中国不可分割的一部分，为中国人的身份自豪"
+      ],
+      "cognitiveAction": "累积",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_mor-p-motherland/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_mor-p-motherland/index.html",
+      "bytes": 116895
+    },
+    {
+      "topicId": "mt_mor-p-nature",
+      "title": "感谢大自然",
+      "template": "explain",
+      "renderer": "senses",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 2,
+      "subject": "道德与法治",
+      "standards": [
+        "morality-2022:S1:MO"
+      ],
+      "prerequisites": [
+        "mt_mor-p-hometown"
+      ],
+      "next": [
+        "mt_mor-p-ecoprotection"
+      ],
+      "objectives": [
+        "感受大自然给予的馈赠",
+        "认识风雨山川动植物的价值",
+        "学会在户外保护自己、不破坏环境"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_mor-p-nature/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_mor-p-nature/index.html",
+      "bytes": 117050
+    },
+    {
+      "topicId": "mt_mor-p-newera",
+      "title": "走进新时代",
+      "template": "explain",
+      "renderer": "solid",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 5,
+      "subject": "道德与法治",
+      "standards": [
+        "morality-2022:S3:GU"
+      ],
+      "prerequisites": [
+        "mt_mor-p-party-history"
+      ],
+      "next": [
+        "mt_mor-p-betterworld"
+      ],
+      "objectives": [
+        "了解党的十八大以来的历史性成就",
+        "认识中国梦的内涵",
+        "把个人成长融入国家发展"
+      ],
+      "cognitiveAction": "累积",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_mor-p-newera/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_mor-p-newera/index.html",
+      "bytes": 116922
+    },
+    {
+      "topicId": "mt_mor-p-occupation",
+      "title": "感谢各行各业的劳动者",
+      "template": "explain",
+      "renderer": "senses",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 3,
+      "subject": "道德与法治",
+      "standards": [
+        "morality-2022:S2:MO"
+      ],
+      "prerequisites": [
+        "mt_mor-p-public"
+      ],
+      "next": [
+        "mt_mor-p-labor",
+        "mt_mor-p-life-source"
+      ],
+      "objectives": [
+        "了解社会分工与各行各业",
+        "知道环卫、医护、司机等职业的价值",
+        "尊重普通劳动者"
+      ],
+      "cognitiveAction": "累积",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_mor-p-occupation/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_mor-p-occupation/index.html",
+      "bytes": 116860
+    },
+    {
+      "topicId": "mt_mor-p-optimistic",
+      "title": "做个乐观的我",
+      "template": "explain",
+      "renderer": "senses",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 2,
+      "subject": "道德与法治",
+      "standards": [
+        "morality-2022:S1:MH"
+      ],
+      "prerequisites": [
+        "mt_mor-p-self"
+      ],
+      "next": [
+        "mt_mor-p-selfhealth",
+        "mt_mor-p-teen"
+      ],
+      "objectives": [
+        "认识常见情绪",
+        "知道情绪没有好坏但要选择合适表达",
+        "学会用倾诉运动等方法调节不开心"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_mor-p-optimistic/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_mor-p-optimistic/index.html",
+      "bytes": 117016
+    },
+    {
+      "topicId": "mt_mor-p-party-history",
+      "title": "没有共产党就没有新中国",
+      "template": "explain",
+      "renderer": "story",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 5,
+      "subject": "道德与法治",
+      "standards": [
+        "morality-2022:S3:GU"
+      ],
+      "prerequisites": [
+        "mt_mor-p-local-culture",
+        "mt_mor-p-motherland"
+      ],
+      "next": [
+        "mt_mor-j-party",
+        "mt_mor-p-newera"
+      ],
+      "objectives": [
+        "了解中国共产党带领人民争取独立建国的历程",
+        "知道长征、抗战等重大历史事件",
+        "理解没有共产党就没有新中国"
+      ],
+      "cognitiveAction": "累积",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_mor-p-party-history/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_mor-p-party-history/index.html",
+      "bytes": 117054
+    },
+    {
+      "topicId": "mt_mor-p-public",
+      "title": "公共生活靠大家",
+      "template": "explain",
+      "renderer": "checkup",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 3,
+      "subject": "道德与法治",
+      "standards": [
+        "morality-2022:S2:MO"
+      ],
+      "prerequisites": [
+        "mt_mor-p-class"
+      ],
+      "next": [
+        "mt_mor-j-society",
+        "mt_mor-p-consume",
+        "mt_mor-p-ecoprotection",
+        "mt_mor-p-info",
+        "mt_mor-p-law",
+        "mt_mor-p-occupation"
+      ],
+      "objectives": [
+        "认识公共空间和公共设施",
+        "知道公共利益需共同维护",
+        "学会在公共场所守秩序、爱护设施、文明有礼"
+      ],
+      "cognitiveAction": "累积",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_mor-p-public/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_mor-p-public/index.html",
+      "bytes": 116771
+    },
+    {
+      "topicId": "mt_mor-p-self",
+      "title": "独特的我",
+      "template": "explain",
+      "renderer": "senses",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 1,
+      "subject": "道德与法治",
+      "standards": [
+        "morality-2022:S1:MO"
+      ],
+      "prerequisites": [
+        "mt_mor-p-adapt"
+      ],
+      "next": [
+        "mt_mor-p-growup",
+        "mt_mor-p-optimistic"
+      ],
+      "objectives": [
+        "能说出自己的长相、爱好和长处",
+        "知道每个人都是独特的",
+        "学会欣赏自己、愿意展示才艺"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_mor-p-self/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_mor-p-self/index.html",
+      "bytes": 116731
+    },
+    {
+      "topicId": "mt_mor-p-selfhealth",
+      "title": "做更好的自己",
+      "template": "explain",
+      "renderer": "senses",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 6,
+      "subject": "道德与法治",
+      "standards": [
+        "morality-2022:S3:MO",
+        "morality-2022:S3:MH"
+      ],
+      "prerequisites": [
+        "mt_mor-p-optimistic",
+        "mt_mor-p-teen"
+      ],
+      "next": [
+        "mt_mor-j-life"
+      ],
+      "objectives": [
+        "学会客观评价自己、接纳不完美",
+        "掌握应对挫折和压力的方法",
+        "理解宽容诚实勇敢等品格的价值"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_mor-p-selfhealth/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_mor-p-selfhealth/index.html",
+      "bytes": 116824
+    },
+    {
+      "topicId": "mt_mor-p-teen",
+      "title": "我在长大",
+      "template": "explain",
+      "renderer": "senses",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 4,
+      "subject": "道德与法治",
+      "standards": [
+        "morality-2022:S2:MO"
+      ],
+      "prerequisites": [
+        "mt_mor-p-communicate",
+        "mt_mor-p-optimistic"
+      ],
+      "next": [
+        "mt_mor-j-youth",
+        "mt_mor-p-minor",
+        "mt_mor-p-selfhealth"
+      ],
+      "objectives": [
+        "了解青春期身体心理变化",
+        "学会悦纳自己、尊重他人变化",
+        "掌握与父母老师沟通的方法"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_mor-p-teen/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_mor-p-teen/index.html",
+      "bytes": 116688
+    },
+    {
+      "topicId": "mt_mor-p-virtue",
+      "title": "中华美德记心间",
+      "template": "explain",
+      "renderer": "story",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 2,
+      "subject": "道德与法治",
+      "standards": [
+        "morality-2022:S1:CT"
+      ],
+      "prerequisites": [
+        "mt_mor-p-holiday"
+      ],
+      "next": [
+        "mt_mor-j-tradition"
+      ],
+      "objectives": [
+        "了解孝敬、勤俭、诚信、助人等传统美德",
+        "能讲出美德故事的内涵",
+        "能在生活中践行一条美德"
+      ],
+      "cognitiveAction": "累积",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_mor-p-virtue/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_mor-p-virtue/index.html",
+      "bytes": 116491
+    },
+    {
+      "topicId": "mt_mor-p-worldcivil",
+      "title": "世界文明多精彩",
+      "template": "explain",
+      "renderer": "senses",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 6,
+      "subject": "道德与法治",
+      "standards": [
+        "morality-2022:S3:CT"
+      ],
+      "prerequisites": [
+        "mt_mor-p-holiday"
+      ],
+      "next": [
+        "mt_mor-p-betterworld"
+      ],
+      "objectives": [
+        "了解不同国家民族的文化成就",
+        "理解文化多样性是共同财富",
+        "学会尊重差异、平等交流"
+      ],
+      "cognitiveAction": "累积",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_mor-p-worldcivil/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_mor-p-worldcivil/index.html",
+      "bytes": 116797
+    },
+    {
       "topicId": "mt_mul-meaning",
       "title": "乘法的意义：3 盘每盘 4 个，为什么不是 3+4",
       "template": "explain",
@@ -15116,6 +18749,3726 @@
       "path": "courses/mt_rect-perimeter/",
       "url": "https://workbuddy.link/p/M7Hg0XI3f3LlgDkDnphfeJ",
       "bytes": 95232
+    },
+    {
+      "topicId": "mt_sci-air",
+      "title": "空气看不见却有力",
+      "template": "explain",
+      "renderer": "molecule",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 4,
+      "subject": "科学",
+      "standards": [
+        "science-2022:KX:MS"
+      ],
+      "prerequisites": [
+        "mt_sci-water"
+      ],
+      "next": [
+        "mt_sci-sound"
+      ],
+      "objectives": [
+        "能用实验证明空气占据空间",
+        "知道空气无色无味、会流动、可压缩",
+        "能解释风是怎样形成的"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_sci-air/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_sci-air/index.html",
+      "bytes": 117173
+    },
+    {
+      "topicId": "mt_sci-animal-life",
+      "title": "蚕的一生变几次",
+      "template": "explain",
+      "renderer": "story",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 3,
+      "subject": "科学",
+      "standards": [
+        "science-2022:KX:LH"
+      ],
+      "prerequisites": [
+        "mt_sci-animals-common"
+      ],
+      "next": [
+        "mt_sci-bio-diversity"
+      ],
+      "objectives": [
+        "能按顺序说出蚕一生经历的几个阶段",
+        "认识蚕和蝴蝶的生命周期",
+        "知道不同动物寿命差别很大"
+      ],
+      "cognitiveAction": "分解",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_sci-animal-life/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_sci-animal-life/index.html",
+      "bytes": 116991
+    },
+    {
+      "topicId": "mt_sci-animals-common",
+      "title": "动物怎么分家",
+      "template": "explain",
+      "renderer": "pairMatch",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 1,
+      "subject": "科学",
+      "standards": [
+        "science-2022:KX:LL"
+      ],
+      "prerequisites": [
+        "mt_sci-plants-around"
+      ],
+      "next": [
+        "mt_sci-animal-life",
+        "mt_sci-dinosaur"
+      ],
+      "objectives": [
+        "能说出五种以上常见动物并描述外形",
+        "能按会不会飞、爱吃什么给动物分组",
+        "会用图画和文字记录观察到的动物"
+      ],
+      "cognitiveAction": "比较",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_sci-animals-common/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_sci-animals-common/index.html",
+      "bytes": 116952
+    },
+    {
+      "topicId": "mt_sci-bio-diversity",
+      "title": "为什么要保护多样",
+      "template": "explain",
+      "renderer": "senses",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 6,
+      "subject": "科学",
+      "standards": [
+        "science-2022:KX:LL",
+        "science-2022:KX:LE"
+      ],
+      "prerequisites": [
+        "mt_sci-animal-life",
+        "mt_sci-micro",
+        "mt_sci-plants-around"
+      ],
+      "next": [],
+      "objectives": [
+        "知道生物多样性的含义",
+        "了解保护生物多样性的意义",
+        "能说出保护生物多样性的措施"
+      ],
+      "cognitiveAction": "累积",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_sci-bio-diversity/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_sci-bio-diversity/index.html",
+      "bytes": 117632
+    },
+    {
+      "topicId": "mt_sci-bio-env",
+      "title": "谁离不开谁",
+      "template": "explain",
+      "renderer": "senses",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 5,
+      "subject": "科学",
+      "standards": [
+        "science-2022:KX:LE"
+      ],
+      "prerequisites": [
+        "mt_sci-earth-home",
+        "mt_sci-plants-around"
+      ],
+      "next": [
+        "mt_sci-environment"
+      ],
+      "objectives": [
+        "能说出生物的生存依赖哪些环境条件",
+        "理解食物链中吃与被吃的关系",
+        "知道破坏环境会影响生物生存"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_sci-bio-env/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_sci-bio-env/index.html",
+      "bytes": 117213
+    },
+    {
+      "topicId": "mt_sci-boat",
+      "title": "船为什么会浮",
+      "template": "explain",
+      "renderer": "solid",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 5,
+      "subject": "科学",
+      "standards": [
+        "science-2022:KX:TS",
+        "science-2022:KX:TD"
+      ],
+      "prerequisites": [
+        "mt_sci-tools",
+        "mt_sci-water"
+      ],
+      "next": [
+        "mt_sci-engineer"
+      ],
+      "objectives": [
+        "能说出船从浮力、材料、形状等方面的改进",
+        "理解船能漂浮的原理",
+        "会通过实验比较船的载重量"
+      ],
+      "cognitiveAction": "构造",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_sci-boat/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_sci-boat/index.html",
+      "bytes": 117028
+    },
+    {
+      "topicId": "mt_sci-breathing",
+      "title": "空气和食物去哪了",
+      "template": "explain",
+      "renderer": "story",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 4,
+      "subject": "科学",
+      "standards": [
+        "science-2022:KX:LR"
+      ],
+      "prerequisites": [
+        "mt_sci-human-self"
+      ],
+      "next": [
+        "mt_sci-health"
+      ],
+      "objectives": [
+        "能说出空气进入身体经过的主要器官",
+        "了解食物消化吸收的过程",
+        "知道保护呼吸和消化器官的做法"
+      ],
+      "cognitiveAction": "分解",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_sci-breathing/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_sci-breathing/index.html",
+      "bytes": 116992
+    },
+    {
+      "topicId": "mt_sci-circuit",
+      "title": "怎样让小灯泡亮",
+      "template": "explain",
+      "renderer": "solid",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 4,
+      "subject": "科学",
+      "standards": [
+        "science-2022:KX:MM"
+      ],
+      "prerequisites": [
+        "mt_sci-magnet"
+      ],
+      "next": [],
+      "objectives": [
+        "能连接一个让小灯泡发光的电路",
+        "能判断通路、断路和短路",
+        "知道导体与绝缘体的区别"
+      ],
+      "cognitiveAction": "构造",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_sci-circuit/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_sci-circuit/index.html",
+      "bytes": 116962
+    },
+    {
+      "topicId": "mt_sci-dinosaur",
+      "title": "恐龙留下什么证据",
+      "template": "explain",
+      "renderer": "story",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 2,
+      "subject": "科学",
+      "standards": [
+        "science-2022:KX:LH"
+      ],
+      "prerequisites": [
+        "mt_sci-animals-common"
+      ],
+      "next": [],
+      "objectives": [
+        "能说出两三种恐龙的名字和外形特点",
+        "能解释化石怎样帮助人类了解恐龙",
+        "知道恐龙已经灭绝这一事实"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_sci-dinosaur/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_sci-dinosaur/index.html",
+      "bytes": 117264
+    },
+    {
+      "topicId": "mt_sci-direction",
+      "title": "太阳帮你找方向",
+      "template": "explain",
+      "renderer": "compass",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 3,
+      "subject": "科学",
+      "standards": [
+        "science-2022:KX:UE"
+      ],
+      "prerequisites": [
+        "mt_sci-earth-home"
+      ],
+      "next": [
+        "mt_sci-earth-motion"
+      ],
+      "objectives": [
+        "能说出太阳位置变化与方向的关系",
+        "能用指南针指出四面八方",
+        "知道东南西北的相对关系"
+      ],
+      "cognitiveAction": "变换",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_sci-direction/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_sci-direction/index.html",
+      "bytes": 116939
+    },
+    {
+      "topicId": "mt_sci-earth-home",
+      "title": "地球给了什么",
+      "template": "explain",
+      "renderer": "solid",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 2,
+      "subject": "科学",
+      "standards": [
+        "science-2022:KX:US"
+      ],
+      "prerequisites": [
+        "mt_sci-plants-around"
+      ],
+      "next": [
+        "mt_sci-bio-env",
+        "mt_sci-direction",
+        "mt_sci-earth-motion",
+        "mt_sci-one-earth",
+        "mt_sci-rock"
+      ],
+      "objectives": [
+        "能说出地球为生物提供哪几种基本条件",
+        "能举例说明一种动植物依赖地球资源生存",
+        "知道地球是人类和动植物共同的家园"
+      ],
+      "cognitiveAction": "累积",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_sci-earth-home/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_sci-earth-home/index.html",
+      "bytes": 116973
+    },
+    {
+      "topicId": "mt_sci-earth-motion",
+      "title": "昼夜和四季从哪来",
+      "template": "explain",
+      "renderer": "compass",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 6,
+      "subject": "科学",
+      "standards": [
+        "science-2022:KX:UE"
+      ],
+      "prerequisites": [
+        "mt_sci-direction",
+        "mt_sci-earth-home"
+      ],
+      "next": [
+        "mt_sci-time",
+        "mt_sci-universe"
+      ],
+      "objectives": [
+        "知道地球自转产生昼夜交替",
+        "知道地球公转与四季变化有关",
+        "能解释相关自然现象"
+      ],
+      "cognitiveAction": "变换",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_sci-earth-motion/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_sci-earth-motion/index.html",
+      "bytes": 116955
+    },
+    {
+      "topicId": "mt_sci-earth-surface",
+      "title": "地表怎样改变",
+      "template": "explain",
+      "renderer": "solid",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 5,
+      "subject": "科学",
+      "standards": [
+        "science-2022:KX:US"
+      ],
+      "prerequisites": [
+        "mt_sci-rock"
+      ],
+      "next": [],
+      "objectives": [
+        "能说出地震、火山、流水等对地表的影响",
+        "了解地表变化有快有慢",
+        "知道保护地表的重要性"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_sci-earth-surface/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_sci-earth-surface/index.html",
+      "bytes": 117051
+    },
+    {
+      "topicId": "mt_sci-engineer",
+      "title": "塔台怎样搭得稳",
+      "template": "explain",
+      "renderer": "solid",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 6,
+      "subject": "科学",
+      "standards": [
+        "science-2022:KX:TD"
+      ],
+      "prerequisites": [
+        "mt_sci-boat",
+        "mt_sci-house",
+        "mt_sci-tools"
+      ],
+      "next": [],
+      "objectives": [
+        "了解工程设计的基本流程",
+        "知道三角形结构更稳定",
+        "能在限制条件下完成任务"
+      ],
+      "cognitiveAction": "构造",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_sci-engineer/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_sci-engineer/index.html",
+      "bytes": 116965
+    },
+    {
+      "topicId": "mt_sci-environment",
+      "title": "环境问题怎么解",
+      "template": "explain",
+      "renderer": "senses",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 5,
+      "subject": "科学",
+      "standards": [
+        "science-2022:KX:UM"
+      ],
+      "prerequisites": [
+        "mt_sci-bio-env",
+        "mt_sci-one-earth"
+      ],
+      "next": [],
+      "objectives": [
+        "能说出常见环境污染的类型",
+        "理解人类活动与环境问题的关系",
+        "知道防治污染的做法"
+      ],
+      "cognitiveAction": "累积",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_sci-environment/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_sci-environment/index.html",
+      "bytes": 117069
+    },
+    {
+      "topicId": "mt_sci-force",
+      "title": "力让物体怎样",
+      "template": "explain",
+      "renderer": "balance",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 5,
+      "subject": "科学",
+      "standards": [
+        "science-2022:KX:MM"
+      ],
+      "prerequisites": [
+        "mt_sci-motion"
+      ],
+      "next": [],
+      "objectives": [
+        "能说出力能改变物体的运动和形状",
+        "认识重力、摩擦力、弹力",
+        "知道力有大小和方向"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_sci-force/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_sci-force/index.html",
+      "bytes": 117174
+    },
+    {
+      "topicId": "mt_sci-health",
+      "title": "怎样更健康",
+      "template": "explain",
+      "renderer": "checkup",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 6,
+      "subject": "科学",
+      "standards": [
+        "science-2022:KX:LR",
+        "science-2022:KX:LE"
+      ],
+      "prerequisites": [
+        "mt_sci-breathing"
+      ],
+      "next": [],
+      "objectives": [
+        "知道健康生活包括哪些方面",
+        "了解合理饮食、运动、作息的重要性",
+        "能说出保护身心健康的方法"
+      ],
+      "cognitiveAction": "累积",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_sci-health/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_sci-health/index.html",
+      "bytes": 116822
+    },
+    {
+      "topicId": "mt_sci-heat",
+      "title": "热怎样传递",
+      "template": "explain",
+      "renderer": "molecule",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 5,
+      "subject": "科学",
+      "standards": [
+        "science-2022:KX:ME"
+      ],
+      "prerequisites": [
+        "mt_sci-water"
+      ],
+      "next": [
+        "mt_sci-matter-change"
+      ],
+      "objectives": [
+        "能区分温度、热量和热传递",
+        "了解传导、对流、辐射三种传热方式",
+        "知道热总是从高温传向低温"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_sci-heat/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_sci-heat/index.html",
+      "bytes": 116733
+    },
+    {
+      "topicId": "mt_sci-house",
+      "title": "怎样的房子站得稳",
+      "template": "explain",
+      "renderer": "solid",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 2,
+      "subject": "科学",
+      "standards": [
+        "science-2022:KX:TS",
+        "science-2022:KX:TD"
+      ],
+      "prerequisites": [
+        "mt_sci-objects-around"
+      ],
+      "next": [
+        "mt_sci-engineer",
+        "mt_sci-tools"
+      ],
+      "objectives": [
+        "能说出房顶、墙壁、地基各自的作用",
+        "能比较纸、木、竹等材料的不同性能",
+        "能参与搭建一个不散的简易房屋模型"
+      ],
+      "cognitiveAction": "构造",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_sci-house/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_sci-house/index.html",
+      "bytes": 116903
+    },
+    {
+      "topicId": "mt_sci-human-self",
+      "title": "我们有几个感觉器官",
+      "template": "explain",
+      "renderer": "senses",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 1,
+      "subject": "科学",
+      "standards": [
+        "science-2022:KX:LL"
+      ],
+      "prerequisites": [
+        "mt_sci-inquiry",
+        "mt_sci-plants-around"
+      ],
+      "next": [
+        "mt_sci-breathing"
+      ],
+      "objectives": [
+        "能指出眼、耳、鼻、舌、手等器官并说出作用",
+        "知道身体外部各部分的名称",
+        "能说出保护眼睛和耳朵的正确做法"
+      ],
+      "cognitiveAction": "分解",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_sci-human-self/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_sci-human-self/index.html",
+      "bytes": 117059
+    },
+    {
+      "topicId": "mt_sci-inquiry",
+      "title": "看到的和想到的不一样",
+      "template": "explain",
+      "renderer": "annotate",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 1,
+      "subject": "科学",
+      "standards": [
+        "science-2022:KX:IP"
+      ],
+      "prerequisites": [],
+      "next": [
+        "mt_sci-human-self",
+        "mt_sci-micro",
+        "mt_sci-objects-around",
+        "mt_sci-plants-around",
+        "mt_sci-scientist",
+        "mt_sci-water",
+        "mt_sci-weather"
+      ],
+      "objectives": [
+        "能按顺序观察并说出三个以上细节",
+        "能把一次观察记录整理成图文形式",
+        "能区分「看到的」和「想到的」"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_sci-inquiry/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_sci-inquiry/index.html",
+      "bytes": 117441
+    },
+    {
+      "topicId": "mt_sci-light",
+      "title": "光怎样走",
+      "template": "explain",
+      "renderer": "molecule",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 6,
+      "subject": "科学",
+      "standards": [
+        "science-2022:KX:MM"
+      ],
+      "prerequisites": [
+        "mt_sci-water"
+      ],
+      "next": [],
+      "objectives": [
+        "知道光沿直线传播",
+        "了解光的反射和折射现象",
+        "知道光与影子的关系"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_sci-light/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_sci-light/index.html",
+      "bytes": 116754
+    },
+    {
+      "topicId": "mt_sci-magnet",
+      "title": "磁铁为什么吸铁",
+      "template": "explain",
+      "renderer": "balance",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 2,
+      "subject": "科学",
+      "standards": [
+        "science-2022:KX:MM"
+      ],
+      "prerequisites": [
+        "mt_sci-objects-around"
+      ],
+      "next": [
+        "mt_sci-circuit"
+      ],
+      "objectives": [
+        "能用磁铁鉴别物品哪些是铁做的",
+        "能说出同名磁极相互靠近的现象",
+        "知道磁铁在生活中的应用并安全使用"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_sci-magnet/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_sci-magnet/index.html",
+      "bytes": 117080
+    },
+    {
+      "topicId": "mt_sci-matter-change",
+      "title": "变化有什么不同",
+      "template": "explain",
+      "renderer": "molecule",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 6,
+      "subject": "科学",
+      "standards": [
+        "science-2022:KX:MC"
+      ],
+      "prerequisites": [
+        "mt_sci-heat",
+        "mt_sci-water"
+      ],
+      "next": [],
+      "objectives": [
+        "能区分物理变化和化学变化",
+        "知道化学变化的特征是有新物质生成",
+        "能举例说明常见变化"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_sci-matter-change/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_sci-matter-change/index.html",
+      "bytes": 117214
+    },
+    {
+      "topicId": "mt_sci-measure",
+      "title": "量长度该用什么",
+      "template": "explain",
+      "renderer": "compass",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 1,
+      "subject": "科学",
+      "standards": [
+        "science-2022:KX:IP"
+      ],
+      "prerequisites": [],
+      "next": [
+        "mt_sci-motion",
+        "mt_sci-tools",
+        "mt_sci-weather"
+      ],
+      "objectives": [
+        "能为测水温、测树叶长选择正确工具",
+        "能规范读出温度计并带上单位",
+        "知道多次测量取平均可减小误差"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_sci-measure/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_sci-measure/index.html",
+      "bytes": 117046
+    },
+    {
+      "topicId": "mt_sci-micro",
+      "title": "看不见的小生命",
+      "template": "explain",
+      "renderer": "molecule",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 5,
+      "subject": "科学",
+      "standards": [
+        "science-2022:KX:LL"
+      ],
+      "prerequisites": [
+        "mt_sci-inquiry",
+        "mt_sci-plants-around"
+      ],
+      "next": [
+        "mt_sci-bio-diversity"
+      ],
+      "objectives": [
+        "知道显微镜能观察微小物体",
+        "认识细胞是生物体的基本单位",
+        "了解微生物与人类的关系"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_sci-micro/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_sci-micro/index.html",
+      "bytes": 117225
+    },
+    {
+      "topicId": "mt_sci-motion",
+      "title": "谁跑得更快",
+      "template": "explain",
+      "renderer": "numberline",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 3,
+      "subject": "科学",
+      "standards": [
+        "science-2022:KX:MM"
+      ],
+      "prerequisites": [
+        "mt_sci-measure"
+      ],
+      "next": [
+        "mt_sci-force",
+        "mt_sci-sound"
+      ],
+      "objectives": [
+        "能判断运动路线是直线还是曲线",
+        "会测量距离和时间并比较快慢",
+        "会用参照物描述位置"
+      ],
+      "cognitiveAction": "比较",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_sci-motion/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_sci-motion/index.html",
+      "bytes": 116838
+    },
+    {
+      "topicId": "mt_sci-objects-around",
+      "title": "这个物体什么样",
+      "template": "explain",
+      "renderer": "senses",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 1,
+      "subject": "科学",
+      "standards": [
+        "science-2022:KX:MS"
+      ],
+      "prerequisites": [
+        "mt_sci-inquiry"
+      ],
+      "next": [
+        "mt_sci-house",
+        "mt_sci-magnet"
+      ],
+      "objectives": [
+        "能用两三个特征词描述一个物体",
+        "能按一个特征给一堆物体分类",
+        "会比较物体的轻重、软硬、透明程度"
+      ],
+      "cognitiveAction": "比较",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_sci-objects-around/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_sci-objects-around/index.html",
+      "bytes": 116902
+    },
+    {
+      "topicId": "mt_sci-one-earth",
+      "title": "地球资源够用吗",
+      "template": "explain",
+      "renderer": "solid",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 3,
+      "subject": "科学",
+      "standards": [
+        "science-2022:KX:UM"
+      ],
+      "prerequisites": [
+        "mt_sci-earth-home"
+      ],
+      "next": [
+        "mt_sci-environment"
+      ],
+      "objectives": [
+        "能说出哪些地球资源正在短缺",
+        "认识浪费与过度开发的危害",
+        "能举出两条自己能做到的节约行动"
+      ],
+      "cognitiveAction": "累积",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_sci-one-earth/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_sci-one-earth/index.html",
+      "bytes": 117071
+    },
+    {
+      "topicId": "mt_sci-plant-growth",
+      "title": "种子怎样长成苗",
+      "template": "explain",
+      "renderer": "senses",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 4,
+      "subject": "科学",
+      "standards": [
+        "science-2022:KX:LL",
+        "science-2022:KX:LH"
+      ],
+      "prerequisites": [
+        "mt_sci-plants-around"
+      ],
+      "next": [],
+      "objectives": [
+        "能说出种子萌发需要的条件",
+        "了解植物从种子到开花结果的过程",
+        "会用图画和数据记录生长"
+      ],
+      "cognitiveAction": "累积",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_sci-plant-growth/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_sci-plant-growth/index.html",
+      "bytes": 117006
+    },
+    {
+      "topicId": "mt_sci-plants-around",
+      "title": "一株植物有几部分",
+      "template": "explain",
+      "renderer": "senses",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 1,
+      "subject": "科学",
+      "standards": [
+        "science-2022:KX:LL"
+      ],
+      "prerequisites": [
+        "mt_sci-inquiry"
+      ],
+      "next": [
+        "mt_sci-animals-common",
+        "mt_sci-bio-diversity",
+        "mt_sci-bio-env",
+        "mt_sci-earth-home",
+        "mt_sci-human-self",
+        "mt_sci-micro",
+        "mt_sci-plant-growth"
+      ],
+      "objectives": [
+        "能说出校园或家里三种以上常见植物的名字",
+        "能指着植物说出根、茎、叶各在什么地方",
+        "会用眼看、手摸、鼻闻等多种感官观察并记录"
+      ],
+      "cognitiveAction": "分解",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_sci-plants-around/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_sci-plants-around/index.html",
+      "bytes": 117615
+    },
+    {
+      "topicId": "mt_sci-rock",
+      "title": "石头和泥土有什么不同",
+      "template": "explain",
+      "renderer": "solid",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 4,
+      "subject": "科学",
+      "standards": [
+        "science-2022:KX:US"
+      ],
+      "prerequisites": [
+        "mt_sci-earth-home"
+      ],
+      "next": [
+        "mt_sci-earth-surface"
+      ],
+      "objectives": [
+        "能按一个特征给岩石分类",
+        "了解土壤的组成",
+        "知道土壤对植物生长的重要性"
+      ],
+      "cognitiveAction": "比较",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_sci-rock/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_sci-rock/index.html",
+      "bytes": 117272
+    },
+    {
+      "topicId": "mt_sci-scientist",
+      "title": "科学家怎么工作",
+      "template": "explain",
+      "renderer": "annotate",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 6,
+      "subject": "科学",
+      "standards": [
+        "science-2022:KX:IP"
+      ],
+      "prerequisites": [
+        "mt_sci-inquiry"
+      ],
+      "next": [],
+      "objectives": [
+        "了解科学探究的基本过程",
+        "知道科学家要有证据和实证精神",
+        "学习科学家实事求是的态度"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_sci-scientist/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_sci-scientist/index.html",
+      "bytes": 117052
+    },
+    {
+      "topicId": "mt_sci-sound",
+      "title": "声音是怎么来的",
+      "template": "explain",
+      "renderer": "molecule",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 4,
+      "subject": "科学",
+      "standards": [
+        "science-2022:KX:MM"
+      ],
+      "prerequisites": [
+        "mt_sci-air",
+        "mt_sci-motion"
+      ],
+      "next": [],
+      "objectives": [
+        "能举例说明声音由物体振动产生",
+        "知道声音传播需要介质",
+        "了解噪声危害与防治"
+      ],
+      "cognitiveAction": "辨析",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_sci-sound/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_sci-sound/index.html",
+      "bytes": 116841
+    },
+    {
+      "topicId": "mt_sci-time",
+      "title": "时间怎么量",
+      "template": "explain",
+      "renderer": "clock",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 6,
+      "subject": "科学",
+      "standards": [
+        "science-2022:KX:TS",
+        "science-2022:KX:TD"
+      ],
+      "prerequisites": [
+        "mt_sci-earth-motion",
+        "mt_sci-tools"
+      ],
+      "next": [],
+      "objectives": [
+        "知道计时工具的发展",
+        "理解日晷、水钟、摆钟的原理",
+        "体会计时精度的提升"
+      ],
+      "cognitiveAction": "累积",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_sci-time/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_sci-time/index.html",
+      "bytes": 116626
+    },
+    {
+      "topicId": "mt_sci-tools",
+      "title": "工具怎样帮我们",
+      "template": "explain",
+      "renderer": "solid",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 5,
+      "subject": "科学",
+      "standards": [
+        "science-2022:KX:TS",
+        "science-2022:KX:TD"
+      ],
+      "prerequisites": [
+        "mt_sci-house",
+        "mt_sci-measure"
+      ],
+      "next": [
+        "mt_sci-boat",
+        "mt_sci-engineer",
+        "mt_sci-time"
+      ],
+      "objectives": [
+        "能说出常用工具的用途",
+        "理解技术是为了解决问题",
+        "知道工具会随需求不断改进"
+      ],
+      "cognitiveAction": "构造",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_sci-tools/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_sci-tools/index.html",
+      "bytes": 117001
+    },
+    {
+      "topicId": "mt_sci-universe",
+      "title": "我们在宇宙哪里",
+      "template": "explain",
+      "renderer": "solid",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 6,
+      "subject": "科学",
+      "standards": [
+        "science-2022:KX:UE"
+      ],
+      "prerequisites": [
+        "mt_sci-earth-motion"
+      ],
+      "next": [],
+      "objectives": [
+        "知道太阳系的组成",
+        "了解地球在宇宙中的位置",
+        "激发探索宇宙的兴趣"
+      ],
+      "cognitiveAction": "累积",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_sci-universe/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_sci-universe/index.html",
+      "bytes": 116674
+    },
+    {
+      "topicId": "mt_sci-water",
+      "title": "水到哪里去了",
+      "template": "explain",
+      "renderer": "molecule",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 3,
+      "subject": "科学",
+      "standards": [
+        "science-2022:KX:MC"
+      ],
+      "prerequisites": [
+        "mt_sci-inquiry"
+      ],
+      "next": [
+        "mt_sci-air",
+        "mt_sci-boat",
+        "mt_sci-heat",
+        "mt_sci-light",
+        "mt_sci-matter-change"
+      ],
+      "objectives": [
+        "能说出水结冰、沸腾的条件",
+        "认识溶解现象",
+        "会用过滤、蒸发分离混合物"
+      ],
+      "cognitiveAction": "变换",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_sci-water/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_sci-water/index.html",
+      "bytes": 116615
+    },
+    {
+      "topicId": "mt_sci-weather",
+      "title": "今天的天气怎么记",
+      "template": "explain",
+      "renderer": "chart",
+      "duration": 24,
+      "interactions": 16,
+      "grade": 3,
+      "subject": "科学",
+      "standards": [
+        "science-2022:KX:US"
+      ],
+      "prerequisites": [
+        "mt_sci-inquiry",
+        "mt_sci-measure"
+      ],
+      "next": [],
+      "objectives": [
+        "能正确读出气温计上的温度",
+        "知道天气可用气温、降水、风力等描述",
+        "能连续记录一周天气日历"
+      ],
+      "cognitiveAction": "累积",
+      "status": "reviewed",
+      "author": "goral.cao",
+      "license": "CC-BY-SA-4.0",
+      "version": "3.0.0",
+      "updatedAt": "2026-11-05",
+      "nav": [
+        {
+          "label": "封面",
+          "page": 0,
+          "cls": "active"
+        },
+        {
+          "label": "前测",
+          "page": 1,
+          "cls": "pre"
+        },
+        {
+          "label": "引入",
+          "page": 2,
+          "cls": ""
+        },
+        {
+          "label": "概念一",
+          "page": 3,
+          "cls": ""
+        },
+        {
+          "label": "连一连",
+          "page": 4,
+          "cls": ""
+        },
+        {
+          "label": "中测1",
+          "page": 5,
+          "cls": "mid"
+        },
+        {
+          "label": "概念二",
+          "page": 6,
+          "cls": ""
+        },
+        {
+          "label": "仿真",
+          "page": 7,
+          "cls": "sim"
+        },
+        {
+          "label": "中测2",
+          "page": 8,
+          "cls": "mid"
+        },
+        {
+          "label": "辨析",
+          "page": 9,
+          "cls": ""
+        },
+        {
+          "label": "后测",
+          "page": 10,
+          "cls": "post"
+        },
+        {
+          "label": "总结",
+          "page": 11,
+          "cls": "end"
+        }
+      ],
+      "path": "courses/mt_sci-weather/",
+      "url": "https://acd118508358062b1.app.workbuddy.host/courses/mt_sci-weather/index.html",
+      "bytes": 116866
     },
     {
       "status": "reviewed",

@@ -1,0 +1,93 @@
+{
+  "topicId": "mt_mor-p-labor",
+  "title": "劳动最光荣",
+  "template": "explain",
+  "renderer": "senses",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 3,
+  "subject": "道德与法治",
+  "standards": [
+    "morality-2022:S2:MO"
+  ],
+  "prerequisites": [
+    "mt_mor-p-occupation"
+  ],
+  "next": [
+    "mt_mor-j-duty",
+    "mt_mor-p-life-source"
+  ],
+  "objectives": [
+    "参加劳动实践、学会基本劳动技能",
+    "体验劳动的辛苦与快乐",
+    "懂得珍惜他人劳动成果"
+  ],
+  "cognitiveAction": "累积",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "引入",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "概念一",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "概念二",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "topicId": "mt_mor-p-motherland",
+  "title": "我爱你，中国",
+  "template": "explain",
+  "renderer": "checkup",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 2,
+  "subject": "道德与法治",
+  "standards": [
+    "morality-2022:S2:GU"
+  ],
+  "prerequisites": [
+    "mt_mor-p-goodchild",
+    "mt_mor-p-hometown"
+  ],
+  "next": [
+    "mt_mor-j-interest",
+    "mt_mor-p-party-history"
+  ],
+  "objectives": [
+    "知道我国全称、首都、国旗与国庆节",
+    "了解祖国山河与民族团结",
+    "知道台湾、香港、澳门是中国不可分割的一部分，为中国人的身份自豪"
+  ],
+  "cognitiveAction": "累积",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "引入",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "概念一",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "概念二",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

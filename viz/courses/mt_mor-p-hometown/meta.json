@@ -1,0 +1,94 @@
+{
+  "topicId": "mt_mor-p-hometown",
+  "title": "我爱家乡",
+  "template": "explain",
+  "renderer": "senses",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 2,
+  "subject": "道德与法治",
+  "standards": [
+    "morality-2022:S2:GU"
+  ],
+  "prerequisites": [
+    "mt_mor-p-family"
+  ],
+  "next": [
+    "mt_mor-p-local-culture",
+    "mt_mor-p-motherland",
+    "mt_mor-p-nature"
+  ],
+  "objectives": [
+    "了解家乡的位置、风景、物产和名人",
+    "会用照片图画小报告介绍家乡",
+    "萌发热爱家乡、建设家乡的情感"
+  ],
+  "cognitiveAction": "累积",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "引入",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "概念一",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "概念二",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

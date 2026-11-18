@@ -1,0 +1,499 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>水到哪里去了</h1>
+  <p class="sub">三年级科学 · 物质科学</p>
+  <div class="tags">
+    <span class="tag">水</span>
+    <span class="tag">三年级</span>
+    <span class="tag">2022课标</span>
+    <span class="tag">实验课</span>
+  </div>
+  <div class="cover-fig">
+<svg viewBox="0 0 760 190" width="760" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="水到哪里去了">
+  <rect x="0" y="0" width="760" height="190" rx="18" fill="#FFFFFF" opacity=".08"/>
+  <g fill="#FFFFFF" opacity=".9"><circle cx="96" cy="58" r="15"/><circle cx="138" cy="58" r="15"/><path d="M78 92 h78 v10 h-78 z" opacity=".35"/></g>
+  <text x="216" y="82" font-size="30" fill="#FFFFFF" font-weight="800">水到哪里去了</text>
+  <text x="218" y="126" font-size="18" fill="rgba(255,255,255,.85)">水与溶解</text>
+</svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">前测 · 先看看你已经知道什么</h2>
+  <p class="quiz-hint">三道题都有唯一答案，答错会告诉你错在哪。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 水结成冰的温度大约是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>0℃以下</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>50℃</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>100℃</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 水沸腾的温度大约是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>0℃</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>100℃</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>50℃</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 水的固态是什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>水蒸气</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>露水</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>冰</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 1 个数看清：水到哪里去了 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">1 个数看清：水到哪里去了</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="认识水与溶解"><rect x="8" y="8" width="284" height="184" rx="12" fill="#F4FAFF" stroke="#00838F"/><text x="20" y="30" font-size="16" fill="#00838F" font-weight="700">认识水与溶解</text>
+  <circle cx="26" cy="40" r="9" fill="#00838F"/><text x="26" y="44" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">1</text><text x="46" y="45" font-size="15" fill="#333">三态：固液气</text>
+  <circle cx="26" cy="70" r="9" fill="#00838F"/><text x="26" y="74" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">2</text><text x="46" y="75" font-size="15" fill="#333">结冰：0℃以下</text>
+  <circle cx="26" cy="100" r="9" fill="#00838F"/><text x="26" y="104" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">3</text><text x="46" y="105" font-size="15" fill="#333">沸腾：100℃</text>
+  <circle cx="26" cy="130" r="9" fill="#00838F"/><text x="26" y="134" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">4</text><text x="46" y="135" font-size="15" fill="#333">溶解：糖盐化开</text>
+  <circle cx="26" cy="160" r="9" fill="#00838F"/><text x="26" y="164" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">5</text><text x="46" y="165" font-size="15" fill="#333">分离：过滤蒸发</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    今天来认识<b>水与溶解</b>。先看整体，再一样一样拆开看。
+  </p>
+  <p class="teach-text" id="p2s2">
+    先看最关键的一点：<strong>三态</strong>。水有固态冰、液态水、气态水蒸气
+  </p>
+  <p class="teach-text" id="p2s3">
+    抓住这几点，水与溶解 就清楚了。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>三态</h4>
+    <div class="eq">固液气</div>
+    <p>水有固态冰、液态水、气态水蒸气</p>
+  </div>
+  <div class="card">
+    <h4>结冰</h4>
+    <div class="eq">0℃以下</div>
+    <p>水在 0℃以下结成冰</p>
+  </div>
+  <div class="card">
+    <h4>沸腾</h4>
+    <div class="eq">100℃</div>
+    <p>水在 100℃左右沸腾变成水蒸气</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  <strong>三态</strong>是这一课的关键，先记住它。
+</div>
+</section>
+
+<!-- ===== p3: 拆成几条：每条讲清一件事 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">拆成几条：每条讲清一件事</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="要点一览"><rect x="8" y="8" width="284" height="184" rx="12" fill="#F4FAFF" stroke="#00838F"/><text x="20" y="30" font-size="16" fill="#00838F" font-weight="700">要点一览</text>
+  <circle cx="26" cy="40" r="9" fill="#00838F"/><text x="26" y="44" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">1</text><text x="46" y="45" font-size="15" fill="#333">三态</text>
+  <circle cx="26" cy="70" r="9" fill="#00838F"/><text x="26" y="74" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">2</text><text x="46" y="75" font-size="15" fill="#333">结冰</text>
+  <circle cx="26" cy="100" r="9" fill="#00838F"/><text x="26" y="104" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">3</text><text x="46" y="105" font-size="15" fill="#333">沸腾</text>
+  <circle cx="26" cy="130" r="9" fill="#00838F"/><text x="26" y="134" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">4</text><text x="46" y="135" font-size="15" fill="#333">溶解</text>
+  <circle cx="26" cy="160" r="9" fill="#00838F"/><text x="26" y="164" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">5</text><text x="46" y="165" font-size="15" fill="#333">分离</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    水与溶解 可以拆成几个要点，一条一条记。
+  </p>
+  <p class="teach-text" id="p3s2">
+    下面这几条要分清，别把它们弄混。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>三态</strong>：水有固态冰、液态水、气态水蒸气</li>
+  <li><strong>结冰</strong>：水在 0℃以下结成冰</li>
+  <li><strong>沸腾</strong>：水在 100℃左右沸腾变成水蒸气</li>
+  <li><strong>溶解</strong>：糖、盐放入水中会溶解，看不见颗粒</li>
+  <li><strong>分离</strong>：过滤可分离不溶物，蒸发可分离出盐</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  一条一条对号入座，<strong>名称</strong>和<strong>作用</strong>别弄反。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：名称和要点对起来</h2>
+<p class="teach-text" id="p3bs1">先读左边的名称，再连右边的要点。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 边学边想</h2>
+  <p class="quiz-hint">三道题都有唯一答案，做完再看讲解。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 糖放入水中搅拌后不见了，这是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>溶解了</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>消失了</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>变质了</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 要把盐水中的盐分离出来，用什么方法？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>过滤</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>蒸发</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>沉淀</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 要把水中的泥沙分离出来，用什么方法？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>蒸发</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>冷冻</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>过滤</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 再看一层：把要点补齐 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">再看一层：把要点补齐</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+<svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="补要点"><rect x="8" y="8" width="284" height="134" rx="12" fill="#F4FAFF" stroke="#00838F"/><text x="20" y="30" font-size="16" fill="#00838F" font-weight="700">补要点</text>
+  <circle cx="26" cy="40" r="9" fill="#00838F"/><text x="26" y="44" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">1</text><text x="46" y="45" font-size="15" fill="#333">沸腾：100℃</text>
+  <circle cx="26" cy="70" r="9" fill="#00838F"/><text x="26" y="74" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">2</text><text x="46" y="75" font-size="15" fill="#333">溶解：糖盐化开</text>
+  <circle cx="26" cy="100" r="9" fill="#00838F"/><text x="26" y="104" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">3</text><text x="46" y="105" font-size="15" fill="#333">分离：过滤蒸发</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    再换个角度，把 水与溶解 剩下的要点补齐。
+  </p>
+  <p class="teach-text" id="p5s2">
+    这几条常常一起考，要能一口气说清。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>沸腾</h4>
+    <div class="eq">100℃</div>
+    <p>水在 100℃左右沸腾变成水蒸气</p>
+  </div>
+  <div class="card">
+    <h4>溶解</h4>
+    <div class="eq">糖盐化开</div>
+    <p>糖、盐放入水中会溶解，看不见颗粒</p>
+  </div>
+  <div class="card">
+    <h4>分离</h4>
+    <div class="eq">过滤蒸发</div>
+    <p>过滤可分离不溶物，蒸发可分离出盐</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  前后要点连起来，才是<strong>完整的 水与溶解</strong>。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">水的实验：一步步做</h2>
+  <p class="sim-desc">点「做下一步」完成水的状态或溶解实验；「换一组」换实验。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">实验 %N% 步</span>
+    <span class="sim-tip" id="simTip">一次只改一个条件</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simAdd()">+ 做下一步</button>
+    <button class="btn" onclick="simNextCase()">换一组</button>
+    <button class="btn" onclick="simDemo()">看老师做</button>
+    <button class="btn-retry" onclick="simReset()">清空</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">看清现象再下结论</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>水有哪三种状态？</li>
+    <li>过滤和蒸发的区别是什么？</li>
+    <li>换一组后实验变了吗？</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 换个角度再认一次</h2>
+  <p class="quiz-hint">三道题都有唯一答案，注意别把概念用反。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 水烧开时冒的「白气」是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>小水滴</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>水蒸气</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>空气</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 湿衣服晾干，水发生了什么变化？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>结冰</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>蒸发变成水蒸气</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>消失</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 下面哪种物质能溶解在水中？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>沙子</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>食用油</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>食盐</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四处最容易翻车 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四处最容易翻车</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    水与溶解 看着简单，最容易在这四处翻车。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>水蒸气看得见</h4>
+    <div class="eq">✗ 白气就是水蒸气</div>
+    <p>水蒸气无色透明，白气是小水滴</p>
+  </div>
+  <div class="card">
+    <h4>溶解消失</h4>
+    <div class="eq">✗ 糖溶解后没了</div>
+    <p>糖还在水里，只是变成肉眼看不见的微粒</p>
+  </div>
+  <div class="card">
+    <h4>过滤分盐</h4>
+    <div class="eq">✗ 用滤纸过滤盐水得盐</div>
+    <p>盐已溶解，滤不住，要用蒸发</p>
+  </div>
+  <div class="card">
+    <h4>结冰放热</h4>
+    <div class="eq">✗ 水结冰要吸热</div>
+    <p>水结冰是放热，融化才吸热</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  记住：<strong>水有固态冰、液态水、气态水蒸气</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到开头那个数：水到哪里去了。现在你能说清为什么了吗？
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，把今天学的说清楚</h2>
+  <p class="quiz-hint">五道题都有唯一答案。做完这一页，这一课就装进去了。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 水在自然界循环，主要靠什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>蒸发和降水</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>只有蒸发</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>只有下雨</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 加快糖溶解的方法不包括？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>搅拌</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>降低温度</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>用热水</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 下面哪个是水的气态？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>冰</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>雪</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>水蒸气</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 水结冰时，热量变化是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>放出热量</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>吸收热量</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>不变</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 做溶解实验时，为公平比较应？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>随便加</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>水量、温度相同</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>以上答案都不合适</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">三态</div>
+        <div class="summary-v4-summary">固液气</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>水有固态冰、液态水、气态水蒸气</p>
+      <p>水在 0℃以下结成冰</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">沸腾</div>
+        <div class="summary-v4-summary">100℃</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>水在 100℃左右沸腾变成水蒸气</p>
+      <p>糖、盐放入水中会溶解，看不见颗粒</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">连一连</div>
+        <div class="summary-v4-summary">名称对要点</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>看到名称想到要点。</p>
+      <p>看到要点能说出名称。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">别踩坑</div>
+        <div class="summary-v4-summary">四处易错</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>水蒸气无色透明，白气是小水滴</p>
+      <p>糖还在水里，只是变成肉眼看不见的微粒</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  水的三态会变化：<strong>结冰、蒸发、溶解</strong>，都看得见证据。
+</p>
+</section>

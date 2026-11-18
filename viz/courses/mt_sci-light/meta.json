@@ -1,0 +1,90 @@
+{
+  "topicId": "mt_sci-light",
+  "title": "光怎样走",
+  "template": "explain",
+  "renderer": "molecule",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 6,
+  "subject": "科学",
+  "standards": [
+    "science-2022:KX:MM"
+  ],
+  "prerequisites": [
+    "mt_sci-water"
+  ],
+  "next": [],
+  "objectives": [
+    "知道光沿直线传播",
+    "了解光的反射和折射现象",
+    "知道光与影子的关系"
+  ],
+  "cognitiveAction": "辨析",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "引入",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "概念一",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "概念二",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

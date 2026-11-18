@@ -2,6 +2,17 @@
 
 本项目遵循[语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [v0.49.8] - 2026-11-18
+
+### 小学科学 39 课 + 道德与法治 38 课：小学阶段全科目收口，全库 270 课
+
+核查发现小学阶段除三大主科（语文 55 / 数学 101 / 英语 37，已全部完成）外，图谱里还有**科学 39**、**道德与法治 38** 两科知识点完全无课件，共 77 课缺口。本批按纯本地链路 C 全部补齐，全库从 193 → **270 课**，小学阶段所有科目 100% 覆盖。
+
+- **装配器**：沿用第四代 7 分片骨架，零引擎改动。新建 `run_sci.py`（复用 `lib.emit`，`subject` 参数化科学/道法）+ `tpl_sci.js`（在数学 7 模式上扩展 `observe` 观察记录 / `experiment` 变量实验 / `scenario` 情境辨析 / `process` 流程步骤 4 种数据驱动仿真，统一 `simAdd/simDemo/simNextCase/simReset` 契约）。77 课数据由 `compact.py` 紧凑框架 + `sci_batch1..4.py`（39 课）、`mor_batch1..4.py`（38 课）生成；权威元数据取 `authority_sci_moral.json`（课标 science-2022 / morality-2022，grade 1/2/3/4/5/6），严格校验 standards/prereq/next。道法党史国史、法治、国家主权等主题一律按官方规范口径撰写。
+- **质量口径**：每课 12 页 / 14 题 / 1 Canvas / 24 分钟 / 16 交互；`compact.lesson()` 按固定序列把 14 题正确答案轮转，分布严格 `{0:5,1:5,2:4}`；答案文本登记进 `quiz-expected.json`，`semantic-check.py` 校验 **3052 题 0 不一致**（141→218 课题库）。
+- **本地链路 C**：`deploy/links.json` 登记 194–270（`nodeId=""`、`delivery="local"`），不新增 `workbuddy.link`、不做 4A/4B；`build.py` 升 `v0.49.8` 并重生成图谱索引与 270 份 `viz/courses` 副本。
+- **回归**：`validate.mjs` / `node --test` 13/13 / `validate-courses.mjs` 273 个 0 警告 / `validate-questions.mjs` 104 题 0 警告 / `semantic-check.py` 3052 题 0 不一致 / `score-course.mjs --min 90`（270 门平均 98.9 分；科学 39 课 98.1、道法 38 课 98.0）/ `git diff --check` 全绿；浏览器验收 10 份代表课件覆盖科学/道法各学段与 4 种仿真模式 + 图谱「有课件 270」，0 JS 报错。
+
 ## [v0.49.7] - 2026-11-17
 
 ### 小学语文 1~2 年级 19 课：小学语文整体收口，全库 193 课

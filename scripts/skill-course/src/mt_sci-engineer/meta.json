@@ -1,0 +1,92 @@
+{
+  "topicId": "mt_sci-engineer",
+  "title": "塔台怎样搭得稳",
+  "template": "explain",
+  "renderer": "solid",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 6,
+  "subject": "科学",
+  "standards": [
+    "science-2022:KX:TD"
+  ],
+  "prerequisites": [
+    "mt_sci-boat",
+    "mt_sci-house",
+    "mt_sci-tools"
+  ],
+  "next": [],
+  "objectives": [
+    "了解工程设计的基本流程",
+    "知道三角形结构更稳定",
+    "能在限制条件下完成任务"
+  ],
+  "cognitiveAction": "构造",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "引入",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "概念一",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "概念二",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

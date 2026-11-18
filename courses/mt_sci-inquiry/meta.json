@@ -1,0 +1,96 @@
+{
+  "topicId": "mt_sci-inquiry",
+  "title": "看到的和想到的不一样",
+  "template": "explain",
+  "renderer": "annotate",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 1,
+  "subject": "科学",
+  "standards": [
+    "science-2022:KX:IP"
+  ],
+  "prerequisites": [],
+  "next": [
+    "mt_sci-human-self",
+    "mt_sci-micro",
+    "mt_sci-objects-around",
+    "mt_sci-plants-around",
+    "mt_sci-scientist",
+    "mt_sci-water",
+    "mt_sci-weather"
+  ],
+  "objectives": [
+    "能按顺序观察并说出三个以上细节",
+    "能把一次观察记录整理成图文形式",
+    "能区分「看到的」和「想到的」"
+  ],
+  "cognitiveAction": "辨析",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "引入",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "概念一",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "概念二",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

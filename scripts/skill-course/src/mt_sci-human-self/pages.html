@@ -1,0 +1,499 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>我们有几个感觉器官</h1>
+  <p class="sub">一年级科学 · 生命科学</p>
+  <div class="tags">
+    <span class="tag">人体</span>
+    <span class="tag">一年级</span>
+    <span class="tag">2022课标</span>
+    <span class="tag">观察课</span>
+  </div>
+  <div class="cover-fig">
+<svg viewBox="0 0 760 190" width="760" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="我们有几个感觉器官">
+  <rect x="0" y="0" width="760" height="190" rx="18" fill="#FFFFFF" opacity=".08"/>
+  <g fill="#FFFFFF" opacity=".9"><circle cx="96" cy="58" r="15"/><circle cx="138" cy="58" r="15"/><path d="M78 92 h78 v10 h-78 z" opacity=".35"/></g>
+  <text x="216" y="82" font-size="30" fill="#FFFFFF" font-weight="800">我们有几个感觉器官</text>
+  <text x="218" y="126" font-size="18" fill="rgba(255,255,255,.85)">认识我们自己</text>
+</svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">前测 · 先看看你已经知道什么</h2>
+  <p class="quiz-hint">三道题都有唯一答案，答错会告诉你错在哪。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 我们用哪个器官看东西？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>眼睛</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>耳朵</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>鼻子</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 下面哪个不是感觉器官？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>舌头</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>膝盖</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>皮肤</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 我们用耳朵来做什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>看颜色</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>尝味道</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>听声音</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 1 个数看清：我们有几个感觉器官 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">1 个数看清：我们有几个感觉器官</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="认识认识我们自己"><rect x="8" y="8" width="284" height="184" rx="12" fill="#F4FAFF" stroke="#00838F"/><text x="20" y="30" font-size="16" fill="#00838F" font-weight="700">认识认识我们自己</text>
+  <circle cx="26" cy="40" r="9" fill="#00838F"/><text x="26" y="44" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">1</text><text x="46" y="45" font-size="15" fill="#333">眼睛：视觉</text>
+  <circle cx="26" cy="70" r="9" fill="#00838F"/><text x="26" y="74" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">2</text><text x="46" y="75" font-size="15" fill="#333">耳朵：听觉</text>
+  <circle cx="26" cy="100" r="9" fill="#00838F"/><text x="26" y="104" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">3</text><text x="46" y="105" font-size="15" fill="#333">鼻子：嗅觉</text>
+  <circle cx="26" cy="130" r="9" fill="#00838F"/><text x="26" y="134" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">4</text><text x="46" y="135" font-size="15" fill="#333">舌头：味觉</text>
+  <circle cx="26" cy="160" r="9" fill="#00838F"/><text x="26" y="164" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">5</text><text x="46" y="165" font-size="15" fill="#333">皮肤：触觉</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    今天来认识<b>认识我们自己</b>。先看整体，再一样一样拆开看。
+  </p>
+  <p class="teach-text" id="p2s2">
+    先看最关键的一点：<strong>眼睛</strong>。用来看颜色和形状，要注意光线和距离
+  </p>
+  <p class="teach-text" id="p2s3">
+    抓住这几点，认识我们自己 就清楚了。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>眼睛</h4>
+    <div class="eq">视觉</div>
+    <p>用来看颜色和形状，要注意光线和距离</p>
+  </div>
+  <div class="card">
+    <h4>耳朵</h4>
+    <div class="eq">听觉</div>
+    <p>用来听声音，还帮我们保持身体平衡</p>
+  </div>
+  <div class="card">
+    <h4>鼻子</h4>
+    <div class="eq">嗅觉</div>
+    <p>闻气味，也是呼吸通道的一部分</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  <strong>眼睛</strong>是这一课的关键，先记住它。
+</div>
+</section>
+
+<!-- ===== p3: 拆成几条：每条讲清一件事 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">拆成几条：每条讲清一件事</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="要点一览"><rect x="8" y="8" width="284" height="184" rx="12" fill="#F4FAFF" stroke="#00838F"/><text x="20" y="30" font-size="16" fill="#00838F" font-weight="700">要点一览</text>
+  <circle cx="26" cy="40" r="9" fill="#00838F"/><text x="26" y="44" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">1</text><text x="46" y="45" font-size="15" fill="#333">眼睛</text>
+  <circle cx="26" cy="70" r="9" fill="#00838F"/><text x="26" y="74" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">2</text><text x="46" y="75" font-size="15" fill="#333">耳朵</text>
+  <circle cx="26" cy="100" r="9" fill="#00838F"/><text x="26" y="104" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">3</text><text x="46" y="105" font-size="15" fill="#333">鼻子</text>
+  <circle cx="26" cy="130" r="9" fill="#00838F"/><text x="26" y="134" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">4</text><text x="46" y="135" font-size="15" fill="#333">舌头</text>
+  <circle cx="26" cy="160" r="9" fill="#00838F"/><text x="26" y="164" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">5</text><text x="46" y="165" font-size="15" fill="#333">皮肤</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    认识我们自己 可以拆成几个要点，一条一条记。
+  </p>
+  <p class="teach-text" id="p3s2">
+    下面这几条要分清，别把它们弄混。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>眼睛</strong>：用来看颜色和形状，要注意光线和距离</li>
+  <li><strong>耳朵</strong>：用来听声音，还帮我们保持身体平衡</li>
+  <li><strong>鼻子</strong>：闻气味，也是呼吸通道的一部分</li>
+  <li><strong>舌头</strong>：尝出甜、咸、酸、苦，表面有味蕾</li>
+  <li><strong>皮肤</strong>：感知冷热软硬疼痒，还保护身体</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  一条一条对号入座，<strong>名称</strong>和<strong>作用</strong>别弄反。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：名称和要点对起来</h2>
+<p class="teach-text" id="p3bs1">先读左边的名称，再连右边的要点。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 边学边想</h2>
+  <p class="quiz-hint">三道题都有唯一答案，做完再看讲解。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 想尝一杯水是甜是咸，用哪个器官？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>舌头</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>鼻子</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>眼睛</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 皮肤能帮我们感觉什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>颜色</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>冷、热、软、硬</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>声音</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 鼻子除了闻气味，还和什么有关？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>看东西</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>走路</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>呼吸</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 再看一层：把要点补齐 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">再看一层：把要点补齐</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+<svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="补要点"><rect x="8" y="8" width="284" height="134" rx="12" fill="#F4FAFF" stroke="#00838F"/><text x="20" y="30" font-size="16" fill="#00838F" font-weight="700">补要点</text>
+  <circle cx="26" cy="40" r="9" fill="#00838F"/><text x="26" y="44" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">1</text><text x="46" y="45" font-size="15" fill="#333">鼻子：嗅觉</text>
+  <circle cx="26" cy="70" r="9" fill="#00838F"/><text x="26" y="74" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">2</text><text x="46" y="75" font-size="15" fill="#333">舌头：味觉</text>
+  <circle cx="26" cy="100" r="9" fill="#00838F"/><text x="26" y="104" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">3</text><text x="46" y="105" font-size="15" fill="#333">皮肤：触觉</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    再换个角度，把 认识我们自己 剩下的要点补齐。
+  </p>
+  <p class="teach-text" id="p5s2">
+    这几条常常一起考，要能一口气说清。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>鼻子</h4>
+    <div class="eq">嗅觉</div>
+    <p>闻气味，也是呼吸通道的一部分</p>
+  </div>
+  <div class="card">
+    <h4>舌头</h4>
+    <div class="eq">味觉</div>
+    <p>尝出甜、咸、酸、苦，表面有味蕾</p>
+  </div>
+  <div class="card">
+    <h4>皮肤</h4>
+    <div class="eq">触觉</div>
+    <p>感知冷热软硬疼痒，还保护身体</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  前后要点连起来，才是<strong>完整的 认识我们自己</strong>。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">认识器官：一个一个来</h2>
+  <p class="sim-desc">点「认识下一项」逐个认识感觉器官；「换一组」换一批内容。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">已认识 %N% 项</span>
+    <span class="sim-tip" id="simTip">边认边说它的用处</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simAdd()">+ 认识下一项</button>
+    <button class="btn" onclick="simNextCase()">换一组</button>
+    <button class="btn" onclick="simDemo()">看老师做</button>
+    <button class="btn-retry" onclick="simReset()">清空</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">每认一个器官，说说它能帮我们做什么</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>五个感觉器官分别是哪些？</li>
+    <li>为什么舌头不能代替鼻子闻？</li>
+    <li>换一组后多了什么？</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 换个角度再认一次</h2>
+  <p class="quiz-hint">三道题都有唯一答案，注意别把概念用反。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 下面哪种做法保护眼睛？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>看书一小时后远眺</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>在强光下看书</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>以上说法都不对</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 保护耳朵的正确做法是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>经常用挖耳勺掏耳朵</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>不把小东西塞进耳朵</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>以上做法都正确</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 感觉器官受伤了应该？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>自己忍着</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>三种说法都不准确</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>告诉大人、及时就医</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四处最容易翻车 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四处最容易翻车</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    认识我们自己 看着简单，最容易在这四处翻车。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>猛闻气味</h4>
+    <div class="eq">✗ 凑上去猛吸</div>
+    <p>用手轻扇、少量地闻</p>
+  </div>
+  <div class="card">
+    <h4>乱尝东西</h4>
+    <div class="eq">✗ 什么都往嘴里尝</div>
+    <p>不认识的东西不能尝</p>
+  </div>
+  <div class="card">
+    <h4>掏耳朵</h4>
+    <div class="eq">✗ 用挖耳勺深掏</div>
+    <p>容易伤耳道，不要乱掏</p>
+  </div>
+  <div class="card">
+    <h4>躺着看书</h4>
+    <div class="eq">✗ 看书姿势随便</div>
+    <p>姿势端正、定时远眺才护眼</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  记住：<strong>用来看颜色和形状，要注意光线和距离</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到开头那个数：我们有几个感觉器官。现在你能说清为什么了吗？
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，把今天学的说清楚</h2>
+  <p class="quiz-hint">五道题都有唯一答案。做完这一页，这一课就装进去了。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 人体的五大感觉器官是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>眼、耳、鼻、舌、皮肤</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>眼、耳、手、脚、头</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>心、肝、肺、胃、肾</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 手属于身体的哪一部分？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>下肢</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>上肢</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>头部</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 「用鼻子闻到花香」用的是哪个感觉？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>视觉</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>听觉</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>嗅觉</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 眼睛近视了，正确做法是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>配戴合适眼镜、注意用眼</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>随便买副眼镜戴</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>前两种都对</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 下面做法能保护皮肤的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>用尖东西划皮肤</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>讲卫生、避免暴晒</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>以上说法都正确</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">眼睛</div>
+        <div class="summary-v4-summary">视觉</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>用来看颜色和形状，要注意光线和距离</p>
+      <p>用来听声音，还帮我们保持身体平衡</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">鼻子</div>
+        <div class="summary-v4-summary">嗅觉</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>闻气味，也是呼吸通道的一部分</p>
+      <p>尝出甜、咸、酸、苦，表面有味蕾</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">连一连</div>
+        <div class="summary-v4-summary">名称对要点</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>看到名称想到要点。</p>
+      <p>看到要点能说出名称。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">别踩坑</div>
+        <div class="summary-v4-summary">四处易错</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>用手轻扇、少量地闻</p>
+      <p>不认识的东西不能尝</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  认识自己从看清身上的器官开始，还要好好保护它们。
+</p>
+</section>

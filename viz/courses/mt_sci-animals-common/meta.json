@@ -1,0 +1,93 @@
+{
+  "topicId": "mt_sci-animals-common",
+  "title": "动物怎么分家",
+  "template": "explain",
+  "renderer": "pairMatch",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 1,
+  "subject": "科学",
+  "standards": [
+    "science-2022:KX:LL"
+  ],
+  "prerequisites": [
+    "mt_sci-plants-around"
+  ],
+  "next": [
+    "mt_sci-animal-life",
+    "mt_sci-dinosaur"
+  ],
+  "objectives": [
+    "能说出五种以上常见动物并描述外形",
+    "能按会不会飞、爱吃什么给动物分组",
+    "会用图画和文字记录观察到的动物"
+  ],
+  "cognitiveAction": "比较",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "引入",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "概念一",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "概念二",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "topicId": "mt_sci-plant-growth",
+  "title": "种子怎样长成苗",
+  "template": "explain",
+  "renderer": "senses",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 4,
+  "subject": "科学",
+  "standards": [
+    "science-2022:KX:LL",
+    "science-2022:KX:LH"
+  ],
+  "prerequisites": [
+    "mt_sci-plants-around"
+  ],
+  "next": [],
+  "objectives": [
+    "能说出种子萌发需要的条件",
+    "了解植物从种子到开花结果的过程",
+    "会用图画和数据记录生长"
+  ],
+  "cognitiveAction": "累积",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "引入",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "概念一",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "概念二",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}

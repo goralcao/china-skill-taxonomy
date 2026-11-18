@@ -1,0 +1,499 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>看不见的小生命</h1>
+  <p class="sub">五年级科学 · 生命科学</p>
+  <div class="tags">
+    <span class="tag">微观</span>
+    <span class="tag">五年级</span>
+    <span class="tag">2022课标</span>
+    <span class="tag">观察课</span>
+  </div>
+  <div class="cover-fig">
+<svg viewBox="0 0 760 190" width="760" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="看不见的小生命">
+  <rect x="0" y="0" width="760" height="190" rx="18" fill="#FFFFFF" opacity=".08"/>
+  <g fill="#FFFFFF" opacity=".9"><circle cx="96" cy="58" r="15"/><circle cx="138" cy="58" r="15"/><path d="M78 92 h78 v10 h-78 z" opacity=".35"/></g>
+  <text x="216" y="82" font-size="30" fill="#FFFFFF" font-weight="800">看不见的小生命</text>
+  <text x="218" y="126" font-size="18" fill="rgba(255,255,255,.85)">微小世界</text>
+</svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">前测 · 先看看你已经知道什么</h2>
+  <p class="quiz-hint">三道题都有唯一答案，答错会告诉你错在哪。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 观察肉眼看不见的微小物体，用什么工具？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>显微镜</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>放大镜</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>望远镜</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 生物体结构和功能的基本单位是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>组织</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>细胞</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>器官</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 下面哪个是有益微生物？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>让食物腐败的细菌</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>致病病毒</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>做酸奶的乳酸菌</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 1 个数看清：看不见的小生命 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">1 个数看清：看不见的小生命</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="认识微小世界"><rect x="8" y="8" width="284" height="184" rx="12" fill="#F4FAFF" stroke="#00838F"/><text x="20" y="30" font-size="16" fill="#00838F" font-weight="700">认识微小世界</text>
+  <circle cx="26" cy="40" r="9" fill="#00838F"/><text x="26" y="44" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">1</text><text x="46" y="45" font-size="15" fill="#333">显微镜：放大观察</text>
+  <circle cx="26" cy="70" r="9" fill="#00838F"/><text x="26" y="74" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">2</text><text x="46" y="75" font-size="15" fill="#333">细胞：基本单位</text>
+  <circle cx="26" cy="100" r="9" fill="#00838F"/><text x="26" y="104" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">3</text><text x="46" y="105" font-size="15" fill="#333">微生物：很小</text>
+  <circle cx="26" cy="130" r="9" fill="#00838F"/><text x="26" y="134" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">4</text><text x="46" y="135" font-size="15" fill="#333">有益微生物：发酵帮忙</text>
+  <circle cx="26" cy="160" r="9" fill="#00838F"/><text x="26" y="164" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">5</text><text x="46" y="165" font-size="15" fill="#333">有害微生物：会致病</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    今天来认识<b>微小世界</b>。先看整体，再一样一样拆开看。
+  </p>
+  <p class="teach-text" id="p2s2">
+    先看最关键的一点：<strong>显微镜</strong>。显微镜能放大微小物体，看到肉眼看不见的东西
+  </p>
+  <p class="teach-text" id="p2s3">
+    抓住这几点，微小世界 就清楚了。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>显微镜</h4>
+    <div class="eq">放大观察</div>
+    <p>显微镜能放大微小物体，看到肉眼看不见的东</p>
+  </div>
+  <div class="card">
+    <h4>细胞</h4>
+    <div class="eq">基本单位</div>
+    <p>细胞是生物体结构和功能的基本单位</p>
+  </div>
+  <div class="card">
+    <h4>微生物</h4>
+    <div class="eq">很小</div>
+    <p>细菌、酵母等微生物肉眼看不见</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  <strong>显微镜</strong>是这一课的关键，先记住它。
+</div>
+</section>
+
+<!-- ===== p3: 拆成几条：每条讲清一件事 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">拆成几条：每条讲清一件事</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="要点一览"><rect x="8" y="8" width="284" height="184" rx="12" fill="#F4FAFF" stroke="#00838F"/><text x="20" y="30" font-size="16" fill="#00838F" font-weight="700">要点一览</text>
+  <circle cx="26" cy="40" r="9" fill="#00838F"/><text x="26" y="44" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">1</text><text x="46" y="45" font-size="15" fill="#333">显微镜</text>
+  <circle cx="26" cy="70" r="9" fill="#00838F"/><text x="26" y="74" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">2</text><text x="46" y="75" font-size="15" fill="#333">细胞</text>
+  <circle cx="26" cy="100" r="9" fill="#00838F"/><text x="26" y="104" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">3</text><text x="46" y="105" font-size="15" fill="#333">微生物</text>
+  <circle cx="26" cy="130" r="9" fill="#00838F"/><text x="26" y="134" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">4</text><text x="46" y="135" font-size="15" fill="#333">有益微生物</text>
+  <circle cx="26" cy="160" r="9" fill="#00838F"/><text x="26" y="164" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">5</text><text x="46" y="165" font-size="15" fill="#333">有害微生物</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    微小世界 可以拆成几个要点，一条一条记。
+  </p>
+  <p class="teach-text" id="p3s2">
+    下面这几条要分清，别把它们弄混。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>显微镜</strong>：显微镜能放大微小物体，看到肉眼看不见的东西</li>
+  <li><strong>细胞</strong>：细胞是生物体结构和功能的基本单位</li>
+  <li><strong>微生物</strong>：细菌、酵母等微生物肉眼看不见</li>
+  <li><strong>有益微生物</strong>：乳酸菌做酸奶、酵母发面，对人有益</li>
+  <li><strong>有害微生物</strong>：有些细菌病毒会让人得病，要注意卫生</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  一条一条对号入座，<strong>名称</strong>和<strong>作用</strong>别弄反。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：名称和要点对起来</h2>
+<p class="teach-text" id="p3bs1">先读左边的名称，再连右边的要点。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 边学边想</h2>
+  <p class="quiz-hint">三道题都有唯一答案，做完再看讲解。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 酵母发面利用了微生物的什么作用？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>发酵产生气体</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>让面变色</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>以上都符合要求</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 微生物肉眼能直接看见吗？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>都能</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>一般不能</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>都能看见颜色</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 下面哪个是有害微生物？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>乳酸菌</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>酵母</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>流感病毒</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 再看一层：把要点补齐 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">再看一层：把要点补齐</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+<svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="补要点"><rect x="8" y="8" width="284" height="134" rx="12" fill="#F4FAFF" stroke="#00838F"/><text x="20" y="30" font-size="16" fill="#00838F" font-weight="700">补要点</text>
+  <circle cx="26" cy="40" r="9" fill="#00838F"/><text x="26" y="44" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">1</text><text x="46" y="45" font-size="15" fill="#333">微生物：很小</text>
+  <circle cx="26" cy="70" r="9" fill="#00838F"/><text x="26" y="74" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">2</text><text x="46" y="75" font-size="15" fill="#333">有益微生物：发酵帮忙</text>
+  <circle cx="26" cy="100" r="9" fill="#00838F"/><text x="26" y="104" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">3</text><text x="46" y="105" font-size="15" fill="#333">有害微生物：会致病</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    再换个角度，把 微小世界 剩下的要点补齐。
+  </p>
+  <p class="teach-text" id="p5s2">
+    这几条常常一起考，要能一口气说清。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>微生物</h4>
+    <div class="eq">很小</div>
+    <p>细菌、酵母等微生物肉眼看不见</p>
+  </div>
+  <div class="card">
+    <h4>有益微生物</h4>
+    <div class="eq">发酵帮忙</div>
+    <p>乳酸菌做酸奶、酵母发面，对人有益</p>
+  </div>
+  <div class="card">
+    <h4>有害微生物</h4>
+    <div class="eq">会致病</div>
+    <p>有些细菌病毒会让人得病，要注意卫生</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  前后要点连起来，才是<strong>完整的 微小世界</strong>。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">显微观察：一步步看</h2>
+  <p class="sim-desc">点「观察下一步」体验显微观察；「换一组」换观察对象。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">观察 %N% 步</span>
+    <span class="sim-tip" id="simTip">先低倍再高倍</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simAdd()">+ 观察下一步</button>
+    <button class="btn" onclick="simNextCase()">换一组</button>
+    <button class="btn" onclick="simDemo()">看老师做</button>
+    <button class="btn-retry" onclick="simReset()">清空</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">看到微小的世界</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>显微镜怎么用？</li>
+    <li>微生物都有害吗？</li>
+    <li>换一组后对象变了吗？</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 换个角度再认一次</h2>
+  <p class="quiz-hint">三道题都有唯一答案，注意别把概念用反。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 使用显微镜，正确的顺序是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>先低倍找到再换高倍</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>直接高倍</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>只有最后一种对</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 洋葱表皮细胞在显微镜下呈什么形状？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>圆形小球</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>像小格子</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>长条形</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 食物腐败通常是因为？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>食物自己变坏</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>以上说法都不对</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>微生物大量繁殖</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四处最容易翻车 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四处最容易翻车</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    微小世界 看着简单，最容易在这四处翻车。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>肉眼全看见</h4>
+    <div class="eq">✗ 肉眼能看到所有生物</div>
+    <p>很多微生物要借显微镜才能看见</p>
+  </div>
+  <div class="card">
+    <h4>微生物都有害</h4>
+    <div class="eq">✗ 微生物都是坏的</div>
+    <p>很多微生物有益，如发酵用的菌</p>
+  </div>
+  <div class="card">
+    <h4>细胞凭想</h4>
+    <div class="eq">✗ 生物体没有细胞</div>
+    <p>除病毒外，生物都由细胞构成</p>
+  </div>
+  <div class="card">
+    <h4>放大随便调</h4>
+    <div class="eq">✗ 显微镜倍数越大越好</div>
+    <p>要先用低倍找到，再换高倍</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  记住：<strong>显微镜能放大微小物体，看到肉眼看不见的东西</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到开头那个数：看不见的小生命。现在你能说清为什么了吗？
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，把今天学的说清楚</h2>
+  <p class="quiz-hint">五道题都有唯一答案。做完这一页，这一课就装进去了。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 保存食物的方法，正确的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>冷藏、干燥、密封</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>放在温暖潮湿处</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>以上做法都正确</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 下面哪个不是细胞构成的？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>植物</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>病毒（非细胞结构）</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>动物</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 洗手能减少疾病，因为？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>让手变香</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>没有正确答案</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>洗掉部分有害微生物</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 显微镜下看到的物像与实物相比？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>上下左右颠倒</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>完全一样</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>以上都不恰当</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 研究微小世界，正确的态度是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>凭想象</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>用工具仔细观察、实事求是</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>以上都符合要求</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">显微镜</div>
+        <div class="summary-v4-summary">放大观察</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>显微镜能放大微小物体，看到肉眼看不见的东西</p>
+      <p>细胞是生物体结构和功能的基本单位</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">微生物</div>
+        <div class="summary-v4-summary">很小</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>细菌、酵母等微生物肉眼看不见</p>
+      <p>乳酸菌做酸奶、酵母发面，对人有益</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">连一连</div>
+        <div class="summary-v4-summary">名称对要点</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>看到名称想到要点。</p>
+      <p>看到要点能说出名称。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">别踩坑</div>
+        <div class="summary-v4-summary">四处易错</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>很多微生物要借显微镜才能看见</p>
+      <p>很多微生物有益，如发酵用的菌</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  借助<strong>显微镜</strong>，我们看到了细胞和小生命，微生物有益也有害。
+</p>
+</section>

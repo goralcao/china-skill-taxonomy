@@ -1,0 +1,499 @@
+<!-- ===== p0: 封面 ===== -->
+<section class="page active" id="p0" data-cw="skill">
+<div class="cover-page" style="height:100%">
+  <h1>我们在宇宙哪里</h1>
+  <p class="sub">六年级科学 · 地球与宇宙科学</p>
+  <div class="tags">
+    <span class="tag">宇宙</span>
+    <span class="tag">六年级</span>
+    <span class="tag">2022课标</span>
+    <span class="tag">地球课</span>
+  </div>
+  <div class="cover-fig">
+<svg viewBox="0 0 760 190" width="760" height="190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="我们在宇宙哪里">
+  <rect x="0" y="0" width="760" height="190" rx="18" fill="#FFFFFF" opacity=".08"/>
+  <g fill="#FFFFFF" opacity=".9"><circle cx="96" cy="58" r="15"/><circle cx="138" cy="58" r="15"/><path d="M78 92 h78 v10 h-78 z" opacity=".35"/></g>
+  <text x="216" y="82" font-size="30" fill="#FFFFFF" font-weight="800">我们在宇宙哪里</text>
+  <text x="218" y="126" font-size="18" fill="rgba(255,255,255,.85)">宇宙与太阳系</text>
+</svg>
+  </div>
+</div>
+</section>
+
+<section class="page" id="p1">
+<div class="quiz-page" id="quizPre">
+  <h2 class="quiz-title">前测 · 先看看你已经知道什么</h2>
+  <p class="quiz-hint">三道题都有唯一答案，答错会告诉你错在哪。</p>
+
+  <div class="quiz-q" id="qq_quizPre_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 太阳系的中心天体是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>太阳</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>地球</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>月球</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 太阳是什么类型的天体？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>行星</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>恒星</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>卫星</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPre_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 地球绕什么公转？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>月球</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>火星</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>太阳</div>
+    </div>
+    <div class="feedback" id="fb_quizPre_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPre')">重做</button>
+  </div>
+  <span id="preScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p2: 1 个数看清：我们在宇宙哪里 ===== -->
+<section class="page" id="p2">
+<h2 class="teach-title">1 个数看清：我们在宇宙哪里</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p2fig">
+<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="认识宇宙与太阳系"><rect x="8" y="8" width="284" height="184" rx="12" fill="#F4FAFF" stroke="#00838F"/><text x="20" y="30" font-size="16" fill="#00838F" font-weight="700">认识宇宙与太阳系</text>
+  <circle cx="26" cy="40" r="9" fill="#00838F"/><text x="26" y="44" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">1</text><text x="46" y="45" font-size="15" fill="#333">太阳：恒星</text>
+  <circle cx="26" cy="70" r="9" fill="#00838F"/><text x="26" y="74" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">2</text><text x="46" y="75" font-size="15" fill="#333">八大行星：绕太阳</text>
+  <circle cx="26" cy="100" r="9" fill="#00838F"/><text x="26" y="104" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">3</text><text x="46" y="105" font-size="15" fill="#333">地球：我们的家</text>
+  <circle cx="26" cy="130" r="9" fill="#00838F"/><text x="26" y="134" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">4</text><text x="46" y="135" font-size="15" fill="#333">卫星：绕行星</text>
+  <circle cx="26" cy="160" r="9" fill="#00838F"/><text x="26" y="164" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">5</text><text x="46" y="165" font-size="15" fill="#333">宇宙：非常大</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p2s1">
+    今天来认识<b>宇宙与太阳系</b>。先看整体，再一样一样拆开看。
+  </p>
+  <p class="teach-text" id="p2s2">
+    先看最关键的一点：<strong>太阳</strong>。太阳是太阳系的中心恒星，发光发热
+  </p>
+  <p class="teach-text" id="p2s3">
+    抓住这几点，宇宙与太阳系 就清楚了。
+  </p>
+</div>
+
+<div class="card-grid" id="p2cards">
+  <div class="card">
+    <h4>太阳</h4>
+    <div class="eq">恒星</div>
+    <p>太阳是太阳系的中心恒星，发光发热</p>
+  </div>
+  <div class="card">
+    <h4>八大行星</h4>
+    <div class="eq">绕太阳</div>
+    <p>水金地火木土天海，八大行星绕太阳公转</p>
+  </div>
+  <div class="card">
+    <h4>地球</h4>
+    <div class="eq">我们的家</div>
+    <p>地球是太阳系中一颗有生命的行星</p>
+  </div>
+</div>
+
+<div class="key-box" id="p2key">
+  <strong>太阳</strong>是这一课的关键，先记住它。
+</div>
+</section>
+
+<!-- ===== p3: 拆成几条：每条讲清一件事 ===== -->
+<section class="page" id="p3">
+<h2 class="teach-title">拆成几条：每条讲清一件事</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p3fig">
+<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="要点一览"><rect x="8" y="8" width="284" height="184" rx="12" fill="#F4FAFF" stroke="#00838F"/><text x="20" y="30" font-size="16" fill="#00838F" font-weight="700">要点一览</text>
+  <circle cx="26" cy="40" r="9" fill="#00838F"/><text x="26" y="44" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">1</text><text x="46" y="45" font-size="15" fill="#333">太阳</text>
+  <circle cx="26" cy="70" r="9" fill="#00838F"/><text x="26" y="74" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">2</text><text x="46" y="75" font-size="15" fill="#333">八大行星</text>
+  <circle cx="26" cy="100" r="9" fill="#00838F"/><text x="26" y="104" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">3</text><text x="46" y="105" font-size="15" fill="#333">地球</text>
+  <circle cx="26" cy="130" r="9" fill="#00838F"/><text x="26" y="134" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">4</text><text x="46" y="135" font-size="15" fill="#333">卫星</text>
+  <circle cx="26" cy="160" r="9" fill="#00838F"/><text x="26" y="164" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">5</text><text x="46" y="165" font-size="15" fill="#333">宇宙</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p3s1">
+    宇宙与太阳系 可以拆成几个要点，一条一条记。
+  </p>
+  <p class="teach-text" id="p3s2">
+    下面这几条要分清，别把它们弄混。
+  </p>
+</div>
+
+<ul class="feature-list" id="p3rules">
+  <li><strong>太阳</strong>：太阳是太阳系的中心恒星，发光发热</li>
+  <li><strong>八大行星</strong>：水金地火木土天海，八大行星绕太阳公转</li>
+  <li><strong>地球</strong>：地球是太阳系中一颗有生命的行星</li>
+  <li><strong>卫星</strong>：月球是地球的卫星，绕地球转</li>
+  <li><strong>宇宙</strong>：太阳系只是银河系的一小部分，宇宙更大</li>
+</ul>
+
+<div class="key-box" id="p3key">
+  一条一条对号入座，<strong>名称</strong>和<strong>作用</strong>别弄反。
+</div>
+</section>
+
+<!-- ===== p3b: 连一连 ===== -->
+<section class="page" id="p3b">
+<h2 class="teach-title">连一连：名称和要点对起来</h2>
+<p class="teach-text" id="p3bs1">先读左边的名称，再连右边的要点。</p>
+<div class="match-wrap" id="matchP3"></div>
+</section>
+
+<section class="page" id="p4">
+<div class="quiz-page" id="quizMid1">
+  <h2 class="quiz-title">中测一 · 边学边想</h2>
+  <p class="quiz-hint">三道题都有唯一答案，做完再看讲解。</p>
+
+  <div class="quiz-q" id="qq_quizMid1_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 月球是什么？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>地球的卫星</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>行星</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>恒星</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 太阳系有几大行星？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>五大</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>八大行星</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>十大</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid1_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 下面哪个是行星？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>太阳</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>月球</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>火星</div>
+    </div>
+    <div class="feedback" id="fb_quizMid1_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid1')">重做</button>
+  </div>
+  <span id="mid1Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p5: 再看一层：把要点补齐 ===== -->
+<section class="page" id="p5">
+<h2 class="teach-title">再看一层：把要点补齐</h2>
+
+<div class="clearfix">
+  <div class="fig float-r" id="p5fig">
+<svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="补要点"><rect x="8" y="8" width="284" height="134" rx="12" fill="#F4FAFF" stroke="#00838F"/><text x="20" y="30" font-size="16" fill="#00838F" font-weight="700">补要点</text>
+  <circle cx="26" cy="40" r="9" fill="#00838F"/><text x="26" y="44" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">1</text><text x="46" y="45" font-size="15" fill="#333">地球：我们的家</text>
+  <circle cx="26" cy="70" r="9" fill="#00838F"/><text x="26" y="74" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">2</text><text x="46" y="75" font-size="15" fill="#333">卫星：绕行星</text>
+  <circle cx="26" cy="100" r="9" fill="#00838F"/><text x="26" y="104" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">3</text><text x="46" y="105" font-size="15" fill="#333">宇宙：非常大</text>
+</svg>
+  </div>
+
+  <p class="teach-text" id="p5s1">
+    再换个角度，把 宇宙与太阳系 剩下的要点补齐。
+  </p>
+  <p class="teach-text" id="p5s2">
+    这几条常常一起考，要能一口气说清。
+  </p>
+</div>
+
+<div class="card-grid" id="p5cards">
+  <div class="card">
+    <h4>地球</h4>
+    <div class="eq">我们的家</div>
+    <p>地球是太阳系中一颗有生命的行星</p>
+  </div>
+  <div class="card">
+    <h4>卫星</h4>
+    <div class="eq">绕行星</div>
+    <p>月球是地球的卫星，绕地球转</p>
+  </div>
+  <div class="card">
+    <h4>宇宙</h4>
+    <div class="eq">非常大</div>
+    <p>太阳系只是银河系的一小部分，宇宙更大</p>
+  </div>
+</div>
+
+<div class="key-box" id="p5key">
+  前后要点连起来，才是<strong>完整的 宇宙与太阳系</strong>。
+</div>
+</section>
+
+<!-- ===== p6: 仿真 ===== -->
+<section class="page" id="p6">
+<div class="sim-page">
+  <h2 class="sim-title">认识太阳系：一层层看</h2>
+  <p class="sim-desc">点「看下一层」认识太阳系结构；「换一组」换天体。</p>
+
+  <div class="sim-status">
+    <span class="sim-readout" id="simReadout">已看 %N% 层</span>
+    <span class="sim-tip" id="simTip">太阳居中、行星环绕</span>
+  </div>
+
+  <div class="sim-controls">
+    <button class="btn-primary" onclick="simAdd()">+ 看下一层</button>
+    <button class="btn" onclick="simNextCase()">换一组</button>
+    <button class="btn" onclick="simDemo()">看老师做</button>
+    <button class="btn-retry" onclick="simReset()">清空</button>
+  </div>
+
+  <div class="sim-canvas-wrap">
+    <div class="canvas-box">
+      <canvas id="simCanvas" width="880" height="360"></canvas>
+      <p class="cap">从太阳系到宇宙</p>
+    </div>
+  </div>
+
+  <div class="sim-log" id="simLog"></div>
+
+  <ul class="feature-list" style="margin-top:14px">
+    <li>太阳系由什么组成？</li>
+    <li>地球在宇宙什么位置？</li>
+    <li>换一组后天体变了吗？</li>
+  </ul>
+</div>
+</section>
+
+<section class="page" id="p7">
+<div class="quiz-page" id="quizMid2">
+  <h2 class="quiz-title">中测二 · 换个角度再认一次</h2>
+  <p class="quiz-hint">三道题都有唯一答案，注意别把概念用反。</p>
+
+  <div class="quiz-q" id="qq_quizMid2_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 我们能看到月亮，是因为它？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>反射太阳光</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>自己发光</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>只有最后一种对</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 离太阳最近的行星是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>地球</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>水星</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>木星</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizMid2_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 太阳系属于哪个星系？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>河外星系</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>不属于任何星系</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>银河系</div>
+    </div>
+    <div class="feedback" id="fb_quizMid2_2"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizMid2')">重做</button>
+  </div>
+  <span id="mid2Score" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p8: 四处最容易翻车 ===== -->
+<section class="page" id="p8">
+<h2 class="teach-title">四处最容易翻车</h2>
+
+<div class="clearfix">
+  <p class="teach-text" id="p8s1">
+    宇宙与太阳系 看着简单，最容易在这四处翻车。
+  </p>
+</div>
+
+<div class="card-grid" id="p8cards">
+  <div class="card">
+    <h4>太阳是行星</h4>
+    <div class="eq">✗ 太阳绕地球</div>
+    <p>太阳是恒星，地球等行星绕太阳</p>
+  </div>
+  <div class="card">
+    <h4>地球是中心</h4>
+    <div class="eq">✗ 地球是宇宙中心</div>
+    <p>地球绕太阳，太阳系也在运动</p>
+  </div>
+  <div class="card">
+    <h4>月亮自己亮</h4>
+    <div class="eq">✗ 月亮是光源</div>
+    <p>月亮反射太阳光</p>
+  </div>
+  <div class="card">
+    <h4>太阳系等于宇宙</h4>
+    <div class="eq">✗ 太阳系就是全部宇宙</div>
+    <p>宇宙远比太阳系大得多</p>
+  </div>
+</div>
+
+<div class="key-box" id="p8key">
+  记住：<strong>太阳是太阳系的中心恒星，发光发热</strong>。
+</div>
+
+<p class="teach-text" id="p8apply">
+  回到开头那个数：我们在宇宙哪里。现在你能说清为什么了吗？
+</p>
+</section>
+
+<section class="page" id="p9">
+<div class="quiz-page" id="quizPost">
+  <h2 class="quiz-title">后测 · 五道题，把今天学的说清楚</h2>
+  <p class="quiz-hint">五道题都有唯一答案。做完这一页，这一课就装进去了。</p>
+
+  <div class="quiz-q" id="qq_quizPost_0">
+    <p class="q-stem"><span class="q-type">单选题</span>1. 宇宙的大小是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>无比巨大</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>和太阳系一样</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>以上做法都正确</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_0"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_1">
+    <p class="q-stem"><span class="q-type">单选题</span>2. 下面哪个不是太阳系的行星？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>土星</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>北极星</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>金星</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_1"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_2">
+    <p class="q-stem"><span class="q-type">单选题</span>3. 行星与恒星的主要区别是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>行星更大</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>没有正确答案</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>行星自己不发光</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_2"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_3">
+    <p class="q-stem"><span class="q-type">单选题</span>4. 人类探索宇宙可以用？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>天文望远镜、探测器</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>用肉眼就够</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>以上都不恰当</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_3"></div>
+  </div>
+
+  <div class="quiz-q" id="qq_quizPost_4">
+    <p class="q-stem"><span class="q-type">单选题</span>5. 下面说法正确的是？</p>
+    <div class="opts">
+      <div class="opt" data-idx="0"><span class="badge">A</span>太阳绕地球转</div>
+      <div class="opt" data-idx="1"><span class="badge">B</span>地球是太阳系中的一颗行星</div>
+      <div class="opt" data-idx="2"><span class="badge">C</span>以上都符合要求</div>
+    </div>
+    <div class="feedback" id="fb_quizPost_4"></div>
+  </div>
+
+  <div class="quiz-actions">
+    <button class="btn-retry" onclick="retryQuiz('quizPost')">重做</button>
+  </div>
+  <span id="postScore" class="quiz-score"></span>
+</div>
+</section>
+
+<!-- ===== p10: 总结 V4 ===== -->
+<section class="page" id="p10">
+<h2 class="teach-title">这一课，装进四张卡</h2>
+
+<div class="summary-v4-toolbar">
+  <button type="button" onclick="expandAllV4()">全部展开</button>
+  <button type="button" onclick="collapseAllV4()">全部收起</button>
+</div>
+
+<div class="summary-v4-grid">
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">1</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">太阳</div>
+        <div class="summary-v4-summary">恒星</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>太阳是太阳系的中心恒星，发光发热</p>
+      <p>水金地火木土天海，八大行星绕太阳公转</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">2</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">地球</div>
+        <div class="summary-v4-summary">我们的家</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>地球是太阳系中一颗有生命的行星</p>
+      <p>月球是地球的卫星，绕地球转</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">3</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">连一连</div>
+        <div class="summary-v4-summary">名称对要点</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>看到名称想到要点。</p>
+      <p>看到要点能说出名称。</p>
+    </div>
+  </div>
+
+  <div class="summary-v4-card" onclick="toggleCardV4(this)">
+    <div class="summary-v4-header">
+      <div class="summary-v4-num">4</div>
+      <div style="flex:1">
+        <div class="summary-v4-title">别踩坑</div>
+        <div class="summary-v4-summary">四处易错</div>
+      </div>
+      <div class="summary-v4-indicator">▼</div>
+    </div>
+    <div class="summary-v4-body">
+      <p>太阳是恒星，地球等行星绕太阳</p>
+      <p>地球绕太阳，太阳系也在运动</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="teach-text" style="margin-top:18px">
+  太阳居中、八大行星环绕；地球只是<strong>浩渺宇宙</strong>中的一员。
+</p>
+</section>

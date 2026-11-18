@@ -1,0 +1,93 @@
+{
+  "topicId": "mt_sci-human-self",
+  "title": "我们有几个感觉器官",
+  "template": "explain",
+  "renderer": "senses",
+  "duration": 24,
+  "interactions": 16,
+  "grade": 1,
+  "subject": "科学",
+  "standards": [
+    "science-2022:KX:LL"
+  ],
+  "prerequisites": [
+    "mt_sci-inquiry",
+    "mt_sci-plants-around"
+  ],
+  "next": [
+    "mt_sci-breathing"
+  ],
+  "objectives": [
+    "能指出眼、耳、鼻、舌、手等器官并说出作用",
+    "知道身体外部各部分的名称",
+    "能说出保护眼睛和耳朵的正确做法"
+  ],
+  "cognitiveAction": "分解",
+  "status": "reviewed",
+  "author": "goral.cao",
+  "license": "CC-BY-SA-4.0",
+  "version": "3.0.0",
+  "updatedAt": "2026-11-05",
+  "nav": [
+    {
+      "label": "封面",
+      "page": 0,
+      "cls": "active"
+    },
+    {
+      "label": "前测",
+      "page": 1,
+      "cls": "pre"
+    },
+    {
+      "label": "引入",
+      "page": 2,
+      "cls": ""
+    },
+    {
+      "label": "概念一",
+      "page": 3,
+      "cls": ""
+    },
+    {
+      "label": "连一连",
+      "page": 4,
+      "cls": ""
+    },
+    {
+      "label": "中测1",
+      "page": 5,
+      "cls": "mid"
+    },
+    {
+      "label": "概念二",
+      "page": 6,
+      "cls": ""
+    },
+    {
+      "label": "仿真",
+      "page": 7,
+      "cls": "sim"
+    },
+    {
+      "label": "中测2",
+      "page": 8,
+      "cls": "mid"
+    },
+    {
+      "label": "辨析",
+      "page": 9,
+      "cls": ""
+    },
+    {
+      "label": "后测",
+      "page": 10,
+      "cls": "post"
+    },
+    {
+      "label": "总结",
+      "page": 11,
+      "cls": "end"
+    }
+  ]
+}
